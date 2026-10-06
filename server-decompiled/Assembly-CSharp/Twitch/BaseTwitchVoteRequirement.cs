@@ -2,28 +2,28 @@
 
 namespace Twitch
 {
-	// Token: 0x02001874 RID: 6260
+	// Token: 0x020018A0 RID: 6304
 	public class BaseTwitchVoteRequirement
 	{
-		// Token: 0x0600C145 RID: 49477 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C29D RID: 49821 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnInit()
 		{
 		}
 
-		// Token: 0x0600C146 RID: 49478 RVA: 0x00479094 File Offset: 0x00477294
+		// Token: 0x0600C29E RID: 49822 RVA: 0x0047D5D0 File Offset: 0x0047B7D0
 		public void Init()
 		{
 			this.OnInit();
 		}
 
-		// Token: 0x0600C147 RID: 49479 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x0600C29F RID: 49823 RVA: 0x00020119 File Offset: 0x0001E319
 		public virtual bool CanPerform(EntityPlayer player)
 		{
 			return true;
 		}
 
-		// Token: 0x0600C148 RID: 49480 RVA: 0x0047909C File Offset: 0x0047729C
+		// Token: 0x0600C2A0 RID: 49824 RVA: 0x0047D5D8 File Offset: 0x0047B7D8
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			if (properties.Values.ContainsKey(BaseTwitchVoteRequirement.PropInvert))
@@ -32,13 +32,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x04009258 RID: 37464
+		// Token: 0x0400931E RID: 37662
 		public TwitchVote Owner;
 
-		// Token: 0x04009259 RID: 37465
+		// Token: 0x0400931F RID: 37663
 		public bool Invert;
 
-		// Token: 0x0400925A RID: 37466
+		// Token: 0x04009320 RID: 37664
 		public static string PropInvert = "invert";
 	}
 }

@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013B0 RID: 5040
+// Token: 0x020013D0 RID: 5072
 public class CachedStringFormatter<T1, T2>
 {
-	// Token: 0x06009ED2 RID: 40658 RVA: 0x003BE952 File Offset: 0x003BCB52
+	// Token: 0x06009F7D RID: 40829 RVA: 0x003C34EE File Offset: 0x003C16EE
 	public CachedStringFormatter(Func<T1, T2, string> _formatterFunc)
 	{
 		this.formatter = _formatterFunc;
 	}
 
-	// Token: 0x06009ED3 RID: 40659 RVA: 0x003BE978 File Offset: 0x003BCB78
+	// Token: 0x06009F7E RID: 40830 RVA: 0x003C3514 File Offset: 0x003C1714
 	public string Format(T1 _v1, T2 _v2)
 	{
 		bool flag;
 		return this.Format(_v1, _v2, out flag);
 	}
 
-	// Token: 0x06009ED4 RID: 40660 RVA: 0x003BE990 File Offset: 0x003BCB90
+	// Token: 0x06009F7F RID: 40831 RVA: 0x003C352C File Offset: 0x003C172C
 	public string Format(T1 _v1, T2 _v2, out bool _valueChanged)
 	{
 		_valueChanged = this.cachedResult == null;
@@ -38,27 +38,27 @@ public class CachedStringFormatter<T1, T2>
 		return this.cachedResult;
 	}
 
-	// Token: 0x04007850 RID: 30800
+	// Token: 0x040078CB RID: 30923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Func<T1, T2, string> formatter;
 
-	// Token: 0x04007851 RID: 30801
+	// Token: 0x040078CC RID: 30924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedResult;
 
-	// Token: 0x04007852 RID: 30802
+	// Token: 0x040078CD RID: 30925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T1 oldValue1;
 
-	// Token: 0x04007853 RID: 30803
+	// Token: 0x040078CE RID: 30926
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEqualityComparer<T1> comparer1 = EqualityComparer<T1>.Default;
 
-	// Token: 0x04007854 RID: 30804
+	// Token: 0x040078CF RID: 30927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T2 oldValue2;
 
-	// Token: 0x04007855 RID: 30805
+	// Token: 0x040078D0 RID: 30928
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEqualityComparer<T2> comparer2 = EqualityComparer<T2>.Default;
 }

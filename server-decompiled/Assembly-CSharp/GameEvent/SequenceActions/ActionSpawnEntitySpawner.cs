@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C8 RID: 6600
+	// Token: 0x020019F4 RID: 6644
 	[Preserve]
 	public class ActionSpawnEntitySpawner : ActionSpawnEntity
 	{
-		// Token: 0x170018AE RID: 6318
-		// (get) Token: 0x0600C9B9 RID: 51641 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001950 RID: 6480
+		// (get) Token: 0x0600CB11 RID: 51985 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool UseRepeating
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9BA RID: 51642 RVA: 0x004A022F File Offset: 0x0049E42F
+		// Token: 0x0600CB12 RID: 51986 RVA: 0x004A46D3 File Offset: 0x004A28D3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			base.OnInit();
 		}
 
-		// Token: 0x0600C9BB RID: 51643 RVA: 0x004A0254 File Offset: 0x0049E454
+		// Token: 0x0600CB13 RID: 51987 RVA: 0x004A46F8 File Offset: 0x004A28F8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleExtraAction()
 		{
@@ -37,7 +37,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9BC RID: 51644 RVA: 0x004A02CC File Offset: 0x0049E4CC
+		// Token: 0x0600CB14 RID: 51988 RVA: 0x004A4770 File Offset: 0x004A2970
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleRepeat()
 		{
@@ -58,7 +58,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600C9BD RID: 51645 RVA: 0x004A032C File Offset: 0x0049E52C
+		// Token: 0x0600CB15 RID: 51989 RVA: 0x004A47D0 File Offset: 0x004A29D0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -66,7 +66,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionSpawnEntitySpawner.PropSpawnOnHit, ref this.spawnOnHit);
 		}
 
-		// Token: 0x0600C9BE RID: 51646 RVA: 0x004A0358 File Offset: 0x0049E558
+		// Token: 0x0600CB16 RID: 51990 RVA: 0x004A47FC File Offset: 0x004A29FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -100,25 +100,25 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098FD RID: 39165
+		// Token: 0x040099C3 RID: 39363
 		public int spawnerMin = 5;
 
-		// Token: 0x040098FE RID: 39166
+		// Token: 0x040099C4 RID: 39364
 		public bool spawnOnHit = true;
 
-		// Token: 0x040098FF RID: 39167
+		// Token: 0x040099C5 RID: 39365
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string internalGroupName = "_spawner";
 
-		// Token: 0x04009900 RID: 39168
+		// Token: 0x040099C6 RID: 39366
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int newZombieNeeded;
 
-		// Token: 0x04009901 RID: 39169
+		// Token: 0x040099C7 RID: 39367
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnerMin = "spawner_min";
 
-		// Token: 0x04009902 RID: 39170
+		// Token: 0x040099C8 RID: 39368
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpawnOnHit = "spawn_on_hit";
 	}

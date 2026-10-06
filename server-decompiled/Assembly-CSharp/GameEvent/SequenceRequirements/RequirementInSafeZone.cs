@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001936 RID: 6454
+	// Token: 0x02001962 RID: 6498
 	[Preserve]
 	public class RequirementInSafeZone : BaseRequirement
 	{
-		// Token: 0x0600C71F RID: 50975 RVA: 0x00491504 File Offset: 0x0048F704
+		// Token: 0x0600C877 RID: 51319 RVA: 0x004959F0 File Offset: 0x00493BF0
 		public override bool CanPerform(Entity target)
 		{
 			if (!GameManager.Instance.World.CanPlaceBlockAt(new Vector3i((target == null) ? this.Owner.TargetPosition : target.position), null, false))
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C720 RID: 50976 RVA: 0x00491555 File Offset: 0x0048F755
+		// Token: 0x0600C878 RID: 51320 RVA: 0x00495A41 File Offset: 0x00493C41
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

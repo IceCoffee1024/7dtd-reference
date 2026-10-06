@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020001C5 RID: 453
+// Token: 0x020001C6 RID: 454
 public class BlockMaskRules<O, M>
 {
-	// Token: 0x06000DE4 RID: 3556 RVA: 0x0005BB2D File Offset: 0x00059D2D
+	// Token: 0x06000DDB RID: 3547 RVA: 0x0005BB2D File Offset: 0x00059D2D
 	public BlockMaskRules(M _wildcard)
 	{
 		this.blockRules = new List<BlockRule<O, M>>();
 		this.wildcard = _wildcard;
 	}
 
-	// Token: 0x06000DE5 RID: 3557 RVA: 0x0005BB47 File Offset: 0x00059D47
+	// Token: 0x06000DDC RID: 3548 RVA: 0x0005BB47 File Offset: 0x00059D47
 	public void AddRule(BlockRule<O, M> blockRule)
 	{
 		if (!this.blockRules.Contains(blockRule))
@@ -21,7 +21,7 @@ public class BlockMaskRules<O, M>
 		}
 	}
 
-	// Token: 0x06000DE6 RID: 3558 RVA: 0x0005BB6C File Offset: 0x00059D6C
+	// Token: 0x06000DDD RID: 3549 RVA: 0x0005BB6C File Offset: 0x00059D6C
 	public O GetOutput(M[] mask)
 	{
 		for (int i = 0; i < this.blockRules.Count; i++)
@@ -47,7 +47,7 @@ public class BlockMaskRules<O, M>
 		return default(O);
 	}
 
-	// Token: 0x06000DE7 RID: 3559 RVA: 0x0005BC1C File Offset: 0x00059E1C
+	// Token: 0x06000DDE RID: 3550 RVA: 0x0005BC1C File Offset: 0x00059E1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotateLocalRangeYAxis(BlockRule<O, M> blockRule)
 	{
@@ -124,11 +124,11 @@ public class BlockMaskRules<O, M>
 		}
 	}
 
-	// Token: 0x04000BF8 RID: 3064
+	// Token: 0x04000BF1 RID: 3057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockRule<O, M>> blockRules;
 
-	// Token: 0x04000BF9 RID: 3065
+	// Token: 0x04000BF2 RID: 3058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public M wildcard;
 }

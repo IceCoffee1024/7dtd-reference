@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E9A RID: 3738
+// Token: 0x02000EA9 RID: 3753
 [Preserve]
 public class XUiC_TabSelector : XUiController
 {
-	// Token: 0x140000B7 RID: 183
-	// (add) Token: 0x06007448 RID: 29768 RVA: 0x002BF900 File Offset: 0x002BDB00
-	// (remove) Token: 0x06007449 RID: 29769 RVA: 0x002BF938 File Offset: 0x002BDB38
+	// Token: 0x140000B6 RID: 182
+	// (add) Token: 0x06007440 RID: 29760 RVA: 0x002C2CB0 File Offset: 0x002C0EB0
+	// (remove) Token: 0x06007441 RID: 29761 RVA: 0x002C2CE8 File Offset: 0x002C0EE8
 	public event XUiC_TabSelector.TabChangedDelegate OnTabChanged;
 
-	// Token: 0x17000D95 RID: 3477
-	// (get) Token: 0x0600744A RID: 29770 RVA: 0x002BF96D File Offset: 0x002BDB6D
-	// (set) Token: 0x0600744B RID: 29771 RVA: 0x002BF975 File Offset: 0x002BDB75
+	// Token: 0x17000DB0 RID: 3504
+	// (get) Token: 0x06007442 RID: 29762 RVA: 0x002C2D1D File Offset: 0x002C0F1D
+	// (set) Token: 0x06007443 RID: 29763 RVA: 0x002C2D25 File Offset: 0x002C0F25
 	[XuiXmlAttribute("use_page_buttons", false)]
 	public bool UsePageButtons
 	{
@@ -22,9 +22,9 @@ public class XUiC_TabSelector : XUiController
 		set;
 	}
 
-	// Token: 0x17000D96 RID: 3478
-	// (get) Token: 0x0600744C RID: 29772 RVA: 0x002BF97E File Offset: 0x002BDB7E
-	// (set) Token: 0x0600744D RID: 29773 RVA: 0x002BF988 File Offset: 0x002BDB88
+	// Token: 0x17000DB1 RID: 3505
+	// (get) Token: 0x06007444 RID: 29764 RVA: 0x002C2D2E File Offset: 0x002C0F2E
+	// (set) Token: 0x06007445 RID: 29765 RVA: 0x002C2D38 File Offset: 0x002C0F38
 	public int SelectedTabIndex
 	{
 		get
@@ -93,9 +93,9 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000D97 RID: 3479
-	// (get) Token: 0x0600744E RID: 29774 RVA: 0x002BFAC0 File Offset: 0x002BDCC0
-	// (set) Token: 0x0600744F RID: 29775 RVA: 0x002BFAF4 File Offset: 0x002BDCF4
+	// Token: 0x17000DB2 RID: 3506
+	// (get) Token: 0x06007446 RID: 29766 RVA: 0x002C2E70 File Offset: 0x002C1070
+	// (set) Token: 0x06007447 RID: 29767 RVA: 0x002C2EA4 File Offset: 0x002C10A4
 	public XUiC_TabSelectorTab SelectedTab
 	{
 		get
@@ -124,8 +124,8 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000D98 RID: 3480
-	// (get) Token: 0x06007450 RID: 29776 RVA: 0x002BFB23 File Offset: 0x002BDD23
+	// Token: 0x17000DB3 RID: 3507
+	// (get) Token: 0x06007448 RID: 29768 RVA: 0x002C2ED3 File Offset: 0x002C10D3
 	[XuiXmlBinding("selected_tab")]
 	public string SelectedTabKey
 	{
@@ -136,8 +136,8 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000D99 RID: 3481
-	// (get) Token: 0x06007451 RID: 29777 RVA: 0x002BFB40 File Offset: 0x002BDD40
+	// Token: 0x17000DB4 RID: 3508
+	// (get) Token: 0x06007449 RID: 29769 RVA: 0x002C2EF0 File Offset: 0x002C10F0
 	public XUiC_TabSelectorButton SelectedTabButton
 	{
 		get
@@ -151,7 +151,7 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007452 RID: 29778 RVA: 0x002BFB54 File Offset: 0x002BDD54
+	// Token: 0x0600744A RID: 29770 RVA: 0x002C2F04 File Offset: 0x002C1104
 	public override void Init()
 	{
 		base.Init();
@@ -185,7 +185,7 @@ public class XUiC_TabSelector : XUiController
 		this.Tabs[0].TabSelected = true;
 	}
 
-	// Token: 0x06007453 RID: 29779 RVA: 0x002BFC88 File Offset: 0x002BDE88
+	// Token: 0x0600744B RID: 29771 RVA: 0x002C3038 File Offset: 0x002C1238
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -199,14 +199,14 @@ public class XUiC_TabSelector : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007454 RID: 29780 RVA: 0x002BFCD8 File Offset: 0x002BDED8
+	// Token: 0x0600744C RID: 29772 RVA: 0x002C3088 File Offset: 0x002C1288
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CalloutWindow.DisableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuCategory);
 	}
 
-	// Token: 0x06007455 RID: 29781 RVA: 0x002BFCF4 File Offset: 0x002BDEF4
+	// Token: 0x0600744D RID: 29773 RVA: 0x002C30A4 File Offset: 0x002C12A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateTabVisibility()
 	{
@@ -254,7 +254,7 @@ public class XUiC_TabSelector : XUiController
 		xuiV_Table.Reposition();
 	}
 
-	// Token: 0x06007456 RID: 29782 RVA: 0x002BFE00 File Offset: 0x002BE000
+	// Token: 0x0600744E RID: 29774 RVA: 0x002C31B0 File Offset: 0x002C13B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleCategory(int _dir, bool _playSound = true)
 	{
@@ -280,7 +280,7 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007457 RID: 29783 RVA: 0x002BFE6C File Offset: 0x002BE06C
+	// Token: 0x0600744F RID: 29775 RVA: 0x002C321C File Offset: 0x002C141C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -320,7 +320,7 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x06007458 RID: 29784 RVA: 0x002BFF7D File Offset: 0x002BE17D
+	// Token: 0x06007450 RID: 29776 RVA: 0x002C332D File Offset: 0x002C152D
 	public void SetTabCaption(int _index, string _name)
 	{
 		if (_index >= this.Tabs.Length)
@@ -330,7 +330,7 @@ public class XUiC_TabSelector : XUiController
 		this.Tabs[_index].TabHeaderText = _name;
 	}
 
-	// Token: 0x06007459 RID: 29785 RVA: 0x002BFFA3 File Offset: 0x002BE1A3
+	// Token: 0x06007451 RID: 29777 RVA: 0x002C3353 File Offset: 0x002C1553
 	public XUiC_TabSelectorTab GetTab(int _index)
 	{
 		if (_index >= this.Tabs.Length)
@@ -340,12 +340,12 @@ public class XUiC_TabSelector : XUiController
 		return this.Tabs[_index];
 	}
 
-	// Token: 0x0600745A RID: 29786 RVA: 0x002BFFC4 File Offset: 0x002BE1C4
-	public void SelectTabByName(string _tabKey)
+	// Token: 0x06007452 RID: 29778 RVA: 0x002C3374 File Offset: 0x002C1574
+	public void SelectTabByName(string _tabKey, bool _ignoreCase = false)
 	{
 		foreach (XUiC_TabSelectorTab xuiC_TabSelectorTab in this.Tabs)
 		{
-			if (!(xuiC_TabSelectorTab.TabKey != _tabKey))
+			if (string.Equals(xuiC_TabSelectorTab.TabKey, _tabKey, _ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
 			{
 				this.SelectedTab = xuiC_TabSelectorTab;
 				return;
@@ -353,14 +353,14 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x0600745B RID: 29787 RVA: 0x002C0000 File Offset: 0x002BE200
+	// Token: 0x06007453 RID: 29779 RVA: 0x002C33B7 File Offset: 0x002C15B7
 	public bool IsSelected(string _tabKey)
 	{
 		XUiC_TabSelectorTab selectedTab = this.SelectedTab;
 		return selectedTab != null && selectedTab.TabKey.Equals(_tabKey);
 	}
 
-	// Token: 0x0600745C RID: 29788 RVA: 0x002C0019 File Offset: 0x002BE219
+	// Token: 0x06007454 RID: 29780 RVA: 0x002C33D0 File Offset: 0x002C15D0
 	public void TabVisibilityChanged(XUiC_TabSelectorTab _tab, bool _visible)
 	{
 		if (_tab == this.SelectedTab && !_visible)
@@ -374,7 +374,7 @@ public class XUiC_TabSelector : XUiController
 		this.updateTabVisibility();
 	}
 
-	// Token: 0x0600745D RID: 29789 RVA: 0x002C004A File Offset: 0x002BE24A
+	// Token: 0x06007455 RID: 29781 RVA: 0x002C3401 File Offset: 0x002C1601
 	public void TabButtonClicked(XUiC_TabSelectorButton _tabButton)
 	{
 		if (!this.enabled)
@@ -384,7 +384,7 @@ public class XUiC_TabSelector : XUiController
 		this.SelectedTabIndex = Array.IndexOf<XUiC_TabSelectorButton>(this.tabButtons, _tabButton);
 	}
 
-	// Token: 0x0600745E RID: 29790 RVA: 0x002C0067 File Offset: 0x002BE267
+	// Token: 0x06007456 RID: 29782 RVA: 0x002C341E File Offset: 0x002C161E
 	[XuiXmlAttribute("select_tab_contents_on_open", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSelectTabContentsOnOpen(string _value)
@@ -395,7 +395,7 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x0600745F RID: 29791 RVA: 0x002C0080 File Offset: 0x002BE280
+	// Token: 0x06007457 RID: 29783 RVA: 0x002C3437 File Offset: 0x002C1637
 	[XuiXmlAttribute("select_tab_contents_on_change", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeSelectTabContentsOnChange(string _value)
@@ -406,54 +406,54 @@ public class XUiC_TabSelector : XUiController
 		}
 	}
 
-	// Token: 0x04005687 RID: 22151
+	// Token: 0x040056BE RID: 22206
 	[XuiBindComponent("tabsHeader.", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TabSelectorButton[] tabButtons;
 
-	// Token: 0x04005688 RID: 22152
+	// Token: 0x040056BF RID: 22207
 	[XuiBindComponent("tabsContents.", true)]
 	public readonly XUiC_TabSelectorTab[] Tabs;
 
-	// Token: 0x04005689 RID: 22153
+	// Token: 0x040056C0 RID: 22208
 	[XuiBindComponent("tabsHeader.", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Table headerButtonsTable;
 
-	// Token: 0x0400568A RID: 22154
+	// Token: 0x040056C1 RID: 22209
 	[XuiBindComponent("border", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite tabSelectorBorder;
 
-	// Token: 0x0400568B RID: 22155
+	// Token: 0x040056C2 RID: 22210
 	[XuiBindComponent("backgroundMainTabs", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite tabHeaderBackground;
 
-	// Token: 0x0400568C RID: 22156
+	// Token: 0x040056C3 RID: 22211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled = true;
 
-	// Token: 0x0400568D RID: 22157
+	// Token: 0x040056C4 RID: 22212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selectedTabIndex;
 
-	// Token: 0x0400568E RID: 22158
+	// Token: 0x040056C5 RID: 22213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool selectOnOpen;
 
-	// Token: 0x0400568F RID: 22159
+	// Token: 0x040056C6 RID: 22214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pendingOnOpenSelection;
 
-	// Token: 0x04005691 RID: 22161
+	// Token: 0x040056C8 RID: 22216
 	public bool SelectTabContentsOnChange = true;
 
-	// Token: 0x04005692 RID: 22162
+	// Token: 0x040056C9 RID: 22217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pendingOnChangeSelection;
 
-	// Token: 0x02000E9B RID: 3739
-	// (Invoke) Token: 0x06007462 RID: 29794
+	// Token: 0x02000EAA RID: 3754
+	// (Invoke) Token: 0x0600745A RID: 29786
 	public delegate void TabChangedDelegate(int _tabIndex, XUiC_TabSelectorTab _tab);
 }

@@ -2,16 +2,16 @@
 
 namespace XMLData.Parsers
 {
-	// Token: 0x02001654 RID: 5716
+	// Token: 0x02001673 RID: 5747
 	public static class intParser
 	{
-		// Token: 0x0600B3DB RID: 46043 RVA: 0x0043403B File Offset: 0x0043223B
+		// Token: 0x0600B46D RID: 46189 RVA: 0x00437D17 File Offset: 0x00435F17
 		public static int Parse(string _value)
 		{
 			return int.Parse(_value);
 		}
 
-		// Token: 0x0600B3DC RID: 46044 RVA: 0x003BED4F File Offset: 0x003BCF4F
+		// Token: 0x0600B46E RID: 46190 RVA: 0x003C38EB File Offset: 0x003C1AEB
 		public static string Unparse(int _value)
 		{
 			return _value.ToString();

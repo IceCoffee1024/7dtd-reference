@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001821 RID: 6177
+	// Token: 0x0200184D RID: 6221
 	public class TwitchCommandResetCooldowns : BaseTwitchCommand
 	{
-		// Token: 0x1700175B RID: 5979
-		// (get) Token: 0x0600BEE5 RID: 48869 RVA: 0x00046EDA File Offset: 0x000450DA
+		// Token: 0x170017FD RID: 6141
+		// (get) Token: 0x0600C03D RID: 49213 RVA: 0x000470B6 File Offset: 0x000452B6
 		public override BaseTwitchCommand.PermissionLevels RequiredPermission
 		{
 			get
@@ -16,8 +16,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700175C RID: 5980
-		// (get) Token: 0x0600BEE6 RID: 48870 RVA: 0x004684D7 File Offset: 0x004666D7
+		// Token: 0x170017FE RID: 6142
+		// (get) Token: 0x0600C03E RID: 49214 RVA: 0x0046CA13 File Offset: 0x0046AC13
 		public override string[] CommandText
 		{
 			get
@@ -26,8 +26,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700175D RID: 5981
-		// (get) Token: 0x0600BEE7 RID: 48871 RVA: 0x004684E7 File Offset: 0x004666E7
+		// Token: 0x170017FF RID: 6143
+		// (get) Token: 0x0600C03F RID: 49215 RVA: 0x0046CA23 File Offset: 0x0046AC23
 		public override string[] LocalizedCommandNames
 		{
 			get
@@ -36,7 +36,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BEE8 RID: 48872 RVA: 0x00468500 File Offset: 0x00466700
+		// Token: 0x0600C040 RID: 49216 RVA: 0x0046CA3C File Offset: 0x0046AC3C
 		public override void Execute(ViewerEntry entry, TwitchIRCClient.TwitchChatMessage message)
 		{
 			TwitchManager twitchManager = TwitchManager.Current;
@@ -49,7 +49,7 @@ namespace Twitch
 			twitchManager.SendChannelMessage("Action Cooldowns have been reset!", true);
 		}
 
-		// Token: 0x0600BEE9 RID: 48873 RVA: 0x00468580 File Offset: 0x00466780
+		// Token: 0x0600C041 RID: 49217 RVA: 0x0046CABC File Offset: 0x0046ACBC
 		public override void ExecuteConsole(List<string> arguments)
 		{
 			if (arguments.Count == 1)

@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C8E RID: 7310
+	// Token: 0x02001CC0 RID: 7360
 	public class MasterServerList : IServerListInterface
 	{
-		// Token: 0x0600D8B8 RID: 55480 RVA: 0x004DD520 File Offset: 0x004DB720
+		// Token: 0x0600DA32 RID: 55858 RVA: 0x004E2068 File Offset: 0x004E0268
 		public MasterServerList(EServerRelationType _source)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -21,8 +21,8 @@ namespace Platform.Steam
 			this.compatVersionInt = int.Parse(Platform.Steam.Constants.SteamVersionNr.Replace(".", ""));
 		}
 
-		// Token: 0x17001AE6 RID: 6886
-		// (get) Token: 0x0600D8B9 RID: 55481 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001B8C RID: 7052
+		// (get) Token: 0x0600DA33 RID: 55859 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsPrefiltered
 		{
 			get
@@ -31,7 +31,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D8BA RID: 55482 RVA: 0x004DD57D File Offset: 0x004DB77D
+		// Token: 0x0600DA34 RID: 55860 RVA: 0x004E20C5 File Offset: 0x004E02C5
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -44,14 +44,14 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D8BB RID: 55483 RVA: 0x004DD59D File Offset: 0x004DB79D
+		// Token: 0x0600DA35 RID: 55861 RVA: 0x004E20E5 File Offset: 0x004E02E5
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _errorCallback)
 		{
 			this.gameServerFoundCallback = _serverFound;
 		}
 
-		// Token: 0x17001AE7 RID: 6887
-		// (get) Token: 0x0600D8BC RID: 55484 RVA: 0x004DD5A6 File Offset: 0x004DB7A6
+		// Token: 0x17001B8D RID: 7053
+		// (get) Token: 0x0600DA36 RID: 55862 RVA: 0x004E20EE File Offset: 0x004E02EE
 		public bool IsRefreshing
 		{
 			get
@@ -60,7 +60,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D8BD RID: 55485 RVA: 0x004DD5B0 File Offset: 0x004DB7B0
+		// Token: 0x0600DA37 RID: 55863 RVA: 0x004E20F8 File Offset: 0x004E02F8
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (this.gameServerFoundCallback == null)
@@ -102,7 +102,7 @@ namespace Platform.Steam
 			this.isRefreshing = true;
 		}
 
-		// Token: 0x0600D8BE RID: 55486 RVA: 0x004DD6DB File Offset: 0x004DB8DB
+		// Token: 0x0600DA38 RID: 55864 RVA: 0x004E2223 File Offset: 0x004E0423
 		public void StopSearch()
 		{
 			if (this.requestHandle != HServerListRequest.Invalid)
@@ -113,20 +113,20 @@ namespace Platform.Steam
 			this.isRefreshing = false;
 		}
 
-		// Token: 0x0600D8BF RID: 55487 RVA: 0x004DD70C File Offset: 0x004DB90C
+		// Token: 0x0600DA39 RID: 55865 RVA: 0x004E2254 File Offset: 0x004E0454
 		public void Disconnect()
 		{
 			this.StopSearch();
 			this.gameServerFoundCallback = null;
 		}
 
-		// Token: 0x0600D8C0 RID: 55488 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DA3A RID: 55866 RVA: 0x0008806C File Offset: 0x0008626C
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600D8C1 RID: 55489 RVA: 0x004DD71B File Offset: 0x004DB91B
+		// Token: 0x0600DA3B RID: 55867 RVA: 0x004E2263 File Offset: 0x004E0463
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool OnApplicationQuit()
 		{
@@ -134,7 +134,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D8C2 RID: 55490 RVA: 0x004DD724 File Offset: 0x004DB924
+		// Token: 0x0600DA3C RID: 55868 RVA: 0x004E226C File Offset: 0x004E046C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ServerResponded(HServerListRequest _hRequest, int _iServer)
 		{
@@ -178,20 +178,20 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D8C3 RID: 55491 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DA3D RID: 55869 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ServerFailedToRespond(HServerListRequest _hRequest, int _iServer)
 		{
 		}
 
-		// Token: 0x0600D8C4 RID: 55492 RVA: 0x004DD889 File Offset: 0x004DBA89
+		// Token: 0x0600DA3E RID: 55870 RVA: 0x004E23D1 File Offset: 0x004E05D1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RefreshComplete(HServerListRequest _hRequest, EMatchMakingServerResponse _response)
 		{
 			ThreadManager.StartCoroutine(this.restartRefreshCo());
 		}
 
-		// Token: 0x0600D8C5 RID: 55493 RVA: 0x004DD897 File Offset: 0x004DBA97
+		// Token: 0x0600DA3F RID: 55871 RVA: 0x004E23DF File Offset: 0x004E05DF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator restartRefreshCo()
 		{
@@ -200,31 +200,31 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0400A47C RID: 42108
+		// Token: 0x0400A551 RID: 42321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A47D RID: 42109
+		// Token: 0x0400A552 RID: 42322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int compatVersionInt;
 
-		// Token: 0x0400A47E RID: 42110
+		// Token: 0x0400A553 RID: 42323
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EServerRelationType source;
 
-		// Token: 0x0400A47F RID: 42111
+		// Token: 0x0400A554 RID: 42324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isRefreshing;
 
-		// Token: 0x0400A480 RID: 42112
+		// Token: 0x0400A555 RID: 42325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback gameServerFoundCallback;
 
-		// Token: 0x0400A481 RID: 42113
+		// Token: 0x0400A556 RID: 42326
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISteamMatchmakingServerListResponse matchmakingServerListResponse;
 
-		// Token: 0x0400A482 RID: 42114
+		// Token: 0x0400A557 RID: 42327
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HServerListRequest requestHandle = HServerListRequest.Invalid;
 	}

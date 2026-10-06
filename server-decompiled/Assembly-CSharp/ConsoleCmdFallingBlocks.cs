@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000216 RID: 534
+// Token: 0x02000217 RID: 535
 [Preserve]
 public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 {
-	// Token: 0x06001036 RID: 4150 RVA: 0x0006721B File Offset: 0x0006541B
+	// Token: 0x06001029 RID: 4137 RVA: 0x0006720B File Offset: 0x0006540B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "fallingblocks", "fb" };
 	}
 
-	// Token: 0x17000179 RID: 377
-	// (get) Token: 0x06001037 RID: 4151 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000171 RID: 369
+	// (get) Token: 0x0600102A RID: 4138 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700017A RID: 378
-	// (get) Token: 0x06001038 RID: 4152 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000172 RID: 370
+	// (get) Token: 0x0600102B RID: 4139 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -34,15 +34,15 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001039 RID: 4153 RVA: 0x00067233 File Offset: 0x00065433
+	// Token: 0x0600102C RID: 4140 RVA: 0x00067223 File Offset: 0x00065423
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "FallingBlocks WIP Settings";
 	}
 
-	// Token: 0x1700017B RID: 379
-	// (get) Token: 0x0600103A RID: 4154 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000173 RID: 371
+	// (get) Token: 0x0600102D RID: 4141 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -51,8 +51,8 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700017C RID: 380
-	// (get) Token: 0x0600103B RID: 4155 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000174 RID: 372
+	// (get) Token: 0x0600102E RID: 4142 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -61,8 +61,8 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700017D RID: 381
-	// (get) Token: 0x0600103C RID: 4156 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x17000175 RID: 373
+	// (get) Token: 0x0600102F RID: 4143 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -71,7 +71,7 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600103D RID: 4157 RVA: 0x0006723C File Offset: 0x0006543C
+	// Token: 0x06001030 RID: 4144 RVA: 0x0006722C File Offset: 0x0006542C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params[0].ToLowerInvariant() == "enable")
@@ -82,15 +82,15 @@ public class ConsoleCmdFallingBlocks : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CB1 RID: 3249
+	// Token: 0x04000CAA RID: 3242
 	public static bool ClientVerification = true;
 
-	// Token: 0x04000CB2 RID: 3250
+	// Token: 0x04000CAB RID: 3243
 	public static bool AllowSendToPeer = true;
 
-	// Token: 0x04000CB3 RID: 3251
+	// Token: 0x04000CAC RID: 3244
 	public static bool AllowReceiveFromPeer = true;
 
-	// Token: 0x04000CB4 RID: 3252
+	// Token: 0x04000CAD RID: 3245
 	public static bool DisablePeerAction = false;
 }

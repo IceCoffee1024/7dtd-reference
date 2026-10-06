@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020008C3 RID: 2243
+// Token: 0x020008C8 RID: 2248
 public class CollisionParticleController
 {
-	// Token: 0x060040F8 RID: 16632 RVA: 0x00195F8D File Offset: 0x0019418D
+	// Token: 0x0600408E RID: 16526 RVA: 0x00196091 File Offset: 0x00194291
 	public void Init(int _entityId, string _colliderSurfaceCategory, string _collisionSurfaceCategory, int _layerMask)
 	{
 		this.entityId = _entityId;
@@ -14,7 +14,7 @@ public class CollisionParticleController
 		this.Reset();
 	}
 
-	// Token: 0x060040F9 RID: 16633 RVA: 0x00195FC8 File Offset: 0x001941C8
+	// Token: 0x0600408F RID: 16527 RVA: 0x001960CC File Offset: 0x001942CC
 	public void CheckCollision(Vector3 worldPos, Vector3 direction, float distance, int originEntityId = -1)
 	{
 		if (this.hasHit)
@@ -31,29 +31,29 @@ public class CollisionParticleController
 		}
 	}
 
-	// Token: 0x060040FA RID: 16634 RVA: 0x0019607D File Offset: 0x0019427D
+	// Token: 0x06004090 RID: 16528 RVA: 0x00196181 File Offset: 0x00194381
 	public void Reset()
 	{
 		this.hasHit = false;
 	}
 
-	// Token: 0x040034C5 RID: 13509
+	// Token: 0x040034B9 RID: 13497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasHit;
 
-	// Token: 0x040034C6 RID: 13510
+	// Token: 0x040034BA RID: 13498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040034C7 RID: 13511
+	// Token: 0x040034BB RID: 13499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string particleEffectName;
 
-	// Token: 0x040034C8 RID: 13512
+	// Token: 0x040034BC RID: 13500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundName;
 
-	// Token: 0x040034C9 RID: 13513
+	// Token: 0x040034BD RID: 13501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int layerMask;
 }

@@ -2,13 +2,13 @@
 
 namespace Platform.XBL.Save.MasterFileTable.Latest
 {
-	// Token: 0x02001C77 RID: 7287
+	// Token: 0x02001CA9 RID: 7337
 	[Flags]
 	public enum NodeAttributes : uint
 	{
-		// Token: 0x0400A445 RID: 42053
+		// Token: 0x0400A51A RID: 42266
 		None = 0U,
-		// Token: 0x0400A446 RID: 42054
+		// Token: 0x0400A51B RID: 42267
 		Directory = 1U
 	}
 }

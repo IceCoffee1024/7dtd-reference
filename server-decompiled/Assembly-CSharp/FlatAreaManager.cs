@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000CEF RID: 3311
+// Token: 0x02000CFD RID: 3325
 public class FlatAreaManager
 {
-	// Token: 0x0600655D RID: 25949 RVA: 0x002793EC File Offset: 0x002775EC
+	// Token: 0x0600654F RID: 25935 RVA: 0x0027C790 File Offset: 0x0027A990
 	public IEnumerator DefineFlatAreas(World world)
 	{
 		this.areaList16x16.Clear();
@@ -102,7 +102,7 @@ public class FlatAreaManager
 		yield break;
 	}
 
-	// Token: 0x0600655E RID: 25950 RVA: 0x00279404 File Offset: 0x00277604
+	// Token: 0x06006550 RID: 25936 RVA: 0x0027C7A8 File Offset: 0x0027A9A8
 	public bool IsPositionValid(int _x, int _z)
 	{
 		World world = GameManager.Instance.World;
@@ -110,20 +110,20 @@ public class FlatAreaManager
 		return decoOccupiedFromMap == EnumDecoOccupied.Free || decoOccupiedFromMap == EnumDecoOccupied.Perimeter || decoOccupiedFromMap == EnumDecoOccupied.Deco;
 	}
 
-	// Token: 0x0600655F RID: 25951 RVA: 0x00279437 File Offset: 0x00277637
+	// Token: 0x06006551 RID: 25937 RVA: 0x0027C7DB File Offset: 0x0027A9DB
 	public void Cleanup()
 	{
 		this.areaList16x16.Clear();
 		this.areaList32x32.Clear();
 	}
 
-	// Token: 0x06006560 RID: 25952 RVA: 0x0027944F File Offset: 0x0027764F
+	// Token: 0x06006552 RID: 25938 RVA: 0x0027C7F3 File Offset: 0x0027A9F3
 	public List<FlatArea> GetAreasWithinRange(Vector3 worldPos, float distance, eFlatAreaSizeFilter searchMode = eFlatAreaSizeFilter.All, BiomeFilterTypes biomeFilter = BiomeFilterTypes.AnyBiome, string[] biomeNames = null, ChunkProtectionLevel maxAllowedChunkProtectionLevel = ChunkProtectionLevel.NearLandClaim)
 	{
 		return this.GetAreasWithinRange(worldPos, 0f, distance, searchMode, biomeFilter, biomeNames, maxAllowedChunkProtectionLevel);
 	}
 
-	// Token: 0x06006561 RID: 25953 RVA: 0x00279468 File Offset: 0x00277668
+	// Token: 0x06006553 RID: 25939 RVA: 0x0027C80C File Offset: 0x0027AA0C
 	public List<FlatArea> GetAreasWithinRange(Vector3 worldPos, float minDistance, float maxDistance, eFlatAreaSizeFilter searchMode = eFlatAreaSizeFilter.All, BiomeFilterTypes biomeFilter = BiomeFilterTypes.AnyBiome, string[] biomeNames = null, ChunkProtectionLevel maxAllowedChunkProtectionLevel = ChunkProtectionLevel.NearLandClaim)
 	{
 		if (minDistance > maxDistance)
@@ -186,7 +186,7 @@ public class FlatAreaManager
 		return list;
 	}
 
-	// Token: 0x06006562 RID: 25954 RVA: 0x0027963C File Offset: 0x0027783C
+	// Token: 0x06006554 RID: 25940 RVA: 0x0027C9E0 File Offset: 0x0027ABE0
 	public List<FlatArea> GetAllFlatAreas()
 	{
 		List<FlatArea> list = new List<FlatArea>();
@@ -195,19 +195,19 @@ public class FlatAreaManager
 		return list;
 	}
 
-	// Token: 0x04004ED3 RID: 20179
+	// Token: 0x04004F09 RID: 20233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cHeightDifferenceThreshold = 1f;
 
-	// Token: 0x04004ED4 RID: 20180
+	// Token: 0x04004F0A RID: 20234
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cYieldMS = 250;
 
-	// Token: 0x04004ED5 RID: 20181
+	// Token: 0x04004F0B RID: 20235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<FlatArea> areaList16x16 = new List<FlatArea>();
 
-	// Token: 0x04004ED6 RID: 20182
+	// Token: 0x04004F0C RID: 20236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<FlatArea> areaList32x32 = new List<FlatArea>();
 }

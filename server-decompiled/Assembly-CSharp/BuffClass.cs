@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000651 RID: 1617
+// Token: 0x02000653 RID: 1619
 public class BuffClass
 {
-	// Token: 0x1700054A RID: 1354
-	// (get) Token: 0x0600345C RID: 13404 RVA: 0x0015C01F File Offset: 0x0015A21F
-	// (set) Token: 0x0600345D RID: 13405 RVA: 0x0015C027 File Offset: 0x0015A227
+	// Token: 0x17000570 RID: 1392
+	// (get) Token: 0x0600349F RID: 13471 RVA: 0x0015C98F File Offset: 0x0015AB8F
+	// (set) Token: 0x060034A0 RID: 13472 RVA: 0x0015C997 File Offset: 0x0015AB97
 	public float DurationMax
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,8 +26,8 @@ public class BuffClass
 		}
 	}
 
-	// Token: 0x1700054B RID: 1355
-	// (get) Token: 0x0600345E RID: 13406 RVA: 0x0015C04C File Offset: 0x0015A24C
+	// Token: 0x17000571 RID: 1393
+	// (get) Token: 0x060034A1 RID: 13473 RVA: 0x0015C9BC File Offset: 0x0015ABBC
 	public float InitialDurationMax
 	{
 		get
@@ -36,7 +36,7 @@ public class BuffClass
 		}
 	}
 
-	// Token: 0x0600345F RID: 13407 RVA: 0x0015C054 File Offset: 0x0015A254
+	// Token: 0x060034A2 RID: 13474 RVA: 0x0015C9C4 File Offset: 0x0015ABC4
 	public BuffClass(string _name = "")
 	{
 		this.Name = _name.ToLower();
@@ -53,7 +53,7 @@ public class BuffClass
 		this.initialDurationMax = 0f;
 	}
 
-	// Token: 0x06003460 RID: 13408 RVA: 0x0015C101 File Offset: 0x0015A301
+	// Token: 0x060034A3 RID: 13475 RVA: 0x0015CA71 File Offset: 0x0015AC71
 	public void Tick(BuffValue _ev)
 	{
 		_ev.DurationTick();
@@ -63,7 +63,7 @@ public class BuffClass
 		}
 	}
 
-	// Token: 0x06003461 RID: 13409 RVA: 0x0015C12C File Offset: 0x0015A32C
+	// Token: 0x060034A4 RID: 13476 RVA: 0x0015CA9C File Offset: 0x0015AC9C
 	public void ModifyValue(EntityAlive _self, PassiveEffects _effect, BuffValue _bv, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags)
 	{
 		if (_bv.Remove)
@@ -81,7 +81,7 @@ public class BuffClass
 		}
 	}
 
-	// Token: 0x06003462 RID: 13410 RVA: 0x0015C19C File Offset: 0x0015A39C
+	// Token: 0x060034A5 RID: 13477 RVA: 0x0015CB0C File Offset: 0x0015AD0C
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, EntityAlive _self, PassiveEffects _effect, BuffValue _bv, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags)
 	{
 		if (_bv.Remove)
@@ -99,7 +99,7 @@ public class BuffClass
 		}
 	}
 
-	// Token: 0x06003463 RID: 13411 RVA: 0x0015C212 File Offset: 0x0015A412
+	// Token: 0x060034A6 RID: 13478 RVA: 0x0015CB82 File Offset: 0x0015AD82
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 	{
 		if (this.Effects == null)
@@ -113,117 +113,117 @@ public class BuffClass
 		this.Effects.FireEvent(_eventType, _params);
 	}
 
-	// Token: 0x06003464 RID: 13412 RVA: 0x0015C234 File Offset: 0x0015A434
+	// Token: 0x060034A7 RID: 13479 RVA: 0x0015CBA4 File Offset: 0x0015ADA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canRun(MinEventParams _params)
 	{
 		return this.Requirements == null || this.Requirements.IsValid(_params);
 	}
 
-	// Token: 0x040029A4 RID: 10660
+	// Token: 0x0400299D RID: 10653
 	public string Name;
 
-	// Token: 0x040029A5 RID: 10661
+	// Token: 0x0400299E RID: 10654
 	public string LocalizedName;
 
-	// Token: 0x040029A6 RID: 10662
+	// Token: 0x0400299F RID: 10655
 	public string Description;
 
-	// Token: 0x040029A7 RID: 10663
+	// Token: 0x040029A0 RID: 10656
 	public string DescriptionKey;
 
-	// Token: 0x040029A8 RID: 10664
+	// Token: 0x040029A1 RID: 10657
 	public string Tooltip;
 
-	// Token: 0x040029A9 RID: 10665
+	// Token: 0x040029A2 RID: 10658
 	public string TooltipKey;
 
-	// Token: 0x040029AA RID: 10666
+	// Token: 0x040029A3 RID: 10659
 	public string Icon;
 
-	// Token: 0x040029AB RID: 10667
+	// Token: 0x040029A4 RID: 10660
 	public string DisplayValueCVar;
 
-	// Token: 0x040029AC RID: 10668
+	// Token: 0x040029A5 RID: 10661
 	public string DisplayValueKey;
 
-	// Token: 0x040029AD RID: 10669
+	// Token: 0x040029A6 RID: 10662
 	public BuffClass.CVarDisplayFormat DisplayValueFormat;
 
-	// Token: 0x040029AE RID: 10670
+	// Token: 0x040029A7 RID: 10663
 	public Color IconColor;
 
-	// Token: 0x040029AF RID: 10671
+	// Token: 0x040029A8 RID: 10664
 	public bool IconBlink;
 
-	// Token: 0x040029B0 RID: 10672
+	// Token: 0x040029A9 RID: 10665
 	public EnumEntityUINotificationDisplayMode DisplayType;
 
-	// Token: 0x040029B1 RID: 10673
+	// Token: 0x040029AA RID: 10666
 	public RequirementGroup Requirements;
 
-	// Token: 0x040029B2 RID: 10674
+	// Token: 0x040029AB RID: 10667
 	public MinEffectController Effects;
 
-	// Token: 0x040029B3 RID: 10675
+	// Token: 0x040029AC RID: 10668
 	public bool Hidden;
 
-	// Token: 0x040029B4 RID: 10676
+	// Token: 0x040029AD RID: 10669
 	public bool ShowOnHUD = true;
 
-	// Token: 0x040029B5 RID: 10677
+	// Token: 0x040029AE RID: 10670
 	public bool AllowInEditor;
 
-	// Token: 0x040029B6 RID: 10678
+	// Token: 0x040029AF RID: 10671
 	public EnumGameStats RequiredGameStat = EnumGameStats.Last;
 
-	// Token: 0x040029B7 RID: 10679
+	// Token: 0x040029B0 RID: 10672
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float durationMax;
 
-	// Token: 0x040029B8 RID: 10680
+	// Token: 0x040029B1 RID: 10673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float initialDurationMax;
 
-	// Token: 0x040029B9 RID: 10681
+	// Token: 0x040029B2 RID: 10674
 	public int UpdateRateTicks = 20;
 
-	// Token: 0x040029BA RID: 10682
+	// Token: 0x040029B3 RID: 10675
 	public EnumDamageTypes DamageType;
 
-	// Token: 0x040029BB RID: 10683
+	// Token: 0x040029B4 RID: 10676
 	public EnumDamageSource DamageSource;
 
-	// Token: 0x040029BC RID: 10684
+	// Token: 0x040029B5 RID: 10677
 	public BuffEffectStackTypes StackType;
 
-	// Token: 0x040029BD RID: 10685
+	// Token: 0x040029B6 RID: 10678
 	public bool RemoveOnDeath = true;
 
-	// Token: 0x040029BE RID: 10686
+	// Token: 0x040029B7 RID: 10679
 	public FastTags<TagGroup.Global> NameTag;
 
-	// Token: 0x040029BF RID: 10687
+	// Token: 0x040029B8 RID: 10680
 	public FastTags<TagGroup.Global> Tags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x02000652 RID: 1618
+	// Token: 0x02000654 RID: 1620
 	public enum CVarDisplayFormat
 	{
-		// Token: 0x040029C1 RID: 10689
+		// Token: 0x040029BA RID: 10682
 		None,
-		// Token: 0x040029C2 RID: 10690
+		// Token: 0x040029BB RID: 10683
 		Float,
-		// Token: 0x040029C3 RID: 10691
+		// Token: 0x040029BC RID: 10684
 		FlooredToInt,
-		// Token: 0x040029C4 RID: 10692
+		// Token: 0x040029BD RID: 10685
 		RoundedToInt,
-		// Token: 0x040029C5 RID: 10693
+		// Token: 0x040029BE RID: 10686
 		CeiledToInt,
-		// Token: 0x040029C6 RID: 10694
+		// Token: 0x040029BF RID: 10687
 		Time,
-		// Token: 0x040029C7 RID: 10695
+		// Token: 0x040029C0 RID: 10688
 		Percentage,
-		// Token: 0x040029C8 RID: 10696
+		// Token: 0x040029C1 RID: 10689
 		Degrees
 	}
 }

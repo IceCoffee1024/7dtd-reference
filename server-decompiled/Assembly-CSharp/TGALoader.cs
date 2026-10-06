@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020014CE RID: 5326
+// Token: 0x020014F0 RID: 5360
 public static class TGALoader
 {
-	// Token: 0x0600A735 RID: 42805 RVA: 0x003E3480 File Offset: 0x003E1680
+	// Token: 0x0600A7E8 RID: 42984 RVA: 0x003E82D4 File Offset: 0x003E64D4
 	public static Texture2D LoadTGA(string fileName, bool mipMaps = true)
 	{
 		Texture2D texture2D;
@@ -16,7 +16,7 @@ public static class TGALoader
 		return texture2D;
 	}
 
-	// Token: 0x0600A736 RID: 42806 RVA: 0x003E34BC File Offset: 0x003E16BC
+	// Token: 0x0600A7E9 RID: 42985 RVA: 0x003E8310 File Offset: 0x003E6510
 	public static Texture2D LoadTGA(Stream TGAStream, bool mipMaps = true)
 	{
 		Texture2D texture2D2;
@@ -87,7 +87,7 @@ public static class TGALoader
 		return texture2D2;
 	}
 
-	// Token: 0x0600A737 RID: 42807 RVA: 0x003E36A0 File Offset: 0x003E18A0
+	// Token: 0x0600A7EA RID: 42986 RVA: 0x003E84F4 File Offset: 0x003E66F4
 	public static Color32[] LoadTGAAsArray(string fileName, out int width, out int height, byte[] tempBuf = null)
 	{
 		Color32[] array2;
@@ -163,7 +163,7 @@ public static class TGALoader
 		return array2;
 	}
 
-	// Token: 0x0600A738 RID: 42808 RVA: 0x003E3844 File Offset: 0x003E1A44
+	// Token: 0x0600A7EB RID: 42987 RVA: 0x003E8698 File Offset: 0x003E6898
 	public static Color32[] LoadTGAAsArrayThreaded(string fileName, out int w, out int h)
 	{
 		Color32[] pulledColors2;
@@ -235,7 +235,7 @@ public static class TGALoader
 		return pulledColors2;
 	}
 
-	// Token: 0x0600A739 RID: 42809 RVA: 0x003E3A30 File Offset: 0x003E1C30
+	// Token: 0x0600A7EC RID: 42988 RVA: 0x003E8884 File Offset: 0x003E6A84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void loadPart(int bitDepth, BinaryReader r, Color32[] pulledColors, int offs, int length)
 	{

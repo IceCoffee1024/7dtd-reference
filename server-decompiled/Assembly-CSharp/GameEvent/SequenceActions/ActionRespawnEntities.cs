@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019B2 RID: 6578
+	// Token: 0x020019DE RID: 6622
 	[Preserve]
 	public class ActionRespawnEntities : BaseAction
 	{
-		// Token: 0x0600C954 RID: 51540 RVA: 0x0049E5F5 File Offset: 0x0049C7F5
+		// Token: 0x0600CAAC RID: 51884 RVA: 0x004A2AE5 File Offset: 0x004A0CE5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			this.AddToGroups = this.addToGroup.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600C955 RID: 51541 RVA: 0x0049E614 File Offset: 0x0049C814
+		// Token: 0x0600CAAD RID: 51885 RVA: 0x004A2B04 File Offset: 0x004A0D04
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.entityList == null)
@@ -91,14 +91,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C956 RID: 51542 RVA: 0x0049E925 File Offset: 0x0049CB25
+		// Token: 0x0600CAAE RID: 51886 RVA: 0x004A2E15 File Offset: 0x004A1015
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
 			this.entityList = null;
 		}
 
-		// Token: 0x0600C957 RID: 51543 RVA: 0x0049E92E File Offset: 0x0049CB2E
+		// Token: 0x0600CAAF RID: 51887 RVA: 0x004A2E1E File Offset: 0x004A101E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -107,7 +107,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionRespawnEntities.PropRespawnSound, ref this.respawnSound);
 		}
 
-		// Token: 0x0600C958 RID: 51544 RVA: 0x0049E96A File Offset: 0x0049CB6A
+		// Token: 0x0600CAB0 RID: 51888 RVA: 0x004A2E5A File Offset: 0x004A105A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -119,43 +119,43 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009896 RID: 39062
+		// Token: 0x0400995C RID: 39260
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x04009897 RID: 39063
+		// Token: 0x0400995D RID: 39261
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string addToGroup = "";
 
-		// Token: 0x04009898 RID: 39064
+		// Token: 0x0400995E RID: 39262
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] AddToGroups;
 
-		// Token: 0x04009899 RID: 39065
+		// Token: 0x0400995F RID: 39263
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string respawnSound = "";
 
-		// Token: 0x0400989A RID: 39066
+		// Token: 0x04009960 RID: 39264
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x0400989B RID: 39067
+		// Token: 0x04009961 RID: 39265
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAddToGroup = "add_to_group";
 
-		// Token: 0x0400989C RID: 39068
+		// Token: 0x04009962 RID: 39266
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsMulti = "is_multi";
 
-		// Token: 0x0400989D RID: 39069
+		// Token: 0x04009963 RID: 39267
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRespawnSound = "respawn_sound";
 
-		// Token: 0x0400989E RID: 39070
+		// Token: 0x04009964 RID: 39268
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<EntityAlive> entityList;
 
-		// Token: 0x0400989F RID: 39071
+		// Token: 0x04009965 RID: 39269
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float checkTime = 1f;
 	}

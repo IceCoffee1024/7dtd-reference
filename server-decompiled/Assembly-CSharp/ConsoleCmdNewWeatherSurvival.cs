@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024D RID: 589
+// Token: 0x02000250 RID: 592
 [Preserve]
 public class ConsoleCmdNewWeatherSurvival : ConsoleCmdAbstract
 {
-	// Token: 0x06001199 RID: 4505 RVA: 0x0006EF91 File Offset: 0x0006D191
+	// Token: 0x06001196 RID: 4502 RVA: 0x0006F23D File Offset: 0x0006D43D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "newweathersurvival" };
 	}
 
-	// Token: 0x0600119A RID: 4506 RVA: 0x0006EFA1 File Offset: 0x0006D1A1
+	// Token: 0x06001197 RID: 4503 RVA: 0x0006F24D File Offset: 0x0006D44D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Enables/disables new weather survival";
 	}
 
-	// Token: 0x0600119B RID: 4507 RVA: 0x0006EFA8 File Offset: 0x0006D1A8
+	// Token: 0x06001198 RID: 4504 RVA: 0x0006F254 File Offset: 0x0006D454
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0)

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02001464 RID: 5220
+// Token: 0x02001484 RID: 5252
 public class OneToOneDictionary<TKey, TValue>
 {
-	// Token: 0x17001347 RID: 4935
-	// (get) Token: 0x0600A3C6 RID: 41926 RVA: 0x003D1D73 File Offset: 0x003CFF73
+	// Token: 0x1700138C RID: 5004
+	// (get) Token: 0x0600A472 RID: 42098 RVA: 0x003D6983 File Offset: 0x003D4B83
 	public int Count
 	{
 		get
@@ -15,7 +15,7 @@ public class OneToOneDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x0600A3C7 RID: 41927 RVA: 0x003D1D80 File Offset: 0x003CFF80
+	// Token: 0x0600A473 RID: 42099 RVA: 0x003D6990 File Offset: 0x003D4B90
 	public void Add(TKey key, TValue value)
 	{
 		OneToOneDictionary<TKey, TValue>.Entry<TKey> entry = new OneToOneDictionary<TKey, TValue>.Entry<TKey>(key);
@@ -32,7 +32,7 @@ public class OneToOneDictionary<TKey, TValue>
 		this._reverse[entry2] = entry;
 	}
 
-	// Token: 0x0600A3C8 RID: 41928 RVA: 0x003D1E00 File Offset: 0x003D0000
+	// Token: 0x0600A474 RID: 42100 RVA: 0x003D6A10 File Offset: 0x003D4C10
 	public bool RemoveByKey(TKey key)
 	{
 		OneToOneDictionary<TKey, TValue>.Entry<TKey> entry = new OneToOneDictionary<TKey, TValue>.Entry<TKey>(key);
@@ -45,7 +45,7 @@ public class OneToOneDictionary<TKey, TValue>
 		return false;
 	}
 
-	// Token: 0x0600A3C9 RID: 41929 RVA: 0x003D1E34 File Offset: 0x003D0034
+	// Token: 0x0600A475 RID: 42101 RVA: 0x003D6A44 File Offset: 0x003D4C44
 	public bool RemoveByValue(TValue value)
 	{
 		OneToOneDictionary<TKey, TValue>.Entry<TValue> entry = new OneToOneDictionary<TKey, TValue>.Entry<TValue>(value);
@@ -58,7 +58,7 @@ public class OneToOneDictionary<TKey, TValue>
 		return false;
 	}
 
-	// Token: 0x0600A3CA RID: 41930 RVA: 0x003D1E68 File Offset: 0x003D0068
+	// Token: 0x0600A476 RID: 42102 RVA: 0x003D6A78 File Offset: 0x003D4C78
 	public bool TryGetByKey(TKey key, out TValue value)
 	{
 		OneToOneDictionary<TKey, TValue>.Entry<TKey> entry = new OneToOneDictionary<TKey, TValue>.Entry<TKey>(key);
@@ -72,7 +72,7 @@ public class OneToOneDictionary<TKey, TValue>
 		return false;
 	}
 
-	// Token: 0x0600A3CB RID: 41931 RVA: 0x003D1EA4 File Offset: 0x003D00A4
+	// Token: 0x0600A477 RID: 42103 RVA: 0x003D6AB4 File Offset: 0x003D4CB4
 	public bool TryGetByValue(TValue value, out TKey key)
 	{
 		OneToOneDictionary<TKey, TValue>.Entry<TValue> entry = new OneToOneDictionary<TKey, TValue>.Entry<TValue>(value);
@@ -86,39 +86,39 @@ public class OneToOneDictionary<TKey, TValue>
 		return false;
 	}
 
-	// Token: 0x0600A3CC RID: 41932 RVA: 0x003D1EDE File Offset: 0x003D00DE
+	// Token: 0x0600A478 RID: 42104 RVA: 0x003D6AEE File Offset: 0x003D4CEE
 	public TValue GetByKey(TKey key)
 	{
 		return this._forward[new OneToOneDictionary<TKey, TValue>.Entry<TKey>(key)].Value;
 	}
 
-	// Token: 0x0600A3CD RID: 41933 RVA: 0x003D1EF6 File Offset: 0x003D00F6
+	// Token: 0x0600A479 RID: 42105 RVA: 0x003D6B06 File Offset: 0x003D4D06
 	public TKey GetByValue(TValue value)
 	{
 		return this._reverse[new OneToOneDictionary<TKey, TValue>.Entry<TValue>(value)].Value;
 	}
 
-	// Token: 0x0600A3CE RID: 41934 RVA: 0x003D1F0E File Offset: 0x003D010E
+	// Token: 0x0600A47A RID: 42106 RVA: 0x003D6B1E File Offset: 0x003D4D1E
 	public bool ContainsKey(TKey key)
 	{
 		return this._forward.ContainsKey(new OneToOneDictionary<TKey, TValue>.Entry<TKey>(key));
 	}
 
-	// Token: 0x0600A3CF RID: 41935 RVA: 0x003D1F21 File Offset: 0x003D0121
+	// Token: 0x0600A47B RID: 42107 RVA: 0x003D6B31 File Offset: 0x003D4D31
 	public bool ContainsValue(TValue value)
 	{
 		return this._reverse.ContainsKey(new OneToOneDictionary<TKey, TValue>.Entry<TValue>(value));
 	}
 
-	// Token: 0x0600A3D0 RID: 41936 RVA: 0x003D1F34 File Offset: 0x003D0134
+	// Token: 0x0600A47C RID: 42108 RVA: 0x003D6B44 File Offset: 0x003D4D44
 	public void Clear()
 	{
 		this._forward.Clear();
 		this._reverse.Clear();
 	}
 
-	// Token: 0x17001348 RID: 4936
-	// (get) Token: 0x0600A3D1 RID: 41937 RVA: 0x003D1F4C File Offset: 0x003D014C
+	// Token: 0x1700138D RID: 5005
+	// (get) Token: 0x0600A47D RID: 42109 RVA: 0x003D6B5C File Offset: 0x003D4D5C
 	public IEnumerable<TKey> Keys
 	{
 		get
@@ -133,8 +133,8 @@ public class OneToOneDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x17001349 RID: 4937
-	// (get) Token: 0x0600A3D2 RID: 41938 RVA: 0x003D1F5C File Offset: 0x003D015C
+	// Token: 0x1700138E RID: 5006
+	// (get) Token: 0x0600A47E RID: 42110 RVA: 0x003D6B6C File Offset: 0x003D4D6C
 	public IEnumerable<TValue> Values
 	{
 		get
@@ -149,32 +149,32 @@ public class OneToOneDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x04007A9C RID: 31388
+	// Token: 0x04007B17 RID: 31511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<OneToOneDictionary<TKey, TValue>.Entry<TKey>, OneToOneDictionary<TKey, TValue>.Entry<TValue>> _forward = new Dictionary<OneToOneDictionary<TKey, TValue>.Entry<TKey>, OneToOneDictionary<TKey, TValue>.Entry<TValue>>();
 
-	// Token: 0x04007A9D RID: 31389
+	// Token: 0x04007B18 RID: 31512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<OneToOneDictionary<TKey, TValue>.Entry<TValue>, OneToOneDictionary<TKey, TValue>.Entry<TKey>> _reverse = new Dictionary<OneToOneDictionary<TKey, TValue>.Entry<TValue>, OneToOneDictionary<TKey, TValue>.Entry<TKey>>();
 
-	// Token: 0x02001465 RID: 5221
+	// Token: 0x02001485 RID: 5253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class Entry<T>
 	{
-		// Token: 0x0600A3D4 RID: 41940 RVA: 0x003D1F8A File Offset: 0x003D018A
+		// Token: 0x0600A480 RID: 42112 RVA: 0x003D6B9A File Offset: 0x003D4D9A
 		public Entry(T value)
 		{
 			this.Value = value;
 			this.stableHash = (OneToOneDictionary<TKey, TValue>.Entry<T>.s_isRefType ? ((value == null) ? 0 : RuntimeHelpers.GetHashCode(value)) : EqualityComparer<T>.Default.GetHashCode(value));
 		}
 
-		// Token: 0x0600A3D5 RID: 41941 RVA: 0x003D1FC9 File Offset: 0x003D01C9
+		// Token: 0x0600A481 RID: 42113 RVA: 0x003D6BD9 File Offset: 0x003D4DD9
 		public override int GetHashCode()
 		{
 			return this.stableHash;
 		}
 
-		// Token: 0x0600A3D6 RID: 41942 RVA: 0x003D1FD4 File Offset: 0x003D01D4
+		// Token: 0x0600A482 RID: 42114 RVA: 0x003D6BE4 File Offset: 0x003D4DE4
 		public override bool Equals(object obj)
 		{
 			OneToOneDictionary<TKey, TValue>.Entry<T> entry = obj as OneToOneDictionary<TKey, TValue>.Entry<T>;
@@ -189,14 +189,14 @@ public class OneToOneDictionary<TKey, TValue>
 			return EqualityComparer<T>.Default.Equals(this.Value, entry.Value);
 		}
 
-		// Token: 0x04007A9E RID: 31390
+		// Token: 0x04007B19 RID: 31513
 		public readonly T Value;
 
-		// Token: 0x04007A9F RID: 31391
+		// Token: 0x04007B1A RID: 31514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int stableHash;
 
-		// Token: 0x04007AA0 RID: 31392
+		// Token: 0x04007B1B RID: 31515
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly bool s_isRefType = !typeof(T).IsValueType;
 	}

@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x02001686 RID: 5766
+	// Token: 0x020016A6 RID: 5798
 	[EventTitle("CosmeticUsage")]
 	public class CosmeticUsageEventData : BaseEventData
 	{
-		// Token: 0x170015CD RID: 5581
-		// (get) Token: 0x0600B4C6 RID: 46278 RVA: 0x004377B0 File Offset: 0x004359B0
+		// Token: 0x17001612 RID: 5650
+		// (get) Token: 0x0600B560 RID: 46432 RVA: 0x0043B4C4 File Offset: 0x004396C4
 		public override string EventType
 		{
 			get
@@ -19,46 +19,46 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015CE RID: 5582
-		// (get) Token: 0x0600B4C7 RID: 46279 RVA: 0x004377B7 File Offset: 0x004359B7
-		// (set) Token: 0x0600B4C8 RID: 46280 RVA: 0x004377BF File Offset: 0x004359BF
+		// Token: 0x17001613 RID: 5651
+		// (get) Token: 0x0600B561 RID: 46433 RVA: 0x0043B4CB File Offset: 0x004396CB
+		// (set) Token: 0x0600B562 RID: 46434 RVA: 0x0043B4D3 File Offset: 0x004396D3
 		[JsonProperty(PropertyName = "server_id")]
 		[Description("Id of the connected server, null if not in one")]
 		public string ServerId { get; set; }
 
-		// Token: 0x170015CF RID: 5583
-		// (get) Token: 0x0600B4C9 RID: 46281 RVA: 0x004377C8 File Offset: 0x004359C8
-		// (set) Token: 0x0600B4CA RID: 46282 RVA: 0x004377D0 File Offset: 0x004359D0
+		// Token: 0x17001614 RID: 5652
+		// (get) Token: 0x0600B563 RID: 46435 RVA: 0x0043B4DC File Offset: 0x004396DC
+		// (set) Token: 0x0600B564 RID: 46436 RVA: 0x0043B4E4 File Offset: 0x004396E4
 		[JsonProperty(PropertyName = "save_id")]
-		[Description("Id of the save")]
+		[Description("Unique Id of the world save")]
 		public string SaveId { get; set; }
 
-		// Token: 0x170015D0 RID: 5584
-		// (get) Token: 0x0600B4CB RID: 46283 RVA: 0x004377D9 File Offset: 0x004359D9
-		// (set) Token: 0x0600B4CC RID: 46284 RVA: 0x004377E1 File Offset: 0x004359E1
+		// Token: 0x17001615 RID: 5653
+		// (get) Token: 0x0600B565 RID: 46437 RVA: 0x0043B4ED File Offset: 0x004396ED
+		// (set) Token: 0x0600B566 RID: 46438 RVA: 0x0043B4F5 File Offset: 0x004396F5
 		[JsonProperty(PropertyName = "cosmetic_change_ts")]
 		[Description("The moment when the player equipped the item.")]
 		[DateTimeFormat]
 		public string CosmeticChangeTimestamp { get; set; }
 
-		// Token: 0x170015D1 RID: 5585
-		// (get) Token: 0x0600B4CD RID: 46285 RVA: 0x004377EA File Offset: 0x004359EA
-		// (set) Token: 0x0600B4CE RID: 46286 RVA: 0x004377F2 File Offset: 0x004359F2
+		// Token: 0x17001616 RID: 5654
+		// (get) Token: 0x0600B567 RID: 46439 RVA: 0x0043B4FE File Offset: 0x004396FE
+		// (set) Token: 0x0600B568 RID: 46440 RVA: 0x0043B506 File Offset: 0x00439706
 		[JsonProperty(PropertyName = "slot")]
 		[Description("The slot where the equipment goes.")]
 		public string Slot { get; set; }
 
-		// Token: 0x170015D2 RID: 5586
-		// (get) Token: 0x0600B4CF RID: 46287 RVA: 0x004377FB File Offset: 0x004359FB
-		// (set) Token: 0x0600B4D0 RID: 46288 RVA: 0x00437803 File Offset: 0x00435A03
+		// Token: 0x17001617 RID: 5655
+		// (get) Token: 0x0600B569 RID: 46441 RVA: 0x0043B50F File Offset: 0x0043970F
+		// (set) Token: 0x0600B56A RID: 46442 RVA: 0x0043B517 File Offset: 0x00439717
 		[JsonProperty(PropertyName = "cosmetic_name")]
 		[Description("The name of the item (truncated to the first 50 characters)")]
 		[JsonConverter(typeof(TruncateStringSerializerConverter))]
 		public string CosmeticName { get; set; }
 
-		// Token: 0x170015D3 RID: 5587
-		// (get) Token: 0x0600B4D1 RID: 46289 RVA: 0x0043780C File Offset: 0x00435A0C
-		// (set) Token: 0x0600B4D2 RID: 46290 RVA: 0x00437814 File Offset: 0x00435A14
+		// Token: 0x17001618 RID: 5656
+		// (get) Token: 0x0600B56B RID: 46443 RVA: 0x0043B520 File Offset: 0x00439720
+		// (set) Token: 0x0600B56C RID: 46444 RVA: 0x0043B528 File Offset: 0x00439728
 		[JsonProperty(PropertyName = "set_name")]
 		[Description("If the item is part of a set, we would like to know the set name.")]
 		public string SetName { get; set; }

@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020009C5 RID: 2501
-// (Invoke) Token: 0x06004A48 RID: 19016
+// Token: 0x020009CE RID: 2510
+// (Invoke) Token: 0x06004A12 RID: 18962
 public delegate void QuestEvent_BlockDestroyEvent(Block block, Vector3i blockPos);

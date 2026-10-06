@@ -1,21 +1,21 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-// Token: 0x0200111D RID: 4381
+// Token: 0x02001135 RID: 4405
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
 [MeansImplicitUse]
 public class XuiXmlAttributeAttribute : Attribute
 {
-	// Token: 0x06008AA6 RID: 35494 RVA: 0x0034C4C1 File Offset: 0x0034A6C1
+	// Token: 0x06008B12 RID: 35602 RVA: 0x0035096D File Offset: 0x0034EB6D
 	public XuiXmlAttributeAttribute(string _attributeName, bool _override = false)
 	{
 		this.AttributeName = _attributeName;
 		this.Override = _override;
 	}
 
-	// Token: 0x040066E3 RID: 26339
+	// Token: 0x04006738 RID: 26424
 	public readonly string AttributeName;
 
-	// Token: 0x040066E4 RID: 26340
+	// Token: 0x04006739 RID: 26425
 	public readonly bool Override;
 }

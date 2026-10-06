@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000B7 RID: 183
+// Token: 0x020000B9 RID: 185
 [PublicizedFrom(EAccessModifier.Internal)]
 public class AudioTrigger
 {
-	// Token: 0x06000387 RID: 903 RVA: 0x0001A03A File Offset: 0x0001823A
+	// Token: 0x0600038D RID: 909 RVA: 0x0001A132 File Offset: 0x00018332
 	public AudioTrigger(AudioObject.Trigger _trigger)
 	{
 		this.trigger = _trigger;
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x0001A054 File Offset: 0x00018254
+	// Token: 0x0600038E RID: 910 RVA: 0x0001A14C File Offset: 0x0001834C
 	public void Add(AudioObject _audioObject)
 	{
 		this.sound.Add(_audioObject);
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x0001A064 File Offset: 0x00018264
+	// Token: 0x0600038F RID: 911 RVA: 0x0001A15C File Offset: 0x0001835C
 	public void Update()
 	{
 		float fixedDeltaTime = Time.fixedDeltaTime;
@@ -28,7 +28,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x0001A0A4 File Offset: 0x000182A4
+	// Token: 0x06000390 RID: 912 RVA: 0x0001A19C File Offset: 0x0001839C
 	public void SetVolume(float _vol)
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -37,7 +37,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038B RID: 907 RVA: 0x0001A0DC File Offset: 0x000182DC
+	// Token: 0x06000391 RID: 913 RVA: 0x0001A1D4 File Offset: 0x000183D4
 	public void Pause()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -46,7 +46,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038C RID: 908 RVA: 0x0001A114 File Offset: 0x00018314
+	// Token: 0x06000392 RID: 914 RVA: 0x0001A20C File Offset: 0x0001840C
 	public void UnPause()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -55,7 +55,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038D RID: 909 RVA: 0x0001A14C File Offset: 0x0001834C
+	// Token: 0x06000393 RID: 915 RVA: 0x0001A244 File Offset: 0x00018444
 	public void TurnOff()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -64,10 +64,10 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x04000413 RID: 1043
+	// Token: 0x04000416 RID: 1046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly AudioObject.Trigger trigger;
 
-	// Token: 0x04000414 RID: 1044
+	// Token: 0x04000417 RID: 1047
 	public List<AudioObject> sound = new List<AudioObject>();
 }

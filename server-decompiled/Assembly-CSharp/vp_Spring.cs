@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200157C RID: 5500
+// Token: 0x0200159E RID: 5534
 public class vp_Spring
 {
-	// Token: 0x170013E8 RID: 5096
-	// (get) Token: 0x0600AC11 RID: 44049 RVA: 0x0040164E File Offset: 0x003FF84E
-	// (set) Token: 0x0600AC12 RID: 44050 RVA: 0x00401656 File Offset: 0x003FF856
+	// Token: 0x1700142D RID: 5165
+	// (get) Token: 0x0600ACC4 RID: 44228 RVA: 0x004064A2 File Offset: 0x004046A2
+	// (set) Token: 0x0600ACC5 RID: 44229 RVA: 0x004064AA File Offset: 0x004046AA
 	public bool SdtdStopping { get; set; }
 
-	// Token: 0x170013E9 RID: 5097
-	// (get) Token: 0x0600AC13 RID: 44051 RVA: 0x0040165F File Offset: 0x003FF85F
-	// (set) Token: 0x0600AC14 RID: 44052 RVA: 0x00401667 File Offset: 0x003FF867
+	// Token: 0x1700142E RID: 5166
+	// (get) Token: 0x0600ACC6 RID: 44230 RVA: 0x004064B3 File Offset: 0x004046B3
+	// (set) Token: 0x0600ACC7 RID: 44231 RVA: 0x004064BB File Offset: 0x004046BB
 	public Transform Transform
 	{
 		get
@@ -25,7 +25,7 @@ public class vp_Spring
 		}
 	}
 
-	// Token: 0x0600AC15 RID: 44053 RVA: 0x00401678 File Offset: 0x003FF878
+	// Token: 0x0600ACC8 RID: 44232 RVA: 0x004064CC File Offset: 0x004046CC
 	public vp_Spring(Transform transform, vp_Spring.UpdateMode mode, bool autoUpdate = true)
 	{
 		this.Mode = mode;
@@ -33,7 +33,7 @@ public class vp_Spring
 		this.m_AutoUpdate = autoUpdate;
 	}
 
-	// Token: 0x0600AC16 RID: 44054 RVA: 0x0040176C File Offset: 0x003FF96C
+	// Token: 0x0600ACC9 RID: 44233 RVA: 0x004065C0 File Offset: 0x004047C0
 	public void FixedUpdate()
 	{
 		if (this.m_VelocityFadeInEndTime > Time.time)
@@ -60,76 +60,76 @@ public class vp_Spring
 		this.m_UpdateFunc();
 	}
 
-	// Token: 0x0600AC17 RID: 44055 RVA: 0x0040183D File Offset: 0x003FFA3D
+	// Token: 0x0600ACCA RID: 44234 RVA: 0x00406691 File Offset: 0x00404891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Position()
 	{
 		this.m_Transform.localPosition = this.State;
 	}
 
-	// Token: 0x0600AC18 RID: 44056 RVA: 0x00401850 File Offset: 0x003FFA50
+	// Token: 0x0600ACCB RID: 44235 RVA: 0x004066A4 File Offset: 0x004048A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Rotation()
 	{
 		this.m_Transform.localEulerAngles = this.State;
 	}
 
-	// Token: 0x0600AC19 RID: 44057 RVA: 0x00401863 File Offset: 0x003FFA63
+	// Token: 0x0600ACCC RID: 44236 RVA: 0x004066B7 File Offset: 0x004048B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Scale()
 	{
 		this.m_Transform.localScale = this.State;
 	}
 
-	// Token: 0x0600AC1A RID: 44058 RVA: 0x00401876 File Offset: 0x003FFA76
+	// Token: 0x0600ACCD RID: 44237 RVA: 0x004066CA File Offset: 0x004048CA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PositionAdditiveLocal()
 	{
 		this.m_Transform.localPosition += this.State;
 	}
 
-	// Token: 0x0600AC1B RID: 44059 RVA: 0x00401894 File Offset: 0x003FFA94
+	// Token: 0x0600ACCE RID: 44238 RVA: 0x004066E8 File Offset: 0x004048E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PositionAdditiveGlobal()
 	{
 		this.m_Transform.position += this.State;
 	}
 
-	// Token: 0x0600AC1C RID: 44060 RVA: 0x004018B2 File Offset: 0x003FFAB2
+	// Token: 0x0600ACCF RID: 44239 RVA: 0x00406706 File Offset: 0x00404906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PositionAdditiveSelf()
 	{
 		this.m_Transform.Translate(this.State, this.m_Transform);
 	}
 
-	// Token: 0x0600AC1D RID: 44061 RVA: 0x004018CB File Offset: 0x003FFACB
+	// Token: 0x0600ACD0 RID: 44240 RVA: 0x0040671F File Offset: 0x0040491F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotationAdditiveLocal()
 	{
 		this.m_Transform.localEulerAngles += this.State;
 	}
 
-	// Token: 0x0600AC1E RID: 44062 RVA: 0x004018E9 File Offset: 0x003FFAE9
+	// Token: 0x0600ACD1 RID: 44241 RVA: 0x0040673D File Offset: 0x0040493D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotationAdditiveGlobal()
 	{
 		this.m_Transform.eulerAngles += this.State;
 	}
 
-	// Token: 0x0600AC1F RID: 44063 RVA: 0x00401907 File Offset: 0x003FFB07
+	// Token: 0x0600ACD2 RID: 44242 RVA: 0x0040675B File Offset: 0x0040495B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ScaleAdditiveLocal()
 	{
 		this.m_Transform.localScale += this.State;
 	}
 
-	// Token: 0x0600AC20 RID: 44064 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600ACD3 RID: 44243 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void None()
 	{
 	}
 
-	// Token: 0x0600AC21 RID: 44065 RVA: 0x00401928 File Offset: 0x003FFB28
+	// Token: 0x0600ACD4 RID: 44244 RVA: 0x0040677C File Offset: 0x0040497C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void RefreshUpdateMode()
 	{
@@ -203,7 +203,7 @@ public class vp_Spring
 		this.RestState = this.State;
 	}
 
-	// Token: 0x0600AC22 RID: 44066 RVA: 0x00401B40 File Offset: 0x003FFD40
+	// Token: 0x0600ACD5 RID: 44245 RVA: 0x00406994 File Offset: 0x00404B94
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Calculate()
 	{
@@ -222,7 +222,7 @@ public class vp_Spring
 		this.Reset();
 	}
 
-	// Token: 0x0600AC23 RID: 44067 RVA: 0x00401C65 File Offset: 0x003FFE65
+	// Token: 0x0600ACD6 RID: 44246 RVA: 0x00406AB9 File Offset: 0x00404CB9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddForceInternal(Vector3 force)
 	{
@@ -232,7 +232,7 @@ public class vp_Spring
 		this.Move();
 	}
 
-	// Token: 0x0600AC24 RID: 44068 RVA: 0x00401CA4 File Offset: 0x003FFEA4
+	// Token: 0x0600ACD7 RID: 44247 RVA: 0x00406AF8 File Offset: 0x00404CF8
 	public void AddForce(Vector3 force)
 	{
 		if (Time.timeScale < 1f)
@@ -243,7 +243,7 @@ public class vp_Spring
 		this.AddForceInternal(force);
 	}
 
-	// Token: 0x0600AC25 RID: 44069 RVA: 0x00401CC8 File Offset: 0x003FFEC8
+	// Token: 0x0600ACD8 RID: 44248 RVA: 0x00406B1C File Offset: 0x00404D1C
 	public void AddSoftForce(Vector3 force, float frames)
 	{
 		force /= Time.timeScale;
@@ -255,7 +255,7 @@ public class vp_Spring
 		}
 	}
 
-	// Token: 0x0600AC26 RID: 44070 RVA: 0x00401D38 File Offset: 0x003FFF38
+	// Token: 0x0600ACD9 RID: 44249 RVA: 0x00406B8C File Offset: 0x00404D8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Move()
 	{
@@ -265,14 +265,14 @@ public class vp_Spring
 		this.State.z = Mathf.Clamp(this.State.z, this.MinState.z, this.MaxState.z);
 	}
 
-	// Token: 0x0600AC27 RID: 44071 RVA: 0x00401DF9 File Offset: 0x003FFFF9
+	// Token: 0x0600ACDA RID: 44250 RVA: 0x00406C4D File Offset: 0x00404E4D
 	public void Reset()
 	{
 		this.m_Velocity = Vector3.zero;
 		this.State = this.RestState;
 	}
 
-	// Token: 0x0600AC28 RID: 44072 RVA: 0x00401E12 File Offset: 0x00400012
+	// Token: 0x0600ACDB RID: 44251 RVA: 0x00406C66 File Offset: 0x00404E66
 	public void Stop(bool includeSoftForce = false)
 	{
 		this.m_Velocity = Vector3.zero;
@@ -282,7 +282,7 @@ public class vp_Spring
 		}
 	}
 
-	// Token: 0x0600AC29 RID: 44073 RVA: 0x00401E28 File Offset: 0x00400028
+	// Token: 0x0600ACDC RID: 44252 RVA: 0x00406C7C File Offset: 0x00404E7C
 	public void StopSoftForce()
 	{
 		for (int i = 0; i < 120; i++)
@@ -291,7 +291,7 @@ public class vp_Spring
 		}
 	}
 
-	// Token: 0x0600AC2A RID: 44074 RVA: 0x00401E53 File Offset: 0x00400053
+	// Token: 0x0600ACDD RID: 44253 RVA: 0x00406CA7 File Offset: 0x00404EA7
 	public void ForceVelocityFadeIn(float seconds)
 	{
 		this.m_VelocityFadeInLength = seconds;
@@ -299,94 +299,94 @@ public class vp_Spring
 		this.m_VelocityFadeInCap = 0f;
 	}
 
-	// Token: 0x04007F52 RID: 32594
+	// Token: 0x04007FD5 RID: 32725
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Spring.UpdateMode Mode;
 
-	// Token: 0x04007F53 RID: 32595
+	// Token: 0x04007FD6 RID: 32726
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool m_AutoUpdate = true;
 
-	// Token: 0x04007F54 RID: 32596
+	// Token: 0x04007FD7 RID: 32727
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Spring.UpdateDelegate m_UpdateFunc;
 
-	// Token: 0x04007F55 RID: 32597
+	// Token: 0x04007FD8 RID: 32728
 	public Vector3 State = Vector3.zero;
 
-	// Token: 0x04007F56 RID: 32598
+	// Token: 0x04007FD9 RID: 32729
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 m_Velocity = Vector3.zero;
 
-	// Token: 0x04007F57 RID: 32599
+	// Token: 0x04007FDA RID: 32730
 	public Vector3 RestState = Vector3.zero;
 
-	// Token: 0x04007F58 RID: 32600
+	// Token: 0x04007FDB RID: 32731
 	public Vector3 Stiffness = new Vector3(0.5f, 0.5f, 0.5f);
 
-	// Token: 0x04007F59 RID: 32601
+	// Token: 0x04007FDC RID: 32732
 	public Vector3 Damping = new Vector3(0.75f, 0.75f, 0.75f);
 
-	// Token: 0x04007F5A RID: 32602
+	// Token: 0x04007FDD RID: 32733
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_VelocityFadeInCap = 1f;
 
-	// Token: 0x04007F5B RID: 32603
+	// Token: 0x04007FDE RID: 32734
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_VelocityFadeInEndTime;
 
-	// Token: 0x04007F5C RID: 32604
+	// Token: 0x04007FDF RID: 32735
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_VelocityFadeInLength;
 
-	// Token: 0x04007F5D RID: 32605
+	// Token: 0x04007FE0 RID: 32736
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3[] m_SoftForceFrame = new Vector3[120];
 
-	// Token: 0x04007F5E RID: 32606
+	// Token: 0x04007FE1 RID: 32737
 	public float MaxVelocity = 10000f;
 
-	// Token: 0x04007F5F RID: 32607
+	// Token: 0x04007FE2 RID: 32738
 	public float MinVelocity = 1E-07f;
 
-	// Token: 0x04007F60 RID: 32608
+	// Token: 0x04007FE3 RID: 32739
 	public Vector3 MaxState = new Vector3(10000f, 10000f, 10000f);
 
-	// Token: 0x04007F61 RID: 32609
+	// Token: 0x04007FE4 RID: 32740
 	public Vector3 MinState = new Vector3(-10000f, -10000f, -10000f);
 
-	// Token: 0x04007F62 RID: 32610
+	// Token: 0x04007FE5 RID: 32741
 	public float SdtdMinDeltaState = 0.0001f;
 
-	// Token: 0x04007F64 RID: 32612
+	// Token: 0x04007FE7 RID: 32743
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Transform m_Transform;
 
-	// Token: 0x0200157D RID: 5501
+	// Token: 0x0200159F RID: 5535
 	public enum UpdateMode
 	{
-		// Token: 0x04007F66 RID: 32614
+		// Token: 0x04007FE9 RID: 32745
 		Position,
-		// Token: 0x04007F67 RID: 32615
+		// Token: 0x04007FEA RID: 32746
 		PositionAdditiveLocal,
-		// Token: 0x04007F68 RID: 32616
+		// Token: 0x04007FEB RID: 32747
 		PositionAdditiveGlobal,
-		// Token: 0x04007F69 RID: 32617
+		// Token: 0x04007FEC RID: 32748
 		PositionAdditiveSelf,
-		// Token: 0x04007F6A RID: 32618
+		// Token: 0x04007FED RID: 32749
 		Rotation,
-		// Token: 0x04007F6B RID: 32619
+		// Token: 0x04007FEE RID: 32750
 		RotationAdditiveLocal,
-		// Token: 0x04007F6C RID: 32620
+		// Token: 0x04007FEF RID: 32751
 		RotationAdditiveGlobal,
-		// Token: 0x04007F6D RID: 32621
+		// Token: 0x04007FF0 RID: 32752
 		Scale,
-		// Token: 0x04007F6E RID: 32622
+		// Token: 0x04007FF1 RID: 32753
 		ScaleAdditiveLocal
 	}
 
-	// Token: 0x0200157E RID: 5502
-	// (Invoke) Token: 0x0600AC2C RID: 44076
+	// Token: 0x020015A0 RID: 5536
+	// (Invoke) Token: 0x0600ACDF RID: 44255
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public delegate void UpdateDelegate();
 }

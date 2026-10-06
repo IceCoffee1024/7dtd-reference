@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001068 RID: 4200
+// Token: 0x02001079 RID: 4217
 [Preserve]
 public class XUiC_SkillSkillInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x17000F98 RID: 3992
-	// (get) Token: 0x06008592 RID: 34194 RVA: 0x0032EC56 File Offset: 0x0032CE56
+	// Token: 0x17000FCE RID: 4046
+	// (get) Token: 0x060085D8 RID: 34264 RVA: 0x00332862 File Offset: 0x00330A62
 	public ProgressionValue CurrentSkill
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -22,14 +22,14 @@ public class XUiC_SkillSkillInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06008593 RID: 34195 RVA: 0x0032EC89 File Offset: 0x0032CE89
+	// Token: 0x060085D9 RID: 34265 RVA: 0x00332895 File Offset: 0x00330A95
 	public override void Init()
 	{
 		base.Init();
 		base.GetChildrenByType<XUiC_SkillSkillMilestone>(this.levelEntries);
 	}
 
-	// Token: 0x06008594 RID: 34196 RVA: 0x0032ECA0 File Offset: 0x0032CEA0
+	// Token: 0x060085DA RID: 34266 RVA: 0x003328AC File Offset: 0x00330AAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSkill()
 	{
@@ -110,14 +110,14 @@ public class XUiC_SkillSkillInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06008595 RID: 34197 RVA: 0x00295FE1 File Offset: 0x002941E1
+	// Token: 0x060085DB RID: 34267 RVA: 0x0029936D File Offset: 0x0029756D
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008596 RID: 34198 RVA: 0x0032F044 File Offset: 0x0032D244
+	// Token: 0x060085DC RID: 34268 RVA: 0x00332C50 File Offset: 0x00330E50
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -129,7 +129,7 @@ public class XUiC_SkillSkillInfoWindow : XUiC_InfoWindow
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008597 RID: 34199 RVA: 0x0032F068 File Offset: 0x0032D268
+	// Token: 0x060085DD RID: 34269 RVA: 0x00332C74 File Offset: 0x00330E74
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -288,47 +288,47 @@ public class XUiC_SkillSkillInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x0400633F RID: 25407
+	// Token: 0x04006384 RID: 25476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_SkillSkillMilestone> levelEntries = new List<XUiC_SkillSkillMilestone>();
 
-	// Token: 0x04006340 RID: 25408
+	// Token: 0x04006385 RID: 25477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> effectLines = new List<string>();
 
-	// Token: 0x04006341 RID: 25409
+	// Token: 0x04006386 RID: 25478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeSubtractionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => _s + ": " + _f.ToCultureInvariantString("0.#") + (_b ? "%" : ""));
 
-	// Token: 0x04006342 RID: 25410
+	// Token: 0x04006387 RID: 25479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeSetValueFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => _s + ": " + _f.ToCultureInvariantString("0.#"));
 
-	// Token: 0x04006343 RID: 25411
+	// Token: 0x04006388 RID: 25480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float, float> groupLevelFormatter = new CachedStringFormatter<float, float>((float _i1, float _i2) => _i1.ToCultureInvariantString() + "/" + _i2.ToCultureInvariantString());
 
-	// Token: 0x04006344 RID: 25412
+	// Token: 0x04006389 RID: 25481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> groupPointCostFormatter = new CachedStringFormatter<int>((int _i) => string.Format("{0} {1}", _i, (_i != 1) ? Localization.Get("xuiSkillPoints", false, null) : Localization.Get("xuiSkillPoint", false, null)));
 
-	// Token: 0x04006345 RID: 25413
+	// Token: 0x0400638A RID: 25482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat skillPercentThisLevelFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04006346 RID: 25414
+	// Token: 0x0400638B RID: 25483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat skillLevelFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04006347 RID: 25415
+	// Token: 0x0400638C RID: 25484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat maxSkillLevelFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04006348 RID: 25416
+	// Token: 0x0400638D RID: 25485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> buyCostFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString() + " " + Localization.Get("xuiSkillPoints", false, null));
 
-	// Token: 0x04006349 RID: 25417
+	// Token: 0x0400638E RID: 25486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> expCostFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString() + " " + Localization.Get("RewardExp_keyword", false, null));
 }

@@ -3,11 +3,11 @@ using System.Collections;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020012F2 RID: 4850
+// Token: 0x02001312 RID: 4882
 public class TitleStorageOverridesManager
 {
-	// Token: 0x17001230 RID: 4656
-	// (get) Token: 0x060099A7 RID: 39335 RVA: 0x003A2DF9 File Offset: 0x003A0FF9
+	// Token: 0x17001275 RID: 4725
+	// (get) Token: 0x06009A53 RID: 39507 RVA: 0x003A79A9 File Offset: 0x003A5BA9
 	public static TitleStorageOverridesManager Instance
 	{
 		get
@@ -21,13 +21,13 @@ public class TitleStorageOverridesManager
 		}
 	}
 
-	// Token: 0x14000101 RID: 257
-	// (add) Token: 0x060099A8 RID: 39336 RVA: 0x003A2E10 File Offset: 0x003A1010
-	// (remove) Token: 0x060099A9 RID: 39337 RVA: 0x003A2E48 File Offset: 0x003A1048
+	// Token: 0x14000100 RID: 256
+	// (add) Token: 0x06009A54 RID: 39508 RVA: 0x003A79C0 File Offset: 0x003A5BC0
+	// (remove) Token: 0x06009A55 RID: 39509 RVA: 0x003A79F8 File Offset: 0x003A5BF8
 	[method: PublicizedFrom(EAccessModifier.Private)]
 	public event Action<TitleStorageOverridesManager.TSOverrides> fetchFinished;
 
-	// Token: 0x060099AA RID: 39338 RVA: 0x003A2E80 File Offset: 0x003A1080
+	// Token: 0x06009A56 RID: 39510 RVA: 0x003A7A30 File Offset: 0x003A5C30
 	public void FetchFromSource(Action<TitleStorageOverridesManager.TSOverrides> _callback)
 	{
 		IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -59,7 +59,7 @@ public class TitleStorageOverridesManager
 		}
 	}
 
-	// Token: 0x060099AB RID: 39339 RVA: 0x003A2F18 File Offset: 0x003A1118
+	// Token: 0x06009A57 RID: 39511 RVA: 0x003A7AC8 File Offset: 0x003A5CC8
 	public void ClearOverrides()
 	{
 		this.overrides = new TitleStorageOverridesManager.TSOverrides
@@ -68,7 +68,7 @@ public class TitleStorageOverridesManager
 		};
 	}
 
-	// Token: 0x060099AC RID: 39340 RVA: 0x003A2F3C File Offset: 0x003A113C
+	// Token: 0x06009A58 RID: 39512 RVA: 0x003A7AEC File Offset: 0x003A5CEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalPlatformNetworkString()
 	{
@@ -101,7 +101,7 @@ public class TitleStorageOverridesManager
 		return null;
 	}
 
-	// Token: 0x060099AD RID: 39341 RVA: 0x003A2FA4 File Offset: 0x003A11A4
+	// Token: 0x06009A59 RID: 39513 RVA: 0x003A7B54 File Offset: 0x003A5D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator RequestDataCo()
 	{
@@ -168,33 +168,33 @@ public class TitleStorageOverridesManager
 		yield break;
 	}
 
-	// Token: 0x040073C5 RID: 29637
+	// Token: 0x04007440 RID: 29760
 	public const string RFSUri = "PlatformOverrides";
 
-	// Token: 0x040073C6 RID: 29638
+	// Token: 0x04007441 RID: 29761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TitleStorageOverridesManager instance;
 
-	// Token: 0x040073C7 RID: 29639
+	// Token: 0x04007442 RID: 29762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastSuccess = DateTime.MinValue;
 
-	// Token: 0x040073C8 RID: 29640
+	// Token: 0x04007443 RID: 29763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object fetchLock = new object();
 
-	// Token: 0x040073C9 RID: 29641
+	// Token: 0x04007444 RID: 29764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool fetching;
 
-	// Token: 0x040073CB RID: 29643
+	// Token: 0x04007446 RID: 29766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TitleStorageOverridesManager.TSOverrides overrides;
 
-	// Token: 0x020012F3 RID: 4851
+	// Token: 0x02001313 RID: 4883
 	public struct TSOverrides
 	{
-		// Token: 0x040073CC RID: 29644
+		// Token: 0x04007447 RID: 29767
 		public bool Crossplay;
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000681 RID: 1665
+// Token: 0x02000683 RID: 1667
 [Preserve]
 public class ItemHasTags : TargetedCompareRequirementBase
 {
-	// Token: 0x0600350D RID: 13581 RVA: 0x0015FB6C File Offset: 0x0015DD6C
+	// Token: 0x06003550 RID: 13648 RVA: 0x001604F0 File Offset: 0x0015E6F0
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -33,12 +33,12 @@ public class ItemHasTags : TargetedCompareRequirementBase
 		return !flag;
 	}
 
-	// Token: 0x0600350E RID: 13582 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003551 RID: 13649 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void GetInfoStrings(ref List<string> list)
 	{
 	}
 
-	// Token: 0x0600350F RID: 13583 RVA: 0x0015FBE8 File Offset: 0x0015DDE8
+	// Token: 0x06003552 RID: 13650 RVA: 0x0016056C File Offset: 0x0015E76C
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -59,11 +59,11 @@ public class ItemHasTags : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B3A RID: 11066
+	// Token: 0x04002B33 RID: 11059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> currentItemTags;
 
-	// Token: 0x04002B3B RID: 11067
+	// Token: 0x04002B34 RID: 11060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAllTags;
 }

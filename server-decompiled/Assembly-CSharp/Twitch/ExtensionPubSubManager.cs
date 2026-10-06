@@ -8,16 +8,16 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017E9 RID: 6121
+	// Token: 0x02001815 RID: 6165
 	public class ExtensionPubSubManager
 	{
-		// Token: 0x0600BDBA RID: 48570 RVA: 0x00462EA4 File Offset: 0x004610A4
+		// Token: 0x0600BF12 RID: 48914 RVA: 0x004673E0 File Offset: 0x004655E0
 		public void SetJWT(string jwt)
 		{
 			this.jwt = jwt;
 		}
 
-		// Token: 0x0600BDBB RID: 48571 RVA: 0x00462EB0 File Offset: 0x004610B0
+		// Token: 0x0600BF13 RID: 48915 RVA: 0x004673EC File Offset: 0x004655EC
 		public void Update(bool updatedViewerConfig)
 		{
 			if (updatedViewerConfig)
@@ -27,7 +27,7 @@ namespace Twitch
 			this.SendUpdate();
 		}
 
-		// Token: 0x0600BDBC RID: 48572 RVA: 0x00462EDF File Offset: 0x004610DF
+		// Token: 0x0600BF14 RID: 48916 RVA: 0x0046741B File Offset: 0x0046561B
 		public void PushUserBalance(ValueTuple<string, int> userBalance)
 		{
 			Log.Out(string.Format("Adding balance of {0} to user {1}", userBalance.Item2, userBalance.Item1));
@@ -35,20 +35,20 @@ namespace Twitch
 			this.UserBitBalances.Enqueue(userBalance);
 		}
 
-		// Token: 0x0600BDBD RID: 48573 RVA: 0x00462F1D File Offset: 0x0046111D
+		// Token: 0x0600BF15 RID: 48917 RVA: 0x00467459 File Offset: 0x00465659
 		public void PushViewerChatState(string id, bool hasChatted)
 		{
 			this.viewerChatStateQueue.Enqueue(new ValueTuple<string, bool>(id, hasChatted));
 		}
 
-		// Token: 0x0600BDBE RID: 48574 RVA: 0x00462F31 File Offset: 0x00461131
+		// Token: 0x0600BF16 RID: 48918 RVA: 0x0046746D File Offset: 0x0046566D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SendUpdate()
 		{
 			GameManager.Instance.StartCoroutine(this.UpdateViewers());
 		}
 
-		// Token: 0x0600BDBF RID: 48575 RVA: 0x00462F44 File Offset: 0x00461144
+		// Token: 0x0600BF17 RID: 48919 RVA: 0x00467480 File Offset: 0x00465680
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator UpdateViewers()
 		{
@@ -111,7 +111,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BDC0 RID: 48576 RVA: 0x00462F54 File Offset: 0x00461154
+		// Token: 0x0600BF18 RID: 48920 RVA: 0x00467490 File Offset: 0x00465690
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string getStatus()
 		{
@@ -147,7 +147,7 @@ namespace Twitch
 			return "online";
 		}
 
-		// Token: 0x0600BDC1 RID: 48577 RVA: 0x00463014 File Offset: 0x00461214
+		// Token: 0x0600BF19 RID: 48921 RVA: 0x00467550 File Offset: 0x00465750
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int[] getActionCooldowns()
 		{
@@ -162,31 +162,31 @@ namespace Twitch
 			return array2;
 		}
 
-		// Token: 0x04008E1C RID: 36380
+		// Token: 0x04008EE2 RID: 36578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<string> target = new List<string> { "broadcast" };
 
-		// Token: 0x04008E1D RID: 36381
+		// Token: 0x04008EE3 RID: 36579
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string jwt;
 
-		// Token: 0x04008E1E RID: 36382
+		// Token: 0x04008EE4 RID: 36580
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string updateSignature;
 
-		// Token: 0x04008E1F RID: 36383
+		// Token: 0x04008EE5 RID: 36581
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<ValueTuple<string, int>> UserBitBalances = new Queue<ValueTuple<string, int>>();
 
-		// Token: 0x04008E20 RID: 36384
+		// Token: 0x04008EE6 RID: 36582
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, int> bitBalancesByUser = new Dictionary<string, int>();
 
-		// Token: 0x04008E21 RID: 36385
+		// Token: 0x04008EE7 RID: 36583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<ValueTuple<string, bool>> viewerChatStateQueue = new Queue<ValueTuple<string, bool>>();
 
-		// Token: 0x04008E22 RID: 36386
+		// Token: 0x04008EE8 RID: 36584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, bool> chattersToSend = new Dictionary<string, bool>();
 	}

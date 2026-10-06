@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C34 RID: 3124
+// Token: 0x02000C46 RID: 3142
 public class ThreadInfoParamPool
 {
-	// Token: 0x170009B0 RID: 2480
-	// (get) Token: 0x06005F2B RID: 24363 RVA: 0x0025A3C8 File Offset: 0x002585C8
+	// Token: 0x170009D2 RID: 2514
+	// (get) Token: 0x06005F44 RID: 24388 RVA: 0x0025D6C4 File Offset: 0x0025B8C4
 	public int Count
 	{
 		get
@@ -20,8 +20,8 @@ public class ThreadInfoParamPool
 		}
 	}
 
-	// Token: 0x170009B1 RID: 2481
-	// (get) Token: 0x06005F2C RID: 24364 RVA: 0x0025A410 File Offset: 0x00258610
+	// Token: 0x170009D3 RID: 2515
+	// (get) Token: 0x06005F45 RID: 24389 RVA: 0x0025D70C File Offset: 0x0025B90C
 	public int CountBig
 	{
 		get
@@ -36,7 +36,7 @@ public class ThreadInfoParamPool
 		}
 	}
 
-	// Token: 0x06005F2D RID: 24365 RVA: 0x0025A458 File Offset: 0x00258658
+	// Token: 0x06005F46 RID: 24390 RVA: 0x0025D754 File Offset: 0x0025B954
 	public ThreadInfoParamPool(int initialCapacity, int initialCapacityBig, int initialCount)
 	{
 		this._poolLock = new object();
@@ -49,7 +49,7 @@ public class ThreadInfoParamPool
 		}
 	}
 
-	// Token: 0x06005F2E RID: 24366 RVA: 0x0025A4BC File Offset: 0x002586BC
+	// Token: 0x06005F47 RID: 24391 RVA: 0x0025D7B8 File Offset: 0x0025B9B8
 	public ThreadInfoParam GetObject(DistantChunkMap _CMap, int _ResLevel, int _OutId)
 	{
 		object poolLock = this._poolLock;
@@ -71,7 +71,7 @@ public class ThreadInfoParamPool
 		return threadInfoParam;
 	}
 
-	// Token: 0x06005F2F RID: 24367 RVA: 0x0025A54C File Offset: 0x0025874C
+	// Token: 0x06005F48 RID: 24392 RVA: 0x0025D848 File Offset: 0x0025BA48
 	public ThreadInfoParam GetObjectBig(DistantChunkMap _CMap, int _ResLevel, int _OutId)
 	{
 		object poolLock = this._poolLock;
@@ -93,7 +93,7 @@ public class ThreadInfoParamPool
 		return threadInfoParam;
 	}
 
-	// Token: 0x06005F30 RID: 24368 RVA: 0x0025A5DC File Offset: 0x002587DC
+	// Token: 0x06005F49 RID: 24393 RVA: 0x0025D8D8 File Offset: 0x0025BAD8
 	public void ReturnObject(ThreadInfoParam item, ThreadContainerPool TmpThContPool = null)
 	{
 		if (item == null)
@@ -123,15 +123,15 @@ public class ThreadInfoParamPool
 		}
 	}
 
-	// Token: 0x04004AA7 RID: 19111
+	// Token: 0x04004AE6 RID: 19174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ThreadInfoParam> pool;
 
-	// Token: 0x04004AA8 RID: 19112
+	// Token: 0x04004AE7 RID: 19175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ThreadInfoParam> poolBig;
 
-	// Token: 0x04004AA9 RID: 19113
+	// Token: 0x04004AE8 RID: 19176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object _poolLock;
 }

@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x0200168A RID: 5770
+	// Token: 0x020016AC RID: 5804
 	[EventTitle("Heartbeat")]
 	public class HeartbeatEventData : BaseEventData
 	{
-		// Token: 0x170015DC RID: 5596
-		// (get) Token: 0x0600B4E4 RID: 46308 RVA: 0x00437961 File Offset: 0x00435B61
+		// Token: 0x17001622 RID: 5666
+		// (get) Token: 0x0600B581 RID: 46465 RVA: 0x0043B689 File Offset: 0x00439889
 		public override string EventType
 		{
 			get
@@ -19,31 +19,33 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015DD RID: 5597
-		// (get) Token: 0x0600B4E5 RID: 46309 RVA: 0x00437968 File Offset: 0x00435B68
-		// (set) Token: 0x0600B4E6 RID: 46310 RVA: 0x00437970 File Offset: 0x00435B70
+		// Token: 0x17001623 RID: 5667
+		// (get) Token: 0x0600B582 RID: 46466 RVA: 0x0043B690 File Offset: 0x00439890
+		// (set) Token: 0x0600B583 RID: 46467 RVA: 0x0043B698 File Offset: 0x00439898
 		[JsonProperty(PropertyName = "heartbeat_ts")]
 		[Description("Timestamp of the heartbeat. Sent every 5 minutes after login")]
 		[DateTimeFormat]
 		public string HeartbeatTimestamp { get; set; }
 
-		// Token: 0x170015DE RID: 5598
-		// (get) Token: 0x0600B4E7 RID: 46311 RVA: 0x00437979 File Offset: 0x00435B79
-		// (set) Token: 0x0600B4E8 RID: 46312 RVA: 0x00437981 File Offset: 0x00435B81
+		// Token: 0x17001624 RID: 5668
+		// (get) Token: 0x0600B584 RID: 46468 RVA: 0x0043B6A1 File Offset: 0x004398A1
+		// (set) Token: 0x0600B585 RID: 46469 RVA: 0x0043B6A9 File Offset: 0x004398A9
 		[JsonProperty(PropertyName = "server_id")]
 		[Description("Id of the connected server, null if not in one")]
 		public string ServerId { get; set; }
 
-		// Token: 0x170015DF RID: 5599
-		// (get) Token: 0x0600B4E9 RID: 46313 RVA: 0x0043798A File Offset: 0x00435B8A
-		// (set) Token: 0x0600B4EA RID: 46314 RVA: 0x00437992 File Offset: 0x00435B92
+		// Token: 0x17001625 RID: 5669
+		// (get) Token: 0x0600B586 RID: 46470 RVA: 0x0043B6B2 File Offset: 0x004398B2
+		// (set) Token: 0x0600B587 RID: 46471 RVA: 0x0043B6BA File Offset: 0x004398BA
 		[JsonProperty(PropertyName = "save_id")]
+		[Description("Unique Id of the world save")]
 		public string SaveId { get; set; }
 
-		// Token: 0x170015E0 RID: 5600
-		// (get) Token: 0x0600B4EB RID: 46315 RVA: 0x0043799B File Offset: 0x00435B9B
-		// (set) Token: 0x0600B4EC RID: 46316 RVA: 0x004379A3 File Offset: 0x00435BA3
+		// Token: 0x17001626 RID: 5670
+		// (get) Token: 0x0600B588 RID: 46472 RVA: 0x0043B6C3 File Offset: 0x004398C3
+		// (set) Token: 0x0600B589 RID: 46473 RVA: 0x0043B6CB File Offset: 0x004398CB
 		[JsonProperty(PropertyName = "player_count")]
+		[Description("The player count of the active zero, null when no server or 0 when not a dedicated server")]
 		public int? PlayerCount { get; set; }
 	}
 }

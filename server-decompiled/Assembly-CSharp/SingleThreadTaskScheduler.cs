@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Unity.Profiling;
 using UnityEngine.Profiling;
 
-// Token: 0x020014A3 RID: 5283
+// Token: 0x020014C3 RID: 5315
 public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 {
-	// Token: 0x0600A5B1 RID: 42417 RVA: 0x003DA3C0 File Offset: 0x003D85C0
+	// Token: 0x0600A65F RID: 42591 RVA: 0x003DF04C File Offset: 0x003DD24C
 	public SingleThreadTaskScheduler(string threadGroupName, string threadName)
 	{
 		this.m_threadGroupName = threadGroupName;
@@ -25,7 +25,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		this.m_taskThread.Start();
 	}
 
-	// Token: 0x0600A5B2 RID: 42418 RVA: 0x003DA458 File Offset: 0x003D8658
+	// Token: 0x0600A660 RID: 42592 RVA: 0x003DF0E4 File Offset: 0x003DD2E4
 	public void Dispose()
 	{
 		this.m_taskFactory = null;
@@ -60,8 +60,8 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		this.m_waitHandle = null;
 	}
 
-	// Token: 0x17001381 RID: 4993
-	// (get) Token: 0x0600A5B3 RID: 42419 RVA: 0x003DA4DE File Offset: 0x003D86DE
+	// Token: 0x170013C6 RID: 5062
+	// (get) Token: 0x0600A661 RID: 42593 RVA: 0x003DF16A File Offset: 0x003DD36A
 	public Thread Thread
 	{
 		get
@@ -70,8 +70,8 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x17001382 RID: 4994
-	// (get) Token: 0x0600A5B4 RID: 42420 RVA: 0x003DA4E6 File Offset: 0x003D86E6
+	// Token: 0x170013C7 RID: 5063
+	// (get) Token: 0x0600A662 RID: 42594 RVA: 0x003DF172 File Offset: 0x003DD372
 	public TaskFactory Factory
 	{
 		get
@@ -80,8 +80,8 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x17001383 RID: 4995
-	// (get) Token: 0x0600A5B5 RID: 42421 RVA: 0x003DA4EE File Offset: 0x003D86EE
+	// Token: 0x170013C8 RID: 5064
+	// (get) Token: 0x0600A663 RID: 42595 RVA: 0x003DF17A File Offset: 0x003DD37A
 	public bool IsCurrentThread
 	{
 		get
@@ -90,7 +90,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x0600A5B6 RID: 42422 RVA: 0x003DA4FD File Offset: 0x003D86FD
+	// Token: 0x0600A664 RID: 42596 RVA: 0x003DF189 File Offset: 0x003DD389
 	public Task ExecuteNoWait(Action task)
 	{
 		if (!this.IsCurrentThread)
@@ -101,7 +101,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		return Task.CompletedTask;
 	}
 
-	// Token: 0x0600A5B7 RID: 42423 RVA: 0x003DA51F File Offset: 0x003D871F
+	// Token: 0x0600A665 RID: 42597 RVA: 0x003DF1AB File Offset: 0x003DD3AB
 	public Task<T> ExecuteNoWait<T>(Func<T> task)
 	{
 		if (!this.IsCurrentThread)
@@ -111,7 +111,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		return Task.FromResult<T>(task());
 	}
 
-	// Token: 0x0600A5B8 RID: 42424 RVA: 0x003DA541 File Offset: 0x003D8741
+	// Token: 0x0600A666 RID: 42598 RVA: 0x003DF1CD File Offset: 0x003DD3CD
 	public void ExecuteAndWait(Action task)
 	{
 		if (this.IsCurrentThread)
@@ -122,7 +122,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		this.m_taskFactory.StartNew(task).Wait();
 	}
 
-	// Token: 0x0600A5B9 RID: 42425 RVA: 0x003DA563 File Offset: 0x003D8763
+	// Token: 0x0600A667 RID: 42599 RVA: 0x003DF1EF File Offset: 0x003DD3EF
 	public T ExecuteAndWait<T>(Func<T> task)
 	{
 		if (!this.IsCurrentThread)
@@ -132,7 +132,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		return task();
 	}
 
-	// Token: 0x0600A5BA RID: 42426 RVA: 0x003DA588 File Offset: 0x003D8788
+	// Token: 0x0600A668 RID: 42600 RVA: 0x003DF214 File Offset: 0x003DD414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TaskThread()
 	{
@@ -168,8 +168,8 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x17001384 RID: 4996
-	// (get) Token: 0x0600A5BB RID: 42427 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170013C9 RID: 5065
+	// (get) Token: 0x0600A669 RID: 42601 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int MaximumConcurrencyLevel
 	{
 		get
@@ -178,14 +178,14 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x0600A5BC RID: 42428 RVA: 0x003DA658 File Offset: 0x003D8858
+	// Token: 0x0600A66A RID: 42602 RVA: 0x003DF2E4 File Offset: 0x003DD4E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
 	{
 		return Thread.CurrentThread == this.m_taskThread && (!taskWasPreviouslyQueued || this.TryDequeue(task)) && base.TryExecuteTask(task);
 	}
 
-	// Token: 0x0600A5BD RID: 42429 RVA: 0x003DA680 File Offset: 0x003D8880
+	// Token: 0x0600A66B RID: 42603 RVA: 0x003DF30C File Offset: 0x003DD50C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void QueueTask(Task task)
 	{
@@ -197,7 +197,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x0600A5BE RID: 42430 RVA: 0x003DA6D4 File Offset: 0x003D88D4
+	// Token: 0x0600A66C RID: 42604 RVA: 0x003DF360 File Offset: 0x003DD560
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryDequeue(Task task)
 	{
@@ -210,7 +210,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		return flag2;
 	}
 
-	// Token: 0x0600A5BF RID: 42431 RVA: 0x003DA71C File Offset: 0x003D891C
+	// Token: 0x0600A66D RID: 42605 RVA: 0x003DF3A8 File Offset: 0x003DD5A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerable<Task> GetScheduledTasks()
 	{
@@ -235,7 +235,7 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		return tasks;
 	}
 
-	// Token: 0x0600A5C1 RID: 42433 RVA: 0x003DA7AC File Offset: 0x003D89AC
+	// Token: 0x0600A66F RID: 42607 RVA: 0x003DF438 File Offset: 0x003DD638
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <TaskThread>g__ProcessTasks|24_0()
@@ -271,51 +271,51 @@ public sealed class SingleThreadTaskScheduler : TaskScheduler, IDisposable
 		}
 	}
 
-	// Token: 0x04007B7A RID: 31610
+	// Token: 0x04007BF5 RID: 31733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ProcessTasksMarker = new ProfilerMarker("SingleThreadTaskScheduler.ProcessTasks");
 
-	// Token: 0x04007B7B RID: 31611
+	// Token: 0x04007BF6 RID: 31734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_WaitForTasksMarker = new ProfilerMarker("SingleThreadTaskScheduler.WaitForTasks");
 
-	// Token: 0x04007B7C RID: 31612
+	// Token: 0x04007BF7 RID: 31735
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_TryGetTaskMarker = new ProfilerMarker("SingleThreadTaskScheduler.TryGetTask");
 
-	// Token: 0x04007B7D RID: 31613
+	// Token: 0x04007BF8 RID: 31736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ExecuteTaskMarker = new ProfilerMarker("SingleThreadTaskScheduler.ExecuteTask");
 
-	// Token: 0x04007B7E RID: 31614
+	// Token: 0x04007BF9 RID: 31737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string m_threadGroupName;
 
-	// Token: 0x04007B7F RID: 31615
+	// Token: 0x04007BFA RID: 31738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string m_threadName;
 
-	// Token: 0x04007B80 RID: 31616
+	// Token: 0x04007BFB RID: 31739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<Task> m_tasks = new LinkedList<Task>();
 
-	// Token: 0x04007B81 RID: 31617
+	// Token: 0x04007BFC RID: 31740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_running;
 
-	// Token: 0x04007B82 RID: 31618
+	// Token: 0x04007BFD RID: 31741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Thread m_taskThread;
 
-	// Token: 0x04007B83 RID: 31619
+	// Token: 0x04007BFE RID: 31742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AutoResetEvent m_waitHandle = new AutoResetEvent(false);
 
-	// Token: 0x04007B84 RID: 31620
+	// Token: 0x04007BFF RID: 31743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CancellationTokenSource m_taskCancellationSource;
 
-	// Token: 0x04007B85 RID: 31621
+	// Token: 0x04007C00 RID: 31744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TaskFactory m_taskFactory;
 }

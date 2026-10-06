@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02001361 RID: 4961
+// Token: 0x02001381 RID: 4993
 public class BoundaryProjectorTreasure : BoundaryProjector
 {
-	// Token: 0x1700128F RID: 4751
-	// (get) Token: 0x06009C5E RID: 40030 RVA: 0x003B04EC File Offset: 0x003AE6EC
-	// (set) Token: 0x06009C5F RID: 40031 RVA: 0x003B04F4 File Offset: 0x003AE6F4
+	// Token: 0x170012D4 RID: 4820
+	// (get) Token: 0x06009D0A RID: 40202 RVA: 0x003B5068 File Offset: 0x003B3268
+	// (set) Token: 0x06009D0B RID: 40203 RVA: 0x003B5070 File Offset: 0x003B3270
 	public bool WithinRadius
 	{
 		get
@@ -22,8 +22,8 @@ public class BoundaryProjectorTreasure : BoundaryProjector
 		}
 	}
 
-	// Token: 0x17001290 RID: 4752
-	// (get) Token: 0x06009C60 RID: 40032 RVA: 0x003B050C File Offset: 0x003AE70C
+	// Token: 0x170012D5 RID: 4821
+	// (get) Token: 0x06009D0C RID: 40204 RVA: 0x003B5088 File Offset: 0x003B3288
 	public float CurrentRadius
 	{
 		get
@@ -32,7 +32,7 @@ public class BoundaryProjectorTreasure : BoundaryProjector
 		}
 	}
 
-	// Token: 0x06009C61 RID: 40033 RVA: 0x003B0524 File Offset: 0x003AE724
+	// Token: 0x06009D0D RID: 40205 RVA: 0x003B50A0 File Offset: 0x003B32A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetupProjectors()
 	{
@@ -40,14 +40,14 @@ public class BoundaryProjectorTreasure : BoundaryProjector
 		base.SetAutoRotate(0, true, 2f);
 	}
 
-	// Token: 0x06009C62 RID: 40034 RVA: 0x003B053F File Offset: 0x003AE73F
+	// Token: 0x06009D0E RID: 40206 RVA: 0x003B50BB File Offset: 0x003B32BB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleWithinRadiusChange()
 	{
 		base.SetGlow(0, this.withinRadius);
 	}
 
-	// Token: 0x04007618 RID: 30232
+	// Token: 0x04007693 RID: 30355
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool withinRadius;

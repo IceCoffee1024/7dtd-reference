@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using AssetManagement;
 using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004B9 RID: 1209
+// Token: 0x020004BF RID: 1215
 [Preserve]
 public class EntityItem : Entity
 {
-	// Token: 0x17000449 RID: 1097
-	// (get) Token: 0x0600264C RID: 9804 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700043F RID: 1087
+	// (get) Token: 0x0600264A RID: 9802 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override Entity.EnumPositionUpdateMovementType positionUpdateMovementType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,7 +21,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600264D RID: 9805 RVA: 0x000EA293 File Offset: 0x000E8493
+	// Token: 0x0600264B RID: 9803 RVA: 0x000EA57B File Offset: 0x000E877B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitLocalActivationCommands(Action<EntityActivationCommand> _addCallback)
 	{
@@ -28,7 +29,7 @@ public class EntityItem : Entity
 		_addCallback(new EntityActivationCommand("search", "search", null, null));
 	}
 
-	// Token: 0x0600264E RID: 9806 RVA: 0x000EA2C4 File Offset: 0x000E84C4
+	// Token: 0x0600264C RID: 9804 RVA: 0x000EA5AC File Offset: 0x000E87AC
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (base.CommandIs(_commandName, "take"))
@@ -42,7 +43,7 @@ public class EntityItem : Entity
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x0600264F RID: 9807 RVA: 0x000EA310 File Offset: 0x000E8510
+	// Token: 0x0600264D RID: 9805 RVA: 0x000EA5F8 File Offset: 0x000E87F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityActivated(EntityActivationCommand _command, EntityPlayerLocal _playerFocusing)
 	{
@@ -50,7 +51,7 @@ public class EntityItem : Entity
 		{
 			if (base.CommandIs(_command.commandId, "search"))
 			{
-				LockManager.Instance.LockRequestLocal(this, new Entity.EntityLockContext(_command.commandId.ToString(), this.bag), 0);
+				LockManager.Instance.LockRequestLocal(this, 0);
 			}
 			return;
 		}
@@ -62,7 +63,7 @@ public class EntityItem : Entity
 		GameManager.ShowTooltip(_playerFocusing, Localization.Get("xuiInventoryFullForPickup", false, null), string.Empty, "ui_denied", null, false, false, 0f);
 	}
 
-	// Token: 0x06002650 RID: 9808 RVA: 0x000EA3C8 File Offset: 0x000E85C8
+	// Token: 0x0600264E RID: 9806 RVA: 0x000EA69C File Offset: 0x000E889C
 	public override string GetActivationText()
 	{
 		GameManager instance = GameManager.Instance;
@@ -111,7 +112,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002651 RID: 9809 RVA: 0x000EA518 File Offset: 0x000E8718
+	// Token: 0x0600264F RID: 9807 RVA: 0x000EA7EC File Offset: 0x000E89EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -127,21 +128,21 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002652 RID: 9810 RVA: 0x000EA570 File Offset: 0x000E8770
+	// Token: 0x06002650 RID: 9808 RVA: 0x000EA844 File Offset: 0x000E8A44
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~EntityItem()
 	{
 		EntityItem.ItemInstanceCount--;
 	}
 
-	// Token: 0x06002653 RID: 9811 RVA: 0x000EA5A4 File Offset: 0x000E87A4
+	// Token: 0x06002651 RID: 9809 RVA: 0x000EA878 File Offset: 0x000E8A78
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
 		this.itemRB = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06002654 RID: 9812 RVA: 0x000EA5BC File Offset: 0x000E87BC
+	// Token: 0x06002652 RID: 9810 RVA: 0x000EA890 File Offset: 0x000E8A90
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -157,7 +158,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002655 RID: 9813 RVA: 0x000EA640 File Offset: 0x000E8840
+	// Token: 0x06002653 RID: 9811 RVA: 0x000EA914 File Offset: 0x000E8B14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -171,7 +172,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002656 RID: 9814 RVA: 0x000EA6C4 File Offset: 0x000E88C4
+	// Token: 0x06002654 RID: 9812 RVA: 0x000EA998 File Offset: 0x000E8B98
 	public void SetItemStack(ItemStack _itemStack)
 	{
 		if (this.itemStack == null)
@@ -188,13 +189,13 @@ public class EntityItem : Entity
 		this.distractionStrength = EffectManager.GetValue(PassiveEffects.DistractionStrength, this.itemStack.itemValue, 0f, null, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002657 RID: 9815 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002655 RID: 9813 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void FixedUpdate()
 	{
 	}
 
-	// Token: 0x06002658 RID: 9816 RVA: 0x000EA7F4 File Offset: 0x000E89F4
+	// Token: 0x06002656 RID: 9814 RVA: 0x000EAAC8 File Offset: 0x000E8CC8
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -223,8 +224,10 @@ public class EntityItem : Entity
 		{
 			return;
 		}
-		if (!this.itemTransform)
+		if (!this.modelAsset.Instance)
 		{
+			this.modelAsset.Destroy();
+			this.modelAsset = default(InstanceHandle<GameObject>);
 			this.lifetime = 0f;
 		}
 		this.lifetime -= 0.05f;
@@ -246,7 +249,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002659 RID: 9817 RVA: 0x000EA94F File Offset: 0x000E8B4F
+	// Token: 0x06002657 RID: 9815 RVA: 0x000EAC3F File Offset: 0x000E8E3F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playThrowSound(string _name)
 	{
@@ -254,7 +257,7 @@ public class EntityItem : Entity
 		Manager.Play(this, "throwdefault", 1f, false);
 	}
 
-	// Token: 0x0600265A RID: 9818 RVA: 0x000EA97B File Offset: 0x000E8B7B
+	// Token: 0x06002658 RID: 9816 RVA: 0x000EAC6B File Offset: 0x000E8E6B
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale = 1f)
 	{
 		if (_strength >= 99999)
@@ -264,7 +267,7 @@ public class EntityItem : Entity
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
 	}
 
-	// Token: 0x0600265B RID: 9819 RVA: 0x000EA99C File Offset: 0x000E8B9C
+	// Token: 0x06002659 RID: 9817 RVA: 0x000EAC8C File Offset: 0x000E8E8C
 	public override void OnDamagedByExplosion()
 	{
 		if (this.itemWorldData != null)
@@ -277,7 +280,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600265C RID: 9820 RVA: 0x000EA9D8 File Offset: 0x000E8BD8
+	// Token: 0x0600265A RID: 9818 RVA: 0x000EACC8 File Offset: 0x000E8EC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createMesh()
 	{
@@ -287,20 +290,19 @@ public class EntityItem : Entity
 			this.SetDead();
 			return;
 		}
-		if (this.meshGameObject != null && this.lastCachedItemStack.itemValue.type != 0)
+		if (this.modelAsset.Instance != null && this.lastCachedItemStack.itemValue.type != 0)
 		{
-			global::UnityEngine.Object.Destroy(this.meshGameObject);
-			this.meshGameObject = null;
+			this.modelAsset.Destroy();
+			this.modelAsset = default(InstanceHandle<GameObject>);
 		}
-		this.itemTransform = null;
 		float num = 0f;
 		Vector3 zero = Vector3.zero;
 		if (this.itemClass.IsBlock())
 		{
 			BlockValue blockValue = this.itemStack.itemValue.ToBlockValue(false);
-			if (this.itemTransform == null)
+			if (this.modelAsset.Instance == null)
 			{
-				this.itemTransform = this.itemClass.CloneModel(this.meshGameObject, this.world, blockValue, null, Vector3.zero, base.transform, BlockShape.MeshPurpose.Drop, default(TextureFullArray));
+				this.modelAsset = new InstanceHandle<GameObject>(ItemClassBlock.CreateMesh(null, null, blockValue, null, Vector3.zero, base.transform, BlockShape.MeshPurpose.Drop, default(TextureFullArray)).gameObject);
 			}
 			Block block = blockValue.Block;
 			if (block.Properties.Values.ContainsKey("DropScale"))
@@ -310,9 +312,9 @@ public class EntityItem : Entity
 		}
 		else
 		{
-			if (this.itemTransform == null)
+			if (this.modelAsset.Instance == null)
 			{
-				this.itemTransform = this.itemClass.CloneModel(this.world, this.itemStack.itemValue, Vector3.zero, base.transform, BlockShape.MeshPurpose.Drop, default(TextureFullArray));
+				this.modelAsset = this.itemClass.CloneModel(this.itemStack.itemValue, base.transform, BlockShape.MeshPurpose.Drop);
 			}
 			if (this.itemClass.Properties.Values.ContainsKey("DropScale"))
 			{
@@ -321,12 +323,12 @@ public class EntityItem : Entity
 		}
 		if (num != 0f)
 		{
-			this.itemTransform.localScale = new Vector3(num, num, num);
+			this.modelAsset.Instance.transform.localScale = new Vector3(num, num, num);
 		}
-		this.itemTransform.localEulerAngles = this.itemClass.GetDroppedCorrectionRotation();
-		this.itemTransform.localPosition = zero;
+		this.modelAsset.Instance.transform.localEulerAngles = this.itemClass.GetDroppedCorrectionRotation();
+		this.modelAsset.Instance.transform.localPosition = zero;
 		bool flag = true;
-		Collider[] componentsInChildren = this.itemTransform.GetComponentsInChildren<Collider>();
+		Collider[] componentsInChildren = this.modelAsset.Instance.GetComponentsInChildren<Collider>();
 		int num2 = 0;
 		while (componentsInChildren != null && num2 < componentsInChildren.Length)
 		{
@@ -346,18 +348,26 @@ public class EntityItem : Entity
 			num2++;
 		}
 		base.transform.GetComponent<Collider>().enabled = flag;
-		this.meshGameObject = this.itemTransform.gameObject;
-		this.meshGameObject.SetActive(true);
+		this.modelAsset.Instance.SetActive(true);
 		if (this.itemWorldData != null)
 		{
 			this.itemClass.OnMeshCreated(this.itemWorldData);
 		}
 		this.bMeshCreated = true;
-		this.meshRenderers = this.itemTransform.GetComponentsInChildren<Renderer>(true);
+		this.meshRenderers = this.modelAsset.Instance.GetComponentsInChildren<Renderer>(true);
 		this.VisiblityCheck(0f, false);
 	}
 
-	// Token: 0x0600265D RID: 9821 RVA: 0x000EACE4 File Offset: 0x000E8EE4
+	// Token: 0x0600265B RID: 9819 RVA: 0x000EAFDE File Offset: 0x000E91DE
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void CleanupAssets()
+	{
+		base.CleanupAssets();
+		this.modelAsset.Destroy();
+		this.modelAsset = default(InstanceHandle<GameObject>);
+	}
+
+	// Token: 0x0600265C RID: 9820 RVA: 0x000EB000 File Offset: 0x000E9200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkGravitySetting(bool hasGravity)
 	{
@@ -379,7 +389,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600265E RID: 9822 RVA: 0x000EAD4C File Offset: 0x000E8F4C
+	// Token: 0x0600265D RID: 9821 RVA: 0x000EB068 File Offset: 0x000E9268
 	public override void AddVelocity(Vector3 _vel)
 	{
 		this.bWasThrown = true;
@@ -396,10 +406,10 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600265F RID: 9823 RVA: 0x000EADDC File Offset: 0x000E8FDC
+	// Token: 0x0600265E RID: 9822 RVA: 0x000EB0F8 File Offset: 0x000E92F8
 	public override void VisiblityCheck(float _distanceSqr, bool _masterIsZooming)
 	{
-		if (this.itemTransform && this.meshRenderers != null)
+		if (this.modelAsset.Instance && this.meshRenderers != null)
 		{
 			bool flag = _distanceSqr < (float)(_masterIsZooming ? 8100 : 3600);
 			if (this.ticksExisted < 3 && _distanceSqr < 0.64000005f)
@@ -413,25 +423,25 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002660 RID: 9824 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600265F RID: 9823 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool CanCollideWith(Entity _other)
 	{
 		return true;
 	}
 
-	// Token: 0x06002661 RID: 9825 RVA: 0x000EAE46 File Offset: 0x000E9046
+	// Token: 0x06002660 RID: 9824 RVA: 0x000EB167 File Offset: 0x000E9367
 	public virtual bool CanCollect()
 	{
 		return this.itemClass != null && this.itemClass.CanCollect(this.itemStack.itemValue);
 	}
 
-	// Token: 0x06002662 RID: 9826 RVA: 0x000EAE68 File Offset: 0x000E9068
+	// Token: 0x06002661 RID: 9825 RVA: 0x000EB189 File Offset: 0x000E9389
 	public override void OnCollectServer(int _playerId)
 	{
 		this.world.RemoveEntity(this.entityId, EnumRemoveEntityReason.Killed);
 	}
 
-	// Token: 0x06002663 RID: 9827 RVA: 0x000EAE80 File Offset: 0x000E9080
+	// Token: 0x06002662 RID: 9826 RVA: 0x000EB1A0 File Offset: 0x000E93A0
 	public override void OnCollectLocal(int _playerId)
 	{
 		EntityPlayerLocal entityPlayerLocal = this.world.GetEntity(_playerId) as EntityPlayerLocal;
@@ -445,46 +455,20 @@ public class EntityItem : Entity
 		GameManager.Instance.ItemDropServer(this.itemStack, base.GetPosition(), Vector3.zero, _playerId, 60f, false);
 	}
 
-	// Token: 0x06002664 RID: 9828 RVA: 0x000EAF34 File Offset: 0x000E9134
-	public override void OnLoadedFromEntityCache(EntityCreationData _ecd)
-	{
-		this.markedForUnload = false;
-		base.transform.name = "Item_" + _ecd.id.ToString();
-		this.SetItemStack(_ecd.itemStack);
-		this.bMeshCreated = false;
-		if (this.meshRenderers != null)
-		{
-			for (int i = 0; i < this.meshRenderers.Length; i++)
-			{
-				this.meshRenderers[i].enabled = false;
-			}
-		}
-		UpdateLightOnChunkMesh component;
-		if (this.meshGameObject != null && (component = this.meshGameObject.GetComponent<UpdateLightOnChunkMesh>()) != null)
-		{
-			component.Reset();
-		}
-		this.itemWorldData = null;
-		this.bDead = false;
-		this.motion = Vector3.zero;
-		this.addedToChunk = false;
-		this.fallDistance = 0f;
-	}
-
-	// Token: 0x06002665 RID: 9829 RVA: 0x000EAFFA File Offset: 0x000E91FA
+	// Token: 0x06002663 RID: 9827 RVA: 0x000EB253 File Offset: 0x000E9453
 	public override Transform GetModelTransform()
 	{
-		return this.itemTransform;
+		return this.modelAsset.Instance.transform;
 	}
 
-	// Token: 0x06002666 RID: 9830 RVA: 0x000EB002 File Offset: 0x000E9202
+	// Token: 0x06002664 RID: 9828 RVA: 0x000EB265 File Offset: 0x000E9465
 	public override void PhysicsMasterBecome()
 	{
 		this.checkGravitySetting(true);
 		base.PhysicsMasterBecome();
 	}
 
-	// Token: 0x06002667 RID: 9831 RVA: 0x000EB014 File Offset: 0x000E9214
+	// Token: 0x06002665 RID: 9829 RVA: 0x000EB274 File Offset: 0x000E9474
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTransform()
 	{
@@ -509,7 +493,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002668 RID: 9832 RVA: 0x000EB168 File Offset: 0x000E9368
+	// Token: 0x06002666 RID: 9830 RVA: 0x000EB3C8 File Offset: 0x000E95C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -521,7 +505,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x06002669 RID: 9833 RVA: 0x000EB1C4 File Offset: 0x000E93C4
+	// Token: 0x06002667 RID: 9831 RVA: 0x000EB424 File Offset: 0x000E9624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void tickDistraction()
 	{
@@ -569,7 +553,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600266A RID: 9834 RVA: 0x000EB384 File Offset: 0x000E9584
+	// Token: 0x06002668 RID: 9832 RVA: 0x000EB5E4 File Offset: 0x000E97E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCollisionEnter(Collision collision)
 	{
@@ -664,7 +648,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600266B RID: 9835 RVA: 0x000EB698 File Offset: 0x000E9898
+	// Token: 0x06002669 RID: 9833 RVA: 0x000EB8F8 File Offset: 0x000E9AF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CanCollide(Collision collision)
 	{
@@ -697,7 +681,7 @@ public class EntityItem : Entity
 		return true;
 	}
 
-	// Token: 0x0600266C RID: 9836 RVA: 0x000EB724 File Offset: 0x000E9924
+	// Token: 0x0600266A RID: 9834 RVA: 0x000EB984 File Offset: 0x000E9B84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckStick(Collision collision)
 	{
@@ -723,7 +707,7 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x0600266D RID: 9837 RVA: 0x000EB838 File Offset: 0x000E9A38
+	// Token: 0x0600266B RID: 9835 RVA: 0x000EBA98 File Offset: 0x000E9C98
 	public override string ToString()
 	{
 		if (this.itemStack.itemValue.HasQuality)
@@ -739,14 +723,14 @@ public class EntityItem : Entity
 		return string.Format("[type={0}, name={1}, cnt={2}]", base.GetType().Name, (this.itemClass != null) ? this.itemClass.Name : string.Empty, this.itemStack.count);
 	}
 
-	// Token: 0x0600266E RID: 9838 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600266C RID: 9836 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsQRotationUsed()
 	{
 		return true;
 	}
 
-	// Token: 0x1700044A RID: 1098
-	// (get) Token: 0x0600266F RID: 9839 RVA: 0x000EB8EE File Offset: 0x000E9AEE
+	// Token: 0x17000440 RID: 1088
+	// (get) Token: 0x0600266D RID: 9837 RVA: 0x000EBB4E File Offset: 0x000E9D4E
 	public bool IsDistractionActive
 	{
 		get
@@ -755,30 +739,25 @@ public class EntityItem : Entity
 		}
 	}
 
-	// Token: 0x04001C78 RID: 7288
+	// Token: 0x04001C79 RID: 7289
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody itemRB;
 
-	// Token: 0x04001C79 RID: 7289
+	// Token: 0x04001C7A RID: 7290
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool useGravity;
 
-	// Token: 0x04001C7A RID: 7290
+	// Token: 0x04001C7B RID: 7291
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Renderer[] meshRenderers;
 
-	// Token: 0x04001C7B RID: 7291
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public GameObject meshGameObject;
-
 	// Token: 0x04001C7C RID: 7292
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Transform itemTransform;
+	public InstanceHandle<GameObject> modelAsset;
 
 	// Token: 0x04001C7D RID: 7293
 	public ItemStack itemStack = ItemStack.Empty;

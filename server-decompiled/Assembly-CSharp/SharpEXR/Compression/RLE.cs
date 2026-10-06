@@ -2,10 +2,10 @@
 
 namespace SharpEXR.Compression
 {
-	// Token: 0x020016DA RID: 5850
+	// Token: 0x02001706 RID: 5894
 	public static class RLE
 	{
-		// Token: 0x0600B701 RID: 46849 RVA: 0x0043E408 File Offset: 0x0043C608
+		// Token: 0x0600B858 RID: 47192 RVA: 0x00442928 File Offset: 0x00440B28
 		public static int Uncompress(IEXRReader reader, int count, byte[] uncompressed)
 		{
 			int num = reader.Position + count;
@@ -40,7 +40,7 @@ namespace SharpEXR.Compression
 			return num3;
 		}
 
-		// Token: 0x0600B702 RID: 46850 RVA: 0x0043E498 File Offset: 0x0043C698
+		// Token: 0x0600B859 RID: 47193 RVA: 0x004429B8 File Offset: 0x00440BB8
 		public static void MemSet(byte[] array, int offset, byte value, int count)
 		{
 			int num = offset + count;

@@ -5,13 +5,13 @@ using System.Security.Permissions;
 
 namespace System.Collections.Generic
 {
-	// Token: 0x020016B8 RID: 5816
+	// Token: 0x020016E4 RID: 5860
 	[DebuggerDisplay("Count={Count}")]
 	[Serializable]
 	public class HashSetLong : ICollection<long>, IEnumerable<long>, IEnumerable, ISerializable, IDeserializationCallback
 	{
-		// Token: 0x17001629 RID: 5673
-		// (get) Token: 0x0600B5BC RID: 46524 RVA: 0x0043914B File Offset: 0x0043734B
+		// Token: 0x170016CB RID: 5835
+		// (get) Token: 0x0600B713 RID: 46867 RVA: 0x0043D66B File Offset: 0x0043B86B
 		public int Count
 		{
 			get
@@ -20,25 +20,25 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5BD RID: 46525 RVA: 0x00439153 File Offset: 0x00437353
+		// Token: 0x0600B714 RID: 46868 RVA: 0x0043D673 File Offset: 0x0043B873
 		public HashSetLong()
 		{
 			this.Init(10, null);
 		}
 
-		// Token: 0x0600B5BE RID: 46526 RVA: 0x00439164 File Offset: 0x00437364
+		// Token: 0x0600B715 RID: 46869 RVA: 0x0043D684 File Offset: 0x0043B884
 		public HashSetLong(IEqualityComparer<long> comparer)
 		{
 			this.Init(10, comparer);
 		}
 
-		// Token: 0x0600B5BF RID: 46527 RVA: 0x00439175 File Offset: 0x00437375
+		// Token: 0x0600B716 RID: 46870 RVA: 0x0043D695 File Offset: 0x0043B895
 		public HashSetLong(IEnumerable<long> collection)
 			: this(collection, null)
 		{
 		}
 
-		// Token: 0x0600B5C0 RID: 46528 RVA: 0x00439180 File Offset: 0x00437380
+		// Token: 0x0600B717 RID: 46871 RVA: 0x0043D6A0 File Offset: 0x0043B8A0
 		public HashSetLong(IEnumerable<long> collection, IEqualityComparer<long> comparer)
 		{
 			if (collection == null)
@@ -58,14 +58,14 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5C1 RID: 46529 RVA: 0x004391F8 File Offset: 0x004373F8
+		// Token: 0x0600B718 RID: 46872 RVA: 0x0043D718 File Offset: 0x0043B918
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public HashSetLong(SerializationInfo info, StreamingContext context)
 		{
 			this.si = info;
 		}
 
-		// Token: 0x0600B5C2 RID: 46530 RVA: 0x00439208 File Offset: 0x00437408
+		// Token: 0x0600B719 RID: 46873 RVA: 0x0043D728 File Offset: 0x0043B928
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Init(int capacity, IEqualityComparer<long> comparer)
 		{
@@ -83,7 +83,7 @@ namespace System.Collections.Generic
 			this.generation = 0;
 		}
 
-		// Token: 0x0600B5C3 RID: 46531 RVA: 0x00439258 File Offset: 0x00437458
+		// Token: 0x0600B71A RID: 46874 RVA: 0x0043D778 File Offset: 0x0043B978
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InitArrays(int size)
 		{
@@ -99,7 +99,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5C4 RID: 46532 RVA: 0x004392C8 File Offset: 0x004374C8
+		// Token: 0x0600B71B RID: 46875 RVA: 0x0043D7E8 File Offset: 0x0043B9E8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool SlotsContainsAt(int index, int hash, long item)
 		{
@@ -115,19 +115,19 @@ namespace System.Collections.Generic
 			return false;
 		}
 
-		// Token: 0x0600B5C5 RID: 46533 RVA: 0x00439311 File Offset: 0x00437511
+		// Token: 0x0600B71C RID: 46876 RVA: 0x0043D831 File Offset: 0x0043BA31
 		public void CopyTo(long[] array)
 		{
 			this.CopyTo(array, 0, this.count);
 		}
 
-		// Token: 0x0600B5C6 RID: 46534 RVA: 0x00439321 File Offset: 0x00437521
+		// Token: 0x0600B71D RID: 46877 RVA: 0x0043D841 File Offset: 0x0043BA41
 		public void CopyTo(long[] array, int arrayIndex)
 		{
 			this.CopyTo(array, arrayIndex, this.count);
 		}
 
-		// Token: 0x0600B5C7 RID: 46535 RVA: 0x00439334 File Offset: 0x00437534
+		// Token: 0x0600B71E RID: 46878 RVA: 0x0043D854 File Offset: 0x0043BA54
 		public void CopyTo(long[] array, int arrayIndex, int count)
 		{
 			if (array == null)
@@ -158,7 +158,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5C8 RID: 46536 RVA: 0x004393B4 File Offset: 0x004375B4
+		// Token: 0x0600B71F RID: 46879 RVA: 0x0043D8D4 File Offset: 0x0043BAD4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Resize()
 		{
@@ -182,14 +182,14 @@ namespace System.Collections.Generic
 			this.threshold = (int)((float)num * 0.9f);
 		}
 
-		// Token: 0x0600B5C9 RID: 46537 RVA: 0x004394BA File Offset: 0x004376BA
+		// Token: 0x0600B720 RID: 46880 RVA: 0x0043D9DA File Offset: 0x0043BBDA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int GetLinkHashCode(int index)
 		{
 			return this.links[index].HashCode & int.MinValue;
 		}
 
-		// Token: 0x0600B5CA RID: 46538 RVA: 0x004394D4 File Offset: 0x004376D4
+		// Token: 0x0600B721 RID: 46881 RVA: 0x0043D9F4 File Offset: 0x0043BBF4
 		public bool Add(long item)
 		{
 			int num = ((int)item ^ (int)(item >> 32)) | int.MinValue;
@@ -224,8 +224,8 @@ namespace System.Collections.Generic
 			return true;
 		}
 
-		// Token: 0x1700162A RID: 5674
-		// (get) Token: 0x0600B5CB RID: 46539 RVA: 0x004395C4 File Offset: 0x004377C4
+		// Token: 0x170016CC RID: 5836
+		// (get) Token: 0x0600B722 RID: 46882 RVA: 0x0043DAE4 File Offset: 0x0043BCE4
 		public IEqualityComparer<long> Comparer
 		{
 			get
@@ -234,7 +234,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5CC RID: 46540 RVA: 0x004395CC File Offset: 0x004377CC
+		// Token: 0x0600B723 RID: 46883 RVA: 0x0043DAEC File Offset: 0x0043BCEC
 		public void Clear()
 		{
 			this.count = 0;
@@ -246,7 +246,7 @@ namespace System.Collections.Generic
 			this.generation++;
 		}
 
-		// Token: 0x0600B5CD RID: 46541 RVA: 0x00439638 File Offset: 0x00437838
+		// Token: 0x0600B724 RID: 46884 RVA: 0x0043DB58 File Offset: 0x0043BD58
 		public bool Contains(long item)
 		{
 			int num = ((int)item ^ (int)(item >> 32)) | int.MinValue;
@@ -254,7 +254,7 @@ namespace System.Collections.Generic
 			return this.SlotsContainsAt(num2, num, item);
 		}
 
-		// Token: 0x0600B5CE RID: 46542 RVA: 0x00439670 File Offset: 0x00437870
+		// Token: 0x0600B725 RID: 46885 RVA: 0x0043DB90 File Offset: 0x0043BD90
 		public bool Remove(long item)
 		{
 			int num = ((int)item ^ (int)(item >> 32)) | int.MinValue;
@@ -297,7 +297,7 @@ namespace System.Collections.Generic
 			return true;
 		}
 
-		// Token: 0x0600B5CF RID: 46543 RVA: 0x00439784 File Offset: 0x00437984
+		// Token: 0x0600B726 RID: 46886 RVA: 0x0043DCA4 File Offset: 0x0043BEA4
 		public int RemoveWhere(Predicate<long> match)
 		{
 			if (match == null)
@@ -319,13 +319,13 @@ namespace System.Collections.Generic
 			return list.Count;
 		}
 
-		// Token: 0x0600B5D0 RID: 46544 RVA: 0x00439838 File Offset: 0x00437A38
+		// Token: 0x0600B727 RID: 46887 RVA: 0x0043DD58 File Offset: 0x0043BF58
 		public void TrimExcess()
 		{
 			this.Resize();
 		}
 
-		// Token: 0x0600B5D1 RID: 46545 RVA: 0x00439840 File Offset: 0x00437A40
+		// Token: 0x0600B728 RID: 46888 RVA: 0x0043DD60 File Offset: 0x0043BF60
 		public void IntersectWith(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -336,7 +336,7 @@ namespace System.Collections.Generic
 			this.RemoveWhere((long item) => !other_set.Contains(item));
 		}
 
-		// Token: 0x0600B5D2 RID: 46546 RVA: 0x00439884 File Offset: 0x00437A84
+		// Token: 0x0600B729 RID: 46889 RVA: 0x0043DDA4 File Offset: 0x0043BFA4
 		public void ExceptWithHashSetLong(HashSetLong other)
 		{
 			if (other == null)
@@ -349,7 +349,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5D3 RID: 46547 RVA: 0x004398E4 File Offset: 0x00437AE4
+		// Token: 0x0600B72A RID: 46890 RVA: 0x0043DE04 File Offset: 0x0043C004
 		public void ExceptWith(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -362,7 +362,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5D4 RID: 46548 RVA: 0x0043993C File Offset: 0x00437B3C
+		// Token: 0x0600B72B RID: 46891 RVA: 0x0043DE5C File Offset: 0x0043C05C
 		public bool Overlaps(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -379,7 +379,7 @@ namespace System.Collections.Generic
 			return false;
 		}
 
-		// Token: 0x0600B5D5 RID: 46549 RVA: 0x0043999C File Offset: 0x00437B9C
+		// Token: 0x0600B72C RID: 46892 RVA: 0x0043DEBC File Offset: 0x0043C0BC
 		public bool SetEquals(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -401,7 +401,7 @@ namespace System.Collections.Generic
 			return true;
 		}
 
-		// Token: 0x0600B5D6 RID: 46550 RVA: 0x00439A1C File Offset: 0x00437C1C
+		// Token: 0x0600B72D RID: 46893 RVA: 0x0043DF3C File Offset: 0x0043C13C
 		public void SymmetricExceptWith(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -417,7 +417,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5D7 RID: 46551 RVA: 0x00439A88 File Offset: 0x00437C88
+		// Token: 0x0600B72E RID: 46894 RVA: 0x0043DFA8 File Offset: 0x0043C1A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSetLong ToSet(IEnumerable<long> enumerable)
 		{
@@ -429,7 +429,7 @@ namespace System.Collections.Generic
 			return hashSetLong;
 		}
 
-		// Token: 0x0600B5D8 RID: 46552 RVA: 0x00439AC0 File Offset: 0x00437CC0
+		// Token: 0x0600B72F RID: 46895 RVA: 0x0043DFE0 File Offset: 0x0043C1E0
 		public void UnionWithHashSetLong(HashSetLong other)
 		{
 			if (other == null)
@@ -442,7 +442,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5D9 RID: 46553 RVA: 0x00439B20 File Offset: 0x00437D20
+		// Token: 0x0600B730 RID: 46896 RVA: 0x0043E040 File Offset: 0x0043C240
 		public void UnionWith(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -455,7 +455,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5DA RID: 46554 RVA: 0x00439B78 File Offset: 0x00437D78
+		// Token: 0x0600B731 RID: 46897 RVA: 0x0043E098 File Offset: 0x0043C298
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckIsSubsetOf(HashSetLong other)
 		{
@@ -473,7 +473,7 @@ namespace System.Collections.Generic
 			return true;
 		}
 
-		// Token: 0x0600B5DB RID: 46555 RVA: 0x00439BE0 File Offset: 0x00437DE0
+		// Token: 0x0600B732 RID: 46898 RVA: 0x0043E100 File Offset: 0x0043C300
 		public bool IsSubsetOf(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -488,7 +488,7 @@ namespace System.Collections.Generic
 			return this.count <= hashSetLong.Count && this.CheckIsSubsetOf(hashSetLong);
 		}
 
-		// Token: 0x0600B5DC RID: 46556 RVA: 0x00439C24 File Offset: 0x00437E24
+		// Token: 0x0600B733 RID: 46899 RVA: 0x0043E144 File Offset: 0x0043C344
 		public bool IsProperSubsetOf(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -503,7 +503,7 @@ namespace System.Collections.Generic
 			return this.count < hashSetLong.Count && this.CheckIsSubsetOf(hashSetLong);
 		}
 
-		// Token: 0x0600B5DD RID: 46557 RVA: 0x00439C68 File Offset: 0x00437E68
+		// Token: 0x0600B734 RID: 46900 RVA: 0x0043E188 File Offset: 0x0043C388
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckIsSupersetOf(HashSetLong other)
 		{
@@ -521,7 +521,7 @@ namespace System.Collections.Generic
 			return true;
 		}
 
-		// Token: 0x0600B5DE RID: 46558 RVA: 0x00439CD0 File Offset: 0x00437ED0
+		// Token: 0x0600B735 RID: 46901 RVA: 0x0043E1F0 File Offset: 0x0043C3F0
 		public bool IsSupersetOf(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -532,7 +532,7 @@ namespace System.Collections.Generic
 			return this.count >= hashSetLong.Count && this.CheckIsSupersetOf(hashSetLong);
 		}
 
-		// Token: 0x0600B5DF RID: 46559 RVA: 0x00439D0C File Offset: 0x00437F0C
+		// Token: 0x0600B736 RID: 46902 RVA: 0x0043E22C File Offset: 0x0043C42C
 		public bool IsProperSupersetOf(IEnumerable<long> other)
 		{
 			if (other == null)
@@ -543,13 +543,13 @@ namespace System.Collections.Generic
 			return this.count > hashSetLong.Count && this.CheckIsSupersetOf(hashSetLong);
 		}
 
-		// Token: 0x0600B5E0 RID: 46560 RVA: 0x00439D46 File Offset: 0x00437F46
+		// Token: 0x0600B737 RID: 46903 RVA: 0x0043E266 File Offset: 0x0043C466
 		public static IEqualityComparer<HashSetLong> CreateSetComparer()
 		{
 			return HashSetLong.setComparer;
 		}
 
-		// Token: 0x0600B5E1 RID: 46561 RVA: 0x00439D50 File Offset: 0x00437F50
+		// Token: 0x0600B738 RID: 46904 RVA: 0x0043E270 File Offset: 0x0043C470
 		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
 		public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
@@ -568,7 +568,7 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5E2 RID: 46562 RVA: 0x00439DE8 File Offset: 0x00437FE8
+		// Token: 0x0600B739 RID: 46905 RVA: 0x0043E308 File Offset: 0x0043C508
 		public virtual void OnDeserialization(object sender)
 		{
 			if (this.si != null)
@@ -599,15 +599,15 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5E3 RID: 46563 RVA: 0x00439EE3 File Offset: 0x004380E3
+		// Token: 0x0600B73A RID: 46906 RVA: 0x0043E403 File Offset: 0x0043C603
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator<long> System.Collections.Generic.IEnumerable<System.Int64>.GetEnumerator()
 		{
 			return new HashSetLong.Enumerator(this);
 		}
 
-		// Token: 0x1700162B RID: 5675
-		// (get) Token: 0x0600B5E4 RID: 46564 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x170016CD RID: 5837
+		// (get) Token: 0x0600B73B RID: 46907 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool System.Collections.Generic.ICollection<System.Int64>.IsReadOnly
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -617,117 +617,117 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x0600B5E5 RID: 46565 RVA: 0x00439EF0 File Offset: 0x004380F0
+		// Token: 0x0600B73C RID: 46908 RVA: 0x0043E410 File Offset: 0x0043C610
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void System.Collections.Generic.ICollection<System.Int64>.Add(long item)
 		{
 			this.Add(item);
 		}
 
-		// Token: 0x0600B5E6 RID: 46566 RVA: 0x00439EE3 File Offset: 0x004380E3
+		// Token: 0x0600B73D RID: 46909 RVA: 0x0043E403 File Offset: 0x0043C603
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return new HashSetLong.Enumerator(this);
 		}
 
-		// Token: 0x0600B5E7 RID: 46567 RVA: 0x00439EFA File Offset: 0x004380FA
+		// Token: 0x0600B73E RID: 46910 RVA: 0x0043E41A File Offset: 0x0043C61A
 		public HashSetLong.Enumerator GetEnumerator()
 		{
 			return new HashSetLong.Enumerator(this);
 		}
 
-		// Token: 0x0400880B RID: 34827
+		// Token: 0x040088D0 RID: 35024
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const int INITIAL_SIZE = 10;
 
-		// Token: 0x0400880C RID: 34828
+		// Token: 0x040088D1 RID: 35025
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const float DEFAULT_LOAD_FACTOR = 0.9f;
 
-		// Token: 0x0400880D RID: 34829
+		// Token: 0x040088D2 RID: 35026
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const int NO_SLOT = -1;
 
-		// Token: 0x0400880E RID: 34830
+		// Token: 0x040088D3 RID: 35027
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const int HASH_FLAG = -2147483648;
 
-		// Token: 0x0400880F RID: 34831
+		// Token: 0x040088D4 RID: 35028
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int[] table;
 
-		// Token: 0x04008810 RID: 34832
+		// Token: 0x040088D5 RID: 35029
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public HashSetLong.Link[] links;
 
-		// Token: 0x04008811 RID: 34833
+		// Token: 0x040088D6 RID: 35030
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public long[] slots;
 
-		// Token: 0x04008812 RID: 34834
+		// Token: 0x040088D7 RID: 35031
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int touched;
 
-		// Token: 0x04008813 RID: 34835
+		// Token: 0x040088D8 RID: 35032
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int empty_slot;
 
-		// Token: 0x04008814 RID: 34836
+		// Token: 0x040088D9 RID: 35033
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int count;
 
-		// Token: 0x04008815 RID: 34837
+		// Token: 0x040088DA RID: 35034
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int threshold;
 
-		// Token: 0x04008816 RID: 34838
+		// Token: 0x040088DB RID: 35035
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public IEqualityComparer<long> comparer;
 
-		// Token: 0x04008817 RID: 34839
+		// Token: 0x040088DC RID: 35036
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public SerializationInfo si;
 
-		// Token: 0x04008818 RID: 34840
+		// Token: 0x040088DD RID: 35037
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int generation;
 
-		// Token: 0x04008819 RID: 34841
+		// Token: 0x040088DE RID: 35038
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static readonly HashSetLong.HashSetEqualityComparer setComparer = new HashSetLong.HashSetEqualityComparer();
 
-		// Token: 0x020016B9 RID: 5817
+		// Token: 0x020016E5 RID: 5861
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct Link
 		{
-			// Token: 0x0400881A RID: 34842
+			// Token: 0x040088DF RID: 35039
 			public int HashCode;
 
-			// Token: 0x0400881B RID: 34843
+			// Token: 0x040088E0 RID: 35040
 			public int Next;
 		}
 
-		// Token: 0x020016BA RID: 5818
+		// Token: 0x020016E6 RID: 5862
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class HashSetEqualityComparer : IEqualityComparer<HashSetLong>
 		{
-			// Token: 0x0600B5E9 RID: 46569 RVA: 0x00439F10 File Offset: 0x00438110
+			// Token: 0x0600B740 RID: 46912 RVA: 0x0043E430 File Offset: 0x0043C630
 			public bool Equals(HashSetLong lhs, HashSetLong rhs)
 			{
 				if (lhs == rhs)
@@ -748,7 +748,7 @@ namespace System.Collections.Generic
 				return true;
 			}
 
-			// Token: 0x0600B5EA RID: 46570 RVA: 0x00439F84 File Offset: 0x00438184
+			// Token: 0x0600B741 RID: 46913 RVA: 0x0043E4A4 File Offset: 0x0043C6A4
 			public int GetHashCode(HashSetLong hashset)
 			{
 				if (hashset == null)
@@ -765,11 +765,11 @@ namespace System.Collections.Generic
 			}
 		}
 
-		// Token: 0x020016BB RID: 5819
+		// Token: 0x020016E7 RID: 5863
 		[Serializable]
 		public struct Enumerator : IEnumerator<long>, IEnumerator, IDisposable
 		{
-			// Token: 0x0600B5EC RID: 46572 RVA: 0x00439FE4 File Offset: 0x004381E4
+			// Token: 0x0600B743 RID: 46915 RVA: 0x0043E504 File Offset: 0x0043C704
 			[PublicizedFrom(EAccessModifier.Internal)]
 			public Enumerator(HashSetLong hashset)
 			{
@@ -778,7 +778,7 @@ namespace System.Collections.Generic
 				this.stamp = hashset.generation;
 			}
 
-			// Token: 0x0600B5ED RID: 46573 RVA: 0x0043A000 File Offset: 0x00438200
+			// Token: 0x0600B744 RID: 46916 RVA: 0x0043E520 File Offset: 0x0043C720
 			public bool MoveNext()
 			{
 				this.CheckState();
@@ -801,8 +801,8 @@ namespace System.Collections.Generic
 				return false;
 			}
 
-			// Token: 0x1700162C RID: 5676
-			// (get) Token: 0x0600B5EE RID: 46574 RVA: 0x0043A06E File Offset: 0x0043826E
+			// Token: 0x170016CE RID: 5838
+			// (get) Token: 0x0600B745 RID: 46917 RVA: 0x0043E58E File Offset: 0x0043C78E
 			public long Current
 			{
 				get
@@ -811,8 +811,8 @@ namespace System.Collections.Generic
 				}
 			}
 
-			// Token: 0x1700162D RID: 5677
-			// (get) Token: 0x0600B5EF RID: 46575 RVA: 0x0043A076 File Offset: 0x00438276
+			// Token: 0x170016CF RID: 5839
+			// (get) Token: 0x0600B746 RID: 46918 RVA: 0x0043E596 File Offset: 0x0043C796
 			public object System.Collections.IEnumerator.Current
 			{
 				[PublicizedFrom(EAccessModifier.Private)]
@@ -827,7 +827,7 @@ namespace System.Collections.Generic
 				}
 			}
 
-			// Token: 0x0600B5F0 RID: 46576 RVA: 0x0043A09D File Offset: 0x0043829D
+			// Token: 0x0600B747 RID: 46919 RVA: 0x0043E5BD File Offset: 0x0043C7BD
 			[PublicizedFrom(EAccessModifier.Private)]
 			public void System.Collections.IEnumerator.Reset()
 			{
@@ -835,13 +835,13 @@ namespace System.Collections.Generic
 				this.next = 0;
 			}
 
-			// Token: 0x0600B5F1 RID: 46577 RVA: 0x0043A0AC File Offset: 0x004382AC
+			// Token: 0x0600B748 RID: 46920 RVA: 0x0043E5CC File Offset: 0x0043C7CC
 			public void Dispose()
 			{
 				this.hashset = null;
 			}
 
-			// Token: 0x0600B5F2 RID: 46578 RVA: 0x0043A0B5 File Offset: 0x004382B5
+			// Token: 0x0600B749 RID: 46921 RVA: 0x0043E5D5 File Offset: 0x0043C7D5
 			[PublicizedFrom(EAccessModifier.Private)]
 			public void CheckState()
 			{
@@ -855,32 +855,32 @@ namespace System.Collections.Generic
 				}
 			}
 
-			// Token: 0x0400881C RID: 34844
+			// Token: 0x040088E1 RID: 35041
 			[PublicizedFrom(EAccessModifier.Private)]
 			[NonSerialized]
 			public HashSetLong hashset;
 
-			// Token: 0x0400881D RID: 34845
+			// Token: 0x040088E2 RID: 35042
 			[PublicizedFrom(EAccessModifier.Private)]
 			[NonSerialized]
 			public int next;
 
-			// Token: 0x0400881E RID: 34846
+			// Token: 0x040088E3 RID: 35043
 			[PublicizedFrom(EAccessModifier.Private)]
 			[NonSerialized]
 			public int stamp;
 
-			// Token: 0x0400881F RID: 34847
+			// Token: 0x040088E4 RID: 35044
 			[PublicizedFrom(EAccessModifier.Private)]
 			[NonSerialized]
 			public long current;
 		}
 
-		// Token: 0x020016BC RID: 5820
+		// Token: 0x020016E8 RID: 5864
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static class PrimeHelper
 		{
-			// Token: 0x0600B5F3 RID: 46579 RVA: 0x0043A0E4 File Offset: 0x004382E4
+			// Token: 0x0600B74A RID: 46922 RVA: 0x0043E604 File Offset: 0x0043C804
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static bool TestPrime(int x)
 			{
@@ -899,7 +899,7 @@ namespace System.Collections.Generic
 				return x == 2;
 			}
 
-			// Token: 0x0600B5F4 RID: 46580 RVA: 0x0043A118 File Offset: 0x00438318
+			// Token: 0x0600B74B RID: 46923 RVA: 0x0043E638 File Offset: 0x0043C838
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static int CalcPrime(int x)
 			{
@@ -913,7 +913,7 @@ namespace System.Collections.Generic
 				return x;
 			}
 
-			// Token: 0x0600B5F5 RID: 46581 RVA: 0x0043A148 File Offset: 0x00438348
+			// Token: 0x0600B74C RID: 46924 RVA: 0x0043E668 File Offset: 0x0043C868
 			public static int ToPrime(int x)
 			{
 				for (int i = 0; i < HashSetLong.PrimeHelper.primes_table.Length; i++)
@@ -926,7 +926,7 @@ namespace System.Collections.Generic
 				return HashSetLong.PrimeHelper.CalcPrime(x);
 			}
 
-			// Token: 0x04008820 RID: 34848
+			// Token: 0x040088E5 RID: 35045
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static readonly int[] primes_table = new int[]
 			{

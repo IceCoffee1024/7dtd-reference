@@ -5,12 +5,12 @@ using Twitch;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020009A0 RID: 2464
+// Token: 0x020009A6 RID: 2470
 [Preserve]
 public class ObjectiveRallyPoint : BaseObjective
 {
-	// Token: 0x170007AE RID: 1966
-	// (get) Token: 0x0600489F RID: 18591 RVA: 0x00046EDA File Offset: 0x000450DA
+	// Token: 0x170007CE RID: 1998
+	// (get) Token: 0x06004856 RID: 18518 RVA: 0x000470B6 File Offset: 0x000452B6
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -19,8 +19,8 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x170007AF RID: 1967
-	// (get) Token: 0x060048A0 RID: 18592 RVA: 0x001C10DC File Offset: 0x001BF2DC
+	// Token: 0x170007CF RID: 1999
+	// (get) Token: 0x06004857 RID: 18519 RVA: 0x001C1750 File Offset: 0x001BF950
 	public override bool UpdateUI
 	{
 		get
@@ -29,8 +29,8 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x170007B0 RID: 1968
-	// (get) Token: 0x060048A1 RID: 18593 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007D0 RID: 2000
+	// (get) Token: 0x06004858 RID: 18520 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -40,8 +40,8 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x170007B1 RID: 1969
-	// (get) Token: 0x060048A2 RID: 18594 RVA: 0x001C5A7C File Offset: 0x001C3C7C
+	// Token: 0x170007D1 RID: 2001
+	// (get) Token: 0x06004859 RID: 18521 RVA: 0x001C639C File Offset: 0x001C459C
 	public override string StatusText
 	{
 		get
@@ -62,7 +62,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048A3 RID: 18595 RVA: 0x001C5AD8 File Offset: 0x001C3CD8
+	// Token: 0x0600485A RID: 18522 RVA: 0x001C63F8 File Offset: 0x001C45F8
 	public override void SetupObjective()
 	{
 		ObjectiveRallyPoint.textActivateRallyPoint = Localization.Get("ObjectiveRallyPointActivate", false, null);
@@ -78,13 +78,13 @@ public class ObjectiveRallyPoint : BaseObjective
 		base.Description = ObjectiveRallyPoint.textActivateRallyPoint;
 	}
 
-	// Token: 0x060048A4 RID: 18596 RVA: 0x001C5B83 File Offset: 0x001C3D83
+	// Token: 0x0600485B RID: 18523 RVA: 0x001C64A3 File Offset: 0x001C46A3
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.BlockActivate += this.Current_BlockActivate;
 	}
 
-	// Token: 0x060048A5 RID: 18597 RVA: 0x001C5B9C File Offset: 0x001C3D9C
+	// Token: 0x0600485C RID: 18524 RVA: 0x001C64BC File Offset: 0x001C46BC
 	public static void SetupFlags(List<BaseObjective> objectives)
 	{
 		HashSet<ObjectiveRallyPointData> hashSet = new HashSet<ObjectiveRallyPointData>();
@@ -119,7 +119,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048A6 RID: 18598 RVA: 0x001C5CB0 File Offset: 0x001C3EB0
+	// Token: 0x0600485D RID: 18525 RVA: 0x001C65D0 File Offset: 0x001C47D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform getBlockTransform(Vector3i rallyPos)
 	{
@@ -136,14 +136,14 @@ public class ObjectiveRallyPoint : BaseObjective
 		return transform;
 	}
 
-	// Token: 0x060048A7 RID: 18599 RVA: 0x001C5CEB File Offset: 0x001C3EEB
+	// Token: 0x0600485E RID: 18526 RVA: 0x001C660B File Offset: 0x001C480B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setVisibility(Transform t, string childName, bool isVisible)
 	{
 		this.isRallyVisible = isVisible;
 	}
 
-	// Token: 0x060048A8 RID: 18600 RVA: 0x001C5CF4 File Offset: 0x001C3EF4
+	// Token: 0x0600485F RID: 18527 RVA: 0x001C6614 File Offset: 0x001C4814
 	public override void RemoveObjectives()
 	{
 		base.RemoveObjectives();
@@ -175,7 +175,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048A9 RID: 18601 RVA: 0x001C5DB8 File Offset: 0x001C3FB8
+	// Token: 0x06004860 RID: 18528 RVA: 0x001C66D8 File Offset: 0x001C48D8
 	public override void RemoveHooks()
 	{
 		World world = GameManager.Instance.World;
@@ -197,7 +197,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048AA RID: 18602 RVA: 0x001C5E84 File Offset: 0x001C4084
+	// Token: 0x06004861 RID: 18529 RVA: 0x001C67A4 File Offset: 0x001C49A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setRallyPointVisibility(bool visible)
 	{
@@ -245,7 +245,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		yield break;
 	}
 
-	// Token: 0x060048AB RID: 18603 RVA: 0x001C5E9C File Offset: 0x001C409C
+	// Token: 0x06004862 RID: 18530 RVA: 0x001C67BC File Offset: 0x001C49BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockActivate(string blockName, Vector3i blockPos)
 	{
@@ -309,7 +309,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageQuestEvent>().Setup(NetPackageQuestEvent.QuestEventTypes.TryRallyMarker, ownerPlayer.entityId, zero, base.OwnerQuest.QuestCode), false);
 	}
 
-	// Token: 0x060048AC RID: 18604 RVA: 0x001C60C4 File Offset: 0x001C42C4
+	// Token: 0x06004863 RID: 18531 RVA: 0x001C69E4 File Offset: 0x001C4BE4
 	public void RallyPointActivate(Vector3 prefabPos, bool activate, QuestEventManager.POILockoutReasonTypes lockoutReason, ulong extraData)
 	{
 		ObjectiveRallyPoint.<>c__DisplayClass39_0 CS$<>8__locals1 = new ObjectiveRallyPoint.<>c__DisplayClass39_0();
@@ -393,7 +393,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048AD RID: 18605 RVA: 0x001C63DA File Offset: 0x001C45DA
+	// Token: 0x06004864 RID: 18532 RVA: 0x001C6CFA File Offset: 0x001C4EFA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void rallyPointActivated()
 	{
@@ -402,19 +402,19 @@ public class ObjectiveRallyPoint : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x060048AE RID: 18606 RVA: 0x001C63EF File Offset: 0x001C45EF
+	// Token: 0x06004865 RID: 18533 RVA: 0x001C6D0F File Offset: 0x001C4F0F
 	public void RallyPointActivated()
 	{
 		this.rallyPointActivated();
 	}
 
-	// Token: 0x060048AF RID: 18607 RVA: 0x001C63F7 File Offset: 0x001C45F7
+	// Token: 0x06004866 RID: 18534 RVA: 0x001C6D17 File Offset: 0x001C4F17
 	public bool IsActivated()
 	{
 		return this.currentValue == 1;
 	}
 
-	// Token: 0x060048B0 RID: 18608 RVA: 0x001C6404 File Offset: 0x001C4604
+	// Token: 0x06004867 RID: 18535 RVA: 0x001C6D24 File Offset: 0x001C4F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleParty()
 	{
@@ -431,7 +431,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackagePartyQuestChange>().Setup(ownerPlayer.entityId, base.OwnerQuest.GetObjectiveIndex(this), true, base.OwnerQuest.QuestCode), false);
 	}
 
-	// Token: 0x060048B1 RID: 18609 RVA: 0x001C64B0 File Offset: 0x001C46B0
+	// Token: 0x06004868 RID: 18536 RVA: 0x001C6DD0 File Offset: 0x001C4FD0
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 1;
@@ -442,8 +442,8 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x170007B2 RID: 1970
-	// (get) Token: 0x060048B2 RID: 18610 RVA: 0x001C64E5 File Offset: 0x001C46E5
+	// Token: 0x170007D2 RID: 2002
+	// (get) Token: 0x06004869 RID: 18537 RVA: 0x001C6E05 File Offset: 0x001C5005
 	public Vector3i RallyPos
 	{
 		get
@@ -452,7 +452,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048B3 RID: 18611 RVA: 0x001C64F0 File Offset: 0x001C46F0
+	// Token: 0x0600486A RID: 18538 RVA: 0x001C6E10 File Offset: 0x001C5010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 HandleRallyPoint()
 	{
@@ -565,7 +565,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		return this.rallyPos.ToVector3();
 	}
 
-	// Token: 0x060048B4 RID: 18612 RVA: 0x001C6938 File Offset: 0x001C4B38
+	// Token: 0x0600486B RID: 18539 RVA: 0x001C7258 File Offset: 0x001C5458
 	public Vector3i GetRallyPosition(World _world, Vector3i _prefabPosition, Vector3i _prefabSize)
 	{
 		int num = World.toChunkXZ(_prefabPosition.x - 1);
@@ -600,7 +600,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		return Vector3i.zero;
 	}
 
-	// Token: 0x060048B5 RID: 18613 RVA: 0x001C6A74 File Offset: 0x001C4C74
+	// Token: 0x0600486C RID: 18540 RVA: 0x001C7394 File Offset: 0x001C5594
 	public override BaseObjective Clone()
 	{
 		ObjectiveRallyPoint objectiveRallyPoint = new ObjectiveRallyPoint();
@@ -608,7 +608,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		return objectiveRallyPoint;
 	}
 
-	// Token: 0x060048B6 RID: 18614 RVA: 0x001C6A90 File Offset: 0x001C4C90
+	// Token: 0x0600486D RID: 18541 RVA: 0x001C73B0 File Offset: 0x001C55B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -621,7 +621,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		objectiveRallyPoint.rallyMarkerType = this.rallyMarkerType;
 	}
 
-	// Token: 0x060048B7 RID: 18615 RVA: 0x001C6AE5 File Offset: 0x001C4CE5
+	// Token: 0x0600486E RID: 18542 RVA: 0x001C7405 File Offset: 0x001C5605
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_NeedSetup()
 	{
@@ -632,7 +632,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048B8 RID: 18616 RVA: 0x001C6B00 File Offset: 0x001C4D00
+	// Token: 0x0600486F RID: 18543 RVA: 0x001C7420 File Offset: 0x001C5620
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_Update()
 	{
@@ -699,7 +699,7 @@ public class ObjectiveRallyPoint : BaseObjective
 		}
 	}
 
-	// Token: 0x060048B9 RID: 18617 RVA: 0x001C6D58 File Offset: 0x001C4F58
+	// Token: 0x06004870 RID: 18544 RVA: 0x001C7678 File Offset: 0x001C5878
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -713,119 +713,127 @@ public class ObjectiveRallyPoint : BaseObjective
 		properties.ParseString(ObjectiveRallyPoint.PropRallyMarkerType, ref this.rallyMarkerType);
 	}
 
-	// Token: 0x060048BA RID: 18618 RVA: 0x001C6DDE File Offset: 0x001C4FDE
+	// Token: 0x06004871 RID: 18545 RVA: 0x001C7700 File Offset: 0x001C5900
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("position", this.position.ToString());
+		parameters.Add("block_id", string.IsNullOrEmpty(this.ID) ? "Any Block" : this.ID);
+	}
+
+	// Token: 0x06004872 RID: 18546 RVA: 0x001C7750 File Offset: 0x001C5950
 	public void RallyPointRefresh()
 	{
 		GameManager.Instance.StartCoroutine(this.setRallyPointVisibility(true));
 	}
 
-	// Token: 0x040039D1 RID: 14801
+	// Token: 0x040039CE RID: 14798
 	public ObjectiveRallyPoint.RallyStartTypes RallyStartType;
 
-	// Token: 0x040039D2 RID: 14802
+	// Token: 0x040039CF RID: 14799
 	public static string PropRallyStartMode = "start_mode";
 
-	// Token: 0x040039D3 RID: 14803
+	// Token: 0x040039D0 RID: 14800
 	public static string PropAllowedStartTime = "allowed_start_hour";
 
-	// Token: 0x040039D4 RID: 14804
+	// Token: 0x040039D1 RID: 14801
 	public static string PropAllowedEndTime = "allowed_end_hour";
 
-	// Token: 0x040039D5 RID: 14805
+	// Token: 0x040039D2 RID: 14802
 	public static string PropActivateEvent = "activate_event";
 
-	// Token: 0x040039D6 RID: 14806
+	// Token: 0x040039D3 RID: 14803
 	public static string PropRallyMarkerType = "rally_marker_type";
 
-	// Token: 0x040039D7 RID: 14807
+	// Token: 0x040039D4 RID: 14804
 	public static ObjectiveRallyPoint OutstandingRallyPoint = null;
 
-	// Token: 0x040039D8 RID: 14808
+	// Token: 0x040039D5 RID: 14805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x040039D9 RID: 14809
+	// Token: 0x040039D6 RID: 14806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 
-	// Token: 0x040039DA RID: 14810
+	// Token: 0x040039D7 RID: 14807
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float currentDistance;
 
-	// Token: 0x040039DB RID: 14811
+	// Token: 0x040039D8 RID: 14808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Rect outerRect;
 
-	// Token: 0x040039DC RID: 14812
+	// Token: 0x040039D9 RID: 14809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startTime = -1;
 
-	// Token: 0x040039DD RID: 14813
+	// Token: 0x040039DA RID: 14810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int endTime = -1;
 
-	// Token: 0x040039DE RID: 14814
+	// Token: 0x040039DB RID: 14811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ObjectiveRallyPoint.PositionSetTypes positionSet;
 
-	// Token: 0x040039DF RID: 14815
+	// Token: 0x040039DC RID: 14812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string textActivateRallyPoint;
 
-	// Token: 0x040039E0 RID: 14816
+	// Token: 0x040039DD RID: 14813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string textHeadToRallyPoint;
 
-	// Token: 0x040039E1 RID: 14817
+	// Token: 0x040039DE RID: 14814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string textWaitForActivate;
 
-	// Token: 0x040039E2 RID: 14818
+	// Token: 0x040039DF RID: 14815
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string rallyMarkerType = "questRallyMarker";
 
-	// Token: 0x040039E3 RID: 14819
+	// Token: 0x040039E0 RID: 14816
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string activateEvent = "";
 
-	// Token: 0x040039E4 RID: 14820
+	// Token: 0x040039E1 RID: 14817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isRallyVisible;
 
-	// Token: 0x040039E5 RID: 14821
+	// Token: 0x040039E2 RID: 14818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i rallyPos = Vector3i.zero;
 
-	// Token: 0x040039E6 RID: 14822
+	// Token: 0x040039E3 RID: 14819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastDistance = -1f;
 
-	// Token: 0x040039E7 RID: 14823
+	// Token: 0x040039E4 RID: 14820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float distanceNeeded = 50f;
 
-	// Token: 0x040039E8 RID: 14824
+	// Token: 0x040039E5 RID: 14821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool setRallyPointVisible;
 
-	// Token: 0x020009A1 RID: 2465
+	// Token: 0x020009A7 RID: 2471
 	public enum RallyStartTypes
 	{
-		// Token: 0x040039EA RID: 14826
+		// Token: 0x040039E7 RID: 14823
 		Find,
-		// Token: 0x040039EB RID: 14827
+		// Token: 0x040039E8 RID: 14824
 		Create
 	}
 
-	// Token: 0x020009A2 RID: 2466
+	// Token: 0x020009A8 RID: 2472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum PositionSetTypes
 	{
-		// Token: 0x040039ED RID: 14829
+		// Token: 0x040039EA RID: 14826
 		None,
-		// Token: 0x040039EE RID: 14830
+		// Token: 0x040039EB RID: 14827
 		POIPosition,
-		// Token: 0x040039EF RID: 14831
+		// Token: 0x040039EC RID: 14828
 		RallyMarkerPosition
 	}
 }

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using Platform;
 
-// Token: 0x02001187 RID: 4487
+// Token: 0x0200119F RID: 4511
 public class XUiWindowGroup : GUIWindow
 {
-	// Token: 0x1700113E RID: 4414
-	// (get) Token: 0x06008FBC RID: 36796 RVA: 0x003602EE File Offset: 0x0035E4EE
-	// (set) Token: 0x06008FBD RID: 36797 RVA: 0x003602F6 File Offset: 0x0035E4F6
+	// Token: 0x17001182 RID: 4482
+	// (get) Token: 0x06009048 RID: 36936 RVA: 0x00364ABA File Offset: 0x00362CBA
+	// (set) Token: 0x06009049 RID: 36937 RVA: 0x00364AC2 File Offset: 0x00362CC2
 	public bool Initialized
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06008FBE RID: 36798 RVA: 0x00360300 File Offset: 0x0035E500
+	// Token: 0x0600904A RID: 36938 RVA: 0x00364ACC File Offset: 0x00362CCC
 	public XUiWindowGroup(XUi _xui, string _id, XUiWindowGroup.EHasActionSetFor _hasActionSetFor, string _defaultSelectedName, int _stackPanelYOffset, int _stackPanelPadding, bool _openBackpackOnOpen, bool _closeCompassOnOpen)
 		: base(_id)
 	{
@@ -36,7 +36,7 @@ public class XUiWindowGroup : GUIWindow
 		this.closeCompassOnOpen = _closeCompassOnOpen;
 	}
 
-	// Token: 0x06008FBF RID: 36799 RVA: 0x003603C4 File Offset: 0x0035E5C4
+	// Token: 0x0600904B RID: 36939 RVA: 0x00364B90 File Offset: 0x00362D90
 	public void Init()
 	{
 		if (this.Initialized)
@@ -58,7 +58,7 @@ public class XUiWindowGroup : GUIWindow
 		this.Initialized = true;
 	}
 
-	// Token: 0x06008FC0 RID: 36800 RVA: 0x0036047C File Offset: 0x0035E67C
+	// Token: 0x0600904C RID: 36940 RVA: 0x00364C48 File Offset: 0x00362E48
 	public override void Cleanup()
 	{
 		if (this.cleanedUp)
@@ -74,7 +74,7 @@ public class XUiWindowGroup : GUIWindow
 		this.Controller.Cleanup();
 	}
 
-	// Token: 0x06008FC1 RID: 36801 RVA: 0x003604DC File Offset: 0x0035E6DC
+	// Token: 0x0600904D RID: 36941 RVA: 0x00364CA8 File Offset: 0x00362EA8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -111,7 +111,7 @@ public class XUiWindowGroup : GUIWindow
 		this.hasActionSetThisOpen = flag;
 	}
 
-	// Token: 0x06008FC2 RID: 36802 RVA: 0x003605B0 File Offset: 0x0035E7B0
+	// Token: 0x0600904E RID: 36942 RVA: 0x00364D7C File Offset: 0x00362F7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyDefaultSelectedView()
 	{
@@ -133,7 +133,7 @@ public class XUiWindowGroup : GUIWindow
 		Log.Warning("Could not find selectable element " + this.defaultSelectedView + " in WindowGroup " + this.Id);
 	}
 
-	// Token: 0x06008FC3 RID: 36803 RVA: 0x00360630 File Offset: 0x0035E830
+	// Token: 0x0600904F RID: 36943 RVA: 0x00364DFC File Offset: 0x00362FFC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -159,13 +159,13 @@ public class XUiWindowGroup : GUIWindow
 		popupMenuWindow.Close();
 	}
 
-	// Token: 0x06008FC4 RID: 36804 RVA: 0x003606C0 File Offset: 0x0035E8C0
+	// Token: 0x06009050 RID: 36944 RVA: 0x00364E8C File Offset: 0x0036308C
 	public override bool HasActionSet()
 	{
 		return this.hasActionSetThisOpen;
 	}
 
-	// Token: 0x06008FC5 RID: 36805 RVA: 0x003606C8 File Offset: 0x0035E8C8
+	// Token: 0x06009051 RID: 36945 RVA: 0x00364E94 File Offset: 0x00363094
 	public bool HasStackPanelWindows()
 	{
 		if (this.Controller == null)
@@ -185,65 +185,65 @@ public class XUiWindowGroup : GUIWindow
 		return false;
 	}
 
-	// Token: 0x04006934 RID: 26932
+	// Token: 0x0400699A RID: 27034
 	public readonly XUi xui;
 
-	// Token: 0x04006935 RID: 26933
+	// Token: 0x0400699B RID: 27035
 	public XUiController Controller;
 
-	// Token: 0x04006937 RID: 26935
+	// Token: 0x0400699D RID: 27037
 	public readonly bool LeftPanelVAlignTop = true;
 
-	// Token: 0x04006938 RID: 26936
+	// Token: 0x0400699E RID: 27038
 	public readonly bool RightPanelVAlignTop = true;
 
-	// Token: 0x04006939 RID: 26937
+	// Token: 0x0400699F RID: 27039
 	public readonly int StackPanelYOffset = 457;
 
-	// Token: 0x0400693A RID: 26938
+	// Token: 0x040069A0 RID: 27040
 	public readonly int StackPanelPadding = 9;
 
-	// Token: 0x0400693B RID: 26939
+	// Token: 0x040069A1 RID: 27041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool openBackpackOnOpen;
 
-	// Token: 0x0400693C RID: 26940
+	// Token: 0x040069A2 RID: 27042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool closeCompassOnOpen;
 
-	// Token: 0x0400693D RID: 26941
+	// Token: 0x040069A3 RID: 27043
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string defaultSelectedView;
 
-	// Token: 0x0400693E RID: 26942
+	// Token: 0x040069A4 RID: 27044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiWindowGroup.EHasActionSetFor hasActionSetFor;
 
-	// Token: 0x0400693F RID: 26943
+	// Token: 0x040069A5 RID: 27045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasActionSetThisOpen = true;
 
-	// Token: 0x04006940 RID: 26944
+	// Token: 0x040069A6 RID: 27046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiV_Window> windows = new List<XUiV_Window>();
 
-	// Token: 0x04006941 RID: 26945
+	// Token: 0x040069A7 RID: 27047
 	public readonly IReadOnlyList<XUiV_Window> Windows;
 
-	// Token: 0x04006942 RID: 26946
+	// Token: 0x040069A8 RID: 27048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cleanedUp;
 
-	// Token: 0x02001188 RID: 4488
+	// Token: 0x020011A0 RID: 4512
 	public enum EHasActionSetFor
 	{
-		// Token: 0x04006944 RID: 26948
+		// Token: 0x040069AA RID: 27050
 		Both,
-		// Token: 0x04006945 RID: 26949
+		// Token: 0x040069AB RID: 27051
 		OnlyController,
-		// Token: 0x04006946 RID: 26950
+		// Token: 0x040069AC RID: 27052
 		OnlyKeyboard,
-		// Token: 0x04006947 RID: 26951
+		// Token: 0x040069AD RID: 27053
 		None
 	}
 }

@@ -7,11 +7,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001994 RID: 6548
+	// Token: 0x020019C0 RID: 6592
 	[Preserve]
 	public class ActionPlaySound : ActionBaseTargetAction
 	{
-		// Token: 0x0600C8B9 RID: 51385 RVA: 0x0049B6C4 File Offset: 0x004998C4
+		// Token: 0x0600CA11 RID: 51729 RVA: 0x0049FB88 File Offset: 0x0049DD88
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			if (target != null)
@@ -78,7 +78,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8BA RID: 51386 RVA: 0x0049B990 File Offset: 0x00499B90
+		// Token: 0x0600CA12 RID: 51730 RVA: 0x0049FE54 File Offset: 0x0049E054
 		public override void OnClientPerform(Entity target)
 		{
 			if (this.duration == 0f)
@@ -91,7 +91,7 @@ namespace GameEvent.SequenceActions
 			GameManager.Instance.StartCoroutine(this.StopInHeadSound(text));
 		}
 
-		// Token: 0x0600C8BB RID: 51387 RVA: 0x0049BA0F File Offset: 0x00499C0F
+		// Token: 0x0600CA13 RID: 51731 RVA: 0x0049FED3 File Offset: 0x0049E0D3
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator StopSound(Vector3 position, string soundName)
 		{
@@ -100,7 +100,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C8BC RID: 51388 RVA: 0x0049BA2C File Offset: 0x00499C2C
+		// Token: 0x0600CA14 RID: 51732 RVA: 0x0049FEF0 File Offset: 0x0049E0F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator StopInHeadSound(string soundName)
 		{
@@ -109,7 +109,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C8BD RID: 51389 RVA: 0x0049BA44 File Offset: 0x00499C44
+		// Token: 0x0600CA15 RID: 51733 RVA: 0x0049FF08 File Offset: 0x0049E108
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -133,7 +133,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseFloat(ActionPlaySound.PropDelay, ref this.delay);
 		}
 
-		// Token: 0x0600C8BE RID: 51390 RVA: 0x0049BB40 File Offset: 0x00499D40
+		// Token: 0x0600CA16 RID: 51734 RVA: 0x004A0004 File Offset: 0x0049E204
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -149,51 +149,51 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400980C RID: 38924
+		// Token: 0x040098D2 RID: 39122
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool insideHead;
 
-		// Token: 0x0400980D RID: 38925
+		// Token: 0x040098D3 RID: 39123
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool behindPlayer;
 
-		// Token: 0x0400980E RID: 38926
+		// Token: 0x040098D4 RID: 39124
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float duration;
 
-		// Token: 0x0400980F RID: 38927
+		// Token: 0x040098D5 RID: 39125
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float delay;
 
-		// Token: 0x04009810 RID: 38928
+		// Token: 0x040098D6 RID: 39126
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool canDisable = true;
 
-		// Token: 0x04009811 RID: 38929
+		// Token: 0x040098D7 RID: 39127
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] soundNames;
 
-		// Token: 0x04009812 RID: 38930
+		// Token: 0x040098D8 RID: 39128
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSound = "sound";
 
-		// Token: 0x04009813 RID: 38931
+		// Token: 0x040098D9 RID: 39129
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropInsideHead = "inside_head";
 
-		// Token: 0x04009814 RID: 38932
+		// Token: 0x040098DA RID: 39130
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBehindPlayer = "behind_player";
 
-		// Token: 0x04009815 RID: 38933
+		// Token: 0x040098DB RID: 39131
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropLoopDuration = "loop_duration";
 
-		// Token: 0x04009816 RID: 38934
+		// Token: 0x040098DC RID: 39132
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDelay = "delay";
 
-		// Token: 0x04009817 RID: 38935
+		// Token: 0x040098DD RID: 39133
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropCanDisable = "can_disable";
 	}

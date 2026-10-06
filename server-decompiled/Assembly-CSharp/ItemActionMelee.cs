@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B8 RID: 1464
+// Token: 0x020005B9 RID: 1465
 [Preserve]
 public class ItemActionMelee : ItemActionAttack
 {
-	// Token: 0x06002FC0 RID: 12224 RVA: 0x00131725 File Offset: 0x0012F925
+	// Token: 0x06003003 RID: 12291 RVA: 0x001321BD File Offset: 0x001303BD
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionMelee.InventoryDataMelee(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FC1 RID: 12225 RVA: 0x0013172E File Offset: 0x0012F92E
+	// Token: 0x06003004 RID: 12292 RVA: 0x001321C6 File Offset: 0x001303C6
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		if (this.isShowOverlay((ItemActionAttackData)_actionData))
@@ -23,7 +23,7 @@ public class ItemActionMelee : ItemActionAttack
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x06002FC2 RID: 12226 RVA: 0x00131744 File Offset: 0x0012F944
+	// Token: 0x06003005 RID: 12293 RVA: 0x001321DC File Offset: 0x001303DC
 	public override WorldRayHitInfo GetExecuteActionTarget(ItemActionData _actionData)
 	{
 		ItemActionMelee.InventoryDataMelee inventoryDataMelee = (ItemActionMelee.InventoryDataMelee)_actionData;
@@ -69,7 +69,7 @@ public class ItemActionMelee : ItemActionAttack
 		return _actionData.GetUpdatedHitInfo();
 	}
 
-	// Token: 0x06002FC3 RID: 12227 RVA: 0x00131940 File Offset: 0x0012FB40
+	// Token: 0x06003006 RID: 12294 RVA: 0x001323D8 File Offset: 0x001305D8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionMelee.InventoryDataMelee inventoryDataMelee = (ItemActionMelee.InventoryDataMelee)_actionData;
@@ -110,7 +110,7 @@ public class ItemActionMelee : ItemActionAttack
 		this.rayCastDelay = AnimationDelayData.AnimationDelay[inventoryDataMelee.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06002FC4 RID: 12228 RVA: 0x00131AB4 File Offset: 0x0012FCB4
+	// Token: 0x06003007 RID: 12295 RVA: 0x0013254C File Offset: 0x0013074C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isShowOverlay(ItemActionData actionData)
 	{
@@ -126,7 +126,7 @@ public class ItemActionMelee : ItemActionAttack
 		return executeActionTarget.bHitValid && (executeActionTarget.tag == null || !GameUtils.IsBlockOrTerrain(executeActionTarget.tag) || executeActionTarget.hit.distanceSq <= this.BlockRange * this.BlockRange) && (executeActionTarget.tag == null || !executeActionTarget.tag.StartsWith("E_") || executeActionTarget.hit.distanceSq <= this.Range * this.Range);
 	}
 
-	// Token: 0x06002FC5 RID: 12229 RVA: 0x00131B6C File Offset: 0x0012FD6C
+	// Token: 0x06003008 RID: 12296 RVA: 0x00132604 File Offset: 0x00130804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkHarvesting(ItemActionData _actionData, out ItemActionAttack.AttackHitInfo myAttackHitInfo)
 	{
@@ -167,14 +167,14 @@ public class ItemActionMelee : ItemActionAttack
 		return false;
 	}
 
-	// Token: 0x06002FC6 RID: 12230 RVA: 0x00131D18 File Offset: 0x0012FF18
+	// Token: 0x06003009 RID: 12297 RVA: 0x001327B0 File Offset: 0x001309B0
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionMelee.InventoryDataMelee inventoryDataMelee = (ItemActionMelee.InventoryDataMelee)_actionData;
 		return Time.time - inventoryDataMelee.lastUseTime < this.Delay + 0.1f;
 	}
 
-	// Token: 0x06002FC7 RID: 12231 RVA: 0x00131D4C File Offset: 0x0012FF4C
+	// Token: 0x0600300A RID: 12298 RVA: 0x001327E4 File Offset: 0x001309E4
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionMelee.InventoryDataMelee inventoryDataMelee = (ItemActionMelee.InventoryDataMelee)_actionData;
@@ -234,7 +234,7 @@ public class ItemActionMelee : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FC8 RID: 12232 RVA: 0x00131F8C File Offset: 0x0013018C
+	// Token: 0x0600300B RID: 12299 RVA: 0x00132A24 File Offset: 0x00130C24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void hitTheTarget(ItemActionMelee.InventoryDataMelee _actionData, WorldRayHitInfo hitInfo, float damageScale)
 	{
@@ -273,30 +273,30 @@ public class ItemActionMelee : ItemActionAttack
 		GameUtils.HarvestOnAttack(_actionData, this.ToolBonuses);
 	}
 
-	// Token: 0x040024F9 RID: 9465
+	// Token: 0x040024F2 RID: 9458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rayCastDelay;
 
-	// Token: 0x020005B9 RID: 1465
+	// Token: 0x020005BA RID: 1466
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class InventoryDataMelee : ItemActionAttackData
 	{
-		// Token: 0x06002FCA RID: 12234 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x0600300D RID: 12301 RVA: 0x0012B224 File Offset: 0x00129424
 		public InventoryDataMelee(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040024FA RID: 9466
+		// Token: 0x040024F3 RID: 9459
 		public bool bAttackStarted;
 
-		// Token: 0x040024FB RID: 9467
+		// Token: 0x040024F4 RID: 9460
 		public Ray ray;
 
-		// Token: 0x040024FC RID: 9468
+		// Token: 0x040024F5 RID: 9461
 		public bool bHarvesting;
 
-		// Token: 0x040024FD RID: 9469
+		// Token: 0x040024F6 RID: 9462
 		public bool bFirstHitInARow;
 	}
 }

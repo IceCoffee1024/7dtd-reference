@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000726 RID: 1830
+// Token: 0x02000728 RID: 1832
 public interface IModApi
 {
-	// Token: 0x0600374E RID: 14158
+	// Token: 0x06003791 RID: 14225
 	void InitMod(Mod _modInstance);
 }

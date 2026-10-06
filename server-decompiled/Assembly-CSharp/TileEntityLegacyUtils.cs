@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C6D RID: 3181
+// Token: 0x02000C7C RID: 3196
 public static class TileEntityLegacyUtils
 {
-	// Token: 0x0600611D RID: 24861 RVA: 0x00265958 File Offset: 0x00263B58
-	public static bool TryReadLegacyType(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode, TileEntityType _type, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock, out TileEntity _tileEntity)
+	// Token: 0x0600611A RID: 24858 RVA: 0x00268DD8 File Offset: 0x00266FD8
+	public static bool TryReadLegacyType(PooledBinaryReader _br, StreamModeRead _eStreamMode, TileEntityType _type, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock, out TileEntity _tileEntity)
 	{
-		if (_eStreamMode != TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode != StreamModeRead.Persistency)
 		{
 			_tileEntity = null;
 			return false;
@@ -56,7 +56,7 @@ public static class TileEntityLegacyUtils
 		return false;
 	}
 
-	// Token: 0x0600611E RID: 24862 RVA: 0x00265A18 File Offset: 0x00263C18
+	// Token: 0x0600611B RID: 24859 RVA: 0x00268E98 File Offset: 0x00267098
 	public static void MigrateLegacyMetadata(TileEntityComposite _teComposite, BlockValue _blockValue)
 	{
 		byte meta = _blockValue.meta;
@@ -75,23 +75,24 @@ public static class TileEntityLegacyUtils
 		}
 	}
 
-	// Token: 0x0600611F RID: 24863 RVA: 0x00265A68 File Offset: 0x00263C68
+	// Token: 0x0600611C RID: 24860 RVA: 0x00268EE8 File Offset: 0x002670E8
 	public static Bag ReadLegacyLootIntoBag(PooledBinaryReader _br)
 	{
 		TileEntityLegacyUtils.LegacyLootContainerData legacyLootContainerData = TileEntityLegacyUtils.ReadLegacyLootContainerData(_br);
-		Bag bag = new Bag(legacyLootContainerData.items.Length);
-		bag.SetSlots(legacyLootContainerData.items);
-		bag.LockedSlots = legacyLootContainerData.slotLocks;
-		if (bag.LockedSlots != null)
+		PackedBoolArray packedBoolArray = legacyLootContainerData.slotLocks ?? new PackedBoolArray(legacyLootContainerData.items.Length);
+		packedBoolArray.Length = legacyLootContainerData.items.Length;
+		Bag bag = new Bag(new Vector2i(packedBoolArray.Length, 1), XUiC_ItemStack.StackLocationTypes.LootContainer, null);
+		bag.ItemGrid.SetItems(legacyLootContainerData.items, false);
+		bag.ItemGrid.SetSlotLocks(packedBoolArray);
+		bag.ItemGrid.SetPreferences(legacyLootContainerData.preferences);
+		if (legacyLootContainerData.bTouched)
 		{
-			bag.LockedSlots.Length = bag.SlotCount;
+			bag.ItemGrid.Touch();
 		}
-		bag.Touched = legacyLootContainerData.bTouched;
-		bag.preferences = (legacyLootContainerData.hasPreferences ? legacyLootContainerData.preferences : null);
 		return bag;
 	}
 
-	// Token: 0x06006120 RID: 24864 RVA: 0x00265AE0 File Offset: 0x00263CE0
+	// Token: 0x0600611D RID: 24861 RVA: 0x00268F7C File Offset: 0x0026717C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityLegacyUtils.LegacyLootContainerData ReadLegacyLootContainerData(PooledBinaryReader _br)
 	{
@@ -167,7 +168,7 @@ public static class TileEntityLegacyUtils
 		throw new Exception("Outdated loot data");
 	}
 
-	// Token: 0x06006121 RID: 24865 RVA: 0x00265CDC File Offset: 0x00263EDC
+	// Token: 0x0600611E RID: 24862 RVA: 0x00269178 File Offset: 0x00267378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacyLootIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock, out BlockValue _blockValue)
 	{
@@ -184,21 +185,17 @@ public static class TileEntityLegacyUtils
 		if (feature != null)
 		{
 			feature.lootListName = legacyLootContainerData.lootListName;
-			feature.SetContainerSize(legacyLootContainerData.containerSize, true);
-			feature.bTouched = legacyLootContainerData.bTouched;
-			feature.worldTimeTouched = legacyLootContainerData.worldTimeTouched;
-			feature.bPlayerStorage = legacyLootContainerData.bPlayerStorage;
-			feature.items = legacyLootContainerData.items;
-			if (legacyLootContainerData.hasPreferences && legacyLootContainerData.preferences != null)
-			{
-				feature.preferences = legacyLootContainerData.preferences;
-			}
-			feature.SlotLocks = legacyLootContainerData.slotLocks;
+			feature.ItemGrid.Resize(legacyLootContainerData.containerSize);
+			feature.ItemGrid.SetItems(legacyLootContainerData.items, false);
+			feature.ItemGrid.SetSlotLocks(legacyLootContainerData.slotLocks);
+			feature.ItemGrid.SetPreferences(legacyLootContainerData.preferences);
+			feature.ItemGrid.WorldTimeTouched = legacyLootContainerData.worldTimeTouched;
+			feature.ItemGrid.PlayerOwned = legacyLootContainerData.bPlayerStorage;
 		}
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006122 RID: 24866 RVA: 0x00265DD0 File Offset: 0x00263FD0
+	// Token: 0x0600611F RID: 24863 RVA: 0x00269270 File Offset: 0x00267470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacySecureLootIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock)
 	{
@@ -240,7 +237,7 @@ public static class TileEntityLegacyUtils
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006123 RID: 24867 RVA: 0x00265EBC File Offset: 0x002640BC
+	// Token: 0x06006120 RID: 24864 RVA: 0x0026935C File Offset: 0x0026755C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacySecureLootSignedIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock)
 	{
@@ -276,7 +273,7 @@ public static class TileEntityLegacyUtils
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006124 RID: 24868 RVA: 0x00265F64 File Offset: 0x00264164
+	// Token: 0x06006121 RID: 24865 RVA: 0x00269404 File Offset: 0x00267604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacyLandClaimIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock)
 	{
@@ -313,7 +310,7 @@ public static class TileEntityLegacyUtils
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006125 RID: 24869 RVA: 0x00266038 File Offset: 0x00264238
+	// Token: 0x06006122 RID: 24866 RVA: 0x002694D8 File Offset: 0x002676D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacySignIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock)
 	{
@@ -383,7 +380,7 @@ public static class TileEntityLegacyUtils
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006126 RID: 24870 RVA: 0x002661DC File Offset: 0x002643DC
+	// Token: 0x06006123 RID: 24867 RVA: 0x0026967C File Offset: 0x0026787C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TileEntityComposite ReadLegacySecureDoorIntoComposite(PooledBinaryReader _br, Chunk _chunk, Func<int, int, int, BlockValue> _getBlock)
 	{
@@ -434,7 +431,7 @@ public static class TileEntityLegacyUtils
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06006127 RID: 24871 RVA: 0x002662E0 File Offset: 0x002644E0
+	// Token: 0x06006124 RID: 24868 RVA: 0x00269780 File Offset: 0x00267980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReadLegacyGoreAndDiscard(PooledBinaryReader _br)
 	{
@@ -488,7 +485,7 @@ public static class TileEntityLegacyUtils
 		throw new Exception("Outdated loot data");
 	}
 
-	// Token: 0x06006128 RID: 24872 RVA: 0x002663F1 File Offset: 0x002645F1
+	// Token: 0x06006125 RID: 24869 RVA: 0x00269891 File Offset: 0x00267A91
 	public static TraderData ReadLegacyTileEntityTraderData(PooledBinaryReader _br)
 	{
 		byte b = (byte)_br.ReadInt32();
@@ -505,10 +502,10 @@ public static class TileEntityLegacyUtils
 		return traderData;
 	}
 
-	// Token: 0x02000C6E RID: 3182
+	// Token: 0x02000C7D RID: 3197
 	public struct LegacyState
 	{
-		// Token: 0x06006129 RID: 24873 RVA: 0x0026642C File Offset: 0x0026462C
+		// Token: 0x06006126 RID: 24870 RVA: 0x002698CC File Offset: 0x00267ACC
 		public LegacyState(Vector3i _chunkPos, int _entityId, ulong _heapMapUpdateTime, ulong _heapMapLastTime)
 		{
 			this.chunkPos = _chunkPos;
@@ -517,54 +514,54 @@ public static class TileEntityLegacyUtils
 			this.heapMapLastTime = _heapMapLastTime;
 		}
 
-		// Token: 0x04004C03 RID: 19459
+		// Token: 0x04004C3A RID: 19514
 		public Vector3i chunkPos;
 
-		// Token: 0x04004C04 RID: 19460
+		// Token: 0x04004C3B RID: 19515
 		public int entityId;
 
-		// Token: 0x04004C05 RID: 19461
+		// Token: 0x04004C3C RID: 19516
 		public ulong heapMapUpdateTime;
 
-		// Token: 0x04004C06 RID: 19462
+		// Token: 0x04004C3D RID: 19517
 		public ulong heapMapLastTime;
 	}
 
-	// Token: 0x02000C6F RID: 3183
+	// Token: 0x02000C7E RID: 3198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct LegacyLootContainerData
 	{
-		// Token: 0x04004C07 RID: 19463
+		// Token: 0x04004C3E RID: 19518
 		public TileEntityLegacyUtils.LegacyState state;
 
-		// Token: 0x04004C08 RID: 19464
+		// Token: 0x04004C3F RID: 19519
 		public string lootListName;
 
-		// Token: 0x04004C09 RID: 19465
+		// Token: 0x04004C40 RID: 19520
 		public Vector2i containerSize;
 
-		// Token: 0x04004C0A RID: 19466
+		// Token: 0x04004C41 RID: 19521
 		public bool bTouched;
 
-		// Token: 0x04004C0B RID: 19467
+		// Token: 0x04004C42 RID: 19522
 		public ulong worldTimeTouched;
 
-		// Token: 0x04004C0C RID: 19468
+		// Token: 0x04004C43 RID: 19523
 		public bool bPlayerBackpack;
 
-		// Token: 0x04004C0D RID: 19469
+		// Token: 0x04004C44 RID: 19524
 		public ItemStack[] items;
 
-		// Token: 0x04004C0E RID: 19470
+		// Token: 0x04004C45 RID: 19525
 		public bool bPlayerStorage;
 
-		// Token: 0x04004C0F RID: 19471
+		// Token: 0x04004C46 RID: 19526
 		public bool hasPreferences;
 
-		// Token: 0x04004C10 RID: 19472
+		// Token: 0x04004C47 RID: 19527
 		public PreferenceTracker preferences;
 
-		// Token: 0x04004C11 RID: 19473
+		// Token: 0x04004C48 RID: 19528
 		public PackedBoolArray slotLocks;
 	}
 }

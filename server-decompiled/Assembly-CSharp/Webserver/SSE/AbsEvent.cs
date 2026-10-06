@@ -6,10 +6,10 @@ using Webserver.UrlHandlers;
 
 namespace Webserver.SSE
 {
-	// Token: 0x02001AFA RID: 6906
+	// Token: 0x02001B26 RID: 6950
 	public abstract class AbsEvent
 	{
-		// Token: 0x0600CFAC RID: 53164 RVA: 0x004B9E74 File Offset: 0x004B8074
+		// Token: 0x0600D104 RID: 53508 RVA: 0x004BE340 File Offset: 0x004BC540
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsEvent(SseHandler _parent, bool _reuseEncodingBuffer = true, string _name = null)
 		{
@@ -21,7 +21,7 @@ namespace Webserver.SSE
 			}
 		}
 
-		// Token: 0x0600CFAD RID: 53165 RVA: 0x004B9ED8 File Offset: 0x004B80D8
+		// Token: 0x0600D105 RID: 53509 RVA: 0x004BE3A4 File Offset: 0x004BC5A4
 		public void AddListener(SseClient _client)
 		{
 			this.totalOpened++;
@@ -30,7 +30,7 @@ namespace Webserver.SSE
 			this.logConnectionState("Connection opened", _client);
 		}
 
-		// Token: 0x0600CFAE RID: 53166 RVA: 0x004B9F0E File Offset: 0x004B810E
+		// Token: 0x0600D106 RID: 53510 RVA: 0x004BE3DA File Offset: 0x004BC5DA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void SendData(string _eventName, string _data)
 		{
@@ -38,7 +38,7 @@ namespace Webserver.SSE
 			this.parent.SignalSendQueue();
 		}
 
-		// Token: 0x0600CFAF RID: 53167 RVA: 0x004B9F30 File Offset: 0x004B8130
+		// Token: 0x0600D107 RID: 53511 RVA: 0x004BE3FC File Offset: 0x004BC5FC
 		public void ProcessSendQueue()
 		{
 			while (this.sendQueue.HasData())
@@ -82,7 +82,7 @@ namespace Webserver.SSE
 			}
 		}
 
-		// Token: 0x0600CFB0 RID: 53168 RVA: 0x004BA044 File Offset: 0x004B8244
+		// Token: 0x0600D108 RID: 53512 RVA: 0x004BE510 File Offset: 0x004BC710
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void sendBufToListeners(byte[] _bytes, int _bytesToSend)
 		{
@@ -92,20 +92,20 @@ namespace Webserver.SSE
 			}
 		}
 
-		// Token: 0x0600CFB1 RID: 53169 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600D109 RID: 53513 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual int DefaultPermissionLevel()
 		{
 			return 0;
 		}
 
-		// Token: 0x0600CFB2 RID: 53170 RVA: 0x004BA080 File Offset: 0x004B8280
+		// Token: 0x0600D10A RID: 53514 RVA: 0x004BE54C File Offset: 0x004BC74C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void logConnectionState(string _message, SseClient _client)
 		{
 			Log.Out(string.Format("[Web] [SSE] '{0}': {1} from {2} (Left open: {3}, total opened: {4}, closed: {5})", new object[] { this.Name, _message, _client.RemoteEndpoint, this.currentlyOpen, this.totalOpened, this.totalClosed }));
 		}
 
-		// Token: 0x0600CFB3 RID: 53171 RVA: 0x004BA0E2 File Offset: 0x004B82E2
+		// Token: 0x0600D10B RID: 53515 RVA: 0x004BE5AE File Offset: 0x004BC7AE
 		public void ClientClosed(SseClient _client)
 		{
 			if (this.openClients.Remove(_client))
@@ -116,43 +116,43 @@ namespace Webserver.SSE
 			}
 		}
 
-		// Token: 0x04009DC1 RID: 40385
+		// Token: 0x04009E87 RID: 40583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int encodingBufferSize = 1048576;
 
-		// Token: 0x04009DC2 RID: 40386
+		// Token: 0x04009E88 RID: 40584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SseHandler parent;
 
-		// Token: 0x04009DC3 RID: 40387
+		// Token: 0x04009E89 RID: 40585
 		public readonly string Name;
 
-		// Token: 0x04009DC4 RID: 40388
+		// Token: 0x04009E8A RID: 40586
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly byte[] encodingBuffer;
 
-		// Token: 0x04009DC5 RID: 40389
+		// Token: 0x04009E8B RID: 40587
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StringBuilder stringBuilder = new StringBuilder();
 
-		// Token: 0x04009DC6 RID: 40390
+		// Token: 0x04009E8C RID: 40588
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<SseClient> openClients = new List<SseClient>();
 
-		// Token: 0x04009DC7 RID: 40391
+		// Token: 0x04009E8D RID: 40589
 		[TupleElementNames(new string[] { "_eventName", "_data" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<ValueTuple<string, string>> sendQueue = new BlockingQueue<ValueTuple<string, string>>();
 
-		// Token: 0x04009DC8 RID: 40392
+		// Token: 0x04009E8E RID: 40590
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentlyOpen;
 
-		// Token: 0x04009DC9 RID: 40393
+		// Token: 0x04009E8F RID: 40591
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int totalOpened;
 
-		// Token: 0x04009DCA RID: 40394
+		// Token: 0x04009E90 RID: 40592
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int totalClosed;
 	}

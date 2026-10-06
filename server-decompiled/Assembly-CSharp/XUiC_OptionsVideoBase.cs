@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DBE RID: 3518
+// Token: 0x02000DCD RID: 3533
 [Preserve]
 public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 {
-	// Token: 0x17000BC9 RID: 3017
-	// (get) Token: 0x06006BB0 RID: 27568 RVA: 0x002A1473 File Offset: 0x0029F673
+	// Token: 0x17000BE4 RID: 3044
+	// (get) Token: 0x06006BA8 RID: 27560 RVA: 0x002A4803 File Offset: 0x002A2A03
 	[XuiXmlBinding("vsync_count_pref")]
 	public EnumGamePrefs VSyncCountPref
 	{
@@ -18,8 +18,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCA RID: 3018
-	// (get) Token: 0x06006BB1 RID: 27569 RVA: 0x002A1480 File Offset: 0x0029F680
+	// Token: 0x17000BE5 RID: 3045
+	// (get) Token: 0x06006BA9 RID: 27561 RVA: 0x002A4810 File Offset: 0x002A2A10
 	[XuiXmlBinding("ui_size_limited")]
 	public bool UiSizeLimited
 	{
@@ -30,8 +30,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCB RID: 3019
-	// (get) Token: 0x06006BB2 RID: 27570 RVA: 0x002A14A1 File Offset: 0x0029F6A1
+	// Token: 0x17000BE6 RID: 3046
+	// (get) Token: 0x06006BAA RID: 27562 RVA: 0x002A4831 File Offset: 0x002A2A31
 	[XuiXmlBinding("ui_size_limit")]
 	public float UiSizeLimit
 	{
@@ -41,8 +41,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCC RID: 3020
-	// (get) Token: 0x06006BB3 RID: 27571 RVA: 0x002A14A9 File Offset: 0x0029F6A9
+	// Token: 0x17000BE7 RID: 3047
+	// (get) Token: 0x06006BAB RID: 27563 RVA: 0x002A4839 File Offset: 0x002A2A39
 	[XuiXmlBinding("fov_min")]
 	public int FovMin
 	{
@@ -52,8 +52,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCD RID: 3021
-	// (get) Token: 0x06006BB4 RID: 27572 RVA: 0x002A14B0 File Offset: 0x0029F6B0
+	// Token: 0x17000BE8 RID: 3048
+	// (get) Token: 0x06006BAC RID: 27564 RVA: 0x002A4840 File Offset: 0x002A2A40
 	[XuiXmlBinding("fov_max")]
 	public int FovMax
 	{
@@ -63,8 +63,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCE RID: 3022
-	// (get) Token: 0x06006BB5 RID: 27573 RVA: 0x002A14B7 File Offset: 0x0029F6B7
+	// Token: 0x17000BE9 RID: 3049
+	// (get) Token: 0x06006BAD RID: 27565 RVA: 0x002A4847 File Offset: 0x002A2A47
 	[XuiXmlBinding("ui_opacity_background_min")]
 	public float UiOpacityBackgroundMin
 	{
@@ -74,8 +74,8 @@ public class XUiC_OptionsVideoBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000BCF RID: 3023
-	// (get) Token: 0x06006BB6 RID: 27574 RVA: 0x002A14BE File Offset: 0x0029F6BE
+	// Token: 0x17000BEA RID: 3050
+	// (get) Token: 0x06006BAE RID: 27566 RVA: 0x002A484E File Offset: 0x002A2A4E
 	[XuiXmlBinding("ui_opacity_foreground_min")]
 	public float UiOpacityForegroundMin
 	{

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.CompilerServices;
 using SandboxOptions;
 
-// Token: 0x020001CE RID: 462
+// Token: 0x020001CF RID: 463
 public class EntityStats
 {
-	// Token: 0x17000113 RID: 275
-	// (get) Token: 0x06000E47 RID: 3655 RVA: 0x0005E0AF File Offset: 0x0005C2AF
+	// Token: 0x1700010B RID: 267
+	// (get) Token: 0x06000E3E RID: 3646 RVA: 0x0005E0AF File Offset: 0x0005C2AF
 	public float AmountEnclosed
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -18,20 +17,20 @@ public class EntityStats
 		}
 	}
 
-	// Token: 0x06000E48 RID: 3656 RVA: 0x0005E0B7 File Offset: 0x0005C2B7
+	// Token: 0x06000E3F RID: 3647 RVA: 0x0005E0B7 File Offset: 0x0005C2B7
 	public EntityStats()
 	{
 		this.Health = new Stat();
 	}
 
-	// Token: 0x06000E49 RID: 3657 RVA: 0x0005E0D2 File Offset: 0x0005C2D2
+	// Token: 0x06000E40 RID: 3648 RVA: 0x0005E0D2 File Offset: 0x0005C2D2
 	public EntityStats(EntityAlive _ea)
 	{
 		this.m_entity = _ea;
 		this.Init();
 	}
 
-	// Token: 0x06000E4A RID: 3658 RVA: 0x0005E0F0 File Offset: 0x0005C2F0
+	// Token: 0x06000E41 RID: 3649 RVA: 0x0005E0F0 File Offset: 0x0005C2F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Init()
 	{
@@ -44,13 +43,13 @@ public class EntityStats
 		};
 	}
 
-	// Token: 0x06000E4B RID: 3659 RVA: 0x0005E152 File Offset: 0x0005C352
+	// Token: 0x06000E42 RID: 3650 RVA: 0x0005E152 File Offset: 0x0005C352
 	public virtual void CopyFrom(EntityStats _newStats)
 	{
 		this.Health.CopyFrom(_newStats.Health);
 	}
 
-	// Token: 0x06000E4C RID: 3660 RVA: 0x0005E165 File Offset: 0x0005C365
+	// Token: 0x06000E43 RID: 3651 RVA: 0x0005E165 File Offset: 0x0005C365
 	public virtual EntityStats SimpleClone()
 	{
 		EntityStats entityStats = new EntityStats();
@@ -58,17 +57,17 @@ public class EntityStats
 		return entityStats;
 	}
 
-	// Token: 0x06000E4D RID: 3661 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000E44 RID: 3652 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void EntityBuffAdded(BuffValue _buff)
 	{
 	}
 
-	// Token: 0x06000E4E RID: 3662 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000E45 RID: 3653 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void EntityBuffRemoved(BuffValue _buff)
 	{
 	}
 
-	// Token: 0x06000E4F RID: 3663 RVA: 0x0005E180 File Offset: 0x0005C380
+	// Token: 0x06000E46 RID: 3654 RVA: 0x0005E180 File Offset: 0x0005C380
 	public void Tick(ulong worldTime)
 	{
 		if (this.m_entity.isEntityRemote || this.m_entity.IsDead())
@@ -84,7 +83,7 @@ public class EntityStats
 		this.TickWait(worldTime);
 	}
 
-	// Token: 0x06000E50 RID: 3664 RVA: 0x0005E1CC File Offset: 0x0005C3CC
+	// Token: 0x06000E47 RID: 3655 RVA: 0x0005E1CC File Offset: 0x0005C3CC
 	public virtual void TickWait(ulong worldTime)
 	{
 		float num = 0.5f;
@@ -115,7 +114,7 @@ public class EntityStats
 		}
 	}
 
-	// Token: 0x06000E51 RID: 3665 RVA: 0x0005E2A4 File Offset: 0x0005C4A4
+	// Token: 0x06000E48 RID: 3656 RVA: 0x0005E2A4 File Offset: 0x0005C4A4
 	public void UpdateNPCStatsOverTime(float dt)
 	{
 		List<EffectManager.ModifierValuesAndSources> valuesAndSources = EffectManager.GetValuesAndSources(PassiveEffects.HealthChangeOT, null, 0f, this.m_entity, null, default(FastTags<TagGroup.Global>), true, true);
@@ -157,12 +156,12 @@ public class EntityStats
 		}
 	}
 
-	// Token: 0x06000E52 RID: 3666 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000E49 RID: 3657 RVA: 0x000027FC File Offset: 0x000009FC
 	public void ResetStats()
 	{
 	}
 
-	// Token: 0x06000E53 RID: 3667 RVA: 0x0005E400 File Offset: 0x0005C600
+	// Token: 0x06000E4A RID: 3658 RVA: 0x0005E400 File Offset: 0x0005C600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SendStatChangePacket(NetPackageEntityStatChanged.EnumStat enumStat)
 	{
@@ -184,21 +183,21 @@ public class EntityStats
 		this.m_entity.world.entityDistributer.SendPacketToTrackedPlayersAndTrackedEntity(this.m_entity.entityId, num, netPackageEntityStatChanged, enumStat > NetPackageEntityStatChanged.EnumStat.Health);
 	}
 
-	// Token: 0x06000E54 RID: 3668 RVA: 0x0005E486 File Offset: 0x0005C686
-	public virtual void Read(BinaryReader stream)
+	// Token: 0x06000E4B RID: 3659 RVA: 0x0005E486 File Offset: 0x0005C686
+	public virtual void Read(PooledBinaryReader stream)
 	{
 		stream.ReadInt32();
 		this.Health.Read(stream);
 	}
 
-	// Token: 0x06000E55 RID: 3669 RVA: 0x0005E49B File Offset: 0x0005C69B
-	public virtual void Write(BinaryWriter stream)
+	// Token: 0x06000E4C RID: 3660 RVA: 0x0005E49B File Offset: 0x0005C69B
+	public virtual void Write(PooledBinaryWriter stream)
 	{
 		stream.Write(11);
 		this.Health.Write(stream);
 	}
 
-	// Token: 0x06000E56 RID: 3670 RVA: 0x0005E4B4 File Offset: 0x0005C6B4
+	// Token: 0x06000E4D RID: 3661 RVA: 0x0005E4B4 File Offset: 0x0005C6B4
 	public void UpdateSandboxOptions()
 	{
 		this.Stamina.GainSandboxModifier = SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.StaminaRegen);
@@ -207,52 +206,52 @@ public class EntityStats
 		this.Water.LossSandboxModifier = SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.ThirstMultiplier);
 	}
 
-	// Token: 0x04000C31 RID: 3121
+	// Token: 0x04000C2A RID: 3114
 	public const int cVersion = 11;
 
-	// Token: 0x04000C32 RID: 3122
+	// Token: 0x04000C2B RID: 3115
 	public static bool WeatherSurvivalEnabled;
 
-	// Token: 0x04000C33 RID: 3123
+	// Token: 0x04000C2C RID: 3116
 	public static bool NewWeatherSurvivalEnabled = true;
 
-	// Token: 0x04000C34 RID: 3124
+	// Token: 0x04000C2D RID: 3117
 	public Stat Health;
 
-	// Token: 0x04000C35 RID: 3125
+	// Token: 0x04000C2E RID: 3118
 	public Stat Stamina;
 
-	// Token: 0x04000C36 RID: 3126
+	// Token: 0x04000C2F RID: 3119
 	public Stat Water;
 
-	// Token: 0x04000C37 RID: 3127
+	// Token: 0x04000C30 RID: 3120
 	public Stat Food;
 
-	// Token: 0x04000C38 RID: 3128
+	// Token: 0x04000C31 RID: 3121
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAlive m_entity;
 
-	// Token: 0x04000C39 RID: 3129
+	// Token: 0x04000C32 RID: 3122
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float m_amountEnclosed;
 
-	// Token: 0x04000C3A RID: 3130
+	// Token: 0x04000C33 RID: 3123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float buffDamageRemainder;
 
-	// Token: 0x04000C3B RID: 3131
+	// Token: 0x04000C34 RID: 3124
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int cWaitTicks = 10;
 
-	// Token: 0x04000C3C RID: 3132
+	// Token: 0x04000C35 RID: 3125
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int waitTicks;
 
-	// Token: 0x04000C3D RID: 3133
+	// Token: 0x04000C36 RID: 3126
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int cNetSyncWaitTicks = 10;
 
-	// Token: 0x04000C3E RID: 3134
+	// Token: 0x04000C37 RID: 3127
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int netSyncWaitTicks = 10;
 }

@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001933 RID: 6451
+	// Token: 0x0200195F RID: 6495
 	[Preserve]
 	public class RequirementInBiome : BaseRequirement
 	{
-		// Token: 0x0600C712 RID: 50962 RVA: 0x00491284 File Offset: 0x0048F484
+		// Token: 0x0600C86A RID: 51306 RVA: 0x00495770 File Offset: 0x00493970
 		public override bool CanPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -23,7 +23,7 @@ namespace GameEvent.SequenceRequirements
 			return !flag;
 		}
 
-		// Token: 0x0600C713 RID: 50963 RVA: 0x004912C2 File Offset: 0x0048F4C2
+		// Token: 0x0600C86B RID: 51307 RVA: 0x004957AE File Offset: 0x004939AE
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C714 RID: 50964 RVA: 0x004912FD File Offset: 0x0048F4FD
+		// Token: 0x0600C86C RID: 51308 RVA: 0x004957E9 File Offset: 0x004939E9
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -45,15 +45,15 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040095EE RID: 38382
+		// Token: 0x040096B4 RID: 38580
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string biomes;
 
-		// Token: 0x040095EF RID: 38383
+		// Token: 0x040096B5 RID: 38581
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] biomeList;
 
-		// Token: 0x040095F0 RID: 38384
+		// Token: 0x040096B6 RID: 38582
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBiome = "biomes";
 	}

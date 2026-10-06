@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace MapRendering
 {
-	// Token: 0x02001AAC RID: 6828
+	// Token: 0x02001AD8 RID: 6872
 	public static class Constants
 	{
-		// Token: 0x17001965 RID: 6501
-		// (get) Token: 0x0600CE01 RID: 52737 RVA: 0x004ADB75 File Offset: 0x004ABD75
+		// Token: 0x17001A07 RID: 6663
+		// (get) Token: 0x0600CF59 RID: 53081 RVA: 0x004B2041 File Offset: 0x004B0241
 		public static int MAP_BLOCK_TO_CHUNK_DIV
 		{
 			get
@@ -16,8 +16,8 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x17001966 RID: 6502
-		// (get) Token: 0x0600CE02 RID: 52738 RVA: 0x00183C79 File Offset: 0x00181E79
+		// Token: 0x17001A08 RID: 6664
+		// (get) Token: 0x0600CF5A RID: 53082 RVA: 0x0022779D File Offset: 0x0022599D
 		public static int MAP_REGION_TO_CHUNK_DIV
 		{
 			get
@@ -26,22 +26,22 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x04009C0B RID: 39947
+		// Token: 0x04009CD1 RID: 40145
 		public static readonly TextureFormat DefaultTextureFormat = TextureFormat.ARGB32;
 
-		// Token: 0x04009C0C RID: 39948
+		// Token: 0x04009CD2 RID: 40146
 		public static int MapBlockSize = 128;
 
-		// Token: 0x04009C0D RID: 39949
+		// Token: 0x04009CD3 RID: 40147
 		public const int MapChunkSize = 16;
 
-		// Token: 0x04009C0E RID: 39950
+		// Token: 0x04009CD4 RID: 40148
 		public const int MapRegionSize = 512;
 
-		// Token: 0x04009C0F RID: 39951
+		// Token: 0x04009CD5 RID: 40149
 		public static int Zoomlevels = 5;
 
-		// Token: 0x04009C10 RID: 39952
+		// Token: 0x04009CD6 RID: 40150
 		public static string MapDirectory = string.Empty;
 	}
 }

@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000804 RID: 2052
+// Token: 0x02000803 RID: 2051
 [Preserve]
 public class NetPackageItemActionEffects : NetPackage
 {
-	// Token: 0x06003C7B RID: 15483 RVA: 0x00182706 File Offset: 0x00180906
+	// Token: 0x06003C57 RID: 15447 RVA: 0x0018275F File Offset: 0x0018095F
 	public NetPackageItemActionEffects Setup(int _entityId, int _slotIdx, int _actionIdx, ItemActionFiringState _firingState, Vector3 _startPos, Vector3 _direction, int _userData)
 	{
 		this.entityId = _entityId;
-		this.slotIdx = (byte)_slotIdx;
+		this.slotIdx = (sbyte)_slotIdx;
 		this.actionIdx = (byte)_actionIdx;
 		this.firingState = _firingState;
 		this.startPos = _startPos;
@@ -19,11 +19,11 @@ public class NetPackageItemActionEffects : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C7C RID: 15484 RVA: 0x00182740 File Offset: 0x00180940
+	// Token: 0x06003C58 RID: 15448 RVA: 0x0018279C File Offset: 0x0018099C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
-		this.slotIdx = _reader.ReadByte();
+		this.slotIdx = _reader.ReadSByte();
 		this.actionIdx = _reader.ReadByte();
 		this.firingState = (ItemActionFiringState)_reader.ReadByte();
 		if (_reader.ReadBoolean())
@@ -39,7 +39,7 @@ public class NetPackageItemActionEffects : NetPackage
 		this.userData = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003C7D RID: 15485 RVA: 0x001827C4 File Offset: 0x001809C4
+	// Token: 0x06003C59 RID: 15449 RVA: 0x00182820 File Offset: 0x00180A20
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -57,7 +57,7 @@ public class NetPackageItemActionEffects : NetPackage
 		_writer.Write(this.userData);
 	}
 
-	// Token: 0x06003C7E RID: 15486 RVA: 0x00182860 File Offset: 0x00180A60
+	// Token: 0x06003C5A RID: 15450 RVA: 0x001828BC File Offset: 0x00180ABC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -72,37 +72,31 @@ public class NetPackageItemActionEffects : NetPackage
 		_world.GetGameManager().ItemActionEffectsClient(this.entityId, (int)this.slotIdx, (int)this.actionIdx, (int)this.firingState, this.startPos, this.direction, this.userData);
 	}
 
-	// Token: 0x06003C7F RID: 15487 RVA: 0x00177A48 File Offset: 0x00175C48
-	public override int GetLength()
-	{
-		return 50;
-	}
-
-	// Token: 0x0400311F RID: 12575
+	// Token: 0x0400310D RID: 12557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003120 RID: 12576
+	// Token: 0x0400310E RID: 12558
 	[PublicizedFrom(EAccessModifier.Private)]
-	public byte slotIdx;
+	public sbyte slotIdx;
 
-	// Token: 0x04003121 RID: 12577
+	// Token: 0x0400310F RID: 12559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte actionIdx;
 
-	// Token: 0x04003122 RID: 12578
+	// Token: 0x04003110 RID: 12560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionFiringState firingState;
 
-	// Token: 0x04003123 RID: 12579
+	// Token: 0x04003111 RID: 12561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startPos;
 
-	// Token: 0x04003124 RID: 12580
+	// Token: 0x04003112 RID: 12562
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 direction;
 
-	// Token: 0x04003125 RID: 12581
+	// Token: 0x04003113 RID: 12563
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int userData;
 }

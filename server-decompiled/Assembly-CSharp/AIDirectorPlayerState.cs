@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200041A RID: 1050
+// Token: 0x0200041C RID: 1052
 [Preserve]
 public class AIDirectorPlayerState : IMemoryPoolableObject
 {
-	// Token: 0x0600206F RID: 8303 RVA: 0x000C40C8 File Offset: 0x000C22C8
+	// Token: 0x0600205E RID: 8286 RVA: 0x000C417C File Offset: 0x000C237C
 	public AIDirectorPlayerState Construct(EntityPlayer _player)
 	{
 		this.Player = _player;
@@ -13,20 +13,20 @@ public class AIDirectorPlayerState : IMemoryPoolableObject
 		return this;
 	}
 
-	// Token: 0x06002070 RID: 8304 RVA: 0x000C40D9 File Offset: 0x000C22D9
+	// Token: 0x0600205F RID: 8287 RVA: 0x000C418D File Offset: 0x000C238D
 	public void Reset()
 	{
 		this.Player = null;
 	}
 
-	// Token: 0x06002071 RID: 8305 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002060 RID: 8288 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x170003C6 RID: 966
-	// (get) Token: 0x06002072 RID: 8306 RVA: 0x000C40E2 File Offset: 0x000C22E2
-	// (set) Token: 0x06002073 RID: 8307 RVA: 0x000C40EA File Offset: 0x000C22EA
+	// Token: 0x170003BA RID: 954
+	// (get) Token: 0x06002061 RID: 8289 RVA: 0x000C4196 File Offset: 0x000C2396
+	// (set) Token: 0x06002062 RID: 8290 RVA: 0x000C419E File Offset: 0x000C239E
 	public AIDirectorPlayerInventory Inventory
 	{
 		get
@@ -39,9 +39,9 @@ public class AIDirectorPlayerState : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x170003C7 RID: 967
-	// (get) Token: 0x06002074 RID: 8308 RVA: 0x000C40F3 File Offset: 0x000C22F3
-	// (set) Token: 0x06002075 RID: 8309 RVA: 0x000C40FB File Offset: 0x000C22FB
+	// Token: 0x170003BB RID: 955
+	// (get) Token: 0x06002063 RID: 8291 RVA: 0x000C41A7 File Offset: 0x000C23A7
+	// (set) Token: 0x06002064 RID: 8292 RVA: 0x000C41AF File Offset: 0x000C23AF
 	public bool Dead
 	{
 		get
@@ -54,20 +54,20 @@ public class AIDirectorPlayerState : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x0400162B RID: 5675
+	// Token: 0x04001622 RID: 5666
 	public const float kCheckUndergroundTime = 5f;
 
-	// Token: 0x0400162C RID: 5676
+	// Token: 0x04001623 RID: 5667
 	public const int kNumBlocksUnderground = 10;
 
-	// Token: 0x0400162D RID: 5677
+	// Token: 0x04001624 RID: 5668
 	public EntityPlayer Player;
 
-	// Token: 0x0400162E RID: 5678
+	// Token: 0x04001625 RID: 5669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorPlayerInventory m_inventory;
 
-	// Token: 0x0400162F RID: 5679
+	// Token: 0x04001626 RID: 5670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_dead;
 }

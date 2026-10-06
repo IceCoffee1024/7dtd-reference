@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x02000BC4 RID: 3012
+// Token: 0x02000BD6 RID: 3030
 [Preserve]
 public class TextureAtlasExternalModels : TextureAtlas
 {
-	// Token: 0x06005AF5 RID: 23285 RVA: 0x0022FC98 File Offset: 0x0022DE98
+	// Token: 0x06005B0E RID: 23310 RVA: 0x00232F94 File Offset: 0x00231194
 	public override bool LoadTextureAtlas(int _idx, MeshDescriptionCollection _tac, bool _bLoadTextures)
 	{
 		bool flag;
@@ -41,6 +41,6 @@ public class TextureAtlasExternalModels : TextureAtlas
 		return flag;
 	}
 
-	// Token: 0x040046AC RID: 18092
+	// Token: 0x040046EB RID: 18155
 	public Dictionary<string, VoxelMeshExt3dModel> Meshes = new Dictionary<string, VoxelMeshExt3dModel>();
 }

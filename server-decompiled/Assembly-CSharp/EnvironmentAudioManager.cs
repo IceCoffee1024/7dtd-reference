@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000B8 RID: 184
+// Token: 0x020000BA RID: 186
 public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 {
-	// Token: 0x0600038E RID: 910 RVA: 0x0001A183 File Offset: 0x00018383
+	// Token: 0x06000394 RID: 916 RVA: 0x0001A27B File Offset: 0x0001847B
 	public static void DestroyInstance()
 	{
 		if (EnvironmentAudioManager.Instance != null && EnvironmentAudioManager.Instance.gameObject != null)
@@ -15,7 +15,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600038F RID: 911 RVA: 0x0001A1B3 File Offset: 0x000183B3
+	// Token: 0x06000395 RID: 917 RVA: 0x0001A2AB File Offset: 0x000184AB
 	public static IEnumerator CreateNewInstance()
 	{
 		if (!GameManager.IsDedicatedServer)
@@ -34,7 +34,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		yield break;
 	}
 
-	// Token: 0x06000390 RID: 912 RVA: 0x0001A1BC File Offset: 0x000183BC
+	// Token: 0x06000396 RID: 918 RVA: 0x0001A2B4 File Offset: 0x000184B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -63,7 +63,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.InitSounds();
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x0001A2C0 File Offset: 0x000184C0
+	// Token: 0x06000397 RID: 919 RVA: 0x0001A3B8 File Offset: 0x000185B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRain()
 	{
@@ -77,7 +77,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x0001A320 File Offset: 0x00018520
+	// Token: 0x06000398 RID: 920 RVA: 0x0001A418 File Offset: 0x00018618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitSounds()
 	{
@@ -129,7 +129,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.soundsInitDone = true;
 	}
 
-	// Token: 0x06000393 RID: 915 RVA: 0x0001A528 File Offset: 0x00018728
+	// Token: 0x06000399 RID: 921 RVA: 0x0001A620 File Offset: 0x00018820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FixedUpdate()
 	{
@@ -222,7 +222,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000394 RID: 916 RVA: 0x0001A7D0 File Offset: 0x000189D0
+	// Token: 0x0600039A RID: 922 RVA: 0x0001A8C8 File Offset: 0x00018AC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRainAudio()
 	{
@@ -257,7 +257,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000395 RID: 917 RVA: 0x0001A8A4 File Offset: 0x00018AA4
+	// Token: 0x0600039B RID: 923 RVA: 0x0001A99C File Offset: 0x00018B9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IncrementRainVolumes(float inc0, float inc1, float inc2)
 	{
@@ -270,7 +270,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.rainAudioSources[2].volume = Utils.FastClamp01(this.currentRainVolume[2] * num);
 	}
 
-	// Token: 0x06000396 RID: 918 RVA: 0x0001A96C File Offset: 0x00018B6C
+	// Token: 0x0600039C RID: 924 RVA: 0x0001AA64 File Offset: 0x00018C64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateValueTrigger(float value, AudioObject.Trigger trigger)
 	{
@@ -308,7 +308,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000397 RID: 919 RVA: 0x0001AAF0 File Offset: 0x00018CF0
+	// Token: 0x0600039D RID: 925 RVA: 0x0001ABE8 File Offset: 0x00018DE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetNewBiome(BiomeDefinition.BiomeType newBiome)
 	{
@@ -324,7 +324,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops = this.audioBiomes[(int)this.toBiome];
 	}
 
-	// Token: 0x06000398 RID: 920 RVA: 0x0001AB54 File Offset: 0x00018D54
+	// Token: 0x0600039E RID: 926 RVA: 0x0001AC4C File Offset: 0x00018E4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -347,7 +347,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops = null;
 	}
 
-	// Token: 0x06000399 RID: 921 RVA: 0x0001ABF2 File Offset: 0x00018DF2
+	// Token: 0x0600039F RID: 927 RVA: 0x0001ACEA File Offset: 0x00018EEA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TurnOffSounds()
 	{
@@ -355,7 +355,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops.TurnOff();
 	}
 
-	// Token: 0x0600039A RID: 922 RVA: 0x0001AC0C File Offset: 0x00018E0C
+	// Token: 0x060003A0 RID: 928 RVA: 0x0001AD04 File Offset: 0x00018F04
 	public void Pause()
 	{
 		this.toBiomeLoops.Pause();
@@ -366,7 +366,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039B RID: 923 RVA: 0x0001AC58 File Offset: 0x00018E58
+	// Token: 0x060003A1 RID: 929 RVA: 0x0001AD50 File Offset: 0x00018F50
 	public void UnPause()
 	{
 		this.toBiomeLoops.UnPause();
@@ -377,7 +377,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039C RID: 924 RVA: 0x0001ACA2 File Offset: 0x00018EA2
+	// Token: 0x060003A2 RID: 930 RVA: 0x0001AD9A File Offset: 0x00018F9A
 	public void TriggerThunder(Vector3 _pos)
 	{
 		this.lightningPos = _pos;
@@ -385,7 +385,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.thunderTimer = float.PositiveInfinity;
 	}
 
-	// Token: 0x0600039D RID: 925 RVA: 0x0001ACC0 File Offset: 0x00018EC0
+	// Token: 0x060003A3 RID: 931 RVA: 0x0001ADB8 File Offset: 0x00018FB8
 	public void EnterBiome(BiomeDefinition _biome)
 	{
 		if (AudioObject.biomeIdMap == null)
@@ -410,7 +410,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039E RID: 926 RVA: 0x0001AD70 File Offset: 0x00018F70
+	// Token: 0x060003A4 RID: 932 RVA: 0x0001AE68 File Offset: 0x00019068
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsMusicVolumeLevel)
@@ -419,175 +419,175 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x04000415 RID: 1045
+	// Token: 0x04000418 RID: 1048
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBiomeTransitionSpeed = 0.1f;
 
-	// Token: 0x04000416 RID: 1046
+	// Token: 0x04000419 RID: 1049
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cRainVolumeTransitionSpeed = 0.025f;
 
-	// Token: 0x04000417 RID: 1047
+	// Token: 0x0400041A RID: 1050
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cMaxRainVolume = 0.25f;
 
-	// Token: 0x04000418 RID: 1048
+	// Token: 0x0400041B RID: 1051
 	public static float GlobalEnvironmentVolumeScale = 0.2f;
 
-	// Token: 0x04000419 RID: 1049
-	public static float musicVolume = 1f;
-
-	// Token: 0x0400041A RID: 1050
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 lightningPos;
-
-	// Token: 0x0400041B RID: 1051
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool thunderPlaying;
-
 	// Token: 0x0400041C RID: 1052
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int thunderTriggerWorldTime;
+	public static float musicVolume = 1f;
 
 	// Token: 0x0400041D RID: 1053
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float thunderTimer;
+	public Vector3 lightningPos;
 
 	// Token: 0x0400041E RID: 1054
-	public bool fadingBiomes;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool thunderPlaying;
 
 	// Token: 0x0400041F RID: 1055
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool enteredBiome;
+	public int thunderTriggerWorldTime;
 
 	// Token: 0x04000420 RID: 1056
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public byte biomeEntered;
+	public float thunderTimer;
 
 	// Token: 0x04000421 RID: 1057
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float biomeTransition = 1f;
+	public bool fadingBiomes;
 
 	// Token: 0x04000422 RID: 1058
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float prevBiomeTransition = 1f;
+	public bool enteredBiome;
 
 	// Token: 0x04000423 RID: 1059
-	public float invAmountEnclosedPow = -1f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public byte biomeEntered;
 
 	// Token: 0x04000424 RID: 1060
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float invAmountEnclosedTarget = -1f;
+	public float biomeTransition = 1f;
 
 	// Token: 0x04000425 RID: 1061
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float prevAmountEnclosed = -1f;
+	public float prevBiomeTransition = 1f;
 
 	// Token: 0x04000426 RID: 1062
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float[] prevTriggerValue;
+	public float invAmountEnclosedPow = -1f;
 
 	// Token: 0x04000427 RID: 1063
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int numBiomes;
+	public float invAmountEnclosedTarget = -1f;
 
 	// Token: 0x04000428 RID: 1064
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int numTriggers;
+	public float prevAmountEnclosed = -1f;
 
 	// Token: 0x04000429 RID: 1065
-	public static EnvironmentAudioManager Instance;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float[] prevTriggerValue;
 
 	// Token: 0x0400042A RID: 1066
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AudioBiome[] audioBiomes;
+	public int numBiomes;
 
 	// Token: 0x0400042B RID: 1067
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public BiomeDefinition.BiomeType fromBiome;
+	public int numTriggers;
 
 	// Token: 0x0400042C RID: 1068
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public BiomeDefinition.BiomeType toBiome;
+	public static EnvironmentAudioManager Instance;
 
 	// Token: 0x0400042D RID: 1069
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public BiomeDefinition.BiomeType queuedBiome;
+	public AudioBiome[] audioBiomes;
 
 	// Token: 0x0400042E RID: 1070
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AudioBiome fromBiomeLoops;
+	public BiomeDefinition.BiomeType fromBiome;
 
 	// Token: 0x0400042F RID: 1071
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AudioBiome toBiomeLoops;
+	public BiomeDefinition.BiomeType toBiome;
 
 	// Token: 0x04000430 RID: 1072
-	public static GameObject sourceSounds = null;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public BiomeDefinition.BiomeType queuedBiome;
 
 	// Token: 0x04000431 RID: 1073
-	public AudioObject[] mixedBiomeSounds;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public AudioBiome fromBiomeLoops;
 
 	// Token: 0x04000432 RID: 1074
-	public AudioObject[] forestOnlyBiomeSounds;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public AudioBiome toBiomeLoops;
 
 	// Token: 0x04000433 RID: 1075
-	public AudioObject[] snowOnlyBiomeSounds;
+	public static GameObject sourceSounds = null;
 
 	// Token: 0x04000434 RID: 1076
-	public AudioObject[] desertOnlyBiomeSounds;
+	public AudioObject[] mixedBiomeSounds;
 
 	// Token: 0x04000435 RID: 1077
-	public AudioObject[] wastelandOnlyBiomeSounds;
+	public AudioObject[] forestOnlyBiomeSounds;
 
 	// Token: 0x04000436 RID: 1078
-	public AudioObject[] waterOnlyBiomeSounds;
+	public AudioObject[] snowOnlyBiomeSounds;
 
 	// Token: 0x04000437 RID: 1079
-	public AudioObject[] burnt_forestOnlyBiomeSounds;
+	public AudioObject[] desertOnlyBiomeSounds;
 
 	// Token: 0x04000438 RID: 1080
-	public AudioSource rainMasterAudioSource;
+	public AudioObject[] wastelandOnlyBiomeSounds;
 
 	// Token: 0x04000439 RID: 1081
-	public AudioClip[] rainClipsLowToHigh;
+	public AudioObject[] waterOnlyBiomeSounds;
 
 	// Token: 0x0400043A RID: 1082
-	public List<AudioSource> rainAudioSources;
+	public AudioObject[] burnt_forestOnlyBiomeSounds;
 
 	// Token: 0x0400043B RID: 1083
+	public AudioSource rainMasterAudioSource;
+
+	// Token: 0x0400043C RID: 1084
+	public AudioClip[] rainClipsLowToHigh;
+
+	// Token: 0x0400043D RID: 1085
+	public List<AudioSource> rainAudioSources;
+
+	// Token: 0x0400043E RID: 1086
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float[] currentRainVolume = new float[3];
 
-	// Token: 0x0400043C RID: 1084
+	// Token: 0x0400043F RID: 1087
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static global::UnityEngine.Object loadedPrefab = null;
 
-	// Token: 0x0400043D RID: 1085
+	// Token: 0x04000440 RID: 1088
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool soundsInitDone;

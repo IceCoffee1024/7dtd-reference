@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000F9F RID: 3999
-// (Invoke) Token: 0x06007E4A RID: 32330
+// Token: 0x02000FAE RID: 4014
+// (Invoke) Token: 0x06007E5A RID: 32346
 public delegate void XUiEvent_OnOptionSelectionChanged(XUiController _sender, int newSelectedIndex);

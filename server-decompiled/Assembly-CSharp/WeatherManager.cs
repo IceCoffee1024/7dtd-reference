@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02001377 RID: 4983
+// Token: 0x02001397 RID: 5015
 public class WeatherManager : MonoBehaviour
 {
-	// Token: 0x06009D0E RID: 40206 RVA: 0x003B56E3 File Offset: 0x003B38E3
+	// Token: 0x06009DBA RID: 40378 RVA: 0x003BA25F File Offset: 0x003B845F
 	public static void Init(World _world, GameObject _obj)
 	{
 		WeatherManager.Cleanup();
@@ -15,7 +15,7 @@ public class WeatherManager : MonoBehaviour
 		WeatherManager.Instance.Init(_world);
 	}
 
-	// Token: 0x06009D0F RID: 40207 RVA: 0x003B5700 File Offset: 0x003B3900
+	// Token: 0x06009DBB RID: 40379 RVA: 0x003BA27C File Offset: 0x003B847C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init(World _world)
 	{
@@ -27,7 +27,7 @@ public class WeatherManager : MonoBehaviour
 		this.ApplyLoad();
 	}
 
-	// Token: 0x06009D10 RID: 40208 RVA: 0x003B5758 File Offset: 0x003B3958
+	// Token: 0x06009DBC RID: 40380 RVA: 0x003BA2D4 File Offset: 0x003B84D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitBiomeWeather()
 	{
@@ -53,7 +53,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D11 RID: 40209 RVA: 0x003B5848 File Offset: 0x003B3A48
+	// Token: 0x06009DBD RID: 40381 RVA: 0x003BA3C4 File Offset: 0x003B85C4
 	public static void Cleanup()
 	{
 		if (WeatherManager.Instance)
@@ -67,7 +67,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D12 RID: 40210 RVA: 0x003B58A2 File Offset: 0x003B3AA2
+	// Token: 0x06009DBE RID: 40382 RVA: 0x003BA41E File Offset: 0x003B861E
 	public static void SetWorldTime(ulong _time)
 	{
 		if (WeatherManager.Instance)
@@ -81,7 +81,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D13 RID: 40211 RVA: 0x003B58CC File Offset: 0x003B3ACC
+	// Token: 0x06009DBF RID: 40383 RVA: 0x003BA448 File Offset: 0x003B8648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AdjustTimeRewind()
 	{
@@ -95,7 +95,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D14 RID: 40212 RVA: 0x003B591A File Offset: 0x003B3B1A
+	// Token: 0x06009DC0 RID: 40384 RVA: 0x003BA496 File Offset: 0x003B8696
 	public static void Load(IBinaryReaderOrWriter _RW, int _loadSize)
 	{
 		if (WeatherManager.loadData == null)
@@ -107,7 +107,7 @@ public class WeatherManager : MonoBehaviour
 		WeatherManager.loadData.Position = 0L;
 	}
 
-	// Token: 0x06009D15 RID: 40213 RVA: 0x003B5958 File Offset: 0x003B3B58
+	// Token: 0x06009DC1 RID: 40385 RVA: 0x003BA4D4 File Offset: 0x003B86D4
 	public void ApplyLoad()
 	{
 		if (WeatherManager.loadData != null)
@@ -124,7 +124,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D16 RID: 40214 RVA: 0x003B59BC File Offset: 0x003B3BBC
+	// Token: 0x06009DC2 RID: 40386 RVA: 0x003BA538 File Offset: 0x003B8738
 	public static void Save(IBinaryReaderOrWriter _RW)
 	{
 		if (WeatherManager.loadData != null)
@@ -138,7 +138,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D17 RID: 40215 RVA: 0x003B59FC File Offset: 0x003B3BFC
+	// Token: 0x06009DC3 RID: 40387 RVA: 0x003BA578 File Offset: 0x003B8778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadWriteData(IBinaryReaderOrWriter _RW, bool _load)
 	{
@@ -198,7 +198,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D18 RID: 40216 RVA: 0x003B5BF8 File Offset: 0x003B3DF8
+	// Token: 0x06009DC4 RID: 40388 RVA: 0x003BA774 File Offset: 0x003B8974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WeatherManager.BiomeWeather FindBiomeWeather(int _id)
 	{
@@ -213,7 +213,7 @@ public class WeatherManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06009D19 RID: 40217 RVA: 0x003B5C3C File Offset: 0x003B3E3C
+	// Token: 0x06009DC5 RID: 40389 RVA: 0x003BA7B8 File Offset: 0x003B89B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WeatherManager.BiomeWeather FindBiomeWeather(BiomeDefinition.BiomeType _type)
 	{
@@ -228,30 +228,30 @@ public class WeatherManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06009D1A RID: 40218 RVA: 0x003B5C80 File Offset: 0x003B3E80
+	// Token: 0x06009DC6 RID: 40390 RVA: 0x003BA7FC File Offset: 0x003B89FC
 	public bool IsStorming(BiomeDefinition.BiomeType _type)
 	{
 		WeatherManager.BiomeWeather biomeWeather = WeatherManager.Instance.FindBiomeWeather(_type);
 		return biomeWeather != null && biomeWeather.stormState >= 2;
 	}
 
-	// Token: 0x06009D1B RID: 40219 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DC7 RID: 40391 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void ClearTemperatureOffSetHeights()
 	{
 	}
 
-	// Token: 0x06009D1C RID: 40220 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DC8 RID: 40392 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void AddTemperatureOffSetHeight(float height, float degreesOffset)
 	{
 	}
 
-	// Token: 0x06009D1D RID: 40221 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06009DC9 RID: 40393 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public static float SeaLevel()
 	{
 		return 0f;
 	}
 
-	// Token: 0x06009D1E RID: 40222 RVA: 0x003B5CAA File Offset: 0x003B3EAA
+	// Token: 0x06009DCA RID: 40394 RVA: 0x003BA826 File Offset: 0x003B8A26
 	public static float GetCloudThickness()
 	{
 		if (WeatherManager.forceClouds >= 0f)
@@ -265,29 +265,29 @@ public class WeatherManager : MonoBehaviour
 		return WeatherManager.currentWeather.parameters[2].value;
 	}
 
-	// Token: 0x06009D1F RID: 40223 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06009DCB RID: 40395 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public static float GetTemperature()
 	{
 		return 0f;
 	}
 
-	// Token: 0x06009D20 RID: 40224 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06009DCC RID: 40396 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public static float GetWindSpeed()
 	{
 		return 0f;
 	}
 
-	// Token: 0x06009D21 RID: 40225 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DCD RID: 40397 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void EntityAddedToWorld(Entity entity)
 	{
 	}
 
-	// Token: 0x06009D22 RID: 40226 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DCE RID: 40398 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void EntityRemovedFromWorld(Entity entity)
 	{
 	}
 
-	// Token: 0x06009D23 RID: 40227 RVA: 0x003B5CE2 File Offset: 0x003B3EE2
+	// Token: 0x06009DCF RID: 40399 RVA: 0x003BA85E File Offset: 0x003B8A5E
 	public float GetCurrentSnowfallPercent()
 	{
 		if (WeatherManager.forceSnowfall < 0f && WeatherManager.currentWeather != null)
@@ -297,7 +297,7 @@ public class WeatherManager : MonoBehaviour
 		return WeatherManager.forceSnowfall;
 	}
 
-	// Token: 0x06009D24 RID: 40228 RVA: 0x003B5D0C File Offset: 0x003B3F0C
+	// Token: 0x06009DD0 RID: 40400 RVA: 0x003BA888 File Offset: 0x003B8A88
 	public float GetCurrentRainfallPercent()
 	{
 		if (WeatherManager.forceRain < 0f && WeatherManager.currentWeather != null)
@@ -307,7 +307,7 @@ public class WeatherManager : MonoBehaviour
 		return WeatherManager.forceRain;
 	}
 
-	// Token: 0x06009D25 RID: 40229 RVA: 0x003B5D38 File Offset: 0x003B3F38
+	// Token: 0x06009DD1 RID: 40401 RVA: 0x003BA8B4 File Offset: 0x003B8AB4
 	public float GetCurrentWetPercent(EntityAlive _ea)
 	{
 		float num = 0f;
@@ -320,19 +320,19 @@ public class WeatherManager : MonoBehaviour
 		return Utils.FastMax(num, num2);
 	}
 
-	// Token: 0x06009D26 RID: 40230 RVA: 0x003B5D8B File Offset: 0x003B3F8B
+	// Token: 0x06009DD2 RID: 40402 RVA: 0x003BA907 File Offset: 0x003B8B07
 	public float GetCurrentCloudThicknessPercent()
 	{
 		return WeatherManager.GetCloudThickness() * 0.01f;
 	}
 
-	// Token: 0x06009D27 RID: 40231 RVA: 0x003B5D98 File Offset: 0x003B3F98
+	// Token: 0x06009DD3 RID: 40403 RVA: 0x003BA914 File Offset: 0x003B8B14
 	public float GetCurrentTemperatureValue()
 	{
 		return WeatherManager.GetTemperature();
 	}
 
-	// Token: 0x06009D28 RID: 40232 RVA: 0x003B5D9F File Offset: 0x003B3F9F
+	// Token: 0x06009DD4 RID: 40404 RVA: 0x003BA91B File Offset: 0x003B8B1B
 	public static void SetSimRandom(float _random)
 	{
 		WeatherManager.forceSimRandom = _random;
@@ -342,22 +342,22 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D29 RID: 40233 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DD5 RID: 40405 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void ReloadSpectrums()
 	{
 	}
 
-	// Token: 0x06009D2A RID: 40234 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DD6 RID: 40406 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Start()
 	{
 	}
 
-	// Token: 0x06009D2B RID: 40235 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DD7 RID: 40407 RVA: 0x000027FC File Offset: 0x000009FC
 	public void PushTransitions()
 	{
 	}
 
-	// Token: 0x06009D2C RID: 40236 RVA: 0x003B5DC4 File Offset: 0x003B3FC4
+	// Token: 0x06009DD8 RID: 40408 RVA: 0x003BA940 File Offset: 0x003B8B40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GenerateWeatherServerFrameUpdate()
 	{
@@ -401,7 +401,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D2D RID: 40237 RVA: 0x003B5ECC File Offset: 0x003B40CC
+	// Token: 0x06009DD9 RID: 40409 RVA: 0x003BAA48 File Offset: 0x003B8C48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string CalcGlobalWeatherType()
 	{
@@ -421,7 +421,7 @@ public class WeatherManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06009D2E RID: 40238 RVA: 0x003B5F2C File Offset: 0x003B412C
+	// Token: 0x06009DDA RID: 40410 RVA: 0x003BAAA8 File Offset: 0x003B8CA8
 	public void ForceWeather(string _weatherName, float _duration)
 	{
 		this.CustomWeatherName = _weatherName;
@@ -430,7 +430,7 @@ public class WeatherManager : MonoBehaviour
 		this.SetAllWeather(_weatherName);
 	}
 
-	// Token: 0x06009D2F RID: 40239 RVA: 0x003B5F4C File Offset: 0x003B414C
+	// Token: 0x06009DDB RID: 40411 RVA: 0x003BAAC8 File Offset: 0x003B8CC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAllWeather(string _weatherName)
 	{
@@ -444,7 +444,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D30 RID: 40240 RVA: 0x003B5F98 File Offset: 0x003B4198
+	// Token: 0x06009DDC RID: 40412 RVA: 0x003BAB14 File Offset: 0x003B8D14
 	public void SetStorm(string _biomeName, int _duration)
 	{
 		for (int i = 0; i < this.biomeWeather.Count; i++)
@@ -458,20 +458,20 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D31 RID: 40241 RVA: 0x003B5FF0 File Offset: 0x003B41F0
+	// Token: 0x06009DDD RID: 40413 RVA: 0x003BAB6C File Offset: 0x003B8D6C
 	public void TriggerUpdate()
 	{
 		this.weatherAllName = null;
 		this.weatherLastUpdateWorldTime = 0f;
 	}
 
-	// Token: 0x06009D32 RID: 40242 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DDE RID: 40414 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GeneralReset()
 	{
 	}
 
-	// Token: 0x06009D33 RID: 40243 RVA: 0x003B6004 File Offset: 0x003B4204
+	// Token: 0x06009DDF RID: 40415 RVA: 0x003BAB80 File Offset: 0x003B8D80
 	public void FrameUpdate()
 	{
 		if (GameManager.Instance == null || SkyManager.random == null)
@@ -494,13 +494,13 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D34 RID: 40244 RVA: 0x003B607B File Offset: 0x003B427B
+	// Token: 0x06009DE0 RID: 40416 RVA: 0x003BABF7 File Offset: 0x003B8DF7
 	public void TriggerThunder(int _playWorldTime, Vector3 _pos)
 	{
 		EnvironmentAudioManager.Instance.TriggerThunder(_pos);
 	}
 
-	// Token: 0x06009D35 RID: 40245 RVA: 0x003B6088 File Offset: 0x003B4288
+	// Token: 0x06009DE1 RID: 40417 RVA: 0x003BAC04 File Offset: 0x003B8E04
 	public void SendPackages()
 	{
 		this.CalcPackages();
@@ -509,7 +509,7 @@ public class WeatherManager : MonoBehaviour
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(package, true, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06009D36 RID: 40246 RVA: 0x003B60CC File Offset: 0x003B42CC
+	// Token: 0x06009DE2 RID: 40418 RVA: 0x003BAC48 File Offset: 0x003B8E48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcPackages()
 	{
@@ -530,7 +530,7 @@ public class WeatherManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009D37 RID: 40247 RVA: 0x003B6170 File Offset: 0x003B4370
+	// Token: 0x06009DE3 RID: 40419 RVA: 0x003BACEC File Offset: 0x003B8EEC
 	public override string ToString()
 	{
 		string text = string.Format("#{0}", this.biomeWeather.Count);
@@ -542,7 +542,7 @@ public class WeatherManager : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06009D38 RID: 40248 RVA: 0x003B61CE File Offset: 0x003B43CE
+	// Token: 0x06009DE4 RID: 40420 RVA: 0x003BAD4A File Offset: 0x003B8F4A
 	[Conditional("DEBUG_WEATHERNET")]
 	public void LogNet(string _format = "", params object[] _args)
 	{
@@ -550,149 +550,149 @@ public class WeatherManager : MonoBehaviour
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x0400770F RID: 30479
+	// Token: 0x0400778A RID: 30602
 	public const ushort cVersion = 4;
 
-	// Token: 0x04007710 RID: 30480
+	// Token: 0x0400778B RID: 30603
 	public static WeatherManager Instance;
 
-	// Token: 0x04007711 RID: 30481
+	// Token: 0x0400778C RID: 30604
 	public const float cStormWarningDuration = 60f;
 
-	// Token: 0x04007712 RID: 30482
+	// Token: 0x0400778D RID: 30605
 	public const int BaseTemperature = 70;
 
-	// Token: 0x04007713 RID: 30483
+	// Token: 0x0400778E RID: 30606
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cWeatherTransitionSeconds = 10f;
 
-	// Token: 0x04007714 RID: 30484
+	// Token: 0x0400778F RID: 30607
 	public List<WeatherManager.BiomeWeather> biomeWeather;
 
-	// Token: 0x04007715 RID: 30485
+	// Token: 0x04007790 RID: 30608
 	public static float forceClouds = -1f;
 
-	// Token: 0x04007716 RID: 30486
+	// Token: 0x04007791 RID: 30609
 	public static float forceRain = -1f;
 
-	// Token: 0x04007717 RID: 30487
+	// Token: 0x04007792 RID: 30610
 	public static float forceSnowfall = -1f;
 
-	// Token: 0x04007718 RID: 30488
+	// Token: 0x04007793 RID: 30611
 	public const float cForceTempDefault = -100f;
 
-	// Token: 0x04007719 RID: 30489
+	// Token: 0x04007794 RID: 30612
 	public static float forceTemperature = -100f;
 
-	// Token: 0x0400771A RID: 30490
+	// Token: 0x04007795 RID: 30613
 	public static float forceWind = -1f;
 
-	// Token: 0x0400771B RID: 30491
+	// Token: 0x04007796 RID: 30614
 	public static bool needToReUpdateWeatherSpectrums;
 
-	// Token: 0x0400771C RID: 30492
+	// Token: 0x04007797 RID: 30615
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float forceSimRandom = -1f;
 
-	// Token: 0x0400771D RID: 30493
+	// Token: 0x04007798 RID: 30616
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cGracePeriodWorldTime = 22000;
 
-	// Token: 0x0400771E RID: 30494
+	// Token: 0x04007799 RID: 30617
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int worldTime;
 
-	// Token: 0x0400771F RID: 30495
+	// Token: 0x0400779A RID: 30618
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public World world;
 
-	// Token: 0x04007720 RID: 30496
+	// Token: 0x0400779B RID: 30619
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameRandom gameRand;
 
-	// Token: 0x04007721 RID: 30497
+	// Token: 0x0400779C RID: 30620
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isGameModeNormal;
 
-	// Token: 0x04007722 RID: 30498
+	// Token: 0x0400779D RID: 30621
 	public static bool inWeatherGracePeriod = true;
 
-	// Token: 0x04007723 RID: 30499
+	// Token: 0x0400779E RID: 30622
 	public static WeatherManager.BiomeWeather currentWeather;
 
-	// Token: 0x04007724 RID: 30500
+	// Token: 0x0400779F RID: 30623
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public WeatherPackage[] weatherPackages;
 
-	// Token: 0x04007725 RID: 30501
+	// Token: 0x040077A0 RID: 30624
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cLightningDelayMin = 30f;
 
-	// Token: 0x04007726 RID: 30502
+	// Token: 0x040077A1 RID: 30625
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cLightningDelayMax = 60f;
 
-	// Token: 0x04007727 RID: 30503
+	// Token: 0x040077A2 RID: 30626
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float thunderDelay = 30f;
 
-	// Token: 0x04007728 RID: 30504
+	// Token: 0x040077A3 RID: 30627
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float stormFog;
 
-	// Token: 0x04007729 RID: 30505
+	// Token: 0x040077A4 RID: 30628
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int frameCount = -1;
 
-	// Token: 0x0400772A RID: 30506
+	// Token: 0x040077A5 RID: 30629
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 playerPosition;
 
-	// Token: 0x0400772B RID: 30507
+	// Token: 0x040077A6 RID: 30630
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float checkPlayerMoveTime;
 
-	// Token: 0x0400772C RID: 30508
+	// Token: 0x040077A7 RID: 30631
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MemoryStream loadData;
 
-	// Token: 0x0400772D RID: 30509
+	// Token: 0x040077A8 RID: 30632
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string weatherAllName;
 
-	// Token: 0x0400772E RID: 30510
+	// Token: 0x040077A9 RID: 30633
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float weatherLastUpdateWorldTime;
 
-	// Token: 0x0400772F RID: 30511
+	// Token: 0x040077AA RID: 30634
 	public string CustomWeatherName = "";
 
-	// Token: 0x04007730 RID: 30512
+	// Token: 0x040077AB RID: 30635
 	public float CustomWeatherTime = -1f;
 
-	// Token: 0x02001378 RID: 4984
+	// Token: 0x02001398 RID: 5016
 	[Serializable]
 	public class Param
 	{
-		// Token: 0x06009D3B RID: 40251 RVA: 0x003B626F File Offset: 0x003B446F
+		// Token: 0x06009DE7 RID: 40423 RVA: 0x003BADEB File Offset: 0x003B8FEB
 		public Param(float _value, float _step1Time = 0.25f)
 		{
 			this.name = "Param";
@@ -701,7 +701,7 @@ public class WeatherManager : MonoBehaviour
 			this.step1Time = _step1Time;
 		}
 
-		// Token: 0x06009D3C RID: 40252 RVA: 0x003B6298 File Offset: 0x003B4498
+		// Token: 0x06009DE8 RID: 40424 RVA: 0x003BAE14 File Offset: 0x003B9014
 		public void FrameUpdate()
 		{
 			float time = Time.time;
@@ -742,21 +742,21 @@ public class WeatherManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009D3D RID: 40253 RVA: 0x003B635F File Offset: 0x003B455F
+		// Token: 0x06009DE9 RID: 40425 RVA: 0x003BAEDB File Offset: 0x003B90DB
 		public void Clamp()
 		{
 			this.value = Utils.FastClamp01(this.value);
 			this.target = Utils.FastClamp01(this.target);
 		}
 
-		// Token: 0x06009D3E RID: 40254 RVA: 0x003B6383 File Offset: 0x003B4583
+		// Token: 0x06009DEA RID: 40426 RVA: 0x003BAEFF File Offset: 0x003B90FF
 		public void Set(float _value)
 		{
 			this.value = _value;
 			this.target = _value;
 		}
 
-		// Token: 0x06009D3F RID: 40255 RVA: 0x003B6393 File Offset: 0x003B4593
+		// Token: 0x06009DEB RID: 40427 RVA: 0x003BAF0F File Offset: 0x003B910F
 		public void SetTarget(float _target)
 		{
 			if (this.target == _target)
@@ -767,29 +767,29 @@ public class WeatherManager : MonoBehaviour
 			this.lastTime = Time.time;
 		}
 
-		// Token: 0x04007731 RID: 30513
+		// Token: 0x040077AC RID: 30636
 		public string name;
 
-		// Token: 0x04007732 RID: 30514
+		// Token: 0x040077AD RID: 30637
 		public float value;
 
-		// Token: 0x04007733 RID: 30515
+		// Token: 0x040077AE RID: 30638
 		public float target;
 
-		// Token: 0x04007734 RID: 30516
+		// Token: 0x040077AF RID: 30639
 		public float step1Time;
 
-		// Token: 0x04007735 RID: 30517
+		// Token: 0x040077B0 RID: 30640
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public float lastTime;
 	}
 
-	// Token: 0x02001379 RID: 4985
+	// Token: 0x02001399 RID: 5017
 	[Serializable]
 	public class BiomeWeather
 	{
-		// Token: 0x06009D40 RID: 40256 RVA: 0x003B63B4 File Offset: 0x003B45B4
+		// Token: 0x06009DEC RID: 40428 RVA: 0x003BAF30 File Offset: 0x003B9130
 		public BiomeWeather(BiomeDefinition _definition)
 		{
 			this.biomeDefinition = _definition;
@@ -800,25 +800,25 @@ public class WeatherManager : MonoBehaviour
 			this.parameters[0].step1Time = 0.15f;
 		}
 
-		// Token: 0x06009D41 RID: 40257 RVA: 0x003B6445 File Offset: 0x003B4645
+		// Token: 0x06009DED RID: 40429 RVA: 0x003BAFC1 File Offset: 0x003B91C1
 		public float CloudThickness()
 		{
 			return this.parameters[2].value;
 		}
 
-		// Token: 0x06009D42 RID: 40258 RVA: 0x003B6454 File Offset: 0x003B4654
+		// Token: 0x06009DEE RID: 40430 RVA: 0x003BAFD0 File Offset: 0x003B91D0
 		public float FogPercent()
 		{
 			return this.parameters[4].value * 0.01f + WeatherManager.stormFog;
 		}
 
-		// Token: 0x06009D43 RID: 40259 RVA: 0x003B646F File Offset: 0x003B466F
+		// Token: 0x06009DEF RID: 40431 RVA: 0x003BAFEB File Offset: 0x003B91EB
 		public float Wind()
 		{
 			return this.parameters[3].value;
 		}
 
-		// Token: 0x06009D44 RID: 40260 RVA: 0x003B6480 File Offset: 0x003B4680
+		// Token: 0x06009DF0 RID: 40432 RVA: 0x003BAFFC File Offset: 0x003B91FC
 		public void FrameUpdate(bool _isServer)
 		{
 			WeatherManager.Param[] array = this.parameters;
@@ -858,7 +858,7 @@ public class WeatherManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009D45 RID: 40261 RVA: 0x003B65E0 File Offset: 0x003B47E0
+		// Token: 0x06009DF1 RID: 40433 RVA: 0x003BB15C File Offset: 0x003B935C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcGlobalTemperature(float _precipitation, float _cloudThickness, ref float _temperature)
 		{
@@ -872,7 +872,7 @@ public class WeatherManager : MonoBehaviour
 			_temperature += (-num2 + 1f) * -7.5f;
 		}
 
-		// Token: 0x06009D46 RID: 40262 RVA: 0x003B6638 File Offset: 0x003B4838
+		// Token: 0x06009DF2 RID: 40434 RVA: 0x003BB1B4 File Offset: 0x003B93B4
 		public void ParamsFrameUpdate()
 		{
 			for (int i = 0; i < this.parameters.Length; i++)
@@ -885,7 +885,7 @@ public class WeatherManager : MonoBehaviour
 			this.snowFallParam.FrameUpdate();
 		}
 
-		// Token: 0x06009D47 RID: 40263 RVA: 0x003B668C File Offset: 0x003B488C
+		// Token: 0x06009DF3 RID: 40435 RVA: 0x003BB208 File Offset: 0x003B9408
 		public void Reset()
 		{
 			this.stormWorldTime = 0;
@@ -899,7 +899,7 @@ public class WeatherManager : MonoBehaviour
 			this.snowFallParam.Set(0f);
 		}
 
-		// Token: 0x06009D48 RID: 40264 RVA: 0x003B66FC File Offset: 0x003B48FC
+		// Token: 0x06009DF4 RID: 40436 RVA: 0x003BB278 File Offset: 0x003B9478
 		public void ServerTimeUpdate(int _worldTime, float _freq)
 		{
 			if (_freq == 0f)
@@ -964,7 +964,7 @@ public class WeatherManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009D49 RID: 40265 RVA: 0x003B6898 File Offset: 0x003B4A98
+		// Token: 0x06009DF5 RID: 40437 RVA: 0x003BB414 File Offset: 0x003B9614
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetWeather(int _worldTime, float _rand)
 		{
@@ -980,7 +980,7 @@ public class WeatherManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009D4A RID: 40266 RVA: 0x003B68F8 File Offset: 0x003B4AF8
+		// Token: 0x06009DF6 RID: 40438 RVA: 0x003BB474 File Offset: 0x003B9674
 		public void SetWeather(string name)
 		{
 			if (this.biomeDefinition != null)
@@ -995,7 +995,7 @@ public class WeatherManager : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06009D4B RID: 40267 RVA: 0x003B6948 File Offset: 0x003B4B48
+		// Token: 0x06009DF7 RID: 40439 RVA: 0x003BB4C4 File Offset: 0x003B96C4
 		public override string ToString()
 		{
 			string text = string.Format("{0}: {1}, nxtT{2}, ", this.biomeDefinition.m_sBiomeName, this.biomeDefinition.weatherName, this.nextRandWorldTime);
@@ -1009,47 +1009,47 @@ public class WeatherManager : MonoBehaviour
 			return text + string.Format("storm WT {0}, dur {1}, state {2}", this.stormWorldTime, this.stormDuration, this.stormState);
 		}
 
-		// Token: 0x04007736 RID: 30518
+		// Token: 0x040077B1 RID: 30641
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const float cStep1Time = 0.15f;
 
-		// Token: 0x04007737 RID: 30519
+		// Token: 0x040077B2 RID: 30642
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const float cPrecipitationPercentVisibleMin = 0.3f;
 
-		// Token: 0x04007738 RID: 30520
+		// Token: 0x040077B3 RID: 30643
 		public BiomeDefinition biomeDefinition;
 
-		// Token: 0x04007739 RID: 30521
+		// Token: 0x040077B4 RID: 30644
 		public int stormWorldTime;
 
-		// Token: 0x0400773A RID: 30522
+		// Token: 0x040077B5 RID: 30645
 		public int stormDuration;
 
-		// Token: 0x0400773B RID: 30523
+		// Token: 0x040077B6 RID: 30646
 		public int stormState;
 
-		// Token: 0x0400773C RID: 30524
+		// Token: 0x040077B7 RID: 30647
 		public int stormIndex;
 
-		// Token: 0x0400773D RID: 30525
+		// Token: 0x040077B8 RID: 30648
 		public int nextRandWorldTime;
 
-		// Token: 0x0400773E RID: 30526
+		// Token: 0x040077B9 RID: 30649
 		public byte remainingSeconds;
 
-		// Token: 0x0400773F RID: 30527
+		// Token: 0x040077BA RID: 30650
 		public WeatherManager.Param[] parameters = new WeatherManager.Param[5];
 
-		// Token: 0x04007740 RID: 30528
+		// Token: 0x040077BB RID: 30651
 		public float[] parameterFinals = new float[5];
 
-		// Token: 0x04007741 RID: 30529
+		// Token: 0x040077BC RID: 30652
 		public WeatherManager.Param rainParam = new WeatherManager.Param(0f, 0.25f);
 
-		// Token: 0x04007742 RID: 30530
+		// Token: 0x040077BD RID: 30653
 		public WeatherManager.Param snowFallParam = new WeatherManager.Param(0f, 0.25f);
 	}
 }

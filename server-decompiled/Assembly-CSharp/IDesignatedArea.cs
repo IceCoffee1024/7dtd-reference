@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000925 RID: 2341
+// Token: 0x0200092A RID: 2346
 public interface IDesignatedArea
 {
-	// Token: 0x1700073D RID: 1853
-	// (get) Token: 0x06004414 RID: 17428
+	// Token: 0x1700075C RID: 1884
+	// (get) Token: 0x060043A6 RID: 17318
 	BoundsInt AreaBounds { get; }
 }

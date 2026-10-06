@@ -4,20 +4,20 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECC RID: 3788
+// Token: 0x02000EDB RID: 3803
 [Preserve]
 public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 {
-	// Token: 0x17000DF9 RID: 3577
-	// (get) Token: 0x0600769F RID: 30367 RVA: 0x002C809D File Offset: 0x002C629D
-	// (set) Token: 0x060076A0 RID: 30368 RVA: 0x002C80A5 File Offset: 0x002C62A5
+	// Token: 0x17000E16 RID: 3606
+	// (get) Token: 0x0600769A RID: 30362 RVA: 0x002CB475 File Offset: 0x002C9675
+	// (set) Token: 0x0600769B RID: 30363 RVA: 0x002CB47D File Offset: 0x002C967D
 	public EntityPlayer LocalPlayer
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x060076A1 RID: 30369 RVA: 0x002C80B0 File Offset: 0x002C62B0
+	// Token: 0x0600769C RID: 30364 RVA: 0x002CB488 File Offset: 0x002C9688
 	public override void Init()
 	{
 		base.Init();
@@ -29,14 +29,14 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		this.xui.BuffPopoutList = this;
 	}
 
-	// Token: 0x060076A2 RID: 30370 RVA: 0x002C813E File Offset: 0x002C633E
+	// Token: 0x0600769D RID: 30365 RVA: 0x002CB516 File Offset: 0x002C9716
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.BuffPopoutList = null;
 	}
 
-	// Token: 0x060076A3 RID: 30371 RVA: 0x002C8154 File Offset: 0x002C6354
+	// Token: 0x0600769E RID: 30366 RVA: 0x002CB52C File Offset: 0x002C972C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -189,13 +189,13 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076A4 RID: 30372 RVA: 0x002C8707 File Offset: 0x002C6907
+	// Token: 0x0600769F RID: 30367 RVA: 0x002CBADF File Offset: 0x002C9CDF
 	public static string GetCVarValueAsTimeString(float cvarValue)
 	{
 		return XUiM_PlayerBuffs.GetCVarValueAsTimeString(cvarValue);
 	}
 
-	// Token: 0x060076A5 RID: 30373 RVA: 0x002C8710 File Offset: 0x002C6910
+	// Token: 0x060076A0 RID: 30368 RVA: 0x002CBAE8 File Offset: 0x002C9CE8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -213,7 +213,7 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076A6 RID: 30374 RVA: 0x002C878C File Offset: 0x002C698C
+	// Token: 0x060076A1 RID: 30369 RVA: 0x002CBB64 File Offset: 0x002C9D64
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -230,7 +230,7 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		this.items.Clear();
 	}
 
-	// Token: 0x060076A7 RID: 30375 RVA: 0x002C8808 File Offset: 0x002C6A08
+	// Token: 0x060076A2 RID: 30370 RVA: 0x002CBBE0 File Offset: 0x002C9DE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeEntry(EntityUINotification notification, int currentIndex = -1)
 	{
@@ -263,7 +263,7 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		this.updateEntries();
 	}
 
-	// Token: 0x060076A8 RID: 30376 RVA: 0x002C894C File Offset: 0x002C6B4C
+	// Token: 0x060076A3 RID: 30371 RVA: 0x002CBD24 File Offset: 0x002C9F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetNotificationIndex(EntityUINotification notification)
 	{
@@ -284,7 +284,7 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		return -1;
 	}
 
-	// Token: 0x060076A9 RID: 30377 RVA: 0x002C89FC File Offset: 0x002C6BFC
+	// Token: 0x060076A4 RID: 30372 RVA: 0x002CBDD4 File Offset: 0x002C9FD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateEntries()
 	{
@@ -307,13 +307,13 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076AA RID: 30378 RVA: 0x002C8B0B File Offset: 0x002C6D0B
+	// Token: 0x060076A5 RID: 30373 RVA: 0x002CBEE3 File Offset: 0x002CA0E3
 	public void EntityUINotificationAdded(EntityUINotification _notification)
 	{
 		this.AddNotification(_notification);
 	}
 
-	// Token: 0x060076AB RID: 30379 RVA: 0x002C8B14 File Offset: 0x002C6D14
+	// Token: 0x060076A6 RID: 30374 RVA: 0x002CBEEC File Offset: 0x002CA0EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddNotification(EntityUINotification _notification)
 	{
@@ -394,14 +394,14 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076AC RID: 30380 RVA: 0x002C8E5D File Offset: 0x002C705D
+	// Token: 0x060076A7 RID: 30375 RVA: 0x002CC235 File Offset: 0x002CA435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnNotificationClicked(GameObject go)
 	{
 		this.HandleClickForItem(go);
 	}
 
-	// Token: 0x060076AD RID: 30381 RVA: 0x002C8E68 File Offset: 0x002C7068
+	// Token: 0x060076A8 RID: 30376 RVA: 0x002CC240 File Offset: 0x002CA440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleClickForItem(GameObject go)
 	{
@@ -420,13 +420,13 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076AE RID: 30382 RVA: 0x002C8F07 File Offset: 0x002C7107
+	// Token: 0x060076A9 RID: 30377 RVA: 0x002CC2DF File Offset: 0x002CA4DF
 	public void EntityUINotificationRemoved(EntityUINotification _notification)
 	{
 		this.removeEntry(_notification, -1);
 	}
 
-	// Token: 0x060076AF RID: 30383 RVA: 0x002C8F11 File Offset: 0x002C7111
+	// Token: 0x060076AA RID: 30378 RVA: 0x002CC2E9 File Offset: 0x002CA4E9
 	public void SetYOffset(int _yOffset)
 	{
 		if (_yOffset != this.yOffset)
@@ -436,7 +436,7 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x060076B0 RID: 30384 RVA: 0x002C8F2C File Offset: 0x002C712C
+	// Token: 0x060076AB RID: 30379 RVA: 0x002CC304 File Offset: 0x002CA504
 	public void SetBuffBarLengthAndColor(string _buffName, float _length, Color _color)
 	{
 		XUiC_BuffPopoutList.Data data = null;
@@ -457,57 +457,57 @@ public class XUiC_BuffPopoutList : XUiController, IEntityUINotificationChanged
 		}
 	}
 
-	// Token: 0x040057AC RID: 22444
+	// Token: 0x040057E4 RID: 22500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool initialized;
 
-	// Token: 0x040057AD RID: 22445
+	// Token: 0x040057E5 RID: 22501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float height;
 
-	// Token: 0x040057AE RID: 22446
+	// Token: 0x040057E6 RID: 22502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int yOffset;
 
-	// Token: 0x040057AF RID: 22447
+	// Token: 0x040057E7 RID: 22503
 	public Transform PrefabItems;
 
-	// Token: 0x040057B1 RID: 22449
+	// Token: 0x040057E9 RID: 22505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 spriteSize;
 
-	// Token: 0x040057B2 RID: 22450
+	// Token: 0x040057EA RID: 22506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 barSpriteSize;
 
-	// Token: 0x040057B3 RID: 22451
+	// Token: 0x040057EB RID: 22507
 	public EntityUINotification SelectedNotification;
 
-	// Token: 0x040057B4 RID: 22452
+	// Token: 0x040057EC RID: 22508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_BuffPopoutList.Data> items = new List<XUiC_BuffPopoutList.Data>();
 
-	// Token: 0x040057B5 RID: 22453
+	// Token: 0x040057ED RID: 22509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityUINotification> disabledItems = new List<EntityUINotification>();
 
-	// Token: 0x02000ECD RID: 3789
+	// Token: 0x02000EDC RID: 3804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Data
 	{
-		// Token: 0x040057B6 RID: 22454
+		// Token: 0x040057EE RID: 22510
 		public GameObject Item;
 
-		// Token: 0x040057B7 RID: 22455
+		// Token: 0x040057EF RID: 22511
 		public float TimeAdded;
 
-		// Token: 0x040057B8 RID: 22456
+		// Token: 0x040057F0 RID: 22512
 		public EntityUINotification Notification;
 
-		// Token: 0x040057B9 RID: 22457
+		// Token: 0x040057F1 RID: 22513
 		public UISprite Sprite;
 
-		// Token: 0x040057BA RID: 22458
+		// Token: 0x040057F2 RID: 22514
 		public UISprite BarSprite;
 	}
 }

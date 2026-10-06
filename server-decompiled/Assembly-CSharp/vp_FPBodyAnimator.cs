@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020015F1 RID: 5617
+// Token: 0x02001610 RID: 5648
 public class vp_FPBodyAnimator : vp_BodyAnimator
 {
-	// Token: 0x17001439 RID: 5177
-	// (get) Token: 0x0600AF37 RID: 44855 RVA: 0x00414E02 File Offset: 0x00413002
+	// Token: 0x1700147C RID: 5244
+	// (get) Token: 0x0600AFC9 RID: 45001 RVA: 0x00418ADE File Offset: 0x00416CDE
 	public vp_FPCamera FPCamera
 	{
 		get
@@ -19,8 +19,8 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x1700143A RID: 5178
-	// (get) Token: 0x0600AF38 RID: 44856 RVA: 0x00414E2E File Offset: 0x0041302E
+	// Token: 0x1700147D RID: 5245
+	// (get) Token: 0x0600AFCA RID: 45002 RVA: 0x00418B0A File Offset: 0x00416D0A
 	public vp_FPController FPController
 	{
 		get
@@ -33,8 +33,8 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x1700143B RID: 5179
-	// (get) Token: 0x0600AF39 RID: 44857 RVA: 0x00414E5C File Offset: 0x0041305C
+	// Token: 0x1700147E RID: 5246
+	// (get) Token: 0x0600AFCB RID: 45003 RVA: 0x00418B38 File Offset: 0x00416D38
 	public vp_FPWeaponShooter CurrentShooter
 	{
 		get
@@ -47,8 +47,8 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x1700143C RID: 5180
-	// (get) Token: 0x0600AF3A RID: 44858 RVA: 0x00414EE4 File Offset: 0x004130E4
+	// Token: 0x1700147F RID: 5247
+	// (get) Token: 0x0600AFCC RID: 45004 RVA: 0x00418BC0 File Offset: 0x00416DC0
 	public float DefaultCamHeight
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -69,7 +69,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF3B RID: 44859 RVA: 0x00414F68 File Offset: 0x00413168
+	// Token: 0x0600AFCD RID: 45005 RVA: 0x00418C44 File Offset: 0x00416E44
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -80,7 +80,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		base.Player.IsFirstPerson.Set(true);
 	}
 
-	// Token: 0x0600AF3C RID: 44860 RVA: 0x00414FBE File Offset: 0x004131BE
+	// Token: 0x0600AFCE RID: 45006 RVA: 0x00418C9A File Offset: 0x00416E9A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -88,14 +88,14 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x0600AF3D RID: 44861 RVA: 0x00414FCC File Offset: 0x004131CC
+	// Token: 0x0600AFCF RID: 45007 RVA: 0x00418CA8 File Offset: 0x00416EA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
 		base.OnDisable();
 	}
 
-	// Token: 0x0600AF3E RID: 44862 RVA: 0x00414FD4 File Offset: 0x004131D4
+	// Token: 0x0600AFD0 RID: 45008 RVA: 0x00418CB0 File Offset: 0x00416EB0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -117,7 +117,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.UpdateFirePosition();
 	}
 
-	// Token: 0x0600AF3F RID: 44863 RVA: 0x00415030 File Offset: 0x00413230
+	// Token: 0x0600AFD1 RID: 45009 RVA: 0x00418D0C File Offset: 0x00416F0C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator RefreshMaterialsOnEndOfFrame()
 	{
@@ -126,7 +126,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		yield break;
 	}
 
-	// Token: 0x0600AF40 RID: 44864 RVA: 0x00415040 File Offset: 0x00413240
+	// Token: 0x0600AFD2 RID: 45010 RVA: 0x00418D1C File Offset: 0x00416F1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RefreshMaterials()
 	{
@@ -165,7 +165,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF41 RID: 44865 RVA: 0x00415144 File Offset: 0x00413344
+	// Token: 0x0600AFD3 RID: 45011 RVA: 0x00418E20 File Offset: 0x00417020
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdatePosition()
 	{
@@ -191,7 +191,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF42 RID: 44866 RVA: 0x004152D8 File Offset: 0x004134D8
+	// Token: 0x0600AFD4 RID: 45012 RVA: 0x00418FB4 File Offset: 0x004171B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateCameraPosition()
 	{
@@ -204,7 +204,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.FPCamera.RefreshZoom();
 	}
 
-	// Token: 0x0600AF43 RID: 44867 RVA: 0x00415404 File Offset: 0x00413604
+	// Token: 0x0600AFD5 RID: 45013 RVA: 0x004190E0 File Offset: 0x004172E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateCameraCollision()
 	{
@@ -215,14 +215,14 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF44 RID: 44868 RVA: 0x00415454 File Offset: 0x00413654
+	// Token: 0x0600AFD6 RID: 45014 RVA: 0x00419130 File Offset: 0x00417330
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateGrounding()
 	{
 		this.m_Grounded = this.FPController.Grounded;
 	}
 
-	// Token: 0x0600AF45 RID: 44869 RVA: 0x00415468 File Offset: 0x00413668
+	// Token: 0x0600AFD7 RID: 45015 RVA: 0x00419144 File Offset: 0x00417344
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateDebugInfo()
 	{
@@ -253,7 +253,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF46 RID: 44870 RVA: 0x00415520 File Offset: 0x00413720
+	// Token: 0x0600AFD8 RID: 45016 RVA: 0x004191FC File Offset: 0x004173FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateFirePosition()
 	{
@@ -268,7 +268,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.CurrentShooter.FirePosition = this.CurrentShooter.ProjectileSpawnPoint.transform.position;
 	}
 
-	// Token: 0x0600AF47 RID: 44871 RVA: 0x00415570 File Offset: 0x00413770
+	// Token: 0x0600AFD9 RID: 45017 RVA: 0x0041924C File Offset: 0x0041744C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InitMaterials()
 	{
@@ -305,22 +305,22 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x0600AF48 RID: 44872 RVA: 0x004156F0 File Offset: 0x004138F0
+	// Token: 0x0600AFDA RID: 45018 RVA: 0x004193CC File Offset: 0x004175CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetIsMoving()
 	{
 		return Vector3.Scale(base.Player.MotorThrottle.Get(), Vector3.right + Vector3.forward).magnitude > 0.01f;
 	}
 
-	// Token: 0x0600AF49 RID: 44873 RVA: 0x00415735 File Offset: 0x00413935
+	// Token: 0x0600AFDB RID: 45019 RVA: 0x00419411 File Offset: 0x00417611
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetLookPoint()
 	{
 		return this.FPCamera.LookPoint;
 	}
 
-	// Token: 0x1700143D RID: 5181
-	// (get) Token: 0x0600AF4A RID: 44874 RVA: 0x00415742 File Offset: 0x00413942
+	// Token: 0x17001480 RID: 5248
+	// (get) Token: 0x0600AFDC RID: 45020 RVA: 0x0041941E File Offset: 0x0041761E
 	public override Vector3 OnValue_LookPoint
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -330,7 +330,7 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		}
 	}
 
-	// Token: 0x0600AF4B RID: 44875 RVA: 0x0041574A File Offset: 0x0041394A
+	// Token: 0x0600AFDD RID: 45021 RVA: 0x00419426 File Offset: 0x00417626
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnMessage_CameraToggle3rdPerson()
 	{
@@ -338,14 +338,14 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		base.StartCoroutine(this.RefreshMaterialsOnEndOfFrame());
 	}
 
-	// Token: 0x0600AF4C RID: 44876 RVA: 0x0041575F File Offset: 0x0041395F
+	// Token: 0x0600AFDE RID: 45022 RVA: 0x0041943B File Offset: 0x0041763B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_SetWeapon()
 	{
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x0600AF4D RID: 44877 RVA: 0x00415767 File Offset: 0x00413967
+	// Token: 0x0600AFDF RID: 45023 RVA: 0x00419443 File Offset: 0x00417643
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnStart_Climb()
 	{
@@ -353,14 +353,14 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x0600AF4E RID: 44878 RVA: 0x0041575F File Offset: 0x0041395F
+	// Token: 0x0600AFE0 RID: 45024 RVA: 0x0041943B File Offset: 0x0041763B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Climb()
 	{
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x0600AF4F RID: 44879 RVA: 0x00415775 File Offset: 0x00413975
+	// Token: 0x0600AFE1 RID: 45025 RVA: 0x00419451 File Offset: 0x00417651
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnStart_Dead()
 	{
@@ -368,64 +368,64 @@ public class vp_FPBodyAnimator : vp_BodyAnimator
 		this.RefreshMaterials();
 	}
 
-	// Token: 0x040082ED RID: 33517
+	// Token: 0x04008343 RID: 33603
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPController m_FPController;
 
-	// Token: 0x040082EE RID: 33518
+	// Token: 0x04008344 RID: 33604
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_FPCamera;
 
-	// Token: 0x040082EF RID: 33519
+	// Token: 0x04008345 RID: 33605
 	public Vector3 EyeOffset = new Vector3(0f, -0.08f, -0.1f);
 
-	// Token: 0x040082F0 RID: 33520
+	// Token: 0x04008346 RID: 33606
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_WasFirstPersonLastFrame;
 
-	// Token: 0x040082F1 RID: 33521
+	// Token: 0x04008347 RID: 33607
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_DefaultCamHeight;
 
-	// Token: 0x040082F2 RID: 33522
+	// Token: 0x04008348 RID: 33608
 	public float LookDownZoomFactor = 15f;
 
-	// Token: 0x040082F3 RID: 33523
+	// Token: 0x04008349 RID: 33609
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float LookDownForwardOffset = 0.05f;
 
-	// Token: 0x040082F4 RID: 33524
+	// Token: 0x0400834A RID: 33610
 	public bool ShowUnarmedArms = true;
 
-	// Token: 0x040082F5 RID: 33525
+	// Token: 0x0400834B RID: 33611
 	public Material InvisibleMaterial;
 
-	// Token: 0x040082F6 RID: 33526
+	// Token: 0x0400834C RID: 33612
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Material[] m_FirstPersonMaterials;
 
-	// Token: 0x040082F7 RID: 33527
+	// Token: 0x0400834D RID: 33613
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Material[] m_FirstPersonWithArmsMaterials;
 
-	// Token: 0x040082F8 RID: 33528
+	// Token: 0x0400834E RID: 33614
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Material[] m_ThirdPersonMaterials;
 
-	// Token: 0x040082F9 RID: 33529
+	// Token: 0x0400834F RID: 33615
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Material[] m_InvisiblePersonMaterials;
 
-	// Token: 0x040082FA RID: 33530
+	// Token: 0x04008350 RID: 33616
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPWeaponShooter m_CurrentShooter;

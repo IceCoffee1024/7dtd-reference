@@ -1,13 +1,12 @@
 ﻿using System;
-using System.IO;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020008F2 RID: 2290
+// Token: 0x020008F7 RID: 2295
 [Preserve]
 public class PlayerData
 {
-	// Token: 0x0600425B RID: 16987 RVA: 0x0019DCCC File Offset: 0x0019BECC
+	// Token: 0x060041ED RID: 16877 RVA: 0x0019DDD0 File Offset: 0x0019BFD0
 	public PlayerData(PlatformUserIdentifierAbs _primaryId, PlatformUserIdentifierAbs _nativeId, AuthoredText _playerName, EPlayGroup _playGroup)
 	{
 		this.PrimaryId = _primaryId;
@@ -18,8 +17,8 @@ public class PlayerData
 		this.PlatformData.NativeId = _nativeId;
 	}
 
-	// Token: 0x0600425C RID: 16988 RVA: 0x0019DD0C File Offset: 0x0019BF0C
-	public static PlayerData Read(BinaryReader _reader)
+	// Token: 0x060041EE RID: 16878 RVA: 0x0019DE10 File Offset: 0x0019C010
+	public static PlayerData Read(PooledBinaryReader _reader)
 	{
 		PlatformUserIdentifierAbs platformUserIdentifierAbs = PlatformUserIdentifierAbs.FromStream(_reader, false, false);
 		PlatformUserIdentifierAbs platformUserIdentifierAbs2 = PlatformUserIdentifierAbs.FromStream(_reader, false, false);
@@ -29,8 +28,8 @@ public class PlayerData
 		return new PlayerData(platformUserIdentifierAbs, platformUserIdentifierAbs2, authoredText, eplayGroup);
 	}
 
-	// Token: 0x0600425D RID: 16989 RVA: 0x0019DD47 File Offset: 0x0019BF47
-	public void Write(BinaryWriter _writer)
+	// Token: 0x060041EF RID: 16879 RVA: 0x0019DE4B File Offset: 0x0019C04B
+	public void Write(PooledBinaryWriter _writer)
 	{
 		this.PrimaryId.ToStream(_writer, false);
 		this.NativeId.ToStream(_writer, false);
@@ -38,18 +37,18 @@ public class PlayerData
 		_writer.Write((byte)this.PlayGroup);
 	}
 
-	// Token: 0x040035BF RID: 13759
+	// Token: 0x040035B3 RID: 13747
 	public readonly IPlatformUserData PlatformData;
 
-	// Token: 0x040035C0 RID: 13760
+	// Token: 0x040035B4 RID: 13748
 	public readonly PlatformUserIdentifierAbs PrimaryId;
 
-	// Token: 0x040035C1 RID: 13761
+	// Token: 0x040035B5 RID: 13749
 	public readonly PlatformUserIdentifierAbs NativeId;
 
-	// Token: 0x040035C2 RID: 13762
+	// Token: 0x040035B6 RID: 13750
 	public readonly EPlayGroup PlayGroup;
 
-	// Token: 0x040035C3 RID: 13763
+	// Token: 0x040035B7 RID: 13751
 	public readonly AuthoredText PlayerName;
 }

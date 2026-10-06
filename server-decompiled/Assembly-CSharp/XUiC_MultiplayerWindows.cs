@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9C RID: 3996
+// Token: 0x02000FAB RID: 4011
 [Preserve]
 public class XUiC_MultiplayerWindows : XUiController
 {
-	// Token: 0x06007E2F RID: 32303 RVA: 0x002FCE5F File Offset: 0x002FB05F
+	// Token: 0x06007E3F RID: 32319 RVA: 0x002FFEC7 File Offset: 0x002FE0C7
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -18,7 +18,7 @@ public class XUiC_MultiplayerWindows : XUiController
 		this.UpdateInput();
 	}
 
-	// Token: 0x06007E30 RID: 32304 RVA: 0x002FCE84 File Offset: 0x002FB084
+	// Token: 0x06007E40 RID: 32320 RVA: 0x002FFEEC File Offset: 0x002FE0EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -40,7 +40,7 @@ public class XUiC_MultiplayerWindows : XUiController
 		return true;
 	}
 
-	// Token: 0x06007E31 RID: 32305 RVA: 0x002FCF08 File Offset: 0x002FB108
+	// Token: 0x06007E41 RID: 32321 RVA: 0x002FFF70 File Offset: 0x002FE170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{

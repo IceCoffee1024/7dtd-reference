@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02001026 RID: 4134
+// Token: 0x02001035 RID: 4149
 [Preserve]
 public class XUiC_ShapeStackGrid : XUiController
 {
-	// Token: 0x17000F3F RID: 3903
-	// (get) Token: 0x060082B6 RID: 33462 RVA: 0x00319786 File Offset: 0x00317986
-	// (set) Token: 0x060082B7 RID: 33463 RVA: 0x0031978E File Offset: 0x0031798E
+	// Token: 0x17000F66 RID: 3942
+	// (get) Token: 0x060082C5 RID: 33477 RVA: 0x0031C7CA File Offset: 0x0031A9CA
+	// (set) Token: 0x060082C6 RID: 33478 RVA: 0x0031C7D2 File Offset: 0x0031A9D2
 	public int Length
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F40 RID: 3904
-	// (get) Token: 0x060082B8 RID: 33464 RVA: 0x00319797 File Offset: 0x00317997
-	// (set) Token: 0x060082B9 RID: 33465 RVA: 0x0031979F File Offset: 0x0031799F
+	// Token: 0x17000F67 RID: 3943
+	// (get) Token: 0x060082C7 RID: 33479 RVA: 0x0031C7DB File Offset: 0x0031A9DB
+	// (set) Token: 0x060082C8 RID: 33480 RVA: 0x0031C7E3 File Offset: 0x0031A9E3
 	public int Page
 	{
 		get
@@ -31,7 +31,7 @@ public class XUiC_ShapeStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x060082BA RID: 33466 RVA: 0x003197B0 File Offset: 0x003179B0
+	// Token: 0x060082C9 RID: 33481 RVA: 0x0031C7F4 File Offset: 0x0031A9F4
 	public override void Init()
 	{
 		base.Init();
@@ -43,7 +43,7 @@ public class XUiC_ShapeStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x060082BB RID: 33467 RVA: 0x00319810 File Offset: 0x00317A10
+	// Token: 0x060082CA RID: 33482 RVA: 0x0031C854 File Offset: 0x0031AA54
 	public void SetShapes(List<XUiC_ShapeStackGrid.ShapeData> shapeIndexList, int newSelectedBlock = -1)
 	{
 		if (GameStats.GetBool(EnumGameStats.IsCreativeMenuEnabled))
@@ -100,7 +100,7 @@ public class XUiC_ShapeStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x060082BC RID: 33468 RVA: 0x002FC752 File Offset: 0x002FA952
+	// Token: 0x060082CB RID: 33483 RVA: 0x002FF7A6 File Offset: 0x002FD9A6
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -109,7 +109,7 @@ public class XUiC_ShapeStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x060082BD RID: 33469 RVA: 0x002E9CB4 File Offset: 0x002E7EB4
+	// Token: 0x060082CC RID: 33484 RVA: 0x002ECFC5 File Offset: 0x002EB1C5
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -118,7 +118,7 @@ public class XUiC_ShapeStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x060082BE RID: 33470 RVA: 0x0031998A File Offset: 0x00317B8A
+	// Token: 0x060082CD RID: 33485 RVA: 0x0031C9CE File Offset: 0x0031ABCE
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -129,44 +129,44 @@ public class XUiC_ShapeStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x040060D4 RID: 24788
+	// Token: 0x040060FD RID: 24829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int curPageIdx;
 
-	// Token: 0x040060D5 RID: 24789
+	// Token: 0x040060FE RID: 24830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int numPages;
 
-	// Token: 0x040060D6 RID: 24790
+	// Token: 0x040060FF RID: 24831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x040060D8 RID: 24792
+	// Token: 0x04006101 RID: 24833
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController[] shapeControllers;
 
-	// Token: 0x040060D9 RID: 24793
+	// Token: 0x04006102 RID: 24834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bAwakeCalled;
 
-	// Token: 0x040060DA RID: 24794
+	// Token: 0x04006103 RID: 24835
 	public XUiC_ShapesWindow Owner;
 
-	// Token: 0x040060DB RID: 24795
+	// Token: 0x04006104 RID: 24836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block selectedBlock;
 
-	// Token: 0x040060DC RID: 24796
+	// Token: 0x04006105 RID: 24837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ShapeStackGrid.ShapeData> currentList;
 
-	// Token: 0x02001027 RID: 4135
+	// Token: 0x02001036 RID: 4150
 	public class ShapeData
 	{
-		// Token: 0x040060DD RID: 24797
+		// Token: 0x04006106 RID: 24838
 		public Block Block;
 
-		// Token: 0x040060DE RID: 24798
+		// Token: 0x04006107 RID: 24839
 		public int Index;
 	}
 }

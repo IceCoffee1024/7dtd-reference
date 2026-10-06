@@ -7,14 +7,15 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using PrefabVolumes;
 using UniLinq;
+using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
-// Token: 0x0200092B RID: 2347
+// Token: 0x02000930 RID: 2352
 public class Prefab : INeighborBlockCache, IChunkAccess
 {
-	// Token: 0x17000743 RID: 1859
-	// (get) Token: 0x0600442C RID: 17452 RVA: 0x001A9059 File Offset: 0x001A7259
+	// Token: 0x17000762 RID: 1890
+	// (get) Token: 0x060043BE RID: 17342 RVA: 0x001A915D File Offset: 0x001A735D
 	public string PrefabName
 	{
 		get
@@ -23,8 +24,8 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000744 RID: 1860
-	// (get) Token: 0x0600442D RID: 17453 RVA: 0x001A906F File Offset: 0x001A726F
+	// Token: 0x17000763 RID: 1891
+	// (get) Token: 0x060043BF RID: 17343 RVA: 0x001A9173 File Offset: 0x001A7373
 	public string LocalizedName
 	{
 		get
@@ -33,8 +34,8 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000745 RID: 1861
-	// (get) Token: 0x0600442E RID: 17454 RVA: 0x001A907E File Offset: 0x001A727E
+	// Token: 0x17000764 RID: 1892
+	// (get) Token: 0x060043C0 RID: 17344 RVA: 0x001A9182 File Offset: 0x001A7382
 	public string LocalizedEnglishName
 	{
 		get
@@ -43,8 +44,8 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000746 RID: 1862
-	// (get) Token: 0x0600442F RID: 17455 RVA: 0x001A9091 File Offset: 0x001A7291
+	// Token: 0x17000765 RID: 1893
+	// (get) Token: 0x060043C1 RID: 17345 RVA: 0x001A9195 File Offset: 0x001A7395
 	public float DensityScore
 	{
 		get
@@ -57,9 +58,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000747 RID: 1863
-	// (get) Token: 0x06004430 RID: 17456 RVA: 0x001A90B3 File Offset: 0x001A72B3
-	// (set) Token: 0x06004431 RID: 17457 RVA: 0x001A90BB File Offset: 0x001A72BB
+	// Token: 0x17000766 RID: 1894
+	// (get) Token: 0x060043C2 RID: 17346 RVA: 0x001A91B7 File Offset: 0x001A73B7
+	// (set) Token: 0x060043C3 RID: 17347 RVA: 0x001A91BF File Offset: 0x001A73BF
 	public WorldStats RenderingCostStats
 	{
 		get
@@ -72,9 +73,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000748 RID: 1864
-	// (get) Token: 0x06004432 RID: 17458 RVA: 0x001A90C4 File Offset: 0x001A72C4
-	// (set) Token: 0x06004433 RID: 17459 RVA: 0x001A90CC File Offset: 0x001A72CC
+	// Token: 0x17000767 RID: 1895
+	// (get) Token: 0x060043C4 RID: 17348 RVA: 0x001A91C8 File Offset: 0x001A73C8
+	// (set) Token: 0x060043C5 RID: 17349 RVA: 0x001A91D0 File Offset: 0x001A73D0
 	public FastTags<TagGroup.Poi> Tags
 	{
 		get
@@ -87,9 +88,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x17000749 RID: 1865
-	// (get) Token: 0x06004434 RID: 17460 RVA: 0x001A90D5 File Offset: 0x001A72D5
-	// (set) Token: 0x06004435 RID: 17461 RVA: 0x001A90DD File Offset: 0x001A72DD
+	// Token: 0x17000768 RID: 1896
+	// (get) Token: 0x060043C6 RID: 17350 RVA: 0x001A91D9 File Offset: 0x001A73D9
+	// (set) Token: 0x060043C7 RID: 17351 RVA: 0x001A91E1 File Offset: 0x001A73E1
 	public FastTags<TagGroup.Poi> ThemeTags
 	{
 		get
@@ -102,9 +103,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x1700074A RID: 1866
-	// (get) Token: 0x06004436 RID: 17462 RVA: 0x001A90E6 File Offset: 0x001A72E6
-	// (set) Token: 0x06004437 RID: 17463 RVA: 0x001A90EE File Offset: 0x001A72EE
+	// Token: 0x17000769 RID: 1897
+	// (get) Token: 0x060043C8 RID: 17352 RVA: 0x001A91EA File Offset: 0x001A73EA
+	// (set) Token: 0x060043C9 RID: 17353 RVA: 0x001A91F2 File Offset: 0x001A73F2
 	public int ThemeRepeatDistance
 	{
 		get
@@ -117,9 +118,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x1700074B RID: 1867
-	// (get) Token: 0x06004438 RID: 17464 RVA: 0x001A90F7 File Offset: 0x001A72F7
-	// (set) Token: 0x06004439 RID: 17465 RVA: 0x001A90FF File Offset: 0x001A72FF
+	// Token: 0x1700076A RID: 1898
+	// (get) Token: 0x060043CA RID: 17354 RVA: 0x001A91FB File Offset: 0x001A73FB
+	// (set) Token: 0x060043CB RID: 17355 RVA: 0x001A9203 File Offset: 0x001A7403
 	public int DuplicateRepeatDistance
 	{
 		get
@@ -132,7 +133,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600443A RID: 17466 RVA: 0x001A9108 File Offset: 0x001A7308
+	// Token: 0x060043CC RID: 17356 RVA: 0x001A920C File Offset: 0x001A740C
 	public static PathAbstractions.AbstractedLocation LocationForNewPrefab(string _name, string _prefabsSubfolder = null)
 	{
 		Mod mod = null;
@@ -153,13 +154,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return PathAbstractions.PrefabsSearchPaths.BuildLocation(eabstractedLocationType, _prefabsSubfolder, _name, mod, null).Value;
 	}
 
-	// Token: 0x0600443B RID: 17467 RVA: 0x001A9170 File Offset: 0x001A7370
+	// Token: 0x060043CD RID: 17357 RVA: 0x001A9274 File Offset: 0x001A7474
 	public static bool CanSaveIn(PathAbstractions.AbstractedLocation _location)
 	{
 		return _location.Type != PathAbstractions.EAbstractedLocationType.GameData;
 	}
 
-	// Token: 0x0600443C RID: 17468 RVA: 0x001A9180 File Offset: 0x001A7380
+	// Token: 0x060043CE RID: 17358 RVA: 0x001A9284 File Offset: 0x001A7484
 	public Prefab()
 	{
 		this.SleeperVolumeList = new PrefabSleeperVolumeList(this);
@@ -175,7 +176,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600443D RID: 17469 RVA: 0x001A9370 File Offset: 0x001A7570
+	// Token: 0x060043CF RID: 17359 RVA: 0x001A9474 File Offset: 0x001A7674
 	public Prefab(Prefab _other, bool _sharedData = false)
 		: this()
 	{
@@ -183,6 +184,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		if (_sharedData)
 		{
 			this.isCellsDataOwner = false;
+			this.cellPool = _other.cellPool;
 			this.blockCells = _other.blockCells;
 			this.damageCells = _other.damageCells;
 			this.densityCells = _other.densityCells;
@@ -191,11 +193,12 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 		else
 		{
-			this.blockCells = _other.blockCells.Clone();
-			this.damageCells = _other.damageCells.Clone();
-			this.densityCells = _other.densityCells.Clone();
-			this.textureCells = _other.textureCells.Clone();
-			this.waterCells = _other.waterCells.Clone();
+			this.cellPool = new Prefab.CellPool();
+			this.blockCells = _other.blockCells.Clone(this.cellPool);
+			this.damageCells = _other.damageCells.Clone(this.cellPool);
+			this.densityCells = _other.densityCells.Clone(this.cellPool);
+			this.textureCells = _other.textureCells.Clone(this.cellPool);
+			this.waterCells = _other.waterCells.Clone(this.cellPool);
 		}
 		if (_sharedData)
 		{
@@ -254,7 +257,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.renderingCost = _other.renderingCost;
 	}
 
-	// Token: 0x0600443E RID: 17470 RVA: 0x001A96F4 File Offset: 0x001A78F4
+	// Token: 0x060043D0 RID: 17360 RVA: 0x001A982C File Offset: 0x001A7A2C
 	public Prefab(Vector3i _size)
 		: this()
 	{
@@ -263,7 +266,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.InitData();
 	}
 
-	// Token: 0x0600443F RID: 17471 RVA: 0x001A9710 File Offset: 0x001A7910
+	// Token: 0x060043D1 RID: 17361 RVA: 0x001A9848 File Offset: 0x001A7A48
 	public int EstimateOwnedBytes()
 	{
 		int num = 0;
@@ -328,23 +331,14 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num + MemoryTracker.GetSize<byte>(this.TriggerLayers);
 	}
 
-	// Token: 0x06004440 RID: 17472 RVA: 0x001A9834 File Offset: 0x001A7A34
+	// Token: 0x060043D2 RID: 17362 RVA: 0x001A996B File Offset: 0x001A7B6B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitData()
 	{
-		if (!this.isCellsDataOwner)
-		{
-			Log.Error("InitData failed: Cannot set block data on non-owning Prefab instance.");
-			return;
-		}
-		this.blockCells = new Prefab.Cells<uint>(this.size.y, 0U);
-		this.damageCells = new Prefab.Cells<ushort>(this.size.y, 0);
-		this.densityCells = new Prefab.Cells<sbyte>(this.size.y, MarchingCubes.DensityAir);
-		this.textureCells = new Prefab.Cells<TextureFullArray>(this.size.y, TextureFullArray.Default);
-		this.waterCells = new Prefab.Cells<WaterValue>(this.size.y, WaterValue.Empty);
+		this.CellsInit();
 	}
 
-	// Token: 0x06004441 RID: 17473 RVA: 0x001A98D4 File Offset: 0x001A7AD4
+	// Token: 0x060043D3 RID: 17363 RVA: 0x001A9974 File Offset: 0x001A7B74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitTerrainFillers()
 	{
@@ -352,25 +346,25 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.terrainFiller2Type = Block.GetBlockValue(Constants.cTerrainFiller2BlockName, false).type;
 	}
 
-	// Token: 0x06004442 RID: 17474 RVA: 0x001A9913 File Offset: 0x001A7B13
+	// Token: 0x060043D4 RID: 17364 RVA: 0x001A99B3 File Offset: 0x001A7BB3
 	public Prefab Clone(bool _sharedData = false)
 	{
 		return new Prefab(this, _sharedData);
 	}
 
-	// Token: 0x06004443 RID: 17475 RVA: 0x001A991C File Offset: 0x001A7B1C
+	// Token: 0x060043D5 RID: 17365 RVA: 0x001A99BC File Offset: 0x001A7BBC
 	public int GetLocalRotation()
 	{
 		return this.localRotation;
 	}
 
-	// Token: 0x06004444 RID: 17476 RVA: 0x001A9924 File Offset: 0x001A7B24
+	// Token: 0x060043D6 RID: 17366 RVA: 0x001A99C4 File Offset: 0x001A7BC4
 	public void SetLocalRotation(int _rot)
 	{
 		this.localRotation = _rot;
 	}
 
-	// Token: 0x06004445 RID: 17477 RVA: 0x001A9930 File Offset: 0x001A7B30
+	// Token: 0x060043D7 RID: 17367 RVA: 0x001A99D0 File Offset: 0x001A7BD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CoordToOffset(int _localRotation, int _x, int _y, int _z)
 	{
@@ -393,7 +387,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num;
 	}
 
-	// Token: 0x06004446 RID: 17478 RVA: 0x001A9A44 File Offset: 0x001A7C44
+	// Token: 0x060043D8 RID: 17368 RVA: 0x001A9AE4 File Offset: 0x001A7CE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void offsetToCoord(int _offset, out int _x, out int _y, out int _z)
 	{
@@ -404,7 +398,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		_x = _offset % this.size.x;
 	}
 
-	// Token: 0x06004447 RID: 17479 RVA: 0x001A9A94 File Offset: 0x001A7C94
+	// Token: 0x060043D9 RID: 17369 RVA: 0x001A9B34 File Offset: 0x001A7D34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void offsetToCoordRotated(int _offset, out int _x, out int _y, out int _z)
 	{
@@ -442,7 +436,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004448 RID: 17480 RVA: 0x001A9C44 File Offset: 0x001A7E44
+	// Token: 0x060043DA RID: 17370 RVA: 0x001A9CE4 File Offset: 0x001A7EE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotateCoords(ref int _x, ref int _z)
 	{
@@ -471,7 +465,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004449 RID: 17481 RVA: 0x001A9CC4 File Offset: 0x001A7EC4
+	// Token: 0x060043DB RID: 17371 RVA: 0x001A9D64 File Offset: 0x001A7F64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotateCoords(int _rot, ref int _x, ref int _z)
 	{
@@ -500,7 +494,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600444A RID: 17482 RVA: 0x001A9D3C File Offset: 0x001A7F3C
+	// Token: 0x060043DC RID: 17372 RVA: 0x001A9DDC File Offset: 0x001A7FDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InverseRotateRelative(ref int _x, ref int _z)
 	{
@@ -529,7 +523,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600444B RID: 17483 RVA: 0x001A9D88 File Offset: 0x001A7F88
+	// Token: 0x060043DD RID: 17373 RVA: 0x001A9E28 File Offset: 0x001A8028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotateRelative(ref int _x, ref int _z)
 	{
@@ -558,7 +552,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600444C RID: 17484 RVA: 0x001A9DD4 File Offset: 0x001A7FD4
+	// Token: 0x060043DE RID: 17374 RVA: 0x001A9E74 File Offset: 0x001A8074
 	public void SetBlock(int _x, int _y, int _z, BlockValue _bv)
 	{
 		if (_bv.isWater)
@@ -581,7 +575,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.damageCells.SetData(_x, _y, _z, (ushort)_bv.damage);
 	}
 
-	// Token: 0x0600444D RID: 17485 RVA: 0x001A9E7C File Offset: 0x001A807C
+	// Token: 0x060043DF RID: 17375 RVA: 0x001A9F1C File Offset: 0x001A811C
 	public float GetHeight(int _x, int _z, bool _terrainOnly = true)
 	{
 		for (int i = this.size.y; i >= 0; i--)
@@ -596,7 +590,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return 0f;
 	}
 
-	// Token: 0x0600444E RID: 17486 RVA: 0x001A9EF4 File Offset: 0x001A80F4
+	// Token: 0x060043E0 RID: 17376 RVA: 0x001A9F94 File Offset: 0x001A8194
 	public BlockValue GetBlock(int _x, int _y, int _z)
 	{
 		if ((ulong)_x >= (ulong)((long)this.size.x) || (ulong)_y >= (ulong)((long)this.size.y) || (ulong)_z >= (ulong)((long)this.size.z))
@@ -606,13 +600,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		BlockValue air = BlockValue.Air;
 		this.RotateCoords(ref _x, ref _z);
 		Prefab.Cells<uint>.Cell cell = this.blockCells.GetCell(_x, _y, _z);
-		if (cell.a != null)
+		if (cell.HasData)
 		{
-			air.rawData = cell.Get(_x, _z);
+			air.rawData = cell.Get(this.cellPool, _x, _z);
 			Prefab.Cells<ushort>.Cell cell2 = this.damageCells.GetCell(_x, _y, _z);
-			if (cell2.a != null)
+			if (cell2.HasData)
 			{
-				air.damage = (int)cell2.Get(_x, _z);
+				air.damage = (int)cell2.Get(this.cellPool, _x, _z);
 			}
 			if (!this.isCellsDataOwner && this.localRotation != 0)
 			{
@@ -622,15 +616,15 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return air;
 	}
 
-	// Token: 0x0600444F RID: 17487 RVA: 0x001A9FB0 File Offset: 0x001A81B0
+	// Token: 0x060043E1 RID: 17377 RVA: 0x001AA05C File Offset: 0x001A825C
 	public BlockValue GetBlockNoDamage(int _localRotation, int _x, int _y, int _z)
 	{
 		BlockValue air = BlockValue.Air;
 		this.RotateCoords(_localRotation, ref _x, ref _z);
 		Prefab.Cells<uint>.Cell cell = this.blockCells.GetCell(_x, _y, _z);
-		if (cell.a != null)
+		if (cell.HasData)
 		{
-			air.rawData = cell.Get(_x, _z);
+			air.rawData = cell.Get(this.cellPool, _x, _z);
 			if (!this.isCellsDataOwner && this.localRotation != 0)
 			{
 				this.ApplyRotation(ref air);
@@ -639,13 +633,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return air;
 	}
 
-	// Token: 0x06004450 RID: 17488 RVA: 0x001AA010 File Offset: 0x001A8210
+	// Token: 0x060043E2 RID: 17378 RVA: 0x001AA0C3 File Offset: 0x001A82C3
 	public PropValue GetProp(long chunkKey, int propId)
 	{
 		return this.GetProp(WorldChunkCache.extractX(chunkKey), WorldChunkCache.extractZ(chunkKey), propId);
 	}
 
-	// Token: 0x06004451 RID: 17489 RVA: 0x001AA028 File Offset: 0x001A8228
+	// Token: 0x060043E3 RID: 17379 RVA: 0x001AA0D8 File Offset: 0x001A82D8
 	public PropValue GetProp(int chunkX, int chunkZ, int propId)
 	{
 		Dictionary<int, PropValue> dictionary;
@@ -657,7 +651,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return propValue;
 	}
 
-	// Token: 0x06004452 RID: 17490 RVA: 0x001AA060 File Offset: 0x001A8260
+	// Token: 0x060043E4 RID: 17380 RVA: 0x001AA110 File Offset: 0x001A8310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyRotation(ref BlockValue _bv)
 	{
@@ -679,26 +673,26 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004453 RID: 17491 RVA: 0x001AA0C5 File Offset: 0x001A82C5
+	// Token: 0x060043E5 RID: 17381 RVA: 0x001AA175 File Offset: 0x001A8375
 	public BlockValue GetBlockNoDamage(int _offs)
 	{
 		return BlockValue.Air;
 	}
 
-	// Token: 0x06004454 RID: 17492 RVA: 0x001AA0CC File Offset: 0x001A82CC
+	// Token: 0x060043E6 RID: 17382 RVA: 0x001AA17C File Offset: 0x001A837C
 	public int GetBlockCount()
 	{
 		return this.size.x * this.size.y * this.size.z;
 	}
 
-	// Token: 0x06004455 RID: 17493 RVA: 0x001AA0F1 File Offset: 0x001A82F1
+	// Token: 0x060043E7 RID: 17383 RVA: 0x001AA1A1 File Offset: 0x001A83A1
 	public WaterValue GetWater(int _x, int _y, int _z)
 	{
 		this.RotateCoords(ref _x, ref _z);
 		return this.waterCells.GetData(_x, _y, _z);
 	}
 
-	// Token: 0x06004456 RID: 17494 RVA: 0x001AA10C File Offset: 0x001A830C
+	// Token: 0x060043E8 RID: 17384 RVA: 0x001AA1BC File Offset: 0x001A83BC
 	public void SetWater(int _x, int _y, int _z, WaterValue _wv)
 	{
 		if ((ulong)_x >= (ulong)((long)this.size.x) || (ulong)_y >= (ulong)((long)this.size.y) || (ulong)_z >= (ulong)((long)this.size.z))
@@ -709,48 +703,48 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.waterCells.SetData(_x, _y, _z, _wv);
 	}
 
-	// Token: 0x06004457 RID: 17495 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060043E9 RID: 17385 RVA: 0x00010E62 File Offset: 0x0000F062
 	public byte GetStab(int _relx, int _absy, int _relz)
 	{
 		return 0;
 	}
 
-	// Token: 0x06004458 RID: 17496 RVA: 0x001AA164 File Offset: 0x001A8364
+	// Token: 0x060043EA RID: 17386 RVA: 0x001AA214 File Offset: 0x001A8414
 	public void SetDensity(int _x, int _y, int _z, sbyte _density)
 	{
 		this.RotateCoords(ref _x, ref _z);
 		this.densityCells.SetData(_x, _y, _z, _density);
 	}
 
-	// Token: 0x06004459 RID: 17497 RVA: 0x001AA180 File Offset: 0x001A8380
+	// Token: 0x060043EB RID: 17387 RVA: 0x001AA230 File Offset: 0x001A8430
 	public sbyte GetDensity(int _x, int _y, int _z)
 	{
 		this.RotateCoords(ref _x, ref _z);
 		return this.densityCells.GetData(_x, _y, _z);
 	}
 
-	// Token: 0x0600445A RID: 17498 RVA: 0x001AA19A File Offset: 0x001A839A
+	// Token: 0x060043EC RID: 17388 RVA: 0x001AA24A File Offset: 0x001A844A
 	public sbyte GetDensity(int _localRotation, int _x, int _y, int _z)
 	{
 		this.RotateCoords(_localRotation, ref _x, ref _z);
 		return this.densityCells.GetData(_x, _y, _z);
 	}
 
-	// Token: 0x0600445B RID: 17499 RVA: 0x001AA1B6 File Offset: 0x001A83B6
+	// Token: 0x060043ED RID: 17389 RVA: 0x001AA266 File Offset: 0x001A8466
 	public void SetTexture(int _x, int _y, int _z, TextureFullArray _fullTexture)
 	{
 		this.RotateCoords(ref _x, ref _z);
 		this.textureCells.SetData(_x, _y, _z, _fullTexture);
 	}
 
-	// Token: 0x0600445C RID: 17500 RVA: 0x001AA1D2 File Offset: 0x001A83D2
+	// Token: 0x060043EE RID: 17390 RVA: 0x001AA282 File Offset: 0x001A8482
 	public TextureFullArray GetTexture(int _x, int _y, int _z)
 	{
 		this.RotateCoords(ref _x, ref _z);
 		return this.textureCells.GetData(_x, _y, _z);
 	}
 
-	// Token: 0x0600445D RID: 17501 RVA: 0x001AA1EC File Offset: 0x001A83EC
+	// Token: 0x060043EF RID: 17391 RVA: 0x001AA29C File Offset: 0x001A849C
 	public bool IsInsidePrefab(int _x, int _y, int _z)
 	{
 		int num;
@@ -782,7 +776,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return this.insidePos.Contains(num, num2, num3);
 	}
 
-	// Token: 0x0600445E RID: 17502 RVA: 0x001AA27A File Offset: 0x001A847A
+	// Token: 0x060043F0 RID: 17392 RVA: 0x001AA32A File Offset: 0x001A852A
 	public void ToggleQuestTag(FastTags<TagGroup.Global> _questTag)
 	{
 		if (this.GetQuestTag(_questTag))
@@ -793,31 +787,31 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.questTags |= _questTag;
 	}
 
-	// Token: 0x0600445F RID: 17503 RVA: 0x001AA2AA File Offset: 0x001A84AA
+	// Token: 0x060043F1 RID: 17393 RVA: 0x001AA35A File Offset: 0x001A855A
 	public FastTags<TagGroup.Global> GetQuestTags()
 	{
 		return new FastTags<TagGroup.Global>(this.questTags);
 	}
 
-	// Token: 0x06004460 RID: 17504 RVA: 0x001AA2B7 File Offset: 0x001A84B7
+	// Token: 0x060043F2 RID: 17394 RVA: 0x001AA367 File Offset: 0x001A8567
 	public bool GetQuestTag(FastTags<TagGroup.Global> _questTag)
 	{
 		return this.questTags.Test_AllSet(_questTag);
 	}
 
-	// Token: 0x06004461 RID: 17505 RVA: 0x001AA2C5 File Offset: 0x001A84C5
+	// Token: 0x060043F3 RID: 17395 RVA: 0x001AA375 File Offset: 0x001A8575
 	public bool HasAnyQuestTag(FastTags<TagGroup.Global> _questTag)
 	{
 		return this.questTags.Test_AnySet(_questTag);
 	}
 
-	// Token: 0x06004462 RID: 17506 RVA: 0x001AA2D3 File Offset: 0x001A84D3
+	// Token: 0x060043F4 RID: 17396 RVA: 0x001AA383 File Offset: 0x001A8583
 	public bool HasQuestTag()
 	{
 		return !this.questTags.IsEmpty;
 	}
 
-	// Token: 0x06004463 RID: 17507 RVA: 0x001AA2E4 File Offset: 0x001A84E4
+	// Token: 0x060043F5 RID: 17397 RVA: 0x001AA394 File Offset: 0x001A8594
 	public TileEntity GetTileEntity(Vector3i _blockPos)
 	{
 		switch (this.localRotation)
@@ -849,7 +843,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return null;
 	}
 
-	// Token: 0x06004464 RID: 17508 RVA: 0x001AA3B4 File Offset: 0x001A85B4
+	// Token: 0x060043F6 RID: 17398 RVA: 0x001AA464 File Offset: 0x001A8664
 	public BlockTrigger GetBlockTrigger(Vector3i _blockPos)
 	{
 		switch (this.localRotation)
@@ -881,7 +875,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return null;
 	}
 
-	// Token: 0x06004465 RID: 17509 RVA: 0x001AA484 File Offset: 0x001A8684
+	// Token: 0x060043F7 RID: 17399 RVA: 0x001AA534 File Offset: 0x001A8734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadFromProperties()
 	{
@@ -988,7 +982,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004466 RID: 17510 RVA: 0x001AAAD8 File Offset: 0x001A8CD8
+	// Token: 0x060043F8 RID: 17400 RVA: 0x001AAB88 File Offset: 0x001A8D88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writeToProperties()
 	{
@@ -1137,19 +1131,19 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004467 RID: 17511 RVA: 0x001AB1BC File Offset: 0x001A93BC
+	// Token: 0x060043F9 RID: 17401 RVA: 0x001AB26C File Offset: 0x001A946C
 	public static bool PrefabExists(string _prefabFileName)
 	{
 		return PathAbstractions.PrefabsSearchPaths.GetLocation(_prefabFileName, null, null).Type != PathAbstractions.EAbstractedLocationType.None;
 	}
 
-	// Token: 0x06004468 RID: 17512 RVA: 0x001AB1F4 File Offset: 0x001A93F4
+	// Token: 0x060043FA RID: 17402 RVA: 0x001AB2A4 File Offset: 0x001A94A4
 	public bool Load(string _prefabName, bool _applyMapping = true, bool _fixChildBlocks = true, bool _allowMissingBlocks = false, bool _skipLoadingBlockData = false)
 	{
 		return this.Load(PathAbstractions.PrefabsSearchPaths.GetLocation(_prefabName, null, null), _applyMapping, _fixChildBlocks, _allowMissingBlocks, _skipLoadingBlockData);
 	}
 
-	// Token: 0x06004469 RID: 17513 RVA: 0x001AB22C File Offset: 0x001A942C
+	// Token: 0x060043FB RID: 17403 RVA: 0x001AB2DC File Offset: 0x001A94DC
 	public bool Load(PathAbstractions.AbstractedLocation _location, bool _applyMapping = true, bool _fixChildBlocks = true, bool _allowMissingBlocks = false, bool _skipLoadingBlockData = false)
 	{
 		if (_location.Type == PathAbstractions.EAbstractedLocationType.None)
@@ -1180,7 +1174,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return this.LoadXMLData(_location);
 	}
 
-	// Token: 0x0600446A RID: 17514 RVA: 0x001AB2D0 File Offset: 0x001A94D0
+	// Token: 0x060043FC RID: 17404 RVA: 0x001AB380 File Offset: 0x001A9580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loadSizeDataOnly(PathAbstractions.AbstractedLocation _location, bool _applyMapping, bool _fixChildBlocks, bool _allowMissingBlocks, bool _skipLoadingBlockData = false)
 	{
@@ -1208,7 +1202,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return flag;
 	}
 
-	// Token: 0x0600446B RID: 17515 RVA: 0x001AB3A4 File Offset: 0x001A95A4
+	// Token: 0x060043FD RID: 17405 RVA: 0x001AB454 File Offset: 0x001A9654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loadBlockData(PathAbstractions.AbstractedLocation _location, bool _applyMapping, bool _fixChildBlocks, bool _allowMissingBlocks, bool _skipLoadingBlockData = false)
 	{
@@ -1259,7 +1253,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return flag;
 	}
 
-	// Token: 0x0600446C RID: 17516 RVA: 0x001AB4D8 File Offset: 0x001A96D8
+	// Token: 0x060043FE RID: 17406 RVA: 0x001AB588 File Offset: 0x001A9788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loadWorldSignData(PathAbstractions.AbstractedLocation _location)
 	{
@@ -1286,7 +1280,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return false;
 	}
 
-	// Token: 0x0600446D RID: 17517 RVA: 0x001AB578 File Offset: 0x001A9778
+	// Token: 0x060043FF RID: 17407 RVA: 0x001AB628 File Offset: 0x001A9828
 	public bool LoadXMLData(PathAbstractions.AbstractedLocation _location)
 	{
 		this.location = _location;
@@ -1302,13 +1296,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return true;
 	}
 
-	// Token: 0x0600446E RID: 17518 RVA: 0x001AB5C8 File Offset: 0x001A97C8
+	// Token: 0x06004400 RID: 17408 RVA: 0x001AB678 File Offset: 0x001A9878
 	public bool Save(string _prefabName, bool _createMapping = true)
 	{
 		return this.Save(PathAbstractions.PrefabsSearchPaths.GetLocation(_prefabName, null, null), _createMapping);
 	}
 
-	// Token: 0x0600446F RID: 17519 RVA: 0x001AB5FC File Offset: 0x001A97FC
+	// Token: 0x06004401 RID: 17409 RVA: 0x001AB6AC File Offset: 0x001A98AC
 	public bool Save(PathAbstractions.AbstractedLocation _location, bool _createMapping = true)
 	{
 		if (this.saveBlockData(_location, _createMapping) && this.SaveXMLData(_location))
@@ -1324,7 +1318,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return false;
 	}
 
-	// Token: 0x06004470 RID: 17520 RVA: 0x001AB64C File Offset: 0x001A984C
+	// Token: 0x06004402 RID: 17410 RVA: 0x001AB6FC File Offset: 0x001A98FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddAllChildBlocks()
 	{
@@ -1356,11 +1350,11 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 						for (int k = 0; k < num3; k++)
 						{
 							Prefab.Cells<uint>.Cell cell = cellsAtX.a[k];
-							if (cell.a != null)
+							if (cell.HasData)
 							{
-								for (int l = 0; l < cell.a.Length; l++)
+								for (int l = 0; l < 16; l++)
 								{
-									uint num4 = cell.a[l];
+									uint num4 = cell.Get(this.cellPool, l);
 									if ((num4 & 65535U) != 0U)
 									{
 										BlockValue blockValue = new BlockValue(num4);
@@ -1407,7 +1401,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004471 RID: 17521 RVA: 0x001AB8AC File Offset: 0x001A9AAC
+	// Token: 0x06004403 RID: 17411 RVA: 0x001AB958 File Offset: 0x001A9B58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveAllChildAndOldBlocks()
 	{
@@ -1436,14 +1430,14 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004472 RID: 17522 RVA: 0x001AB96C File Offset: 0x001A9B6C
+	// Token: 0x06004404 RID: 17412 RVA: 0x001ABA18 File Offset: 0x001A9C18
 	public bool SaveXMLData(PathAbstractions.AbstractedLocation _location)
 	{
 		this.writeToProperties();
 		return this.properties.Save("prefab", _location.Folder, _location.FileNameNoExtension);
 	}
 
-	// Token: 0x06004473 RID: 17523 RVA: 0x001AB990 File Offset: 0x001A9B90
+	// Token: 0x06004405 RID: 17413 RVA: 0x001ABA3C File Offset: 0x001A9C3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool saveBlockData(PathAbstractions.AbstractedLocation _location, bool _createMapping)
 	{
@@ -1496,15 +1490,15 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return false;
 	}
 
-	// Token: 0x06004474 RID: 17524 RVA: 0x001ABB10 File Offset: 0x001A9D10
+	// Token: 0x06004406 RID: 17414 RVA: 0x001ABBBC File Offset: 0x001A9DBC
 	public bool IsCullThisPrefab()
 	{
 		return !this.bExcludePOICulling;
 	}
 
-	// Token: 0x06004475 RID: 17525 RVA: 0x001ABB1C File Offset: 0x001A9D1C
+	// Token: 0x06004407 RID: 17415 RVA: 0x001ABBC8 File Offset: 0x001A9DC8
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void writeBlockData(BinaryWriter _bw)
+	public void writeBlockData(PooledBinaryWriter _bw)
 	{
 		_bw.Write((short)this.size.x);
 		_bw.Write((short)this.size.y);
@@ -1553,9 +1547,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004476 RID: 17526 RVA: 0x001ABCF4 File Offset: 0x001A9EF4
+	// Token: 0x06004408 RID: 17416 RVA: 0x001ABDA0 File Offset: 0x001A9FA0
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void writeTileEntities(BinaryWriter _bw)
+	public void writeTileEntities(PooledBinaryWriter _bw)
 	{
 		_bw.Write((short)this.tileEntities.Count);
 		foreach (KeyValuePair<Vector3i, TileEntity> keyValuePair in this.tileEntities)
@@ -1565,7 +1559,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 				using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(true))
 				{
 					pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
-					keyValuePair.Value.write(pooledBinaryWriter, TileEntity.StreamModeWrite.Persistency);
+					keyValuePair.Value.write(pooledBinaryWriter, StreamModeWrite.Persistency);
 				}
 				_bw.Write((short)pooledExpandableMemoryStream.Length);
 				_bw.Write((byte)keyValuePair.Value.GetTileEntityType());
@@ -1574,9 +1568,9 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004477 RID: 17527 RVA: 0x001ABDE0 File Offset: 0x001A9FE0
+	// Token: 0x06004409 RID: 17417 RVA: 0x001ABE8C File Offset: 0x001AA08C
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void writeTriggerData(BinaryWriter _bw)
+	public void writeTriggerData(PooledBinaryWriter _bw)
 	{
 		_bw.Write((short)this.triggerData.Count);
 		foreach (KeyValuePair<Vector3i, BlockTrigger> keyValuePair in this.triggerData)
@@ -1595,7 +1589,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004478 RID: 17528 RVA: 0x001ABEC0 File Offset: 0x001AA0C0
+	// Token: 0x0600440A RID: 17418 RVA: 0x001ABF6C File Offset: 0x001AA16C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool readBlockData(PooledBinaryReader _br, uint _version, int[] _blockIdMapping, bool _fixChildBlocks)
 	{
@@ -1806,7 +1800,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			for (int n = 0; n < num13; n++)
 			{
 				EntityCreationData entityCreationData = new EntityCreationData();
-				entityCreationData.read(_br, false);
+				entityCreationData.read(_br, StreamModeRead.Persistency);
 				this.entities.Add(entityCreationData);
 			}
 		}
@@ -1827,7 +1821,43 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return true;
 	}
 
-	// Token: 0x06004479 RID: 17529 RVA: 0x001AC53C File Offset: 0x001AA73C
+	// Token: 0x0600440B RID: 17419 RVA: 0x001AC5E8 File Offset: 0x001AA7E8
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void CellsInit()
+	{
+		if (!this.isCellsDataOwner)
+		{
+			Log.Error("CellsInit failed: Cannot set block data on non-owning Prefab instance.");
+			return;
+		}
+		this.cellPool = new Prefab.CellPool();
+		this.blockCells = new Prefab.Cells<uint>(this.size.y, 0U, this.cellPool);
+		this.damageCells = new Prefab.Cells<ushort>(this.size.y, 0, this.cellPool);
+		this.densityCells = new Prefab.Cells<sbyte>(this.size.y, MarchingCubes.DensityAir, this.cellPool);
+		this.textureCells = new Prefab.Cells<TextureFullArray>(this.size.y, TextureFullArray.Default, this.cellPool);
+		this.waterCells = new Prefab.Cells<WaterValue>(this.size.y, WaterValue.Empty, this.cellPool);
+	}
+
+	// Token: 0x0600440C RID: 17420 RVA: 0x001AC6B0 File Offset: 0x001AA8B0
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void CellsCleanup()
+	{
+		if (this.cellPool != null)
+		{
+			if (this.isCellsDataOwner)
+			{
+				this.blockCells.Cleanup();
+				this.damageCells.Cleanup();
+				this.densityCells.Cleanup();
+				this.textureCells.Cleanup();
+				this.waterCells.Cleanup();
+				this.cellPool.Cleanup();
+			}
+			this.cellPool = null;
+		}
+	}
+
+	// Token: 0x0600440D RID: 17421 RVA: 0x001AC718 File Offset: 0x001AA918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CellsFromArrays(ref Prefab.Data _data)
 	{
@@ -1842,34 +1872,34 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 					air.rawData = _data.m_Blocks[num];
 					if (!air.isair)
 					{
-						this.blockCells.AllocCell(k, i, j).Set(k, j, air.rawData);
+						this.blockCells.AllocCell(k, i, j).Set(this.cellPool, k, j, air.rawData);
 					}
 					ushort num2 = _data.m_Damage[num];
 					if (num2 != 0)
 					{
-						this.damageCells.AllocCell(k, i, j).Set(k, j, num2);
+						this.damageCells.AllocCell(k, i, j).Set(this.cellPool, k, j, num2);
 					}
 					sbyte b = (sbyte)_data.m_Density[num];
 					if (b != this.densityCells.defaultValue)
 					{
-						this.densityCells.AllocCell(k, i, j).Set(k, j, b);
+						this.densityCells.AllocCell(k, i, j).Set(this.cellPool, k, j, b);
 					}
 					TextureFullArray textureFullArray = _data.m_Textures[num];
 					if (!textureFullArray.IsDefault)
 					{
-						this.textureCells.AllocCell(k, i, j).Set(k, j, textureFullArray);
+						this.textureCells.AllocCell(k, i, j).Set(this.cellPool, k, j, textureFullArray);
 					}
 					WaterValue waterValue = _data.m_Water[num];
 					if (waterValue.HasMass())
 					{
-						this.waterCells.AllocCell(k, i, j).Set(k, j, waterValue);
+						this.waterCells.AllocCell(k, i, j).Set(this.cellPool, k, j, waterValue);
 					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x0600447A RID: 17530 RVA: 0x001AC6B4 File Offset: 0x001AA8B4
+	// Token: 0x0600440E RID: 17422 RVA: 0x001AC8AC File Offset: 0x001AAAAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Data CellsToArrays()
 	{
@@ -1882,7 +1912,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return data;
 	}
 
-	// Token: 0x0600447B RID: 17531 RVA: 0x001AC744 File Offset: 0x001AA944
+	// Token: 0x0600440F RID: 17423 RVA: 0x001AC93C File Offset: 0x001AAB3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void readTileEntities(PooledBinaryReader _br, int[] _blockIdMapping)
 	{
@@ -1902,7 +1932,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 					using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(true))
 					{
 						pooledBinaryReader.SetBaseStream(pooledExpandableMemoryStream);
-						tileEntity = TileEntity.InstantiateFromRead(pooledBinaryReader, TileEntity.StreamModeRead.Persistency, tileEntityType, null, _blockIdMapping, new Func<int, int, int, BlockValue>(this.GetBlock));
+						tileEntity = TileEntity.InstantiateFromRead(pooledBinaryReader, StreamModeRead.Persistency, tileEntityType, null, _blockIdMapping, new Func<int, int, int, BlockValue>(this.GetBlock));
 					}
 				}
 				Block block = this.GetBlock(tileEntity.localChunkPos.x, tileEntity.localChunkPos.y, tileEntity.localChunkPos.z).Block;
@@ -1919,7 +1949,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600447C RID: 17532 RVA: 0x001AC89C File Offset: 0x001AAA9C
+	// Token: 0x06004410 RID: 17424 RVA: 0x001ACA94 File Offset: 0x001AAC94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void readTriggerData(PooledBinaryReader _br)
 	{
@@ -1958,7 +1988,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600447D RID: 17533 RVA: 0x001AC9F0 File Offset: 0x001AABF0
+	// Token: 0x06004411 RID: 17425 RVA: 0x001ACBE8 File Offset: 0x001AADE8
 	public void RotateY(bool _bLeft, int _rotCount)
 	{
 		if (_rotCount == 0)
@@ -1983,11 +2013,11 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							for (int k = 0; k < num3; k++)
 							{
 								Prefab.Cells<uint>.Cell cell = cellsAtX.a[k];
-								if (cell.a != null)
+								if (cell.HasData)
 								{
-									for (int l = 0; l < cell.a.Length; l++)
+									for (int l = 0; l < 16; l++)
 									{
-										uint num4 = cell.a[l];
+										uint num4 = cell.Get(this.cellPool, l);
 										if ((num4 & 65535U) != 0U)
 										{
 											BlockValue blockValue = new BlockValue(num4);
@@ -1996,12 +2026,12 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 												Block block = blockValue.Block;
 												if (block == null || ((blockValue.meta & 1) != 0 && block is BlockModelTree))
 												{
-													cell.a[l] = 0U;
+													cell.Set(this.cellPool, l, 0U);
 												}
 												else
 												{
 													blockValue = block.shape.RotateY(_bLeft, blockValue, _rotCount);
-													cell.a[l] = blockValue.rawData;
+													cell.Set(this.cellPool, l, blockValue.rawData);
 												}
 											}
 										}
@@ -2053,7 +2083,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600447E RID: 17534 RVA: 0x001ACDB0 File Offset: 0x001AAFB0
+	// Token: 0x06004412 RID: 17426 RVA: 0x001ACFB0 File Offset: 0x001AB1B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RotatePointOnY(bool _bLeft, ref Vector3i _center)
 	{
@@ -2069,7 +2099,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		_center = new Vector3i(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y), Mathf.RoundToInt(vector.z));
 	}
 
-	// Token: 0x0600447F RID: 17535 RVA: 0x001ACE24 File Offset: 0x001AB024
+	// Token: 0x06004413 RID: 17427 RVA: 0x001AD024 File Offset: 0x001AB224
 	public void Replace(BlockValue _src, BlockValue _dst, bool _bConsiderRotation, int _considerPaintId1 = -1, int _considerPaintId2 = -1)
 	{
 		for (int i = 0; i < this.size.x; i++)
@@ -2110,7 +2140,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004480 RID: 17536 RVA: 0x001ACF9C File Offset: 0x001AB19C
+	// Token: 0x06004414 RID: 17428 RVA: 0x001AD19C File Offset: 0x001AB39C
 	public void Replace(int _searchPaintId, int _replacePaintId, int _blockId = -1)
 	{
 		for (int i = 0; i < this.size.x; i++)
@@ -2145,7 +2175,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004481 RID: 17537 RVA: 0x001AD0E0 File Offset: 0x001AB2E0
+	// Token: 0x06004415 RID: 17429 RVA: 0x001AD2E0 File Offset: 0x001AB4E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasTexture(TextureFullArray _fullTexture, int _textureIdx)
 	{
@@ -2162,7 +2192,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return false;
 	}
 
-	// Token: 0x06004482 RID: 17538 RVA: 0x001AD124 File Offset: 0x001AB324
+	// Token: 0x06004416 RID: 17430 RVA: 0x001AD324 File Offset: 0x001AB524
 	public int Search(BlockValue _src, bool _bConsiderRotation, int _considerPaintId1 = -1, int _considerPaintId2 = -1)
 	{
 		int num = 0;
@@ -2183,7 +2213,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num;
 	}
 
-	// Token: 0x06004483 RID: 17539 RVA: 0x001AD1EC File Offset: 0x001AB3EC
+	// Token: 0x06004417 RID: 17431 RVA: 0x001AD3EC File Offset: 0x001AB5EC
 	public int Search(int _paintId, int _blockId = -1)
 	{
 		int num = 0;
@@ -2204,7 +2234,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num;
 	}
 
-	// Token: 0x06004484 RID: 17540 RVA: 0x001AD278 File Offset: 0x001AB478
+	// Token: 0x06004418 RID: 17432 RVA: 0x001AD478 File Offset: 0x001AB678
 	public void CopyIntoRPC(GameManager _gm, Vector3i _destinationPos, bool _pasteAirBlocks = false)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -2330,7 +2360,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004485 RID: 17541 RVA: 0x001AD71C File Offset: 0x001AB91C
+	// Token: 0x06004419 RID: 17433 RVA: 0x001AD91C File Offset: 0x001ABB1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CopyVolumesIntoWorld(World _world, Chunk _chunk, Vector3i _offset)
 	{
@@ -2340,7 +2370,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004486 RID: 17542 RVA: 0x001AD770 File Offset: 0x001AB970
+	// Token: 0x0600441A RID: 17434 RVA: 0x001AD970 File Offset: 0x001ABB70
 	public void MoveVolumes(Vector3i moveDistance)
 	{
 		foreach (PrefabVolumeListAbs prefabVolumeListAbs in this.AllVolumeLists)
@@ -2349,7 +2379,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004487 RID: 17543 RVA: 0x001AD7C4 File Offset: 0x001AB9C4
+	// Token: 0x0600441B RID: 17435 RVA: 0x001AD9C4 File Offset: 0x001ABBC4
 	public short FindSleeperVolumeFreeGroupId()
 	{
 		int num = 0;
@@ -2364,7 +2394,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return (short)(num + 1);
 	}
 
-	// Token: 0x06004488 RID: 17544 RVA: 0x001AD80C File Offset: 0x001ABA0C
+	// Token: 0x0600441C RID: 17436 RVA: 0x001ADA0C File Offset: 0x001ABC0C
 	public void CopySleeperBlocksContainedInVolume(int _volumeIndex, Vector3i _offset, SleeperVolume _volume, Vector3i _volumeMins, Vector3i _volumeMaxs)
 	{
 		int num = Mathf.Max(_volumeMins.x, 0);
@@ -2400,7 +2430,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004489 RID: 17545 RVA: 0x001AD964 File Offset: 0x001ABB64
+	// Token: 0x0600441D RID: 17437 RVA: 0x001ADB64 File Offset: 0x001ABD64
 	public PrefabSleeperVolume FindSleeperVolume(Vector3i _pos)
 	{
 		PrefabSleeperVolume prefabSleeperVolume = null;
@@ -2419,7 +2449,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return prefabSleeperVolume;
 	}
 
-	// Token: 0x0600448A RID: 17546 RVA: 0x001AD9B4 File Offset: 0x001ABBB4
+	// Token: 0x0600441E RID: 17438 RVA: 0x001ADBB4 File Offset: 0x001ABDB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPosInSleeperPriorityVolume(Vector3i _pos, int _skipIndex)
 	{
@@ -2437,7 +2467,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return false;
 	}
 
-	// Token: 0x0600448B RID: 17547 RVA: 0x001ADA08 File Offset: 0x001ABC08
+	// Token: 0x0600441F RID: 17439 RVA: 0x001ADC08 File Offset: 0x001ABE08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPosInSleeperVolume(PrefabSleeperVolume _volume, Vector3i _pos)
 	{
@@ -2450,7 +2480,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return _pos.x >= startPos.x && _pos.x < vector3i.x && _pos.y >= startPos.y && _pos.y < vector3i.y && _pos.z >= startPos.z && _pos.z < vector3i.z;
 	}
 
-	// Token: 0x0600448C RID: 17548 RVA: 0x001ADA8C File Offset: 0x001ABC8C
+	// Token: 0x06004420 RID: 17440 RVA: 0x001ADC8C File Offset: 0x001ABE8C
 	public void CountSleeperSpawnsInVolume(World _world, Vector3i _offset, int _index)
 	{
 		this.Transient_NumSleeperSpawns = 0;
@@ -2485,7 +2515,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x0600448D RID: 17549 RVA: 0x001ADBB8 File Offset: 0x001ABDB8
+	// Token: 0x06004421 RID: 17441 RVA: 0x001ADDB8 File Offset: 0x001ABFB8
 	public static void TransientSleeperBlockIncrement(Vector3i _point, int _c)
 	{
 		SelectionBox selection = SelectionBoxManager.Instance.Selection;
@@ -2515,7 +2545,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		prefab.Transient_NumSleeperSpawns += _c;
 	}
 
-	// Token: 0x0600448E RID: 17550 RVA: 0x001ADC40 File Offset: 0x001ABE40
+	// Token: 0x06004422 RID: 17442 RVA: 0x001ADE40 File Offset: 0x001AC040
 	public string CalcSleeperInfo()
 	{
 		int num = 0;
@@ -2551,7 +2581,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return text;
 	}
 
-	// Token: 0x0600448F RID: 17551 RVA: 0x001ADCDC File Offset: 0x001ABEDC
+	// Token: 0x06004423 RID: 17443 RVA: 0x001ADEDC File Offset: 0x001AC0DC
 	public void CopyIntoLocal(ChunkCluster _cluster, Vector3i _destinationPos, bool _bOverwriteExistingBlocks, bool _bSetChunkToRegenerate, FastTags<TagGroup.Global> _questTags)
 	{
 		World world = _cluster.GetWorld();
@@ -2797,7 +2827,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		GameRandomManager.Instance.FreeGameRandom(gameRandom2);
 	}
 
-	// Token: 0x06004490 RID: 17552 RVA: 0x001AE3F4 File Offset: 0x001AC5F4
+	// Token: 0x06004424 RID: 17444 RVA: 0x001AE5F4 File Offset: 0x001AC7F4
 	public void DestroyAllMultiblocks(ChunkCluster _cluster, Vector3i _destinationPos)
 	{
 		Chunk chunk = _cluster.GetChunkSync(World.toChunkXZ(_destinationPos.x), World.toChunkXZ(_destinationPos.z));
@@ -2849,7 +2879,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004491 RID: 17553 RVA: 0x001AE5CC File Offset: 0x001AC7CC
+	// Token: 0x06004425 RID: 17445 RVA: 0x001AE7CC File Offset: 0x001AC9CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyDecoAllowed(ChunkCluster _cluster, Vector3i _prefabTargetPos)
 	{
@@ -2870,7 +2900,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004492 RID: 17554 RVA: 0x001AE658 File Offset: 0x001AC858
+	// Token: 0x06004426 RID: 17446 RVA: 0x001AE858 File Offset: 0x001ACA58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessMultiBlock(ref BlockValue targetBV, Chunk chunk, Vector3i prefabRelPos, Vector3i chunkRelPos, FastTags<TagGroup.Global> questTags, bool overwriteExistingBlocks)
 	{
@@ -2984,7 +3014,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		targetBV.rotation = blockValue.rotation;
 	}
 
-	// Token: 0x06004493 RID: 17555 RVA: 0x001AE9B4 File Offset: 0x001ACBB4
+	// Token: 0x06004427 RID: 17447 RVA: 0x001AEBB4 File Offset: 0x001ACDB4
 	public void SnapTerrainToArea(ChunkCluster _cluster, Vector3i _destinationPos)
 	{
 		for (int i = -1; i < this.size.x + 1; i++)
@@ -2997,7 +3027,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004494 RID: 17556 RVA: 0x001AEA40 File Offset: 0x001ACC40
+	// Token: 0x06004428 RID: 17448 RVA: 0x001AEC40 File Offset: 0x001ACE40
 	public void CopyEntitiesIntoWorld(World _world, Vector3i _destinationPos, ICollection<int> _entityIds, bool _bSpawnEnemies)
 	{
 		if (_entityIds != null)
@@ -3021,7 +3051,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004495 RID: 17557 RVA: 0x001AEAD4 File Offset: 0x001ACCD4
+	// Token: 0x06004429 RID: 17449 RVA: 0x001AECD4 File Offset: 0x001ACED4
 	public void CopyEntitiesIntoChunkStub(Chunk _chunk, Vector3i _destinationPos, ICollection<int> _entityIds, bool _bSpawnEnemies)
 	{
 		for (int i = 0; i < this.entities.Count; i++)
@@ -3046,7 +3076,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x06004496 RID: 17558 RVA: 0x001AEBF0 File Offset: 0x001ACDF0
+	// Token: 0x0600442A RID: 17450 RVA: 0x001AEDF0 File Offset: 0x001ACFF0
 	public static Vector3i SizeFromPositions(Vector3i _posStart, Vector3i _posEnd)
 	{
 		Vector3i vector3i = new Vector3i(Math.Min(_posStart.x, _posEnd.x), Math.Min(_posStart.y, _posEnd.y), Math.Min(_posStart.z, _posEnd.z));
@@ -3054,7 +3084,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return new Vector3i(Math.Abs(vector3i2.x - vector3i.x) + 1, Math.Abs(vector3i2.y - vector3i.y) + 1, Math.Abs(vector3i2.z - vector3i.z) + 1);
 	}
 
-	// Token: 0x06004497 RID: 17559 RVA: 0x001AECB4 File Offset: 0x001ACEB4
+	// Token: 0x0600442B RID: 17451 RVA: 0x001AEEB4 File Offset: 0x001AD0B4
 	public Vector3i copyFromWorld(World _world, Vector3i _posStart, Vector3i _posEnd)
 	{
 		Vector3i vector3i = Vector3i.Min(_posStart, _posEnd);
@@ -3113,7 +3143,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return vector3i;
 	}
 
-	// Token: 0x06004498 RID: 17560 RVA: 0x001AEE98 File Offset: 0x001AD098
+	// Token: 0x0600442C RID: 17452 RVA: 0x001AF098 File Offset: 0x001AD298
 	public Vector3i CopyFromWorldWithEntities(World _world, Vector3i _posStart, Vector3i _posEnd, ICollection<int> _entityIds)
 	{
 		this.copyFromWorld(_world, _posStart, _posEnd);
@@ -3183,7 +3213,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			Entity entity = list[n];
 			if (!(entity is EntityPlayer))
 			{
-				EntityCreationData entityCreationData = new EntityCreationData(entity, true);
+				EntityCreationData entityCreationData = new EntityCreationData(entity, StreamModeWrite.ToClient);
 				entityCreationData.pos -= new Vector3(bounds.min.x, bounds.min.y, bounds.min.z);
 				this.entities.Add(entityCreationData);
 				if (_entityIds != null)
@@ -3195,7 +3225,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return vector3i;
 	}
 
-	// Token: 0x06004499 RID: 17561 RVA: 0x001AF1DC File Offset: 0x001AD3DC
+	// Token: 0x0600442D RID: 17453 RVA: 0x001AF3DC File Offset: 0x001AD5DC
 	public BlockValue Get(int _absy)
 	{
 		int num = this.currX;
@@ -3207,7 +3237,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return BlockValue.Air;
 	}
 
-	// Token: 0x0600449A RID: 17562 RVA: 0x001AF240 File Offset: 0x001AD440
+	// Token: 0x0600442E RID: 17454 RVA: 0x001AF440 File Offset: 0x001AD640
 	public BlockValue Get(int _relx, int _absy, int _relz)
 	{
 		int num = this.currX + _relx;
@@ -3219,7 +3249,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return BlockValue.Air;
 	}
 
-	// Token: 0x0600449B RID: 17563 RVA: 0x001AF2A8 File Offset: 0x001AD4A8
+	// Token: 0x0600442F RID: 17455 RVA: 0x001AF4A8 File Offset: 0x001AD6A8
 	public IChunk GetChunk(int _x, int _z)
 	{
 		long num = WorldChunkCache.MakeChunkKey(_x, _z);
@@ -3232,7 +3262,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return prefabChunk;
 	}
 
-	// Token: 0x0600449C RID: 17564 RVA: 0x001AF2E4 File Offset: 0x001AD4E4
+	// Token: 0x06004430 RID: 17456 RVA: 0x001AF4E4 File Offset: 0x001AD6E4
 	public List<IChunk> GetChunks()
 	{
 		if (this.dictChunks.Count == 0)
@@ -3256,13 +3286,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return this.dictChunks.Values.ToList<IChunk>();
 	}
 
-	// Token: 0x0600449D RID: 17565 RVA: 0x001AF355 File Offset: 0x001AD555
+	// Token: 0x06004431 RID: 17457 RVA: 0x001AF555 File Offset: 0x001AD755
 	public IChunk GetNeighborChunk(int _x, int _z)
 	{
 		return this.GetChunk(_x, _z);
 	}
 
-	// Token: 0x0600449E RID: 17566 RVA: 0x001AF360 File Offset: 0x001AD560
+	// Token: 0x06004432 RID: 17458 RVA: 0x001AF560 File Offset: 0x001AD760
 	public bool IsWater(int _relx, int _absy, int _relz)
 	{
 		int num = this.currX + _relx;
@@ -3270,7 +3300,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num >= 0 && num < this.size.x && _absy >= 0 && _absy < this.size.y && num2 >= 0 && num2 < this.size.z && this.GetWater(num, _absy, num2).HasMass();
 	}
 
-	// Token: 0x0600449F RID: 17567 RVA: 0x001AF3CC File Offset: 0x001AD5CC
+	// Token: 0x06004433 RID: 17459 RVA: 0x001AF5CC File Offset: 0x001AD7CC
 	public bool IsAir(int _relx, int _absy, int _relz)
 	{
 		int num = this.currX + _relx;
@@ -3278,7 +3308,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return num >= 0 && num < this.size.x && _absy >= 0 && _absy < this.size.y && num2 >= 0 && num2 < this.size.z && this.GetBlock(num, _absy, num2).isair && !this.GetWater(num, _absy, num2).HasMass();
 	}
 
-	// Token: 0x060044A0 RID: 17568 RVA: 0x001AF44F File Offset: 0x001AD64F
+	// Token: 0x06004434 RID: 17460 RVA: 0x001AF64F File Offset: 0x001AD84F
 	public void Init(int _bX, int _bZ)
 	{
 		this.currX = _bX;
@@ -3286,23 +3316,24 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.dictChunks = new Dictionary<long, Prefab.PrefabChunk>();
 	}
 
-	// Token: 0x060044A1 RID: 17569 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004435 RID: 17461 RVA: 0x001AF66A File Offset: 0x001AD86A
 	public void Clear()
 	{
+		this.CellsCleanup();
 	}
 
-	// Token: 0x060044A2 RID: 17570 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004436 RID: 17462 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cache()
 	{
 	}
 
-	// Token: 0x060044A3 RID: 17571 RVA: 0x001AF46A File Offset: 0x001AD66A
+	// Token: 0x06004437 RID: 17463 RVA: 0x001AF672 File Offset: 0x001AD872
 	public void ToMesh(VoxelMesh[] _meshes)
 	{
 		new MeshGenerator(this).GenerateMesh(new Vector3i(-1, -1, -1), this.size + Vector3i.one, _meshes);
 	}
 
-	// Token: 0x060044A4 RID: 17572 RVA: 0x001AF490 File Offset: 0x001AD690
+	// Token: 0x06004438 RID: 17464 RVA: 0x001AF698 File Offset: 0x001AD898
 	public Transform ToTransform()
 	{
 		MeshFilter[] array = new MeshFilter[MeshDescription.meshes.Length];
@@ -3370,7 +3401,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return gameObject.transform;
 	}
 
-	// Token: 0x060044A5 RID: 17573 RVA: 0x001AF788 File Offset: 0x001AD988
+	// Token: 0x06004439 RID: 17465 RVA: 0x001AF990 File Offset: 0x001ADB90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BiomeDefinition> toBiomeArray(WorldBiomes _biomes, List<string> _biomeStrList)
 	{
@@ -3387,25 +3418,25 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return list;
 	}
 
-	// Token: 0x060044A6 RID: 17574 RVA: 0x001AF7C7 File Offset: 0x001AD9C7
+	// Token: 0x0600443A RID: 17466 RVA: 0x001AF9CF File Offset: 0x001ADBCF
 	public string[] GetAllowedBiomes()
 	{
 		return this.allowedBiomes.ToArray();
 	}
 
-	// Token: 0x060044A7 RID: 17575 RVA: 0x001AF7D4 File Offset: 0x001AD9D4
+	// Token: 0x0600443B RID: 17467 RVA: 0x001AF9DC File Offset: 0x001ADBDC
 	public string[] GetAllowedZones()
 	{
 		return this.allowedZones.ToArray();
 	}
 
-	// Token: 0x060044A8 RID: 17576 RVA: 0x001AF7E1 File Offset: 0x001AD9E1
+	// Token: 0x0600443C RID: 17468 RVA: 0x001AF9E9 File Offset: 0x001ADBE9
 	public bool IsAllowedZone(string _zone)
 	{
 		return this.allowedZones.ContainsCaseInsensitive(_zone);
 	}
 
-	// Token: 0x060044A9 RID: 17577 RVA: 0x001AF7EF File Offset: 0x001AD9EF
+	// Token: 0x0600443D RID: 17469 RVA: 0x001AF9F7 File Offset: 0x001ADBF7
 	public void AddAllowedZone(string _zone)
 	{
 		if (!this.IsAllowedZone(_zone))
@@ -3414,7 +3445,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044AA RID: 17578 RVA: 0x001AF808 File Offset: 0x001ADA08
+	// Token: 0x0600443E RID: 17470 RVA: 0x001AFA10 File Offset: 0x001ADC10
 	public void RemoveAllowedZone(string _zone)
 	{
 		int num = this.allowedZones.FindIndex((string _s) => _s.EqualsCaseInsensitive(_zone));
@@ -3424,25 +3455,25 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044AB RID: 17579 RVA: 0x001AF84A File Offset: 0x001ADA4A
+	// Token: 0x0600443F RID: 17471 RVA: 0x001AFA52 File Offset: 0x001ADC52
 	public string[] GetAllowedTownships()
 	{
 		return this.allowedTownships.ToArray();
 	}
 
-	// Token: 0x060044AC RID: 17580 RVA: 0x001AF857 File Offset: 0x001ADA57
+	// Token: 0x06004440 RID: 17472 RVA: 0x001AFA5F File Offset: 0x001ADC5F
 	public void SetAllowedBiomes(string[] _b)
 	{
 		this.allowedBiomes = new List<string>(_b);
 	}
 
-	// Token: 0x060044AD RID: 17581 RVA: 0x001AF865 File Offset: 0x001ADA65
+	// Token: 0x06004441 RID: 17473 RVA: 0x001AFA6D File Offset: 0x001ADC6D
 	public List<BiomeDefinition> GetAllowedBiomes(WorldBiomes _biomes)
 	{
 		return this.toBiomeArray(_biomes, this.allowedBiomes);
 	}
 
-	// Token: 0x060044AE RID: 17582 RVA: 0x001AF874 File Offset: 0x001ADA74
+	// Token: 0x06004442 RID: 17474 RVA: 0x001AFA7C File Offset: 0x001ADC7C
 	public void CopyBlocksIntoChunkNoEntities(World _world, Chunk _chunk, Vector3i _prefabTargetPos, bool _bForceOverwriteBlocks, FastTags<TagGroup.Global> _questTags)
 	{
 		bool flag = this.IsCullThisPrefab() && GameStats.GetInt(EnumGameStats.OptionsPOICulling) > 1;
@@ -3665,7 +3696,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.ApplyDecoAllowed(_chunk, _prefabTargetPos);
 	}
 
-	// Token: 0x060044AF RID: 17583 RVA: 0x001AFF70 File Offset: 0x001AE170
+	// Token: 0x06004443 RID: 17475 RVA: 0x001B0178 File Offset: 0x001AE378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyDecoAllowed(Chunk _chunk, Vector3i _prefabTargetPos)
 	{
@@ -3680,7 +3711,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044B0 RID: 17584 RVA: 0x001AFFEC File Offset: 0x001AE1EC
+	// Token: 0x06004444 RID: 17476 RVA: 0x001B01F4 File Offset: 0x001AE3F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBlockStatistics(BlockValue _bv, Block _b)
 	{
@@ -3694,19 +3725,19 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.statistics.cntSolid = this.statistics.cntSolid + ((!_bv.isair) ? 1 : 0);
 	}
 
-	// Token: 0x060044B1 RID: 17585 RVA: 0x001B0092 File Offset: 0x001AE292
+	// Token: 0x06004445 RID: 17477 RVA: 0x001B029A File Offset: 0x001AE49A
 	public Prefab.BlockStatistics GetBlockStatistics()
 	{
 		return this.statistics;
 	}
 
-	// Token: 0x060044B2 RID: 17586 RVA: 0x001B009A File Offset: 0x001AE29A
+	// Token: 0x06004446 RID: 17478 RVA: 0x001B02A2 File Offset: 0x001AE4A2
 	public List<EntityCreationData> GetEntities()
 	{
 		return this.entities;
 	}
 
-	// Token: 0x060044B3 RID: 17587 RVA: 0x001B00A4 File Offset: 0x001AE2A4
+	// Token: 0x06004447 RID: 17479 RVA: 0x001B02AC File Offset: 0x001AE4AC
 	public void Mirror(EnumMirrorAlong _axis)
 	{
 		Prefab.Data data = this.CellsToArrays();
@@ -3756,7 +3787,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		this.CellsFromArrays(ref data2);
 	}
 
-	// Token: 0x060044B4 RID: 17588 RVA: 0x001B0370 File Offset: 0x001AE570
+	// Token: 0x06004448 RID: 17480 RVA: 0x001B0578 File Offset: 0x001AE778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextureFullArray mirrorTexture(EnumMirrorAlong _axis, BlockShape _shape, int _sourceRot, int _targetRot, TextureFullArray _tex)
 	{
@@ -3779,7 +3810,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return textureFullArray;
 	}
 
-	// Token: 0x060044B5 RID: 17589 RVA: 0x001B03F8 File Offset: 0x001AE5F8
+	// Token: 0x06004449 RID: 17481 RVA: 0x001B0600 File Offset: 0x001AE800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<int> loadIdMapping(string _directory, string _prefabFileName, bool _allowMissingBlocks)
 	{
@@ -3850,7 +3881,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return arrayListMP;
 	}
 
-	// Token: 0x060044B6 RID: 17590 RVA: 0x001B0518 File Offset: 0x001AE718
+	// Token: 0x0600444A RID: 17482 RVA: 0x001B0720 File Offset: 0x001AE920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool doRaycast(Ray _ray, out RaycastHit _hitInfo, Vector3i _min)
 	{
@@ -3870,7 +3901,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return flag;
 	}
 
-	// Token: 0x060044B7 RID: 17591 RVA: 0x001B0600 File Offset: 0x001AE800
+	// Token: 0x0600444B RID: 17483 RVA: 0x001B0808 File Offset: 0x001AEA08
 	public EnumInsideOutside[] UpdateInsideOutside(Vector3i _min, Vector3i _max)
 	{
 		EnumInsideOutside[] array = new EnumInsideOutside[this.GetBlockCount()];
@@ -4218,7 +4249,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return array;
 	}
 
-	// Token: 0x060044B8 RID: 17592 RVA: 0x001B1178 File Offset: 0x001AF378
+	// Token: 0x0600444C RID: 17484 RVA: 0x001B1380 File Offset: 0x001AF580
 	public void RecalcInsideDevices(EnumInsideOutside[] _eInsideOutside)
 	{
 		this.insidePos.Init(this.size);
@@ -4240,7 +4271,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044B9 RID: 17593 RVA: 0x001B11F0 File Offset: 0x001AF3F0
+	// Token: 0x0600444D RID: 17485 RVA: 0x001B13F8 File Offset: 0x001AF5F8
 	public Vector3i? GetFirstIndexedBlockOffsetOfType(string _indexName)
 	{
 		List<Vector3i> list;
@@ -4251,73 +4282,73 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		return null;
 	}
 
-	// Token: 0x060044BA RID: 17594 RVA: 0x001AF355 File Offset: 0x001AD555
+	// Token: 0x0600444E RID: 17486 RVA: 0x001AF555 File Offset: 0x001AD755
 	public IChunk GetChunkSync(int _chunkX, int _chunkZ)
 	{
 		return this.GetChunk(_chunkX, _chunkZ);
 	}
 
-	// Token: 0x060044BB RID: 17595 RVA: 0x001B122C File Offset: 0x001AF42C
+	// Token: 0x0600444F RID: 17487 RVA: 0x001B1434 File Offset: 0x001AF634
 	public IChunk GetChunkSync(long _chunkKey)
 	{
 		return this.GetChunkSync(WorldChunkCache.extractX(_chunkKey), WorldChunkCache.extractZ(_chunkKey));
 	}
 
-	// Token: 0x060044BC RID: 17596 RVA: 0x001B1240 File Offset: 0x001AF440
+	// Token: 0x06004450 RID: 17488 RVA: 0x001B1448 File Offset: 0x001AF648
 	public IChunk GetChunkSync(int chunkX, int chunkY, int chunkZ)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, chunkX, chunkY, chunkZ);
 	}
 
-	// Token: 0x060044BD RID: 17597 RVA: 0x001B124B File Offset: 0x001AF44B
+	// Token: 0x06004451 RID: 17489 RVA: 0x001B1453 File Offset: 0x001AF653
 	public IChunk GetChunkSync(Vector2i chunkPos)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, chunkPos);
 	}
 
-	// Token: 0x060044BE RID: 17598 RVA: 0x001B1254 File Offset: 0x001AF454
+	// Token: 0x06004452 RID: 17490 RVA: 0x001B145C File Offset: 0x001AF65C
 	public IChunk GetChunkSync(PropRef propRef)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, propRef);
 	}
 
-	// Token: 0x060044BF RID: 17599 RVA: 0x001B125D File Offset: 0x001AF45D
+	// Token: 0x06004453 RID: 17491 RVA: 0x001B1465 File Offset: 0x001AF665
 	public IChunk GetChunkSync(BlockValueRef bvRef)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, bvRef);
 	}
 
-	// Token: 0x060044C0 RID: 17600 RVA: 0x001B1266 File Offset: 0x001AF466
+	// Token: 0x06004454 RID: 17492 RVA: 0x001B146E File Offset: 0x001AF66E
 	public IChunk GetChunkFromWorldPos(int x, int z)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, z);
 	}
 
-	// Token: 0x060044C1 RID: 17601 RVA: 0x001B1270 File Offset: 0x001AF470
+	// Token: 0x06004455 RID: 17493 RVA: 0x001B1478 File Offset: 0x001AF678
 	public IChunk GetChunkFromWorldPos(int x, int y, int z)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, y, z);
 	}
 
-	// Token: 0x060044C2 RID: 17602 RVA: 0x001B127B File Offset: 0x001AF47B
+	// Token: 0x06004456 RID: 17494 RVA: 0x001B1483 File Offset: 0x001AF683
 	public IChunk GetChunkFromWorldPos(Vector3i blockPos)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, blockPos);
 	}
 
-	// Token: 0x060044C3 RID: 17603 RVA: 0x001B1284 File Offset: 0x001AF484
+	// Token: 0x06004457 RID: 17495 RVA: 0x001B148C File Offset: 0x001AF68C
 	public bool GetChunkFromWorldPos(int x, int z, ref IChunk chunk)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, z, ref chunk);
 	}
 
-	// Token: 0x060044C4 RID: 17604 RVA: 0x001B128F File Offset: 0x001AF48F
+	// Token: 0x06004458 RID: 17496 RVA: 0x001B1497 File Offset: 0x001AF697
 	public bool GetChunkFromWorldPos(Vector3i blockPos, ref IChunk chunk)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, blockPos, ref chunk);
 	}
 
-	// Token: 0x060044C5 RID: 17605 RVA: 0x001B129C File Offset: 0x001AF49C
+	// Token: 0x06004459 RID: 17497 RVA: 0x001B14A4 File Offset: 0x001AF6A4
 	public IEnumerator ToTransform(bool _genBlockModels, bool _genTerrain, bool _genBlockShapes, bool _fillEmptySpace, Transform _parent, string _name, Vector3 _position, int _heightLimit = 0)
 	{
 		MicroStopwatch ms = new MicroStopwatch(true);
@@ -4462,7 +4493,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		yield break;
 	}
 
-	// Token: 0x060044C6 RID: 17606 RVA: 0x001B12EC File Offset: 0x001AF4EC
+	// Token: 0x0600445A RID: 17498 RVA: 0x001B14F4 File Offset: 0x001AF6F4
 	public void HandleAddingTriggerLayers(BlockTrigger _trigger)
 	{
 		for (int i = 0; i < _trigger.TriggersIndices.Count; i++)
@@ -4481,7 +4512,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044C7 RID: 17607 RVA: 0x001B1388 File Offset: 0x001AF588
+	// Token: 0x0600445B RID: 17499 RVA: 0x001B1590 File Offset: 0x001AF790
 	public void HandleAddingTriggerLayers(PrefabTriggerVolume _trigger)
 	{
 		for (int i = 0; i < _trigger.TriggersIndices.Count; i++)
@@ -4493,7 +4524,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044C8 RID: 17608 RVA: 0x001B13DC File Offset: 0x001AF5DC
+	// Token: 0x0600445C RID: 17500 RVA: 0x001B15E4 File Offset: 0x001AF7E4
 	public void AddInitialTriggerLayers()
 	{
 		for (byte b = 1; b < 6; b += 1)
@@ -4502,7 +4533,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044C9 RID: 17609 RVA: 0x001B1404 File Offset: 0x001AF604
+	// Token: 0x0600445D RID: 17501 RVA: 0x001B160C File Offset: 0x001AF80C
 	public void AddNewTriggerLayer()
 	{
 		if (this.TriggerLayers.Count > 0)
@@ -4521,7 +4552,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		}
 	}
 
-	// Token: 0x060044CA RID: 17610 RVA: 0x001B146B File Offset: 0x001AF66B
+	// Token: 0x0600445E RID: 17502 RVA: 0x001B1673 File Offset: 0x001AF873
 	[Conditional("DEBUG_PREFABLOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogPrefab(string _format, params object[] _args)
@@ -4529,396 +4560,400 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 		Log.Warning(string.Format("{0} Prefab {1}", GameManager.frameCount, _format), _args);
 	}
 
-	// Token: 0x04003700 RID: 14080
+	// Token: 0x040036F4 RID: 14068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int CurrentSaveVersion = 19;
 
-	// Token: 0x04003701 RID: 14081
+	// Token: 0x040036F5 RID: 14069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMinimumSupportedVersion = 13;
 
-	// Token: 0x04003702 RID: 14082
+	// Token: 0x040036F6 RID: 14070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_CopyAirBlocks = "CopyAirBlocks";
 
-	// Token: 0x04003703 RID: 14083
+	// Token: 0x040036F7 RID: 14071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_AllowDecorations = "AllowDecorations";
 
-	// Token: 0x04003704 RID: 14084
+	// Token: 0x040036F8 RID: 14072
 	public const string cProp_YOffset = "YOffset";
 
-	// Token: 0x04003705 RID: 14085
+	// Token: 0x040036F9 RID: 14073
 	public const string cProp_RotationToFaceNorth = "RotationToFaceNorth";
 
-	// Token: 0x04003706 RID: 14086
+	// Token: 0x040036FA RID: 14074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_ExcludeDistantPOIMesh = "ExcludeDistantPOIMesh";
 
-	// Token: 0x04003707 RID: 14087
+	// Token: 0x040036FB RID: 14075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_ExcludePOICulling = "ExcludePOICulling";
 
-	// Token: 0x04003708 RID: 14088
+	// Token: 0x040036FC RID: 14076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_DistantPOIYOffset = "DistantPOIYOffset";
 
-	// Token: 0x04003709 RID: 14089
+	// Token: 0x040036FD RID: 14077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_DistantPOIOverride = "DistantPOIOverride";
 
-	// Token: 0x0400370A RID: 14090
+	// Token: 0x040036FE RID: 14078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_EditorGroups = "EditorGroups";
 
-	// Token: 0x0400370B RID: 14091
+	// Token: 0x040036FF RID: 14079
 	public const string cProp_IsTraderArea = "TraderArea";
 
-	// Token: 0x0400370C RID: 14092
+	// Token: 0x04003700 RID: 14080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_TraderAreaProtect = "TraderAreaProtect";
 
-	// Token: 0x0400370D RID: 14093
+	// Token: 0x04003701 RID: 14081
 	public const string cProp_SleeperVolumeStart = "SleeperVolumeStart";
 
-	// Token: 0x0400370E RID: 14094
+	// Token: 0x04003702 RID: 14082
 	public const string cProp_SleeperVolumeSize = "SleeperVolumeSize";
 
-	// Token: 0x0400370F RID: 14095
+	// Token: 0x04003703 RID: 14083
 	public const string cProp_SleeperVolumeGroup = "SleeperVolumeGroup";
 
-	// Token: 0x04003710 RID: 14096
+	// Token: 0x04003704 RID: 14084
 	public const string cProp_SleeperVolumeGroupId = "SleeperVolumeGroupId";
 
-	// Token: 0x04003711 RID: 14097
+	// Token: 0x04003705 RID: 14085
 	public const string cProp_SleeperIsPriorityVolume = "SleeperIsLootVolume";
 
-	// Token: 0x04003712 RID: 14098
+	// Token: 0x04003706 RID: 14086
 	public const string cProp_SleeperIsQuestExclude = "SleeperIsQuestExclude";
 
-	// Token: 0x04003713 RID: 14099
+	// Token: 0x04003707 RID: 14087
 	public const string cProp_SleeperVolumeFlags = "SleeperVolumeFlags";
 
-	// Token: 0x04003714 RID: 14100
+	// Token: 0x04003708 RID: 14088
 	public const string cProp_SleeperVolumeTriggeredBy = "SleeperVolumeTriggeredBy";
 
-	// Token: 0x04003715 RID: 14101
+	// Token: 0x04003709 RID: 14089
 	public const string cProp_SleeperVolumeScript = "SVS";
 
-	// Token: 0x04003716 RID: 14102
+	// Token: 0x0400370A RID: 14090
 	public const string cProp_TeleportVolumeStart = "TeleportVolumeStart";
 
-	// Token: 0x04003717 RID: 14103
+	// Token: 0x0400370B RID: 14091
 	public const string cProp_TeleportVolumeSize = "TeleportVolumeSize";
 
-	// Token: 0x04003718 RID: 14104
+	// Token: 0x0400370C RID: 14092
 	public const string cProp_InfoVolumeStart = "InfoVolumeStart";
 
-	// Token: 0x04003719 RID: 14105
+	// Token: 0x0400370D RID: 14093
 	public const string cProp_InfoVolumeSize = "InfoVolumeSize";
 
-	// Token: 0x0400371A RID: 14106
+	// Token: 0x0400370E RID: 14094
 	public const string cProp_WallVolumeStart = "WallVolumeStart";
 
-	// Token: 0x0400371B RID: 14107
+	// Token: 0x0400370F RID: 14095
 	public const string cProp_WallVolumeSize = "WallVolumeSize";
 
-	// Token: 0x0400371C RID: 14108
+	// Token: 0x04003710 RID: 14096
 	public const string cProp_TriggerVolumeStart = "TriggerVolumeStart";
 
-	// Token: 0x0400371D RID: 14109
+	// Token: 0x04003711 RID: 14097
 	public const string cProp_TriggerVolumeSize = "TriggerVolumeSize";
 
-	// Token: 0x0400371E RID: 14110
+	// Token: 0x04003712 RID: 14098
 	public const string cProp_TriggerVolumeTriggers = "TriggerVolumeTriggers";
 
-	// Token: 0x0400371F RID: 14111
+	// Token: 0x04003713 RID: 14099
 	public const string cProp_POIMarkerStart = "POIMarkerStart";
 
-	// Token: 0x04003720 RID: 14112
+	// Token: 0x04003714 RID: 14100
 	public const string cProp_POIMarkerSize = "POIMarkerSize";
 
-	// Token: 0x04003721 RID: 14113
+	// Token: 0x04003715 RID: 14101
 	public const string cProp_POIMarkerGroup = "POIMarkerGroup";
 
-	// Token: 0x04003722 RID: 14114
+	// Token: 0x04003716 RID: 14102
 	public const string cProp_POIMarkerTags = "POIMarkerTags";
 
-	// Token: 0x04003723 RID: 14115
+	// Token: 0x04003717 RID: 14103
 	public const string cProp_POIMarkerType = "POIMarkerType";
 
-	// Token: 0x04003724 RID: 14116
+	// Token: 0x04003718 RID: 14104
 	public const string cProp_POIMarkerPartToSpawn = "POIMarkerPartToSpawn";
 
-	// Token: 0x04003725 RID: 14117
+	// Token: 0x04003719 RID: 14105
 	public const string cProp_POIMarkerPartRotations = "POIMarkerPartRotations";
 
-	// Token: 0x04003726 RID: 14118
+	// Token: 0x0400371A RID: 14106
 	public const string cProp_POIMarkerPartSpawnChance = "POIMarkerPartSpawnChance";
 
-	// Token: 0x04003727 RID: 14119
+	// Token: 0x0400371B RID: 14107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_Zoning = "Zoning";
 
-	// Token: 0x04003728 RID: 14120
+	// Token: 0x0400371C RID: 14108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_AllowedBiomes = "AllowedBiomes";
 
-	// Token: 0x04003729 RID: 14121
+	// Token: 0x0400371D RID: 14109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_AllowedTownships = "AllowedTownships";
 
-	// Token: 0x0400372A RID: 14122
+	// Token: 0x0400371E RID: 14110
 	public const string cProp_Tags = "Tags";
 
-	// Token: 0x0400372B RID: 14123
+	// Token: 0x0400371F RID: 14111
 	public const string cProp_ThemeTags = "ThemeTags";
 
-	// Token: 0x0400372C RID: 14124
+	// Token: 0x04003720 RID: 14112
 	public const string cProp_ThemeRepeatDist = "ThemeRepeatDistance";
 
-	// Token: 0x0400372D RID: 14125
+	// Token: 0x04003721 RID: 14113
 	public const string cProp_DuplicateRepeatDist = "DuplicateRepeatDistance";
 
-	// Token: 0x0400372E RID: 14126
+	// Token: 0x04003722 RID: 14114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_IndexedBlockOffsets = "IndexedBlockOffsets";
 
-	// Token: 0x0400372F RID: 14127
+	// Token: 0x04003723 RID: 14115
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_QuestTags = "QuestTags";
 
-	// Token: 0x04003730 RID: 14128
+	// Token: 0x04003724 RID: 14116
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cProp_ShowQuestClearCount = "ShowQuestClearCount";
 
-	// Token: 0x04003731 RID: 14129
+	// Token: 0x04003725 RID: 14117
 	public const string cProp_DifficultyTier = "DifficultyTier";
 
-	// Token: 0x04003732 RID: 14130
+	// Token: 0x04003726 RID: 14118
 	public const string cProp_PrefabSize = "PrefabSize";
 
-	// Token: 0x04003733 RID: 14131
+	// Token: 0x04003727 RID: 14119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string MISSING_BLOCK_NAME = "missingBlock";
 
-	// Token: 0x04003734 RID: 14132
+	// Token: 0x04003728 RID: 14120
 	public Vector3i size;
 
-	// Token: 0x04003735 RID: 14133
+	// Token: 0x04003729 RID: 14121
 	public PathAbstractions.AbstractedLocation location;
 
-	// Token: 0x04003736 RID: 14134
+	// Token: 0x0400372A RID: 14122
 	public bool bCopyAirBlocks = true;
 
-	// Token: 0x04003737 RID: 14135
+	// Token: 0x0400372B RID: 14123
 	public bool bExcludeDistantPOIMesh;
 
-	// Token: 0x04003738 RID: 14136
+	// Token: 0x0400372C RID: 14124
 	public bool bExcludePOICulling;
 
-	// Token: 0x04003739 RID: 14137
+	// Token: 0x0400372D RID: 14125
 	public float distantPOIYOffset;
 
-	// Token: 0x0400373A RID: 14138
+	// Token: 0x0400372E RID: 14126
 	public string distantPOIOverride;
 
-	// Token: 0x0400373B RID: 14139
+	// Token: 0x0400372F RID: 14127
 	public bool bAllowDecorations = true;
 
-	// Token: 0x0400373C RID: 14140
+	// Token: 0x04003730 RID: 14128
 	public bool bTraderArea;
 
-	// Token: 0x0400373D RID: 14141
+	// Token: 0x04003731 RID: 14129
 	public Vector3i TraderAreaProtect;
 
-	// Token: 0x0400373E RID: 14142
+	// Token: 0x04003732 RID: 14130
 	public readonly List<PrefabVolumeListAbs> AllVolumeLists;
 
-	// Token: 0x0400373F RID: 14143
+	// Token: 0x04003733 RID: 14131
 	public readonly Dictionary<PrefabVolumeAbs.EVolumeType, PrefabVolumeListAbs> AllVolumeListsByType = new Dictionary<PrefabVolumeAbs.EVolumeType, PrefabVolumeListAbs>();
 
-	// Token: 0x04003740 RID: 14144
+	// Token: 0x04003734 RID: 14132
 	public readonly PrefabSleeperVolumeList SleeperVolumeList;
 
-	// Token: 0x04003741 RID: 14145
+	// Token: 0x04003735 RID: 14133
 	public readonly PrefabTeleportVolumeList TeleportVolumeList;
 
-	// Token: 0x04003742 RID: 14146
+	// Token: 0x04003736 RID: 14134
 	public readonly PrefabInfoVolumeList InfoVolumeList;
 
-	// Token: 0x04003743 RID: 14147
+	// Token: 0x04003737 RID: 14135
 	public readonly PrefabWallVolumeList WallVolumeList;
 
-	// Token: 0x04003744 RID: 14148
+	// Token: 0x04003738 RID: 14136
 	public readonly PrefabTriggerVolumeList TriggerVolumeList;
 
-	// Token: 0x04003745 RID: 14149
+	// Token: 0x04003739 RID: 14137
 	public readonly PrefabMarkerVolumeList MarkerVolumeList;
 
-	// Token: 0x04003746 RID: 14150
+	// Token: 0x0400373A RID: 14138
 	public int yOffset;
 
-	// Token: 0x04003747 RID: 14151
+	// Token: 0x0400373B RID: 14139
 	public int Transient_NumSleeperSpawns;
 
-	// Token: 0x04003748 RID: 14152
+	// Token: 0x0400373C RID: 14140
 	public List<string> editorGroups = new List<string>();
 
-	// Token: 0x04003749 RID: 14153
+	// Token: 0x0400373D RID: 14141
 	public int rotationToFaceNorth = 2;
 
-	// Token: 0x0400374A RID: 14154
+	// Token: 0x0400373E RID: 14142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> allowedZones = new List<string>();
 
-	// Token: 0x0400374B RID: 14155
+	// Token: 0x0400373F RID: 14143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> allowedBiomes = new List<string>();
 
-	// Token: 0x0400374C RID: 14156
+	// Token: 0x04003740 RID: 14144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> allowedTownships = new List<string>();
 
-	// Token: 0x0400374D RID: 14157
+	// Token: 0x04003741 RID: 14145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> tags;
 
-	// Token: 0x0400374E RID: 14158
+	// Token: 0x04003742 RID: 14146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> themeTags;
 
-	// Token: 0x0400374F RID: 14159
+	// Token: 0x04003743 RID: 14147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int themeRepeatDistance = 300;
 
-	// Token: 0x04003750 RID: 14160
+	// Token: 0x04003744 RID: 14148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int duplicateRepeatDistance = 1000;
 
-	// Token: 0x04003751 RID: 14161
+	// Token: 0x04003745 RID: 14149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> multiBlockParentIndices = new List<int>();
 
-	// Token: 0x04003752 RID: 14162
+	// Token: 0x04003746 RID: 14150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> decoAllowedBlockIndices = new List<int>();
 
-	// Token: 0x04003753 RID: 14163
+	// Token: 0x04003747 RID: 14151
 	public readonly Dictionary<string, List<Vector3i>> indexedBlockOffsets = new CaseInsensitiveStringDictionary<List<Vector3i>>();
 
-	// Token: 0x04003754 RID: 14164
+	// Token: 0x04003748 RID: 14152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> questTags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x04003755 RID: 14165
+	// Token: 0x04003749 RID: 14153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.BlockStatistics statistics;
 
-	// Token: 0x04003756 RID: 14166
+	// Token: 0x0400374A RID: 14154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldStats renderingCost;
 
-	// Token: 0x04003757 RID: 14167
+	// Token: 0x0400374B RID: 14155
 	public int ShowQuestClearCount = 1;
 
-	// Token: 0x04003758 RID: 14168
+	// Token: 0x0400374C RID: 14156
 	public byte DifficultyTier;
 
-	// Token: 0x04003759 RID: 14169
+	// Token: 0x0400374D RID: 14157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int localRotation;
 
-	// Token: 0x0400375A RID: 14170
+	// Token: 0x0400374E RID: 14158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isCellsDataOwner = true;
 
-	// Token: 0x0400375B RID: 14171
+	// Token: 0x0400374F RID: 14159
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Cells<uint> blockCells;
 
-	// Token: 0x0400375C RID: 14172
+	// Token: 0x04003750 RID: 14160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Cells<ushort> damageCells;
 
-	// Token: 0x0400375D RID: 14173
+	// Token: 0x04003751 RID: 14161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Cells<sbyte> densityCells;
 
-	// Token: 0x0400375E RID: 14174
+	// Token: 0x04003752 RID: 14162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Cells<TextureFullArray> textureCells;
 
-	// Token: 0x0400375F RID: 14175
+	// Token: 0x04003753 RID: 14163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab.Cells<WaterValue> waterCells;
 
-	// Token: 0x04003760 RID: 14176
+	// Token: 0x04003754 RID: 14164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Prefab.Data sharedData = default(Prefab.Data);
 
-	// Token: 0x04003761 RID: 14177
+	// Token: 0x04003755 RID: 14165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityCreationData> entities = new List<EntityCreationData>();
 
-	// Token: 0x04003762 RID: 14178
+	// Token: 0x04003756 RID: 14166
 	public DynamicProperties properties = new DynamicProperties();
 
-	// Token: 0x04003763 RID: 14179
+	// Token: 0x04003757 RID: 14167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainFillerType;
 
-	// Token: 0x04003764 RID: 14180
+	// Token: 0x04003758 RID: 14168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainFiller2Type;
 
-	// Token: 0x04003765 RID: 14181
+	// Token: 0x04003759 RID: 14169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blockTypeMissingBlock = -1;
 
-	// Token: 0x04003766 RID: 14182
+	// Token: 0x0400375A RID: 14170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector3i, TileEntity> tileEntities = new Dictionary<Vector3i, TileEntity>();
 
-	// Token: 0x04003767 RID: 14183
+	// Token: 0x0400375B RID: 14171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector2i, Dictionary<int, PropValue>> propsByChunk = new Dictionary<Vector2i, Dictionary<int, PropValue>>();
 
-	// Token: 0x04003768 RID: 14184
+	// Token: 0x0400375C RID: 14172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly PrefabInsideDataFile insidePos = new PrefabInsideDataFile();
 
-	// Token: 0x04003769 RID: 14185
+	// Token: 0x0400375D RID: 14173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector3i, BlockTrigger> triggerData = new Dictionary<Vector3i, BlockTrigger>();
 
-	// Token: 0x0400376A RID: 14186
+	// Token: 0x0400375E RID: 14174
 	public readonly List<byte> TriggerLayers = new List<byte>();
 
-	// Token: 0x0400376B RID: 14187
+	// Token: 0x0400375F RID: 14175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] tempBuf;
 
-	// Token: 0x0400376C RID: 14188
+	// Token: 0x04003760 RID: 14176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SimpleBitStream simpleBitStreamReader = new SimpleBitStream(1000);
 
-	// Token: 0x0400376D RID: 14189
+	// Token: 0x04003761 RID: 14177
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Prefab.CellPool cellPool;
+
+	// Token: 0x04003762 RID: 14178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currX;
 
-	// Token: 0x0400376E RID: 14190
+	// Token: 0x04003763 RID: 14179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currZ;
 
-	// Token: 0x0400376F RID: 14191
+	// Token: 0x04003764 RID: 14180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, Prefab.PrefabChunk> dictChunks;
 
-	// Token: 0x0200092C RID: 2348
+	// Token: 0x02000931 RID: 2353
 	public struct BlockStatistics
 	{
-		// Token: 0x060044CC RID: 17612 RVA: 0x001B14B5 File Offset: 0x001AF6B5
+		// Token: 0x06004460 RID: 17504 RVA: 0x001B16BD File Offset: 0x001AF8BD
 		public void Clear()
 		{
 			this.cntWindows = 0;
@@ -4928,32 +4963,32 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			this.cntBlockModels = 0;
 		}
 
-		// Token: 0x060044CD RID: 17613 RVA: 0x001B14DC File Offset: 0x001AF6DC
+		// Token: 0x06004461 RID: 17505 RVA: 0x001B16E4 File Offset: 0x001AF8E4
 		public override string ToString()
 		{
 			return string.Format("Blocks: {0} BEnts: {1} BMods: {2} Wdws: {3}", new object[] { this.cntSolid, this.cntBlockEntities, this.cntBlockModels, this.cntWindows });
 		}
 
-		// Token: 0x04003770 RID: 14192
+		// Token: 0x04003765 RID: 14181
 		public int cntWindows;
 
-		// Token: 0x04003771 RID: 14193
+		// Token: 0x04003766 RID: 14182
 		public int cntDoors;
 
-		// Token: 0x04003772 RID: 14194
+		// Token: 0x04003767 RID: 14183
 		public int cntBlockEntities;
 
-		// Token: 0x04003773 RID: 14195
+		// Token: 0x04003768 RID: 14184
 		public int cntBlockModels;
 
-		// Token: 0x04003774 RID: 14196
+		// Token: 0x04003769 RID: 14185
 		public int cntSolid;
 	}
 
-	// Token: 0x0200092D RID: 2349
+	// Token: 0x02000932 RID: 2354
 	public struct Data
 	{
-		// Token: 0x060044CE RID: 17614 RVA: 0x001B1531 File Offset: 0x001AF731
+		// Token: 0x06004462 RID: 17506 RVA: 0x001B1739 File Offset: 0x001AF939
 		public void Init(int _count)
 		{
 			this.m_Blocks = new uint[_count];
@@ -4963,7 +4998,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			this.m_Water = new WaterValue[_count];
 		}
 
-		// Token: 0x060044CF RID: 17615 RVA: 0x001B1570 File Offset: 0x001AF770
+		// Token: 0x06004463 RID: 17507 RVA: 0x001B1778 File Offset: 0x001AF978
 		public void Expand(int _count)
 		{
 			int num = ((this.m_Blocks != null) ? this.m_Blocks.Length : 0);
@@ -4982,41 +5017,169 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			}
 		}
 
-		// Token: 0x04003775 RID: 14197
+		// Token: 0x0400376A RID: 14186
 		public uint[] m_Blocks;
 
-		// Token: 0x04003776 RID: 14198
+		// Token: 0x0400376B RID: 14187
 		public ushort[] m_Damage;
 
-		// Token: 0x04003777 RID: 14199
+		// Token: 0x0400376C RID: 14188
 		public byte[] m_Density;
 
-		// Token: 0x04003778 RID: 14200
+		// Token: 0x0400376D RID: 14189
 		public TextureFullArray[] m_Textures;
 
-		// Token: 0x04003779 RID: 14201
+		// Token: 0x0400376E RID: 14190
 		public WaterValue[] m_Water;
 	}
 
-	// Token: 0x0200092E RID: 2350
+	// Token: 0x02000933 RID: 2355
+	public class CellPool
+	{
+		// Token: 0x06004464 RID: 17508 RVA: 0x001B1809 File Offset: 0x001AFA09
+		public CellPool()
+		{
+			this.AllocNative();
+		}
+
+		// Token: 0x06004465 RID: 17509 RVA: 0x001B1824 File Offset: 0x001AFA24
+		public void Cleanup()
+		{
+			for (int i = 0; i < this.dataList.Count; i++)
+			{
+				this.dataList[i].Dispose();
+			}
+			this.dataList.Clear();
+			this.dataList = null;
+		}
+
+		// Token: 0x06004466 RID: 17510 RVA: 0x001B1870 File Offset: 0x001AFA70
+		public int Alloc<[IsUnmanaged] T>() where T : struct, ValueType
+		{
+			int num = 16 * UnsafeUtility.SizeOf<T>();
+			if (this.dataOffset + num > 2048)
+			{
+				this.AllocNative();
+			}
+			int num2 = this.dataOffset;
+			this.dataOffset += num;
+			return (this.dataListIndex << 16) | num2;
+		}
+
+		// Token: 0x06004467 RID: 17511 RVA: 0x001B18BC File Offset: 0x001AFABC
+		[PublicizedFrom(EAccessModifier.Private)]
+		public void AllocNative()
+		{
+			NativeArray<byte> nativeArray = new NativeArray<byte>(2048, Allocator.Persistent, NativeArrayOptions.UninitializedMemory);
+			this.dataList.Add(nativeArray);
+			this.dataListIndex = this.dataList.Count - 1;
+			this.dataOffset = 8;
+		}
+
+		// Token: 0x06004468 RID: 17512 RVA: 0x001B1900 File Offset: 0x001AFB00
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public unsafe ref T CellFromOffset<[IsUnmanaged] T>(int _offset, int _index) where T : struct, ValueType
+		{
+			int num = _offset >> 16;
+			int num2 = _offset & 65535;
+			void* ptr = (void*)((byte*)((byte*)this.dataList[num].GetUnsafePtr<byte>() + num2) + _index * sizeof(T));
+			return UnsafeUtility.AsRef<T>(ptr);
+		}
+
+		// Token: 0x06004469 RID: 17513 RVA: 0x001B1940 File Offset: 0x001AFB40
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public unsafe byte* PtrFromOffset<[IsUnmanaged] T>(int _offset, int _index) where T : struct, ValueType
+		{
+			int num = _offset >> 16;
+			int num2 = _offset & 65535;
+			return (byte*)((byte*)this.dataList[num].GetUnsafePtr<byte>() + num2) + _index * sizeof(T);
+		}
+
+		// Token: 0x0600446A RID: 17514 RVA: 0x001B1976 File Offset: 0x001AFB76
+		public override string ToString()
+		{
+			return string.Format("pool #{0}, {1}", this.dataList.Count, this.dataOffset);
+		}
+
+		// Token: 0x0400376F RID: 14191
+		[PublicizedFrom(EAccessModifier.Private)]
+		public const int cNativeSize = 2048;
+
+		// Token: 0x04003770 RID: 14192
+		[PublicizedFrom(EAccessModifier.Private)]
+		public const int cNativeListIndexShift = 16;
+
+		// Token: 0x04003771 RID: 14193
+		[PublicizedFrom(EAccessModifier.Private)]
+		public const int cNativeOffsetMask = 65535;
+
+		// Token: 0x04003772 RID: 14194
+		[PublicizedFrom(EAccessModifier.Private)]
+		public List<NativeArray<byte>> dataList = new List<NativeArray<byte>>();
+
+		// Token: 0x04003773 RID: 14195
+		[PublicizedFrom(EAccessModifier.Private)]
+		public int dataListIndex;
+
+		// Token: 0x04003774 RID: 14196
+		[PublicizedFrom(EAccessModifier.Private)]
+		public int dataOffset;
+	}
+
+	// Token: 0x02000934 RID: 2356
 	public class Cells<[IsUnmanaged] T> where T : struct, ValueType
 	{
-		// Token: 0x060044D0 RID: 17616 RVA: 0x001B1601 File Offset: 0x001AF801
-		public Cells(int _sizeY, T _defaultValue)
+		// Token: 0x0600446B RID: 17515 RVA: 0x001B199D File Offset: 0x001AFB9D
+		public Cells(int _sizeY, T _defaultValue, Prefab.CellPool _pool)
 		{
 			this.sizeY = _sizeY;
 			this.defaultValue = _defaultValue;
+			this.pool = _pool;
 		}
 
-		// Token: 0x060044D1 RID: 17617 RVA: 0x001B1617 File Offset: 0x001AF817
+		// Token: 0x0600446C RID: 17516 RVA: 0x001B19BA File Offset: 0x001AFBBA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Cells(Prefab.Cells<T> _template)
 		{
 			this.sizeY = _template.sizeY;
 			this.defaultValue = _template.defaultValue;
+			this.pool = _template.pool;
 		}
 
-		// Token: 0x060044D2 RID: 17618 RVA: 0x001B1638 File Offset: 0x001AF838
+		// Token: 0x0600446D RID: 17517 RVA: 0x001B19E8 File Offset: 0x001AFBE8
+		public void Cleanup()
+		{
+			if (this.a != null)
+			{
+				for (int i = 0; i < this.a.Length; i++)
+				{
+					Prefab.Cells<T>.CellsAtZ cellsAtZ = this.a[i];
+					if (cellsAtZ != null)
+					{
+						for (int j = 0; j < cellsAtZ.a.Length; j++)
+						{
+							Prefab.Cells<T>.CellsAtX cellsAtX = cellsAtZ.a[j];
+							if (cellsAtX != null)
+							{
+								for (int k = 0; k < cellsAtX.a.Length; k++)
+								{
+									cellsAtX.a[k].Cleanup();
+								}
+							}
+						}
+					}
+				}
+				this.a = null;
+			}
+		}
+
+		// Token: 0x0600446E RID: 17518 RVA: 0x0003223F File Offset: 0x0003043F
+		public override string ToString()
+		{
+			return "";
+		}
+
+		// Token: 0x0600446F RID: 17519 RVA: 0x001B1A6C File Offset: 0x001AFC6C
 		public Prefab.Cells<T>.Cell AllocCell(int _x, int _y, int _z)
 		{
 			if (this.a == null)
@@ -5046,15 +5209,15 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 				Array.Resize<Prefab.Cells<T>.Cell>(ref cellsAtX.a, num2 + 1);
 			}
 			Prefab.Cells<T>.Cell cell = cellsAtX.a[num2];
-			if (cell.a == null)
+			if (!cell.HasData)
 			{
-				cell = new Prefab.Cells<T>.Cell(this.defaultValue);
+				cell = new Prefab.Cells<T>.Cell(this.pool, this.defaultValue);
 				cellsAtX.a[num2] = cell;
 			}
 			return cell;
 		}
 
-		// Token: 0x060044D3 RID: 17619 RVA: 0x001B1714 File Offset: 0x001AF914
+		// Token: 0x06004470 RID: 17520 RVA: 0x001B1B4C File Offset: 0x001AFD4C
 		public Prefab.Cells<T>.Cell GetCell(int _x, int _y, int _z)
 		{
 			if (this.a == null)
@@ -5084,27 +5247,27 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return cellsAtX.a[num2];
 		}
 
-		// Token: 0x060044D4 RID: 17620 RVA: 0x001B179C File Offset: 0x001AF99C
+		// Token: 0x06004471 RID: 17521 RVA: 0x001B1BD4 File Offset: 0x001AFDD4
 		public T GetData(int _x, int _y, int _z)
 		{
 			Prefab.Cells<T>.Cell cell = this.GetCell(_x, _y, _z);
-			if (cell.a == null)
+			if (!cell.HasData)
 			{
 				return this.defaultValue;
 			}
-			return cell.Get(_x, _z);
+			return cell.Get(this.pool, _x, _z);
 		}
 
-		// Token: 0x060044D5 RID: 17621 RVA: 0x001B17CC File Offset: 0x001AF9CC
+		// Token: 0x06004472 RID: 17522 RVA: 0x001B1C0C File Offset: 0x001AFE0C
 		public void SetData(int _x, int _y, int _z, T _data)
 		{
-			this.AllocCell(_x, _y, _z).Set(_x, _z, _data);
+			this.AllocCell(_x, _y, _z).Set(this.pool, _x, _z, _data);
 		}
 
-		// Token: 0x060044D6 RID: 17622 RVA: 0x001B17F0 File Offset: 0x001AF9F0
-		public Prefab.Cells<T> Clone()
+		// Token: 0x06004473 RID: 17523 RVA: 0x001B1C34 File Offset: 0x001AFE34
+		public unsafe Prefab.Cells<T> Clone(Prefab.CellPool _pool)
 		{
-			Prefab.Cells<T> cells = new Prefab.Cells<T>(this.sizeY, this.defaultValue);
+			Prefab.Cells<T> cells = new Prefab.Cells<T>(this.sizeY, this.defaultValue, _pool);
 			if (this.a == null)
 			{
 				return cells;
@@ -5129,10 +5292,10 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							for (int k = 0; k < cellsAtX.a.Length; k++)
 							{
 								Prefab.Cells<T>.Cell cell = cellsAtX.a[k];
-								if (cell.a != null)
-								{
-									cellsAtX2.a[k] = cell.Clone();
-								}
+								Prefab.Cells<T>.Cell cell2 = new Prefab.Cells<T>.Cell(_pool, this.defaultValue);
+								byte* ptr = cell.GetPtr(this.pool);
+								UnsafeUtility.MemCpy((void*)cell2.GetPtr(_pool), (void*)ptr, (long)(16 * UnsafeUtility.SizeOf<T>()));
+								cellsAtX2.a[k] = cell2;
 							}
 						}
 					}
@@ -5141,7 +5304,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return cells;
 		}
 
-		// Token: 0x060044D7 RID: 17623 RVA: 0x001B190C File Offset: 0x001AFB0C
+		// Token: 0x06004474 RID: 17524 RVA: 0x001B1D7C File Offset: 0x001AFF7C
 		public void Stats(out int _arrayCount, out int _arraySize, out int _cellsCount, out int _cellsSize, out int _usedCount)
 		{
 			_arrayCount = 0;
@@ -5169,11 +5332,11 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							for (int k = 0; k < cellsAtX.a.Length; k++)
 							{
 								Prefab.Cells<T>.Cell cell = cellsAtX.a[k];
-								if (cell.a != null)
+								if (cell.HasData)
 								{
 									_cellsCount += 16;
 									_cellsSize += cell.Size();
-									_usedCount += cell.UsedCount(this.defaultValue);
+									_usedCount += cell.UsedCount(this.pool, this.defaultValue);
 								}
 							}
 						}
@@ -5182,7 +5345,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			}
 		}
 
-		// Token: 0x060044D8 RID: 17624 RVA: 0x001B1A2E File Offset: 0x001AFC2E
+		// Token: 0x06004475 RID: 17525 RVA: 0x001B1EA7 File Offset: 0x001B00A7
 		public void Load(PooledBinaryReader _br)
 		{
 			Array.Clear(this.a, 0, this.a.Length);
@@ -5192,7 +5355,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			}
 		}
 
-		// Token: 0x060044D9 RID: 17625 RVA: 0x001B1A60 File Offset: 0x001AFC60
+		// Token: 0x06004476 RID: 17526 RVA: 0x001B1ED8 File Offset: 0x001B00D8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LoadData(PooledBinaryReader _br)
 		{
@@ -5206,12 +5369,12 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 				}
 				int num2 = (int)Prefab.Cells<T>.cellBytes[1] << 2;
 				int num3 = (int)Prefab.Cells<T>.cellBytes[2] << 2;
-				this.AllocCell(num2, num, num3).Load(_br);
+				this.AllocCell(num2, num, num3).Load(_br, this.pool);
 			}
 		}
 
-		// Token: 0x060044DA RID: 17626 RVA: 0x001B1AB4 File Offset: 0x001AFCB4
-		public void Save(BinaryWriter _bw)
+		// Token: 0x06004477 RID: 17527 RVA: 0x001B1F34 File Offset: 0x001B0134
+		public void Save(PooledBinaryWriter _bw)
 		{
 			ushort num = (ushort)((this.a != null) ? this.a.Length : 0);
 			if (num == 0)
@@ -5234,13 +5397,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							for (int k = 0; k < cellsAtX.a.Length; k++)
 							{
 								Prefab.Cells<T>.Cell cell = cellsAtX.a[k];
-								if (cell.a != null)
+								if (cell.HasData)
 								{
 									Prefab.Cells<T>.cellBytes[0] = (byte)i;
 									Prefab.Cells<T>.cellBytes[1] = (byte)k;
 									Prefab.Cells<T>.cellBytes[2] = (byte)j;
 									_bw.Write(Prefab.Cells<T>.cellBytes, 0, 3);
-									cell.Save(_bw);
+									cell.Save(_bw, this.pool);
 								}
 							}
 						}
@@ -5251,7 +5414,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			_bw.Write(Prefab.Cells<T>.cellBytes, 0, 3);
 		}
 
-		// Token: 0x060044DB RID: 17627 RVA: 0x001B1BAC File Offset: 0x001AFDAC
+		// Token: 0x06004478 RID: 17528 RVA: 0x001B2038 File Offset: 0x001B0238
 		public T[] ToArray(Prefab prefab, Vector3i _size)
 		{
 			T[] array = new T[_size.x * _size.y * _size.z];
@@ -5269,7 +5432,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							for (int k = 0; k < cellsAtX.a.Length; k++)
 							{
 								Prefab.Cells<T>.Cell cell = cellsAtX.a[k];
-								if (cell.a != null)
+								if (cell.HasData)
 								{
 									int num2 = k << 2;
 									int num3 = j << 2;
@@ -5279,7 +5442,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 									{
 										for (int m = 0; m < num4; m++)
 										{
-											T t = cell.Get(m, l);
+											T t = cell.Get(this.pool, m, l);
 											int num6 = prefab.CoordToOffset(0, num2 + m, i, num3 + l);
 											array[num6] = t;
 										}
@@ -5293,7 +5456,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return array;
 		}
 
-		// Token: 0x060044DC RID: 17628 RVA: 0x001B1CEC File Offset: 0x001AFEEC
+		// Token: 0x06004479 RID: 17529 RVA: 0x001B2180 File Offset: 0x001B0380
 		public unsafe void CompareTest(Vector3i size, PooledBinaryReader _br)
 		{
 			Prefab.Cells<T> cells = new Prefab.Cells<T>(this);
@@ -5310,21 +5473,21 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 					{
 						Prefab.Cells<T>.Cell cell = this.GetCell(k, i, j);
 						Prefab.Cells<T>.Cell cell2 = cells.GetCell(k, i, j);
-						if (cell.a == null)
+						if (!cell.HasData)
 						{
-							if (cell2.a != null)
+							if (cell2.HasData)
 							{
 								Log.Error("Cells one is null {0} {1} {2}", new object[] { k, i, j });
 							}
 						}
-						else if (cell2.a != null)
+						else if (cell2.HasData)
 						{
 							for (int l = 0; l < 4; l++)
 							{
 								for (int m = 0; m < 4; m++)
 								{
-									T t = cell.Get(m, l);
-									T t2 = cell2.Get(m, l);
+									T t = cell.Get(this.pool, m, l);
+									T t2 = cell2.Get(this.pool, m, l);
 									byte* ptr = (byte*)UnsafeUtility.AddressOf<T>(ref t);
 									byte* ptr2 = (byte*)UnsafeUtility.AddressOf<T>(ref t2);
 									for (int n = 0; n < sizeof(T); n++)
@@ -5349,82 +5512,88 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			}
 		}
 
-		// Token: 0x0400377A RID: 14202
+		// Token: 0x04003775 RID: 14197
 		public T defaultValue;
 
-		// Token: 0x0400377B RID: 14203
+		// Token: 0x04003776 RID: 14198
 		[PublicizedFrom(EAccessModifier.Private)]
-		public int sizeY;
+		public readonly int sizeY;
 
-		// Token: 0x0400377C RID: 14204
+		// Token: 0x04003777 RID: 14199
+		[PublicizedFrom(EAccessModifier.Private)]
+		public readonly Prefab.CellPool pool;
+
+		// Token: 0x04003778 RID: 14200
 		public Prefab.Cells<T>.CellsAtZ[] a;
 
-		// Token: 0x0400377D RID: 14205
+		// Token: 0x04003779 RID: 14201
 		[PublicizedFrom(EAccessModifier.Private)]
-		public static byte[] cellBytes = new byte[256];
+		public static readonly byte[] cellBytes = new byte[256];
 
-		// Token: 0x0200092F RID: 2351
+		// Token: 0x02000935 RID: 2357
 		public class CellsAtX
 		{
-			// Token: 0x0400377E RID: 14206
+			// Token: 0x0400377A RID: 14202
 			public Prefab.Cells<T>.Cell[] a;
 		}
 
-		// Token: 0x02000930 RID: 2352
+		// Token: 0x02000936 RID: 2358
 		public class CellsAtZ
 		{
-			// Token: 0x0400377F RID: 14207
+			// Token: 0x0400377B RID: 14203
 			public Prefab.Cells<T>.CellsAtX[] a;
 		}
 
-		// Token: 0x02000931 RID: 2353
+		// Token: 0x02000937 RID: 2359
 		public struct Cell
 		{
-			// Token: 0x060044E0 RID: 17632 RVA: 0x001B1EA4 File Offset: 0x001B00A4
-			public Cell(T _defaultValue)
+			// Token: 0x0600447D RID: 17533 RVA: 0x001B2344 File Offset: 0x001B0544
+			public unsafe Cell(Prefab.CellPool _pool, T _defaultValue)
 			{
-				this.a = new T[16];
+				this.offset = _pool.Alloc<T>();
 				for (int i = 0; i < 16; i++)
 				{
-					this.a[i] = _defaultValue;
+					*_pool.CellFromOffset<T>(this.offset, i) = _defaultValue;
 				}
 			}
 
-			// Token: 0x060044E1 RID: 17633 RVA: 0x001B1ED8 File Offset: 0x001B00D8
-			public Prefab.Cells<T>.Cell Clone()
+			// Token: 0x0600447E RID: 17534 RVA: 0x000027FC File Offset: 0x000009FC
+			public void Cleanup()
 			{
-				Prefab.Cells<T>.Cell cell = default(Prefab.Cells<T>.Cell);
-				if (this.a != null)
-				{
-					cell.a = new T[16];
-					for (int i = 0; i < 16; i++)
-					{
-						cell.a[i] = this.a[i];
-					}
-				}
-				return cell;
 			}
 
-			// Token: 0x060044E2 RID: 17634 RVA: 0x001B1F29 File Offset: 0x001B0129
+			// Token: 0x1700076B RID: 1899
+			// (get) Token: 0x0600447F RID: 17535 RVA: 0x001B237D File Offset: 0x001B057D
+			public bool HasData
+			{
+				[MethodImpl(MethodImplOptions.AggressiveInlining)]
+				get
+				{
+					return this.offset > 0;
+				}
+			}
+
+			// Token: 0x06004480 RID: 17536 RVA: 0x001B2388 File Offset: 0x001B0588
 			public override string ToString()
 			{
-				return string.Format("{0}", (this.a != null) ? this.a.Length : (-1));
+				return string.Format("{0}", this.Size());
 			}
 
-			// Token: 0x060044E3 RID: 17635 RVA: 0x001B1F4D File Offset: 0x001B014D
+			// Token: 0x06004481 RID: 17537 RVA: 0x001B239F File Offset: 0x001B059F
 			public int Size()
 			{
 				return 16 * sizeof(T);
 			}
 
-			// Token: 0x060044E4 RID: 17636 RVA: 0x001B1F58 File Offset: 0x001B0158
-			public unsafe int UsedCount(T _defaultValue)
+			// Token: 0x06004482 RID: 17538 RVA: 0x001B23AC File Offset: 0x001B05AC
+			public unsafe int UsedCount(Prefab.CellPool _pool, T _defaultValue)
 			{
 				int num = 0;
 				byte* ptr = (byte*)UnsafeUtility.AddressOf<T>(ref _defaultValue);
 				for (int i = 0; i < 16; i++)
 				{
-					byte* ptr2 = (byte*)UnsafeUtility.AddressOf<T>(ref this.a[i]);
+					T t = this.Get(_pool, i);
+					byte* ptr2 = (byte*)UnsafeUtility.AddressOf<T>(ref t);
 					for (int j = 0; j < sizeof(T); j++)
 					{
 						if (ptr[j] != ptr2[j])
@@ -5437,72 +5606,89 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 				return num;
 			}
 
-			// Token: 0x060044E5 RID: 17637 RVA: 0x001B1FB8 File Offset: 0x001B01B8
-			public void Set(int _x, int _z, T _value)
+			// Token: 0x06004483 RID: 17539 RVA: 0x001B240B File Offset: 0x001B060B
+			public unsafe readonly void Set(Prefab.CellPool _pool, int _index, T _value)
 			{
-				int num = (_x & 3) + ((_z & 3) << 2);
-				this.a[num] = _value;
+				*_pool.CellFromOffset<T>(this.offset, _index) = _value;
 			}
 
-			// Token: 0x060044E6 RID: 17638 RVA: 0x001B1FDC File Offset: 0x001B01DC
-			public T Get(int _x, int _z)
+			// Token: 0x06004484 RID: 17540 RVA: 0x001B2420 File Offset: 0x001B0620
+			public unsafe readonly void Set(Prefab.CellPool _pool, int _x, int _z, T _value)
 			{
 				int num = (_x & 3) + ((_z & 3) << 2);
-				return this.a[num];
+				*_pool.CellFromOffset<T>(this.offset, num) = _value;
 			}
 
-			// Token: 0x060044E7 RID: 17639 RVA: 0x001B2000 File Offset: 0x001B0200
-			public unsafe void Load(PooledBinaryReader _br)
+			// Token: 0x06004485 RID: 17541 RVA: 0x001B244C File Offset: 0x001B064C
+			public unsafe readonly T Get(Prefab.CellPool _pool, int _x, int _z)
 			{
-				int num = (int)_br.BaseStream.Position;
-				int num2 = (int)_br.ReadUInt16();
-				_br.Read(Prefab.Cells<T>.cellBytes, 0, num2);
-				Log.Warning("Cell Load at {0}, count{1}", new object[] { num, num2 });
-				int num3 = 0;
-				byte* ptr = (byte*)UnsafeUtility.AddressOf<T>(ref this.a[0]);
+				int num = (_x & 3) + ((_z & 3) << 2);
+				return *_pool.CellFromOffset<T>(this.offset, num);
+			}
+
+			// Token: 0x06004486 RID: 17542 RVA: 0x001B2475 File Offset: 0x001B0675
+			public unsafe readonly byte* GetPtr(Prefab.CellPool _pool)
+			{
+				return _pool.PtrFromOffset<T>(this.offset, 0);
+			}
+
+			// Token: 0x06004487 RID: 17543 RVA: 0x001B2484 File Offset: 0x001B0684
+			public unsafe readonly T Get(Prefab.CellPool _pool, int _index)
+			{
+				return *_pool.CellFromOffset<T>(this.offset, _index);
+			}
+
+			// Token: 0x06004488 RID: 17544 RVA: 0x001B2498 File Offset: 0x001B0698
+			public unsafe void Load(PooledBinaryReader _br, Prefab.CellPool _pool)
+			{
+				long position = _br.BaseStream.Position;
+				int num = (int)_br.ReadUInt16();
+				_br.Read(Prefab.Cells<T>.cellBytes, 0, num);
+				int num2 = 0;
+				byte* ptr = this.GetPtr(_pool);
 				int i = 0;
-				while (i < num2)
+				while (i < num)
 				{
-					int num4 = (int)((sbyte)Prefab.Cells<T>.cellBytes[i++]);
-					if (num4 >= 0)
+					int num3 = (int)((sbyte)Prefab.Cells<T>.cellBytes[i++]);
+					if (num3 >= 0)
 					{
-						for (int j = 0; j < num4; j++)
+						for (int j = 0; j < num3; j++)
 						{
 							byte b = Prefab.Cells<T>.cellBytes[i++];
-							ptr[num3++] = b;
+							ptr[num2++] = b;
 						}
 					}
 					else
 					{
-						num4 = -num4;
+						num3 = -num3;
 						byte b2 = Prefab.Cells<T>.cellBytes[i++];
-						for (int k = 0; k < num4; k++)
+						for (int k = 0; k < num3; k++)
 						{
-							ptr[num3++] = b2;
+							ptr[num2++] = b2;
 						}
 					}
 				}
 			}
 
-			// Token: 0x060044E8 RID: 17640 RVA: 0x001B20E0 File Offset: 0x001B02E0
-			public unsafe void Save(BinaryWriter _bw)
+			// Token: 0x06004489 RID: 17545 RVA: 0x001B2544 File Offset: 0x001B0744
+			public unsafe void Save(PooledBinaryWriter _bw, Prefab.CellPool _pool)
 			{
-				byte* ptr = (byte*)UnsafeUtility.AddressOf<T>(ref this.a[0]);
-				int num = 0;
-				int num2 = this.a.Length * sizeof(T);
+				byte* ptr = this.GetPtr(_pool);
+				int num = 16 * sizeof(T);
+				int num2 = 0;
 				int i = 0;
-				while (i < num2)
+				while (i < num)
 				{
 					int num3 = 1;
 					byte b = ptr[i];
-					if (i + 1 < num2)
+					if (i + 1 < num)
 					{
 						byte b2 = ptr[i + 1];
 						if (b == b2)
 						{
 							int num4 = 2;
 							int num5 = i + 2;
-							while (num5 < num2 && ptr[num5] == b)
+							while (num5 < num && ptr[num5] == b)
 							{
 								num4++;
 								if (num4 >= 128)
@@ -5523,10 +5709,10 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 						}
 						if (num3 >= 0)
 						{
-							for (int j = i + num3; j < num2; j++)
+							for (int j = i + num3; j < num; j++)
 							{
 								b2 = ptr[j];
-								if (j + 2 < num2 && b2 == ptr[j + 1] && b2 == ptr[j + 2])
+								if (j + 2 < num && b2 == ptr[j + 1] && b2 == ptr[j + 2])
 								{
 									break;
 								}
@@ -5538,58 +5724,58 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 							}
 						}
 					}
-					Prefab.Cells<T>.cellBytes[num++] = (byte)num3;
+					Prefab.Cells<T>.cellBytes[num2++] = (byte)num3;
 					if (num3 >= 0)
 					{
 						for (int k = 0; k < num3; k++)
 						{
 							byte b3 = ptr[i++];
-							Prefab.Cells<T>.cellBytes[num++] = b3;
+							Prefab.Cells<T>.cellBytes[num2++] = b3;
 						}
 					}
 					else
 					{
-						Prefab.Cells<T>.cellBytes[num++] = b;
+						Prefab.Cells<T>.cellBytes[num2++] = b;
 					}
 				}
-				_bw.Write((ushort)num);
-				_bw.Write(Prefab.Cells<T>.cellBytes, 0, num);
+				_bw.Write((ushort)num2);
+				_bw.Write(Prefab.Cells<T>.cellBytes, 0, num2);
 			}
 
-			// Token: 0x04003780 RID: 14208
+			// Token: 0x0400377C RID: 14204
 			public const int cSizeXZ = 4;
 
-			// Token: 0x04003781 RID: 14209
+			// Token: 0x0400377D RID: 14205
 			public const int cSizeArray = 16;
 
-			// Token: 0x04003782 RID: 14210
+			// Token: 0x0400377E RID: 14206
 			public const int cSizeXZMask = 3;
 
-			// Token: 0x04003783 RID: 14211
+			// Token: 0x0400377F RID: 14207
 			public const int cSizeXZShift = 2;
 
-			// Token: 0x04003784 RID: 14212
+			// Token: 0x04003780 RID: 14208
 			public static Prefab.Cells<T>.Cell empty;
 
-			// Token: 0x04003785 RID: 14213
-			public T[] a;
+			// Token: 0x04003781 RID: 14209
+			public int offset;
 		}
 
-		// Token: 0x02000932 RID: 2354
+		// Token: 0x02000938 RID: 2360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum DataFormat
 		{
-			// Token: 0x04003787 RID: 14215
+			// Token: 0x04003783 RID: 14211
 			Empty,
-			// Token: 0x04003788 RID: 14216
+			// Token: 0x04003784 RID: 14212
 			RLE
 		}
 	}
 
-	// Token: 0x02000933 RID: 2355
+	// Token: 0x02000939 RID: 2361
 	public class PrefabChunk : IChunk, IBlockAccess
 	{
-		// Token: 0x060044EA RID: 17642 RVA: 0x001B2228 File Offset: 0x001B0428
+		// Token: 0x0600448B RID: 17547 RVA: 0x001B267C File Offset: 0x001B087C
 		public PrefabChunk(Prefab _prefab, int _x, int _z)
 		{
 			this.prefab = _prefab;
@@ -5598,33 +5784,33 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			this.Y = 0;
 		}
 
-		// Token: 0x1700074C RID: 1868
-		// (get) Token: 0x060044EB RID: 17643 RVA: 0x001B224C File Offset: 0x001B044C
-		// (set) Token: 0x060044EC RID: 17644 RVA: 0x001B2254 File Offset: 0x001B0454
+		// Token: 0x1700076C RID: 1900
+		// (get) Token: 0x0600448C RID: 17548 RVA: 0x001B26A0 File Offset: 0x001B08A0
+		// (set) Token: 0x0600448D RID: 17549 RVA: 0x001B26A8 File Offset: 0x001B08A8
 		public int X { get; set; }
 
-		// Token: 0x1700074D RID: 1869
-		// (get) Token: 0x060044ED RID: 17645 RVA: 0x001B225D File Offset: 0x001B045D
-		// (set) Token: 0x060044EE RID: 17646 RVA: 0x001B2265 File Offset: 0x001B0465
+		// Token: 0x1700076D RID: 1901
+		// (get) Token: 0x0600448E RID: 17550 RVA: 0x001B26B1 File Offset: 0x001B08B1
+		// (set) Token: 0x0600448F RID: 17551 RVA: 0x001B26B9 File Offset: 0x001B08B9
 		public int Y { get; set; }
 
-		// Token: 0x1700074E RID: 1870
-		// (get) Token: 0x060044EF RID: 17647 RVA: 0x001B226E File Offset: 0x001B046E
-		// (set) Token: 0x060044F0 RID: 17648 RVA: 0x001B2276 File Offset: 0x001B0476
+		// Token: 0x1700076E RID: 1902
+		// (get) Token: 0x06004490 RID: 17552 RVA: 0x001B26C2 File Offset: 0x001B08C2
+		// (set) Token: 0x06004491 RID: 17553 RVA: 0x001B26CA File Offset: 0x001B08CA
 		public int Z { get; set; }
 
-		// Token: 0x1700074F RID: 1871
-		// (get) Token: 0x060044F1 RID: 17649 RVA: 0x001B227F File Offset: 0x001B047F
-		// (set) Token: 0x060044F2 RID: 17650 RVA: 0x001B2287 File Offset: 0x001B0487
+		// Token: 0x1700076F RID: 1903
+		// (get) Token: 0x06004492 RID: 17554 RVA: 0x001B26D3 File Offset: 0x001B08D3
+		// (set) Token: 0x06004493 RID: 17555 RVA: 0x001B26DB File Offset: 0x001B08DB
 		public Vector3i ChunkPos { get; set; }
 
-		// Token: 0x060044F3 RID: 17651 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x06004494 RID: 17556 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool GetAvailable()
 		{
 			return true;
 		}
 
-		// Token: 0x060044F4 RID: 17652 RVA: 0x001B2290 File Offset: 0x001B0490
+		// Token: 0x06004495 RID: 17557 RVA: 0x001B26E4 File Offset: 0x001B08E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool checkCoordinates(ref int _x, ref int _y, ref int _z)
 		{
@@ -5634,7 +5820,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return _x >= 0 && _x < this.prefab.size.x && _y >= 0 && _y < this.prefab.size.y && _z >= 0 && _z < this.prefab.size.z;
 		}
 
-		// Token: 0x060044F5 RID: 17653 RVA: 0x001B2318 File Offset: 0x001B0518
+		// Token: 0x06004496 RID: 17558 RVA: 0x001B276C File Offset: 0x001B096C
 		public BlockValue GetBlock(int _x, int _y, int _z)
 		{
 			if (!this.checkCoordinates(ref _x, ref _y, ref _z))
@@ -5644,25 +5830,25 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return this.prefab.GetBlock(_x, _y, _z);
 		}
 
-		// Token: 0x060044F6 RID: 17654 RVA: 0x001B233C File Offset: 0x001B053C
+		// Token: 0x06004497 RID: 17559 RVA: 0x001B2790 File Offset: 0x001B0990
 		public BlockValue GetBlock(Vector3i pos)
 		{
 			return IBlockAccess.DefaultGetBlock(this, pos);
 		}
 
-		// Token: 0x060044F7 RID: 17655 RVA: 0x001B2345 File Offset: 0x001B0545
+		// Token: 0x06004498 RID: 17560 RVA: 0x001B2799 File Offset: 0x001B0999
 		public BlockValue GetBlock(BlockValueRef bvRef)
 		{
 			return IBlockAccess.DefaultGetBlock(this, bvRef);
 		}
 
-		// Token: 0x060044F8 RID: 17656 RVA: 0x001B234E File Offset: 0x001B054E
+		// Token: 0x06004499 RID: 17561 RVA: 0x001B27A2 File Offset: 0x001B09A2
 		public BlockValue GetBlockNoDamage(int _x, int _y, int _z)
 		{
 			return this.GetBlock(_x, _y, _z);
 		}
 
-		// Token: 0x060044F9 RID: 17657 RVA: 0x001B235C File Offset: 0x001B055C
+		// Token: 0x0600449A RID: 17562 RVA: 0x001B27B0 File Offset: 0x001B09B0
 		public void GetBlockColumn(int _x, int _y, int _z, BlockValue[] _blocks)
 		{
 			int num = _blocks.Length;
@@ -5672,19 +5858,19 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			}
 		}
 
-		// Token: 0x060044FA RID: 17658 RVA: 0x001B238D File Offset: 0x001B058D
+		// Token: 0x0600449B RID: 17563 RVA: 0x001B27E1 File Offset: 0x001B09E1
 		public BlockValue GetBlock(int _bos, int _y)
 		{
 			return this.GetBlock(ChunkBlockLayerLegacy.OffsetX(_bos), _y, ChunkBlockLayerLegacy.OffsetX(_bos));
 		}
 
-		// Token: 0x060044FB RID: 17659 RVA: 0x001B23A4 File Offset: 0x001B05A4
+		// Token: 0x0600449C RID: 17564 RVA: 0x001B27F8 File Offset: 0x001B09F8
 		public bool IsAir(int _x, int _y, int _z)
 		{
 			return this.checkCoordinates(ref _x, ref _y, ref _z) && this.prefab.GetBlock(_x, _y, _z).isair && !this.prefab.GetWater(_x, _y, _z).HasMass();
 		}
 
-		// Token: 0x060044FC RID: 17660 RVA: 0x001B23F4 File Offset: 0x001B05F4
+		// Token: 0x0600449D RID: 17565 RVA: 0x001B2848 File Offset: 0x001B0A48
 		public WaterValue GetWater(int _x, int _y, int _z)
 		{
 			if (!this.checkCoordinates(ref _x, ref _y, ref _z))
@@ -5694,13 +5880,13 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return this.prefab.GetWater(_x, _y, _z);
 		}
 
-		// Token: 0x060044FD RID: 17661 RVA: 0x001B2418 File Offset: 0x001B0618
+		// Token: 0x0600449E RID: 17566 RVA: 0x001B286C File Offset: 0x001B0A6C
 		public bool IsWater(int _x, int _y, int _z)
 		{
 			return this.GetWater(_x, _y, _z).HasMass();
 		}
 
-		// Token: 0x060044FE RID: 17662 RVA: 0x001B2438 File Offset: 0x001B0638
+		// Token: 0x0600449F RID: 17567 RVA: 0x001B288C File Offset: 0x001B0A8C
 		public int GetBlockFaceTexture(int _x, int _y, int _z, BlockFace _blockFace, int _channel)
 		{
 			if (!this.checkCoordinates(ref _x, ref _y, ref _z))
@@ -5710,7 +5896,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return (int)((this.prefab.GetTexture(_x, _y, _z)[_channel] >> (int)(_blockFace * BlockFace.Middle)) & 63L);
 		}
 
-		// Token: 0x060044FF RID: 17663 RVA: 0x001B247C File Offset: 0x001B067C
+		// Token: 0x060044A0 RID: 17568 RVA: 0x001B28D0 File Offset: 0x001B0AD0
 		public long GetTextureFull(int _x, int _y, int _z, int _channel = 0)
 		{
 			if (!this.checkCoordinates(ref _x, ref _y, ref _z))
@@ -5720,142 +5906,142 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return this.prefab.GetTexture(_x, _y, _z)[_channel];
 		}
 
-		// Token: 0x06004500 RID: 17664 RVA: 0x001B24B2 File Offset: 0x001B06B2
+		// Token: 0x060044A1 RID: 17569 RVA: 0x001B2906 File Offset: 0x001B0B06
 		public PropValue GetProp(int chunkX, int chunkZ, int propId)
 		{
 			return this.prefab.GetProp(chunkX, chunkZ, propId);
 		}
 
-		// Token: 0x06004501 RID: 17665 RVA: 0x001B24C2 File Offset: 0x001B06C2
+		// Token: 0x060044A2 RID: 17570 RVA: 0x001B2916 File Offset: 0x001B0B16
 		public PropValue GetProp(long chunkKey, int propId)
 		{
 			return this.prefab.GetProp(chunkKey, propId);
 		}
 
-		// Token: 0x06004502 RID: 17666 RVA: 0x001B24D1 File Offset: 0x001B06D1
+		// Token: 0x060044A3 RID: 17571 RVA: 0x001B2925 File Offset: 0x001B0B25
 		public PropValue GetProp(Vector2i chunkPos, int propId)
 		{
 			return IBlockAccess.DefaultGetProp(this, chunkPos, propId);
 		}
 
-		// Token: 0x06004503 RID: 17667 RVA: 0x001B24DB File Offset: 0x001B06DB
+		// Token: 0x060044A4 RID: 17572 RVA: 0x001B292F File Offset: 0x001B0B2F
 		public PropValue GetProp(PropRef propRef)
 		{
 			return IBlockAccess.DefaultGetProp(this, propRef);
 		}
 
-		// Token: 0x06004504 RID: 17668 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044A5 RID: 17573 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsOnlyTerrain(int _y)
 		{
 			return false;
 		}
 
-		// Token: 0x06004505 RID: 17669 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044A6 RID: 17574 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsOnlyTerrainLayer(int _idx)
 		{
 			return false;
 		}
 
-		// Token: 0x06004506 RID: 17670 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044A7 RID: 17575 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsEmpty()
 		{
 			return false;
 		}
 
-		// Token: 0x06004507 RID: 17671 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044A8 RID: 17576 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsEmpty(int _y)
 		{
 			return false;
 		}
 
-		// Token: 0x06004508 RID: 17672 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044A9 RID: 17577 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsEmptyLayer(int _y)
 		{
 			return false;
 		}
 
-		// Token: 0x06004509 RID: 17673 RVA: 0x001B24E4 File Offset: 0x001B06E4
+		// Token: 0x060044AA RID: 17578 RVA: 0x001B2938 File Offset: 0x001B0B38
 		public byte GetStability(int _x, int _y, int _z)
 		{
 			return 15;
 		}
 
-		// Token: 0x0600450A RID: 17674 RVA: 0x001B24E4 File Offset: 0x001B06E4
+		// Token: 0x060044AB RID: 17579 RVA: 0x001B2938 File Offset: 0x001B0B38
 		public byte GetStability(int _offs, int _y)
 		{
 			return 15;
 		}
 
-		// Token: 0x0600450B RID: 17675 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x060044AC RID: 17580 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetStability(int _offs, int _y, byte _v)
 		{
 		}
 
-		// Token: 0x0600450C RID: 17676 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x060044AD RID: 17581 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetStability(int _x, int _y, int _z, byte _v)
 		{
 		}
 
-		// Token: 0x0600450D RID: 17677 RVA: 0x001B24E4 File Offset: 0x001B06E4
+		// Token: 0x060044AE RID: 17582 RVA: 0x001B2938 File Offset: 0x001B0B38
 		public byte GetLight(int _x, int _y, int _z, Chunk.LIGHT_TYPE _type)
 		{
 			return 15;
 		}
 
-		// Token: 0x0600450E RID: 17678 RVA: 0x001B24E4 File Offset: 0x001B06E4
+		// Token: 0x060044AF RID: 17583 RVA: 0x001B2938 File Offset: 0x001B0B38
 		public int GetLightValue(int _x, int _y, int _z, int _darknessV)
 		{
 			return 15;
 		}
 
-		// Token: 0x0600450F RID: 17679 RVA: 0x00040F84 File Offset: 0x0003F184
+		// Token: 0x060044B0 RID: 17584 RVA: 0x00041064 File Offset: 0x0003F264
 		public float GetLightBrightness(int _x, int _y, int _z, int _darknessV)
 		{
 			return 1f;
 		}
 
-		// Token: 0x06004510 RID: 17680 RVA: 0x001B24E8 File Offset: 0x001B06E8
+		// Token: 0x060044B1 RID: 17585 RVA: 0x001B293C File Offset: 0x001B0B3C
 		public Vector3i GetWorldPos()
 		{
 			return new Vector3i(this.X, this.Y, this.Z);
 		}
 
-		// Token: 0x06004511 RID: 17681 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x060044B2 RID: 17586 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetVertexOffset(int _x, int _y, int _z, Vector3 _vertexOffset)
 		{
 		}
 
-		// Token: 0x06004512 RID: 17682 RVA: 0x001B2501 File Offset: 0x001B0701
+		// Token: 0x060044B3 RID: 17587 RVA: 0x001B2955 File Offset: 0x001B0B55
 		public bool GetVertexOffset(int _x, int _y, int _z, out Vector3 _vertexOffset)
 		{
 			_vertexOffset = Vector3.zero;
 			return false;
 		}
 
-		// Token: 0x06004513 RID: 17683 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x060044B4 RID: 17588 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetVertexYOffset(int _x, int _y, int _z, float _addYPos)
 		{
 		}
 
-		// Token: 0x06004514 RID: 17684 RVA: 0x001B2510 File Offset: 0x001B0710
+		// Token: 0x060044B5 RID: 17589 RVA: 0x001B2964 File Offset: 0x001B0B64
 		public byte GetHeight(int _blockOffset)
 		{
 			return (byte)this.prefab.size.y;
 		}
 
-		// Token: 0x06004515 RID: 17685 RVA: 0x001B2510 File Offset: 0x001B0710
+		// Token: 0x060044B6 RID: 17590 RVA: 0x001B2964 File Offset: 0x001B0B64
 		public byte GetHeight(int _x, int _z)
 		{
 			return (byte)this.prefab.size.y;
 		}
 
-		// Token: 0x06004516 RID: 17686 RVA: 0x001B2523 File Offset: 0x001B0723
+		// Token: 0x060044B7 RID: 17591 RVA: 0x001B2977 File Offset: 0x001B0B77
 		public sbyte GetDensity(int _xzOffs, int _y)
 		{
 			return this.GetDensity(ChunkBlockLayerLegacy.OffsetX(_xzOffs), _y, ChunkBlockLayerLegacy.OffsetX(_xzOffs));
 		}
 
-		// Token: 0x06004517 RID: 17687 RVA: 0x001B2538 File Offset: 0x001B0738
+		// Token: 0x060044B8 RID: 17592 RVA: 0x001B298C File Offset: 0x001B0B8C
 		public sbyte GetDensity(int _x, int _y, int _z)
 		{
 			if (!this.checkCoordinates(ref _x, ref _y, ref _z))
@@ -5865,48 +6051,48 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return this.prefab.GetDensity(_x, _y, _z);
 		}
 
-		// Token: 0x06004518 RID: 17688 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044B9 RID: 17593 RVA: 0x00010E62 File Offset: 0x0000F062
 		public sbyte SetDensity(int _xzOffs, int _y, sbyte _density)
 		{
 			return 0;
 		}
 
-		// Token: 0x06004519 RID: 17689 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044BA RID: 17594 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool HasSameDensityValue(int _y)
 		{
 			return false;
 		}
 
-		// Token: 0x0600451A RID: 17690 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044BB RID: 17595 RVA: 0x00010E62 File Offset: 0x0000F062
 		public sbyte GetSameDensityValue(int _y)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600451B RID: 17691 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x060044BC RID: 17596 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public BlockEntityData GetBlockEntity(Vector3i _blockPos)
 		{
 			return null;
 		}
 
-		// Token: 0x0600451C RID: 17692 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x060044BD RID: 17597 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public BlockEntityData GetBlockEntity(Transform _transform)
 		{
 			return null;
 		}
 
-		// Token: 0x0600451D RID: 17693 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x060044BE RID: 17598 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetTopSoilBroken(int _x, int _z)
 		{
 		}
 
-		// Token: 0x0600451E RID: 17694 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x060044BF RID: 17599 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsTopSoil(int _x, int _z)
 		{
 			return false;
 		}
 
-		// Token: 0x0600451F RID: 17695 RVA: 0x001B255C File Offset: 0x001B075C
+		// Token: 0x060044C0 RID: 17600 RVA: 0x001B29B0 File Offset: 0x001B0BB0
 		public byte GetTerrainHeight(int _x, int _z)
 		{
 			for (int i = this.prefab.size.y - 1; i >= 0; i--)
@@ -5919,7 +6105,7 @@ public class Prefab : INeighborBlockCache, IChunkAccess
 			return 0;
 		}
 
-		// Token: 0x04003789 RID: 14217
+		// Token: 0x04003785 RID: 14213
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Prefab prefab;
 	}

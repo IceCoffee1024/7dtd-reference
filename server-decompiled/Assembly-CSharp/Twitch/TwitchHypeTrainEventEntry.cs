@@ -2,13 +2,13 @@
 
 namespace Twitch
 {
-	// Token: 0x0200183A RID: 6202
+	// Token: 0x02001866 RID: 6246
 	public class TwitchHypeTrainEventEntry : TwitchEventEntry
 	{
-		// Token: 0x04008FC9 RID: 36809
+		// Token: 0x0400908F RID: 37007
 		public int RewardAmount = 100;
 
-		// Token: 0x04008FCA RID: 36810
+		// Token: 0x04009090 RID: 37008
 		public TwitchAction.PointTypes RewardType;
 	}
 }

@@ -3,11 +3,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF9 RID: 3833
+// Token: 0x02000F08 RID: 3848
 [Preserve]
 public class XUiC_CombineGrid : XUiC_ItemStackGrid
 {
-	// Token: 0x0600782B RID: 30763 RVA: 0x002D460C File Offset: 0x002D280C
+	// Token: 0x06007826 RID: 30758 RVA: 0x002D79A0 File Offset: 0x002D5BA0
 	public override void Init()
 	{
 		base.Init();
@@ -27,13 +27,13 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		this.btnCombine.OnPressed += this.BtnCombine_OnPressed;
 	}
 
-	// Token: 0x0600782C RID: 30764 RVA: 0x002D471C File Offset: 0x002D291C
+	// Token: 0x06007827 RID: 30759 RVA: 0x002D7AB0 File Offset: 0x002D5CB0
 	public void SetTileEntity(TEFeatureCombine _te)
 	{
 		this.te = _te;
 	}
 
-	// Token: 0x0600782D RID: 30765 RVA: 0x002D4728 File Offset: 0x002D2928
+	// Token: 0x06007828 RID: 30760 RVA: 0x002D7ABC File Offset: 0x002D5CBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Merge_FailedSwap(ItemStack stack)
 	{
@@ -44,7 +44,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600782E RID: 30766 RVA: 0x002D477C File Offset: 0x002D297C
+	// Token: 0x06007829 RID: 30761 RVA: 0x002D7B10 File Offset: 0x002D5D10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCombine_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -68,7 +68,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		tefeatureCombine.HandlePlayComplete();
 	}
 
-	// Token: 0x0600782F RID: 30767 RVA: 0x002D4878 File Offset: 0x002D2A78
+	// Token: 0x0600782A RID: 30762 RVA: 0x002D7C0C File Offset: 0x002D5E0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Merge_SlotChangedEvent(int slotNumber, ItemStack stack)
 	{
@@ -105,7 +105,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007830 RID: 30768 RVA: 0x002D4A58 File Offset: 0x002D2C58
+	// Token: 0x0600782B RID: 30763 RVA: 0x002D7DEC File Offset: 0x002D5FEC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -124,7 +124,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		this.xui.CurrentCombineGrid = this;
 	}
 
-	// Token: 0x06007831 RID: 30769 RVA: 0x002D4AFC File Offset: 0x002D2CFC
+	// Token: 0x0600782C RID: 30764 RVA: 0x002D7E90 File Offset: 0x002D6090
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -139,13 +139,13 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		this.xui.CurrentCombineGrid = null;
 	}
 
-	// Token: 0x06007832 RID: 30770 RVA: 0x002D4B70 File Offset: 0x002D2D70
+	// Token: 0x0600782D RID: 30765 RVA: 0x002D7F04 File Offset: 0x002D6104
 	public bool HasEmptySlot()
 	{
 		return this.merge1.ItemStack.IsEmpty() || this.merge2.ItemStack.IsEmpty();
 	}
 
-	// Token: 0x06007833 RID: 30771 RVA: 0x002D4B98 File Offset: 0x002D2D98
+	// Token: 0x0600782E RID: 30766 RVA: 0x002D7F2C File Offset: 0x002D612C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool TryAddItemToSlot(ItemClass itemClass, ItemStack itemStack)
 	{
@@ -165,7 +165,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return false;
 	}
 
-	// Token: 0x06007834 RID: 30772 RVA: 0x002D4C08 File Offset: 0x002D2E08
+	// Token: 0x0600782F RID: 30767 RVA: 0x002D7F9C File Offset: 0x002D619C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetResult(ItemStack newResult)
 	{
@@ -180,7 +180,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007835 RID: 30773 RVA: 0x002D4C6C File Offset: 0x002D2E6C
+	// Token: 0x06007830 RID: 30768 RVA: 0x002D8000 File Offset: 0x002D6200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddBackItem(ItemStack stack)
 	{
@@ -197,7 +197,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		entityPlayer.PlayOneShot("itemdropped", false, false, false, null, 1f);
 	}
 
-	// Token: 0x06007836 RID: 30774 RVA: 0x002D4CD8 File Offset: 0x002D2ED8
+	// Token: 0x06007831 RID: 30769 RVA: 0x002D806C File Offset: 0x002D626C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -334,7 +334,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return valueTuple2.Item2;
 	}
 
-	// Token: 0x06007838 RID: 30776 RVA: 0x002D50E9 File Offset: 0x002D32E9
+	// Token: 0x06007833 RID: 30771 RVA: 0x002D847D File Offset: 0x002D667D
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemIconValue|25_0(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -351,7 +351,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return itemValue.GetPropertyOverride("CustomIcon", A_1.resultItemClass.GetIconName());
 	}
 
-	// Token: 0x06007839 RID: 30777 RVA: 0x002D5120 File Offset: 0x002D3320
+	// Token: 0x06007834 RID: 30772 RVA: 0x002D84B4 File Offset: 0x002D66B4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemIconTintValue|25_1(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -364,7 +364,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return this.iconTintColorFormatter.Format(color);
 	}
 
-	// Token: 0x0600783A RID: 30778 RVA: 0x002D5168 File Offset: 0x002D3368
+	// Token: 0x06007835 RID: 30773 RVA: 0x002D84FC File Offset: 0x002D66FC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetHasDurabilityValue|25_2(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -372,7 +372,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return (A_1.resultItemClass != null && A_1.resultItemClass.ShowQualityBar).ToString();
 	}
 
-	// Token: 0x0600783B RID: 30779 RVA: 0x002D5193 File Offset: 0x002D3393
+	// Token: 0x06007836 RID: 30774 RVA: 0x002D8527 File Offset: 0x002D6727
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetRemovedDurabilityFillValue|25_3(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -384,7 +384,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return this.removedDurabilityFillFormatter.Format(this.result.itemValue.MaxDurabilityModifier);
 	}
 
-	// Token: 0x0600783C RID: 30780 RVA: 0x002D51C4 File Offset: 0x002D33C4
+	// Token: 0x06007837 RID: 30775 RVA: 0x002D8558 File Offset: 0x002D6758
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetDurabilityColorValue|25_4(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -397,7 +397,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return this.durabilityColorFormatter.Format(color);
 	}
 
-	// Token: 0x0600783D RID: 30781 RVA: 0x002D5210 File Offset: 0x002D3410
+	// Token: 0x06007838 RID: 30776 RVA: 0x002D85A4 File Offset: 0x002D67A4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetDurabilityFillValue|25_5(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -413,7 +413,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return this.durabilityFillFormatter.Format(((float)this.result.itemValue.MaxUseTimes - this.result.itemValue.UseTimes) / (float)this.result.itemValue.MaxUseTimesUI);
 	}
 
-	// Token: 0x0600783E RID: 30782 RVA: 0x002D5287 File Offset: 0x002D3487
+	// Token: 0x06007839 RID: 30777 RVA: 0x002D861B File Offset: 0x002D681B
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetDurabilityJustifyValue|25_6(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -425,7 +425,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return "right";
 	}
 
-	// Token: 0x0600783F RID: 30783 RVA: 0x002D52AC File Offset: 0x002D34AC
+	// Token: 0x0600783A RID: 30778 RVA: 0x002D8640 File Offset: 0x002D6840
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetDurabilityTextValue|25_7(ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_1)
@@ -452,7 +452,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007840 RID: 30784 RVA: 0x002D5334 File Offset: 0x002D3534
+	// Token: 0x0600783B RID: 30779 RVA: 0x002D86C8 File Offset: 0x002D68C8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemStackNameValue|25_8(int itemIndex, ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_2)
@@ -466,7 +466,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return itemClass.GetLocalizedItemName();
 	}
 
-	// Token: 0x06007841 RID: 30785 RVA: 0x002D5380 File Offset: 0x002D3580
+	// Token: 0x0600783C RID: 30780 RVA: 0x002D8714 File Offset: 0x002D6914
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemStackColorValue|25_9(int itemIndex, ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_2)
@@ -476,7 +476,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return this.itemStackColorFormatter.Format(color);
 	}
 
-	// Token: 0x06007842 RID: 30786 RVA: 0x002D53D0 File Offset: 0x002D35D0
+	// Token: 0x0600783D RID: 30781 RVA: 0x002D8764 File Offset: 0x002D6964
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemStatTitleValue|25_10(int index, ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_2)
@@ -494,7 +494,7 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return text;
 	}
 
-	// Token: 0x06007843 RID: 30787 RVA: 0x002D5460 File Offset: 0x002D3660
+	// Token: 0x0600783E RID: 30782 RVA: 0x002D87F4 File Offset: 0x002D69F4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <GetBindingValueInternal>g__GetItemStatValue|25_11(int index, ref XUiC_CombineGrid.<>c__DisplayClass25_0 A_2)
@@ -507,59 +507,59 @@ public class XUiC_CombineGrid : XUiC_ItemStackGrid
 		return XUiM_ItemStack.GetStatItemValueTextWithCompareInfo(this.result.itemValue, ItemStack.Empty.itemValue, this.xui.playerUI.entityPlayer, displayInfoEntry, false, true);
 	}
 
-	// Token: 0x040058DD RID: 22749
+	// Token: 0x04005915 RID: 22805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RequiredItemStack merge1;
 
-	// Token: 0x040058DE RID: 22750
+	// Token: 0x04005916 RID: 22806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RequiredItemStack merge2;
 
-	// Token: 0x040058DF RID: 22751
+	// Token: 0x04005917 RID: 22807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnCombine;
 
-	// Token: 0x040058E0 RID: 22752
+	// Token: 0x04005918 RID: 22808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack result = ItemStack.Empty;
 
-	// Token: 0x040058E1 RID: 22753
+	// Token: 0x04005919 RID: 22809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float experienceFromLastResult;
 
-	// Token: 0x040058E2 RID: 22754
+	// Token: 0x0400591A RID: 22810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureCombine te;
 
-	// Token: 0x040058E3 RID: 22755
+	// Token: 0x0400591B RID: 22811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemDisplayEntry itemDisplayEntry;
 
-	// Token: 0x040058E4 RID: 22756
+	// Token: 0x0400591C RID: 22812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor iconTintColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040058E5 RID: 22757
+	// Token: 0x0400591D RID: 22813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilityColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040058E6 RID: 22758
+	// Token: 0x0400591E RID: 22814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemStackColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040058E7 RID: 22759
+	// Token: 0x0400591F RID: 22815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor iconTypeIconTintFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040058E8 RID: 22760
+	// Token: 0x04005920 RID: 22816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat removedDurabilityFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x040058E9 RID: 22761
+	// Token: 0x04005921 RID: 22817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat durabilityFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x040058EA RID: 22762
+	// Token: 0x04005922 RID: 22818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt durabilityTextFormatter = new CachedStringFormatterInt();
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020000E5 RID: 229
+// Token: 0x020000E7 RID: 231
 public class GorePrefab : RootTransformRefEntity
 {
 	// Token: 0x17000062 RID: 98
-	// (set) Token: 0x060005CD RID: 1485 RVA: 0x00029EB1 File Offset: 0x000280B1
+	// (set) Token: 0x060005D3 RID: 1491 RVA: 0x00029FA9 File Offset: 0x000281A9
 	public bool restoreState
 	{
 		set
@@ -13,7 +13,7 @@ public class GorePrefab : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x060005CE RID: 1486 RVA: 0x00029EBC File Offset: 0x000280BC
+	// Token: 0x060005D4 RID: 1492 RVA: 0x00029FB4 File Offset: 0x000281B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -24,10 +24,10 @@ public class GorePrefab : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x04000681 RID: 1665
+	// Token: 0x04000684 RID: 1668
 	public string Sound;
 
-	// Token: 0x04000682 RID: 1666
+	// Token: 0x04000685 RID: 1669
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool _restoreState;

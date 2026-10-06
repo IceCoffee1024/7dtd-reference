@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8F RID: 3983
+// Token: 0x02000F9E RID: 3998
 [Preserve]
 public class XUiC_MapSubPopupList : XUiController
 {
-	// Token: 0x06007DC7 RID: 32199 RVA: 0x002FA6D4 File Offset: 0x002F88D4
+	// Token: 0x06007DD7 RID: 32215 RVA: 0x002FD778 File Offset: 0x002FB978
 	public override void Init()
 	{
 		base.Init();
@@ -21,7 +21,7 @@ public class XUiC_MapSubPopupList : XUiController
 		}
 	}
 
-	// Token: 0x06007DC8 RID: 32200 RVA: 0x002FA740 File Offset: 0x002F8940
+	// Token: 0x06007DD8 RID: 32216 RVA: 0x002FD7E4 File Offset: 0x002FB9E4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void ResetList()
 	{
@@ -36,7 +36,7 @@ public class XUiC_MapSubPopupList : XUiController
 		this.children[0].SelectCursorElement(true, false);
 	}
 
-	// Token: 0x04005D35 RID: 23861
+	// Token: 0x04005D5E RID: 23902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] sprites = new string[]
 	{

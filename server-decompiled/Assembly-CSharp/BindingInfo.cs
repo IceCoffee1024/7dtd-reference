@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Unity.Profiling;
 
-// Token: 0x020010E4 RID: 4324
+// Token: 0x020010F5 RID: 4341
 public class BindingInfo : IBindingInstance
 {
-	// Token: 0x06008993 RID: 35219 RVA: 0x00347144 File Offset: 0x00345344
+	// Token: 0x060089E1 RID: 35297 RVA: 0x0034AEF4 File Offset: 0x003490F4
 	public BindingInfo(XUiView _view, string _attribute, string _sourceText)
 	{
 		this.View = _view;
@@ -63,169 +63,261 @@ public class BindingInfo : IBindingInstance
 				this.bindingList.Add(bindingItem);
 			}
 		}
+		this.singleTypedBinding = this.bindingList.Count == 1 && this.sourceText.Equals(this.bindingList[0].SourceText, StringComparison.Ordinal);
 	}
 
-	// Token: 0x06008994 RID: 35220 RVA: 0x00347338 File Offset: 0x00345538
+	// Token: 0x060089E2 RID: 35298 RVA: 0x0034B11C File Offset: 0x0034931C
 	public void RefreshValue()
 	{
 		using (this.pmRefreshValueComplete.Auto())
 		{
 			using (this.pmRefreshValueCompleteSourceText.Auto())
 			{
-				bool flag = this.cachedResultValue == null;
-				using (this.pmGetBindingValues.Auto())
+				if (!this.singleTypedBinding || !this.refreshValueSingleTyped())
 				{
-					for (int i = 0; i < this.bindingList.Count; i++)
+					bool flag = this.cachedResultValue == null;
+					using (this.pmGetBindingValues.Auto())
 					{
-						string text = this.bindingList[i].GetValue() ?? "";
-						if (i < this.cachedBindingValues.Count)
+						for (int i = 0; i < this.bindingList.Count; i++)
 						{
-							flag |= !string.Equals(this.cachedBindingValues[i], text, StringComparison.Ordinal);
-							this.cachedBindingValues[i] = text;
-						}
-						else
-						{
-							flag = true;
-							this.cachedBindingValues.Add(text);
-						}
-					}
-				}
-				using (this.pmBuildAttributeValue.Auto())
-				{
-					if (flag)
-					{
-						string text2 = this.sourceText;
-						if (this.bindingList.Count == 1 && text2.Equals(this.bindingList[0].SourceText, StringComparison.Ordinal))
-						{
-							text2 = this.cachedBindingValues[0] ?? "";
-						}
-						else
-						{
-							for (int j = 0; j < this.bindingList.Count; j++)
+							string text = this.bindingList[i].GetValue() ?? "";
+							if (i < this.cachedBindingValues.Count)
 							{
-								BindingItem bindingItem = this.bindingList[j];
-								text2 = text2.Replace(bindingItem.SourceText, this.cachedBindingValues[j]);
+								flag |= !string.Equals(this.cachedBindingValues[i], text, StringComparison.Ordinal);
+								this.cachedBindingValues[i] = text;
+							}
+							else
+							{
+								flag = true;
+								this.cachedBindingValues.Add(text);
 							}
 						}
-						this.cachedResultValue = text2;
 					}
-				}
-				using (this.pmParseAttribute.Auto())
-				{
-					string text3 = this.cachedResultValue;
-					if (text3.Contains("{cvar("))
+					using (this.pmBuildAttributeValue.Auto())
 					{
-						text3 = BindingsManager.ReplaceCVars(text3);
-					}
-					try
-					{
-						if (!this.parsersDetected)
+						if (flag)
 						{
-							ParsingMethodCache.ParsingMethodData parsingMethodData;
-							if (ParsingMethodCache.Instance.TryGetParsingDelegate(this.View, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(typeof(string), out this.parsingDelegateView))
+							string text2 = this.sourceText;
+							if (this.bindingList.Count == 1 && text2.Equals(this.bindingList[0].SourceText, StringComparison.Ordinal))
+							{
+								text2 = this.cachedBindingValues[0] ?? "";
+							}
+							else
+							{
+								for (int j = 0; j < this.bindingList.Count; j++)
+								{
+									BindingItem bindingItem = this.bindingList[j];
+									text2 = text2.Replace(bindingItem.SourceText, this.cachedBindingValues[j]);
+								}
+							}
+							this.cachedResultValue = text2;
+						}
+					}
+					using (this.pmParseAttribute.Auto())
+					{
+						string text3 = this.cachedResultValue;
+						if (text3.Contains("{cvar("))
+						{
+							text3 = BindingsManager.ReplaceCVars(text3);
+						}
+						try
+						{
+							if (!this.parsersDetected)
+							{
+								ParsingMethodCache.ParsingMethodData parsingMethodData;
+								if (ParsingMethodCache.Instance.TryGetParsingDelegate(this.View, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(typeof(string), out this.parsingDelegateView))
+								{
+									this.parsingDelegateView(this.View, text3);
+								}
+								if (this.parsingDelegateView == null && this.View.Controller != null && ParsingMethodCache.Instance.TryGetParsingDelegate(this.View.Controller, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(typeof(string), out this.parsingDelegateController))
+								{
+									this.parsingDelegateController(this.View.Controller, text3);
+								}
+								if (this.parsingDelegateView == null && this.parsingDelegateController == null)
+								{
+									this.View.ParseAttributeViewAndController(this.attributeName, text3);
+								}
+								this.parsersDetected = true;
+							}
+							else if (this.parsingDelegateView != null)
 							{
 								this.parsingDelegateView(this.View, text3);
 							}
-							if (this.parsingDelegateView == null && this.View.Controller != null && ParsingMethodCache.Instance.TryGetParsingDelegate(this.View.Controller, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(typeof(string), out this.parsingDelegateController))
+							else if (this.parsingDelegateController != null)
 							{
 								this.parsingDelegateController(this.View.Controller, text3);
 							}
-							if (this.parsingDelegateView == null && this.parsingDelegateController == null)
+							else
 							{
 								this.View.ParseAttributeViewAndController(this.attributeName, text3);
 							}
-							this.parsersDetected = true;
 						}
-						else if (this.parsingDelegateView != null)
+						catch (Exception ex)
 						{
-							this.parsingDelegateView(this.View, text3);
+							Log.Error(string.Concat(new string[]
+							{
+								"[XUi] Exception parsing result of binding. Attribute: '",
+								this.attributeName,
+								"', binding string: '",
+								this.sourceText,
+								"', binding result: '",
+								text3,
+								"', view hierarchy: ",
+								this.View.GetXuiHierarchy(),
+								":"
+							}));
+							Log.Exception(ex);
 						}
-						else if (this.parsingDelegateController != null)
-						{
-							this.parsingDelegateController(this.View.Controller, text3);
-						}
-						else
-						{
-							this.View.ParseAttributeViewAndController(this.attributeName, text3);
-						}
-					}
-					catch (Exception ex)
-					{
-						Log.Error(string.Concat(new string[]
-						{
-							"[XUi] Exception parsing result of binding. Attribute: '",
-							this.attributeName,
-							"', binding string: '",
-							this.sourceText,
-							"', binding result: '",
-							text3,
-							"', view hierarchy: ",
-							this.View.GetXuiHierarchy(),
-							":"
-						}));
-						Log.Exception(ex);
 					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x04006657 RID: 26199
+	// Token: 0x060089E3 RID: 35299 RVA: 0x0034B558 File Offset: 0x00349758
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool refreshValueSingleTyped()
+	{
+		if (this.typedPathDisabled)
+		{
+			return false;
+		}
+		object obj;
+		if (!this.bindingList[0].TryGetTypedValue(out obj))
+		{
+			this.typedPathDisabled = true;
+			return false;
+		}
+		if (!this.typedParserResolved)
+		{
+			this.typedParserResolved = true;
+			if (!(obj is string))
+			{
+				this.resolveSingleTypedParser(obj.GetType());
+			}
+			if (this.typedParsingDelegate == null)
+			{
+				this.typedPathDisabled = true;
+				return false;
+			}
+		}
+		bool flag;
+		using (this.pmParseAttribute.Auto())
+		{
+			try
+			{
+				this.typedParsingDelegate(this.typedTargetElement, obj);
+			}
+			catch (Exception ex)
+			{
+				Log.Error(string.Format("[XUi] Exception parsing result of binding. Attribute: '{0}', binding string: '{1}', binding result: '{2}', view hierarchy: {3}:", new object[]
+				{
+					this.attributeName,
+					this.sourceText,
+					obj,
+					this.View.GetXuiHierarchy()
+				}));
+				Log.Exception(ex);
+			}
+			flag = true;
+		}
+		return flag;
+	}
+
+	// Token: 0x060089E4 RID: 35300 RVA: 0x0034B658 File Offset: 0x00349858
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void resolveSingleTypedParser(Type _resultType)
+	{
+		ParsingMethodCache.ParsingMethodData parsingMethodData;
+		if (ParsingMethodCache.Instance.TryGetParsingDelegate(this.View, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(_resultType, out this.typedParsingDelegate))
+		{
+			this.typedTargetElement = this.View;
+			return;
+		}
+		if (this.View.Controller != null && ParsingMethodCache.Instance.TryGetParsingDelegate(this.View.Controller, this.attributeName, out parsingMethodData) && parsingMethodData.TryGetDelegateForSourceType(_resultType, out this.typedParsingDelegate))
+		{
+			this.typedTargetElement = this.View.Controller;
+			return;
+		}
+		this.typedParsingDelegate = null;
+	}
+
+	// Token: 0x04006699 RID: 26265
 	public readonly XUiView View;
 
-	// Token: 0x04006658 RID: 26200
+	// Token: 0x0400669A RID: 26266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string attributeName;
 
-	// Token: 0x04006659 RID: 26201
+	// Token: 0x0400669B RID: 26267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string sourceText;
 
-	// Token: 0x0400665A RID: 26202
+	// Token: 0x0400669C RID: 26268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool parsersDetected;
 
-	// Token: 0x0400665B RID: 26203
+	// Token: 0x0400669D RID: 26269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XuiParsingDelegate parsingDelegateView;
 
-	// Token: 0x0400665C RID: 26204
+	// Token: 0x0400669E RID: 26270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XuiParsingDelegate parsingDelegateController;
 
-	// Token: 0x0400665D RID: 26205
+	// Token: 0x0400669F RID: 26271
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool singleTypedBinding;
+
+	// Token: 0x040066A0 RID: 26272
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool typedParserResolved;
+
+	// Token: 0x040066A1 RID: 26273
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool typedPathDisabled;
+
+	// Token: 0x040066A2 RID: 26274
+	[PublicizedFrom(EAccessModifier.Private)]
+	public IXUiElement typedTargetElement;
+
+	// Token: 0x040066A3 RID: 26275
+	[PublicizedFrom(EAccessModifier.Private)]
+	public XuiParsingDelegate typedParsingDelegate;
+
+	// Token: 0x040066A4 RID: 26276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<BindingItem> bindingList = new List<BindingItem>();
 
-	// Token: 0x0400665E RID: 26206
+	// Token: 0x040066A5 RID: 26277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> cachedBindingValues = new List<string>();
 
-	// Token: 0x0400665F RID: 26207
+	// Token: 0x040066A6 RID: 26278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedResultValue;
 
-	// Token: 0x04006660 RID: 26208
+	// Token: 0x040066A7 RID: 26279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmCtor = new ProfilerMarker("BindingInfo.ctor");
 
-	// Token: 0x04006661 RID: 26209
+	// Token: 0x040066A8 RID: 26280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueComplete = new ProfilerMarker("BindingInfo.RefreshValue");
 
-	// Token: 0x04006662 RID: 26210
+	// Token: 0x040066A9 RID: 26281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueCompleteSourceText;
 
-	// Token: 0x04006663 RID: 26211
+	// Token: 0x040066AA RID: 26282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmGetBindingValues = new ProfilerMarker("GetBindingValues");
 
-	// Token: 0x04006664 RID: 26212
+	// Token: 0x040066AB RID: 26283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmBuildAttributeValue = new ProfilerMarker("BuildAttributeValue");
 
-	// Token: 0x04006665 RID: 26213
+	// Token: 0x040066AC RID: 26284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmParseAttribute = new ProfilerMarker("ParseAttribute");
 }

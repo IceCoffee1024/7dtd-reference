@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001333 RID: 4915
+// Token: 0x02001353 RID: 4947
 public class CloneToTransform : MonoBehaviour
 {
-	// Token: 0x06009B26 RID: 39718 RVA: 0x003A9266 File Offset: 0x003A7466
+	// Token: 0x06009BD2 RID: 39890 RVA: 0x003ADDE2 File Offset: 0x003ABFE2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.m_transform = base.transform;
 	}
 
-	// Token: 0x06009B27 RID: 39719 RVA: 0x003A9274 File Offset: 0x003A7474
+	// Token: 0x06009BD3 RID: 39891 RVA: 0x003ADDF0 File Offset: 0x003ABFF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -26,14 +26,14 @@ public class CloneToTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B28 RID: 39720 RVA: 0x003A92AB File Offset: 0x003A74AB
+	// Token: 0x06009BD4 RID: 39892 RVA: 0x003ADE27 File Offset: 0x003AC027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		this.DestroyClone();
 	}
 
-	// Token: 0x06009B29 RID: 39721 RVA: 0x003A92B3 File Offset: 0x003A74B3
+	// Token: 0x06009BD5 RID: 39893 RVA: 0x003ADE2F File Offset: 0x003AC02F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyClone()
 	{
@@ -46,7 +46,7 @@ public class CloneToTransform : MonoBehaviour
 		this.m_clone = null;
 	}
 
-	// Token: 0x06009B2A RID: 39722 RVA: 0x003A92DC File Offset: 0x003A74DC
+	// Token: 0x06009BD6 RID: 39894 RVA: 0x003ADE58 File Offset: 0x003AC058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -56,7 +56,7 @@ public class CloneToTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B2B RID: 39723 RVA: 0x003A92F7 File Offset: 0x003A74F7
+	// Token: 0x06009BD7 RID: 39895 RVA: 0x003ADE73 File Offset: 0x003AC073
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -66,7 +66,7 @@ public class CloneToTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B2C RID: 39724 RVA: 0x003A9314 File Offset: 0x003A7514
+	// Token: 0x06009BD8 RID: 39896 RVA: 0x003ADE90 File Offset: 0x003AC090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -135,7 +135,7 @@ public class CloneToTransform : MonoBehaviour
 		this.CheckTransform();
 	}
 
-	// Token: 0x06009B2D RID: 39725 RVA: 0x003A9564 File Offset: 0x003A7764
+	// Token: 0x06009BD9 RID: 39897 RVA: 0x003AE0E0 File Offset: 0x003AC2E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckTransform()
 	{
@@ -148,57 +148,57 @@ public class CloneToTransform : MonoBehaviour
 		this.m_cloneTransform.SetPositionAndRotation(this.m_transform.position, this.m_transform.rotation);
 	}
 
-	// Token: 0x040074FD RID: 29949
+	// Token: 0x04007578 RID: 30072
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_transform;
 
-	// Token: 0x040074FE RID: 29950
+	// Token: 0x04007579 RID: 30073
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject m_storage;
 
-	// Token: 0x040074FF RID: 29951
+	// Token: 0x0400757A RID: 30074
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_storageTransform;
 
-	// Token: 0x04007500 RID: 29952
+	// Token: 0x0400757B RID: 30075
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject m_clone;
 
-	// Token: 0x04007501 RID: 29953
+	// Token: 0x0400757C RID: 30076
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_cloneTransform;
 
-	// Token: 0x04007502 RID: 29954
+	// Token: 0x0400757D RID: 30077
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_lastCloneTarget;
 
-	// Token: 0x04007503 RID: 29955
+	// Token: 0x0400757E RID: 30078
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_lastLocalPosition;
 
-	// Token: 0x04007504 RID: 29956
+	// Token: 0x0400757F RID: 30079
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Quaternion m_lastLocalRotation;
 
-	// Token: 0x04007505 RID: 29957
+	// Token: 0x04007580 RID: 30080
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_hasParentEntity;
 
-	// Token: 0x04007506 RID: 29958
+	// Token: 0x04007581 RID: 30081
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_hasParentEntityLocal;
 
-	// Token: 0x04007507 RID: 29959
+	// Token: 0x04007582 RID: 30082
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Entity m_parentEntity;

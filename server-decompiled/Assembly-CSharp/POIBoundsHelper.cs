@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000549 RID: 1353
+// Token: 0x0200054F RID: 1359
 public class POIBoundsHelper : MonoBehaviour
 {
-	// Token: 0x06002C61 RID: 11361 RVA: 0x00118DBC File Offset: 0x00116FBC
+	// Token: 0x06002C57 RID: 11351 RVA: 0x00119B8C File Offset: 0x00117D8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -25,7 +25,7 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C62 RID: 11362 RVA: 0x00118EE0 File Offset: 0x001170E0
+	// Token: 0x06002C58 RID: 11352 RVA: 0x00119CB0 File Offset: 0x00117EB0
 	public void SetSidesVisible(bool visible)
 	{
 		for (int i = 0; i < this.SideHelpers.Count; i++)
@@ -34,7 +34,7 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C63 RID: 11363 RVA: 0x00118F1C File Offset: 0x0011711C
+	// Token: 0x06002C59 RID: 11353 RVA: 0x00119CEC File Offset: 0x00117EEC
 	public void SetPosition(Vector3 position, Vector3 size)
 	{
 		base.transform.position = position;
@@ -44,7 +44,7 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C64 RID: 11364 RVA: 0x00118F60 File Offset: 0x00117160
+	// Token: 0x06002C5A RID: 11354 RVA: 0x00119D30 File Offset: 0x00117F30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -89,7 +89,7 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C65 RID: 11365 RVA: 0x001190AE File Offset: 0x001172AE
+	// Token: 0x06002C5B RID: 11355 RVA: 0x00119E7E File Offset: 0x0011807E
 	public void AddSideEntered(POIBoundsSideHelper side)
 	{
 		if (!this.ActivatedHelpers.Contains(side))
@@ -103,7 +103,7 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C66 RID: 11366 RVA: 0x001190E6 File Offset: 0x001172E6
+	// Token: 0x06002C5C RID: 11356 RVA: 0x00119EB6 File Offset: 0x001180B6
 	public void RemoveSideEntered(POIBoundsSideHelper side)
 	{
 		if (this.ActivatedHelpers.Contains(side))
@@ -117,42 +117,42 @@ public class POIBoundsHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400221D RID: 8733
+	// Token: 0x04002225 RID: 8741
 	public List<POIBoundsSideHelper> SideHelpers = new List<POIBoundsSideHelper>();
 
-	// Token: 0x0400221E RID: 8734
+	// Token: 0x04002226 RID: 8742
 	public List<POIBoundsSideHelper> ActivatedHelpers = new List<POIBoundsSideHelper>();
 
-	// Token: 0x0400221F RID: 8735
+	// Token: 0x04002227 RID: 8743
 	public POIBoundsHelper.WallVisibilityStates CurrentState;
 
-	// Token: 0x04002220 RID: 8736
+	// Token: 0x04002228 RID: 8744
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material material;
 
-	// Token: 0x04002221 RID: 8737
+	// Token: 0x04002229 RID: 8745
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float showTime = 3f;
 
-	// Token: 0x04002222 RID: 8738
+	// Token: 0x0400222A RID: 8746
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fullAlpha = -1f;
 
-	// Token: 0x0200054A RID: 1354
+	// Token: 0x02000550 RID: 1360
 	public enum WallVisibilityStates
 	{
-		// Token: 0x04002224 RID: 8740
+		// Token: 0x0400222C RID: 8748
 		None,
-		// Token: 0x04002225 RID: 8741
+		// Token: 0x0400222D RID: 8749
 		Showing,
-		// Token: 0x04002226 RID: 8742
+		// Token: 0x0400222E RID: 8750
 		Visible,
-		// Token: 0x04002227 RID: 8743
+		// Token: 0x0400222F RID: 8751
 		ReadyToHide,
-		// Token: 0x04002228 RID: 8744
+		// Token: 0x04002230 RID: 8752
 		Hiding
 	}
 }

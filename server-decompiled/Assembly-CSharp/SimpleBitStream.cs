@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x020014A1 RID: 5281
+// Token: 0x020014C1 RID: 5313
 [PublicizedFrom(EAccessModifier.Internal)]
 public class SimpleBitStream
 {
-	// Token: 0x0600A5A6 RID: 42406 RVA: 0x003D9F12 File Offset: 0x003D8112
+	// Token: 0x0600A654 RID: 42580 RVA: 0x003DEB9E File Offset: 0x003DCD9E
 	public SimpleBitStream(int _initialCapacity = 1000)
 	{
 		this.data = new List<byte>(_initialCapacity);
 		this.Reset();
 	}
 
-	// Token: 0x0600A5A7 RID: 42407 RVA: 0x003D9F2C File Offset: 0x003D812C
+	// Token: 0x0600A655 RID: 42581 RVA: 0x003DEBB8 File Offset: 0x003DCDB8
 	public void Reset()
 	{
 		this.data.Clear();
@@ -22,7 +22,7 @@ public class SimpleBitStream
 		this.curByteData = 0;
 	}
 
-	// Token: 0x0600A5A8 RID: 42408 RVA: 0x003D9F50 File Offset: 0x003D8150
+	// Token: 0x0600A656 RID: 42582 RVA: 0x003DEBDC File Offset: 0x003DCDDC
 	public void Add(bool _b)
 	{
 		if (_b)
@@ -39,7 +39,7 @@ public class SimpleBitStream
 		}
 	}
 
-	// Token: 0x0600A5A9 RID: 42409 RVA: 0x003D9FC0 File Offset: 0x003D81C0
+	// Token: 0x0600A657 RID: 42583 RVA: 0x003DEC4C File Offset: 0x003DCE4C
 	public bool GetNext()
 	{
 		if (this.curBitIdx > 7)
@@ -56,7 +56,7 @@ public class SimpleBitStream
 		return flag;
 	}
 
-	// Token: 0x0600A5AA RID: 42410 RVA: 0x003DA028 File Offset: 0x003D8228
+	// Token: 0x0600A658 RID: 42584 RVA: 0x003DECB4 File Offset: 0x003DCEB4
 	public int GetNextOffset()
 	{
 		bool flag = false;
@@ -92,7 +92,7 @@ public class SimpleBitStream
 		return this.curByteIdx * 8 + this.curBitIdx - 1;
 	}
 
-	// Token: 0x0600A5AB RID: 42411 RVA: 0x003DA0D4 File Offset: 0x003D82D4
+	// Token: 0x0600A659 RID: 42585 RVA: 0x003DED60 File Offset: 0x003DCF60
 	public void Write(BinaryWriter _bw)
 	{
 		if (this.curBitIdx > 0)
@@ -106,7 +106,7 @@ public class SimpleBitStream
 		}
 	}
 
-	// Token: 0x0600A5AC RID: 42412 RVA: 0x003DA134 File Offset: 0x003D8334
+	// Token: 0x0600A65A RID: 42586 RVA: 0x003DEDC0 File Offset: 0x003DCFC0
 	public void Read(BinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -119,19 +119,19 @@ public class SimpleBitStream
 		}
 	}
 
-	// Token: 0x04007B72 RID: 31602
+	// Token: 0x04007BED RID: 31725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<byte> data;
 
-	// Token: 0x04007B73 RID: 31603
+	// Token: 0x04007BEE RID: 31726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curBitIdx;
 
-	// Token: 0x04007B74 RID: 31604
+	// Token: 0x04007BEF RID: 31727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curByteIdx;
 
-	// Token: 0x04007B75 RID: 31605
+	// Token: 0x04007BF0 RID: 31728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte curByteData;
 }

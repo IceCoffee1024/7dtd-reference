@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x020013BB RID: 5051
+// Token: 0x020013DB RID: 5083
 public class ChunkGroupVisualiser : SingletonMonoBehaviour<ChunkGroupVisualiser>
 {
-	// Token: 0x06009EF6 RID: 40694 RVA: 0x003BEDF8 File Offset: 0x003BCFF8
+	// Token: 0x06009FA1 RID: 40865 RVA: 0x003C3994 File Offset: 0x003C1B94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDrawGizmos()
 	{
@@ -25,7 +25,7 @@ public class ChunkGroupVisualiser : SingletonMonoBehaviour<ChunkGroupVisualiser>
 		}
 	}
 
-	// Token: 0x06009EF7 RID: 40695 RVA: 0x003BEED0 File Offset: 0x003BD0D0
+	// Token: 0x06009FA2 RID: 40866 RVA: 0x003C3A6C File Offset: 0x003C1C6C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetGroups(IEnumerable<LongSetGroups.Group> chunkGroups)
 	{
@@ -44,12 +44,12 @@ public class ChunkGroupVisualiser : SingletonMonoBehaviour<ChunkGroupVisualiser>
 		}
 	}
 
-	// Token: 0x04007875 RID: 30837
+	// Token: 0x040078F0 RID: 30960
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float alpha = 0.25f;
 
-	// Token: 0x04007876 RID: 30838
+	// Token: 0x040078F1 RID: 30961
 	[TupleElementNames(new string[] { "color", "positions" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]

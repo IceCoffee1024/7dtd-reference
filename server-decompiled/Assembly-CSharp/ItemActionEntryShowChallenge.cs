@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D64 RID: 3428
+// Token: 0x02000D75 RID: 3445
 [Preserve]
 public class ItemActionEntryShowChallenge : BaseItemActionEntry
 {
-	// Token: 0x0600682C RID: 26668 RVA: 0x00292538 File Offset: 0x00290738
+	// Token: 0x06006833 RID: 26675 RVA: 0x00295AE8 File Offset: 0x00293CE8
 	public ItemActionEntryShowChallenge(XUiController controller, RecipeUnlockData unlockData)
 		: base(controller, "Challenge", "ui_game_symbol_challenge", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -14,13 +14,13 @@ public class ItemActionEntryShowChallenge : BaseItemActionEntry
 		base.IconName = "ui_game_symbol_challenge";
 	}
 
-	// Token: 0x0600682D RID: 26669 RVA: 0x00290C6A File Offset: 0x0028EE6A
+	// Token: 0x06006834 RID: 26676 RVA: 0x002941E6 File Offset: 0x002923E6
 	public override void RefreshEnabled()
 	{
 		base.Enabled = true;
 	}
 
-	// Token: 0x0600682E RID: 26670 RVA: 0x00292588 File Offset: 0x00290788
+	// Token: 0x06006835 RID: 26677 RVA: 0x00295B38 File Offset: 0x00293D38
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -33,6 +33,6 @@ public class ItemActionEntryShowChallenge : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0400500B RID: 20491
+	// Token: 0x0400504A RID: 20554
 	public RecipeUnlockData UnlockData;
 }

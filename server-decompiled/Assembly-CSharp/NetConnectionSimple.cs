@@ -5,10 +5,10 @@ using System.Threading;
 using Noemax.GZip;
 using UnityEngine.Networking;
 
-// Token: 0x02000773 RID: 1907
+// Token: 0x02000775 RID: 1909
 public class NetConnectionSimple : NetConnectionAbs
 {
-	// Token: 0x060038C9 RID: 14537 RVA: 0x00173F34 File Offset: 0x00172134
+	// Token: 0x0600390C RID: 14604 RVA: 0x00174860 File Offset: 0x00172A60
 	public NetConnectionSimple(int _channel, ClientInfo _clientInfo, INetworkClient _netClient, string _uniqueId, int _reservedHeaderBytes = 0, int _maxPacketSize = 0)
 		: base(_channel, _clientInfo, _netClient, _uniqueId)
 	{
@@ -35,7 +35,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerThreadInfo = ThreadManager.StartThread("NCS_Writer_" + this.connectionIdentifier, new ThreadManager.ThreadFunctionDelegate(this.taskSerialize), null, null, true, false);
 	}
 
-	// Token: 0x060038CA RID: 14538 RVA: 0x0017406C File Offset: 0x0017226C
+	// Token: 0x0600390D RID: 14605 RVA: 0x0017498C File Offset: 0x00172B8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitStreams(bool _full)
 	{
@@ -45,44 +45,54 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 		if (_full)
 		{
-			byte[] array = new byte[2097152];
-			this.receiveStreamCompressed = new MemoryStream(array, 0, array.Length, true, true);
-			this.receiveStreamCompressed.SetLength(0L);
+			byte[] array = new byte[2096128];
+			this.packageStagingStream = new MemoryStream(array, 0, array.Length, true, true);
+			this.packageStagingStream.SetLength(0L);
+			this.packageStagingStreamWriter = new PooledBinaryWriter();
+			this.packageStagingStreamWriter.SetBaseStream(this.packageStagingStream);
 			byte[] array2 = new byte[2097152];
-			this.receiveStreamUncompressed = new MemoryStream(array2, 0, array2.Length, true, true);
-			this.receiveZipStream = new DeflateInputStream(this.receiveStreamCompressed, true);
+			this.receiveStreamCompressed = new MemoryStream(array2, 0, array2.Length, true, true);
+			this.receiveStreamCompressed.SetLength(0L);
 			byte[] array3 = new byte[2097152];
-			this.reliableSendStreamUncompressed = new MemoryStream(array3, 0, array3.Length, true, true);
+			this.receiveStreamUncompressed = new MemoryStream(array3, 0, array3.Length, true, true);
+			this.receiveZipStream = new DeflateInputStream(this.receiveStreamCompressed, true);
+			byte[] array4 = new byte[2097152];
+			this.reliableSendStreamUncompressed = new MemoryStream(array4, 0, array4.Length, true, true);
 			this.reliableSendStreamWriter = new PooledBinaryWriter();
 			this.reliableSendStreamWriter.SetBaseStream(this.reliableSendStreamUncompressed);
-			byte[] array4 = new byte[2097152];
-			this.unreliableSendStreamUncompressed = new MemoryStream(array4, 0, array4.Length, true, true);
+			byte[] array5 = new byte[2097152];
+			this.unreliableSendStreamUncompressed = new MemoryStream(array5, 0, array5.Length, true, true);
 			this.unreliableSendStreamWriter = new PooledBinaryWriter();
 			this.unreliableSendStreamWriter.SetBaseStream(this.unreliableSendStreamUncompressed);
-			byte[] array5 = new byte[2097152];
-			this.sendStreamCompressed = new MemoryStream(array5, 0, array5.Length, true, true);
+			byte[] array6 = new byte[2097152];
+			this.sendStreamCompressed = new MemoryStream(array6, 0, array6.Length, true, true);
 			this.sendZipStream = new DeflateOutputStream(this.sendStreamCompressed, 3, true);
 			this.writerStream = new MemoryStream(new byte[2097152]);
 			this.writerStream.SetLength(0L);
 			this.fullConnection = true;
 			return;
 		}
-		byte[] array6 = new byte[32768];
-		this.receiveStreamCompressed = new MemoryStream(array6, 0, array6.Length, true, true);
+		byte[] array7 = new byte[32256];
+		this.packageStagingStream = new MemoryStream(array7, 0, array7.Length, true, true);
+		this.packageStagingStream.SetLength(0L);
+		this.packageStagingStreamWriter = new PooledBinaryWriter();
+		this.packageStagingStreamWriter.SetBaseStream(this.packageStagingStream);
+		byte[] array8 = new byte[32768];
+		this.receiveStreamCompressed = new MemoryStream(array8, 0, array8.Length, true, true);
 		this.receiveStreamCompressed.SetLength(0L);
-		byte[] array7 = new byte[32768];
-		this.reliableSendStreamUncompressed = new MemoryStream(array7, 0, array7.Length, true, true);
+		byte[] array9 = new byte[32768];
+		this.reliableSendStreamUncompressed = new MemoryStream(array9, 0, array9.Length, true, true);
 		this.reliableSendStreamWriter = new PooledBinaryWriter();
 		this.reliableSendStreamWriter.SetBaseStream(this.reliableSendStreamUncompressed);
-		byte[] array8 = new byte[32768];
-		this.unreliableSendStreamUncompressed = new MemoryStream(array8, 0, array8.Length, true, true);
+		byte[] array10 = new byte[32768];
+		this.unreliableSendStreamUncompressed = new MemoryStream(array10, 0, array10.Length, true, true);
 		this.unreliableSendStreamWriter = new PooledBinaryWriter();
 		this.unreliableSendStreamWriter.SetBaseStream(this.unreliableSendStreamUncompressed);
 		this.writerStream = new MemoryStream(new byte[32768]);
 		this.writerStream.SetLength(0L);
 	}
 
-	// Token: 0x060038CB RID: 14539 RVA: 0x00174277 File Offset: 0x00172477
+	// Token: 0x0600390E RID: 14606 RVA: 0x00174C29 File Offset: 0x00172E29
 	public override void Disconnect(bool _kick)
 	{
 		base.Disconnect(_kick);
@@ -90,18 +100,18 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerTriggerEvent.Set();
 	}
 
-	// Token: 0x060038CC RID: 14540 RVA: 0x00174298 File Offset: 0x00172498
+	// Token: 0x0600390F RID: 14607 RVA: 0x00174C4C File Offset: 0x00172E4C
 	public override void AddToSendQueue(NetPackage _package)
 	{
 		_package.RegisterSendQueue();
 		object obj = this.writerListLockObj;
 		lock (obj)
 		{
-			this.writerListFilling.Add(_package);
+			this.writerListPending.Add(_package);
 		}
 	}
 
-	// Token: 0x060038CD RID: 14541 RVA: 0x001742E4 File Offset: 0x001724E4
+	// Token: 0x06003910 RID: 14608 RVA: 0x00174C98 File Offset: 0x00172E98
 	public override void FlushSendQueue()
 	{
 		object obj = this.writerListLockObj;
@@ -111,7 +121,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x060038CE RID: 14542 RVA: 0x0017432C File Offset: 0x0017252C
+	// Token: 0x06003911 RID: 14609 RVA: 0x00174CE0 File Offset: 0x00172EE0
 	public override void AppendToReaderStream(byte[] _data, int _dataSize)
 	{
 		if (this.bDisconnected)
@@ -126,7 +136,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.readerTriggerEvent.Set();
 	}
 
-	// Token: 0x060038CF RID: 14543 RVA: 0x00174390 File Offset: 0x00172590
+	// Token: 0x06003912 RID: 14610 RVA: 0x00174D44 File Offset: 0x00172F44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void taskDeserialize(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -209,11 +219,6 @@ public class NetConnectionSimple : NetConnectionAbs
 						for (int i = 0; i < num2; i++)
 						{
 							int num6 = this.receiveStreamReader.ReadInt32();
-							if (NetConnectionSimple.doCrash)
-							{
-								num6++;
-								NetConnectionSimple.doCrash = false;
-							}
 							long position = this.receiveStreamReader.BaseStream.Position;
 							NetPackage netPackage = NetPackageManager.ParsePackage(this.receiveStreamReader, this.cInfo);
 							int num7 = (int)(this.receiveStreamReader.BaseStream.Position - position);
@@ -287,11 +292,10 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x060038D0 RID: 14544 RVA: 0x00174884 File Offset: 0x00172A84
+	// Token: 0x06003913 RID: 14611 RVA: 0x00175224 File Offset: 0x00173424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void taskSerialize(ThreadManager.ThreadInfo _threadInfo)
 	{
-		this.writerListProcessing.Clear();
 		bool flag = false;
 		MicroStopwatch microStopwatch = new MicroStopwatch();
 		try
@@ -307,10 +311,10 @@ public class NetConnectionSimple : NetConnectionAbs
 						switch (networkError)
 						{
 						case NetworkError.Ok:
-							goto IL_0167;
+							goto IL_015C;
 						case NetworkError.WrongHost:
 						case NetworkError.WrongChannel:
-							goto IL_00FF;
+							goto IL_00F4;
 						case NetworkError.WrongConnection:
 							break;
 						case NetworkError.NoResources:
@@ -328,17 +332,17 @@ public class NetConnectionSimple : NetConnectionAbs
 								Log.Warning("NET No resources to send data to server on channel {1}, backing off for {0} ms", new object[] { 500, this.channel });
 							}
 							microStopwatch.ResetAndRestart();
-							goto IL_0167;
+							goto IL_015C;
 						default:
 							if (networkError != NetworkError.WrongOperation)
 							{
-								goto IL_00FF;
+								goto IL_00F4;
 							}
 							break;
 						}
 						this.Disconnect(true);
-						goto IL_0167;
-						IL_00FF:
+						goto IL_015C;
+						IL_00F4:
 						if (this.isServer)
 						{
 							Log.Warning("NET Unexpected result '{2}' trying to send data to client ({0}) on channel {1}", new object[]
@@ -356,7 +360,7 @@ public class NetConnectionSimple : NetConnectionAbs
 								networkError.ToStringCached<NetworkError>()
 							});
 						}
-						IL_0167:;
+						IL_015C:;
 					}
 					catch (Exception ex)
 					{
@@ -370,87 +374,137 @@ public class NetConnectionSimple : NetConnectionAbs
 					break;
 				}
 				object obj = this.writerListLockObj;
-				int count;
+				int num;
 				lock (obj)
 				{
-					count = this.writerListFilling.Count;
+					num = this.writerListPending.Count;
 				}
-				if (count == 0)
+				if (num == 0)
 				{
 					this.writerTriggerEvent.Reset();
 				}
 				else
 				{
-					obj = this.writerListLockObj;
-					lock (obj)
+					this.reliableSendStreamUncompressed.Position = 0L;
+					this.reliableSendStreamUncompressed.SetLength(0L);
+					this.unreliableSendStreamUncompressed.Position = 0L;
+					this.unreliableSendStreamUncompressed.SetLength(0L);
+					int num2 = 0;
+					int num3 = 0;
+					bool flag3 = false;
+					for (int i = 0; i < num; i++)
 					{
-						List<NetPackage> list = this.writerListFilling;
-						List<NetPackage> list2 = this.writerListProcessing;
-						this.writerListProcessing = list;
-						this.writerListFilling = list2;
-						this.writerListFilling.Clear();
-					}
-					if (this.writerListProcessing.Count != 0)
-					{
-						this.reliableSendStreamUncompressed.Position = 0L;
-						this.reliableSendStreamUncompressed.SetLength(0L);
-						this.unreliableSendStreamUncompressed.Position = 0L;
-						this.unreliableSendStreamUncompressed.SetLength(0L);
-						int num = 0;
-						int num2 = 0;
-						int num3 = 0;
-						int num4 = 0;
-						for (int i = 0; i < this.writerListProcessing.Count; i++)
+						obj = this.writerListLockObj;
+						NetPackage netPackage;
+						lock (obj)
 						{
-							NetPackage netPackage = this.writerListProcessing[i];
-							bool flag3;
-							if (netPackage.ReliableDelivery || !GameManager.unreliableNetPackets)
+							netPackage = this.writerListPending[i];
+						}
+						bool flag4 = netPackage.ReliableDelivery || !GameManager.unreliableNetPackets;
+						if (!flag4 || !flag3)
+						{
+							int num4;
+							int num5;
+							try
 							{
-								flag3 = this.WriteToStream(num3, i, ref num, ref netPackage, ref this.reliableSendStreamWriter, ref this.reliableSendStreamUncompressed);
-								num3++;
+								num4 = this.WriteToPackageStagingStream(netPackage);
+								num5 = (int)this.packageStagingStream.Length;
+							}
+							catch (Exception ex2)
+							{
+								string text = ((this.cInfo != null) ? string.Format("(cl={0}, ch={1})", this.cInfo.InternalId.CombinedString, this.channel) : string.Format("(ch={0})", this.channel));
+								Log.Error(string.Concat(new string[]
+								{
+									"NCSimple ",
+									text,
+									" dropping package ",
+									netPackage.GetType().Name,
+									" serialization failed, or it exceeds the send buffer and must be chunked smaller."
+								}));
+								Log.Exception(ex2);
+								netPackage.SendQueueHandled();
+								obj = this.writerListLockObj;
+								lock (obj)
+								{
+									this.writerListPending.RemoveAt(i);
+								}
+								num--;
+								i--;
+								goto IL_0476;
+							}
+							MemoryStream memoryStream;
+							if (flag4)
+							{
+								memoryStream = this.reliableSendStreamUncompressed;
 							}
 							else
 							{
-								long position = this.unreliableSendStreamWriter.BaseStream.Position;
-								if (this.cInfo != null && position + (long)netPackage.GetLength() >= (long)this.cInfo.network.GetMaximumPacketSize(this.cInfo, false))
+								memoryStream = this.unreliableSendStreamUncompressed;
+								if (this.cInfo != null)
 								{
-									flag3 = this.WriteToStream(num3, i, ref num, ref netPackage, ref this.reliableSendStreamWriter, ref this.reliableSendStreamUncompressed);
-									num3++;
+									int maximumPacketSize = this.cInfo.network.GetMaximumPacketSize(this.cInfo, false);
+									if (maximumPacketSize > 0)
+									{
+										int num6 = maximumPacketSize - 8 - this.reservedHeaderBytes;
+										if ((int)this.unreliableSendStreamUncompressed.Length + num5 > num6)
+										{
+											flag4 = true;
+											memoryStream = this.reliableSendStreamUncompressed;
+										}
+									}
+								}
+							}
+							if (memoryStream.Capacity - (int)memoryStream.Length < num5)
+							{
+								flag3 = flag3 || flag4;
+							}
+							else
+							{
+								memoryStream.Write(this.packageStagingStream.GetBuffer(), 0, num5);
+								if (flag4)
+								{
+									num2++;
+									NetPackageLogger.LogPackage(true, this.cInfo, netPackage, this.channel, num4, this.EnableEncryptData(), false, num2, -1);
 								}
 								else
 								{
-									flag3 = this.WriteToStream(num4, i, ref num2, ref netPackage, ref this.unreliableSendStreamWriter, ref this.unreliableSendStreamUncompressed);
-									num4++;
+									num3++;
+									NetPackageLogger.LogPackage(true, this.cInfo, netPackage, this.channel, num4, this.EnableEncryptData(), false, num3, -1);
 								}
+								netPackage.SendQueueHandled();
+								obj = this.writerListLockObj;
+								lock (obj)
+								{
+									this.writerListPending.RemoveAt(i);
+								}
+								num--;
+								i--;
 							}
-							if (!flag3)
-							{
-								break;
-							}
 						}
-						if (this.reliableSendStreamUncompressed.Length > 0L)
-						{
-							this.StreamToBuffer(ref this.reliableSendStreamUncompressed, true, ref num, microStopwatch.ElapsedMilliseconds);
-						}
-						if (this.unreliableSendStreamUncompressed.Length > 0L)
-						{
-							this.StreamToBuffer(ref this.unreliableSendStreamUncompressed, false, ref num2, microStopwatch.ElapsedMilliseconds);
-						}
+						IL_0476:;
+					}
+					if (this.reliableSendStreamUncompressed.Length > 0L)
+					{
+						this.StreamToBuffer(ref this.reliableSendStreamUncompressed, true, ref num2, microStopwatch.ElapsedMilliseconds);
+					}
+					if (this.unreliableSendStreamUncompressed.Length > 0L)
+					{
+						this.StreamToBuffer(ref this.unreliableSendStreamUncompressed, false, ref num3, microStopwatch.ElapsedMilliseconds);
 					}
 				}
 			}
 		}
-		catch (Exception ex2)
+		catch (Exception ex3)
 		{
 			if (this.cInfo != null)
 			{
-				Log.Error(string.Format("NCSimple_Serializer (cl={0}, ch={1}) Message: {2}", this.cInfo.InternalId.CombinedString, this.channel, ex2.Message));
+				Log.Error(string.Format("NCSimple_Serializer (cl={0}, ch={1}) Message: {2}", this.cInfo.InternalId.CombinedString, this.channel, ex3.Message));
 			}
 			else
 			{
-				Log.Error(string.Format("NCSimple_Serializer (ch={0}) Message: {1}", this.channel, ex2.Message));
+				Log.Error(string.Format("NCSimple_Serializer (ch={0}) Message: {1}", this.channel, ex3.Message));
 			}
-			Log.Exception(ex2);
+			Log.Exception(ex3);
 			if (this.isServer)
 			{
 				this.Disconnect(true);
@@ -462,151 +516,45 @@ public class NetConnectionSimple : NetConnectionAbs
 		}
 	}
 
-	// Token: 0x1700059F RID: 1439
-	// (get) Token: 0x060038D1 RID: 14545 RVA: 0x00174D30 File Offset: 0x00172F30
-	public int preCompressMaxBufferSize
-	{
-		[PublicizedFrom(EAccessModifier.Private)]
-		get
-		{
-			if (!this.allowCompression)
-			{
-				return 32256;
-			}
-			return 2097152;
-		}
-	}
-
-	// Token: 0x060038D2 RID: 14546 RVA: 0x00174D48 File Offset: 0x00172F48
+	// Token: 0x06003914 RID: 14612 RVA: 0x00175840 File Offset: 0x00173A40
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool WriteToStream(int streamIndex, int packageIndex, ref int packagesToSend, ref NetPackage package, ref PooledBinaryWriter writer, ref MemoryStream stream)
+	public int WriteToPackageStagingStream(NetPackage package)
 	{
-		long position = writer.BaseStream.Position;
-		if (streamIndex > 0 && position + (long)package.GetLength() >= (long)this.preCompressMaxBufferSize)
+		this.packageStagingStream.SetLength(0L);
+		this.packageStagingStreamWriter.Write(-1);
+		package.write(this.packageStagingStreamWriter);
+		int num = (int)(this.packageStagingStreamWriter.BaseStream.Position - 4L);
+		this.packageStagingStream.Position = 0L;
+		this.packageStagingStreamWriter.Write(num);
+		this.packageStagingStream.Position = this.packageStagingStream.Length;
+		int packageId = package.PackageId;
+		this.stats.RegisterSentPackage(packageId, num);
+		if (ConnectionManager.VerboseNetLogging)
 		{
-			object obj = this.writerListLockObj;
-			lock (obj)
+			if (this.cInfo != null)
 			{
-				for (int i = this.writerListProcessing.Count - 1; i >= packageIndex; i--)
+				Log.Out("NCSimple serialized (cl={3}, ch={0}): {1}, size={2}", new object[]
 				{
-					this.writerListFilling.Insert(0, this.writerListProcessing[i]);
-				}
-			}
-			return false;
-		}
-		bool flag;
-		try
-		{
-			writer.Write(-1);
-			package.write(writer);
-			int num = (int)(writer.BaseStream.Position - position - 4L);
-			writer.BaseStream.Position = position;
-			writer.Write(num);
-			writer.BaseStream.Position = writer.BaseStream.Length;
-			packagesToSend++;
-			int packageId = package.PackageId;
-			this.stats.RegisterSentPackage(packageId, num);
-			NetPackageLogger.LogPackage(true, this.cInfo, package, this.channel, num, this.EnableEncryptData(), false, packagesToSend, -1);
-			if (ConnectionManager.VerboseNetLogging)
-			{
-				if (this.cInfo != null)
-				{
-					Log.Out("NCSimple serialized (cl={3}, ch={0}): {1}, size={2}", new object[]
-					{
-						this.channel,
-						NetPackageManager.GetPackageName(packageId),
-						num,
-						this.cInfo.InternalId.CombinedString
-					});
-				}
-				else
-				{
-					Log.Out("NCSimple serialized (ch={0}): {1}, size={2}", new object[]
-					{
-						this.channel,
-						NetPackageManager.GetPackageName(packageId),
-						num
-					});
-				}
-			}
-			package.SendQueueHandled();
-			flag = true;
-		}
-		catch (Exception ex)
-		{
-			if (packagesToSend > 0)
-			{
-				string text;
-				if (this.cInfo != null)
-				{
-					text = string.Format("(cl={0}, ch={1})", this.cInfo.InternalId.CombinedString, this.channel);
-				}
-				else
-				{
-					text = string.Format("(ch={0})", this.channel);
-				}
-				Log.Exception(ex);
-				string[] array = new string[10];
-				array[0] = "Failed writing ";
-				int num2 = 1;
-				NetPackage netPackage = package;
-				array[num2] = ((netPackage != null) ? netPackage.ToString() : null);
-				array[2] = " to client ";
-				array[3] = text;
-				array[4] = ", requeueing ";
-				array[5] = (this.writerListProcessing.Count - packageIndex).ToString();
-				array[6] = " packages. Stream index: ";
-				array[7] = (streamIndex + 1).ToString();
-				array[8] = " - stream size before: ";
-				array[9] = position.ToString();
-				Log.Warning(string.Concat(array));
-				Log.Warning("Packages in stream:");
-				int[] array2 = new int[NetPackageManager.KnownPackageCount];
-				for (int j = 0; j < packageIndex; j++)
-				{
-					array2[this.writerListProcessing[j].PackageId]++;
-				}
-				for (int k = 0; k < array2.Length; k++)
-				{
-					if (array2[k] > 0)
-					{
-						Log.Warning("   " + NetPackageManager.GetPackageName(k) + ": " + array2[k].ToString());
-					}
-				}
-				object obj = this.writerListLockObj;
-				lock (obj)
-				{
-					for (int l = this.writerListProcessing.Count - 1; l >= packageIndex; l--)
-					{
-						this.writerListFilling.Insert(0, this.writerListProcessing[l]);
-					}
-				}
-				stream.SetLength(position);
-				this.writerListProcessing.Clear();
-				flag = false;
+					this.channel,
+					NetPackageManager.GetPackageName(packageId),
+					num,
+					this.cInfo.InternalId.CombinedString
+				});
 			}
 			else
 			{
-				Log.Exception(ex);
-				string[] array3 = new string[7];
-				array3[0] = "Failed writing first package: ";
-				int num3 = 1;
-				NetPackage netPackage2 = package;
-				array3[num3] = ((netPackage2 != null) ? netPackage2.ToString() : null);
-				array3[2] = " of size ";
-				array3[3] = package.GetLength().ToString();
-				array3[4] = ". ";
-				array3[5] = (this.writerListProcessing.Count - packageIndex).ToString();
-				array3[6] = " remaining packages in queue.";
-				Log.Warning(string.Concat(array3));
-				package.SendQueueHandled();
-				flag = false;
+				Log.Out("NCSimple serialized (ch={0}): {1}, size={2}", new object[]
+				{
+					this.channel,
+					NetPackageManager.GetPackageName(packageId),
+					num
+				});
 			}
 		}
-		return flag;
+		return num;
 	}
 
-	// Token: 0x060038D3 RID: 14547 RVA: 0x001751A4 File Offset: 0x001733A4
+	// Token: 0x06003915 RID: 14613 RVA: 0x00175950 File Offset: 0x00173B50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StreamToBuffer(ref MemoryStream uncompressedStream, bool sendReliable, ref int packagesToSend, long milliseconds)
 	{
@@ -614,7 +562,6 @@ public class NetConnectionSimple : NetConnectionAbs
 		{
 			return;
 		}
-		this.writerListProcessing.Clear();
 		uncompressedStream.Position = 0L;
 		long length = uncompressedStream.Length;
 		bool flag = this.allowCompression && uncompressedStream.Length > 500L;
@@ -630,12 +577,12 @@ public class NetConnectionSimple : NetConnectionAbs
 		StreamUtils.Write(this.writerStream, flag ? 1 : 0);
 		StreamUtils.Write(this.writerStream, flag2 ? 1 : 0);
 		StreamUtils.Write(this.writerStream, (ushort)packagesToSend);
-		if (memoryStream.Length > (long)this.writerStream.Capacity)
+		if (memoryStream.Length > (long)this.writerStream.Capacity - this.writerStream.Length)
 		{
-			Log.Error(string.Format("Source stream size ({0}) > writer stream capacity ({1}), packages: {2}, compressed: {3}", new object[]
+			Log.Error(string.Format("Source stream size ({0}) exceeds remaining writer stream capacity ({1}), packages: {2}, compressed: {3}", new object[]
 			{
 				memoryStream.Length,
-				this.writerStream.Capacity,
+				(long)this.writerStream.Capacity - this.writerStream.Length,
 				packagesToSend,
 				flag
 			}));
@@ -656,7 +603,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		this.writerStream.SetLength(0L);
 	}
 
-	// Token: 0x060038D4 RID: 14548 RVA: 0x00175390 File Offset: 0x00173590
+	// Token: 0x06003916 RID: 14614 RVA: 0x00175B48 File Offset: 0x00173D48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetworkError SendBuffers()
 	{
@@ -672,7 +619,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		return NetworkError.Ok;
 	}
 
-	// Token: 0x060038D5 RID: 14549 RVA: 0x001753C4 File Offset: 0x001735C4
+	// Token: 0x06003917 RID: 14615 RVA: 0x00175B7C File Offset: 0x00173D7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetworkError sendBuffersFromQueue(LinkedList<ArrayListMP<byte>> _sendQueue, bool _reliableDelivery)
 	{
@@ -705,7 +652,7 @@ public class NetConnectionSimple : NetConnectionAbs
 		return NetworkError.Ok;
 	}
 
-	// Token: 0x060038D6 RID: 14550 RVA: 0x0017546C File Offset: 0x0017366C
+	// Token: 0x06003918 RID: 14616 RVA: 0x00175C24 File Offset: 0x00173E24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<byte> splitSendBuffer(ArrayListMP<byte> _inBuf, LinkedList<ArrayListMP<byte>> _sendQueue)
 	{
@@ -739,132 +686,137 @@ public class NetConnectionSimple : NetConnectionAbs
 		return null;
 	}
 
-	// Token: 0x04002E97 RID: 11927
+	// Token: 0x04002E90 RID: 11920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int reservedHeaderBytes;
 
-	// Token: 0x04002E98 RID: 11928
+	// Token: 0x04002E91 RID: 11921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int maxPacketSize;
 
-	// Token: 0x04002E99 RID: 11929
+	// Token: 0x04002E92 RID: 11922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int maxPayloadPerPacket;
 
-	// Token: 0x04002E9A RID: 11930
-	public static bool doCrash;
+	// Token: 0x04002E93 RID: 11923
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int sendFrameHeaderBytes = 8;
 
-	// Token: 0x04002E9B RID: 11931
+	// Token: 0x04002E94 RID: 11924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object writerListLockObj = new object();
 
-	// Token: 0x04002E9C RID: 11932
+	// Token: 0x04002E95 RID: 11925
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<NetPackage> writerListFilling = new List<NetPackage>();
+	public List<NetPackage> writerListPending = new List<NetPackage>();
 
-	// Token: 0x04002E9D RID: 11933
-	[PublicizedFrom(EAccessModifier.Private)]
-	public List<NetPackage> writerListProcessing = new List<NetPackage>();
-
-	// Token: 0x04002E9E RID: 11934
+	// Token: 0x04002E96 RID: 11926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ManualResetEvent writerTriggerEvent = new ManualResetEvent(false);
 
-	// Token: 0x04002E9F RID: 11935
+	// Token: 0x04002E97 RID: 11927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] writerBuffer;
 
-	// Token: 0x04002EA0 RID: 11936
+	// Token: 0x04002E98 RID: 11928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo writerThreadInfo;
 
-	// Token: 0x04002EA1 RID: 11937
+	// Token: 0x04002E99 RID: 11929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter reliableSendStreamWriter;
 
-	// Token: 0x04002EA2 RID: 11938
+	// Token: 0x04002E9A RID: 11930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryWriter unreliableSendStreamWriter;
 
-	// Token: 0x04002EA3 RID: 11939
+	// Token: 0x04002E9B RID: 11931
+	[PublicizedFrom(EAccessModifier.Private)]
+	public PooledBinaryWriter packageStagingStreamWriter;
+
+	// Token: 0x04002E9C RID: 11932
+	[PublicizedFrom(EAccessModifier.Private)]
+	public MemoryStream packageStagingStream;
+
+	// Token: 0x04002E9D RID: 11933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream reliableSendStreamUncompressed;
 
-	// Token: 0x04002EA4 RID: 11940
+	// Token: 0x04002E9E RID: 11934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream unreliableSendStreamUncompressed;
 
-	// Token: 0x04002EA5 RID: 11941
+	// Token: 0x04002E9F RID: 11935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream sendStreamCompressed;
 
-	// Token: 0x04002EA6 RID: 11942
+	// Token: 0x04002EA0 RID: 11936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateOutputStream sendZipStream;
 
-	// Token: 0x04002EA7 RID: 11943
+	// Token: 0x04002EA1 RID: 11937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream writerStream;
 
-	// Token: 0x04002EA8 RID: 11944
+	// Token: 0x04002EA2 RID: 11938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<ArrayListMP<byte>> reliableBufsToSend = new LinkedList<ArrayListMP<byte>>();
 
-	// Token: 0x04002EA9 RID: 11945
+	// Token: 0x04002EA3 RID: 11939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly LinkedList<ArrayListMP<byte>> unreliableBufsToSend = new LinkedList<ArrayListMP<byte>>();
 
-	// Token: 0x04002EAA RID: 11946
+	// Token: 0x04002EA4 RID: 11940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ManualResetEvent readerTriggerEvent = new ManualResetEvent(false);
 
-	// Token: 0x04002EAB RID: 11947
+	// Token: 0x04002EA5 RID: 11941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo readerThreadInfo;
 
-	// Token: 0x04002EAC RID: 11948
+	// Token: 0x04002EA6 RID: 11942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] readerBuffer;
 
-	// Token: 0x04002EAD RID: 11949
+	// Token: 0x04002EA7 RID: 11943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream receiveStreamCompressed;
 
-	// Token: 0x04002EAE RID: 11950
+	// Token: 0x04002EA8 RID: 11944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream receiveStreamUncompressed;
 
-	// Token: 0x04002EAF RID: 11951
+	// Token: 0x04002EA9 RID: 11945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateInputStream receiveZipStream;
 
-	// Token: 0x04002EB0 RID: 11952
+	// Token: 0x04002EAA RID: 11946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly PooledBinaryReader receiveStreamReader = new PooledBinaryReader();
 
-	// Token: 0x04002EB1 RID: 11953
+	// Token: 0x04002EAB RID: 11947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Queue<NetConnectionSimple.RecvBuffer> receivedBuffers = new Queue<NetConnectionSimple.RecvBuffer>();
 
-	// Token: 0x04002EB2 RID: 11954
+	// Token: 0x04002EAC RID: 11948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int networkErrorCooldownMs = 500;
 
-	// Token: 0x02000774 RID: 1908
+	// Token: 0x02000776 RID: 1910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RecvBuffer
 	{
-		// Token: 0x060038D7 RID: 14551 RVA: 0x00175520 File Offset: 0x00173720
+		// Token: 0x06003919 RID: 14617 RVA: 0x00175CD8 File Offset: 0x00173ED8
 		public RecvBuffer(byte[] _data, int _size)
 		{
 			this.Data = _data;
 			this.Size = _size;
 		}
 
-		// Token: 0x04002EB3 RID: 11955
+		// Token: 0x04002EAD RID: 11949
 		public readonly byte[] Data;
 
-		// Token: 0x04002EB4 RID: 11956
+		// Token: 0x04002EAE RID: 11950
 		public readonly int Size;
 	}
 }

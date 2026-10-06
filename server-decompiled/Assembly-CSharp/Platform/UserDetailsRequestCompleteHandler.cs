@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001BB9 RID: 7097
-	// (Invoke) Token: 0x0600D382 RID: 54146
+	// Token: 0x02001BEB RID: 7147
+	// (Invoke) Token: 0x0600D4FA RID: 54522
 	public delegate void UserDetailsRequestCompleteHandler(IReadOnlyList<UserDetailsRequest> results);
 }

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000654 RID: 1620
+// Token: 0x02000656 RID: 1622
 public class BuffValue
 {
-	// Token: 0x1700054C RID: 1356
-	// (get) Token: 0x06003469 RID: 13417 RVA: 0x0015C294 File Offset: 0x0015A494
+	// Token: 0x17000572 RID: 1394
+	// (get) Token: 0x060034AC RID: 13484 RVA: 0x0015CC04 File Offset: 0x0015AE04
 	public BuffClass BuffClass
 	{
 		get
@@ -21,9 +20,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x1700054D RID: 1357
-	// (get) Token: 0x0600346A RID: 13418 RVA: 0x0015C2E0 File Offset: 0x0015A4E0
-	// (set) Token: 0x0600346B RID: 13419 RVA: 0x0015C2ED File Offset: 0x0015A4ED
+	// Token: 0x17000573 RID: 1395
+	// (get) Token: 0x060034AD RID: 13485 RVA: 0x0015CC50 File Offset: 0x0015AE50
+	// (set) Token: 0x060034AE RID: 13486 RVA: 0x0015CC5D File Offset: 0x0015AE5D
 	public bool Remove
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,9 +41,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x1700054E RID: 1358
-	// (get) Token: 0x0600346C RID: 13420 RVA: 0x0015C313 File Offset: 0x0015A513
-	// (set) Token: 0x0600346D RID: 13421 RVA: 0x0015C320 File Offset: 0x0015A520
+	// Token: 0x17000574 RID: 1396
+	// (get) Token: 0x060034AF RID: 13487 RVA: 0x0015CC83 File Offset: 0x0015AE83
+	// (set) Token: 0x060034B0 RID: 13488 RVA: 0x0015CC90 File Offset: 0x0015AE90
 	public bool Finished
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,9 +62,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x1700054F RID: 1359
-	// (get) Token: 0x0600346E RID: 13422 RVA: 0x0015C346 File Offset: 0x0015A546
-	// (set) Token: 0x0600346F RID: 13423 RVA: 0x0015C353 File Offset: 0x0015A553
+	// Token: 0x17000575 RID: 1397
+	// (get) Token: 0x060034B1 RID: 13489 RVA: 0x0015CCB6 File Offset: 0x0015AEB6
+	// (set) Token: 0x060034B2 RID: 13490 RVA: 0x0015CCC3 File Offset: 0x0015AEC3
 	public bool Started
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,9 +83,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000550 RID: 1360
-	// (get) Token: 0x06003470 RID: 13424 RVA: 0x0015C379 File Offset: 0x0015A579
-	// (set) Token: 0x06003471 RID: 13425 RVA: 0x0015C387 File Offset: 0x0015A587
+	// Token: 0x17000576 RID: 1398
+	// (get) Token: 0x060034B3 RID: 13491 RVA: 0x0015CCE9 File Offset: 0x0015AEE9
+	// (set) Token: 0x060034B4 RID: 13492 RVA: 0x0015CCF7 File Offset: 0x0015AEF7
 	public bool Invalid
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,9 +104,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000551 RID: 1361
-	// (get) Token: 0x06003472 RID: 13426 RVA: 0x0015C3AE File Offset: 0x0015A5AE
-	// (set) Token: 0x06003473 RID: 13427 RVA: 0x0015C3BB File Offset: 0x0015A5BB
+	// Token: 0x17000577 RID: 1399
+	// (get) Token: 0x060034B5 RID: 13493 RVA: 0x0015CD1E File Offset: 0x0015AF1E
+	// (set) Token: 0x060034B6 RID: 13494 RVA: 0x0015CD2B File Offset: 0x0015AF2B
 	public bool Update
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -126,9 +125,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000552 RID: 1362
-	// (get) Token: 0x06003474 RID: 13428 RVA: 0x0015C3E1 File Offset: 0x0015A5E1
-	// (set) Token: 0x06003475 RID: 13429 RVA: 0x0015C3EF File Offset: 0x0015A5EF
+	// Token: 0x17000578 RID: 1400
+	// (get) Token: 0x060034B7 RID: 13495 RVA: 0x0015CD51 File Offset: 0x0015AF51
+	// (set) Token: 0x060034B8 RID: 13496 RVA: 0x0015CD5F File Offset: 0x0015AF5F
 	public bool Paused
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,9 +146,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000553 RID: 1363
-	// (get) Token: 0x06003476 RID: 13430 RVA: 0x0015C416 File Offset: 0x0015A616
-	// (set) Token: 0x06003477 RID: 13431 RVA: 0x0015C41E File Offset: 0x0015A61E
+	// Token: 0x17000579 RID: 1401
+	// (get) Token: 0x060034B9 RID: 13497 RVA: 0x0015CD86 File Offset: 0x0015AF86
+	// (set) Token: 0x060034BA RID: 13498 RVA: 0x0015CD8E File Offset: 0x0015AF8E
 	public int StackEffectMultiplier
 	{
 		get
@@ -162,8 +161,8 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000554 RID: 1364
-	// (get) Token: 0x06003478 RID: 13432 RVA: 0x0015C433 File Offset: 0x0015A633
+	// Token: 0x1700057A RID: 1402
+	// (get) Token: 0x060034BB RID: 13499 RVA: 0x0015CDA3 File Offset: 0x0015AFA3
 	public float DurationInSeconds
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -173,9 +172,9 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000555 RID: 1365
-	// (get) Token: 0x06003479 RID: 13433 RVA: 0x0015C443 File Offset: 0x0015A643
-	// (set) Token: 0x0600347A RID: 13434 RVA: 0x0015C44B File Offset: 0x0015A64B
+	// Token: 0x1700057B RID: 1403
+	// (get) Token: 0x060034BC RID: 13500 RVA: 0x0015CDB3 File Offset: 0x0015AFB3
+	// (set) Token: 0x060034BD RID: 13501 RVA: 0x0015CDBB File Offset: 0x0015AFBB
 	public uint DurationInTicks
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -190,7 +189,7 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x0600347B RID: 13435 RVA: 0x0015C45C File Offset: 0x0015A65C
+	// Token: 0x060034BE RID: 13502 RVA: 0x0015CDCC File Offset: 0x0015AFCC
 	public void DurationTick()
 	{
 		this.durationTicks += 1U;
@@ -203,14 +202,14 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x0600347C RID: 13436 RVA: 0x0015C4A4 File Offset: 0x0015A6A4
+	// Token: 0x060034BF RID: 13503 RVA: 0x0015CE14 File Offset: 0x0015B014
 	public void DurationTriggerUpdate()
 	{
 		this.updateTicks = 32767;
 	}
 
-	// Token: 0x17000556 RID: 1366
-	// (get) Token: 0x0600347D RID: 13437 RVA: 0x0015C4B1 File Offset: 0x0015A6B1
+	// Token: 0x1700057C RID: 1404
+	// (get) Token: 0x060034C0 RID: 13504 RVA: 0x0015CE21 File Offset: 0x0015B021
 	public string BuffName
 	{
 		get
@@ -219,8 +218,8 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000557 RID: 1367
-	// (get) Token: 0x0600347E RID: 13438 RVA: 0x0015C4B9 File Offset: 0x0015A6B9
+	// Token: 0x1700057D RID: 1405
+	// (get) Token: 0x060034C1 RID: 13505 RVA: 0x0015CE29 File Offset: 0x0015B029
 	public int InstigatorId
 	{
 		get
@@ -229,8 +228,8 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x17000558 RID: 1368
-	// (get) Token: 0x0600347F RID: 13439 RVA: 0x0015C4C1 File Offset: 0x0015A6C1
+	// Token: 0x1700057E RID: 1406
+	// (get) Token: 0x060034C2 RID: 13506 RVA: 0x0015CE31 File Offset: 0x0015B031
 	public Vector3i InstigatorPos
 	{
 		get
@@ -239,12 +238,12 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x06003480 RID: 13440 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060034C3 RID: 13507 RVA: 0x0000640C File Offset: 0x0000460C
 	public BuffValue()
 	{
 	}
 
-	// Token: 0x06003481 RID: 13441 RVA: 0x0015C4CC File Offset: 0x0015A6CC
+	// Token: 0x060034C4 RID: 13508 RVA: 0x0015CE3C File Offset: 0x0015B03C
 	public BuffValue(string _buffEffectGroupId, Vector3i _instigatorPos, int _instigatorId = -1, BuffClass _buffClass = null)
 	{
 		this.buffName = _buffEffectGroupId;
@@ -262,13 +261,13 @@ public class BuffValue
 		this.cachedBuff = _buffClass;
 	}
 
-	// Token: 0x06003482 RID: 13442 RVA: 0x0015C523 File Offset: 0x0015A723
+	// Token: 0x060034C5 RID: 13509 RVA: 0x0015CE93 File Offset: 0x0015B093
 	public void ClearBuffClassLink()
 	{
 		this.cachedBuff = null;
 	}
 
-	// Token: 0x06003483 RID: 13443 RVA: 0x0015C52C File Offset: 0x0015A72C
+	// Token: 0x060034C6 RID: 13510 RVA: 0x0015CE9C File Offset: 0x0015B09C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cacheBuffClassPointer()
 	{
@@ -278,7 +277,7 @@ public class BuffValue
 		}
 	}
 
-	// Token: 0x06003484 RID: 13444 RVA: 0x0015C550 File Offset: 0x0015A750
+	// Token: 0x060034C7 RID: 13511 RVA: 0x0015CEC0 File Offset: 0x0015B0C0
 	public void Tick()
 	{
 		BuffClass buffClass = this.BuffClass;
@@ -290,8 +289,8 @@ public class BuffValue
 		this.Remove = true;
 	}
 
-	// Token: 0x06003485 RID: 13445 RVA: 0x0015C578 File Offset: 0x0015A778
-	public void Write(BinaryWriter _bw)
+	// Token: 0x060034C8 RID: 13512 RVA: 0x0015CEE8 File Offset: 0x0015B0E8
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.buffName);
 		_bw.Write(this.stackEffectMultiplier);
@@ -302,8 +301,8 @@ public class BuffValue
 		StreamUtils.Write(_bw, this.instigatorPos);
 	}
 
-	// Token: 0x06003486 RID: 13446 RVA: 0x0015C5DC File Offset: 0x0015A7DC
-	public void Read(BinaryReader _br, int _version)
+	// Token: 0x060034C9 RID: 13513 RVA: 0x0015CF4C File Offset: 0x0015B14C
+	public void Read(PooledBinaryReader _br, int _version)
 	{
 		if (_version < 2)
 		{
@@ -343,55 +342,55 @@ public class BuffValue
 		this.cacheBuffClassPointer();
 	}
 
-	// Token: 0x040029CA RID: 10698
+	// Token: 0x040029C3 RID: 10691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BuffClass cachedBuff;
 
-	// Token: 0x040029CB RID: 10699
+	// Token: 0x040029C4 RID: 10692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buffName;
 
-	// Token: 0x040029CC RID: 10700
+	// Token: 0x040029C5 RID: 10693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte stackEffectMultiplier;
 
-	// Token: 0x040029CD RID: 10701
+	// Token: 0x040029C6 RID: 10694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint durationTicks;
 
-	// Token: 0x040029CE RID: 10702
+	// Token: 0x040029C7 RID: 10695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int instigatorId;
 
-	// Token: 0x040029CF RID: 10703
+	// Token: 0x040029C8 RID: 10696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BuffValue.BuffFlags buffFlags;
 
-	// Token: 0x040029D0 RID: 10704
+	// Token: 0x040029C9 RID: 10697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort updateTicks;
 
-	// Token: 0x040029D1 RID: 10705
+	// Token: 0x040029CA RID: 10698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i instigatorPos;
 
-	// Token: 0x02000655 RID: 1621
+	// Token: 0x02000657 RID: 1623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum BuffFlags : byte
 	{
-		// Token: 0x040029D3 RID: 10707
+		// Token: 0x040029CC RID: 10700
 		None,
-		// Token: 0x040029D4 RID: 10708
+		// Token: 0x040029CD RID: 10701
 		Started,
-		// Token: 0x040029D5 RID: 10709
+		// Token: 0x040029CE RID: 10702
 		Finished,
-		// Token: 0x040029D6 RID: 10710
+		// Token: 0x040029CF RID: 10703
 		Remove = 4,
-		// Token: 0x040029D7 RID: 10711
+		// Token: 0x040029D0 RID: 10704
 		Update = 8,
-		// Token: 0x040029D8 RID: 10712
+		// Token: 0x040029D1 RID: 10705
 		Invalid = 16,
-		// Token: 0x040029D9 RID: 10713
+		// Token: 0x040029D2 RID: 10706
 		Paused = 32
 	}
 }

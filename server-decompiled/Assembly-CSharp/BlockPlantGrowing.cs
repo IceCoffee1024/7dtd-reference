@@ -3,17 +3,17 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000139 RID: 313
+// Token: 0x0200013B RID: 315
 [Preserve]
 public class BlockPlantGrowing : BlockPlant
 {
-	// Token: 0x06000878 RID: 2168 RVA: 0x0003BE79 File Offset: 0x0003A079
+	// Token: 0x0600087E RID: 2174 RVA: 0x0003BF65 File Offset: 0x0003A165
 	public BlockPlantGrowing()
 	{
 		this.fertileLevel = 5;
 	}
 
-	// Token: 0x06000879 RID: 2169 RVA: 0x0003BEA8 File Offset: 0x0003A0A8
+	// Token: 0x0600087F RID: 2175 RVA: 0x0003BF94 File Offset: 0x0003A194
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -80,7 +80,7 @@ public class BlockPlantGrowing : BlockPlant
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x0600087A RID: 2170 RVA: 0x0003C174 File Offset: 0x0003A374
+	// Token: 0x06000880 RID: 2176 RVA: 0x0003C260 File Offset: 0x0003A460
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (GameManager.Instance.IsEditMode())
@@ -104,13 +104,13 @@ public class BlockPlantGrowing : BlockPlant
 		return true;
 	}
 
-	// Token: 0x0600087B RID: 2171 RVA: 0x0003C1D4 File Offset: 0x0003A3D4
+	// Token: 0x06000881 RID: 2177 RVA: 0x0003C2C0 File Offset: 0x0003A4C0
 	public override bool CanGrowOn(WorldBase _world, Vector3i _blockPos, BlockValue _blockValueOfPlant)
 	{
 		return this.fertileLevel == 0 || _world.GetBlock(_blockPos).Block.blockMaterial.FertileLevel >= this.fertileLevel;
 	}
 
-	// Token: 0x0600087C RID: 2172 RVA: 0x0003C20F File Offset: 0x0003A40F
+	// Token: 0x06000882 RID: 2178 RVA: 0x0003C2FB File Offset: 0x0003A4FB
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -120,7 +120,7 @@ public class BlockPlantGrowing : BlockPlant
 		}
 	}
 
-	// Token: 0x0600087D RID: 2173 RVA: 0x0003C250 File Offset: 0x0003A450
+	// Token: 0x06000883 RID: 2179 RVA: 0x0003C33C File Offset: 0x0003A53C
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -139,7 +139,7 @@ public class BlockPlantGrowing : BlockPlant
 		}
 	}
 
-	// Token: 0x0600087E RID: 2174 RVA: 0x0003C2B8 File Offset: 0x0003A4B8
+	// Token: 0x06000884 RID: 2180 RVA: 0x0003C3A4 File Offset: 0x0003A5A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void addScheduledTick(WorldBase _world, Vector3i _blockPos)
 	{
@@ -165,13 +165,13 @@ public class BlockPlantGrowing : BlockPlant
 		_world.GetWBT().AddScheduledBlockUpdate(_blockPos, this.blockID, (ulong)((long)num6));
 	}
 
-	// Token: 0x0600087F RID: 2175 RVA: 0x0003C347 File Offset: 0x0003A547
+	// Token: 0x06000885 RID: 2181 RVA: 0x0003C433 File Offset: 0x0003A633
 	public override ulong GetTickRate()
 	{
 		return (ulong)(this.growthRate * BlockPlantGrowing.CropGrowthModifier * 20f * 60f);
 	}
 
-	// Token: 0x06000880 RID: 2176 RVA: 0x0003C364 File Offset: 0x0003A564
+	// Token: 0x06000886 RID: 2182 RVA: 0x0003C450 File Offset: 0x0003A650
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		if (this.nextPlant.isair)
@@ -244,7 +244,7 @@ public class BlockPlantGrowing : BlockPlant
 		return true;
 	}
 
-	// Token: 0x06000881 RID: 2177 RVA: 0x0003C5F4 File Offset: 0x0003A7F4
+	// Token: 0x06000887 RID: 2183 RVA: 0x0003C6E0 File Offset: 0x0003A8E0
 	public BlockValue ForceNextGrowStage(World _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		BlockValue block = _world.GetBlock(_blockPos + Vector3i.up);
@@ -281,7 +281,7 @@ public class BlockPlantGrowing : BlockPlant
 		return _blockValue;
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x0003C775 File Offset: 0x0003A975
+	// Token: 0x06000888 RID: 2184 RVA: 0x0003C861 File Offset: 0x0003AA61
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
@@ -291,82 +291,82 @@ public class BlockPlantGrowing : BlockPlant
 		}
 	}
 
-	// Token: 0x04000963 RID: 2403
+	// Token: 0x04000966 RID: 2406
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropPlantGrowing = "PlantGrowing";
 
-	// Token: 0x04000964 RID: 2404
+	// Token: 0x04000967 RID: 2407
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropNext = "Next";
 
-	// Token: 0x04000965 RID: 2405
+	// Token: 0x04000968 RID: 2408
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropGrowthRate = "GrowthRate";
 
-	// Token: 0x04000966 RID: 2406
+	// Token: 0x04000969 RID: 2409
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropGrowthDeviation = "GrowthDeviation";
 
-	// Token: 0x04000967 RID: 2407
+	// Token: 0x0400096A RID: 2410
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropFertileLevel = "FertileLevel";
 
-	// Token: 0x04000968 RID: 2408
+	// Token: 0x0400096B RID: 2411
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropGrowOnTop = "GrowOnTop";
 
-	// Token: 0x04000969 RID: 2409
+	// Token: 0x0400096C RID: 2412
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropIsGrowOnTopEnabled = "IsGrowOnTopEnabled";
 
-	// Token: 0x0400096A RID: 2410
+	// Token: 0x0400096D RID: 2413
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropLightLevelStay = "LightLevelStay";
 
-	// Token: 0x0400096B RID: 2411
+	// Token: 0x0400096E RID: 2414
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropLightLevelGrow = "LightLevelGrow";
 
-	// Token: 0x0400096C RID: 2412
+	// Token: 0x0400096F RID: 2415
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropIsRandom = "IsRandom";
 
-	// Token: 0x0400096D RID: 2413
+	// Token: 0x04000970 RID: 2416
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const string PropGrowIfAnythinOnTop = "GrowIfAnythinOnTop";
 
-	// Token: 0x0400096E RID: 2414
+	// Token: 0x04000971 RID: 2417
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue nextPlant;
 
-	// Token: 0x0400096F RID: 2415
+	// Token: 0x04000972 RID: 2418
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue growOnTop;
 
-	// Token: 0x04000970 RID: 2416
+	// Token: 0x04000973 RID: 2419
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bGrowOnTopEnabled;
 
-	// Token: 0x04000971 RID: 2417
+	// Token: 0x04000974 RID: 2420
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float growthRate;
 
-	// Token: 0x04000972 RID: 2418
+	// Token: 0x04000975 RID: 2421
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float growthDeviation = 0.25f;
 
-	// Token: 0x04000973 RID: 2419
+	// Token: 0x04000976 RID: 2422
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int lightLevelGrow = 8;
 
-	// Token: 0x04000974 RID: 2420
+	// Token: 0x04000977 RID: 2423
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isPlantGrowingRandom = true;
 
-	// Token: 0x04000975 RID: 2421
+	// Token: 0x04000978 RID: 2424
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isPlantGrowingIfAnythingOnTop = true;
 
-	// Token: 0x04000976 RID: 2422
+	// Token: 0x04000979 RID: 2425
 	public static float CropGrowthModifier = 1f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015A1 RID: 5537
+// Token: 0x020015C3 RID: 5571
 public class vp_FPSDemoPlaceHolderMessenger : MonoBehaviour
 {
-	// Token: 0x0600AD4F RID: 44367 RVA: 0x00409F0A File Offset: 0x0040810A
+	// Token: 0x0600AE02 RID: 44546 RVA: 0x0040ED5E File Offset: 0x0040CF5E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -15,7 +15,7 @@ public class vp_FPSDemoPlaceHolderMessenger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD50 RID: 44368 RVA: 0x00409F38 File Offset: 0x00408138
+	// Token: 0x0600AE03 RID: 44547 RVA: 0x0040ED8C File Offset: 0x0040CF8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -56,17 +56,17 @@ public class vp_FPSDemoPlaceHolderMessenger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040080D7 RID: 32983
+	// Token: 0x0400815A RID: 33114
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler Player;
 
-	// Token: 0x040080D8 RID: 32984
+	// Token: 0x0400815B RID: 33115
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_WasSwingingMaceIn3rdPersonLastFrame;
 
-	// Token: 0x040080D9 RID: 32985
+	// Token: 0x0400815C RID: 33116
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_WasClimbingIn3rdPersonLastFrame;

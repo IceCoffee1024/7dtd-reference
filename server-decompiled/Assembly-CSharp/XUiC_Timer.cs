@@ -2,11 +2,11 @@
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x02001084 RID: 4228
+// Token: 0x02001094 RID: 4244
 [Preserve]
 public class XUiC_Timer : XUiController
 {
-	// Token: 0x0600864F RID: 34383 RVA: 0x0033311C File Offset: 0x0033131C
+	// Token: 0x06008691 RID: 34449 RVA: 0x00336A54 File Offset: 0x00334C54
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -16,7 +16,7 @@ public class XUiC_Timer : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.Menu, 0f);
 	}
 
-	// Token: 0x06008650 RID: 34384 RVA: 0x00333184 File Offset: 0x00331384
+	// Token: 0x06008692 RID: 34450 RVA: 0x00336ABC File Offset: 0x00334CBC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -37,7 +37,7 @@ public class XUiC_Timer : XUiController
 		CursorControllerAbs.SetCursor(CursorControllerAbs.ECursorType.Default);
 	}
 
-	// Token: 0x06008651 RID: 34385 RVA: 0x00333215 File Offset: 0x00331415
+	// Token: 0x06008693 RID: 34451 RVA: 0x00336B4D File Offset: 0x00334D4D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateTimer(float _timeLeft, float _fillAmount)
 	{
@@ -46,7 +46,7 @@ public class XUiC_Timer : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008652 RID: 34386 RVA: 0x0033322C File Offset: 0x0033142C
+	// Token: 0x06008694 RID: 34452 RVA: 0x00336B64 File Offset: 0x00334D64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void timeReachedNull()
 	{
@@ -64,7 +64,7 @@ public class XUiC_Timer : XUiController
 		this.eventData = null;
 	}
 
-	// Token: 0x06008653 RID: 34387 RVA: 0x003332A4 File Offset: 0x003314A4
+	// Token: 0x06008695 RID: 34453 RVA: 0x00336BDC File Offset: 0x00334DDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void alternateTimeReached()
 	{
@@ -82,7 +82,7 @@ public class XUiC_Timer : XUiController
 		this.eventData = null;
 	}
 
-	// Token: 0x06008654 RID: 34388 RVA: 0x0033331C File Offset: 0x0033151C
+	// Token: 0x06008696 RID: 34454 RVA: 0x00336C54 File Offset: 0x00334E54
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -119,7 +119,7 @@ public class XUiC_Timer : XUiController
 		}
 	}
 
-	// Token: 0x06008655 RID: 34389 RVA: 0x0033348C File Offset: 0x0033168C
+	// Token: 0x06008697 RID: 34455 RVA: 0x00336DC4 File Offset: 0x00334FC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setTimer(float _fullTime, TimerEventData _eventData, float _startTime = -1f, string _labelText = "")
 	{
@@ -135,7 +135,7 @@ public class XUiC_Timer : XUiController
 		this.updateTimer(this.timeLeft, num);
 	}
 
-	// Token: 0x06008656 RID: 34390 RVA: 0x00333500 File Offset: 0x00331700
+	// Token: 0x06008698 RID: 34456 RVA: 0x00336E38 File Offset: 0x00335038
 	public static void OpenTimer(XUi _xui, float _fullTime, TimerEventData _eventData, float _startTime = -1f, string _labelText = "", bool _modal = true)
 	{
 		XUiC_Timer childByType = _xui.GetChildByType<XUiC_Timer>();
@@ -143,7 +143,7 @@ public class XUiC_Timer : XUiController
 		childByType.setTimer(_fullTime, _eventData, _startTime, _labelText);
 	}
 
-	// Token: 0x06008657 RID: 34391 RVA: 0x00333538 File Offset: 0x00331738
+	// Token: 0x06008699 RID: 34457 RVA: 0x00336E70 File Offset: 0x00335070
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -165,31 +165,31 @@ public class XUiC_Timer : XUiController
 		return true;
 	}
 
-	// Token: 0x040063D0 RID: 25552
+	// Token: 0x04006410 RID: 25616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fullTime;
 
-	// Token: 0x040063D1 RID: 25553
+	// Token: 0x04006411 RID: 25617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float timeLeft;
 
-	// Token: 0x040063D2 RID: 25554
+	// Token: 0x04006412 RID: 25618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string currentOpenEventText;
 
-	// Token: 0x040063D3 RID: 25555
+	// Token: 0x04006413 RID: 25619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentFillAmount;
 
-	// Token: 0x040063D4 RID: 25556
+	// Token: 0x04006414 RID: 25620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentTimeLeft;
 
-	// Token: 0x040063D5 RID: 25557
+	// Token: 0x04006415 RID: 25621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TimerEventData eventData;
 
-	// Token: 0x040063D6 RID: 25558
+	// Token: 0x04006416 RID: 25622
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool skipCloseEvent;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000EF RID: 239
+// Token: 0x020000F1 RID: 241
 public class QuestGeneratorController : MonoBehaviour
 {
 	// Token: 0x17000068 RID: 104
-	// (get) Token: 0x06000621 RID: 1569 RVA: 0x0002BA94 File Offset: 0x00029C94
+	// (get) Token: 0x06000627 RID: 1575 RVA: 0x0002BB8C File Offset: 0x00029D8C
 	public bool IsRunning
 	{
 		get
@@ -14,7 +14,7 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000622 RID: 1570 RVA: 0x0002BA9F File Offset: 0x00029C9F
+	// Token: 0x06000628 RID: 1576 RVA: 0x0002BB97 File Offset: 0x00029D97
 	public void SetGeneratorState(QuestGeneratorController.GeneratorStates state, bool isInit)
 	{
 		if (state != this.currentState)
@@ -28,7 +28,7 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000623 RID: 1571 RVA: 0x0002BAD4 File Offset: 0x00029CD4
+	// Token: 0x06000629 RID: 1577 RVA: 0x0002BBCC File Offset: 0x00029DCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateStateDisplay()
 	{
@@ -69,54 +69,54 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000624 RID: 1572 RVA: 0x0002BBF7 File Offset: 0x00029DF7
+	// Token: 0x0600062A RID: 1578 RVA: 0x0002BCEF File Offset: 0x00029EEF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		this.updateStateDisplay();
 	}
 
-	// Token: 0x06000625 RID: 1573 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600062B RID: 1579 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x040006CB RID: 1739
+	// Token: 0x040006CE RID: 1742
 	public Light MainLight;
 
-	// Token: 0x040006CC RID: 1740
+	// Token: 0x040006CF RID: 1743
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public QuestGeneratorController.GeneratorStates currentState;
 
-	// Token: 0x040006CD RID: 1741
+	// Token: 0x040006D0 RID: 1744
 	public QuestGeneratorController.GeneratorStates TestingCurrentState = QuestGeneratorController.GeneratorStates.Off;
 
-	// Token: 0x040006CE RID: 1742
+	// Token: 0x040006D1 RID: 1745
 	public GameObject OffState;
 
-	// Token: 0x040006CF RID: 1743
+	// Token: 0x040006D2 RID: 1746
 	public GameObject RebootState;
 
-	// Token: 0x040006D0 RID: 1744
+	// Token: 0x040006D3 RID: 1747
 	public GameObject EnteringOnState;
 
-	// Token: 0x040006D1 RID: 1745
+	// Token: 0x040006D4 RID: 1748
 	public GameObject OnState;
 
-	// Token: 0x020000F0 RID: 240
+	// Token: 0x020000F2 RID: 242
 	public enum GeneratorStates
 	{
-		// Token: 0x040006D3 RID: 1747
-		OnNoQuest,
-		// Token: 0x040006D4 RID: 1748
-		Off,
-		// Token: 0x040006D5 RID: 1749
-		RebootState,
 		// Token: 0x040006D6 RID: 1750
-		EnteringOnState,
+		OnNoQuest,
 		// Token: 0x040006D7 RID: 1751
+		Off,
+		// Token: 0x040006D8 RID: 1752
+		RebootState,
+		// Token: 0x040006D9 RID: 1753
+		EnteringOnState,
+		// Token: 0x040006DA RID: 1754
 		On
 	}
 }

@@ -1,170 +1,170 @@
 ﻿using System;
 
-// Token: 0x02001201 RID: 4609
+// Token: 0x02001219 RID: 4633
 public enum EnumGameStats
 {
-	// Token: 0x04006E13 RID: 28179
+	// Token: 0x04006E7D RID: 28285
 	GameState,
-	// Token: 0x04006E14 RID: 28180
+	// Token: 0x04006E7E RID: 28286
 	GameModeId,
-	// Token: 0x04006E15 RID: 28181
+	// Token: 0x04006E7F RID: 28287
 	TimeLimitActive,
-	// Token: 0x04006E16 RID: 28182
+	// Token: 0x04006E80 RID: 28288
 	TimeLimitThisRound,
-	// Token: 0x04006E17 RID: 28183
+	// Token: 0x04006E81 RID: 28289
 	DayLimitActive,
-	// Token: 0x04006E18 RID: 28184
+	// Token: 0x04006E82 RID: 28290
 	DayLimitThisRound,
-	// Token: 0x04006E19 RID: 28185
+	// Token: 0x04006E83 RID: 28291
 	FragLimitActive,
-	// Token: 0x04006E1A RID: 28186
+	// Token: 0x04006E84 RID: 28292
 	FragLimitThisRound,
-	// Token: 0x04006E1B RID: 28187
+	// Token: 0x04006E85 RID: 28293
 	ShowWindow,
-	// Token: 0x04006E1C RID: 28188
+	// Token: 0x04006E86 RID: 28294
 	LoadScene,
-	// Token: 0x04006E1D RID: 28189
+	// Token: 0x04006E87 RID: 28295
 	CurrentRoundIx,
-	// Token: 0x04006E1E RID: 28190
+	// Token: 0x04006E88 RID: 28296
 	TimeOfDayIncPerSec,
-	// Token: 0x04006E1F RID: 28191
+	// Token: 0x04006E89 RID: 28297
 	EnemyCount,
-	// Token: 0x04006E20 RID: 28192
+	// Token: 0x04006E8A RID: 28298
 	AnimalCount,
-	// Token: 0x04006E21 RID: 28193
+	// Token: 0x04006E8B RID: 28299
 	ShowAllPlayersOnMap,
-	// Token: 0x04006E22 RID: 28194
+	// Token: 0x04006E8C RID: 28300
 	ShowFriendPlayerOnMap,
-	// Token: 0x04006E23 RID: 28195
+	// Token: 0x04006E8D RID: 28301
 	ShowSpawnWindow,
-	// Token: 0x04006E24 RID: 28196
+	// Token: 0x04006E8E RID: 28302
 	UNUSED_ShowZombieCounter,
-	// Token: 0x04006E25 RID: 28197
+	// Token: 0x04006E8F RID: 28303
 	IsCreativeMenuEnabled,
-	// Token: 0x04006E26 RID: 28198
+	// Token: 0x04006E90 RID: 28304
 	IsTeleportEnabled,
-	// Token: 0x04006E27 RID: 28199
+	// Token: 0x04006E91 RID: 28305
 	IsFlyingEnabled,
-	// Token: 0x04006E28 RID: 28200
+	// Token: 0x04006E92 RID: 28306
 	IsPlayerDamageEnabled,
-	// Token: 0x04006E29 RID: 28201
+	// Token: 0x04006E93 RID: 28307
 	IsPlayerCollisionEnabled,
-	// Token: 0x04006E2A RID: 28202
+	// Token: 0x04006E94 RID: 28308
 	PlayerKillingMode,
-	// Token: 0x04006E2B RID: 28203
+	// Token: 0x04006E95 RID: 28309
 	IsSpawnEnemies,
-	// Token: 0x04006E2C RID: 28204
+	// Token: 0x04006E96 RID: 28310
 	IsSpawnNearOtherPlayer,
-	// Token: 0x04006E2D RID: 28205
+	// Token: 0x04006E97 RID: 28311
 	IsSaveSupplyCrates,
-	// Token: 0x04006E2E RID: 28206
+	// Token: 0x04006E98 RID: 28312
 	IsResetMapOnRestart,
-	// Token: 0x04006E2F RID: 28207
+	// Token: 0x04006E99 RID: 28313
 	ScoreZombieKillMultiplier,
-	// Token: 0x04006E30 RID: 28208
+	// Token: 0x04006E9A RID: 28314
 	ScorePlayerKillMultiplier,
-	// Token: 0x04006E31 RID: 28209
+	// Token: 0x04006E9B RID: 28315
 	ScoreDiedMultiplier,
-	// Token: 0x04006E32 RID: 28210
+	// Token: 0x04006E9C RID: 28316
 	IsVersionCheckDone,
-	// Token: 0x04006E33 RID: 28211
+	// Token: 0x04006E9D RID: 28317
 	ZombieHordeMeter,
-	// Token: 0x04006E34 RID: 28212
+	// Token: 0x04006E9E RID: 28318
 	DropOnDeath,
-	// Token: 0x04006E35 RID: 28213
+	// Token: 0x04006E9F RID: 28319
 	DropOnQuit,
-	// Token: 0x04006E36 RID: 28214
+	// Token: 0x04006EA0 RID: 28320
 	DeathPenalty,
-	// Token: 0x04006E37 RID: 28215
+	// Token: 0x04006EA1 RID: 28321
 	LootTimer,
-	// Token: 0x04006E38 RID: 28216
+	// Token: 0x04006EA2 RID: 28322
 	GameDifficulty,
-	// Token: 0x04006E39 RID: 28217
+	// Token: 0x04006EA3 RID: 28323
 	UNUSED_GameDifficultyBonus,
-	// Token: 0x04006E3A RID: 28218
+	// Token: 0x04006EA4 RID: 28324
 	BloodMoonEnemyCount,
-	// Token: 0x04006E3B RID: 28219
+	// Token: 0x04006EA5 RID: 28325
 	EnemySpawnMode,
-	// Token: 0x04006E3C RID: 28220
+	// Token: 0x04006EA6 RID: 28326
 	EnemyDifficulty,
-	// Token: 0x04006E3D RID: 28221
+	// Token: 0x04006EA7 RID: 28327
 	DayLightLength,
-	// Token: 0x04006E3E RID: 28222
+	// Token: 0x04006EA8 RID: 28328
 	LandClaimCount,
-	// Token: 0x04006E3F RID: 28223
+	// Token: 0x04006EA9 RID: 28329
 	LandClaimSize,
-	// Token: 0x04006E40 RID: 28224
+	// Token: 0x04006EAA RID: 28330
 	LandClaimDeadZone,
-	// Token: 0x04006E41 RID: 28225
+	// Token: 0x04006EAB RID: 28331
 	LandClaimExpiryTime,
-	// Token: 0x04006E42 RID: 28226
+	// Token: 0x04006EAC RID: 28332
 	LandClaimDecayMode,
-	// Token: 0x04006E43 RID: 28227
+	// Token: 0x04006EAD RID: 28333
 	LandClaimOnlineDurabilityModifier,
-	// Token: 0x04006E44 RID: 28228
+	// Token: 0x04006EAE RID: 28334
 	LandClaimOfflineDurabilityModifier,
-	// Token: 0x04006E45 RID: 28229
+	// Token: 0x04006EAF RID: 28335
 	LandClaimOfflineDelay,
-	// Token: 0x04006E46 RID: 28230
+	// Token: 0x04006EB0 RID: 28336
 	AirDropFrequency,
-	// Token: 0x04006E47 RID: 28231
+	// Token: 0x04006EB1 RID: 28337
 	GlobalMessageToShow,
-	// Token: 0x04006E48 RID: 28232
+	// Token: 0x04006EB2 RID: 28338
 	AirDropMarker,
-	// Token: 0x04006E49 RID: 28233
+	// Token: 0x04006EB3 RID: 28339
 	PartySharedKillRange,
-	// Token: 0x04006E4A RID: 28234
+	// Token: 0x04006EB4 RID: 28340
 	ChunkStabilityEnabled,
-	// Token: 0x04006E4B RID: 28235
+	// Token: 0x04006EB5 RID: 28341
 	AutoParty,
-	// Token: 0x04006E4C RID: 28236
+	// Token: 0x04006EB6 RID: 28342
 	OptionsPOICulling,
-	// Token: 0x04006E4D RID: 28237
+	// Token: 0x04006EB7 RID: 28343
 	BloodMoonDay,
-	// Token: 0x04006E4E RID: 28238
+	// Token: 0x04006EB8 RID: 28344
 	BlockDamagePlayer,
-	// Token: 0x04006E4F RID: 28239
+	// Token: 0x04006EB9 RID: 28345
 	XPMultiplier,
-	// Token: 0x04006E50 RID: 28240
+	// Token: 0x04006EBA RID: 28346
 	BloodMoonWarning,
-	// Token: 0x04006E51 RID: 28241
+	// Token: 0x04006EBB RID: 28347
 	AllowedViewDistance,
-	// Token: 0x04006E52 RID: 28242
+	// Token: 0x04006EBC RID: 28348
 	BedrollExpiryTime,
-	// Token: 0x04006E53 RID: 28243
+	// Token: 0x04006EBD RID: 28349
 	TwitchBloodMoonAllowed,
-	// Token: 0x04006E54 RID: 28244
+	// Token: 0x04006EBE RID: 28350
 	QuestProgressionDailyLimit,
-	// Token: 0x04006E55 RID: 28245
+	// Token: 0x04006EBF RID: 28351
 	BiomeProgression,
-	// Token: 0x04006E56 RID: 28246
+	// Token: 0x04006EC0 RID: 28352
 	StormFreq,
-	// Token: 0x04006E57 RID: 28247
+	// Token: 0x04006EC1 RID: 28353
 	CameraRestrictionMode,
-	// Token: 0x04006E58 RID: 28248
+	// Token: 0x04006EC2 RID: 28354
 	JarRefund,
-	// Token: 0x04006E59 RID: 28249
+	// Token: 0x04006EC3 RID: 28355
 	SandboxPreset,
-	// Token: 0x04006E5A RID: 28250
+	// Token: 0x04006EC4 RID: 28356
 	SandboxCode,
-	// Token: 0x04006E5B RID: 28251
+	// Token: 0x04006EC5 RID: 28357
 	DayNightLength,
-	// Token: 0x04006E5C RID: 28252
+	// Token: 0x04006EC6 RID: 28358
 	BlockDamageAI,
-	// Token: 0x04006E5D RID: 28253
+	// Token: 0x04006EC7 RID: 28359
 	BlockDamageAIBM,
-	// Token: 0x04006E5E RID: 28254
+	// Token: 0x04006EC8 RID: 28360
 	LootAbundance,
-	// Token: 0x04006E5F RID: 28255
+	// Token: 0x04006EC9 RID: 28361
 	LootRespawnDays,
-	// Token: 0x04006E60 RID: 28256
+	// Token: 0x04006ECA RID: 28362
 	GlobalGSModifier,
-	// Token: 0x04006E61 RID: 28257
+	// Token: 0x04006ECB RID: 28363
 	BiomeGSModifier,
-	// Token: 0x04006E62 RID: 28258
+	// Token: 0x04006ECC RID: 28364
 	GlobalLSModifier,
-	// Token: 0x04006E63 RID: 28259
+	// Token: 0x04006ECD RID: 28365
 	BiomeLSModifier,
-	// Token: 0x04006E64 RID: 28260
+	// Token: 0x04006ECE RID: 28366
 	Last
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FE5 RID: 4069
+// Token: 0x02000FF4 RID: 4084
 [Preserve]
 public class XUiC_QuestObjectiveList : XUiController
 {
-	// Token: 0x0600806C RID: 32876 RVA: 0x0030A1D0 File Offset: 0x003083D0
+	// Token: 0x0600807B RID: 32891 RVA: 0x0030D1A8 File Offset: 0x0030B3A8
 	public void SetIsTracker()
 	{
 		this.isTracker = true;
@@ -16,9 +16,9 @@ public class XUiC_QuestObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x17000EF2 RID: 3826
-	// (get) Token: 0x0600806D RID: 32877 RVA: 0x0030A210 File Offset: 0x00308410
-	// (set) Token: 0x0600806E RID: 32878 RVA: 0x0030A218 File Offset: 0x00308418
+	// Token: 0x17000F19 RID: 3865
+	// (get) Token: 0x0600807C RID: 32892 RVA: 0x0030D1E8 File Offset: 0x0030B3E8
+	// (set) Token: 0x0600807D RID: 32893 RVA: 0x0030D1F0 File Offset: 0x0030B3F0
 	public Quest Quest
 	{
 		get
@@ -32,7 +32,7 @@ public class XUiC_QuestObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x0600806F RID: 32879 RVA: 0x0030A228 File Offset: 0x00308428
+	// Token: 0x0600807E RID: 32894 RVA: 0x0030D200 File Offset: 0x0030B400
 	public override void Init()
 	{
 		base.Init();
@@ -47,14 +47,14 @@ public class XUiC_QuestObjectiveList : XUiController
 		}
 	}
 
-	// Token: 0x06008070 RID: 32880 RVA: 0x00295FE1 File Offset: 0x002941E1
+	// Token: 0x0600807F RID: 32895 RVA: 0x0029936D File Offset: 0x0029756D
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008071 RID: 32881 RVA: 0x0030A268 File Offset: 0x00308468
+	// Token: 0x06008080 RID: 32896 RVA: 0x0030D240 File Offset: 0x0030B440
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -111,30 +111,30 @@ public class XUiC_QuestObjectiveList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005F1E RID: 24350
+	// Token: 0x04005F47 RID: 24391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest quest;
 
-	// Token: 0x04005F1F RID: 24351
+	// Token: 0x04005F48 RID: 24392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiController> objectiveEntries = new List<XUiController>();
 
-	// Token: 0x04005F20 RID: 24352
+	// Token: 0x04005F49 RID: 24393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTracker;
 
-	// Token: 0x04005F21 RID: 24353
+	// Token: 0x04005F4A RID: 24394
 	public string completeHexColor = "FF00FF00";
 
-	// Token: 0x04005F22 RID: 24354
+	// Token: 0x04005F4B RID: 24395
 	public string incompleteHexColor = "FFFF0000";
 
-	// Token: 0x04005F23 RID: 24355
+	// Token: 0x04005F4C RID: 24396
 	public string warningHexColor = "FFFF00FF";
 
-	// Token: 0x04005F24 RID: 24356
+	// Token: 0x04005F4D RID: 24397
 	public string inactiveHexColor = "888888FF";
 
-	// Token: 0x04005F25 RID: 24357
+	// Token: 0x04005F4E RID: 24398
 	public string activeHexColor = "FFFFFFFF";
 }

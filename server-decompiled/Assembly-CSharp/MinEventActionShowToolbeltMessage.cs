@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200071A RID: 1818
+// Token: 0x0200071C RID: 1820
 [Preserve]
 public class MinEventActionShowToolbeltMessage : MinEventActionTargetedBase
 {
-	// Token: 0x06003717 RID: 14103 RVA: 0x0016BC78 File Offset: 0x00169E78
+	// Token: 0x0600375A RID: 14170 RVA: 0x0016C5DC File Offset: 0x0016A7DC
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -25,13 +25,13 @@ public class MinEventActionShowToolbeltMessage : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003718 RID: 14104 RVA: 0x0016BD20 File Offset: 0x00169F20
+	// Token: 0x0600375B RID: 14171 RVA: 0x0016C684 File Offset: 0x0016A884
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.message != null;
 	}
 
-	// Token: 0x06003719 RID: 14105 RVA: 0x0016BD38 File Offset: 0x00169F38
+	// Token: 0x0600375C RID: 14172 RVA: 0x0016C69C File Offset: 0x0016A89C
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -74,15 +74,15 @@ public class MinEventActionShowToolbeltMessage : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002CA7 RID: 11431
+	// Token: 0x04002CA0 RID: 11424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message;
 
-	// Token: 0x04002CA8 RID: 11432
+	// Token: 0x04002CA1 RID: 11425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sound;
 
-	// Token: 0x04002CA9 RID: 11433
+	// Token: 0x04002CA2 RID: 11426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showImmediately;
 }

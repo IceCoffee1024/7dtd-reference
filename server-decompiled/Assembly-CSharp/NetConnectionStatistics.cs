@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000775 RID: 1909
+// Token: 0x02000777 RID: 1911
 public class NetConnectionStatistics
 {
-	// Token: 0x060038D8 RID: 14552 RVA: 0x00175530 File Offset: 0x00173730
+	// Token: 0x0600391A RID: 14618 RVA: 0x00175CE8 File Offset: 0x00173EE8
 	public void RegisterReceivedPackage(int _packageType, int _length)
 	{
 		this.statsPackagePerTypeReceived[_packageType]++;
@@ -12,21 +12,21 @@ public class NetConnectionStatistics
 		this.statsLastPackagesRec.Add(new SNetPackageInfo(_packageType, _length));
 	}
 
-	// Token: 0x060038D9 RID: 14553 RVA: 0x00175566 File Offset: 0x00173766
+	// Token: 0x0600391B RID: 14619 RVA: 0x00175D1E File Offset: 0x00173F1E
 	public void RegisterReceivedData(int _packageCount, int _netDataSize)
 	{
 		this.statsBytesReceived += _netDataSize;
 		this.statsPackagesReceived += _packageCount;
 	}
 
-	// Token: 0x060038DA RID: 14554 RVA: 0x0017558C File Offset: 0x0017378C
+	// Token: 0x0600391C RID: 14620 RVA: 0x00175D44 File Offset: 0x00173F44
 	public void RegisterSentData(int _packageCount, int _netDataSize)
 	{
 		this.statsBytesSent += _netDataSize;
 		this.statsPackagesSent += _packageCount;
 	}
 
-	// Token: 0x060038DB RID: 14555 RVA: 0x001755B2 File Offset: 0x001737B2
+	// Token: 0x0600391D RID: 14621 RVA: 0x00175D6A File Offset: 0x00173F6A
 	public void RegisterSentPackage(int _packageType, int _length)
 	{
 		this.statsPackagePerTypeSent[_packageType]++;
@@ -34,7 +34,7 @@ public class NetConnectionStatistics
 		this.statsLastPackagesSent.Add(new SNetPackageInfo(_packageType, _length));
 	}
 
-	// Token: 0x060038DC RID: 14556 RVA: 0x001755E8 File Offset: 0x001737E8
+	// Token: 0x0600391E RID: 14622 RVA: 0x00175DA0 File Offset: 0x00173FA0
 	public void GetPackageTypes(int[] _packagesPerTypeReceived, int[] _bytesPerTypeReceived, int[] _packagesPerTypeSent, int[] _bytesPerTypeSent, bool _reset)
 	{
 		for (int i = 0; i < _packagesPerTypeReceived.Length; i++)
@@ -53,19 +53,19 @@ public class NetConnectionStatistics
 		}
 	}
 
-	// Token: 0x060038DD RID: 14557 RVA: 0x001756A4 File Offset: 0x001738A4
+	// Token: 0x0600391F RID: 14623 RVA: 0x00175E5C File Offset: 0x0017405C
 	public RingBuffer<SNetPackageInfo> GetLastPackagesSent()
 	{
 		return this.statsLastPackagesSent;
 	}
 
-	// Token: 0x060038DE RID: 14558 RVA: 0x001756AC File Offset: 0x001738AC
+	// Token: 0x06003920 RID: 14624 RVA: 0x00175E64 File Offset: 0x00174064
 	public RingBuffer<SNetPackageInfo> GetLastPackagesReceived()
 	{
 		return this.statsLastPackagesRec;
 	}
 
-	// Token: 0x060038DF RID: 14559 RVA: 0x001756B4 File Offset: 0x001738B4
+	// Token: 0x06003921 RID: 14625 RVA: 0x00175E6C File Offset: 0x0017406C
 	public void GetStats(float _interval, out int _bytesPerSecondSent, out int _packagesPerSecondSent, out int _bytesPerSecondReceived, out int _packagesPerSecondReceived)
 	{
 		_bytesPerSecondSent = this.statsBytesSent;
@@ -75,7 +75,7 @@ public class NetConnectionStatistics
 		this.resetStats();
 	}
 
-	// Token: 0x060038E0 RID: 14560 RVA: 0x001756E6 File Offset: 0x001738E6
+	// Token: 0x06003922 RID: 14626 RVA: 0x00175E9E File Offset: 0x0017409E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetStats()
 	{
@@ -86,63 +86,63 @@ public class NetConnectionStatistics
 		this.lastTimeStatsRequested = Time.time;
 	}
 
-	// Token: 0x04002EB5 RID: 11957
+	// Token: 0x04002EAF RID: 11951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastTimeStatsRequested;
 
-	// Token: 0x04002EB6 RID: 11958
+	// Token: 0x04002EB0 RID: 11952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile int statsBytesSent;
 
-	// Token: 0x04002EB7 RID: 11959
+	// Token: 0x04002EB1 RID: 11953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile int statsPackagesSent;
 
-	// Token: 0x04002EB8 RID: 11960
+	// Token: 0x04002EB2 RID: 11954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] statsPackagePerTypeSent = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04002EB9 RID: 11961
+	// Token: 0x04002EB3 RID: 11955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] statsBytesPerTypeSent = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04002EBA RID: 11962
+	// Token: 0x04002EB4 RID: 11956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RingBuffer<SNetPackageInfo> statsLastPackagesSent = new RingBuffer<SNetPackageInfo>(30);
 
-	// Token: 0x04002EBB RID: 11963
+	// Token: 0x04002EB5 RID: 11957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile int statsBytesReceived;
 
-	// Token: 0x04002EBC RID: 11964
+	// Token: 0x04002EB6 RID: 11958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile int statsPackagesReceived;
 
-	// Token: 0x04002EBD RID: 11965
+	// Token: 0x04002EB7 RID: 11959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] statsPackagePerTypeReceived = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04002EBE RID: 11966
+	// Token: 0x04002EB8 RID: 11960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] statsBytesPerTypeReceived = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04002EBF RID: 11967
+	// Token: 0x04002EB9 RID: 11961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RingBuffer<SNetPackageInfo> statsLastPackagesRec = new RingBuffer<SNetPackageInfo>(30);
 
-	// Token: 0x04002EC0 RID: 11968
+	// Token: 0x04002EBA RID: 11962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bytesPerSecondSent;
 
-	// Token: 0x04002EC1 RID: 11969
+	// Token: 0x04002EBB RID: 11963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int packagesPerSecondSent;
 
-	// Token: 0x04002EC2 RID: 11970
+	// Token: 0x04002EBC RID: 11964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bytesPerSecondReceived;
 
-	// Token: 0x04002EC3 RID: 11971
+	// Token: 0x04002EBD RID: 11965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int packagesPerSecondReceived;
 }

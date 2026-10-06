@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200014B RID: 331
+// Token: 0x0200014D RID: 333
 [Preserve]
 public class BlockSign : Block
 {
-	// Token: 0x0600092C RID: 2348 RVA: 0x0003FF84 File Offset: 0x0003E184
+	// Token: 0x06000932 RID: 2354 RVA: 0x00040064 File Offset: 0x0003E264
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class BlockSign : Block
 		this.CanDecorateOnSlopes = false;
 	}
 
-	// Token: 0x0600092D RID: 2349 RVA: 0x0003FFE8 File Offset: 0x0003E1E8
+	// Token: 0x06000933 RID: 2355 RVA: 0x000400C8 File Offset: 0x0003E2C8
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		if ((_blockValue.meta & 1) == 0)
@@ -36,7 +36,7 @@ public class BlockSign : Block
 		}
 	}
 
-	// Token: 0x0600092E RID: 2350 RVA: 0x00040064 File Offset: 0x0003E264
+	// Token: 0x06000934 RID: 2356 RVA: 0x00040144 File Offset: 0x0003E344
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (_chunk == null)
@@ -77,7 +77,7 @@ public class BlockSign : Block
 		}
 	}
 
-	// Token: 0x0600092F RID: 2351 RVA: 0x0004016C File Offset: 0x0003E36C
+	// Token: 0x06000935 RID: 2357 RVA: 0x0004024C File Offset: 0x0003E44C
 	public override void RenderDecorations(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, INeighborBlockCache _nBlocks)
 	{
 		if ((_blockValue.meta & 1) == 0)
@@ -86,7 +86,7 @@ public class BlockSign : Block
 		}
 	}
 
-	// Token: 0x040009A5 RID: 2469
+	// Token: 0x040009A8 RID: 2472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int upwardsCount;
 }

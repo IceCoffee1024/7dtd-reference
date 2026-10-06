@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A47 RID: 6727
+	// Token: 0x02001A73 RID: 6771
 	public class ContentLoader
 	{
-		// Token: 0x170018F1 RID: 6385
-		// (get) Token: 0x0600CBF9 RID: 52217 RVA: 0x004A80EE File Offset: 0x004A62EE
+		// Token: 0x17001993 RID: 6547
+		// (get) Token: 0x0600CD51 RID: 52561 RVA: 0x004AC5BA File Offset: 0x004AA7BA
 		public static ContentLoader Instance
 		{
 			get
@@ -22,14 +22,14 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CBFA RID: 52218 RVA: 0x004A8106 File Offset: 0x004A6306
+		// Token: 0x0600CD52 RID: 52562 RVA: 0x004AC5D2 File Offset: 0x004AA7D2
 		public void Start()
 		{
 			this.LoadQueue = new Queue<IEnumerator>();
 			this.Loader = GameManager.Instance.StartCoroutine(this.Load());
 		}
 
-		// Token: 0x0600CBFB RID: 52219 RVA: 0x004A8129 File Offset: 0x004A6329
+		// Token: 0x0600CD53 RID: 52563 RVA: 0x004AC5F5 File Offset: 0x004AA7F5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator Load()
 		{
@@ -42,7 +42,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CBFC RID: 52220 RVA: 0x004A8138 File Offset: 0x004A6338
+		// Token: 0x0600CD54 RID: 52564 RVA: 0x004AC604 File Offset: 0x004AA804
 		public void Cleanup()
 		{
 			if (this.Loader != null)
@@ -57,14 +57,14 @@ namespace DynamicMusic
 			this.LoadQueue = null;
 		}
 
-		// Token: 0x04009B01 RID: 39681
+		// Token: 0x04009BC7 RID: 39879
 		public static ContentLoader instance;
 
-		// Token: 0x04009B02 RID: 39682
+		// Token: 0x04009BC8 RID: 39880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine Loader;
 
-		// Token: 0x04009B03 RID: 39683
+		// Token: 0x04009BC9 RID: 39881
 		public Queue<IEnumerator> LoadQueue;
 	}
 }

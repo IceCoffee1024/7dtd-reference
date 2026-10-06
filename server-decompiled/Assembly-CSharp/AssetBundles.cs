@@ -1,25 +1,25 @@
 ﻿using System;
 
-// Token: 0x0200118A RID: 4490
+// Token: 0x020011A2 RID: 4514
 public static class AssetBundles
 {
-	// Token: 0x06008FC7 RID: 36807 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009053 RID: 36947 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void Cleanup()
 	{
 	}
 
-	// Token: 0x0400694D RID: 26957
+	// Token: 0x040069B3 RID: 27059
 	public const string UmaPlayer = "umaplayer";
 
-	// Token: 0x0400694E RID: 26958
+	// Token: 0x040069B4 RID: 27060
 	public const string UmaPlayerAssets = "Assets/UMA/Content/Player";
 
-	// Token: 0x0400694F RID: 26959
+	// Token: 0x040069B5 RID: 27061
 	public const string UmaPlayer2 = "umaplayer2";
 
-	// Token: 0x04006950 RID: 26960
+	// Token: 0x040069B6 RID: 27062
 	public const string UmaPlayerAssets2 = "Assets/UMA/Content/Player2";
 
-	// Token: 0x04006951 RID: 26961
+	// Token: 0x040069B7 RID: 27063
 	public const string AutomaticBundlesPrefix = "Assets/AssetBundles/Automatic";
 }

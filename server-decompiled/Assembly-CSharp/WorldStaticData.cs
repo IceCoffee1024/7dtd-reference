@@ -11,10 +11,10 @@ using UnityEngine;
 using WorldGenerationEngineFinal;
 using XMLData.Item;
 
-// Token: 0x02001306 RID: 4870
+// Token: 0x02001326 RID: 4902
 public static class WorldStaticData
 {
-	// Token: 0x06009A21 RID: 39457 RVA: 0x003A577C File Offset: 0x003A397C
+	// Token: 0x06009ACD RID: 39629 RVA: 0x003AA32C File Offset: 0x003A852C
 	public static void InitSync(bool _bForce, bool _bDediServer, bool _cleanup = true, string[] _onlyXmls = null)
 	{
 		if (_cleanup)
@@ -25,7 +25,7 @@ public static class WorldStaticData
 		ThreadManager.RunCoroutineSync(WorldStaticData.Init(_bForce, _bDediServer, null, _onlyXmls));
 	}
 
-	// Token: 0x06009A22 RID: 39458 RVA: 0x003A5799 File Offset: 0x003A3999
+	// Token: 0x06009ACE RID: 39630 RVA: 0x003AA349 File Offset: 0x003A8549
 	public static IEnumerator Init(bool _bForce, bool _bDediServer, WorldStaticData.ProgressDelegate _progressDelegate, string[] _onlyXmls = null)
 	{
 		WorldStaticData.isDediServer = _bDediServer;
@@ -121,7 +121,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A23 RID: 39459 RVA: 0x003A57BD File Offset: 0x003A39BD
+	// Token: 0x06009ACF RID: 39631 RVA: 0x003AA36D File Offset: 0x003A856D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadTextureAtlases()
 	{
@@ -149,7 +149,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A24 RID: 39460 RVA: 0x003A57C5 File Offset: 0x003A39C5
+	// Token: 0x06009AD0 RID: 39632 RVA: 0x003AA375 File Offset: 0x003A8575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadMaterials(XmlFile _xmlFile)
 	{
@@ -158,7 +158,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A25 RID: 39461 RVA: 0x003A57D4 File Offset: 0x003A39D4
+	// Token: 0x06009AD1 RID: 39633 RVA: 0x003AA384 File Offset: 0x003A8584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadBlocks(XmlFile _xmlFile)
 	{
@@ -168,7 +168,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A26 RID: 39462 RVA: 0x003A57E3 File Offset: 0x003A39E3
+	// Token: 0x06009AD2 RID: 39634 RVA: 0x003AA393 File Offset: 0x003A8593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadMisc(XmlFile _xmlFile)
 	{
@@ -178,7 +178,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A27 RID: 39463 RVA: 0x003A57F2 File Offset: 0x003A39F2
+	// Token: 0x06009AD3 RID: 39635 RVA: 0x003AA3A2 File Offset: 0x003A85A2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadMisc(XmlFile _xmlFile)
 	{
@@ -187,7 +187,7 @@ public static class WorldStaticData
 		ThreadManager.RunCoroutineSync(MiscFromXml.Create(_xmlFile));
 	}
 
-	// Token: 0x06009A28 RID: 39464 RVA: 0x003A5809 File Offset: 0x003A3A09
+	// Token: 0x06009AD4 RID: 39636 RVA: 0x003AA3B9 File Offset: 0x003A85B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadItems(XmlFile _xmlFile)
 	{
@@ -195,26 +195,22 @@ public static class WorldStaticData
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadItems(_xmlFile));
 	}
 
-	// Token: 0x06009A29 RID: 39465 RVA: 0x003A581B File Offset: 0x003A3A1B
+	// Token: 0x06009AD5 RID: 39637 RVA: 0x003AA3CB File Offset: 0x003A85CB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadItemsAppend(XmlFile _xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadItems(_xmlFile));
 	}
 
-	// Token: 0x06009A2A RID: 39466 RVA: 0x003A5828 File Offset: 0x003A3A28
+	// Token: 0x06009AD6 RID: 39638 RVA: 0x003AA3D8 File Offset: 0x003A85D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadItemModifiers(XmlFile _xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadItemModifiers(_xmlFile));
 		ThreadManager.RunCoroutineSync(WorldStaticData.LateInitItems());
-		if (GameManager.Instance != null && GameManager.Instance.World != null && GameManager.Instance.World.GetPrimaryPlayer() != null)
-		{
-			GameManager.Instance.World.GetPrimaryPlayer().inventory.ForceHoldingItemUpdate();
-		}
 	}
 
-	// Token: 0x06009A2B RID: 39467 RVA: 0x003A5893 File Offset: 0x003A3A93
+	// Token: 0x06009AD7 RID: 39639 RVA: 0x003AA3EF File Offset: 0x003A85EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadItems(XmlFile _xmlFile)
 	{
@@ -228,7 +224,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A2C RID: 39468 RVA: 0x003A58A2 File Offset: 0x003A3AA2
+	// Token: 0x06009AD8 RID: 39640 RVA: 0x003AA3FE File Offset: 0x003A85FE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadItemsAppend(XmlFile _xmlFile)
 	{
@@ -237,7 +233,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A2D RID: 39469 RVA: 0x003A58B1 File Offset: 0x003A3AB1
+	// Token: 0x06009AD9 RID: 39641 RVA: 0x003AA40D File Offset: 0x003A860D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LateInitItems()
 	{
@@ -247,7 +243,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A2E RID: 39470 RVA: 0x003A58B9 File Offset: 0x003A3AB9
+	// Token: 0x06009ADA RID: 39642 RVA: 0x003AA415 File Offset: 0x003A8615
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadItemModifiers(XmlFile _xmlFile)
 	{
@@ -255,7 +251,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A2F RID: 39471 RVA: 0x003A58C8 File Offset: 0x003A3AC8
+	// Token: 0x06009ADB RID: 39643 RVA: 0x003AA424 File Offset: 0x003A8624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadRecipes(XmlFile _xmlFile)
 	{
@@ -300,7 +296,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A30 RID: 39472 RVA: 0x003A58D7 File Offset: 0x003A3AD7
+	// Token: 0x06009ADC RID: 39644 RVA: 0x003AA433 File Offset: 0x003A8633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadRecipes(XmlFile _xmlFile)
 	{
@@ -308,7 +304,7 @@ public static class WorldStaticData
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadRecipes(_xmlFile));
 	}
 
-	// Token: 0x06009A31 RID: 39473 RVA: 0x003A58E9 File Offset: 0x003A3AE9
+	// Token: 0x06009ADD RID: 39645 RVA: 0x003AA445 File Offset: 0x003A8645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadLoot(XmlFile _xmlFile)
 	{
@@ -317,7 +313,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A32 RID: 39474 RVA: 0x003A58F8 File Offset: 0x003A3AF8
+	// Token: 0x06009ADE RID: 39646 RVA: 0x003AA454 File Offset: 0x003A8654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReloadLoot(XmlFile _xmlFile)
 	{
@@ -325,7 +321,7 @@ public static class WorldStaticData
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadLoot(_xmlFile));
 	}
 
-	// Token: 0x06009A33 RID: 39475 RVA: 0x003A590A File Offset: 0x003A3B0A
+	// Token: 0x06009ADF RID: 39647 RVA: 0x003AA466 File Offset: 0x003A8666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadWeather(XmlFile _xmlFile)
 	{
@@ -334,7 +330,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A34 RID: 39476 RVA: 0x003A5919 File Offset: 0x003A3B19
+	// Token: 0x06009AE0 RID: 39648 RVA: 0x003AA475 File Offset: 0x003A8675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadSDCSArchetypes(XmlFile _xmlFile)
 	{
@@ -342,7 +338,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A35 RID: 39477 RVA: 0x003A5928 File Offset: 0x003A3B28
+	// Token: 0x06009AE1 RID: 39649 RVA: 0x003AA484 File Offset: 0x003A8684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadTraders(XmlFile _xmlFile)
 	{
@@ -351,7 +347,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A36 RID: 39478 RVA: 0x003A5937 File Offset: 0x003A3B37
+	// Token: 0x06009AE2 RID: 39650 RVA: 0x003AA493 File Offset: 0x003A8693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadNpc(XmlFile _xmlFile)
 	{
@@ -360,7 +356,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A37 RID: 39479 RVA: 0x003A5946 File Offset: 0x003A3B46
+	// Token: 0x06009AE3 RID: 39651 RVA: 0x003AA4A2 File Offset: 0x003A86A2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadMusic(XmlFile _xmlFile)
 	{
@@ -369,7 +365,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A38 RID: 39480 RVA: 0x003A5955 File Offset: 0x003A3B55
+	// Token: 0x06009AE4 RID: 39652 RVA: 0x003AA4B1 File Offset: 0x003A86B1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadUIDisplayInfo(XmlFile _xmlFile)
 	{
@@ -378,7 +374,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A39 RID: 39481 RVA: 0x003A5964 File Offset: 0x003A3B64
+	// Token: 0x06009AE5 RID: 39653 RVA: 0x003AA4C0 File Offset: 0x003A86C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadBiomes(XmlFile _xmlFile)
 	{
@@ -386,7 +382,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A3A RID: 39482 RVA: 0x003A5973 File Offset: 0x003A3B73
+	// Token: 0x06009AE6 RID: 39654 RVA: 0x003AA4CF File Offset: 0x003A86CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadSpawning(XmlFile _xmlFile)
 	{
@@ -395,7 +391,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A3B RID: 39483 RVA: 0x003A5982 File Offset: 0x003A3B82
+	// Token: 0x06009AE7 RID: 39655 RVA: 0x003AA4DE File Offset: 0x003A86DE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupBlocks()
 	{
@@ -404,7 +400,7 @@ public static class WorldStaticData
 		TileEntityCompositeData.Cleanup();
 	}
 
-	// Token: 0x06009A3C RID: 39484 RVA: 0x003A5993 File Offset: 0x003A3B93
+	// Token: 0x06009AE8 RID: 39656 RVA: 0x003AA4EF File Offset: 0x003A86EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupGamestages()
 	{
@@ -412,14 +408,14 @@ public static class WorldStaticData
 		GameStageGroup.Clear();
 	}
 
-	// Token: 0x06009A3D RID: 39485 RVA: 0x003A599F File Offset: 0x003A3B9F
+	// Token: 0x06009AE9 RID: 39657 RVA: 0x003AA4FB File Offset: 0x003A86FB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupChallenges()
 	{
 		ChallengeClass.Cleanup();
 	}
 
-	// Token: 0x06009A3E RID: 39486 RVA: 0x003A59A6 File Offset: 0x003A3BA6
+	// Token: 0x06009AEA RID: 39658 RVA: 0x003AA502 File Offset: 0x003A8702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupGameEvents()
 	{
@@ -429,7 +425,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A3F RID: 39487 RVA: 0x003A59B9 File Offset: 0x003A3BB9
+	// Token: 0x06009AEB RID: 39659 RVA: 0x003AA515 File Offset: 0x003A8715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupTwitch()
 	{
@@ -439,7 +435,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A40 RID: 39488 RVA: 0x003A59CC File Offset: 0x003A3BCC
+	// Token: 0x06009AEC RID: 39660 RVA: 0x003AA528 File Offset: 0x003A8728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupTwitchEvents()
 	{
@@ -449,7 +445,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A41 RID: 39489 RVA: 0x003A59DF File Offset: 0x003A3BDF
+	// Token: 0x06009AED RID: 39661 RVA: 0x003AA53B File Offset: 0x003A873B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanupSpawning()
 	{
@@ -457,25 +453,25 @@ public static class WorldStaticData
 		BiomeSpawningClass.Cleanup();
 	}
 
-	// Token: 0x06009A42 RID: 39490 RVA: 0x003A59EB File Offset: 0x003A3BEB
+	// Token: 0x06009AEE RID: 39662 RVA: 0x003AA547 File Offset: 0x003A8747
 	public static void LoadPhysicsBodies()
 	{
 		WorldStaticData.Reset("physicsbodies");
 	}
 
-	// Token: 0x06009A43 RID: 39491 RVA: 0x003A59F7 File Offset: 0x003A3BF7
+	// Token: 0x06009AEF RID: 39663 RVA: 0x003AA553 File Offset: 0x003A8753
 	public static void SavePhysicsBodies()
 	{
 		PhysicsBodiesFromXml.Save(GameIO.GetGameDir("Data/Config") + "/physicsbodies.xml");
 	}
 
-	// Token: 0x06009A44 RID: 39492 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009AF0 RID: 39664 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LinkBuffs()
 	{
 	}
 
-	// Token: 0x06009A45 RID: 39493 RVA: 0x003A5A14 File Offset: 0x003A3C14
+	// Token: 0x06009AF1 RID: 39665 RVA: 0x003AA570 File Offset: 0x003A8770
 	public static void Cleanup(string _xmlNameContaining)
 	{
 		foreach (WorldStaticData.XmlLoadInfo xmlLoadInfo in WorldStaticData.xmlsToLoad)
@@ -491,7 +487,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A46 RID: 39494 RVA: 0x003A5A60 File Offset: 0x003A3C60
+	// Token: 0x06009AF2 RID: 39666 RVA: 0x003AA5BC File Offset: 0x003A87BC
 	public static void Cleanup()
 	{
 		WorldStaticData.Cleanup(null);
@@ -505,12 +501,12 @@ public static class WorldStaticData
 		WorldStaticData.bInitDone = false;
 	}
 
-	// Token: 0x06009A47 RID: 39495 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009AF3 RID: 39667 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void QuitCleanup()
 	{
 	}
 
-	// Token: 0x06009A48 RID: 39496 RVA: 0x003A5A94 File Offset: 0x003A3C94
+	// Token: 0x06009AF4 RID: 39668 RVA: 0x003AA5F0 File Offset: 0x003A87F0
 	public static void Reset(string _xmlNameContaining)
 	{
 		WorldStaticData.Cleanup(_xmlNameContaining);
@@ -535,7 +531,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A49 RID: 39497 RVA: 0x003A5B1D File Offset: 0x003A3D1D
+	// Token: 0x06009AF5 RID: 39669 RVA: 0x003AA679 File Offset: 0x003A8879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator cacheSingleXml(WorldStaticData.XmlLoadInfo _loadInfo, XmlFile _origXml, MemoryStream _memStream, DeflateOutputStream _zipStream)
 	{
@@ -553,7 +549,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A4A RID: 39498 RVA: 0x003A5B41 File Offset: 0x003A3D41
+	// Token: 0x06009AF6 RID: 39670 RVA: 0x003AA69D File Offset: 0x003A889D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator loadSingleXml(WorldStaticData.XmlLoadInfo _loadInfo, MemoryStream _memStream, DeflateOutputStream _zipStream)
 	{
@@ -641,7 +637,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A4B RID: 39499 RVA: 0x003A5B5E File Offset: 0x003A3D5E
+	// Token: 0x06009AF7 RID: 39671 RVA: 0x003AA6BA File Offset: 0x003A88BA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator DumpPatchedXml(WorldStaticData.XmlLoadInfo _loadInfo, XmlFile _xmlFile, MicroStopwatch _timer)
 	{
@@ -672,7 +668,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A4C RID: 39500 RVA: 0x003A5B7B File Offset: 0x003A3D7B
+	// Token: 0x06009AF8 RID: 39672 RVA: 0x003AA6D7 File Offset: 0x003A88D7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator CachePatchedXml(WorldStaticData.XmlLoadInfo _loadInfo, XmlFile _xmlFile, MicroStopwatch _timer, MemoryStream _memStream, DeflateOutputStream _zipStream, Action _errorCallback)
 	{
@@ -702,7 +698,7 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A4D RID: 39501 RVA: 0x003A5BAF File Offset: 0x003A3DAF
+	// Token: 0x06009AF9 RID: 39673 RVA: 0x003AA70B File Offset: 0x003A890B
 	[Conditional("UNITY_GAMECORE")]
 	[Conditional("UNITY_XBOXONE")]
 	[Conditional("UNITY_PS4")]
@@ -713,7 +709,7 @@ public static class WorldStaticData
 		GC.Collect();
 	}
 
-	// Token: 0x06009A4E RID: 39502 RVA: 0x003A5BB6 File Offset: 0x003A3DB6
+	// Token: 0x06009AFA RID: 39674 RVA: 0x003AA712 File Offset: 0x003A8912
 	public static IEnumerator LoadAllXmlsCo(bool _isStartup, WorldStaticData.ProgressDelegate _progressDelegate, string[] _onlyXmls = null)
 	{
 		WorldStaticData.LoadAllXmlsCoComplete = false;
@@ -745,14 +741,14 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A4F RID: 39503 RVA: 0x003A5BD3 File Offset: 0x003A3DD3
+	// Token: 0x06009AFB RID: 39675 RVA: 0x003AA72F File Offset: 0x003A892F
 	public static void ReloadAllXmlsSync()
 	{
 		WorldStaticData.Cleanup(null);
 		ThreadManager.RunCoroutineSync(WorldStaticData.LoadAllXmlsCo(false, null, null));
 	}
 
-	// Token: 0x06009A50 RID: 39504 RVA: 0x003A5BE8 File Offset: 0x003A3DE8
+	// Token: 0x06009AFC RID: 39676 RVA: 0x003AA744 File Offset: 0x003A8944
 	public static void SendXmlsToClient(ClientInfo _cInfo)
 	{
 		foreach (WorldStaticData.XmlLoadInfo xmlLoadInfo in WorldStaticData.xmlsToLoad)
@@ -764,7 +760,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A51 RID: 39505 RVA: 0x003A5C4C File Offset: 0x003A3E4C
+	// Token: 0x06009AFD RID: 39677 RVA: 0x003AA7A8 File Offset: 0x003A89A8
 	public static void SaveXmlsToFolder(string _exportPath)
 	{
 		foreach (WorldStaticData.XmlLoadInfo xmlLoadInfo in WorldStaticData.xmlsToLoad)
@@ -797,7 +793,7 @@ public static class WorldStaticData
 		}
 	}
 
-	// Token: 0x06009A52 RID: 39506 RVA: 0x003A5D4C File Offset: 0x003A3F4C
+	// Token: 0x06009AFE RID: 39678 RVA: 0x003AA8A8 File Offset: 0x003A8AA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WorldStaticData.XmlLoadInfo getLoadInfoForName(string _xmlName, out int _arrayIndex)
 	{
@@ -814,7 +810,7 @@ public static class WorldStaticData
 		return null;
 	}
 
-	// Token: 0x06009A53 RID: 39507 RVA: 0x003A5D8A File Offset: 0x003A3F8A
+	// Token: 0x06009AFF RID: 39679 RVA: 0x003AA8E6 File Offset: 0x003A8AE6
 	public static void WaitForConfigsFromServer()
 	{
 		if (WorldStaticData.receivedConfigsHandlerCoroutine != null)
@@ -824,7 +820,7 @@ public static class WorldStaticData
 		WorldStaticData.receivedConfigsHandlerCoroutine = ThreadManager.StartCoroutine(WorldStaticData.handleReceivedConfigs());
 	}
 
-	// Token: 0x06009A54 RID: 39508 RVA: 0x003A5DAC File Offset: 0x003A3FAC
+	// Token: 0x06009B00 RID: 39680 RVA: 0x003AA908 File Offset: 0x003A8B08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator handleReceivedConfigs()
 	{
@@ -930,13 +926,13 @@ public static class WorldStaticData
 		yield break;
 	}
 
-	// Token: 0x06009A55 RID: 39509 RVA: 0x003A5DB4 File Offset: 0x003A3FB4
+	// Token: 0x06009B01 RID: 39681 RVA: 0x003AA910 File Offset: 0x003A8B10
 	public static bool AllConfigsReceivedAndLoaded()
 	{
 		return WorldStaticData.receivedConfigsHandlerCoroutine == null;
 	}
 
-	// Token: 0x06009A56 RID: 39510 RVA: 0x003A5DC0 File Offset: 0x003A3FC0
+	// Token: 0x06009B02 RID: 39682 RVA: 0x003AA91C File Offset: 0x003A8B1C
 	public static void ReceivedConfigFile(string _name, byte[] _data)
 	{
 		if (_data != null)
@@ -959,19 +955,19 @@ public static class WorldStaticData
 		WorldStaticData.highestReceivedIndex = MathUtils.Max(WorldStaticData.highestReceivedIndex, num);
 	}
 
-	// Token: 0x06009A57 RID: 39511 RVA: 0x003A5E40 File Offset: 0x003A4040
+	// Token: 0x06009B03 RID: 39683 RVA: 0x003AA99C File Offset: 0x003A8B9C
 	public static void UnloadMeshDescriptionTextureArrays(int _meshIndex)
 	{
 		WorldStaticData.meshDescCol.UnloadTextureArrays(_meshIndex);
 	}
 
-	// Token: 0x06009A58 RID: 39512 RVA: 0x003A5E4D File Offset: 0x003A404D
+	// Token: 0x06009B04 RID: 39684 RVA: 0x003AA9A9 File Offset: 0x003A8BA9
 	public static void ReloadTextureArrays()
 	{
 		ThreadManager.RunCoroutineSync(WorldStaticData.meshDescCol.LoadTextureArrays(true));
 	}
 
-	// Token: 0x06009A59 RID: 39513 RVA: 0x003A5E60 File Offset: 0x003A4060
+	// Token: 0x06009B05 RID: 39685 RVA: 0x003AA9BC File Offset: 0x003A8BBC
 	public static void ReloadInGameXML()
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -1003,14 +999,14 @@ public static class WorldStaticData
 		Log.Out("-- ReloadInGameXML {0} seconds --\n", new object[] { ((float)microStopwatch.ElapsedMicroseconds * 1E-06f).ToCultureInvariantString() });
 	}
 
-	// Token: 0x04007431 RID: 29745
+	// Token: 0x040074AC RID: 29868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cExplosionPrefabMax = 100;
 
-	// Token: 0x04007432 RID: 29746
+	// Token: 0x040074AD RID: 29869
 	public static bool LoadAllXmlsCoComplete;
 
-	// Token: 0x04007433 RID: 29747
+	// Token: 0x040074AE RID: 29870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly WorldStaticData.XmlLoadInfo[] xmlsToLoad = new WorldStaticData.XmlLoadInfo[]
 	{
@@ -1023,6 +1019,7 @@ public static class WorldStaticData
 		new WorldStaticData.XmlLoadInfo("progression", false, true, new Func<XmlFile, IEnumerator>(ProgressionFromXml.Load), new Action(Progression.Cleanup), null, true, null, false, null),
 		new WorldStaticData.XmlLoadInfo("buffs", false, true, new Func<XmlFile, IEnumerator>(BuffsFromXml.CreateBuffs), new Action(BuffManager.Cleanup), null, true, new Action<XmlFile>(BuffsFromXml.Reload), false, null),
 		new WorldStaticData.XmlLoadInfo("misc", false, true, new Func<XmlFile, IEnumerator>(WorldStaticData.LoadMisc), new Action(AnimationDelayData.Cleanup), null, true, new Action<XmlFile>(WorldStaticData.ReloadMisc), false, null),
+		new WorldStaticData.XmlLoadInfo("toolbelt", false, true, new Func<XmlFile, IEnumerator>(ToolbeltFromXml.Load), null, null, false, null, false, null),
 		new WorldStaticData.XmlLoadInfo("items", false, true, new Func<XmlFile, IEnumerator>(WorldStaticData.LoadItems), new Action(ItemClass.Cleanup), null, true, new Action<XmlFile>(WorldStaticData.ReloadItems), false, "loadActionItems"),
 		new WorldStaticData.XmlLoadInfo("item_modifiers", false, true, new Func<XmlFile, IEnumerator>(WorldStaticData.LoadItemModifiers), null, new Func<IEnumerator>(WorldStaticData.LateInitItems), true, new Action<XmlFile>(WorldStaticData.ReloadItemModifiers), false, null),
 		new WorldStaticData.XmlLoadInfo("entityclasses", false, true, new Func<XmlFile, IEnumerator>(EntityClassesFromXml.LoadMain), new Action(EntityClass.Cleanup), null, false, null, false, null),
@@ -1068,52 +1065,52 @@ public static class WorldStaticData
 		new WorldStaticData.XmlLoadInfo("sandbox_overrides", true, true, new Func<XmlFile, IEnumerator>(SandboxOverridesFromXml.CreateOverrides), null, null, false, null, false, null)
 	};
 
-	// Token: 0x04007434 RID: 29748
+	// Token: 0x040074AF RID: 29871
 	public static Transform[] prefabExplosions;
 
-	// Token: 0x04007435 RID: 29749
+	// Token: 0x040074B0 RID: 29872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool bInitDone;
 
-	// Token: 0x04007436 RID: 29750
+	// Token: 0x040074B1 RID: 29873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MeshDescriptionCollection meshDescCol;
 
-	// Token: 0x04007437 RID: 29751
+	// Token: 0x040074B2 RID: 29874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isDediServer;
 
-	// Token: 0x04007438 RID: 29752
+	// Token: 0x040074B3 RID: 29875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Coroutine receivedConfigsHandlerCoroutine;
 
-	// Token: 0x04007439 RID: 29753
+	// Token: 0x040074B4 RID: 29876
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int highestReceivedIndex = -1;
 
-	// Token: 0x02001307 RID: 4871
+	// Token: 0x02001327 RID: 4903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EClientFileState
 	{
-		// Token: 0x0400743B RID: 29755
+		// Token: 0x040074B6 RID: 29878
 		None,
-		// Token: 0x0400743C RID: 29756
+		// Token: 0x040074B7 RID: 29879
 		Received,
-		// Token: 0x0400743D RID: 29757
+		// Token: 0x040074B8 RID: 29880
 		LoadLocal
 	}
 
-	// Token: 0x02001308 RID: 4872
+	// Token: 0x02001328 RID: 4904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class XmlLoadInfo
 	{
-		// Token: 0x06009A5B RID: 39515 RVA: 0x003A67A8 File Offset: 0x003A49A8
+		// Token: 0x06009B07 RID: 39687 RVA: 0x003AB326 File Offset: 0x003A9526
 		public bool XmlFileExists()
 		{
 			return SdFile.Exists(GameIO.GetGameDir("Data/Config") + "/" + this.XmlName + ".xml");
 		}
 
-		// Token: 0x06009A5C RID: 39516 RVA: 0x003A67D0 File Offset: 0x003A49D0
+		// Token: 0x06009B08 RID: 39688 RVA: 0x003AB34C File Offset: 0x003A954C
 		public XmlLoadInfo(string _xmlName, bool _loadAtStartup, bool _sendToClients, Func<XmlFile, IEnumerator> _loadMethod, Action _cleanupMethod, Func<IEnumerator> _executeAfterLoad = null, bool _allowReloadDuringGame = false, Action<XmlFile> _reloadDuringGameMethod = null, bool _ignoreMissingFile = false, string _loadStepLocalizationKey = null)
 		{
 			this.XmlName = _xmlName;
@@ -1132,47 +1129,47 @@ public static class WorldStaticData
 			}
 		}
 
-		// Token: 0x0400743E RID: 29758
+		// Token: 0x040074B9 RID: 29881
 		public readonly string XmlName;
 
-		// Token: 0x0400743F RID: 29759
+		// Token: 0x040074BA RID: 29882
 		public readonly string LoadStepLocalizationKey;
 
-		// Token: 0x04007440 RID: 29760
+		// Token: 0x040074BB RID: 29883
 		public readonly bool LoadAtStartup;
 
-		// Token: 0x04007441 RID: 29761
+		// Token: 0x040074BC RID: 29884
 		public readonly bool SendToClients;
 
-		// Token: 0x04007442 RID: 29762
+		// Token: 0x040074BD RID: 29885
 		public readonly bool IgnoreMissingFile;
 
-		// Token: 0x04007443 RID: 29763
+		// Token: 0x040074BE RID: 29886
 		public readonly bool AllowReloadDuringGame;
 
-		// Token: 0x04007444 RID: 29764
+		// Token: 0x040074BF RID: 29887
 		public readonly Func<XmlFile, IEnumerator> LoadMethod;
 
-		// Token: 0x04007445 RID: 29765
+		// Token: 0x040074C0 RID: 29888
 		public readonly Action CleanupMethod;
 
-		// Token: 0x04007446 RID: 29766
+		// Token: 0x040074C1 RID: 29889
 		public readonly Func<IEnumerator> ExecuteAfterLoad;
 
-		// Token: 0x04007447 RID: 29767
+		// Token: 0x040074C2 RID: 29890
 		public readonly Action<XmlFile> ReloadDuringGameMethod;
 
-		// Token: 0x04007448 RID: 29768
+		// Token: 0x040074C3 RID: 29891
 		public byte[] CompressedXmlData;
 
-		// Token: 0x04007449 RID: 29769
+		// Token: 0x040074C4 RID: 29892
 		public bool LoadClientFile;
 
-		// Token: 0x0400744A RID: 29770
+		// Token: 0x040074C5 RID: 29893
 		public WorldStaticData.EClientFileState WasReceivedFromServer;
 	}
 
-	// Token: 0x02001309 RID: 4873
-	// (Invoke) Token: 0x06009A5E RID: 39518
+	// Token: 0x02001329 RID: 4905
+	// (Invoke) Token: 0x06009B0A RID: 39690
 	public delegate void ProgressDelegate(string _progressText, float _percentage);
 }

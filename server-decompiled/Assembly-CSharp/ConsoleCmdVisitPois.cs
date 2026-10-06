@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BD RID: 701
+// Token: 0x020002C0 RID: 704
 [Preserve]
 public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 {
-	// Token: 0x17000239 RID: 569
-	// (get) Token: 0x06001437 RID: 5175 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000231 RID: 561
+	// (get) Token: 0x06001434 RID: 5172 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,28 +18,28 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001438 RID: 5176 RVA: 0x0007A75B File Offset: 0x0007895B
+	// Token: 0x06001435 RID: 5173 RVA: 0x0007AA0F File Offset: 0x00078C0F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "vpois", "visitpois" };
 	}
 
-	// Token: 0x06001439 RID: 5177 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x06001436 RID: 5174 RVA: 0x0003223F File Offset: 0x0003043F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "";
 	}
 
-	// Token: 0x0600143A RID: 5178 RVA: 0x0007A773 File Offset: 0x00078973
+	// Token: 0x06001437 RID: 5175 RVA: 0x0007AA27 File Offset: 0x00078C27
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "<s[tart] [pois per auto-pause]|p[ause]|r[eset]>";
 	}
 
-	// Token: 0x0600143B RID: 5179 RVA: 0x0007A77A File Offset: 0x0007897A
+	// Token: 0x06001438 RID: 5176 RVA: 0x0007AA2E File Offset: 0x00078C2E
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!this.ExecuteInternal(_params, _senderInfo))
@@ -48,7 +48,7 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600143C RID: 5180 RVA: 0x0007A798 File Offset: 0x00078998
+	// Token: 0x06001439 RID: 5177 RVA: 0x0007AA4C File Offset: 0x00078C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ExecuteInternal(List<string> _params, CommandSenderInfo _senderInfo)
 	{
@@ -93,7 +93,7 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600143D RID: 5181 RVA: 0x0007A890 File Offset: 0x00078A90
+	// Token: 0x0600143A RID: 5178 RVA: 0x0007AB44 File Offset: 0x00078D44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroStart(int _poisPerAutoPause)
 	{
@@ -108,7 +108,7 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600143E RID: 5182 RVA: 0x0007A8C2 File Offset: 0x00078AC2
+	// Token: 0x0600143B RID: 5179 RVA: 0x0007AB76 File Offset: 0x00078D76
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroPause()
 	{
@@ -120,7 +120,7 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		this.m_isRunning = true;
 	}
 
-	// Token: 0x0600143F RID: 5183 RVA: 0x0007A8DB File Offset: 0x00078ADB
+	// Token: 0x0600143C RID: 5180 RVA: 0x0007AB8F File Offset: 0x00078D8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroReset()
 	{
@@ -133,7 +133,7 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		this.m_coroutine = null;
 	}
 
-	// Token: 0x06001440 RID: 5184 RVA: 0x0007A8FF File Offset: 0x00078AFF
+	// Token: 0x0600143D RID: 5181 RVA: 0x0007ABB3 File Offset: 0x00078DB3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CoroutineVisit(int _poisPerAutoPause)
 	{
@@ -189,15 +189,15 @@ public class ConsoleCmdVisitPois : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x04000D9F RID: 3487
+	// Token: 0x04000D98 RID: 3480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_isRunning;
 
-	// Token: 0x04000DA0 RID: 3488
+	// Token: 0x04000D99 RID: 3481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine m_coroutine;
 
-	// Token: 0x04000DA1 RID: 3489
+	// Token: 0x04000D9A RID: 3482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3 MinPoiSize = new Vector3i(5, 5, 5);
 }

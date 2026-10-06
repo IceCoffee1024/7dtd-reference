@@ -12,10 +12,10 @@ using UnityEngine;
 
 namespace Twitch.PubSub
 {
-	// Token: 0x02001888 RID: 6280
+	// Token: 0x020018B4 RID: 6324
 	public class TwitchPubSub
 	{
-		// Token: 0x0600C1BD RID: 49597 RVA: 0x00479574 File Offset: 0x00477774
+		// Token: 0x0600C315 RID: 49941 RVA: 0x0047DAB0 File Offset: 0x0047BCB0
 		public void Connect(string userID)
 		{
 			if (this.cts != null)
@@ -33,14 +33,14 @@ namespace Twitch.PubSub
 			}, this.cts.Token));
 		}
 
-		// Token: 0x0600C1BE RID: 49598 RVA: 0x004795C3 File Offset: 0x004777C3
+		// Token: 0x0600C316 RID: 49942 RVA: 0x0047DAFF File Offset: 0x0047BCFF
 		public void Disconnect()
 		{
 			this.cts.Cancel();
 			TwitchPubSub.reconnect = false;
 		}
 
-		// Token: 0x0600C1BF RID: 49599 RVA: 0x004795D8 File Offset: 0x004777D8
+		// Token: 0x0600C317 RID: 49943 RVA: 0x0047DB14 File Offset: 0x0047BD14
 		public async Task StartAsync(TwitchTopic[] newTopics, CancellationToken token)
 		{
 			TwitchPubSub.<>c__DisplayClass12_0 CS$<>8__locals1 = new TwitchPubSub.<>c__DisplayClass12_0();
@@ -127,7 +127,7 @@ namespace Twitch.PubSub
 			}
 		}
 
-		// Token: 0x0600C1C0 RID: 49600 RVA: 0x0047962C File Offset: 0x0047782C
+		// Token: 0x0600C318 RID: 49944 RVA: 0x0047DB68 File Offset: 0x0047BD68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HandleMessage(string receivedMessage, TwitchPubSub.MessageTypes msgType)
 		{
@@ -160,7 +160,7 @@ namespace Twitch.PubSub
 			this.HandleRedemptionsMessages(receivedMessage);
 		}
 
-		// Token: 0x0600C1C1 RID: 49601 RVA: 0x004796B8 File Offset: 0x004778B8
+		// Token: 0x0600C319 RID: 49945 RVA: 0x0047DBF4 File Offset: 0x0047BDF4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public async Task StartListening(IEnumerable<TwitchTopic> topics)
 		{
@@ -174,7 +174,7 @@ namespace Twitch.PubSub
 			await this.socket.ConnectAsync(new Uri("wss://pubsub-edge.twitch.tv"), CancellationToken.None).ContinueWith<Task>((Task t) => this.SendMessageOnSocket(JsonConvert.SerializeObject(msg)));
 		}
 
-		// Token: 0x0600C1C2 RID: 49602 RVA: 0x00479704 File Offset: 0x00477904
+		// Token: 0x0600C31A RID: 49946 RVA: 0x0047DC40 File Offset: 0x0047BE40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PingTimer_Elapsed(object sender, ElapsedEventArgs e)
 		{
@@ -186,7 +186,7 @@ namespace Twitch.PubSub
 			this.pingAcknowledged = false;
 		}
 
-		// Token: 0x0600C1C3 RID: 49603 RVA: 0x00479775 File Offset: 0x00477975
+		// Token: 0x0600C31B RID: 49947 RVA: 0x0047DCB1 File Offset: 0x0047BEB1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PongTimer_Elapsed(object sender, ElapsedEventArgs e)
 		{
@@ -197,7 +197,7 @@ namespace Twitch.PubSub
 			}
 		}
 
-		// Token: 0x0600C1C4 RID: 49604 RVA: 0x00479790 File Offset: 0x00477990
+		// Token: 0x0600C31C RID: 49948 RVA: 0x0047DCCC File Offset: 0x0047BECC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task SendMessageOnSocket(string message)
 		{
@@ -209,27 +209,27 @@ namespace Twitch.PubSub
 			return this.socket.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, CancellationToken.None);
 		}
 
-		// Token: 0x14000113 RID: 275
-		// (add) Token: 0x0600C1C5 RID: 49605 RVA: 0x004797D8 File Offset: 0x004779D8
-		// (remove) Token: 0x0600C1C6 RID: 49606 RVA: 0x00479810 File Offset: 0x00477A10
+		// Token: 0x14000112 RID: 274
+		// (add) Token: 0x0600C31D RID: 49949 RVA: 0x0047DD14 File Offset: 0x0047BF14
+		// (remove) Token: 0x0600C31E RID: 49950 RVA: 0x0047DD4C File Offset: 0x0047BF4C
 		public event EventHandler<PubSubBitRedemptionMessage.BitRedemptionData> OnBitsRedeemed;
 
-		// Token: 0x14000114 RID: 276
-		// (add) Token: 0x0600C1C7 RID: 49607 RVA: 0x00479848 File Offset: 0x00477A48
-		// (remove) Token: 0x0600C1C8 RID: 49608 RVA: 0x00479880 File Offset: 0x00477A80
+		// Token: 0x14000113 RID: 275
+		// (add) Token: 0x0600C31F RID: 49951 RVA: 0x0047DD84 File Offset: 0x0047BF84
+		// (remove) Token: 0x0600C320 RID: 49952 RVA: 0x0047DDBC File Offset: 0x0047BFBC
 		public event EventHandler<PubSubSubscriptionRedemptionMessage> OnSubscriptionRedeemed;
 
-		// Token: 0x14000115 RID: 277
-		// (add) Token: 0x0600C1C9 RID: 49609 RVA: 0x004798B8 File Offset: 0x00477AB8
-		// (remove) Token: 0x0600C1CA RID: 49610 RVA: 0x004798F0 File Offset: 0x00477AF0
+		// Token: 0x14000114 RID: 276
+		// (add) Token: 0x0600C321 RID: 49953 RVA: 0x0047DDF4 File Offset: 0x0047BFF4
+		// (remove) Token: 0x0600C322 RID: 49954 RVA: 0x0047DE2C File Offset: 0x0047C02C
 		public event EventHandler<PubSubChannelPointMessage.ChannelRedemptionData> OnChannelPointsRedeemed;
 
-		// Token: 0x14000116 RID: 278
-		// (add) Token: 0x0600C1CB RID: 49611 RVA: 0x00479928 File Offset: 0x00477B28
-		// (remove) Token: 0x0600C1CC RID: 49612 RVA: 0x00479960 File Offset: 0x00477B60
+		// Token: 0x14000115 RID: 277
+		// (add) Token: 0x0600C323 RID: 49955 RVA: 0x0047DE64 File Offset: 0x0047C064
+		// (remove) Token: 0x0600C324 RID: 49956 RVA: 0x0047DE9C File Offset: 0x0047C09C
 		public event EventHandler<PubSubGoalMessage.Goal> OnGoalAchieved;
 
-		// Token: 0x0600C1CD RID: 49613 RVA: 0x00479995 File Offset: 0x00477B95
+		// Token: 0x0600C325 RID: 49957 RVA: 0x0047DED1 File Offset: 0x0047C0D1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HandlePongMessage(string message)
 		{
@@ -243,7 +243,7 @@ namespace Twitch.PubSub
 			return false;
 		}
 
-		// Token: 0x0600C1CE RID: 49614 RVA: 0x004799C4 File Offset: 0x00477BC4
+		// Token: 0x0600C326 RID: 49958 RVA: 0x0047DF00 File Offset: 0x0047C100
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HandleReconnectMessage(string message)
 		{
@@ -255,7 +255,7 @@ namespace Twitch.PubSub
 			return false;
 		}
 
-		// Token: 0x0600C1CF RID: 49615 RVA: 0x004799DC File Offset: 0x00477BDC
+		// Token: 0x0600C327 RID: 49959 RVA: 0x0047DF18 File Offset: 0x0047C118
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HandleRedemptionsMessages(string message)
 		{
@@ -369,7 +369,7 @@ namespace Twitch.PubSub
 			return false;
 		}
 
-		// Token: 0x0600C1D0 RID: 49616 RVA: 0x00479CD0 File Offset: 0x00477ED0
+		// Token: 0x0600C328 RID: 49960 RVA: 0x0047E20C File Offset: 0x0047C40C
 		public void Cleanup()
 		{
 			if (this.pingTimer != null)
@@ -386,39 +386,39 @@ namespace Twitch.PubSub
 			}
 		}
 
-		// Token: 0x0400928C RID: 37516
+		// Token: 0x04009352 RID: 37714
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ClientWebSocket socket;
 
-		// Token: 0x0400928D RID: 37517
+		// Token: 0x04009353 RID: 37715
 		[PublicizedFrom(EAccessModifier.Private)]
 		public global::System.Timers.Timer pingTimer;
 
-		// Token: 0x0400928E RID: 37518
+		// Token: 0x04009354 RID: 37716
 		[PublicizedFrom(EAccessModifier.Private)]
 		public global::System.Timers.Timer pongTimer;
 
-		// Token: 0x0400928F RID: 37519
+		// Token: 0x04009355 RID: 37717
 		[PublicizedFrom(EAccessModifier.Private)]
 		public global::System.Timers.Timer reconnectTimer = new global::System.Timers.Timer();
 
-		// Token: 0x04009290 RID: 37520
+		// Token: 0x04009356 RID: 37718
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool pingAcknowledged;
 
-		// Token: 0x04009291 RID: 37521
+		// Token: 0x04009357 RID: 37719
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool reconnect = false;
 
-		// Token: 0x04009292 RID: 37522
+		// Token: 0x04009358 RID: 37720
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchTopic[] topics;
 
-		// Token: 0x04009293 RID: 37523
+		// Token: 0x04009359 RID: 37721
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CancellationTokenSource cts;
 
-		// Token: 0x04009294 RID: 37524
+		// Token: 0x0400935A RID: 37722
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan[] _ReconnectTimeouts = new TimeSpan[]
 		{
@@ -430,13 +430,13 @@ namespace Twitch.PubSub
 			TimeSpan.FromMinutes(5.0)
 		};
 
-		// Token: 0x02001889 RID: 6281
+		// Token: 0x020018B5 RID: 6325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum MessageTypes
 		{
-			// Token: 0x0400929A RID: 37530
+			// Token: 0x04009360 RID: 37728
 			Standard,
-			// Token: 0x0400929B RID: 37531
+			// Token: 0x04009361 RID: 37729
 			HypeStart
 		}
 	}

@@ -3,29 +3,29 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006EB RID: 1771
+// Token: 0x020006ED RID: 1773
 [Preserve]
 public class MinEventActionSetProgressionLevel : MinEventActionTargetedBase
 {
-	// Token: 0x17000563 RID: 1379
-	// (get) Token: 0x06003677 RID: 13943 RVA: 0x00168179 File Offset: 0x00166379
-	// (set) Token: 0x06003678 RID: 13944 RVA: 0x00168181 File Offset: 0x00166381
+	// Token: 0x17000589 RID: 1417
+	// (get) Token: 0x060036BA RID: 14010 RVA: 0x00168ADD File Offset: 0x00166CDD
+	// (set) Token: 0x060036BB RID: 14011 RVA: 0x00168AE5 File Offset: 0x00166CE5
 	public string progressionName
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000564 RID: 1380
-	// (get) Token: 0x06003679 RID: 13945 RVA: 0x0016818A File Offset: 0x0016638A
-	// (set) Token: 0x0600367A RID: 13946 RVA: 0x00168192 File Offset: 0x00166392
+	// Token: 0x1700058A RID: 1418
+	// (get) Token: 0x060036BC RID: 14012 RVA: 0x00168AEE File Offset: 0x00166CEE
+	// (set) Token: 0x060036BD RID: 14013 RVA: 0x00168AF6 File Offset: 0x00166CF6
 	public int level
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600367B RID: 13947 RVA: 0x0016819C File Offset: 0x0016639C
+	// Token: 0x060036BE RID: 14014 RVA: 0x00168B00 File Offset: 0x00166D00
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -56,13 +56,13 @@ public class MinEventActionSetProgressionLevel : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600367C RID: 13948 RVA: 0x001682DB File Offset: 0x001664DB
+	// Token: 0x060036BF RID: 14015 RVA: 0x00168C3F File Offset: 0x00166E3F
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.progressionName != null && this.level >= -1;
 	}
 
-	// Token: 0x0600367D RID: 13949 RVA: 0x00168300 File Offset: 0x00166500
+	// Token: 0x060036C0 RID: 14016 RVA: 0x00168C64 File Offset: 0x00166E64
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);

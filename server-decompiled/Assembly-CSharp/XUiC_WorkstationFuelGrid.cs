@@ -5,16 +5,16 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010CE RID: 4302
+// Token: 0x020010DF RID: 4319
 [Preserve]
 public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 {
-	// Token: 0x140000E0 RID: 224
-	// (add) Token: 0x060088F5 RID: 35061 RVA: 0x00343CD8 File Offset: 0x00341ED8
-	// (remove) Token: 0x060088F6 RID: 35062 RVA: 0x00343D10 File Offset: 0x00341F10
+	// Token: 0x140000DF RID: 223
+	// (add) Token: 0x06008943 RID: 35139 RVA: 0x00347A88 File Offset: 0x00345C88
+	// (remove) Token: 0x06008944 RID: 35140 RVA: 0x00347AC0 File Offset: 0x00345CC0
 	public event XuiEvent_WorkstationItemsChanged OnWorkstationFuelChanged;
 
-	// Token: 0x060088F7 RID: 35063 RVA: 0x00343D48 File Offset: 0x00341F48
+	// Token: 0x06008945 RID: 35141 RVA: 0x00347AF8 File Offset: 0x00345CF8
 	public override void Init()
 	{
 		base.Init();
@@ -27,7 +27,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.turnOn = Localization.Get("xuiTurnOn", false, null);
 	}
 
-	// Token: 0x060088F8 RID: 35064 RVA: 0x00343DFA File Offset: 0x00341FFA
+	// Token: 0x06008946 RID: 35142 RVA: 0x00347BAA File Offset: 0x00345DAA
 	public override void HandleSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		base.HandleSlotChangedEvent(slotNumber, stack);
@@ -35,7 +35,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.onFuelItemsChanged();
 	}
 
-	// Token: 0x060088F9 RID: 35065 RVA: 0x00343E3A File Offset: 0x0034203A
+	// Token: 0x06008947 RID: 35143 RVA: 0x00347BEA File Offset: 0x00345DEA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onFuelItemsChanged()
 	{
@@ -45,7 +45,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x060088FA RID: 35066 RVA: 0x00343E50 File Offset: 0x00342050
+	// Token: 0x06008948 RID: 35144 RVA: 0x00347C00 File Offset: 0x00345E00
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -104,7 +104,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x060088FB RID: 35067 RVA: 0x00343FAC File Offset: 0x003421AC
+	// Token: 0x06008949 RID: 35145 RVA: 0x00347D5C File Offset: 0x00345F5C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -119,7 +119,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x060088FC RID: 35068 RVA: 0x0034406C File Offset: 0x0034226C
+	// Token: 0x0600894A RID: 35146 RVA: 0x00347E1C File Offset: 0x0034601C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -127,7 +127,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.xui.CurrentWorkstationFuelGrid = null;
 	}
 
-	// Token: 0x060088FD RID: 35069 RVA: 0x00344094 File Offset: 0x00342294
+	// Token: 0x0600894B RID: 35147 RVA: 0x00347E44 File Offset: 0x00346044
 	public void TurnOn()
 	{
 		if (!this.isOn)
@@ -143,7 +143,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x060088FE RID: 35070 RVA: 0x00344118 File Offset: 0x00342318
+	// Token: 0x0600894C RID: 35148 RVA: 0x00347EC8 File Offset: 0x003460C8
 	public void TurnOff()
 	{
 		if (this.isOn)
@@ -164,7 +164,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x060088FF RID: 35071 RVA: 0x003441B0 File Offset: 0x003423B0
+	// Token: 0x0600894D RID: 35149 RVA: 0x00347F60 File Offset: 0x00346160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAnyFuel()
 	{
@@ -202,7 +202,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		return num > 0;
 	}
 
-	// Token: 0x06008900 RID: 35072 RVA: 0x00344254 File Offset: 0x00342454
+	// Token: 0x0600894E RID: 35150 RVA: 0x00348004 File Offset: 0x00346204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasFuelStack()
 	{
@@ -236,7 +236,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		return num > 0;
 	}
 
-	// Token: 0x06008901 RID: 35073 RVA: 0x003442E4 File Offset: 0x003424E4
+	// Token: 0x0600894F RID: 35151 RVA: 0x00348094 File Offset: 0x00346294
 	public override bool HasRequirement(Recipe recipe)
 	{
 		XUiC_ItemStack xuiC_ItemStack = this.itemControllers[0];
@@ -269,7 +269,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		return num > 0;
 	}
 
-	// Token: 0x06008902 RID: 35074 RVA: 0x003443A4 File Offset: 0x003425A4
+	// Token: 0x06008950 RID: 35152 RVA: 0x00348154 File Offset: 0x00346354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CycleStacks()
 	{
@@ -288,7 +288,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x06008903 RID: 35075 RVA: 0x00344415 File Offset: 0x00342615
+	// Token: 0x06008951 RID: 35153 RVA: 0x003481C5 File Offset: 0x003463C5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Button_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -300,7 +300,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.TurnOff();
 	}
 
-	// Token: 0x06008904 RID: 35076 RVA: 0x00344453 File Offset: 0x00342653
+	// Token: 0x06008952 RID: 35154 RVA: 0x00348203 File Offset: 0x00346403
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -309,7 +309,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06008905 RID: 35077 RVA: 0x00344478 File Offset: 0x00342678
+	// Token: 0x06008953 RID: 35155 RVA: 0x00348228 File Offset: 0x00346428
 	public override bool AddItem(ItemClass _itemClass, ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
@@ -321,7 +321,7 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		return _itemStack.count > 0 && base.AddItem(_itemStack);
 	}
 
-	// Token: 0x06008906 RID: 35078 RVA: 0x003444BC File Offset: 0x003426BC
+	// Token: 0x06008954 RID: 35156 RVA: 0x0034826C File Offset: 0x0034646C
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -344,39 +344,39 @@ public class XUiC_WorkstationFuelGrid : XUiC_WorkstationGrid
 		return flag;
 	}
 
-	// Token: 0x040065F6 RID: 26102
+	// Token: 0x04006638 RID: 26168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOn;
 
-	// Token: 0x040065F7 RID: 26103
+	// Token: 0x04006639 RID: 26169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController button;
 
-	// Token: 0x040065F8 RID: 26104
+	// Token: 0x0400663A RID: 26170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController onOffLabel;
 
-	// Token: 0x040065F9 RID: 26105
+	// Token: 0x0400663B RID: 26171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController flameIcon;
 
-	// Token: 0x040065FA RID: 26106
+	// Token: 0x0400663C RID: 26172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 flameOnColor = new Color32(250, byte.MaxValue, 163, byte.MaxValue);
 
-	// Token: 0x040065FB RID: 26107
+	// Token: 0x0400663D RID: 26173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 flameOffColor = Color.white;
 
-	// Token: 0x040065FC RID: 26108
+	// Token: 0x0400663E RID: 26174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOff;
 
-	// Token: 0x040065FD RID: 26109
+	// Token: 0x0400663F RID: 26175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOn;
 
-	// Token: 0x040065FF RID: 26111
+	// Token: 0x04006641 RID: 26177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float normalizedDt;
 }

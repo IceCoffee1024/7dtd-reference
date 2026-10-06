@@ -38,6 +38,8 @@ Pass `-Version <version>` and `-GameBuild '<build>'` when logs do not contain us
 
 Always archive the current root before replacing it:
 
+If the current version is already published, do not repackage it. Use `gh release view <version>` to confirm the ZIP and checksum assets exist. The update script checks only the local archive record and asks for confirmation; it does not query GitHub.
+
 ```powershell
 $version = '<version>'
 pwsh ./scripts/Verify-Reference.ps1
@@ -45,6 +47,7 @@ pwsh ./scripts/New-ReferenceRelease.ps1 -Version $version
 gh release create $version `
   "./dist/7dtd-reference-$version.zip" `
   "./dist/7dtd-reference-$version.zip.sha256" `
+  --target main `
   --title "7DTD Reference $version"
 ```
 
@@ -89,3 +92,5 @@ git add server-decompiled runtime metadata.json runtime.manifest.json decompile.
 git commit -m "chore: update reference to <version>"
 git push origin main
 ```
+
+After committing and pushing the new version, publish it with the archive commands above so the tag points to the updated commit. Once published, set `metadata.json.archive` to `{ "asset": "7dtd-reference-<version>.zip", "sha256": "<ZIP SHA-256>" }`, then commit and push the metadata. The packaging script does not fill this field automatically. Keep the published ZIP after recording its hash; do not repackage it or overwrite Release assets.

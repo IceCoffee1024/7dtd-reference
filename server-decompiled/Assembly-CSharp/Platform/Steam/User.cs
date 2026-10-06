@@ -8,21 +8,21 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CA1 RID: 7329
+	// Token: 0x02001CD3 RID: 7379
 	public class User : IUserClient
 	{
-		// Token: 0x17001AF9 RID: 6905
-		// (get) Token: 0x0600D957 RID: 55639 RVA: 0x004E0947 File Offset: 0x004DEB47
-		// (set) Token: 0x0600D958 RID: 55640 RVA: 0x004E094F File Offset: 0x004DEB4F
+		// Token: 0x17001B9F RID: 7071
+		// (get) Token: 0x0600DAD1 RID: 56017 RVA: 0x004E548F File Offset: 0x004E368F
+		// (set) Token: 0x0600DAD2 RID: 56018 RVA: 0x004E5497 File Offset: 0x004E3697
 		public EUserStatus UserStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = EUserStatus.NotAttempted;
 
-		// Token: 0x14000137 RID: 311
-		// (add) Token: 0x0600D959 RID: 55641 RVA: 0x004E0958 File Offset: 0x004DEB58
-		// (remove) Token: 0x0600D95A RID: 55642 RVA: 0x004E09B8 File Offset: 0x004DEBB8
+		// Token: 0x14000136 RID: 310
+		// (add) Token: 0x0600DAD3 RID: 56019 RVA: 0x004E54A0 File Offset: 0x004E36A0
+		// (remove) Token: 0x0600DAD4 RID: 56020 RVA: 0x004E5500 File Offset: 0x004E3700
 		public event Action<IPlatform> UserLoggedIn
 		{
 			add
@@ -45,9 +45,9 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x14000138 RID: 312
-		// (add) Token: 0x0600D95B RID: 55643 RVA: 0x000027FC File Offset: 0x000009FC
-		// (remove) Token: 0x0600D95C RID: 55644 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x14000137 RID: 311
+		// (add) Token: 0x0600DAD5 RID: 56021 RVA: 0x000027FC File Offset: 0x000009FC
+		// (remove) Token: 0x0600DAD6 RID: 56022 RVA: 0x000027FC File Offset: 0x000009FC
 		public event UserBlocksChangedCallback UserBlocksChanged
 		{
 			add
@@ -58,8 +58,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AFA RID: 6906
-		// (get) Token: 0x0600D95D RID: 55645 RVA: 0x004E0A04 File Offset: 0x004DEC04
+		// Token: 0x17001BA0 RID: 7072
+		// (get) Token: 0x0600DAD7 RID: 56023 RVA: 0x004E554C File Offset: 0x004E374C
 		public PlatformUserIdentifierAbs PlatformUserId
 		{
 			get
@@ -68,7 +68,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D95E RID: 55646 RVA: 0x004E0A0C File Offset: 0x004DEC0C
+		// Token: 0x0600DAD8 RID: 56024 RVA: 0x004E5554 File Offset: 0x004E3754
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -81,7 +81,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D95F RID: 55647 RVA: 0x004E0A34 File Offset: 0x004DEC34
+		// Token: 0x0600DAD9 RID: 56025 RVA: 0x004E557C File Offset: 0x004E377C
 		public void Login(LoginUserCallback _delegate)
 		{
 			if (this.UserStatus == EUserStatus.LoggedIn)
@@ -142,7 +142,7 @@ namespace Platform.Steam
 			_delegate(this.owner, EApiStatusReason.Ok, null);
 		}
 
-		// Token: 0x0600D960 RID: 55648 RVA: 0x004E0BC4 File Offset: 0x004DEDC4
+		// Token: 0x0600DADA RID: 56026 RVA: 0x004E570C File Offset: 0x004E390C
 		public void PlayOffline(LoginUserCallback _delegate)
 		{
 			if (this.UserStatus != EUserStatus.OfflineMode && this.UserStatus != EUserStatus.LoggedIn)
@@ -158,17 +158,17 @@ namespace Platform.Steam
 			_delegate(this.owner, EApiStatusReason.Ok, null);
 		}
 
-		// Token: 0x0600D961 RID: 55649 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DADB RID: 56027 RVA: 0x000027FC File Offset: 0x000009FC
 		public void StartAdvertisePlaying(GameServerInfo _serverInfo)
 		{
 		}
 
-		// Token: 0x0600D962 RID: 55650 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DADC RID: 56028 RVA: 0x000027FC File Offset: 0x000009FC
 		public void StopAdvertisePlaying()
 		{
 		}
 
-		// Token: 0x0600D963 RID: 55651 RVA: 0x004E0C1C File Offset: 0x004DEE1C
+		// Token: 0x0600DADD RID: 56029 RVA: 0x004E5764 File Offset: 0x004E3964
 		public void GetLoginTicket(Action<bool, byte[], string> _callback)
 		{
 			if (this.requestEncryptedAppTicketCallback == null)
@@ -180,7 +180,7 @@ namespace Platform.Steam
 			this.requestEncryptedAppTicketCallback.Set(steamAPICall_t, null);
 		}
 
-		// Token: 0x0600D964 RID: 55652 RVA: 0x004E0C64 File Offset: 0x004DEE64
+		// Token: 0x0600DADE RID: 56030 RVA: 0x004E57AC File Offset: 0x004E39AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void EncryptedAppTicketCallback(EncryptedAppTicketResponse_t _result, bool _ioFailure)
 		{
@@ -211,7 +211,7 @@ namespace Platform.Steam
 			this.<EncryptedAppTicketCallback>g__Callback|24_0(array, null);
 		}
 
-		// Token: 0x0600D965 RID: 55653 RVA: 0x004E0D18 File Offset: 0x004DEF18
+		// Token: 0x0600DADF RID: 56031 RVA: 0x004E5860 File Offset: 0x004E3A60
 		public string GetFriendName(PlatformUserIdentifierAbs _playerId)
 		{
 			UserIdentifierSteam userIdentifierSteam = _playerId as UserIdentifierSteam;
@@ -222,15 +222,15 @@ namespace Platform.Steam
 			return SteamFriends.GetFriendPersonaName(new CSteamID(userIdentifierSteam.SteamId));
 		}
 
-		// Token: 0x0600D966 RID: 55654 RVA: 0x004E0D44 File Offset: 0x004DEF44
+		// Token: 0x0600DAE0 RID: 56032 RVA: 0x004E588C File Offset: 0x004E3A8C
 		public bool IsFriend(PlatformUserIdentifierAbs _playerId)
 		{
 			UserIdentifierSteam userIdentifierSteam = _playerId as UserIdentifierSteam;
 			return userIdentifierSteam != null && this.owner.Api.ClientApiStatus == EApiStatus.Ok && SteamFriends.GetFriendRelationship(new CSteamID(userIdentifierSteam.SteamId)) == EFriendRelationship.k_EFriendRelationshipFriend;
 		}
 
-		// Token: 0x17001AFB RID: 6907
-		// (get) Token: 0x0600D967 RID: 55655 RVA: 0x001B24E4 File Offset: 0x001B06E4
+		// Token: 0x17001BA1 RID: 7073
+		// (get) Token: 0x0600DAE1 RID: 56033 RVA: 0x001B2938 File Offset: 0x001B0B38
 		public EUserPerms Permissions
 		{
 			get
@@ -239,48 +239,48 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D968 RID: 55656 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x0600DAE2 RID: 56034 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public string GetPermissionDenyReason(EUserPerms _perms)
 		{
 			return null;
 		}
 
-		// Token: 0x0600D969 RID: 55657 RVA: 0x004E0D84 File Offset: 0x004DEF84
+		// Token: 0x0600DAE3 RID: 56035 RVA: 0x004E58CC File Offset: 0x004E3ACC
 		public IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			return Enumerable.Empty<object>().GetEnumerator();
 		}
 
-		// Token: 0x0600D96A RID: 55658 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAE4 RID: 56036 RVA: 0x000027FC File Offset: 0x000009FC
 		public void UserAdded(PlatformUserIdentifierAbs _userId, bool _isPrimary)
 		{
 		}
 
-		// Token: 0x0600D96B RID: 55659 RVA: 0x004E0D84 File Offset: 0x004DEF84
+		// Token: 0x0600DAE5 RID: 56037 RVA: 0x004E58CC File Offset: 0x004E3ACC
 		public IEnumerator ResolveUserBlocks(IReadOnlyList<IPlatformUserBlockedResults> _results)
 		{
 			return Enumerable.Empty<object>().GetEnumerator();
 		}
 
-		// Token: 0x0600D96C RID: 55660 RVA: 0x0002F168 File Offset: 0x0002D368
+		// Token: 0x0600DAE6 RID: 56038 RVA: 0x0002F260 File Offset: 0x0002D460
 		public EMatchmakingGroup GetMatchmakingGroup()
 		{
 			return EMatchmakingGroup.Retail;
 		}
 
-		// Token: 0x0600D96D RID: 55661 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAE7 RID: 56039 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0600D96E RID: 55662 RVA: 0x004E0D90 File Offset: 0x004DEF90
+		// Token: 0x0600DAE8 RID: 56040 RVA: 0x004E58D8 File Offset: 0x004E3AD8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GameOverlayActivated(GameOverlayActivated_t _val)
 		{
 			InputManager.Enabled = _val.m_bActive == 0;
 		}
 
-		// Token: 0x0600D971 RID: 55665 RVA: 0x004E0DD7 File Offset: 0x004DEFD7
+		// Token: 0x0600DAEB RID: 56043 RVA: 0x004E591F File Offset: 0x004E3B1F
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <EncryptedAppTicketCallback>g__Callback|24_0(byte[] _ticket, string _message)
@@ -297,27 +297,27 @@ namespace Platform.Steam
 			this.encryptedAppTicketCallback = null;
 		}
 
-		// Token: 0x0400A4EC RID: 42220
+		// Token: 0x0400A5C1 RID: 42433
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A4EE RID: 42222
+		// Token: 0x0400A5C3 RID: 42435
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<IPlatform> userLoggedIn;
 
-		// Token: 0x0400A4EF RID: 42223
+		// Token: 0x0400A5C4 RID: 42436
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<GameOverlayActivated_t> m_gameOverlayActivated;
 
-		// Token: 0x0400A4F0 RID: 42224
+		// Token: 0x0400A5C5 RID: 42437
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserIdentifierSteam platformUserId;
 
-		// Token: 0x0400A4F1 RID: 42225
+		// Token: 0x0400A5C6 RID: 42438
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CallResult<EncryptedAppTicketResponse_t> requestEncryptedAppTicketCallback;
 
-		// Token: 0x0400A4F2 RID: 42226
+		// Token: 0x0400A5C7 RID: 42439
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<bool, byte[], string> encryptedAppTicketCallback;
 	}

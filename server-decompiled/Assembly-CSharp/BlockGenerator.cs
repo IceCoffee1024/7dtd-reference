@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000142 RID: 322
+// Token: 0x02000144 RID: 324
 [Preserve]
 public class BlockGenerator : BlockPowerSource
 {
-	// Token: 0x060008DF RID: 2271 RVA: 0x0003E7C8 File Offset: 0x0003C9C8
+	// Token: 0x060008E5 RID: 2277 RVA: 0x0003E8B0 File Offset: 0x0003CAB0
 	public override TileEntityPowerSource CreateTileEntity(Chunk chunk)
 	{
 		if (this.slotItem == null)
@@ -19,13 +19,13 @@ public class BlockGenerator : BlockPowerSource
 		};
 	}
 
-	// Token: 0x060008E0 RID: 2272 RVA: 0x0003E7FD File Offset: 0x0003C9FD
+	// Token: 0x060008E6 RID: 2278 RVA: 0x0003E8E5 File Offset: 0x0003CAE5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetPowerSourceIcon()
 	{
 		return "electric_generator";
 	}
 
-	// Token: 0x04000993 RID: 2451
+	// Token: 0x04000996 RID: 2454
 	public static FastTags<TagGroup.Global> tag = FastTags<TagGroup.Global>.Parse("gasoline");
 }

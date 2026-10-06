@@ -12,11 +12,11 @@ using MemoryPack.Formatters;
 using MemoryPack.Internal;
 using UnityEngine;
 
-// Token: 0x020013ED RID: 5101
+// Token: 0x0200140D RID: 5133
 [MemoryPackable(GenerateType.Object)]
 public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPackFormatterRegister
 {
-	// Token: 0x06009FFD RID: 40957 RVA: 0x003C25FC File Offset: 0x003C07FC
+	// Token: 0x0600A0A8 RID: 41128 RVA: 0x003C7198 File Offset: 0x003C5398
 	public Dictionary<string, string> ParseKeyData(string key)
 	{
 		try
@@ -34,7 +34,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return null;
 	}
 
-	// Token: 0x06009FFE RID: 40958 RVA: 0x003C2654 File Offset: 0x003C0854
+	// Token: 0x0600A0A9 RID: 41129 RVA: 0x003C71F0 File Offset: 0x003C53F0
 	public static Dictionary<string, string> ParseData(string data)
 	{
 		Dictionary<string, string> dictionary = null;
@@ -69,7 +69,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return dictionary;
 	}
 
-	// Token: 0x0600A000 RID: 40960 RVA: 0x003C275D File Offset: 0x003C095D
+	// Token: 0x0600A0AB RID: 41131 RVA: 0x003C72F9 File Offset: 0x003C54F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateKey(string _key)
 	{
@@ -79,7 +79,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A001 RID: 40961 RVA: 0x003C2794 File Offset: 0x003C0994
+	// Token: 0x0600A0AC RID: 41132 RVA: 0x003C7330 File Offset: 0x003C5530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicProperties GetOrCreateClass(string _className)
 	{
@@ -93,7 +93,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return dynamicProperties;
 	}
 
-	// Token: 0x0600A002 RID: 40962 RVA: 0x003C27CC File Offset: 0x003C09CC
+	// Token: 0x0600A0AD RID: 41133 RVA: 0x003C7368 File Offset: 0x003C5568
 	public DynamicProperties GetClass(string _className)
 	{
 		DynamicProperties dynamicProperties;
@@ -104,20 +104,20 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return null;
 	}
 
-	// Token: 0x0600A003 RID: 40963 RVA: 0x003C27EC File Offset: 0x003C09EC
+	// Token: 0x0600A0AE RID: 41134 RVA: 0x003C7388 File Offset: 0x003C5588
 	public void SetValue(string _propName, string _value)
 	{
 		DynamicProperties.ValidateKey(_propName);
 		this.Values[_propName] = _value;
 	}
 
-	// Token: 0x0600A004 RID: 40964 RVA: 0x003C2801 File Offset: 0x003C0A01
+	// Token: 0x0600A0AF RID: 41135 RVA: 0x003C739D File Offset: 0x003C559D
 	public void SetValue(string _className, string _propName, string _value)
 	{
 		this.GetOrCreateClass(_className).SetValue(_propName, _value);
 	}
 
-	// Token: 0x0600A005 RID: 40965 RVA: 0x003C2814 File Offset: 0x003C0A14
+	// Token: 0x0600A0B0 RID: 41136 RVA: 0x003C73B0 File Offset: 0x003C55B0
 	public string GetValue(string _propName)
 	{
 		string text;
@@ -128,14 +128,14 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return null;
 	}
 
-	// Token: 0x0600A006 RID: 40966 RVA: 0x003C2834 File Offset: 0x003C0A34
+	// Token: 0x0600A0B1 RID: 41137 RVA: 0x003C73D0 File Offset: 0x003C55D0
 	public bool TryGetValue(string _propName, out string _value)
 	{
 		DynamicProperties.ValidateKey(_propName);
 		return this.Values.TryGetValue(_propName, out _value);
 	}
 
-	// Token: 0x0600A007 RID: 40967 RVA: 0x003C284C File Offset: 0x003C0A4C
+	// Token: 0x0600A0B2 RID: 41138 RVA: 0x003C73E8 File Offset: 0x003C55E8
 	public bool TryGetValue(string _className, string _propName, out string _value)
 	{
 		DynamicProperties.ValidateKey(_className);
@@ -148,21 +148,21 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return dynamicProperties.TryGetValue(_propName, out _value);
 	}
 
-	// Token: 0x0600A008 RID: 40968 RVA: 0x003C287C File Offset: 0x003C0A7C
+	// Token: 0x0600A0B3 RID: 41139 RVA: 0x003C7418 File Offset: 0x003C5618
 	public bool Contains(string _propName)
 	{
 		DynamicProperties.ValidateKey(_propName);
 		return this.Values.ContainsKey(_propName);
 	}
 
-	// Token: 0x0600A009 RID: 40969 RVA: 0x003C2890 File Offset: 0x003C0A90
+	// Token: 0x0600A0B4 RID: 41140 RVA: 0x003C742C File Offset: 0x003C562C
 	public bool Contains(string _className, string _propName)
 	{
 		string text;
 		return this.TryGetValue(_className, _propName, out text);
 	}
 
-	// Token: 0x0600A00A RID: 40970 RVA: 0x003C28A8 File Offset: 0x003C0AA8
+	// Token: 0x0600A0B5 RID: 41141 RVA: 0x003C7444 File Offset: 0x003C5644
 	public void SetParam1(string _propName, string _param1)
 	{
 		DynamicProperties.ValidateKey(_propName);
@@ -178,20 +178,20 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		this.Params1.Add(_propName, _param1);
 	}
 
-	// Token: 0x0600A00B RID: 40971 RVA: 0x003C28FF File Offset: 0x003C0AFF
+	// Token: 0x0600A0B6 RID: 41142 RVA: 0x003C749B File Offset: 0x003C569B
 	public void SetParam1(string _className, string _propName, string _param1)
 	{
 		this.GetOrCreateClass(_className).SetParam1(_propName, _param1);
 	}
 
-	// Token: 0x0600A00C RID: 40972 RVA: 0x003C290F File Offset: 0x003C0B0F
+	// Token: 0x0600A0B7 RID: 41143 RVA: 0x003C74AB File Offset: 0x003C56AB
 	public bool TryGetParam1(string _propName, out string _param1)
 	{
 		DynamicProperties.ValidateKey(_propName);
 		return this.Params1.TryGetValue(_propName, out _param1);
 	}
 
-	// Token: 0x0600A00D RID: 40973 RVA: 0x003C2924 File Offset: 0x003C0B24
+	// Token: 0x0600A0B8 RID: 41144 RVA: 0x003C74C0 File Offset: 0x003C56C0
 	public bool TryGetParam1(string _className, string _propName, out string _param1)
 	{
 		DynamicProperties.ValidateKey(_className);
@@ -204,7 +204,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return dynamicProperties.TryGetParam1(_propName, out _param1);
 	}
 
-	// Token: 0x0600A00E RID: 40974 RVA: 0x003C2954 File Offset: 0x003C0B54
+	// Token: 0x0600A0B9 RID: 41145 RVA: 0x003C74F0 File Offset: 0x003C56F0
 	public string GetParam1(string _propName)
 	{
 		string text;
@@ -215,7 +215,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return null;
 	}
 
-	// Token: 0x0600A00F RID: 40975 RVA: 0x003C2974 File Offset: 0x003C0B74
+	// Token: 0x0600A0BA RID: 41146 RVA: 0x003C7510 File Offset: 0x003C5710
 	public bool GetBool(string _propName)
 	{
 		string text;
@@ -228,7 +228,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return flag;
 	}
 
-	// Token: 0x0600A010 RID: 40976 RVA: 0x003C2998 File Offset: 0x003C0B98
+	// Token: 0x0600A0BB RID: 41147 RVA: 0x003C7534 File Offset: 0x003C5734
 	public bool GetBool(string _className, string _propName)
 	{
 		string text;
@@ -241,7 +241,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return flag;
 	}
 
-	// Token: 0x0600A011 RID: 40977 RVA: 0x003C29C0 File Offset: 0x003C0BC0
+	// Token: 0x0600A0BC RID: 41148 RVA: 0x003C755C File Offset: 0x003C575C
 	public float GetFloat(string _propName)
 	{
 		string text;
@@ -254,7 +254,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return num;
 	}
 
-	// Token: 0x0600A012 RID: 40978 RVA: 0x003C29E8 File Offset: 0x003C0BE8
+	// Token: 0x0600A0BD RID: 41149 RVA: 0x003C7584 File Offset: 0x003C5784
 	public float GetFloat(string _className, string _propName)
 	{
 		string text;
@@ -267,7 +267,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return num;
 	}
 
-	// Token: 0x0600A013 RID: 40979 RVA: 0x003C2A14 File Offset: 0x003C0C14
+	// Token: 0x0600A0BE RID: 41150 RVA: 0x003C75B0 File Offset: 0x003C57B0
 	public int GetInt(string _propName)
 	{
 		string text;
@@ -280,7 +280,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return num;
 	}
 
-	// Token: 0x0600A014 RID: 40980 RVA: 0x003C2A38 File Offset: 0x003C0C38
+	// Token: 0x0600A0BF RID: 41151 RVA: 0x003C75D4 File Offset: 0x003C57D4
 	public int GetInt(string _className, string _propName)
 	{
 		string text;
@@ -293,7 +293,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return num;
 	}
 
-	// Token: 0x0600A015 RID: 40981 RVA: 0x003C2A60 File Offset: 0x003C0C60
+	// Token: 0x0600A0C0 RID: 41152 RVA: 0x003C75FC File Offset: 0x003C57FC
 	public string GetString(string _propName)
 	{
 		string text;
@@ -304,7 +304,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return text;
 	}
 
-	// Token: 0x0600A016 RID: 40982 RVA: 0x003C2A80 File Offset: 0x003C0C80
+	// Token: 0x0600A0C1 RID: 41153 RVA: 0x003C761C File Offset: 0x003C581C
 	public string GetString(string _className, string _propName)
 	{
 		string text;
@@ -315,7 +315,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return text;
 	}
 
-	// Token: 0x0600A017 RID: 40983 RVA: 0x003C2AA0 File Offset: 0x003C0CA0
+	// Token: 0x0600A0C2 RID: 41154 RVA: 0x003C763C File Offset: 0x003C583C
 	public bool Load(string _directory, string _name)
 	{
 		try
@@ -333,7 +333,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return false;
 	}
 
-	// Token: 0x0600A018 RID: 40984 RVA: 0x003C2B20 File Offset: 0x003C0D20
+	// Token: 0x0600A0C3 RID: 41155 RVA: 0x003C76BC File Offset: 0x003C58BC
 	public bool Save(string _rootNodeName, Stream stream)
 	{
 		try
@@ -353,7 +353,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return false;
 	}
 
-	// Token: 0x0600A019 RID: 40985 RVA: 0x003C2B90 File Offset: 0x003C0D90
+	// Token: 0x0600A0C4 RID: 41156 RVA: 0x003C772C File Offset: 0x003C592C
 	public bool Save(string _rootNodeName, string _path, string _name)
 	{
 		try
@@ -370,7 +370,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return false;
 	}
 
-	// Token: 0x0600A01A RID: 40986 RVA: 0x003C2BFC File Offset: 0x003C0DFC
+	// Token: 0x0600A0C5 RID: 41157 RVA: 0x003C7798 File Offset: 0x003C5998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toXml(XmlDocument _doc, XmlNode _parent)
 	{
@@ -411,13 +411,13 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A01B RID: 40987 RVA: 0x003C2E04 File Offset: 0x003C1004
+	// Token: 0x0600A0C6 RID: 41158 RVA: 0x003C79A0 File Offset: 0x003C5BA0
 	public void Add(XElement _propertyNode, bool _doValueReplace = false)
 	{
 		this.Parse(_propertyNode, _doValueReplace);
 	}
 
-	// Token: 0x0600A01C RID: 40988 RVA: 0x003C2E10 File Offset: 0x003C1010
+	// Token: 0x0600A0C7 RID: 41159 RVA: 0x003C79AC File Offset: 0x003C5BAC
 	public void AddArray(XElement _arrayNode)
 	{
 		string attribute = _arrayNode.GetAttribute(XNames.name);
@@ -442,7 +442,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A01D RID: 40989 RVA: 0x003C2F00 File Offset: 0x003C1100
+	// Token: 0x0600A0C8 RID: 41160 RVA: 0x003C7A9C File Offset: 0x003C5C9C
 	public void Parse(XElement elementProperty, bool _doValueReplace = false)
 	{
 		if (elementProperty.HasAttribute(XNames.class_))
@@ -504,7 +504,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		this.Values[text] = text2;
 	}
 
-	// Token: 0x0600A01E RID: 40990 RVA: 0x003C3080 File Offset: 0x003C1280
+	// Token: 0x0600A0C9 RID: 41161 RVA: 0x003C7C1C File Offset: 0x003C5E1C
 	public void Clear()
 	{
 		this.Values.Clear();
@@ -514,7 +514,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		this.Classes.Clear();
 	}
 
-	// Token: 0x0600A01F RID: 40991 RVA: 0x003C30BC File Offset: 0x003C12BC
+	// Token: 0x0600A0CA RID: 41162 RVA: 0x003C7C58 File Offset: 0x003C5E58
 	public void ParseString(string _propName, ref string optionalValue)
 	{
 		string text;
@@ -524,7 +524,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A020 RID: 40992 RVA: 0x003C30D8 File Offset: 0x003C12D8
+	// Token: 0x0600A0CB RID: 41163 RVA: 0x003C7C74 File Offset: 0x003C5E74
 	public void ParseString(string _className, string _propName, ref string optionalValue)
 	{
 		string text;
@@ -534,7 +534,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A021 RID: 40993 RVA: 0x003C30F4 File Offset: 0x003C12F4
+	// Token: 0x0600A0CC RID: 41164 RVA: 0x003C7C90 File Offset: 0x003C5E90
 	public void ParseStringFloatDictWithSubStringKey(string _propName, char _propSeparator, Dictionary<string, string> _dict, ref Dictionary<string, float> optionalValue)
 	{
 		foreach (KeyValuePair<string, string> keyValuePair in _dict)
@@ -550,7 +550,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A022 RID: 40994 RVA: 0x003C3198 File Offset: 0x003C1398
+	// Token: 0x0600A0CD RID: 41165 RVA: 0x003C7D34 File Offset: 0x003C5F34
 	public IntRange TryParseRange(string _propName, IntRange defaultValue = default(IntRange))
 	{
 		IntRange intRange = defaultValue;
@@ -572,7 +572,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return intRange;
 	}
 
-	// Token: 0x0600A023 RID: 40995 RVA: 0x003C31E4 File Offset: 0x003C13E4
+	// Token: 0x0600A0CE RID: 41166 RVA: 0x003C7D80 File Offset: 0x003C5F80
 	public FloatRange TryParseRange(string _propName, FloatRange defaultValue = default(FloatRange))
 	{
 		FloatRange floatRange = defaultValue;
@@ -594,7 +594,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return floatRange;
 	}
 
-	// Token: 0x0600A024 RID: 40996 RVA: 0x003C3230 File Offset: 0x003C1430
+	// Token: 0x0600A0CF RID: 41167 RVA: 0x003C7DCC File Offset: 0x003C5FCC
 	public string GetLocalizedString(string _propName)
 	{
 		string text;
@@ -605,7 +605,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return string.Empty;
 	}
 
-	// Token: 0x0600A025 RID: 40997 RVA: 0x003C3250 File Offset: 0x003C1450
+	// Token: 0x0600A0D0 RID: 41168 RVA: 0x003C7DEC File Offset: 0x003C5FEC
 	public void ParseLocalizedString(string _propName, ref string optionalValue)
 	{
 		string text;
@@ -615,7 +615,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A026 RID: 40998 RVA: 0x003C3274 File Offset: 0x003C1474
+	// Token: 0x0600A0D1 RID: 41169 RVA: 0x003C7E10 File Offset: 0x003C6010
 	public void ParseBool(string _propName, ref bool optionalValue)
 	{
 		string text;
@@ -631,7 +631,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A027 RID: 40999 RVA: 0x003C32B4 File Offset: 0x003C14B4
+	// Token: 0x0600A0D2 RID: 41170 RVA: 0x003C7E50 File Offset: 0x003C6050
 	public void ParseByte(string _propName, ref byte optionalValue)
 	{
 		string text;
@@ -647,7 +647,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A028 RID: 41000 RVA: 0x003C32F4 File Offset: 0x003C14F4
+	// Token: 0x0600A0D3 RID: 41171 RVA: 0x003C7E90 File Offset: 0x003C6090
 	public void ParseColor(string _propName, ref Color optionalValue)
 	{
 		string text;
@@ -657,7 +657,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A029 RID: 41001 RVA: 0x003C3318 File Offset: 0x003C1518
+	// Token: 0x0600A0D4 RID: 41172 RVA: 0x003C7EB4 File Offset: 0x003C60B4
 	public void ParseColorHex(string _propName, ref Color optionalValue)
 	{
 		string text;
@@ -667,7 +667,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02A RID: 41002 RVA: 0x003C333C File Offset: 0x003C153C
+	// Token: 0x0600A0D5 RID: 41173 RVA: 0x003C7ED8 File Offset: 0x003C60D8
 	public void ParseEnum<T>(string _propName, ref T optionalValue) where T : struct, IConvertible
 	{
 		string text;
@@ -678,7 +678,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02B RID: 41003 RVA: 0x003C3368 File Offset: 0x003C1568
+	// Token: 0x0600A0D6 RID: 41174 RVA: 0x003C7F04 File Offset: 0x003C6104
 	public void ParseFloat(string _propName, ref float optionalValue)
 	{
 		string text;
@@ -694,7 +694,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02C RID: 41004 RVA: 0x003C33A8 File Offset: 0x003C15A8
+	// Token: 0x0600A0D7 RID: 41175 RVA: 0x003C7F44 File Offset: 0x003C6144
 	public void ParseFloat(string _className, string _propName, ref float optionalValue)
 	{
 		string text;
@@ -710,7 +710,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02D RID: 41005 RVA: 0x003C33E4 File Offset: 0x003C15E4
+	// Token: 0x0600A0D8 RID: 41176 RVA: 0x003C7F80 File Offset: 0x003C6180
 	public static void ParseFloat(XElement _e, string _propName, ref float optionalValue)
 	{
 		XAttribute xattribute = _e.Attribute(_propName);
@@ -727,7 +727,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02E RID: 41006 RVA: 0x003C3430 File Offset: 0x003C1630
+	// Token: 0x0600A0D9 RID: 41177 RVA: 0x003C7FCC File Offset: 0x003C61CC
 	public void ParseInt(string _propName, ref int optionalValue)
 	{
 		string text;
@@ -743,7 +743,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A02F RID: 41007 RVA: 0x003C3470 File Offset: 0x003C1670
+	// Token: 0x0600A0DA RID: 41178 RVA: 0x003C800C File Offset: 0x003C620C
 	public void ParseInt(string _className, string _propName, ref int optionalValue)
 	{
 		string text;
@@ -759,7 +759,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A030 RID: 41008 RVA: 0x003C34B4 File Offset: 0x003C16B4
+	// Token: 0x0600A0DB RID: 41179 RVA: 0x003C8050 File Offset: 0x003C6250
 	public void ParseVec(string _propName, ref Vector2 optionalValue)
 	{
 		string text;
@@ -769,7 +769,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A031 RID: 41009 RVA: 0x003C34D8 File Offset: 0x003C16D8
+	// Token: 0x0600A0DC RID: 41180 RVA: 0x003C8074 File Offset: 0x003C6274
 	public void ParseVec(string _className, string _propName, ref Vector2 optionalValue)
 	{
 		string text;
@@ -779,7 +779,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A032 RID: 41010 RVA: 0x003C3500 File Offset: 0x003C1700
+	// Token: 0x0600A0DD RID: 41181 RVA: 0x003C809C File Offset: 0x003C629C
 	public void ParseVec(string _propName, ref Vector2 optionalValue, float _defaultValue)
 	{
 		string text;
@@ -789,7 +789,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A033 RID: 41011 RVA: 0x003C3528 File Offset: 0x003C1728
+	// Token: 0x0600A0DE RID: 41182 RVA: 0x003C80C4 File Offset: 0x003C62C4
 	public void ParseVec(string _className, string _propName, ref Vector2 optionalValue, float _defaultValue)
 	{
 		string text;
@@ -799,7 +799,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A034 RID: 41012 RVA: 0x003C3550 File Offset: 0x003C1750
+	// Token: 0x0600A0DF RID: 41183 RVA: 0x003C80EC File Offset: 0x003C62EC
 	public void ParseVec(string _propName, ref Vector3 optionalValue)
 	{
 		string text;
@@ -809,7 +809,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A035 RID: 41013 RVA: 0x003C3578 File Offset: 0x003C1778
+	// Token: 0x0600A0E0 RID: 41184 RVA: 0x003C8114 File Offset: 0x003C6314
 	public void ParseVec(string _className, string _propName, ref Vector3 optionalValue)
 	{
 		string text;
@@ -819,7 +819,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A036 RID: 41014 RVA: 0x003C35A0 File Offset: 0x003C17A0
+	// Token: 0x0600A0E1 RID: 41185 RVA: 0x003C813C File Offset: 0x003C633C
 	public void ParseVec(string _propName, ref Vector3 optionalValue, float _defaultValue)
 	{
 		string text;
@@ -829,7 +829,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A037 RID: 41015 RVA: 0x003C35C8 File Offset: 0x003C17C8
+	// Token: 0x0600A0E2 RID: 41186 RVA: 0x003C8164 File Offset: 0x003C6364
 	public void ParseVec(string _className, string _propName, ref Vector3 optionalValue, float _defaultValue)
 	{
 		string text;
@@ -839,7 +839,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A038 RID: 41016 RVA: 0x003C35F0 File Offset: 0x003C17F0
+	// Token: 0x0600A0E3 RID: 41187 RVA: 0x003C818C File Offset: 0x003C638C
 	public void ParseVec(string _propName, ref Vector3i optionalValue)
 	{
 		string text;
@@ -849,7 +849,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A039 RID: 41017 RVA: 0x003C3618 File Offset: 0x003C1818
+	// Token: 0x0600A0E4 RID: 41188 RVA: 0x003C81B4 File Offset: 0x003C63B4
 	public void ParseVec(string _className, string _propName, ref Vector3i optionalValue)
 	{
 		string text;
@@ -859,7 +859,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03A RID: 41018 RVA: 0x003C3640 File Offset: 0x003C1840
+	// Token: 0x0600A0E5 RID: 41189 RVA: 0x003C81DC File Offset: 0x003C63DC
 	public void ParseVec(string _propName, ref float optionalValue1, ref float optionalValue2)
 	{
 		string text;
@@ -871,7 +871,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03B RID: 41019 RVA: 0x003C3670 File Offset: 0x003C1870
+	// Token: 0x0600A0E6 RID: 41190 RVA: 0x003C820C File Offset: 0x003C640C
 	public void ParseVec(string _className, string _propName, ref float optionalValue1, ref float optionalValue2)
 	{
 		string text;
@@ -883,7 +883,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03C RID: 41020 RVA: 0x003C36A4 File Offset: 0x003C18A4
+	// Token: 0x0600A0E7 RID: 41191 RVA: 0x003C8240 File Offset: 0x003C6440
 	public void ParseVec(string _propName, ref float optionalValue1, ref float optionalValue2, ref float optionalValue3)
 	{
 		string text;
@@ -896,7 +896,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03D RID: 41021 RVA: 0x003C36E0 File Offset: 0x003C18E0
+	// Token: 0x0600A0E8 RID: 41192 RVA: 0x003C827C File Offset: 0x003C647C
 	public void ParseVec(string _className, string _propName, ref float optionalValue1, ref float optionalValue2, ref float optionalValue3)
 	{
 		string text;
@@ -909,7 +909,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03E RID: 41022 RVA: 0x003C371C File Offset: 0x003C191C
+	// Token: 0x0600A0E9 RID: 41193 RVA: 0x003C82B8 File Offset: 0x003C64B8
 	public void ParseVec(string _propName, ref float optionalValue1, ref float optionalValue2, ref float optionalValue3, ref float optionalValue4)
 	{
 		string text;
@@ -923,7 +923,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A03F RID: 41023 RVA: 0x003C3760 File Offset: 0x003C1960
+	// Token: 0x0600A0EA RID: 41194 RVA: 0x003C82FC File Offset: 0x003C64FC
 	public void ParseVec(string _className, string _propName, ref float optionalValue1, ref float optionalValue2, ref float optionalValue3, ref float optionalValue4)
 	{
 		string text;
@@ -937,7 +937,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A040 RID: 41024 RVA: 0x003C37A4 File Offset: 0x003C19A4
+	// Token: 0x0600A0EB RID: 41195 RVA: 0x003C8340 File Offset: 0x003C6540
 	public void CopyFrom(DynamicProperties _other, HashSet<string> _exclude = null)
 	{
 		DynamicProperties.copyDict(_other.Values, this.Values, _exclude);
@@ -956,7 +956,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A041 RID: 41025 RVA: 0x003C38A8 File Offset: 0x003C1AA8
+	// Token: 0x0600A0EC RID: 41196 RVA: 0x003C8444 File Offset: 0x003C6644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<string> GetNestedExclusions(string _className, HashSet<string> _exclude)
 	{
@@ -980,7 +980,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return hashSet;
 	}
 
-	// Token: 0x0600A042 RID: 41026 RVA: 0x003C3928 File Offset: 0x003C1B28
+	// Token: 0x0600A0ED RID: 41197 RVA: 0x003C84C4 File Offset: 0x003C66C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void copyDict(Dictionary<string, string> _source, Dictionary<string, string> _dest, HashSet<string> _exclude)
 	{
@@ -993,7 +993,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A043 RID: 41027 RVA: 0x003C3994 File Offset: 0x003C1B94
+	// Token: 0x0600A0EE RID: 41198 RVA: 0x003C8530 File Offset: 0x003C6730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool copyKey(string _key, HashSet<string> _exclude)
 	{
@@ -1019,7 +1019,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return true;
 	}
 
-	// Token: 0x0600A044 RID: 41028 RVA: 0x003C3A10 File Offset: 0x003C1C10
+	// Token: 0x0600A0EF RID: 41199 RVA: 0x003C85AC File Offset: 0x003C67AC
 	public string PrettyPrint()
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -1027,7 +1027,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A045 RID: 41029 RVA: 0x003C3A38 File Offset: 0x003C1C38
+	// Token: 0x0600A0F0 RID: 41200 RVA: 0x003C85D4 File Offset: 0x003C67D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrettyPrint(StringBuilder sb, string indent)
 	{
@@ -1060,14 +1060,14 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A046 RID: 41030 RVA: 0x003C3BFC File Offset: 0x003C1DFC
+	// Token: 0x0600A0F1 RID: 41201 RVA: 0x003C8798 File Offset: 0x003C6998
 	[PublicizedFrom(EAccessModifier.Private)]
 	static DynamicProperties()
 	{
 		DynamicProperties.RegisterFormatter();
 	}
 
-	// Token: 0x0600A047 RID: 41031 RVA: 0x003C3C24 File Offset: 0x003C1E24
+	// Token: 0x0600A0F2 RID: 41202 RVA: 0x003C87C0 File Offset: 0x003C69C0
 	[Preserve]
 	public static void RegisterFormatter()
 	{
@@ -1097,7 +1097,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		}
 	}
 
-	// Token: 0x0600A048 RID: 41032 RVA: 0x003C3C98 File Offset: 0x003C1E98
+	// Token: 0x0600A0F3 RID: 41203 RVA: 0x003C8834 File Offset: 0x003C6A34
 	[NullableContext(2)]
 	[Preserve]
 	public static void Serialize(ref MemoryPackWriter writer, ref DynamicProperties value)
@@ -1116,7 +1116,7 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		writer.WriteValue<Dictionary<string, List<Dictionary<string, string>>>>(in value.Array);
 	}
 
-	// Token: 0x0600A049 RID: 41033 RVA: 0x003C3D08 File Offset: 0x003C1F08
+	// Token: 0x0600A0F4 RID: 41204 RVA: 0x003C88A4 File Offset: 0x003C6AA4
 	[NullableContext(2)]
 	[Preserve]
 	public static void Deserialize(ref MemoryPackReader reader, ref DynamicProperties value)
@@ -1231,57 +1231,57 @@ public class DynamicProperties : IMemoryPackable<DynamicProperties>, IMemoryPack
 		};
 	}
 
-	// Token: 0x040078FA RID: 30970
+	// Token: 0x04007975 RID: 31093
 	[MemoryPackInclude]
 	public Dictionary<string, string> Values = new Dictionary<string, string>();
 
-	// Token: 0x040078FB RID: 30971
+	// Token: 0x04007976 RID: 31094
 	[MemoryPackInclude]
 	public Dictionary<string, string> Params1 = new Dictionary<string, string>();
 
-	// Token: 0x040078FC RID: 30972
+	// Token: 0x04007977 RID: 31095
 	[MemoryPackInclude]
 	public Dictionary<string, string> Params2 = new Dictionary<string, string>();
 
-	// Token: 0x040078FD RID: 30973
+	// Token: 0x04007978 RID: 31096
 	[MemoryPackInclude]
 	public Dictionary<string, string> Data = new Dictionary<string, string>();
 
-	// Token: 0x040078FE RID: 30974
+	// Token: 0x04007979 RID: 31097
 	[MemoryPackInclude]
 	public Dictionary<string, DynamicProperties> Classes = new Dictionary<string, DynamicProperties>();
 
-	// Token: 0x040078FF RID: 30975
+	// Token: 0x0400797A RID: 31098
 	[MemoryPackInclude]
 	public Dictionary<string, List<Dictionary<string, string>>> Array = new Dictionary<string, List<Dictionary<string, string>>>();
 
-	// Token: 0x04007900 RID: 30976
+	// Token: 0x0400797B RID: 31099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char PathAccessSeparator = '.';
 
-	// Token: 0x04007901 RID: 30977
+	// Token: 0x0400797C RID: 31100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] semicolonSeparator = new char[] { ';' };
 
-	// Token: 0x04007902 RID: 30978
+	// Token: 0x0400797D RID: 31101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] equalSeparator = new char[] { '=' };
 
-	// Token: 0x020013EE RID: 5102
+	// Token: 0x0200140E RID: 5134
 	[NullableContext(1)]
 	[Nullable(new byte[] { 0, 1 })]
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class DynamicPropertiesFormatter : MemoryPackFormatter<DynamicProperties>
 	{
-		// Token: 0x0600A04A RID: 41034 RVA: 0x003C3EDD File Offset: 0x003C20DD
+		// Token: 0x0600A0F5 RID: 41205 RVA: 0x003C8A79 File Offset: 0x003C6C79
 		[Preserve]
 		public override void Serialize(ref MemoryPackWriter writer, ref DynamicProperties value)
 		{
 			DynamicProperties.Serialize(ref writer, ref value);
 		}
 
-		// Token: 0x0600A04B RID: 41035 RVA: 0x003C3EE6 File Offset: 0x003C20E6
+		// Token: 0x0600A0F6 RID: 41206 RVA: 0x003C8A82 File Offset: 0x003C6C82
 		[Preserve]
 		public override void Deserialize(ref MemoryPackReader reader, ref DynamicProperties value)
 		{

@@ -3,23 +3,23 @@ using GUI_2;
 using InControl;
 using UnityEngine;
 
-// Token: 0x02001121 RID: 4385
+// Token: 0x02001139 RID: 4409
 public class XUi_FallThrough : MonoBehaviour
 {
-	// Token: 0x06008AAA RID: 35498 RVA: 0x0034C4E6 File Offset: 0x0034A6E6
+	// Token: 0x06008B16 RID: 35606 RVA: 0x00350992 File Offset: 0x0034EB92
 	public void SetXUi(XUi _xui)
 	{
 		this.xui = _xui;
 	}
 
-	// Token: 0x06008AAB RID: 35499 RVA: 0x0034C4EF File Offset: 0x0034A6EF
+	// Token: 0x06008B17 RID: 35607 RVA: 0x0035099B File Offset: 0x0034EB9B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		UICamera.fallThrough = base.gameObject;
 	}
 
-	// Token: 0x06008AAC RID: 35500 RVA: 0x0034C4FC File Offset: 0x0034A6FC
+	// Token: 0x06008B18 RID: 35608 RVA: 0x003509A8 File Offset: 0x0034EBA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -29,7 +29,7 @@ public class XUi_FallThrough : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008AAD RID: 35501 RVA: 0x0034C518 File Offset: 0x0034A718
+	// Token: 0x06008B19 RID: 35609 RVA: 0x003509C4 File Offset: 0x0034EBC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -93,12 +93,12 @@ public class XUi_FallThrough : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040066E6 RID: 26342
+	// Token: 0x0400673B RID: 26427
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public XUi xui;
 
-	// Token: 0x040066E7 RID: 26343
+	// Token: 0x0400673C RID: 26428
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool canDrop;

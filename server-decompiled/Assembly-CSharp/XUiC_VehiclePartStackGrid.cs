@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B4 RID: 4276
+// Token: 0x020010C5 RID: 4293
 [Preserve]
 public class XUiC_VehiclePartStackGrid : XUiC_ItemPartStackGrid
 {
-	// Token: 0x17000FE7 RID: 4071
-	// (get) Token: 0x06008857 RID: 34903 RVA: 0x00080719 File Offset: 0x0007E919
+	// Token: 0x1700101C RID: 4124
+	// (get) Token: 0x060088A6 RID: 34982 RVA: 0x00081AB0 File Offset: 0x0007FCB0
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -16,20 +16,14 @@ public class XUiC_VehiclePartStackGrid : XUiC_ItemPartStackGrid
 		}
 	}
 
-	// Token: 0x17000FE8 RID: 4072
-	// (get) Token: 0x06008858 RID: 34904 RVA: 0x00341369 File Offset: 0x0033F569
-	// (set) Token: 0x06008859 RID: 34905 RVA: 0x00341371 File Offset: 0x0033F571
+	// Token: 0x1700101D RID: 4125
+	// (get) Token: 0x060088A7 RID: 34983 RVA: 0x0034517D File Offset: 0x0034337D
+	// (set) Token: 0x060088A8 RID: 34984 RVA: 0x00345185 File Offset: 0x00343385
 	public Vehicle CurrentVehicle { get; set; }
 
-	// Token: 0x0600885A RID: 34906 RVA: 0x0034137A File Offset: 0x0033F57A
+	// Token: 0x060088A9 RID: 34985 RVA: 0x0034518E File Offset: 0x0034338E
 	public override void Init()
 	{
 		base.Init();
-	}
-
-	// Token: 0x0600885B RID: 34907 RVA: 0x00341382 File Offset: 0x0033F582
-	public void SetMods(ItemValue[] mods)
-	{
-		base.SetParts(mods);
 	}
 }

@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000CF5 RID: 3317
+// Token: 0x02000D03 RID: 3331
 public class BlockPlaceholdersFromXml
 {
-	// Token: 0x0600657A RID: 25978 RVA: 0x0027A32C File Offset: 0x0027852C
+	// Token: 0x0600656C RID: 25964 RVA: 0x0027D6D0 File Offset: 0x0027B8D0
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		BlockPlaceholderMap.InitStatic();

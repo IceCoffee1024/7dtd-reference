@@ -3,10 +3,10 @@ using System.Collections;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000C4C RID: 3148
+// Token: 0x02000C5E RID: 3166
 public class WorldBiomeProviderFromImage : IBiomeProvider
 {
-	// Token: 0x06005FD9 RID: 24537 RVA: 0x0025D46D File Offset: 0x0025B66D
+	// Token: 0x06005FF2 RID: 24562 RVA: 0x00260769 File Offset: 0x0025E969
 	public WorldBiomeProviderFromImage(string _levelName, string _worldPath, WorldBiomes _biomes, int _worldSize = 4096)
 	{
 		this.worldName = _levelName;
@@ -16,7 +16,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		this.worldSizeHalf = _worldSize / 2;
 	}
 
-	// Token: 0x06005FDA RID: 24538 RVA: 0x0025D4A7 File Offset: 0x0025B6A7
+	// Token: 0x06005FF3 RID: 24563 RVA: 0x002607A3 File Offset: 0x0025E9A3
 	public IEnumerator InitData()
 	{
 		string text = this.worldPath + "/biomes";
@@ -89,7 +89,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		yield break;
 	}
 
-	// Token: 0x06005FDB RID: 24539 RVA: 0x0025D4B8 File Offset: 0x0025B6B8
+	// Token: 0x06005FF4 RID: 24564 RVA: 0x002607B4 File Offset: 0x0025E9B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FillRadiationResult<T>(NativeArray<T> radPixs, byte[,][,] result, Func<T, byte> processColor) where T : struct
 	{
@@ -112,7 +112,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		}
 	}
 
-	// Token: 0x06005FDC RID: 24540 RVA: 0x0025D56C File Offset: 0x0025B76C
+	// Token: 0x06005FF5 RID: 24565 RVA: 0x00260868 File Offset: 0x0025EA68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe void FillRadiationFileBackedArray<T>(NativeArray<T> radPixs, FileBackedArray<byte> fba, Func<T, byte> processColor) where T : struct
 	{
@@ -141,7 +141,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		}
 	}
 
-	// Token: 0x06005FDD RID: 24541 RVA: 0x0025D664 File Offset: 0x0025B864
+	// Token: 0x06005FF6 RID: 24566 RVA: 0x00260960 File Offset: 0x0025EB60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte ProcessColor(Color32 pixel)
 	{
@@ -161,7 +161,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return b;
 	}
 
-	// Token: 0x06005FDE RID: 24542 RVA: 0x0025D698 File Offset: 0x0025B898
+	// Token: 0x06005FF7 RID: 24567 RVA: 0x00260994 File Offset: 0x0025EB94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte ProcessColor(TextureUtils.ColorARGB32 pixel)
 	{
@@ -181,7 +181,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return b;
 	}
 
-	// Token: 0x06005FDF RID: 24543 RVA: 0x0025D6CC File Offset: 0x0025B8CC
+	// Token: 0x06005FF8 RID: 24568 RVA: 0x002609C8 File Offset: 0x0025EBC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RadiationTileArrayFileFromTexture(FileBackedArray<byte> fba, Texture2D radiationTexture)
 	{
@@ -199,7 +199,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		}
 	}
 
-	// Token: 0x06005FE0 RID: 24544 RVA: 0x0025D758 File Offset: 0x0025B958
+	// Token: 0x06005FF9 RID: 24569 RVA: 0x00260A54 File Offset: 0x0025EC54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[,][,] RadiationTileArrayFromTexture(Texture2D radiationTexture)
 	{
@@ -221,7 +221,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return array;
 	}
 
-	// Token: 0x06005FE1 RID: 24545 RVA: 0x0025D804 File Offset: 0x0025BA04
+	// Token: 0x06005FFA RID: 24570 RVA: 0x00260B00 File Offset: 0x0025ED00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void worldCoordsToTileCoords(int worldX, int worldZ, TileAreaConfig tileAreaConfig, out int tileX, out int tileZ, out int posX, out int posZ)
 	{
@@ -231,7 +231,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		posZ = worldZ - tileZ * 512;
 	}
 
-	// Token: 0x06005FE2 RID: 24546 RVA: 0x0025D868 File Offset: 0x0025BA68
+	// Token: 0x06005FFB RID: 24571 RVA: 0x00260B64 File Offset: 0x0025ED64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileArea<byte[,]> LoadRadiationMap(Texture2D radiationTex, TileAreaConfig tileAreaConfig)
 	{
@@ -239,7 +239,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return new TileArea<byte[,]>(tileAreaConfig, array);
 	}
 
-	// Token: 0x06005FE3 RID: 24547 RVA: 0x0025D884 File Offset: 0x0025BA84
+	// Token: 0x06005FFC RID: 24572 RVA: 0x00260B80 File Offset: 0x0025ED80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileArea<byte[,]> LoadRadiationMapToFile(Texture2D radiationTex, TileAreaConfig tileAreaConfig)
 	{
@@ -249,7 +249,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return new TileAreaCache<byte>(tileAreaConfig, tileFile, 9);
 	}
 
-	// Token: 0x06005FE4 RID: 24548 RVA: 0x0025D8D0 File Offset: 0x0025BAD0
+	// Token: 0x06005FFD RID: 24573 RVA: 0x00260BCC File Offset: 0x0025EDCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadSplatMaps(string _levelName, int _worldWidth)
 	{
@@ -373,25 +373,25 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		}
 	}
 
-	// Token: 0x06005FE5 RID: 24549 RVA: 0x0025E3AD File Offset: 0x0025C5AD
+	// Token: 0x06005FFE RID: 24574 RVA: 0x002616A9 File Offset: 0x0025F8A9
 	public string GetWorldName()
 	{
 		return this.worldName;
 	}
 
-	// Token: 0x06005FE6 RID: 24550 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005FFF RID: 24575 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Init(int _seed, string _worldName, WorldBiomes _biomes, string _params1, string _params2)
 	{
 	}
 
-	// Token: 0x06005FE7 RID: 24551 RVA: 0x0025E3B5 File Offset: 0x0025C5B5
+	// Token: 0x06006000 RID: 24576 RVA: 0x002616B1 File Offset: 0x0025F8B1
 	public BiomeDefinition GetBiomeAt(int x, int z, out float _intensity)
 	{
 		_intensity = 1f;
 		return this.GetBiomeAt(x, z);
 	}
 
-	// Token: 0x06005FE8 RID: 24552 RVA: 0x0025E3C8 File Offset: 0x0025C5C8
+	// Token: 0x06006001 RID: 24577 RVA: 0x002616C4 File Offset: 0x0025F8C4
 	public BiomeDefinition GetBiomeAt(int x, int z)
 	{
 		if (this.biomesScaleDiv == 0)
@@ -416,7 +416,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return this.m_Biomes.GetBiome(value);
 	}
 
-	// Token: 0x06005FE9 RID: 24553 RVA: 0x0025E44C File Offset: 0x0025C64C
+	// Token: 0x06006002 RID: 24578 RVA: 0x00261748 File Offset: 0x0025F948
 	public BiomeDefinition GetBiomeOrSubAt(int x, int z)
 	{
 		BiomeDefinition biomeDefinition = this.GetBiomeAt(x, z);
@@ -431,7 +431,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return biomeDefinition;
 	}
 
-	// Token: 0x06005FEA RID: 24554 RVA: 0x0025E484 File Offset: 0x0025C684
+	// Token: 0x06006003 RID: 24579 RVA: 0x00261780 File Offset: 0x0025F980
 	public int GetSubBiomeIdxAt(BiomeDefinition bd, int _x, int _y, int _z)
 	{
 		double num = -3.4028234663852886E+38;
@@ -455,25 +455,25 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return -1;
 	}
 
-	// Token: 0x06005FEB RID: 24555 RVA: 0x0025E553 File Offset: 0x0025C753
+	// Token: 0x06006004 RID: 24580 RVA: 0x0026184F File Offset: 0x0025FA4F
 	public Vector2i GetSize()
 	{
 		return new Vector2i(this.biomeMapWidth, this.biomeMapHeight);
 	}
 
-	// Token: 0x06005FEC RID: 24556 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06006005 RID: 24581 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public float GetHumidityAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005FED RID: 24557 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06006006 RID: 24582 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public float GetTemperatureAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005FEE RID: 24558 RVA: 0x0025E568 File Offset: 0x0025C768
+	// Token: 0x06006007 RID: 24583 RVA: 0x00261864 File Offset: 0x0025FA64
 	public float GetRadiationAt(int x, int z)
 	{
 		if (this.radiationMapSmall == null)
@@ -488,7 +488,7 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return 0f;
 	}
 
-	// Token: 0x06005FEF RID: 24559 RVA: 0x0025E5C8 File Offset: 0x0025C7C8
+	// Token: 0x06006008 RID: 24584 RVA: 0x002618C4 File Offset: 0x0025FAC4
 	public BlockValue GetTopmostBlockValue(int xWorld, int zWorld)
 	{
 		this.bvReturn.type = 0;
@@ -541,100 +541,100 @@ public class WorldBiomeProviderFromImage : IBiomeProvider
 		return this.bvReturn;
 	}
 
-	// Token: 0x06005FF0 RID: 24560 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006009 RID: 24585 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x04004B07 RID: 19207
+	// Token: 0x04004B46 RID: 19270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GridCompressedData<byte> m_BiomeMap;
 
-	// Token: 0x04004B08 RID: 19208
+	// Token: 0x04004B47 RID: 19271
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBiomes m_Biomes;
 
-	// Token: 0x04004B09 RID: 19209
+	// Token: 0x04004B48 RID: 19272
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PerlinNoise noiseGen;
 
-	// Token: 0x04004B0A RID: 19210
+	// Token: 0x04004B49 RID: 19273
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string worldName;
 
-	// Token: 0x04004B0B RID: 19211
+	// Token: 0x04004B4A RID: 19274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string worldPath;
 
-	// Token: 0x04004B0C RID: 19212
+	// Token: 0x04004B4B RID: 19275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomeMapWidth;
 
-	// Token: 0x04004B0D RID: 19213
+	// Token: 0x04004B4C RID: 19276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomesMapWidthHalf;
 
-	// Token: 0x04004B0E RID: 19214
+	// Token: 0x04004B4D RID: 19277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomeMapHeight;
 
-	// Token: 0x04004B0F RID: 19215
+	// Token: 0x04004B4E RID: 19278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomesMapHeightHalf;
 
-	// Token: 0x04004B10 RID: 19216
+	// Token: 0x04004B4F RID: 19279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomesScaleDiv;
 
-	// Token: 0x04004B11 RID: 19217
+	// Token: 0x04004B50 RID: 19280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int radiationMapSize;
 
-	// Token: 0x04004B12 RID: 19218
+	// Token: 0x04004B51 RID: 19281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int radiationMapScale;
 
-	// Token: 0x04004B13 RID: 19219
+	// Token: 0x04004B52 RID: 19282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] radiationMapSmall;
 
-	// Token: 0x04004B14 RID: 19220
+	// Token: 0x04004B53 RID: 19283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRadiationTileSize = 512;
 
-	// Token: 0x04004B15 RID: 19221
+	// Token: 0x04004B54 RID: 19284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int radiationTilesX;
 
-	// Token: 0x04004B16 RID: 19222
+	// Token: 0x04004B55 RID: 19285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int radiationTilesZ;
 
-	// Token: 0x04004B17 RID: 19223
+	// Token: 0x04004B56 RID: 19286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] splatMapMaxValue;
 
-	// Token: 0x04004B18 RID: 19224
+	// Token: 0x04004B57 RID: 19287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cntSplatChannels;
 
-	// Token: 0x04004B19 RID: 19225
+	// Token: 0x04004B58 RID: 19288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int splatScaleDiv;
 
-	// Token: 0x04004B1A RID: 19226
+	// Token: 0x04004B59 RID: 19289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int splatW;
 
-	// Token: 0x04004B1B RID: 19227
+	// Token: 0x04004B5A RID: 19290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSize;
 
-	// Token: 0x04004B1C RID: 19228
+	// Token: 0x04004B5B RID: 19291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSizeHalf;
 
-	// Token: 0x04004B1D RID: 19229
+	// Token: 0x04004B5C RID: 19292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue bvReturn = BlockValue.Air;
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001576 RID: 5494
+// Token: 0x02001598 RID: 5528
 public class vp_SmoothRandom
 {
-	// Token: 0x0600ABF2 RID: 44018 RVA: 0x004007DC File Offset: 0x003FE9DC
+	// Token: 0x0600ACA5 RID: 44197 RVA: 0x00405630 File Offset: 0x00403830
 	public static Vector3 GetVector3(float speed)
 	{
 		float num = Time.time * 0.01f * speed;
 		return new Vector3(vp_SmoothRandom.Get().HybridMultifractal(num, 15.73f, 0.58f), vp_SmoothRandom.Get().HybridMultifractal(num, 63.94f, 0.58f), vp_SmoothRandom.Get().HybridMultifractal(num, 0.2f, 0.58f));
 	}
 
-	// Token: 0x0600ABF3 RID: 44019 RVA: 0x0040083C File Offset: 0x003FEA3C
+	// Token: 0x0600ACA6 RID: 44198 RVA: 0x00405690 File Offset: 0x00403890
 	public static Vector3 GetVector3Centered(float speed)
 	{
 		float num = Time.time * 0.01f * speed;
@@ -21,7 +21,7 @@ public class vp_SmoothRandom
 		return vector - vector2;
 	}
 
-	// Token: 0x0600ABF4 RID: 44020 RVA: 0x004008FC File Offset: 0x003FEAFC
+	// Token: 0x0600ACA7 RID: 44199 RVA: 0x00405750 File Offset: 0x00403950
 	public static Vector3 GetVector3Centered(float time, float speed)
 	{
 		float num = time * 0.01f * speed;
@@ -31,14 +31,14 @@ public class vp_SmoothRandom
 		return vector - vector2;
 	}
 
-	// Token: 0x0600ABF5 RID: 44021 RVA: 0x004009B4 File Offset: 0x003FEBB4
+	// Token: 0x0600ACA8 RID: 44200 RVA: 0x00405808 File Offset: 0x00403A08
 	public static float Get(float speed)
 	{
 		float num = Time.time * 0.01f * speed;
 		return vp_SmoothRandom.Get().HybridMultifractal(num * 0.01f, 15.7f, 0.65f);
 	}
 
-	// Token: 0x0600ABF6 RID: 44022 RVA: 0x004009EA File Offset: 0x003FEBEA
+	// Token: 0x0600ACA9 RID: 44201 RVA: 0x0040583E File Offset: 0x00403A3E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static vp_FractalNoise Get()
 	{
@@ -49,7 +49,7 @@ public class vp_SmoothRandom
 		return vp_SmoothRandom.s_Noise;
 	}
 
-	// Token: 0x04007F3B RID: 32571
+	// Token: 0x04007FBE RID: 32702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static vp_FractalNoise s_Noise;
 }

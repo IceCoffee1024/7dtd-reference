@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Platform.Shared
 {
-	// Token: 0x02001CA9 RID: 7337
+	// Token: 0x02001CDB RID: 7387
 	public class LocalServerDetect : IServerListInterface
 	{
-		// Token: 0x0600D9AE RID: 55726 RVA: 0x004E1788 File Offset: 0x004DF988
+		// Token: 0x0600DB28 RID: 56104 RVA: 0x004E62D0 File Offset: 0x004E44D0
 		public LocalServerDetect()
 		{
 			if (GameManager.IsDedicatedServer)
@@ -22,8 +22,8 @@ namespace Platform.Shared
 			};
 		}
 
-		// Token: 0x17001B07 RID: 6919
-		// (get) Token: 0x0600D9AF RID: 55727 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001BAD RID: 7085
+		// (get) Token: 0x0600DB29 RID: 56105 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsPrefiltered
 		{
 			get
@@ -32,7 +32,7 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D9B0 RID: 55728 RVA: 0x004E17A9 File Offset: 0x004DF9A9
+		// Token: 0x0600DB2A RID: 56106 RVA: 0x004E62F1 File Offset: 0x004E44F1
 		public void Init(IPlatform _owner)
 		{
 			if (GameManager.IsDedicatedServer || this.initDone)
@@ -42,14 +42,14 @@ namespace Platform.Shared
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600D9B1 RID: 55729 RVA: 0x004E17C2 File Offset: 0x004DF9C2
+		// Token: 0x0600DB2B RID: 56107 RVA: 0x004E630A File Offset: 0x004E450A
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _errorCallback)
 		{
 			this.gameServerFoundCallback = _serverFound;
 		}
 
-		// Token: 0x17001B08 RID: 6920
-		// (get) Token: 0x0600D9B2 RID: 55730 RVA: 0x004E17CB File Offset: 0x004DF9CB
+		// Token: 0x17001BAE RID: 7086
+		// (get) Token: 0x0600DB2C RID: 56108 RVA: 0x004E6313 File Offset: 0x004E4513
 		public bool IsRefreshing
 		{
 			get
@@ -58,7 +58,7 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D9B3 RID: 55731 RVA: 0x004E17D3 File Offset: 0x004DF9D3
+		// Token: 0x0600DB2D RID: 56109 RVA: 0x004E631B File Offset: 0x004E451B
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			this.isRefreshing = true;
@@ -68,26 +68,26 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D9B4 RID: 55732 RVA: 0x004E17F5 File Offset: 0x004DF9F5
+		// Token: 0x0600DB2E RID: 56110 RVA: 0x004E633D File Offset: 0x004E453D
 		public void StopSearch()
 		{
 			this.isRefreshing = false;
 			this.detectCoroutine = null;
 		}
 
-		// Token: 0x0600D9B5 RID: 55733 RVA: 0x004E1805 File Offset: 0x004DFA05
+		// Token: 0x0600DB2F RID: 56111 RVA: 0x004E634D File Offset: 0x004E454D
 		public void Disconnect()
 		{
 			this.isRefreshing = false;
 		}
 
-		// Token: 0x0600D9B6 RID: 55734 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DB30 RID: 56112 RVA: 0x0008806C File Offset: 0x0008626C
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600D9B7 RID: 55735 RVA: 0x004E180E File Offset: 0x004DFA0E
+		// Token: 0x0600DB31 RID: 56113 RVA: 0x004E6356 File Offset: 0x004E4556
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator detectLocalServers()
 		{
@@ -108,7 +108,7 @@ namespace Platform.Shared
 			yield break;
 		}
 
-		// Token: 0x0600D9B8 RID: 55736 RVA: 0x004E181D File Offset: 0x004DFA1D
+		// Token: 0x0600DB32 RID: 56114 RVA: 0x004E6365 File Offset: 0x004E4565
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void callback(bool _success, string _message, GameServerInfo _gsi)
 		{
@@ -125,27 +125,27 @@ namespace Platform.Shared
 			gameServerFoundCallback(this.owner, _gsi, EServerRelationType.LAN);
 		}
 
-		// Token: 0x0400A50D RID: 42253
+		// Token: 0x0400A5E2 RID: 42466
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool initDone;
 
-		// Token: 0x0400A50E RID: 42254
+		// Token: 0x0400A5E3 RID: 42467
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A50F RID: 42255
+		// Token: 0x0400A5E4 RID: 42468
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback gameServerFoundCallback;
 
-		// Token: 0x0400A510 RID: 42256
+		// Token: 0x0400A5E5 RID: 42469
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly WaitForSeconds refreshInterval = new WaitForSeconds(3f);
 
-		// Token: 0x0400A511 RID: 42257
+		// Token: 0x0400A5E6 RID: 42470
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isRefreshing;
 
-		// Token: 0x0400A512 RID: 42258
+		// Token: 0x0400A5E7 RID: 42471
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine detectCoroutine;
 	}

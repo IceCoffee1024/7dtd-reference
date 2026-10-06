@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000BBF RID: 3007
+// Token: 0x02000BD1 RID: 3025
 public struct TerrainSubMesh
 {
-	// Token: 0x06005AE2 RID: 23266 RVA: 0x0022F4BF File Offset: 0x0022D6BF
+	// Token: 0x06005AFB RID: 23291 RVA: 0x002327BB File Offset: 0x002309BB
 	public TerrainSubMesh(List<TerrainSubMesh> _others, int _minSize = 0)
 	{
 		this.others = _others;
@@ -14,7 +14,7 @@ public struct TerrainSubMesh
 		this.needToAdd = new ArrayListMP<int>(MemoryPools.poolInt, 0);
 	}
 
-	// Token: 0x06005AE3 RID: 23267 RVA: 0x0022F4FC File Offset: 0x0022D6FC
+	// Token: 0x06005AFC RID: 23292 RVA: 0x002327F8 File Offset: 0x002309F8
 	public bool Contains(IList<int> _texIds)
 	{
 		for (int i = 0; i < _texIds.Count; i++)
@@ -27,7 +27,7 @@ public struct TerrainSubMesh
 		return true;
 	}
 
-	// Token: 0x06005AE4 RID: 23268 RVA: 0x0022F53C File Offset: 0x0022D73C
+	// Token: 0x06005AFD RID: 23293 RVA: 0x00232838 File Offset: 0x00230A38
 	public bool CanAdd(IList<int> _texIds)
 	{
 		this.needToAdd.Clear();
@@ -50,7 +50,7 @@ public struct TerrainSubMesh
 		return false;
 	}
 
-	// Token: 0x06005AE5 RID: 23269 RVA: 0x0022F5D4 File Offset: 0x0022D7D4
+	// Token: 0x06005AFE RID: 23294 RVA: 0x002328D0 File Offset: 0x00230AD0
 	public void Add(int[] _texIds)
 	{
 		foreach (int num in _texIds)
@@ -73,7 +73,7 @@ public struct TerrainSubMesh
 		}
 	}
 
-	// Token: 0x06005AE6 RID: 23270 RVA: 0x0022F650 File Offset: 0x0022D850
+	// Token: 0x06005AFF RID: 23295 RVA: 0x0023294C File Offset: 0x00230B4C
 	public void Add(ArrayListMP<int> _texIds)
 	{
 		for (int i = 0; i < _texIds.Count; i++)
@@ -97,7 +97,7 @@ public struct TerrainSubMesh
 		}
 	}
 
-	// Token: 0x06005AE7 RID: 23271 RVA: 0x0022F6D0 File Offset: 0x0022D8D0
+	// Token: 0x06005B00 RID: 23296 RVA: 0x002329CC File Offset: 0x00230BCC
 	public Color GetColorForTextureId(int _texId)
 	{
 		int num = this.textureIds.Contains(_texId);
@@ -108,13 +108,13 @@ public struct TerrainSubMesh
 		return TerrainSubMesh.vertexColors[0];
 	}
 
-	// Token: 0x06005AE8 RID: 23272 RVA: 0x0022F705 File Offset: 0x0022D905
+	// Token: 0x06005B01 RID: 23297 RVA: 0x00232A01 File Offset: 0x00230C01
 	public int GetTextureIdCount()
 	{
 		return this.textureIds.Count;
 	}
 
-	// Token: 0x06005AE9 RID: 23273 RVA: 0x0022F714 File Offset: 0x0022D914
+	// Token: 0x06005B02 RID: 23298 RVA: 0x00232A10 File Offset: 0x00230C10
 	public int GetTextureId(int _idx)
 	{
 		for (int i = 0; i < this.textureIds.Size; i++)
@@ -128,7 +128,7 @@ public struct TerrainSubMesh
 		return 0;
 	}
 
-	// Token: 0x0400468D RID: 18061
+	// Token: 0x040046CC RID: 18124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color[] vertexColors = new Color[]
 	{
@@ -137,17 +137,17 @@ public struct TerrainSubMesh
 		new Color(0f, 1f, 0f, 0f)
 	};
 
-	// Token: 0x0400468E RID: 18062
+	// Token: 0x040046CD RID: 18125
 	public ArrayDynamicFast<int> textureIds;
 
-	// Token: 0x0400468F RID: 18063
+	// Token: 0x040046CE RID: 18126
 	public ArrayListMP<int> triangles;
 
-	// Token: 0x04004690 RID: 18064
+	// Token: 0x040046CF RID: 18127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayListMP<int> needToAdd;
 
-	// Token: 0x04004691 RID: 18065
+	// Token: 0x040046D0 RID: 18128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<TerrainSubMesh> others;
 }

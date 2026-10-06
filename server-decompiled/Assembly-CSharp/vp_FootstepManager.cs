@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015D8 RID: 5592
+// Token: 0x020015FA RID: 5626
 public class vp_FootstepManager : MonoBehaviour
 {
-	// Token: 0x1700142A RID: 5162
-	// (get) Token: 0x0600AEA2 RID: 44706 RVA: 0x00410FEF File Offset: 0x0040F1EF
+	// Token: 0x1700146F RID: 5231
+	// (get) Token: 0x0600AF55 RID: 44885 RVA: 0x00415E43 File Offset: 0x00414043
 	public static vp_FootstepManager[] FootstepManagers
 	{
 		get
@@ -24,8 +24,8 @@ public class vp_FootstepManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700142B RID: 5163
-	// (get) Token: 0x0600AEA3 RID: 44707 RVA: 0x0041102E File Offset: 0x0040F22E
+	// Token: 0x17001470 RID: 5232
+	// (get) Token: 0x0600AF56 RID: 44886 RVA: 0x00415E82 File Offset: 0x00414082
 	public bool IsDirty
 	{
 		get
@@ -34,7 +34,7 @@ public class vp_FootstepManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEA4 RID: 44708 RVA: 0x00411038 File Offset: 0x0040F238
+	// Token: 0x0600AF57 RID: 44887 RVA: 0x00415E8C File Offset: 0x0041408C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -44,13 +44,13 @@ public class vp_FootstepManager : MonoBehaviour
 		this.m_Audio = base.gameObject.AddComponent<AudioSource>();
 	}
 
-	// Token: 0x0600AEA5 RID: 44709 RVA: 0x00411098 File Offset: 0x0040F298
+	// Token: 0x0600AF58 RID: 44888 RVA: 0x00415EEC File Offset: 0x004140EC
 	public virtual void SetDirty(bool dirty)
 	{
 		vp_FootstepManager.mIsDirty = dirty;
 	}
 
-	// Token: 0x0600AEA6 RID: 44710 RVA: 0x004110A0 File Offset: 0x0040F2A0
+	// Token: 0x0600AF59 RID: 44889 RVA: 0x00415EF4 File Offset: 0x004140F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -61,7 +61,7 @@ public class vp_FootstepManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEA7 RID: 44711 RVA: 0x004110D7 File Offset: 0x0040F2D7
+	// Token: 0x0600AF5A RID: 44890 RVA: 0x00415F2B File Offset: 0x0041412B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -69,7 +69,7 @@ public class vp_FootstepManager : MonoBehaviour
 		camera.BobStepCallback = (vp_FPCamera.BobStepDelegate)Delegate.Combine(camera.BobStepCallback, new vp_FPCamera.BobStepDelegate(this.Footstep));
 	}
 
-	// Token: 0x0600AEA8 RID: 44712 RVA: 0x00411101 File Offset: 0x0040F301
+	// Token: 0x0600AF5B RID: 44891 RVA: 0x00415F55 File Offset: 0x00414155
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -77,7 +77,7 @@ public class vp_FootstepManager : MonoBehaviour
 		camera.BobStepCallback = (vp_FPCamera.BobStepDelegate)Delegate.Remove(camera.BobStepCallback, new vp_FPCamera.BobStepDelegate(this.Footstep));
 	}
 
-	// Token: 0x0600AEA9 RID: 44713 RVA: 0x0041112C File Offset: 0x0040F32C
+	// Token: 0x0600AF5C RID: 44892 RVA: 0x00415F80 File Offset: 0x00414180
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Footstep()
 	{
@@ -110,7 +110,7 @@ public class vp_FootstepManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AEAA RID: 44714 RVA: 0x0041126C File Offset: 0x0040F46C
+	// Token: 0x0600AF5D RID: 44893 RVA: 0x004160C0 File Offset: 0x004142C0
 	public virtual void PlaySound(vp_FootstepManager.vp_SurfaceTypes st)
 	{
 		if (st.Sounds == null || st.Sounds.Count == 0)
@@ -137,7 +137,7 @@ public class vp_FootstepManager : MonoBehaviour
 		this.m_LastPlayedSound = this.m_SoundToPlay;
 	}
 
-	// Token: 0x0600AEAB RID: 44715 RVA: 0x00411338 File Offset: 0x0040F538
+	// Token: 0x0600AF5E RID: 44894 RVA: 0x0041618C File Offset: 0x0041438C
 	public static int GetMainTerrainTexture(Vector3 worldPos, Terrain terrain)
 	{
 		TerrainData terrainData = terrain.terrainData;
@@ -163,70 +163,70 @@ public class vp_FootstepManager : MonoBehaviour
 		return num4;
 	}
 
-	// Token: 0x0400823D RID: 33341
+	// Token: 0x040082C0 RID: 33472
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static vp_FootstepManager[] m_FootstepManagers;
 
-	// Token: 0x0400823E RID: 33342
+	// Token: 0x040082C1 RID: 33473
 	public static bool mIsDirty = true;
 
-	// Token: 0x0400823F RID: 33343
+	// Token: 0x040082C2 RID: 33474
 	public List<vp_FootstepManager.vp_SurfaceTypes> SurfaceTypes = new List<vp_FootstepManager.vp_SurfaceTypes>();
 
-	// Token: 0x04008240 RID: 33344
+	// Token: 0x040082C3 RID: 33475
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x04008241 RID: 33345
+	// Token: 0x040082C4 RID: 33476
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_Camera;
 
-	// Token: 0x04008242 RID: 33346
+	// Token: 0x040082C5 RID: 33477
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPController m_Controller;
 
-	// Token: 0x04008243 RID: 33347
+	// Token: 0x040082C6 RID: 33478
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04008244 RID: 33348
+	// Token: 0x040082C7 RID: 33479
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip m_SoundToPlay;
 
-	// Token: 0x04008245 RID: 33349
+	// Token: 0x040082C8 RID: 33480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip m_LastPlayedSound;
 
-	// Token: 0x020015D9 RID: 5593
+	// Token: 0x020015FB RID: 5627
 	[Serializable]
 	public class vp_SurfaceTypes
 	{
-		// Token: 0x04008246 RID: 33350
+		// Token: 0x040082C9 RID: 33481
 		public Vector2 RandomPitch = new Vector2(1f, 1.5f);
 
-		// Token: 0x04008247 RID: 33351
+		// Token: 0x040082CA RID: 33482
 		public bool Foldout = true;
 
-		// Token: 0x04008248 RID: 33352
+		// Token: 0x040082CB RID: 33483
 		public bool SoundsFoldout = true;
 
-		// Token: 0x04008249 RID: 33353
+		// Token: 0x040082CC RID: 33484
 		public bool TexturesFoldout = true;
 
-		// Token: 0x0400824A RID: 33354
+		// Token: 0x040082CD RID: 33485
 		public string SurfaceName = "";
 
-		// Token: 0x0400824B RID: 33355
+		// Token: 0x040082CE RID: 33486
 		public List<AudioClip> Sounds = new List<AudioClip>();
 
-		// Token: 0x0400824C RID: 33356
+		// Token: 0x040082CF RID: 33487
 		public List<Texture> Textures = new List<Texture>();
 	}
 }

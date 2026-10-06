@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019E1 RID: 6625
+	// Token: 0x02001A0D RID: 6669
 	[Preserve]
 	public class ActionBlockGameEvent : ActionBaseBlockAction
 	{
-		// Token: 0x0600CA3D RID: 51773 RVA: 0x004A2568 File Offset: 0x004A0768
+		// Token: 0x0600CB95 RID: 52117 RVA: 0x004A6A0C File Offset: 0x004A4C0C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600CA3E RID: 51774 RVA: 0x004A25E6 File Offset: 0x004A07E6
+		// Token: 0x0600CB96 RID: 52118 RVA: 0x004A6A8A File Offset: 0x004A4C8A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -29,7 +29,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CA3F RID: 51775 RVA: 0x004A2624 File Offset: 0x004A0824
+		// Token: 0x0600CB97 RID: 52119 RVA: 0x004A6AC8 File Offset: 0x004A4CC8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,11 +39,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009990 RID: 39312
+		// Token: 0x04009A56 RID: 39510
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<string> gameEventNames = new List<string>();
 
-		// Token: 0x04009991 RID: 39313
+		// Token: 0x04009A57 RID: 39511
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGameEventNames = "game_events";
 	}

@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D2B RID: 7467
+	// Token: 0x02001D5D RID: 7517
 	[Preserve]
 	[UserIdentifierFactory(EPlatformIdentifier.EOS)]
 	public class UserIdentifierFactory : AbsUserIdentifierFactory
 	{
-		// Token: 0x0600DD41 RID: 56641 RVA: 0x004F20C0 File Offset: 0x004F02C0
+		// Token: 0x0600DEBC RID: 57020 RVA: 0x004F6D08 File Offset: 0x004F4F08
 		public override PlatformUserIdentifierAbs FromId(string _userId)
 		{
 			return new UserIdentifierEos(_userId);

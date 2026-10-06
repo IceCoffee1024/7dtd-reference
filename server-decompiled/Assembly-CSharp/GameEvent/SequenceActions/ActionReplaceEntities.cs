@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A9 RID: 6569
+	// Token: 0x020019D5 RID: 6613
 	[Preserve]
 	public class ActionReplaceEntities : ActionBaseTargetAction
 	{
-		// Token: 0x0600C921 RID: 51489 RVA: 0x0049D29C File Offset: 0x0049B49C
+		// Token: 0x0600CA79 RID: 51833 RVA: 0x004A178C File Offset: 0x0049F98C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -36,13 +36,13 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C922 RID: 51490 RVA: 0x0049D374 File Offset: 0x0049B574
+		// Token: 0x0600CA7A RID: 51834 RVA: 0x004A1864 File Offset: 0x0049FA64
 		public override void StartTargetAction()
 		{
 			this.newList = new List<Entity>();
 		}
 
-		// Token: 0x0600C923 RID: 51491 RVA: 0x0049D381 File Offset: 0x0049B581
+		// Token: 0x0600CA7B RID: 51835 RVA: 0x004A1871 File Offset: 0x0049FA71
 		public override void EndTargetAction()
 		{
 			if (this.targetGroup != "")
@@ -51,7 +51,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C924 RID: 51492 RVA: 0x0049D3B0 File Offset: 0x0049B5B0
+		// Token: 0x0600CA7C RID: 51836 RVA: 0x004A18A0 File Offset: 0x0049FAA0
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			World world = GameManager.Instance.World;
@@ -94,13 +94,13 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C925 RID: 51493 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CA7D RID: 51837 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRemoveData(Entity ent)
 		{
 		}
 
-		// Token: 0x0600C926 RID: 51494 RVA: 0x0049D5BE File Offset: 0x0049B7BE
+		// Token: 0x0600CA7E RID: 51838 RVA: 0x004A1AAE File Offset: 0x0049FCAE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator removeLater(Entity e)
 		{
@@ -113,7 +113,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C927 RID: 51495 RVA: 0x0049D5D0 File Offset: 0x0049B7D0
+		// Token: 0x0600CA7F RID: 51839 RVA: 0x004A1AC0 File Offset: 0x0049FCC0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -128,7 +128,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionReplaceEntities.PropAttackTarget, ref this.attackTarget);
 		}
 
-		// Token: 0x0600C928 RID: 51496 RVA: 0x0049D650 File Offset: 0x0049B850
+		// Token: 0x0600CA80 RID: 51840 RVA: 0x004A1B40 File Offset: 0x0049FD40
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -143,39 +143,39 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009860 RID: 39008
+		// Token: 0x04009926 RID: 39206
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string entityNames = "";
 
-		// Token: 0x04009861 RID: 39009
+		// Token: 0x04009927 RID: 39207
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool singleChoice;
 
-		// Token: 0x04009862 RID: 39010
+		// Token: 0x04009928 RID: 39208
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEntityNames = "entity_names";
 
-		// Token: 0x04009863 RID: 39011
+		// Token: 0x04009929 RID: 39209
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSingleChoice = "single_choice";
 
-		// Token: 0x04009864 RID: 39012
+		// Token: 0x0400992A RID: 39210
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAttackTarget = "attack_target";
 
-		// Token: 0x04009865 RID: 39013
+		// Token: 0x0400992B RID: 39211
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<int> entityIDs = new List<int>();
 
-		// Token: 0x04009866 RID: 39014
+		// Token: 0x0400992C RID: 39212
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int selectedEntityIndex = -1;
 
-		// Token: 0x04009867 RID: 39015
+		// Token: 0x0400992D RID: 39213
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<Entity> newList;
 
-		// Token: 0x04009868 RID: 39016
+		// Token: 0x0400992E RID: 39214
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool attackTarget = true;
 	}

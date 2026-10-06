@@ -1,6 +1,6 @@
 ﻿using System;
 using Challenges;
 
-// Token: 0x020009D9 RID: 2521
-// (Invoke) Token: 0x06004A98 RID: 19096
+// Token: 0x020009E3 RID: 2531
+// (Invoke) Token: 0x06004A66 RID: 19046
 public delegate void QuestEvent_TwitchEvent(TwitchObjectiveTypes action, string param);

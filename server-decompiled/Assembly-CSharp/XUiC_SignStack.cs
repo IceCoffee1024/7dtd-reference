@@ -1,14 +1,111 @@
 ﻿using System;
 using InControl;
+using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200104D RID: 4173
+// Token: 0x0200105E RID: 4190
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_SignStack : XUiC_SelectableEntry
 {
-	// Token: 0x17000F68 RID: 3944
-	// (get) Token: 0x06008482 RID: 33922 RVA: 0x0032690E File Offset: 0x00324B0E
+	// Token: 0x17000F96 RID: 3990
+	// (get) Token: 0x060084B8 RID: 33976 RVA: 0x0032A503 File Offset: 0x00328703
+	// (set) Token: 0x060084B9 RID: 33977 RVA: 0x0032A50B File Offset: 0x0032870B
+	[XuiXmlAttribute("select_color", false)]
+	public Color32 SelectColor
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	} = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+
+	// Token: 0x17000F97 RID: 3991
+	// (get) Token: 0x060084BA RID: 33978 RVA: 0x0032A514 File Offset: 0x00328714
+	// (set) Token: 0x060084BB RID: 33979 RVA: 0x0032A51C File Offset: 0x0032871C
+	[XuiXmlAttribute("background_color", false)]
+	public Color32 BackgroundColor
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	} = new Color32(96, 96, 96, byte.MaxValue);
+
+	// Token: 0x17000F98 RID: 3992
+	// (get) Token: 0x060084BC RID: 33980 RVA: 0x0032A525 File Offset: 0x00328725
+	// (set) Token: 0x060084BD RID: 33981 RVA: 0x0032A52D File Offset: 0x0032872D
+	[XuiXmlAttribute("highlight_color", false)]
+	public Color32 HighlightColor
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	} = new Color32(222, 206, 163, byte.MaxValue);
+
+	// Token: 0x17000F99 RID: 3993
+	// (get) Token: 0x060084BE RID: 33982 RVA: 0x0032A536 File Offset: 0x00328736
+	// (set) Token: 0x060084BF RID: 33983 RVA: 0x0032A53E File Offset: 0x0032873E
+	[XuiXmlAttribute("lib_marker_color_default", false)]
+	public Color32 LibraryMarkerColorDefault
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	}
+
+	// Token: 0x17000F9A RID: 3994
+	// (get) Token: 0x060084C0 RID: 33984 RVA: 0x0032A547 File Offset: 0x00328747
+	// (set) Token: 0x060084C1 RID: 33985 RVA: 0x0032A54F File Offset: 0x0032874F
+	[XuiXmlAttribute("lib_marker_color_own", false)]
+	public Color32 LibraryMarkerColorOwn
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	}
+
+	// Token: 0x17000F9B RID: 3995
+	// (get) Token: 0x060084C2 RID: 33986 RVA: 0x0032A558 File Offset: 0x00328758
+	// (set) Token: 0x060084C3 RID: 33987 RVA: 0x0032A560 File Offset: 0x00328760
+	[XuiXmlAttribute("lib_marker_color_allies", false)]
+	public Color32 LibraryMarkerColorAllies
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	}
+
+	// Token: 0x17000F9C RID: 3996
+	// (get) Token: 0x060084C4 RID: 33988 RVA: 0x0032A569 File Offset: 0x00328769
+	// (set) Token: 0x060084C5 RID: 33989 RVA: 0x0032A571 File Offset: 0x00328771
+	[XuiXmlAttribute("lib_marker_color_prefab", false)]
+	public Color32 LibraryMarkerColorPrefab
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	}
+
+	// Token: 0x17000F9D RID: 3997
+	// (get) Token: 0x060084C6 RID: 33990 RVA: 0x0032A57A File Offset: 0x0032877A
+	// (set) Token: 0x060084C7 RID: 33991 RVA: 0x0032A582 File Offset: 0x00328782
+	[XuiXmlAttribute("lib_marker_color_all_prefabs", false)]
+	public Color32 LibraryMarkerColorAllPrefabs
+	{
+		[PublicizedFrom(EAccessModifier.Private)]
+		get;
+		[PublicizedFrom(EAccessModifier.Private)]
+		set;
+	}
+
+	// Token: 0x17000F9E RID: 3998
+	// (get) Token: 0x060084C8 RID: 33992 RVA: 0x0032A58B File Offset: 0x0032878B
 	public SignData SignData
 	{
 		get
@@ -17,8 +114,8 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000F69 RID: 3945
-	// (get) Token: 0x06008483 RID: 33923 RVA: 0x00326916 File Offset: 0x00324B16
+	// Token: 0x17000F9F RID: 3999
+	// (get) Token: 0x060084C9 RID: 33993 RVA: 0x0032A593 File Offset: 0x00328793
 	public string LibraryName
 	{
 		get
@@ -27,15 +124,15 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008484 RID: 33924 RVA: 0x0032691E File Offset: 0x00324B1E
+	// Token: 0x060084CA RID: 33994 RVA: 0x0032A59C File Offset: 0x0032879C
 	public XUiC_SignStack()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000F6A RID: 3946
-	// (get) Token: 0x06008485 RID: 33925 RVA: 0x0032694C File Offset: 0x00324B4C
-	// (set) Token: 0x06008486 RID: 33926 RVA: 0x00326954 File Offset: 0x00324B54
+	// Token: 0x17000FA0 RID: 4000
+	// (get) Token: 0x060084CB RID: 33995 RVA: 0x0032A60A File Offset: 0x0032880A
+	// (set) Token: 0x060084CC RID: 33996 RVA: 0x0032A614 File Offset: 0x00328814
 	public GlobalSignId SignId
 	{
 		get
@@ -51,7 +148,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 				if (!this.signId.IsValid)
 				{
 					this.SetItemNameText("");
-					this.libraryColor = XUiC_SignStack.backgroundColor;
+					this.libraryColor = this.BackgroundColor;
 				}
 				else
 				{
@@ -59,28 +156,13 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 					if (!SignDataManager.Instance.TryGetSignData(this.signId, out this.signData))
 					{
 						this.SetItemNameText("");
-						this.libraryColor = XUiC_SignStack.backgroundColor;
+						this.libraryColor = this.BackgroundColor;
 						Log.Error("Failed to retrieve sign data for global id: '" + this.signId.ToString() + "'.");
 					}
 					else
 					{
 						this.SetItemNameText(this.signData.name + " (" + this.libraryName + ")");
-						string libraryId = this.signId.libraryId;
-						if (!(libraryId == "[D]"))
-						{
-							if (!(libraryId == "[U]"))
-							{
-								this.libraryColor = XUiC_SignStack.libraryMarkerColorPrefab;
-							}
-							else
-							{
-								this.libraryColor = XUiC_SignStack.libraryMarkerColorUser;
-							}
-						}
-						else
-						{
-							this.libraryColor = XUiC_SignStack.libraryMarkerColorDefault;
-						}
+						this.libraryColor = this.GetLibraryMarkerColor(this.signId.libraryId);
 					}
 				}
 			}
@@ -91,7 +173,56 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008487 RID: 33927 RVA: 0x00326ABF File Offset: 0x00324CBF
+	// Token: 0x060084CD RID: 33997 RVA: 0x0032A74C File Offset: 0x0032894C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Color32 GetLibraryMarkerColor(string libraryId)
+	{
+		if (libraryId == "[D]")
+		{
+			return this.LibraryMarkerColorDefault;
+		}
+		if (libraryId == "[U]" || libraryId == PlatformManager.InternalLocalUserIdentifier.CombinedString)
+		{
+			return this.LibraryMarkerColorOwn;
+		}
+		if (SignDataManager.IsPlayerLibraryId(libraryId))
+		{
+			return this.LibraryMarkerColorAllies;
+		}
+		if (!(libraryId == XUiC_SignStack.GetCurrentPrefabName()))
+		{
+			return this.LibraryMarkerColorAllPrefabs;
+		}
+		return this.LibraryMarkerColorPrefab;
+	}
+
+	// Token: 0x060084CE RID: 33998 RVA: 0x0032A7BC File Offset: 0x003289BC
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static string GetCurrentPrefabName()
+	{
+		if (PrefabEditModeManager.Instance.IsActive())
+		{
+			return PrefabEditModeManager.Instance.LoadedPrefab.FileNameNoExtension;
+		}
+		World world = GameManager.Instance.World;
+		if (world == null)
+		{
+			return null;
+		}
+		EntityPlayerLocal primaryPlayer = world.GetPrimaryPlayer();
+		if (primaryPlayer == null)
+		{
+			return null;
+		}
+		PrefabInstance prefab = primaryPlayer.prefab;
+		if (prefab == null)
+		{
+			return null;
+		}
+		return prefab.location.FileNameNoExtension;
+	}
+
+	// Token: 0x060084CF RID: 33999 RVA: 0x0032A815 File Offset: 0x00328A15
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -100,7 +231,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 			this.SetColor(this.libraryColor);
 			return;
 		}
-		this.SetColor(this.selectColor);
+		this.SetColor(this.SelectColor);
 		Action<XUiC_SignStack> onBecameSelected = this.OnBecameSelected;
 		if (onBecameSelected == null)
 		{
@@ -109,14 +240,14 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		onBecameSelected(this);
 	}
 
-	// Token: 0x06008488 RID: 33928 RVA: 0x00326AEE File Offset: 0x00324CEE
+	// Token: 0x060084D0 RID: 34000 RVA: 0x0032A844 File Offset: 0x00328A44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetColor(Color32 color)
 	{
 		this.background.Color = color;
 	}
 
-	// Token: 0x06008489 RID: 33929 RVA: 0x00326B04 File Offset: 0x00324D04
+	// Token: 0x060084D1 RID: 34001 RVA: 0x0032A858 File Offset: 0x00328A58
 	public override void Init()
 	{
 		base.Init();
@@ -129,14 +260,14 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		this.signMaterial.Texture = Texture2D.whiteTexture;
 	}
 
-	// Token: 0x0600848A RID: 33930 RVA: 0x00326BAF File Offset: 0x00324DAF
+	// Token: 0x060084D2 RID: 34002 RVA: 0x0032A903 File Offset: 0x00328B03
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnWillRender(Material mat)
 	{
 		SignDataManager.Instance.TryApplyRenderingData(this.signId, 1f, mat, null, SignUIStyle.Standard);
 	}
 
-	// Token: 0x0600848B RID: 33931 RVA: 0x00326BCC File Offset: 0x00324DCC
+	// Token: 0x060084D3 RID: 34003 RVA: 0x0032A920 File Offset: 0x00328B20
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -172,7 +303,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 				this.currentColor = this.libraryColor;
 				if (this.highlightOverlay != null)
 				{
-					this.highlightOverlay.Color = XUiC_SignStack.backgroundColor;
+					this.highlightOverlay.Color = this.BackgroundColor;
 				}
 				if (!base.IsSelected)
 				{
@@ -190,7 +321,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x0600848C RID: 33932 RVA: 0x00326D11 File Offset: 0x00324F11
+	// Token: 0x060084D4 RID: 34004 RVA: 0x0032AA66 File Offset: 0x00328C66
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetItemNameText(string name)
 	{
@@ -199,7 +330,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		viewComponent.ToolTip = name;
 	}
 
-	// Token: 0x0600848D RID: 33933 RVA: 0x00326D28 File Offset: 0x00324F28
+	// Token: 0x060084D5 RID: 34005 RVA: 0x0032AA7C File Offset: 0x00328C7C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -208,7 +339,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		{
 			if (_isOver)
 			{
-				this.background.Color = XUiC_SignStack.highlightColor;
+				this.background.Color = this.HighlightColor;
 			}
 			else
 			{
@@ -218,110 +349,47 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x0600848E RID: 33934 RVA: 0x0008B69C File Offset: 0x0008989C
+	// Token: 0x060084D6 RID: 34006 RVA: 0x0008B91C File Offset: 0x00089B1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600848F RID: 33935 RVA: 0x00326D7C File Offset: 0x00324F7C
-	public override bool ParseAttribute(string name, string value)
-	{
-		bool flag = base.ParseAttribute(name, value);
-		if (!flag)
-		{
-			if (!(name == "select_color"))
-			{
-				if (!(name == "background_color"))
-				{
-					if (!(name == "highlight_color"))
-					{
-						if (!(name == "lib_marker_color_default"))
-						{
-							if (!(name == "lib_marker_color_prefab"))
-							{
-								return false;
-							}
-							XUiC_SignStack.libraryMarkerColorPrefab = StringParsers.ParseColor32(value);
-						}
-						else
-						{
-							XUiC_SignStack.libraryMarkerColorDefault = StringParsers.ParseColor32(value);
-						}
-					}
-					else
-					{
-						XUiC_SignStack.highlightColor = StringParsers.ParseColor32(value);
-					}
-				}
-				else
-				{
-					XUiC_SignStack.backgroundColor = StringParsers.ParseColor32(value);
-				}
-			}
-			else
-			{
-				this.selectColor = StringParsers.ParseColor32(value);
-			}
-			return true;
-		}
-		return flag;
-	}
-
-	// Token: 0x04006239 RID: 25145
+	// Token: 0x0400627C RID: 25212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x0400623A RID: 25146
+	// Token: 0x0400627D RID: 25213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 currentColor;
 
-	// Token: 0x0400623B RID: 25147
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Color32 selectColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
-
-	// Token: 0x0400623C RID: 25148
-	public static Color32 backgroundColor = new Color32(96, 96, 96, byte.MaxValue);
-
-	// Token: 0x0400623D RID: 25149
-	public static Color32 highlightColor = new Color32(222, 206, 163, byte.MaxValue);
-
-	// Token: 0x0400623E RID: 25150
-	public static Color32 libraryMarkerColorDefault = new Color32(120, 0, 200, byte.MaxValue);
-
-	// Token: 0x0400623F RID: 25151
-	public static Color32 libraryMarkerColorPrefab = new Color32(45, 220, 30, byte.MaxValue);
-
-	// Token: 0x04006240 RID: 25152
-	public static Color32 libraryMarkerColorUser = new Color32(0, 170, 190, byte.MaxValue);
-
-	// Token: 0x04006241 RID: 25153
+	// Token: 0x04006286 RID: 25222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite highlightOverlay;
 
-	// Token: 0x04006242 RID: 25154
+	// Token: 0x04006287 RID: 25223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04006243 RID: 25155
+	// Token: 0x04006288 RID: 25224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture signMaterial;
 
-	// Token: 0x04006244 RID: 25156
+	// Token: 0x04006289 RID: 25225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 libraryColor;
 
-	// Token: 0x04006245 RID: 25157
+	// Token: 0x0400628A RID: 25226
 	public SignData signData;
 
-	// Token: 0x04006246 RID: 25158
+	// Token: 0x0400628B RID: 25227
 	public string libraryName;
 
-	// Token: 0x04006247 RID: 25159
+	// Token: 0x0400628C RID: 25228
 	public Action<XUiC_SignStack> OnBecameSelected;
 
-	// Token: 0x04006248 RID: 25160
+	// Token: 0x0400628D RID: 25229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId signId;
 }

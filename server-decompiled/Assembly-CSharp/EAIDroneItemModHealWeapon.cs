@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200043A RID: 1082
+// Token: 0x0200043C RID: 1084
 public class EAIDroneItemModHealWeapon : EAIDroneItemTask
 {
-	// Token: 0x0600212E RID: 8494 RVA: 0x000C8190 File Offset: 0x000C6390
+	// Token: 0x0600211D RID: 8477 RVA: 0x000C8244 File Offset: 0x000C6444
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 	}
 
-	// Token: 0x0600212F RID: 8495 RVA: 0x000C8199 File Offset: 0x000C6399
+	// Token: 0x0600211E RID: 8478 RVA: 0x000C824D File Offset: 0x000C644D
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
 	}
 
-	// Token: 0x06002130 RID: 8496 RVA: 0x000C81A4 File Offset: 0x000C63A4
+	// Token: 0x0600211F RID: 8479 RVA: 0x000C8258 File Offset: 0x000C6458
 	public override bool CanExecute()
 	{
 		if (!base.CanExecute())
@@ -71,7 +71,7 @@ public class EAIDroneItemModHealWeapon : EAIDroneItemTask
 		return false;
 	}
 
-	// Token: 0x06002131 RID: 8497 RVA: 0x000C82B8 File Offset: 0x000C64B8
+	// Token: 0x06002120 RID: 8480 RVA: 0x000C836C File Offset: 0x000C656C
 	public override bool Continue()
 	{
 		if (!this.drone)
@@ -131,41 +131,41 @@ public class EAIDroneItemModHealWeapon : EAIDroneItemTask
 		return true;
 	}
 
-	// Token: 0x06002132 RID: 8498 RVA: 0x000C8489 File Offset: 0x000C6689
+	// Token: 0x06002121 RID: 8481 RVA: 0x000C853D File Offset: 0x000C673D
 	public override void Update()
 	{
 		base.Update();
 	}
 
-	// Token: 0x06002133 RID: 8499 RVA: 0x000C8491 File Offset: 0x000C6691
+	// Token: 0x06002122 RID: 8482 RVA: 0x000C8545 File Offset: 0x000C6745
 	public override void Reset()
 	{
 		base.Reset();
 		this.OnAttackExit();
 	}
 
-	// Token: 0x06002134 RID: 8500 RVA: 0x000C849F File Offset: 0x000C669F
+	// Token: 0x06002123 RID: 8483 RVA: 0x000C8553 File Offset: 0x000C6753
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackEnter()
 	{
 		base.OnAttackEnter();
 	}
 
-	// Token: 0x06002135 RID: 8501 RVA: 0x000C84A7 File Offset: 0x000C66A7
+	// Token: 0x06002124 RID: 8484 RVA: 0x000C855B File Offset: 0x000C675B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackAction()
 	{
 		base.OnAttackAction();
 	}
 
-	// Token: 0x06002136 RID: 8502 RVA: 0x000C84AF File Offset: 0x000C66AF
+	// Token: 0x06002125 RID: 8485 RVA: 0x000C8563 File Offset: 0x000C6763
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackExit()
 	{
 		base.OnAttackExit();
 	}
 
-	// Token: 0x040016D5 RID: 5845
+	// Token: 0x040016CC RID: 5836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float healTargetRange = 15f;
 }

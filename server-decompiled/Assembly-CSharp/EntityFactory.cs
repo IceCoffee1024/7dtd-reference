@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004AC RID: 1196
+// Token: 0x020004B2 RID: 1202
 [Preserve]
 public class EntityFactory
 {
-	// Token: 0x060025AD RID: 9645 RVA: 0x000E575C File Offset: 0x000E395C
+	// Token: 0x060025AC RID: 9644 RVA: 0x000E5A54 File Offset: 0x000E3C54
 	public static void Init(Transform _entitiesTransform)
 	{
 		EntityFactory.ParentNameToTransform.Clear();
@@ -23,7 +23,7 @@ public class EntityFactory
 		}
 	}
 
-	// Token: 0x060025AE RID: 9646 RVA: 0x000E5814 File Offset: 0x000E3A14
+	// Token: 0x060025AD RID: 9645 RVA: 0x000E5B0C File Offset: 0x000E3D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FindOrCreateTransform(Transform _parent, string _name, int _originLevel)
 	{
@@ -54,18 +54,18 @@ public class EntityFactory
 		}
 	}
 
-	// Token: 0x060025AF RID: 9647 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060025AE RID: 9646 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void Cleanup()
 	{
 	}
 
-	// Token: 0x060025B0 RID: 9648 RVA: 0x000DC8FA File Offset: 0x000DAAFA
+	// Token: 0x060025AF RID: 9647 RVA: 0x000DC8A2 File Offset: 0x000DAAA2
 	public static void CleanupStatic()
 	{
 		EntityClass.list.Clear();
 	}
 
-	// Token: 0x060025B1 RID: 9649 RVA: 0x000E58A0 File Offset: 0x000E3AA0
+	// Token: 0x060025B0 RID: 9648 RVA: 0x000E5B98 File Offset: 0x000E3D98
 	public static Type GetEntityType(string _className)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(_className);
@@ -152,7 +152,7 @@ public class EntityFactory
 		return Type.GetType(_className);
 	}
 
-	// Token: 0x060025B2 RID: 9650 RVA: 0x000E5A8C File Offset: 0x000E3C8C
+	// Token: 0x060025B1 RID: 9649 RVA: 0x000E5D84 File Offset: 0x000E3F84
 	public static EntityCreationData SetupEntityCreationData(int _et, int _id, ItemValue _itemValue, int _count, Vector3 _transformPos, Vector3 _transformRot, float _lifetime, int _playerId, int _spawnById = -1, string _spawnByName = "")
 	{
 		return new EntityCreationData
@@ -169,7 +169,7 @@ public class EntityFactory
 		};
 	}
 
-	// Token: 0x060025B3 RID: 9651 RVA: 0x000E5AEC File Offset: 0x000E3CEC
+	// Token: 0x060025B2 RID: 9650 RVA: 0x000E5DE4 File Offset: 0x000E3FE4
 	public static EntityCreationData SetupEntityCreationData(int _et, int _id, BlockValue[] _blockValues, TextureFullArray[] _textureFullArrays, int _count, Vector3 _transformPos, Vector3 _transformRot, float _lifetime, int _playerId, int _spawnById = -1, string _spawnByName = "")
 	{
 		return new EntityCreationData
@@ -191,55 +191,55 @@ public class EntityFactory
 		};
 	}
 
-	// Token: 0x060025B4 RID: 9652 RVA: 0x000E5B57 File Offset: 0x000E3D57
+	// Token: 0x060025B3 RID: 9651 RVA: 0x000E5E4F File Offset: 0x000E404F
 	public static EntityCreationData SetupEntityCreationData(int _et, Vector3 _transformPos)
 	{
 		return EntityFactory.SetupEntityCreationData(_et, EntityFactory.nextEntityID++, _transformPos, Vector3.zero);
 	}
 
-	// Token: 0x060025B5 RID: 9653 RVA: 0x000E5B72 File Offset: 0x000E3D72
+	// Token: 0x060025B4 RID: 9652 RVA: 0x000E5E6A File Offset: 0x000E406A
 	public static EntityCreationData SetupEntityCreationData(int _et, Vector3 _transformPos, Vector3 _rotation)
 	{
 		return EntityFactory.SetupEntityCreationData(_et, EntityFactory.nextEntityID++, _transformPos, _rotation);
 	}
 
-	// Token: 0x060025B6 RID: 9654 RVA: 0x000E5B8C File Offset: 0x000E3D8C
+	// Token: 0x060025B5 RID: 9653 RVA: 0x000E5E84 File Offset: 0x000E4084
 	public static EntityCreationData SetupEntityCreationData(int _et, int _id, Vector3 _transformPos, Vector3 _rotation)
 	{
 		return EntityFactory.SetupEntityCreationData(_et, _id, ItemValue.None, 1, _transformPos, _rotation, float.MaxValue, -1, -1, "");
 	}
 
-	// Token: 0x060025B7 RID: 9655 RVA: 0x000E5BB4 File Offset: 0x000E3DB4
+	// Token: 0x060025B6 RID: 9654 RVA: 0x000E5EAC File Offset: 0x000E40AC
 	public static Entity CreateEntity(int _et, Vector3 _transformPos)
 	{
 		return EntityFactory.CreateEntity(EntityFactory.SetupEntityCreationData(_et, _transformPos));
 	}
 
-	// Token: 0x060025B8 RID: 9656 RVA: 0x000E5BC2 File Offset: 0x000E3DC2
+	// Token: 0x060025B7 RID: 9655 RVA: 0x000E5EBA File Offset: 0x000E40BA
 	public static Entity CreateEntity(int _et, Vector3 _transformPos, Vector3 _rotation)
 	{
 		return EntityFactory.CreateEntity(EntityFactory.SetupEntityCreationData(_et, _transformPos, _rotation));
 	}
 
-	// Token: 0x060025B9 RID: 9657 RVA: 0x000E5BD1 File Offset: 0x000E3DD1
+	// Token: 0x060025B8 RID: 9656 RVA: 0x000E5EC9 File Offset: 0x000E40C9
 	public static Entity CreateEntity(int _et, int _id, Vector3 _transformPos, Vector3 _rotation)
 	{
 		return EntityFactory.CreateEntity(EntityFactory.SetupEntityCreationData(_et, _id, _transformPos, _rotation));
 	}
 
-	// Token: 0x060025BA RID: 9658 RVA: 0x000E5BE4 File Offset: 0x000E3DE4
+	// Token: 0x060025B9 RID: 9657 RVA: 0x000E5EDC File Offset: 0x000E40DC
 	public static Entity CreateEntity(int _et, Vector3 _transformPos, Vector3 _rotation, int _spawnById, string _spawnByName)
 	{
 		return EntityFactory.CreateEntity(EntityFactory.SetupEntityCreationData(_et, EntityFactory.nextEntityID++, ItemValue.None, 1, _transformPos, _rotation, float.MaxValue, -1, _spawnById, _spawnByName));
 	}
 
-	// Token: 0x060025BB RID: 9659 RVA: 0x000E5C1C File Offset: 0x000E3E1C
+	// Token: 0x060025BA RID: 9658 RVA: 0x000E5F14 File Offset: 0x000E4114
 	public static Entity CreateEntity(int _et, int _id, BlockValue[] _blockValues, TextureFullArray[] _textureFullArrays, int _count, Vector3 _transformPos, Vector3 _transformRot, float _lifetime, int _playerId, int _spawnById = -1, string _spawnByName = "")
 	{
 		return EntityFactory.CreateEntity(EntityFactory.SetupEntityCreationData(_et, _id, _blockValues, _textureFullArrays, _count, _transformPos, _transformRot, _lifetime, _playerId, _spawnById, _spawnByName));
 	}
 
-	// Token: 0x060025BC RID: 9660 RVA: 0x000E5C45 File Offset: 0x000E3E45
+	// Token: 0x060025BB RID: 9659 RVA: 0x000E5F3D File Offset: 0x000E413D
 	public static Entity CreateEntity(EntityCreationData _ecd)
 	{
 		EntityFactory.CreateEntityOperation createEntityOperation = EntityFactory.CreateEntityOperation.Start(_ecd, true);
@@ -247,20 +247,20 @@ public class EntityFactory
 		return createEntityOperation.entity;
 	}
 
-	// Token: 0x060025BD RID: 9661 RVA: 0x000E5C59 File Offset: 0x000E3E59
+	// Token: 0x060025BC RID: 9660 RVA: 0x000E5F51 File Offset: 0x000E4151
 	public static EntityFactory.CreateEntityOperation CreateEntityAsync(EntityCreationData _ecd)
 	{
 		return EntityFactory.CreateEntityOperation.Start(_ecd, false);
 	}
 
-	// Token: 0x060025BE RID: 9662 RVA: 0x000E5C62 File Offset: 0x000E3E62
+	// Token: 0x060025BD RID: 9661 RVA: 0x000E5F5A File Offset: 0x000E415A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Entity addEntityComponent(GameObject _gameObject, string _className)
 	{
 		return EntityFactory.addEntityComponent(_gameObject, Type.GetType(_className));
 	}
 
-	// Token: 0x060025BF RID: 9663 RVA: 0x000E5C70 File Offset: 0x000E3E70
+	// Token: 0x060025BE RID: 9662 RVA: 0x000E5F68 File Offset: 0x000E4168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Entity addEntityComponent(GameObject _gameObject, Type _classType)
 	{
@@ -271,42 +271,42 @@ public class EntityFactory
 		return null;
 	}
 
-	// Token: 0x04001BFB RID: 7163
-	public static int nextEntityID;
-
 	// Token: 0x04001BFC RID: 7164
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cNumberOfCachedFallingBlocks = 150;
+	public static int nextEntityID;
 
 	// Token: 0x04001BFD RID: 7165
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cNumberOfCachedItems = 20;
+	public const int cNumberOfCachedFallingBlocks = 150;
 
 	// Token: 0x04001BFE RID: 7166
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cFirstEntityID = 1;
+	public const int cNumberOfCachedItems = 20;
 
 	// Token: 0x04001BFF RID: 7167
-	public const int StartEntityID = 171;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFirstEntityID = 1;
 
 	// Token: 0x04001C00 RID: 7168
+	public const int StartEntityID = 171;
+
+	// Token: 0x04001C01 RID: 7169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly int playerNewMaleClass = EntityClass.FromString("playerNewMale");
 
-	// Token: 0x04001C01 RID: 7169
+	// Token: 0x04001C02 RID: 7170
 	public static Dictionary<string, Transform> ParentNameToTransform = new Dictionary<string, Transform>();
 
-	// Token: 0x04001C02 RID: 7170
+	// Token: 0x04001C03 RID: 7171
 	public static EntityClass.EntityTierTypes MaxEntityTier = EntityClass.EntityTierTypes.Elite;
 
-	// Token: 0x04001C03 RID: 7171
+	// Token: 0x04001C04 RID: 7172
 	public static bool EnemySpawnMode = true;
 
-	// Token: 0x020004AD RID: 1197
+	// Token: 0x020004B3 RID: 1203
 	public class CreateEntityOperation
 	{
-		// Token: 0x1700043C RID: 1084
-		// (get) Token: 0x060025C2 RID: 9666 RVA: 0x000E5CB0 File Offset: 0x000E3EB0
+		// Token: 0x17000432 RID: 1074
+		// (get) Token: 0x060025C1 RID: 9665 RVA: 0x000E5FA8 File Offset: 0x000E41A8
 		public int EntityId
 		{
 			get
@@ -315,8 +315,8 @@ public class EntityFactory
 			}
 		}
 
-		// Token: 0x1700043D RID: 1085
-		// (get) Token: 0x060025C3 RID: 9667 RVA: 0x000E5CBD File Offset: 0x000E3EBD
+		// Token: 0x17000433 RID: 1075
+		// (get) Token: 0x060025C2 RID: 9666 RVA: 0x000E5FB5 File Offset: 0x000E41B5
 		public string DebugEntityInfo
 		{
 			get
@@ -325,8 +325,8 @@ public class EntityFactory
 			}
 		}
 
-		// Token: 0x1700043E RID: 1086
-		// (get) Token: 0x060025C4 RID: 9668 RVA: 0x000E5CCA File Offset: 0x000E3ECA
+		// Token: 0x17000434 RID: 1076
+		// (get) Token: 0x060025C3 RID: 9667 RVA: 0x000E5FC2 File Offset: 0x000E41C2
 		public bool IsLoadingComplete
 		{
 			get
@@ -345,7 +345,7 @@ public class EntityFactory
 			}
 		}
 
-		// Token: 0x060025C5 RID: 9669 RVA: 0x000E5D00 File Offset: 0x000E3F00
+		// Token: 0x060025C4 RID: 9668 RVA: 0x000E5FF8 File Offset: 0x000E41F8
 		public static EntityFactory.CreateEntityOperation Start(EntityCreationData _ecd, bool _isSync)
 		{
 			if (_ecd.id == -1)
@@ -361,14 +361,14 @@ public class EntityFactory
 			return createEntityOperation;
 		}
 
-		// Token: 0x060025C6 RID: 9670 RVA: 0x000E5D4F File Offset: 0x000E3F4F
+		// Token: 0x060025C5 RID: 9669 RVA: 0x000E6047 File Offset: 0x000E4247
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CreateEntityOperation(EntityCreationData _ecd)
 		{
 			this.ecd = _ecd;
 		}
 
-		// Token: 0x060025C7 RID: 9671 RVA: 0x000E5D60 File Offset: 0x000E3F60
+		// Token: 0x060025C6 RID: 9670 RVA: 0x000E6058 File Offset: 0x000E4258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LoadAssets(bool _isSync)
 		{
@@ -393,7 +393,7 @@ public class EntityFactory
 			this.eModelInstanceAssets.Load(_isSync, this.ecd, this.ec);
 		}
 
-		// Token: 0x060025C8 RID: 9672 RVA: 0x000E5EC0 File Offset: 0x000E40C0
+		// Token: 0x060025C7 RID: 9671 RVA: 0x000E61B8 File Offset: 0x000E43B8
 		public void WaitForLoadingComplete()
 		{
 			EntityInstanceAssets entityInstanceAssets = this.entityInstanceAssets;
@@ -409,7 +409,7 @@ public class EntityFactory
 			emodelInstanceAssets.WaitForComplete();
 		}
 
-		// Token: 0x060025C9 RID: 9673 RVA: 0x000E5EE4 File Offset: 0x000E40E4
+		// Token: 0x060025C8 RID: 9672 RVA: 0x000E61DC File Offset: 0x000E43DC
 		public void CompleteEntity()
 		{
 			if (!this.entityInstanceAssets.IsLoadComplete || !this.eModelInstanceAssets.IsLoadComplete)
@@ -597,30 +597,30 @@ public class EntityFactory
 			this.entity = entity;
 		}
 
-		// Token: 0x04001C04 RID: 7172
-		public Entity entity;
-
 		// Token: 0x04001C05 RID: 7173
-		[PublicizedFrom(EAccessModifier.Private)]
-		public EntityCreationData ecd;
+		public Entity entity;
 
 		// Token: 0x04001C06 RID: 7174
 		[PublicizedFrom(EAccessModifier.Private)]
-		public EntityClass ec;
+		public EntityCreationData ecd;
 
 		// Token: 0x04001C07 RID: 7175
 		[PublicizedFrom(EAccessModifier.Private)]
-		public bool isPlayer;
+		public EntityClass ec;
 
 		// Token: 0x04001C08 RID: 7176
 		[PublicizedFrom(EAccessModifier.Private)]
-		public bool isLocalPlayer;
+		public bool isPlayer;
 
 		// Token: 0x04001C09 RID: 7177
 		[PublicizedFrom(EAccessModifier.Private)]
-		public EntityInstanceAssets entityInstanceAssets;
+		public bool isLocalPlayer;
 
 		// Token: 0x04001C0A RID: 7178
+		[PublicizedFrom(EAccessModifier.Private)]
+		public EntityInstanceAssets entityInstanceAssets;
+
+		// Token: 0x04001C0B RID: 7179
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EModelInstanceAssets eModelInstanceAssets;
 	}

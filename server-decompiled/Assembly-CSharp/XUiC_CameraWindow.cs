@@ -3,16 +3,16 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECE RID: 3790
+// Token: 0x02000EDD RID: 3805
 [Preserve]
 public class XUiC_CameraWindow : XUiController
 {
-	// Token: 0x17000DFA RID: 3578
-	// (get) Token: 0x060076B3 RID: 30387 RVA: 0x002C8FFA File Offset: 0x002C71FA
-	// (set) Token: 0x060076B4 RID: 30388 RVA: 0x002C9002 File Offset: 0x002C7202
+	// Token: 0x17000E17 RID: 3607
+	// (get) Token: 0x060076AE RID: 30382 RVA: 0x002CC3D2 File Offset: 0x002CA5D2
+	// (set) Token: 0x060076AF RID: 30383 RVA: 0x002CC3DA File Offset: 0x002CA5DA
 	public XUiController Owner { get; set; }
 
-	// Token: 0x060076B5 RID: 30389 RVA: 0x002C900C File Offset: 0x002C720C
+	// Token: 0x060076B0 RID: 30384 RVA: 0x002CC3E4 File Offset: 0x002CA5E4
 	public override void Init()
 	{
 		base.Init();
@@ -33,7 +33,7 @@ public class XUiC_CameraWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076B6 RID: 30390 RVA: 0x002C9078 File Offset: 0x002C7278
+	// Token: 0x060076B1 RID: 30385 RVA: 0x002CC450 File Offset: 0x002CA650
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -85,7 +85,7 @@ public class XUiC_CameraWindow : XUiController
 		}, false));
 	}
 
-	// Token: 0x060076B7 RID: 30391 RVA: 0x002C9168 File Offset: 0x002C7368
+	// Token: 0x060076B2 RID: 30386 RVA: 0x002CC540 File Offset: 0x002CA740
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -138,7 +138,7 @@ public class XUiC_CameraWindow : XUiController
 		this.xui.playerUI.CursorController.Locked = false;
 	}
 
-	// Token: 0x060076B8 RID: 30392 RVA: 0x002C9354 File Offset: 0x002C7554
+	// Token: 0x060076B3 RID: 30387 RVA: 0x002CC72C File Offset: 0x002CA92C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -210,7 +210,7 @@ public class XUiC_CameraWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076B9 RID: 30393 RVA: 0x002C96A0 File Offset: 0x002C78A0
+	// Token: 0x060076B4 RID: 30388 RVA: 0x002CCA78 File Offset: 0x002CAC78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateCamera()
 	{
@@ -233,7 +233,7 @@ public class XUiC_CameraWindow : XUiController
 		this.cameraView.Texture = this.sensorCamera.targetTexture;
 	}
 
-	// Token: 0x060076BA RID: 30394 RVA: 0x002C97A7 File Offset: 0x002C79A7
+	// Token: 0x060076B5 RID: 30389 RVA: 0x002CCB7F File Offset: 0x002CAD7F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyCamera()
 	{
@@ -243,7 +243,7 @@ public class XUiC_CameraWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076BB RID: 30395 RVA: 0x002C97C8 File Offset: 0x002C79C8
+	// Token: 0x060076B6 RID: 30390 RVA: 0x002CCBA0 File Offset: 0x002CADA0
 	public void OnPreviewClicked(XUiController _sender, int _mouseButton)
 	{
 		if (this.TileEntity.IsPowered && !this.isBuried)
@@ -263,63 +263,63 @@ public class XUiC_CameraWindow : XUiController
 		GameManager.ShowTooltip(entityPlayer, text, string.Empty, "ui_denied", null, false, false, 0f);
 	}
 
-	// Token: 0x040057BC RID: 22460
+	// Token: 0x040057F4 RID: 22516
 	public TileEntityPowered TileEntity;
 
-	// Token: 0x040057BD RID: 22461
+	// Token: 0x040057F5 RID: 22517
 	public bool UseEdgeDetection = true;
 
-	// Token: 0x040057BE RID: 22462
+	// Token: 0x040057F6 RID: 22518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture cameraView;
 
-	// Token: 0x040057BF RID: 22463
+	// Token: 0x040057F7 RID: 22519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView cameraDrag;
 
-	// Token: 0x040057C0 RID: 22464
+	// Token: 0x040057F8 RID: 22520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView cameraClick;
 
-	// Token: 0x040057C1 RID: 22465
+	// Token: 0x040057F9 RID: 22521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IPowerSystemCamera cameraController;
 
-	// Token: 0x040057C2 RID: 22466
+	// Token: 0x040057FA RID: 22522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform cameraParentTransform;
 
-	// Token: 0x040057C3 RID: 22467
+	// Token: 0x040057FB RID: 22523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera sensorCamera;
 
-	// Token: 0x040057C4 RID: 22468
+	// Token: 0x040057FC RID: 22524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture myRenderTexture;
 
-	// Token: 0x040057C5 RID: 22469
+	// Token: 0x040057FD RID: 22525
 	public static bool hackyIsOpeningMaximizedWindow;
 
-	// Token: 0x040057C6 RID: 22470
+	// Token: 0x040057FE RID: 22526
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool firstPass = true;
 
-	// Token: 0x040057C7 RID: 22471
+	// Token: 0x040057FF RID: 22527
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float nextModifiedTime;
 
-	// Token: 0x040057C8 RID: 22472
+	// Token: 0x04005800 RID: 22528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBuried;
 
-	// Token: 0x040057C9 RID: 22473
+	// Token: 0x04005801 RID: 22529
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool maximizedWindow;
 
-	// Token: 0x040057CA RID: 22474
+	// Token: 0x04005802 RID: 22530
 	public static string lastWindowGroup;
 
-	// Token: 0x040057CB RID: 22475
+	// Token: 0x04005803 RID: 22531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDraggingCamera;
 }

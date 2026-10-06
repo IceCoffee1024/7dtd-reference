@@ -4,16 +4,16 @@ using System.Xml;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000496 RID: 1174
+// Token: 0x02000499 RID: 1177
 [Preserve]
 public class EntityCreationData
 {
-	// Token: 0x06002445 RID: 9285 RVA: 0x000DD320 File Offset: 0x000DB520
+	// Token: 0x06002442 RID: 9282 RVA: 0x000DD4C8 File Offset: 0x000DB6C8
 	public EntityCreationData()
 	{
 	}
 
-	// Token: 0x06002446 RID: 9286 RVA: 0x000DD3C8 File Offset: 0x000DB5C8
+	// Token: 0x06002443 RID: 9283 RVA: 0x000DD570 File Offset: 0x000DB770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityCreationData(EntityCreationData _other)
 	{
@@ -26,8 +26,7 @@ public class EntityCreationData
 		this.deathTime = _other.deathTime;
 		this.lifetime = _other.lifetime;
 		this.itemStack = _other.itemStack;
-		Bag bag = _other.bag;
-		this.bag = ((bag != null) ? bag.Clone() : null);
+		this.bagData = _other.bagData;
 		this.belongsPlayerId = _other.belongsPlayerId;
 		this.clientEntityId = _other.clientEntityId;
 		this.holdingItem = _other.holdingItem;
@@ -40,6 +39,7 @@ public class EntityCreationData
 		this.homeRange = _other.homeRange;
 		this.entityData = _other.entityData;
 		this.readFileVersion = _other.readFileVersion;
+		this.readStreamMode = _other.readStreamMode;
 		this.playerProfile = _other.playerProfile;
 		this.bodyDamage = _other.bodyDamage;
 		this.sleeperPose = _other.sleeperPose;
@@ -58,13 +58,13 @@ public class EntityCreationData
 		this.requestKey = _other.requestKey;
 	}
 
-	// Token: 0x06002447 RID: 9287 RVA: 0x000DD664 File Offset: 0x000DB864
+	// Token: 0x06002444 RID: 9284 RVA: 0x000DD80C File Offset: 0x000DBA0C
 	public EntityCreationData(XmlElement _entityElement)
 	{
 		this.readXml(_entityElement);
 	}
 
-	// Token: 0x06002448 RID: 9288 RVA: 0x000DD710 File Offset: 0x000DB910
+	// Token: 0x06002445 RID: 9285 RVA: 0x000DD8B8 File Offset: 0x000DBAB8
 	public void ApplyToEntity(Entity _e)
 	{
 		EntityAlive entityAlive = _e as EntityAlive;
@@ -120,9 +120,17 @@ public class EntityCreationData
 			entityAlive.StressAmount = this.stressAmount;
 		}
 		_e.SetSpawnerSource(this.spawnerSource);
-		if (this.bag != null)
+		if (this.bagData != null && this.bagData.Length > 0L)
 		{
-			_e.bag = this.bag.Clone();
+			Entity e = _e;
+			if (e.bag == null)
+			{
+				e.bag = new Bag(new Vector2i(0, 0), XUiC_ItemStack.StackLocationTypes.LootContainer, _e);
+			}
+			StreamUtils.FromBlob(this.bagData, delegate(PooledBinaryReader pbr)
+			{
+				_e.bag.ReadInto(pbr, this.readStreamMode);
+			});
 		}
 		if (this.entityData.Length > 0L)
 		{
@@ -132,19 +140,21 @@ public class EntityCreationData
 				using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
 				{
 					pooledBinaryReader.SetBaseStream(this.entityData);
-					_e.Read(this.readFileVersion, pooledBinaryReader);
+					_e.Read(this.readFileVersion, pooledBinaryReader, this.readStreamMode);
 				}
 			}
 			catch (Exception ex)
 			{
 				Log.Exception(ex);
-				Log.Error("Error loading entity " + ((_e != null) ? _e.ToString() : null));
+				string text = "Error loading entity ";
+				Entity e2 = _e;
+				Log.Error(text + ((e2 != null) ? e2.ToString() : null));
 			}
 		}
 	}
 
-	// Token: 0x06002449 RID: 9289 RVA: 0x000DD92C File Offset: 0x000DBB2C
-	public EntityCreationData(Entity _e, bool _bNetworkWrite = true)
+	// Token: 0x06002446 RID: 9286 RVA: 0x000DDB64 File Offset: 0x000DBD64
+	public EntityCreationData(Entity _e, StreamModeWrite _eStreamMode = StreamModeWrite.ToClient)
 	{
 		this.entityClass = _e.entityClass;
 		this.id = _e.entityId;
@@ -224,28 +234,31 @@ public class EntityCreationData
 			this.blockPos = entityFallingTree.GetBlockPos();
 			this.fallTreeDir = entityFallingTree.GetFallTreeDir();
 		}
-		Bag bag = _e.bag;
-		this.bag = ((bag != null) ? bag.Clone() : null);
+		this.bagData = ((_e.bag != null) ? StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+		{
+			_e.bag.Write(pbw, _eStreamMode);
+		}) : null);
 		using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
 		{
 			pooledBinaryWriter.SetBaseStream(this.entityData);
-			_e.Write(pooledBinaryWriter, _bNetworkWrite);
+			_e.Write(pooledBinaryWriter, _eStreamMode);
 		}
-		this.readFileVersion = 37;
+		this.readFileVersion = 38;
 	}
 
-	// Token: 0x0600244A RID: 9290 RVA: 0x000DDCEC File Offset: 0x000DBEEC
+	// Token: 0x06002447 RID: 9287 RVA: 0x000DDFD8 File Offset: 0x000DC1D8
 	public EntityCreationData Clone()
 	{
 		return new EntityCreationData(this);
 	}
 
-	// Token: 0x0600244B RID: 9291 RVA: 0x000DDCF4 File Offset: 0x000DBEF4
-	public void read(PooledBinaryReader _br, bool _bNetworkRead)
+	// Token: 0x06002448 RID: 9288 RVA: 0x000DDFE0 File Offset: 0x000DC1E0
+	public void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
+		this.readStreamMode = _eStreamMode;
 		this.readFileVersion = _br.ReadByte();
 		byte b = this.readFileVersion;
-		this.bag = null;
+		this.bagData = null;
 		this.entityClass = _br.ReadInt32();
 		bool flag = this.entityClass == EntityClass.playerMaleClass || this.entityClass == EntityClass.playerFemaleClass;
 		this.id = _br.ReadInt32();
@@ -277,14 +290,33 @@ public class EntityCreationData
 			}
 		}
 		this.deathTime = (int)_br.ReadInt16();
-		if (b >= 35)
+		if (b >= 38)
 		{
-			this.bag = (_br.ReadBoolean() ? Bag.Read(_br) : null);
+			this.bagData = (_br.ReadBoolean() ? StreamUtils.ReadBlob(_br) : null);
+		}
+		else if (b >= 35)
+		{
+			if (_br.ReadBoolean())
+			{
+				Bag legacyBag2 = Bag.Read(_br, XUiC_ItemStack.StackLocationTypes.LootContainer, _eStreamMode, null);
+				this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+				{
+					legacyBag2.Write(pbw, StreamModeWrite.Persistency);
+				});
+			}
+			else
+			{
+				this.bagData = null;
+			}
 		}
 		else if (b >= 2 && _br.ReadBoolean())
 		{
 			_br.ReadInt32();
-			this.bag = TileEntityLegacyUtils.ReadLegacyLootIntoBag(_br);
+			Bag legacyBag = TileEntityLegacyUtils.ReadLegacyLootIntoBag(_br);
+			this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+			{
+				legacyBag.Write(pbw, StreamModeWrite.Persistency);
+			});
 		}
 		if (b >= 3)
 		{
@@ -414,7 +446,7 @@ public class EntityCreationData
 				this.traderData = TileEntityLegacyUtils.ReadLegacyTileEntityTraderData(_br);
 			}
 		}
-		if (_bNetworkRead)
+		if (_eStreamMode != StreamModeRead.Persistency)
 		{
 			this.sleeperPose = _br.ReadByte();
 			this.isSleeper = _br.ReadBoolean();
@@ -454,10 +486,10 @@ public class EntityCreationData
 		}
 	}
 
-	// Token: 0x0600244C RID: 9292 RVA: 0x000DE288 File Offset: 0x000DC488
-	public void write(PooledBinaryWriter _bw, bool _bNetworkWrite)
+	// Token: 0x06002449 RID: 9289 RVA: 0x000DE5E4 File Offset: 0x000DC7E4
+	public void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
-		_bw.Write(37);
+		_bw.Write(38);
 		_bw.Write(this.entityClass);
 		_bw.Write(this.id);
 		_bw.Write(this.lifetime);
@@ -475,11 +507,11 @@ public class EntityCreationData
 			this.stats.Write(_bw);
 		}
 		_bw.Write((short)this.deathTime);
-		bool flag = this.bag != null;
+		bool flag = this.bagData != null;
 		_bw.Write(flag);
 		if (flag)
 		{
-			this.bag.Write(_bw);
+			StreamUtils.WriteBlob(_bw, this.bagData);
 		}
 		_bw.Write(this.homePosition.x);
 		_bw.Write(this.homePosition.y);
@@ -542,7 +574,7 @@ public class EntityCreationData
 		{
 			this.traderData.Write(_bw);
 		}
-		if (_bNetworkWrite)
+		if (_eStreamMode != StreamModeWrite.Persistency)
 		{
 			_bw.Write(this.sleeperPose);
 			_bw.Write(this.isSleeper);
@@ -568,7 +600,7 @@ public class EntityCreationData
 		_bw.Write(this.requestKey.ToByteArray());
 	}
 
-	// Token: 0x0600244D RID: 9293 RVA: 0x000DE6AC File Offset: 0x000DC8AC
+	// Token: 0x0600244A RID: 9290 RVA: 0x000DEA08 File Offset: 0x000DCC08
 	public void readXml(XmlElement _entityElement)
 	{
 		if (!_entityElement.HasAttribute("type"))
@@ -589,7 +621,7 @@ public class EntityCreationData
 		this.id = -1;
 	}
 
-	// Token: 0x0600244E RID: 9294 RVA: 0x000DE750 File Offset: 0x000DC950
+	// Token: 0x0600244B RID: 9291 RVA: 0x000DEAAC File Offset: 0x000DCCAC
 	public void writeXml(StreamWriter _sw)
 	{
 		_sw.WriteLine(string.Concat(new string[]
@@ -612,7 +644,7 @@ public class EntityCreationData
 		}));
 	}
 
-	// Token: 0x0600244F RID: 9295 RVA: 0x000DE840 File Offset: 0x000DCA40
+	// Token: 0x0600244C RID: 9292 RVA: 0x000DEB9C File Offset: 0x000DCD9C
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -627,142 +659,145 @@ public class EntityCreationData
 		});
 	}
 
-	// Token: 0x04001AE8 RID: 6888
+	// Token: 0x04001AE1 RID: 6881
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int FileVersion = 37;
+	public const int FileVersion = 38;
 
-	// Token: 0x04001AE9 RID: 6889
+	// Token: 0x04001AE2 RID: 6882
 	public int entityClass;
 
-	// Token: 0x04001AEA RID: 6890
+	// Token: 0x04001AE3 RID: 6883
 	public Vector3 pos;
 
-	// Token: 0x04001AEB RID: 6891
+	// Token: 0x04001AE4 RID: 6884
 	public Vector3 rot;
 
-	// Token: 0x04001AEC RID: 6892
+	// Token: 0x04001AE5 RID: 6885
 	public int id;
 
-	// Token: 0x04001AED RID: 6893
+	// Token: 0x04001AE6 RID: 6886
 	public bool onGround;
 
-	// Token: 0x04001AEE RID: 6894
+	// Token: 0x04001AE7 RID: 6887
 	public EntityStats stats;
 
-	// Token: 0x04001AEF RID: 6895
+	// Token: 0x04001AE8 RID: 6888
 	public int deathTime;
 
-	// Token: 0x04001AF0 RID: 6896
+	// Token: 0x04001AE9 RID: 6889
 	public float lifetime = float.MaxValue;
 
-	// Token: 0x04001AF1 RID: 6897
+	// Token: 0x04001AEA RID: 6890
 	public int belongsPlayerId = -1;
 
-	// Token: 0x04001AF2 RID: 6898
+	// Token: 0x04001AEB RID: 6891
 	public int clientEntityId;
 
-	// Token: 0x04001AF3 RID: 6899
+	// Token: 0x04001AEC RID: 6892
 	public ItemValue holdingItem = ItemValue.None;
 
-	// Token: 0x04001AF4 RID: 6900
+	// Token: 0x04001AED RID: 6893
 	public int teamNumber;
 
-	// Token: 0x04001AF5 RID: 6901
+	// Token: 0x04001AEE RID: 6894
 	public string entityName = "";
 
-	// Token: 0x04001AF6 RID: 6902
+	// Token: 0x04001AEF RID: 6895
 	public string skinTexture = "";
 
-	// Token: 0x04001AF7 RID: 6903
-	public Bag bag;
+	// Token: 0x04001AF0 RID: 6896
+	public MemoryStream bagData;
 
-	// Token: 0x04001AF8 RID: 6904
+	// Token: 0x04001AF1 RID: 6897
 	public TraderData traderData;
 
-	// Token: 0x04001AF9 RID: 6905
+	// Token: 0x04001AF2 RID: 6898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i homePosition;
 
-	// Token: 0x04001AFA RID: 6906
+	// Token: 0x04001AF3 RID: 6899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int homeRange = -1;
 
-	// Token: 0x04001AFB RID: 6907
+	// Token: 0x04001AF4 RID: 6900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumSpawnerSource spawnerSource;
 
-	// Token: 0x04001AFC RID: 6908
+	// Token: 0x04001AF5 RID: 6901
 	public ItemStack itemStack = ItemStack.Empty;
 
-	// Token: 0x04001AFD RID: 6909
+	// Token: 0x04001AF6 RID: 6902
 	public BlockValue[] blockValues;
 
-	// Token: 0x04001AFE RID: 6910
+	// Token: 0x04001AF7 RID: 6903
 	public Vector3i[] blockPositions;
 
-	// Token: 0x04001AFF RID: 6911
+	// Token: 0x04001AF8 RID: 6904
 	public TextureFullArray[] textureFullArrays;
 
-	// Token: 0x04001B00 RID: 6912
+	// Token: 0x04001AF9 RID: 6905
 	public Vector3i blockPos;
 
-	// Token: 0x04001B01 RID: 6913
+	// Token: 0x04001AFA RID: 6906
 	public Vector3 fallTreeDir;
 
-	// Token: 0x04001B02 RID: 6914
+	// Token: 0x04001AFB RID: 6907
 	public int subType;
 
-	// Token: 0x04001B03 RID: 6915
+	// Token: 0x04001AFC RID: 6908
 	public byte sleeperPose = byte.MaxValue;
 
-	// Token: 0x04001B04 RID: 6916
+	// Token: 0x04001AFD RID: 6909
 	public PlayerProfile playerProfile;
 
-	// Token: 0x04001B05 RID: 6917
+	// Token: 0x04001AFE RID: 6910
 	public BodyDamage bodyDamage;
 
-	// Token: 0x04001B06 RID: 6918
+	// Token: 0x04001AFF RID: 6911
 	public bool isSleeper;
 
-	// Token: 0x04001B07 RID: 6919
+	// Token: 0x04001B00 RID: 6912
 	public bool isSleeperPassive;
 
-	// Token: 0x04001B08 RID: 6920
+	// Token: 0x04001B01 RID: 6913
 	public string spawnByName = "";
 
-	// Token: 0x04001B09 RID: 6921
+	// Token: 0x04001B02 RID: 6914
 	public int spawnById = -1;
 
-	// Token: 0x04001B0A RID: 6922
+	// Token: 0x04001B03 RID: 6915
 	public bool spawnByAllowShare;
 
-	// Token: 0x04001B0B RID: 6923
+	// Token: 0x04001B04 RID: 6916
 	public EModelBase.HeadStates headState;
 
-	// Token: 0x04001B0C RID: 6924
+	// Token: 0x04001B05 RID: 6917
 	public float overrideSize = 1f;
 
-	// Token: 0x04001B0D RID: 6925
+	// Token: 0x04001B06 RID: 6918
 	public float overrideHeadSize = 1f;
 
-	// Token: 0x04001B0E RID: 6926
+	// Token: 0x04001B07 RID: 6919
 	public bool isDancing;
 
-	// Token: 0x04001B0F RID: 6927
+	// Token: 0x04001B08 RID: 6920
 	public int orderState = -1;
 
-	// Token: 0x04001B10 RID: 6928
+	// Token: 0x04001B09 RID: 6921
 	public float stressAmount;
 
-	// Token: 0x04001B11 RID: 6929
+	// Token: 0x04001B0A RID: 6922
 	public int requestedBy = -1;
 
-	// Token: 0x04001B12 RID: 6930
+	// Token: 0x04001B0B RID: 6923
 	public Guid requestKey;
 
-	// Token: 0x04001B13 RID: 6931
+	// Token: 0x04001B0C RID: 6924
 	public byte readFileVersion;
 
-	// Token: 0x04001B14 RID: 6932
+	// Token: 0x04001B0D RID: 6925
+	public StreamModeRead readStreamMode;
+
+	// Token: 0x04001B0E RID: 6926
 	public MemoryStream entityData = new MemoryStream(0);
 }

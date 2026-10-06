@@ -2,11 +2,11 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x0200013F RID: 319
+// Token: 0x02000141 RID: 321
 [Preserve]
 public class BlockBladeTrap : BlockPoweredTrap
 {
-	// Token: 0x060008C3 RID: 2243 RVA: 0x0003DB48 File Offset: 0x0003BD48
+	// Token: 0x060008C9 RID: 2249 RVA: 0x0003DC34 File Offset: 0x0003BE34
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		}
 	}
 
-	// Token: 0x060008C4 RID: 2244 RVA: 0x0003DBF4 File Offset: 0x0003BDF4
+	// Token: 0x060008CA RID: 2250 RVA: 0x0003DCE0 File Offset: 0x0003BEE0
 	public override bool ActivateTrap(BlockEntityData blockEntity, bool isOn)
 	{
 		SpinningBladeTrapController component = blockEntity.transform.gameObject.GetComponent<SpinningBladeTrapController>();
@@ -39,7 +39,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		return true;
 	}
 
-	// Token: 0x060008C5 RID: 2245 RVA: 0x0003DC68 File Offset: 0x0003BE68
+	// Token: 0x060008CB RID: 2251 RVA: 0x0003DD54 File Offset: 0x0003BF54
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		ChunkCluster chunkCache = _world.ChunkCache;
@@ -62,7 +62,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x060008C6 RID: 2246 RVA: 0x0003DCFC File Offset: 0x0003BEFC
+	// Token: 0x060008CC RID: 2252 RVA: 0x0003DDE8 File Offset: 0x0003BFE8
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		Manager.BroadcastStop(_blockPos.ToVector3(), this.runningSound);
@@ -71,7 +71,7 @@ public class BlockBladeTrap : BlockPoweredTrap
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x060008C7 RID: 2247 RVA: 0x0003DD4C File Offset: 0x0003BF4C
+	// Token: 0x060008CD RID: 2253 RVA: 0x0003DE38 File Offset: 0x0003C038
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		Manager.Stop(_blockPos.ToVector3(), this.runningSound);
@@ -80,15 +80,15 @@ public class BlockBladeTrap : BlockPoweredTrap
 		base.OnBlockUnloaded(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x04000988 RID: 2440
+	// Token: 0x0400098B RID: 2443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string runningSound = "Electricity/BladeTrap/bladetrap_fire_lp";
 
-	// Token: 0x04000989 RID: 2441
+	// Token: 0x0400098C RID: 2444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string runningSoundPartlyBroken = "Electricity/BladeTrap/bladetrap_dm1_lp";
 
-	// Token: 0x0400098A RID: 2442
+	// Token: 0x0400098D RID: 2445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string runningSoundBroken = "Electricity/BladeTrap/bladetrap_dm2_lp";
 }

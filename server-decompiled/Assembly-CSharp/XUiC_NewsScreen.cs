@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E24 RID: 3620
+// Token: 0x02000E33 RID: 3635
 [Preserve]
 public class XUiC_NewsScreen : XUiController
 {
-	// Token: 0x06006F35 RID: 28469 RVA: 0x002AFFF4 File Offset: 0x002AE1F4
+	// Token: 0x06006F2D RID: 28461 RVA: 0x002B339C File Offset: 0x002B159C
 	public override void Init()
 	{
 		base.Init();
@@ -28,7 +28,7 @@ public class XUiC_NewsScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006F36 RID: 28470 RVA: 0x002B0081 File Offset: 0x002AE281
+	// Token: 0x06006F2E RID: 28462 RVA: 0x002B3429 File Offset: 0x002B1629
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -37,7 +37,7 @@ public class XUiC_NewsScreen : XUiController
 		this.UpdateContinueLabel(_newStyle);
 	}
 
-	// Token: 0x06006F37 RID: 28471 RVA: 0x002B0098 File Offset: 0x002AE298
+	// Token: 0x06006F2F RID: 28463 RVA: 0x002B3440 File Offset: 0x002B1640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateContinueLabel(PlayerInputManager.InputStyle _style)
 	{
@@ -58,7 +58,7 @@ public class XUiC_NewsScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006F38 RID: 28472 RVA: 0x002B00E5 File Offset: 0x002AE2E5
+	// Token: 0x06006F30 RID: 28464 RVA: 0x002B348D File Offset: 0x002B168D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnContinue_OnPress(XUiController _sender, int _mousebutton)
 	{
@@ -66,14 +66,14 @@ public class XUiC_NewsScreen : XUiController
 		XUiC_MainMenu.Open(this.xui);
 	}
 
-	// Token: 0x06006F39 RID: 28473 RVA: 0x002B010E File Offset: 0x002AE30E
+	// Token: 0x06006F31 RID: 28465 RVA: 0x002B34B6 File Offset: 0x002B16B6
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.UpdateInput();
 	}
 
-	// Token: 0x06006F3A RID: 28474 RVA: 0x002B0120 File Offset: 0x002AE320
+	// Token: 0x06006F32 RID: 28466 RVA: 0x002B34C8 File Offset: 0x002B16C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -84,24 +84,24 @@ public class XUiC_NewsScreen : XUiController
 		}
 	}
 
-	// Token: 0x06006F3B RID: 28475 RVA: 0x002B0173 File Offset: 0x002AE373
+	// Token: 0x06006F33 RID: 28467 RVA: 0x002B351B File Offset: 0x002B171B
 	public static void Open(XUi _xuiInstance)
 	{
 		_xuiInstance.playerUI.windowManager.Open(XUiC_NewsScreen.ID, true, true);
 	}
 
-	// Token: 0x06006F3C RID: 28476 RVA: 0x002B018C File Offset: 0x002AE38C
+	// Token: 0x06006F34 RID: 28468 RVA: 0x002B3534 File Offset: 0x002B1734
 	public override void OnClose()
 	{
 		base.OnClose();
 		XUiC_MessageBoxWindowGroup.Close(this.xui);
 	}
 
-	// Token: 0x04005452 RID: 21586
+	// Token: 0x04005489 RID: 21641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ID = "";
 
-	// Token: 0x04005453 RID: 21587
+	// Token: 0x0400548A RID: 21642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label controllerContinueLabel;
 }

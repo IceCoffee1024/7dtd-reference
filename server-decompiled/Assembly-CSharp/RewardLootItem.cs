@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x020009F2 RID: 2546
+// Token: 0x020009FC RID: 2556
 [Preserve]
 public class RewardLootItem : BaseReward
 {
-	// Token: 0x06004C01 RID: 19457 RVA: 0x001D76C4 File Offset: 0x001D58C4
+	// Token: 0x06004BD0 RID: 19408 RVA: 0x001D8974 File Offset: 0x001D6B74
 	public override void SetupReward()
 	{
 		this.LootGameStage = Convert.ToInt32(base.Value);
@@ -122,8 +121,8 @@ public class RewardLootItem : BaseReward
 		base.IconAtlas = "ItemIconAtlas";
 	}
 
-	// Token: 0x17000818 RID: 2072
-	// (get) Token: 0x06004C02 RID: 19458 RVA: 0x001D79AE File Offset: 0x001D5BAE
+	// Token: 0x17000838 RID: 2104
+	// (get) Token: 0x06004BD1 RID: 19409 RVA: 0x001D8C5E File Offset: 0x001D6E5E
 	public ItemStack Item
 	{
 		get
@@ -136,16 +135,16 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x06004C03 RID: 19459 RVA: 0x001D79D1 File Offset: 0x001D5BD1
-	public override void Read(BinaryReader _br)
+	// Token: 0x06004BD2 RID: 19410 RVA: 0x001D8C81 File Offset: 0x001D6E81
+	public override void Read(PooledBinaryReader _br)
 	{
 		base.Read(_br);
 		this.item = new ItemStack();
 		this.item.Read(_br);
 	}
 
-	// Token: 0x06004C04 RID: 19460 RVA: 0x001D79F2 File Offset: 0x001D5BF2
-	public override void Write(BinaryWriter _bw)
+	// Token: 0x06004BD3 RID: 19411 RVA: 0x001D8CA2 File Offset: 0x001D6EA2
+	public override void Write(PooledBinaryWriter _bw)
 	{
 		base.Write(_bw);
 		if (this.item == null)
@@ -155,7 +154,7 @@ public class RewardLootItem : BaseReward
 		this.item.Write(_bw);
 	}
 
-	// Token: 0x06004C05 RID: 19461 RVA: 0x001D7A1C File Offset: 0x001D5C1C
+	// Token: 0x06004BD4 RID: 19412 RVA: 0x001D8CCC File Offset: 0x001D6ECC
 	public override void GiveReward(EntityPlayer player)
 	{
 		XUiM_PlayerInventory playerInventory = LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer).xui.PlayerInventory;
@@ -165,13 +164,13 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x06004C06 RID: 19462 RVA: 0x001D7A63 File Offset: 0x001D5C63
+	// Token: 0x06004BD5 RID: 19413 RVA: 0x001D8D13 File Offset: 0x001D6F13
 	public override ItemStack GetRewardItem()
 	{
 		return this.item.Clone();
 	}
 
-	// Token: 0x06004C07 RID: 19463 RVA: 0x001D7A70 File Offset: 0x001D5C70
+	// Token: 0x06004BD6 RID: 19414 RVA: 0x001D8D20 File Offset: 0x001D6F20
 	public void SetupItem()
 	{
 		string[] array = base.ID.Split(',', StringSplitOptions.None);
@@ -218,7 +217,7 @@ public class RewardLootItem : BaseReward
 		this.item.itemValue.MaxDurabilityModifier = 1f;
 	}
 
-	// Token: 0x06004C08 RID: 19464 RVA: 0x001D7BB0 File Offset: 0x001D5DB0
+	// Token: 0x06004BD7 RID: 19415 RVA: 0x001D8E60 File Offset: 0x001D7060
 	public override BaseReward Clone()
 	{
 		RewardLootItem rewardLootItem = new RewardLootItem();
@@ -231,7 +230,7 @@ public class RewardLootItem : BaseReward
 		return rewardLootItem;
 	}
 
-	// Token: 0x06004C09 RID: 19465 RVA: 0x001D7BF0 File Offset: 0x001D5DF0
+	// Token: 0x06004BD8 RID: 19416 RVA: 0x001D8EA0 File Offset: 0x001D70A0
 	public override string GetRewardText()
 	{
 		string localizedItemName = this.Item.itemValue.ItemClass.GetLocalizedItemName();
@@ -246,7 +245,7 @@ public class RewardLootItem : BaseReward
 		return string.Format("{0} ({1})", localizedItemName, this.Item.count);
 	}
 
-	// Token: 0x06004C0A RID: 19466 RVA: 0x001D7C52 File Offset: 0x001D5E52
+	// Token: 0x06004BD9 RID: 19417 RVA: 0x001D8F02 File Offset: 0x001D7102
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -256,14 +255,14 @@ public class RewardLootItem : BaseReward
 		}
 	}
 
-	// Token: 0x04003BC7 RID: 15303
+	// Token: 0x04003BD4 RID: 15316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int LootGameStage = 1;
 
-	// Token: 0x04003BC8 RID: 15304
+	// Token: 0x04003BD5 RID: 15317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack item;
 
-	// Token: 0x04003BC9 RID: 15305
+	// Token: 0x04003BD6 RID: 15318
 	public static string PropLootTier = "loot_tier";
 }

@@ -4,10 +4,10 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000B08 RID: 2824
+// Token: 0x02000B1A RID: 2842
 public class ChunkAreaBiomeSpawnData
 {
-	// Token: 0x06005501 RID: 21761 RVA: 0x00207D84 File Offset: 0x00205F84
+	// Token: 0x0600551A RID: 21786 RVA: 0x0020AFF4 File Offset: 0x002091F4
 	public ChunkAreaBiomeSpawnData(Chunk _chunk, byte _biomeId, ChunkCustomData _ccd)
 	{
 		this.biomeId = _biomeId;
@@ -25,7 +25,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x06005502 RID: 21762 RVA: 0x00207E4C File Offset: 0x0020604C
+	// Token: 0x0600551B RID: 21787 RVA: 0x0020B0BC File Offset: 0x002092BC
 	public bool IsSpawnNeeded(WorldBiomes _worldBiomes, ulong _worldTime)
 	{
 		BiomeDefinition biome = _worldBiomes.GetBiome(this.biomeId);
@@ -54,14 +54,14 @@ public class ChunkAreaBiomeSpawnData
 		return false;
 	}
 
-	// Token: 0x06005503 RID: 21763 RVA: 0x00207ED8 File Offset: 0x002060D8
+	// Token: 0x0600551C RID: 21788 RVA: 0x0020B148 File Offset: 0x00209348
 	public bool CanSpawn(int _idHash)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
 		return this.entitesSpawned.TryGetValue(_idHash, out countsAndTime) && countsAndTime.count < countsAndTime.maxCount;
 	}
 
-	// Token: 0x06005504 RID: 21764 RVA: 0x00207F08 File Offset: 0x00206108
+	// Token: 0x0600551D RID: 21789 RVA: 0x0020B178 File Offset: 0x00209378
 	public void SetCounts(int _idHash, int _count, int _maxCount)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
@@ -71,7 +71,7 @@ public class ChunkAreaBiomeSpawnData
 		this.entitesSpawned[_idHash] = countsAndTime;
 	}
 
-	// Token: 0x06005505 RID: 21765 RVA: 0x00207F44 File Offset: 0x00206144
+	// Token: 0x0600551E RID: 21790 RVA: 0x0020B1B4 File Offset: 0x002093B4
 	public void IncCount(int _idHash)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
@@ -87,7 +87,7 @@ public class ChunkAreaBiomeSpawnData
 		this.chunk.isModified = true;
 	}
 
-	// Token: 0x06005506 RID: 21766 RVA: 0x00207F90 File Offset: 0x00206190
+	// Token: 0x0600551F RID: 21791 RVA: 0x0020B200 File Offset: 0x00209400
 	public void DecCount(int _idHash, bool _killed)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
@@ -103,7 +103,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x06005507 RID: 21767 RVA: 0x00207FF4 File Offset: 0x002061F4
+	// Token: 0x06005520 RID: 21792 RVA: 0x0020B264 File Offset: 0x00209464
 	public void DecMaxCount(int _idHash)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
@@ -115,7 +115,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x06005508 RID: 21768 RVA: 0x00208040 File Offset: 0x00206240
+	// Token: 0x06005521 RID: 21793 RVA: 0x0020B2B0 File Offset: 0x002094B0
 	public ulong GetDelayWorldTime(int _idHash)
 	{
 		ChunkAreaBiomeSpawnData.CountsAndTime countsAndTime;
@@ -123,7 +123,7 @@ public class ChunkAreaBiomeSpawnData
 		return countsAndTime.delayWorldTime;
 	}
 
-	// Token: 0x06005509 RID: 21769 RVA: 0x00208064 File Offset: 0x00206264
+	// Token: 0x06005522 RID: 21794 RVA: 0x0020B2D4 File Offset: 0x002094D4
 	public void ResetRespawn(int _idHash, World _world, int _maxCount)
 	{
 		BiomeDefinition biome = _world.Biomes.GetBiome(this.biomeId);
@@ -195,7 +195,7 @@ public class ChunkAreaBiomeSpawnData
 		this.chunk.isModified = true;
 	}
 
-	// Token: 0x0600550A RID: 21770 RVA: 0x002081F4 File Offset: 0x002063F4
+	// Token: 0x06005523 RID: 21795 RVA: 0x0020B464 File Offset: 0x00209664
 	public bool DelayAllEnemySpawningUntil(ulong _worldTime, WorldBiomes _worldBiomes)
 	{
 		bool flag = false;
@@ -250,7 +250,7 @@ public class ChunkAreaBiomeSpawnData
 		return flag;
 	}
 
-	// Token: 0x0600550B RID: 21771 RVA: 0x00208398 File Offset: 0x00206598
+	// Token: 0x06005524 RID: 21796 RVA: 0x0020B608 File Offset: 0x00209808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(BinaryReader _br)
 	{
@@ -278,7 +278,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x0600550C RID: 21772 RVA: 0x0020842C File Offset: 0x0020662C
+	// Token: 0x06005525 RID: 21797 RVA: 0x0020B69C File Offset: 0x0020989C
 	public void BeforeWrite()
 	{
 		using (PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true))
@@ -292,7 +292,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x0600550D RID: 21773 RVA: 0x002084A4 File Offset: 0x002066A4
+	// Token: 0x06005526 RID: 21798 RVA: 0x0020B714 File Offset: 0x00209914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(BinaryWriter _bw)
 	{
@@ -312,7 +312,7 @@ public class ChunkAreaBiomeSpawnData
 		}
 	}
 
-	// Token: 0x0600550E RID: 21774 RVA: 0x00208564 File Offset: 0x00206764
+	// Token: 0x06005527 RID: 21799 RVA: 0x0020B7D4 File Offset: 0x002099D4
 	public override string ToString()
 	{
 		World world = GameManager.Instance.World;
@@ -357,65 +357,65 @@ public class ChunkAreaBiomeSpawnData
 		});
 	}
 
-	// Token: 0x04004211 RID: 16913
+	// Token: 0x0400424E RID: 16974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCurrentSaveVersion = 2;
 
-	// Token: 0x04004212 RID: 16914
+	// Token: 0x0400424F RID: 16975
 	public byte biomeId;
 
-	// Token: 0x04004213 RID: 16915
+	// Token: 0x04004250 RID: 16976
 	public Rect area;
 
-	// Token: 0x04004214 RID: 16916
+	// Token: 0x04004251 RID: 16977
 	public Chunk chunk;
 
-	// Token: 0x04004215 RID: 16917
+	// Token: 0x04004252 RID: 16978
 	public bool checkedPOITags;
 
-	// Token: 0x04004216 RID: 16918
+	// Token: 0x04004253 RID: 16979
 	public FastTags<TagGroup.Poi> poiTags;
 
-	// Token: 0x04004217 RID: 16919
+	// Token: 0x04004254 RID: 16980
 	public int groupsEnabledFlags;
 
-	// Token: 0x04004218 RID: 16920
+	// Token: 0x04004255 RID: 16981
 	public static int RespawnDayDelayIndexEnemies;
 
-	// Token: 0x04004219 RID: 16921
+	// Token: 0x04004256 RID: 16982
 	public static int RespawnDayDelayIndexAnimals;
 
-	// Token: 0x0400421A RID: 16922
+	// Token: 0x04004257 RID: 16983
 	public static int RespawnDayEnemyCountOverride;
 
-	// Token: 0x0400421B RID: 16923
+	// Token: 0x04004258 RID: 16984
 	public static int RespawnDayAnimalCountOverride;
 
-	// Token: 0x0400421C RID: 16924
+	// Token: 0x04004259 RID: 16985
 	public static int RespawnNightDelayIndexEnemies;
 
-	// Token: 0x0400421D RID: 16925
+	// Token: 0x0400425A RID: 16986
 	public static int RespawnNightDelayIndexAnimals;
 
-	// Token: 0x0400421E RID: 16926
+	// Token: 0x0400425B RID: 16987
 	public static int RespawnNightEnemyCountOverride;
 
-	// Token: 0x0400421F RID: 16927
+	// Token: 0x0400425C RID: 16988
 	public static int RespawnNightAnimalCountOverride;
 
-	// Token: 0x04004220 RID: 16928
+	// Token: 0x0400425D RID: 16989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCustomData ccd;
 
-	// Token: 0x04004221 RID: 16929
+	// Token: 0x0400425E RID: 16990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, ChunkAreaBiomeSpawnData.CountsAndTime> entitesSpawned = new Dictionary<int, ChunkAreaBiomeSpawnData.CountsAndTime>();
 
-	// Token: 0x02000B09 RID: 2825
+	// Token: 0x02000B1B RID: 2843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct CountsAndTime
 	{
-		// Token: 0x0600550F RID: 21775 RVA: 0x0020870C File Offset: 0x0020690C
+		// Token: 0x06005528 RID: 21800 RVA: 0x0020B97C File Offset: 0x00209B7C
 		public CountsAndTime(int _count, int _maxCount, ulong _delayWorldTime)
 		{
 			this.count = _count;
@@ -423,19 +423,19 @@ public class ChunkAreaBiomeSpawnData
 			this.delayWorldTime = _delayWorldTime;
 		}
 
-		// Token: 0x06005510 RID: 21776 RVA: 0x00208723 File Offset: 0x00206923
+		// Token: 0x06005529 RID: 21801 RVA: 0x0020B993 File Offset: 0x00209B93
 		public override string ToString()
 		{
 			return string.Format("cnt {0}, maxCnt {1}, wtime {2}", this.count, this.maxCount, this.delayWorldTime);
 		}
 
-		// Token: 0x04004222 RID: 16930
+		// Token: 0x0400425F RID: 16991
 		public int count;
 
-		// Token: 0x04004223 RID: 16931
+		// Token: 0x04004260 RID: 16992
 		public int maxCount;
 
-		// Token: 0x04004224 RID: 16932
+		// Token: 0x04004261 RID: 16993
 		public ulong delayWorldTime;
 	}
 }

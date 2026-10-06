@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000647 RID: 1607
+// Token: 0x02000649 RID: 1609
 public class Transvoxel
 {
-	// Token: 0x0600344D RID: 13389 RVA: 0x00155BA8 File Offset: 0x00153DA8
+	// Token: 0x06003490 RID: 13456 RVA: 0x00156518 File Offset: 0x00154718
 	// Note: this type is marked as 'beforefieldinit'.
 	[PublicizedFrom(EAccessModifier.Private)]
 	static Transvoxel()
@@ -561,43 +561,43 @@ public class Transvoxel
 		Transvoxel.transitionVertexData = new Transvoxel.TransitionVertexData();
 	}
 
-	// Token: 0x04002974 RID: 10612
+	// Token: 0x0400296D RID: 10605
 	public const int kTerrainLogDimension = 4;
 
-	// Token: 0x04002975 RID: 10613
+	// Token: 0x0400296E RID: 10606
 	public const int kTerrainDimension = 16;
 
-	// Token: 0x04002976 RID: 10614
+	// Token: 0x0400296F RID: 10607
 	public const int kMaxTerrainTriangleCount = 8192;
 
-	// Token: 0x04002977 RID: 10615
+	// Token: 0x04002970 RID: 10608
 	public const int kMaxTerrainVertexCount = 8192;
 
-	// Token: 0x04002978 RID: 10616
+	// Token: 0x04002971 RID: 10609
 	public const int kVoxelFractionSize = 8;
 
-	// Token: 0x04002979 RID: 10617
+	// Token: 0x04002972 RID: 10610
 	public const int kVoxelFixedUnit = 256;
 
-	// Token: 0x0400297A RID: 10618
+	// Token: 0x04002973 RID: 10611
 	public const int kMaxTerrainChannelCount = 2;
 
-	// Token: 0x0400297B RID: 10619
+	// Token: 0x04002974 RID: 10612
 	public const int kMaxTerrainMaterialCount = 255;
 
-	// Token: 0x0400297C RID: 10620
+	// Token: 0x04002975 RID: 10613
 	public const int kTerrainMaterialUsageTableSize = 256;
 
-	// Token: 0x0400297D RID: 10621
+	// Token: 0x04002976 RID: 10614
 	public const int kDeadTerrainMaterialIndex = 255;
 
-	// Token: 0x0400297E RID: 10622
+	// Token: 0x04002977 RID: 10615
 	public const float one_over_127 = 0.007874016f;
 
-	// Token: 0x0400297F RID: 10623
+	// Token: 0x04002978 RID: 10616
 	public const float one_over_256 = 0.00390625f;
 
-	// Token: 0x04002980 RID: 10624
+	// Token: 0x04002979 RID: 10617
 	public static readonly byte[] regularCellClass = new byte[]
 	{
 		0, 1, 1, 3, 1, 3, 2, 4, 1, 2,
@@ -628,168 +628,168 @@ public class Transvoxel
 		3, 1, 3, 1, 1, 0
 	};
 
-	// Token: 0x04002981 RID: 10625
+	// Token: 0x0400297A RID: 10618
 	public static readonly Transvoxel.RegularCellData[,] regularCellData;
 
-	// Token: 0x04002982 RID: 10626
+	// Token: 0x0400297B RID: 10619
 	public static readonly Transvoxel.InternalEdgeData[,] regularInternalEdgeData;
 
-	// Token: 0x04002983 RID: 10627
+	// Token: 0x0400297C RID: 10620
 	public static readonly Transvoxel.RegularVertexData regularVertexData;
 
-	// Token: 0x04002984 RID: 10628
+	// Token: 0x0400297D RID: 10621
 	public static readonly byte[] transitionCellClass;
 
-	// Token: 0x04002985 RID: 10629
+	// Token: 0x0400297E RID: 10622
 	public static readonly Transvoxel.TransitionCellData[] transitionCellData;
 
-	// Token: 0x04002986 RID: 10630
+	// Token: 0x0400297F RID: 10623
 	public static readonly byte[] transitionCornerData;
 
-	// Token: 0x04002987 RID: 10631
+	// Token: 0x04002980 RID: 10624
 	public static Transvoxel.TransitionVertexData transitionVertexData;
 
-	// Token: 0x02000648 RID: 1608
+	// Token: 0x0200064A RID: 1610
 	public struct BuildVertex
 	{
-		// Token: 0x04002988 RID: 10632
+		// Token: 0x04002981 RID: 10625
 		public Vector3i position0;
 
-		// Token: 0x04002989 RID: 10633
+		// Token: 0x04002982 RID: 10626
 		public Vector3 normal;
 
-		// Token: 0x0400298A RID: 10634
+		// Token: 0x04002983 RID: 10627
 		public Color border;
 
-		// Token: 0x0400298B RID: 10635
+		// Token: 0x04002984 RID: 10628
 		public Color color;
 
-		// Token: 0x0400298C RID: 10636
+		// Token: 0x04002985 RID: 10629
 		public Vector2 uv;
 
-		// Token: 0x0400298D RID: 10637
+		// Token: 0x04002986 RID: 10630
 		public Vector2 uv2;
 
-		// Token: 0x0400298E RID: 10638
+		// Token: 0x04002987 RID: 10631
 		public Vector2 uv3;
 
-		// Token: 0x0400298F RID: 10639
+		// Token: 0x04002988 RID: 10632
 		public Vector2 uv4;
 
-		// Token: 0x04002990 RID: 10640
+		// Token: 0x04002989 RID: 10633
 		public byte material;
 
-		// Token: 0x04002991 RID: 10641
+		// Token: 0x0400298A RID: 10634
 		public byte statusFlags;
 
-		// Token: 0x04002992 RID: 10642
+		// Token: 0x0400298B RID: 10635
 		public int remapIndex;
 
-		// Token: 0x04002993 RID: 10643
+		// Token: 0x0400298C RID: 10636
 		public int texture;
 
-		// Token: 0x04002994 RID: 10644
+		// Token: 0x0400298D RID: 10637
 		public bool bTopSoil;
 	}
 
-	// Token: 0x02000649 RID: 1609
+	// Token: 0x0200064B RID: 1611
 	public struct BuildTriangle
 	{
-		// Token: 0x04002995 RID: 10645
+		// Token: 0x0400298E RID: 10638
 		public int index0;
 
-		// Token: 0x04002996 RID: 10646
+		// Token: 0x0400298F RID: 10639
 		public int index1;
 
-		// Token: 0x04002997 RID: 10647
+		// Token: 0x04002990 RID: 10640
 		public int index2;
 
-		// Token: 0x04002998 RID: 10648
+		// Token: 0x04002991 RID: 10641
 		public bool inclusionFlag;
 
-		// Token: 0x04002999 RID: 10649
+		// Token: 0x04002992 RID: 10642
 		public int submeshIdx;
 	}
 
-	// Token: 0x0200064A RID: 1610
+	// Token: 0x0200064C RID: 1612
 	public class RegularCellData
 	{
-		// Token: 0x0600344E RID: 13390 RVA: 0x00156A84 File Offset: 0x00154C84
+		// Token: 0x06003491 RID: 13457 RVA: 0x001573F4 File Offset: 0x001555F4
 		public RegularCellData(byte _geometryCounts, byte[] _vertexIndex)
 		{
 			this.geometryCounts = _geometryCounts;
 			this.vertexIndex = _vertexIndex;
 		}
 
-		// Token: 0x0600344F RID: 13391 RVA: 0x00156A9A File Offset: 0x00154C9A
+		// Token: 0x06003492 RID: 13458 RVA: 0x0015740A File Offset: 0x0015560A
 		public int GetVertexCount()
 		{
 			return this.geometryCounts >> 4;
 		}
 
-		// Token: 0x06003450 RID: 13392 RVA: 0x00156AA4 File Offset: 0x00154CA4
+		// Token: 0x06003493 RID: 13459 RVA: 0x00157414 File Offset: 0x00155614
 		public int GetTriangleCount()
 		{
 			return (int)(this.geometryCounts & 15);
 		}
 
-		// Token: 0x0400299A RID: 10650
+		// Token: 0x04002993 RID: 10643
 		public byte geometryCounts;
 
-		// Token: 0x0400299B RID: 10651
+		// Token: 0x04002994 RID: 10644
 		public byte[] vertexIndex;
 	}
 
-	// Token: 0x0200064B RID: 1611
+	// Token: 0x0200064D RID: 1613
 	public class TransitionCellData
 	{
-		// Token: 0x06003451 RID: 13393 RVA: 0x00156AAF File Offset: 0x00154CAF
+		// Token: 0x06003494 RID: 13460 RVA: 0x0015741F File Offset: 0x0015561F
 		public TransitionCellData(int _geometryCounts, byte[] _vertexIndex)
 		{
 			this.geometryCounts = _geometryCounts;
 			this.vertexIndex = _vertexIndex;
 		}
 
-		// Token: 0x06003452 RID: 13394 RVA: 0x00156AC5 File Offset: 0x00154CC5
+		// Token: 0x06003495 RID: 13461 RVA: 0x00157435 File Offset: 0x00155635
 		public int GetVertexCount()
 		{
 			return this.geometryCounts >> 4;
 		}
 
-		// Token: 0x06003453 RID: 13395 RVA: 0x00156ACF File Offset: 0x00154CCF
+		// Token: 0x06003496 RID: 13462 RVA: 0x0015743F File Offset: 0x0015563F
 		public int GetTriangleCount()
 		{
 			return this.geometryCounts & 15;
 		}
 
-		// Token: 0x0400299C RID: 10652
+		// Token: 0x04002995 RID: 10645
 		public int geometryCounts;
 
-		// Token: 0x0400299D RID: 10653
+		// Token: 0x04002996 RID: 10646
 		public byte[] vertexIndex;
 	}
 
-	// Token: 0x0200064C RID: 1612
+	// Token: 0x0200064E RID: 1614
 	public class InternalEdgeData
 	{
-		// Token: 0x06003454 RID: 13396 RVA: 0x00156ADA File Offset: 0x00154CDA
+		// Token: 0x06003497 RID: 13463 RVA: 0x0015744A File Offset: 0x0015564A
 		public InternalEdgeData(byte _edgeCount, byte[,] _vertexIndex)
 		{
 			this.edgeCount = _edgeCount;
 			this.vertexIndex = _vertexIndex;
 		}
 
-		// Token: 0x0400299E RID: 10654
+		// Token: 0x04002997 RID: 10647
 		public byte edgeCount;
 
-		// Token: 0x0400299F RID: 10655
+		// Token: 0x04002998 RID: 10648
 		public byte[,] vertexIndex;
 	}
 
-	// Token: 0x0200064D RID: 1613
+	// Token: 0x0200064F RID: 1615
 	public class RegularVertexData
 	{
-		// Token: 0x17000547 RID: 1351
+		// Token: 0x1700056D RID: 1389
 		public Transvoxel.RegularVertexData.Row this[int _index]
 		{
 			get
@@ -798,7 +798,7 @@ public class Transvoxel
 			}
 		}
 
-		// Token: 0x06003456 RID: 13398 RVA: 0x00156AFC File Offset: 0x00154CFC
+		// Token: 0x06003499 RID: 13465 RVA: 0x0015746C File Offset: 0x0015566C
 		public RegularVertexData()
 		{
 			this.rows = new Transvoxel.RegularVertexData.Row[]
@@ -1070,28 +1070,28 @@ public class Transvoxel
 			};
 		}
 
-		// Token: 0x040029A0 RID: 10656
+		// Token: 0x04002999 RID: 10649
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Transvoxel.RegularVertexData.Row[] rows;
 
-		// Token: 0x0200064E RID: 1614
+		// Token: 0x02000650 RID: 1616
 		public class Row
 		{
-			// Token: 0x06003457 RID: 13399 RVA: 0x00158692 File Offset: 0x00156892
+			// Token: 0x0600349A RID: 13466 RVA: 0x00159002 File Offset: 0x00157202
 			public Row(ushort[] _data)
 			{
 				this.data = _data;
 			}
 
-			// Token: 0x040029A1 RID: 10657
+			// Token: 0x0400299A RID: 10650
 			public ushort[] data;
 		}
 	}
 
-	// Token: 0x0200064F RID: 1615
+	// Token: 0x02000651 RID: 1617
 	public class TransitionVertexData
 	{
-		// Token: 0x17000548 RID: 1352
+		// Token: 0x1700056E RID: 1390
 		public Transvoxel.TransitionVertexData.Row this[int _index]
 		{
 			get
@@ -1100,7 +1100,7 @@ public class Transvoxel
 			}
 		}
 
-		// Token: 0x06003459 RID: 13401 RVA: 0x001586AC File Offset: 0x001568AC
+		// Token: 0x0600349C RID: 13468 RVA: 0x0015901C File Offset: 0x0015721C
 		public TransitionVertexData()
 		{
 			this.rows = new Transvoxel.TransitionVertexData.Row[]
@@ -1836,14 +1836,14 @@ public class Transvoxel
 			};
 		}
 
-		// Token: 0x040029A2 RID: 10658
+		// Token: 0x0400299B RID: 10651
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Transvoxel.TransitionVertexData.Row[] rows;
 
-		// Token: 0x02000650 RID: 1616
+		// Token: 0x02000652 RID: 1618
 		public class Row
 		{
-			// Token: 0x17000549 RID: 1353
+			// Token: 0x1700056F RID: 1391
 			public ushort this[int _index]
 			{
 				get
@@ -1852,13 +1852,13 @@ public class Transvoxel
 				}
 			}
 
-			// Token: 0x0600345B RID: 13403 RVA: 0x0015C010 File Offset: 0x0015A210
+			// Token: 0x0600349E RID: 13470 RVA: 0x0015C980 File Offset: 0x0015AB80
 			public Row(ushort[] _data)
 			{
 				this.data = _data;
 			}
 
-			// Token: 0x040029A3 RID: 10659
+			// Token: 0x0400299C RID: 10652
 			[PublicizedFrom(EAccessModifier.Private)]
 			public ushort[] data;
 		}

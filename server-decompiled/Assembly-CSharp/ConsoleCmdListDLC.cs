@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020002C5 RID: 709
+// Token: 0x020002C8 RID: 712
 [Preserve]
 public class ConsoleCmdListDLC : ConsoleCmdAbstract
 {
-	// Token: 0x06001479 RID: 5241 RVA: 0x0007C4FA File Offset: 0x0007A6FA
+	// Token: 0x06001476 RID: 5238 RVA: 0x0007C7AE File Offset: 0x0007A9AE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "listdlc", "dlcs" };
 	}
 
-	// Token: 0x17000241 RID: 577
-	// (get) Token: 0x0600147A RID: 5242 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000239 RID: 569
+	// (get) Token: 0x06001477 RID: 5239 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdListDLC : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000242 RID: 578
-	// (get) Token: 0x0600147B RID: 5243 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700023A RID: 570
+	// (get) Token: 0x06001478 RID: 5240 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,27 +34,27 @@ public class ConsoleCmdListDLC : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600147C RID: 5244 RVA: 0x0007C512 File Offset: 0x0007A712
+	// Token: 0x06001479 RID: 5241 RVA: 0x0007C7C6 File Offset: 0x0007A9C6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "List the available DLC and their current entitlement status.";
 	}
 
-	// Token: 0x0600147D RID: 5245 RVA: 0x0007C519 File Offset: 0x0007A719
+	// Token: 0x0600147A RID: 5242 RVA: 0x0007C7CD File Offset: 0x0007A9CD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "List DLCs and their entitlement states.\nUsage:\n   listdlc\n   dlcs\n";
 	}
 
-	// Token: 0x0600147E RID: 5246 RVA: 0x0007C520 File Offset: 0x0007A720
+	// Token: 0x0600147B RID: 5243 RVA: 0x0007C7D4 File Offset: 0x0007A9D4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ConsoleCmdListDLC.ExecuteList();
 	}
 
-	// Token: 0x0600147F RID: 5247 RVA: 0x0007C528 File Offset: 0x0007A728
+	// Token: 0x0600147C RID: 5244 RVA: 0x0007C7DC File Offset: 0x0007A9DC
 	public static void ExecuteList()
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("DLC List:");

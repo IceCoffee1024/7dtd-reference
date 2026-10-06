@@ -1,26 +1,26 @@
 ﻿using System;
 
-// Token: 0x02000A62 RID: 2658
+// Token: 0x02000A6C RID: 2668
 public enum RenderCubeType
 {
-	// Token: 0x04003DC6 RID: 15814
+	// Token: 0x04003DD4 RID: 15828
 	None,
-	// Token: 0x04003DC7 RID: 15815
+	// Token: 0x04003DD5 RID: 15829
 	FaceN,
-	// Token: 0x04003DC8 RID: 15816
+	// Token: 0x04003DD6 RID: 15830
 	FaceS,
-	// Token: 0x04003DC9 RID: 15817
+	// Token: 0x04003DD7 RID: 15831
 	FaceE,
-	// Token: 0x04003DCA RID: 15818
+	// Token: 0x04003DD8 RID: 15832
 	FaceW,
-	// Token: 0x04003DCB RID: 15819
+	// Token: 0x04003DD9 RID: 15833
 	FaceTop,
-	// Token: 0x04003DCC RID: 15820
+	// Token: 0x04003DDA RID: 15834
 	FaceBottom,
-	// Token: 0x04003DCD RID: 15821
+	// Token: 0x04003DDB RID: 15835
 	FullBlockInnerSides,
-	// Token: 0x04003DCE RID: 15822
+	// Token: 0x04003DDC RID: 15836
 	FullBlockOuterSides,
-	// Token: 0x04003DCF RID: 15823
+	// Token: 0x04003DDD RID: 15837
 	FullBlockBothSides
 }

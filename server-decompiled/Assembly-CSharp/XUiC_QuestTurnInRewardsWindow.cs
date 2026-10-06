@@ -4,13 +4,13 @@ using UniLinq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FFA RID: 4090
+// Token: 0x02001009 RID: 4105
 [Preserve]
 public class XUiC_QuestTurnInRewardsWindow : XUiController
 {
-	// Token: 0x17000F12 RID: 3858
-	// (get) Token: 0x0600811C RID: 33052 RVA: 0x0030EF26 File Offset: 0x0030D126
-	// (set) Token: 0x0600811D RID: 33053 RVA: 0x0030EF2E File Offset: 0x0030D12E
+	// Token: 0x17000F39 RID: 3897
+	// (get) Token: 0x0600812B RID: 33067 RVA: 0x00311F0E File Offset: 0x0031010E
+	// (set) Token: 0x0600812C RID: 33068 RVA: 0x00311F16 File Offset: 0x00310116
 	public Quest CurrentQuest
 	{
 		get
@@ -26,14 +26,14 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000F13 RID: 3859
-	// (get) Token: 0x0600811E RID: 33054 RVA: 0x0030EF5F File Offset: 0x0030D15F
-	// (set) Token: 0x0600811F RID: 33055 RVA: 0x0030EF67 File Offset: 0x0030D167
+	// Token: 0x17000F3A RID: 3898
+	// (get) Token: 0x0600812D RID: 33069 RVA: 0x00311F47 File Offset: 0x00310147
+	// (set) Token: 0x0600812E RID: 33070 RVA: 0x00311F4F File Offset: 0x0031014F
 	public XUiC_ItemInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x17000F14 RID: 3860
-	// (get) Token: 0x06008120 RID: 33056 RVA: 0x0030EF70 File Offset: 0x0030D170
-	// (set) Token: 0x06008121 RID: 33057 RVA: 0x0030EF78 File Offset: 0x0030D178
+	// Token: 0x17000F3B RID: 3899
+	// (get) Token: 0x0600812F RID: 33071 RVA: 0x00311F58 File Offset: 0x00310158
+	// (set) Token: 0x06008130 RID: 33072 RVA: 0x00311F60 File Offset: 0x00310160
 	public XUiC_QuestTurnInEntry SelectedEntry
 	{
 		get
@@ -62,7 +62,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008122 RID: 33058 RVA: 0x0030F008 File Offset: 0x0030D208
+	// Token: 0x06008131 RID: 33073 RVA: 0x00311FF0 File Offset: 0x003101F0
 	public override void Init()
 	{
 		base.Init();
@@ -72,7 +72,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		((XUiV_Button)this.btnAccept.GetChildById("clickable").ViewComponent).Controller.OnPress += this.BtnAccept_OnPress;
 	}
 
-	// Token: 0x06008123 RID: 33059 RVA: 0x0030F09C File Offset: 0x0030D29C
+	// Token: 0x06008132 RID: 33074 RVA: 0x00312084 File Offset: 0x00310284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnAccept_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -112,7 +112,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008124 RID: 33060 RVA: 0x0030F212 File Offset: 0x0030D412
+	// Token: 0x06008133 RID: 33075 RVA: 0x003121FA File Offset: 0x003103FA
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -120,7 +120,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		this.CurrentQuest = this.xui.Dialog.QuestTurnIn;
 	}
 
-	// Token: 0x06008125 RID: 33061 RVA: 0x0030F238 File Offset: 0x0030D438
+	// Token: 0x06008134 RID: 33076 RVA: 0x00312220 File Offset: 0x00310420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupOptions()
 	{
@@ -168,7 +168,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008126 RID: 33062 RVA: 0x0030F438 File Offset: 0x0030D638
+	// Token: 0x06008135 RID: 33077 RVA: 0x00312420 File Offset: 0x00310620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TurnInEntryPressed(XUiController _sender, int _mouseButton)
 	{
@@ -180,7 +180,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008127 RID: 33063 RVA: 0x0030F45C File Offset: 0x0030D65C
+	// Token: 0x06008136 RID: 33078 RVA: 0x00312444 File Offset: 0x00310644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleEntryPressed(XUiC_QuestTurnInEntry entry)
 	{
@@ -203,7 +203,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008128 RID: 33064 RVA: 0x0030F4F8 File Offset: 0x0030D6F8
+	// Token: 0x06008137 RID: 33079 RVA: 0x003124E0 File Offset: 0x003106E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -455,7 +455,7 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008129 RID: 33065 RVA: 0x0030FBC8 File Offset: 0x0030DDC8
+	// Token: 0x06008138 RID: 33080 RVA: 0x00312BB0 File Offset: 0x00310DB0
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -492,66 +492,66 @@ public class XUiC_QuestTurnInRewardsWindow : XUiController
 		return flag;
 	}
 
-	// Token: 0x04005FB4 RID: 24500
+	// Token: 0x04005FDD RID: 24541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005FB5 RID: 24501
+	// Token: 0x04005FDE RID: 24542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string xuiQuestDescriptionLabel;
 
-	// Token: 0x04005FB6 RID: 24502
+	// Token: 0x04005FDF RID: 24543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardNumberFormat = "[DECEA3]{0}[-]";
 
-	// Token: 0x04005FB7 RID: 24503
+	// Token: 0x04005FE0 RID: 24544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardNumberBonusFormat = "[DECEA3]{0}[-] ([DECEA3]{1}[-] {2})";
 
-	// Token: 0x04005FB8 RID: 24504
+	// Token: 0x04005FE1 RID: 24545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardItemFormat = "[DECEA3]{0}[-] {1}";
 
-	// Token: 0x04005FB9 RID: 24505
+	// Token: 0x04005FE2 RID: 24546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardItemBonusFormat = "[DECEA3]{0}[-] {1} ([DECEA3]{2}[-] {3})";
 
-	// Token: 0x04005FBA RID: 24506
+	// Token: 0x04005FE3 RID: 24547
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTurnInEntry[] entryList;
 
-	// Token: 0x04005FBB RID: 24507
+	// Token: 0x04005FE4 RID: 24548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button acceptButton;
 
-	// Token: 0x04005FBC RID: 24508
+	// Token: 0x04005FE5 RID: 24549
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BaseReward> rewardList = new List<BaseReward>();
 
-	// Token: 0x04005FBD RID: 24509
+	// Token: 0x04005FE6 RID: 24550
 	public EntityNPC NPC;
 
-	// Token: 0x04005FBE RID: 24510
+	// Token: 0x04005FE7 RID: 24551
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int optionCount;
 
-	// Token: 0x04005FBF RID: 24511
+	// Token: 0x04005FE8 RID: 24552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest currentQuest;
 
-	// Token: 0x04005FC1 RID: 24513
+	// Token: 0x04005FEA RID: 24554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_QuestTurnInEntry> selectedEntryList = new List<XUiC_QuestTurnInEntry>();
 
-	// Token: 0x04005FC2 RID: 24514
+	// Token: 0x04005FEB RID: 24555
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTurnInEntry selectedEntry;
 
-	// Token: 0x04005FC3 RID: 24515
+	// Token: 0x04005FEC RID: 24556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnAccept;
 
-	// Token: 0x04005FC4 RID: 24516
+	// Token: 0x04005FED RID: 24557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, string> questtitleFormatter = new CachedStringFormatter<string, string>((string _s, string _s1) => string.Format("{0} : {1}", _s, _s1));
 }

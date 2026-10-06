@@ -9,11 +9,11 @@ using System.Xml.Linq;
 
 namespace XMLEditing
 {
-	// Token: 0x0200166D RID: 5741
+	// Token: 0x0200168C RID: 5772
 	public static class XMLUtils
 	{
-		// Token: 0x170015A6 RID: 5542
-		// (get) Token: 0x0600B440 RID: 46144 RVA: 0x00435A0B File Offset: 0x00433C0B
+		// Token: 0x170015E9 RID: 5609
+		// (get) Token: 0x0600B4D2 RID: 46290 RVA: 0x004396E7 File Offset: 0x004378E7
 		public static string DefaultBlocksFilePath
 		{
 			get
@@ -22,7 +22,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B441 RID: 46145 RVA: 0x00435A24 File Offset: 0x00433C24
+		// Token: 0x0600B4D3 RID: 46291 RVA: 0x00439700 File Offset: 0x00437900
 		public static XDocument LoadXDocument(string filePath)
 		{
 			XDocument xdocument;
@@ -33,7 +33,7 @@ namespace XMLEditing
 			return xdocument;
 		}
 
-		// Token: 0x0600B442 RID: 46146 RVA: 0x00435A60 File Offset: 0x00433C60
+		// Token: 0x0600B4D4 RID: 46292 RVA: 0x0043973C File Offset: 0x0043793C
 		public static XElement SetArray(XElement _element, string _arrayName)
 		{
 			XElement xelement = (from e in _element.Elements(XNames.array)
@@ -50,7 +50,7 @@ namespace XMLEditing
 			return xelement;
 		}
 
-		// Token: 0x0600B443 RID: 46147 RVA: 0x00435AE4 File Offset: 0x00433CE4
+		// Token: 0x0600B4D5 RID: 46293 RVA: 0x004397C0 File Offset: 0x004379C0
 		public static XElement SetProperty(XElement _element, string _propertyName, XName _attribName, string _value)
 		{
 			XElement xelement = (from e in _element.Elements(XNames.property)
@@ -68,7 +68,7 @@ namespace XMLEditing
 			return xelement;
 		}
 
-		// Token: 0x0600B444 RID: 46148 RVA: 0x00435B70 File Offset: 0x00433D70
+		// Token: 0x0600B4D6 RID: 46294 RVA: 0x0043984C File Offset: 0x00437A4C
 		public static bool IsChildOf(this XElement element, XElement parent)
 		{
 			for (XElement xelement = element; xelement != null; xelement = xelement.Parent)
@@ -81,7 +81,7 @@ namespace XMLEditing
 			return false;
 		}
 
-		// Token: 0x0600B445 RID: 46149 RVA: 0x00435B94 File Offset: 0x00433D94
+		// Token: 0x0600B4D7 RID: 46295 RVA: 0x00439870 File Offset: 0x00437A70
 		public static void SaveXDocument(XDocument doc, string filePath, bool omitXmlDeclaration = false)
 		{
 			using (Stream stream = SdFile.Create(filePath))
@@ -101,7 +101,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B446 RID: 46150 RVA: 0x00435C28 File Offset: 0x00433E28
+		// Token: 0x0600B4D8 RID: 46296 RVA: 0x00439904 File Offset: 0x00437B04
 		public static void CleanAndRepairBlocksXML()
 		{
 			string text = SdFile.ReadAllText(XMLUtils.DefaultBlocksFilePath);
@@ -114,7 +114,7 @@ namespace XMLEditing
 			SdFile.WriteAllText(XMLUtils.DefaultBlocksFilePath, text);
 		}
 
-		// Token: 0x0600B447 RID: 46151 RVA: 0x00435C7C File Offset: 0x00433E7C
+		// Token: 0x0600B4D9 RID: 46297 RVA: 0x00439958 File Offset: 0x00437B58
 		public static HashSet<string> ParseStringList(string targetListString, char separator)
 		{
 			string[] array = targetListString.Split(new char[] { separator }, StringSplitOptions.RemoveEmptyEntries);
@@ -128,7 +128,7 @@ namespace XMLEditing
 			return hashSet;
 		}
 
-		// Token: 0x0600B448 RID: 46152 RVA: 0x00435CC4 File Offset: 0x00433EC4
+		// Token: 0x0600B4DA RID: 46298 RVA: 0x004399A0 File Offset: 0x00437BA0
 		public static HashSet<string> GetReplacementBlockNames(HashSet<string> targetNames)
 		{
 			XElement root = XMLUtils.LoadXDocument(GameIO.GetGameDir("Data/Config") + "/blockplaceholders.xml").Root;
@@ -158,7 +158,7 @@ namespace XMLEditing
 			return hashSet;
 		}
 
-		// Token: 0x0600B449 RID: 46153 RVA: 0x00435E0C File Offset: 0x0043400C
+		// Token: 0x0600B4DB RID: 46299 RVA: 0x00439AE8 File Offset: 0x00437CE8
 		public static bool AllAttributesAreEqual(XElement elementA, XElement elementB, StringComparison comparisonType)
 		{
 			if (elementB.Attributes().Count<XAttribute>() != elementA.Attributes().Count<XAttribute>())
@@ -182,7 +182,7 @@ namespace XMLEditing
 			return true;
 		}
 
-		// Token: 0x0600B44A RID: 46154 RVA: 0x00435EAC File Offset: 0x004340AC
+		// Token: 0x0600B4DC RID: 46300 RVA: 0x00439B88 File Offset: 0x00437D88
 		public static void PopulateReplacementMap(Dictionary<string, HashSet<string>> replacementMap)
 		{
 			replacementMap.Clear();
@@ -203,10 +203,10 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0400871A RID: 34586
+		// Token: 0x04008770 RID: 34672
 		public const string IndentChars = "\t";
 
-		// Token: 0x0400871B RID: 34587
+		// Token: 0x04008771 RID: 34673
 		public const string NewLineChars = "\r\n";
 	}
 }

@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DE RID: 2014
+// Token: 0x020007E1 RID: 2017
 [Preserve]
 public class NetPackageEntityMapMarkerRemove : NetPackage
 {
-	// Token: 0x17000631 RID: 1585
-	// (get) Token: 0x06003B95 RID: 15253 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000656 RID: 1622
+	// (get) Token: 0x06003BA8 RID: 15272 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		}
 	}
 
-	// Token: 0x06003B96 RID: 15254 RVA: 0x0017F3CF File Offset: 0x0017D5CF
+	// Token: 0x06003BA9 RID: 15273 RVA: 0x0017F913 File Offset: 0x0017DB13
 	public NetPackageEntityMapMarkerRemove Setup(EnumMapObjectType _mapObjectType, int _entityId)
 	{
 		this.mapObjectType = _mapObjectType;
@@ -25,7 +25,7 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B97 RID: 15255 RVA: 0x0017F3E7 File Offset: 0x0017D5E7
+	// Token: 0x06003BAA RID: 15274 RVA: 0x0017F92B File Offset: 0x0017DB2B
 	public NetPackageEntityMapMarkerRemove Setup(EnumMapObjectType _mapObjectType, Vector3 _position)
 	{
 		this.mapObjectType = _mapObjectType;
@@ -34,7 +34,7 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B98 RID: 15256 RVA: 0x0017F3FF File Offset: 0x0017D5FF
+	// Token: 0x06003BAB RID: 15275 RVA: 0x0017F943 File Offset: 0x0017DB43
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.RemoveByType = (NetPackageEntityMapMarkerRemove.RemoveByTypes)_reader.ReadInt32();
@@ -49,7 +49,7 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		this.mapObjectType = (EnumMapObjectType)_reader.ReadInt32();
 	}
 
-	// Token: 0x06003B99 RID: 15257 RVA: 0x0017F43C File Offset: 0x0017D63C
+	// Token: 0x06003BAC RID: 15276 RVA: 0x0017F980 File Offset: 0x0017DB80
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -65,7 +65,7 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		_writer.Write((int)this.mapObjectType);
 	}
 
-	// Token: 0x06003B9A RID: 15258 RVA: 0x0017F48A File Offset: 0x0017D68A
+	// Token: 0x06003BAD RID: 15277 RVA: 0x0017F9CE File Offset: 0x0017DBCE
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -80,35 +80,29 @@ public class NetPackageEntityMapMarkerRemove : NetPackage
 		_world.ObjectOnMapRemove(this.mapObjectType, this.position);
 	}
 
-	// Token: 0x06003B9B RID: 15259 RVA: 0x00080550 File Offset: 0x0007E750
-	public override int GetLength()
-	{
-		return 4;
-	}
-
-	// Token: 0x04003088 RID: 12424
+	// Token: 0x04003081 RID: 12417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003089 RID: 12425
+	// Token: 0x04003082 RID: 12418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x0400308A RID: 12426
+	// Token: 0x04003083 RID: 12419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumMapObjectType mapObjectType;
 
-	// Token: 0x0400308B RID: 12427
+	// Token: 0x04003084 RID: 12420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEntityMapMarkerRemove.RemoveByTypes RemoveByType;
 
-	// Token: 0x020007DF RID: 2015
+	// Token: 0x020007E2 RID: 2018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum RemoveByTypes
 	{
-		// Token: 0x0400308D RID: 12429
+		// Token: 0x04003086 RID: 12422
 		EntityID,
-		// Token: 0x0400308E RID: 12430
+		// Token: 0x04003087 RID: 12423
 		Position
 	}
 }

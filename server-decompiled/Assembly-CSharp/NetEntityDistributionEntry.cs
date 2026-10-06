@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000795 RID: 1941
+// Token: 0x02000798 RID: 1944
 public class NetEntityDistributionEntry
 {
-	// Token: 0x060039CD RID: 14797 RVA: 0x00179040 File Offset: 0x00177240
+	// Token: 0x06003A10 RID: 14864 RVA: 0x001797F8 File Offset: 0x001779F8
 	public NetEntityDistributionEntry(Entity _e, int _d, int _ticks, bool _isMotionSent)
 	{
 		this.updateCounter = 0;
@@ -20,19 +20,19 @@ public class NetEntityDistributionEntry
 		this.encodedOnGround = _e.onGround;
 	}
 
-	// Token: 0x060039CE RID: 14798 RVA: 0x001790C8 File Offset: 0x001772C8
+	// Token: 0x06003A11 RID: 14865 RVA: 0x00179880 File Offset: 0x00177A80
 	public override bool Equals(object _other)
 	{
 		return _other is NetEntityDistributionEntry && ((NetEntityDistributionEntry)_other).trackedEntity.entityId == this.trackedEntity.entityId;
 	}
 
-	// Token: 0x060039CF RID: 14799 RVA: 0x001790F1 File Offset: 0x001772F1
+	// Token: 0x06003A12 RID: 14866 RVA: 0x001798A9 File Offset: 0x00177AA9
 	public override int GetHashCode()
 	{
 		return this.trackedEntity.entityId;
 	}
 
-	// Token: 0x060039D0 RID: 14800 RVA: 0x00179100 File Offset: 0x00177300
+	// Token: 0x06003A13 RID: 14867 RVA: 0x001798B8 File Offset: 0x00177AB8
 	public void SendToPlayers(NetPackage _packet, int _excludePlayer, bool _inRangeOnly = false, int _range = 192)
 	{
 		foreach (EntityPlayer entityPlayer in this.trackedPlayers)
@@ -44,7 +44,7 @@ public class NetEntityDistributionEntry
 		}
 	}
 
-	// Token: 0x060039D1 RID: 14801 RVA: 0x00179188 File Offset: 0x00177388
+	// Token: 0x06003A14 RID: 14868 RVA: 0x00179940 File Offset: 0x00177B40
 	public void sendPacketToTrackedPlayersAndTrackedEntity(NetPackage _packet, int _excludePlayer, bool _inRangeOnly = false)
 	{
 		this.SendToPlayers(_packet, _excludePlayer, _inRangeOnly, 192);
@@ -54,19 +54,19 @@ public class NetEntityDistributionEntry
 		}
 	}
 
-	// Token: 0x060039D2 RID: 14802 RVA: 0x001791E8 File Offset: 0x001773E8
+	// Token: 0x06003A15 RID: 14869 RVA: 0x001799A0 File Offset: 0x00177BA0
 	public void SendDestroyEntityToPlayers()
 	{
 		this.SendToPlayers(NetPackageManager.GetPackage<NetPackageEntityRemove>().Setup(this.trackedEntity.entityId, EnumRemoveEntityReason.Killed), -1, false, 192);
 	}
 
-	// Token: 0x060039D3 RID: 14803 RVA: 0x0017920D File Offset: 0x0017740D
+	// Token: 0x06003A16 RID: 14870 RVA: 0x001799C5 File Offset: 0x00177BC5
 	public void SendUnloadEntityToPlayers()
 	{
 		this.SendToPlayers(NetPackageManager.GetPackage<NetPackageEntityRemove>().Setup(this.trackedEntity.entityId, EnumRemoveEntityReason.Unloaded), -1, false, 192);
 	}
 
-	// Token: 0x060039D4 RID: 14804 RVA: 0x00179232 File Offset: 0x00177432
+	// Token: 0x06003A17 RID: 14871 RVA: 0x001799EA File Offset: 0x00177BEA
 	public void Remove(EntityPlayer _e)
 	{
 		if (this.trackedPlayers.Contains(_e))
@@ -75,7 +75,7 @@ public class NetEntityDistributionEntry
 		}
 	}
 
-	// Token: 0x060039D5 RID: 14805 RVA: 0x00179250 File Offset: 0x00177450
+	// Token: 0x06003A18 RID: 14872 RVA: 0x00179A08 File Offset: 0x00177C08
 	public void updatePlayerEntity(EntityPlayer _ep)
 	{
 		if (_ep == this.trackedEntity)
@@ -125,7 +125,7 @@ public class NetEntityDistributionEntry
 		}
 	}
 
-	// Token: 0x060039D6 RID: 14806 RVA: 0x001794D8 File Offset: 0x001776D8
+	// Token: 0x06003A19 RID: 14873 RVA: 0x00179C90 File Offset: 0x00177E90
 	public void updatePlayerEntities(List<EntityPlayer> _list)
 	{
 		for (int i = 0; i < _list.Count; i++)
@@ -135,14 +135,14 @@ public class NetEntityDistributionEntry
 		}
 	}
 
-	// Token: 0x060039D7 RID: 14807 RVA: 0x00179505 File Offset: 0x00177705
+	// Token: 0x06003A1A RID: 14874 RVA: 0x00179CBD File Offset: 0x00177EBD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackage getSpawnPacket()
 	{
-		return NetPackageManager.GetPackage<NetPackageEntitySpawn>().Setup(new EntityCreationData(this.trackedEntity, true));
+		return NetPackageManager.GetPackage<NetPackageEntitySpawn>().Setup(new EntityCreationData(this.trackedEntity, StreamModeWrite.ToClient));
 	}
 
-	// Token: 0x060039D8 RID: 14808 RVA: 0x00179520 File Offset: 0x00177720
+	// Token: 0x06003A1B RID: 14875 RVA: 0x00179CD8 File Offset: 0x00177ED8
 	public void updatePlayerList(List<EntityPlayer> _playerList)
 	{
 		if (!this.firstUpdateDone || this.trackedEntity.GetDistanceSq(this.lastTrackedEntityPos) > 16f)
@@ -281,75 +281,75 @@ public class NetEntityDistributionEntry
 		this.trackedEntity.SetAirBorne(false);
 	}
 
-	// Token: 0x060039D9 RID: 14809 RVA: 0x00179AF8 File Offset: 0x00177CF8
+	// Token: 0x06003A1C RID: 14876 RVA: 0x0017A2B0 File Offset: 0x001784B0
 	public void SendFullUpdateNextTick()
 	{
 		this.sendFullUpdateAfterTicks = 100;
 	}
 
-	// Token: 0x060039DA RID: 14810 RVA: 0x00179B02 File Offset: 0x00177D02
+	// Token: 0x06003A1D RID: 14877 RVA: 0x0017A2BA File Offset: 0x001784BA
 	public static Vector3i EncodePos(Vector3 _pos)
 	{
 		return new Vector3i(_pos.x * 32f + 0.5f, _pos.y * 32f + 0.5f, _pos.z * 32f + 0.5f);
 	}
 
-	// Token: 0x060039DB RID: 14811 RVA: 0x00179B3F File Offset: 0x00177D3F
+	// Token: 0x06003A1E RID: 14878 RVA: 0x0017A2F7 File Offset: 0x001784F7
 	public static Vector3i EncodeRot(Vector3 _rot)
 	{
 		return new Vector3i(_rot * 256f / 360f);
 	}
 
-	// Token: 0x04002F71 RID: 12145
+	// Token: 0x04002F6B RID: 12139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxTrackingDistance = 46340;
 
-	// Token: 0x04002F72 RID: 12146
+	// Token: 0x04002F6C RID: 12140
 	public Entity trackedEntity;
 
-	// Token: 0x04002F73 RID: 12147
+	// Token: 0x04002F6D RID: 12141
 	public int updatTickCounter;
 
-	// Token: 0x04002F74 RID: 12148
+	// Token: 0x04002F6E RID: 12142
 	public Vector3i encodedPos;
 
-	// Token: 0x04002F75 RID: 12149
+	// Token: 0x04002F6F RID: 12143
 	public Vector3i encodedRot;
 
-	// Token: 0x04002F76 RID: 12150
+	// Token: 0x04002F70 RID: 12144
 	public bool encodedOnGround;
 
-	// Token: 0x04002F77 RID: 12151
+	// Token: 0x04002F71 RID: 12145
 	public Vector3 lastTrackedEntityMotion;
 
-	// Token: 0x04002F78 RID: 12152
+	// Token: 0x04002F72 RID: 12146
 	public int updateCounter;
 
-	// Token: 0x04002F79 RID: 12153
+	// Token: 0x04002F73 RID: 12147
 	public HashSet<EntityPlayer> trackedPlayers;
 
-	// Token: 0x04002F7A RID: 12154
+	// Token: 0x04002F74 RID: 12148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int trackingDistanceThreshold;
 
-	// Token: 0x04002F7B RID: 12155
+	// Token: 0x04002F75 RID: 12149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 lastTrackedEntityPos;
 
-	// Token: 0x04002F7C RID: 12156
+	// Token: 0x04002F76 RID: 12150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstUpdateDone;
 
-	// Token: 0x04002F7D RID: 12157
+	// Token: 0x04002F77 RID: 12151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldSendMotionUpdates;
 
-	// Token: 0x04002F7E RID: 12158
+	// Token: 0x04002F78 RID: 12152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sendFullUpdateAfterTicks;
 
-	// Token: 0x04002F7F RID: 12159
+	// Token: 0x04002F79 RID: 12153
 	public const int cFullUpdateAfterTicks = 100;
 
-	// Token: 0x04002F80 RID: 12160
+	// Token: 0x04002F7A RID: 12154
 	public int priorityLevel = 1;
 }

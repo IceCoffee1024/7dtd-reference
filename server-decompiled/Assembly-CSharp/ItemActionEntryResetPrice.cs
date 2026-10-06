@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D60 RID: 3424
+// Token: 0x02000D71 RID: 3441
 [Preserve]
 public class ItemActionEntryResetPrice : BaseItemActionEntry
 {
-	// Token: 0x0600681D RID: 26653 RVA: 0x00291504 File Offset: 0x0028F704
+	// Token: 0x06006824 RID: 26660 RVA: 0x00294AA4 File Offset: 0x00292CA4
 	public ItemActionEntryResetPrice(XUiController _controller)
 		: base(_controller, "lblContextActionReset", "ui_game_symbol_coin", BaseItemActionEntry.GamepadShortCut.None, "", "ui/ui_denied")
 	{
@@ -23,7 +23,7 @@ public class ItemActionEntryResetPrice : BaseItemActionEntry
 		this.isOwner = false;
 	}
 
-	// Token: 0x0600681E RID: 26654 RVA: 0x0029158C File Offset: 0x0028F78C
+	// Token: 0x06006825 RID: 26661 RVA: 0x00294B2C File Offset: 0x00292D2C
 	public override void OnActivated()
 	{
 		XUiC_TraderItemEntry xuiC_TraderItemEntry = (XUiC_TraderItemEntry)base.ItemController;
@@ -35,7 +35,7 @@ public class ItemActionEntryResetPrice : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_tab", -1, 0f, false, false);
 	}
 
-	// Token: 0x04004FFD RID: 20477
+	// Token: 0x0400503C RID: 20540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 }

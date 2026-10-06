@@ -2,28 +2,28 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085E RID: 2142
+// Token: 0x02000861 RID: 2145
 [Preserve]
 public class NetPackageTwitchVoteScheduling : NetPackage
 {
-	// Token: 0x06003E9F RID: 16031 RVA: 0x0012A165 File Offset: 0x00128365
+	// Token: 0x06003E40 RID: 15936 RVA: 0x0012AC85 File Offset: 0x00128E85
 	public NetPackageTwitchVoteScheduling Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003EA0 RID: 16032 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003E41 RID: 15937 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x06003EA1 RID: 16033 RVA: 0x0017BC33 File Offset: 0x00179E33
+	// Token: 0x06003E42 RID: 15938 RVA: 0x0017C2CF File Offset: 0x0017A4CF
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 	}
 
-	// Token: 0x06003EA2 RID: 16034 RVA: 0x0018B1B8 File Offset: 0x001893B8
+	// Token: 0x06003E43 RID: 15939 RVA: 0x0018B054 File Offset: 0x00189254
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -36,11 +36,5 @@ public class NetPackageTwitchVoteScheduling : NetPackage
 			return;
 		}
 		TwitchManager.Current.VotingManager.RequestApprovedToStart();
-	}
-
-	// Token: 0x06003EA3 RID: 16035 RVA: 0x00105CC1 File Offset: 0x00103EC1
-	public override int GetLength()
-	{
-		return 30;
 	}
 }

@@ -4,42 +4,42 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E8D RID: 3725
+// Token: 0x02000E9C RID: 3740
 [Preserve]
 public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 {
-	// Token: 0x140000AE RID: 174
-	// (add) Token: 0x0600739B RID: 29595 RVA: 0x002BDA28 File Offset: 0x002BBC28
-	// (remove) Token: 0x0600739C RID: 29596 RVA: 0x002BDA60 File Offset: 0x002BBC60
+	// Token: 0x140000AD RID: 173
+	// (add) Token: 0x06007393 RID: 29587 RVA: 0x002C0DD8 File Offset: 0x002BEFD8
+	// (remove) Token: 0x06007394 RID: 29588 RVA: 0x002C0E10 File Offset: 0x002BF010
 	public event XUiEvent_ListSelectionChangedEventHandler<T> SelectionChanged;
 
-	// Token: 0x140000AF RID: 175
-	// (add) Token: 0x0600739D RID: 29597 RVA: 0x002BDA98 File Offset: 0x002BBC98
-	// (remove) Token: 0x0600739E RID: 29598 RVA: 0x002BDAD0 File Offset: 0x002BBCD0
+	// Token: 0x140000AE RID: 174
+	// (add) Token: 0x06007395 RID: 29589 RVA: 0x002C0E48 File Offset: 0x002BF048
+	// (remove) Token: 0x06007396 RID: 29590 RVA: 0x002C0E80 File Offset: 0x002BF080
 	public event XUiEvent_ListPageNumberChangedEventHandler<T> PageNumberChanged;
 
-	// Token: 0x140000B0 RID: 176
-	// (add) Token: 0x0600739F RID: 29599 RVA: 0x002BDB08 File Offset: 0x002BBD08
-	// (remove) Token: 0x060073A0 RID: 29600 RVA: 0x002BDB40 File Offset: 0x002BBD40
+	// Token: 0x140000AF RID: 175
+	// (add) Token: 0x06007397 RID: 29591 RVA: 0x002C0EB8 File Offset: 0x002BF0B8
+	// (remove) Token: 0x06007398 RID: 29592 RVA: 0x002C0EF0 File Offset: 0x002BF0F0
 	public event XUiEvent_ListEntryClickedEventHandler<T> ListEntryClicked;
 
-	// Token: 0x140000B1 RID: 177
-	// (add) Token: 0x060073A1 RID: 29601 RVA: 0x002BDB78 File Offset: 0x002BBD78
-	// (remove) Token: 0x060073A2 RID: 29602 RVA: 0x002BDBB0 File Offset: 0x002BBDB0
+	// Token: 0x140000B0 RID: 176
+	// (add) Token: 0x06007399 RID: 29593 RVA: 0x002C0F28 File Offset: 0x002BF128
+	// (remove) Token: 0x0600739A RID: 29594 RVA: 0x002C0F60 File Offset: 0x002BF160
 	public event XUiEvent_ListEntryDoubleClickedEventHandler<T> ListEntryDoubleClicked;
 
-	// Token: 0x140000B2 RID: 178
-	// (add) Token: 0x060073A3 RID: 29603 RVA: 0x002BDBE8 File Offset: 0x002BBDE8
-	// (remove) Token: 0x060073A4 RID: 29604 RVA: 0x002BDC20 File Offset: 0x002BBE20
+	// Token: 0x140000B1 RID: 177
+	// (add) Token: 0x0600739B RID: 29595 RVA: 0x002C0F98 File Offset: 0x002BF198
+	// (remove) Token: 0x0600739C RID: 29596 RVA: 0x002C0FD0 File Offset: 0x002BF1D0
 	public event XUiEvent_ListEntryHoveredEventHandler<T> ListEntryHovered;
 
-	// Token: 0x140000B3 RID: 179
-	// (add) Token: 0x060073A5 RID: 29605 RVA: 0x002BDC58 File Offset: 0x002BBE58
-	// (remove) Token: 0x060073A6 RID: 29606 RVA: 0x002BDC90 File Offset: 0x002BBE90
+	// Token: 0x140000B2 RID: 178
+	// (add) Token: 0x0600739D RID: 29597 RVA: 0x002C1008 File Offset: 0x002BF208
+	// (remove) Token: 0x0600739E RID: 29598 RVA: 0x002C1040 File Offset: 0x002BF240
 	public event XUiEvent_PageContentsChangedEventHandler<T> PageContentsChanged;
 
-	// Token: 0x17000D6C RID: 3436
-	// (get) Token: 0x060073A7 RID: 29607 RVA: 0x002BDCC5 File Offset: 0x002BBEC5
+	// Token: 0x17000D87 RID: 3463
+	// (get) Token: 0x0600739F RID: 29599 RVA: 0x002C1075 File Offset: 0x002BF275
 	public int PageLength
 	{
 		get
@@ -57,9 +57,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D6D RID: 3437
-	// (get) Token: 0x060073A8 RID: 29608 RVA: 0x002BDCE5 File Offset: 0x002BBEE5
-	// (set) Token: 0x060073A9 RID: 29609 RVA: 0x002BDCF0 File Offset: 0x002BBEF0
+	// Token: 0x17000D88 RID: 3464
+	// (get) Token: 0x060073A0 RID: 29600 RVA: 0x002C1095 File Offset: 0x002BF295
+	// (set) Token: 0x060073A1 RID: 29601 RVA: 0x002C10A0 File Offset: 0x002BF2A0
 	public int Page
 	{
 		get
@@ -87,8 +87,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D6E RID: 3438
-	// (get) Token: 0x060073AA RID: 29610 RVA: 0x002BDD59 File Offset: 0x002BBF59
+	// Token: 0x17000D89 RID: 3465
+	// (get) Token: 0x060073A2 RID: 29602 RVA: 0x002C1109 File Offset: 0x002BF309
 	public int LastPage
 	{
 		get
@@ -97,9 +97,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D6F RID: 3439
-	// (get) Token: 0x060073AB RID: 29611 RVA: 0x002BDD7C File Offset: 0x002BBF7C
-	// (set) Token: 0x060073AC RID: 29612 RVA: 0x002BDD84 File Offset: 0x002BBF84
+	// Token: 0x17000D8A RID: 3466
+	// (get) Token: 0x060073A3 RID: 29603 RVA: 0x002C112C File Offset: 0x002BF32C
+	// (set) Token: 0x060073A4 RID: 29604 RVA: 0x002C1134 File Offset: 0x002BF334
 	public XUiC_List<T>.XUiC_ListEntry SelectedEntry
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -148,8 +148,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D70 RID: 3440
-	// (get) Token: 0x060073AD RID: 29613 RVA: 0x002BDE58 File Offset: 0x002BC058
+	// Token: 0x17000D8B RID: 3467
+	// (get) Token: 0x060073A5 RID: 29605 RVA: 0x002C1208 File Offset: 0x002BF408
 	public T SelectedEntryData
 	{
 		get
@@ -163,9 +163,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D71 RID: 3441
-	// (get) Token: 0x060073AE RID: 29614 RVA: 0x002BDE7E File Offset: 0x002BC07E
-	// (set) Token: 0x060073AF RID: 29615 RVA: 0x002BDE88 File Offset: 0x002BC088
+	// Token: 0x17000D8C RID: 3468
+	// (get) Token: 0x060073A6 RID: 29606 RVA: 0x002C122E File Offset: 0x002BF42E
+	// (set) Token: 0x060073A7 RID: 29607 RVA: 0x002C1238 File Offset: 0x002BF438
 	public int SelectedEntryIndex
 	{
 		get
@@ -192,9 +192,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D72 RID: 3442
-	// (get) Token: 0x060073B0 RID: 29616 RVA: 0x002BDEEB File Offset: 0x002BC0EB
-	// (set) Token: 0x060073B1 RID: 29617 RVA: 0x002BDEF3 File Offset: 0x002BC0F3
+	// Token: 0x17000D8D RID: 3469
+	// (get) Token: 0x060073A8 RID: 29608 RVA: 0x002C129B File Offset: 0x002BF49B
+	// (set) Token: 0x060073A9 RID: 29609 RVA: 0x002C12A3 File Offset: 0x002BF4A3
 	[XuiXmlAttribute("page_size_override", false)]
 	public int PageSizeOverride
 	{
@@ -217,9 +217,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D73 RID: 3443
-	// (get) Token: 0x060073B2 RID: 29618 RVA: 0x002BDF1C File Offset: 0x002BC11C
-	// (set) Token: 0x060073B3 RID: 29619 RVA: 0x002BDF24 File Offset: 0x002BC124
+	// Token: 0x17000D8E RID: 3470
+	// (get) Token: 0x060073AA RID: 29610 RVA: 0x002C12CC File Offset: 0x002BF4CC
+	// (set) Token: 0x060073AB RID: 29611 RVA: 0x002C12D4 File Offset: 0x002BF4D4
 	[XuiXmlAttribute("paging_step_size", false)]
 	public XUiC_List<T>.EPagingStepSize PagingStepSize
 	{
@@ -238,9 +238,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D74 RID: 3444
-	// (get) Token: 0x060073B4 RID: 29620 RVA: 0x002BDF3E File Offset: 0x002BC13E
-	// (set) Token: 0x060073B5 RID: 29621 RVA: 0x002BDF46 File Offset: 0x002BC146
+	// Token: 0x17000D8F RID: 3471
+	// (get) Token: 0x060073AC RID: 29612 RVA: 0x002C12EE File Offset: 0x002BF4EE
+	// (set) Token: 0x060073AD RID: 29613 RVA: 0x002C12F6 File Offset: 0x002BF4F6
 	[XuiXmlAttribute("paging_overscroll", false)]
 	public Vector2i PagingOverscroll
 	{
@@ -259,9 +259,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D75 RID: 3445
-	// (get) Token: 0x060073B6 RID: 29622 RVA: 0x002BDF65 File Offset: 0x002BC165
-	// (set) Token: 0x060073B7 RID: 29623 RVA: 0x002BDF70 File Offset: 0x002BC170
+	// Token: 0x17000D90 RID: 3472
+	// (get) Token: 0x060073AE RID: 29614 RVA: 0x002C1315 File Offset: 0x002BF515
+	// (set) Token: 0x060073AF RID: 29615 RVA: 0x002C1320 File Offset: 0x002BF520
 	public int CurrentBaseIndex
 	{
 		get
@@ -301,8 +301,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D76 RID: 3446
-	// (get) Token: 0x060073B8 RID: 29624 RVA: 0x002BE016 File Offset: 0x002BC216
+	// Token: 0x17000D91 RID: 3473
+	// (get) Token: 0x060073B0 RID: 29616 RVA: 0x002C13C6 File Offset: 0x002BF5C6
 	[XuiXmlBinding("current_min_index")]
 	public int CurrentPageMinIndex
 	{
@@ -312,8 +312,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D77 RID: 3447
-	// (get) Token: 0x060073B9 RID: 29625 RVA: 0x002BE024 File Offset: 0x002BC224
+	// Token: 0x17000D92 RID: 3474
+	// (get) Token: 0x060073B1 RID: 29617 RVA: 0x002C13D4 File Offset: 0x002BF5D4
 	[XuiXmlBinding("current_max_index")]
 	public int CurrentPageMaxIndex
 	{
@@ -323,8 +323,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D78 RID: 3448
-	// (get) Token: 0x060073BA RID: 29626 RVA: 0x002BE040 File Offset: 0x002BC240
+	// Token: 0x17000D93 RID: 3475
+	// (get) Token: 0x060073B2 RID: 29618 RVA: 0x002C13F0 File Offset: 0x002BF5F0
 	[XuiXmlBinding("hasselection")]
 	public bool HasSelection
 	{
@@ -334,8 +334,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D79 RID: 3449
-	// (get) Token: 0x060073BB RID: 29627 RVA: 0x002BE050 File Offset: 0x002BC250
+	// Token: 0x17000D94 RID: 3476
+	// (get) Token: 0x060073B3 RID: 29619 RVA: 0x002C1400 File Offset: 0x002BF600
 	[XuiXmlBinding("entrycountfiltered")]
 	public int EntryCount
 	{
@@ -345,14 +345,14 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x060073BC RID: 29628 RVA: 0x002BE05D File Offset: 0x002BC25D
+	// Token: 0x060073B4 RID: 29620 RVA: 0x002C140D File Offset: 0x002BF60D
 	public T GetEntry(int _index)
 	{
 		return this.filteredEntries[_index];
 	}
 
-	// Token: 0x17000D7A RID: 3450
-	// (get) Token: 0x060073BD RID: 29629 RVA: 0x002BE06B File Offset: 0x002BC26B
+	// Token: 0x17000D95 RID: 3477
+	// (get) Token: 0x060073B5 RID: 29621 RVA: 0x002C141B File Offset: 0x002BF61B
 	[XuiXmlBinding("entrycounttotal")]
 	public int UnfilteredEntryCount
 	{
@@ -362,31 +362,31 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x17000D7B RID: 3451
-	// (get) Token: 0x060073BE RID: 29630 RVA: 0x002BE078 File Offset: 0x002BC278
-	// (set) Token: 0x060073BF RID: 29631 RVA: 0x002BE080 File Offset: 0x002BC280
+	// Token: 0x17000D96 RID: 3478
+	// (get) Token: 0x060073B6 RID: 29622 RVA: 0x002C1428 File Offset: 0x002BF628
+	// (set) Token: 0x060073B7 RID: 29623 RVA: 0x002C1430 File Offset: 0x002BF630
 	[XuiXmlAttribute("clear_selection_on_open", false)]
 	public bool ClearSelectionOnOpenClose { get; set; } = true;
 
-	// Token: 0x17000D7C RID: 3452
-	// (get) Token: 0x060073C0 RID: 29632 RVA: 0x002BE089 File Offset: 0x002BC289
-	// (set) Token: 0x060073C1 RID: 29633 RVA: 0x002BE091 File Offset: 0x002BC291
+	// Token: 0x17000D97 RID: 3479
+	// (get) Token: 0x060073B8 RID: 29624 RVA: 0x002C1439 File Offset: 0x002BF639
+	// (set) Token: 0x060073B9 RID: 29625 RVA: 0x002C1441 File Offset: 0x002BF641
 	[XuiXmlAttribute("clear_searchtext_on_open", false)]
 	public bool ClearSearchTextOnOpenClose { get; set; }
 
-	// Token: 0x17000D7D RID: 3453
-	// (get) Token: 0x060073C2 RID: 29634 RVA: 0x002BE09A File Offset: 0x002BC29A
-	// (set) Token: 0x060073C3 RID: 29635 RVA: 0x002BE0A2 File Offset: 0x002BC2A2
+	// Token: 0x17000D98 RID: 3480
+	// (get) Token: 0x060073BA RID: 29626 RVA: 0x002C144A File Offset: 0x002BF64A
+	// (set) Token: 0x060073BB RID: 29627 RVA: 0x002C1452 File Offset: 0x002BF652
 	[XuiXmlAttribute("selectable", false)]
 	public bool SelectableEntries { get; set; } = true;
 
-	// Token: 0x17000D7E RID: 3454
-	// (get) Token: 0x060073C4 RID: 29636 RVA: 0x002BE0AB File Offset: 0x002BC2AB
-	// (set) Token: 0x060073C5 RID: 29637 RVA: 0x002BE0B3 File Offset: 0x002BC2B3
+	// Token: 0x17000D99 RID: 3481
+	// (get) Token: 0x060073BC RID: 29628 RVA: 0x002C145B File Offset: 0x002BF65B
+	// (set) Token: 0x060073BD RID: 29629 RVA: 0x002C1463 File Offset: 0x002BF663
 	[XuiXmlAttribute("cursor_controllable", false)]
 	public bool CursorControllable { get; set; }
 
-	// Token: 0x060073C6 RID: 29638 RVA: 0x002BE0BC File Offset: 0x002BC2BC
+	// Token: 0x060073BE RID: 29630 RVA: 0x002C146C File Offset: 0x002BF66C
 	public override void Init()
 	{
 		base.Init();
@@ -421,7 +421,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.RebuildList(true);
 	}
 
-	// Token: 0x060073C7 RID: 29639 RVA: 0x002BE19F File Offset: 0x002BC39F
+	// Token: 0x060073BF RID: 29631 RVA: 0x002C154F File Offset: 0x002BF74F
 	public virtual void RebuildList(bool _resetFilter = false)
 	{
 		this.ClearSelection();
@@ -433,7 +433,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.RefreshView(_resetFilter, true);
 	}
 
-	// Token: 0x060073C8 RID: 29640 RVA: 0x002BE1C0 File Offset: 0x002BC3C0
+	// Token: 0x060073C0 RID: 29632 RVA: 0x002C1570 File Offset: 0x002BF770
 	public virtual void RefreshView(bool _resetFilter = false, bool _resetPage = true)
 	{
 		if (_resetFilter)
@@ -475,7 +475,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.CurrentBaseIndex = this.PagingOverscroll.x;
 	}
 
-	// Token: 0x060073C9 RID: 29641 RVA: 0x002BE264 File Offset: 0x002BC464
+	// Token: 0x060073C1 RID: 29633 RVA: 0x002C1614 File Offset: 0x002BF814
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_List<T>.XUiC_ListEntry IsVisible(T _value)
 	{
@@ -490,7 +490,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		return null;
 	}
 
-	// Token: 0x060073CA RID: 29642 RVA: 0x002BE2AA File Offset: 0x002BC4AA
+	// Token: 0x060073C2 RID: 29634 RVA: 0x002C165A File Offset: 0x002BF85A
 	[XuiBindEvent("OnPageChanged", "pager")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnPageChanged()
@@ -498,7 +498,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.Page = this.pager.CurrentPageNumber;
 	}
 
-	// Token: 0x060073CB RID: 29643 RVA: 0x002BE2BD File Offset: 0x002BC4BD
+	// Token: 0x060073C3 RID: 29635 RVA: 0x002C166D File Offset: 0x002BF86D
 	[XuiBindEvent("OnScroll", null)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
@@ -506,7 +506,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.ChangePage((_delta > 0f) ? (-1) : 1);
 	}
 
-	// Token: 0x060073CC RID: 29644 RVA: 0x002BE2D4 File Offset: 0x002BC4D4
+	// Token: 0x060073C4 RID: 29636 RVA: 0x002C1684 File Offset: 0x002BF884
 	public void ChangePage(int _offset)
 	{
 		XUiC_List<T>.EPagingStepSize epagingStepSize = this.PagingStepSize;
@@ -522,7 +522,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.CurrentBaseIndex += _offset;
 	}
 
-	// Token: 0x060073CD RID: 29645 RVA: 0x002BE314 File Offset: 0x002BC514
+	// Token: 0x060073C5 RID: 29637 RVA: 0x002C16C4 File Offset: 0x002BF8C4
 	[XuiBindEvent("OnSubmitHandler", "searchBox")]
 	[XuiBindEvent("OnSubmitHandler", "searchBox2")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -531,7 +531,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.OnSearchInputChanged(_sender, _text, false);
 	}
 
-	// Token: 0x060073CE RID: 29646 RVA: 0x002BE31F File Offset: 0x002BC51F
+	// Token: 0x060073C6 RID: 29638 RVA: 0x002C16CF File Offset: 0x002BF8CF
 	[XuiBindEvent("OnChangeHandler", "searchBox")]
 	[XuiBindEvent("OnChangeHandler", "searchBox2")]
 	[PublicizedFrom(EAccessModifier.Protected)]
@@ -541,13 +541,13 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060073CF RID: 29647 RVA: 0x002BE32F File Offset: 0x002BC52F
+	// Token: 0x060073C7 RID: 29639 RVA: 0x002C16DF File Offset: 0x002BF8DF
 	public IReadOnlyList<T> AllEntries()
 	{
 		return this.allEntries;
 	}
 
-	// Token: 0x060073D0 RID: 29648 RVA: 0x002BE338 File Offset: 0x002BC538
+	// Token: 0x060073C8 RID: 29640 RVA: 0x002C16E8 File Offset: 0x002BF8E8
 	public T GetEntryByIndex(int _index)
 	{
 		if (_index < 0 || _index >= this.filteredEntries.Count)
@@ -557,7 +557,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		return this.filteredEntries[_index];
 	}
 
-	// Token: 0x060073D1 RID: 29649 RVA: 0x002BE370 File Offset: 0x002BC570
+	// Token: 0x060073C9 RID: 29641 RVA: 0x002C1720 File Offset: 0x002BF920
 	public void GetCurrentPageEntries(List<T> _entries)
 	{
 		if (_entries == null)
@@ -575,7 +575,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x060073D2 RID: 29650 RVA: 0x002BE3CC File Offset: 0x002BC5CC
+	// Token: 0x060073CA RID: 29642 RVA: 0x002C177C File Offset: 0x002BF97C
 	public void SetFilter(string _filter)
 	{
 		if (this.searchBox != null)
@@ -593,7 +593,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		Log.Error("Can not set filter without search box");
 	}
 
-	// Token: 0x060073D3 RID: 29651 RVA: 0x002BE41C File Offset: 0x002BC61C
+	// Token: 0x060073CB RID: 29643 RVA: 0x002C17CC File Offset: 0x002BF9CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FilterResults(string _textMatch)
 	{
@@ -627,7 +627,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.filteredEntries.AddRange(this.allEntries);
 	}
 
-	// Token: 0x060073D4 RID: 29652 RVA: 0x002BE4F8 File Offset: 0x002BC6F8
+	// Token: 0x060073CC RID: 29644 RVA: 0x002C18A8 File Offset: 0x002BFAA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnSelectionChanged(XUiC_List<T>.XUiC_ListEntry _previousEntry, XUiC_List<T>.XUiC_ListEntry _newEntry)
 	{
@@ -649,7 +649,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.ignoreSelectionChange = false;
 	}
 
-	// Token: 0x060073D5 RID: 29653 RVA: 0x002BE568 File Offset: 0x002BC768
+	// Token: 0x060073CD RID: 29645 RVA: 0x002C1918 File Offset: 0x002BFB18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void goToPageOfCurrentlySelectedEntry()
 	{
@@ -671,7 +671,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.currentSelectedEntry = (flag ? t : default(T));
 	}
 
-	// Token: 0x060073D6 RID: 29654 RVA: 0x002BE5E0 File Offset: 0x002BC7E0
+	// Token: 0x060073CE RID: 29646 RVA: 0x002C1990 File Offset: 0x002BFB90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void forceEntryVisible(int _index)
 	{
@@ -696,7 +696,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.CurrentBaseIndex = _index;
 	}
 
-	// Token: 0x060073D7 RID: 29655 RVA: 0x002BE640 File Offset: 0x002BC840
+	// Token: 0x060073CF RID: 29647 RVA: 0x002C19F0 File Offset: 0x002BFBF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCurrentPageContents()
 	{
@@ -733,7 +733,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x060073D8 RID: 29656 RVA: 0x002BE730 File Offset: 0x002BC930
+	// Token: 0x060073D0 RID: 29648 RVA: 0x002C1AE0 File Offset: 0x002BFCE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePageLabel()
 	{
@@ -745,7 +745,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.pager.CurrentPageNumber = this.page;
 	}
 
-	// Token: 0x060073D9 RID: 29657 RVA: 0x002BE760 File Offset: 0x002BC960
+	// Token: 0x060073D1 RID: 29649 RVA: 0x002C1B10 File Offset: 0x002BFD10
 	public override void Update(float _dt)
 	{
 		if (this.SelectableEntries && this.CursorControllable && this.columns > 0 && this.rows > 0 && PlatformManager.NativePlatform.Input.CurrentInputStyle == PlayerInputManager.InputStyle.Keyboard && !this.xui.playerUI.windowManager.IsInputActive())
@@ -792,7 +792,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		base.Update(_dt);
 	}
 
-	// Token: 0x060073DA RID: 29658 RVA: 0x002BE8F4 File Offset: 0x002BCAF4
+	// Token: 0x060073D2 RID: 29650 RVA: 0x002C1CA4 File Offset: 0x002BFEA4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -816,7 +816,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060073DB RID: 29659 RVA: 0x002BE970 File Offset: 0x002BCB70
+	// Token: 0x060073D3 RID: 29651 RVA: 0x002C1D20 File Offset: 0x002BFF20
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -837,13 +837,13 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		}
 	}
 
-	// Token: 0x060073DC RID: 29660 RVA: 0x002BE9C9 File Offset: 0x002BCBC9
+	// Token: 0x060073D4 RID: 29652 RVA: 0x002C1D79 File Offset: 0x002BFF79
 	public void ClearSelection()
 	{
 		this.SelectedEntry = null;
 	}
 
-	// Token: 0x060073DD RID: 29661 RVA: 0x002BE9D2 File Offset: 0x002BCBD2
+	// Token: 0x060073D5 RID: 29653 RVA: 0x002C1D82 File Offset: 0x002BFF82
 	public void SelectCursorElementForSelectedEntry()
 	{
 		XUiC_List<T>.XUiC_ListEntry xuiC_ListEntry = this.SelectedEntry;
@@ -854,7 +854,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		xuiC_ListEntry.SelectCursorElement(true, false);
 	}
 
-	// Token: 0x060073DE RID: 29662 RVA: 0x002BE9E7 File Offset: 0x002BCBE7
+	// Token: 0x060073D6 RID: 29654 RVA: 0x002C1D97 File Offset: 0x002BFF97
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnListEntryClicked(T _entry)
 	{
@@ -866,7 +866,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		listEntryClicked(this, _entry);
 	}
 
-	// Token: 0x060073DF RID: 29663 RVA: 0x002BE9FB File Offset: 0x002BCBFB
+	// Token: 0x060073D7 RID: 29655 RVA: 0x002C1DAB File Offset: 0x002BFFAB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnListEntryDoubleClicked(T _entry)
 	{
@@ -878,7 +878,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		listEntryDoubleClicked(this, _entry);
 	}
 
-	// Token: 0x060073E0 RID: 29664 RVA: 0x002BEA0F File Offset: 0x002BCC0F
+	// Token: 0x060073D8 RID: 29656 RVA: 0x002C1DBF File Offset: 0x002BFFBF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnListEntryHovered(T _entry, bool _isOver)
 	{
@@ -890,108 +890,108 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 		listEntryHovered(this, _entry, _isOver);
 	}
 
-	// Token: 0x060073E1 RID: 29665 RVA: 0x002BEA24 File Offset: 0x002BCC24
+	// Token: 0x060073D9 RID: 29657 RVA: 0x002C1DD4 File Offset: 0x002BFFD4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_List()
 	{
 	}
 
-	// Token: 0x04005646 RID: 22086
+	// Token: 0x0400567D RID: 22141
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<T> filteredEntries = new List<T>();
 
-	// Token: 0x04005647 RID: 22087
+	// Token: 0x0400567E RID: 22142
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public T currentSelectedEntry;
 
-	// Token: 0x04005648 RID: 22088
+	// Token: 0x0400567F RID: 22143
 	[XuiBindComponent("list.", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_List<T>.XUiC_ListEntry[] listEntryControllers;
 
-	// Token: 0x04005649 RID: 22089
+	// Token: 0x04005680 RID: 22144
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_List<T>.XUiC_ListEntry selectedEntry;
 
-	// Token: 0x0400564A RID: 22090
+	// Token: 0x04005681 RID: 22145
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int selectedEntryIndex = -1;
 
-	// Token: 0x0400564B RID: 22091
+	// Token: 0x04005682 RID: 22146
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool updateSelectedItemByIndex;
 
-	// Token: 0x0400564C RID: 22092
+	// Token: 0x04005683 RID: 22147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pageSizeOverride = -1;
 
-	// Token: 0x0400564D RID: 22093
+	// Token: 0x04005684 RID: 22148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_List<T>.EPagingStepSize pagingStepSize;
 
-	// Token: 0x0400564E RID: 22094
+	// Token: 0x04005685 RID: 22149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i pagingOverscroll;
 
-	// Token: 0x0400564F RID: 22095
+	// Token: 0x04005686 RID: 22150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int minIndex;
 
-	// Token: 0x04005650 RID: 22096
+	// Token: 0x04005687 RID: 22151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04005651 RID: 22097
+	// Token: 0x04005688 RID: 22152
 	[XuiBindComponent("searchInput", false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_TextInput searchBox;
 
-	// Token: 0x04005652 RID: 22098
+	// Token: 0x04005689 RID: 22153
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_CaptionedTextBox searchBox2;
 
-	// Token: 0x04005653 RID: 22099
+	// Token: 0x0400568A RID: 22154
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_Paging pager;
 
-	// Token: 0x04005654 RID: 22100
+	// Token: 0x0400568B RID: 22155
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly List<T> allEntries = new List<T>();
 
-	// Token: 0x04005659 RID: 22105
+	// Token: 0x04005690 RID: 22160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int columns;
 
-	// Token: 0x0400565A RID: 22106
+	// Token: 0x04005691 RID: 22161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int rows;
 
-	// Token: 0x0400565B RID: 22107
+	// Token: 0x04005692 RID: 22162
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string previousMatch = "";
 
-	// Token: 0x0400565C RID: 22108
+	// Token: 0x04005693 RID: 22163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ignoreSelectionChange;
 
-	// Token: 0x02000E8E RID: 3726
+	// Token: 0x02000E9D RID: 3741
 	public enum EPagingStepSize
 	{
-		// Token: 0x0400565E RID: 22110
+		// Token: 0x04005695 RID: 22165
 		Page,
-		// Token: 0x0400565F RID: 22111
+		// Token: 0x04005696 RID: 22166
 		SingleEntry
 	}
 
-	// Token: 0x02000E8F RID: 3727
+	// Token: 0x02000E9E RID: 3742
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class XUiC_ListEntry : XUiController
 	{
-		// Token: 0x17000D7F RID: 3455
-		// (get) Token: 0x060073E2 RID: 29666 RVA: 0x002BEA74 File Offset: 0x002BCC74
+		// Token: 0x17000D9A RID: 3482
+		// (get) Token: 0x060073DA RID: 29658 RVA: 0x002C1E24 File Offset: 0x002C0024
 		[XuiXmlBinding("hasentry")]
 		public bool HasEntry
 		{
@@ -1002,8 +1002,8 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			}
 		}
 
-		// Token: 0x17000D80 RID: 3456
-		// (get) Token: 0x060073E3 RID: 29667 RVA: 0x002BEA84 File Offset: 0x002BCC84
+		// Token: 0x17000D9B RID: 3483
+		// (get) Token: 0x060073DB RID: 29659 RVA: 0x002C1E34 File Offset: 0x002C0034
 		[XuiXmlBinding("hovered")]
 		public bool IsHovered
 		{
@@ -1014,9 +1014,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			}
 		}
 
-		// Token: 0x17000D81 RID: 3457
-		// (get) Token: 0x060073E4 RID: 29668 RVA: 0x002BEA96 File Offset: 0x002BCC96
-		// (set) Token: 0x060073E5 RID: 29669 RVA: 0x002BEAA0 File Offset: 0x002BCCA0
+		// Token: 0x17000D9C RID: 3484
+		// (get) Token: 0x060073DC RID: 29660 RVA: 0x002C1E46 File Offset: 0x002C0046
+		// (set) Token: 0x060073DD RID: 29661 RVA: 0x002C1E50 File Offset: 0x002C0050
 		[XuiXmlBinding("isselected")]
 		public new bool Selected
 		{
@@ -1047,9 +1047,9 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			}
 		}
 
-		// Token: 0x17000D82 RID: 3458
-		// (get) Token: 0x060073E6 RID: 29670 RVA: 0x002BEB12 File Offset: 0x002BCD12
-		// (set) Token: 0x060073E7 RID: 29671 RVA: 0x002BEB1A File Offset: 0x002BCD1A
+		// Token: 0x17000D9D RID: 3485
+		// (get) Token: 0x060073DE RID: 29662 RVA: 0x002C1EC2 File Offset: 0x002C00C2
+		// (set) Token: 0x060073DF RID: 29663 RVA: 0x002C1ECA File Offset: 0x002C00CA
 		public bool ForceHovered
 		{
 			get
@@ -1067,7 +1067,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			}
 		}
 
-		// Token: 0x060073E8 RID: 29672 RVA: 0x002BEB34 File Offset: 0x002BCD34
+		// Token: 0x060073E0 RID: 29664 RVA: 0x002C1EE4 File Offset: 0x002C00E4
 		public override void Init()
 		{
 			base.Init();
@@ -1075,7 +1075,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			this.IsDirty = true;
 		}
 
-		// Token: 0x060073E9 RID: 29673 RVA: 0x002BEB54 File Offset: 0x002BCD54
+		// Token: 0x060073E1 RID: 29665 RVA: 0x002C1F04 File Offset: 0x002C0104
 		[XuiBindEvent("OnScroll", null)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Event_OnScroll(XUiController _sender, float _delta)
@@ -1083,7 +1083,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			this.list.HandleOnScroll(this, _delta);
 		}
 
-		// Token: 0x060073EA RID: 29674 RVA: 0x002BEB63 File Offset: 0x002BCD63
+		// Token: 0x060073E2 RID: 29666 RVA: 0x002C1F13 File Offset: 0x002C0113
 		[XuiBindEvent("OnPress", null)]
 		public void Event_OnPress(XUiController _sender, int _mouseButton)
 		{
@@ -1094,21 +1094,21 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			this.list.OnListEntryClicked(this.entryData);
 		}
 
-		// Token: 0x060073EB RID: 29675 RVA: 0x002BEB85 File Offset: 0x002BCD85
+		// Token: 0x060073E3 RID: 29667 RVA: 0x002C1F35 File Offset: 0x002C0135
 		[XuiBindEvent("OnDoubleClick", null)]
 		public void Event_OnDoubleClick(XUiController _sender, int _mouseButton)
 		{
 			this.list.OnListEntryDoubleClicked(this.entryData);
 		}
 
-		// Token: 0x060073EC RID: 29676 RVA: 0x002BEB98 File Offset: 0x002BCD98
+		// Token: 0x060073E4 RID: 29668 RVA: 0x002C1F48 File Offset: 0x002C0148
 		[XuiBindEvent("OnHover", null)]
 		public void Event_OnHover(XUiController _sender, bool _isOver)
 		{
 			this.list.OnListEntryHovered(this.entryData, _isOver);
 		}
 
-		// Token: 0x060073ED RID: 29677 RVA: 0x002BEBAC File Offset: 0x002BCDAC
+		// Token: 0x060073E5 RID: 29669 RVA: 0x002C1F5C File Offset: 0x002C015C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnHovered(bool _isOver)
 		{
@@ -1117,7 +1117,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			base.OnHovered(_isOver);
 		}
 
-		// Token: 0x060073EE RID: 29678 RVA: 0x002BEBC4 File Offset: 0x002BCDC4
+		// Token: 0x060073E6 RID: 29670 RVA: 0x002C1F74 File Offset: 0x002C0174
 		public override void Update(float _dt)
 		{
 			base.Update(_dt);
@@ -1132,7 +1132,7 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			}
 		}
 
-		// Token: 0x060073EF RID: 29679 RVA: 0x002BEC1E File Offset: 0x002BCE1E
+		// Token: 0x060073E7 RID: 29671 RVA: 0x002C1FCE File Offset: 0x002C01CE
 		public virtual void SetEntry(T _data)
 		{
 			if (_data != this.entryData)
@@ -1143,30 +1143,30 @@ public abstract class XUiC_List<T> : XUiController where T : XUiListEntry<T>
 			this.IsDirty = true;
 		}
 
-		// Token: 0x060073F0 RID: 29680 RVA: 0x002BEC52 File Offset: 0x002BCE52
+		// Token: 0x060073E8 RID: 29672 RVA: 0x002C2002 File Offset: 0x002C0202
 		public T GetEntry()
 		{
 			return this.entryData;
 		}
 
-		// Token: 0x04005660 RID: 22112
+		// Token: 0x04005697 RID: 22167
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isHovered;
 
-		// Token: 0x04005661 RID: 22113
+		// Token: 0x04005698 RID: 22168
 		[XuiBindParent(true)]
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly XUiC_List<T> list;
 
-		// Token: 0x04005662 RID: 22114
+		// Token: 0x04005699 RID: 22169
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public T entryData;
 
-		// Token: 0x04005663 RID: 22115
+		// Token: 0x0400569A RID: 22170
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool selected;
 
-		// Token: 0x04005664 RID: 22116
+		// Token: 0x0400569B RID: 22171
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool forceHovered;
 	}

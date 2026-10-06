@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-// Token: 0x0200111F RID: 4383
+// Token: 0x02001137 RID: 4407
 [AttributeUsage(AttributeTargets.Class, Inherited = false)]
 [MeansImplicitUse]
 public class XuiXmlAttributeConvertersClassAttribute : Attribute

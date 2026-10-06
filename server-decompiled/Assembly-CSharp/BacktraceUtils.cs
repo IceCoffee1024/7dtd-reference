@@ -11,11 +11,11 @@ using Platform;
 using UniLinq;
 using UnityEngine;
 
-// Token: 0x02001399 RID: 5017
+// Token: 0x020013B9 RID: 5049
 public static class BacktraceUtils
 {
-	// Token: 0x170012BB RID: 4795
-	// (get) Token: 0x06009E44 RID: 40516 RVA: 0x003BAB39 File Offset: 0x003B8D39
+	// Token: 0x17001300 RID: 4864
+	// (get) Token: 0x06009EEF RID: 40687 RVA: 0x003BF6B5 File Offset: 0x003BD8B5
 	public static bool Initialized
 	{
 		get
@@ -24,8 +24,8 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x170012BC RID: 4796
-	// (get) Token: 0x06009E45 RID: 40517 RVA: 0x003BAB46 File Offset: 0x003B8D46
+	// Token: 0x17001301 RID: 4865
+	// (get) Token: 0x06009EF0 RID: 40688 RVA: 0x003BF6C2 File Offset: 0x003BD8C2
 	public static bool Enabled
 	{
 		get
@@ -34,8 +34,8 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x170012BD RID: 4797
-	// (get) Token: 0x06009E46 RID: 40518 RVA: 0x003BAB56 File Offset: 0x003B8D56
+	// Token: 0x17001302 RID: 4866
+	// (get) Token: 0x06009EF1 RID: 40689 RVA: 0x003BF6D2 File Offset: 0x003BD8D2
 	public static bool BugReportFeature
 	{
 		get
@@ -44,8 +44,8 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x170012BE RID: 4798
-	// (get) Token: 0x06009E47 RID: 40519 RVA: 0x003BAB66 File Offset: 0x003B8D66
+	// Token: 0x17001303 RID: 4867
+	// (get) Token: 0x06009EF2 RID: 40690 RVA: 0x003BF6E2 File Offset: 0x003BD8E2
 	public static bool BugReportAttachSaveFeature
 	{
 		get
@@ -54,8 +54,8 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x170012BF RID: 4799
-	// (get) Token: 0x06009E48 RID: 40520 RVA: 0x003BAB7D File Offset: 0x003B8D7D
+	// Token: 0x17001304 RID: 4868
+	// (get) Token: 0x06009EF3 RID: 40691 RVA: 0x003BF6F9 File Offset: 0x003BD8F9
 	public static bool BugReportAttachWholeWorldFeature
 	{
 		get
@@ -64,7 +64,7 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x06009E49 RID: 40521 RVA: 0x003BAB94 File Offset: 0x003B8D94
+	// Token: 0x06009EF4 RID: 40692 RVA: 0x003BF710 File Offset: 0x003BD910
 	public static void InitializeBacktrace()
 	{
 		Log.Out("[BACKTRACE] Initialize");
@@ -73,7 +73,7 @@ public static class BacktraceUtils
 		Log.Out("[BACKTRACE] Initialized");
 	}
 
-	// Token: 0x06009E4A RID: 40522 RVA: 0x003BABB4 File Offset: 0x003B8DB4
+	// Token: 0x06009EF5 RID: 40693 RVA: 0x003BF730 File Offset: 0x003BD930
 	public static void BacktraceUserLoggedIn(IPlatform platform)
 	{
 		Log.Out(string.Format("[BACKTRACE] Attempting to get User ID from platform: {0}", (platform != null) ? new EPlatformIdentifier?(platform.PlatformIdentifier) : null));
@@ -96,7 +96,7 @@ public static class BacktraceUtils
 		BacktraceUtils.RefreshUserIdAttribute();
 	}
 
-	// Token: 0x06009E4B RID: 40523 RVA: 0x003BAC6C File Offset: 0x003B8E6C
+	// Token: 0x06009EF6 RID: 40694 RVA: 0x003BF7E8 File Offset: 0x003BD9E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RefreshUserIdAttribute()
 	{
@@ -116,7 +116,7 @@ public static class BacktraceUtils
 		Log.Out("[BACKTRACE] Platform ID set to: \"" + BacktraceUtils.userIdString + "\"");
 	}
 
-	// Token: 0x06009E4C RID: 40524 RVA: 0x003BACCC File Offset: 0x003B8ECC
+	// Token: 0x06009EF7 RID: 40695 RVA: 0x003BF848 File Offset: 0x003BDA48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Reset()
 	{
@@ -129,7 +129,7 @@ public static class BacktraceUtils
 		BacktraceUtils.s_Configuration.DeduplicationStrategy = DeduplicationStrategy.Default;
 	}
 
-	// Token: 0x06009E4D RID: 40525 RVA: 0x003BAD24 File Offset: 0x003B8F24
+	// Token: 0x06009EF8 RID: 40696 RVA: 0x003BF8A0 File Offset: 0x003BDAA0
 	public static void SendBugReport(string message, string worldName, string saveName, string worldDir = null, string saveDir = null, bool sendSave = false, string screenshotPath = null, Action<BacktraceResult> callback = null)
 	{
 		if (!BacktraceUtils.BugReportFeature)
@@ -235,14 +235,14 @@ public static class BacktraceUtils
 		backtraceClient.Send(message, callback, list, null);
 	}
 
-	// Token: 0x06009E4E RID: 40526 RVA: 0x003BB07C File Offset: 0x003B927C
+	// Token: 0x06009EF9 RID: 40697 RVA: 0x003BFBF8 File Offset: 0x003BDDF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ClearMessageTypeAttribute(BacktraceResult _result)
 	{
 		BacktraceUtils.SetAttribute("messagetype", null);
 	}
 
-	// Token: 0x06009E4F RID: 40527 RVA: 0x003BB08C File Offset: 0x003B928C
+	// Token: 0x06009EFA RID: 40698 RVA: 0x003BFC08 File Offset: 0x003BDE08
 	public static void SendErrorReport(string messageType, string message, List<string> files = null, Dictionary<string, string> attributes = null)
 	{
 		BacktraceUtils.<>c__DisplayClass40_0 CS$<>8__locals1 = new BacktraceUtils.<>c__DisplayClass40_0();
@@ -250,6 +250,11 @@ public static class BacktraceUtils
 		if (BacktraceUtils.ErrorReportingDisabledMessageTypes.Contains(messageType))
 		{
 			Log.Out("[BACKTRACE] Opted out of reporting error of type " + messageType);
+			return;
+		}
+		if (!BacktraceUtils.Enabled)
+		{
+			Log.Out("[BACKTRACE] Not reporting error of type " + messageType + ", reporting is not enabled");
 			return;
 		}
 		if (BacktraceUtils.s_BacktraceClient == null)
@@ -283,7 +288,7 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x06009E50 RID: 40528 RVA: 0x003BB134 File Offset: 0x003B9334
+	// Token: 0x06009EFB RID: 40699 RVA: 0x003BFCD0 File Offset: 0x003BDED0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<string> CondenseZipFiles(string combinedArchivePath, List<string> attachmentPaths)
 	{
@@ -335,7 +340,7 @@ public static class BacktraceUtils
 		return attachmentPaths;
 	}
 
-	// Token: 0x06009E51 RID: 40529 RVA: 0x003BB328 File Offset: 0x003B9528
+	// Token: 0x06009EFC RID: 40700 RVA: 0x003BFEC4 File Offset: 0x003BE0C4
 	public static BacktraceUtils.SaveArchiveResult TryCreateSaveArchive(string saveDir, string archivePath)
 	{
 		BacktraceUtils.SaveArchiveResult saveArchiveResult;
@@ -409,7 +414,7 @@ public static class BacktraceUtils
 		return saveArchiveResult;
 	}
 
-	// Token: 0x06009E52 RID: 40530 RVA: 0x003BB590 File Offset: 0x003B9790
+	// Token: 0x06009EFD RID: 40701 RVA: 0x003C012C File Offset: 0x003BE32C
 	public static bool TryCreateRegionArchives(string tag, string saveDir, out List<string> archivePaths)
 	{
 		bool flag;
@@ -488,7 +493,7 @@ public static class BacktraceUtils
 		return flag;
 	}
 
-	// Token: 0x06009E53 RID: 40531 RVA: 0x003BB924 File Offset: 0x003B9B24
+	// Token: 0x06009EFE RID: 40702 RVA: 0x003C04C0 File Offset: 0x003BE6C0
 	public static bool TryCreateWorldArchive(string worldDir, string archivePath)
 	{
 		bool flag;
@@ -569,7 +574,7 @@ public static class BacktraceUtils
 		return flag;
 	}
 
-	// Token: 0x06009E54 RID: 40532 RVA: 0x003BBC1C File Offset: 0x003B9E1C
+	// Token: 0x06009EFF RID: 40703 RVA: 0x003C07B8 File Offset: 0x003BE9B8
 	public static void DebugEnableBacktrace()
 	{
 		BacktraceUtils.s_BacktraceEnabled = true;
@@ -577,7 +582,7 @@ public static class BacktraceUtils
 		BacktraceUtils.InitializeBacktraceClient();
 	}
 
-	// Token: 0x06009E55 RID: 40533 RVA: 0x003BBC30 File Offset: 0x003B9E30
+	// Token: 0x06009F00 RID: 40704 RVA: 0x003C07CC File Offset: 0x003BE9CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void InitializeBacktraceClient()
 	{
@@ -615,7 +620,7 @@ public static class BacktraceUtils
 		BacktraceUtils.s_BacktraceClient = null;
 	}
 
-	// Token: 0x06009E56 RID: 40534 RVA: 0x003BBD1C File Offset: 0x003B9F1C
+	// Token: 0x06009F01 RID: 40705 RVA: 0x003C08B8 File Offset: 0x003BEAB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void InitializeConfiguration()
 	{
@@ -658,7 +663,7 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x06009E57 RID: 40535 RVA: 0x003BBEA8 File Offset: 0x003BA0A8
+	// Token: 0x06009F02 RID: 40706 RVA: 0x003C0A44 File Offset: 0x003BEC44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<string> GetListOfLogPaths()
 	{
@@ -691,20 +696,20 @@ public static class BacktraceUtils
 		return list;
 	}
 
-	// Token: 0x06009E58 RID: 40536 RVA: 0x003BBFC4 File Offset: 0x003BA1C4
+	// Token: 0x06009F03 RID: 40707 RVA: 0x003C0B60 File Offset: 0x003BED60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLogRoot()
 	{
 		return Path.GetFullPath(Path.Join(GameIO.GetDefaultPersistentDataPath(), "BacktraceLogs"));
 	}
 
-	// Token: 0x06009E59 RID: 40537 RVA: 0x003BBFE4 File Offset: 0x003BA1E4
+	// Token: 0x06009F04 RID: 40708 RVA: 0x003C0B80 File Offset: 0x003BED80
 	public static void StartStatisticsUpdate()
 	{
 		DebugGameStats.StartStatisticsUpdate(new DebugGameStats.StatisticsUpdatedCallback(BacktraceUtils.SetAttributes));
 	}
 
-	// Token: 0x06009E5A RID: 40538 RVA: 0x003BBFF7 File Offset: 0x003BA1F7
+	// Token: 0x06009F05 RID: 40709 RVA: 0x003C0B93 File Offset: 0x003BED93
 	public static void SetAttributes(Dictionary<string, string> _attributesDictionary)
 	{
 		BacktraceClient backtraceClient = BacktraceUtils.s_BacktraceClient;
@@ -715,7 +720,7 @@ public static class BacktraceUtils
 		backtraceClient.SetAttributes(_attributesDictionary);
 	}
 
-	// Token: 0x06009E5B RID: 40539 RVA: 0x003BC009 File Offset: 0x003BA209
+	// Token: 0x06009F06 RID: 40710 RVA: 0x003C0BA5 File Offset: 0x003BEDA5
 	public static void SetAttribute(string _attributeName, string _attributeValue)
 	{
 		BacktraceClient backtraceClient = BacktraceUtils.s_BacktraceClient;
@@ -726,7 +731,7 @@ public static class BacktraceUtils
 		backtraceClient.SetAttributes(new Dictionary<string, string> { { _attributeName, _attributeValue } });
 	}
 
-	// Token: 0x06009E5C RID: 40540 RVA: 0x003BC028 File Offset: 0x003BA228
+	// Token: 0x06009F07 RID: 40711 RVA: 0x003C0BC4 File Offset: 0x003BEDC4
 	public static void UpdateConfig(XmlFile _xmlFile)
 	{
 		if (BacktraceUtils.s_Configuration == null)
@@ -752,7 +757,7 @@ public static class BacktraceUtils
 		Log.Out("[BACKTRACE] Bug reporting attach entire world feature: " + (BacktraceUtils.s_BugReportAttachWholeWorldFeature ? "Enabled" : "Disabled"));
 	}
 
-	// Token: 0x06009E5D RID: 40541 RVA: 0x003BC144 File Offset: 0x003BA344
+	// Token: 0x06009F08 RID: 40712 RVA: 0x003C0CE0 File Offset: 0x003BEEE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParsePlatform(XElement _element)
 	{
@@ -770,7 +775,7 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x06009E5E RID: 40542 RVA: 0x003BC1D8 File Offset: 0x003BA3D8
+	// Token: 0x06009F09 RID: 40713 RVA: 0x003C0D74 File Offset: 0x003BEF74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParsePlatformElement(XElement _element)
 	{
@@ -871,109 +876,109 @@ public static class BacktraceUtils
 		}
 	}
 
-	// Token: 0x040077F3 RID: 30707
+	// Token: 0x0400786E RID: 30830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long BacktraceFileSizeLimitMebibyte = 30L;
 
-	// Token: 0x040077F4 RID: 30708
+	// Token: 0x0400786F RID: 30831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BacktraceClient s_BacktraceClient;
 
-	// Token: 0x040077F5 RID: 30709
+	// Token: 0x04007870 RID: 30832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object _lock = new object();
 
-	// Token: 0x040077F6 RID: 30710
+	// Token: 0x04007871 RID: 30833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string s_PlayerLogAttachmentPath;
 
-	// Token: 0x040077F7 RID: 30711
+	// Token: 0x04007872 RID: 30834
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static readonly string s_svncommit = "87858";
+	public static readonly string s_svncommit = "88751";
 
-	// Token: 0x040077F8 RID: 30712
+	// Token: 0x04007873 RID: 30835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string s_platformString;
 
-	// Token: 0x040077F9 RID: 30713
+	// Token: 0x04007874 RID: 30836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName enabled = "enabled";
 
-	// Token: 0x040077FA RID: 30714
+	// Token: 0x04007875 RID: 30837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName excludedversions = "excludedversions";
 
-	// Token: 0x040077FB RID: 30715
+	// Token: 0x04007876 RID: 30838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName sampling = "sampling";
 
-	// Token: 0x040077FC RID: 30716
+	// Token: 0x04007877 RID: 30839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName deduplicationStrategy = "deduplicationstrategy";
 
-	// Token: 0x040077FD RID: 30717
+	// Token: 0x04007878 RID: 30840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName minidumptype = "minidumptype";
 
-	// Token: 0x040077FE RID: 30718
+	// Token: 0x04007879 RID: 30841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName enablemetricssupport = "enablemetricssupport";
 
-	// Token: 0x040077FF RID: 30719
+	// Token: 0x0400787A RID: 30842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName bugreporting = "bugreportfeature";
 
-	// Token: 0x04007800 RID: 30720
+	// Token: 0x0400787B RID: 30843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName attachsaves = "bugreportattachsaves";
 
-	// Token: 0x04007801 RID: 30721
+	// Token: 0x0400787C RID: 30844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName attachentireworld = "bugreportattachentireworld";
 
-	// Token: 0x04007802 RID: 30722
+	// Token: 0x0400787D RID: 30845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly XName errorreportdisabledmessagetypes = "errorreportdisabledmessagetypes";
 
-	// Token: 0x04007803 RID: 30723
+	// Token: 0x0400787E RID: 30846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BacktraceConfiguration s_Configuration;
 
-	// Token: 0x04007804 RID: 30724
+	// Token: 0x0400787F RID: 30847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_BacktraceEnabled = false;
 
-	// Token: 0x04007805 RID: 30725
+	// Token: 0x04007880 RID: 30848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_VersionEnabled = false;
 
-	// Token: 0x04007806 RID: 30726
+	// Token: 0x04007881 RID: 30849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_BugReportFeature = false;
 
-	// Token: 0x04007807 RID: 30727
+	// Token: 0x04007882 RID: 30850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_BugReportAttachSaveFeature = false;
 
-	// Token: 0x04007808 RID: 30728
+	// Token: 0x04007883 RID: 30851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_BugReportAttachWholeWorldFeature = false;
 
-	// Token: 0x04007809 RID: 30729
+	// Token: 0x04007884 RID: 30852
 	public static List<string> ErrorReportingDisabledMessageTypes = new List<string>();
 
-	// Token: 0x0400780A RID: 30730
+	// Token: 0x04007885 RID: 30853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string userIdString = string.Empty;
 
-	// Token: 0x0200139A RID: 5018
+	// Token: 0x020013BA RID: 5050
 	public enum SaveArchiveResult
 	{
-		// Token: 0x0400780C RID: 30732
+		// Token: 0x04007887 RID: 30855
 		FailureToArchive,
-		// Token: 0x0400780D RID: 30733
+		// Token: 0x04007888 RID: 30856
 		Success,
-		// Token: 0x0400780E RID: 30734
+		// Token: 0x04007889 RID: 30857
 		MissingRegions
 	}
 }

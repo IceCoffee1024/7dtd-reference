@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000ACD RID: 2765
+// Token: 0x02000ADF RID: 2783
 public enum ProgressionCurrencyType : byte
 {
-	// Token: 0x04004084 RID: 16516
+	// Token: 0x040040C1 RID: 16577
 	None,
-	// Token: 0x04004085 RID: 16517
+	// Token: 0x040040C2 RID: 16578
 	XP,
-	// Token: 0x04004086 RID: 16518
+	// Token: 0x040040C3 RID: 16579
 	SP,
-	// Token: 0x04004087 RID: 16519
+	// Token: 0x040040C4 RID: 16580
 	CP
 }

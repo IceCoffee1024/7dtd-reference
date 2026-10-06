@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000BA9 RID: 2985
+// Token: 0x02000BBB RID: 3003
 public class RegionFileV2 : RegionFileSectorBased
 {
-	// Token: 0x06005A4D RID: 23117 RVA: 0x0022A6F0 File Offset: 0x002288F0
+	// Token: 0x06005A66 RID: 23142 RVA: 0x0022D9EC File Offset: 0x0022BBEC
 	public RegionFileV2(string _fullFilePath, int _rX, int _rZ, Stream _fileStream, int _version)
 		: base(_fullFilePath, _rX, _rZ, _version)
 	{
@@ -37,7 +37,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A4E RID: 23118 RVA: 0x0022A7D0 File Offset: 0x002289D0
+	// Token: 0x06005A67 RID: 23143 RVA: 0x0022DACC File Offset: 0x0022BCCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initSectorInfo()
 	{
@@ -56,7 +56,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A4F RID: 23119 RVA: 0x0022A814 File Offset: 0x00228A14
+	// Token: 0x06005A68 RID: 23144 RVA: 0x0022DB10 File Offset: 0x0022BD10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findFreeSectorOfSize(int _sectorLength)
 	{
@@ -77,7 +77,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		return num2;
 	}
 
-	// Token: 0x06005A50 RID: 23120 RVA: 0x0022A8B0 File Offset: 0x00228AB0
+	// Token: 0x06005A69 RID: 23145 RVA: 0x0022DBAC File Offset: 0x0022BDAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetLocationInfo(int _cX, int _cZ, short _sectorOffset, byte _sectorLength)
 	{
@@ -88,7 +88,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A51 RID: 23121 RVA: 0x0022A900 File Offset: 0x00228B00
+	// Token: 0x06005A6A RID: 23146 RVA: 0x0022DBFC File Offset: 0x0022BDFC
 	public override void SaveHeaderData()
 	{
 		lock (this)
@@ -103,7 +103,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A52 RID: 23122 RVA: 0x0022A998 File Offset: 0x00228B98
+	// Token: 0x06005A6B RID: 23147 RVA: 0x0022DC94 File Offset: 0x0022BE94
 	public override void ReadData(int _cX, int _cZ, Stream _targetStream)
 	{
 		lock (this)
@@ -175,7 +175,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A53 RID: 23123 RVA: 0x0022AC04 File Offset: 0x00228E04
+	// Token: 0x06005A6C RID: 23148 RVA: 0x0022DF00 File Offset: 0x0022C100
 	public override void WriteData(int _cX, int _cZ, int _dataLength, byte _compression, byte[] _data, bool _saveHeaderToFile)
 	{
 		lock (this)
@@ -228,7 +228,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A54 RID: 23124 RVA: 0x0022AE70 File Offset: 0x00229070
+	// Token: 0x06005A6D RID: 23149 RVA: 0x0022E16C File Offset: 0x0022C36C
 	public override void RemoveChunk(int _cX, int _cZ)
 	{
 		lock (this)
@@ -244,7 +244,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A55 RID: 23125 RVA: 0x0022AED0 File Offset: 0x002290D0
+	// Token: 0x06005A6E RID: 23150 RVA: 0x0022E1CC File Offset: 0x0022C3CC
 	public override void OptimizeLayout()
 	{
 		lock (this)
@@ -288,7 +288,7 @@ public class RegionFileV2 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x06005A56 RID: 23126 RVA: 0x0022B0B8 File Offset: 0x002292B8
+	// Token: 0x06005A6F RID: 23151 RVA: 0x0022E3B4 File Offset: 0x0022C5B4
 	public override int ChunkCount()
 	{
 		int num = 0;
@@ -305,23 +305,23 @@ public class RegionFileV2 : RegionFileSectorBased
 		return num;
 	}
 
-	// Token: 0x0400460A RID: 17930
+	// Token: 0x04004649 RID: 17993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SortedDictionary<int, int> usedSectors = new SortedDictionary<int, int>();
 
-	// Token: 0x0400460B RID: 17931
+	// Token: 0x0400464A RID: 17994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ReservedSectors = 3;
 
-	// Token: 0x0400460C RID: 17932
+	// Token: 0x0400464B RID: 17995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ReservedBytesPerEntry = 16;
 
-	// Token: 0x0400460D RID: 17933
+	// Token: 0x0400464C RID: 17996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] emptyBytes = new byte[4096];
 
-	// Token: 0x0400460E RID: 17934
+	// Token: 0x0400464D RID: 17997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryStream optimizerMemoryStream = new MemoryStream(16789504);
 }

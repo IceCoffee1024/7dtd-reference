@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02001468 RID: 5224
+// Token: 0x02001488 RID: 5256
 public interface IOnPostRender
 {
-	// Token: 0x0600A3EA RID: 41962
+	// Token: 0x0600A496 RID: 42134
 	void OnPostRender();
 }

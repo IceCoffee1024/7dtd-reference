@@ -3,41 +3,41 @@ using System.Collections;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x02000966 RID: 2406
+// Token: 0x0200096C RID: 2412
 public abstract class BaseQuestAction
 {
-	// Token: 0x1700076B RID: 1899
-	// (get) Token: 0x06004674 RID: 18036 RVA: 0x001BDF1F File Offset: 0x001BC11F
-	// (set) Token: 0x06004675 RID: 18037 RVA: 0x001BDF27 File Offset: 0x001BC127
+	// Token: 0x1700078B RID: 1931
+	// (get) Token: 0x06004615 RID: 17941 RVA: 0x001BE427 File Offset: 0x001BC627
+	// (set) Token: 0x06004616 RID: 17942 RVA: 0x001BE42F File Offset: 0x001BC62F
 	public Quest OwnerQuest { get; set; }
 
-	// Token: 0x1700076C RID: 1900
-	// (get) Token: 0x06004676 RID: 18038 RVA: 0x001BDF30 File Offset: 0x001BC130
-	// (set) Token: 0x06004677 RID: 18039 RVA: 0x001BDF38 File Offset: 0x001BC138
+	// Token: 0x1700078C RID: 1932
+	// (get) Token: 0x06004617 RID: 17943 RVA: 0x001BE438 File Offset: 0x001BC638
+	// (set) Token: 0x06004618 RID: 17944 RVA: 0x001BE440 File Offset: 0x001BC640
 	public QuestClass Owner { get; set; }
 
-	// Token: 0x1700076D RID: 1901
-	// (get) Token: 0x06004678 RID: 18040 RVA: 0x001BDF41 File Offset: 0x001BC141
-	// (set) Token: 0x06004679 RID: 18041 RVA: 0x001BDF49 File Offset: 0x001BC149
+	// Token: 0x1700078D RID: 1933
+	// (get) Token: 0x06004619 RID: 17945 RVA: 0x001BE449 File Offset: 0x001BC649
+	// (set) Token: 0x0600461A RID: 17946 RVA: 0x001BE451 File Offset: 0x001BC651
 	public int Phase { get; set; }
 
-	// Token: 0x1700076E RID: 1902
-	// (get) Token: 0x0600467A RID: 18042 RVA: 0x001BDF52 File Offset: 0x001BC152
-	// (set) Token: 0x0600467B RID: 18043 RVA: 0x001BDF5A File Offset: 0x001BC15A
+	// Token: 0x1700078E RID: 1934
+	// (get) Token: 0x0600461B RID: 17947 RVA: 0x001BE45A File Offset: 0x001BC65A
+	// (set) Token: 0x0600461C RID: 17948 RVA: 0x001BE462 File Offset: 0x001BC662
 	public float Delay { get; set; }
 
-	// Token: 0x1700076F RID: 1903
-	// (get) Token: 0x0600467C RID: 18044 RVA: 0x001BDF63 File Offset: 0x001BC163
-	// (set) Token: 0x0600467D RID: 18045 RVA: 0x001BDF6B File Offset: 0x001BC16B
+	// Token: 0x1700078F RID: 1935
+	// (get) Token: 0x0600461D RID: 17949 RVA: 0x001BE46B File Offset: 0x001BC66B
+	// (set) Token: 0x0600461E RID: 17950 RVA: 0x001BE473 File Offset: 0x001BC673
 	public bool OnComplete { get; set; }
 
-	// Token: 0x0600467E RID: 18046 RVA: 0x001BDF74 File Offset: 0x001BC174
+	// Token: 0x0600461F RID: 17951 RVA: 0x001BE47C File Offset: 0x001BC67C
 	public BaseQuestAction()
 	{
 		this.Phase = 1;
 	}
 
-	// Token: 0x0600467F RID: 18047 RVA: 0x001BDF83 File Offset: 0x001BC183
+	// Token: 0x06004620 RID: 17952 RVA: 0x001BE48B File Offset: 0x001BC68B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void CopyValues(BaseQuestAction action)
 	{
@@ -48,17 +48,17 @@ public abstract class BaseQuestAction
 		action.OnComplete = this.OnComplete;
 	}
 
-	// Token: 0x06004680 RID: 18048 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004621 RID: 17953 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetupAction()
 	{
 	}
 
-	// Token: 0x06004681 RID: 18049 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004622 RID: 17954 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void PerformAction(Quest ownerQuest)
 	{
 	}
 
-	// Token: 0x06004682 RID: 18050 RVA: 0x001BDFC1 File Offset: 0x001BC1C1
+	// Token: 0x06004623 RID: 17955 RVA: 0x001BE4C9 File Offset: 0x001BC6C9
 	public void HandlePerformAction()
 	{
 		if (this.Delay == 0f)
@@ -69,7 +69,7 @@ public abstract class BaseQuestAction
 		GameManager.Instance.StartCoroutine(this.PerformActionLater());
 	}
 
-	// Token: 0x06004683 RID: 18051 RVA: 0x001BDFEE File Offset: 0x001BC1EE
+	// Token: 0x06004624 RID: 17956 RVA: 0x001BE4F6 File Offset: 0x001BC6F6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator PerformActionLater()
 	{
@@ -81,20 +81,20 @@ public abstract class BaseQuestAction
 		yield break;
 	}
 
-	// Token: 0x06004684 RID: 18052 RVA: 0x001BDFFD File Offset: 0x001BC1FD
+	// Token: 0x06004625 RID: 17957 RVA: 0x001BE505 File Offset: 0x001BC705
 	public virtual void HandleVariables()
 	{
 		this.ID = this.OwnerQuest.ParseVariable(this.ID);
 		this.Value = this.OwnerQuest.ParseVariable(this.Value);
 	}
 
-	// Token: 0x06004685 RID: 18053 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+	// Token: 0x06004626 RID: 17958 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual BaseQuestAction Clone()
 	{
 		return null;
 	}
 
-	// Token: 0x06004686 RID: 18054 RVA: 0x001BE030 File Offset: 0x001BC230
+	// Token: 0x06004627 RID: 17959 RVA: 0x001BE538 File Offset: 0x001BC738
 	public virtual void ParseProperties(DynamicProperties properties)
 	{
 		this.Properties = properties;
@@ -125,27 +125,27 @@ public abstract class BaseQuestAction
 		}
 	}
 
-	// Token: 0x040038BE RID: 14526
+	// Token: 0x040038BA RID: 14522
 	public static string PropID = "id";
 
-	// Token: 0x040038BF RID: 14527
+	// Token: 0x040038BB RID: 14523
 	public static string PropValue = "value";
 
-	// Token: 0x040038C0 RID: 14528
+	// Token: 0x040038BC RID: 14524
 	public static string PropPhase = "phase";
 
-	// Token: 0x040038C1 RID: 14529
+	// Token: 0x040038BD RID: 14525
 	public static string PropDelay = "delay";
 
-	// Token: 0x040038C2 RID: 14530
+	// Token: 0x040038BE RID: 14526
 	public static string PropOnComplete = "on_complete";
 
-	// Token: 0x040038C3 RID: 14531
+	// Token: 0x040038BF RID: 14527
 	public string ID;
 
-	// Token: 0x040038C4 RID: 14532
+	// Token: 0x040038C0 RID: 14528
 	public string Value;
 
-	// Token: 0x040038CA RID: 14538
+	// Token: 0x040038C6 RID: 14534
 	public DynamicProperties Properties;
 }

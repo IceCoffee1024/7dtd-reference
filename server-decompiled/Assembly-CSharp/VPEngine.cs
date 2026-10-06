@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000C9E RID: 3230
+// Token: 0x02000CAC RID: 3244
 [Preserve]
 public class VPEngine : VehiclePart
 {
-	// Token: 0x06006313 RID: 25363 RVA: 0x0026E708 File Offset: 0x0026C908
+	// Token: 0x06006306 RID: 25350 RVA: 0x00271B4C File Offset: 0x0026FD4C
 	public override void SetProperties(DynamicProperties _properties)
 	{
 		base.SetProperties(_properties);
@@ -59,13 +59,13 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006314 RID: 25364 RVA: 0x0026E973 File Offset: 0x0026CB73
+	// Token: 0x06006307 RID: 25351 RVA: 0x00271DB7 File Offset: 0x0026FFB7
 	public override void InitPrefabConnections()
 	{
 		this.ParticleEffectUpdate();
 	}
 
-	// Token: 0x06006315 RID: 25365 RVA: 0x0026E97C File Offset: 0x0026CB7C
+	// Token: 0x06006308 RID: 25352 RVA: 0x00271DC0 File Offset: 0x0026FFC0
 	public override void Update(float _dt)
 	{
 		if (this.IsBroken())
@@ -110,7 +110,7 @@ public class VPEngine : VehiclePart
 		this.vehicle.FireEvent(VehiclePart.Event.FuelRemove, this, num2);
 	}
 
-	// Token: 0x06006316 RID: 25366 RVA: 0x0026EA80 File Offset: 0x0026CC80
+	// Token: 0x06006309 RID: 25353 RVA: 0x00271EC4 File Offset: 0x002700C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParticleEffectUpdate()
 	{
@@ -131,7 +131,7 @@ public class VPEngine : VehiclePart
 		base.SetTransformActive("particleDamaged", false);
 	}
 
-	// Token: 0x06006317 RID: 25367 RVA: 0x0026EAF8 File Offset: 0x0026CCF8
+	// Token: 0x0600630A RID: 25354 RVA: 0x00271F3C File Offset: 0x0027013C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateEngineSimulation()
 	{
@@ -225,7 +225,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006318 RID: 25368 RVA: 0x0026EDA8 File Offset: 0x0026CFA8
+	// Token: 0x0600630B RID: 25355 RVA: 0x002721EC File Offset: 0x002703EC
 	public override void HandleEvent(Vehicle.Event _event, float _arg)
 	{
 		switch (_event)
@@ -265,7 +265,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006319 RID: 25369 RVA: 0x0026EE2E File Offset: 0x0026D02E
+	// Token: 0x0600630C RID: 25356 RVA: 0x00272272 File Offset: 0x00270472
 	public override void HandleEvent(VehiclePart.Event _event, VehiclePart _part, float _arg)
 	{
 		if (_event == VehiclePart.Event.FuelEmpty)
@@ -274,7 +274,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x0600631A RID: 25370 RVA: 0x0026EE3C File Offset: 0x0026D03C
+	// Token: 0x0600630D RID: 25357 RVA: 0x00272280 File Offset: 0x00270480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startEngine()
 	{
@@ -294,7 +294,7 @@ public class VPEngine : VehiclePart
 		this.ParticleEffectUpdate();
 	}
 
-	// Token: 0x0600631B RID: 25371 RVA: 0x0026EEC4 File Offset: 0x0026D0C4
+	// Token: 0x0600630E RID: 25358 RVA: 0x00272308 File Offset: 0x00270508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopEngine(bool _outOfFuel = false)
 	{
@@ -317,7 +317,7 @@ public class VPEngine : VehiclePart
 		this.ParticleEffectUpdate();
 	}
 
-	// Token: 0x0600631C RID: 25372 RVA: 0x0026EF3B File Offset: 0x0026D13B
+	// Token: 0x0600630F RID: 25359 RVA: 0x0027237F File Offset: 0x0027057F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playSound(string _sound)
 	{
@@ -327,7 +327,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x0600631D RID: 25373 RVA: 0x0026EF7B File Offset: 0x0026D17B
+	// Token: 0x06006310 RID: 25360 RVA: 0x002723BF File Offset: 0x002705BF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopSound(string _sound)
 	{
@@ -337,7 +337,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x0600631E RID: 25374 RVA: 0x0026EFB2 File Offset: 0x0026D1B2
+	// Token: 0x06006311 RID: 25361 RVA: 0x002723F6 File Offset: 0x002705F6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void changeSoundLoop(string soundName, ref Handle handle)
 	{
@@ -345,7 +345,7 @@ public class VPEngine : VehiclePart
 		this.playSoundLoop(soundName, ref handle);
 	}
 
-	// Token: 0x0600631F RID: 25375 RVA: 0x0026EFC3 File Offset: 0x0026D1C3
+	// Token: 0x06006312 RID: 25362 RVA: 0x00272407 File Offset: 0x00270607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playSoundLoop(string soundName, ref Handle handle)
 	{
@@ -359,7 +359,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006320 RID: 25376 RVA: 0x0026EFF5 File Offset: 0x0026D1F5
+	// Token: 0x06006313 RID: 25363 RVA: 0x00272439 File Offset: 0x00270639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopSoundLoop(ref Handle handle)
 	{
@@ -370,7 +370,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006321 RID: 25377 RVA: 0x0026F015 File Offset: 0x0026D215
+	// Token: 0x06006314 RID: 25364 RVA: 0x00272459 File Offset: 0x00270659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playAccelDecelSound(string name)
 	{
@@ -385,7 +385,7 @@ public class VPEngine : VehiclePart
 		this.accelDecelSoundName = name;
 	}
 
-	// Token: 0x06006322 RID: 25378 RVA: 0x0026F048 File Offset: 0x0026D248
+	// Token: 0x06006315 RID: 25365 RVA: 0x0027248C File Offset: 0x0027068C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateEngineSounds(float rpmPercent)
 	{
@@ -469,7 +469,7 @@ public class VPEngine : VehiclePart
 		}
 	}
 
-	// Token: 0x06006323 RID: 25379 RVA: 0x0026F2CC File Offset: 0x0026D4CC
+	// Token: 0x06006316 RID: 25366 RVA: 0x00272710 File Offset: 0x00270910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopEngineSounds()
 	{
@@ -491,136 +491,136 @@ public class VPEngine : VehiclePart
 		this.playAccelDecelSound(null);
 	}
 
-	// Token: 0x04004CF3 RID: 19699
+	// Token: 0x04004D29 RID: 19753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cIdleFuelPercent = 0.1f;
 
-	// Token: 0x04004CF4 RID: 19700
+	// Token: 0x04004D2A RID: 19754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTurboFuelPercent = 2f;
 
-	// Token: 0x04004CF5 RID: 19701
+	// Token: 0x04004D2B RID: 19755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fuelKmPerL;
 
-	// Token: 0x04004CF6 RID: 19702
+	// Token: 0x04004D2C RID: 19756
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float foodDrain;
 
-	// Token: 0x04004CF7 RID: 19703
+	// Token: 0x04004D2D RID: 19757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float foodDrainTurbo;
 
-	// Token: 0x04004CF8 RID: 19704
+	// Token: 0x04004D2E RID: 19758
 	public bool isRunning;
 
-	// Token: 0x04004CF9 RID: 19705
+	// Token: 0x04004D2F RID: 19759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int acceleratePhase;
 
-	// Token: 0x04004CFA RID: 19706
+	// Token: 0x04004D30 RID: 19760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rpm;
 
-	// Token: 0x04004CFB RID: 19707
+	// Token: 0x04004D31 RID: 19761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int gearIndex;
 
-	// Token: 0x04004CFC RID: 19708
+	// Token: 0x04004D32 RID: 19762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDecelSoundPlayed;
 
-	// Token: 0x04004CFD RID: 19709
+	// Token: 0x04004D33 RID: 19763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string accelDecelSoundName;
 
-	// Token: 0x04004CFE RID: 19710
+	// Token: 0x04004D34 RID: 19764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float pitchRandTime;
 
-	// Token: 0x04004CFF RID: 19711
+	// Token: 0x04004D35 RID: 19765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float pitchRand;
 
-	// Token: 0x04004D00 RID: 19712
+	// Token: 0x04004D36 RID: 19766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float pitchAdd;
 
-	// Token: 0x04004D01 RID: 19713
+	// Token: 0x04004D37 RID: 19767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTurbo;
 
-	// Token: 0x04004D02 RID: 19714
+	// Token: 0x04004D38 RID: 19768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<VPEngine.Gear> gears = new List<VPEngine.Gear>();
 
-	// Token: 0x02000C9F RID: 3231
+	// Token: 0x02000CAD RID: 3245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Gear
 	{
-		// Token: 0x04004D03 RID: 19715
+		// Token: 0x04004D39 RID: 19769
 		public float rpmMin;
 
-		// Token: 0x04004D04 RID: 19716
+		// Token: 0x04004D3A RID: 19770
 		public float rpmMax;
 
-		// Token: 0x04004D05 RID: 19717
+		// Token: 0x04004D3B RID: 19771
 		public float rpmDecel;
 
-		// Token: 0x04004D06 RID: 19718
+		// Token: 0x04004D3C RID: 19772
 		public float rpmAccel;
 
-		// Token: 0x04004D07 RID: 19719
+		// Token: 0x04004D3D RID: 19773
 		public float rpmDownShiftPoint;
 
-		// Token: 0x04004D08 RID: 19720
+		// Token: 0x04004D3E RID: 19774
 		public float rpmUpShiftPoint;
 
-		// Token: 0x04004D09 RID: 19721
+		// Token: 0x04004D3F RID: 19775
 		public float rpmDownShiftTo;
 
-		// Token: 0x04004D0A RID: 19722
+		// Token: 0x04004D40 RID: 19776
 		public float rpmUpShiftTo;
 
-		// Token: 0x04004D0B RID: 19723
+		// Token: 0x04004D41 RID: 19777
 		public string accelSoundName;
 
-		// Token: 0x04004D0C RID: 19724
+		// Token: 0x04004D42 RID: 19778
 		public string decelSoundName;
 
-		// Token: 0x04004D0D RID: 19725
+		// Token: 0x04004D43 RID: 19779
 		public VPEngine.SoundRange[] soundRanges;
 	}
 
-	// Token: 0x02000CA0 RID: 3232
+	// Token: 0x02000CAE RID: 3246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SoundRange
 	{
-		// Token: 0x04004D0E RID: 19726
+		// Token: 0x04004D44 RID: 19780
 		public float pitchMin;
 
-		// Token: 0x04004D0F RID: 19727
+		// Token: 0x04004D45 RID: 19781
 		public float pitchMax;
 
-		// Token: 0x04004D10 RID: 19728
+		// Token: 0x04004D46 RID: 19782
 		public float volumeMin;
 
-		// Token: 0x04004D11 RID: 19729
+		// Token: 0x04004D47 RID: 19783
 		public float volumeMax;
 
-		// Token: 0x04004D12 RID: 19730
+		// Token: 0x04004D48 RID: 19784
 		public float pitchFadeMin;
 
-		// Token: 0x04004D13 RID: 19731
+		// Token: 0x04004D49 RID: 19785
 		public float pitchFadeMax;
 
-		// Token: 0x04004D14 RID: 19732
+		// Token: 0x04004D4A RID: 19786
 		public float pitchFadeRange;
 
-		// Token: 0x04004D15 RID: 19733
+		// Token: 0x04004D4B RID: 19787
 		public string name;
 
-		// Token: 0x04004D16 RID: 19734
+		// Token: 0x04004D4C RID: 19788
 		public Handle soundHandle;
 	}
 }

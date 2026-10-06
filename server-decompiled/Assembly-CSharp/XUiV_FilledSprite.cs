@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001154 RID: 4436
+// Token: 0x0200116C RID: 4460
 public class XUiV_FilledSprite : XUiV_Sprite
 {
-	// Token: 0x17001098 RID: 4248
-	// (get) Token: 0x06008D14 RID: 36116 RVA: 0x00356585 File Offset: 0x00354785
-	// (set) Token: 0x06008D15 RID: 36117 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x170010CD RID: 4301
+	// (get) Token: 0x06008D7F RID: 36223 RVA: 0x0035A9A5 File Offset: 0x00358BA5
+	// (set) Token: 0x06008D80 RID: 36224 RVA: 0x000027FC File Offset: 0x000009FC
 	public override UIBasicSprite.Type Type
 	{
 		get
@@ -18,13 +18,13 @@ public class XUiV_FilledSprite : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x06008D16 RID: 36118 RVA: 0x0035658D File Offset: 0x0035478D
+	// Token: 0x06008D81 RID: 36225 RVA: 0x0035A9AD File Offset: 0x00358BAD
 	public XUiV_FilledSprite(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008D17 RID: 36119 RVA: 0x00356598 File Offset: 0x00354798
+	// Token: 0x06008D82 RID: 36226 RVA: 0x0035A9B8 File Offset: 0x00358BB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -145,7 +145,7 @@ public class XUiV_FilledSprite : XUiV_Sprite
 		this.refreshBoxCollider();
 	}
 
-	// Token: 0x06008D18 RID: 36120 RVA: 0x00356948 File Offset: 0x00354B48
+	// Token: 0x06008D83 RID: 36227 RVA: 0x0035AD68 File Offset: 0x00358F68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void refreshBoxCollider()
 	{
@@ -198,7 +198,7 @@ public class XUiV_FilledSprite : XUiV_Sprite
 		this.collider.size = new Vector3((float)this.size.x * base.ColliderScale + (float)(2 * base.ColliderPadding.x), (float)this.size.y * base.ColliderScale + (float)(2 * base.ColliderPadding.y), 0f);
 	}
 
-	// Token: 0x06008D19 RID: 36121 RVA: 0x00356A98 File Offset: 0x00354C98
+	// Token: 0x06008D84 RID: 36228 RVA: 0x0035AEB8 File Offset: 0x003590B8
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
@@ -207,11 +207,11 @@ public class XUiV_FilledSprite : XUiV_Sprite
 		base.FillDirection = UIBasicSprite.FillDirection.Horizontal;
 	}
 
-	// Token: 0x040067E5 RID: 26597
+	// Token: 0x0400683A RID: 26682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i spriteBorder;
 
-	// Token: 0x040067E6 RID: 26598
+	// Token: 0x0400683B RID: 26683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hideFill;
 }

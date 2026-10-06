@@ -2,11 +2,11 @@
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018BF RID: 6335
+	// Token: 0x020018EB RID: 6379
 	public class PrefabInfoVolume : PrefabVolumeAbs<PrefabInfoVolume>
 	{
-		// Token: 0x1700180D RID: 6157
-		// (get) Token: 0x0600C388 RID: 50056 RVA: 0x0002F168 File Offset: 0x0002D368
+		// Token: 0x170018AF RID: 6319
+		// (get) Token: 0x0600C4E0 RID: 50400 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -15,8 +15,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x1700180E RID: 6158
-		// (get) Token: 0x0600C389 RID: 50057 RVA: 0x0004AC4A File Offset: 0x00048E4A
+		// Token: 0x170018B0 RID: 6320
+		// (get) Token: 0x0600C4E1 RID: 50401 RVA: 0x0004AC4D File Offset: 0x00048E4D
 		public override int SerializedSize
 		{
 			get

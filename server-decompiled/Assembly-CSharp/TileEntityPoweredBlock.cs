@@ -1,17 +1,17 @@
 ﻿using System;
 
-// Token: 0x02000C73 RID: 3187
+// Token: 0x02000C82 RID: 3202
 public class TileEntityPoweredBlock : TileEntityPowered
 {
-	// Token: 0x06006168 RID: 24936 RVA: 0x00267690 File Offset: 0x00265890
+	// Token: 0x06006164 RID: 24932 RVA: 0x0026AB32 File Offset: 0x00268D32
 	public TileEntityPoweredBlock(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x170009ED RID: 2541
-	// (get) Token: 0x06006169 RID: 24937 RVA: 0x002676A0 File Offset: 0x002658A0
-	// (set) Token: 0x0600616A RID: 24938 RVA: 0x002676D4 File Offset: 0x002658D4
+	// Token: 0x17000A03 RID: 2563
+	// (get) Token: 0x06006165 RID: 24933 RVA: 0x0026AB42 File Offset: 0x00268D42
+	// (set) Token: 0x06006166 RID: 24934 RVA: 0x0026AB74 File Offset: 0x00268D74
 	public bool IsToggled
 	{
 		get
@@ -39,8 +39,8 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		}
 	}
 
-	// Token: 0x170009EE RID: 2542
-	// (get) Token: 0x0600616B RID: 24939 RVA: 0x00267726 File Offset: 0x00265926
+	// Token: 0x17000A04 RID: 2564
+	// (get) Token: 0x06006167 RID: 24935 RVA: 0x0026ABC6 File Offset: 0x00268DC6
 	public override int PowerUsed
 	{
 		get
@@ -53,13 +53,13 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		}
 	}
 
-	// Token: 0x0600616C RID: 24940 RVA: 0x00267738 File Offset: 0x00265938
+	// Token: 0x06006168 RID: 24936 RVA: 0x0026ABD8 File Offset: 0x00268DD8
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
 	}
 
-	// Token: 0x0600616D RID: 24941 RVA: 0x00267744 File Offset: 0x00265944
+	// Token: 0x06006169 RID: 24937 RVA: 0x0026ABE4 File Offset: 0x00268DE4
 	public override bool Activate(bool activated)
 	{
 		World world = GameManager.Instance.World;
@@ -67,7 +67,7 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		return block.Block.ActivateBlock(world, base.ToWorldPos(), block, activated, activated);
 	}
 
-	// Token: 0x0600616E RID: 24942 RVA: 0x00267784 File Offset: 0x00265984
+	// Token: 0x0600616A RID: 24938 RVA: 0x0026AC24 File Offset: 0x00268E24
 	public override bool ActivateOnce()
 	{
 		World world = GameManager.Instance.World;
@@ -75,21 +75,21 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		return block.Block.ActivateBlockOnce(world, base.ToWorldPos(), block);
 	}
 
-	// Token: 0x0600616F RID: 24943 RVA: 0x002677C2 File Offset: 0x002659C2
+	// Token: 0x0600616B RID: 24939 RVA: 0x0026AC62 File Offset: 0x00268E62
 	public override void OnRemove(World world)
 	{
 		base.OnRemove(world);
 		PowerManager.Instance.SetTileEntityUpdate(this, false);
 	}
 
-	// Token: 0x06006170 RID: 24944 RVA: 0x002677D7 File Offset: 0x002659D7
+	// Token: 0x0600616C RID: 24940 RVA: 0x0026AC77 File Offset: 0x00268E77
 	public override void OnUnload(World world)
 	{
 		base.OnUnload(world);
 		PowerManager.Instance.SetTileEntityUpdate(this, false);
 	}
 
-	// Token: 0x06006171 RID: 24945 RVA: 0x002677EC File Offset: 0x002659EC
+	// Token: 0x0600616D RID: 24941 RVA: 0x0026AC8C File Offset: 0x00268E8C
 	public override void OnSetLocalChunkPosition()
 	{
 		base.OnSetLocalChunkPosition();
@@ -109,16 +109,16 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		}
 	}
 
-	// Token: 0x06006172 RID: 24946 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600616E RID: 24942 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ClientUpdate()
 	{
 	}
 
-	// Token: 0x06006173 RID: 24947 RVA: 0x00267864 File Offset: 0x00265A64
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x0600616F RID: 24943 RVA: 0x0026AD04 File Offset: 0x00268F04
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			if (base.UseLocalVersioning())
 			{
@@ -129,9 +129,9 @@ public class TileEntityPoweredBlock : TileEntityPowered
 				base.GetLegacyForkVersion();
 			}
 		}
-		if (_eStreamMode != TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode != StreamModeRead.Persistency)
 		{
-			if (_eStreamMode == TileEntity.StreamModeRead.FromClient)
+			if (_eStreamMode == StreamModeRead.FromClient)
 			{
 				this.isToggled = _br.ReadBoolean();
 				if (this.PowerItem is PowerConsumerToggle)
@@ -147,32 +147,32 @@ public class TileEntityPoweredBlock : TileEntityPowered
 		}
 	}
 
-	// Token: 0x06006174 RID: 24948 RVA: 0x002678D7 File Offset: 0x00265AD7
-	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06006170 RID: 24944 RVA: 0x0026AD77 File Offset: 0x00268F77
+	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
-		if (_eStreamMode != TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode != StreamModeWrite.Persistency)
 		{
 			_bw.Write(this.IsToggled);
 		}
 	}
 
-	// Token: 0x04004C2D RID: 19501
+	// Token: 0x04004C64 RID: 19556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C2E RID: 19502
+	// Token: 0x04004C65 RID: 19557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isToggled = true;
 
-	// Token: 0x04004C2F RID: 19503
+	// Token: 0x04004C66 RID: 19558
 	public float DelayTime;
 
-	// Token: 0x04004C30 RID: 19504
+	// Token: 0x04004C67 RID: 19559
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float updateTime;
 }

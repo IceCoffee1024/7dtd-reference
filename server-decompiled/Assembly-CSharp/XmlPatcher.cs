@@ -9,10 +9,10 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-// Token: 0x020014FF RID: 5375
+// Token: 0x02001521 RID: 5409
 public class XmlPatcher
 {
-	// Token: 0x0600A93F RID: 43327 RVA: 0x003EE730 File Offset: 0x003EC930
+	// Token: 0x0600A9F2 RID: 43506 RVA: 0x003F3584 File Offset: 0x003F1784
 	public static IEnumerator LoadAndPatchConfig(string _configName, Action<XmlFile> _callback)
 	{
 		if (!_configName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
@@ -71,7 +71,7 @@ public class XmlPatcher
 		yield break;
 	}
 
-	// Token: 0x0600A940 RID: 43328 RVA: 0x003EE748 File Offset: 0x003EC948
+	// Token: 0x0600A9F3 RID: 43507 RVA: 0x003F359C File Offset: 0x003F179C
 	public static XmlFile ReadPatchXmlWithFixedModFolders(Mod _parentMod, string _file)
 	{
 		string text = SdFile.ReadAllText(_file, Encoding.UTF8);
@@ -89,7 +89,7 @@ public class XmlPatcher
 		return null;
 	}
 
-	// Token: 0x0600A941 RID: 43329 RVA: 0x003EE7EC File Offset: 0x003EC9EC
+	// Token: 0x0600A9F4 RID: 43508 RVA: 0x003F3640 File Offset: 0x003F1840
 	public static bool PatchXml(XmlFile _xmlFile, XElement _containerElement, XmlFile _patchFile, Mod _patchingMod)
 	{
 		if (_containerElement == null)
@@ -117,7 +117,7 @@ public class XmlPatcher
 		return flag;
 	}
 
-	// Token: 0x0600A942 RID: 43330 RVA: 0x003EE89C File Offset: 0x003ECA9C
+	// Token: 0x0600A9F5 RID: 43509 RVA: 0x003F36F0 File Offset: 0x003F18F0
 	public static IEnumerator ApplyConditionalXmlBlocks(string _xmlName, XmlFile _xmlFile, MicroStopwatch _timer, XmlPatcher.EEvaluator _evaluator, Action _errorCallback)
 	{
 		if (_timer != null)
@@ -164,7 +164,7 @@ public class XmlPatcher
 		yield break;
 	}
 
-	// Token: 0x0600A943 RID: 43331 RVA: 0x003EE8C0 File Offset: 0x003ECAC0
+	// Token: 0x0600A9F6 RID: 43510 RVA: 0x003F3714 File Offset: 0x003F1914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool singlePatch(XmlFile _targetFile, XElement _patchElement, XmlFile _patchFile, Mod _patchingMod)
 	{
@@ -209,14 +209,14 @@ public class XmlPatcher
 		return flag;
 	}
 
-	// Token: 0x0600A944 RID: 43332 RVA: 0x003EEA2C File Offset: 0x003ECC2C
+	// Token: 0x0600A9F7 RID: 43511 RVA: 0x003F3880 File Offset: 0x003F1A80
 	[PublicizedFrom(EAccessModifier.Private)]
 	static XmlPatcher()
 	{
 		ReflectionHelpers.FindTypesWithAttribute<XmlPatchMethodsClassAttribute>(new Action<Type, bool, XmlPatchMethodsClassAttribute>(XmlPatcher.<.cctor>g__TypeFoundCallback|9_0), true);
 	}
 
-	// Token: 0x0600A945 RID: 43333 RVA: 0x003EEA4C File Offset: 0x003ECC4C
+	// Token: 0x0600A9F8 RID: 43512 RVA: 0x003F38A0 File Offset: 0x003F1AA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addXmlFilePatchMethod(string _patchName, string _methodName, bool _requiresXpath = true)
 	{
@@ -228,7 +228,7 @@ public class XmlPatcher
 		}
 	}
 
-	// Token: 0x0600A946 RID: 43334 RVA: 0x003EEA9C File Offset: 0x003ECC9C
+	// Token: 0x0600A9F9 RID: 43513 RVA: 0x003F38F0 File Offset: 0x003F1AF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void addXmlFilePatchMethod(string _patchName, MethodInfo _method, bool _requiresXpath = true)
 	{
@@ -239,7 +239,7 @@ public class XmlPatcher
 		}
 	}
 
-	// Token: 0x0600A947 RID: 43335 RVA: 0x003EEADC File Offset: 0x003ECCDC
+	// Token: 0x0600A9FA RID: 43514 RVA: 0x003F3930 File Offset: 0x003F1B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void redeclarationLog(string _patchName, MethodInfo _newMethod)
 	{
@@ -259,7 +259,7 @@ public class XmlPatcher
 		}));
 	}
 
-	// Token: 0x0600A949 RID: 43337 RVA: 0x003EEB6B File Offset: 0x003ECD6B
+	// Token: 0x0600A9FC RID: 43516 RVA: 0x003F39BF File Offset: 0x003F1BBF
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <.cctor>g__TypeFoundCallback|9_0(Type _type, bool _hasMultiple, XmlPatchMethodsClassAttribute _xmlPatchMethodsClassAttribute)
@@ -267,7 +267,7 @@ public class XmlPatcher
 		ReflectionHelpers.GetMethodsWithAttribute<XmlPatchMethodAttribute>(_type, new Action<MethodInfo, bool, XmlPatchMethodAttribute>(XmlPatcher.<.cctor>g__MethodFoundCallback|9_1), true, false, true);
 	}
 
-	// Token: 0x0600A94A RID: 43338 RVA: 0x003EEB84 File Offset: 0x003ECD84
+	// Token: 0x0600A9FD RID: 43517 RVA: 0x003F39D8 File Offset: 0x003F1BD8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <.cctor>g__MethodFoundCallback|9_1(MethodInfo _method, bool _hasMultiple, XmlPatchMethodAttribute _xmlPatchMethodAttribute)
@@ -297,36 +297,36 @@ public class XmlPatcher
 		}
 	}
 
-	// Token: 0x04007D1D RID: 32029
+	// Token: 0x04007DA0 RID: 32160
 	public static readonly Dictionary<string, XmlPatcher.PatchMethodDefinition> XpathPatchMethods = new CaseInsensitiveStringDictionary<XmlPatcher.PatchMethodDefinition>();
 
-	// Token: 0x02001500 RID: 5376
+	// Token: 0x02001522 RID: 5410
 	public enum EEvaluator
 	{
-		// Token: 0x04007D1F RID: 32031
+		// Token: 0x04007DA2 RID: 32162
 		Host,
-		// Token: 0x04007D20 RID: 32032
+		// Token: 0x04007DA3 RID: 32163
 		Client
 	}
 
-	// Token: 0x02001501 RID: 5377
+	// Token: 0x02001523 RID: 5411
 	public struct PatchMethodDefinition
 	{
-		// Token: 0x0600A94B RID: 43339 RVA: 0x003EEC40 File Offset: 0x003ECE40
+		// Token: 0x0600A9FE RID: 43518 RVA: 0x003F3A94 File Offset: 0x003F1C94
 		public PatchMethodDefinition(XmlPatcher.XpathDelegate _delegate, bool _requiresXpath)
 		{
 			this.Delegate = _delegate;
 			this.RequiresXpath = _requiresXpath;
 		}
 
-		// Token: 0x04007D21 RID: 32033
+		// Token: 0x04007DA4 RID: 32164
 		public readonly XmlPatcher.XpathDelegate Delegate;
 
-		// Token: 0x04007D22 RID: 32034
+		// Token: 0x04007DA5 RID: 32165
 		public readonly bool RequiresXpath;
 	}
 
-	// Token: 0x02001502 RID: 5378
-	// (Invoke) Token: 0x0600A94D RID: 43341
+	// Token: 0x02001524 RID: 5412
+	// (Invoke) Token: 0x0600AA00 RID: 43520
 	public delegate int XpathDelegate(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod);
 }

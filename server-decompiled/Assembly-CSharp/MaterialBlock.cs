@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000191 RID: 401
+// Token: 0x02000192 RID: 402
 public class MaterialBlock
 {
-	// Token: 0x170000F7 RID: 247
-	// (get) Token: 0x06000C2C RID: 3116 RVA: 0x0004C522 File Offset: 0x0004A722
-	// (set) Token: 0x06000C2D RID: 3117 RVA: 0x0004C52A File Offset: 0x0004A72A
+	// Token: 0x170000EF RID: 239
+	// (get) Token: 0x06000C23 RID: 3107 RVA: 0x0004C526 File Offset: 0x0004A726
+	// (set) Token: 0x06000C24 RID: 3108 RVA: 0x0004C52E File Offset: 0x0004A72E
 	public float ExplosionResistance
 	{
 		get
@@ -19,19 +19,19 @@ public class MaterialBlock
 		}
 	}
 
-	// Token: 0x06000C2F RID: 3119 RVA: 0x0004C54E File Offset: 0x0004A74E
+	// Token: 0x06000C26 RID: 3110 RVA: 0x0004C552 File Offset: 0x0004A752
 	public static void Cleanup()
 	{
 		MaterialBlock.materials = new Dictionary<string, MaterialBlock>();
 	}
 
-	// Token: 0x06000C30 RID: 3120 RVA: 0x0004C55C File Offset: 0x0004A75C
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0004C560 File Offset: 0x0004A760
 	public MaterialBlock()
 	{
 		this.Properties = new DynamicProperties();
 	}
 
-	// Token: 0x06000C31 RID: 3121 RVA: 0x0004C5C6 File Offset: 0x0004A7C6
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0004C5CA File Offset: 0x0004A7CA
 	public MaterialBlock(string _id)
 		: this()
 	{
@@ -41,7 +41,7 @@ public class MaterialBlock
 		MaterialBlock.materials[_id] = this;
 	}
 
-	// Token: 0x06000C32 RID: 3122 RVA: 0x0004C5EF File Offset: 0x0004A7EF
+	// Token: 0x06000C29 RID: 3113 RVA: 0x0004C5F3 File Offset: 0x0004A7F3
 	public static MaterialBlock fromString(string _name)
 	{
 		if (!MaterialBlock.materials.ContainsKey(_name))
@@ -51,13 +51,13 @@ public class MaterialBlock
 		return MaterialBlock.materials[_name];
 	}
 
-	// Token: 0x06000C33 RID: 3123 RVA: 0x0004C60B File Offset: 0x0004A80B
+	// Token: 0x06000C2A RID: 3114 RVA: 0x0004C60F File Offset: 0x0004A80F
 	public string GetLocalizedMaterialName()
 	{
 		return Localization.Get("material" + this.id, false, null);
 	}
 
-	// Token: 0x06000C34 RID: 3124 RVA: 0x0004C624 File Offset: 0x0004A824
+	// Token: 0x06000C2B RID: 3115 RVA: 0x0004C628 File Offset: 0x0004A828
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool CheckDamageIgnore(FastTags<TagGroup.Global> _tags, EntityAlive _entity)
 	{
@@ -72,88 +72,88 @@ public class MaterialBlock
 		return false;
 	}
 
-	// Token: 0x04000AF2 RID: 2802
+	// Token: 0x04000AEB RID: 2795
 	public static MaterialBlock air = new MaterialBlock();
 
-	// Token: 0x04000AF3 RID: 2803
+	// Token: 0x04000AEC RID: 2796
 	public static Dictionary<string, MaterialBlock> materials = new Dictionary<string, MaterialBlock>();
 
-	// Token: 0x04000AF4 RID: 2804
+	// Token: 0x04000AED RID: 2797
 	public DynamicProperties Properties;
 
-	// Token: 0x04000AF5 RID: 2805
+	// Token: 0x04000AEE RID: 2798
 	public bool StabilitySupport = true;
 
-	// Token: 0x04000AF6 RID: 2806
+	// Token: 0x04000AEF RID: 2799
 	public DataItem<float> Hardness;
 
-	// Token: 0x04000AF7 RID: 2807
+	// Token: 0x04000AF0 RID: 2800
 	public StepSound stepSound;
 
-	// Token: 0x04000AF8 RID: 2808
+	// Token: 0x04000AF1 RID: 2801
 	public bool IsCollidable;
 
-	// Token: 0x04000AF9 RID: 2809
+	// Token: 0x04000AF2 RID: 2802
 	public int LightOpacity;
 
-	// Token: 0x04000AFA RID: 2810
+	// Token: 0x04000AF3 RID: 2803
 	public int StabilityGlue = 6;
 
-	// Token: 0x04000AFB RID: 2811
+	// Token: 0x04000AF4 RID: 2804
 	public bool IsLiquid;
 
-	// Token: 0x04000AFC RID: 2812
+	// Token: 0x04000AF5 RID: 2805
 	public string DamageCategory;
 
-	// Token: 0x04000AFD RID: 2813
+	// Token: 0x04000AF6 RID: 2806
 	public string SurfaceCategory;
 
-	// Token: 0x04000AFE RID: 2814
+	// Token: 0x04000AF7 RID: 2807
 	public string ParticleCategory;
 
-	// Token: 0x04000AFF RID: 2815
+	// Token: 0x04000AF8 RID: 2808
 	public string ParticleDestroyCategory;
 
-	// Token: 0x04000B00 RID: 2816
+	// Token: 0x04000AF9 RID: 2809
 	public string ForgeCategory;
 
-	// Token: 0x04000B01 RID: 2817
+	// Token: 0x04000AFA RID: 2810
 	public int FertileLevel;
 
-	// Token: 0x04000B02 RID: 2818
+	// Token: 0x04000AFB RID: 2811
 	public bool IsPlant;
 
-	// Token: 0x04000B03 RID: 2819
+	// Token: 0x04000AFC RID: 2812
 	public float MovementFactor = 1f;
 
-	// Token: 0x04000B04 RID: 2820
+	// Token: 0x04000AFD RID: 2813
 	public float Friction = 1f;
 
-	// Token: 0x04000B05 RID: 2821
+	// Token: 0x04000AFE RID: 2814
 	public DataItem<int> Mass;
 
-	// Token: 0x04000B06 RID: 2822
+	// Token: 0x04000AFF RID: 2815
 	public int MaxDamage;
 
-	// Token: 0x04000B07 RID: 2823
+	// Token: 0x04000B00 RID: 2816
 	public int MaxIncomingDamage = int.MaxValue;
 
-	// Token: 0x04000B08 RID: 2824
+	// Token: 0x04000B01 RID: 2817
 	public float Experience = 1f;
 
-	// Token: 0x04000B09 RID: 2825
+	// Token: 0x04000B02 RID: 2818
 	public string id;
 
-	// Token: 0x04000B0A RID: 2826
+	// Token: 0x04000B03 RID: 2819
 	public FastTags<TagGroup.Global> IgnoreDamageFromTag = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x04000B0B RID: 2827
+	// Token: 0x04000B04 RID: 2820
 	public bool IsGroundCover;
 
-	// Token: 0x04000B0C RID: 2828
+	// Token: 0x04000B05 RID: 2821
 	public bool CanDestroy = true;
 
-	// Token: 0x04000B0D RID: 2829
+	// Token: 0x04000B06 RID: 2822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float explosionResistance;
 }

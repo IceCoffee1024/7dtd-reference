@@ -7,18 +7,18 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A5E RID: 6750
+	// Token: 0x02001A8A RID: 6794
 	[Preserve]
 	public class CombatLayerMixer : FixedLayerMixer
 	{
-		// Token: 0x0600CC89 RID: 52361 RVA: 0x004A9FFC File Offset: 0x004A81FC
+		// Token: 0x0600CDE1 RID: 52705 RVA: 0x004AE4C8 File Offset: 0x004AC6C8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void updateHyperbar(int _idx)
 		{
 			this.hyperbar = _idx / (Content.SamplesFor[base.Sect] * 2) % this.maxHyperbar;
 		}
 
-		// Token: 0x0600CC8A RID: 52362 RVA: 0x004AA01F File Offset: 0x004A821F
+		// Token: 0x0600CDE2 RID: 52706 RVA: 0x004AE4EB File Offset: 0x004AC6EB
 		public override IEnumerator Load()
 		{
 			yield return this.<>n__0();
@@ -26,7 +26,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x04009B4D RID: 39757
+		// Token: 0x04009C13 RID: 39955
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int maxHyperbar;
 	}

@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000159 RID: 345
+// Token: 0x0200015B RID: 347
 [Preserve]
 public class BlockTimerRelay : BlockPowered
 {
-	// Token: 0x06000986 RID: 2438 RVA: 0x00041DF0 File Offset: 0x0003FFF0
+	// Token: 0x0600098C RID: 2444 RVA: 0x00041ED0 File Offset: 0x000400D0
 	public BlockTimerRelay()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000987 RID: 2439 RVA: 0x00041E48 File Offset: 0x00040048
+	// Token: 0x0600098D RID: 2445 RVA: 0x00041F28 File Offset: 0x00040128
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -32,7 +32,7 @@ public class BlockTimerRelay : BlockPowered
 		});
 	}
 
-	// Token: 0x06000988 RID: 2440 RVA: 0x00041EB4 File Offset: 0x000400B4
+	// Token: 0x0600098E RID: 2446 RVA: 0x00041F94 File Offset: 0x00040194
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.GetTileEntity(_blockPos) is TileEntityPoweredTrigger;
@@ -46,7 +46,7 @@ public class BlockTimerRelay : BlockPowered
 		return "";
 	}
 
-	// Token: 0x06000989 RID: 2441 RVA: 0x00041F2C File Offset: 0x0004012C
+	// Token: 0x0600098F RID: 2447 RVA: 0x0004200C File Offset: 0x0004020C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -63,7 +63,7 @@ public class BlockTimerRelay : BlockPowered
 		if (_commandName == "options")
 		{
 			_player.AimingGun = false;
-			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, null, 0);
+			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, 0);
 			return true;
 		}
 		if (!(_commandName == "take"))
@@ -74,13 +74,13 @@ public class BlockTimerRelay : BlockPowered
 		return true;
 	}
 
-	// Token: 0x0600098A RID: 2442 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06000990 RID: 2448 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x0600098B RID: 2443 RVA: 0x00041FC8 File Offset: 0x000401C8
+	// Token: 0x06000991 RID: 2449 RVA: 0x000420A4 File Offset: 0x000402A4
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);
@@ -90,7 +90,7 @@ public class BlockTimerRelay : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x0600098C RID: 2444 RVA: 0x00042038 File Offset: 0x00040238
+	// Token: 0x06000992 RID: 2450 RVA: 0x00042114 File Offset: 0x00040314
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -99,7 +99,7 @@ public class BlockTimerRelay : BlockPowered
 		};
 	}
 
-	// Token: 0x040009D4 RID: 2516
+	// Token: 0x040009D7 RID: 2519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

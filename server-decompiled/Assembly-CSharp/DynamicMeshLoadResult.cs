@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020003BD RID: 957
+// Token: 0x020003C0 RID: 960
 public enum DynamicMeshLoadResult
 {
-	// Token: 0x040012B3 RID: 4787
+	// Token: 0x040012AC RID: 4780
 	Ok,
-	// Token: 0x040012B4 RID: 4788
+	// Token: 0x040012AD RID: 4781
 	WrongSize,
-	// Token: 0x040012B5 RID: 4789
+	// Token: 0x040012AE RID: 4782
 	Error
 }

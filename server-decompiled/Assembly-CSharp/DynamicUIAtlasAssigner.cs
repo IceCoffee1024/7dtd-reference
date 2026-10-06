@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001285 RID: 4741
+// Token: 0x0200129D RID: 4765
 public class DynamicUIAtlasAssigner : MonoBehaviour
 {
-	// Token: 0x060096BE RID: 38590 RVA: 0x0038B4BC File Offset: 0x003896BC
+	// Token: 0x0600974B RID: 38731 RVA: 0x0038FD04 File Offset: 0x0038DF04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -34,7 +34,7 @@ public class DynamicUIAtlasAssigner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096BF RID: 38591 RVA: 0x0038B57B File Offset: 0x0038977B
+	// Token: 0x0600974C RID: 38732 RVA: 0x0038FDC3 File Offset: 0x0038DFC3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDestroy()
 	{
@@ -44,7 +44,7 @@ public class DynamicUIAtlasAssigner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096C0 RID: 38592 RVA: 0x0038B5A4 File Offset: 0x003897A4
+	// Token: 0x0600974D RID: 38733 RVA: 0x0038FDEC File Offset: 0x0038DFEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void AtlasUpdateCallback()
 	{
@@ -58,18 +58,18 @@ public class DynamicUIAtlasAssigner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040070EC RID: 28908
+	// Token: 0x04007156 RID: 29014
 	public string AtlasPathInScene;
 
-	// Token: 0x040070ED RID: 28909
+	// Token: 0x04007157 RID: 29015
 	public string OptionalSpriteName;
 
-	// Token: 0x040070EE RID: 28910
+	// Token: 0x04007158 RID: 29016
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public DynamicUIAtlas atlas;
 
-	// Token: 0x040070EF RID: 28911
+	// Token: 0x04007159 RID: 29017
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UISprite[] sprites;

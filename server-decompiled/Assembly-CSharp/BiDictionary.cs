@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013A1 RID: 5025
+// Token: 0x020013C1 RID: 5057
 public sealed class BiDictionary<TKey, TValue>
 {
-	// Token: 0x06009E7E RID: 40574 RVA: 0x003BCEA4 File Offset: 0x003BB0A4
+	// Token: 0x06009F29 RID: 40745 RVA: 0x003C1A40 File Offset: 0x003BFC40
 	public void Add(TKey key, TValue value)
 	{
 		if (this.m_keyToValue.ContainsKey(key))
@@ -19,31 +19,31 @@ public sealed class BiDictionary<TKey, TValue>
 		this.m_valueToKey.Add(value, key);
 	}
 
-	// Token: 0x06009E7F RID: 40575 RVA: 0x003BCF07 File Offset: 0x003BB107
+	// Token: 0x06009F2A RID: 40746 RVA: 0x003C1AA3 File Offset: 0x003BFCA3
 	public bool ContainsKey(TKey key)
 	{
 		return this.m_keyToValue.ContainsKey(key);
 	}
 
-	// Token: 0x06009E80 RID: 40576 RVA: 0x003BCF15 File Offset: 0x003BB115
+	// Token: 0x06009F2B RID: 40747 RVA: 0x003C1AB1 File Offset: 0x003BFCB1
 	public bool ContainsValue(TValue value)
 	{
 		return this.m_valueToKey.ContainsKey(value);
 	}
 
-	// Token: 0x06009E81 RID: 40577 RVA: 0x003BCF23 File Offset: 0x003BB123
+	// Token: 0x06009F2C RID: 40748 RVA: 0x003C1ABF File Offset: 0x003BFCBF
 	public bool TryGetByKey(TKey key, out TValue value)
 	{
 		return this.m_keyToValue.TryGetValue(key, out value);
 	}
 
-	// Token: 0x06009E82 RID: 40578 RVA: 0x003BCF32 File Offset: 0x003BB132
+	// Token: 0x06009F2D RID: 40749 RVA: 0x003C1ACE File Offset: 0x003BFCCE
 	public bool TryGetByValue(TValue value, out TKey key)
 	{
 		return this.m_valueToKey.TryGetValue(value, out key);
 	}
 
-	// Token: 0x06009E83 RID: 40579 RVA: 0x003BCF44 File Offset: 0x003BB144
+	// Token: 0x06009F2E RID: 40750 RVA: 0x003C1AE0 File Offset: 0x003BFCE0
 	public bool RemoveByKey(TKey key)
 	{
 		TValue tvalue;
@@ -55,7 +55,7 @@ public sealed class BiDictionary<TKey, TValue>
 		return true;
 	}
 
-	// Token: 0x06009E84 RID: 40580 RVA: 0x003BCF74 File Offset: 0x003BB174
+	// Token: 0x06009F2F RID: 40751 RVA: 0x003C1B10 File Offset: 0x003BFD10
 	public bool RemoveByValue(TValue value)
 	{
 		TKey tkey;
@@ -67,11 +67,11 @@ public sealed class BiDictionary<TKey, TValue>
 		return true;
 	}
 
-	// Token: 0x0400781E RID: 30750
+	// Token: 0x04007899 RID: 30873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<TKey, TValue> m_keyToValue = new Dictionary<TKey, TValue>();
 
-	// Token: 0x0400781F RID: 30751
+	// Token: 0x0400789A RID: 30874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<TValue, TKey> m_valueToKey = new Dictionary<TValue, TKey>();
 }

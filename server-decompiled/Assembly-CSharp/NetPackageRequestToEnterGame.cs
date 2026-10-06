@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000841 RID: 2113
+// Token: 0x02000842 RID: 2114
 [Preserve]
 public class NetPackageRequestToEnterGame : NetPackage
 {
-	// Token: 0x17000675 RID: 1653
-	// (get) Token: 0x06003DF1 RID: 15857 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000694 RID: 1684
+	// (get) Token: 0x06003DA1 RID: 15777 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,26 +15,20 @@ public class NetPackageRequestToEnterGame : NetPackage
 		}
 	}
 
-	// Token: 0x06003DF2 RID: 15858 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003DA2 RID: 15778 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _reader)
 	{
 	}
 
-	// Token: 0x06003DF3 RID: 15859 RVA: 0x0017BC33 File Offset: 0x00179E33
+	// Token: 0x06003DA3 RID: 15779 RVA: 0x0017C2CF File Offset: 0x0017A4CF
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 	}
 
-	// Token: 0x06003DF4 RID: 15860 RVA: 0x00188F55 File Offset: 0x00187155
+	// Token: 0x06003DA4 RID: 15780 RVA: 0x00188A8D File Offset: 0x00186C8D
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		ThreadManager.StartCoroutine(_callbacks.RequestToEnterGame(base.Sender));
-	}
-
-	// Token: 0x06003DF5 RID: 15861 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
 	}
 }

@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006FF RID: 1791
+// Token: 0x02000701 RID: 1793
 [Preserve]
 public class MinEventActionAddHealth : MinEventActionTargetedBase
 {
-	// Token: 0x060036C1 RID: 14017 RVA: 0x0016969C File Offset: 0x0016789C
+	// Token: 0x06003704 RID: 14084 RVA: 0x0016A000 File Offset: 0x00168200
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -29,7 +29,7 @@ public class MinEventActionAddHealth : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036C2 RID: 14018 RVA: 0x00169730 File Offset: 0x00167930
+	// Token: 0x06003705 RID: 14085 RVA: 0x0016A094 File Offset: 0x00168294
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -56,19 +56,19 @@ public class MinEventActionAddHealth : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C31 RID: 11313
+	// Token: 0x04002C2A RID: 11306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002C32 RID: 11314
+	// Token: 0x04002C2B RID: 11307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName = "";
 
-	// Token: 0x04002C33 RID: 11315
+	// Token: 0x04002C2C RID: 11308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int health;
 
-	// Token: 0x04002C34 RID: 11316
+	// Token: 0x04002C2D RID: 11309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showSplatter = true;
 }

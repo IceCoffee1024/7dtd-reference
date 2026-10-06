@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 
 namespace Platform
 {
-	// Token: 0x02001B96 RID: 7062
+	// Token: 0x02001BC8 RID: 7112
 	public interface IRemotePlayerStorageObject
 	{
-		// Token: 0x0600D306 RID: 54022
-		void ReadInto(BinaryReader _reader);
+		// Token: 0x0600D47E RID: 54398
+		void ReadInto(PooledBinaryReader _reader);
 
-		// Token: 0x0600D307 RID: 54023
-		void WriteFrom(BinaryWriter _writer);
+		// Token: 0x0600D47F RID: 54399
+		void WriteFrom(PooledBinaryWriter _writer);
 	}
 }

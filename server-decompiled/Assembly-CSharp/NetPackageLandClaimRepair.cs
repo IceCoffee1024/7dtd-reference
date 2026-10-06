@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AA RID: 1962
+// Token: 0x020007AD RID: 1965
 [Preserve]
 public class NetPackageLandClaimRepair : NetPackage
 {
-	// Token: 0x06003A59 RID: 14937 RVA: 0x0017BAB1 File Offset: 0x00179CB1
+	// Token: 0x06003A96 RID: 14998 RVA: 0x0017C14F File Offset: 0x0017A34F
 	public NetPackageLandClaimRepair Setup(Vector3i _blockPosition, bool _beginRepair)
 	{
 		this.blockPosition = _blockPosition;
@@ -14,7 +14,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A5A RID: 14938 RVA: 0x0017BAC4 File Offset: 0x00179CC4
+	// Token: 0x06003A97 RID: 14999 RVA: 0x0017C160 File Offset: 0x0017A360
 	public override void read(PooledBinaryReader _br)
 	{
 		long num = _br.ReadInt64();
@@ -24,7 +24,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		this.beginRepair = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003A5B RID: 14939 RVA: 0x0017BB04 File Offset: 0x00179D04
+	// Token: 0x06003A98 RID: 15000 RVA: 0x0017C1A0 File Offset: 0x0017A3A0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -34,7 +34,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		_bw.Write(this.beginRepair);
 	}
 
-	// Token: 0x06003A5C RID: 14940 RVA: 0x0017BB5C File Offset: 0x00179D5C
+	// Token: 0x06003A99 RID: 15001 RVA: 0x0017C1F8 File Offset: 0x0017A3F8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		TEFeatureAreaRepair selfOrFeature = _world.GetTileEntity(this.blockPosition).GetSelfOrFeature<TEFeatureAreaRepair>();
@@ -55,17 +55,11 @@ public class NetPackageLandClaimRepair : NetPackage
 		}
 	}
 
-	// Token: 0x06003A5D RID: 14941 RVA: 0x0004AC4A File Offset: 0x00048E4A
-	public override int GetLength()
-	{
-		return 25;
-	}
-
-	// Token: 0x04002FCD RID: 12237
+	// Token: 0x04002FC7 RID: 12231
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPosition;
 
-	// Token: 0x04002FCE RID: 12238
+	// Token: 0x04002FC8 RID: 12232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool beginRepair;
 }

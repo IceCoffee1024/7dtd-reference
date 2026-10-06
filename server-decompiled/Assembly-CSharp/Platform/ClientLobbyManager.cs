@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001B3F RID: 6975
+	// Token: 0x02001B71 RID: 7025
 	public class ClientLobbyManager
 	{
-		// Token: 0x0600D121 RID: 53537 RVA: 0x004C4E1F File Offset: 0x004C301F
+		// Token: 0x0600D298 RID: 53912 RVA: 0x004C9907 File Offset: 0x004C7B07
 		public ClientLobbyManager()
 		{
 			ConnectionManager.OnClientDisconnected += this.OnClientDisconnected;
 		}
 
-		// Token: 0x0600D122 RID: 53538 RVA: 0x004C4E50 File Offset: 0x004C3050
+		// Token: 0x0600D299 RID: 53913 RVA: 0x004C9938 File Offset: 0x004C7B38
 		public bool TryGetLobbyId(EPlatformIdentifier platform, out PlatformLobbyId lobbyId)
 		{
 			object obj = this.lockObj;
@@ -34,7 +34,7 @@ namespace Platform
 			return flag2;
 		}
 
-		// Token: 0x0600D123 RID: 53539 RVA: 0x004C4EAC File Offset: 0x004C30AC
+		// Token: 0x0600D29A RID: 53914 RVA: 0x004C9994 File Offset: 0x004C7B94
 		public void RegisterLobbyClient(PlatformLobbyId platformLobbyId, ClientInfo client, bool overwrite = false)
 		{
 			if (!SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.Contains(client))
@@ -77,7 +77,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D124 RID: 53540 RVA: 0x004C507C File Offset: 0x004C327C
+		// Token: 0x0600D29B RID: 53915 RVA: 0x004C9B64 File Offset: 0x004C7D64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientDisconnected(ClientInfo client)
 		{
@@ -97,20 +97,20 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0400A00C RID: 40972
+		// Token: 0x0400A0E1 RID: 41185
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object lockObj = new object();
 
-		// Token: 0x0400A00D RID: 40973
+		// Token: 0x0400A0E2 RID: 41186
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<EPlatformIdentifier, ClientLobbyManager.Lobby> lobbies = new Dictionary<EPlatformIdentifier, ClientLobbyManager.Lobby>();
 
-		// Token: 0x02001B40 RID: 6976
+		// Token: 0x02001B72 RID: 7026
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class Lobby
 		{
-			// Token: 0x170019AA RID: 6570
-			// (get) Token: 0x0600D125 RID: 53541 RVA: 0x004C5120 File Offset: 0x004C3320
+			// Token: 0x17001A50 RID: 6736
+			// (get) Token: 0x0600D29C RID: 53916 RVA: 0x004C9C08 File Offset: 0x004C7E08
 			public PlatformLobbyId Id
 			{
 				get
@@ -119,8 +119,8 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019AB RID: 6571
-			// (get) Token: 0x0600D126 RID: 53542 RVA: 0x004C5128 File Offset: 0x004C3328
+			// Token: 0x17001A51 RID: 6737
+			// (get) Token: 0x0600D29D RID: 53917 RVA: 0x004C9C10 File Offset: 0x004C7E10
 			public bool IsEmpty
 			{
 				get
@@ -129,8 +129,8 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019AC RID: 6572
-			// (get) Token: 0x0600D127 RID: 53543 RVA: 0x004C5138 File Offset: 0x004C3338
+			// Token: 0x17001A52 RID: 6738
+			// (get) Token: 0x0600D29E RID: 53918 RVA: 0x004C9C20 File Offset: 0x004C7E20
 			public IReadOnlyList<ClientInfo> Clients
 			{
 				get
@@ -139,19 +139,19 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0600D128 RID: 53544 RVA: 0x004C5140 File Offset: 0x004C3340
+			// Token: 0x0600D29F RID: 53919 RVA: 0x004C9C28 File Offset: 0x004C7E28
 			public Lobby(PlatformLobbyId id)
 			{
 				this.id = id;
 			}
 
-			// Token: 0x0600D129 RID: 53545 RVA: 0x004C515A File Offset: 0x004C335A
+			// Token: 0x0600D2A0 RID: 53920 RVA: 0x004C9C42 File Offset: 0x004C7E42
 			public Lobby(EPlatformIdentifier platform, string lobbyId)
 			{
 				this.id = new PlatformLobbyId(platform, lobbyId);
 			}
 
-			// Token: 0x0600D12A RID: 53546 RVA: 0x004C517C File Offset: 0x004C337C
+			// Token: 0x0600D2A1 RID: 53921 RVA: 0x004C9C64 File Offset: 0x004C7E64
 			public void AddClient(ClientInfo client)
 			{
 				this.clients.Add(client);
@@ -164,7 +164,7 @@ namespace Platform
 				}));
 			}
 
-			// Token: 0x0600D12B RID: 53547 RVA: 0x004C51E8 File Offset: 0x004C33E8
+			// Token: 0x0600D2A2 RID: 53922 RVA: 0x004C9CD0 File Offset: 0x004C7ED0
 			public void RemoveClient(ClientInfo client)
 			{
 				if (this.clients.Remove(client))
@@ -181,11 +181,11 @@ namespace Platform
 				Log.Warning(string.Format("[ClientLobbyManager] remove member {0} from client lobby {1} : {2} failed. They are not a member", client.playerName, this.id.PlatformIdentifier, this.id.LobbyId));
 			}
 
-			// Token: 0x0400A00E RID: 40974
+			// Token: 0x0400A0E3 RID: 41187
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly PlatformLobbyId id;
 
-			// Token: 0x0400A00F RID: 40975
+			// Token: 0x0400A0E4 RID: 41188
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly List<ClientInfo> clients = new List<ClientInfo>();
 		}

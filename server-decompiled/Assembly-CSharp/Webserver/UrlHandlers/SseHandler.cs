@@ -7,10 +7,10 @@ using Webserver.SSE;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001AF7 RID: 6903
+	// Token: 0x02001B23 RID: 6947
 	public class SseHandler : AbsHandler
 	{
-		// Token: 0x0600CF9C RID: 53148 RVA: 0x004B9678 File Offset: 0x004B7878
+		// Token: 0x0600D0F4 RID: 53492 RVA: 0x004BDB44 File Offset: 0x004BBD44
 		public SseHandler(string _moduleName = null)
 			: base(_moduleName, 0)
 		{
@@ -18,7 +18,7 @@ namespace Webserver.UrlHandlers
 			ReflectionHelpers.FindTypesImplementingBase(typeof(AbsEvent), new Action<Type>(this.apiFoundCallback), false);
 		}
 
-		// Token: 0x0600CF9D RID: 53149 RVA: 0x004B96D4 File Offset: 0x004B78D4
+		// Token: 0x0600D0F5 RID: 53493 RVA: 0x004BDBA0 File Offset: 0x004BBDA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiFoundCallback(Type _type)
 		{
@@ -31,14 +31,14 @@ namespace Webserver.UrlHandlers
 			this.AddEvent(absEvent.Name, absEvent);
 		}
 
-		// Token: 0x0600CF9E RID: 53150 RVA: 0x004B9715 File Offset: 0x004B7915
+		// Token: 0x0600D0F6 RID: 53494 RVA: 0x004BDBE1 File Offset: 0x004BBDE1
 		public override void SetBasePathAndParent(Web _parent, string _relativePath)
 		{
 			base.SetBasePathAndParent(_parent, _relativePath);
 			this.queueThead = ThreadManager.StartThread("SSE-Processing_" + this.urlBasePath, new ThreadManager.ThreadFunctionDelegate(this.QueueProcessThread), ThreadPriority.BelowNormal, null, true, false);
 		}
 
-		// Token: 0x0600CF9F RID: 53151 RVA: 0x004B974F File Offset: 0x004B794F
+		// Token: 0x0600D0F7 RID: 53495 RVA: 0x004BDC1B File Offset: 0x004BBE1B
 		public override void Shutdown()
 		{
 			base.Shutdown();
@@ -46,14 +46,14 @@ namespace Webserver.UrlHandlers
 			this.SignalSendQueue();
 		}
 
-		// Token: 0x0600CFA0 RID: 53152 RVA: 0x004B9764 File Offset: 0x004B7964
+		// Token: 0x0600D0F8 RID: 53496 RVA: 0x004BDC30 File Offset: 0x004BBE30
 		public void AddEvent(string _eventName, AbsEvent _eventInstance)
 		{
 			this.events.Add(_eventName, _eventInstance);
 			AdminWebModules.Instance.AddKnownModule(new AdminWebModules.WebModule("webevent." + _eventName, _eventInstance.DefaultPermissionLevel(), true));
 		}
 
-		// Token: 0x0600CFA1 RID: 53153 RVA: 0x004B9794 File Offset: 0x004B7994
+		// Token: 0x0600D0F9 RID: 53497 RVA: 0x004BDC60 File Offset: 0x004BBE60
 		public override void HandleRequest(RequestContext _context)
 		{
 			string text = _context.QueryParameters["events"];
@@ -121,14 +121,14 @@ namespace Webserver.UrlHandlers
 			this.clients.Add(sseClient);
 		}
 
-		// Token: 0x0600CFA2 RID: 53154 RVA: 0x004B9928 File Offset: 0x004B7B28
+		// Token: 0x0600D0FA RID: 53498 RVA: 0x004BDDF4 File Offset: 0x004BBFF4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsAuthorizedForEvent(string _eventName, int _permissionLevel)
 		{
 			return AdminWebModules.Instance.ModuleAllowedWithLevel("webevent." + _eventName, _permissionLevel);
 		}
 
-		// Token: 0x0600CFA3 RID: 53155 RVA: 0x004B9940 File Offset: 0x004B7B40
+		// Token: 0x0600D0FB RID: 53499 RVA: 0x004BDE0C File Offset: 0x004BC00C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void QueueProcessThread(ThreadManager.ThreadInfo _threadInfo)
 		{
@@ -159,13 +159,13 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x0600CFA4 RID: 53156 RVA: 0x004B9A24 File Offset: 0x004B7C24
+		// Token: 0x0600D0FC RID: 53500 RVA: 0x004BDEF0 File Offset: 0x004BC0F0
 		public void SignalSendQueue()
 		{
 			this.evSendRequest.Set();
 		}
 
-		// Token: 0x0600CFA5 RID: 53157 RVA: 0x004B9A34 File Offset: 0x004B7C34
+		// Token: 0x0600D0FD RID: 53501 RVA: 0x004BDF00 File Offset: 0x004BC100
 		public void ClientClosed(SseClient _client)
 		{
 			foreach (KeyValuePair<string, AbsEvent> keyValuePair in this.events)
@@ -188,31 +188,31 @@ namespace Webserver.UrlHandlers
 			this.clients.Remove(_client);
 		}
 
-		// Token: 0x04009DB0 RID: 40368
+		// Token: 0x04009E76 RID: 40566
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AbsEvent> events = new CaseInsensitiveStringDictionary<AbsEvent>();
 
-		// Token: 0x04009DB1 RID: 40369
+		// Token: 0x04009E77 RID: 40567
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreadManager.ThreadInfo queueThead;
 
-		// Token: 0x04009DB2 RID: 40370
+		// Token: 0x04009E78 RID: 40568
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AutoResetEvent evSendRequest = new AutoResetEvent(false);
 
-		// Token: 0x04009DB3 RID: 40371
+		// Token: 0x04009E79 RID: 40569
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shutdown;
 
-		// Token: 0x04009DB4 RID: 40372
+		// Token: 0x04009E7A RID: 40570
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Type[] ctorTypes = new Type[] { typeof(SseHandler) };
 
-		// Token: 0x04009DB5 RID: 40373
+		// Token: 0x04009E7B RID: 40571
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly object[] ctorParams = new object[1];
 
-		// Token: 0x04009DB6 RID: 40374
+		// Token: 0x04009E7C RID: 40572
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<SseClient> clients = new List<SseClient>();
 	}

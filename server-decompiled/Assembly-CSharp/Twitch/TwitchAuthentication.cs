@@ -15,15 +15,15 @@ using ZXing.QrCode;
 
 namespace Twitch
 {
-	// Token: 0x02001800 RID: 6144
+	// Token: 0x0200182C RID: 6188
 	public class TwitchAuthentication
 	{
-		// Token: 0x1400010B RID: 267
-		// (add) Token: 0x0600BE2B RID: 48683 RVA: 0x00465A14 File Offset: 0x00463C14
-		// (remove) Token: 0x0600BE2C RID: 48684 RVA: 0x00465A48 File Offset: 0x00463C48
+		// Token: 0x1400010A RID: 266
+		// (add) Token: 0x0600BF83 RID: 49027 RVA: 0x00469F50 File Offset: 0x00468150
+		// (remove) Token: 0x0600BF84 RID: 49028 RVA: 0x00469F84 File Offset: 0x00468184
 		public static event TwitchAuth_QRCodeGenerated QRCodeGenerated;
 
-		// Token: 0x0600BE2D RID: 48685 RVA: 0x00465A7C File Offset: 0x00463C7C
+		// Token: 0x0600BF85 RID: 49029 RVA: 0x00469FB8 File Offset: 0x004681B8
 		public TwitchAuthentication()
 		{
 			this.TwitchListener = new HttpListener();
@@ -31,13 +31,13 @@ namespace Twitch
 			this.TwitchListener.Prefixes.Add("http://localhost:56207/auth/");
 		}
 
-		// Token: 0x0600BE2E RID: 48686 RVA: 0x00465AFB File Offset: 0x00463CFB
+		// Token: 0x0600BF86 RID: 49030 RVA: 0x0046A037 File Offset: 0x00468237
 		public Task<TwitchAuthentication.AuthenticationValues> GetAuthenticationValuesAsync()
 		{
 			return Task.Run<TwitchAuthentication.AuthenticationValues>(() => this.GetAuthenticationValues());
 		}
 
-		// Token: 0x0600BE2F RID: 48687 RVA: 0x00465B10 File Offset: 0x00463D10
+		// Token: 0x0600BF87 RID: 49031 RVA: 0x0046A04C File Offset: 0x0046824C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool StartListener()
 		{
@@ -52,13 +52,13 @@ namespace Twitch
 			return this.TwitchListener.IsListening;
 		}
 
-		// Token: 0x0600BE30 RID: 48688 RVA: 0x00465B50 File Offset: 0x00463D50
+		// Token: 0x0600BF88 RID: 49032 RVA: 0x0046A08C File Offset: 0x0046828C
 		public void StopListener()
 		{
 			this.TwitchListener.Stop();
 		}
 
-		// Token: 0x0600BE31 RID: 48689 RVA: 0x00465B60 File Offset: 0x00463D60
+		// Token: 0x0600BF89 RID: 49033 RVA: 0x0046A09C File Offset: 0x0046829C
 		public TwitchAuthentication.AuthenticationValues GetAuthenticationValues()
 		{
 			while (this.TwitchListener.IsListening)
@@ -124,7 +124,7 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600BE32 RID: 48690 RVA: 0x00465D8C File Offset: 0x00463F8C
+		// Token: 0x0600BF8A RID: 49034 RVA: 0x0046A2C8 File Offset: 0x004684C8
 		public static NameValueCollection ParseQueryString(string s)
 		{
 			NameValueCollection nameValueCollection = new NameValueCollection();
@@ -148,7 +148,7 @@ namespace Twitch
 			return nameValueCollection;
 		}
 
-		// Token: 0x0600BE33 RID: 48691 RVA: 0x00465E0C File Offset: 0x0046400C
+		// Token: 0x0600BF8B RID: 49035 RVA: 0x0046A348 File Offset: 0x00468548
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string GetResponse()
 		{
@@ -211,7 +211,7 @@ namespace Twitch
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600BE34 RID: 48692 RVA: 0x004660B7 File Offset: 0x004642B7
+		// Token: 0x0600BF8C RID: 49036 RVA: 0x0046A5F3 File Offset: 0x004687F3
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchAuthentication.AuthenticationValues GetModel(string token, string scopes)
 		{
@@ -222,7 +222,7 @@ namespace Twitch
 			};
 		}
 
-		// Token: 0x0600BE35 RID: 48693 RVA: 0x004660CC File Offset: 0x004642CC
+		// Token: 0x0600BF8D RID: 49037 RVA: 0x0046A608 File Offset: 0x00468808
 		public void SendRequestToBrowser(string ClientID)
 		{
 			string url = TwitchAuthentication.GetUrl(ClientID);
@@ -230,7 +230,7 @@ namespace Twitch
 			Process.Start(url);
 		}
 
-		// Token: 0x0600BE36 RID: 48694 RVA: 0x004660E4 File Offset: 0x004642E4
+		// Token: 0x0600BF8E RID: 49038 RVA: 0x0046A620 File Offset: 0x00468820
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetUrl(string ClientID)
 		{
@@ -247,13 +247,13 @@ namespace Twitch
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600BE37 RID: 48695 RVA: 0x0046615C File Offset: 0x0046435C
+		// Token: 0x0600BF8F RID: 49039 RVA: 0x0046A698 File Offset: 0x00468898
 		public void GetToken()
 		{
 			GameManager.Instance.StartCoroutine(this.DeviceAuthenticate());
 		}
 
-		// Token: 0x0600BE38 RID: 48696 RVA: 0x0046616F File Offset: 0x0046436F
+		// Token: 0x0600BF90 RID: 49040 RVA: 0x0046A6AB File Offset: 0x004688AB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator DeviceAuthenticate()
 		{
@@ -366,7 +366,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE39 RID: 48697 RVA: 0x0046617E File Offset: 0x0046437E
+		// Token: 0x0600BF91 RID: 49041 RVA: 0x0046A6BA File Offset: 0x004688BA
 		public IEnumerator RefreshToken(float delay, bool skipNextRefresh = false)
 		{
 			yield return new WaitForSecondsRealtime(delay);
@@ -401,7 +401,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE3A RID: 48698 RVA: 0x0046619B File Offset: 0x0046439B
+		// Token: 0x0600BF92 RID: 49042 RVA: 0x0046A6D7 File Offset: 0x004688D7
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator Authenticate()
 		{
@@ -430,7 +430,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE3B RID: 48699 RVA: 0x004661AA File Offset: 0x004643AA
+		// Token: 0x0600BF93 RID: 49043 RVA: 0x0046A6E6 File Offset: 0x004688E6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator ValidateToken(string token)
 		{
@@ -464,7 +464,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BE3C RID: 48700 RVA: 0x004661C0 File Offset: 0x004643C0
+		// Token: 0x0600BF94 RID: 49044 RVA: 0x0046A6FC File Offset: 0x004688FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator RunGetAuthenticationValues(Task<TwitchAuthentication.AuthenticationValues> task)
 		{
@@ -511,103 +511,103 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x04008F1A RID: 36634
+		// Token: 0x04008FE0 RID: 36832
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HttpListener TwitchListener;
 
-		// Token: 0x04008F1B RID: 36635
+		// Token: 0x04008FE1 RID: 36833
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string ReturnUrl = "http://localhost:56207";
 
-		// Token: 0x04008F1C RID: 36636
+		// Token: 0x04008FE2 RID: 36834
 		public string oauth = "";
 
-		// Token: 0x04008F1D RID: 36637
+		// Token: 0x04008FE3 RID: 36835
 		public string oauthwithHeader = "";
 
-		// Token: 0x04008F1E RID: 36638
+		// Token: 0x04008FE4 RID: 36836
 		public string userName = "";
 
-		// Token: 0x04008F1F RID: 36639
+		// Token: 0x04008FE5 RID: 36837
 		public string userID = "";
 
-		// Token: 0x04008F20 RID: 36640
+		// Token: 0x04008FE6 RID: 36838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string refresh_token = "";
 
-		// Token: 0x04008F21 RID: 36641
+		// Token: 0x04008FE7 RID: 36839
 		public static bool bFirstLogin = true;
 
-		// Token: 0x04008F22 RID: 36642
+		// Token: 0x04008FE8 RID: 36840
 		public bool completed;
 
-		// Token: 0x04008F24 RID: 36644
+		// Token: 0x04008FEA RID: 36842
 		public static string client_id = "qtex0oyygtptfirybmxqxm27cdcdpf";
 
-		// Token: 0x02001801 RID: 6145
+		// Token: 0x0200182D RID: 6189
 		public class AuthenticationValues
 		{
-			// Token: 0x04008F25 RID: 36645
+			// Token: 0x04008FEB RID: 36843
 			public string Token;
 
-			// Token: 0x04008F26 RID: 36646
+			// Token: 0x04008FEC RID: 36844
 			public string Scopes;
 		}
 
-		// Token: 0x02001802 RID: 6146
+		// Token: 0x0200182E RID: 6190
 		[PublicizedFrom(EAccessModifier.Private)]
 		[Serializable]
 		public class ValidationResponseData
 		{
-			// Token: 0x04008F27 RID: 36647
+			// Token: 0x04008FED RID: 36845
 			public string login;
 
-			// Token: 0x04008F28 RID: 36648
+			// Token: 0x04008FEE RID: 36846
 			public string user_id;
 		}
 
-		// Token: 0x02001803 RID: 6147
+		// Token: 0x0200182F RID: 6191
 		[PublicizedFrom(EAccessModifier.Private)]
 		[Serializable]
 		public class DeviceAuthIntitationData
 		{
-			// Token: 0x04008F29 RID: 36649
+			// Token: 0x04008FEF RID: 36847
 			public string device_code;
 
-			// Token: 0x04008F2A RID: 36650
+			// Token: 0x04008FF0 RID: 36848
 			public int expires_in;
 
-			// Token: 0x04008F2B RID: 36651
+			// Token: 0x04008FF1 RID: 36849
 			public int interval;
 
-			// Token: 0x04008F2C RID: 36652
+			// Token: 0x04008FF2 RID: 36850
 			public string user_code;
 
-			// Token: 0x04008F2D RID: 36653
+			// Token: 0x04008FF3 RID: 36851
 			public string verification_uri;
 		}
 
-		// Token: 0x02001804 RID: 6148
+		// Token: 0x02001830 RID: 6192
 		[PublicizedFrom(EAccessModifier.Private)]
 		[Serializable]
 		public class PollingIncompleteResponse
 		{
-			// Token: 0x04008F2E RID: 36654
+			// Token: 0x04008FF4 RID: 36852
 			public string message;
 		}
 
-		// Token: 0x02001805 RID: 6149
+		// Token: 0x02001831 RID: 6193
 		[PublicizedFrom(EAccessModifier.Private)]
 		[Serializable]
 		public class PollingSuccessResponse
 		{
-			// Token: 0x04008F2F RID: 36655
+			// Token: 0x04008FF5 RID: 36853
 			public string access_token;
 
-			// Token: 0x04008F30 RID: 36656
+			// Token: 0x04008FF6 RID: 36854
 			public int expires_in;
 
-			// Token: 0x04008F31 RID: 36657
+			// Token: 0x04008FF7 RID: 36855
 			public string refresh_token;
 		}
 	}

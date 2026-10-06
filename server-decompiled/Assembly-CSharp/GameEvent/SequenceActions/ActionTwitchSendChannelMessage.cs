@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A00 RID: 6656
+	// Token: 0x02001A2C RID: 6700
 	[Preserve]
 	public class ActionTwitchSendChannelMessage : ActionBaseClientAction
 	{
-		// Token: 0x0600CAC5 RID: 51909 RVA: 0x004A4BF8 File Offset: 0x004A2DF8
+		// Token: 0x0600CC1D RID: 52253 RVA: 0x004A90C4 File Offset: 0x004A72C4
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -24,7 +24,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAC6 RID: 51910 RVA: 0x004A4C38 File Offset: 0x004A2E38
+		// Token: 0x0600CC1E RID: 52254 RVA: 0x004A9104 File Offset: 0x004A7304
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string ParseTextElement(string element)
 		{
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			return this.player.EntityName;
 		}
 
-		// Token: 0x0600CAC7 RID: 51911 RVA: 0x004A4C70 File Offset: 0x004A2E70
+		// Token: 0x0600CC1F RID: 52255 RVA: 0x004A913C File Offset: 0x004A733C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -54,7 +54,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAC8 RID: 51912 RVA: 0x004A4CE7 File Offset: 0x004A2EE7
+		// Token: 0x0600CC20 RID: 52256 RVA: 0x004A91B3 File Offset: 0x004A73B3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -66,23 +66,23 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099FF RID: 39423
+		// Token: 0x04009AC5 RID: 39621
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string textKey = "";
 
-		// Token: 0x04009A00 RID: 39424
+		// Token: 0x04009AC6 RID: 39622
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string text = "";
 
-		// Token: 0x04009A01 RID: 39425
+		// Token: 0x04009AC7 RID: 39623
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropText = "text";
 
-		// Token: 0x04009A02 RID: 39426
+		// Token: 0x04009AC8 RID: 39624
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTextKey = "text_key";
 
-		// Token: 0x04009A03 RID: 39427
+		// Token: 0x04009AC9 RID: 39625
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal player;
 	}

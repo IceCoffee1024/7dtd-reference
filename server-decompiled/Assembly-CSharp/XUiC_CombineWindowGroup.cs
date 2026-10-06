@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EFB RID: 3835
+// Token: 0x02000F0A RID: 3850
 [Preserve]
 public class XUiC_CombineWindowGroup : XUiController
 {
-	// Token: 0x06007844 RID: 30788 RVA: 0x002D54D5 File Offset: 0x002D36D5
+	// Token: 0x0600783F RID: 30783 RVA: 0x002D8869 File Offset: 0x002D6A69
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_CombineWindowGroup : XUiController
 		this.AlwaysUpdate = true;
 	}
 
-	// Token: 0x06007845 RID: 30789 RVA: 0x002D5504 File Offset: 0x002D3704
+	// Token: 0x06007840 RID: 30784 RVA: 0x002D8898 File Offset: 0x002D6A98
 	public void SetTileEntity(TEFeatureCombine _teCombine)
 	{
 		this.te = _teCombine;
@@ -27,7 +27,7 @@ public class XUiC_CombineWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007846 RID: 30790 RVA: 0x002D5524 File Offset: 0x002D3724
+	// Token: 0x06007841 RID: 30785 RVA: 0x002D88B8 File Offset: 0x002D6AB8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -55,7 +55,7 @@ public class XUiC_CombineWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007847 RID: 30791 RVA: 0x002D5604 File Offset: 0x002D3804
+	// Token: 0x06007842 RID: 30786 RVA: 0x002D8998 File Offset: 0x002D6B98
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -77,7 +77,7 @@ public class XUiC_CombineWindowGroup : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x06007848 RID: 30792 RVA: 0x002D56C4 File Offset: 0x002D38C4
+	// Token: 0x06007843 RID: 30787 RVA: 0x002D8A58 File Offset: 0x002D6C58
 	public override void OnClose()
 	{
 		this.wasReleased = false;
@@ -89,23 +89,23 @@ public class XUiC_CombineWindowGroup : XUiController
 		this.xui.CalloutWindow.ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts);
 	}
 
-	// Token: 0x040058ED RID: 22765
+	// Token: 0x04005925 RID: 22821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x040058EE RID: 22766
+	// Token: 0x04005926 RID: 22822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CombineGrid combineGrid;
 
-	// Token: 0x040058EF RID: 22767
+	// Token: 0x04005927 RID: 22823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureCombine te;
 
-	// Token: 0x040058F0 RID: 22768
+	// Token: 0x04005928 RID: 22824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x040058F1 RID: 22769
+	// Token: 0x04005929 RID: 22825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DD RID: 2013
+// Token: 0x020007E0 RID: 2016
 [Preserve]
 public class NetPackageEntityLookAt : NetPackageEntityTargeted
 {
-	// Token: 0x17000630 RID: 1584
-	// (get) Token: 0x06003B8E RID: 15246 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000655 RID: 1621
+	// (get) Token: 0x06003BA2 RID: 15266 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityLookAt : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003B8F RID: 15247 RVA: 0x0017F2F1 File Offset: 0x0017D4F1
+	// Token: 0x06003BA3 RID: 15267 RVA: 0x0017F835 File Offset: 0x0017DA35
 	public NetPackageEntityLookAt Setup(int _entityId, Vector3 _lookAtPosition)
 	{
 		base.Setup(_entityId);
@@ -24,14 +24,14 @@ public class NetPackageEntityLookAt : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003B90 RID: 15248 RVA: 0x0017F302 File Offset: 0x0017D502
+	// Token: 0x06003BA4 RID: 15268 RVA: 0x0017F846 File Offset: 0x0017DA46
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.lookAtPosition = new Vector3((float)_reader.ReadInt32(), (float)_reader.ReadInt32(), (float)_reader.ReadInt32());
 	}
 
-	// Token: 0x06003B91 RID: 15249 RVA: 0x0017F32B File Offset: 0x0017D52B
+	// Token: 0x06003BA5 RID: 15269 RVA: 0x0017F86F File Offset: 0x0017DA6F
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -40,7 +40,7 @@ public class NetPackageEntityLookAt : NetPackageEntityTargeted
 		_writer.Write((int)this.lookAtPosition.z);
 	}
 
-	// Token: 0x06003B92 RID: 15250 RVA: 0x0017F36C File Offset: 0x0017D56C
+	// Token: 0x06003BA6 RID: 15270 RVA: 0x0017F8B0 File Offset: 0x0017DAB0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -54,12 +54,6 @@ public class NetPackageEntityLookAt : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003B93 RID: 15251 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x04003087 RID: 12423
+	// Token: 0x04003080 RID: 12416
 	public Vector3 lookAtPosition;
 }

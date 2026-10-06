@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001937 RID: 6455
+	// Token: 0x02001963 RID: 6499
 	[Preserve]
 	public class RequirementInTraderArea : BaseRequirement
 	{
-		// Token: 0x0600C722 RID: 50978 RVA: 0x0049155C File Offset: 0x0048F75C
+		// Token: 0x0600C87A RID: 51322 RVA: 0x00495A48 File Offset: 0x00493C48
 		public override bool CanPerform(Entity target)
 		{
 			if (!GameManager.Instance.World.IsWithinTraderArea(new Vector3i((target == null) ? this.Owner.TargetPosition : target.position)))
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C723 RID: 50979 RVA: 0x004915AB File Offset: 0x0048F7AB
+		// Token: 0x0600C87B RID: 51323 RVA: 0x00495A97 File Offset: 0x00493C97
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

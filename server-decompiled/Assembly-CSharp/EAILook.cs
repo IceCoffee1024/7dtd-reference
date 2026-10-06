@@ -2,23 +2,23 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000448 RID: 1096
+// Token: 0x0200044A RID: 1098
 [Preserve]
 public class EAILook : EAIBase
 {
-	// Token: 0x06002173 RID: 8563 RVA: 0x000C9595 File Offset: 0x000C7795
+	// Token: 0x06002162 RID: 8546 RVA: 0x000C9649 File Offset: 0x000C7849
 	public EAILook()
 	{
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x06002174 RID: 8564 RVA: 0x000C95A4 File Offset: 0x000C77A4
+	// Token: 0x06002163 RID: 8547 RVA: 0x000C9658 File Offset: 0x000C7858
 	public override bool CanExecute()
 	{
 		return this.manager.lookTime > 0f && !this.theEntity.Jumping;
 	}
 
-	// Token: 0x06002175 RID: 8565 RVA: 0x000C95C8 File Offset: 0x000C77C8
+	// Token: 0x06002164 RID: 8548 RVA: 0x000C967C File Offset: 0x000C787C
 	public override void Start()
 	{
 		this.waitTicks = (int)(this.manager.lookTime * 20f);
@@ -29,7 +29,7 @@ public class EAILook : EAIBase
 		this.theEntity.moveHelper.Stop();
 	}
 
-	// Token: 0x06002176 RID: 8566 RVA: 0x000C962C File Offset: 0x000C782C
+	// Token: 0x06002165 RID: 8549 RVA: 0x000C96E0 File Offset: 0x000C78E0
 	public override bool Continue()
 	{
 		if (this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None)
@@ -68,27 +68,27 @@ public class EAILook : EAIBase
 		return true;
 	}
 
-	// Token: 0x06002177 RID: 8567 RVA: 0x000C9767 File Offset: 0x000C7967
+	// Token: 0x06002166 RID: 8550 RVA: 0x000C981B File Offset: 0x000C7A1B
 	public override void Reset()
 	{
 		this.theEntity.SetLookPosition(Vector3.zero);
 	}
 
-	// Token: 0x06002178 RID: 8568 RVA: 0x000C9779 File Offset: 0x000C7979
+	// Token: 0x06002167 RID: 8551 RVA: 0x000C982D File Offset: 0x000C7A2D
 	public override string ToString()
 	{
 		return string.Format("{0}, wait {1}", base.ToString(), ((float)this.waitTicks / 20f).ToCultureInvariantString());
 	}
 
-	// Token: 0x04001702 RID: 5890
+	// Token: 0x040016F9 RID: 5881
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int waitTicks;
 
-	// Token: 0x04001703 RID: 5891
+	// Token: 0x040016FA RID: 5882
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lookAtTicks;
 
-	// Token: 0x04001704 RID: 5892
+	// Token: 0x040016FB RID: 5883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int turnTicks;
 }

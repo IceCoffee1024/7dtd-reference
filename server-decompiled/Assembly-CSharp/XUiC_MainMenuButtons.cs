@@ -3,12 +3,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E13 RID: 3603
+// Token: 0x02000E22 RID: 3618
 [Preserve]
 public class XUiC_MainMenuButtons : XUiController
 {
-	// Token: 0x17000C4C RID: 3148
-	// (get) Token: 0x06006E80 RID: 28288 RVA: 0x002AD208 File Offset: 0x002AB408
+	// Token: 0x17000C67 RID: 3175
+	// (get) Token: 0x06006E78 RID: 28280 RVA: 0x002B05B0 File Offset: 0x002AE7B0
 	[XuiXmlBinding("online_mode")]
 	public bool OnlineMode
 	{
@@ -31,7 +31,7 @@ public class XUiC_MainMenuButtons : XUiController
 		}
 	}
 
-	// Token: 0x06006E81 RID: 28289 RVA: 0x002AD258 File Offset: 0x002AB458
+	// Token: 0x06006E79 RID: 28281 RVA: 0x002B0600 File Offset: 0x002AE800
 	public override void Init()
 	{
 		base.Init();
@@ -86,14 +86,14 @@ public class XUiC_MainMenuButtons : XUiController
 		}
 	}
 
-	// Token: 0x06006E82 RID: 28290 RVA: 0x002AD3D8 File Offset: 0x002AB5D8
+	// Token: 0x06006E7A RID: 28282 RVA: 0x002B0780 File Offset: 0x002AE980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NewsBoxOnNewsEntryClicked(NewsManager.NewsEntry _newsEntry)
 	{
 		this.btnNews_OnPressed(this, -1);
 	}
 
-	// Token: 0x06006E83 RID: 28291 RVA: 0x002AD3E2 File Offset: 0x002AB5E2
+	// Token: 0x06006E7B RID: 28283 RVA: 0x002B078A File Offset: 0x002AE98A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnPlayGame_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -105,7 +105,7 @@ public class XUiC_MainMenuButtons : XUiController
 		XUiC_EulaWindow.Open(this.xui, false);
 	}
 
-	// Token: 0x06006E84 RID: 28292 RVA: 0x002AD413 File Offset: 0x002AB613
+	// Token: 0x06006E7C RID: 28284 RVA: 0x002B07BB File Offset: 0x002AE9BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnConnectToServer_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -123,7 +123,7 @@ public class XUiC_MainMenuButtons : XUiController
 		}, -1f, false, null);
 	}
 
-	// Token: 0x06006E85 RID: 28293 RVA: 0x002AD444 File Offset: 0x002AB644
+	// Token: 0x06006E7D RID: 28285 RVA: 0x002B07EC File Offset: 0x002AE9EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnEditingTools_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -136,7 +136,7 @@ public class XUiC_MainMenuButtons : XUiController
 		XUiC_EulaWindow.Open(this.xui, false);
 	}
 
-	// Token: 0x06006E86 RID: 28294 RVA: 0x002AD49C File Offset: 0x002AB69C
+	// Token: 0x06006E7E RID: 28286 RVA: 0x002B0844 File Offset: 0x002AEA44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnRWG_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -148,7 +148,7 @@ public class XUiC_MainMenuButtons : XUiController
 		XUiC_WorldGenerationWindow.Open(this.xui, XUiC_MainMenu.ID);
 	}
 
-	// Token: 0x06006E87 RID: 28295 RVA: 0x002AD4C2 File Offset: 0x002AB6C2
+	// Token: 0x06006E7F RID: 28287 RVA: 0x002B086A File Offset: 0x002AEA6A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnOptions_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -156,7 +156,7 @@ public class XUiC_MainMenuButtons : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_OptionsMenuNew.ParentSelector.WindowGroup, false);
 	}
 
-	// Token: 0x06006E88 RID: 28296 RVA: 0x002AD500 File Offset: 0x002AB700
+	// Token: 0x06006E80 RID: 28288 RVA: 0x002B08A8 File Offset: 0x002AEAA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnCredits_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -164,7 +164,7 @@ public class XUiC_MainMenuButtons : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_Credits.ID, true);
 	}
 
-	// Token: 0x06006E89 RID: 28297 RVA: 0x002AD539 File Offset: 0x002AB739
+	// Token: 0x06006E81 RID: 28289 RVA: 0x002B08E1 File Offset: 0x002AEAE1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnNews_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -172,7 +172,7 @@ public class XUiC_MainMenuButtons : XUiController
 		XUiC_NewsScreen.Open(this.xui);
 	}
 
-	// Token: 0x06006E8A RID: 28298 RVA: 0x002AD562 File Offset: 0x002AB762
+	// Token: 0x06006E82 RID: 28290 RVA: 0x002B090A File Offset: 0x002AEB0A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDlc_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -180,14 +180,14 @@ public class XUiC_MainMenuButtons : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_DlcWindowNew.ID, true);
 	}
 
-	// Token: 0x06006E8B RID: 28299 RVA: 0x0007E747 File Offset: 0x0007C947
+	// Token: 0x06006E83 RID: 28291 RVA: 0x0007E9FB File Offset: 0x0007CBFB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnQuit_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		Application.Quit();
 	}
 
-	// Token: 0x06006E8C RID: 28300 RVA: 0x002AD59C File Offset: 0x002AB79C
+	// Token: 0x06006E84 RID: 28292 RVA: 0x002B0944 File Offset: 0x002AEB44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckProfile(string _windowToOpen)
 	{
@@ -203,7 +203,7 @@ public class XUiC_MainMenuButtons : XUiController
 		this.xui.playerUI.windowManager.Open(_windowToOpen, true);
 	}
 
-	// Token: 0x06006E8D RID: 28301 RVA: 0x002AD619 File Offset: 0x002AB819
+	// Token: 0x06006E85 RID: 28293 RVA: 0x002B09C1 File Offset: 0x002AEBC1
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -214,7 +214,7 @@ public class XUiC_MainMenuButtons : XUiController
 		}
 	}
 
-	// Token: 0x06006E8E RID: 28302 RVA: 0x002AD636 File Offset: 0x002AB836
+	// Token: 0x06006E86 RID: 28294 RVA: 0x002B09DE File Offset: 0x002AEBDE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGoToPlayGameWindow(string name)
 	{
@@ -227,7 +227,7 @@ public class XUiC_MainMenuButtons : XUiController
 		return true;
 	}
 
-	// Token: 0x06006E8F RID: 28303 RVA: 0x002AD66C File Offset: 0x002AB86C
+	// Token: 0x06006E87 RID: 28295 RVA: 0x002B0A14 File Offset: 0x002AEC14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoLoadSaveGameAutomation()
 	{
@@ -258,7 +258,7 @@ public class XUiC_MainMenuButtons : XUiController
 		}
 	}
 
-	// Token: 0x040053FD RID: 21501
+	// Token: 0x04005434 RID: 21556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Button btnPlayGame;
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E62 RID: 3682
+// Token: 0x02000E71 RID: 3697
 [Preserve]
 public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 {
-	// Token: 0x06007186 RID: 29062 RVA: 0x002B8CE0 File Offset: 0x002B6EE0
+	// Token: 0x0600717E RID: 29054 RVA: 0x002BC090 File Offset: 0x002BA290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long getWorldMemory(XUiC_WorldList.WorldListEntry _worldEntry)
 	{
@@ -19,7 +19,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		return this.worldDataSizeCache[location];
 	}
 
-	// Token: 0x06007187 RID: 29063 RVA: 0x002B8D27 File Offset: 0x002B6F27
+	// Token: 0x0600717F RID: 29055 RVA: 0x002BC0D7 File Offset: 0x002BA2D7
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -27,14 +27,14 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007188 RID: 29064 RVA: 0x002B8D41 File Offset: 0x002B6F41
+	// Token: 0x06007180 RID: 29056 RVA: 0x002BC0F1 File Offset: 0x002BA2F1
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.worldDataSizeCache.Clear();
 	}
 
-	// Token: 0x06007189 RID: 29065 RVA: 0x002B8D54 File Offset: 0x002B6F54
+	// Token: 0x06007181 RID: 29057 RVA: 0x002BC104 File Offset: 0x002BA304
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.worldDataSizeCache.Clear();
@@ -54,7 +54,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x0600718A RID: 29066 RVA: 0x002B8E44 File Offset: 0x002B7044
+	// Token: 0x06007182 RID: 29058 RVA: 0x002BC1F4 File Offset: 0x002BA3F4
 	public void SetUserDataStorageTypeFilter(params UserDataStorageType[] _storageTypes)
 	{
 		this.userDataStorageTypeFilter.Clear();
@@ -67,7 +67,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		this.RefreshView(false, true);
 	}
 
-	// Token: 0x0600718B RID: 29067 RVA: 0x002B8E9C File Offset: 0x002B709C
+	// Token: 0x06007183 RID: 29059 RVA: 0x002BC24C File Offset: 0x002BA44C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void FilterResults(string _textMatch)
 	{
@@ -86,7 +86,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		}
 	}
 
-	// Token: 0x0600718C RID: 29068 RVA: 0x002B8F0C File Offset: 0x002B710C
+	// Token: 0x06007184 RID: 29060 RVA: 0x002BC2BC File Offset: 0x002BA4BC
 	public bool SelectByName(string _name)
 	{
 		if (string.IsNullOrEmpty(_name))
@@ -104,23 +104,23 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 		return false;
 	}
 
-	// Token: 0x04005595 RID: 21909
+	// Token: 0x040055CC RID: 21964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> forbiddenWorlds = new List<string> { "Empty", "Playtesting" };
 
-	// Token: 0x04005596 RID: 21910
+	// Token: 0x040055CD RID: 21965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<UserDataStorageType> userDataStorageTypeFilter = new List<UserDataStorageType>();
 
-	// Token: 0x04005597 RID: 21911
+	// Token: 0x040055CE RID: 21966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PathAbstractions.AbstractedLocation, long> worldDataSizeCache = new Dictionary<PathAbstractions.AbstractedLocation, long>();
 
-	// Token: 0x02000E63 RID: 3683
+	// Token: 0x02000E72 RID: 3698
 	[Preserve]
 	public class WorldListEntry : XUiListEntry<XUiC_WorldList.WorldListEntry>
 	{
-		// Token: 0x0600718F RID: 29071 RVA: 0x002B8FA2 File Offset: 0x002B71A2
+		// Token: 0x06007187 RID: 29063 RVA: 0x002BC352 File Offset: 0x002BA552
 		public WorldListEntry(PathAbstractions.AbstractedLocation _location, bool _generatedWorld, VersionInformation _version)
 		{
 			this.Location = _location;
@@ -129,7 +129,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			this.VersionComparison = this.Version.CompareToRunningBuild();
 		}
 
-		// Token: 0x06007190 RID: 29072 RVA: 0x002B8FD0 File Offset: 0x002B71D0
+		// Token: 0x06007188 RID: 29064 RVA: 0x002BC380 File Offset: 0x002BA580
 		public override int CompareTo(XUiC_WorldList.WorldListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -139,31 +139,31 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return this.Location.CompareTo(_otherEntry.Location);
 		}
 
-		// Token: 0x06007191 RID: 29073 RVA: 0x002B8FE8 File Offset: 0x002B71E8
+		// Token: 0x06007189 RID: 29065 RVA: 0x002BC398 File Offset: 0x002BA598
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.Location.Name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x04005598 RID: 21912
+		// Token: 0x040055CF RID: 21967
 		public readonly PathAbstractions.AbstractedLocation Location;
 
-		// Token: 0x04005599 RID: 21913
+		// Token: 0x040055D0 RID: 21968
 		public readonly bool GeneratedWorld;
 
-		// Token: 0x0400559A RID: 21914
+		// Token: 0x040055D1 RID: 21969
 		public readonly VersionInformation Version;
 
-		// Token: 0x0400559B RID: 21915
+		// Token: 0x040055D2 RID: 21970
 		public readonly VersionInformation.EVersionComparisonResult VersionComparison;
 	}
 
-	// Token: 0x02000E64 RID: 3684
+	// Token: 0x02000E73 RID: 3699
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_WorldList.WorldListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007192 RID: 29074 RVA: 0x002B9002 File Offset: 0x002B7202
+		// Token: 0x0600718A RID: 29066 RVA: 0x002BC3B2 File Offset: 0x002BA5B2
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -175,7 +175,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return "";
 		}
 
-		// Token: 0x06007193 RID: 29075 RVA: 0x002B9022 File Offset: 0x002B7222
+		// Token: 0x0600718B RID: 29067 RVA: 0x002BC3D2 File Offset: 0x002BA5D2
 		[XuiXmlBinding("location")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLocation()
@@ -187,7 +187,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return this.entryData.Location.GetLocationTypeDisplayString();
 		}
 
-		// Token: 0x06007194 RID: 29076 RVA: 0x002B9044 File Offset: 0x002B7244
+		// Token: 0x0600718C RID: 29068 RVA: 0x002BC3F4 File Offset: 0x002BA5F4
 		[XuiXmlBinding("version")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersion()
@@ -203,7 +203,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return this.entryData.Version.LongStringNoBuild;
 		}
 
-		// Token: 0x06007195 RID: 29077 RVA: 0x002B90A4 File Offset: 0x002B72A4
+		// Token: 0x0600718D RID: 29069 RVA: 0x002BC454 File Offset: 0x002BA654
 		[XuiXmlBinding("versionvalid")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingValidVersion()
@@ -211,7 +211,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return this.entryData == null || !this.entryData.Version.IsValid || this.entryData.Version.Major == 3;
 		}
 
-		// Token: 0x06007196 RID: 29078 RVA: 0x002B90D7 File Offset: 0x002B72D7
+		// Token: 0x0600718E RID: 29070 RVA: 0x002BC487 File Offset: 0x002BA687
 		[XuiXmlBinding("worldsize")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldSize()
@@ -223,7 +223,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return "";
 		}
 
-		// Token: 0x06007197 RID: 29079 RVA: 0x002B9100 File Offset: 0x002B7300
+		// Token: 0x0600718F RID: 29071 RVA: 0x002BC4B0 File Offset: 0x002BA6B0
 		[XuiXmlBinding("versionstate")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingVersionState()
@@ -258,7 +258,7 @@ public class XUiC_WorldList : XUiC_List<XUiC_WorldList.WorldListEntry>
 			return text;
 		}
 
-		// Token: 0x0400559C RID: 21916
+		// Token: 0x040055D3 RID: 21971
 		[XuiBindParent(true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_WorldList parentList;

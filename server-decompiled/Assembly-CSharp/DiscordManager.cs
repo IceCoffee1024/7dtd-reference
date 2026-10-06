@@ -14,11 +14,11 @@ using Twitch;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Token: 0x02000302 RID: 770
+// Token: 0x02000305 RID: 773
 public class DiscordManager
 {
-	// Token: 0x1700027A RID: 634
-	// (get) Token: 0x060015CD RID: 5581 RVA: 0x0008191F File Offset: 0x0007FB1F
+	// Token: 0x17000272 RID: 626
+	// (get) Token: 0x060015CA RID: 5578 RVA: 0x00081BD3 File Offset: 0x0007FDD3
 	public static DiscordManager Instance
 	{
 		get
@@ -33,87 +33,87 @@ public class DiscordManager
 	}
 
 	// Token: 0x14000005 RID: 5
-	// (add) Token: 0x060015CE RID: 5582 RVA: 0x00081938 File Offset: 0x0007FB38
-	// (remove) Token: 0x060015CF RID: 5583 RVA: 0x00081970 File Offset: 0x0007FB70
+	// (add) Token: 0x060015CB RID: 5579 RVA: 0x00081BEC File Offset: 0x0007FDEC
+	// (remove) Token: 0x060015CC RID: 5580 RVA: 0x00081C24 File Offset: 0x0007FE24
 	public event DiscordManager.UserAuthorizationResultCallback UserAuthorizationResult;
 
 	// Token: 0x14000006 RID: 6
-	// (add) Token: 0x060015D0 RID: 5584 RVA: 0x000819A8 File Offset: 0x0007FBA8
-	// (remove) Token: 0x060015D1 RID: 5585 RVA: 0x000819E0 File Offset: 0x0007FBE0
+	// (add) Token: 0x060015CD RID: 5581 RVA: 0x00081C5C File Offset: 0x0007FE5C
+	// (remove) Token: 0x060015CE RID: 5582 RVA: 0x00081C94 File Offset: 0x0007FE94
 	public event Action<DiscordManager.EDiscordStatus> StatusChanged;
 
 	// Token: 0x14000007 RID: 7
-	// (add) Token: 0x060015D2 RID: 5586 RVA: 0x00081A18 File Offset: 0x0007FC18
-	// (remove) Token: 0x060015D3 RID: 5587 RVA: 0x00081A50 File Offset: 0x0007FC50
+	// (add) Token: 0x060015CF RID: 5583 RVA: 0x00081CCC File Offset: 0x0007FECC
+	// (remove) Token: 0x060015D0 RID: 5584 RVA: 0x00081D04 File Offset: 0x0007FF04
 	public event DiscordManager.LocalUserChangedCallback LocalUserChanged;
 
 	// Token: 0x14000008 RID: 8
-	// (add) Token: 0x060015D4 RID: 5588 RVA: 0x00081A88 File Offset: 0x0007FC88
-	// (remove) Token: 0x060015D5 RID: 5589 RVA: 0x00081AC0 File Offset: 0x0007FCC0
+	// (add) Token: 0x060015D1 RID: 5585 RVA: 0x00081D3C File Offset: 0x0007FF3C
+	// (remove) Token: 0x060015D2 RID: 5586 RVA: 0x00081D74 File Offset: 0x0007FF74
 	public event DiscordManager.LobbyStateChangedCallback LobbyStateChanged;
 
 	// Token: 0x14000009 RID: 9
-	// (add) Token: 0x060015D6 RID: 5590 RVA: 0x00081AF8 File Offset: 0x0007FCF8
-	// (remove) Token: 0x060015D7 RID: 5591 RVA: 0x00081B30 File Offset: 0x0007FD30
+	// (add) Token: 0x060015D3 RID: 5587 RVA: 0x00081DAC File Offset: 0x0007FFAC
+	// (remove) Token: 0x060015D4 RID: 5588 RVA: 0x00081DE4 File Offset: 0x0007FFE4
 	public event DiscordManager.LobbyMembersChangedCallback LobbyMembersChanged;
 
 	// Token: 0x1400000A RID: 10
-	// (add) Token: 0x060015D8 RID: 5592 RVA: 0x00081B68 File Offset: 0x0007FD68
-	// (remove) Token: 0x060015D9 RID: 5593 RVA: 0x00081BA0 File Offset: 0x0007FDA0
+	// (add) Token: 0x060015D5 RID: 5589 RVA: 0x00081E1C File Offset: 0x0008001C
+	// (remove) Token: 0x060015D6 RID: 5590 RVA: 0x00081E54 File Offset: 0x00080054
 	public event DiscordManager.CallChangedCallback CallChanged;
 
 	// Token: 0x1400000B RID: 11
-	// (add) Token: 0x060015DA RID: 5594 RVA: 0x00081BD8 File Offset: 0x0007FDD8
-	// (remove) Token: 0x060015DB RID: 5595 RVA: 0x00081C10 File Offset: 0x0007FE10
+	// (add) Token: 0x060015D7 RID: 5591 RVA: 0x00081E8C File Offset: 0x0008008C
+	// (remove) Token: 0x060015D8 RID: 5592 RVA: 0x00081EC4 File Offset: 0x000800C4
 	public event DiscordManager.CallStatusChangedCallback CallStatusChanged;
 
 	// Token: 0x1400000C RID: 12
-	// (add) Token: 0x060015DC RID: 5596 RVA: 0x00081C48 File Offset: 0x0007FE48
-	// (remove) Token: 0x060015DD RID: 5597 RVA: 0x00081C80 File Offset: 0x0007FE80
+	// (add) Token: 0x060015D9 RID: 5593 RVA: 0x00081EFC File Offset: 0x000800FC
+	// (remove) Token: 0x060015DA RID: 5594 RVA: 0x00081F34 File Offset: 0x00080134
 	public event DiscordManager.CallMembersChangedCallback CallMembersChanged;
 
 	// Token: 0x1400000D RID: 13
-	// (add) Token: 0x060015DE RID: 5598 RVA: 0x00081CB8 File Offset: 0x0007FEB8
-	// (remove) Token: 0x060015DF RID: 5599 RVA: 0x00081CF0 File Offset: 0x0007FEF0
+	// (add) Token: 0x060015DB RID: 5595 RVA: 0x00081F6C File Offset: 0x0008016C
+	// (remove) Token: 0x060015DC RID: 5596 RVA: 0x00081FA4 File Offset: 0x000801A4
 	public event DiscordManager.VoiceStateChangedCallback VoiceStateChanged;
 
 	// Token: 0x1400000E RID: 14
-	// (add) Token: 0x060015E0 RID: 5600 RVA: 0x00081D28 File Offset: 0x0007FF28
-	// (remove) Token: 0x060015E1 RID: 5601 RVA: 0x00081D60 File Offset: 0x0007FF60
+	// (add) Token: 0x060015DD RID: 5597 RVA: 0x00081FDC File Offset: 0x000801DC
+	// (remove) Token: 0x060015DE RID: 5598 RVA: 0x00082014 File Offset: 0x00080214
 	public event DiscordManager.SelfMuteStateChangedCallback SelfMuteStateChanged;
 
 	// Token: 0x1400000F RID: 15
-	// (add) Token: 0x060015E2 RID: 5602 RVA: 0x00081D98 File Offset: 0x0007FF98
-	// (remove) Token: 0x060015E3 RID: 5603 RVA: 0x00081DD0 File Offset: 0x0007FFD0
+	// (add) Token: 0x060015DF RID: 5599 RVA: 0x0008204C File Offset: 0x0008024C
+	// (remove) Token: 0x060015E0 RID: 5600 RVA: 0x00082084 File Offset: 0x00080284
 	public event DiscordManager.FriendsListChangedCallback FriendsListChanged;
 
 	// Token: 0x14000010 RID: 16
-	// (add) Token: 0x060015E4 RID: 5604 RVA: 0x00081E08 File Offset: 0x00080008
-	// (remove) Token: 0x060015E5 RID: 5605 RVA: 0x00081E40 File Offset: 0x00080040
+	// (add) Token: 0x060015E1 RID: 5601 RVA: 0x000820BC File Offset: 0x000802BC
+	// (remove) Token: 0x060015E2 RID: 5602 RVA: 0x000820F4 File Offset: 0x000802F4
 	public event DiscordManager.RelationshipChangedCallback RelationshipChanged;
 
 	// Token: 0x14000011 RID: 17
-	// (add) Token: 0x060015E6 RID: 5606 RVA: 0x00081E78 File Offset: 0x00080078
-	// (remove) Token: 0x060015E7 RID: 5607 RVA: 0x00081EB0 File Offset: 0x000800B0
+	// (add) Token: 0x060015E3 RID: 5603 RVA: 0x0008212C File Offset: 0x0008032C
+	// (remove) Token: 0x060015E4 RID: 5604 RVA: 0x00082164 File Offset: 0x00080364
 	public event DiscordManager.ActivityInviteReceivedCallback ActivityInviteReceived;
 
 	// Token: 0x14000012 RID: 18
-	// (add) Token: 0x060015E8 RID: 5608 RVA: 0x00081EE8 File Offset: 0x000800E8
-	// (remove) Token: 0x060015E9 RID: 5609 RVA: 0x00081F20 File Offset: 0x00080120
+	// (add) Token: 0x060015E5 RID: 5605 RVA: 0x0008219C File Offset: 0x0008039C
+	// (remove) Token: 0x060015E6 RID: 5606 RVA: 0x000821D4 File Offset: 0x000803D4
 	public event DiscordManager.ActivityJoiningCallback ActivityJoining;
 
 	// Token: 0x14000013 RID: 19
-	// (add) Token: 0x060015EA RID: 5610 RVA: 0x00081F58 File Offset: 0x00080158
-	// (remove) Token: 0x060015EB RID: 5611 RVA: 0x00081F90 File Offset: 0x00080190
+	// (add) Token: 0x060015E7 RID: 5607 RVA: 0x0008220C File Offset: 0x0008040C
+	// (remove) Token: 0x060015E8 RID: 5608 RVA: 0x00082244 File Offset: 0x00080444
 	public event DiscordManager.PendingActionsUpdateCallback PendingActionsUpdate;
 
 	// Token: 0x14000014 RID: 20
-	// (add) Token: 0x060015EC RID: 5612 RVA: 0x00081FC8 File Offset: 0x000801C8
-	// (remove) Token: 0x060015ED RID: 5613 RVA: 0x00082000 File Offset: 0x00080200
+	// (add) Token: 0x060015E9 RID: 5609 RVA: 0x0008227C File Offset: 0x0008047C
+	// (remove) Token: 0x060015EA RID: 5610 RVA: 0x000822B4 File Offset: 0x000804B4
 	public event DiscordManager.AudioDevicesChangedCallback AudioDevicesChanged;
 
-	// Token: 0x1700027B RID: 635
-	// (get) Token: 0x060015EE RID: 5614 RVA: 0x00082038 File Offset: 0x00080238
+	// Token: 0x17000273 RID: 627
+	// (get) Token: 0x060015EB RID: 5611 RVA: 0x000822EC File Offset: 0x000804EC
 	public DiscordManager.EDiscordStatus Status
 	{
 		get
@@ -151,8 +151,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x1700027C RID: 636
-	// (get) Token: 0x060015EF RID: 5615 RVA: 0x00082096 File Offset: 0x00080296
+	// Token: 0x17000274 RID: 628
+	// (get) Token: 0x060015EC RID: 5612 RVA: 0x0008234A File Offset: 0x0008054A
 	public bool IsReady
 	{
 		get
@@ -161,8 +161,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x1700027D RID: 637
-	// (get) Token: 0x060015F0 RID: 5616 RVA: 0x000820A1 File Offset: 0x000802A1
+	// Token: 0x17000275 RID: 629
+	// (get) Token: 0x060015ED RID: 5613 RVA: 0x00082355 File Offset: 0x00080555
 	public bool IsInitialized
 	{
 		get
@@ -171,9 +171,9 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x1700027E RID: 638
-	// (get) Token: 0x060015F1 RID: 5617 RVA: 0x000820AC File Offset: 0x000802AC
-	// (set) Token: 0x060015F2 RID: 5618 RVA: 0x000820B4 File Offset: 0x000802B4
+	// Token: 0x17000276 RID: 630
+	// (get) Token: 0x060015EE RID: 5614 RVA: 0x00082360 File Offset: 0x00080560
+	// (set) Token: 0x060015EF RID: 5615 RVA: 0x00082368 File Offset: 0x00080568
 	public DiscordManager.DiscordUser LocalUser
 	{
 		get
@@ -198,8 +198,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x1700027F RID: 639
-	// (get) Token: 0x060015F3 RID: 5619 RVA: 0x000820ED File Offset: 0x000802ED
+	// Token: 0x17000277 RID: 631
+	// (get) Token: 0x060015F0 RID: 5616 RVA: 0x000823A1 File Offset: 0x000805A1
 	public static LoggingSeverity LogLevel
 	{
 		get
@@ -208,7 +208,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x060015F4 RID: 5620 RVA: 0x000820F4 File Offset: 0x000802F4
+	// Token: 0x060015F1 RID: 5617 RVA: 0x000823A8 File Offset: 0x000805A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DiscordManager()
 	{
@@ -243,7 +243,7 @@ public class DiscordManager
 		this.Init(false);
 	}
 
-	// Token: 0x060015F5 RID: 5621 RVA: 0x00082208 File Offset: 0x00080408
+	// Token: 0x060015F2 RID: 5618 RVA: 0x000824BC File Offset: 0x000806BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLogLevelsFromCmdLine()
 	{
@@ -261,7 +261,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x060015F6 RID: 5622 RVA: 0x00082254 File Offset: 0x00080454
+	// Token: 0x060015F3 RID: 5619 RVA: 0x00082508 File Offset: 0x00080708
 	public void Init(bool _forceReinit = false)
 	{
 		if (!VoiceHelpers.VoiceAllowed || !PermissionsManager.IsMultiplayerAllowed())
@@ -351,7 +351,7 @@ public class DiscordManager
 		DiscordManager.CallInfo.LoadSounds();
 	}
 
-	// Token: 0x060015F7 RID: 5623 RVA: 0x000824B0 File Offset: 0x000806B0
+	// Token: 0x060015F4 RID: 5620 RVA: 0x00082764 File Offset: 0x00080964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerGlobalDiscordCallbacks()
 	{
@@ -374,7 +374,7 @@ public class DiscordManager
 		this.Presence.RegisterDiscordCallbacks();
 	}
 
-	// Token: 0x060015F8 RID: 5624 RVA: 0x0008262C File Offset: 0x0008082C
+	// Token: 0x060015F5 RID: 5621 RVA: 0x000828E0 File Offset: 0x00080AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerGameStartupForInvites()
 	{
@@ -407,7 +407,7 @@ public class DiscordManager
 		Log.Out("[Discord] Registering game for Discord invites: " + (flag2 ? "Success" : "Failed"));
 	}
 
-	// Token: 0x060015F9 RID: 5625 RVA: 0x000826DC File Offset: 0x000808DC
+	// Token: 0x060015F6 RID: 5622 RVA: 0x00082990 File Offset: 0x00080B90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cleanup(ref ModEvents.SGameShutdownData _data)
 	{
@@ -429,8 +429,8 @@ public class DiscordManager
 		statusChanged(this.Status);
 	}
 
-	// Token: 0x17000280 RID: 640
-	// (get) Token: 0x060015FA RID: 5626 RVA: 0x00082741 File Offset: 0x00080941
+	// Token: 0x17000278 RID: 632
+	// (get) Token: 0x060015F7 RID: 5623 RVA: 0x000829F5 File Offset: 0x00080BF5
 	public static bool SupportsProvisionalAccounts
 	{
 		get
@@ -439,8 +439,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x17000281 RID: 641
-	// (get) Token: 0x060015FB RID: 5627 RVA: 0x00082759 File Offset: 0x00080959
+	// Token: 0x17000279 RID: 633
+	// (get) Token: 0x060015F8 RID: 5624 RVA: 0x00082A0D File Offset: 0x00080C0D
 	public static bool SupportsFullAccounts
 	{
 		get
@@ -449,7 +449,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x060015FC RID: 5628 RVA: 0x00082768 File Offset: 0x00080968
+	// Token: 0x060015F9 RID: 5625 RVA: 0x00082A1C File Offset: 0x00080C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnRelationshipCreated(ulong _userId, bool _isDiscordRelationship)
 	{
@@ -470,7 +470,7 @@ public class DiscordManager
 		friendsListChanged();
 	}
 
-	// Token: 0x060015FD RID: 5629 RVA: 0x000827C8 File Offset: 0x000809C8
+	// Token: 0x060015FA RID: 5626 RVA: 0x00082A7C File Offset: 0x00080C7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnRelationshipDeleted(ulong _userId, bool _isDiscordRelationship)
 	{
@@ -491,7 +491,7 @@ public class DiscordManager
 		friendsListChanged();
 	}
 
-	// Token: 0x060015FE RID: 5630 RVA: 0x00082828 File Offset: 0x00080A28
+	// Token: 0x060015FB RID: 5627 RVA: 0x00082ADC File Offset: 0x00080CDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearFriends()
 	{
@@ -510,7 +510,7 @@ public class DiscordManager
 		friendsListChanged();
 	}
 
-	// Token: 0x060015FF RID: 5631 RVA: 0x00082898 File Offset: 0x00080A98
+	// Token: 0x060015FC RID: 5628 RVA: 0x00082B4C File Offset: 0x00080D4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getFriends()
 	{
@@ -540,7 +540,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001600 RID: 5632 RVA: 0x00082900 File Offset: 0x00080B00
+	// Token: 0x060015FD RID: 5629 RVA: 0x00082BB4 File Offset: 0x00080DB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnUserUpdated(ulong _userId)
 	{
@@ -555,7 +555,7 @@ public class DiscordManager
 		DiscordManager.logCallbackInfo(string.Format("OnUserUpdated: user={0}", user), LogType.Log);
 	}
 
-	// Token: 0x06001601 RID: 5633 RVA: 0x00082944 File Offset: 0x00080B44
+	// Token: 0x060015FE RID: 5630 RVA: 0x00082BF8 File Offset: 0x00080DF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onLogMessageReceivedGeneric(string _message, LoggingSeverity _severity, string _prefix)
 	{
@@ -598,7 +598,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001602 RID: 5634 RVA: 0x00082AB8 File Offset: 0x00080CB8
+	// Token: 0x060015FF RID: 5631 RVA: 0x00082D6C File Offset: 0x00080F6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nativeMethodException(Exception _e)
 	{
@@ -606,42 +606,42 @@ public class DiscordManager
 		Log.Exception(_e);
 	}
 
-	// Token: 0x06001603 RID: 5635 RVA: 0x00082AD5 File Offset: 0x00080CD5
+	// Token: 0x06001600 RID: 5632 RVA: 0x00082D89 File Offset: 0x00080F89
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDiscordLogMessageReceived(string _message, LoggingSeverity _severity)
 	{
 		this.onLogMessageReceivedGeneric(_message, _severity, "");
 	}
 
-	// Token: 0x06001604 RID: 5636 RVA: 0x00082AE4 File Offset: 0x00080CE4
+	// Token: 0x06001601 RID: 5633 RVA: 0x00082D98 File Offset: 0x00080F98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDiscordRtcLogMessageReceived(string _message, LoggingSeverity _severity)
 	{
 		this.onLogMessageReceivedGeneric(_message, _severity, "[RTC]");
 	}
 
-	// Token: 0x06001605 RID: 5637 RVA: 0x00082AF3 File Offset: 0x00080CF3
+	// Token: 0x06001602 RID: 5634 RVA: 0x00082DA7 File Offset: 0x00080FA7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnMessageCreated(ulong _messageId)
 	{
 		this.handleMessage(true, _messageId);
 	}
 
-	// Token: 0x06001606 RID: 5638 RVA: 0x00082AFD File Offset: 0x00080CFD
+	// Token: 0x06001603 RID: 5635 RVA: 0x00082DB1 File Offset: 0x00080FB1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnMessageDeleted(ulong _messageId, ulong _channelId)
 	{
 		DiscordManager.logCallbackInfo(string.Format("OnMessageDeleted: msg={0}, channel={1}", _messageId, _channelId), LogType.Log);
 	}
 
-	// Token: 0x06001607 RID: 5639 RVA: 0x00082B1B File Offset: 0x00080D1B
+	// Token: 0x06001604 RID: 5636 RVA: 0x00082DCF File Offset: 0x00080FCF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnMessageUpdated(ulong _messageId)
 	{
 		this.handleMessage(false, _messageId);
 	}
 
-	// Token: 0x06001608 RID: 5640 RVA: 0x00082B28 File Offset: 0x00080D28
+	// Token: 0x06001605 RID: 5637 RVA: 0x00082DDC File Offset: 0x00080FDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleMessage(bool _created, ulong _messageId)
 	{
@@ -761,7 +761,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001609 RID: 5641 RVA: 0x00082F4C File Offset: 0x0008114C
+	// Token: 0x06001606 RID: 5638 RVA: 0x00083200 File Offset: 0x00081400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerGameChatHandling()
 	{
@@ -769,7 +769,7 @@ public class DiscordManager
 		XUiC_Chat.RegisterCustomMessagingHandler(EChatType.Discord, new XUiC_Chat.IsValidTarget(this.<registerGameChatHandling>g__IsValidTarget|123_4), new XUiC_Chat.GetTargetDisplayName(this.<registerGameChatHandling>g__GetTargetDisplayName|123_3), new XUiC_Chat.SendMessage(this.<registerGameChatHandling>g__SendMessage|123_2));
 	}
 
-	// Token: 0x0600160A RID: 5642 RVA: 0x00082FA5 File Offset: 0x000811A5
+	// Token: 0x06001607 RID: 5639 RVA: 0x00083259 File Offset: 0x00081459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void suppressDmNotifications(bool _suppress)
 	{
@@ -788,7 +788,7 @@ public class DiscordManager
 		this.client.SetShowingChat(_suppress);
 	}
 
-	// Token: 0x0600160B RID: 5643 RVA: 0x00082FE1 File Offset: 0x000811E1
+	// Token: 0x06001608 RID: 5640 RVA: 0x00083295 File Offset: 0x00081495
 	public DiscordManager.LobbyInfo GetLobby(DiscordManager.ELobbyType _type)
 	{
 		if (_type != DiscordManager.ELobbyType.Global)
@@ -798,7 +798,7 @@ public class DiscordManager
 		return this.globalLobby;
 	}
 
-	// Token: 0x0600160C RID: 5644 RVA: 0x00082FF3 File Offset: 0x000811F3
+	// Token: 0x06001609 RID: 5641 RVA: 0x000832A7 File Offset: 0x000814A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void leaveLobbies(bool _manual = true)
 	{
@@ -807,49 +807,49 @@ public class DiscordManager
 		this.partyLobby.Leave(_manual);
 	}
 
-	// Token: 0x0600160D RID: 5645 RVA: 0x00083014 File Offset: 0x00081214
+	// Token: 0x0600160A RID: 5642 RVA: 0x000832C8 File Offset: 0x000814C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyCreated(ulong _lobbyId)
 	{
 		DiscordManager.logCallbackInfo(string.Format("OnLobbyCreated: lobby={0}", _lobbyId), LogType.Log);
 	}
 
-	// Token: 0x0600160E RID: 5646 RVA: 0x0008302C File Offset: 0x0008122C
+	// Token: 0x0600160B RID: 5643 RVA: 0x000832E0 File Offset: 0x000814E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyDeleted(ulong _lobbyId)
 	{
 		DiscordManager.logCallbackInfo(string.Format("OnLobbyDeleted: lobby={0}", _lobbyId), LogType.Log);
 	}
 
-	// Token: 0x0600160F RID: 5647 RVA: 0x00083044 File Offset: 0x00081244
+	// Token: 0x0600160C RID: 5644 RVA: 0x000832F8 File Offset: 0x000814F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyUpdated(ulong _lobbyId)
 	{
 		DiscordManager.logCallbackInfo(string.Format("OnLobbyUpdated: lobby={0}", _lobbyId), LogType.Log);
 	}
 
-	// Token: 0x06001610 RID: 5648 RVA: 0x0008305C File Offset: 0x0008125C
+	// Token: 0x0600160D RID: 5645 RVA: 0x00083310 File Offset: 0x00081510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyMemberAdded(ulong _lobbyId, ulong _memberId)
 	{
 		this.OnLobbyMemberChanged(_lobbyId, _memberId, DiscordManager.LobbyMemberActionType.Add);
 	}
 
-	// Token: 0x06001611 RID: 5649 RVA: 0x00083067 File Offset: 0x00081267
+	// Token: 0x0600160E RID: 5646 RVA: 0x0008331B File Offset: 0x0008151B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyMemberRemoved(ulong _lobbyId, ulong _memberId)
 	{
 		this.OnLobbyMemberChanged(_lobbyId, _memberId, DiscordManager.LobbyMemberActionType.Remove);
 	}
 
-	// Token: 0x06001612 RID: 5650 RVA: 0x00083072 File Offset: 0x00081272
+	// Token: 0x0600160F RID: 5647 RVA: 0x00083326 File Offset: 0x00081526
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyMemberUpdated(ulong _lobbyId, ulong _memberId)
 	{
 		this.OnLobbyMemberChanged(_lobbyId, _memberId, DiscordManager.LobbyMemberActionType.Update);
 	}
 
-	// Token: 0x06001613 RID: 5651 RVA: 0x00083080 File Offset: 0x00081280
+	// Token: 0x06001610 RID: 5648 RVA: 0x00083334 File Offset: 0x00081534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLobbyMemberChanged(ulong _lobbyId, ulong _memberId, DiscordManager.LobbyMemberActionType _actionType)
 	{
@@ -865,9 +865,9 @@ public class DiscordManager
 		activeVoiceLobby.VoiceCall.UpdateMembers(false);
 	}
 
-	// Token: 0x17000282 RID: 642
-	// (get) Token: 0x06001614 RID: 5652 RVA: 0x000830DE File Offset: 0x000812DE
-	// (set) Token: 0x06001615 RID: 5653 RVA: 0x000830F1 File Offset: 0x000812F1
+	// Token: 0x1700027A RID: 634
+	// (get) Token: 0x06001611 RID: 5649 RVA: 0x00083392 File Offset: 0x00081592
+	// (set) Token: 0x06001612 RID: 5650 RVA: 0x000833A5 File Offset: 0x000815A5
 	public bool Mute
 	{
 		get
@@ -891,9 +891,9 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x17000283 RID: 643
-	// (get) Token: 0x06001616 RID: 5654 RVA: 0x0008311C File Offset: 0x0008131C
-	// (set) Token: 0x06001617 RID: 5655 RVA: 0x0008312F File Offset: 0x0008132F
+	// Token: 0x1700027B RID: 635
+	// (get) Token: 0x06001613 RID: 5651 RVA: 0x000833D0 File Offset: 0x000815D0
+	// (set) Token: 0x06001614 RID: 5652 RVA: 0x000833E3 File Offset: 0x000815E3
 	public bool Deaf
 	{
 		get
@@ -917,8 +917,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x17000284 RID: 644
-	// (get) Token: 0x06001618 RID: 5656 RVA: 0x0008315A File Offset: 0x0008135A
+	// Token: 0x1700027C RID: 636
+	// (get) Token: 0x06001615 RID: 5653 RVA: 0x0008340E File Offset: 0x0008160E
 	public DiscordManager.LobbyInfo ActiveVoiceLobby
 	{
 		get
@@ -935,8 +935,8 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x17000285 RID: 645
-	// (get) Token: 0x06001619 RID: 5657 RVA: 0x00083188 File Offset: 0x00081388
+	// Token: 0x1700027D RID: 637
+	// (get) Token: 0x06001616 RID: 5654 RVA: 0x0008343C File Offset: 0x0008163C
 	public bool AnyLobbyInUnstableVoiceState
 	{
 		get
@@ -951,7 +951,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600161A RID: 5658 RVA: 0x000831CC File Offset: 0x000813CC
+	// Token: 0x06001617 RID: 5655 RVA: 0x00083480 File Offset: 0x00081680
 	public void JoinLobbyVoice(DiscordManager.ELobbyType _type)
 	{
 		DiscordManager.LobbyInfo lobby = this.GetLobby(_type);
@@ -963,7 +963,7 @@ public class DiscordManager
 		lobby.VoiceCall.Join();
 	}
 
-	// Token: 0x0600161B RID: 5659 RVA: 0x000831FD File Offset: 0x000813FD
+	// Token: 0x06001618 RID: 5656 RVA: 0x000834B1 File Offset: 0x000816B1
 	public void LeaveLobbyVoice(bool _manual = true)
 	{
 		DiscordManager.LobbyInfo activeVoiceLobby = this.ActiveVoiceLobby;
@@ -974,14 +974,14 @@ public class DiscordManager
 		activeVoiceLobby.VoiceCall.Leave(_manual);
 	}
 
-	// Token: 0x0600161C RID: 5660 RVA: 0x00083215 File Offset: 0x00081415
+	// Token: 0x06001619 RID: 5657 RVA: 0x000834C9 File Offset: 0x000816C9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnNoAudioInput(bool _inputDetected)
 	{
 		DiscordManager.logCallbackInfo(string.Format("OnNoAudioInput: inputDetected={0}", _inputDetected), LogType.Log);
 	}
 
-	// Token: 0x0600161D RID: 5661 RVA: 0x00083230 File Offset: 0x00081430
+	// Token: 0x0600161A RID: 5658 RVA: 0x000834E4 File Offset: 0x000816E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVoiceParticipantChanged(ulong _lobbyId, ulong _userId, bool _added)
 	{
@@ -989,7 +989,7 @@ public class DiscordManager
 		DiscordManager.logCallbackInfo(string.Format("OnVoiceParticipantChanged: lobby={0} user={1} added={2}", _lobbyId, user, _added), LogType.Log);
 	}
 
-	// Token: 0x0600161E RID: 5662 RVA: 0x00083262 File Offset: 0x00081462
+	// Token: 0x0600161B RID: 5659 RVA: 0x00083516 File Offset: 0x00081716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDeviceChanged(AudioDevice[] _inputDevices, AudioDevice[] _outputDevices)
 	{
@@ -998,7 +998,7 @@ public class DiscordManager
 		this.AudioInput.ApplyDevicesFound(_inputDevices);
 	}
 
-	// Token: 0x0600161F RID: 5663 RVA: 0x0008329C File Offset: 0x0008149C
+	// Token: 0x0600161C RID: 5660 RVA: 0x00083550 File Offset: 0x00081750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void fireAudioDevicesChanged(DiscordManager.AudioDeviceConfig _config)
 	{
@@ -1010,7 +1010,7 @@ public class DiscordManager
 		audioDevicesChanged(_config);
 	}
 
-	// Token: 0x06001620 RID: 5664 RVA: 0x000832AF File Offset: 0x000814AF
+	// Token: 0x0600161D RID: 5661 RVA: 0x00083563 File Offset: 0x00081763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateAudioDeviceList()
 	{
@@ -1018,7 +1018,7 @@ public class DiscordManager
 		this.AudioInput.UpdateAudioDeviceList();
 	}
 
-	// Token: 0x06001621 RID: 5665 RVA: 0x000832C8 File Offset: 0x000814C8
+	// Token: 0x0600161E RID: 5662 RVA: 0x0008357C File Offset: 0x0008177C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerGameEventHandlers()
 	{
@@ -1046,7 +1046,7 @@ public class DiscordManager
 		GamePrefs.OnGamePrefChanged += this.gamePrefChanged;
 	}
 
-	// Token: 0x06001622 RID: 5666 RVA: 0x00083447 File Offset: 0x00081647
+	// Token: 0x0600161F RID: 5663 RVA: 0x000836FB File Offset: 0x000818FB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -1056,14 +1056,14 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001623 RID: 5667 RVA: 0x00083464 File Offset: 0x00081664
+	// Token: 0x06001620 RID: 5664 RVA: 0x00083718 File Offset: 0x00081918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameFocusChanged(ref ModEvents.SGameFocusData _data)
 	{
 		this.suppressDmNotifications(_data.IsFocused);
 	}
 
-	// Token: 0x06001624 RID: 5668 RVA: 0x00083474 File Offset: 0x00081674
+	// Token: 0x06001621 RID: 5665 RVA: 0x00083728 File Offset: 0x00081928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ModEvents.EModEventResult mainMenuOpening(ref ModEvents.SMainMenuOpeningData _data)
 	{
@@ -1098,7 +1098,7 @@ public class DiscordManager
 		return ModEvents.EModEventResult.StopHandlersAndVanilla;
 	}
 
-	// Token: 0x06001625 RID: 5669 RVA: 0x0008352B File Offset: 0x0008172B
+	// Token: 0x06001622 RID: 5666 RVA: 0x000837DF File Offset: 0x000819DF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void update(ref ModEvents.SUnityUpdateData _data)
 	{
@@ -1109,7 +1109,7 @@ public class DiscordManager
 		this.handlePushToTalkButton();
 	}
 
-	// Token: 0x06001626 RID: 5670 RVA: 0x0008353C File Offset: 0x0008173C
+	// Token: 0x06001623 RID: 5667 RVA: 0x000837F0 File Offset: 0x000819F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handlePushToTalkButton()
 	{
@@ -1129,7 +1129,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001627 RID: 5671 RVA: 0x00083597 File Offset: 0x00081797
+	// Token: 0x06001624 RID: 5668 RVA: 0x0008384B File Offset: 0x00081A4B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void serverStarted(ref ModEvents.SServerRegisteredData _data)
 	{
@@ -1140,21 +1140,21 @@ public class DiscordManager
 		this.ReceivedLobbySecret(DiscordManager.ELobbyType.Global, SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo.GetValue(GameInfoString.IP) + "_" + Utils.GenerateGuid());
 	}
 
-	// Token: 0x06001628 RID: 5672 RVA: 0x000835CD File Offset: 0x000817CD
+	// Token: 0x06001625 RID: 5669 RVA: 0x00083881 File Offset: 0x00081A81
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerJoined(ref ModEvents.SPlayerJoinedGameData _data)
 	{
 		this.userMappings.SendMappingsToClient(_data.ClientInfo);
 	}
 
-	// Token: 0x06001629 RID: 5673 RVA: 0x000835E0 File Offset: 0x000817E0
+	// Token: 0x06001626 RID: 5670 RVA: 0x00083894 File Offset: 0x00081A94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerSpawning(ref ModEvents.SPlayerSpawningData _data)
 	{
 		_data.ClientInfo.SendPackage(NetPackageManager.GetPackage<NetPackageDiscordLobbySecret>().Setup(DiscordManager.ELobbyType.Global, this.globalLobby.Secret));
 	}
 
-	// Token: 0x0600162A RID: 5674 RVA: 0x00083604 File Offset: 0x00081804
+	// Token: 0x06001627 RID: 5671 RVA: 0x000838B8 File Offset: 0x00081AB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerSpawned(ref ModEvents.SPlayerSpawnedInWorldData _data)
 	{
@@ -1174,7 +1174,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600162B RID: 5675 RVA: 0x0008365C File Offset: 0x0008185C
+	// Token: 0x06001628 RID: 5672 RVA: 0x00083910 File Offset: 0x00081B10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerDisconnected(ref ModEvents.SPlayerDisconnectedData _data)
 	{
@@ -1195,7 +1195,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600162C RID: 5676 RVA: 0x000836D4 File Offset: 0x000818D4
+	// Token: 0x06001629 RID: 5673 RVA: 0x00083988 File Offset: 0x00081B88
 	public void ReceivedLobbySecret(DiscordManager.ELobbyType _lobbyType, string _secret)
 	{
 		DiscordManager.LobbyInfo lobby = this.GetLobby(_lobbyType);
@@ -1208,7 +1208,7 @@ public class DiscordManager
 		lobby.Join(true);
 	}
 
-	// Token: 0x0600162D RID: 5677 RVA: 0x00083722 File Offset: 0x00081922
+	// Token: 0x0600162A RID: 5674 RVA: 0x000839D6 File Offset: 0x00081BD6
 	public void LeftParty()
 	{
 		this.partyLobby.Secret = null;
@@ -1219,7 +1219,7 @@ public class DiscordManager
 		this.partyLobby.Leave(false);
 	}
 
-	// Token: 0x0600162E RID: 5678 RVA: 0x0008374C File Offset: 0x0008194C
+	// Token: 0x0600162B RID: 5675 RVA: 0x00083A00 File Offset: 0x00081C00
 	public void UserMappingReceived(int _entityId, bool _remove, ulong _discordId, bool _batch = false)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -1242,7 +1242,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600162F RID: 5679 RVA: 0x000837C4 File Offset: 0x000819C4
+	// Token: 0x0600162C RID: 5676 RVA: 0x00083A78 File Offset: 0x00081C78
 	public void UserMappingsReceived(List<int> _entityIds, List<ulong> _discordIds)
 	{
 		for (int i = 0; i < _entityIds.Count; i++)
@@ -1257,7 +1257,7 @@ public class DiscordManager
 		friendsListChanged();
 	}
 
-	// Token: 0x06001630 RID: 5680 RVA: 0x00083808 File Offset: 0x00081A08
+	// Token: 0x0600162D RID: 5677 RVA: 0x00083ABC File Offset: 0x00081CBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameStarting(ref ModEvents.SGameStartingData _data)
 	{
@@ -1283,7 +1283,7 @@ public class DiscordManager
 		this.AuthManager.AutoLogin();
 	}
 
-	// Token: 0x06001631 RID: 5681 RVA: 0x00083898 File Offset: 0x00081A98
+	// Token: 0x0600162E RID: 5678 RVA: 0x00083B4C File Offset: 0x00081D4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void inGameUpdate(ref ModEvents.SGameUpdateData _data)
 	{
@@ -1296,7 +1296,7 @@ public class DiscordManager
 		this.Presence.SetRichPresenceState(new IRichPresence.PresenceStates?(IRichPresence.PresenceStates.InGame));
 	}
 
-	// Token: 0x06001632 RID: 5682 RVA: 0x000838D4 File Offset: 0x00081AD4
+	// Token: 0x0600162F RID: 5679 RVA: 0x00083B88 File Offset: 0x00081D88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameEnded(ref ModEvents.SWorldShuttingDownData _data)
 	{
@@ -1319,7 +1319,7 @@ public class DiscordManager
 		this.UserSettings.Save();
 	}
 
-	// Token: 0x06001633 RID: 5683 RVA: 0x0008395C File Offset: 0x00081B5C
+	// Token: 0x06001630 RID: 5680 RVA: 0x00083C10 File Offset: 0x00081E10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void localPlayerChangedEvent(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -1343,7 +1343,7 @@ public class DiscordManager
 		friendsListChanged();
 	}
 
-	// Token: 0x06001634 RID: 5684 RVA: 0x000839A8 File Offset: 0x00081BA8
+	// Token: 0x06001631 RID: 5681 RVA: 0x00083C5C File Offset: 0x00081E5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerCreated(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -1356,7 +1356,7 @@ public class DiscordManager
 		this.localPlayer.PartyLeave += this.playerLeftParty;
 	}
 
-	// Token: 0x06001635 RID: 5685 RVA: 0x00083A00 File Offset: 0x00081C00
+	// Token: 0x06001632 RID: 5682 RVA: 0x00083CB4 File Offset: 0x00081EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerDestroyed()
 	{
@@ -1368,7 +1368,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001636 RID: 5686 RVA: 0x00083A50 File Offset: 0x00081C50
+	// Token: 0x06001633 RID: 5683 RVA: 0x00083D04 File Offset: 0x00081F04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerJoinedParty(Party _affectedParty, EntityPlayer _player)
 	{
@@ -1379,14 +1379,14 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001637 RID: 5687 RVA: 0x00083AA1 File Offset: 0x00081CA1
+	// Token: 0x06001634 RID: 5684 RVA: 0x00083D55 File Offset: 0x00081F55
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerLeftParty(Party _affectedParty, EntityPlayer _player)
 	{
 		this.LeftParty();
 	}
 
-	// Token: 0x06001638 RID: 5688 RVA: 0x00083AAC File Offset: 0x00081CAC
+	// Token: 0x06001635 RID: 5685 RVA: 0x00083D60 File Offset: 0x00081F60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerBlockStateChanged(IPlatformUserData _ppd, EBlockType _blockType, EUserBlockState _blockState)
 	{
@@ -1413,7 +1413,7 @@ public class DiscordManager
 		activeVoiceLobby.VoiceCall.UpdateBlockState(discordUser, _blockState.IsBlocked());
 	}
 
-	// Token: 0x06001639 RID: 5689 RVA: 0x00083B15 File Offset: 0x00081D15
+	// Token: 0x06001636 RID: 5686 RVA: 0x00083DC9 File Offset: 0x00081FC9
 	public void OpenDiscordSocialSettings()
 	{
 		this.client.OpenConnectedGamesSettingsInDiscord(delegate(ClientResult _result)
@@ -1422,7 +1422,7 @@ public class DiscordManager
 		});
 	}
 
-	// Token: 0x0600163A RID: 5690 RVA: 0x00083B44 File Offset: 0x00081D44
+	// Token: 0x06001637 RID: 5687 RVA: 0x00083DF8 File Offset: 0x00081FF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void localDiscordOrEntityIdChanged()
 	{
@@ -1453,7 +1453,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600163B RID: 5691 RVA: 0x00083BF8 File Offset: 0x00081DF8
+	// Token: 0x06001638 RID: 5688 RVA: 0x00083EAC File Offset: 0x000820AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateUserNames()
 	{
@@ -1466,7 +1466,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600163C RID: 5692 RVA: 0x00083C58 File Offset: 0x00081E58
+	// Token: 0x06001639 RID: 5689 RVA: 0x00083F0C File Offset: 0x0008210C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetPendingOutgoingJoinRequests()
 	{
@@ -1479,7 +1479,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600163D RID: 5693 RVA: 0x00083CB8 File Offset: 0x00081EB8
+	// Token: 0x0600163A RID: 5690 RVA: 0x00083F6C File Offset: 0x0008216C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void refreshCachedUserHandlesAndRelationships()
 	{
@@ -1492,7 +1492,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x0600163E RID: 5694 RVA: 0x00083D18 File Offset: 0x00081F18
+	// Token: 0x0600163B RID: 5691 RVA: 0x00083FCC File Offset: 0x000821CC
 	public int GetPendingActionsCount()
 	{
 		int num = 0;
@@ -1509,7 +1509,7 @@ public class DiscordManager
 		return num;
 	}
 
-	// Token: 0x0600163F RID: 5695 RVA: 0x00083D80 File Offset: 0x00081F80
+	// Token: 0x0600163C RID: 5692 RVA: 0x00084034 File Offset: 0x00082234
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePendingActionsEvent()
 	{
@@ -1521,7 +1521,7 @@ public class DiscordManager
 		pendingActionsUpdate(this.GetPendingActionsCount());
 	}
 
-	// Token: 0x06001640 RID: 5696 RVA: 0x00083D98 File Offset: 0x00081F98
+	// Token: 0x0600163D RID: 5693 RVA: 0x0008404C File Offset: 0x0008224C
 	public DiscordManager.DiscordUser GetUser(ulong _userId)
 	{
 		DiscordManager.DiscordUser discordUser;
@@ -1534,7 +1534,7 @@ public class DiscordManager
 		return discordUser;
 	}
 
-	// Token: 0x06001641 RID: 5697 RVA: 0x00083DD4 File Offset: 0x00081FD4
+	// Token: 0x0600163E RID: 5694 RVA: 0x00084088 File Offset: 0x00082288
 	public bool TryGetUserFromEntityId(int _entityId, out DiscordManager.DiscordUser _user)
 	{
 		ulong num;
@@ -1546,7 +1546,7 @@ public class DiscordManager
 		return this.knownUsers.TryGetValue(num, out _user);
 	}
 
-	// Token: 0x06001642 RID: 5698 RVA: 0x00083E03 File Offset: 0x00082003
+	// Token: 0x0600163F RID: 5695 RVA: 0x000840B7 File Offset: 0x000822B7
 	public bool TryGetUserFromEntity(EntityPlayer _entity, out DiscordManager.DiscordUser _user)
 	{
 		if (_entity == null)
@@ -1557,13 +1557,13 @@ public class DiscordManager
 		return this.TryGetUserFromEntityId(_entity.entityId, out _user);
 	}
 
-	// Token: 0x06001643 RID: 5699 RVA: 0x00083E20 File Offset: 0x00082020
+	// Token: 0x06001640 RID: 5696 RVA: 0x000840D4 File Offset: 0x000822D4
 	public void GetAllUsers(IList<DiscordManager.DiscordUser> _target)
 	{
 		this.knownUsers.CopyValuesTo<ulong, DiscordManager.DiscordUser>(_target);
 	}
 
-	// Token: 0x06001644 RID: 5700 RVA: 0x00083E30 File Offset: 0x00082030
+	// Token: 0x06001641 RID: 5697 RVA: 0x000840E4 File Offset: 0x000822E4
 	public void GetFriends(HashSet<DiscordManager.DiscordUser> _target)
 	{
 		foreach (KeyValuePair<ulong, DiscordManager.DiscordUser> keyValuePair in this.knownUsers)
@@ -1579,7 +1579,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001645 RID: 5701 RVA: 0x00083E9C File Offset: 0x0008209C
+	// Token: 0x06001642 RID: 5698 RVA: 0x00084150 File Offset: 0x00082350
 	public void GetBlockedUsers(HashSet<DiscordManager.DiscordUser> _target)
 	{
 		foreach (KeyValuePair<ulong, DiscordManager.DiscordUser> keyValuePair in this.knownUsers)
@@ -1595,7 +1595,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001646 RID: 5702 RVA: 0x00083F08 File Offset: 0x00082108
+	// Token: 0x06001643 RID: 5699 RVA: 0x000841BC File Offset: 0x000823BC
 	public void GetUsersWithPendingAction(HashSet<DiscordManager.DiscordUser> _target)
 	{
 		foreach (KeyValuePair<ulong, DiscordManager.DiscordUser> keyValuePair in this.knownUsers)
@@ -1611,7 +1611,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001647 RID: 5703 RVA: 0x00083F74 File Offset: 0x00082174
+	// Token: 0x06001644 RID: 5700 RVA: 0x00084228 File Offset: 0x00082428
 	public void GetInServer(HashSet<DiscordManager.DiscordUser> _target)
 	{
 		this.userMappings.GetAll(delegate(int _, ulong _discordId)
@@ -1630,7 +1630,7 @@ public class DiscordManager
 		});
 	}
 
-	// Token: 0x06001648 RID: 5704 RVA: 0x00083FAC File Offset: 0x000821AC
+	// Token: 0x06001645 RID: 5701 RVA: 0x00084260 File Offset: 0x00082460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void logCallbackInfo(string _message, LogType _logType = LogType.Log)
 	{
@@ -1653,7 +1653,7 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x06001649 RID: 5705 RVA: 0x00084018 File Offset: 0x00082218
+	// Token: 0x06001646 RID: 5702 RVA: 0x000842CC File Offset: 0x000824CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void logCallbackInfoWithClientResult(string _callbackName, string _message, ClientResult _result, bool _disposeClientResult = false)
 	{
@@ -1675,7 +1675,7 @@ public class DiscordManager
 		DiscordManager.logCallbackInfo(string.IsNullOrEmpty(_message) ? (_callbackName + " (" + text + ")") : string.Concat(new string[] { _callbackName, " (", text, "): ", _message }), logType);
 	}
 
-	// Token: 0x0600164A RID: 5706 RVA: 0x00084094 File Offset: 0x00082294
+	// Token: 0x06001647 RID: 5703 RVA: 0x00084348 File Offset: 0x00082548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string clientResultToString(ClientResult _result, bool _dispose = false)
 	{
@@ -1693,7 +1693,7 @@ public class DiscordManager
 		return text;
 	}
 
-	// Token: 0x06001653 RID: 5715 RVA: 0x0008416D File Offset: 0x0008236D
+	// Token: 0x06001650 RID: 5712 RVA: 0x00084421 File Offset: 0x00082621
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <registerGameStartupForInvites>g__RegisterSteamLauncher|100_0()
@@ -1701,7 +1701,7 @@ public class DiscordManager
 		return this.client.RegisterLaunchSteamApplication(1296840202995896363UL, 251570U);
 	}
 
-	// Token: 0x06001654 RID: 5716 RVA: 0x00084188 File Offset: 0x00082388
+	// Token: 0x06001651 RID: 5713 RVA: 0x0008443C File Offset: 0x0008263C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <registerGameStartupForInvites>g__RegisterNativePcLauncher|100_1()
@@ -1714,7 +1714,7 @@ public class DiscordManager
 		return this.client.RegisterLaunchCommand(1296840202995896363UL, GameIO.GetLauncherExecutablePath());
 	}
 
-	// Token: 0x06001655 RID: 5717 RVA: 0x000841D8 File Offset: 0x000823D8
+	// Token: 0x06001652 RID: 5714 RVA: 0x0008448C File Offset: 0x0008268C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <registerGameChatHandling>g__DiscordButtonHoverHandler|123_0(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements, out string _tooltipText)
@@ -1735,7 +1735,7 @@ public class DiscordManager
 		_tooltipText = Localization.Get("xuiChatOpenMessageInDiscord", false, null);
 	}
 
-	// Token: 0x06001656 RID: 5718 RVA: 0x0008423C File Offset: 0x0008243C
+	// Token: 0x06001653 RID: 5715 RVA: 0x000844F0 File Offset: 0x000826F0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <registerGameChatHandling>g__DiscordButtonHandler|123_1(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements)
@@ -1758,7 +1758,7 @@ public class DiscordManager
 		});
 	}
 
-	// Token: 0x06001657 RID: 5719 RVA: 0x000842C1 File Offset: 0x000824C1
+	// Token: 0x06001654 RID: 5716 RVA: 0x00084575 File Offset: 0x00082775
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <registerGameChatHandling>g__ProvisionalUserMergeRequiredCallback|123_6()
@@ -1766,7 +1766,7 @@ public class DiscordManager
 		Log.Warning("[Discord] ProvisionalUserMergeRequiredCallback fired!");
 	}
 
-	// Token: 0x06001658 RID: 5720 RVA: 0x000842D0 File Offset: 0x000824D0
+	// Token: 0x06001655 RID: 5717 RVA: 0x00084584 File Offset: 0x00082784
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <registerGameChatHandling>g__SendMessage|123_2(EChatType _chatType, string _targetId, string _message)
@@ -1783,7 +1783,7 @@ public class DiscordManager
 		});
 	}
 
-	// Token: 0x06001659 RID: 5721 RVA: 0x00084338 File Offset: 0x00082538
+	// Token: 0x06001656 RID: 5718 RVA: 0x000845EC File Offset: 0x000827EC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string <registerGameChatHandling>g__GetTargetDisplayName|123_3(EChatType _chatType, string _targetId)
@@ -1797,7 +1797,7 @@ public class DiscordManager
 		return string.Format(Localization.Get("xuiChatTargetWhisper", false, null), user.DisplayName + " [discord] ");
 	}
 
-	// Token: 0x0600165A RID: 5722 RVA: 0x00084390 File Offset: 0x00082590
+	// Token: 0x06001657 RID: 5719 RVA: 0x00084644 File Offset: 0x00082844
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <registerGameChatHandling>g__IsValidTarget|123_4(EChatType _chatType, string _targetId)
@@ -1816,111 +1816,111 @@ public class DiscordManager
 		return num2 != ((discordUser != null) ? discordUser.ID : 0UL);
 	}
 
-	// Token: 0x04000EA9 RID: 3753
+	// Token: 0x04000EA2 RID: 3746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ulong DiscordApplicationId = 1296840202995896363UL;
 
-	// Token: 0x04000EAA RID: 3754
+	// Token: 0x04000EA3 RID: 3747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ulong DiscordClientId = 1296840202995896363UL;
 
-	// Token: 0x04000EAB RID: 3755
+	// Token: 0x04000EA4 RID: 3748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DiscordManager instance;
 
-	// Token: 0x04000EBC RID: 3772
+	// Token: 0x04000EB5 RID: 3765
 	public readonly DiscordManager.DiscordSettings Settings;
 
-	// Token: 0x04000EBD RID: 3773
+	// Token: 0x04000EB6 RID: 3766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DiscordManager.DiscordUserSettingsManager UserSettings;
 
-	// Token: 0x04000EBE RID: 3774
+	// Token: 0x04000EB7 RID: 3767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Discord.Sdk.Client client;
 
-	// Token: 0x04000EBF RID: 3775
+	// Token: 0x04000EB8 RID: 3768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DiscordManager.DiscordUser localUser;
 
-	// Token: 0x04000EC0 RID: 3776
+	// Token: 0x04000EB9 RID: 3769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DiscordManager.DiscordUserMappingManager userMappings;
 
-	// Token: 0x04000EC1 RID: 3777
+	// Token: 0x04000EBA RID: 3770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<ulong, DiscordManager.DiscordUser> knownUsers = new Dictionary<ulong, DiscordManager.DiscordUser>();
 
-	// Token: 0x04000EC2 RID: 3778
+	// Token: 0x04000EBB RID: 3771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DiscordManager.FriendsServerList friendsServerList = new DiscordManager.FriendsServerList();
 
-	// Token: 0x04000EC3 RID: 3779
+	// Token: 0x04000EBC RID: 3772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LoggingSeverity logLevel = LoggingSeverity.Warning;
 
-	// Token: 0x04000EC4 RID: 3780
+	// Token: 0x04000EBD RID: 3773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LoggingSeverity logLevelRtc = LoggingSeverity.Warning;
 
-	// Token: 0x04000EC5 RID: 3781
+	// Token: 0x04000EBE RID: 3774
 	public readonly DiscordManager.AuthAndLoginManager AuthManager;
 
-	// Token: 0x04000EC6 RID: 3782
+	// Token: 0x04000EBF RID: 3775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex logMessageMatcher = new Regex("^\\[([^\\]]+)\\] \\[(\\d+)\\] \\(([^)]+)\\): (.*)\\n$", RegexOptions.Compiled | RegexOptions.Singleline);
 
-	// Token: 0x04000EC7 RID: 3783
+	// Token: 0x04000EC0 RID: 3776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string UrlTypeDiscordMessageButton = "DiscordMessageButton";
 
-	// Token: 0x04000EC8 RID: 3784
+	// Token: 0x04000EC1 RID: 3777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string UrlFieldMessageId = "MessageId";
 
-	// Token: 0x04000EC9 RID: 3785
+	// Token: 0x04000EC2 RID: 3778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DiscordManager.LobbyInfo globalLobby;
 
-	// Token: 0x04000ECA RID: 3786
+	// Token: 0x04000EC3 RID: 3779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DiscordManager.LobbyInfo partyLobby;
 
-	// Token: 0x04000ECB RID: 3787
+	// Token: 0x04000EC4 RID: 3780
 	public readonly DiscordManager.PresenceManager Presence;
 
-	// Token: 0x04000ECC RID: 3788
+	// Token: 0x04000EC5 RID: 3781
 	public readonly DiscordManager.AudioDeviceConfig AudioOutput;
 
-	// Token: 0x04000ECD RID: 3789
+	// Token: 0x04000EC6 RID: 3782
 	public readonly DiscordManager.AudioDeviceConfig AudioInput;
 
-	// Token: 0x04000ECE RID: 3790
+	// Token: 0x04000EC7 RID: 3783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float nextActivityUpdate;
 
-	// Token: 0x04000ECF RID: 3791
+	// Token: 0x04000EC8 RID: 3784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04000ED0 RID: 3792
+	// Token: 0x04000EC9 RID: 3785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CurrentFileVersion = 1;
 
-	// Token: 0x02000303 RID: 771
+	// Token: 0x02000306 RID: 774
 	public class AuthAndLoginManager
 	{
-		// Token: 0x17000286 RID: 646
-		// (get) Token: 0x0600165B RID: 5723 RVA: 0x000843DB File Offset: 0x000825DB
-		// (set) Token: 0x0600165C RID: 5724 RVA: 0x000843E3 File Offset: 0x000825E3
+		// Token: 0x1700027E RID: 638
+		// (get) Token: 0x06001658 RID: 5720 RVA: 0x0008468F File Offset: 0x0008288F
+		// (set) Token: 0x06001659 RID: 5721 RVA: 0x00084697 File Offset: 0x00082897
 		public DiscordManager.EDiscordAccountType IsLoggingInWith
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17000287 RID: 647
-		// (get) Token: 0x0600165D RID: 5725 RVA: 0x000843EC File Offset: 0x000825EC
+		// Token: 0x1700027F RID: 639
+		// (get) Token: 0x0600165A RID: 5722 RVA: 0x000846A0 File Offset: 0x000828A0
 		public bool IsLoggingIn
 		{
 			get
@@ -1929,13 +1929,13 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600165E RID: 5726 RVA: 0x000843F7 File Offset: 0x000825F7
+		// Token: 0x0600165B RID: 5723 RVA: 0x000846AB File Offset: 0x000828AB
 		public AuthAndLoginManager(DiscordManager _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600165F RID: 5727 RVA: 0x00084408 File Offset: 0x00082608
+		// Token: 0x0600165C RID: 5724 RVA: 0x000846BC File Offset: 0x000828BC
 		public void RegisterGameEventHandlers()
 		{
 			ModEvents.MainMenuOpened.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SMainMenuOpenedData>(this.OnMainMenuOpened));
@@ -1944,7 +1944,7 @@ public class DiscordManager
 			ModEvents.WorldShuttingDown.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SWorldShuttingDownData>(this.OnWorldShuttingDown));
 		}
 
-		// Token: 0x06001660 RID: 5728 RVA: 0x00084470 File Offset: 0x00082670
+		// Token: 0x0600165D RID: 5725 RVA: 0x00084724 File Offset: 0x00082924
 		public void RegisterDiscordCallbacks()
 		{
 			this.owner.client.SetStatusChangedCallback(new Discord.Sdk.Client.OnStatusChanged(this.OnStatusChanged));
@@ -1952,21 +1952,21 @@ public class DiscordManager
 			this.owner.StatusChanged += this.OnDiscordStatusChanged;
 		}
 
-		// Token: 0x06001661 RID: 5729 RVA: 0x000844CC File Offset: 0x000826CC
+		// Token: 0x0600165E RID: 5726 RVA: 0x00084780 File Offset: 0x00082980
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnMainMenuOpened(ref ModEvents.SMainMenuOpenedData _data)
 		{
 			this.updateExternalAuthRequestHandler();
 		}
 
-		// Token: 0x06001662 RID: 5730 RVA: 0x000844CC File Offset: 0x000826CC
+		// Token: 0x0600165F RID: 5727 RVA: 0x00084780 File Offset: 0x00082980
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDiscordStatusChanged(DiscordManager.EDiscordStatus _status)
 		{
 			this.updateExternalAuthRequestHandler();
 		}
 
-		// Token: 0x06001663 RID: 5731 RVA: 0x000844D4 File Offset: 0x000826D4
+		// Token: 0x06001660 RID: 5728 RVA: 0x00084788 File Offset: 0x00082988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGameStarting(ref ModEvents.SGameStartingData _data)
 		{
@@ -1974,7 +1974,7 @@ public class DiscordManager
 			this.updateExternalAuthRequestHandler();
 		}
 
-		// Token: 0x06001664 RID: 5732 RVA: 0x000844E3 File Offset: 0x000826E3
+		// Token: 0x06001661 RID: 5729 RVA: 0x00084797 File Offset: 0x00082997
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerSpawned(ref ModEvents.SPlayerSpawnedInWorldData _data)
 		{
@@ -1982,7 +1982,7 @@ public class DiscordManager
 			this.updateExternalAuthRequestHandler();
 		}
 
-		// Token: 0x06001665 RID: 5733 RVA: 0x000844D4 File Offset: 0x000826D4
+		// Token: 0x06001662 RID: 5730 RVA: 0x00084788 File Offset: 0x00082988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnWorldShuttingDown(ref ModEvents.SWorldShuttingDownData _data)
 		{
@@ -1990,7 +1990,7 @@ public class DiscordManager
 			this.updateExternalAuthRequestHandler();
 		}
 
-		// Token: 0x06001666 RID: 5734 RVA: 0x000844F4 File Offset: 0x000826F4
+		// Token: 0x06001663 RID: 5731 RVA: 0x000847A8 File Offset: 0x000829A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateExternalAuthRequestHandler()
 		{
@@ -2037,7 +2037,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001667 RID: 5735 RVA: 0x000845D8 File Offset: 0x000827D8
+		// Token: 0x06001664 RID: 5732 RVA: 0x0008488C File Offset: 0x00082A8C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnExternalAuthorizeRequest()
 		{
@@ -2058,7 +2058,7 @@ public class DiscordManager
 			this.LoginDiscordUser();
 		}
 
-		// Token: 0x06001668 RID: 5736 RVA: 0x00084649 File Offset: 0x00082849
+		// Token: 0x06001665 RID: 5733 RVA: 0x000848FD File Offset: 0x00082AFD
 		public void LoginWithPlatformDefaultAccountType()
 		{
 			if (DiscordManager.SupportsProvisionalAccounts)
@@ -2069,7 +2069,7 @@ public class DiscordManager
 			this.LoginDiscordUser();
 		}
 
-		// Token: 0x06001669 RID: 5737 RVA: 0x00084660 File Offset: 0x00082860
+		// Token: 0x06001666 RID: 5734 RVA: 0x00084914 File Offset: 0x00082B14
 		public void AutoLogin()
 		{
 			switch (this.owner.Settings.LastAccountType)
@@ -2088,7 +2088,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600166A RID: 5738 RVA: 0x000846B1 File Offset: 0x000828B1
+		// Token: 0x06001667 RID: 5735 RVA: 0x00084965 File Offset: 0x00082B65
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void prepareLoginStart(DiscordManager.EDiscordAccountType _accountType)
 		{
@@ -2097,7 +2097,7 @@ public class DiscordManager
 			this.provisionalAccountLoginResult = DiscordManager.EProvisionalAccountLoginResult.None;
 		}
 
-		// Token: 0x0600166B RID: 5739 RVA: 0x000846C8 File Offset: 0x000828C8
+		// Token: 0x06001668 RID: 5736 RVA: 0x0008497C File Offset: 0x00082B7C
 		public void AbortAuth()
 		{
 			if (!this.inAuthProcess)
@@ -2115,7 +2115,7 @@ public class DiscordManager
 			this.inAuthProcess = false;
 		}
 
-		// Token: 0x0600166C RID: 5740 RVA: 0x00084708 File Offset: 0x00082908
+		// Token: 0x06001669 RID: 5737 RVA: 0x000849BC File Offset: 0x00082BBC
 		public void LoginDiscordUser()
 		{
 			this.owner.Init(false);
@@ -2144,7 +2144,7 @@ public class DiscordManager
 			this.loginDiscordUserPC();
 		}
 
-		// Token: 0x0600166D RID: 5741 RVA: 0x000847AE File Offset: 0x000829AE
+		// Token: 0x0600166A RID: 5738 RVA: 0x00084A62 File Offset: 0x00082C62
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loginWithStoredTokens()
 		{
@@ -2152,7 +2152,7 @@ public class DiscordManager
 			this.owner.client.UpdateToken(AuthorizationTokenType.Bearer, this.owner.Settings.AccessToken, new Discord.Sdk.Client.UpdateTokenCallback(this.updateTokenCallback));
 		}
 
-		// Token: 0x0600166E RID: 5742 RVA: 0x000847E8 File Offset: 0x000829E8
+		// Token: 0x0600166B RID: 5739 RVA: 0x00084A9C File Offset: 0x00082C9C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loginDiscordUserPC()
 		{
@@ -2224,7 +2224,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x0600166F RID: 5743 RVA: 0x00084888 File Offset: 0x00082A88
+		// Token: 0x0600166C RID: 5740 RVA: 0x00084B3C File Offset: 0x00082D3C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loginDiscordUserConsole()
 		{
@@ -2243,7 +2243,7 @@ public class DiscordManager
 			this.owner.client.GetTokenFromDeviceProvisionalMerge(deviceAuthorizationArgs, AuthenticationExternalAuthType.EpicOnlineServicesIdToken, authTicket, new Discord.Sdk.Client.TokenExchangeCallback(this.tokenExchangeCallbackFullAccount));
 		}
 
-		// Token: 0x06001670 RID: 5744 RVA: 0x00084910 File Offset: 0x00082B10
+		// Token: 0x0600166D RID: 5741 RVA: 0x00084BC4 File Offset: 0x00082DC4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void tokenExchangeCallbackFullAccount(ClientResult _result, string _accessToken, string _refreshToken, AuthorizationTokenType _tokenType, int _expiresIn, string _scope)
 		{
@@ -2263,7 +2263,7 @@ public class DiscordManager
 			this.loginProvisionalAccountInternal(false);
 		}
 
-		// Token: 0x06001671 RID: 5745 RVA: 0x000849D4 File Offset: 0x00082BD4
+		// Token: 0x0600166E RID: 5742 RVA: 0x00084C88 File Offset: 0x00082E88
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void refreshToken()
 		{
@@ -2278,7 +2278,7 @@ public class DiscordManager
 			this.owner.client.RefreshToken(1296840202995896363UL, refreshToken, new Discord.Sdk.Client.TokenExchangeCallback(this.<refreshToken>g__RefreshTokenExchangeCallback|29_0));
 		}
 
-		// Token: 0x06001672 RID: 5746 RVA: 0x00084A48 File Offset: 0x00082C48
+		// Token: 0x0600166F RID: 5743 RVA: 0x00084CFC File Offset: 0x00082EFC
 		public void UnmergeAccount()
 		{
 			this.fullAccountLoginResult = DiscordManager.EFullAccountLoginResult.None;
@@ -2308,7 +2308,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x06001673 RID: 5747 RVA: 0x00084AC6 File Offset: 0x00082CC6
+		// Token: 0x06001670 RID: 5744 RVA: 0x00084D7A File Offset: 0x00082F7A
 		public void LoginProvisionalAccount()
 		{
 			this.owner.Init(false);
@@ -2316,7 +2316,7 @@ public class DiscordManager
 			this.loginProvisionalAccountInternal(false);
 		}
 
-		// Token: 0x06001674 RID: 5748 RVA: 0x00084AE4 File Offset: 0x00082CE4
+		// Token: 0x06001671 RID: 5745 RVA: 0x00084D98 File Offset: 0x00082F98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loginProvisionalAccountInternal(bool _isRefresh)
 		{
@@ -2354,7 +2354,7 @@ public class DiscordManager
 			this.owner.client.GetProvisionalToken(1296840202995896363UL, AuthenticationExternalAuthType.EpicOnlineServicesIdToken, authTicket, new Discord.Sdk.Client.TokenExchangeCallback(this.<loginProvisionalAccountInternal>g__TokenExchangeCallbackProvisional|33_0));
 		}
 
-		// Token: 0x06001675 RID: 5749 RVA: 0x00084BD7 File Offset: 0x00082DD7
+		// Token: 0x06001672 RID: 5746 RVA: 0x00084E8B File Offset: 0x0008308B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateTokenCallback(ClientResult _result)
 		{
@@ -2368,7 +2368,7 @@ public class DiscordManager
 			this.owner.client.Connect();
 		}
 
-		// Token: 0x06001676 RID: 5750 RVA: 0x00084C0C File Offset: 0x00082E0C
+		// Token: 0x06001673 RID: 5747 RVA: 0x00084EC0 File Offset: 0x000830C0
 		public void Disconnect()
 		{
 			this.IsLoggingInWith = DiscordManager.EDiscordAccountType.None;
@@ -2383,7 +2383,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001677 RID: 5751 RVA: 0x00084C58 File Offset: 0x00082E58
+		// Token: 0x06001674 RID: 5748 RVA: 0x00084F0C File Offset: 0x0008310C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnStatusChanged(Discord.Sdk.Client.Status _status, Discord.Sdk.Client.Error _error, int _errorDetail)
 		{
@@ -2512,7 +2512,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001678 RID: 5752 RVA: 0x00084F70 File Offset: 0x00083170
+		// Token: 0x06001675 RID: 5749 RVA: 0x00085224 File Offset: 0x00083424
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnTokenExpiration()
 		{
@@ -2530,7 +2530,7 @@ public class DiscordManager
 			this.refreshToken();
 		}
 
-		// Token: 0x06001679 RID: 5753 RVA: 0x00084FC0 File Offset: 0x000831C0
+		// Token: 0x06001676 RID: 5750 RVA: 0x00085274 File Offset: 0x00083474
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void invokeAuthResultCallback(bool _success)
 		{
@@ -2546,7 +2546,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600167A RID: 5754 RVA: 0x0008501C File Offset: 0x0008321C
+		// Token: 0x06001677 RID: 5751 RVA: 0x000852D0 File Offset: 0x000834D0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <refreshToken>g__RefreshTokenExchangeCallback|29_0(ClientResult _result, string _accessToken, string _refreshToken, AuthorizationTokenType _tokenType, int _expiresIn, string _scope)
@@ -2566,7 +2566,7 @@ public class DiscordManager
 			this.loginProvisionalAccountInternal(false);
 		}
 
-		// Token: 0x0600167C RID: 5756 RVA: 0x000850FC File Offset: 0x000832FC
+		// Token: 0x06001679 RID: 5753 RVA: 0x000853B0 File Offset: 0x000835B0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <loginProvisionalAccountInternal>g__TokenExchangeCallbackProvisional|33_0(ClientResult _result, string _accessToken, string _refreshToken, AuthorizationTokenType _tokenType, int _expiresIn, string _scope)
@@ -2590,31 +2590,31 @@ public class DiscordManager
 			this.invokeAuthResultCallback(false);
 		}
 
-		// Token: 0x04000ED1 RID: 3793
+		// Token: 0x04000ECA RID: 3786
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager owner;
 
-		// Token: 0x04000ED3 RID: 3795
+		// Token: 0x04000ECC RID: 3788
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool playerSpawned;
 
-		// Token: 0x04000ED4 RID: 3796
+		// Token: 0x04000ECD RID: 3789
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DiscordManager.EFullAccountLoginResult fullAccountLoginResult;
 
-		// Token: 0x04000ED5 RID: 3797
+		// Token: 0x04000ECE RID: 3790
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool inAuthProcess;
 
-		// Token: 0x04000ED6 RID: 3798
+		// Token: 0x04000ECF RID: 3791
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DiscordManager.EProvisionalAccountLoginResult provisionalAccountLoginResult;
 	}
 
-	// Token: 0x02000307 RID: 775
+	// Token: 0x0200030A RID: 778
 	public class CallInfo
 	{
-		// Token: 0x06001684 RID: 5764 RVA: 0x000853BC File Offset: 0x000835BC
+		// Token: 0x06001681 RID: 5761 RVA: 0x00085670 File Offset: 0x00083870
 		public static void LoadSounds()
 		{
 			LoadManager.LoadAsset<AudioClip>("@:Sounds/UI/ui_discord_join.wav", delegate(AudioClip _o)
@@ -2631,17 +2631,17 @@ public class DiscordManager
 			}, null, false, false, false);
 		}
 
-		// Token: 0x17000288 RID: 648
-		// (get) Token: 0x06001685 RID: 5765 RVA: 0x00085453 File Offset: 0x00083653
-		// (set) Token: 0x06001686 RID: 5766 RVA: 0x0008545B File Offset: 0x0008365B
+		// Token: 0x17000280 RID: 640
+		// (get) Token: 0x06001682 RID: 5762 RVA: 0x00085707 File Offset: 0x00083907
+		// (set) Token: 0x06001683 RID: 5763 RVA: 0x0008570F File Offset: 0x0008390F
 		public Call.Status Status
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17000289 RID: 649
-		// (get) Token: 0x06001687 RID: 5767 RVA: 0x00085464 File Offset: 0x00083664
+		// Token: 0x17000281 RID: 641
+		// (get) Token: 0x06001684 RID: 5764 RVA: 0x00085718 File Offset: 0x00083918
 		public bool IsJoined
 		{
 			get
@@ -2650,8 +2650,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700028A RID: 650
-		// (get) Token: 0x06001688 RID: 5768 RVA: 0x00085479 File Offset: 0x00083679
+		// Token: 0x17000282 RID: 642
+		// (get) Token: 0x06001685 RID: 5765 RVA: 0x0008572D File Offset: 0x0008392D
 		public Call Call
 		{
 			get
@@ -2660,16 +2660,16 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700028B RID: 651
-		// (get) Token: 0x06001689 RID: 5769 RVA: 0x00085481 File Offset: 0x00083681
-		// (set) Token: 0x0600168A RID: 5770 RVA: 0x00085489 File Offset: 0x00083689
+		// Token: 0x17000283 RID: 643
+		// (get) Token: 0x06001686 RID: 5766 RVA: 0x00085735 File Offset: 0x00083935
+		// (set) Token: 0x06001687 RID: 5767 RVA: 0x0008573D File Offset: 0x0008393D
 		public bool IsSpeaking
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600168B RID: 5771 RVA: 0x00085494 File Offset: 0x00083694
+		// Token: 0x06001688 RID: 5768 RVA: 0x00085748 File Offset: 0x00083948
 		public CallInfo(DiscordManager.LobbyInfo _ownerLobby, DiscordManager _ownerManager)
 		{
 			this.ownerLobby = _ownerLobby;
@@ -2678,7 +2678,7 @@ public class DiscordManager
 			this.ownerManager.Settings.VoiceVadThresholdChanged += this.OnVadThresholdChanged;
 		}
 
-		// Token: 0x0600168C RID: 5772 RVA: 0x00085504 File Offset: 0x00083704
+		// Token: 0x06001689 RID: 5769 RVA: 0x000857B8 File Offset: 0x000839B8
 		public void Join()
 		{
 			if (!this.ownerLobby.IsJoined)
@@ -2710,7 +2710,7 @@ public class DiscordManager
 			this.call.SetSpeakingStatusChangedCallback(new Call.OnSpeakingStatusChanged(this.OnSpeakingStatusChanged));
 		}
 
-		// Token: 0x0600168D RID: 5773 RVA: 0x0008564C File Offset: 0x0008384C
+		// Token: 0x0600168A RID: 5770 RVA: 0x00085900 File Offset: 0x00083B00
 		public void Leave(bool _manual)
 		{
 			this.startedJoining = false;
@@ -2735,19 +2735,19 @@ public class DiscordManager
 			callChanged(null);
 		}
 
-		// Token: 0x0600168E RID: 5774 RVA: 0x000856E4 File Offset: 0x000838E4
+		// Token: 0x0600168B RID: 5771 RVA: 0x00085998 File Offset: 0x00083B98
 		public void SetPushToTalkMode()
 		{
 			this.call.SetAudioMode(this.ownerManager.Settings.VoiceModePtt ? AudioModeType.MODE_PTT : AudioModeType.MODE_VAD);
 		}
 
-		// Token: 0x0600168F RID: 5775 RVA: 0x00085707 File Offset: 0x00083907
+		// Token: 0x0600168C RID: 5772 RVA: 0x000859BB File Offset: 0x00083BBB
 		public void SetPushToTalkActive(bool _pushToTalkPressed)
 		{
 			this.call.SetPTTActive(_pushToTalkPressed);
 		}
 
-		// Token: 0x06001690 RID: 5776 RVA: 0x00085715 File Offset: 0x00083915
+		// Token: 0x0600168D RID: 5773 RVA: 0x000859C9 File Offset: 0x00083BC9
 		public float GetParticipantVolume(DiscordManager.DiscordUser _user)
 		{
 			Call call = this.call;
@@ -2758,7 +2758,7 @@ public class DiscordManager
 			return call.GetParticipantVolume(_user.ID);
 		}
 
-		// Token: 0x06001691 RID: 5777 RVA: 0x00085732 File Offset: 0x00083932
+		// Token: 0x0600168E RID: 5774 RVA: 0x000859E6 File Offset: 0x00083BE6
 		public void SetParticipantVolume(DiscordManager.DiscordUser _user, float _volume)
 		{
 			Call call = this.call;
@@ -2769,7 +2769,7 @@ public class DiscordManager
 			call.SetParticipantVolume(_user.ID, _volume);
 		}
 
-		// Token: 0x06001692 RID: 5778 RVA: 0x0008574C File Offset: 0x0008394C
+		// Token: 0x0600168F RID: 5775 RVA: 0x00085A00 File Offset: 0x00083C00
 		public void UpdateMembers(bool _applySavedVolume = false)
 		{
 			if (!this.IsJoined)
@@ -2814,19 +2814,19 @@ public class DiscordManager
 			callMembersChanged(this);
 		}
 
-		// Token: 0x06001693 RID: 5779 RVA: 0x00085894 File Offset: 0x00083A94
+		// Token: 0x06001690 RID: 5776 RVA: 0x00085B48 File Offset: 0x00083D48
 		public bool TryGetMember(ulong _userId, out DiscordManager.CallInfo.MemberState _state)
 		{
 			return this.callMembersCurrent.TryGetValue(_userId, out _state);
 		}
 
-		// Token: 0x06001694 RID: 5780 RVA: 0x000858A3 File Offset: 0x00083AA3
+		// Token: 0x06001691 RID: 5777 RVA: 0x00085B57 File Offset: 0x00083D57
 		public void GetMembers(List<ulong> _target)
 		{
 			this.callMembersCurrent.CopyKeysTo<ulong, DiscordManager.CallInfo.MemberState>(_target);
 		}
 
-		// Token: 0x06001695 RID: 5781 RVA: 0x000858B4 File Offset: 0x00083AB4
+		// Token: 0x06001692 RID: 5778 RVA: 0x00085B68 File Offset: 0x00083D68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnCallStatusChanged(Call.Status _status, Call.Error _error, int _errorDetail)
 		{
@@ -2888,7 +2888,7 @@ public class DiscordManager
 			callStatusChanged(this, this.Status);
 		}
 
-		// Token: 0x06001696 RID: 5782 RVA: 0x00085A10 File Offset: 0x00083C10
+		// Token: 0x06001693 RID: 5779 RVA: 0x00085CC4 File Offset: 0x00083EC4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnSpeakingStatusChanged(ulong _userId, bool _isPlayingSound)
 		{
@@ -2916,7 +2916,7 @@ public class DiscordManager
 			voiceStateChanged(flag, _userId);
 		}
 
-		// Token: 0x06001697 RID: 5783 RVA: 0x00085ADC File Offset: 0x00083CDC
+		// Token: 0x06001694 RID: 5780 RVA: 0x00085D90 File Offset: 0x00083F90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnParticipantChanged(ulong _userId, bool _added)
 		{
@@ -2952,7 +2952,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001698 RID: 5784 RVA: 0x00085C00 File Offset: 0x00083E00
+		// Token: 0x06001695 RID: 5781 RVA: 0x00085EB4 File Offset: 0x000840B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnVoiceStateChanged(ulong _userId)
 		{
@@ -2986,7 +2986,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001699 RID: 5785 RVA: 0x00085D14 File Offset: 0x00083F14
+		// Token: 0x06001696 RID: 5782 RVA: 0x00085FC8 File Offset: 0x000841C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnVadModeChanged(bool _auto)
 		{
@@ -2998,7 +2998,7 @@ public class DiscordManager
 			this.call.SetVADThreshold(_auto, vadthreshold.VadThreshold());
 		}
 
-		// Token: 0x0600169A RID: 5786 RVA: 0x00085D48 File Offset: 0x00083F48
+		// Token: 0x06001697 RID: 5783 RVA: 0x00085FFC File Offset: 0x000841FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnVadThresholdChanged(int _threshold)
 		{
@@ -3010,7 +3010,7 @@ public class DiscordManager
 			this.call.SetVADThreshold(vadthreshold.Automatic(), (float)_threshold);
 		}
 
-		// Token: 0x0600169B RID: 5787 RVA: 0x00085D80 File Offset: 0x00083F80
+		// Token: 0x06001698 RID: 5784 RVA: 0x00086034 File Offset: 0x00084234
 		public void UpdateBlockState(DiscordManager.DiscordUser _user, bool _isBlocked)
 		{
 			DiscordManager.CallInfo.MemberState memberState;
@@ -3021,247 +3021,247 @@ public class DiscordManager
 			_user.LocalMuted = _isBlocked;
 		}
 
-		// Token: 0x04000EDC RID: 3804
+		// Token: 0x04000ED5 RID: 3797
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioClip soundOtherJoin;
 
-		// Token: 0x04000EDD RID: 3805
+		// Token: 0x04000ED6 RID: 3798
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioClip soundOtherLeave;
 
-		// Token: 0x04000EDE RID: 3806
+		// Token: 0x04000ED7 RID: 3799
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioClip soundSelfNoManualLeave;
 
-		// Token: 0x04000EDF RID: 3807
+		// Token: 0x04000ED8 RID: 3800
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager.LobbyInfo ownerLobby;
 
-		// Token: 0x04000EE0 RID: 3808
+		// Token: 0x04000ED9 RID: 3801
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager ownerManager;
 
-		// Token: 0x04000EE1 RID: 3809
+		// Token: 0x04000EDA RID: 3802
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Call call;
 
-		// Token: 0x04000EE2 RID: 3810
+		// Token: 0x04000EDB RID: 3803
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool startedJoining;
 
-		// Token: 0x04000EE3 RID: 3811
+		// Token: 0x04000EDC RID: 3804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool manualLeave;
 
-		// Token: 0x04000EE6 RID: 3814
+		// Token: 0x04000EDF RID: 3807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<ulong, DiscordManager.CallInfo.MemberState> callMembersCurrent = new Dictionary<ulong, DiscordManager.CallInfo.MemberState>();
 
-		// Token: 0x04000EE7 RID: 3815
+		// Token: 0x04000EE0 RID: 3808
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<ulong, DiscordManager.CallInfo.MemberState> callMembersOld = new Dictionary<ulong, DiscordManager.CallInfo.MemberState>();
 
-		// Token: 0x02000308 RID: 776
+		// Token: 0x0200030B RID: 779
 		public struct MemberState
 		{
-			// Token: 0x04000EE8 RID: 3816
+			// Token: 0x04000EE1 RID: 3809
 			public bool Speaking;
 
-			// Token: 0x04000EE9 RID: 3817
+			// Token: 0x04000EE2 RID: 3810
 			public bool Muted;
 
-			// Token: 0x04000EEA RID: 3818
+			// Token: 0x04000EE3 RID: 3811
 			public bool Deafened;
 		}
 	}
 
-	// Token: 0x0200030A RID: 778
+	// Token: 0x0200030D RID: 781
 	public enum EDiscordStatus
 	{
-		// Token: 0x04000EF1 RID: 3825
+		// Token: 0x04000EEA RID: 3818
 		NotInitialized,
-		// Token: 0x04000EF2 RID: 3826
+		// Token: 0x04000EEB RID: 3819
 		Disconnected,
-		// Token: 0x04000EF3 RID: 3827
+		// Token: 0x04000EEC RID: 3820
 		Ready,
-		// Token: 0x04000EF4 RID: 3828
+		// Token: 0x04000EED RID: 3821
 		Connecting,
-		// Token: 0x04000EF5 RID: 3829
+		// Token: 0x04000EEE RID: 3822
 		Disconnecting
 	}
 
-	// Token: 0x0200030B RID: 779
+	// Token: 0x0200030E RID: 782
 	public enum ELobbyType : byte
 	{
-		// Token: 0x04000EF7 RID: 3831
+		// Token: 0x04000EF0 RID: 3824
 		Global,
-		// Token: 0x04000EF8 RID: 3832
+		// Token: 0x04000EF1 RID: 3825
 		Party
-	}
-
-	// Token: 0x0200030C RID: 780
-	public enum EDiscordAccountType
-	{
-		// Token: 0x04000EFA RID: 3834
-		None,
-		// Token: 0x04000EFB RID: 3835
-		Regular,
-		// Token: 0x04000EFC RID: 3836
-		Provisional
-	}
-
-	// Token: 0x0200030D RID: 781
-	public enum EFullAccountLoginResult
-	{
-		// Token: 0x04000EFE RID: 3838
-		None,
-		// Token: 0x04000EFF RID: 3839
-		Success,
-		// Token: 0x04000F00 RID: 3840
-		RequestingAuth,
-		// Token: 0x04000F01 RID: 3841
-		AuthAccepted,
-		// Token: 0x04000F02 RID: 3842
-		AuthCancelled,
-		// Token: 0x04000F03 RID: 3843
-		AuthFailed,
-		// Token: 0x04000F04 RID: 3844
-		TokenExchangeFailed,
-		// Token: 0x04000F05 RID: 3845
-		TokenRefreshFailed,
-		// Token: 0x04000F06 RID: 3846
-		TokenRevoked,
-		// Token: 0x04000F07 RID: 3847
-		ConnectionFailed,
-		// Token: 0x04000F08 RID: 3848
-		PlatformError
-	}
-
-	// Token: 0x0200030E RID: 782
-	public enum EProvisionalAccountLoginResult
-	{
-		// Token: 0x04000F0A RID: 3850
-		None,
-		// Token: 0x04000F0B RID: 3851
-		Success,
-		// Token: 0x04000F0C RID: 3852
-		NotSupported,
-		// Token: 0x04000F0D RID: 3853
-		PlatformIdLinkedToDiscordAccount,
-		// Token: 0x04000F0E RID: 3854
-		TokenExchangeFailed,
-		// Token: 0x04000F0F RID: 3855
-		ConnectionFailed,
-		// Token: 0x04000F10 RID: 3856
-		PlatformError
 	}
 
 	// Token: 0x0200030F RID: 783
-	public enum EAutoJoinVoiceMode
+	public enum EDiscordAccountType
 	{
-		// Token: 0x04000F12 RID: 3858
+		// Token: 0x04000EF3 RID: 3827
 		None,
-		// Token: 0x04000F13 RID: 3859
-		Global,
-		// Token: 0x04000F14 RID: 3860
-		Party
+		// Token: 0x04000EF4 RID: 3828
+		Regular,
+		// Token: 0x04000EF5 RID: 3829
+		Provisional
 	}
 
 	// Token: 0x02000310 RID: 784
-	// (Invoke) Token: 0x060016A3 RID: 5795
-	public delegate void UserAuthorizationResultCallback(bool _isDone, DiscordManager.EFullAccountLoginResult _fullAccResult, DiscordManager.EProvisionalAccountLoginResult _provisionalAccResult, bool _isExpectedSuccess);
+	public enum EFullAccountLoginResult
+	{
+		// Token: 0x04000EF7 RID: 3831
+		None,
+		// Token: 0x04000EF8 RID: 3832
+		Success,
+		// Token: 0x04000EF9 RID: 3833
+		RequestingAuth,
+		// Token: 0x04000EFA RID: 3834
+		AuthAccepted,
+		// Token: 0x04000EFB RID: 3835
+		AuthCancelled,
+		// Token: 0x04000EFC RID: 3836
+		AuthFailed,
+		// Token: 0x04000EFD RID: 3837
+		TokenExchangeFailed,
+		// Token: 0x04000EFE RID: 3838
+		TokenRefreshFailed,
+		// Token: 0x04000EFF RID: 3839
+		TokenRevoked,
+		// Token: 0x04000F00 RID: 3840
+		ConnectionFailed,
+		// Token: 0x04000F01 RID: 3841
+		PlatformError
+	}
 
 	// Token: 0x02000311 RID: 785
-	// (Invoke) Token: 0x060016A7 RID: 5799
-	public delegate void LocalUserChangedCallback(bool _loggedIn);
+	public enum EProvisionalAccountLoginResult
+	{
+		// Token: 0x04000F03 RID: 3843
+		None,
+		// Token: 0x04000F04 RID: 3844
+		Success,
+		// Token: 0x04000F05 RID: 3845
+		NotSupported,
+		// Token: 0x04000F06 RID: 3846
+		PlatformIdLinkedToDiscordAccount,
+		// Token: 0x04000F07 RID: 3847
+		TokenExchangeFailed,
+		// Token: 0x04000F08 RID: 3848
+		ConnectionFailed,
+		// Token: 0x04000F09 RID: 3849
+		PlatformError
+	}
 
 	// Token: 0x02000312 RID: 786
-	// (Invoke) Token: 0x060016AB RID: 5803
-	public delegate void LobbyStateChangedCallback(DiscordManager.LobbyInfo _lobby, bool _isReady, bool _isJoined);
+	public enum EAutoJoinVoiceMode
+	{
+		// Token: 0x04000F0B RID: 3851
+		None,
+		// Token: 0x04000F0C RID: 3852
+		Global,
+		// Token: 0x04000F0D RID: 3853
+		Party
+	}
 
 	// Token: 0x02000313 RID: 787
-	// (Invoke) Token: 0x060016AF RID: 5807
-	public delegate void LobbyMembersChangedCallback(DiscordManager.LobbyInfo _lobby);
+	// (Invoke) Token: 0x060016A0 RID: 5792
+	public delegate void UserAuthorizationResultCallback(bool _isDone, DiscordManager.EFullAccountLoginResult _fullAccResult, DiscordManager.EProvisionalAccountLoginResult _provisionalAccResult, bool _isExpectedSuccess);
 
 	// Token: 0x02000314 RID: 788
-	// (Invoke) Token: 0x060016B3 RID: 5811
-	public delegate void CallChangedCallback(DiscordManager.CallInfo _newCall);
+	// (Invoke) Token: 0x060016A4 RID: 5796
+	public delegate void LocalUserChangedCallback(bool _loggedIn);
 
 	// Token: 0x02000315 RID: 789
-	// (Invoke) Token: 0x060016B7 RID: 5815
-	public delegate void CallStatusChangedCallback(DiscordManager.CallInfo _call, Call.Status _callStatus);
+	// (Invoke) Token: 0x060016A8 RID: 5800
+	public delegate void LobbyStateChangedCallback(DiscordManager.LobbyInfo _lobby, bool _isReady, bool _isJoined);
 
 	// Token: 0x02000316 RID: 790
-	// (Invoke) Token: 0x060016BB RID: 5819
-	public delegate void CallMembersChangedCallback(DiscordManager.CallInfo _call);
+	// (Invoke) Token: 0x060016AC RID: 5804
+	public delegate void LobbyMembersChangedCallback(DiscordManager.LobbyInfo _lobby);
 
 	// Token: 0x02000317 RID: 791
-	// (Invoke) Token: 0x060016BF RID: 5823
-	public delegate void VoiceStateChangedCallback(bool _self, ulong _userId);
+	// (Invoke) Token: 0x060016B0 RID: 5808
+	public delegate void CallChangedCallback(DiscordManager.CallInfo _newCall);
 
 	// Token: 0x02000318 RID: 792
-	// (Invoke) Token: 0x060016C3 RID: 5827
-	public delegate void SelfMuteStateChangedCallback(bool _selfMute, bool _selfDeaf);
+	// (Invoke) Token: 0x060016B4 RID: 5812
+	public delegate void CallStatusChangedCallback(DiscordManager.CallInfo _call, Call.Status _callStatus);
 
 	// Token: 0x02000319 RID: 793
-	// (Invoke) Token: 0x060016C7 RID: 5831
-	public delegate void FriendsListChangedCallback();
+	// (Invoke) Token: 0x060016B8 RID: 5816
+	public delegate void CallMembersChangedCallback(DiscordManager.CallInfo _call);
 
 	// Token: 0x0200031A RID: 794
-	// (Invoke) Token: 0x060016CB RID: 5835
-	public delegate void RelationshipChangedCallback(DiscordManager.DiscordUser _user);
+	// (Invoke) Token: 0x060016BC RID: 5820
+	public delegate void VoiceStateChangedCallback(bool _self, ulong _userId);
 
 	// Token: 0x0200031B RID: 795
-	// (Invoke) Token: 0x060016CF RID: 5839
-	public delegate void ActivityInviteReceivedCallback(DiscordManager.DiscordUser _user, bool _cleared, ActivityActionTypes _type);
+	// (Invoke) Token: 0x060016C0 RID: 5824
+	public delegate void SelfMuteStateChangedCallback(bool _selfMute, bool _selfDeaf);
 
 	// Token: 0x0200031C RID: 796
-	// (Invoke) Token: 0x060016D3 RID: 5843
-	public delegate void ActivityJoiningCallback();
+	// (Invoke) Token: 0x060016C4 RID: 5828
+	public delegate void FriendsListChangedCallback();
 
 	// Token: 0x0200031D RID: 797
-	// (Invoke) Token: 0x060016D7 RID: 5847
-	public delegate void PendingActionsUpdateCallback(int _pendingActionsCount);
+	// (Invoke) Token: 0x060016C8 RID: 5832
+	public delegate void RelationshipChangedCallback(DiscordManager.DiscordUser _user);
 
 	// Token: 0x0200031E RID: 798
-	// (Invoke) Token: 0x060016DB RID: 5851
-	public delegate void AudioDevicesChangedCallback(DiscordManager.AudioDeviceConfig _inOutConfig);
+	// (Invoke) Token: 0x060016CC RID: 5836
+	public delegate void ActivityInviteReceivedCallback(DiscordManager.DiscordUser _user, bool _cleared, ActivityActionTypes _type);
 
 	// Token: 0x0200031F RID: 799
+	// (Invoke) Token: 0x060016D0 RID: 5840
+	public delegate void ActivityJoiningCallback();
+
+	// Token: 0x02000320 RID: 800
+	// (Invoke) Token: 0x060016D4 RID: 5844
+	public delegate void PendingActionsUpdateCallback(int _pendingActionsCount);
+
+	// Token: 0x02000321 RID: 801
+	// (Invoke) Token: 0x060016D8 RID: 5848
+	public delegate void AudioDevicesChangedCallback(DiscordManager.AudioDeviceConfig _inOutConfig);
+
+	// Token: 0x02000322 RID: 802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum LobbyMemberActionType
 	{
-		// Token: 0x04000F16 RID: 3862
+		// Token: 0x04000F0F RID: 3855
 		Add,
-		// Token: 0x04000F17 RID: 3863
+		// Token: 0x04000F10 RID: 3856
 		Remove,
-		// Token: 0x04000F18 RID: 3864
+		// Token: 0x04000F11 RID: 3857
 		Update
 	}
 
-	// Token: 0x02000320 RID: 800
+	// Token: 0x02000323 RID: 803
 	public class AudioDeviceConfig
 	{
-		// Token: 0x1700028C RID: 652
-		// (get) Token: 0x060016DE RID: 5854 RVA: 0x00085DCE File Offset: 0x00083FCE
-		// (set) Token: 0x060016DF RID: 5855 RVA: 0x00085DD6 File Offset: 0x00083FD6
+		// Token: 0x17000284 RID: 644
+		// (get) Token: 0x060016DB RID: 5851 RVA: 0x00086082 File Offset: 0x00084282
+		// (set) Token: 0x060016DC RID: 5852 RVA: 0x0008608A File Offset: 0x0008428A
 		public Dictionary<string, DiscordManager.DiscordAudioDevice> CurrentAudioDevices
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = new Dictionary<string, DiscordManager.DiscordAudioDevice>();
 
-		// Token: 0x1700028D RID: 653
-		// (get) Token: 0x060016E0 RID: 5856 RVA: 0x00085DDF File Offset: 0x00083FDF
-		// (set) Token: 0x060016E1 RID: 5857 RVA: 0x00085DE7 File Offset: 0x00083FE7
+		// Token: 0x17000285 RID: 645
+		// (get) Token: 0x060016DD RID: 5853 RVA: 0x00086093 File Offset: 0x00084293
+		// (set) Token: 0x060016DE RID: 5854 RVA: 0x0008609B File Offset: 0x0008429B
 		public string ActiveAudioDevice
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x1700028E RID: 654
-		// (get) Token: 0x060016E2 RID: 5858 RVA: 0x00085DF0 File Offset: 0x00083FF0
+		// Token: 0x17000286 RID: 646
+		// (get) Token: 0x060016DF RID: 5855 RVA: 0x000860A4 File Offset: 0x000842A4
 		public string ConfigAudioDevice
 		{
 			get
@@ -3274,14 +3274,14 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060016E3 RID: 5859 RVA: 0x00085E1B File Offset: 0x0008401B
+		// Token: 0x060016E0 RID: 5856 RVA: 0x000860CF File Offset: 0x000842CF
 		public AudioDeviceConfig(DiscordManager _owner, bool _isOutput)
 		{
 			this.owner = _owner;
 			this.IsOutput = _isOutput;
 		}
 
-		// Token: 0x060016E4 RID: 5860 RVA: 0x00085E47 File Offset: 0x00084047
+		// Token: 0x060016E1 RID: 5857 RVA: 0x000860FB File Offset: 0x000842FB
 		public void UpdateAudioDeviceList()
 		{
 			if (this.owner.client == null)
@@ -3293,7 +3293,7 @@ public class DiscordManager
 			this.getDevices();
 		}
 
-		// Token: 0x060016E5 RID: 5861 RVA: 0x00085E74 File Offset: 0x00084074
+		// Token: 0x060016E2 RID: 5858 RVA: 0x00086128 File Offset: 0x00084328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getDevices()
 		{
@@ -3305,7 +3305,7 @@ public class DiscordManager
 			this.owner.client.GetInputDevices(new Discord.Sdk.Client.GetInputDevicesCallback(this.ApplyDevicesFound));
 		}
 
-		// Token: 0x060016E6 RID: 5862 RVA: 0x00085EC4 File Offset: 0x000840C4
+		// Token: 0x060016E3 RID: 5859 RVA: 0x00086178 File Offset: 0x00084378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void swapAndClearAudioDeviceList()
 		{
@@ -3316,7 +3316,7 @@ public class DiscordManager
 			this.CurrentAudioDevices.Clear();
 		}
 
-		// Token: 0x060016E7 RID: 5863 RVA: 0x00085EFC File Offset: 0x000840FC
+		// Token: 0x060016E4 RID: 5860 RVA: 0x000861B0 File Offset: 0x000843B0
 		public void ApplyDevicesFound(AudioDevice[] _devices)
 		{
 			this.swapAndClearAudioDeviceList();
@@ -3333,7 +3333,7 @@ public class DiscordManager
 			this.owner.client.GetCurrentInputDevice(new Discord.Sdk.Client.GetCurrentInputDeviceCallback(this.getCurrentDeviceCallbackFn));
 		}
 
-		// Token: 0x060016E8 RID: 5864 RVA: 0x00085F84 File Offset: 0x00084184
+		// Token: 0x060016E5 RID: 5861 RVA: 0x00086238 File Offset: 0x00084438
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getCurrentDeviceCallbackFn(AudioDevice _device)
 		{
@@ -3381,22 +3381,22 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x04000F19 RID: 3865
+		// Token: 0x04000F12 RID: 3858
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager owner;
 
-		// Token: 0x04000F1A RID: 3866
+		// Token: 0x04000F13 RID: 3859
 		public readonly bool IsOutput;
 
-		// Token: 0x04000F1C RID: 3868
+		// Token: 0x04000F15 RID: 3861
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, DiscordManager.DiscordAudioDevice> oldAudioDevices = new Dictionary<string, DiscordManager.DiscordAudioDevice>();
 	}
 
-	// Token: 0x02000322 RID: 802
+	// Token: 0x02000325 RID: 805
 	public class DiscordAudioDevice : IPartyVoice.VoiceAudioDevice
 	{
-		// Token: 0x060016ED RID: 5869 RVA: 0x0008616D File Offset: 0x0008436D
+		// Token: 0x060016EA RID: 5866 RVA: 0x00086421 File Offset: 0x00084621
 		public DiscordAudioDevice(AudioDevice _device, bool _isOutput)
 			: base(_isOutput, _device.IsDefault())
 		{
@@ -3404,7 +3404,7 @@ public class DiscordManager
 			this.name = _device.Name();
 		}
 
-		// Token: 0x060016EE RID: 5870 RVA: 0x00086194 File Offset: 0x00084394
+		// Token: 0x060016EB RID: 5867 RVA: 0x00086448 File Offset: 0x00084648
 		public override string ToString()
 		{
 			if (!this.IsDefault)
@@ -3414,8 +3414,8 @@ public class DiscordManager
 			return "(Default) " + this.name;
 		}
 
-		// Token: 0x1700028F RID: 655
-		// (get) Token: 0x060016EF RID: 5871 RVA: 0x000861B5 File Offset: 0x000843B5
+		// Token: 0x17000287 RID: 647
+		// (get) Token: 0x060016EC RID: 5868 RVA: 0x00086469 File Offset: 0x00084669
 		public override string Identifier
 		{
 			get
@@ -3424,56 +3424,56 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x04000F21 RID: 3873
+		// Token: 0x04000F1A RID: 3866
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string id;
 
-		// Token: 0x04000F22 RID: 3874
+		// Token: 0x04000F1B RID: 3867
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string name;
 	}
 
-	// Token: 0x02000323 RID: 803
+	// Token: 0x02000326 RID: 806
 	public class DiscordSettings
 	{
 		// Token: 0x14000015 RID: 21
-		// (add) Token: 0x060016F0 RID: 5872 RVA: 0x000861C0 File Offset: 0x000843C0
-		// (remove) Token: 0x060016F1 RID: 5873 RVA: 0x000861F8 File Offset: 0x000843F8
+		// (add) Token: 0x060016ED RID: 5869 RVA: 0x00086474 File Offset: 0x00084674
+		// (remove) Token: 0x060016EE RID: 5870 RVA: 0x000864AC File Offset: 0x000846AC
 		public event Action<string> OutputDeviceChanged;
 
 		// Token: 0x14000016 RID: 22
-		// (add) Token: 0x060016F2 RID: 5874 RVA: 0x00086230 File Offset: 0x00084430
-		// (remove) Token: 0x060016F3 RID: 5875 RVA: 0x00086268 File Offset: 0x00084468
+		// (add) Token: 0x060016EF RID: 5871 RVA: 0x000864E4 File Offset: 0x000846E4
+		// (remove) Token: 0x060016F0 RID: 5872 RVA: 0x0008651C File Offset: 0x0008471C
 		public event Action<string> InputDeviceChanged;
 
 		// Token: 0x14000017 RID: 23
-		// (add) Token: 0x060016F4 RID: 5876 RVA: 0x000862A0 File Offset: 0x000844A0
-		// (remove) Token: 0x060016F5 RID: 5877 RVA: 0x000862D8 File Offset: 0x000844D8
+		// (add) Token: 0x060016F1 RID: 5873 RVA: 0x00086554 File Offset: 0x00084754
+		// (remove) Token: 0x060016F2 RID: 5874 RVA: 0x0008658C File Offset: 0x0008478C
 		public event Action<int> OutputVolumeChanged;
 
 		// Token: 0x14000018 RID: 24
-		// (add) Token: 0x060016F6 RID: 5878 RVA: 0x00086310 File Offset: 0x00084510
-		// (remove) Token: 0x060016F7 RID: 5879 RVA: 0x00086348 File Offset: 0x00084548
+		// (add) Token: 0x060016F3 RID: 5875 RVA: 0x000865C4 File Offset: 0x000847C4
+		// (remove) Token: 0x060016F4 RID: 5876 RVA: 0x000865FC File Offset: 0x000847FC
 		public event Action<int> InputVolumeChanged;
 
 		// Token: 0x14000019 RID: 25
-		// (add) Token: 0x060016F8 RID: 5880 RVA: 0x00086380 File Offset: 0x00084580
-		// (remove) Token: 0x060016F9 RID: 5881 RVA: 0x000863B8 File Offset: 0x000845B8
+		// (add) Token: 0x060016F5 RID: 5877 RVA: 0x00086634 File Offset: 0x00084834
+		// (remove) Token: 0x060016F6 RID: 5878 RVA: 0x0008666C File Offset: 0x0008486C
 		public event Action<bool> VoiceModePttChanged;
 
 		// Token: 0x1400001A RID: 26
-		// (add) Token: 0x060016FA RID: 5882 RVA: 0x000863F0 File Offset: 0x000845F0
-		// (remove) Token: 0x060016FB RID: 5883 RVA: 0x00086428 File Offset: 0x00084628
+		// (add) Token: 0x060016F7 RID: 5879 RVA: 0x000866A4 File Offset: 0x000848A4
+		// (remove) Token: 0x060016F8 RID: 5880 RVA: 0x000866DC File Offset: 0x000848DC
 		public event Action<bool> VoiceVadModeChanged;
 
 		// Token: 0x1400001B RID: 27
-		// (add) Token: 0x060016FC RID: 5884 RVA: 0x00086460 File Offset: 0x00084660
-		// (remove) Token: 0x060016FD RID: 5885 RVA: 0x00086498 File Offset: 0x00084698
+		// (add) Token: 0x060016F9 RID: 5881 RVA: 0x00086714 File Offset: 0x00084914
+		// (remove) Token: 0x060016FA RID: 5882 RVA: 0x0008674C File Offset: 0x0008494C
 		public event Action<int> VoiceVadThresholdChanged;
 
-		// Token: 0x17000290 RID: 656
-		// (get) Token: 0x060016FE RID: 5886 RVA: 0x000864CD File Offset: 0x000846CD
-		// (set) Token: 0x060016FF RID: 5887 RVA: 0x000864D9 File Offset: 0x000846D9
+		// Token: 0x17000288 RID: 648
+		// (get) Token: 0x060016FB RID: 5883 RVA: 0x00086781 File Offset: 0x00084981
+		// (set) Token: 0x060016FC RID: 5884 RVA: 0x0008678D File Offset: 0x0008498D
 		public bool DiscordFirstTimeInfoShown
 		{
 			get
@@ -3486,9 +3486,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000291 RID: 657
-		// (get) Token: 0x06001700 RID: 5888 RVA: 0x000864E6 File Offset: 0x000846E6
-		// (set) Token: 0x06001701 RID: 5889 RVA: 0x000864F2 File Offset: 0x000846F2
+		// Token: 0x17000289 RID: 649
+		// (get) Token: 0x060016FD RID: 5885 RVA: 0x0008679A File Offset: 0x0008499A
+		// (set) Token: 0x060016FE RID: 5886 RVA: 0x000867A6 File Offset: 0x000849A6
 		public bool DiscordDisabled
 		{
 			get
@@ -3501,9 +3501,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000292 RID: 658
-		// (get) Token: 0x06001702 RID: 5890 RVA: 0x000864FF File Offset: 0x000846FF
-		// (set) Token: 0x06001703 RID: 5891 RVA: 0x0008650B File Offset: 0x0008470B
+		// Token: 0x1700028A RID: 650
+		// (get) Token: 0x060016FF RID: 5887 RVA: 0x000867B3 File Offset: 0x000849B3
+		// (set) Token: 0x06001700 RID: 5888 RVA: 0x000867BF File Offset: 0x000849BF
 		public DiscordManager.EDiscordAccountType LastAccountType
 		{
 			get
@@ -3516,9 +3516,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000293 RID: 659
-		// (get) Token: 0x06001704 RID: 5892 RVA: 0x00086518 File Offset: 0x00084718
-		// (set) Token: 0x06001705 RID: 5893 RVA: 0x00086524 File Offset: 0x00084724
+		// Token: 0x1700028B RID: 651
+		// (get) Token: 0x06001701 RID: 5889 RVA: 0x000867CC File Offset: 0x000849CC
+		// (set) Token: 0x06001702 RID: 5890 RVA: 0x000867D8 File Offset: 0x000849D8
 		public string AccessToken
 		{
 			get
@@ -3531,9 +3531,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000294 RID: 660
-		// (get) Token: 0x06001706 RID: 5894 RVA: 0x00086531 File Offset: 0x00084731
-		// (set) Token: 0x06001707 RID: 5895 RVA: 0x0008653D File Offset: 0x0008473D
+		// Token: 0x1700028C RID: 652
+		// (get) Token: 0x06001703 RID: 5891 RVA: 0x000867E5 File Offset: 0x000849E5
+		// (set) Token: 0x06001704 RID: 5892 RVA: 0x000867F1 File Offset: 0x000849F1
 		public string RefreshToken
 		{
 			get
@@ -3546,9 +3546,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000295 RID: 661
-		// (get) Token: 0x06001708 RID: 5896 RVA: 0x0008654A File Offset: 0x0008474A
-		// (set) Token: 0x06001709 RID: 5897 RVA: 0x00086556 File Offset: 0x00084756
+		// Token: 0x1700028D RID: 653
+		// (get) Token: 0x06001705 RID: 5893 RVA: 0x000867FE File Offset: 0x000849FE
+		// (set) Token: 0x06001706 RID: 5894 RVA: 0x0008680A File Offset: 0x00084A0A
 		public string SelectedOutputDevice
 		{
 			get
@@ -3561,9 +3561,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000296 RID: 662
-		// (get) Token: 0x0600170A RID: 5898 RVA: 0x00086563 File Offset: 0x00084763
-		// (set) Token: 0x0600170B RID: 5899 RVA: 0x0008656F File Offset: 0x0008476F
+		// Token: 0x1700028E RID: 654
+		// (get) Token: 0x06001707 RID: 5895 RVA: 0x00086817 File Offset: 0x00084A17
+		// (set) Token: 0x06001708 RID: 5896 RVA: 0x00086823 File Offset: 0x00084A23
 		public string SelectedInputDevice
 		{
 			get
@@ -3576,9 +3576,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000297 RID: 663
-		// (get) Token: 0x0600170C RID: 5900 RVA: 0x0008657C File Offset: 0x0008477C
-		// (set) Token: 0x0600170D RID: 5901 RVA: 0x00086593 File Offset: 0x00084793
+		// Token: 0x1700028F RID: 655
+		// (get) Token: 0x06001709 RID: 5897 RVA: 0x00086830 File Offset: 0x00084A30
+		// (set) Token: 0x0600170A RID: 5898 RVA: 0x00086847 File Offset: 0x00084A47
 		public int OutputVolume
 		{
 			get
@@ -3591,9 +3591,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000298 RID: 664
-		// (get) Token: 0x0600170E RID: 5902 RVA: 0x000865A7 File Offset: 0x000847A7
-		// (set) Token: 0x0600170F RID: 5903 RVA: 0x000865BE File Offset: 0x000847BE
+		// Token: 0x17000290 RID: 656
+		// (get) Token: 0x0600170B RID: 5899 RVA: 0x0008685B File Offset: 0x00084A5B
+		// (set) Token: 0x0600170C RID: 5900 RVA: 0x00086872 File Offset: 0x00084A72
 		public int InputVolume
 		{
 			get
@@ -3606,9 +3606,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x17000299 RID: 665
-		// (get) Token: 0x06001710 RID: 5904 RVA: 0x000865D2 File Offset: 0x000847D2
-		// (set) Token: 0x06001711 RID: 5905 RVA: 0x000865DE File Offset: 0x000847DE
+		// Token: 0x17000291 RID: 657
+		// (get) Token: 0x0600170D RID: 5901 RVA: 0x00086886 File Offset: 0x00084A86
+		// (set) Token: 0x0600170E RID: 5902 RVA: 0x00086892 File Offset: 0x00084A92
 		public bool VoiceModePtt
 		{
 			get
@@ -3621,9 +3621,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700029A RID: 666
-		// (get) Token: 0x06001712 RID: 5906 RVA: 0x000865EB File Offset: 0x000847EB
-		// (set) Token: 0x06001713 RID: 5907 RVA: 0x000865F7 File Offset: 0x000847F7
+		// Token: 0x17000292 RID: 658
+		// (get) Token: 0x0600170F RID: 5903 RVA: 0x0008689F File Offset: 0x00084A9F
+		// (set) Token: 0x06001710 RID: 5904 RVA: 0x000868AB File Offset: 0x00084AAB
 		public bool VoiceVadModeAuto
 		{
 			get
@@ -3636,9 +3636,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700029B RID: 667
-		// (get) Token: 0x06001714 RID: 5908 RVA: 0x00086604 File Offset: 0x00084804
-		// (set) Token: 0x06001715 RID: 5909 RVA: 0x00086610 File Offset: 0x00084810
+		// Token: 0x17000293 RID: 659
+		// (get) Token: 0x06001711 RID: 5905 RVA: 0x000868B8 File Offset: 0x00084AB8
+		// (set) Token: 0x06001712 RID: 5906 RVA: 0x000868C4 File Offset: 0x00084AC4
 		public int VoiceVadThreshold
 		{
 			get
@@ -3651,9 +3651,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700029C RID: 668
-		// (get) Token: 0x06001716 RID: 5910 RVA: 0x0008661D File Offset: 0x0008481D
-		// (set) Token: 0x06001717 RID: 5911 RVA: 0x00086629 File Offset: 0x00084829
+		// Token: 0x17000294 RID: 660
+		// (get) Token: 0x06001713 RID: 5907 RVA: 0x000868D1 File Offset: 0x00084AD1
+		// (set) Token: 0x06001714 RID: 5908 RVA: 0x000868DD File Offset: 0x00084ADD
 		public bool DmPrivacyMode
 		{
 			get
@@ -3666,9 +3666,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x1700029D RID: 669
-		// (get) Token: 0x06001718 RID: 5912 RVA: 0x00086636 File Offset: 0x00084836
-		// (set) Token: 0x06001719 RID: 5913 RVA: 0x00086642 File Offset: 0x00084842
+		// Token: 0x17000295 RID: 661
+		// (get) Token: 0x06001715 RID: 5909 RVA: 0x000868EA File Offset: 0x00084AEA
+		// (set) Token: 0x06001716 RID: 5910 RVA: 0x000868F6 File Offset: 0x00084AF6
 		public DiscordManager.EAutoJoinVoiceMode AutoJoinVoiceMode
 		{
 			get
@@ -3681,14 +3681,14 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600171A RID: 5914 RVA: 0x0008664F File Offset: 0x0008484F
+		// Token: 0x06001717 RID: 5911 RVA: 0x00086903 File Offset: 0x00084B03
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DiscordSettings()
 		{
 			GamePrefs.OnGamePrefChanged += this.OnGamePrefChanged;
 		}
 
-		// Token: 0x0600171B RID: 5915 RVA: 0x00086668 File Offset: 0x00084868
+		// Token: 0x06001718 RID: 5912 RVA: 0x0008691C File Offset: 0x00084B1C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGamePrefChanged(EnumGamePrefs _pref)
 		{
@@ -3769,7 +3769,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600171C RID: 5916 RVA: 0x00086740 File Offset: 0x00084940
+		// Token: 0x06001719 RID: 5913 RVA: 0x000869F4 File Offset: 0x00084BF4
 		public static DiscordManager.DiscordSettings Load()
 		{
 			if (!SdPlayerPrefs.HasKey("DiscordSettings"))
@@ -3794,22 +3794,22 @@ public class DiscordManager
 			return discordSettings;
 		}
 
-		// Token: 0x0600171D RID: 5917 RVA: 0x000867D0 File Offset: 0x000849D0
+		// Token: 0x0600171A RID: 5914 RVA: 0x00086A84 File Offset: 0x00084C84
 		public void Save()
 		{
 			Log.Out(string.Format("[Discord] Saving settings with DiscordDisabled={0}", this.DiscordDisabled));
 			GamePrefs.Instance.Save();
 		}
 
-		// Token: 0x04000F2A RID: 3882
+		// Token: 0x04000F23 RID: 3875
 		public const string DiscordSettingsPlayerPrefName = "DiscordSettings";
 
-		// Token: 0x02000324 RID: 804
+		// Token: 0x02000327 RID: 807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class LegacySettings
 		{
-			// Token: 0x1700029E RID: 670
-			// (set) Token: 0x0600171E RID: 5918 RVA: 0x000864D9 File Offset: 0x000846D9
+			// Token: 0x17000296 RID: 662
+			// (set) Token: 0x0600171B RID: 5915 RVA: 0x0008678D File Offset: 0x0008498D
 			public bool DiscordFirstTimeInfoShown
 			{
 				set
@@ -3818,8 +3818,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x1700029F RID: 671
-			// (set) Token: 0x0600171F RID: 5919 RVA: 0x000864F2 File Offset: 0x000846F2
+			// Token: 0x17000297 RID: 663
+			// (set) Token: 0x0600171C RID: 5916 RVA: 0x000867A6 File Offset: 0x000849A6
 			public bool DiscordDisabled
 			{
 				set
@@ -3828,8 +3828,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A0 RID: 672
-			// (set) Token: 0x06001720 RID: 5920 RVA: 0x0008650B File Offset: 0x0008470B
+			// Token: 0x17000298 RID: 664
+			// (set) Token: 0x0600171D RID: 5917 RVA: 0x000867BF File Offset: 0x000849BF
 			public DiscordManager.EDiscordAccountType LastAccountType
 			{
 				set
@@ -3838,8 +3838,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A1 RID: 673
-			// (set) Token: 0x06001721 RID: 5921 RVA: 0x00086524 File Offset: 0x00084724
+			// Token: 0x17000299 RID: 665
+			// (set) Token: 0x0600171E RID: 5918 RVA: 0x000867D8 File Offset: 0x000849D8
 			public string AccessToken
 			{
 				set
@@ -3848,8 +3848,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A2 RID: 674
-			// (set) Token: 0x06001722 RID: 5922 RVA: 0x0008653D File Offset: 0x0008473D
+			// Token: 0x1700029A RID: 666
+			// (set) Token: 0x0600171F RID: 5919 RVA: 0x000867F1 File Offset: 0x000849F1
 			public string RefreshToken
 			{
 				set
@@ -3858,8 +3858,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A3 RID: 675
-			// (set) Token: 0x06001723 RID: 5923 RVA: 0x00086556 File Offset: 0x00084756
+			// Token: 0x1700029B RID: 667
+			// (set) Token: 0x06001720 RID: 5920 RVA: 0x0008680A File Offset: 0x00084A0A
 			public string SelectedOutputDevice
 			{
 				set
@@ -3868,8 +3868,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A4 RID: 676
-			// (set) Token: 0x06001724 RID: 5924 RVA: 0x0008656F File Offset: 0x0008476F
+			// Token: 0x1700029C RID: 668
+			// (set) Token: 0x06001721 RID: 5921 RVA: 0x00086823 File Offset: 0x00084A23
 			public string SelectedInputDevice
 			{
 				set
@@ -3878,8 +3878,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A5 RID: 677
-			// (set) Token: 0x06001725 RID: 5925 RVA: 0x00086593 File Offset: 0x00084793
+			// Token: 0x1700029D RID: 669
+			// (set) Token: 0x06001722 RID: 5922 RVA: 0x00086847 File Offset: 0x00084A47
 			public int OutputVolume
 			{
 				set
@@ -3888,8 +3888,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A6 RID: 678
-			// (set) Token: 0x06001726 RID: 5926 RVA: 0x000865BE File Offset: 0x000847BE
+			// Token: 0x1700029E RID: 670
+			// (set) Token: 0x06001723 RID: 5923 RVA: 0x00086872 File Offset: 0x00084A72
 			public int InputVolume
 			{
 				set
@@ -3898,8 +3898,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A7 RID: 679
-			// (set) Token: 0x06001727 RID: 5927 RVA: 0x000865DE File Offset: 0x000847DE
+			// Token: 0x1700029F RID: 671
+			// (set) Token: 0x06001724 RID: 5924 RVA: 0x00086892 File Offset: 0x00084A92
 			public bool VoiceModePtt
 			{
 				set
@@ -3908,8 +3908,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A8 RID: 680
-			// (set) Token: 0x06001728 RID: 5928 RVA: 0x000865F7 File Offset: 0x000847F7
+			// Token: 0x170002A0 RID: 672
+			// (set) Token: 0x06001725 RID: 5925 RVA: 0x000868AB File Offset: 0x00084AAB
 			public bool VoiceVadModeAuto
 			{
 				set
@@ -3918,8 +3918,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002A9 RID: 681
-			// (set) Token: 0x06001729 RID: 5929 RVA: 0x00086610 File Offset: 0x00084810
+			// Token: 0x170002A1 RID: 673
+			// (set) Token: 0x06001726 RID: 5926 RVA: 0x000868C4 File Offset: 0x00084AC4
 			public int VoiceVadThreshold
 			{
 				set
@@ -3928,8 +3928,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002AA RID: 682
-			// (set) Token: 0x0600172A RID: 5930 RVA: 0x00086629 File Offset: 0x00084829
+			// Token: 0x170002A2 RID: 674
+			// (set) Token: 0x06001727 RID: 5927 RVA: 0x000868DD File Offset: 0x00084ADD
 			public bool DmPrivacyMode
 			{
 				set
@@ -3938,8 +3938,8 @@ public class DiscordManager
 				}
 			}
 
-			// Token: 0x170002AB RID: 683
-			// (set) Token: 0x0600172B RID: 5931 RVA: 0x00086642 File Offset: 0x00084842
+			// Token: 0x170002A3 RID: 675
+			// (set) Token: 0x06001728 RID: 5928 RVA: 0x000868F6 File Offset: 0x00084AF6
 			public DiscordManager.EAutoJoinVoiceMode AutoJoinVoiceMode
 			{
 				set
@@ -3950,20 +3950,20 @@ public class DiscordManager
 		}
 	}
 
-	// Token: 0x02000325 RID: 805
+	// Token: 0x02000328 RID: 808
 	public class DiscordUser : IDisposable, IEquatable<DiscordManager.DiscordUser>
 	{
-		// Token: 0x170002AC RID: 684
-		// (get) Token: 0x0600172D RID: 5933 RVA: 0x000867F6 File Offset: 0x000849F6
-		// (set) Token: 0x0600172E RID: 5934 RVA: 0x000867FE File Offset: 0x000849FE
+		// Token: 0x170002A4 RID: 676
+		// (get) Token: 0x0600172A RID: 5930 RVA: 0x00086AAA File Offset: 0x00084CAA
+		// (set) Token: 0x0600172B RID: 5931 RVA: 0x00086AB2 File Offset: 0x00084CB2
 		public bool IsProvisionalAccount
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170002AD RID: 685
-		// (get) Token: 0x0600172F RID: 5935 RVA: 0x00086807 File Offset: 0x00084A07
+		// Token: 0x170002A5 RID: 677
+		// (get) Token: 0x0600172C RID: 5932 RVA: 0x00086ABB File Offset: 0x00084CBB
 		public StatusType DiscordState
 		{
 			get
@@ -3977,8 +3977,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002AE RID: 686
-		// (get) Token: 0x06001730 RID: 5936 RVA: 0x0008681A File Offset: 0x00084A1A
+		// Token: 0x170002A6 RID: 678
+		// (get) Token: 0x0600172D RID: 5933 RVA: 0x00086ACE File Offset: 0x00084CCE
 		public string DiscordStateLocalized
 		{
 			get
@@ -3989,8 +3989,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002AF RID: 687
-		// (get) Token: 0x06001731 RID: 5937 RVA: 0x00086844 File Offset: 0x00084A44
+		// Token: 0x170002A7 RID: 679
+		// (get) Token: 0x0600172E RID: 5934 RVA: 0x00086AF8 File Offset: 0x00084CF8
 		public string DisplayName
 		{
 			get
@@ -3999,8 +3999,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B0 RID: 688
-		// (get) Token: 0x06001732 RID: 5938 RVA: 0x00086856 File Offset: 0x00084A56
+		// Token: 0x170002A8 RID: 680
+		// (get) Token: 0x0600172F RID: 5935 RVA: 0x00086B0A File Offset: 0x00084D0A
 		public string DiscordDisplayName
 		{
 			get
@@ -4009,8 +4009,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B1 RID: 689
-		// (get) Token: 0x06001733 RID: 5939 RVA: 0x00086867 File Offset: 0x00084A67
+		// Token: 0x170002A9 RID: 681
+		// (get) Token: 0x06001730 RID: 5936 RVA: 0x00086B1B File Offset: 0x00084D1B
 		public string DiscordUserName
 		{
 			get
@@ -4020,8 +4020,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B2 RID: 690
-		// (get) Token: 0x06001734 RID: 5940 RVA: 0x00086884 File Offset: 0x00084A84
+		// Token: 0x170002AA RID: 682
+		// (get) Token: 0x06001731 RID: 5937 RVA: 0x00086B38 File Offset: 0x00084D38
 		public string PlayerName
 		{
 			get
@@ -4030,8 +4030,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B3 RID: 691
-		// (get) Token: 0x06001735 RID: 5941 RVA: 0x00086895 File Offset: 0x00084A95
+		// Token: 0x170002AB RID: 683
+		// (get) Token: 0x06001732 RID: 5938 RVA: 0x00086B49 File Offset: 0x00084D49
 		public Texture2D Avatar
 		{
 			get
@@ -4040,8 +4040,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B4 RID: 692
-		// (get) Token: 0x06001736 RID: 5942 RVA: 0x0008689D File Offset: 0x00084A9D
+		// Token: 0x170002AC RID: 684
+		// (get) Token: 0x06001733 RID: 5939 RVA: 0x00086B51 File Offset: 0x00084D51
 		public bool InGlobalLobby
 		{
 			get
@@ -4050,8 +4050,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B5 RID: 693
-		// (get) Token: 0x06001737 RID: 5943 RVA: 0x000868B5 File Offset: 0x00084AB5
+		// Token: 0x170002AD RID: 685
+		// (get) Token: 0x06001734 RID: 5940 RVA: 0x00086B69 File Offset: 0x00084D69
 		public bool InPartyLobby
 		{
 			get
@@ -4060,8 +4060,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B6 RID: 694
-		// (get) Token: 0x06001738 RID: 5944 RVA: 0x000868CD File Offset: 0x00084ACD
+		// Token: 0x170002AE RID: 686
+		// (get) Token: 0x06001735 RID: 5941 RVA: 0x00086B81 File Offset: 0x00084D81
 		public bool PendingAction
 		{
 			get
@@ -4070,7 +4070,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001739 RID: 5945 RVA: 0x000868E7 File Offset: 0x00084AE7
+		// Token: 0x06001736 RID: 5942 RVA: 0x00086B9B File Offset: 0x00084D9B
 		public DiscordUser(DiscordManager _ownerManager, ulong _id, bool _isLocalAccount = false)
 		{
 			this.ownerManager = _ownerManager;
@@ -4079,7 +4079,7 @@ public class DiscordManager
 			this.TryUpdateDiscordHandle();
 		}
 
-		// Token: 0x0600173A RID: 5946 RVA: 0x0008690C File Offset: 0x00084B0C
+		// Token: 0x06001737 RID: 5943 RVA: 0x00086BC0 File Offset: 0x00084DC0
 		public void TryUpdateDiscordHandle()
 		{
 			this.userHandle = ((!this.ownerManager.IsReady) ? null : this.ownerManager.client.GetUser(this.ID));
@@ -4091,7 +4091,7 @@ public class DiscordManager
 			this.UpdateRelationship();
 		}
 
-		// Token: 0x0600173B RID: 5947 RVA: 0x0008696C File Offset: 0x00084B6C
+		// Token: 0x06001738 RID: 5944 RVA: 0x00086C20 File Offset: 0x00084E20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateDisplayName()
 		{
@@ -4107,7 +4107,7 @@ public class DiscordManager
 			this.discordDisplayName = text;
 		}
 
-		// Token: 0x0600173C RID: 5948 RVA: 0x000869C9 File Offset: 0x00084BC9
+		// Token: 0x06001739 RID: 5945 RVA: 0x00086C7D File Offset: 0x00084E7D
 		public void RequestAvatar()
 		{
 			if (!this.avatarStartedDownload && this.userHandle != null)
@@ -4116,7 +4116,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600173D RID: 5949 RVA: 0x000869E7 File Offset: 0x00084BE7
+		// Token: 0x0600173A RID: 5946 RVA: 0x00086C9B File Offset: 0x00084E9B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator downloadDiscordAvatar()
 		{
@@ -4170,7 +4170,7 @@ public class DiscordManager
 			yield break;
 		}
 
-		// Token: 0x0600173E RID: 5950 RVA: 0x000869F8 File Offset: 0x00084BF8
+		// Token: 0x0600173B RID: 5947 RVA: 0x00086CAC File Offset: 0x00084EAC
 		public void UpdatePlayerName(EntityPlayer _entity = null)
 		{
 			if (_entity != null)
@@ -4196,8 +4196,8 @@ public class DiscordManager
 			friendsListChanged();
 		}
 
-		// Token: 0x170002B7 RID: 695
-		// (get) Token: 0x0600173F RID: 5951 RVA: 0x00086A84 File Offset: 0x00084C84
+		// Token: 0x170002AF RID: 687
+		// (get) Token: 0x0600173C RID: 5948 RVA: 0x00086D38 File Offset: 0x00084F38
 		public bool InCurrentVoice
 		{
 			get
@@ -4208,9 +4208,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B8 RID: 696
-		// (get) Token: 0x06001740 RID: 5952 RVA: 0x00086AB4 File Offset: 0x00084CB4
-		// (set) Token: 0x06001741 RID: 5953 RVA: 0x00086AE4 File Offset: 0x00084CE4
+		// Token: 0x170002B0 RID: 688
+		// (get) Token: 0x0600173D RID: 5949 RVA: 0x00086D68 File Offset: 0x00084F68
+		// (set) Token: 0x0600173E RID: 5950 RVA: 0x00086D98 File Offset: 0x00084F98
 		public double Volume
 		{
 			get
@@ -4232,8 +4232,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002B9 RID: 697
-		// (get) Token: 0x06001742 RID: 5954 RVA: 0x00086B48 File Offset: 0x00084D48
+		// Token: 0x170002B1 RID: 689
+		// (get) Token: 0x0600173F RID: 5951 RVA: 0x00086DFC File Offset: 0x00084FFC
 		public bool IsSpeaking
 		{
 			get
@@ -4244,8 +4244,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BA RID: 698
-		// (get) Token: 0x06001743 RID: 5955 RVA: 0x00086B83 File Offset: 0x00084D83
+		// Token: 0x170002B2 RID: 690
+		// (get) Token: 0x06001740 RID: 5952 RVA: 0x00086E37 File Offset: 0x00085037
 		public bool IsMutedLocalOrRemote
 		{
 			get
@@ -4254,9 +4254,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BB RID: 699
-		// (get) Token: 0x06001744 RID: 5956 RVA: 0x00086B98 File Offset: 0x00084D98
-		// (set) Token: 0x06001745 RID: 5957 RVA: 0x00086BF0 File Offset: 0x00084DF0
+		// Token: 0x170002B3 RID: 691
+		// (get) Token: 0x06001741 RID: 5953 RVA: 0x00086E4C File Offset: 0x0008504C
+		// (set) Token: 0x06001742 RID: 5954 RVA: 0x00086EA4 File Offset: 0x000850A4
 		public bool LocalMuted
 		{
 			get
@@ -4291,8 +4291,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BC RID: 700
-		// (get) Token: 0x06001746 RID: 5958 RVA: 0x00086C20 File Offset: 0x00084E20
+		// Token: 0x170002B4 RID: 692
+		// (get) Token: 0x06001743 RID: 5955 RVA: 0x00086ED4 File Offset: 0x000850D4
 		public bool IsMuted
 		{
 			get
@@ -4303,8 +4303,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BD RID: 701
-		// (get) Token: 0x06001747 RID: 5959 RVA: 0x00086C5C File Offset: 0x00084E5C
+		// Token: 0x170002B5 RID: 693
+		// (get) Token: 0x06001744 RID: 5956 RVA: 0x00086F10 File Offset: 0x00085110
 		public bool IsDeafened
 		{
 			get
@@ -4315,8 +4315,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BE RID: 702
-		// (get) Token: 0x06001748 RID: 5960 RVA: 0x00086C98 File Offset: 0x00084E98
+		// Token: 0x170002B6 RID: 694
+		// (get) Token: 0x06001745 RID: 5957 RVA: 0x00086F4C File Offset: 0x0008514C
 		public IPartyVoice.EVoiceMemberState VoiceState
 		{
 			get
@@ -4339,26 +4339,26 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002BF RID: 703
-		// (get) Token: 0x06001749 RID: 5961 RVA: 0x00086CEA File Offset: 0x00084EEA
-		// (set) Token: 0x0600174A RID: 5962 RVA: 0x00086CF2 File Offset: 0x00084EF2
+		// Token: 0x170002B7 RID: 695
+		// (get) Token: 0x06001746 RID: 5958 RVA: 0x00086F9E File Offset: 0x0008519E
+		// (set) Token: 0x06001747 RID: 5959 RVA: 0x00086FA6 File Offset: 0x000851A6
 		public RelationshipType DiscordRelationship
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170002C0 RID: 704
-		// (get) Token: 0x0600174B RID: 5963 RVA: 0x00086CFB File Offset: 0x00084EFB
-		// (set) Token: 0x0600174C RID: 5964 RVA: 0x00086D03 File Offset: 0x00084F03
+		// Token: 0x170002B8 RID: 696
+		// (get) Token: 0x06001748 RID: 5960 RVA: 0x00086FAF File Offset: 0x000851AF
+		// (set) Token: 0x06001749 RID: 5961 RVA: 0x00086FB7 File Offset: 0x000851B7
 		public RelationshipType GameRelationship
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170002C1 RID: 705
-		// (get) Token: 0x0600174D RID: 5965 RVA: 0x00086D0C File Offset: 0x00084F0C
+		// Token: 0x170002B9 RID: 697
+		// (get) Token: 0x0600174A RID: 5962 RVA: 0x00086FC0 File Offset: 0x000851C0
 		public bool IsDiscordFriend
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -4368,8 +4368,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002C2 RID: 706
-		// (get) Token: 0x0600174E RID: 5966 RVA: 0x00086D17 File Offset: 0x00084F17
+		// Token: 0x170002BA RID: 698
+		// (get) Token: 0x0600174B RID: 5963 RVA: 0x00086FCB File Offset: 0x000851CB
 		public bool IsGameFriend
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -4379,8 +4379,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002C3 RID: 707
-		// (get) Token: 0x0600174F RID: 5967 RVA: 0x00086D22 File Offset: 0x00084F22
+		// Token: 0x170002BB RID: 699
+		// (get) Token: 0x0600174C RID: 5964 RVA: 0x00086FD6 File Offset: 0x000851D6
 		public bool IsFriend
 		{
 			get
@@ -4389,8 +4389,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002C4 RID: 708
-		// (get) Token: 0x06001750 RID: 5968 RVA: 0x00086D34 File Offset: 0x00084F34
+		// Token: 0x170002BC RID: 700
+		// (get) Token: 0x0600174D RID: 5965 RVA: 0x00086FE8 File Offset: 0x000851E8
 		public bool IsBlocked
 		{
 			get
@@ -4399,8 +4399,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002C5 RID: 709
-		// (get) Token: 0x06001751 RID: 5969 RVA: 0x00086D3F File Offset: 0x00084F3F
+		// Token: 0x170002BD RID: 701
+		// (get) Token: 0x0600174E RID: 5966 RVA: 0x00086FF3 File Offset: 0x000851F3
 		public bool PendingFriendRequest
 		{
 			get
@@ -4409,7 +4409,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001752 RID: 5970 RVA: 0x00086D60 File Offset: 0x00084F60
+		// Token: 0x0600174F RID: 5967 RVA: 0x00087014 File Offset: 0x00085214
 		public void UpdateRelationship()
 		{
 			if (this.ownerManager.IsReady)
@@ -4431,7 +4431,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001753 RID: 5971 RVA: 0x00086DEC File Offset: 0x00084FEC
+		// Token: 0x06001750 RID: 5968 RVA: 0x000870A0 File Offset: 0x000852A0
 		public void SendFriendRequest(bool _gameFriend)
 		{
 			if (!this.ownerManager.IsReady)
@@ -4461,7 +4461,7 @@ public class DiscordManager
 			this.ownerManager.client.SendDiscordFriendRequestById(this.ID, new Discord.Sdk.Client.UpdateRelationshipCallback(DiscordManager.DiscordUser.<SendFriendRequest>g__SendRequestCallback|77_0));
 		}
 
-		// Token: 0x06001754 RID: 5972 RVA: 0x00086EE0 File Offset: 0x000850E0
+		// Token: 0x06001751 RID: 5969 RVA: 0x00087194 File Offset: 0x00085394
 		public void DeclineFriendRequest(bool _gameFriend)
 		{
 			if (!this.ownerManager.IsReady)
@@ -4483,7 +4483,7 @@ public class DiscordManager
 			this.ownerManager.client.RejectDiscordFriendRequest(this.ID, new Discord.Sdk.Client.UpdateRelationshipCallback(DiscordManager.DiscordUser.<DeclineFriendRequest>g__RejectRequestCallback|78_0));
 		}
 
-		// Token: 0x06001755 RID: 5973 RVA: 0x00086F8C File Offset: 0x0008518C
+		// Token: 0x06001752 RID: 5970 RVA: 0x00087240 File Offset: 0x00085440
 		public void RemoveFriend()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4498,7 +4498,7 @@ public class DiscordManager
 			this.ownerManager.client.RemoveDiscordAndGameFriend(this.ID, new Discord.Sdk.Client.UpdateRelationshipCallback(DiscordManager.DiscordUser.<RemoveFriend>g__RemoveFriendCallback|79_0));
 		}
 
-		// Token: 0x06001756 RID: 5974 RVA: 0x00086FE4 File Offset: 0x000851E4
+		// Token: 0x06001753 RID: 5971 RVA: 0x00087298 File Offset: 0x00085498
 		public void BlockUser()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4513,7 +4513,7 @@ public class DiscordManager
 			this.ownerManager.client.BlockUser(this.ID, new Discord.Sdk.Client.UpdateRelationshipCallback(DiscordManager.DiscordUser.<BlockUser>g__BlockUserCallback|80_0));
 		}
 
-		// Token: 0x06001757 RID: 5975 RVA: 0x0008703C File Offset: 0x0008523C
+		// Token: 0x06001754 RID: 5972 RVA: 0x000872F0 File Offset: 0x000854F0
 		public void UnblockUser()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4528,23 +4528,23 @@ public class DiscordManager
 			this.ownerManager.client.UnblockUser(this.ID, new Discord.Sdk.Client.UpdateRelationshipCallback(DiscordManager.DiscordUser.<UnblockUser>g__UnblockUserUserCallback|81_0));
 		}
 
-		// Token: 0x170002C6 RID: 710
-		// (get) Token: 0x06001758 RID: 5976 RVA: 0x00087093 File Offset: 0x00085293
-		// (set) Token: 0x06001759 RID: 5977 RVA: 0x0008709B File Offset: 0x0008529B
+		// Token: 0x170002BE RID: 702
+		// (get) Token: 0x06001755 RID: 5973 RVA: 0x00087347 File Offset: 0x00085547
+		// (set) Token: 0x06001756 RID: 5974 RVA: 0x0008734F File Offset: 0x0008554F
 		public Activity Activity
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170002C7 RID: 711
-		// (get) Token: 0x0600175A RID: 5978 RVA: 0x000870A4 File Offset: 0x000852A4
-		// (set) Token: 0x0600175B RID: 5979 RVA: 0x000870AC File Offset: 0x000852AC
+		// Token: 0x170002BF RID: 703
+		// (get) Token: 0x06001757 RID: 5975 RVA: 0x00087358 File Offset: 0x00085558
+		// (set) Token: 0x06001758 RID: 5976 RVA: 0x00087360 File Offset: 0x00085560
 		public bool PendingOutgoingJoinRequest { get; set; }
 
-		// Token: 0x170002C8 RID: 712
-		// (get) Token: 0x0600175C RID: 5980 RVA: 0x000870B5 File Offset: 0x000852B5
-		// (set) Token: 0x0600175D RID: 5981 RVA: 0x000870BD File Offset: 0x000852BD
+		// Token: 0x170002C0 RID: 704
+		// (get) Token: 0x06001759 RID: 5977 RVA: 0x00087369 File Offset: 0x00085569
+		// (set) Token: 0x0600175A RID: 5978 RVA: 0x00087371 File Offset: 0x00085571
 		public bool PendingIncomingJoinRequest
 		{
 			get
@@ -4567,8 +4567,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002C9 RID: 713
-		// (get) Token: 0x0600175E RID: 5982 RVA: 0x000870EB File Offset: 0x000852EB
+		// Token: 0x170002C1 RID: 705
+		// (get) Token: 0x0600175B RID: 5979 RVA: 0x0008739F File Offset: 0x0008559F
 		public bool PendingIncomingInvite
 		{
 			get
@@ -4577,8 +4577,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002CA RID: 714
-		// (get) Token: 0x0600175F RID: 5983 RVA: 0x000870F6 File Offset: 0x000852F6
+		// Token: 0x170002C2 RID: 706
+		// (get) Token: 0x0600175C RID: 5980 RVA: 0x000873AA File Offset: 0x000855AA
 		public bool JoinableActivity
 		{
 			get
@@ -4588,8 +4588,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002CB RID: 715
-		// (get) Token: 0x06001760 RID: 5984 RVA: 0x0008710D File Offset: 0x0008530D
+		// Token: 0x170002C3 RID: 707
+		// (get) Token: 0x0600175D RID: 5981 RVA: 0x000873C1 File Offset: 0x000855C1
 		public bool InGame
 		{
 			get
@@ -4598,8 +4598,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002CC RID: 716
-		// (get) Token: 0x06001761 RID: 5985 RVA: 0x00087118 File Offset: 0x00085318
+		// Token: 0x170002C4 RID: 708
+		// (get) Token: 0x0600175E RID: 5982 RVA: 0x000873CC File Offset: 0x000855CC
 		public bool InSameSession
 		{
 			get
@@ -4609,7 +4609,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001762 RID: 5986 RVA: 0x0008713D File Offset: 0x0008533D
+		// Token: 0x0600175F RID: 5983 RVA: 0x000873F1 File Offset: 0x000855F1
 		public void UpdatePresenceInfo()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4621,7 +4621,7 @@ public class DiscordManager
 			this.logPresenceInfo();
 		}
 
-		// Token: 0x06001763 RID: 5987 RVA: 0x0008716C File Offset: 0x0008536C
+		// Token: 0x06001760 RID: 5984 RVA: 0x00087420 File Offset: 0x00085620
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void logPresenceInfo()
 		{
@@ -4673,7 +4673,7 @@ public class DiscordManager
 			DiscordManager.logCallbackInfo(string.Format("OnPresenceChanged: user={0}, status={1}, activity=<{2}>", this, statusType.ToStringCached<StatusType>(), text), LogType.Log);
 		}
 
-		// Token: 0x06001764 RID: 5988 RVA: 0x00087384 File Offset: 0x00085584
+		// Token: 0x06001761 RID: 5985 RVA: 0x00087638 File Offset: 0x00085838
 		public void SetIncomingInviteActivity(ActivityInvite _invite)
 		{
 			this.incomingInviteActivity = _invite;
@@ -4685,7 +4685,7 @@ public class DiscordManager
 			activityInviteReceived(this, _invite == null, ActivityActionTypes.Join);
 		}
 
-		// Token: 0x06001765 RID: 5989 RVA: 0x000873A8 File Offset: 0x000855A8
+		// Token: 0x06001762 RID: 5986 RVA: 0x0008765C File Offset: 0x0008585C
 		public void SendInvite()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4700,7 +4700,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x06001766 RID: 5990 RVA: 0x00087414 File Offset: 0x00085614
+		// Token: 0x06001763 RID: 5987 RVA: 0x000876C8 File Offset: 0x000858C8
 		public void SendJoinRequest()
 		{
 			if (!this.ownerManager.IsReady)
@@ -4715,7 +4715,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x06001767 RID: 5991 RVA: 0x00087461 File Offset: 0x00085661
+		// Token: 0x06001764 RID: 5988 RVA: 0x00087715 File Offset: 0x00085915
 		public void DeclineJoinRequest()
 		{
 			if (!this.PendingIncomingJoinRequest)
@@ -4726,7 +4726,7 @@ public class DiscordManager
 			this.PendingIncomingJoinRequest = false;
 		}
 
-		// Token: 0x06001768 RID: 5992 RVA: 0x00087483 File Offset: 0x00085683
+		// Token: 0x06001765 RID: 5989 RVA: 0x00087737 File Offset: 0x00085937
 		public void DeclineInvite()
 		{
 			if (!this.PendingIncomingInvite)
@@ -4743,7 +4743,7 @@ public class DiscordManager
 			activityInviteReceived(this, true, ActivityActionTypes.Join);
 		}
 
-		// Token: 0x06001769 RID: 5993 RVA: 0x000874C0 File Offset: 0x000856C0
+		// Token: 0x06001766 RID: 5990 RVA: 0x00087774 File Offset: 0x00085974
 		public void AcceptInvite(ActivityInvite _invite = null)
 		{
 			if (!this.ownerManager.IsReady)
@@ -4774,7 +4774,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x0600176A RID: 5994 RVA: 0x00087570 File Offset: 0x00085770
+		// Token: 0x06001767 RID: 5991 RVA: 0x00087824 File Offset: 0x00085A24
 		public override string ToString()
 		{
 			return string.Format("<Id={0}, local={1}, Discord='{2}', Player='{3}', DcRel={4}, GameRel={5}>", new object[]
@@ -4788,7 +4788,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x0600176B RID: 5995 RVA: 0x000875D7 File Offset: 0x000857D7
+		// Token: 0x06001768 RID: 5992 RVA: 0x0008788B File Offset: 0x00085A8B
 		public void Dispose()
 		{
 			UserHandle userHandle = this.userHandle;
@@ -4804,25 +4804,25 @@ public class DiscordManager
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x0600176C RID: 5996 RVA: 0x00087601 File Offset: 0x00085801
+		// Token: 0x06001769 RID: 5993 RVA: 0x000878B5 File Offset: 0x00085AB5
 		public bool Equals(DiscordManager.DiscordUser _other)
 		{
 			return _other != null && (this == _other || this.ID == _other.ID);
 		}
 
-		// Token: 0x0600176D RID: 5997 RVA: 0x0008761C File Offset: 0x0008581C
+		// Token: 0x0600176A RID: 5994 RVA: 0x000878D0 File Offset: 0x00085AD0
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (!(_obj.GetType() != base.GetType()) && this.Equals((DiscordManager.DiscordUser)_obj)));
 		}
 
-		// Token: 0x0600176E RID: 5998 RVA: 0x0008764C File Offset: 0x0008584C
+		// Token: 0x0600176B RID: 5995 RVA: 0x00087900 File Offset: 0x00085B00
 		public override int GetHashCode()
 		{
 			return this.ID.GetHashCode();
 		}
 
-		// Token: 0x0600176F RID: 5999 RVA: 0x00087667 File Offset: 0x00085867
+		// Token: 0x0600176C RID: 5996 RVA: 0x0008791B File Offset: 0x00085B1B
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <SendFriendRequest>g__SendRequestCallback|77_0(ClientResult _result)
@@ -4830,7 +4830,7 @@ public class DiscordManager
 			DiscordManager.logCallbackInfoWithClientResult("Send*FriendRequestById", null, _result, true);
 		}
 
-		// Token: 0x06001770 RID: 6000 RVA: 0x00087676 File Offset: 0x00085876
+		// Token: 0x0600176D RID: 5997 RVA: 0x0008792A File Offset: 0x00085B2A
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <DeclineFriendRequest>g__RejectRequestCallback|78_0(ClientResult _result)
@@ -4838,7 +4838,7 @@ public class DiscordManager
 			DiscordManager.logCallbackInfoWithClientResult("Reject*FriendRequest", null, _result, true);
 		}
 
-		// Token: 0x06001771 RID: 6001 RVA: 0x00087685 File Offset: 0x00085885
+		// Token: 0x0600176E RID: 5998 RVA: 0x00087939 File Offset: 0x00085B39
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <RemoveFriend>g__RemoveFriendCallback|79_0(ClientResult _result)
@@ -4846,7 +4846,7 @@ public class DiscordManager
 			DiscordManager.logCallbackInfoWithClientResult("RemoveDiscordAndGameFriend", null, _result, true);
 		}
 
-		// Token: 0x06001772 RID: 6002 RVA: 0x00087694 File Offset: 0x00085894
+		// Token: 0x0600176F RID: 5999 RVA: 0x00087948 File Offset: 0x00085B48
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <BlockUser>g__BlockUserCallback|80_0(ClientResult _result)
@@ -4854,7 +4854,7 @@ public class DiscordManager
 			DiscordManager.logCallbackInfoWithClientResult("BlockUser", null, _result, true);
 		}
 
-		// Token: 0x06001773 RID: 6003 RVA: 0x000876A3 File Offset: 0x000858A3
+		// Token: 0x06001770 RID: 6000 RVA: 0x00087957 File Offset: 0x00085B57
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <UnblockUser>g__UnblockUserUserCallback|81_0(ClientResult _result)
@@ -4862,62 +4862,62 @@ public class DiscordManager
 			DiscordManager.logCallbackInfoWithClientResult("UnblockUser", null, _result, true);
 		}
 
-		// Token: 0x04000F2B RID: 3883
+		// Token: 0x04000F24 RID: 3876
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager ownerManager;
 
-		// Token: 0x04000F2C RID: 3884
+		// Token: 0x04000F25 RID: 3877
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserHandle userHandle;
 
-		// Token: 0x04000F2D RID: 3885
+		// Token: 0x04000F26 RID: 3878
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string discordDisplayName;
 
-		// Token: 0x04000F2E RID: 3886
+		// Token: 0x04000F27 RID: 3879
 		public readonly ulong ID;
 
-		// Token: 0x04000F2F RID: 3887
+		// Token: 0x04000F28 RID: 3880
 		public readonly bool IsLocalAccount;
 
-		// Token: 0x04000F31 RID: 3889
+		// Token: 0x04000F2A RID: 3882
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string playerName;
 
-		// Token: 0x04000F32 RID: 3890
+		// Token: 0x04000F2B RID: 3883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool avatarStartedDownload;
 
-		// Token: 0x04000F33 RID: 3891
+		// Token: 0x04000F2C RID: 3884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Texture2D avatar;
 
-		// Token: 0x04000F34 RID: 3892
+		// Token: 0x04000F2D RID: 3885
 		public bool MessageSentFromGame;
 
-		// Token: 0x04000F37 RID: 3895
+		// Token: 0x04000F30 RID: 3888
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isSpamRequest;
 
-		// Token: 0x04000F3A RID: 3898
+		// Token: 0x04000F33 RID: 3891
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool pendingIncomingJoinRequest;
 
-		// Token: 0x04000F3B RID: 3899
+		// Token: 0x04000F34 RID: 3892
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ActivityInvite incomingInviteActivity;
 	}
 
-	// Token: 0x02000329 RID: 809
+	// Token: 0x0200032C RID: 812
 	public class DiscordUserMappingManager
 	{
-		// Token: 0x06001780 RID: 6016 RVA: 0x000878C8 File Offset: 0x00085AC8
+		// Token: 0x0600177D RID: 6013 RVA: 0x00087B7C File Offset: 0x00085D7C
 		public DiscordUserMappingManager(DiscordManager _ownerManager)
 		{
 			this.ownerManager = _ownerManager;
 		}
 
-		// Token: 0x06001781 RID: 6017 RVA: 0x000878F0 File Offset: 0x00085AF0
+		// Token: 0x0600177E RID: 6014 RVA: 0x00087BA4 File Offset: 0x00085DA4
 		public void UpdateMapping(int _entityId, bool _remove, ulong _discordId)
 		{
 			ulong num;
@@ -4934,19 +4934,19 @@ public class DiscordManager
 			this.discordIdToEntityId[_discordId] = _entityId;
 		}
 
-		// Token: 0x06001782 RID: 6018 RVA: 0x00087945 File Offset: 0x00085B45
+		// Token: 0x0600177F RID: 6015 RVA: 0x00087BF9 File Offset: 0x00085DF9
 		public bool TryGetDiscordId(int _entity, out ulong _discordId)
 		{
 			return this.entityIdToDiscordId.TryGetValue(_entity, out _discordId);
 		}
 
-		// Token: 0x06001783 RID: 6019 RVA: 0x00087954 File Offset: 0x00085B54
+		// Token: 0x06001780 RID: 6016 RVA: 0x00087C08 File Offset: 0x00085E08
 		public bool TryGetEntityId(ulong _discordId, out int _entity)
 		{
 			return this.discordIdToEntityId.TryGetValue(_discordId, out _entity);
 		}
 
-		// Token: 0x06001784 RID: 6020 RVA: 0x00087964 File Offset: 0x00085B64
+		// Token: 0x06001781 RID: 6017 RVA: 0x00087C18 File Offset: 0x00085E18
 		public void SendMappingsToClient(ClientInfo _clientInfo)
 		{
 			List<int> list = new List<int>();
@@ -4964,14 +4964,14 @@ public class DiscordManager
 			_clientInfo.SendPackage(NetPackageManager.GetPackage<NetPackageDiscordIdMappings>().Setup(list, list2));
 		}
 
-		// Token: 0x06001785 RID: 6021 RVA: 0x000879F0 File Offset: 0x00085BF0
+		// Token: 0x06001782 RID: 6018 RVA: 0x00087CA4 File Offset: 0x00085EA4
 		public void Clear()
 		{
 			this.discordIdToEntityId.Clear();
 			this.entityIdToDiscordId.Clear();
 		}
 
-		// Token: 0x06001786 RID: 6022 RVA: 0x00087A08 File Offset: 0x00085C08
+		// Token: 0x06001783 RID: 6019 RVA: 0x00087CBC File Offset: 0x00085EBC
 		public void GetAll(Action<int, ulong> _callback)
 		{
 			if (GameManager.Instance.World == null)
@@ -4989,23 +4989,23 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x04000F44 RID: 3908
+		// Token: 0x04000F3D RID: 3901
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager ownerManager;
 
-		// Token: 0x04000F45 RID: 3909
+		// Token: 0x04000F3E RID: 3902
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ulong, int> discordIdToEntityId = new Dictionary<ulong, int>();
 
-		// Token: 0x04000F46 RID: 3910
+		// Token: 0x04000F3F RID: 3903
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<int, ulong> entityIdToDiscordId = new Dictionary<int, ulong>();
 	}
 
-	// Token: 0x0200032A RID: 810
+	// Token: 0x0200032D RID: 813
 	public class DiscordUserSettingsManager
 	{
-		// Token: 0x06001787 RID: 6023 RVA: 0x00087A7C File Offset: 0x00085C7C
+		// Token: 0x06001784 RID: 6020 RVA: 0x00087D30 File Offset: 0x00085F30
 		public double GetUserVolume(ulong _userId)
 		{
 			int num;
@@ -5016,7 +5016,7 @@ public class DiscordManager
 			return 1.0;
 		}
 
-		// Token: 0x06001788 RID: 6024 RVA: 0x00087AB0 File Offset: 0x00085CB0
+		// Token: 0x06001785 RID: 6021 RVA: 0x00087D64 File Offset: 0x00085F64
 		public void SetUserVolume(ulong _userId, double _volume)
 		{
 			int num = Mathf.RoundToInt((float)(_volume * 100.0));
@@ -5029,8 +5029,8 @@ public class DiscordManager
 			this.userVolumes[_userId] = num;
 		}
 
-		// Token: 0x170002CF RID: 719
-		// (get) Token: 0x06001789 RID: 6025 RVA: 0x00087B01 File Offset: 0x00085D01
+		// Token: 0x170002C7 RID: 711
+		// (get) Token: 0x06001786 RID: 6022 RVA: 0x00087DB5 File Offset: 0x00085FB5
 		public static string DataFilePath
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -5040,7 +5040,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600178A RID: 6026 RVA: 0x00087B14 File Offset: 0x00085D14
+		// Token: 0x06001787 RID: 6023 RVA: 0x00087DC8 File Offset: 0x00085FC8
 		public static DiscordManager.DiscordUserSettingsManager Load()
 		{
 			DiscordManager.DiscordUserSettingsManager discordUserSettingsManager = new DiscordManager.DiscordUserSettingsManager();
@@ -5077,7 +5077,7 @@ public class DiscordManager
 			return discordUserSettingsManager2;
 		}
 
-		// Token: 0x0600178B RID: 6027 RVA: 0x00087BFC File Offset: 0x00085DFC
+		// Token: 0x06001788 RID: 6024 RVA: 0x00087EB0 File Offset: 0x000860B0
 		public void Save()
 		{
 			using (Stream stream = SdFile.Open(DiscordManager.DiscordUserSettingsManager.DataFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
@@ -5101,16 +5101,16 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x04000F47 RID: 3911
+		// Token: 0x04000F40 RID: 3904
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ulong, int> userVolumes = new Dictionary<ulong, int>();
 	}
 
-	// Token: 0x0200032B RID: 811
+	// Token: 0x0200032E RID: 814
 	public class FriendsServerList : IServerListInterface
 	{
-		// Token: 0x170002D0 RID: 720
-		// (get) Token: 0x0600178D RID: 6029 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x170002C8 RID: 712
+		// (get) Token: 0x0600178A RID: 6026 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsPrefiltered
 		{
 			get
@@ -5119,8 +5119,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D1 RID: 721
-		// (get) Token: 0x0600178E RID: 6030 RVA: 0x00087CE3 File Offset: 0x00085EE3
+		// Token: 0x170002C9 RID: 713
+		// (get) Token: 0x0600178B RID: 6027 RVA: 0x00087F97 File Offset: 0x00086197
 		public bool IsRefreshing
 		{
 			get
@@ -5129,7 +5129,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x0600178F RID: 6031 RVA: 0x00087CF8 File Offset: 0x00085EF8
+		// Token: 0x0600178C RID: 6028 RVA: 0x00087FAC File Offset: 0x000861AC
 		public void Init(IPlatform _owner)
 		{
 			IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -5140,7 +5140,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x06001790 RID: 6032 RVA: 0x00087D23 File Offset: 0x00085F23
+		// Token: 0x0600178D RID: 6029 RVA: 0x00087FD7 File Offset: 0x000861D7
 		public void RegisterGameServerFoundCallback(GameServerFoundCallback _serverFound, MaxResultsReachedCallback _maxResultsCallback, ServerSearchErrorCallback _sessionSearchErrorCallback)
 		{
 			if (this.serverLookup == null)
@@ -5150,7 +5150,7 @@ public class DiscordManager
 			this.gameServerFoundCallback = _serverFound;
 		}
 
-		// Token: 0x06001791 RID: 6033 RVA: 0x00087D35 File Offset: 0x00085F35
+		// Token: 0x0600178E RID: 6030 RVA: 0x00087FE9 File Offset: 0x000861E9
 		public void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (this.serverLookup == null)
@@ -5162,7 +5162,7 @@ public class DiscordManager
 			ThreadManager.StartCoroutine(this.refreshFriendsCo());
 		}
 
-		// Token: 0x06001792 RID: 6034 RVA: 0x00087D5D File Offset: 0x00085F5D
+		// Token: 0x0600178F RID: 6031 RVA: 0x00088011 File Offset: 0x00086211
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator refreshFriendsCo()
 		{
@@ -5211,7 +5211,7 @@ public class DiscordManager
 			yield break;
 		}
 
-		// Token: 0x06001793 RID: 6035 RVA: 0x00087D6C File Offset: 0x00085F6C
+		// Token: 0x06001790 RID: 6032 RVA: 0x00088020 File Offset: 0x00086220
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnServerFound(IPlatform _sourcePlatform, GameServerInfo _info, EServerRelationType _source)
 		{
@@ -5229,52 +5229,52 @@ public class DiscordManager
 			gameServerFoundCallback(_sourcePlatform, _info, _source);
 		}
 
-		// Token: 0x06001794 RID: 6036 RVA: 0x00087DA0 File Offset: 0x00085FA0
+		// Token: 0x06001791 RID: 6033 RVA: 0x00088054 File Offset: 0x00086254
 		public void StopSearch()
 		{
 			this.isRefreshing = false;
 		}
 
-		// Token: 0x06001795 RID: 6037 RVA: 0x00087DA9 File Offset: 0x00085FA9
+		// Token: 0x06001792 RID: 6034 RVA: 0x0008805D File Offset: 0x0008625D
 		public void Disconnect()
 		{
 			this.StopSearch();
 			this.gameServerFoundCallback = null;
 		}
 
-		// Token: 0x06001796 RID: 6038 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x06001793 RID: 6035 RVA: 0x0008806C File Offset: 0x0008626C
 		public void GetSingleServerDetails(GameServerInfo _serverInfo, EServerRelationType _relation, GameServerFoundCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x04000F48 RID: 3912
+		// Token: 0x04000F41 RID: 3905
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerFoundCallback gameServerFoundCallback;
 
-		// Token: 0x04000F49 RID: 3913
+		// Token: 0x04000F42 RID: 3906
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IServerListInterface serverLookup;
 
-		// Token: 0x04000F4A RID: 3914
+		// Token: 0x04000F43 RID: 3907
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isRefreshing;
 
-		// Token: 0x04000F4B RID: 3915
+		// Token: 0x04000F44 RID: 3908
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int sessionSearchCount;
 
-		// Token: 0x04000F4C RID: 3916
+		// Token: 0x04000F45 RID: 3909
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<DiscordManager.DiscordUser> users = new HashSet<DiscordManager.DiscordUser>();
 	}
 
-	// Token: 0x0200032D RID: 813
+	// Token: 0x02000330 RID: 816
 	public class LobbyInfo
 	{
-		// Token: 0x170002D4 RID: 724
-		// (get) Token: 0x0600179E RID: 6046 RVA: 0x00087F34 File Offset: 0x00086134
-		// (set) Token: 0x0600179F RID: 6047 RVA: 0x00087F3C File Offset: 0x0008613C
+		// Token: 0x170002CC RID: 716
+		// (get) Token: 0x0600179B RID: 6043 RVA: 0x000881E8 File Offset: 0x000863E8
+		// (set) Token: 0x0600179C RID: 6044 RVA: 0x000881F0 File Offset: 0x000863F0
 		public string Secret
 		{
 			get
@@ -5297,8 +5297,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D5 RID: 725
-		// (get) Token: 0x060017A0 RID: 6048 RVA: 0x00087F76 File Offset: 0x00086176
+		// Token: 0x170002CD RID: 717
+		// (get) Token: 0x0600179D RID: 6045 RVA: 0x0008822A File Offset: 0x0008642A
 		public bool IsReady
 		{
 			get
@@ -5307,8 +5307,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D6 RID: 726
-		// (get) Token: 0x060017A1 RID: 6049 RVA: 0x00087F86 File Offset: 0x00086186
+		// Token: 0x170002CE RID: 718
+		// (get) Token: 0x0600179E RID: 6046 RVA: 0x0008823A File Offset: 0x0008643A
 		public bool IsJoined
 		{
 			get
@@ -5317,9 +5317,9 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D7 RID: 727
-		// (get) Token: 0x060017A2 RID: 6050 RVA: 0x00087F92 File Offset: 0x00086192
-		// (set) Token: 0x060017A3 RID: 6051 RVA: 0x00087F9A File Offset: 0x0008619A
+		// Token: 0x170002CF RID: 719
+		// (get) Token: 0x0600179F RID: 6047 RVA: 0x00088246 File Offset: 0x00086446
+		// (set) Token: 0x060017A0 RID: 6048 RVA: 0x0008824E File Offset: 0x0008644E
 		public ulong Id
 		{
 			get
@@ -5343,8 +5343,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D8 RID: 728
-		// (get) Token: 0x060017A4 RID: 6052 RVA: 0x00087FCF File Offset: 0x000861CF
+		// Token: 0x170002D0 RID: 720
+		// (get) Token: 0x060017A1 RID: 6049 RVA: 0x00088283 File Offset: 0x00086483
 		public DiscordManager.CallInfo VoiceCall
 		{
 			get
@@ -5353,8 +5353,8 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x170002D9 RID: 729
-		// (get) Token: 0x060017A5 RID: 6053 RVA: 0x00087FD7 File Offset: 0x000861D7
+		// Token: 0x170002D1 RID: 721
+		// (get) Token: 0x060017A2 RID: 6050 RVA: 0x0008828B File Offset: 0x0008648B
 		public bool IsInVoice
 		{
 			get
@@ -5363,7 +5363,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017A6 RID: 6054 RVA: 0x00087FE4 File Offset: 0x000861E4
+		// Token: 0x060017A3 RID: 6051 RVA: 0x00088298 File Offset: 0x00086498
 		public LobbyInfo(DiscordManager _ownerManager, DiscordManager.ELobbyType _lobbyType)
 		{
 			this.ownerManager = _ownerManager;
@@ -5371,7 +5371,7 @@ public class DiscordManager
 			this.voiceCall = new DiscordManager.CallInfo(this, this.ownerManager);
 		}
 
-		// Token: 0x060017A7 RID: 6055 RVA: 0x00088018 File Offset: 0x00086218
+		// Token: 0x060017A4 RID: 6052 RVA: 0x000882CC File Offset: 0x000864CC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void Finalize()
 		{
@@ -5389,7 +5389,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017A8 RID: 6056 RVA: 0x00088050 File Offset: 0x00086250
+		// Token: 0x060017A5 RID: 6053 RVA: 0x00088304 File Offset: 0x00086504
 		public void Join(bool _errorWithoutSecret = true)
 		{
 			if (this.IsJoined)
@@ -5434,7 +5434,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x060017A9 RID: 6057 RVA: 0x00088170 File Offset: 0x00086370
+		// Token: 0x060017A6 RID: 6054 RVA: 0x00088424 File Offset: 0x00086624
 		public void Leave(bool _manual = true)
 		{
 			if (this.IsInVoice)
@@ -5458,7 +5458,7 @@ public class DiscordManager
 			this.UpdateMembers();
 		}
 
-		// Token: 0x060017AA RID: 6058 RVA: 0x000881E4 File Offset: 0x000863E4
+		// Token: 0x060017A7 RID: 6055 RVA: 0x00088498 File Offset: 0x00086698
 		public void UpdateMembers()
 		{
 			this.lobbyMembers.Clear();
@@ -5478,53 +5478,53 @@ public class DiscordManager
 			lobbyMembersChanged(this);
 		}
 
-		// Token: 0x060017AB RID: 6059 RVA: 0x00088252 File Offset: 0x00086452
+		// Token: 0x060017A8 RID: 6056 RVA: 0x00088506 File Offset: 0x00086706
 		public bool HasMember(ulong _userId)
 		{
 			return this.lobbyMembers.Contains(_userId);
 		}
 
-		// Token: 0x04000F50 RID: 3920
+		// Token: 0x04000F49 RID: 3913
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string LobbyMetadataKeyGameSession = "GameSession";
 
-		// Token: 0x04000F51 RID: 3921
+		// Token: 0x04000F4A RID: 3914
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string LobbyMetadataKeyPlatform = "Platform";
 
-		// Token: 0x04000F52 RID: 3922
+		// Token: 0x04000F4B RID: 3915
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager ownerManager;
 
-		// Token: 0x04000F53 RID: 3923
+		// Token: 0x04000F4C RID: 3916
 		public readonly DiscordManager.ELobbyType LobbyType;
 
-		// Token: 0x04000F54 RID: 3924
+		// Token: 0x04000F4D RID: 3917
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string secret;
 
-		// Token: 0x04000F55 RID: 3925
+		// Token: 0x04000F4E RID: 3918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong id;
 
-		// Token: 0x04000F56 RID: 3926
+		// Token: 0x04000F4F RID: 3919
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LobbyHandle handle;
 
-		// Token: 0x04000F57 RID: 3927
+		// Token: 0x04000F50 RID: 3920
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager.CallInfo voiceCall;
 
-		// Token: 0x04000F58 RID: 3928
+		// Token: 0x04000F51 RID: 3921
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<ulong> lobbyMembers = new HashSet<ulong>();
 	}
 
-	// Token: 0x0200032E RID: 814
+	// Token: 0x02000331 RID: 817
 	public class PresenceManager
 	{
-		// Token: 0x170002DA RID: 730
-		// (get) Token: 0x060017AE RID: 6062 RVA: 0x000882E5 File Offset: 0x000864E5
+		// Token: 0x170002D2 RID: 722
+		// (get) Token: 0x060017AB RID: 6059 RVA: 0x00088599 File Offset: 0x00086799
 		public bool JoinableActivitySet
 		{
 			get
@@ -5533,13 +5533,13 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017AF RID: 6063 RVA: 0x000882F8 File Offset: 0x000864F8
+		// Token: 0x060017AC RID: 6060 RVA: 0x000885AC File Offset: 0x000867AC
 		public PresenceManager(DiscordManager _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x060017B0 RID: 6064 RVA: 0x00088364 File Offset: 0x00086564
+		// Token: 0x060017AD RID: 6061 RVA: 0x00088618 File Offset: 0x00086818
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ActivityAssets initActivity()
 		{
@@ -5551,7 +5551,7 @@ public class DiscordManager
 			return activityAssets;
 		}
 
-		// Token: 0x060017B1 RID: 6065 RVA: 0x000883A0 File Offset: 0x000865A0
+		// Token: 0x060017AE RID: 6062 RVA: 0x00088654 File Offset: 0x00086854
 		public void RegisterDiscordCallbacks()
 		{
 			this.owner.client.SetActivityInviteCreatedCallback(new Discord.Sdk.Client.ActivityInviteCallback(this.OnActivityInviteCreated));
@@ -5560,7 +5560,7 @@ public class DiscordManager
 			this.SetRichPresenceState(new IRichPresence.PresenceStates?(IRichPresence.PresenceStates.Menu));
 		}
 
-		// Token: 0x060017B2 RID: 6066 RVA: 0x00088410 File Offset: 0x00086610
+		// Token: 0x060017AF RID: 6063 RVA: 0x000886C4 File Offset: 0x000868C4
 		public void SetRichPresenceState(IRichPresence.PresenceStates? _state = null)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -5591,7 +5591,7 @@ public class DiscordManager
 			this.sendCurrentRichPresence();
 		}
 
-		// Token: 0x060017B3 RID: 6067 RVA: 0x000884B4 File Offset: 0x000866B4
+		// Token: 0x060017B0 RID: 6064 RVA: 0x00088768 File Offset: 0x00086968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void sendCurrentRichPresence()
 		{
@@ -5624,7 +5624,7 @@ public class DiscordManager
 			});
 		}
 
-		// Token: 0x060017B4 RID: 6068 RVA: 0x00088504 File Offset: 0x00086704
+		// Token: 0x060017B1 RID: 6065 RVA: 0x000887B8 File Offset: 0x000869B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void refreshRichPresenceData()
 		{
@@ -5644,7 +5644,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017B5 RID: 6069 RVA: 0x00088570 File Offset: 0x00086770
+		// Token: 0x060017B2 RID: 6066 RVA: 0x00088824 File Offset: 0x00086A24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setDetailsAndState()
 		{
@@ -5713,7 +5713,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017B6 RID: 6070 RVA: 0x000887EC File Offset: 0x000869EC
+		// Token: 0x060017B3 RID: 6067 RVA: 0x00088AA0 File Offset: 0x00086CA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setTimestamps()
 		{
@@ -5729,7 +5729,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017B7 RID: 6071 RVA: 0x0008884C File Offset: 0x00086A4C
+		// Token: 0x060017B4 RID: 6068 RVA: 0x00088B00 File Offset: 0x00086D00
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setLargeImageAndTooltip(ActivityAssets _activityAssets)
 		{
@@ -5774,7 +5774,7 @@ public class DiscordManager
 			CS$<>8__locals1._activityAssets.SetLargeText(valueTuple.Item1);
 		}
 
-		// Token: 0x060017B8 RID: 6072 RVA: 0x00088980 File Offset: 0x00086B80
+		// Token: 0x060017B5 RID: 6069 RVA: 0x00088C34 File Offset: 0x00086E34
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setSmallImageAndTooltip(ActivityAssets _activityAssets)
 		{
@@ -5826,7 +5826,7 @@ public class DiscordManager
 			CS$<>8__locals1._activityAssets.SetSmallText(text);
 		}
 
-		// Token: 0x060017B9 RID: 6073 RVA: 0x00088AC4 File Offset: 0x00086CC4
+		// Token: 0x060017B6 RID: 6070 RVA: 0x00088D78 File Offset: 0x00086F78
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setParty()
 		{
@@ -5862,7 +5862,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017BA RID: 6074 RVA: 0x00088BD8 File Offset: 0x00086DD8
+		// Token: 0x060017B7 RID: 6071 RVA: 0x00088E8C File Offset: 0x0008708C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setPlatforms()
 		{
@@ -5908,21 +5908,21 @@ public class DiscordManager
 			activity.SetSupportedPlatforms(activityGamePlatforms);
 		}
 
-		// Token: 0x060017BB RID: 6075 RVA: 0x00088CB6 File Offset: 0x00086EB6
+		// Token: 0x060017B8 RID: 6072 RVA: 0x00088F6A File Offset: 0x0008716A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnActivityInviteCreated(ActivityInvite _invite)
 		{
 			this.handleInvite(true, _invite);
 		}
 
-		// Token: 0x060017BC RID: 6076 RVA: 0x00088CC0 File Offset: 0x00086EC0
+		// Token: 0x060017B9 RID: 6073 RVA: 0x00088F74 File Offset: 0x00087174
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnActivityInviteUpdated(ActivityInvite _invite)
 		{
 			this.handleInvite(false, _invite);
 		}
 
-		// Token: 0x060017BD RID: 6077 RVA: 0x00088CCC File Offset: 0x00086ECC
+		// Token: 0x060017BA RID: 6074 RVA: 0x00088F80 File Offset: 0x00087180
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handleInvite(bool _created, ActivityInvite _invite)
 		{
@@ -5965,7 +5965,7 @@ public class DiscordManager
 			}
 		}
 
-		// Token: 0x060017BE RID: 6078 RVA: 0x00088DA0 File Offset: 0x00086FA0
+		// Token: 0x060017BB RID: 6075 RVA: 0x00089054 File Offset: 0x00087254
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnActivityJoin(string _joinSecret)
 		{
@@ -5989,7 +5989,7 @@ public class DiscordManager
 			DiscordInviteListener.ListenerInstance.SetPendingInvite(activitySecret.SessionID, activitySecret.Password);
 		}
 
-		// Token: 0x060017C1 RID: 6081 RVA: 0x00088E78 File Offset: 0x00087078
+		// Token: 0x060017BE RID: 6078 RVA: 0x0008912C File Offset: 0x0008732C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static bool <setDetailsAndState>g__PlayerAtHome|16_0(EntityPlayerLocal _player)
@@ -5998,7 +5998,7 @@ public class DiscordManager
 			return (!spawnPoint.IsUndef() && (spawnPoint.position - _player.position).sqrMagnitude <= 2500f) || GameManager.Instance.World.GetLandClaimOwnerInParty(_player, _player.persistentPlayerData);
 		}
 
-		// Token: 0x060017C2 RID: 6082 RVA: 0x00088ECD File Offset: 0x000870CD
+		// Token: 0x060017BF RID: 6079 RVA: 0x00089181 File Offset: 0x00087381
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <setLargeImageAndTooltip>g__SetDefaultImage|20_0(ref DiscordManager.PresenceManager.<>c__DisplayClass20_0 A_0)
@@ -6007,7 +6007,7 @@ public class DiscordManager
 			A_0._activityAssets.SetLargeText(null);
 		}
 
-		// Token: 0x060017C3 RID: 6083 RVA: 0x00088EEB File Offset: 0x000870EB
+		// Token: 0x060017C0 RID: 6080 RVA: 0x0008919F File Offset: 0x0008739F
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <setSmallImageAndTooltip>g__ClearImage|22_0(ref DiscordManager.PresenceManager.<>c__DisplayClass22_0 A_0)
@@ -6016,40 +6016,40 @@ public class DiscordManager
 			A_0._activityAssets.SetSmallText(null);
 		}
 
-		// Token: 0x04000F59 RID: 3929
+		// Token: 0x04000F52 RID: 3922
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly string discordPresenceLocalizationLanguage = "english";
 
-		// Token: 0x04000F5A RID: 3930
+		// Token: 0x04000F53 RID: 3923
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly DiscordManager owner;
 
-		// Token: 0x04000F5B RID: 3931
+		// Token: 0x04000F54 RID: 3924
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IRichPresence.PresenceStates currentRichPresenceState = IRichPresence.PresenceStates.InGame;
 
-		// Token: 0x04000F5C RID: 3932
+		// Token: 0x04000F55 RID: 3925
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong timeStartedCurrentActivity = (ulong)Utils.CurrentUnixTime;
 
-		// Token: 0x04000F5D RID: 3933
+		// Token: 0x04000F56 RID: 3926
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string joinSecretJson;
 
-		// Token: 0x04000F5E RID: 3934
+		// Token: 0x04000F57 RID: 3927
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Activity activity;
 
-		// Token: 0x04000F5F RID: 3935
+		// Token: 0x04000F58 RID: 3928
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string DefaultLargeImageName = "7dtd";
 
-		// Token: 0x04000F60 RID: 3936
+		// Token: 0x04000F59 RID: 3929
 		[TupleElementNames(new string[] { "label", "image" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, ValueTuple<string, string>> biomeNameToAssetsMap = new Dictionary<string, ValueTuple<string, string>>();
 
-		// Token: 0x04000F61 RID: 3937
+		// Token: 0x04000F5A RID: 3930
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<BiomeDefinition.BiomeType> supportedBiomeImages = new HashSet<BiomeDefinition.BiomeType>
 		{
@@ -6060,16 +6060,16 @@ public class DiscordManager
 			BiomeDefinition.BiomeType.Wasteland
 		};
 
-		// Token: 0x04000F62 RID: 3938
+		// Token: 0x04000F5B RID: 3931
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly string dayTimeFormatString = Localization.Get("xuiDay", false, DiscordManager.PresenceManager.discordPresenceLocalizationLanguage) + " {0}, {1:00}:{2:00}";
 
-		// Token: 0x0200032F RID: 815
+		// Token: 0x02000332 RID: 818
 		[JsonObject(MemberSerialization.Fields)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class ActivitySecret
 		{
-			// Token: 0x060017C4 RID: 6084 RVA: 0x00088F08 File Offset: 0x00087108
+			// Token: 0x060017C1 RID: 6081 RVA: 0x000891BC File Offset: 0x000873BC
 			public ActivitySecret(GameServerInfo _gsi)
 			{
 				this.SessionID = _gsi.GetValue(GameInfoString.UniqueId);
@@ -6083,19 +6083,19 @@ public class DiscordManager
 				this.Password = ServerInfoCache.Instance.GetPassword(_gsi) ?? "";
 			}
 
-			// Token: 0x04000F63 RID: 3939
+			// Token: 0x04000F5C RID: 3932
 			[JsonProperty("ID")]
 			public readonly string SessionID;
 
-			// Token: 0x04000F64 RID: 3940
+			// Token: 0x04000F5D RID: 3933
 			[JsonProperty("IP")]
 			public string ServerIP;
 
-			// Token: 0x04000F65 RID: 3941
+			// Token: 0x04000F5E RID: 3934
 			[JsonProperty("Port")]
 			public int ServerPort;
 
-			// Token: 0x04000F66 RID: 3942
+			// Token: 0x04000F5F RID: 3935
 			[JsonProperty("PW")]
 			public string Password;
 		}

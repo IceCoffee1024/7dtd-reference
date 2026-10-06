@@ -1,68 +1,68 @@
 ﻿using System;
 
-// Token: 0x0200051B RID: 1307
+// Token: 0x02000521 RID: 1313
 public enum EnumDamageTypes
 {
-	// Token: 0x040020D3 RID: 8403
-	None,
-	// Token: 0x040020D4 RID: 8404
-	Piercing,
-	// Token: 0x040020D5 RID: 8405
-	Slashing,
-	// Token: 0x040020D6 RID: 8406
-	Bashing,
-	// Token: 0x040020D7 RID: 8407
-	Crushing,
-	// Token: 0x040020D8 RID: 8408
-	Corrosive,
-	// Token: 0x040020D9 RID: 8409
-	Heat,
-	// Token: 0x040020DA RID: 8410
-	Cold,
 	// Token: 0x040020DB RID: 8411
-	Radiation,
+	None,
 	// Token: 0x040020DC RID: 8412
-	Toxic,
+	Piercing,
 	// Token: 0x040020DD RID: 8413
-	Electrical,
+	Slashing,
 	// Token: 0x040020DE RID: 8414
-	Disease,
+	Bashing,
 	// Token: 0x040020DF RID: 8415
-	Infection,
+	Crushing,
 	// Token: 0x040020E0 RID: 8416
-	Starvation,
+	Corrosive,
 	// Token: 0x040020E1 RID: 8417
-	Dehydration,
+	Heat,
 	// Token: 0x040020E2 RID: 8418
-	Falling,
+	Cold,
 	// Token: 0x040020E3 RID: 8419
-	Suffocation,
+	Radiation,
 	// Token: 0x040020E4 RID: 8420
-	BloodLoss,
+	Toxic,
 	// Token: 0x040020E5 RID: 8421
-	Sprain,
+	Electrical,
 	// Token: 0x040020E6 RID: 8422
-	Break,
+	Disease,
 	// Token: 0x040020E7 RID: 8423
-	Stun,
+	Infection,
 	// Token: 0x040020E8 RID: 8424
-	Concuss,
+	Starvation,
 	// Token: 0x040020E9 RID: 8425
-	KnockOut,
+	Dehydration,
 	// Token: 0x040020EA RID: 8426
-	BlackOut,
+	Falling,
 	// Token: 0x040020EB RID: 8427
-	KnockDown,
+	Suffocation,
 	// Token: 0x040020EC RID: 8428
-	BarbedWire,
+	BloodLoss,
 	// Token: 0x040020ED RID: 8429
-	Suicide,
+	Sprain,
 	// Token: 0x040020EE RID: 8430
-	VehicleInside,
+	Break,
 	// Token: 0x040020EF RID: 8431
-	Weather,
+	Stun,
 	// Token: 0x040020F0 RID: 8432
-	Special,
+	Concuss,
 	// Token: 0x040020F1 RID: 8433
+	KnockOut,
+	// Token: 0x040020F2 RID: 8434
+	BlackOut,
+	// Token: 0x040020F3 RID: 8435
+	KnockDown,
+	// Token: 0x040020F4 RID: 8436
+	BarbedWire,
+	// Token: 0x040020F5 RID: 8437
+	Suicide,
+	// Token: 0x040020F6 RID: 8438
+	VehicleInside,
+	// Token: 0x040020F7 RID: 8439
+	Weather,
+	// Token: 0x040020F8 RID: 8440
+	Special,
+	// Token: 0x040020F9 RID: 8441
 	COUNT
 }

@@ -2,30 +2,30 @@
 
 namespace Platform
 {
-	// Token: 0x02001B2D RID: 6957
+	// Token: 0x02001B5F RID: 7007
 	public enum EnumStatEvent
 	{
-		// Token: 0x04009F9C RID: 40860
+		// Token: 0x0400A071 RID: 41073
 		PlayerSessionStart,
-		// Token: 0x04009F9D RID: 40861
+		// Token: 0x0400A072 RID: 41074
 		PlayerSessionPause,
-		// Token: 0x04009F9E RID: 40862
+		// Token: 0x0400A073 RID: 41075
 		PlayerSessionResume,
-		// Token: 0x04009F9F RID: 40863
+		// Token: 0x0400A074 RID: 41076
 		PlayerSessionEnd,
-		// Token: 0x04009FA0 RID: 40864
+		// Token: 0x0400A075 RID: 41077
 		MultiplayerRoundStart,
-		// Token: 0x04009FA1 RID: 40865
+		// Token: 0x0400A076 RID: 41078
 		MultiplayerRoundEnd,
-		// Token: 0x04009FA2 RID: 40866
+		// Token: 0x0400A077 RID: 41079
 		GameProgress,
-		// Token: 0x04009FA3 RID: 40867
+		// Token: 0x0400A078 RID: 41080
 		ZombieKilled,
-		// Token: 0x04009FA4 RID: 40868
+		// Token: 0x0400A079 RID: 41081
 		PlayerKilled,
-		// Token: 0x04009FA5 RID: 40869
+		// Token: 0x0400A07A RID: 41082
 		LongestLifeLived,
-		// Token: 0x04009FA6 RID: 40870
+		// Token: 0x0400A07B RID: 41083
 		DayPlaying
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001024 RID: 4132
+// Token: 0x02001033 RID: 4147
 [Preserve]
 public class XUiC_ShapeMaterialInfoWindow : XUiController
 {
-	// Token: 0x0600829A RID: 33434 RVA: 0x00318CDC File Offset: 0x00316EDC
+	// Token: 0x060082A9 RID: 33449 RVA: 0x0031BD20 File Offset: 0x00319F20
 	public override void Init()
 	{
 		base.Init();
@@ -27,21 +27,21 @@ public class XUiC_ShapeMaterialInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600829B RID: 33435 RVA: 0x00318D61 File Offset: 0x00316F61
+	// Token: 0x060082AA RID: 33450 RVA: 0x0031BDA5 File Offset: 0x00319FA5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnUpgrade_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.windowGroup.Controller.GetChildByType<XUiC_ShapesWindow>().UpgradeDowngradeShapes(this.blockData.UpgradeBlock);
 	}
 
-	// Token: 0x0600829C RID: 33436 RVA: 0x00318D83 File Offset: 0x00316F83
+	// Token: 0x060082AB RID: 33451 RVA: 0x0031BDC7 File Offset: 0x00319FC7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDowngrade_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.windowGroup.Controller.GetChildByType<XUiC_ShapesWindow>().UpgradeDowngradeShapes(this.blockData.DowngradeBlock);
 	}
 
-	// Token: 0x0600829D RID: 33437 RVA: 0x002FB86C File Offset: 0x002F9A6C
+	// Token: 0x060082AC RID: 33452 RVA: 0x002FE910 File Offset: 0x002FCB10
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -51,7 +51,7 @@ public class XUiC_ShapeMaterialInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600829E RID: 33438 RVA: 0x00318DA8 File Offset: 0x00316FA8
+	// Token: 0x060082AD RID: 33453 RVA: 0x0031BDEC File Offset: 0x00319FEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -88,7 +88,7 @@ public class XUiC_ShapeMaterialInfoWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0600829F RID: 33439 RVA: 0x00318E98 File Offset: 0x00317098
+	// Token: 0x060082AE RID: 33454 RVA: 0x0031BEDC File Offset: 0x0031A0DC
 	public void SetShape(Block _newBlockData)
 	{
 		this.backgroundTexture.IsVisible = false;
@@ -132,23 +132,23 @@ public class XUiC_ShapeMaterialInfoWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x040060B8 RID: 24760
+	// Token: 0x040060E1 RID: 24801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture backgroundTexture;
 
-	// Token: 0x040060B9 RID: 24761
+	// Token: 0x040060E2 RID: 24802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block blockData;
 
-	// Token: 0x040060BA RID: 24762
+	// Token: 0x040060E3 RID: 24803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string materialName;
 
-	// Token: 0x040060BB RID: 24763
+	// Token: 0x040060E4 RID: 24804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string upgradeMaterial;
 
-	// Token: 0x040060BC RID: 24764
+	// Token: 0x040060E5 RID: 24805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string downgradeMaterial;
 }

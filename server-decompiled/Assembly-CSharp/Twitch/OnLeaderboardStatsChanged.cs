@@ -2,7 +2,7 @@
 
 namespace Twitch
 {
-	// Token: 0x02001841 RID: 6209
-	// (Invoke) Token: 0x0600BF73 RID: 49011
+	// Token: 0x0200186D RID: 6253
+	// (Invoke) Token: 0x0600C0CB RID: 49355
 	public delegate void OnLeaderboardStatsChanged();
 }

@@ -5,10 +5,10 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C13 RID: 7187
+	// Token: 0x02001C45 RID: 7237
 	public class UserPrivilegeHelper
 	{
-		// Token: 0x0600D598 RID: 54680 RVA: 0x004CEDC8 File Offset: 0x004CCFC8
+		// Token: 0x0600D710 RID: 55056 RVA: 0x004D38B0 File Offset: 0x004D1AB0
 		public UserPrivilegeHelper(XUserHandle userHandle)
 		{
 			this.AllAllowed = new PrivilegeState[]
@@ -23,7 +23,7 @@ namespace Platform.XBL
 			this.CrossPlayAllowed = new PrivilegeState[] { this.CrossPlay };
 		}
 
-		// Token: 0x0600D599 RID: 54681 RVA: 0x004CEE8B File Offset: 0x004CD08B
+		// Token: 0x0600D711 RID: 55057 RVA: 0x004D3973 File Offset: 0x004D1B73
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator ResolveAllowed(bool canPrompt, CoroutineCancellationToken _cancellationToken = null, params PrivilegeState[] privilegeStates)
 		{
@@ -35,7 +35,7 @@ namespace Platform.XBL
 			return privilegeStates.ResolveWithPrompt(_cancellationToken);
 		}
 
-		// Token: 0x0600D59A RID: 54682 RVA: 0x004CEEA8 File Offset: 0x004CD0A8
+		// Token: 0x0600D712 RID: 55058 RVA: 0x004D3990 File Offset: 0x004D1B90
 		public IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			if (_perms.HasMultiplayer() || _perms.HasHostMultiplayer())
@@ -66,28 +66,28 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0400A263 RID: 41571
+		// Token: 0x0400A338 RID: 41784
 		public readonly PrivilegeState Multiplayer;
 
-		// Token: 0x0400A264 RID: 41572
+		// Token: 0x0400A339 RID: 41785
 		public readonly PrivilegeState Communications;
 
-		// Token: 0x0400A265 RID: 41573
+		// Token: 0x0400A33A RID: 41786
 		public readonly PrivilegeState CrossPlay;
 
-		// Token: 0x0400A266 RID: 41574
+		// Token: 0x0400A33B RID: 41787
 		public readonly PrivilegeState UserGeneratedContent;
 
-		// Token: 0x0400A267 RID: 41575
+		// Token: 0x0400A33C RID: 41788
 		public readonly PrivilegeState[] AllAllowed;
 
-		// Token: 0x0400A268 RID: 41576
+		// Token: 0x0400A33D RID: 41789
 		public readonly PrivilegeState[] MultiplayerAllowed;
 
-		// Token: 0x0400A269 RID: 41577
+		// Token: 0x0400A33E RID: 41790
 		public readonly PrivilegeState[] CommunicationAllowed;
 
-		// Token: 0x0400A26A RID: 41578
+		// Token: 0x0400A33F RID: 41791
 		public readonly PrivilegeState[] CrossPlayAllowed;
 	}
 }

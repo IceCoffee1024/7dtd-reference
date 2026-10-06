@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200106A RID: 4202
+// Token: 0x0200107B RID: 4219
 [Preserve]
 public class XUiC_SkillSkillMilestone : XUiController
 {
-	// Token: 0x17000F99 RID: 3993
-	// (get) Token: 0x060085A1 RID: 34209 RVA: 0x0032EC56 File Offset: 0x0032CE56
+	// Token: 0x17000FCF RID: 4047
+	// (get) Token: 0x060085E7 RID: 34279 RVA: 0x00332862 File Offset: 0x00330A62
 	public ProgressionValue CurrentSkill
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -22,7 +22,7 @@ public class XUiC_SkillSkillMilestone : XUiController
 		}
 	}
 
-	// Token: 0x060085A2 RID: 34210 RVA: 0x0032F73C File Offset: 0x0032D93C
+	// Token: 0x060085E8 RID: 34280 RVA: 0x00333348 File Offset: 0x00331548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSkill()
 	{
@@ -70,7 +70,7 @@ public class XUiC_SkillSkillMilestone : XUiController
 		}
 	}
 
-	// Token: 0x060085A3 RID: 34211 RVA: 0x0032F99C File Offset: 0x0032DB9C
+	// Token: 0x060085E9 RID: 34281 RVA: 0x003335A8 File Offset: 0x003317A8
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "color_lbl_available")
@@ -86,7 +86,7 @@ public class XUiC_SkillSkillMilestone : XUiController
 		return true;
 	}
 
-	// Token: 0x060085A4 RID: 34212 RVA: 0x0032F9D4 File Offset: 0x0032DBD4
+	// Token: 0x060085EA RID: 34282 RVA: 0x003335E0 File Offset: 0x003317E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -244,7 +244,7 @@ public class XUiC_SkillSkillMilestone : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x060085A5 RID: 34213 RVA: 0x0032FE33 File Offset: 0x0032E033
+	// Token: 0x060085EB RID: 34283 RVA: 0x00333A3F File Offset: 0x00331C3F
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -256,45 +256,45 @@ public class XUiC_SkillSkillMilestone : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04006351 RID: 25425
+	// Token: 0x04006396 RID: 25494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_available;
 
-	// Token: 0x04006352 RID: 25426
+	// Token: 0x04006397 RID: 25495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_locked;
 
-	// Token: 0x04006353 RID: 25427
+	// Token: 0x04006398 RID: 25496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> effectLines = new List<string>();
 
-	// Token: 0x04006354 RID: 25428
+	// Token: 0x04006399 RID: 25497
 	public int LevelStart;
 
-	// Token: 0x04006355 RID: 25429
+	// Token: 0x0400639A RID: 25498
 	public int LevelGoal;
 
-	// Token: 0x04006356 RID: 25430
+	// Token: 0x0400639B RID: 25499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeMultiplicationFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}%", _s, (_f < 0f) ? _f.ToCultureInvariantString("0.#") : ("+" + _f.ToCultureInvariantString("0.#"))));
 
-	// Token: 0x04006357 RID: 25431
+	// Token: 0x0400639C RID: 25500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeDivisionFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}%", _s, _f.ToCultureInvariantString("0.#")));
 
-	// Token: 0x04006358 RID: 25432
+	// Token: 0x0400639D RID: 25501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeAdditionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => string.Format("{0}: +{1}", _s, _f.ToCultureInvariantString("0.#") + (_b ? "%" : "")));
 
-	// Token: 0x04006359 RID: 25433
+	// Token: 0x0400639E RID: 25502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeSubtractionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#") + (_b ? "%" : "")));
 
-	// Token: 0x0400635A RID: 25434
+	// Token: 0x0400639F RID: 25503
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeSetValueFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#")));
 
-	// Token: 0x0400635B RID: 25435
+	// Token: 0x040063A0 RID: 25504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, string> attributeLockedFormatter = new CachedStringFormatter<string, string>((string _s1, string _s2) => string.Format("{0}: {1}", _s1, _s2));
 }

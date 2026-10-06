@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C83 RID: 7299
+	// Token: 0x02001CB5 RID: 7349
 	[Preserve]
 	public class SteamOwnerAuthorizer : AuthorizerAbs
 	{
-		// Token: 0x17001AD9 RID: 6873
-		// (get) Token: 0x0600D86F RID: 55407 RVA: 0x004DC929 File Offset: 0x004DAB29
+		// Token: 0x17001B7F RID: 7039
+		// (get) Token: 0x0600D9E8 RID: 55784 RVA: 0x004E1465 File Offset: 0x004DF665
 		public override int Order
 		{
 			get
@@ -17,8 +17,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001ADA RID: 6874
-		// (get) Token: 0x0600D870 RID: 55408 RVA: 0x004DC930 File Offset: 0x004DAB30
+		// Token: 0x17001B80 RID: 7040
+		// (get) Token: 0x0600D9E9 RID: 55785 RVA: 0x004E146C File Offset: 0x004DF66C
 		public override string AuthorizerName
 		{
 			get
@@ -27,8 +27,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001ADB RID: 6875
-		// (get) Token: 0x0600D871 RID: 55409 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001B81 RID: 7041
+		// (get) Token: 0x0600D9EA RID: 55786 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public override string StateLocalizationKey
 		{
 			get
@@ -37,8 +37,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001ADC RID: 6876
-		// (get) Token: 0x0600D872 RID: 55410 RVA: 0x00046EDA File Offset: 0x000450DA
+		// Token: 0x17001B82 RID: 7042
+		// (get) Token: 0x0600D9EB RID: 55787 RVA: 0x000470B6 File Offset: 0x000452B6
 		public override EPlatformIdentifier PlatformRestriction
 		{
 			get
@@ -47,7 +47,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D873 RID: 55411 RVA: 0x004DC938 File Offset: 0x004DAB38
+		// Token: 0x0600D9EC RID: 55788 RVA: 0x004E1474 File Offset: 0x004DF674
 		public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 		{
 			UserIdentifierSteam userIdentifierSteam = (UserIdentifierSteam)_clientInfo.PlatformId;

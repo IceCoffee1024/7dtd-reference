@@ -3,11 +3,11 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C96 RID: 7318
+	// Token: 0x02001CC8 RID: 7368
 	public class MultiplayerInvitationDialogSteam : IMultiplayerInvitationDialog
 	{
-		// Token: 0x17001AF1 RID: 6897
-		// (get) Token: 0x0600D907 RID: 55559 RVA: 0x004DEC3F File Offset: 0x004DCE3F
+		// Token: 0x17001B97 RID: 7063
+		// (get) Token: 0x0600DA81 RID: 55937 RVA: 0x004E3787 File Offset: 0x004E1987
 		public bool CanShow
 		{
 			get
@@ -16,13 +16,13 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D908 RID: 55560 RVA: 0x004DEC56 File Offset: 0x004DCE56
+		// Token: 0x0600DA82 RID: 55938 RVA: 0x004E379E File Offset: 0x004E199E
 		public void Init(IPlatform owner)
 		{
 			this.lobbyHost = (LobbyHost)owner.LobbyHost;
 		}
 
-		// Token: 0x0600D909 RID: 55561 RVA: 0x004DEC6C File Offset: 0x004DCE6C
+		// Token: 0x0600DA83 RID: 55939 RVA: 0x004E37B4 File Offset: 0x004E19B4
 		public void ShowInviteDialog()
 		{
 			if (this.lobbyHost == null)
@@ -46,7 +46,7 @@ namespace Platform.Steam
 			Log.Error("[Steam] Cannot open invite dialog, could not parse Steam lobby id: " + lobbyId);
 		}
 
-		// Token: 0x0400A4A6 RID: 42150
+		// Token: 0x0400A57B RID: 42363
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LobbyHost lobbyHost;
 	}

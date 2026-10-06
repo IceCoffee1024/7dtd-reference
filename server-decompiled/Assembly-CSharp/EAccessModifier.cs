@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-// Token: 0x02001D96 RID: 7574
+// Token: 0x02001DC8 RID: 7624
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public enum EAccessModifier
 {
-	// Token: 0x0400AD61 RID: 44385
+	// Token: 0x0400AE3A RID: 44602
 	Unknown,
-	// Token: 0x0400AD62 RID: 44386
+	// Token: 0x0400AE3B RID: 44603
 	Public,
-	// Token: 0x0400AD63 RID: 44387
+	// Token: 0x0400AE3C RID: 44604
 	Private,
-	// Token: 0x0400AD64 RID: 44388
+	// Token: 0x0400AE3D RID: 44605
 	Protected,
-	// Token: 0x0400AD65 RID: 44389
+	// Token: 0x0400AE3E RID: 44606
 	Internal,
-	// Token: 0x0400AD66 RID: 44390
+	// Token: 0x0400AE3F RID: 44607
 	ProtectedInternal,
-	// Token: 0x0400AD67 RID: 44391
+	// Token: 0x0400AE40 RID: 44608
 	PrivateProtected
 }

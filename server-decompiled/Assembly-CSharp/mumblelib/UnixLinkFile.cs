@@ -6,41 +6,41 @@ using UnityEngine;
 
 namespace mumblelib
 {
-	// Token: 0x0200169F RID: 5791
+	// Token: 0x020016CB RID: 5835
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class UnixLinkFile : ILinkFile, IDisposable
 	{
-		// Token: 0x0600B592 RID: 46482
+		// Token: 0x0600B6E9 RID: 46825
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public static extern int shm_open([MarshalAs(UnmanagedType.LPStr)] string name, int oflag, uint mode);
 
-		// Token: 0x0600B593 RID: 46483
+		// Token: 0x0600B6EA RID: 46826
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public static extern uint getuid();
 
-		// Token: 0x0600B594 RID: 46484
+		// Token: 0x0600B6EB RID: 46827
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public static extern int ftruncate(int fd, long length);
 
-		// Token: 0x0600B595 RID: 46485
+		// Token: 0x0600B6EC RID: 46828
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public unsafe static extern void* mmap(void* addr, long length, int prot, int flags, int fd, long off);
 
-		// Token: 0x0600B596 RID: 46486
+		// Token: 0x0600B6ED RID: 46829
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public unsafe static extern void* munmap(void* addr, long length);
 
-		// Token: 0x0600B597 RID: 46487
+		// Token: 0x0600B6EE RID: 46830
 		[PublicizedFrom(EAccessModifier.Private)]
 		[DllImport("libc")]
 		public static extern int close(int fd);
 
-		// Token: 0x0600B598 RID: 46488 RVA: 0x00438C60 File Offset: 0x00436E60
+		// Token: 0x0600B6EF RID: 46831 RVA: 0x0043D180 File Offset: 0x0043B380
 		public unsafe UnixLinkFile()
 		{
 			this.fd = UnixLinkFile.shm_open("/MumbleLink." + UnixLinkFile.getuid().ToString(), 66, 384U);
@@ -60,9 +60,9 @@ namespace mumblelib
 			Log.Out("[MumbleLF] MemMapped");
 		}
 
-		// Token: 0x17001613 RID: 5651
-		// (get) Token: 0x0600B599 RID: 46489 RVA: 0x00438D07 File Offset: 0x00436F07
-		// (set) Token: 0x0600B59A RID: 46490 RVA: 0x00438D14 File Offset: 0x00436F14
+		// Token: 0x170016B5 RID: 5813
+		// (get) Token: 0x0600B6F0 RID: 46832 RVA: 0x0043D227 File Offset: 0x0043B427
+		// (set) Token: 0x0600B6F1 RID: 46833 RVA: 0x0043D234 File Offset: 0x0043B434
 		public unsafe uint UIVersion
 		{
 			get
@@ -75,14 +75,14 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x0600B59B RID: 46491 RVA: 0x00438D22 File Offset: 0x00436F22
+		// Token: 0x0600B6F2 RID: 46834 RVA: 0x0043D242 File Offset: 0x0043B442
 		public unsafe void Tick()
 		{
 			this.ptr->uiTick += 1U;
 		}
 
-		// Token: 0x17001614 RID: 5652
-		// (set) Token: 0x0600B59C RID: 46492 RVA: 0x00438D34 File Offset: 0x00436F34
+		// Token: 0x170016B6 RID: 5814
+		// (set) Token: 0x0600B6F3 RID: 46835 RVA: 0x0043D254 File Offset: 0x0043B454
 		public unsafe Vector3 AvatarPosition
 		{
 			set
@@ -91,8 +91,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x17001615 RID: 5653
-		// (set) Token: 0x0600B59D RID: 46493 RVA: 0x00438D4D File Offset: 0x00436F4D
+		// Token: 0x170016B7 RID: 5815
+		// (set) Token: 0x0600B6F4 RID: 46836 RVA: 0x0043D26D File Offset: 0x0043B46D
 		public unsafe Vector3 AvatarForward
 		{
 			set
@@ -101,8 +101,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x17001616 RID: 5654
-		// (set) Token: 0x0600B59E RID: 46494 RVA: 0x00438D66 File Offset: 0x00436F66
+		// Token: 0x170016B8 RID: 5816
+		// (set) Token: 0x0600B6F5 RID: 46837 RVA: 0x0043D286 File Offset: 0x0043B486
 		public unsafe Vector3 AvatarTop
 		{
 			set
@@ -111,8 +111,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x17001617 RID: 5655
-		// (set) Token: 0x0600B59F RID: 46495 RVA: 0x00438D7F File Offset: 0x00436F7F
+		// Token: 0x170016B9 RID: 5817
+		// (set) Token: 0x0600B6F6 RID: 46838 RVA: 0x0043D29F File Offset: 0x0043B49F
 		public unsafe string Name
 		{
 			set
@@ -121,8 +121,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x17001618 RID: 5656
-		// (set) Token: 0x0600B5A0 RID: 46496 RVA: 0x00438DA2 File Offset: 0x00436FA2
+		// Token: 0x170016BA RID: 5818
+		// (set) Token: 0x0600B6F7 RID: 46839 RVA: 0x0043D2C2 File Offset: 0x0043B4C2
 		public unsafe Vector3 CameraPosition
 		{
 			set
@@ -131,8 +131,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x17001619 RID: 5657
-		// (set) Token: 0x0600B5A1 RID: 46497 RVA: 0x00438DBB File Offset: 0x00436FBB
+		// Token: 0x170016BB RID: 5819
+		// (set) Token: 0x0600B6F8 RID: 46840 RVA: 0x0043D2DB File Offset: 0x0043B4DB
 		public unsafe Vector3 CameraForward
 		{
 			set
@@ -141,8 +141,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x1700161A RID: 5658
-		// (set) Token: 0x0600B5A2 RID: 46498 RVA: 0x00438DD4 File Offset: 0x00436FD4
+		// Token: 0x170016BC RID: 5820
+		// (set) Token: 0x0600B6F9 RID: 46841 RVA: 0x0043D2F4 File Offset: 0x0043B4F4
 		public unsafe Vector3 CameraTop
 		{
 			set
@@ -151,8 +151,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x1700161B RID: 5659
-		// (set) Token: 0x0600B5A3 RID: 46499 RVA: 0x00438DED File Offset: 0x00436FED
+		// Token: 0x170016BD RID: 5821
+		// (set) Token: 0x0600B6FA RID: 46842 RVA: 0x0043D30D File Offset: 0x0043B50D
 		public unsafe string Identity
 		{
 			set
@@ -161,8 +161,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x1700161C RID: 5660
-		// (set) Token: 0x0600B5A4 RID: 46500 RVA: 0x00438E10 File Offset: 0x00437010
+		// Token: 0x170016BE RID: 5822
+		// (set) Token: 0x0600B6FB RID: 46843 RVA: 0x0043D330 File Offset: 0x0043B530
 		public unsafe string Context
 		{
 			set
@@ -171,8 +171,8 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x1700161D RID: 5661
-		// (set) Token: 0x0600B5A5 RID: 46501 RVA: 0x00438E35 File Offset: 0x00437035
+		// Token: 0x170016BF RID: 5823
+		// (set) Token: 0x0600B6FC RID: 46844 RVA: 0x0043D355 File Offset: 0x0043B555
 		public unsafe string Description
 		{
 			set
@@ -181,7 +181,7 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x0600B5A6 RID: 46502 RVA: 0x00438E58 File Offset: 0x00437058
+		// Token: 0x0600B6FD RID: 46845 RVA: 0x0043D378 File Offset: 0x0043B578
 		public unsafe void Dispose()
 		{
 			if (!this.disposed)
@@ -192,227 +192,227 @@ namespace mumblelib
 			}
 		}
 
-		// Token: 0x0600B5A7 RID: 46503 RVA: 0x00438E88 File Offset: 0x00437088
+		// Token: 0x0600B6FE RID: 46846 RVA: 0x0043D3A8 File Offset: 0x0043B5A8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~UnixLinkFile()
 		{
 			this.Dispose();
 		}
 
-		// Token: 0x040087CA RID: 34762
+		// Token: 0x0400888F RID: 34959
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_RDONLY = 0;
 
-		// Token: 0x040087CB RID: 34763
+		// Token: 0x04008890 RID: 34960
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_WRONLY = 1;
 
-		// Token: 0x040087CC RID: 34764
+		// Token: 0x04008891 RID: 34961
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_RDWR = 2;
 
-		// Token: 0x040087CD RID: 34765
+		// Token: 0x04008892 RID: 34962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_CREAT = 64;
 
-		// Token: 0x040087CE RID: 34766
+		// Token: 0x04008893 RID: 34963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_EXCL = 128;
 
-		// Token: 0x040087CF RID: 34767
+		// Token: 0x04008894 RID: 34964
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int O_TRUNC = 512;
 
-		// Token: 0x040087D0 RID: 34768
+		// Token: 0x04008895 RID: 34965
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PROT_READ = 1;
 
-		// Token: 0x040087D1 RID: 34769
+		// Token: 0x04008896 RID: 34966
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PROT_WRITE = 2;
 
-		// Token: 0x040087D2 RID: 34770
+		// Token: 0x04008897 RID: 34967
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PROT_EXEC = 4;
 
-		// Token: 0x040087D3 RID: 34771
+		// Token: 0x04008898 RID: 34968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PROT_NONE = 0;
 
-		// Token: 0x040087D4 RID: 34772
+		// Token: 0x04008899 RID: 34969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MAP_SHARED = 1;
 
-		// Token: 0x040087D5 RID: 34773
+		// Token: 0x0400889A RID: 34970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MAP_PRIVATE = 2;
 
-		// Token: 0x040087D6 RID: 34774
+		// Token: 0x0400889B RID: 34971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MAP_SHARED_VALIDATE = 3;
 
-		// Token: 0x040087D7 RID: 34775
+		// Token: 0x0400889C RID: 34972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool disposed;
 
-		// Token: 0x040087D8 RID: 34776
+		// Token: 0x0400889D RID: 34973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe readonly UnixLinkFile.LinuxLinkMemory* ptr;
 
-		// Token: 0x040087D9 RID: 34777
+		// Token: 0x0400889E RID: 34974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int fd;
 
-		// Token: 0x020016A0 RID: 5792
+		// Token: 0x020016CC RID: 5836
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct LinuxLinkMemory
 		{
-			// Token: 0x040087DA RID: 34778
+			// Token: 0x0400889F RID: 34975
 			public uint uiVersion;
 
-			// Token: 0x040087DB RID: 34779
+			// Token: 0x040088A0 RID: 34976
 			public uint uiTick;
 
-			// Token: 0x040087DC RID: 34780
+			// Token: 0x040088A1 RID: 34977
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fAvatarPosition>e__FixedBuffer fAvatarPosition;
 
-			// Token: 0x040087DD RID: 34781
+			// Token: 0x040088A2 RID: 34978
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fAvatarFront>e__FixedBuffer fAvatarFront;
 
-			// Token: 0x040087DE RID: 34782
+			// Token: 0x040088A3 RID: 34979
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fAvatarTop>e__FixedBuffer fAvatarTop;
 
-			// Token: 0x040087DF RID: 34783
+			// Token: 0x040088A4 RID: 34980
 			[FixedBuffer(typeof(uint), 256)]
 			public UnixLinkFile.LinuxLinkMemory.<name>e__FixedBuffer name;
 
-			// Token: 0x040087E0 RID: 34784
+			// Token: 0x040088A5 RID: 34981
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fCameraPosition>e__FixedBuffer fCameraPosition;
 
-			// Token: 0x040087E1 RID: 34785
+			// Token: 0x040088A6 RID: 34982
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fCameraFront>e__FixedBuffer fCameraFront;
 
-			// Token: 0x040087E2 RID: 34786
+			// Token: 0x040088A7 RID: 34983
 			[FixedBuffer(typeof(float), 3)]
 			public UnixLinkFile.LinuxLinkMemory.<fCameraTop>e__FixedBuffer fCameraTop;
 
-			// Token: 0x040087E3 RID: 34787
+			// Token: 0x040088A8 RID: 34984
 			[FixedBuffer(typeof(uint), 256)]
 			public UnixLinkFile.LinuxLinkMemory.<identity>e__FixedBuffer identity;
 
-			// Token: 0x040087E4 RID: 34788
+			// Token: 0x040088A9 RID: 34985
 			public uint context_len;
 
-			// Token: 0x040087E5 RID: 34789
+			// Token: 0x040088AA RID: 34986
 			[FixedBuffer(typeof(byte), 256)]
 			public UnixLinkFile.LinuxLinkMemory.<context>e__FixedBuffer context;
 
-			// Token: 0x040087E6 RID: 34790
+			// Token: 0x040088AB RID: 34987
 			[FixedBuffer(typeof(uint), 2048)]
 			public UnixLinkFile.LinuxLinkMemory.<description>e__FixedBuffer description;
 
-			// Token: 0x020016A1 RID: 5793
+			// Token: 0x020016CD RID: 5837
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 256)]
 			public struct <context>e__FixedBuffer
 			{
-				// Token: 0x040087E7 RID: 34791
+				// Token: 0x040088AC RID: 34988
 				public byte FixedElementField;
 			}
 
-			// Token: 0x020016A2 RID: 5794
+			// Token: 0x020016CE RID: 5838
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 8192)]
 			public struct <description>e__FixedBuffer
 			{
-				// Token: 0x040087E8 RID: 34792
+				// Token: 0x040088AD RID: 34989
 				public uint FixedElementField;
 			}
 
-			// Token: 0x020016A3 RID: 5795
+			// Token: 0x020016CF RID: 5839
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fAvatarFront>e__FixedBuffer
 			{
-				// Token: 0x040087E9 RID: 34793
+				// Token: 0x040088AE RID: 34990
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A4 RID: 5796
+			// Token: 0x020016D0 RID: 5840
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fAvatarPosition>e__FixedBuffer
 			{
-				// Token: 0x040087EA RID: 34794
+				// Token: 0x040088AF RID: 34991
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A5 RID: 5797
+			// Token: 0x020016D1 RID: 5841
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fAvatarTop>e__FixedBuffer
 			{
-				// Token: 0x040087EB RID: 34795
+				// Token: 0x040088B0 RID: 34992
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A6 RID: 5798
+			// Token: 0x020016D2 RID: 5842
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fCameraFront>e__FixedBuffer
 			{
-				// Token: 0x040087EC RID: 34796
+				// Token: 0x040088B1 RID: 34993
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A7 RID: 5799
+			// Token: 0x020016D3 RID: 5843
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fCameraPosition>e__FixedBuffer
 			{
-				// Token: 0x040087ED RID: 34797
+				// Token: 0x040088B2 RID: 34994
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A8 RID: 5800
+			// Token: 0x020016D4 RID: 5844
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 12)]
 			public struct <fCameraTop>e__FixedBuffer
 			{
-				// Token: 0x040087EE RID: 34798
+				// Token: 0x040088B3 RID: 34995
 				public float FixedElementField;
 			}
 
-			// Token: 0x020016A9 RID: 5801
+			// Token: 0x020016D5 RID: 5845
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 1024)]
 			public struct <identity>e__FixedBuffer
 			{
-				// Token: 0x040087EF RID: 34799
+				// Token: 0x040088B4 RID: 34996
 				public uint FixedElementField;
 			}
 
-			// Token: 0x020016AA RID: 5802
+			// Token: 0x020016D6 RID: 5846
 			[CompilerGenerated]
 			[UnsafeValueType]
 			[StructLayout(LayoutKind.Sequential, Size = 1024)]
 			public struct <name>e__FixedBuffer
 			{
-				// Token: 0x040087F0 RID: 34800
+				// Token: 0x040088B5 RID: 34997
 				public uint FixedElementField;
 			}
 		}

@@ -1,21 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000613 RID: 1555
+// Token: 0x02000615 RID: 1557
 [RequireComponent(typeof(Camera))]
 public class LocalPlayerCamera : MonoBehaviour
 {
-	// Token: 0x14000038 RID: 56
-	// (add) Token: 0x0600329D RID: 12957 RVA: 0x0014915C File Offset: 0x0014735C
-	// (remove) Token: 0x0600329E RID: 12958 RVA: 0x00149194 File Offset: 0x00147394
+	// Token: 0x14000039 RID: 57
+	// (add) Token: 0x060032E0 RID: 13024 RVA: 0x00149B00 File Offset: 0x00147D00
+	// (remove) Token: 0x060032E1 RID: 13025 RVA: 0x00149B38 File Offset: 0x00147D38
 	public event Action<LocalPlayerCamera> PreCull;
 
-	// Token: 0x14000039 RID: 57
-	// (add) Token: 0x0600329F RID: 12959 RVA: 0x001491CC File Offset: 0x001473CC
-	// (remove) Token: 0x060032A0 RID: 12960 RVA: 0x00149204 File Offset: 0x00147404
+	// Token: 0x1400003A RID: 58
+	// (add) Token: 0x060032E2 RID: 13026 RVA: 0x00149B70 File Offset: 0x00147D70
+	// (remove) Token: 0x060032E3 RID: 13027 RVA: 0x00149BA8 File Offset: 0x00147DA8
 	public event Action<LocalPlayerCamera> PreRender;
 
-	// Token: 0x060032A1 RID: 12961 RVA: 0x0014923C File Offset: 0x0014743C
+	// Token: 0x060032E4 RID: 13028 RVA: 0x00149BE0 File Offset: 0x00147DE0
 	public static LocalPlayerCamera AddToCamera(Camera camera, LocalPlayerCamera.CameraType camType)
 	{
 		LocalPlayerCamera localPlayerCamera = camera.gameObject.AddMissingComponent<LocalPlayerCamera>();
@@ -26,7 +26,7 @@ public class LocalPlayerCamera : MonoBehaviour
 		return localPlayerCamera;
 	}
 
-	// Token: 0x060032A2 RID: 12962 RVA: 0x00149261 File Offset: 0x00147461
+	// Token: 0x060032E5 RID: 13029 RVA: 0x00149C05 File Offset: 0x00147E05
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init(LocalPlayerCamera.CameraType camType)
 	{
@@ -40,13 +40,13 @@ public class LocalPlayerCamera : MonoBehaviour
 		this.localPlayer = base.GetComponentInParent<LocalPlayer>();
 	}
 
-	// Token: 0x060032A3 RID: 12963 RVA: 0x0014929E File Offset: 0x0014749E
+	// Token: 0x060032E6 RID: 13030 RVA: 0x00149C42 File Offset: 0x00147E42
 	public void SetUI(LocalPlayerUI ui)
 	{
 		this.playerUI = ui;
 	}
 
-	// Token: 0x060032A4 RID: 12964 RVA: 0x001492A7 File Offset: 0x001474A7
+	// Token: 0x060032E7 RID: 13031 RVA: 0x00149C4B File Offset: 0x00147E4B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -59,28 +59,28 @@ public class LocalPlayerCamera : MonoBehaviour
 		LocalPlayerManager.OnLocalPlayersChanged += this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x060032A5 RID: 12965 RVA: 0x001492E5 File Offset: 0x001474E5
+	// Token: 0x060032E8 RID: 13032 RVA: 0x00149C89 File Offset: 0x00147E89
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged -= this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x060032A6 RID: 12966 RVA: 0x001492F8 File Offset: 0x001474F8
+	// Token: 0x060032E9 RID: 13033 RVA: 0x00149C9C File Offset: 0x00147E9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsAttachedToLocalPlayer()
 	{
 		return this.localPlayer != null;
 	}
 
-	// Token: 0x060032A7 RID: 12967 RVA: 0x00149306 File Offset: 0x00147506
+	// Token: 0x060032EA RID: 13034 RVA: 0x00149CAA File Offset: 0x00147EAA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLocalPlayersChanged()
 	{
 		this.ModifyCameraProperties();
 	}
 
-	// Token: 0x060032A8 RID: 12968 RVA: 0x00149310 File Offset: 0x00147510
+	// Token: 0x060032EB RID: 13035 RVA: 0x00149CB4 File Offset: 0x00147EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ModifyCameraProperties()
 	{
@@ -98,13 +98,13 @@ public class LocalPlayerCamera : MonoBehaviour
 		this.SetCameraDepth();
 	}
 
-	// Token: 0x060032A9 RID: 12969 RVA: 0x0014936C File Offset: 0x0014756C
+	// Token: 0x060032EC RID: 13036 RVA: 0x00149D10 File Offset: 0x00147F10
 	public void SetCameraDepth()
 	{
 		this.camera.depth = 1.01f + (float)this.playerUI.playerIndex * 0.01f + (float)this.uiChildIndex * 0.001f;
 	}
 
-	// Token: 0x060032AA RID: 12970 RVA: 0x001493A0 File Offset: 0x001475A0
+	// Token: 0x060032ED RID: 13037 RVA: 0x00149D44 File Offset: 0x00147F44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCull()
 	{
@@ -126,7 +126,7 @@ public class LocalPlayerCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060032AB RID: 12971 RVA: 0x00149421 File Offset: 0x00147621
+	// Token: 0x060032EE RID: 13038 RVA: 0x00149DC5 File Offset: 0x00147FC5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender()
 	{
@@ -136,49 +136,49 @@ public class LocalPlayerCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400282A RID: 10282
+	// Token: 0x04002823 RID: 10275
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly float splitScreenFOVFactors = 1f;
 
-	// Token: 0x0400282B RID: 10283
+	// Token: 0x04002824 RID: 10276
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera camera;
 
-	// Token: 0x0400282C RID: 10284
+	// Token: 0x04002825 RID: 10277
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerCamera.CameraType cameraType;
 
-	// Token: 0x0400282D RID: 10285
+	// Token: 0x04002826 RID: 10278
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x0400282E RID: 10286
+	// Token: 0x04002827 RID: 10279
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal entityPlayerLocal;
 
-	// Token: 0x0400282F RID: 10287
+	// Token: 0x04002828 RID: 10280
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayer localPlayer;
 
-	// Token: 0x04002830 RID: 10288
+	// Token: 0x04002829 RID: 10281
 	public int uiChildIndex;
 
-	// Token: 0x02000614 RID: 1556
+	// Token: 0x02000616 RID: 1558
 	public enum CameraType
 	{
-		// Token: 0x04002832 RID: 10290
+		// Token: 0x0400282B RID: 10283
 		None,
-		// Token: 0x04002833 RID: 10291
+		// Token: 0x0400282C RID: 10284
 		Main,
-		// Token: 0x04002834 RID: 10292
+		// Token: 0x0400282D RID: 10285
 		Weapon,
-		// Token: 0x04002835 RID: 10293
+		// Token: 0x0400282E RID: 10286
 		UI
 	}
 }

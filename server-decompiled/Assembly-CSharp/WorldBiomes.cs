@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000C03 RID: 3075
+// Token: 0x02000C15 RID: 3093
 public class WorldBiomes
 {
-	// Token: 0x06005DB6 RID: 23990 RVA: 0x00245CC4 File Offset: 0x00243EC4
+	// Token: 0x06005DCF RID: 24015 RVA: 0x00248FC0 File Offset: 0x002471C0
 	public WorldBiomes(XDocument _genxml, bool _instantiateReferences)
 	{
 		WorldBiomes.Instance = this;
@@ -19,12 +19,12 @@ public class WorldBiomes
 		this.readXML(_genxml, _instantiateReferences);
 	}
 
-	// Token: 0x06005DB7 RID: 23991 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005DD0 RID: 24016 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06005DB8 RID: 23992 RVA: 0x00245D16 File Offset: 0x00243F16
+	// Token: 0x06005DD1 RID: 24017 RVA: 0x00249012 File Offset: 0x00247212
 	public static void CleanupStatic()
 	{
 		if (WorldBiomes.Instance != null)
@@ -33,7 +33,7 @@ public class WorldBiomes
 		}
 	}
 
-	// Token: 0x06005DB9 RID: 23993 RVA: 0x00245D29 File Offset: 0x00243F29
+	// Token: 0x06005DD2 RID: 24018 RVA: 0x00249025 File Offset: 0x00247225
 	public int GetBiomeCount()
 	{
 		if (this.m_Color2BiomeMap == null)
@@ -43,14 +43,14 @@ public class WorldBiomes
 		return this.m_Color2BiomeMap.Count;
 	}
 
-	// Token: 0x06005DBA RID: 23994 RVA: 0x00245D40 File Offset: 0x00243F40
+	// Token: 0x06005DD3 RID: 24019 RVA: 0x0024903C File Offset: 0x0024723C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Dictionary<uint, BiomeDefinition> GetBiomeMap()
 	{
 		return this.m_Color2BiomeMap;
 	}
 
-	// Token: 0x06005DBB RID: 23995 RVA: 0x00245D48 File Offset: 0x00243F48
+	// Token: 0x06005DD4 RID: 24020 RVA: 0x00249044 File Offset: 0x00247244
 	public BiomeDefinition GetBiome(Color32 _color)
 	{
 		if (this.m_Color2BiomeMap.ContainsKey((uint)(((int)_color.r << 16) | ((int)_color.g << 8) | (int)_color.b)))
@@ -60,14 +60,14 @@ public class WorldBiomes
 		return null;
 	}
 
-	// Token: 0x06005DBC RID: 23996 RVA: 0x00245DA1 File Offset: 0x00243FA1
+	// Token: 0x06005DD5 RID: 24021 RVA: 0x0024909D File Offset: 0x0024729D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public BiomeDefinition GetBiome(byte _id)
 	{
 		return this.m_Id2BiomeArr[(int)_id];
 	}
 
-	// Token: 0x06005DBD RID: 23997 RVA: 0x00245DAB File Offset: 0x00243FAB
+	// Token: 0x06005DD6 RID: 24022 RVA: 0x002490A7 File Offset: 0x002472A7
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool TryGetBiome(byte _id, out BiomeDefinition _bd)
 	{
@@ -75,7 +75,7 @@ public class WorldBiomes
 		return _bd != null;
 	}
 
-	// Token: 0x06005DBE RID: 23998 RVA: 0x00245DBC File Offset: 0x00243FBC
+	// Token: 0x06005DD7 RID: 24023 RVA: 0x002490B8 File Offset: 0x002472B8
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public BiomeDefinition GetBiome(string _name)
 	{
@@ -86,7 +86,7 @@ public class WorldBiomes
 		return this.m_Name2BiomeMap[_name];
 	}
 
-	// Token: 0x06005DBF RID: 23999 RVA: 0x00245DDC File Offset: 0x00243FDC
+	// Token: 0x06005DD8 RID: 24024 RVA: 0x002490D8 File Offset: 0x002472D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void readXML(XDocument _xml, bool _instantiateReferences)
 	{
@@ -183,7 +183,7 @@ public class WorldBiomes
 		}
 	}
 
-	// Token: 0x06005DC0 RID: 24000 RVA: 0x00246374 File Offset: 0x00244574
+	// Token: 0x06005DD9 RID: 24025 RVA: 0x00249670 File Offset: 0x00247870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition parseBiome(byte id, byte subId, string name, XElement biomeElement, bool _instantiateReferences)
 	{
@@ -377,7 +377,7 @@ public class WorldBiomes
 		return biomeDefinition;
 	}
 
-	// Token: 0x06005DC1 RID: 24001 RVA: 0x00246D04 File Offset: 0x00244F04
+	// Token: 0x06005DDA RID: 24026 RVA: 0x0024A000 File Offset: 0x00248200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParseWeather(BiomeDefinition _bd, XElement _xe)
 	{
@@ -443,7 +443,7 @@ public class WorldBiomes
 		}
 	}
 
-	// Token: 0x06005DC2 RID: 24002 RVA: 0x00246FD0 File Offset: 0x002451D0
+	// Token: 0x06005DDB RID: 24027 RVA: 0x0024A2CC File Offset: 0x002484CC
 	public static BlockValue GetBlockValueForName(string blockname)
 	{
 		ItemValue item = ItemClass.GetItem(blockname, false);
@@ -454,7 +454,7 @@ public class WorldBiomes
 		return item.ToBlockValue(false);
 	}
 
-	// Token: 0x06005DC3 RID: 24003 RVA: 0x00247000 File Offset: 0x00245200
+	// Token: 0x06005DDC RID: 24028 RVA: 0x0024A2FC File Offset: 0x002484FC
 	public PoiMapElement getPoiForColor(uint uiColor)
 	{
 		PoiMapElement poiMapElement;
@@ -465,7 +465,7 @@ public class WorldBiomes
 		return null;
 	}
 
-	// Token: 0x06005DC4 RID: 24004 RVA: 0x00247020 File Offset: 0x00245220
+	// Token: 0x06005DDD RID: 24029 RVA: 0x0024A31C File Offset: 0x0024851C
 	public void AddPoiMapElement(PoiMapElement _newElement)
 	{
 		if (!this.m_PoiMap.ContainsKey(_newElement.m_uColorId))
@@ -474,7 +474,7 @@ public class WorldBiomes
 		}
 	}
 
-	// Token: 0x06005DC5 RID: 24005 RVA: 0x00247048 File Offset: 0x00245248
+	// Token: 0x06005DDE RID: 24030 RVA: 0x0024A344 File Offset: 0x00248544
 	public int GetTotalBluffsCount()
 	{
 		int num = 0;
@@ -488,22 +488,22 @@ public class WorldBiomes
 		return num;
 	}
 
-	// Token: 0x04004896 RID: 18582
+	// Token: 0x040048D5 RID: 18645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<uint, BiomeDefinition> m_Color2BiomeMap;
 
-	// Token: 0x04004897 RID: 18583
+	// Token: 0x040048D6 RID: 18646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition[] m_Id2BiomeArr;
 
-	// Token: 0x04004898 RID: 18584
+	// Token: 0x040048D7 RID: 18647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, BiomeDefinition> m_Name2BiomeMap;
 
-	// Token: 0x04004899 RID: 18585
+	// Token: 0x040048D8 RID: 18648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<uint, PoiMapElement> m_PoiMap;
 
-	// Token: 0x0400489A RID: 18586
+	// Token: 0x040048D9 RID: 18649
 	public static WorldBiomes Instance;
 }

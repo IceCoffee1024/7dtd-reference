@@ -4,17 +4,17 @@ using System.Xml.Linq;
 
 namespace Challenges
 {
-	// Token: 0x020018ED RID: 6381
+	// Token: 0x02001919 RID: 6425
 	public class ChallengeCategory
 	{
-		// Token: 0x0600C4CB RID: 50379 RVA: 0x004888AF File Offset: 0x00486AAF
+		// Token: 0x0600C623 RID: 50723 RVA: 0x0048CD9F File Offset: 0x0048AF9F
 		public ChallengeCategory(string name)
 		{
 			this.Name = name;
 		}
 
-		// Token: 0x17001848 RID: 6216
-		// (get) Token: 0x0600C4CC RID: 50380 RVA: 0x004888D4 File Offset: 0x00486AD4
+		// Token: 0x170018EA RID: 6378
+		// (get) Token: 0x0600C624 RID: 50724 RVA: 0x0048CDC4 File Offset: 0x0048AFC4
 		public bool IsActive
 		{
 			get
@@ -27,7 +27,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4CD RID: 50381 RVA: 0x004888EC File Offset: 0x00486AEC
+		// Token: 0x0600C625 RID: 50725 RVA: 0x0048CDDC File Offset: 0x0048AFDC
 		public bool CanShow(EntityPlayer player)
 		{
 			if (this.showType == ChallengeCategory.ShowTypes.Twitch)
@@ -45,7 +45,7 @@ namespace Challenges
 			return ChallengeJournal.AllowChallenges;
 		}
 
-		// Token: 0x0600C4CE RID: 50382 RVA: 0x00488940 File Offset: 0x00486B40
+		// Token: 0x0600C626 RID: 50726 RVA: 0x0048CE30 File Offset: 0x0048B030
 		public void ParseElement(XElement e)
 		{
 			if (e.HasAttribute("title_key"))
@@ -78,39 +78,39 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x040094B2 RID: 38066
+		// Token: 0x04009578 RID: 38264
 		public static Dictionary<string, ChallengeCategory> s_ChallengeCategories = new CaseInsensitiveStringDictionary<ChallengeCategory>();
 
-		// Token: 0x040094B3 RID: 38067
+		// Token: 0x04009579 RID: 38265
 		public string Name;
 
-		// Token: 0x040094B4 RID: 38068
+		// Token: 0x0400957A RID: 38266
 		public string Icon;
 
-		// Token: 0x040094B5 RID: 38069
+		// Token: 0x0400957B RID: 38267
 		public string Title;
 
-		// Token: 0x040094B6 RID: 38070
+		// Token: 0x0400957C RID: 38268
 		public string DisplayKey = "";
 
-		// Token: 0x040094B7 RID: 38071
+		// Token: 0x0400957D RID: 38269
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ChallengeCategory.ShowTypes showType;
 
-		// Token: 0x040094B8 RID: 38072
+		// Token: 0x0400957E RID: 38270
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string showValue = "";
 
-		// Token: 0x020018EE RID: 6382
+		// Token: 0x0200191A RID: 6426
 		public enum ShowTypes
 		{
-			// Token: 0x040094BA RID: 38074
+			// Token: 0x04009580 RID: 38272
 			Normal,
-			// Token: 0x040094BB RID: 38075
+			// Token: 0x04009581 RID: 38273
 			CVar,
-			// Token: 0x040094BC RID: 38076
+			// Token: 0x04009582 RID: 38274
 			Twitch,
-			// Token: 0x040094BD RID: 38077
+			// Token: 0x04009583 RID: 38275
 			BiomeProgression
 		}
 	}

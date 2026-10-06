@@ -6,12 +6,12 @@ using Noemax.GZip;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000870 RID: 2160
+// Token: 0x02000873 RID: 2163
 [Preserve]
 public class NetPackageWorldFolder : NetPackage
 {
-	// Token: 0x17000685 RID: 1669
-	// (get) Token: 0x06003F06 RID: 16134 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170006A4 RID: 1700
+	// (get) Token: 0x06003E9A RID: 16026 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool Compress
 	{
 		get
@@ -20,8 +20,8 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x17000686 RID: 1670
-	// (get) Token: 0x06003F07 RID: 16135 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170006A5 RID: 1701
+	// (get) Token: 0x06003E9B RID: 16027 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int Channel
 	{
 		get
@@ -30,7 +30,7 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F08 RID: 16136 RVA: 0x0018C95A File Offset: 0x0018AB5A
+	// Token: 0x06003E9C RID: 16028 RVA: 0x0018C796 File Offset: 0x0018A996
 	public NetPackageWorldFolder Setup(byte[] _data, int _seqNr, int _totalParts)
 	{
 		this.data = _data;
@@ -39,7 +39,7 @@ public class NetPackageWorldFolder : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003F09 RID: 16137 RVA: 0x0018C974 File Offset: 0x0018AB74
+	// Token: 0x06003E9D RID: 16029 RVA: 0x0018C7B0 File Offset: 0x0018A9B0
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.seqNr = _reader.ReadInt32();
@@ -51,7 +51,7 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F0A RID: 16138 RVA: 0x0018C9B4 File Offset: 0x0018ABB4
+	// Token: 0x06003E9E RID: 16030 RVA: 0x0018C7F0 File Offset: 0x0018A9F0
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -64,7 +64,7 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F0B RID: 16139 RVA: 0x0018CA10 File Offset: 0x0018AC10
+	// Token: 0x06003E9F RID: 16031 RVA: 0x0018C84C File Offset: 0x0018AA4C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -94,14 +94,8 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F0C RID: 16140 RVA: 0x0018CB25 File Offset: 0x0018AD25
-	public override int GetLength()
-	{
-		return 16 + ((this.data != null) ? this.data.Length : 0);
-	}
-
-	// Token: 0x17000687 RID: 1671
-	// (get) Token: 0x06003F0D RID: 16141 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170006A6 RID: 1702
+	// (get) Token: 0x06003EA0 RID: 16032 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -110,7 +104,7 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F0E RID: 16142 RVA: 0x0018CB3D File Offset: 0x0018AD3D
+	// Token: 0x06003EA1 RID: 16033 RVA: 0x0018C961 File Offset: 0x0018AB61
 	public static IEnumerator TestWorldValid(string _locationPath, Dictionary<string, uint> _worldFileHashes, Action<bool> _resultCallback)
 	{
 		byte[] buffer = new byte[8192];
@@ -118,7 +112,7 @@ public class NetPackageWorldFolder : NetPackage
 		{
 			while (enumerator.MoveNext())
 			{
-				NetPackageWorldFolder.<>c__DisplayClass17_0 CS$<>8__locals1 = new NetPackageWorldFolder.<>c__DisplayClass17_0();
+				NetPackageWorldFolder.<>c__DisplayClass16_0 CS$<>8__locals1 = new NetPackageWorldFolder.<>c__DisplayClass16_0();
 				CS$<>8__locals1.hashEntry = enumerator.Current;
 				string text = _locationPath + "/" + CS$<>8__locals1.hashEntry.Key;
 				if (!SdFile.Exists(text))
@@ -157,7 +151,7 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003F0F RID: 16143 RVA: 0x0018CB5A File Offset: 0x0018AD5A
+	// Token: 0x06003EA2 RID: 16034 RVA: 0x0018C97E File Offset: 0x0018AB7E
 	public static IEnumerator RequestWorld()
 	{
 		NetPackageWorldFolder.ReceiveStream = new MemoryStream();
@@ -171,7 +165,7 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003F10 RID: 16144 RVA: 0x0018CB62 File Offset: 0x0018AD62
+	// Token: 0x06003EA3 RID: 16035 RVA: 0x0018C986 File Offset: 0x0018AB86
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator uncompressWorld()
 	{
@@ -259,7 +253,7 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003F11 RID: 16145 RVA: 0x0018CB6A File Offset: 0x0018AD6A
+	// Token: 0x06003EA4 RID: 16036 RVA: 0x0018C98E File Offset: 0x0018AB8E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator readDtmDelta(Stream _fs, DeflateInputStream _zipStream, MicroStopwatch _mswCompressing, long _fileSize)
 	{
@@ -300,8 +294,8 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x17000688 RID: 1672
-	// (get) Token: 0x06003F12 RID: 16146 RVA: 0x0018CB8E File Offset: 0x0018AD8E
+	// Token: 0x170006A7 RID: 1703
+	// (get) Token: 0x06003EA5 RID: 16037 RVA: 0x0018C9B2 File Offset: 0x0018ABB2
 	public static int MaxTimePerFrame
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -315,7 +309,7 @@ public class NetPackageWorldFolder : NetPackage
 		}
 	}
 
-	// Token: 0x06003F13 RID: 16147 RVA: 0x0018CB9C File Offset: 0x0018AD9C
+	// Token: 0x06003EA6 RID: 16038 RVA: 0x0018C9C0 File Offset: 0x0018ABC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void StartSendingPacketsToClient(ClientInfo _cInfo)
 	{
@@ -337,7 +331,7 @@ public class NetPackageWorldFolder : NetPackage
 		ThreadManager.StartCoroutine(NetPackageWorldFolder.sendPacketsToClient(_cInfo));
 	}
 
-	// Token: 0x06003F14 RID: 16148 RVA: 0x0018CC28 File Offset: 0x0018AE28
+	// Token: 0x06003EA7 RID: 16039 RVA: 0x0018CA4C File Offset: 0x0018AC4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator prepareWorldFolderData()
 	{
@@ -443,7 +437,7 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003F15 RID: 16149 RVA: 0x0018CC30 File Offset: 0x0018AE30
+	// Token: 0x06003EA8 RID: 16040 RVA: 0x0018CA54 File Offset: 0x0018AC54
 	public static IEnumerator writeDtmDelta(Stream _sourceStream, Stream _targetStream, MicroStopwatch _mswCompressing)
 	{
 		int w = (int)Math.Sqrt((double)(_sourceStream.Length / 2L));
@@ -483,7 +477,7 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003F16 RID: 16150 RVA: 0x0018CC4D File Offset: 0x0018AE4D
+	// Token: 0x06003EA9 RID: 16041 RVA: 0x0018CA71 File Offset: 0x0018AC71
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator sendPacketsToClient(ClientInfo _cInfo)
 	{
@@ -504,55 +498,55 @@ public class NetPackageWorldFolder : NetPackage
 		yield break;
 	}
 
-	// Token: 0x040032DD RID: 13021
+	// Token: 0x040032C8 RID: 13000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 
-	// Token: 0x040032DE RID: 13022
+	// Token: 0x040032C9 RID: 13001
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int seqNr;
 
-	// Token: 0x040032DF RID: 13023
+	// Token: 0x040032CA RID: 13002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalParts;
 
-	// Token: 0x040032E0 RID: 13024
+	// Token: 0x040032CB RID: 13003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime downloadStartTime;
 
-	// Token: 0x040032E1 RID: 13025
+	// Token: 0x040032CC RID: 13004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryStream ReceiveStream;
 
-	// Token: 0x040032E2 RID: 13026
+	// Token: 0x040032CD RID: 13005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool WorldReceivedAndUncompressed;
 
-	// Token: 0x040032E3 RID: 13027
+	// Token: 0x040032CE RID: 13006
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WaitForSeconds PACKET_SEND_DELAY = new WaitForSeconds(0.25f);
 
-	// Token: 0x040032E4 RID: 13028
+	// Token: 0x040032CF RID: 13007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CHUNK_SIZE = 65536;
 
-	// Token: 0x040032E5 RID: 13029
+	// Token: 0x040032D0 RID: 13008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int DTM_BITMASK = 65520;
 
-	// Token: 0x040032E6 RID: 13030
+	// Token: 0x040032D1 RID: 13009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<byte[]> CompressedWorldDataChunks;
 
-	// Token: 0x040032E7 RID: 13031
+	// Token: 0x040032D2 RID: 13010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string CachedWorldName;
 
-	// Token: 0x040032E8 RID: 13032
+	// Token: 0x040032D3 RID: 13011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object LockObj = new object();
 
-	// Token: 0x040032E9 RID: 13033
+	// Token: 0x040032D4 RID: 13012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator PreparationCoroutine;
 }

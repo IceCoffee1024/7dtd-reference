@@ -5,24 +5,24 @@ using RaycastPathing;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020008E5 RID: 2277
+// Token: 0x020008EA RID: 2282
 [Preserve]
 public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 {
-	// Token: 0x0600420B RID: 16907 RVA: 0x0019C916 File Offset: 0x0019AB16
+	// Token: 0x060041A1 RID: 16801 RVA: 0x0019CA2A File Offset: 0x0019AC2A
 	public FloodFillEntityPathGenerator(World _world, EntityAlive _entity)
 		: base(_world, _entity)
 	{
 	}
 
-	// Token: 0x0600420C RID: 16908 RVA: 0x0019C920 File Offset: 0x0019AB20
+	// Token: 0x060041A2 RID: 16802 RVA: 0x0019CA34 File Offset: 0x0019AC34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitPath(Vector3 start, Vector3 end)
 	{
 		this.Path = new FloodFillPath(start, end);
 	}
 
-	// Token: 0x0600420D RID: 16909 RVA: 0x0019C92F File Offset: 0x0019AB2F
+	// Token: 0x060041A3 RID: 16803 RVA: 0x0019CA43 File Offset: 0x0019AC43
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerator BuildPathProc()
 	{
@@ -63,7 +63,7 @@ public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 		yield break;
 	}
 
-	// Token: 0x0600420E RID: 16910 RVA: 0x0019C940 File Offset: 0x0019AB40
+	// Token: 0x060041A4 RID: 16804 RVA: 0x0019CA54 File Offset: 0x0019AC54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsValidNeighbor(World world, FloodFillPath path, FloodFillNode current, FloodFillNode adjacent)
 	{
@@ -83,7 +83,7 @@ public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 		return false;
 	}
 
-	// Token: 0x0600420F RID: 16911 RVA: 0x0019C9BC File Offset: 0x0019ABBC
+	// Token: 0x060041A5 RID: 16805 RVA: 0x0019CAD0 File Offset: 0x0019ACD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<FloodFillNode> AddNeighborNodes(World world, FloodFillPath path, FloodFillNode current)
 	{
@@ -99,7 +99,7 @@ public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 		return list;
 	}
 
-	// Token: 0x06004210 RID: 16912 RVA: 0x0019CA28 File Offset: 0x0019AC28
+	// Token: 0x060041A6 RID: 16806 RVA: 0x0019CB3C File Offset: 0x0019AD3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FloodFillNode IsNeighborEnd(List<FloodFillNode> currentNeighbors)
 	{
@@ -114,7 +114,7 @@ public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 		return null;
 	}
 
-	// Token: 0x06004211 RID: 16913 RVA: 0x0019CA6C File Offset: 0x0019AC6C
+	// Token: 0x060041A7 RID: 16807 RVA: 0x0019CB80 File Offset: 0x0019AD80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FloodFillNode ProcNeighborNodes(List<FloodFillNode> currentNeighbors, FloodFillNode current)
 	{
@@ -171,7 +171,7 @@ public class FloodFillEntityPathGenerator : RaycastEntityPathGenerator
 		return floodFillNode7;
 	}
 
-	// Token: 0x0400358E RID: 13710
+	// Token: 0x04003582 RID: 13698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float debugTick;
 }

@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace DynamicMusic.Legacy.ObjectModel
 {
-	// Token: 0x02001A9F RID: 6815
+	// Token: 0x02001ACB RID: 6859
 	public class InstrumentID : Dictionary<PlacementType, string>
 	{
-		// Token: 0x14000119 RID: 281
-		// (add) Token: 0x0600CDB2 RID: 52658 RVA: 0x004AC83C File Offset: 0x004AAA3C
-		// (remove) Token: 0x0600CDB3 RID: 52659 RVA: 0x004AC874 File Offset: 0x004AAA74
+		// Token: 0x14000118 RID: 280
+		// (add) Token: 0x0600CF0A RID: 53002 RVA: 0x004B0D08 File Offset: 0x004AEF08
+		// (remove) Token: 0x0600CF0B RID: 53003 RVA: 0x004B0D40 File Offset: 0x004AEF40
 		public event InstrumentID.LoadFinishedAction OnLoadFinished;
 
-		// Token: 0x1700195C RID: 6492
-		// (get) Token: 0x0600CDB4 RID: 52660 RVA: 0x004AC8A9 File Offset: 0x004AAAA9
-		// (set) Token: 0x0600CDB5 RID: 52661 RVA: 0x004AC8B1 File Offset: 0x004AAAB1
+		// Token: 0x170019FE RID: 6654
+		// (get) Token: 0x0600CF0C RID: 53004 RVA: 0x004B0D75 File Offset: 0x004AEF75
+		// (set) Token: 0x0600CF0D RID: 53005 RVA: 0x004B0D7D File Offset: 0x004AEF7D
 		public bool IsLoaded
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CDB6 RID: 52662 RVA: 0x004AC8BA File Offset: 0x004AAABA
+		// Token: 0x0600CF0E RID: 53006 RVA: 0x004B0D86 File Offset: 0x004AEF86
 		public InstrumentID()
 			: base(3)
 		{
@@ -31,7 +31,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			this.Clips = new EnumDictionary<PlacementType, AudioClip>(3);
 		}
 
-		// Token: 0x0600CDB7 RID: 52663 RVA: 0x004AC8F8 File Offset: 0x004AAAF8
+		// Token: 0x0600CF0F RID: 53007 RVA: 0x004B0DC4 File Offset: 0x004AEFC4
 		public void Load()
 		{
 			if (!this.IsLoaded)
@@ -44,7 +44,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			}
 		}
 
-		// Token: 0x0600CDB8 RID: 52664 RVA: 0x004AC922 File Offset: 0x004AAB22
+		// Token: 0x0600CF10 RID: 53008 RVA: 0x004B0DEE File Offset: 0x004AEFEE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator<bool> LoadClip()
 		{
@@ -130,14 +130,14 @@ namespace DynamicMusic.Legacy.ObjectModel
 			yield break;
 		}
 
-		// Token: 0x0600CDB9 RID: 52665 RVA: 0x004AC931 File Offset: 0x004AAB31
+		// Token: 0x0600CF11 RID: 53009 RVA: 0x004B0DFD File Offset: 0x004AEFFD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnRequestFinished(AudioClip clip)
 		{
 			this.isClipLoaded = true;
 		}
 
-		// Token: 0x0600CDBA RID: 52666 RVA: 0x004AC93C File Offset: 0x004AAB3C
+		// Token: 0x0600CF12 RID: 53010 RVA: 0x004B0E08 File Offset: 0x004AF008
 		public void Unload()
 		{
 			foreach (float[] array in this.ClipData.Values)
@@ -151,51 +151,51 @@ namespace DynamicMusic.Legacy.ObjectModel
 			this.Frequency = 44100;
 		}
 
-		// Token: 0x04009BD9 RID: 39897
+		// Token: 0x04009C9F RID: 40095
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator<bool> thisEnumerator;
 
-		// Token: 0x04009BDB RID: 39899
+		// Token: 0x04009CA1 RID: 40097
 		public static string BundlePath;
 
-		// Token: 0x04009BDC RID: 39900
+		// Token: 0x04009CA2 RID: 40098
 		public string Name;
 
-		// Token: 0x04009BDD RID: 39901
+		// Token: 0x04009CA3 RID: 40099
 		public string SourceName;
 
-		// Token: 0x04009BDE RID: 39902
+		// Token: 0x04009CA4 RID: 40100
 		public float Volume = 1f;
 
-		// Token: 0x04009BDF RID: 39903
+		// Token: 0x04009CA5 RID: 40101
 		public int Frames;
 
-		// Token: 0x04009BE0 RID: 39904
+		// Token: 0x04009CA6 RID: 40102
 		public int Samples;
 
-		// Token: 0x04009BE1 RID: 39905
+		// Token: 0x04009CA7 RID: 40103
 		public int Channels;
 
-		// Token: 0x04009BE2 RID: 39906
+		// Token: 0x04009CA8 RID: 40104
 		public int Frequency = 44100;
 
-		// Token: 0x04009BE3 RID: 39907
+		// Token: 0x04009CA9 RID: 40105
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EnumDictionary<PlacementType, AudioClip> Clips;
 
-		// Token: 0x04009BE4 RID: 39908
+		// Token: 0x04009CAA RID: 40106
 		public EnumDictionary<PlacementType, float[]> ClipData;
 
-		// Token: 0x04009BE6 RID: 39910
+		// Token: 0x04009CAC RID: 40108
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasGrabbedClipProperties;
 
-		// Token: 0x04009BE7 RID: 39911
+		// Token: 0x04009CAD RID: 40109
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isClipLoaded;
 
-		// Token: 0x02001AA0 RID: 6816
-		// (Invoke) Token: 0x0600CDBC RID: 52668
+		// Token: 0x02001ACC RID: 6860
+		// (Invoke) Token: 0x0600CF14 RID: 53012
 		public delegate void LoadFinishedAction();
 	}
 }

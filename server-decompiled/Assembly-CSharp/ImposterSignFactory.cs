@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000A6C RID: 2668
+// Token: 0x02000A78 RID: 2680
 public static class ImposterSignFactory
 {
-	// Token: 0x060050D7 RID: 20695 RVA: 0x001EE0A0 File Offset: 0x001EC2A0
+	// Token: 0x060050BF RID: 20671 RVA: 0x001EFC24 File Offset: 0x001EDE24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform GetPrefab(bool isDecal)
 	{
@@ -23,7 +23,7 @@ public static class ImposterSignFactory
 		return ImposterSignFactory.canvasPrefab;
 	}
 
-	// Token: 0x060050D8 RID: 20696 RVA: 0x001EE0F8 File Offset: 0x001EC2F8
+	// Token: 0x060050C0 RID: 20672 RVA: 0x001EFC7C File Offset: 0x001EDE7C
 	public static SignCanvas Create(GameObject _parent, ImposterCanvas _data)
 	{
 		ImposterSignFactory.<>c__DisplayClass5_0 CS$<>8__locals1 = new ImposterSignFactory.<>c__DisplayClass5_0();
@@ -45,14 +45,14 @@ public static class ImposterSignFactory
 		gameObject.transform.localRotation = CS$<>8__locals1._data.WorldRotation;
 		gameObject.transform.localScale = new Vector3(CS$<>8__locals1._data.Size.x, CS$<>8__locals1._data.Size.y, 1f);
 		CS$<>8__locals1.canvas = gameObject.GetComponent<SignCanvas>();
+		CS$<>8__locals1.canvas.Initialize(new SignDataManager.RenderingDataPatcher(CS$<>8__locals1.<Create>g__PatchRenderingData|0));
 		CS$<>8__locals1.canvas.State = CS$<>8__locals1._data.State.Clone();
 		CS$<>8__locals1.canvas.CanvasAspect = CS$<>8__locals1._data.CanvasAspect;
-		CS$<>8__locals1.canvas.Initialize(new SignDataManager.RenderingDataPatcher(CS$<>8__locals1.<Create>g__PatchRenderingData|0));
 		CS$<>8__locals1._data.Canvas = CS$<>8__locals1.canvas;
 		return CS$<>8__locals1.canvas;
 	}
 
-	// Token: 0x060050D9 RID: 20697 RVA: 0x001EE29E File Offset: 0x001EC49E
+	// Token: 0x060050C1 RID: 20673 RVA: 0x001EFE22 File Offset: 0x001EE022
 	public static void Destroy(ImposterCanvas _data)
 	{
 		if (((_data != null) ? _data.Canvas : null) == null)
@@ -63,7 +63,7 @@ public static class ImposterSignFactory
 		_data.Canvas = null;
 	}
 
-	// Token: 0x060050DA RID: 20698 RVA: 0x001EE2C8 File Offset: 0x001EC4C8
+	// Token: 0x060050C2 RID: 20674 RVA: 0x001EFE4C File Offset: 0x001EE04C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector4 ComputeAspectST(float canvasAspect)
 	{
@@ -72,19 +72,19 @@ public static class ImposterSignFactory
 		return new Vector4(num, num2, -num * 0.5f, -num2 * 0.5f);
 	}
 
-	// Token: 0x04003E29 RID: 15913
+	// Token: 0x04003E45 RID: 15941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string CanvasPrefabPath = "@:Entities/Crafting/sign_canvas_imposter_Prefab.prefab";
 
-	// Token: 0x04003E2A RID: 15914
+	// Token: 0x04003E46 RID: 15942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DecalPrefabPath = "@:Entities/Crafting/sign_decal_imposter_Prefab.prefab";
 
-	// Token: 0x04003E2B RID: 15915
+	// Token: 0x04003E47 RID: 15943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform canvasPrefab;
 
-	// Token: 0x04003E2C RID: 15916
+	// Token: 0x04003E48 RID: 15944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform decalPrefab;
 }

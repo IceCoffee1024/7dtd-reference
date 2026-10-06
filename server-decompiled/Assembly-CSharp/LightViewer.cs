@@ -2,29 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001258 RID: 4696
+// Token: 0x02001270 RID: 4720
 public class LightViewer : MonoBehaviour
 {
-	// Token: 0x06009569 RID: 38249 RVA: 0x00385E4A File Offset: 0x0038404A
+	// Token: 0x060095F6 RID: 38390 RVA: 0x0038A692 File Offset: 0x00388892
 	public static void SetEnabled(bool _on)
 	{
 		LightViewer.IsEnabled = _on;
 		LightLOD.DebugViewDistance = (_on ? float.MaxValue : 0f);
 	}
 
-	// Token: 0x0600956A RID: 38250 RVA: 0x00385E66 File Offset: 0x00384066
+	// Token: 0x060095F7 RID: 38391 RVA: 0x0038A6AE File Offset: 0x003888AE
 	public void OnDestroy()
 	{
 		this.Disable();
 	}
 
-	// Token: 0x0600956B RID: 38251 RVA: 0x00385E6E File Offset: 0x0038406E
+	// Token: 0x060095F8 RID: 38392 RVA: 0x0038A6B6 File Offset: 0x003888B6
 	public void SetUpdateFrequency(float _updateFrequency)
 	{
 		this.updateFrequency = _updateFrequency;
 	}
 
-	// Token: 0x0600956C RID: 38252 RVA: 0x00385E78 File Offset: 0x00384078
+	// Token: 0x060095F9 RID: 38393 RVA: 0x0038A6C0 File Offset: 0x003888C0
 	public void Disable()
 	{
 		for (int i = 0; i < this.spheres.Count; i++)
@@ -36,7 +36,7 @@ public class LightViewer : MonoBehaviour
 		this.allLights = null;
 	}
 
-	// Token: 0x0600956D RID: 38253 RVA: 0x00385EC4 File Offset: 0x003840C4
+	// Token: 0x060095FA RID: 38394 RVA: 0x0038A70C File Offset: 0x0038890C
 	public void TurnOnAllLights()
 	{
 		foreach (KeyValuePair<Light, bool> keyValuePair in this.lightsOn)
@@ -49,7 +49,7 @@ public class LightViewer : MonoBehaviour
 		this.lightsOn.Clear();
 	}
 
-	// Token: 0x0600956E RID: 38254 RVA: 0x00385F40 File Offset: 0x00384140
+	// Token: 0x060095FB RID: 38395 RVA: 0x0038A788 File Offset: 0x00388988
 	public void TurnOffAllLights()
 	{
 		if (this.allLights == null)
@@ -67,7 +67,7 @@ public class LightViewer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600956F RID: 38255 RVA: 0x00385FC0 File Offset: 0x003841C0
+	// Token: 0x060095FC RID: 38396 RVA: 0x0038A808 File Offset: 0x00388A08
 	public void Update()
 	{
 		if (this.lightsOn.Count > 0)
@@ -200,83 +200,83 @@ public class LightViewer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007021 RID: 28705
+	// Token: 0x0400708B RID: 28811
 	public static bool IsEnabled;
 
-	// Token: 0x04007022 RID: 28706
+	// Token: 0x0400708C RID: 28812
 	public static bool IsAllOff;
 
-	// Token: 0x04007023 RID: 28707
+	// Token: 0x0400708D RID: 28813
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light[] allLights;
 
-	// Token: 0x04007024 RID: 28708
+	// Token: 0x0400708E RID: 28814
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<Light, bool> lightsOn = new Dictionary<Light, bool>();
 
-	// Token: 0x04007025 RID: 28709
+	// Token: 0x0400708F RID: 28815
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<GameObject> spheres = new List<GameObject>();
 
-	// Token: 0x04007026 RID: 28710
+	// Token: 0x04007090 RID: 28816
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereClear;
 
-	// Token: 0x04007027 RID: 28711
+	// Token: 0x04007091 RID: 28817
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereInc;
 
-	// Token: 0x04007028 RID: 28712
+	// Token: 0x04007092 RID: 28818
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereInvInc;
 
-	// Token: 0x04007029 RID: 28713
+	// Token: 0x04007093 RID: 28819
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereColor;
 
-	// Token: 0x0400702A RID: 28714
+	// Token: 0x04007094 RID: 28820
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereInvColor;
 
-	// Token: 0x0400702B RID: 28715
+	// Token: 0x04007095 RID: 28821
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereNoShadowColor;
 
-	// Token: 0x0400702C RID: 28716
+	// Token: 0x04007096 RID: 28822
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject sourceSphereNoShadowInvColor;
 
-	// Token: 0x0400702D RID: 28717
+	// Token: 0x04007097 RID: 28823
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeLastGathered;
 
-	// Token: 0x0400702E RID: 28718
+	// Token: 0x04007098 RID: 28824
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float updateFrequency = 1f;
 
-	// Token: 0x0400702F RID: 28719
+	// Token: 0x04007099 RID: 28825
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 prevCameraPos;
 
-	// Token: 0x04007030 RID: 28720
+	// Token: 0x0400709A RID: 28826
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Light> noShadowList;
 
-	// Token: 0x04007031 RID: 28721
+	// Token: 0x0400709B RID: 28827
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Light> shadowList;

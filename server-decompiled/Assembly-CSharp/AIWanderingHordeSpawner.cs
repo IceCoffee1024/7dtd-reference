@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000426 RID: 1062
+// Token: 0x02000428 RID: 1064
 [Preserve]
 public class AIWanderingHordeSpawner
 {
-	// Token: 0x060020BA RID: 8378 RVA: 0x000C51E8 File Offset: 0x000C33E8
+	// Token: 0x060020A9 RID: 8361 RVA: 0x000C529C File Offset: 0x000C349C
 	public AIWanderingHordeSpawner(AIDirector _director, AIWanderingHordeSpawner.SpawnType _spawnType, AIWanderingHordeSpawner.HordeArrivedDelegate _arrivedEvent, List<AIDirectorPlayerState> _targets, ulong _endTime, Vector3 _startPos, Vector3 _pitStopPos, Vector3 _endPos)
 	{
 		this.director = _director;
@@ -42,7 +42,7 @@ public class AIWanderingHordeSpawner
 		this.spawner.ClearMembers();
 	}
 
-	// Token: 0x060020BB RID: 8379 RVA: 0x000C52B4 File Offset: 0x000C34B4
+	// Token: 0x060020AA RID: 8362 RVA: 0x000C5368 File Offset: 0x000C3568
 	public bool Update(World world, float _deltaTime)
 	{
 		if (world.GetPlayers().Count == 0)
@@ -93,7 +93,7 @@ public class AIWanderingHordeSpawner
 		return false;
 	}
 
-	// Token: 0x060020BC RID: 8380 RVA: 0x000C53B4 File Offset: 0x000C35B4
+	// Token: 0x060020AB RID: 8363 RVA: 0x000C5468 File Offset: 0x000C3668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateSpawn(World _world, float _deltaTime)
 	{
@@ -155,7 +155,7 @@ public class AIWanderingHordeSpawner
 		return false;
 	}
 
-	// Token: 0x060020BD RID: 8381 RVA: 0x000C5560 File Offset: 0x000C3760
+	// Token: 0x060020AC RID: 8364 RVA: 0x000C5614 File Offset: 0x000C3814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateHorde(float dt)
 	{
@@ -227,7 +227,7 @@ public class AIWanderingHordeSpawner
 		}
 	}
 
-	// Token: 0x060020BE RID: 8382 RVA: 0x000C57B0 File Offset: 0x000C39B0
+	// Token: 0x060020AD RID: 8365 RVA: 0x000C5864 File Offset: 0x000C3A64
 	public void Cleanup()
 	{
 		for (int i = 0; i < this.commandList.Count; i++)
@@ -238,104 +238,104 @@ public class AIWanderingHordeSpawner
 		}
 	}
 
-	// Token: 0x060020BF RID: 8383 RVA: 0x000C57F8 File Offset: 0x000C39F8
+	// Token: 0x060020AE RID: 8366 RVA: 0x000C58AC File Offset: 0x000C3AAC
 	public static Vector3 RandomPos(AIDirector director, Vector3 target, float radius)
 	{
 		Vector2 vector = director.random.RandomOnUnitCircle * radius;
 		return target + new Vector3(vector.x, 0f, vector.y);
 	}
 
-	// Token: 0x04001662 RID: 5730
+	// Token: 0x04001659 RID: 5721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cInvestigateTime = 6000;
 
-	// Token: 0x04001663 RID: 5731
+	// Token: 0x0400165A RID: 5722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirector director;
 
-	// Token: 0x04001664 RID: 5732
+	// Token: 0x0400165B RID: 5723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIWanderingHordeSpawner.HordeArrivedDelegate arrivedCallback;
 
-	// Token: 0x04001665 RID: 5733
+	// Token: 0x0400165C RID: 5724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startPos;
 
-	// Token: 0x04001666 RID: 5734
+	// Token: 0x0400165D RID: 5725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 pitStopPos;
 
-	// Token: 0x04001667 RID: 5735
+	// Token: 0x0400165E RID: 5726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 endPos;
 
-	// Token: 0x04001668 RID: 5736
+	// Token: 0x0400165F RID: 5727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong endTime;
 
-	// Token: 0x04001669 RID: 5737
+	// Token: 0x04001660 RID: 5728
 	public AIWanderingHordeSpawner.SpawnType spawnType;
 
-	// Token: 0x0400166A RID: 5738
+	// Token: 0x04001661 RID: 5729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorGameStagePartySpawner spawner;
 
-	// Token: 0x0400166B RID: 5739
+	// Token: 0x04001662 RID: 5730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float spawnDelay;
 
-	// Token: 0x0400166C RID: 5740
+	// Token: 0x04001663 RID: 5731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x0400166D RID: 5741
+	// Token: 0x04001664 RID: 5732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIWanderingHordeSpawner.ZombieCommand> commandList = new List<AIWanderingHordeSpawner.ZombieCommand>();
 
-	// Token: 0x0400166E RID: 5742
+	// Token: 0x04001665 RID: 5733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bonusLootSpawnCount;
 
-	// Token: 0x02000427 RID: 1063
-	// (Invoke) Token: 0x060020C1 RID: 8385
+	// Token: 0x02000429 RID: 1065
+	// (Invoke) Token: 0x060020B0 RID: 8368
 	public delegate void HordeArrivedDelegate();
 
-	// Token: 0x02000428 RID: 1064
+	// Token: 0x0200042A RID: 1066
 	public enum SpawnType
 	{
-		// Token: 0x04001670 RID: 5744
+		// Token: 0x04001667 RID: 5735
 		Bandits,
-		// Token: 0x04001671 RID: 5745
+		// Token: 0x04001668 RID: 5736
 		Horde
 	}
 
-	// Token: 0x02000429 RID: 1065
+	// Token: 0x0200042B RID: 1067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ECommand
 	{
-		// Token: 0x04001673 RID: 5747
+		// Token: 0x0400166A RID: 5738
 		PitStop,
-		// Token: 0x04001674 RID: 5748
+		// Token: 0x0400166B RID: 5739
 		Wander,
-		// Token: 0x04001675 RID: 5749
+		// Token: 0x0400166C RID: 5740
 		EndPos
 	}
 
-	// Token: 0x0200042A RID: 1066
+	// Token: 0x0200042C RID: 1068
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ZombieCommand
 	{
-		// Token: 0x04001676 RID: 5750
+		// Token: 0x0400166D RID: 5741
 		public AIWanderingHordeSpawner.ECommand Command;
 
-		// Token: 0x04001677 RID: 5751
+		// Token: 0x0400166E RID: 5742
 		public EntityEnemy Enemy;
 
-		// Token: 0x04001678 RID: 5752
+		// Token: 0x0400166F RID: 5743
 		public float WanderTime;
 
-		// Token: 0x04001679 RID: 5753
+		// Token: 0x04001670 RID: 5744
 		public Vector3 TargetPos;
 	}
 }

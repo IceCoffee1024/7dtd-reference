@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000632 RID: 1586
+// Token: 0x02000634 RID: 1588
 public class MapObjectManager
 {
-	// Token: 0x1400003D RID: 61
-	// (add) Token: 0x06003378 RID: 13176 RVA: 0x0014CED4 File Offset: 0x0014B0D4
-	// (remove) Token: 0x06003379 RID: 13177 RVA: 0x0014CF0C File Offset: 0x0014B10C
+	// Token: 0x1400003E RID: 62
+	// (add) Token: 0x060033BB RID: 13243 RVA: 0x0014D844 File Offset: 0x0014BA44
+	// (remove) Token: 0x060033BC RID: 13244 RVA: 0x0014D87C File Offset: 0x0014BA7C
 	public event MapObjectManager.MapObjectListChangedDelegate ChangedDelegates;
 
-	// Token: 0x0600337A RID: 13178 RVA: 0x0014CF41 File Offset: 0x0014B141
+	// Token: 0x060033BD RID: 13245 RVA: 0x0014D8B1 File Offset: 0x0014BAB1
 	public static void Reset()
 	{
 		MapObjectManager.entityList.Clear();
 	}
 
-	// Token: 0x0600337B RID: 13179 RVA: 0x0014CF50 File Offset: 0x0014B150
+	// Token: 0x060033BE RID: 13246 RVA: 0x0014D8C0 File Offset: 0x0014BAC0
 	public MapObjectManager()
 	{
 		for (int i = 0; i < 17; i++)
@@ -36,13 +36,13 @@ public class MapObjectManager
 		}
 	}
 
-	// Token: 0x0600337C RID: 13180 RVA: 0x0014CF41 File Offset: 0x0014B141
+	// Token: 0x060033BF RID: 13247 RVA: 0x0014D8B1 File Offset: 0x0014BAB1
 	public static void ClearEntityList()
 	{
 		MapObjectManager.entityList.Clear();
 	}
 
-	// Token: 0x0600337D RID: 13181 RVA: 0x0014CFF0 File Offset: 0x0014B1F0
+	// Token: 0x060033C0 RID: 13248 RVA: 0x0014D960 File Offset: 0x0014BB60
 	public void Add(MapObject _mapObject)
 	{
 		if (this.mapObjects[(int)_mapObject.type].dict.ContainsKey((int)_mapObject.key))
@@ -60,7 +60,7 @@ public class MapObjectManager
 		}
 	}
 
-	// Token: 0x0600337E RID: 13182 RVA: 0x0014D090 File Offset: 0x0014B290
+	// Token: 0x060033C1 RID: 13249 RVA: 0x0014DA00 File Offset: 0x0014BC00
 	public void Remove(EnumMapObjectType _type, int _key)
 	{
 		if (this.mapObjects[(int)_type].dict.ContainsKey(_key))
@@ -78,7 +78,7 @@ public class MapObjectManager
 		}
 	}
 
-	// Token: 0x0600337F RID: 13183 RVA: 0x0014D118 File Offset: 0x0014B318
+	// Token: 0x060033C2 RID: 13250 RVA: 0x0014DA88 File Offset: 0x0014BC88
 	public void RemoveByPosition(EnumMapObjectType _type, Vector3 _position)
 	{
 		for (int i = this.mapObjects[(int)_type].list.Count - 1; i >= 0; i--)
@@ -91,7 +91,7 @@ public class MapObjectManager
 		}
 	}
 
-	// Token: 0x06003380 RID: 13184 RVA: 0x0014D198 File Offset: 0x0014B398
+	// Token: 0x060033C3 RID: 13251 RVA: 0x0014DB08 File Offset: 0x0014BD08
 	public void RemoveByType(EnumMapObjectType _type)
 	{
 		for (int i = this.mapObjects[(int)_type].list.Count - 1; i >= 0; i--)
@@ -103,27 +103,27 @@ public class MapObjectManager
 		}
 	}
 
-	// Token: 0x06003381 RID: 13185 RVA: 0x0014D1FE File Offset: 0x0014B3FE
+	// Token: 0x060033C4 RID: 13252 RVA: 0x0014DB6E File Offset: 0x0014BD6E
 	public void Clear()
 	{
 		this.mapObjects.Clear();
 	}
 
-	// Token: 0x06003382 RID: 13186 RVA: 0x0014D20B File Offset: 0x0014B40B
+	// Token: 0x060033C5 RID: 13253 RVA: 0x0014DB7B File Offset: 0x0014BD7B
 	public List<MapObject> GetList(EnumMapObjectType _type)
 	{
 		return this.mapObjects[(int)_type].list;
 	}
 
-	// Token: 0x04002904 RID: 10500
+	// Token: 0x040028FD RID: 10493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DictionaryList<int, MapObject>> mapObjects = new List<DictionaryList<int, MapObject>>();
 
-	// Token: 0x04002906 RID: 10502
+	// Token: 0x040028FF RID: 10495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<MapObject> entityList = new List<MapObject>();
 
-	// Token: 0x02000633 RID: 1587
-	// (Invoke) Token: 0x06003385 RID: 13189
+	// Token: 0x02000635 RID: 1589
+	// (Invoke) Token: 0x060033C8 RID: 13256
 	public delegate void MapObjectListChangedDelegate(EnumMapObjectType _type, MapObject _mapObject, bool _bAdded);
 }

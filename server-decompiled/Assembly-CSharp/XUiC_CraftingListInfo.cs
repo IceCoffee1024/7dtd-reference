@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0B RID: 3851
+// Token: 0x02000F1A RID: 3866
 [Preserve]
 public class XUiC_CraftingListInfo : XUiController
 {
-	// Token: 0x17000E21 RID: 3617
-	// (get) Token: 0x060078CC RID: 30924 RVA: 0x002D9975 File Offset: 0x002D7B75
-	// (set) Token: 0x060078CD RID: 30925 RVA: 0x002D997D File Offset: 0x002D7B7D
+	// Token: 0x17000E3E RID: 3646
+	// (get) Token: 0x060078C7 RID: 30919 RVA: 0x002DCD09 File Offset: 0x002DAF09
+	// (set) Token: 0x060078C8 RID: 30920 RVA: 0x002DCD11 File Offset: 0x002DAF11
 	public string CategoryName
 	{
 		get
@@ -21,7 +21,7 @@ public class XUiC_CraftingListInfo : XUiController
 		}
 	}
 
-	// Token: 0x060078CE RID: 30926 RVA: 0x002D99A0 File Offset: 0x002D7BA0
+	// Token: 0x060078C9 RID: 30921 RVA: 0x002DCD34 File Offset: 0x002DAF34
 	public override void Init()
 	{
 		base.Init();
@@ -49,7 +49,7 @@ public class XUiC_CraftingListInfo : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078CF RID: 30927 RVA: 0x002D9A4C File Offset: 0x002D7C4C
+	// Token: 0x060078CA RID: 30922 RVA: 0x002DCDE0 File Offset: 0x002DAFE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleCategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -57,7 +57,7 @@ public class XUiC_CraftingListInfo : XUiController
 		this.spriteName = _categoryEntry.SpriteName;
 	}
 
-	// Token: 0x060078D0 RID: 30928 RVA: 0x002D9A68 File Offset: 0x002D7C68
+	// Token: 0x060078CB RID: 30923 RVA: 0x002DCDFC File Offset: 0x002DAFFC
 	public override void Update(float _dt)
 	{
 		if (!this.windowGroup.isShowing)
@@ -83,7 +83,7 @@ public class XUiC_CraftingListInfo : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x060078D1 RID: 30929 RVA: 0x002D9AFC File Offset: 0x002D7CFC
+	// Token: 0x060078CC RID: 30924 RVA: 0x002DCE90 File Offset: 0x002DB090
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -91,45 +91,45 @@ public class XUiC_CraftingListInfo : XUiController
 		CraftingManager.RecipeUnlocked += this.CraftingManager_RecipeUnlocked;
 	}
 
-	// Token: 0x060078D2 RID: 30930 RVA: 0x002D9B1C File Offset: 0x002D7D1C
+	// Token: 0x060078CD RID: 30925 RVA: 0x002DCEB0 File Offset: 0x002DB0B0
 	public override void OnClose()
 	{
 		base.OnClose();
 		CraftingManager.RecipeUnlocked -= this.CraftingManager_RecipeUnlocked;
 	}
 
-	// Token: 0x060078D3 RID: 30931 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x060078CE RID: 30926 RVA: 0x0008A995 File Offset: 0x00088B95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CraftingManager_RecipeUnlocked(string recipeName)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x04005962 RID: 22882
+	// Token: 0x0400599A RID: 22938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryName = "Basics";
 
-	// Token: 0x04005963 RID: 22883
+	// Token: 0x0400599B RID: 22939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string spriteName = "Craft_Icon_Basics";
 
-	// Token: 0x04005964 RID: 22884
+	// Token: 0x0400599C RID: 22940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string unlockedCount;
 
-	// Token: 0x04005965 RID: 22885
+	// Token: 0x0400599D RID: 22941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblName;
 
-	// Token: 0x04005966 RID: 22886
+	// Token: 0x0400599E RID: 22942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite icoCategoryIcon;
 
-	// Token: 0x04005967 RID: 22887
+	// Token: 0x0400599F RID: 22943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblUnlockedCount;
 
-	// Token: 0x04005968 RID: 22888
+	// Token: 0x040059A0 RID: 22944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 }

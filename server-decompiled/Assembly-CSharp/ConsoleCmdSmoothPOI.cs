@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029B RID: 667
+// Token: 0x0200029E RID: 670
 [Preserve]
 public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 {
-	// Token: 0x0600136E RID: 4974 RVA: 0x0007690C File Offset: 0x00074B0C
+	// Token: 0x0600136B RID: 4971 RVA: 0x00076BC0 File Offset: 0x00074DC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "smoothpoi" };
 	}
 
-	// Token: 0x17000218 RID: 536
-	// (get) Token: 0x0600136F RID: 4975 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000210 RID: 528
+	// (get) Token: 0x0600136C RID: 4972 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,7 +23,7 @@ public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001370 RID: 4976 RVA: 0x0007691C File Offset: 0x00074B1C
+	// Token: 0x0600136D RID: 4973 RVA: 0x00076BD0 File Offset: 0x00074DD0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!PrefabEditModeManager.Instance.IsActive())
@@ -54,14 +54,14 @@ public class ConsoleCmdSmoothPOI : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Smoothing action took {0} ms", (DateTime.Now - now).TotalMilliseconds));
 	}
 
-	// Token: 0x06001371 RID: 4977 RVA: 0x00076A03 File Offset: 0x00074C03
+	// Token: 0x0600136E RID: 4974 RVA: 0x00076CB7 File Offset: 0x00074EB7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Smoothens the POI";
 	}
 
-	// Token: 0x06001372 RID: 4978 RVA: 0x00076A0A File Offset: 0x00074C0A
+	// Token: 0x0600136F RID: 4975 RVA: 0x00076CBE File Offset: 0x00074EBE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

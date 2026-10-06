@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace UAI
 {
-	// Token: 0x02001784 RID: 6020
+	// Token: 0x020017B0 RID: 6064
 	public static class UAIBase
 	{
-		// Token: 0x0600BA83 RID: 47747 RVA: 0x00456DBE File Offset: 0x00454FBE
+		// Token: 0x0600BBDA RID: 48090 RVA: 0x0045B2DE File Offset: 0x004594DE
 		public static void Update(Context _context)
 		{
 			if (_context.updateTimer <= 0f)
@@ -19,7 +19,7 @@ namespace UAI
 			_context.updateTimer -= Time.deltaTime;
 		}
 
-		// Token: 0x0600BA84 RID: 47748 RVA: 0x00456DF8 File Offset: 0x00454FF8
+		// Token: 0x0600BBDB RID: 48091 RVA: 0x0045B318 File Offset: 0x00459518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void updateAction(Context _context)
 		{
@@ -49,7 +49,7 @@ namespace UAI
 			_context.ActionData.Action = null;
 		}
 
-		// Token: 0x0600BA85 RID: 47749 RVA: 0x00456EC0 File Offset: 0x004550C0
+		// Token: 0x0600BBDC RID: 48092 RVA: 0x0045B3E0 File Offset: 0x004595E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void chooseAction(Context _context)
 		{
@@ -82,7 +82,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA86 RID: 47750 RVA: 0x00457000 File Offset: 0x00455200
+		// Token: 0x0600BBDD RID: 48093 RVA: 0x0045B520 File Offset: 0x00459720
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void addWaypointTargetsToConsider(Context _context)
 		{
@@ -96,7 +96,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA87 RID: 47751 RVA: 0x00457058 File Offset: 0x00455258
+		// Token: 0x0600BBDE RID: 48094 RVA: 0x0045B578 File Offset: 0x00459778
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void addEntityTargetsToConsider(Context _context)
 		{
@@ -115,7 +115,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA88 RID: 47752 RVA: 0x00457135 File Offset: 0x00455335
+		// Token: 0x0600BBDF RID: 48095 RVA: 0x0045B655 File Offset: 0x00459855
 		public static void Cleanup()
 		{
 			if (UAIBase.AIPackages != null)
@@ -124,23 +124,23 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA89 RID: 47753 RVA: 0x00457148 File Offset: 0x00455348
+		// Token: 0x0600BBE0 RID: 48096 RVA: 0x0045B668 File Offset: 0x00459868
 		public static void Reload()
 		{
 			UAIBase.AIPackages.Clear();
 			WorldStaticData.Reset("utilityai");
 		}
 
-		// Token: 0x04008BC8 RID: 35784
+		// Token: 0x04008C8D RID: 35981
 		public static Dictionary<string, UAIPackage> AIPackages = new Dictionary<string, UAIPackage>();
 
-		// Token: 0x04008BC9 RID: 35785
+		// Token: 0x04008C8E RID: 35982
 		public static int MaxEntitiesToConsider = 5;
 
-		// Token: 0x04008BCA RID: 35786
+		// Token: 0x04008C8F RID: 35983
 		public static int MaxWaypointsToConsider = 5;
 
-		// Token: 0x04008BCB RID: 35787
+		// Token: 0x04008C90 RID: 35984
 		public static float ActionChoiceDelay = 0.2f;
 	}
 }

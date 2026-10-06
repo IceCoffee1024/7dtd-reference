@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000C27 RID: 3111
+// Token: 0x02000C39 RID: 3129
 public class DistantChunk
 {
-	// Token: 0x06005ED4 RID: 24276 RVA: 0x0024F9E0 File Offset: 0x0024DBE0
+	// Token: 0x06005EED RID: 24301 RVA: 0x00252CDC File Offset: 0x00250EDC
 	public DistantChunk(DistantChunkMap _BaseChunkMap, int _ResLevel, Vector2i _CellIdVector, Vector2 _TerrainOriginCoor, float[] _EdgeResFactor, Stack<GameObject>[] _waterPlaneGameObjStack)
 	{
 		this.ResLevel = _ResLevel;
@@ -120,7 +120,7 @@ public class DistantChunk
 		}
 	}
 
-	// Token: 0x06005ED5 RID: 24277 RVA: 0x0024FEEC File Offset: 0x0024E0EC
+	// Token: 0x06005EEE RID: 24302 RVA: 0x002531E8 File Offset: 0x002513E8
 	public void ResetDistantChunkSameResLevel(DistantChunkMap _BaseChunkMap, Vector2i _CellIdVector, Vector2 _TerrainOriginCoor, float[] _EdgeResFactor)
 	{
 		this.BaseChunkMap = _BaseChunkMap;
@@ -142,14 +142,14 @@ public class DistantChunk
 		this.WaterPlaneIsActive = false;
 	}
 
-	// Token: 0x06005ED6 RID: 24278 RVA: 0x0024FFD3 File Offset: 0x0024E1D3
+	// Token: 0x06005EEF RID: 24303 RVA: 0x002532CF File Offset: 0x002514CF
 	public void Cleanup()
 	{
 		DistantChunk.SMPool.ReturnObject(this.CellMeshData, this.ResLevel);
 		this.CellMeshData = null;
 	}
 
-	// Token: 0x06005ED7 RID: 24279 RVA: 0x0024FFF4 File Offset: 0x0024E1F4
+	// Token: 0x06005EF0 RID: 24304 RVA: 0x002532F0 File Offset: 0x002514F0
 	public void ResetEdgeToOwnResLevel(int _edgeId)
 	{
 		if (this.CellObj == null)
@@ -170,7 +170,7 @@ public class DistantChunk
 		this.CellObj.GetComponent<MeshFilter>().mesh.vertices = vertices;
 	}
 
-	// Token: 0x06005ED8 RID: 24280 RVA: 0x0025009C File Offset: 0x0024E29C
+	// Token: 0x06005EF1 RID: 24305 RVA: 0x00253398 File Offset: 0x00251598
 	public void ResetEdgeToNextResLevel(int _edgeId)
 	{
 		if (this.CellObj == null)
@@ -191,7 +191,7 @@ public class DistantChunk
 		this.CellObj.GetComponent<MeshFilter>().mesh.vertices = vertices;
 	}
 
-	// Token: 0x06005ED9 RID: 24281 RVA: 0x00250148 File Offset: 0x0024E348
+	// Token: 0x06005EF2 RID: 24306 RVA: 0x00253444 File Offset: 0x00251644
 	public void ActivateObject(bool _bHeightAndNormalOnly)
 	{
 		int num = this.ChunkMapInfo.BaseMesh.Vertices.Length;
@@ -349,7 +349,7 @@ public class DistantChunk
 		}
 	}
 
-	// Token: 0x06005EDA RID: 24282 RVA: 0x00250914 File Offset: 0x0024EB14
+	// Token: 0x06005EF3 RID: 24307 RVA: 0x00253C10 File Offset: 0x00251E10
 	public void ActivateUnityMeshGameObject(DistantChunkBasicMesh _BasicMesh)
 	{
 		Vector3[] array = DistantChunk.TmpMeshV[this.ResLevel];
@@ -431,7 +431,7 @@ public class DistantChunk
 		this.Cleanup();
 	}
 
-	// Token: 0x06005EDB RID: 24283 RVA: 0x00250DC4 File Offset: 0x0024EFC4
+	// Token: 0x06005EF4 RID: 24308 RVA: 0x002540C0 File Offset: 0x002522C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateWaterPlaneMesh(float MeshWidth, GameObject _WaterPlaneObj)
 	{
@@ -507,7 +507,7 @@ public class DistantChunk
 		component.mesh = mesh;
 	}
 
-	// Token: 0x06005EDC RID: 24284 RVA: 0x00251184 File Offset: 0x0024F384
+	// Token: 0x06005EF5 RID: 24309 RVA: 0x00254480 File Offset: 0x00252680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createWaterPlaneMeshLowRes(GameObject _WaterPlaneObj)
 	{
@@ -573,7 +573,7 @@ public class DistantChunk
 		component.mesh = mesh;
 	}
 
-	// Token: 0x06005EDD RID: 24285 RVA: 0x0025150C File Offset: 0x0024F70C
+	// Token: 0x06005EF6 RID: 24310 RVA: 0x00254808 File Offset: 0x00252A08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createWaterPlaneObject()
 	{
@@ -618,7 +618,7 @@ public class DistantChunk
 		this.WaterPlaneObjExist = true;
 	}
 
-	// Token: 0x06005EDE RID: 24286 RVA: 0x002516E4 File Offset: 0x0024F8E4
+	// Token: 0x06005EF7 RID: 24311 RVA: 0x002549E0 File Offset: 0x00252BE0
 	public void ActivateWaterPlane(float PlaneHeight, bool IsActive)
 	{
 		this.WaterPlaneHeight = PlaneHeight;
@@ -646,7 +646,7 @@ public class DistantChunk
 		this.WaterPlaneObj.SetActive(true);
 	}
 
-	// Token: 0x06005EDF RID: 24287 RVA: 0x00251784 File Offset: 0x0024F984
+	// Token: 0x06005EF8 RID: 24312 RVA: 0x00254A80 File Offset: 0x00252C80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void calculateMeshTangents(DChunkSquareMesh DataMesh)
 	{
@@ -714,19 +714,19 @@ public class DistantChunk
 		}
 	}
 
-	// Token: 0x06005EE0 RID: 24288 RVA: 0x00251EEE File Offset: 0x002500EE
+	// Token: 0x06005EF9 RID: 24313 RVA: 0x002551EA File Offset: 0x002533EA
 	public static long GetCellKeyIdFromIdVector(int[] CellIdVector)
 	{
 		return (((long)CellIdVector[1] & 16777215L) << 24) | ((long)CellIdVector[0] & 1048575L);
 	}
 
-	// Token: 0x06005EE1 RID: 24289 RVA: 0x00251F0A File Offset: 0x0025010A
+	// Token: 0x06005EFA RID: 24314 RVA: 0x00255206 File Offset: 0x00253406
 	public static long GetCellKeyIdFromIdVector(Vector2i CellIdVector)
 	{
 		return (((long)CellIdVector.y & 16777215L) << 24) | ((long)CellIdVector.x & 1048575L);
 	}
 
-	// Token: 0x06005EE2 RID: 24290 RVA: 0x00251F2C File Offset: 0x0025012C
+	// Token: 0x06005EFB RID: 24315 RVA: 0x00255228 File Offset: 0x00253428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void calculateEdgeInformation(float _LowLeftCornerX, float _LowLeftCornerZ, float _Width, int _Resolution, float _XZScale, float _YScale, float _NeighbFactorSouth, float _NeighbFactorEast, float _NeighbFactorNorth, float _NeighbFactorWest, float[] _CurVHeights)
 	{
@@ -1169,7 +1169,7 @@ public class DistantChunk
 		}
 	}
 
-	// Token: 0x06005EE3 RID: 24291 RVA: 0x00252DD8 File Offset: 0x00250FD8
+	// Token: 0x06005EFC RID: 24316 RVA: 0x002560D4 File Offset: 0x002542D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void computeEdgeNormals(int _Resolution, int _EdgeId, float _ChunkWidth, float[] _HeightTab, float[] _NormalTab)
 	{
@@ -1231,287 +1231,287 @@ public class DistantChunk
 		}
 	}
 
-	// Token: 0x040049C2 RID: 18882
+	// Token: 0x04004A01 RID: 18945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] EdgeResFactor;
 
-	// Token: 0x040049C3 RID: 18883
+	// Token: 0x04004A02 RID: 18946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float NextResLevelEdgeFactor;
 
-	// Token: 0x040049C4 RID: 18884
+	// Token: 0x04004A03 RID: 18947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float Size;
 
-	// Token: 0x040049C5 RID: 18885
+	// Token: 0x04004A04 RID: 18948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Resolution;
 
-	// Token: 0x040049C6 RID: 18886
+	// Token: 0x04004A05 RID: 18949
 	public long CellKey;
 
-	// Token: 0x040049C7 RID: 18887
+	// Token: 0x04004A06 RID: 18950
 	public bool WasReset;
 
-	// Token: 0x040049C8 RID: 18888
+	// Token: 0x04004A07 RID: 18951
 	public int ResLevel;
 
-	// Token: 0x040049C9 RID: 18889
+	// Token: 0x04004A08 RID: 18952
 	public bool IsMeshUpdated;
 
-	// Token: 0x040049CA RID: 18890
+	// Token: 0x04004A09 RID: 18953
 	public bool IsFreeToUse;
 
-	// Token: 0x040049CB RID: 18891
+	// Token: 0x04004A0A RID: 18954
 	public Vector3 LeftDownCoor;
 
-	// Token: 0x040049CC RID: 18892
+	// Token: 0x04004A0B RID: 18955
 	public Vector3 TerrainOriginCoor;
 
-	// Token: 0x040049CD RID: 18893
+	// Token: 0x04004A0C RID: 18956
 	public Vector2i CellIdVector;
 
-	// Token: 0x040049CE RID: 18894
+	// Token: 0x04004A0D RID: 18957
 	public DChunkSquareMesh CellMeshData;
 
-	// Token: 0x040049CF RID: 18895
+	// Token: 0x04004A0E RID: 18958
 	public static DChunkSquareMeshPool SMPool;
 
-	// Token: 0x040049D0 RID: 18896
+	// Token: 0x04004A0F RID: 18959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float[][] ActivateObject_NTabArray;
 
-	// Token: 0x040049D1 RID: 18897
+	// Token: 0x04004A10 RID: 18960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] ActivateObject_NTab;
 
-	// Token: 0x040049D2 RID: 18898
+	// Token: 0x04004A11 RID: 18961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float[][] ActivateObject_ENTabArray;
 
-	// Token: 0x040049D3 RID: 18899
+	// Token: 0x04004A12 RID: 18962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] ActivateObject_ENTab;
 
-	// Token: 0x040049D4 RID: 18900
+	// Token: 0x04004A13 RID: 18963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[][] CalcMeshTg_tan1Array;
 
-	// Token: 0x040049D5 RID: 18901
+	// Token: 0x04004A14 RID: 18964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] CalcMeshTg_tan1;
 
-	// Token: 0x040049D6 RID: 18902
+	// Token: 0x04004A15 RID: 18965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[][] CalcMeshTg_tan2Array;
 
-	// Token: 0x040049D7 RID: 18903
+	// Token: 0x04004A16 RID: 18966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] CalcMeshTg_tan2;
 
-	// Token: 0x040049D8 RID: 18904
+	// Token: 0x04004A17 RID: 18967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DistantChunk.WaterMesh[] StaticWaterSMesh;
 
-	// Token: 0x040049D9 RID: 18905
+	// Token: 0x04004A18 RID: 18968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mesh AcUMeshGO_CellMesh;
 
-	// Token: 0x040049DA RID: 18906
+	// Token: 0x04004A19 RID: 18969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mesh AcUMeshGO_ColMesh;
 
-	// Token: 0x040049DB RID: 18907
+	// Token: 0x04004A1A RID: 18970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[][] TmpMeshV;
 
-	// Token: 0x040049DC RID: 18908
+	// Token: 0x04004A1B RID: 18971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[][] TmpMeshN;
 
-	// Token: 0x040049DD RID: 18909
+	// Token: 0x04004A1C RID: 18972
 	public float[] CMDataVerticesHeight;
 
-	// Token: 0x040049DE RID: 18910
+	// Token: 0x04004A1D RID: 18973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] CMDataEdgeCorHeight;
 
-	// Token: 0x040049DF RID: 18911
+	// Token: 0x04004A1E RID: 18974
 	public bool ChunkObjExist;
 
-	// Token: 0x040049E0 RID: 18912
+	// Token: 0x04004A1F RID: 18975
 	public bool IsChunkActivated;
 
-	// Token: 0x040049E1 RID: 18913
+	// Token: 0x04004A20 RID: 18976
 	public bool IsOnActivationProcess;
 
-	// Token: 0x040049E2 RID: 18914
+	// Token: 0x04004A21 RID: 18977
 	public bool IsOnSeamCorrectionProcess;
 
-	// Token: 0x040049E3 RID: 18915
+	// Token: 0x04004A22 RID: 18978
 	public GameObject CellObj;
 
-	// Token: 0x040049E4 RID: 18916
+	// Token: 0x04004A23 RID: 18979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float FoldHeight = 35f;
 
-	// Token: 0x040049E5 RID: 18917
+	// Token: 0x04004A24 RID: 18980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject WaterPlaneObj;
 
-	// Token: 0x040049E6 RID: 18918
+	// Token: 0x04004A25 RID: 18981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float WaterPlaneHeight;
 
-	// Token: 0x040049E7 RID: 18919
+	// Token: 0x04004A26 RID: 18982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool WaterPlaneIsActive;
 
-	// Token: 0x040049E8 RID: 18920
+	// Token: 0x04004A27 RID: 18983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool WaterPlaneObjExist;
 
-	// Token: 0x040049E9 RID: 18921
+	// Token: 0x04004A28 RID: 18984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float WaterPlaneUnitStep;
 
-	// Token: 0x040049EA RID: 18922
+	// Token: 0x04004A29 RID: 18985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float WaterPlaneOverlapSize = 0.01f;
 
-	// Token: 0x040049EB RID: 18923
+	// Token: 0x04004A2A RID: 18986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsWaterActivated;
 
-	// Token: 0x040049EC RID: 18924
+	// Token: 0x04004A2B RID: 18987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] CurTri;
 
-	// Token: 0x040049ED RID: 18925
+	// Token: 0x04004A2C RID: 18988
 	public DistantChunkMapInfo ChunkMapInfo;
 
-	// Token: 0x040049EE RID: 18926
+	// Token: 0x04004A2D RID: 18989
 	public DistantChunkMap BaseChunkMap;
 
-	// Token: 0x040049EF RID: 18927
+	// Token: 0x04004A2E RID: 18990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stack<GameObject> WaterPlaneGameObjStack;
 
-	// Token: 0x040049F0 RID: 18928
+	// Token: 0x04004A2F RID: 18991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 ScaleTexVec = new Vector2(3.75f, 3.75f);
 
-	// Token: 0x040049F1 RID: 18929
+	// Token: 0x04004A30 RID: 18992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 FlPosVec = Vector3.zero;
 
-	// Token: 0x040049F2 RID: 18930
+	// Token: 0x04004A31 RID: 18993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] TilingFacFromResLevel = new float[] { 1f, 1f, 1f, 32f };
 
-	// Token: 0x040049F3 RID: 18931
+	// Token: 0x04004A32 RID: 18994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 v1;
 
-	// Token: 0x040049F4 RID: 18932
+	// Token: 0x04004A33 RID: 18995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 v2;
 
-	// Token: 0x040049F5 RID: 18933
+	// Token: 0x04004A34 RID: 18996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 v3;
 
-	// Token: 0x040049F6 RID: 18934
+	// Token: 0x04004A35 RID: 18997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 w1;
 
-	// Token: 0x040049F7 RID: 18935
+	// Token: 0x04004A36 RID: 18998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 w2;
 
-	// Token: 0x040049F8 RID: 18936
+	// Token: 0x04004A37 RID: 18999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 w3;
 
-	// Token: 0x040049F9 RID: 18937
+	// Token: 0x04004A38 RID: 19000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 sdir;
 
-	// Token: 0x040049FA RID: 18938
+	// Token: 0x04004A39 RID: 19001
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 tdir;
 
-	// Token: 0x040049FB RID: 18939
+	// Token: 0x04004A3A RID: 19002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 n;
 
-	// Token: 0x040049FC RID: 18940
+	// Token: 0x04004A3B RID: 19003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 t;
 
-	// Token: 0x040049FD RID: 18941
+	// Token: 0x04004A3C RID: 19004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MAX_RESOLUTION = 20;
 
-	// Token: 0x040049FE RID: 18942
+	// Token: 0x04004A3D RID: 19005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] SouthTab = new int[20];
 
-	// Token: 0x040049FF RID: 18943
+	// Token: 0x04004A3E RID: 19006
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] EastTab = new int[20];
 
-	// Token: 0x04004A00 RID: 18944
+	// Token: 0x04004A3F RID: 19007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] NorthTab = new int[20];
 
-	// Token: 0x04004A01 RID: 18945
+	// Token: 0x04004A40 RID: 19008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] WestTab = new int[20];
 
-	// Token: 0x04004A02 RID: 18946
+	// Token: 0x04004A41 RID: 19009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] NSouthTab = new int[20];
 
-	// Token: 0x04004A03 RID: 18947
+	// Token: 0x04004A42 RID: 19010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] NEastTab = new int[20];
 
-	// Token: 0x04004A04 RID: 18948
+	// Token: 0x04004A43 RID: 19011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] NNorthTab = new int[20];
 
-	// Token: 0x04004A05 RID: 18949
+	// Token: 0x04004A44 RID: 19012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] NWestTab = new int[20];
 
-	// Token: 0x04004A06 RID: 18950
+	// Token: 0x04004A45 RID: 19013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] DeltaNormal = new float[3];
 
-	// Token: 0x04004A07 RID: 18951
+	// Token: 0x04004A46 RID: 19014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] NewNormal = new float[3];
 
-	// Token: 0x04004A08 RID: 18952
+	// Token: 0x04004A47 RID: 19015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] TmpVec = new float[3];
 
-	// Token: 0x04004A09 RID: 18953
+	// Token: 0x04004A48 RID: 19016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] EdgeFactorTab = new float[4];
 
-	// Token: 0x02000C28 RID: 3112
+	// Token: 0x02000C3A RID: 3130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class WaterMesh
 	{
-		// Token: 0x06005EE4 RID: 24292 RVA: 0x00253022 File Offset: 0x00251222
+		// Token: 0x06005EFD RID: 24317 RVA: 0x0025631E File Offset: 0x0025451E
 		public WaterMesh(int NbVertices, int NbTriangles, float Size)
 		{
 			this.Init(NbVertices, NbTriangles, Size);
 		}
 
-		// Token: 0x06005EE5 RID: 24293 RVA: 0x00253034 File Offset: 0x00251234
+		// Token: 0x06005EFE RID: 24318 RVA: 0x00256330 File Offset: 0x00254530
 		public void Init(int NbVertices, int NbTriangles, float Size)
 		{
 			this.Vertices = new Vector3[NbVertices];
@@ -1523,25 +1523,25 @@ public class DistantChunk
 			this.Bound = new Bounds(new Vector3(Size / 2f, 0f, Size / 2f), new Vector3(Size, 0f, Size));
 		}
 
-		// Token: 0x04004A0A RID: 18954
+		// Token: 0x04004A49 RID: 19017
 		public Vector3[] Vertices;
 
-		// Token: 0x04004A0B RID: 18955
+		// Token: 0x04004A4A RID: 19018
 		public Vector3[] Normals;
 
-		// Token: 0x04004A0C RID: 18956
+		// Token: 0x04004A4B RID: 19019
 		public Vector4[] Tangents;
 
-		// Token: 0x04004A0D RID: 18957
+		// Token: 0x04004A4C RID: 19020
 		public Vector2[] UVVectors;
 
-		// Token: 0x04004A0E RID: 18958
+		// Token: 0x04004A4D RID: 19021
 		public int[] Triangles;
 
-		// Token: 0x04004A0F RID: 18959
+		// Token: 0x04004A4E RID: 19022
 		public Color[] Colors;
 
-		// Token: 0x04004A10 RID: 18960
+		// Token: 0x04004A4F RID: 19023
 		public Bounds Bound;
 	}
 }

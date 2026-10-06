@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000610 RID: 1552
+// Token: 0x02000612 RID: 1554
 [Preserve]
 public class Pulsing : LightState
 {
-	// Token: 0x17000531 RID: 1329
-	// (get) Token: 0x06003286 RID: 12934 RVA: 0x00148A54 File Offset: 0x00146C54
+	// Token: 0x17000557 RID: 1367
+	// (get) Token: 0x060032C9 RID: 13001 RVA: 0x001493F8 File Offset: 0x001475F8
 	public override float LODThreshold
 	{
 		get
@@ -16,8 +16,8 @@ public class Pulsing : LightState
 		}
 	}
 
-	// Token: 0x17000532 RID: 1330
-	// (get) Token: 0x06003287 RID: 12935 RVA: 0x00148ECC File Offset: 0x001470CC
+	// Token: 0x17000558 RID: 1368
+	// (get) Token: 0x060032CA RID: 13002 RVA: 0x00149870 File Offset: 0x00147A70
 	public override float Intensity
 	{
 		get
@@ -26,8 +26,8 @@ public class Pulsing : LightState
 		}
 	}
 
-	// Token: 0x17000533 RID: 1331
-	// (get) Token: 0x06003288 RID: 12936 RVA: 0x00148EF6 File Offset: 0x001470F6
+	// Token: 0x17000559 RID: 1369
+	// (get) Token: 0x060032CB RID: 13003 RVA: 0x0014989A File Offset: 0x00147A9A
 	public override float Emissive
 	{
 		get

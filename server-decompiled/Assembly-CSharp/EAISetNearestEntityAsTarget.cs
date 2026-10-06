@@ -4,11 +4,11 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000456 RID: 1110
+// Token: 0x02000458 RID: 1112
 [Preserve]
 public class EAISetNearestEntityAsTarget : EAITarget
 {
-	// Token: 0x060021DA RID: 8666 RVA: 0x000CC6DE File Offset: 0x000CA8DE
+	// Token: 0x060021C9 RID: 8649 RVA: 0x000CC792 File Offset: 0x000CA992
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity, 25f, true);
@@ -16,7 +16,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		this.sorter = new EAISetNearestEntityAsTargetSorter(_theEntity);
 	}
 
-	// Token: 0x060021DB RID: 8667 RVA: 0x000CC700 File Offset: 0x000CA900
+	// Token: 0x060021CA RID: 8650 RVA: 0x000CC7B4 File Offset: 0x000CA9B4
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -52,7 +52,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		}
 	}
 
-	// Token: 0x060021DC RID: 8668 RVA: 0x000CC804 File Offset: 0x000CAA04
+	// Token: 0x060021CB RID: 8651 RVA: 0x000CC8B8 File Offset: 0x000CAAB8
 	public void SetTargetOnlyPlayers(float _distance)
 	{
 		this.targetClasses.Clear();
@@ -64,7 +64,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		this.playerTargetClassIndex = 0;
 	}
 
-	// Token: 0x060021DD RID: 8669 RVA: 0x000CC85C File Offset: 0x000CAA5C
+	// Token: 0x060021CC RID: 8652 RVA: 0x000CC910 File Offset: 0x000CAB10
 	public override bool CanExecute()
 	{
 		if (this.theEntity.distraction != null)
@@ -81,7 +81,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		return true;
 	}
 
-	// Token: 0x060021DE RID: 8670 RVA: 0x000CC8B4 File Offset: 0x000CAAB4
+	// Token: 0x060021CD RID: 8653 RVA: 0x000CC968 File Offset: 0x000CAB68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FindTarget()
 	{
@@ -172,7 +172,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		}
 	}
 
-	// Token: 0x060021DF RID: 8671 RVA: 0x000CCC48 File Offset: 0x000CAE48
+	// Token: 0x060021CE RID: 8654 RVA: 0x000CCCFC File Offset: 0x000CAEFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SeekNoise(EntityPlayer player)
 	{
@@ -202,7 +202,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		this.PlaySoundSense();
 	}
 
-	// Token: 0x060021E0 RID: 8672 RVA: 0x000CCD44 File Offset: 0x000CAF44
+	// Token: 0x060021CF RID: 8655 RVA: 0x000CCDF8 File Offset: 0x000CAFF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SeekBreadcrumb(EntityPlayer player, float _maxDist)
 	{
@@ -213,7 +213,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		this.PlaySoundSense();
 	}
 
-	// Token: 0x060021E1 RID: 8673 RVA: 0x000CCDAC File Offset: 0x000CAFAC
+	// Token: 0x060021D0 RID: 8656 RVA: 0x000CCE60 File Offset: 0x000CB060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlaySoundSense()
 	{
@@ -225,7 +225,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		}
 	}
 
-	// Token: 0x060021E2 RID: 8674 RVA: 0x000CCE08 File Offset: 0x000CB008
+	// Token: 0x060021D1 RID: 8657 RVA: 0x000CCEBC File Offset: 0x000CB0BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FindTargetPlayer(float seeDist)
 	{
@@ -306,7 +306,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		EAISetNearestEntityAsTarget.playerList.Clear();
 	}
 
-	// Token: 0x060021E3 RID: 8675 RVA: 0x000CD022 File Offset: 0x000CB222
+	// Token: 0x060021D2 RID: 8658 RVA: 0x000CD0D6 File Offset: 0x000CB2D6
 	public override void Start()
 	{
 		this.theEntity.SetAttackTarget(this.targetEntity, 200);
@@ -315,7 +315,7 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		base.Start();
 	}
 
-	// Token: 0x060021E4 RID: 8676 RVA: 0x000CD054 File Offset: 0x000CB254
+	// Token: 0x060021D3 RID: 8659 RVA: 0x000CD108 File Offset: 0x000CB308
 	public override bool Continue()
 	{
 		if (this.targetEntity.IsDead() || this.theEntity.distraction != null)
@@ -359,82 +359,82 @@ public class EAISetNearestEntityAsTarget : EAITarget
 		return false;
 	}
 
-	// Token: 0x060021E5 RID: 8677 RVA: 0x000CD1F7 File Offset: 0x000CB3F7
+	// Token: 0x060021D4 RID: 8660 RVA: 0x000CD2AB File Offset: 0x000CB4AB
 	public override void Reset()
 	{
 		this.targetEntity = null;
 		this.targetPlayer = null;
 	}
 
-	// Token: 0x060021E6 RID: 8678 RVA: 0x000CD207 File Offset: 0x000CB407
+	// Token: 0x060021D5 RID: 8661 RVA: 0x000CD2BB File Offset: 0x000CB4BB
 	public override string ToString()
 	{
 		return string.Format("{0}, {1}", base.ToString(), this.targetEntity ? this.targetEntity.EntityName : "");
 	}
 
-	// Token: 0x04001760 RID: 5984
+	// Token: 0x04001757 RID: 5975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cHearDistMax = 50f;
 
-	// Token: 0x04001761 RID: 5985
+	// Token: 0x04001758 RID: 5976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAISetNearestEntityAsTarget.TargetClass> targetClasses;
 
-	// Token: 0x04001762 RID: 5986
+	// Token: 0x04001759 RID: 5977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerTargetClassIndex = -1;
 
-	// Token: 0x04001763 RID: 5987
+	// Token: 0x0400175A RID: 5978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float closeTargetDist;
 
-	// Token: 0x04001764 RID: 5988
+	// Token: 0x0400175B RID: 5979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive closeTargetEntity;
 
-	// Token: 0x04001765 RID: 5989
+	// Token: 0x0400175C RID: 5980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive targetEntity;
 
-	// Token: 0x04001766 RID: 5990
+	// Token: 0x0400175D RID: 5981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer targetPlayer;
 
-	// Token: 0x04001767 RID: 5991
+	// Token: 0x0400175E RID: 5982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 lastSeenPos;
 
-	// Token: 0x04001768 RID: 5992
+	// Token: 0x0400175F RID: 5983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float findTime;
 
-	// Token: 0x04001769 RID: 5993
+	// Token: 0x04001760 RID: 5984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float senseSoundTime;
 
-	// Token: 0x0400176A RID: 5994
+	// Token: 0x04001761 RID: 5985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAISetNearestEntityAsTargetSorter sorter;
 
-	// Token: 0x0400176B RID: 5995
+	// Token: 0x04001762 RID: 5986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Entity> list = new List<Entity>();
 
-	// Token: 0x0400176C RID: 5996
+	// Token: 0x04001763 RID: 5987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<EntityPlayer> playerList = new List<EntityPlayer>();
 
-	// Token: 0x02000457 RID: 1111
+	// Token: 0x02000459 RID: 1113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TargetClass
 	{
-		// Token: 0x0400176D RID: 5997
+		// Token: 0x04001764 RID: 5988
 		public Type type;
 
-		// Token: 0x0400176E RID: 5998
+		// Token: 0x04001765 RID: 5989
 		public float hearDistMax;
 
-		// Token: 0x0400176F RID: 5999
+		// Token: 0x04001766 RID: 5990
 		public float seeDistMax;
 	}
 }

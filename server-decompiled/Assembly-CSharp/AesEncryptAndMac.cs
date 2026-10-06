@@ -2,11 +2,11 @@
 using System.IO;
 using System.Security.Cryptography;
 
-// Token: 0x02000767 RID: 1895
+// Token: 0x02000769 RID: 1897
 public class AesEncryptAndMac : IEncryptionModule
 {
-	// Token: 0x17000590 RID: 1424
-	// (get) Token: 0x06003838 RID: 14392 RVA: 0x001710D7 File Offset: 0x0016F2D7
+	// Token: 0x170005B6 RID: 1462
+	// (get) Token: 0x0600387B RID: 14459 RVA: 0x00171A3B File Offset: 0x0016FC3B
 	public byte[] EncryptionKey
 	{
 		get
@@ -15,8 +15,8 @@ public class AesEncryptAndMac : IEncryptionModule
 		}
 	}
 
-	// Token: 0x17000591 RID: 1425
-	// (get) Token: 0x06003839 RID: 14393 RVA: 0x001710E4 File Offset: 0x0016F2E4
+	// Token: 0x170005B7 RID: 1463
+	// (get) Token: 0x0600387C RID: 14460 RVA: 0x00171A48 File Offset: 0x0016FC48
 	public byte[] IntegrityKey
 	{
 		get
@@ -25,7 +25,7 @@ public class AesEncryptAndMac : IEncryptionModule
 		}
 	}
 
-	// Token: 0x0600383A RID: 14394 RVA: 0x001710F4 File Offset: 0x0016F2F4
+	// Token: 0x0600387D RID: 14461 RVA: 0x00171A58 File Offset: 0x0016FC58
 	public AesEncryptAndMac()
 	{
 		this.aes = Aes.Create();
@@ -37,7 +37,7 @@ public class AesEncryptAndMac : IEncryptionModule
 		this.random = RandomNumberGenerator.Create();
 	}
 
-	// Token: 0x0600383B RID: 14395 RVA: 0x0017116C File Offset: 0x0016F36C
+	// Token: 0x0600387E RID: 14462 RVA: 0x00171AD0 File Offset: 0x0016FCD0
 	public AesEncryptAndMac(byte[] encryptionKey, byte[] integrityKey)
 	{
 		this.aes = Aes.Create();
@@ -49,7 +49,7 @@ public class AesEncryptAndMac : IEncryptionModule
 		this.random = RandomNumberGenerator.Create();
 	}
 
-	// Token: 0x0600383C RID: 14396 RVA: 0x001711E8 File Offset: 0x0016F3E8
+	// Token: 0x0600387F RID: 14463 RVA: 0x00171B4C File Offset: 0x0016FD4C
 	public unsafe bool EncryptStream(ClientInfo _cInfo, MemoryStream _stream)
 	{
 		int inputBlockSize = this.encryptor.InputBlockSize;
@@ -80,7 +80,7 @@ public class AesEncryptAndMac : IEncryptionModule
 		return true;
 	}
 
-	// Token: 0x0600383D RID: 14397 RVA: 0x00171320 File Offset: 0x0016F520
+	// Token: 0x06003880 RID: 14464 RVA: 0x00171C84 File Offset: 0x0016FE84
 	public unsafe bool DecryptStream(ClientInfo _cInfo, MemoryStream _stream)
 	{
 		int num = this.hmac.HashSize / 8;
@@ -126,27 +126,27 @@ public class AesEncryptAndMac : IEncryptionModule
 		return true;
 	}
 
-	// Token: 0x04002E3E RID: 11838
+	// Token: 0x04002E37 RID: 11831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Aes aes;
 
-	// Token: 0x04002E3F RID: 11839
+	// Token: 0x04002E38 RID: 11832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ICryptoTransform encryptor;
 
-	// Token: 0x04002E40 RID: 11840
+	// Token: 0x04002E39 RID: 11833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ICryptoTransform decryptor;
 
-	// Token: 0x04002E41 RID: 11841
+	// Token: 0x04002E3A RID: 11834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HMAC hmac;
 
-	// Token: 0x04002E42 RID: 11842
+	// Token: 0x04002E3B RID: 11835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RandomNumberGenerator random;
 
-	// Token: 0x04002E43 RID: 11843
+	// Token: 0x04002E3C RID: 11836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object lockObj = new object();
 }

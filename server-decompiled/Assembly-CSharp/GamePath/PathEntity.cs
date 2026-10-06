@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018DC RID: 6364
+	// Token: 0x02001908 RID: 6408
 	public class PathEntity
 	{
-		// Token: 0x0600C45E RID: 50270 RVA: 0x004876C0 File Offset: 0x004858C0
+		// Token: 0x0600C5B6 RID: 50614 RVA: 0x0048BC08 File Offset: 0x00489E08
 		public void Destruct()
 		{
 			PathPoint[] array = this.points;
@@ -17,32 +17,32 @@ namespace GamePath
 			this.points = null;
 		}
 
-		// Token: 0x0600C45F RID: 50271 RVA: 0x004876F1 File Offset: 0x004858F1
+		// Token: 0x0600C5B7 RID: 50615 RVA: 0x0048BC39 File Offset: 0x00489E39
 		public void SetPoints(PathPoint[] _points)
 		{
 			this.points = _points;
 			this.pathLength = _points.Length;
 		}
 
-		// Token: 0x0600C460 RID: 50272 RVA: 0x00487703 File Offset: 0x00485903
+		// Token: 0x0600C5B8 RID: 50616 RVA: 0x0048BC4B File Offset: 0x00489E4B
 		public bool HasPoints()
 		{
 			return this.points != null;
 		}
 
-		// Token: 0x0600C461 RID: 50273 RVA: 0x0048770E File Offset: 0x0048590E
+		// Token: 0x0600C5B9 RID: 50617 RVA: 0x0048BC56 File Offset: 0x00489E56
 		public bool isFinished()
 		{
 			return this.currentPathIndex >= this.pathLength;
 		}
 
-		// Token: 0x0600C462 RID: 50274 RVA: 0x00487721 File Offset: 0x00485921
+		// Token: 0x0600C5BA RID: 50618 RVA: 0x0048BC69 File Offset: 0x00489E69
 		public int NodeCountRemaining()
 		{
 			return this.pathLength - this.currentPathIndex;
 		}
 
-		// Token: 0x0600C463 RID: 50275 RVA: 0x00487730 File Offset: 0x00485930
+		// Token: 0x0600C5BB RID: 50619 RVA: 0x0048BC78 File Offset: 0x00489E78
 		public Vector3 GetEndPos()
 		{
 			if (this.pathLength > 0)
@@ -52,7 +52,7 @@ namespace GamePath
 			return this.rawEndPos;
 		}
 
-		// Token: 0x0600C464 RID: 50276 RVA: 0x00487756 File Offset: 0x00485956
+		// Token: 0x0600C5BC RID: 50620 RVA: 0x0048BC9E File Offset: 0x00489E9E
 		public PathPoint GetEndPoint()
 		{
 			if (this.pathLength > 0)
@@ -62,7 +62,7 @@ namespace GamePath
 			return null;
 		}
 
-		// Token: 0x0600C465 RID: 50277 RVA: 0x00487774 File Offset: 0x00485974
+		// Token: 0x0600C5BD RID: 50621 RVA: 0x0048BCBC File Offset: 0x00489EBC
 		public void ShortenEnd(float _distance)
 		{
 			if (this.pathLength >= 2)
@@ -72,38 +72,38 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C466 RID: 50278 RVA: 0x004877B4 File Offset: 0x004859B4
+		// Token: 0x0600C5BE RID: 50622 RVA: 0x0048BCFC File Offset: 0x00489EFC
 		public PathPoint getPathPointFromIndex(int _idx)
 		{
 			return this.points[_idx];
 		}
 
-		// Token: 0x0600C467 RID: 50279 RVA: 0x004877BE File Offset: 0x004859BE
+		// Token: 0x0600C5BF RID: 50623 RVA: 0x0048BD06 File Offset: 0x00489F06
 		public int getCurrentPathLength()
 		{
 			return this.pathLength;
 		}
 
-		// Token: 0x0600C468 RID: 50280 RVA: 0x004877C6 File Offset: 0x004859C6
+		// Token: 0x0600C5C0 RID: 50624 RVA: 0x0048BD0E File Offset: 0x00489F0E
 		public void setCurrentPathLength(int _length)
 		{
 			this.pathLength = _length;
 		}
 
-		// Token: 0x0600C469 RID: 50281 RVA: 0x004877CF File Offset: 0x004859CF
+		// Token: 0x0600C5C1 RID: 50625 RVA: 0x0048BD17 File Offset: 0x00489F17
 		public int getCurrentPathIndex()
 		{
 			return this.currentPathIndex;
 		}
 
-		// Token: 0x0600C46A RID: 50282 RVA: 0x004877D7 File Offset: 0x004859D7
+		// Token: 0x0600C5C2 RID: 50626 RVA: 0x0048BD1F File Offset: 0x00489F1F
 		public void setCurrentPathIndex(int _idx, Entity entity, Vector3 entityPos)
 		{
 			this.currentPathIndex = _idx;
 		}
 
-		// Token: 0x1700183F RID: 6207
-		// (get) Token: 0x0600C46B RID: 50283 RVA: 0x004877E0 File Offset: 0x004859E0
+		// Token: 0x170018E1 RID: 6369
+		// (get) Token: 0x0600C5C3 RID: 50627 RVA: 0x0048BD28 File Offset: 0x00489F28
 		public PathPoint CurrentPoint
 		{
 			get
@@ -112,8 +112,8 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x17001840 RID: 6208
-		// (get) Token: 0x0600C46C RID: 50284 RVA: 0x004877F0 File Offset: 0x004859F0
+		// Token: 0x170018E2 RID: 6370
+		// (get) Token: 0x0600C5C4 RID: 50628 RVA: 0x0048BD38 File Offset: 0x00489F38
 		public PathPoint NextPoint
 		{
 			get
@@ -127,7 +127,7 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x0600C46D RID: 50285 RVA: 0x0048781C File Offset: 0x00485A1C
+		// Token: 0x0600C5C5 RID: 50629 RVA: 0x0048BD64 File Offset: 0x00489F64
 		public override bool Equals(object _other)
 		{
 			if (!(_other is PathEntity) || _other == null)
@@ -149,7 +149,7 @@ namespace GamePath
 			return true;
 		}
 
-		// Token: 0x0600C46E RID: 50286 RVA: 0x00487880 File Offset: 0x00485A80
+		// Token: 0x0600C5C6 RID: 50630 RVA: 0x0048BDC8 File Offset: 0x00489FC8
 		public override int GetHashCode()
 		{
 			if (this.points == null)
@@ -164,20 +164,20 @@ namespace GamePath
 			return num;
 		}
 
-		// Token: 0x04009459 RID: 37977
+		// Token: 0x0400951F RID: 38175
 		public PathPoint[] points;
 
-		// Token: 0x0400945A RID: 37978
+		// Token: 0x04009520 RID: 38176
 		public Vector3 toPos;
 
-		// Token: 0x0400945B RID: 37979
+		// Token: 0x04009521 RID: 38177
 		public Vector3 rawEndPos;
 
-		// Token: 0x0400945C RID: 37980
+		// Token: 0x04009522 RID: 38178
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentPathIndex;
 
-		// Token: 0x0400945D RID: 37981
+		// Token: 0x04009523 RID: 38179
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int pathLength;
 	}

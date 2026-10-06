@@ -4,21 +4,21 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019F2 RID: 6642
+	// Token: 0x02001A1E RID: 6686
 	[Preserve]
 	public class ActionShuffleContainers : ActionBaseContainersAction
 	{
-		// Token: 0x0600CA88 RID: 51848 RVA: 0x004A3C38 File Offset: 0x004A1E38
+		// Token: 0x0600CBE0 RID: 52192 RVA: 0x004A80F8 File Offset: 0x004A62F8
 		public override bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			isEmpty = false;
 			TileEntityType tileEntityType = te.GetTileEntityType();
 			if (tileEntityType != TileEntityType.Workstation)
 			{
-				ITileEntityLootable tileEntityLootable;
-				if (tileEntityType == TileEntityType.Composite && te.TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable))
+				TEFeatureStorage tefeatureStorage;
+				if (tileEntityType == TileEntityType.Composite && te.TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage))
 				{
-					isEmpty = tileEntityLootable.IsEmpty();
+					isEmpty = tefeatureStorage.IsEmpty();
 					return true;
 				}
 			}
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CA89 RID: 51849 RVA: 0x004A3C8C File Offset: 0x004A1E8C
+		// Token: 0x0600CBE1 RID: 52193 RVA: 0x004A814C File Offset: 0x004A634C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
@@ -46,12 +46,12 @@ namespace GameEvent.SequenceActions
 				TileEntityType tileEntityType = tileEntityList[i].GetTileEntityType();
 				if (tileEntityType != TileEntityType.Workstation)
 				{
-					ITileEntityLootable tileEntityLootable;
-					if (tileEntityType == TileEntityType.Composite && tileEntityList[i].TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable))
+					TEFeatureStorage tefeatureStorage;
+					if (tileEntityType == TileEntityType.Composite && tileEntityList[i].TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage))
 					{
 						list2.Add(tileEntityList[i]);
-						list.AddRange(tileEntityLootable.items);
-						if (!tileEntityLootable.IsEmpty())
+						list.AddRange(tefeatureStorage.ItemGrid.CloneItems());
+						if (!tefeatureStorage.IsEmpty())
 						{
 							flag = true;
 						}
@@ -99,12 +99,12 @@ namespace GameEvent.SequenceActions
 					TileEntityType tileEntityType2 = list2[l].GetTileEntityType();
 					if (tileEntityType2 != TileEntityType.Workstation)
 					{
-						ITileEntityLootable tileEntityLootable2;
-						if (tileEntityType2 == TileEntityType.Composite && list2[l].TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable2))
+						TEFeatureStorage tefeatureStorage2;
+						if (tileEntityType2 == TileEntityType.Composite && list2[l].TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage2))
 						{
-							for (int m = 0; m < tileEntityLootable2.items.Length; m++)
+							for (int m = 0; m < tefeatureStorage2.ItemGrid.Length; m++)
 							{
-								tileEntityLootable2.items[m] = list[0];
+								tefeatureStorage2.ItemGrid[m] = list[0];
 								list.RemoveAt(0);
 							}
 						}
@@ -129,14 +129,14 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600CA8A RID: 51850 RVA: 0x004A3F20 File Offset: 0x004A2120
+		// Token: 0x0600CBE2 RID: 52194 RVA: 0x004A83EC File Offset: 0x004A65EC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseBool(ActionShuffleContainers.PropIncludeOutputs, ref this.includeOutputs);
 		}
 
-		// Token: 0x0600CA8B RID: 51851 RVA: 0x004A3F3C File Offset: 0x004A213C
+		// Token: 0x0600CBE3 RID: 52195 RVA: 0x004A8408 File Offset: 0x004A6608
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -151,11 +151,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099CB RID: 39371
+		// Token: 0x04009A91 RID: 39569
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeOutputs;
 
-		// Token: 0x040099CC RID: 39372
+		// Token: 0x04009A92 RID: 39570
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeOutputs = "include_outputs";
 	}

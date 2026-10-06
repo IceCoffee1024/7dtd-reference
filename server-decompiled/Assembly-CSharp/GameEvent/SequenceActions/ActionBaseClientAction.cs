@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001967 RID: 6503
+	// Token: 0x02001993 RID: 6547
 	[Preserve]
 	public class ActionBaseClientAction : ActionBaseTargetAction
 	{
-		// Token: 0x0600C809 RID: 51209 RVA: 0x00495690 File Offset: 0x00493890
+		// Token: 0x0600C961 RID: 51553 RVA: 0x00499B80 File Offset: 0x00497D80
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C80A RID: 51210 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C962 RID: 51554 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnServerPerform(Entity target)
 		{

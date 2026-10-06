@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200157A RID: 5498
+// Token: 0x0200159C RID: 5532
 [RequireComponent(typeof(Rigidbody))]
 public class vp_RigidbodyImpulse_random : MonoBehaviour
 {
-	// Token: 0x0600AC0B RID: 44043 RVA: 0x004014CD File Offset: 0x003FF6CD
+	// Token: 0x0600ACBE RID: 44222 RVA: 0x00406321 File Offset: 0x00404521
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.m_Rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x0600AC0C RID: 44044 RVA: 0x004014DC File Offset: 0x003FF6DC
+	// Token: 0x0600ACBF RID: 44223 RVA: 0x00406330 File Offset: 0x00404530
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -32,20 +32,20 @@ public class vp_RigidbodyImpulse_random : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007F4B RID: 32587
+	// Token: 0x04007FCE RID: 32718
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x04007F4C RID: 32588
+	// Token: 0x04007FCF RID: 32719
 	public float minRigidBodySpin = 0.2f;
 
-	// Token: 0x04007F4D RID: 32589
+	// Token: 0x04007FD0 RID: 32720
 	public float maxRigidBodySpin = 0.2f;
 
-	// Token: 0x04007F4E RID: 32590
+	// Token: 0x04007FD1 RID: 32721
 	public Vector3 minForce = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x04007F4F RID: 32591
+	// Token: 0x04007FD2 RID: 32722
 	public Vector3 maxForce = new Vector3(0f, 0f, 0f);
 }

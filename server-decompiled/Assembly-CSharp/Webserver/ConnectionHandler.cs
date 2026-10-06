@@ -4,10 +4,10 @@ using System.Net;
 
 namespace Webserver
 {
-	// Token: 0x02001AB8 RID: 6840
+	// Token: 0x02001AE4 RID: 6884
 	public class ConnectionHandler
 	{
-		// Token: 0x0600CE49 RID: 52809 RVA: 0x004AF624 File Offset: 0x004AD824
+		// Token: 0x0600CFA1 RID: 53153 RVA: 0x004B3AF0 File Offset: 0x004B1CF0
 		public WebConnection IsLoggedIn(string _sessionId, IPAddress _ip)
 		{
 			WebConnection webConnection;
@@ -19,13 +19,13 @@ namespace Webserver
 			return webConnection;
 		}
 
-		// Token: 0x0600CE4A RID: 52810 RVA: 0x004AF64A File Offset: 0x004AD84A
+		// Token: 0x0600CFA2 RID: 53154 RVA: 0x004B3B16 File Offset: 0x004B1D16
 		public void LogOut(string _sessionId)
 		{
 			this.connections.Remove(_sessionId);
 		}
 
-		// Token: 0x0600CE4B RID: 52811 RVA: 0x004AF65C File Offset: 0x004AD85C
+		// Token: 0x0600CFA3 RID: 53155 RVA: 0x004B3B28 File Offset: 0x004B1D28
 		public WebConnection LogIn(IPAddress _ip, string _username, PlatformUserIdentifierAbs _userId, PlatformUserIdentifierAbs _crossUserId = null)
 		{
 			string text = Guid.NewGuid().ToString();
@@ -34,7 +34,7 @@ namespace Webserver
 			return webConnection;
 		}
 
-		// Token: 0x0600CE4C RID: 52812 RVA: 0x004AF698 File Offset: 0x004AD898
+		// Token: 0x0600CFA4 RID: 53156 RVA: 0x004B3B64 File Offset: 0x004B1D64
 		public void SendLine(string _line)
 		{
 			foreach (KeyValuePair<string, WebConnection> keyValuePair in this.connections)
@@ -43,7 +43,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x04009C37 RID: 39991
+		// Token: 0x04009CFD RID: 40189
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, WebConnection> connections = new Dictionary<string, WebConnection>();
 	}

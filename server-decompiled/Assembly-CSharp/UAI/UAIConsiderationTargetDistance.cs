@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x02001778 RID: 6008
+	// Token: 0x020017A4 RID: 6052
 	[Preserve]
 	public class UAIConsiderationTargetDistance : UAIConsiderationBase
 	{
-		// Token: 0x0600BA4F RID: 47695 RVA: 0x0045615C File Offset: 0x0045435C
+		// Token: 0x0600BBA6 RID: 48038 RVA: 0x0045A67C File Offset: 0x0045887C
 		public override void Init(Dictionary<string, string> _parameters)
 		{
 			base.Init(_parameters);
@@ -26,7 +26,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA50 RID: 47696 RVA: 0x004561EC File Offset: 0x004543EC
+		// Token: 0x0600BBA7 RID: 48039 RVA: 0x0045A70C File Offset: 0x0045890C
 		public override float GetScore(Context _context, object target)
 		{
 			EntityAlive entityAlive = UAIUtils.ConvertToEntityAlive(target);
@@ -44,11 +44,11 @@ namespace UAI
 			return 0f;
 		}
 
-		// Token: 0x04008BB5 RID: 35765
+		// Token: 0x04008C7A RID: 35962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float min;
 
-		// Token: 0x04008BB6 RID: 35766
+		// Token: 0x04008C7B RID: 35963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float max = 9126f;
 	}

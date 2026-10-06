@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A0A RID: 6666
+	// Token: 0x02001A36 RID: 6710
 	[Preserve]
 	public class WaitWhile : BaseWait
 	{
-		// Token: 0x0600CAF2 RID: 51954 RVA: 0x004A53B8 File Offset: 0x004A35B8
+		// Token: 0x0600CC4A RID: 52298 RVA: 0x004A9884 File Offset: 0x004A7A84
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.Requirements != null)
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CAF3 RID: 51955 RVA: 0x004A5451 File Offset: 0x004A3651
+		// Token: 0x0600CC4B RID: 52299 RVA: 0x004A991D File Offset: 0x004A7B1D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

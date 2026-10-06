@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CA5 RID: 3237
+// Token: 0x02000CB3 RID: 3251
 [Preserve]
 public class VPSteering : VehiclePart
 {
-	// Token: 0x06006346 RID: 25414 RVA: 0x0026FEB8 File Offset: 0x0026E0B8
+	// Token: 0x06006339 RID: 25401 RVA: 0x002732FC File Offset: 0x002714FC
 	public override void InitPrefabConnections()
 	{
 		StringParsers.TryParseFloat(base.GetProperty("steerMaxAngle"), out this.steerMaxAngle);
@@ -20,7 +20,7 @@ public class VPSteering : VehiclePart
 		base.InitIKTarget(AvatarIKGoal.RightHand, this.steeringJoint);
 	}
 
-	// Token: 0x06006347 RID: 25415 RVA: 0x0026FF38 File Offset: 0x0026E138
+	// Token: 0x0600633A RID: 25402 RVA: 0x0027337C File Offset: 0x0027157C
 	public override void Update(float _dt)
 	{
 		if (this.steerMaxAngle != 0f)
@@ -34,19 +34,19 @@ public class VPSteering : VehiclePart
 		}
 	}
 
-	// Token: 0x04004D36 RID: 19766
+	// Token: 0x04004D6C RID: 19820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform steeringJoint;
 
-	// Token: 0x04004D37 RID: 19767
+	// Token: 0x04004D6D RID: 19821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion baseRotation;
 
-	// Token: 0x04004D38 RID: 19768
+	// Token: 0x04004D6E RID: 19822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float steerMaxAngle;
 
-	// Token: 0x04004D39 RID: 19769
+	// Token: 0x04004D6F RID: 19823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 steerAngles;
 }

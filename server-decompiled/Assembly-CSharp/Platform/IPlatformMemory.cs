@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B77 RID: 7031
+	// Token: 0x02001BA9 RID: 7081
 	public interface IPlatformMemory
 	{
-		// Token: 0x0600D275 RID: 53877
+		// Token: 0x0600D3ED RID: 54253
 		IPlatformMemorySampler CreateSampler();
 	}
 }

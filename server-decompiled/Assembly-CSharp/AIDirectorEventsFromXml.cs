@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000CF1 RID: 3313
+// Token: 0x02000CFF RID: 3327
 public class AIDirectorEventsFromXml : MonoBehaviour
 {
-	// Token: 0x0600656A RID: 25962 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600655C RID: 25948 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 	}
 
-	// Token: 0x0600656B RID: 25963 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600655D RID: 25949 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{

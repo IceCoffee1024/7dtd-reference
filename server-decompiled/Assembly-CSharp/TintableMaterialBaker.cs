@@ -3,11 +3,11 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
-// Token: 0x02001342 RID: 4930
+// Token: 0x02001362 RID: 4962
 public static class TintableMaterialBaker
 {
-	// Token: 0x1700127E RID: 4734
-	// (get) Token: 0x06009BC9 RID: 39881 RVA: 0x003ACC4E File Offset: 0x003AAE4E
+	// Token: 0x170012C3 RID: 4803
+	// (get) Token: 0x06009C75 RID: 40053 RVA: 0x003B17CA File Offset: 0x003AF9CA
 	public static Shader BakerShader
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -21,8 +21,8 @@ public static class TintableMaterialBaker
 		}
 	}
 
-	// Token: 0x1700127F RID: 4735
-	// (get) Token: 0x06009BCA RID: 39882 RVA: 0x003ACC71 File Offset: 0x003AAE71
+	// Token: 0x170012C4 RID: 4804
+	// (get) Token: 0x06009C76 RID: 40054 RVA: 0x003B17ED File Offset: 0x003AF9ED
 	public static Material BakerMaterial
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -36,7 +36,7 @@ public static class TintableMaterialBaker
 		}
 	}
 
-	// Token: 0x06009BCB RID: 39883 RVA: 0x003ACCA4 File Offset: 0x003AAEA4
+	// Token: 0x06009C77 RID: 40055 RVA: 0x003B1820 File Offset: 0x003AFA20
 	public static int ProcessGameObject(GameObject gameObject)
 	{
 		if (gameObject == null)
@@ -80,14 +80,14 @@ public static class TintableMaterialBaker
 		return num;
 	}
 
-	// Token: 0x06009BCC RID: 39884 RVA: 0x003ACD60 File Offset: 0x003AAF60
+	// Token: 0x06009C78 RID: 40056 RVA: 0x003B18DC File Offset: 0x003AFADC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool IsTintableMaterial(Material material)
 	{
 		return !(material == null) && !(material.shader == null) && (material.shader.name.Contains("_Tintable") && material.HasProperty("_Albedo") && material.HasProperty("_IndexTex") && material.HasProperty("_TintMask")) && material.HasProperty("_PaletteTex");
 	}
 
-	// Token: 0x06009BCD RID: 39885 RVA: 0x003ACDD4 File Offset: 0x003AAFD4
+	// Token: 0x06009C79 RID: 40057 RVA: 0x003B1950 File Offset: 0x003AFB50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool BakeMaterial(Material material)
 	{
@@ -126,7 +126,7 @@ public static class TintableMaterialBaker
 		return true;
 	}
 
-	// Token: 0x06009BCE RID: 39886 RVA: 0x003ACED8 File Offset: 0x003AB0D8
+	// Token: 0x06009C7A RID: 40058 RVA: 0x003B1A54 File Offset: 0x003AFC54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Shader GetNonTintableShader(Material material)
 	{
@@ -150,7 +150,7 @@ public static class TintableMaterialBaker
 		return shader;
 	}
 
-	// Token: 0x06009BCF RID: 39887 RVA: 0x003ACFA4 File Offset: 0x003AB1A4
+	// Token: 0x06009C7B RID: 40059 RVA: 0x003B1B20 File Offset: 0x003AFD20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D BakeAlbedoWithTintsGPU(Material sourceMaterial, Texture albedo, Texture indexTex, Texture tintMask, Texture paletteTex)
 	{
@@ -170,7 +170,7 @@ public static class TintableMaterialBaker
 		return texture2D;
 	}
 
-	// Token: 0x06009BD0 RID: 39888 RVA: 0x003AD068 File Offset: 0x003AB268
+	// Token: 0x06009C7C RID: 40060 RVA: 0x003B1BE4 File Offset: 0x003AFDE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D RenderTextureToTexture2D(RenderTexture renderTexture, int width, int height, bool retainAlphaChannel)
 	{
@@ -192,7 +192,7 @@ public static class TintableMaterialBaker
 		return texture2D;
 	}
 
-	// Token: 0x06009BD1 RID: 39889 RVA: 0x003AD0C9 File Offset: 0x003AB2C9
+	// Token: 0x06009C7D RID: 40061 RVA: 0x003B1C45 File Offset: 0x003AFE45
 	public static void Cleanup()
 	{
 		if (TintableMaterialBaker._bakerMaterial != null)
@@ -203,11 +203,11 @@ public static class TintableMaterialBaker
 		TintableMaterialBaker._bakerShader = null;
 	}
 
-	// Token: 0x0400758A RID: 30090
+	// Token: 0x04007605 RID: 30213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Shader _bakerShader;
 
-	// Token: 0x0400758B RID: 30091
+	// Token: 0x04007606 RID: 30214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Material _bakerMaterial;
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000467 RID: 1127
+// Token: 0x02000469 RID: 1129
 [Preserve]
 public enum EnumEntityModelView
 {
-	// Token: 0x040017A1 RID: 6049
+	// Token: 0x04001798 RID: 6040
 	FirstPerson,
-	// Token: 0x040017A2 RID: 6050
+	// Token: 0x04001799 RID: 6041
 	ThirdPerson
 }

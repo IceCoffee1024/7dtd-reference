@@ -4,12 +4,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001076 RID: 4214
+// Token: 0x02001087 RID: 4231
 [Preserve]
 public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.ListEntry>
 {
-	// Token: 0x17000F9B RID: 3995
-	// (get) Token: 0x060085E3 RID: 34275 RVA: 0x00330F9E File Offset: 0x0032F19E
+	// Token: 0x17000FD1 RID: 4049
+	// (get) Token: 0x06008629 RID: 34345 RVA: 0x00334BAA File Offset: 0x00332DAA
 	public static AllowSpawnNearFriend SpawnNearFriendMode
 	{
 		get
@@ -27,12 +27,12 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		}
 	}
 
-	// Token: 0x140000DC RID: 220
-	// (add) Token: 0x060085E4 RID: 34276 RVA: 0x00330FD0 File Offset: 0x0032F1D0
-	// (remove) Token: 0x060085E5 RID: 34277 RVA: 0x00331008 File Offset: 0x0032F208
+	// Token: 0x140000DB RID: 219
+	// (add) Token: 0x0600862A RID: 34346 RVA: 0x00334BDC File Offset: 0x00332DDC
+	// (remove) Token: 0x0600862B RID: 34347 RVA: 0x00334C14 File Offset: 0x00332E14
 	public event Action<PersistentPlayerData> SpawnClicked;
 
-	// Token: 0x060085E6 RID: 34278 RVA: 0x00331040 File Offset: 0x0032F240
+	// Token: 0x0600862C RID: 34348 RVA: 0x00334C4C File Offset: 0x00332E4C
 	public override void Init()
 	{
 		base.Init();
@@ -57,7 +57,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		}
 	}
 
-	// Token: 0x060085E7 RID: 34279 RVA: 0x00331080 File Offset: 0x0032F280
+	// Token: 0x0600862D RID: 34349 RVA: 0x00334C8C File Offset: 0x00332E8C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -73,7 +73,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		}
 	}
 
-	// Token: 0x060085E8 RID: 34280 RVA: 0x003310FC File Offset: 0x0032F2FC
+	// Token: 0x0600862E RID: 34350 RVA: 0x00334D08 File Offset: 0x00332F08
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -88,21 +88,21 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		}
 	}
 
-	// Token: 0x060085E9 RID: 34281 RVA: 0x00331171 File Offset: 0x0032F371
+	// Token: 0x0600862F RID: 34351 RVA: 0x00334D7D File Offset: 0x00332F7D
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		XUiC_SpawnNearFriendsList.Instance = null;
 	}
 
-	// Token: 0x060085EA RID: 34282 RVA: 0x0033117F File Offset: 0x0032F37F
+	// Token: 0x06008630 RID: 34352 RVA: 0x00334D8B File Offset: 0x00332F8B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playersDictChanged(object _sender, DictionaryChangedEventArgs<PlatformUserIdentifierAbs, PersistentPlayerData> _e)
 	{
 		this.UpdatePlayers();
 	}
 
-	// Token: 0x060085EB RID: 34283 RVA: 0x00331188 File Offset: 0x0032F388
+	// Token: 0x06008631 RID: 34353 RVA: 0x00334D94 File Offset: 0x00332F94
 	public void UpdatePlayers()
 	{
 		XUiC_SpawnNearFriendsList.<>c__DisplayClass13_0 CS$<>8__locals1 = new XUiC_SpawnNearFriendsList.<>c__DisplayClass13_0();
@@ -116,7 +116,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		}
 	}
 
-	// Token: 0x060085EC RID: 34284 RVA: 0x003311E8 File Offset: 0x0032F3E8
+	// Token: 0x06008632 RID: 34354 RVA: 0x00334DF4 File Offset: 0x00332FF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -135,7 +135,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		return true;
 	}
 
-	// Token: 0x060085ED RID: 34285 RVA: 0x00331258 File Offset: 0x0032F458
+	// Token: 0x06008633 RID: 34355 RVA: 0x00334E64 File Offset: 0x00333064
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -174,15 +174,15 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x0400637F RID: 25471
+	// Token: 0x040063C4 RID: 25540
 	public static XUiC_SpawnNearFriendsList Instance;
 
-	// Token: 0x02001077 RID: 4215
+	// Token: 0x02001088 RID: 4232
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_SpawnNearFriendsList.ListEntry>
 	{
-		// Token: 0x17000F9C RID: 3996
-		// (get) Token: 0x060085F0 RID: 34288 RVA: 0x003313BA File Offset: 0x0032F5BA
+		// Token: 0x17000FD2 RID: 4050
+		// (get) Token: 0x06008636 RID: 34358 RVA: 0x00334FC6 File Offset: 0x003331C6
 		public bool IsFriend
 		{
 			get
@@ -191,8 +191,8 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			}
 		}
 
-		// Token: 0x17000F9D RID: 3997
-		// (get) Token: 0x060085F1 RID: 34289 RVA: 0x003313CA File Offset: 0x0032F5CA
+		// Token: 0x17000FD3 RID: 4051
+		// (get) Token: 0x06008637 RID: 34359 RVA: 0x00334FD6 File Offset: 0x003331D6
 		public bool ValidSpawn
 		{
 			get
@@ -201,8 +201,8 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			}
 		}
 
-		// Token: 0x17000F9E RID: 3998
-		// (get) Token: 0x060085F2 RID: 34290 RVA: 0x003313DC File Offset: 0x0032F5DC
+		// Token: 0x17000FD4 RID: 4052
+		// (get) Token: 0x06008638 RID: 34360 RVA: 0x00334FE8 File Offset: 0x003331E8
 		public string InvalidSpawnReason
 		{
 			get
@@ -219,7 +219,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			}
 		}
 
-		// Token: 0x060085F3 RID: 34291 RVA: 0x00331404 File Offset: 0x0032F604
+		// Token: 0x06008639 RID: 34361 RVA: 0x00335010 File Offset: 0x00333210
 		public ListEntry(int _randomSeed)
 		{
 			GameRandom tempGameRandom = GameRandomManager.Instance.GetTempGameRandom(_randomSeed);
@@ -237,7 +237,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			this.iconCrossplaySprite = "ui_platform_pc";
 		}
 
-		// Token: 0x060085F4 RID: 34292 RVA: 0x003314B8 File Offset: 0x0032F6B8
+		// Token: 0x0600863A RID: 34362 RVA: 0x003350C4 File Offset: 0x003332C4
 		public ListEntry(PersistentPlayerData _persistentPlayerData, bool _showPlatformIcons)
 		{
 			this.name = _persistentPlayerData.PlayerName.AuthoredName.Text;
@@ -262,7 +262,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			this.UpdatePosition();
 		}
 
-		// Token: 0x060085F5 RID: 34293 RVA: 0x003315E0 File Offset: 0x0032F7E0
+		// Token: 0x0600863B RID: 34363 RVA: 0x003351EC File Offset: 0x003333EC
 		public void UpdatePosition()
 		{
 			if (this.PersistentPlayerData == null)
@@ -309,7 +309,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			this.invalidLocationReason = string.Empty;
 		}
 
-		// Token: 0x060085F6 RID: 34294 RVA: 0x003316D8 File Offset: 0x0032F8D8
+		// Token: 0x0600863C RID: 34364 RVA: 0x003352E4 File Offset: 0x003334E4
 		public override int CompareTo(XUiC_SpawnNearFriendsList.ListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -329,51 +329,51 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return string.Compare(this.name, _otherEntry.name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x060085F7 RID: 34295 RVA: 0x00331732 File Offset: 0x0032F932
+		// Token: 0x0600863D RID: 34365 RVA: 0x0033533E File Offset: 0x0033353E
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x04006380 RID: 25472
+		// Token: 0x040063C5 RID: 25541
 		public readonly PersistentPlayerData PersistentPlayerData;
 
-		// Token: 0x04006381 RID: 25473
+		// Token: 0x040063C6 RID: 25542
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string name;
 
-		// Token: 0x04006382 RID: 25474
+		// Token: 0x040063C7 RID: 25543
 		public readonly string displayName;
 
-		// Token: 0x04006383 RID: 25475
+		// Token: 0x040063C8 RID: 25544
 		public readonly bool showIconCrossplay;
 
-		// Token: 0x04006384 RID: 25476
+		// Token: 0x040063C9 RID: 25545
 		public readonly string iconCrossplaySprite;
 
-		// Token: 0x04006385 RID: 25477
+		// Token: 0x040063CA RID: 25546
 		public Vector3i position;
 
-		// Token: 0x04006386 RID: 25478
+		// Token: 0x040063CB RID: 25547
 		public BiomeDefinition biome;
 
-		// Token: 0x04006387 RID: 25479
+		// Token: 0x040063CC RID: 25548
 		public bool locationAllowed;
 
-		// Token: 0x04006388 RID: 25480
+		// Token: 0x040063CD RID: 25549
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string invalidLocationReason;
 
-		// Token: 0x04006389 RID: 25481
+		// Token: 0x040063CE RID: 25550
 		public readonly string friendPlatform;
 	}
 
-	// Token: 0x02001078 RID: 4216
+	// Token: 0x02001089 RID: 4233
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class SpawnNearFriendsListEntryController : XUiC_List<XUiC_SpawnNearFriendsList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x060085F8 RID: 34296 RVA: 0x00331747 File Offset: 0x0032F947
+		// Token: 0x0600863E RID: 34366 RVA: 0x00335353 File Offset: 0x00333553
 		public override void Init()
 		{
 			base.Init();
@@ -393,7 +393,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			};
 		}
 
-		// Token: 0x060085F9 RID: 34297 RVA: 0x00331777 File Offset: 0x0032F977
+		// Token: 0x0600863F RID: 34367 RVA: 0x00335383 File Offset: 0x00333583
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -402,7 +402,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return ((entryData != null) ? entryData.displayName : null) ?? "";
 		}
 
-		// Token: 0x060085FA RID: 34298 RVA: 0x00331794 File Offset: 0x0032F994
+		// Token: 0x06008640 RID: 34368 RVA: 0x003353A0 File Offset: 0x003335A0
 		[XuiXmlBinding("position")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingPosition()
@@ -414,7 +414,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return "";
 		}
 
-		// Token: 0x060085FB RID: 34299 RVA: 0x003317BF File Offset: 0x0032F9BF
+		// Token: 0x06008641 RID: 34369 RVA: 0x003353CB File Offset: 0x003335CB
 		[XuiXmlBinding("biomeName")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingBiomeName()
@@ -433,7 +433,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return text ?? "";
 		}
 
-		// Token: 0x060085FC RID: 34300 RVA: 0x003317E8 File Offset: 0x0032F9E8
+		// Token: 0x06008642 RID: 34370 RVA: 0x003353F4 File Offset: 0x003335F4
 		[XuiXmlBinding("locationAllowed")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingLocationAllowed()
@@ -442,7 +442,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return entryData != null && entryData.locationAllowed;
 		}
 
-		// Token: 0x060085FD RID: 34301 RVA: 0x003317FB File Offset: 0x0032F9FB
+		// Token: 0x06008643 RID: 34371 RVA: 0x00335407 File Offset: 0x00333607
 		[XuiXmlBinding("isFriend")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingIsFriend()
@@ -451,7 +451,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return entryData != null && entryData.IsFriend;
 		}
 
-		// Token: 0x060085FE RID: 34302 RVA: 0x0033180E File Offset: 0x0032FA0E
+		// Token: 0x06008644 RID: 34372 RVA: 0x0033541A File Offset: 0x0033361A
 		[XuiXmlBinding("friendPlatform")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingFriendPlatform()
@@ -460,7 +460,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return ((entryData != null) ? entryData.friendPlatform : null) ?? "-";
 		}
 
-		// Token: 0x060085FF RID: 34303 RVA: 0x0033182B File Offset: 0x0032FA2B
+		// Token: 0x06008645 RID: 34373 RVA: 0x00335437 File Offset: 0x00333637
 		[XuiXmlBinding("validSpawn")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingValidSpawn()
@@ -469,7 +469,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return entryData != null && entryData.ValidSpawn;
 		}
 
-		// Token: 0x06008600 RID: 34304 RVA: 0x0033183E File Offset: 0x0032FA3E
+		// Token: 0x06008646 RID: 34374 RVA: 0x0033544A File Offset: 0x0033364A
 		[XuiXmlBinding("invalidSpawnReason")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingInvalidSpawnReason()
@@ -478,7 +478,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return ((entryData != null) ? entryData.InvalidSpawnReason : null) ?? "";
 		}
 
-		// Token: 0x06008601 RID: 34305 RVA: 0x0033185B File Offset: 0x0032FA5B
+		// Token: 0x06008647 RID: 34375 RVA: 0x00335467 File Offset: 0x00333667
 		[XuiXmlBinding("showIconCrossplay")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingShowIconCrossplay()
@@ -487,7 +487,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return entryData != null && entryData.showIconCrossplay;
 		}
 
-		// Token: 0x06008602 RID: 34306 RVA: 0x0033186E File Offset: 0x0032FA6E
+		// Token: 0x06008648 RID: 34376 RVA: 0x0033547A File Offset: 0x0033367A
 		[XuiXmlBinding("iconCrossplaySprite")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingIconCrossplaySprite()
@@ -496,7 +496,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return ((entryData != null) ? entryData.iconCrossplaySprite : null) ?? "";
 		}
 
-		// Token: 0x06008603 RID: 34307 RVA: 0x0033188B File Offset: 0x0032FA8B
+		// Token: 0x06008649 RID: 34377 RVA: 0x00335497 File Offset: 0x00333697
 		[XuiXmlBinding("canShowProfile")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingCanShowProfile()
@@ -505,7 +505,7 @@ public class XUiC_SpawnNearFriendsList : XUiC_List<XUiC_SpawnNearFriendsList.Lis
 			return ((entryData != null) ? entryData.PersistentPlayerData : null) != null && PlatformManager.NativePlatform.User.CanShowProfile(this.entryData.PersistentPlayerData.PlayerData.NativeId);
 		}
 
-		// Token: 0x0400638A RID: 25482
+		// Token: 0x040063CF RID: 25551
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiController btnProfile;
 	}

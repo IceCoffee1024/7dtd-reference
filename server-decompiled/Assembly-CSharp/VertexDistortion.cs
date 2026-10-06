@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000BDB RID: 3035
+// Token: 0x02000BED RID: 3053
 public class VertexDistortion
 {
-	// Token: 0x06005B58 RID: 23384 RVA: 0x0023343C File Offset: 0x0023163C
+	// Token: 0x06005B71 RID: 23409 RVA: 0x00236738 File Offset: 0x00234938
 	[PublicizedFrom(EAccessModifier.Private)]
 	static VertexDistortion()
 	{
@@ -13,7 +13,7 @@ public class VertexDistortion
 		}
 	}
 
-	// Token: 0x04004724 RID: 18212
+	// Token: 0x04004763 RID: 18275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] arrayB = new float[] { 0f, 0.2f, 0.15f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f };
 }

@@ -4,21 +4,21 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C7F RID: 7295
+	// Token: 0x02001CB1 RID: 7345
 	public class Api : IPlatformApi
 	{
-		// Token: 0x17001AD3 RID: 6867
-		// (get) Token: 0x0600D848 RID: 55368 RVA: 0x004DC066 File Offset: 0x004DA266
-		// (set) Token: 0x0600D849 RID: 55369 RVA: 0x004DC06E File Offset: 0x004DA26E
+		// Token: 0x17001B79 RID: 7033
+		// (get) Token: 0x0600D9C1 RID: 55745 RVA: 0x004E0BA2 File Offset: 0x004DEDA2
+		// (set) Token: 0x0600D9C2 RID: 55746 RVA: 0x004E0BAA File Offset: 0x004DEDAA
 		public EApiStatus ClientApiStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = EApiStatus.Uninitialized;
 
-		// Token: 0x14000135 RID: 309
-		// (add) Token: 0x0600D84A RID: 55370 RVA: 0x004DC078 File Offset: 0x004DA278
-		// (remove) Token: 0x0600D84B RID: 55371 RVA: 0x004DC0D4 File Offset: 0x004DA2D4
+		// Token: 0x14000134 RID: 308
+		// (add) Token: 0x0600D9C3 RID: 55747 RVA: 0x004E0BB4 File Offset: 0x004DEDB4
+		// (remove) Token: 0x0600D9C4 RID: 55748 RVA: 0x004E0C10 File Offset: 0x004DEE10
 		public event Action ClientApiInitialized
 		{
 			add
@@ -41,12 +41,12 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D84C RID: 55372 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D9C5 RID: 55749 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600D84D RID: 55373 RVA: 0x004DC120 File Offset: 0x004DA320
+		// Token: 0x0600D9C6 RID: 55750 RVA: 0x004E0C5C File Offset: 0x004DEE5C
 		public bool InitClientApis()
 		{
 			if (!Packsize.Test())
@@ -90,13 +90,13 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D84E RID: 55374 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x0600D9C7 RID: 55751 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool InitServerApis()
 		{
 			return true;
 		}
 
-		// Token: 0x0600D84F RID: 55375 RVA: 0x004DC1F4 File Offset: 0x004DA3F4
+		// Token: 0x0600D9C8 RID: 55752 RVA: 0x004E0D30 File Offset: 0x004DEF30
 		public void ServerApiLoaded()
 		{
 			if (this.ClientApiStatus != EApiStatus.Ok)
@@ -110,7 +110,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D850 RID: 55376 RVA: 0x004DC210 File Offset: 0x004DA410
+		// Token: 0x0600D9C9 RID: 55753 RVA: 0x004E0D4C File Offset: 0x004DEF4C
 		public void Update()
 		{
 			if (this.ClientApiStatus == EApiStatus.Ok)
@@ -125,7 +125,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D851 RID: 55377 RVA: 0x004DC263 File Offset: 0x004DA463
+		// Token: 0x0600D9CA RID: 55754 RVA: 0x004E0D9F File Offset: 0x004DEF9F
 		public void Destroy()
 		{
 			if (this.ClientApiStatus == EApiStatus.Ok)
@@ -134,24 +134,24 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D852 RID: 55378 RVA: 0x004DC272 File Offset: 0x004DA472
+		// Token: 0x0600D9CB RID: 55755 RVA: 0x004E0DAE File Offset: 0x004DEFAE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ExceptionThrown(int _severity, StringBuilder _message)
 		{
 			Log.Error("[Steamworks.NET] " + ((_severity == 0) ? "Info: " : "Warning: ") + ": " + ((_message != null) ? _message.ToString() : null));
 		}
 
-		// Token: 0x0600D853 RID: 55379 RVA: 0x00040F84 File Offset: 0x0003F184
+		// Token: 0x0600D9CC RID: 55756 RVA: 0x00041064 File Offset: 0x0003F264
 		public float GetScreenBoundsValueFromSystem()
 		{
 			return 1f;
 		}
 
-		// Token: 0x0400A455 RID: 42069
+		// Token: 0x0400A52A RID: 42282
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action clientApiInitialized;
 
-		// Token: 0x0400A456 RID: 42070
+		// Token: 0x0400A52B RID: 42283
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MicroStopwatch tickDurationStopwatch = new MicroStopwatch(false);
 	}

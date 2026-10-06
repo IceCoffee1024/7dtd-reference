@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using Challenges;
 
-// Token: 0x02000CFE RID: 3326
+// Token: 0x02000D0C RID: 3340
 public class ChallengesFromXml
 {
-	// Token: 0x060065AD RID: 26029 RVA: 0x0027C6D8 File Offset: 0x0027A8D8
+	// Token: 0x0600659F RID: 26015 RVA: 0x0027FA7C File Offset: 0x0027DC7C
 	public static IEnumerator CreateChallenges(XmlFile xmlFile)
 	{
 		ChallengeClass.s_Challenges.Clear();
@@ -25,7 +25,7 @@ public class ChallengesFromXml
 		yield break;
 	}
 
-	// Token: 0x060065AE RID: 26030 RVA: 0x0027C6E8 File Offset: 0x0027A8E8
+	// Token: 0x060065A0 RID: 26016 RVA: 0x0027FA8C File Offset: 0x0027DC8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -64,7 +64,7 @@ public class ChallengesFromXml
 		}
 	}
 
-	// Token: 0x060065AF RID: 26031 RVA: 0x0027C834 File Offset: 0x0027AA34
+	// Token: 0x060065A1 RID: 26017 RVA: 0x0027FBD8 File Offset: 0x0027DDD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseChallengeGroup(XElement e)
 	{
@@ -106,7 +106,7 @@ public class ChallengesFromXml
 		challengeGroup.Effects = MinEffectController.ParseXml(e, null, MinEffectController.SourceParentType.ChallengeGroup, challengeGroup.Name);
 	}
 
-	// Token: 0x060065B0 RID: 26032 RVA: 0x0027C9B8 File Offset: 0x0027ABB8
+	// Token: 0x060065A2 RID: 26018 RVA: 0x0027FD5C File Offset: 0x0027DF5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseChallengeCategory(XElement e)
 	{
@@ -124,7 +124,7 @@ public class ChallengesFromXml
 		ChallengeCategory.s_ChallengeCategories.Add(attribute, challengeCategory);
 	}
 
-	// Token: 0x060065B1 RID: 26033 RVA: 0x0027CA30 File Offset: 0x0027AC30
+	// Token: 0x060065A3 RID: 26019 RVA: 0x0027FDD4 File Offset: 0x0027DFD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseChallenge(XElement e)
 	{
@@ -167,7 +167,7 @@ public class ChallengesFromXml
 		challengeClass.Effects = MinEffectController.ParseXml(e, null, MinEffectController.SourceParentType.ChallengeClass, challengeClass.Name);
 	}
 
-	// Token: 0x060065B2 RID: 26034 RVA: 0x0027CB6C File Offset: 0x0027AD6C
+	// Token: 0x060065A4 RID: 26020 RVA: 0x0027FF10 File Offset: 0x0027E110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseObjective(ChallengeClass Challenge, XElement e)
 	{
@@ -193,13 +193,13 @@ public class ChallengesFromXml
 		}
 	}
 
-	// Token: 0x04004EFC RID: 20220
+	// Token: 0x04004F32 RID: 20274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<ChallengeGroup, ChallengeClass> LastGroupChallenge = new Dictionary<ChallengeGroup, ChallengeClass>();
 
-	// Token: 0x04004EFD RID: 20221
+	// Token: 0x04004F33 RID: 20275
 	public static string DefaultRewardEvent;
 
-	// Token: 0x04004EFE RID: 20222
+	// Token: 0x04004F34 RID: 20276
 	public static string DefaultRewardText;
 }

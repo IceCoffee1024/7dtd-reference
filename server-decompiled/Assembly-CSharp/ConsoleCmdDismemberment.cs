@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020F RID: 527
+// Token: 0x02000210 RID: 528
 [Preserve]
 public class ConsoleCmdDismemberment : ConsoleCmdAbstract
 {
-	// Token: 0x1700016F RID: 367
-	// (get) Token: 0x0600100C RID: 4108 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000167 RID: 359
+	// (get) Token: 0x06000FFF RID: 4095 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,21 +16,21 @@ public class ConsoleCmdDismemberment : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600100D RID: 4109 RVA: 0x000668EB File Offset: 0x00064AEB
+	// Token: 0x06001000 RID: 4096 RVA: 0x000668DB File Offset: 0x00064ADB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testDismemberment", "tds" };
 	}
 
-	// Token: 0x0600100E RID: 4110 RVA: 0x00066903 File Offset: 0x00064B03
+	// Token: 0x06001001 RID: 4097 RVA: 0x000668F3 File Offset: 0x00064AF3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Dismemberment testing toggle.";
 	}
 
-	// Token: 0x0600100F RID: 4111 RVA: 0x0006690C File Offset: 0x00064B0C
+	// Token: 0x06001002 RID: 4098 RVA: 0x000668FC File Offset: 0x00064AFC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0 && _params[0].ContainsCaseInsensitive("debuglog"))

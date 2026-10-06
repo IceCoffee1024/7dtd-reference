@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB3 RID: 4019
+// Token: 0x02000FC2 RID: 4034
 [Preserve]
 public class XUiC_PowerCameraWindowGroup : XUiController
 {
-	// Token: 0x06007EF2 RID: 32498 RVA: 0x00302824 File Offset: 0x00300A24
+	// Token: 0x06007F01 RID: 32513 RVA: 0x003057FC File Offset: 0x003039FC
 	public override void Init()
 	{
 		base.Init();
@@ -22,9 +22,9 @@ public class XUiC_PowerCameraWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x17000ED1 RID: 3793
-	// (get) Token: 0x06007EF3 RID: 32499 RVA: 0x00302863 File Offset: 0x00300A63
-	// (set) Token: 0x06007EF4 RID: 32500 RVA: 0x0030286B File Offset: 0x00300A6B
+	// Token: 0x17000EF8 RID: 3832
+	// (get) Token: 0x06007F02 RID: 32514 RVA: 0x0030583B File Offset: 0x00303A3B
+	// (set) Token: 0x06007F03 RID: 32515 RVA: 0x00305843 File Offset: 0x00303A43
 	public TileEntityPowered TileEntity
 	{
 		get
@@ -38,7 +38,7 @@ public class XUiC_PowerCameraWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007EF5 RID: 32501 RVA: 0x00302888 File Offset: 0x00300A88
+	// Token: 0x06007F04 RID: 32516 RVA: 0x00305860 File Offset: 0x00303A60
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -66,7 +66,7 @@ public class XUiC_PowerCameraWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007EF6 RID: 32502 RVA: 0x00302968 File Offset: 0x00300B68
+	// Token: 0x06007F05 RID: 32517 RVA: 0x00305940 File Offset: 0x00303B40
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -80,7 +80,7 @@ public class XUiC_PowerCameraWindowGroup : XUiController
 		this.xui.playerUI.CursorController.Locked = true;
 	}
 
-	// Token: 0x06007EF7 RID: 32503 RVA: 0x003029E8 File Offset: 0x00300BE8
+	// Token: 0x06007F06 RID: 32518 RVA: 0x003059C0 File Offset: 0x00303BC0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -113,29 +113,29 @@ public class XUiC_PowerCameraWindowGroup : XUiController
 		this.xui.playerUI.CursorController.Locked = false;
 	}
 
-	// Token: 0x04005E2C RID: 24108
+	// Token: 0x04005E55 RID: 24149
 	public bool UseEdgeDetection = true;
 
-	// Token: 0x04005E2D RID: 24109
+	// Token: 0x04005E56 RID: 24150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04005E2E RID: 24110
+	// Token: 0x04005E57 RID: 24151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CameraWindow cameraWindow;
 
-	// Token: 0x04005E2F RID: 24111
+	// Token: 0x04005E58 RID: 24152
 	public static string ID = "powercamera";
 
-	// Token: 0x04005E30 RID: 24112
+	// Token: 0x04005E59 RID: 24153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005E31 RID: 24113
+	// Token: 0x04005E5A RID: 24154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 
-	// Token: 0x04005E32 RID: 24114
+	// Token: 0x04005E5B RID: 24155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowered tileEntity;
 }

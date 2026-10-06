@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x0200177B RID: 6011
+	// Token: 0x020017A7 RID: 6055
 	[Preserve]
 	public class UAIConsiderationTargetType : UAIConsiderationBase
 	{
-		// Token: 0x0600BA57 RID: 47703 RVA: 0x00456404 File Offset: 0x00454604
+		// Token: 0x0600BBAE RID: 48046 RVA: 0x0045A924 File Offset: 0x00458B24
 		public override void Init(Dictionary<string, string> parameters)
 		{
 			base.Init(parameters);
@@ -23,7 +23,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA58 RID: 47704 RVA: 0x00456468 File Offset: 0x00454668
+		// Token: 0x0600BBAF RID: 48047 RVA: 0x0045A988 File Offset: 0x00458B88
 		public override float GetScore(Context _context, object target)
 		{
 			for (int i = 0; i < this.type.Length; i++)
@@ -41,7 +41,7 @@ namespace UAI
 			return 0f;
 		}
 
-		// Token: 0x04008BB9 RID: 35769
+		// Token: 0x04008C7E RID: 35966
 		public string[] type;
 	}
 }

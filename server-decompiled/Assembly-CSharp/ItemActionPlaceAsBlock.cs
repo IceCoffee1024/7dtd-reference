@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005BE RID: 1470
+// Token: 0x020005BF RID: 1471
 [Preserve]
 public class ItemActionPlaceAsBlock : ItemAction
 {
-	// Token: 0x06002FD9 RID: 12249 RVA: 0x00132F54 File Offset: 0x00131154
+	// Token: 0x0600301C RID: 12316 RVA: 0x001339F8 File Offset: 0x00131BF8
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -30,7 +30,7 @@ public class ItemActionPlaceAsBlock : ItemAction
 		this.changeItemTo = null;
 	}
 
-	// Token: 0x06002FDA RID: 12250 RVA: 0x00133004 File Offset: 0x00131204
+	// Token: 0x0600301D RID: 12317 RVA: 0x00133AA8 File Offset: 0x00131CA8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -76,17 +76,16 @@ public class ItemActionPlaceAsBlock : ItemAction
 			GameManager.ShowTooltip(invData.holdingEntity as EntityPlayerLocal, "blockCantPlaced", false, false, 0f);
 			return;
 		}
-		ItemClassBlock.ItemBlockInventoryData itemBlockInventoryData = invData as ItemClassBlock.ItemBlockInventoryData;
 		BlockPlacement.EnumPlacement enumPlacement;
 		BlockPlacement.EnumRotationMode enumRotationMode;
 		int num;
 		PropTransform propTransform;
-		if (itemBlockInventoryData != null)
+		if (invData.IsBlock)
 		{
-			enumPlacement = itemBlockInventoryData.Placement;
-			enumRotationMode = itemBlockInventoryData.mode;
-			num = itemBlockInventoryData.localRot;
-			propTransform = itemBlockInventoryData.propTransform;
+			enumPlacement = invData.Placement;
+			enumRotationMode = invData.mode;
+			num = invData.localRot;
+			propTransform = invData.propTransform;
 		}
 		else
 		{
@@ -136,7 +135,7 @@ public class ItemActionPlaceAsBlock : ItemAction
 		(invData.holdingEntity as EntityPlayerLocal).DropTimeDelay = 0.5f;
 	}
 
-	// Token: 0x06002FDB RID: 12251 RVA: 0x0013343F File Offset: 0x0013163F
+	// Token: 0x0600301E RID: 12318 RVA: 0x00133EDB File Offset: 0x001320DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator decInventoryLater(ItemInventoryData data, int index)
 	{
@@ -152,23 +151,23 @@ public class ItemActionPlaceAsBlock : ItemAction
 		yield break;
 	}
 
-	// Token: 0x06002FDC RID: 12252 RVA: 0x00131719 File Offset: 0x0012F919
+	// Token: 0x0600301F RID: 12319 RVA: 0x001321B1 File Offset: 0x001303B1
 	public override RenderCubeType GetFocusType(ItemActionData _actionData)
 	{
 		return RenderCubeType.FullBlockBothSides;
 	}
 
-	// Token: 0x06002FDD RID: 12253 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003020 RID: 12320 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsFocusBlockInside()
 	{
 		return false;
 	}
 
-	// Token: 0x0400250B RID: 9483
+	// Token: 0x04002504 RID: 9476
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue blockToPlace;
 
-	// Token: 0x0400250C RID: 9484
+	// Token: 0x04002505 RID: 9477
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string changeItemTo;
 }

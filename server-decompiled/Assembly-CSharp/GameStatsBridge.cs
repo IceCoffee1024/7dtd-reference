@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001207 RID: 4615
+// Token: 0x0200121F RID: 4639
 public static class GameStatsBridge
 {
-	// Token: 0x06009356 RID: 37718 RVA: 0x0037A3C4 File Offset: 0x003785C4
+	// Token: 0x060093E4 RID: 37860 RVA: 0x0037EC0C File Offset: 0x0037CE0C
 	public static void Init()
 	{
 		GameStats.OnChangedDelegates -= GameStatsBridge.GameStats_OnChangedDelegates;
@@ -18,14 +18,14 @@ public static class GameStatsBridge
 		GameStatsBridge.UpdateStaticFields(EnumGameStats.LootAbundance, GameStats.GetInt(EnumGameStats.LootAbundance));
 	}
 
-	// Token: 0x06009357 RID: 37719 RVA: 0x0037A48B File Offset: 0x0037868B
+	// Token: 0x060093E5 RID: 37861 RVA: 0x0037ECD3 File Offset: 0x0037CED3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void GameStats_OnChangedDelegates(EnumGameStats _gameState, object _newValue)
 	{
 		GameStatsBridge.UpdateStaticFields(_gameState, _newValue);
 	}
 
-	// Token: 0x06009358 RID: 37720 RVA: 0x0037A494 File Offset: 0x00378694
+	// Token: 0x060093E6 RID: 37862 RVA: 0x0037ECDC File Offset: 0x0037CEDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ToFloatPercent(object _value)
 	{
@@ -46,7 +46,7 @@ public static class GameStatsBridge
 		return num;
 	}
 
-	// Token: 0x06009359 RID: 37721 RVA: 0x0037A4F0 File Offset: 0x003786F0
+	// Token: 0x060093E7 RID: 37863 RVA: 0x0037ED38 File Offset: 0x0037CF38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdateStaticFields(EnumGameStats _gameState, object _newValue)
 	{

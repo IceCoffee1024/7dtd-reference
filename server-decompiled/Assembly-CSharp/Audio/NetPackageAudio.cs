@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace Audio
 {
-	// Token: 0x02001B23 RID: 6947
+	// Token: 0x02001B4F RID: 6991
 	[Preserve]
 	public class NetPackageAudio : NetPackageEntityTargeted
 	{
-		// Token: 0x0600D082 RID: 53378 RVA: 0x004C05BA File Offset: 0x004BE7BA
+		// Token: 0x0600D1DA RID: 53722 RVA: 0x004C4A86 File Offset: 0x004C2C86
 		public NetPackageAudio Setup(int _playOnEntityId, string _soundGroupName, float _occlusion, bool _play, bool _signalOnly = false, float _volumeScale = 1f)
 		{
 			base.Setup(_playOnEntityId);
@@ -21,7 +21,7 @@ namespace Audio
 			return this;
 		}
 
-		// Token: 0x0600D083 RID: 53379 RVA: 0x004C05F1 File Offset: 0x004BE7F1
+		// Token: 0x0600D1DB RID: 53723 RVA: 0x004C4ABD File Offset: 0x004C2CBD
 		public NetPackageAudio Setup(Vector3 _position, string _soundGroupName, float _occlusion, bool _play, int _entityId = -1, float _volumeScale = 1f)
 		{
 			base.Setup(_entityId);
@@ -34,7 +34,7 @@ namespace Audio
 			return this;
 		}
 
-		// Token: 0x0600D084 RID: 53380 RVA: 0x004C0628 File Offset: 0x004BE828
+		// Token: 0x0600D1DC RID: 53724 RVA: 0x004C4AF4 File Offset: 0x004C2CF4
 		public override void read(PooledBinaryReader _reader)
 		{
 			base.read(_reader);
@@ -52,7 +52,7 @@ namespace Audio
 			this.signalOnly = _reader.ReadBoolean();
 		}
 
-		// Token: 0x0600D085 RID: 53381 RVA: 0x004C06C0 File Offset: 0x004BE8C0
+		// Token: 0x0600D1DD RID: 53725 RVA: 0x004C4B8C File Offset: 0x004C2D8C
 		public override void write(PooledBinaryWriter _writer)
 		{
 			base.write(_writer);
@@ -67,7 +67,7 @@ namespace Audio
 			_writer.Write(this.signalOnly);
 		}
 
-		// Token: 0x0600D086 RID: 53382 RVA: 0x004C0764 File Offset: 0x004BE964
+		// Token: 0x0600D1DE RID: 53726 RVA: 0x004C4C30 File Offset: 0x004C2E30
 		public override void ProcessPackage(World _world, GameManager _callbacks)
 		{
 			if (_world == null)
@@ -154,31 +154,25 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D087 RID: 53383 RVA: 0x000811EE File Offset: 0x0007F3EE
-		public override int GetLength()
-		{
-			return 10;
-		}
-
-		// Token: 0x04009EE0 RID: 40672
+		// Token: 0x04009FA6 RID: 40870
 		public string soundGroupName;
 
-		// Token: 0x04009EE1 RID: 40673
+		// Token: 0x04009FA7 RID: 40871
 		public bool play;
 
-		// Token: 0x04009EE2 RID: 40674
+		// Token: 0x04009FA8 RID: 40872
 		public Vector3 position;
 
-		// Token: 0x04009EE3 RID: 40675
+		// Token: 0x04009FA9 RID: 40873
 		public bool playOnEntity;
 
-		// Token: 0x04009EE4 RID: 40676
+		// Token: 0x04009FAA RID: 40874
 		public float occlusion;
 
-		// Token: 0x04009EE5 RID: 40677
+		// Token: 0x04009FAB RID: 40875
 		public bool signalOnly;
 
-		// Token: 0x04009EE6 RID: 40678
+		// Token: 0x04009FAC RID: 40876
 		public float volumeScale;
 	}
 }

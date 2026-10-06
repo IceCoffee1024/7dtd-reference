@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015B1 RID: 5553
+// Token: 0x020015D3 RID: 5587
 [RequireComponent(typeof(AudioSource))]
 public class vp_Shooter : vp_Component
 {
-	// Token: 0x17001419 RID: 5145
-	// (get) Token: 0x0600ADD0 RID: 44496 RVA: 0x0040C6F9 File Offset: 0x0040A8F9
+	// Token: 0x1700145E RID: 5214
+	// (get) Token: 0x0600AE83 RID: 44675 RVA: 0x0041154D File Offset: 0x0040F74D
 	public GameObject ProjectileSpawnPoint
 	{
 		get
@@ -15,8 +15,8 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x1700141A RID: 5146
-	// (get) Token: 0x0600ADD1 RID: 44497 RVA: 0x0040C704 File Offset: 0x0040A904
+	// Token: 0x1700145F RID: 5215
+	// (get) Token: 0x0600AE84 RID: 44676 RVA: 0x00411558 File Offset: 0x0040F758
 	public GameObject MuzzleFlash
 	{
 		get
@@ -31,7 +31,7 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADD2 RID: 44498 RVA: 0x0040C7B8 File Offset: 0x0040A9B8
+	// Token: 0x0600AE85 RID: 44677 RVA: 0x0041160C File Offset: 0x0040F80C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -58,7 +58,7 @@ public class vp_Shooter : vp_Component
 		this.ProjectileSpawnDelay = Mathf.Min(this.ProjectileSpawnDelay, this.ProjectileFiringRate - 0.1f);
 	}
 
-	// Token: 0x0600ADD3 RID: 44499 RVA: 0x0040C895 File Offset: 0x0040AA95
+	// Token: 0x0600AE86 RID: 44678 RVA: 0x004116E9 File Offset: 0x0040F8E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -69,20 +69,20 @@ public class vp_Shooter : vp_Component
 		this.Refresh();
 	}
 
-	// Token: 0x0600ADD4 RID: 44500 RVA: 0x0040C8C5 File Offset: 0x0040AAC5
+	// Token: 0x0600AE87 RID: 44679 RVA: 0x00411719 File Offset: 0x0040F919
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
 		this.FirePosition = this.m_ProjectileSpawnPoint.transform.position;
 	}
 
-	// Token: 0x0600ADD5 RID: 44501 RVA: 0x0040C8DD File Offset: 0x0040AADD
+	// Token: 0x0600AE88 RID: 44680 RVA: 0x00411731 File Offset: 0x0040F931
 	public virtual bool CanFire()
 	{
 		return Time.time >= this.m_NextAllowedFireTime;
 	}
 
-	// Token: 0x0600ADD6 RID: 44502 RVA: 0x0040C8EF File Offset: 0x0040AAEF
+	// Token: 0x0600AE89 RID: 44681 RVA: 0x00411743 File Offset: 0x0040F943
 	public virtual bool TryFire()
 	{
 		if (Time.time < this.m_NextAllowedFireTime)
@@ -93,7 +93,7 @@ public class vp_Shooter : vp_Component
 		return true;
 	}
 
-	// Token: 0x0600ADD7 RID: 44503 RVA: 0x0040C908 File Offset: 0x0040AB08
+	// Token: 0x0600AE8A RID: 44682 RVA: 0x0041175C File Offset: 0x0040F95C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Fire()
 	{
@@ -133,7 +133,7 @@ public class vp_Shooter : vp_Component
 		vp_Timer.In(this.MuzzleFlashDelay, new vp_Timer.Callback(this.ShowMuzzleFlash), null);
 	}
 
-	// Token: 0x0600ADD8 RID: 44504 RVA: 0x0040C9E0 File Offset: 0x0040ABE0
+	// Token: 0x0600AE8B RID: 44683 RVA: 0x00411834 File Offset: 0x0040FA34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void PlayFireSound()
 	{
@@ -146,7 +146,7 @@ public class vp_Shooter : vp_Component
 		base.Audio.Play();
 	}
 
-	// Token: 0x0600ADD9 RID: 44505 RVA: 0x0040CA44 File Offset: 0x0040AC44
+	// Token: 0x0600AE8C RID: 44684 RVA: 0x00411898 File Offset: 0x0040FA98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SpawnProjectiles()
 	{
@@ -170,7 +170,7 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADDA RID: 44506 RVA: 0x0040CB34 File Offset: 0x0040AD34
+	// Token: 0x0600AE8D RID: 44685 RVA: 0x00411988 File Offset: 0x0040FB88
 	public void SetSpread(int seed, Transform target)
 	{
 		global::UnityEngine.Random.InitState(seed);
@@ -178,7 +178,7 @@ public class vp_Shooter : vp_Component
 		target.Rotate(0f, global::UnityEngine.Random.Range(-this.ProjectileSpread, this.ProjectileSpread), 0f);
 	}
 
-	// Token: 0x0600ADDB RID: 44507 RVA: 0x0040CB88 File Offset: 0x0040AD88
+	// Token: 0x0600AE8E RID: 44686 RVA: 0x004119DC File Offset: 0x0040FBDC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ShowMuzzleFlash()
 	{
@@ -194,7 +194,7 @@ public class vp_Shooter : vp_Component
 		this.MuzzleFlash.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
 	}
 
-	// Token: 0x0600ADDC RID: 44508 RVA: 0x0040CC14 File Offset: 0x0040AE14
+	// Token: 0x0600AE8F RID: 44687 RVA: 0x00411A68 File Offset: 0x0040FC68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void EjectShell()
 	{
@@ -226,19 +226,19 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADDD RID: 44509 RVA: 0x0040CDC3 File Offset: 0x0040AFC3
+	// Token: 0x0600AE90 RID: 44688 RVA: 0x00411C17 File Offset: 0x0040FE17
 	public virtual void DisableFiring(float seconds = 10000000f)
 	{
 		this.m_NextAllowedFireTime = Time.time + seconds;
 	}
 
-	// Token: 0x0600ADDE RID: 44510 RVA: 0x0040CDD2 File Offset: 0x0040AFD2
+	// Token: 0x0600AE91 RID: 44689 RVA: 0x00411C26 File Offset: 0x0040FE26
 	public virtual void EnableFiring()
 	{
 		this.m_NextAllowedFireTime = Time.time;
 	}
 
-	// Token: 0x0600ADDF RID: 44511 RVA: 0x0040CDE0 File Offset: 0x0040AFE0
+	// Token: 0x0600AE92 RID: 44690 RVA: 0x00411C34 File Offset: 0x0040FE34
 	public override void Refresh()
 	{
 		if (this.MuzzleFlash != null)
@@ -285,7 +285,7 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADE0 RID: 44512 RVA: 0x0040CFB6 File Offset: 0x0040B1B6
+	// Token: 0x0600AE93 RID: 44691 RVA: 0x00411E0A File Offset: 0x0041000A
 	public override void Activate()
 	{
 		base.Activate();
@@ -295,7 +295,7 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADE1 RID: 44513 RVA: 0x0040CFD8 File Offset: 0x0040B1D8
+	// Token: 0x0600AE94 RID: 44692 RVA: 0x00411E2C File Offset: 0x0041002C
 	public override void Deactivate()
 	{
 		base.Deactivate();
@@ -305,7 +305,7 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0600ADE2 RID: 44514 RVA: 0x0040CFFC File Offset: 0x0040B1FC
+	// Token: 0x0600AE95 RID: 44693 RVA: 0x00411E50 File Offset: 0x00410050
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DrawProjectileDebugInfo(int projectileIndex)
 	{
@@ -320,144 +320,144 @@ public class vp_Shooter : vp_Component
 		}
 	}
 
-	// Token: 0x0400815C RID: 33116
+	// Token: 0x040081DF RID: 33247
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public CharacterController m_CharacterController;
 
-	// Token: 0x0400815D RID: 33117
+	// Token: 0x040081E0 RID: 33248
 	public GameObject m_ProjectileSpawnPoint;
 
-	// Token: 0x0400815E RID: 33118
+	// Token: 0x040081E1 RID: 33249
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameObject m_ProjectileDefaultSpawnpoint;
 
-	// Token: 0x0400815F RID: 33119
+	// Token: 0x040081E2 RID: 33250
 	public GameObject ProjectilePrefab;
 
-	// Token: 0x04008160 RID: 33120
+	// Token: 0x040081E3 RID: 33251
 	public float ProjectileScale = 1f;
 
-	// Token: 0x04008161 RID: 33121
+	// Token: 0x040081E4 RID: 33252
 	public float ProjectileFiringRate = 0.3f;
 
-	// Token: 0x04008162 RID: 33122
+	// Token: 0x040081E5 RID: 33253
 	public float ProjectileSpawnDelay;
 
-	// Token: 0x04008163 RID: 33123
+	// Token: 0x040081E6 RID: 33254
 	public int ProjectileCount = 1;
 
-	// Token: 0x04008164 RID: 33124
+	// Token: 0x040081E7 RID: 33255
 	public float ProjectileSpread;
 
-	// Token: 0x04008165 RID: 33125
+	// Token: 0x040081E8 RID: 33256
 	public bool ProjectileSourceIsRoot = true;
 
-	// Token: 0x04008166 RID: 33126
+	// Token: 0x040081E9 RID: 33257
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_NextAllowedFireTime;
 
-	// Token: 0x04008167 RID: 33127
+	// Token: 0x040081EA RID: 33258
 	public Vector3 MuzzleFlashPosition = Vector3.zero;
 
-	// Token: 0x04008168 RID: 33128
+	// Token: 0x040081EB RID: 33259
 	public Vector3 MuzzleFlashScale = Vector3.one;
 
-	// Token: 0x04008169 RID: 33129
+	// Token: 0x040081EC RID: 33260
 	public float MuzzleFlashFadeSpeed = 0.075f;
 
-	// Token: 0x0400816A RID: 33130
+	// Token: 0x040081ED RID: 33261
 	public GameObject MuzzleFlashPrefab;
 
-	// Token: 0x0400816B RID: 33131
+	// Token: 0x040081EE RID: 33262
 	public float MuzzleFlashDelay;
 
-	// Token: 0x0400816C RID: 33132
+	// Token: 0x040081EF RID: 33263
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameObject m_MuzzleFlash;
 
-	// Token: 0x0400816D RID: 33133
+	// Token: 0x040081F0 RID: 33264
 	public Transform m_MuzzleFlashSpawnPoint;
 
-	// Token: 0x0400816E RID: 33134
+	// Token: 0x040081F1 RID: 33265
 	public GameObject ShellPrefab;
 
-	// Token: 0x0400816F RID: 33135
+	// Token: 0x040081F2 RID: 33266
 	public float ShellScale = 1f;
 
-	// Token: 0x04008170 RID: 33136
+	// Token: 0x040081F3 RID: 33267
 	public Vector3 ShellEjectDirection = new Vector3(1f, 1f, 1f);
 
-	// Token: 0x04008171 RID: 33137
+	// Token: 0x040081F4 RID: 33268
 	public Vector3 ShellEjectPosition = new Vector3(1f, 0f, 1f);
 
-	// Token: 0x04008172 RID: 33138
+	// Token: 0x040081F5 RID: 33269
 	public float ShellEjectVelocity = 0.2f;
 
-	// Token: 0x04008173 RID: 33139
+	// Token: 0x040081F6 RID: 33270
 	public float ShellEjectDelay;
 
-	// Token: 0x04008174 RID: 33140
+	// Token: 0x040081F7 RID: 33271
 	public float ShellEjectSpin;
 
-	// Token: 0x04008175 RID: 33141
+	// Token: 0x040081F8 RID: 33272
 	public Transform m_ShellEjectSpawnPoint;
 
-	// Token: 0x04008176 RID: 33142
+	// Token: 0x040081F9 RID: 33273
 	public AudioClip SoundFire;
 
-	// Token: 0x04008177 RID: 33143
+	// Token: 0x040081FA RID: 33274
 	public float SoundFireDelay;
 
-	// Token: 0x04008178 RID: 33144
+	// Token: 0x040081FB RID: 33275
 	public Vector2 SoundFirePitch = new Vector2(1f, 1f);
 
-	// Token: 0x04008179 RID: 33145
+	// Token: 0x040081FC RID: 33276
 	public vp_Shooter.NetworkFunc m_SendFireEventToNetworkFunc;
 
-	// Token: 0x0400817A RID: 33146
+	// Token: 0x040081FD RID: 33277
 	public vp_Shooter.FirePositionFunc GetFirePosition;
 
-	// Token: 0x0400817B RID: 33147
+	// Token: 0x040081FE RID: 33278
 	public vp_Shooter.FireRotationFunc GetFireRotation;
 
-	// Token: 0x0400817C RID: 33148
+	// Token: 0x040081FF RID: 33279
 	public vp_Shooter.FireSeedFunc GetFireSeed;
 
-	// Token: 0x0400817D RID: 33149
+	// Token: 0x04008200 RID: 33280
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentFirePosition = Vector3.zero;
 
-	// Token: 0x0400817E RID: 33150
+	// Token: 0x04008201 RID: 33281
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Quaternion m_CurrentFireRotation = Quaternion.identity;
 
-	// Token: 0x0400817F RID: 33151
+	// Token: 0x04008202 RID: 33282
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_CurrentFireSeed;
 
-	// Token: 0x04008180 RID: 33152
+	// Token: 0x04008203 RID: 33283
 	public Vector3 FirePosition = Vector3.zero;
 
-	// Token: 0x020015B2 RID: 5554
-	// (Invoke) Token: 0x0600ADE8 RID: 44520
+	// Token: 0x020015D4 RID: 5588
+	// (Invoke) Token: 0x0600AE9B RID: 44699
 	public delegate void NetworkFunc();
 
-	// Token: 0x020015B3 RID: 5555
-	// (Invoke) Token: 0x0600ADEC RID: 44524
+	// Token: 0x020015D5 RID: 5589
+	// (Invoke) Token: 0x0600AE9F RID: 44703
 	public delegate Vector3 FirePositionFunc();
 
-	// Token: 0x020015B4 RID: 5556
-	// (Invoke) Token: 0x0600ADF0 RID: 44528
+	// Token: 0x020015D6 RID: 5590
+	// (Invoke) Token: 0x0600AEA3 RID: 44707
 	public delegate Quaternion FireRotationFunc();
 
-	// Token: 0x020015B5 RID: 5557
-	// (Invoke) Token: 0x0600ADF4 RID: 44532
+	// Token: 0x020015D7 RID: 5591
+	// (Invoke) Token: 0x0600AEA7 RID: 44711
 	public delegate int FireSeedFunc();
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007D2 RID: 2002
+// Token: 0x020007D5 RID: 2005
 [Preserve]
 public class NetPackageEntityAddExpClient : NetPackage
 {
-	// Token: 0x17000628 RID: 1576
-	// (get) Token: 0x06003B4A RID: 15178 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700064D RID: 1613
+	// (get) Token: 0x06003B66 RID: 15206 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityAddExpClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4B RID: 15179 RVA: 0x0017E902 File Offset: 0x0017CB02
+	// Token: 0x06003B67 RID: 15207 RVA: 0x0017EE82 File Offset: 0x0017D082
 	public NetPackageEntityAddExpClient Setup(int _entityId, int _xp, Progression.XPTypes _xpType, ItemValue _usedItem)
 	{
 		this.entityId = _entityId;
@@ -26,7 +26,7 @@ public class NetPackageEntityAddExpClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B4C RID: 15180 RVA: 0x0017E930 File Offset: 0x0017CB30
+	// Token: 0x06003B68 RID: 15208 RVA: 0x0017EEB0 File Offset: 0x0017D0B0
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -39,7 +39,7 @@ public class NetPackageEntityAddExpClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4D RID: 15181 RVA: 0x0017E984 File Offset: 0x0017CB84
+	// Token: 0x06003B69 RID: 15209 RVA: 0x0017EF04 File Offset: 0x0017D104
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -53,7 +53,7 @@ public class NetPackageEntityAddExpClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4E RID: 15182 RVA: 0x0017E9E0 File Offset: 0x0017CBE0
+	// Token: 0x06003B6A RID: 15210 RVA: 0x0017EF60 File Offset: 0x0017D160
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -72,29 +72,23 @@ public class NetPackageEntityAddExpClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B4F RID: 15183 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x04003067 RID: 12391
+	// Token: 0x04003061 RID: 12385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int entityId;
 
-	// Token: 0x04003068 RID: 12392
+	// Token: 0x04003062 RID: 12386
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int xp;
 
-	// Token: 0x04003069 RID: 12393
+	// Token: 0x04003063 RID: 12387
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int xpType;
 
-	// Token: 0x0400306A RID: 12394
+	// Token: 0x04003064 RID: 12388
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool includeItem;
 
-	// Token: 0x0400306B RID: 12395
+	// Token: 0x04003065 RID: 12389
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemValue usedItem;
 }

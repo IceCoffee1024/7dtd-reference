@@ -6,11 +6,11 @@ using Webserver.Permissions;
 
 namespace Webserver.WebAPI.APIs.WorldState
 {
-	// Token: 0x02001AD8 RID: 6872
+	// Token: 0x02001B04 RID: 6916
 	[Preserve]
 	public class Player : AbsRestApi
 	{
-		// Token: 0x0600CEE8 RID: 52968 RVA: 0x004B5364 File Offset: 0x004B3564
+		// Token: 0x0600D040 RID: 53312 RVA: 0x004B9830 File Offset: 0x004B7A30
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -49,7 +49,7 @@ namespace Webserver.WebAPI.APIs.WorldState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CEE9 RID: 52969 RVA: 0x004B5480 File Offset: 0x004B3680
+		// Token: 0x0600D041 RID: 53313 RVA: 0x004B994C File Offset: 0x004B7B4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writePlayerJson(ref JsonWriter _writer, ref int _written, PlatformUserIdentifierAbs _nativeUserId, bool _allowViewAll, PlatformUserIdentifierAbs _requesterNativeUserId)
 		{
@@ -166,107 +166,107 @@ namespace Webserver.WebAPI.APIs.WorldState
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CEEA RID: 52970 RVA: 0x004B4F59 File Offset: 0x004B3159
+		// Token: 0x0600D042 RID: 53314 RVA: 0x004B9425 File Offset: 0x004B7625
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;
 		}
 
-		// Token: 0x0600CEEB RID: 52971 RVA: 0x004AF5DC File Offset: 0x004AD7DC
+		// Token: 0x0600D043 RID: 53315 RVA: 0x004B3AA8 File Offset: 0x004B1CA8
 		public Player()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009CF3 RID: 40179
+		// Token: 0x04009DB9 RID: 40377
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPlayersKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("players");
 
-		// Token: 0x04009CF4 RID: 40180
+		// Token: 0x04009DBA RID: 40378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonEntityIdKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("entityId");
 
-		// Token: 0x04009CF5 RID: 40181
+		// Token: 0x04009DBB RID: 40379
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonNameKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("name");
 
-		// Token: 0x04009CF6 RID: 40182
+		// Token: 0x04009DBC RID: 40380
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPlatformIdKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("platformId");
 
-		// Token: 0x04009CF7 RID: 40183
+		// Token: 0x04009DBD RID: 40381
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonCrossplatformIdKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("crossplatformId");
 
-		// Token: 0x04009CF8 RID: 40184
+		// Token: 0x04009DBE RID: 40382
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonTotalPlayTimeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("totalPlayTimeSeconds");
 
-		// Token: 0x04009CF9 RID: 40185
+		// Token: 0x04009DBF RID: 40383
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonLastOnlineKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("lastOnline");
 
-		// Token: 0x04009CFA RID: 40186
+		// Token: 0x04009DC0 RID: 40384
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOnlineKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("online");
 
-		// Token: 0x04009CFB RID: 40187
+		// Token: 0x04009DC1 RID: 40385
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonIpKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("ip");
 
-		// Token: 0x04009CFC RID: 40188
+		// Token: 0x04009DC2 RID: 40386
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPingKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("ping");
 
-		// Token: 0x04009CFD RID: 40189
+		// Token: 0x04009DC3 RID: 40387
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPositionKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("position");
 
-		// Token: 0x04009CFE RID: 40190
+		// Token: 0x04009DC4 RID: 40388
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonLevelKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("level");
 
-		// Token: 0x04009CFF RID: 40191
+		// Token: 0x04009DC5 RID: 40389
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonHealthKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("health");
 
-		// Token: 0x04009D00 RID: 40192
+		// Token: 0x04009DC6 RID: 40390
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonStaminaKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("stamina");
 
-		// Token: 0x04009D01 RID: 40193
+		// Token: 0x04009DC7 RID: 40391
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonScoreKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("score");
 
-		// Token: 0x04009D02 RID: 40194
+		// Token: 0x04009DC8 RID: 40392
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonDeathsKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("deaths");
 
-		// Token: 0x04009D03 RID: 40195
+		// Token: 0x04009DC9 RID: 40393
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKillsKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("kills");
 
-		// Token: 0x04009D04 RID: 40196
+		// Token: 0x04009DCA RID: 40394
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKillsZombiesKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("zombies");
 
-		// Token: 0x04009D05 RID: 40197
+		// Token: 0x04009DCB RID: 40395
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKillsPlayersKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("players");
 
-		// Token: 0x04009D06 RID: 40198
+		// Token: 0x04009DCC RID: 40396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonBannedKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("banned");
 
-		// Token: 0x04009D07 RID: 40199
+		// Token: 0x04009DCD RID: 40397
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonBanActiveKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("banActive");
 
-		// Token: 0x04009D08 RID: 40200
+		// Token: 0x04009DCE RID: 40398
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonBanReasonKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("reason");
 
-		// Token: 0x04009D09 RID: 40201
+		// Token: 0x04009DCF RID: 40399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonBanUntilKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("until");
 	}

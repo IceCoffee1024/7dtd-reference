@@ -6,26 +6,26 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A3D RID: 6717
+	// Token: 0x02001A69 RID: 6761
 	[Preserve]
 	public class Configuration : AbstractConfiguration, IFiniteConfiguration, IConfiguration<IList<PlacementType>>, IConfiguration
 	{
-		// Token: 0x170018EA RID: 6378
-		// (get) Token: 0x0600CBCC RID: 52172 RVA: 0x004A7A4E File Offset: 0x004A5C4E
-		// (set) Token: 0x0600CBCD RID: 52173 RVA: 0x004A7A56 File Offset: 0x004A5C56
+		// Token: 0x1700198C RID: 6540
+		// (get) Token: 0x0600CD24 RID: 52516 RVA: 0x004ABF1A File Offset: 0x004AA11A
+		// (set) Token: 0x0600CD25 RID: 52517 RVA: 0x004ABF22 File Offset: 0x004AA122
 		public Dictionary<LayerType, IList<PlacementType>> Layers
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CBCE RID: 52174 RVA: 0x004A7A5F File Offset: 0x004A5C5F
+		// Token: 0x0600CD26 RID: 52518 RVA: 0x004ABF2B File Offset: 0x004AA12B
 		public Configuration()
 		{
 			this.Layers = new Dictionary<LayerType, IList<PlacementType>>();
 		}
 
-		// Token: 0x0600CBCF RID: 52175 RVA: 0x004A7A72 File Offset: 0x004A5C72
+		// Token: 0x0600CD27 RID: 52519 RVA: 0x004ABF3E File Offset: 0x004AA13E
 		public override int CountFor(LayerType _layer)
 		{
 			if (!this.Layers.ContainsKey(_layer))
@@ -35,7 +35,7 @@ namespace DynamicMusic
 			return 1;
 		}
 
-		// Token: 0x0600CBD0 RID: 52176 RVA: 0x004A7A88 File Offset: 0x004A5C88
+		// Token: 0x0600CD28 RID: 52520 RVA: 0x004ABF54 File Offset: 0x004AA154
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);
@@ -45,7 +45,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CBD1 RID: 52177 RVA: 0x004A7AE8 File Offset: 0x004A5CE8
+		// Token: 0x0600CD29 RID: 52521 RVA: 0x004ABFB4 File Offset: 0x004AA1B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ParseLayers(XElement e)
 		{

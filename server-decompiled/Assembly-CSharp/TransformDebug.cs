@@ -5,10 +5,10 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02001196 RID: 4502
+// Token: 0x020011AE RID: 4526
 public sealed class TransformDebug : MonoBehaviour
 {
-	// Token: 0x06008FFA RID: 36858 RVA: 0x00361B68 File Offset: 0x0035FD68
+	// Token: 0x06009086 RID: 36998 RVA: 0x00366334 File Offset: 0x00364534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -38,7 +38,7 @@ public sealed class TransformDebug : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FFB RID: 36859 RVA: 0x00361BF4 File Offset: 0x0035FDF4
+	// Token: 0x06009087 RID: 36999 RVA: 0x003663C0 File Offset: 0x003645C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PushTransform(Transform t)
 	{
@@ -49,7 +49,7 @@ public sealed class TransformDebug : MonoBehaviour
 		this.m_stack.Push(t);
 	}
 
-	// Token: 0x06008FFC RID: 36860 RVA: 0x00361C0C File Offset: 0x0035FE0C
+	// Token: 0x06009088 RID: 37000 RVA: 0x003663D8 File Offset: 0x003645D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoOperation()
 	{
@@ -93,7 +93,7 @@ public sealed class TransformDebug : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FFD RID: 36861 RVA: 0x00361DA0 File Offset: 0x0035FFA0
+	// Token: 0x06009089 RID: 37001 RVA: 0x0036656C File Offset: 0x0036476C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string DescribeTransformHierarchy(Transform t)
 	{
@@ -125,14 +125,14 @@ public sealed class TransformDebug : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x06008FFE RID: 36862 RVA: 0x00361E64 File Offset: 0x00360064
+	// Token: 0x0600908A RID: 37002 RVA: 0x00366630 File Offset: 0x00364830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool IsValid(float f)
 	{
 		return float.IsFinite(f);
 	}
 
-	// Token: 0x06008FFF RID: 36863 RVA: 0x00361E6C File Offset: 0x0036006C
+	// Token: 0x0600908B RID: 37003 RVA: 0x00366638 File Offset: 0x00364838
 	public static void Test()
 	{
 		Scene activeScene = SceneManager.GetActiveScene();
@@ -169,7 +169,7 @@ public sealed class TransformDebug : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009001 RID: 36865 RVA: 0x0036209C File Offset: 0x0036029C
+	// Token: 0x0600908D RID: 37005 RVA: 0x00366868 File Offset: 0x00364A68
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static float <Test>g__MaybeCorruptFloat|10_0(float originalValue)
@@ -198,36 +198,36 @@ public sealed class TransformDebug : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x04006A6E RID: 27246
+	// Token: 0x04006AD4 RID: 27348
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int MAX_OPERATIONS_PER_FRAME = 256;
 
-	// Token: 0x04006A6F RID: 27247
+	// Token: 0x04006AD5 RID: 27349
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly ConditionalWeakTable<Transform, TransformDebug.TransformState> m_states = new ConditionalWeakTable<Transform, TransformDebug.TransformState>();
 
-	// Token: 0x04006A70 RID: 27248
+	// Token: 0x04006AD6 RID: 27350
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Stack<Transform> m_stack = new Stack<Transform>();
 
-	// Token: 0x04006A71 RID: 27249
+	// Token: 0x04006AD7 RID: 27351
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Stack<string> m_describeStack = new Stack<string>();
 
-	// Token: 0x04006A72 RID: 27250
+	// Token: 0x04006AD8 RID: 27352
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StringBuilder m_describeBuilder = new StringBuilder();
 
-	// Token: 0x02001197 RID: 4503
+	// Token: 0x020011AF RID: 4527
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class TransformState
 	{
-		// Token: 0x06009002 RID: 36866 RVA: 0x003620E8 File Offset: 0x003602E8
+		// Token: 0x0600908E RID: 37006 RVA: 0x003668B4 File Offset: 0x00364AB4
 		public void Update(Transform t)
 		{
 			Vector3 localPosition = t.localPosition;
@@ -242,17 +242,17 @@ public sealed class TransformDebug : MonoBehaviour
 			this.Scale = new Vector3(TransformDebug.IsValid(localScale.x) ? localScale.x : this.Scale.x, TransformDebug.IsValid(localScale.y) ? localScale.y : this.Scale.y, TransformDebug.IsValid(localScale.z) ? localScale.z : this.Scale.z);
 		}
 
-		// Token: 0x04006A73 RID: 27251
+		// Token: 0x04006AD9 RID: 27353
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Quaternion zeroQuaternion = new Quaternion(0f, 0f, 0f, 0f);
 
-		// Token: 0x04006A74 RID: 27252
+		// Token: 0x04006ADA RID: 27354
 		public Vector3 Position = Vector3.zero;
 
-		// Token: 0x04006A75 RID: 27253
+		// Token: 0x04006ADB RID: 27355
 		public Quaternion Rotation = Quaternion.identity;
 
-		// Token: 0x04006A76 RID: 27254
+		// Token: 0x04006ADC RID: 27356
 		public Vector3 Scale = Vector3.one;
 	}
 }

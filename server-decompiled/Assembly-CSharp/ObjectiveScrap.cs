@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020009AE RID: 2478
+// Token: 0x020009B4 RID: 2484
 [Preserve]
 public class ObjectiveScrap : BaseObjective
 {
-	// Token: 0x170007C0 RID: 1984
-	// (get) Token: 0x06004911 RID: 18705 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007E0 RID: 2016
+	// (get) Token: 0x060048CB RID: 18635 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,7 +16,7 @@ public class ObjectiveScrap : BaseObjective
 		}
 	}
 
-	// Token: 0x06004912 RID: 18706 RVA: 0x001C8C38 File Offset: 0x001C6E38
+	// Token: 0x060048CC RID: 18636 RVA: 0x001C9600 File Offset: 0x001C7800
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveScrap_keyword", false, null);
@@ -24,26 +25,26 @@ public class ObjectiveScrap : BaseObjective
 		this.scrapCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x06004913 RID: 18707 RVA: 0x001C8C8C File Offset: 0x001C6E8C
+	// Token: 0x060048CD RID: 18637 RVA: 0x001C9654 File Offset: 0x001C7854
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.scrapCount);
 	}
 
-	// Token: 0x06004914 RID: 18708 RVA: 0x001C8CDB File Offset: 0x001C6EDB
+	// Token: 0x060048CE RID: 18638 RVA: 0x001C96A3 File Offset: 0x001C78A3
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.ScrapItem += this.Current_ScrapItem;
 	}
 
-	// Token: 0x06004915 RID: 18709 RVA: 0x001C8CF3 File Offset: 0x001C6EF3
+	// Token: 0x060048CF RID: 18639 RVA: 0x001C96BB File Offset: 0x001C78BB
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.ScrapItem -= this.Current_ScrapItem;
 	}
 
-	// Token: 0x06004916 RID: 18710 RVA: 0x001C8D0C File Offset: 0x001C6F0C
+	// Token: 0x060048D0 RID: 18640 RVA: 0x001C96D4 File Offset: 0x001C78D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_ScrapItem(ItemStack stack)
 	{
@@ -58,7 +59,7 @@ public class ObjectiveScrap : BaseObjective
 		}
 	}
 
-	// Token: 0x06004917 RID: 18711 RVA: 0x001C8D62 File Offset: 0x001C6F62
+	// Token: 0x060048D1 RID: 18641 RVA: 0x001C972A File Offset: 0x001C792A
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -72,7 +73,7 @@ public class ObjectiveScrap : BaseObjective
 		}
 	}
 
-	// Token: 0x06004918 RID: 18712 RVA: 0x001C8D9C File Offset: 0x001C6F9C
+	// Token: 0x060048D2 RID: 18642 RVA: 0x001C9764 File Offset: 0x001C7964
 	public override BaseObjective Clone()
 	{
 		ObjectiveScrap objectiveScrap = new ObjectiveScrap();
@@ -80,15 +81,23 @@ public class ObjectiveScrap : BaseObjective
 		return objectiveScrap;
 	}
 
-	// Token: 0x04003A20 RID: 14880
+	// Token: 0x060048D3 RID: 18643 RVA: 0x001C977F File Offset: 0x001C797F
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("expected_item_id", this.expectedItem.ItemClass.Name);
+		parameters.Add("count", this.scrapCount);
+	}
+
+	// Token: 0x04003A1D RID: 14877
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x04003A21 RID: 14881
+	// Token: 0x04003A1E RID: 14878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04003A22 RID: 14882
+	// Token: 0x04003A1F RID: 14879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int scrapCount;
 }

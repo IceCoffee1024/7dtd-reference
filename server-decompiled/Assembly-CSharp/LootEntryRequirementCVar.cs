@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000626 RID: 1574
+// Token: 0x02000628 RID: 1576
 [Preserve]
 public class LootEntryRequirementCVar : BaseOperationLootEntryRequirement
 {
-	// Token: 0x06003313 RID: 13075 RVA: 0x0014C4B2 File Offset: 0x0014A6B2
+	// Token: 0x06003356 RID: 13142 RVA: 0x0014CE22 File Offset: 0x0014B022
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -15,7 +15,7 @@ public class LootEntryRequirementCVar : BaseOperationLootEntryRequirement
 		e.ParseAttribute("value", ref this.valueText);
 	}
 
-	// Token: 0x06003314 RID: 13076 RVA: 0x0014C4E9 File Offset: 0x0014A6E9
+	// Token: 0x06003357 RID: 13143 RVA: 0x0014CE59 File Offset: 0x0014B059
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float LeftSide(EntityPlayer player)
 	{
@@ -26,18 +26,18 @@ public class LootEntryRequirementCVar : BaseOperationLootEntryRequirement
 		return 0f;
 	}
 
-	// Token: 0x06003315 RID: 13077 RVA: 0x0014C50B File Offset: 0x0014A70B
+	// Token: 0x06003358 RID: 13144 RVA: 0x0014CE7B File Offset: 0x0014B07B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float RightSide(EntityPlayer player)
 	{
 		return StringParsers.ParseFloat(this.valueText, 0, -1, NumberStyles.Any);
 	}
 
-	// Token: 0x040028D9 RID: 10457
+	// Token: 0x040028D2 RID: 10450
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string cvar;
 
-	// Token: 0x040028DA RID: 10458
+	// Token: 0x040028D3 RID: 10451
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string valueText;
 }

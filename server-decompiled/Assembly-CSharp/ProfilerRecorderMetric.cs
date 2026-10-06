@@ -2,26 +2,26 @@
 using System.Text;
 using Unity.Profiling;
 
-// Token: 0x02001526 RID: 5414
+// Token: 0x02001548 RID: 5448
 public class ProfilerRecorderMetric : IMetric
 {
-	// Token: 0x170013C4 RID: 5060
-	// (get) Token: 0x0600AA0F RID: 43535 RVA: 0x003F71F8 File Offset: 0x003F53F8
-	// (set) Token: 0x0600AA10 RID: 43536 RVA: 0x003F7200 File Offset: 0x003F5400
+	// Token: 0x17001409 RID: 5129
+	// (get) Token: 0x0600AAC2 RID: 43714 RVA: 0x003FC04C File Offset: 0x003FA24C
+	// (set) Token: 0x0600AAC3 RID: 43715 RVA: 0x003FC054 File Offset: 0x003FA254
 	public string Header { get; set; }
 
-	// Token: 0x0600AA11 RID: 43537 RVA: 0x003F7209 File Offset: 0x003F5409
+	// Token: 0x0600AAC4 RID: 43716 RVA: 0x003FC05D File Offset: 0x003FA25D
 	public void AppendLastValue(StringBuilder builder)
 	{
 		ProfilerUtils.AppendLastValue(this.recorder, builder);
 	}
 
-	// Token: 0x0600AA12 RID: 43538 RVA: 0x003F7217 File Offset: 0x003F5417
+	// Token: 0x0600AAC5 RID: 43717 RVA: 0x003FC06B File Offset: 0x003FA26B
 	public void Cleanup()
 	{
 		this.recorder.Dispose();
 	}
 
-	// Token: 0x04007E4A RID: 32330
+	// Token: 0x04007ECD RID: 32461
 	public ProfilerRecorder recorder;
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using InControl;
 using Platform;
 
-// Token: 0x020011D5 RID: 4565
+// Token: 0x020011ED RID: 4589
 public static class GameOptionsControls
 {
-	// Token: 0x1700116F RID: 4463
-	// (get) Token: 0x0600921A RID: 37402 RVA: 0x00370971 File Offset: 0x0036EB71
+	// Token: 0x170011B3 RID: 4531
+	// (get) Token: 0x060092A8 RID: 37544 RVA: 0x003751B9 File Offset: 0x003733B9
 	public static IEnumerable<ValueTuple<PlayerActionsBase, string>> ActionSetPrefs
 	{
 		get
@@ -22,7 +22,7 @@ public static class GameOptionsControls
 		}
 	}
 
-	// Token: 0x0600921B RID: 37403 RVA: 0x0037097C File Offset: 0x0036EB7C
+	// Token: 0x060092A9 RID: 37545 RVA: 0x003751C4 File Offset: 0x003733C4
 	public static void Save()
 	{
 		foreach (ValueTuple<PlayerActionsBase, string> valueTuple in GameOptionsControls.ActionSetPrefs)
@@ -41,7 +41,7 @@ public static class GameOptionsControls
 		GameOptionsControls.ApplyAllowControllerOption();
 	}
 
-	// Token: 0x0600921C RID: 37404 RVA: 0x00370A08 File Offset: 0x0036EC08
+	// Token: 0x060092AA RID: 37546 RVA: 0x00375250 File Offset: 0x00373450
 	public static void Load()
 	{
 		bool flag = SdPlayerPrefs.HasKey("ActionSetsSaved");
@@ -75,7 +75,7 @@ public static class GameOptionsControls
 		GameOptionsControls.RestoreNonBindableControllerActionsToDefaults();
 	}
 
-	// Token: 0x0600921D RID: 37405 RVA: 0x00370AFC File Offset: 0x0036ECFC
+	// Token: 0x060092AB RID: 37547 RVA: 0x00375344 File Offset: 0x00373544
 	public static string Export()
 	{
 		string[] array = new string[PlatformManager.NativePlatform.Input.ActionSets.Count];
@@ -86,7 +86,7 @@ public static class GameOptionsControls
 		return string.Join(";", array);
 	}
 
-	// Token: 0x0600921E RID: 37406 RVA: 0x00370B59 File Offset: 0x0036ED59
+	// Token: 0x060092AC RID: 37548 RVA: 0x003753A1 File Offset: 0x003735A1
 	public static void Import(string importString)
 	{
 		PlatformManager.NativePlatform.Input.LoadActionSetsFromStrings(importString.Split(';', StringSplitOptions.None));
@@ -94,7 +94,7 @@ public static class GameOptionsControls
 		GameOptionsControls.RestoreNonBindableControllerActionsToDefaults();
 	}
 
-	// Token: 0x0600921F RID: 37407 RVA: 0x00370B80 File Offset: 0x0036ED80
+	// Token: 0x060092AD RID: 37549 RVA: 0x003753C8 File Offset: 0x003735C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyAllowControllerOption()
 	{
@@ -105,7 +105,7 @@ public static class GameOptionsControls
 		}
 	}
 
-	// Token: 0x06009220 RID: 37408 RVA: 0x00370BDC File Offset: 0x0036EDDC
+	// Token: 0x060092AE RID: 37550 RVA: 0x00375424 File Offset: 0x00373624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RestoreNonBindableControllerActionsToDefaults()
 	{
@@ -113,12 +113,12 @@ public static class GameOptionsControls
 		PlatformManager.NativePlatform.Input.GetActionSetForName("permanent").ResetControllerBindings();
 	}
 
-	// Token: 0x04006BF8 RID: 27640
+	// Token: 0x04006C62 RID: 27746
 	public const string cActionSetSavePrefix = "ActionSet_";
 
-	// Token: 0x04006BF9 RID: 27641
+	// Token: 0x04006C63 RID: 27747
 	public const string ActionSetSaveModeFlagPref = "ActionSetsSaved";
 
-	// Token: 0x04006BFA RID: 27642
+	// Token: 0x04006C64 RID: 27748
 	public const string LegacyControlsPref = "Controls";
 }

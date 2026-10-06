@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B2F RID: 2863
+// Token: 0x02000B41 RID: 2881
 public class ChunkProviderParameter
 {
-	// Token: 0x060056B5 RID: 22197 RVA: 0x00213E58 File Offset: 0x00212058
+	// Token: 0x060056CF RID: 22223 RVA: 0x002170E4 File Offset: 0x002152E4
 	public ChunkProviderParameter(int _id, string _name, float _val, float _minVal, float _maxVal)
 	{
 		this.id = _id;
@@ -13,18 +13,18 @@ public class ChunkProviderParameter
 		this.maxVal = _maxVal;
 	}
 
-	// Token: 0x04004328 RID: 17192
+	// Token: 0x04004366 RID: 17254
 	public int id;
 
-	// Token: 0x04004329 RID: 17193
+	// Token: 0x04004367 RID: 17255
 	public string name;
 
-	// Token: 0x0400432A RID: 17194
+	// Token: 0x04004368 RID: 17256
 	public float val;
 
-	// Token: 0x0400432B RID: 17195
+	// Token: 0x04004369 RID: 17257
 	public float minVal;
 
-	// Token: 0x0400432C RID: 17196
+	// Token: 0x0400436A RID: 17258
 	public float maxVal;
 }

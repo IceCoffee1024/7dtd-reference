@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006FB RID: 1787
+// Token: 0x020006FD RID: 1789
 [Preserve]
 public class MinEventActionRage : MinEventActionTargetedBase
 {
-	// Token: 0x060036B6 RID: 14006 RVA: 0x0016918C File Offset: 0x0016738C
+	// Token: 0x060036F9 RID: 14073 RVA: 0x00169AF0 File Offset: 0x00167CF0
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -27,7 +27,7 @@ public class MinEventActionRage : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036B7 RID: 14007 RVA: 0x001691F4 File Offset: 0x001673F4
+	// Token: 0x060036FA RID: 14074 RVA: 0x00169B58 File Offset: 0x00167D58
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -52,15 +52,15 @@ public class MinEventActionRage : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C26 RID: 11302
+	// Token: 0x04002C1F RID: 11295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled;
 
-	// Token: 0x04002C27 RID: 11303
+	// Token: 0x04002C20 RID: 11296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float speedPercent = 2f;
 
-	// Token: 0x04002C28 RID: 11304
+	// Token: 0x04002C21 RID: 11297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rageTime = 60f;
 }

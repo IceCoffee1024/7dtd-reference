@@ -2,10 +2,10 @@
 using System.IO;
 using System.Text;
 
-// Token: 0x02000BA7 RID: 2983
+// Token: 0x02000BB9 RID: 3001
 public abstract class RegionFileSectorBased : RegionFile
 {
-	// Token: 0x06005A3C RID: 23100 RVA: 0x00229FDF File Offset: 0x002281DF
+	// Token: 0x06005A55 RID: 23125 RVA: 0x0022D2DB File Offset: 0x0022B4DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public RegionFileSectorBased(string _fullFilePath, int _rX, int _rZ, int _version)
 		: base(_fullFilePath, _rX, _rZ)
@@ -13,7 +13,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		this.Version = _version;
 	}
 
-	// Token: 0x06005A3D RID: 23101 RVA: 0x0022A014 File Offset: 0x00228214
+	// Token: 0x06005A56 RID: 23126 RVA: 0x0022D310 File Offset: 0x0022B510
 	public static RegionFile Get(string dir, int rX, int rZ, string ext)
 	{
 		string text = RegionFile.ConstructFullFilePath(dir, rX, rZ, ext);
@@ -40,7 +40,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		return new RegionFileV2(text, rX, rZ, stream, num);
 	}
 
-	// Token: 0x06005A3E RID: 23102 RVA: 0x0022A0B4 File Offset: 0x002282B4
+	// Token: 0x06005A57 RID: 23127 RVA: 0x0022D3B0 File Offset: 0x0022B5B0
 	public override void GetTimestampInfo(int _cX, int _cZ, out uint _timeStamp)
 	{
 		lock (this)
@@ -50,7 +50,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		}
 	}
 
-	// Token: 0x06005A3F RID: 23103 RVA: 0x0022A104 File Offset: 0x00228304
+	// Token: 0x06005A58 RID: 23128 RVA: 0x0022D400 File Offset: 0x0022B600
 	public override void SetTimestampInfo(int _cX, int _cZ, uint _timeStamp)
 	{
 		lock (this)
@@ -60,7 +60,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		}
 	}
 
-	// Token: 0x06005A40 RID: 23104 RVA: 0x0022A150 File Offset: 0x00228350
+	// Token: 0x06005A59 RID: 23129 RVA: 0x0022D44C File Offset: 0x0022B64C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void GetLocationInfo(int _cX, int _cZ, out short _sectorOffset, out byte _sectorLength)
 	{
@@ -75,7 +75,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		}
 	}
 
-	// Token: 0x06005A41 RID: 23105 RVA: 0x0022A1BC File Offset: 0x002283BC
+	// Token: 0x06005A5A RID: 23130 RVA: 0x0022D4B8 File Offset: 0x0022B6B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetLocationInfo(int _cX, int _cZ, short _sectorOffset, byte _sectorLength)
 	{
@@ -90,7 +90,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		}
 	}
 
-	// Token: 0x06005A42 RID: 23106 RVA: 0x0022A22C File Offset: 0x0022842C
+	// Token: 0x06005A5B RID: 23131 RVA: 0x0022D528 File Offset: 0x0022B728
 	public override bool HasChunk(int _cX, int _cZ)
 	{
 		short num;
@@ -99,7 +99,7 @@ public abstract class RegionFileSectorBased : RegionFile
 		return num > 0 && b > 0;
 	}
 
-	// Token: 0x06005A43 RID: 23107 RVA: 0x0022A250 File Offset: 0x00228450
+	// Token: 0x06005A5C RID: 23132 RVA: 0x0022D54C File Offset: 0x0022B74C
 	public override int GetChunkByteCount(int _cX, int _cZ)
 	{
 		short num;
@@ -112,13 +112,13 @@ public abstract class RegionFileSectorBased : RegionFile
 		return (int)b * 4096;
 	}
 
-	// Token: 0x06005A44 RID: 23108 RVA: 0x0022A27A File Offset: 0x0022847A
+	// Token: 0x06005A5D RID: 23133 RVA: 0x0022D576 File Offset: 0x0022B776
 	public override void RemoveChunk(int _cX, int _cZ)
 	{
 		this.SetLocationInfo(_cX, _cZ, 0, 0);
 	}
 
-	// Token: 0x06005A45 RID: 23109 RVA: 0x0022A288 File Offset: 0x00228488
+	// Token: 0x06005A5E RID: 23134 RVA: 0x0022D584 File Offset: 0x0022B784
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual long GetOffsetFromXz(int _cX, int _cZ)
 	{
@@ -135,37 +135,37 @@ public abstract class RegionFileSectorBased : RegionFile
 		return (long)(4 * (num + num2 * 32));
 	}
 
-	// Token: 0x04004600 RID: 17920
+	// Token: 0x0400463F RID: 17983
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int CURRENT_VERSION = 1;
 
-	// Token: 0x04004601 RID: 17921
+	// Token: 0x04004640 RID: 17984
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static readonly byte[] FileHeaderMagicBytes = Encoding.ASCII.GetBytes("7rg");
 
-	// Token: 0x04004602 RID: 17922
+	// Token: 0x04004641 RID: 17985
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int FileHeaderMagicBytesLength = 3;
 
-	// Token: 0x04004603 RID: 17923
+	// Token: 0x04004642 RID: 17986
 	public const int ChunksPerRegionPerDimension = 32;
 
-	// Token: 0x04004604 RID: 17924
+	// Token: 0x04004643 RID: 17987
 	public const int ChunksPerRegion = 1024;
 
-	// Token: 0x04004605 RID: 17925
+	// Token: 0x04004644 RID: 17988
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int SECTOR_SIZE = 4096;
 
-	// Token: 0x04004606 RID: 17926
+	// Token: 0x04004645 RID: 17989
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly byte[] regionLocationHeader = new byte[4096];
 
-	// Token: 0x04004607 RID: 17927
+	// Token: 0x04004646 RID: 17990
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly byte[] regionTimestampHeader = new byte[4096];
 
-	// Token: 0x04004608 RID: 17928
+	// Token: 0x04004647 RID: 17991
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly int Version;
 }

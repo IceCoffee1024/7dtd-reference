@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-// Token: 0x02001567 RID: 5479
+// Token: 0x02001589 RID: 5513
 [PublicizedFrom(EAccessModifier.Internal)]
 public static class vp_TargetEventHandler
 {
-	// Token: 0x170013E6 RID: 5094
-	// (get) Token: 0x0600ABA3 RID: 43939 RVA: 0x003FF25C File Offset: 0x003FD45C
+	// Token: 0x1700142B RID: 5163
+	// (get) Token: 0x0600AC56 RID: 44118 RVA: 0x004040B0 File Offset: 0x004022B0
 	public static List<Dictionary<object, Dictionary<string, Delegate>>> TargetDict
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -26,7 +26,7 @@ public static class vp_TargetEventHandler
 		}
 	}
 
-	// Token: 0x0600ABA4 RID: 43940 RVA: 0x003FF2A0 File Offset: 0x003FD4A0
+	// Token: 0x0600AC57 RID: 44119 RVA: 0x004040F4 File Offset: 0x004022F4
 	public static void Register(object target, string eventName, Delegate callback, int dictionary)
 	{
 		if (target == null)
@@ -80,7 +80,7 @@ public static class vp_TargetEventHandler
 		}
 	}
 
-	// Token: 0x0600ABA5 RID: 43941 RVA: 0x003FF3D8 File Offset: 0x003FD5D8
+	// Token: 0x0600AC58 RID: 44120 RVA: 0x0040422C File Offset: 0x0040242C
 	public static void Unregister(object target, string eventName = null, Delegate callback = null)
 	{
 		if (eventName == null && callback != null)
@@ -97,7 +97,7 @@ public static class vp_TargetEventHandler
 		}
 	}
 
-	// Token: 0x0600ABA6 RID: 43942 RVA: 0x003FF408 File Offset: 0x003FD608
+	// Token: 0x0600AC59 RID: 44121 RVA: 0x0040425C File Offset: 0x0040245C
 	public static void Unregister(Component component)
 	{
 		if (component == null)
@@ -110,7 +110,7 @@ public static class vp_TargetEventHandler
 		}
 	}
 
-	// Token: 0x0600ABA7 RID: 43943 RVA: 0x003FF434 File Offset: 0x003FD634
+	// Token: 0x0600AC5A RID: 44122 RVA: 0x00404288 File Offset: 0x00402488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Unregister(int dictionary, Component component)
 	{
@@ -157,7 +157,7 @@ public static class vp_TargetEventHandler
 		}
 	}
 
-	// Token: 0x0600ABA8 RID: 43944 RVA: 0x003FF558 File Offset: 0x003FD758
+	// Token: 0x0600AC5B RID: 44123 RVA: 0x004043AC File Offset: 0x004025AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Unregister(object target, int dictionary, string eventName, Delegate callback)
 	{
@@ -200,13 +200,13 @@ public static class vp_TargetEventHandler
 		vp_TargetEventHandler.TargetDict[dictionary].Remove(target);
 	}
 
-	// Token: 0x0600ABA9 RID: 43945 RVA: 0x003FF5FB File Offset: 0x003FD7FB
+	// Token: 0x0600AC5C RID: 44124 RVA: 0x0040444F File Offset: 0x0040264F
 	public static void UnregisterAll()
 	{
 		vp_TargetEventHandler.m_TargetDict = null;
 	}
 
-	// Token: 0x0600ABAA RID: 43946 RVA: 0x003FF604 File Offset: 0x003FD804
+	// Token: 0x0600AC5D RID: 44125 RVA: 0x00404458 File Offset: 0x00402658
 	public static Delegate GetCallback(object target, string eventName, bool upwards, int d, vp_TargetEventOptions options)
 	{
 		if (target == null)
@@ -287,7 +287,7 @@ public static class vp_TargetEventHandler
 		return null;
 	}
 
-	// Token: 0x0600ABAB RID: 43947 RVA: 0x003FF6B8 File Offset: 0x003FD8B8
+	// Token: 0x0600AC5E RID: 44126 RVA: 0x0040450C File Offset: 0x0040270C
 	public static void OnNoReceiver(string eventName, vp_TargetEventOptions options)
 	{
 		if ((options & vp_TargetEventOptions.RequireReceiver) != vp_TargetEventOptions.RequireReceiver)
@@ -304,7 +304,7 @@ public static class vp_TargetEventHandler
 		}));
 	}
 
-	// Token: 0x0600ABAC RID: 43948 RVA: 0x003FF6F8 File Offset: 0x003FD8F8
+	// Token: 0x0600AC5F RID: 44127 RVA: 0x0040454C File Offset: 0x0040274C
 	public static string Dump()
 	{
 		Dictionary<object, string> dictionary = new Dictionary<object, string>();
@@ -397,7 +397,7 @@ public static class vp_TargetEventHandler
 		return text8;
 	}
 
-	// Token: 0x04007F24 RID: 32548
+	// Token: 0x04007FA7 RID: 32679
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Dictionary<object, Dictionary<string, Delegate>>> m_TargetDict;
 }

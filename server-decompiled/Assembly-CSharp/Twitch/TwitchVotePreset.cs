@@ -2,25 +2,25 @@
 
 namespace Twitch
 {
-	// Token: 0x02001868 RID: 6248
+	// Token: 0x02001894 RID: 6292
 	public class TwitchVotePreset
 	{
-		// Token: 0x040091C8 RID: 37320
+		// Token: 0x0400928E RID: 37518
 		public string Name;
 
-		// Token: 0x040091C9 RID: 37321
+		// Token: 0x0400928F RID: 37519
 		public bool IsDefault;
 
-		// Token: 0x040091CA RID: 37322
+		// Token: 0x04009290 RID: 37520
 		public bool IsEmpty;
 
-		// Token: 0x040091CB RID: 37323
+		// Token: 0x04009291 RID: 37521
 		public string Title;
 
-		// Token: 0x040091CC RID: 37324
+		// Token: 0x04009292 RID: 37522
 		public string Description;
 
-		// Token: 0x040091CD RID: 37325
+		// Token: 0x04009293 RID: 37523
 		public TwitchVotingManager.BossVoteSettings BossVoteSetting = TwitchVotingManager.BossVoteSettings.Standard;
 	}
 }

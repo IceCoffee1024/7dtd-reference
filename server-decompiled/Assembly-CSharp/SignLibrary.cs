@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000AB4 RID: 2740
+// Token: 0x02000AC5 RID: 2757
 public class SignLibrary
 {
-	// Token: 0x0600523B RID: 21051 RVA: 0x001F5B0C File Offset: 0x001F3D0C
+	// Token: 0x0600524F RID: 21071 RVA: 0x001F8948 File Offset: 0x001F6B48
 	public void WriteXml(string filePath)
 	{
 		XmlDocument xmlDocument = new XmlDocument();
@@ -20,7 +20,7 @@ public class SignLibrary
 		xmlDocument.SdSave(filePath);
 	}
 
-	// Token: 0x0600523C RID: 21052 RVA: 0x001F5B9C File Offset: 0x001F3D9C
+	// Token: 0x06005250 RID: 21072 RVA: 0x001F89D8 File Offset: 0x001F6BD8
 	public void ReadXml(XmlFile _xmlFile)
 	{
 		this.signs.Clear();
@@ -44,7 +44,7 @@ public class SignLibrary
 		}
 	}
 
-	// Token: 0x0600523D RID: 21053 RVA: 0x001F5C84 File Offset: 0x001F3E84
+	// Token: 0x06005251 RID: 21073 RVA: 0x001F8AC0 File Offset: 0x001F6CC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ReadVersion(XElement root)
 	{
@@ -63,7 +63,7 @@ public class SignLibrary
 		return num;
 	}
 
-	// Token: 0x0600523E RID: 21054 RVA: 0x001F5CE0 File Offset: 0x001F3EE0
+	// Token: 0x06005252 RID: 21074 RVA: 0x001F8B1C File Offset: 0x001F6D1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XElement MigrateToCurrentVersion(XElement root, int fromVersion, XmlFile xmlFile)
 	{
@@ -93,13 +93,13 @@ public class SignLibrary
 		return xelement;
 	}
 
-	// Token: 0x04003FC9 RID: 16329
+	// Token: 0x04004004 RID: 16388
 	public const int CurrentVersion = 2;
 
-	// Token: 0x04003FCA RID: 16330
+	// Token: 0x04004005 RID: 16389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string VersionAttributeName = "version";
 
-	// Token: 0x04003FCB RID: 16331
+	// Token: 0x04004006 RID: 16390
 	public readonly Dictionary<Guid, SignData> signs = new Dictionary<Guid, SignData>();
 }

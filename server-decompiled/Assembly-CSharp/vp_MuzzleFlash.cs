@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015A6 RID: 5542
+// Token: 0x020015C8 RID: 5576
 public class vp_MuzzleFlash : MonoBehaviour
 {
-	// Token: 0x1700140C RID: 5132
-	// (get) Token: 0x0600AD68 RID: 44392 RVA: 0x0040A650 File Offset: 0x00408850
-	// (set) Token: 0x0600AD69 RID: 44393 RVA: 0x0040A658 File Offset: 0x00408858
+	// Token: 0x17001451 RID: 5201
+	// (get) Token: 0x0600AE1B RID: 44571 RVA: 0x0040F4A4 File Offset: 0x0040D6A4
+	// (set) Token: 0x0600AE1C RID: 44572 RVA: 0x0040F4AC File Offset: 0x0040D6AC
 	public float FadeSpeed
 	{
 		get
@@ -19,9 +19,9 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700140D RID: 5133
-	// (get) Token: 0x0600AD6A RID: 44394 RVA: 0x0040A661 File Offset: 0x00408861
-	// (set) Token: 0x0600AD6B RID: 44395 RVA: 0x0040A669 File Offset: 0x00408869
+	// Token: 0x17001452 RID: 5202
+	// (get) Token: 0x0600AE1D RID: 44573 RVA: 0x0040F4B5 File Offset: 0x0040D6B5
+	// (set) Token: 0x0600AE1E RID: 44574 RVA: 0x0040F4BD File Offset: 0x0040D6BD
 	public bool ForceShow
 	{
 		get
@@ -34,7 +34,7 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6C RID: 44396 RVA: 0x0040A674 File Offset: 0x00408874
+	// Token: 0x0600AE1F RID: 44575 RVA: 0x0040F4C8 File Offset: 0x0040D6C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -58,7 +58,7 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6D RID: 44397 RVA: 0x0040A730 File Offset: 0x00408930
+	// Token: 0x0600AE20 RID: 44576 RVA: 0x0040F584 File Offset: 0x0040D784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -69,7 +69,7 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6E RID: 44398 RVA: 0x0040A77C File Offset: 0x0040897C
+	// Token: 0x0600AE21 RID: 44577 RVA: 0x0040F5D0 File Offset: 0x0040D7D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -99,7 +99,7 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6F RID: 44399 RVA: 0x0040A85C File Offset: 0x00408A5C
+	// Token: 0x0600AE22 RID: 44578 RVA: 0x0040F6B0 File Offset: 0x0040D8B0
 	public void Show()
 	{
 		this.m_Renderer.enabled = true;
@@ -111,19 +111,19 @@ public class vp_MuzzleFlash : MonoBehaviour
 		this.m_Color.a = 0.5f;
 	}
 
-	// Token: 0x0600AD70 RID: 44400 RVA: 0x0040A8B0 File Offset: 0x00408AB0
+	// Token: 0x0600AE23 RID: 44579 RVA: 0x0040F704 File Offset: 0x0040D904
 	public void Shoot()
 	{
 		this.ShootInternal(true);
 	}
 
-	// Token: 0x0600AD71 RID: 44401 RVA: 0x0040A8B9 File Offset: 0x00408AB9
+	// Token: 0x0600AE24 RID: 44580 RVA: 0x0040F70D File Offset: 0x0040D90D
 	public void ShootLightOnly()
 	{
 		this.ShootInternal(false);
 	}
 
-	// Token: 0x0600AD72 RID: 44402 RVA: 0x0040A8C4 File Offset: 0x00408AC4
+	// Token: 0x0600AE25 RID: 44581 RVA: 0x0040F718 File Offset: 0x0040D918
 	public void ShootInternal(bool showMesh)
 	{
 		this.m_Color.a = 0.5f;
@@ -139,48 +139,48 @@ public class vp_MuzzleFlash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD73 RID: 44403 RVA: 0x0040A93C File Offset: 0x00408B3C
+	// Token: 0x0600AE26 RID: 44582 RVA: 0x0040F790 File Offset: 0x0040D990
 	public void SetFadeSpeed(float fadeSpeed)
 	{
 		this.FadeSpeed = fadeSpeed;
 	}
 
-	// Token: 0x040080EC RID: 33004
+	// Token: 0x0400816F RID: 33135
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_FadeSpeed = 0.075f;
 
-	// Token: 0x040080ED RID: 33005
+	// Token: 0x04008170 RID: 33136
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_ForceShow;
 
-	// Token: 0x040080EE RID: 33006
+	// Token: 0x04008171 RID: 33137
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_Color = new Color(1f, 1f, 1f, 0f);
 
-	// Token: 0x040080EF RID: 33007
+	// Token: 0x04008172 RID: 33138
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040080F0 RID: 33008
+	// Token: 0x04008173 RID: 33139
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Light m_Light;
 
-	// Token: 0x040080F1 RID: 33009
+	// Token: 0x04008174 RID: 33140
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_LightIntensity;
 
-	// Token: 0x040080F2 RID: 33010
+	// Token: 0x04008175 RID: 33141
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Renderer m_Renderer;
 
-	// Token: 0x040080F3 RID: 33011
+	// Token: 0x04008176 RID: 33142
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Material m_Material;

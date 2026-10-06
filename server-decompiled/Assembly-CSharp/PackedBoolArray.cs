@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x0200146C RID: 5228
+// Token: 0x0200148C RID: 5260
 public class PackedBoolArray
 {
-	// Token: 0x1700134F RID: 4943
-	// (get) Token: 0x0600A407 RID: 41991 RVA: 0x003D2ACC File Offset: 0x003D0CCC
-	// (set) Token: 0x0600A408 RID: 41992 RVA: 0x003D2AD4 File Offset: 0x003D0CD4
+	// Token: 0x17001394 RID: 5012
+	// (get) Token: 0x0600A4B3 RID: 42163 RVA: 0x003D76DC File Offset: 0x003D58DC
+	// (set) Token: 0x0600A4B4 RID: 42164 RVA: 0x003D76E4 File Offset: 0x003D58E4
 	public int Length
 	{
 		get
@@ -56,8 +56,8 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x17001350 RID: 4944
-	// (get) Token: 0x0600A409 RID: 41993 RVA: 0x003D2BA2 File Offset: 0x003D0DA2
+	// Token: 0x17001395 RID: 5013
+	// (get) Token: 0x0600A4B5 RID: 42165 RVA: 0x003D77B2 File Offset: 0x003D59B2
 	public int ByteSize
 	{
 		get
@@ -66,7 +66,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x17001351 RID: 4945
+	// Token: 0x17001396 RID: 5014
 	public bool this[int _i]
 	{
 		get
@@ -90,13 +90,13 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A40C RID: 41996 RVA: 0x003D2C21 File Offset: 0x003D0E21
+	// Token: 0x0600A4B8 RID: 42168 RVA: 0x003D7831 File Offset: 0x003D5A31
 	public PackedBoolArray(int _length = 0)
 	{
 		this.Length = _length;
 	}
 
-	// Token: 0x0600A40D RID: 41997 RVA: 0x003D2C30 File Offset: 0x003D0E30
+	// Token: 0x0600A4B9 RID: 42169 RVA: 0x003D7840 File Offset: 0x003D5A40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void validateIndex(int _i)
 	{
@@ -110,7 +110,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A40E RID: 41998 RVA: 0x003D2C84 File Offset: 0x003D0E84
+	// Token: 0x0600A4BA RID: 42170 RVA: 0x003D7894 File Offset: 0x003D5A94
 	public PackedBoolArray Clone()
 	{
 		PackedBoolArray packedBoolArray = new PackedBoolArray(this.Length);
@@ -121,7 +121,17 @@ public class PackedBoolArray
 		return packedBoolArray;
 	}
 
-	// Token: 0x0600A40F RID: 41999 RVA: 0x003D2CC4 File Offset: 0x003D0EC4
+	// Token: 0x0600A4BB RID: 42171 RVA: 0x003D78D4 File Offset: 0x003D5AD4
+	public void CopyFrom(PackedBoolArray _other)
+	{
+		this.Length = _other.Length;
+		if (this.Length > 0)
+		{
+			Array.Copy(_other.data, this.data, this.ByteSize);
+		}
+	}
+
+	// Token: 0x0600A4BC RID: 42172 RVA: 0x003D7902 File Offset: 0x003D5B02
 	public void Write(Stream _targetStream)
 	{
 		StreamUtils.Write7BitEncodedInt(_targetStream, this.Length);
@@ -131,7 +141,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A410 RID: 42000 RVA: 0x003D2CEE File Offset: 0x003D0EEE
+	// Token: 0x0600A4BD RID: 42173 RVA: 0x003D792C File Offset: 0x003D5B2C
 	public void Write(BinaryWriter _targetWriter)
 	{
 		StreamUtils.Write7BitEncodedInt(_targetWriter.BaseStream, this.Length);
@@ -141,7 +151,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A411 RID: 42001 RVA: 0x003D2D16 File Offset: 0x003D0F16
+	// Token: 0x0600A4BE RID: 42174 RVA: 0x003D7954 File Offset: 0x003D5B54
 	public void Write(PooledBinaryWriter _targetWriter)
 	{
 		_targetWriter.Write7BitEncodedInt(this.Length);
@@ -151,7 +161,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A412 RID: 42002 RVA: 0x003D2D39 File Offset: 0x003D0F39
+	// Token: 0x0600A4BF RID: 42175 RVA: 0x003D7977 File Offset: 0x003D5B77
 	public void Read(Stream _sourceStream)
 	{
 		this.Length = StreamUtils.Read7BitEncodedInt(_sourceStream);
@@ -161,7 +171,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A413 RID: 42003 RVA: 0x003D2D64 File Offset: 0x003D0F64
+	// Token: 0x0600A4C0 RID: 42176 RVA: 0x003D79A2 File Offset: 0x003D5BA2
 	public void Read(BinaryReader _sourceReader)
 	{
 		this.Length = StreamUtils.Read7BitEncodedInt(_sourceReader.BaseStream);
@@ -171,7 +181,7 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A414 RID: 42004 RVA: 0x003D2D94 File Offset: 0x003D0F94
+	// Token: 0x0600A4C1 RID: 42177 RVA: 0x003D79D2 File Offset: 0x003D5BD2
 	public void Read(PooledBinaryReader _sourceReader)
 	{
 		this.Length = _sourceReader.Read7BitEncodedInt();
@@ -181,14 +191,14 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x0600A415 RID: 42005 RVA: 0x003D2DBF File Offset: 0x003D0FBF
+	// Token: 0x0600A4C2 RID: 42178 RVA: 0x003D79FD File Offset: 0x003D5BFD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int calcArraySize(int _length)
 	{
 		return (_length + 7) / 8;
 	}
 
-	// Token: 0x0600A416 RID: 42006 RVA: 0x003D2DC8 File Offset: 0x003D0FC8
+	// Token: 0x0600A4C3 RID: 42179 RVA: 0x003D7A04 File Offset: 0x003D5C04
 	public void Clear()
 	{
 		for (int i = 0; i < this.ByteSize; i++)
@@ -197,11 +207,11 @@ public class PackedBoolArray
 		}
 	}
 
-	// Token: 0x04007AB2 RID: 31410
+	// Token: 0x04007B2D RID: 31533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04007AB3 RID: 31411
+	// Token: 0x04007B2E RID: 31534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

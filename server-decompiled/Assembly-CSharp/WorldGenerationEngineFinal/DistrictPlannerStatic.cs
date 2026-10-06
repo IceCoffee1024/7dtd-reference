@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016F7 RID: 5879
+	// Token: 0x02001723 RID: 5923
 	public static class DistrictPlannerStatic
 	{
-		// Token: 0x0400891F RID: 35103
+		// Token: 0x040089E4 RID: 35300
 		public static readonly Dictionary<string, District> Districts = new Dictionary<string, District>();
 	}
 }

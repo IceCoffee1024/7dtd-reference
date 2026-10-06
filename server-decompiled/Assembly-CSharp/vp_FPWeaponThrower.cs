@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001605 RID: 5637
+// Token: 0x02001624 RID: 5668
 public class vp_FPWeaponThrower : vp_WeaponThrower
 {
-	// Token: 0x17001491 RID: 5265
-	// (get) Token: 0x0600B0CE RID: 45262 RVA: 0x0041FEBD File Offset: 0x0041E0BD
+	// Token: 0x170014D4 RID: 5332
+	// (get) Token: 0x0600B160 RID: 45408 RVA: 0x00423B99 File Offset: 0x00421D99
 	public vp_FPWeapon FPWeapon
 	{
 		get
@@ -18,8 +18,8 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		}
 	}
 
-	// Token: 0x17001492 RID: 5266
-	// (get) Token: 0x0600B0CF RID: 45263 RVA: 0x0041FEF3 File Offset: 0x0041E0F3
+	// Token: 0x170014D5 RID: 5333
+	// (get) Token: 0x0600B161 RID: 45409 RVA: 0x00423BCF File Offset: 0x00421DCF
 	public vp_FPWeaponShooter FPWeaponShooter
 	{
 		get
@@ -32,8 +32,8 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		}
 	}
 
-	// Token: 0x17001493 RID: 5267
-	// (get) Token: 0x0600B0D0 RID: 45264 RVA: 0x0041FF2C File Offset: 0x0041E12C
+	// Token: 0x170014D6 RID: 5334
+	// (get) Token: 0x0600B162 RID: 45410 RVA: 0x00423C08 File Offset: 0x00421E08
 	public Transform FirePosition
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -49,7 +49,7 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		}
 	}
 
-	// Token: 0x0600B0D1 RID: 45265 RVA: 0x0041FF79 File Offset: 0x0041E179
+	// Token: 0x0600B163 RID: 45411 RVA: 0x00423C55 File Offset: 0x00421E55
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -57,7 +57,7 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		this.m_OriginalLookDownActive = this.FPWeapon.LookDownActive;
 	}
 
-	// Token: 0x0600B0D2 RID: 45266 RVA: 0x0041FF94 File Offset: 0x0041E194
+	// Token: 0x0600B164 RID: 45412 RVA: 0x00423C70 File Offset: 0x00421E70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RewindAnimation()
 	{
@@ -91,7 +91,7 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		this.FPWeapon.WeaponModel.GetComponent<Animation>().Stop();
 	}
 
-	// Token: 0x0600B0D3 RID: 45267 RVA: 0x00420088 File Offset: 0x0041E288
+	// Token: 0x0600B165 RID: 45413 RVA: 0x00423D64 File Offset: 0x00421F64
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnStart_Attack()
 	{
@@ -146,14 +146,14 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		}, this.m_Timer1);
 	}
 
-	// Token: 0x0600B0D4 RID: 45268 RVA: 0x0042012F File Offset: 0x0041E32F
+	// Token: 0x0600B166 RID: 45414 RVA: 0x00423E0B File Offset: 0x0042200B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_SetWeapon()
 	{
 		this.RewindAnimation();
 	}
 
-	// Token: 0x0600B0D5 RID: 45269 RVA: 0x00420137 File Offset: 0x0041E337
+	// Token: 0x0600B167 RID: 45415 RVA: 0x00423E13 File Offset: 0x00422013
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnStop_Attack()
 	{
@@ -161,45 +161,45 @@ public class vp_FPWeaponThrower : vp_WeaponThrower
 		this.FPWeapon.LookDownActive = this.m_OriginalLookDownActive;
 	}
 
-	// Token: 0x04008481 RID: 33921
+	// Token: 0x040084D7 RID: 34007
 	public Vector3 FirePositionOffset = new Vector3(0.35f, 0f, 0f);
 
-	// Token: 0x04008482 RID: 33922
+	// Token: 0x040084D8 RID: 34008
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_OriginalLookDownActive;
 
-	// Token: 0x04008483 RID: 33923
+	// Token: 0x040084D9 RID: 34009
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer1 = new vp_Timer.Handle();
 
-	// Token: 0x04008484 RID: 33924
+	// Token: 0x040084DA RID: 34010
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer2 = new vp_Timer.Handle();
 
-	// Token: 0x04008485 RID: 33925
+	// Token: 0x040084DB RID: 34011
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer3 = new vp_Timer.Handle();
 
-	// Token: 0x04008486 RID: 33926
+	// Token: 0x040084DC RID: 34012
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer4 = new vp_Timer.Handle();
 
-	// Token: 0x04008487 RID: 33927
+	// Token: 0x040084DD RID: 34013
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPWeapon m_FPWeapon;
 
-	// Token: 0x04008488 RID: 33928
+	// Token: 0x040084DE RID: 34014
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPWeaponShooter m_FPWeaponShooter;
 
-	// Token: 0x04008489 RID: 33929
+	// Token: 0x040084DF RID: 34015
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_FirePosition;

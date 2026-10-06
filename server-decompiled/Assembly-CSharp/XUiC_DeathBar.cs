@@ -2,16 +2,16 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1A RID: 3866
+// Token: 0x02000F29 RID: 3881
 [Preserve]
 public class XUiC_DeathBar : XUiController
 {
-	// Token: 0x17000E2D RID: 3629
-	// (get) Token: 0x06007945 RID: 31045 RVA: 0x002DBCCA File Offset: 0x002D9ECA
-	// (set) Token: 0x06007946 RID: 31046 RVA: 0x002DBCD2 File Offset: 0x002D9ED2
+	// Token: 0x17000E4A RID: 3658
+	// (get) Token: 0x06007940 RID: 31040 RVA: 0x002DF066 File Offset: 0x002DD266
+	// (set) Token: 0x06007941 RID: 31041 RVA: 0x002DF06E File Offset: 0x002DD26E
 	public EntityAlive Target { get; set; }
 
-	// Token: 0x06007947 RID: 31047 RVA: 0x002DBCDB File Offset: 0x002D9EDB
+	// Token: 0x06007942 RID: 31042 RVA: 0x002DF077 File Offset: 0x002DD277
 	public override void Init()
 	{
 		base.Init();
@@ -19,7 +19,7 @@ public class XUiC_DeathBar : XUiController
 		this.viewComponent.IsVisible = false;
 	}
 
-	// Token: 0x06007948 RID: 31048 RVA: 0x002DBCF8 File Offset: 0x002D9EF8
+	// Token: 0x06007943 RID: 31043 RVA: 0x002DF094 File Offset: 0x002DD294
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -43,7 +43,7 @@ public class XUiC_DeathBar : XUiController
 		}
 	}
 
-	// Token: 0x06007949 RID: 31049 RVA: 0x002DBDB8 File Offset: 0x002D9FB8
+	// Token: 0x06007944 RID: 31044 RVA: 0x002DF154 File Offset: 0x002DD354
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -83,11 +83,11 @@ public class XUiC_DeathBar : XUiController
 		}
 	}
 
-	// Token: 0x040059B4 RID: 22964
+	// Token: 0x040059EC RID: 23020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string deathText = "";
 
-	// Token: 0x040059B5 RID: 22965
+	// Token: 0x040059ED RID: 23021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal LocalPlayer;
 }

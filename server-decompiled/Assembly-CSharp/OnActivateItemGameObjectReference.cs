@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200145B RID: 5211
+// Token: 0x0200147B RID: 5243
 public class OnActivateItemGameObjectReference : MonoBehaviour
 {
-	// Token: 0x0600A390 RID: 41872 RVA: 0x003D14BC File Offset: 0x003CF6BC
+	// Token: 0x0600A43C RID: 42044 RVA: 0x003D60CC File Offset: 0x003D42CC
 	public void ActivateItem(bool _activate)
 	{
 		if (this.ActivateGameObjectTransform != null)
@@ -13,12 +13,12 @@ public class OnActivateItemGameObjectReference : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A391 RID: 41873 RVA: 0x003D14DD File Offset: 0x003CF6DD
+	// Token: 0x0600A43D RID: 42045 RVA: 0x003D60ED File Offset: 0x003D42ED
 	public bool IsActivated()
 	{
 		return this.ActivateGameObjectTransform != null && this.ActivateGameObjectTransform.gameObject.activeSelf;
 	}
 
-	// Token: 0x04007A86 RID: 31366
+	// Token: 0x04007B01 RID: 31489
 	public Transform ActivateGameObjectTransform;
 }

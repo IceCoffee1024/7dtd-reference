@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FF7 RID: 4087
+// Token: 0x02001006 RID: 4102
 [Preserve]
 public class XUiC_QuestTurnInDetailsWindow : XUiController
 {
-	// Token: 0x17000F0E RID: 3854
-	// (get) Token: 0x06008105 RID: 33029 RVA: 0x0030E067 File Offset: 0x0030C267
-	// (set) Token: 0x06008106 RID: 33030 RVA: 0x0030E06F File Offset: 0x0030C26F
+	// Token: 0x17000F35 RID: 3893
+	// (get) Token: 0x06008114 RID: 33044 RVA: 0x0031104F File Offset: 0x0030F24F
+	// (set) Token: 0x06008115 RID: 33045 RVA: 0x00311057 File Offset: 0x0030F257
 	public Quest CurrentQuest
 	{
 		get
@@ -22,21 +22,21 @@ public class XUiC_QuestTurnInDetailsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008107 RID: 33031 RVA: 0x0030E09A File Offset: 0x0030C29A
+	// Token: 0x06008116 RID: 33046 RVA: 0x00311082 File Offset: 0x0030F282
 	public override void Init()
 	{
 		base.Init();
 		this.xuiQuestDescriptionLabel = Localization.Get("xuiDescriptionLabel", false, null);
 	}
 
-	// Token: 0x06008108 RID: 33032 RVA: 0x0030E0B4 File Offset: 0x0030C2B4
+	// Token: 0x06008117 RID: 33047 RVA: 0x0031109C File Offset: 0x0030F29C
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.CurrentQuest = this.xui.Dialog.QuestTurnIn;
 	}
 
-	// Token: 0x06008109 RID: 33033 RVA: 0x0030E0D4 File Offset: 0x0030C2D4
+	// Token: 0x06008118 RID: 33048 RVA: 0x003110BC File Offset: 0x0030F2BC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -154,22 +154,22 @@ public class XUiC_QuestTurnInDetailsWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x04005F9D RID: 24477
+	// Token: 0x04005FC6 RID: 24518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005F9E RID: 24478
+	// Token: 0x04005FC7 RID: 24519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string xuiQuestDescriptionLabel;
 
-	// Token: 0x04005F9F RID: 24479
+	// Token: 0x04005FC8 RID: 24520
 	public EntityNPC NPC;
 
-	// Token: 0x04005FA0 RID: 24480
+	// Token: 0x04005FC9 RID: 24521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest currentQuest;
 
-	// Token: 0x04005FA1 RID: 24481
+	// Token: 0x04005FCA RID: 24522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, string> questtitleFormatter = new CachedStringFormatter<string, string>((string _s, string _s1) => string.Format("{0} : {1}", _s, _s1));
 }

@@ -3,28 +3,28 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x0200169A RID: 5786
+	// Token: 0x020016C6 RID: 5830
 	public abstract class SdfTag
 	{
-		// Token: 0x17001605 RID: 5637
-		// (get) Token: 0x0600B573 RID: 46451 RVA: 0x0043898D File Offset: 0x00436B8D
-		// (set) Token: 0x0600B574 RID: 46452 RVA: 0x00438995 File Offset: 0x00436B95
+		// Token: 0x170016A7 RID: 5799
+		// (get) Token: 0x0600B6CA RID: 46794 RVA: 0x0043CEAD File Offset: 0x0043B0AD
+		// (set) Token: 0x0600B6CB RID: 46795 RVA: 0x0043CEB5 File Offset: 0x0043B0B5
 		public SdfTagType TagType { get; set; }
 
-		// Token: 0x17001606 RID: 5638
-		// (get) Token: 0x0600B575 RID: 46453 RVA: 0x0043899E File Offset: 0x00436B9E
-		// (set) Token: 0x0600B576 RID: 46454 RVA: 0x004389A6 File Offset: 0x00436BA6
+		// Token: 0x170016A8 RID: 5800
+		// (get) Token: 0x0600B6CC RID: 46796 RVA: 0x0043CEBE File Offset: 0x0043B0BE
+		// (set) Token: 0x0600B6CD RID: 46797 RVA: 0x0043CEC6 File Offset: 0x0043B0C6
 		public string Name { get; set; }
 
-		// Token: 0x17001607 RID: 5639
-		// (get) Token: 0x0600B577 RID: 46455 RVA: 0x004389AF File Offset: 0x00436BAF
-		// (set) Token: 0x0600B578 RID: 46456 RVA: 0x004389B7 File Offset: 0x00436BB7
+		// Token: 0x170016A9 RID: 5801
+		// (get) Token: 0x0600B6CE RID: 46798 RVA: 0x0043CECF File Offset: 0x0043B0CF
+		// (set) Token: 0x0600B6CF RID: 46799 RVA: 0x0043CED7 File Offset: 0x0043B0D7
 		public object Value { get; set; }
 
-		// Token: 0x0600B579 RID: 46457
+		// Token: 0x0600B6D0 RID: 46800
 		public abstract void WritePayload(BinaryWriter bw);
 
-		// Token: 0x0600B57A RID: 46458 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600B6D1 RID: 46801 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public SdfTag()
 		{

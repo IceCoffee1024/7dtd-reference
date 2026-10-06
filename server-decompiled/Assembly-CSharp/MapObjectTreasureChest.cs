@@ -1,53 +1,53 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200063A RID: 1594
+// Token: 0x0200063C RID: 1596
 public class MapObjectTreasureChest : MapObject
 {
-	// Token: 0x060033C3 RID: 13251 RVA: 0x0014D400 File Offset: 0x0014B600
+	// Token: 0x06003406 RID: 13318 RVA: 0x0014DD70 File Offset: 0x0014BF70
 	public MapObjectTreasureChest(Vector3 _position, int _questCode, int _defaultRadius)
 		: base(EnumMapObjectType.TreasureChest, _position, (long)_questCode, null, false)
 	{
 		this.DefaultRadius = _defaultRadius;
 	}
 
-	// Token: 0x060033C4 RID: 13252 RVA: 0x0014D41C File Offset: 0x0014B61C
+	// Token: 0x06003407 RID: 13319 RVA: 0x0014DD8C File Offset: 0x0014BF8C
 	public override string GetMapIcon()
 	{
 		return "ui_game_symbol_treasure";
 	}
 
-	// Token: 0x060033C5 RID: 13253 RVA: 0x0014D41C File Offset: 0x0014B61C
+	// Token: 0x06003408 RID: 13320 RVA: 0x0014DD8C File Offset: 0x0014BF8C
 	public override string GetCompassIcon()
 	{
 		return "ui_game_symbol_treasure";
 	}
 
-	// Token: 0x060033C6 RID: 13254 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003409 RID: 13321 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsOnCompass()
 	{
 		return true;
 	}
 
-	// Token: 0x060033C7 RID: 13255 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600340A RID: 13322 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsCompassIconClamped()
 	{
 		return true;
 	}
 
-	// Token: 0x060033C8 RID: 13256 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600340B RID: 13323 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLayerForMapIcon()
 	{
 		return 0;
 	}
 
-	// Token: 0x060033C9 RID: 13257 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600340C RID: 13324 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsMapIconEnabled()
 	{
 		return true;
 	}
 
-	// Token: 0x060033CA RID: 13258 RVA: 0x0014D423 File Offset: 0x0014B623
+	// Token: 0x0600340D RID: 13325 RVA: 0x0014DD93 File Offset: 0x0014BF93
 	public override Color GetMapIconColor()
 	{
 		if (this.IsSelected)
@@ -57,9 +57,9 @@ public class MapObjectTreasureChest : MapObject
 		return Color.white;
 	}
 
-	// Token: 0x0400290E RID: 10510
+	// Token: 0x04002907 RID: 10503
 	public bool IsSelected;
 
-	// Token: 0x0400290F RID: 10511
+	// Token: 0x04002908 RID: 10504
 	public int DefaultRadius = 1;
 }

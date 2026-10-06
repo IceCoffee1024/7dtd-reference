@@ -2,30 +2,30 @@
 
 namespace Platform
 {
-	// Token: 0x02001B64 RID: 7012
+	// Token: 0x02001B96 RID: 7062
 	public enum EUserAuthenticationResult
 	{
-		// Token: 0x0400A086 RID: 41094
+		// Token: 0x0400A15B RID: 41307
 		Ok,
-		// Token: 0x0400A087 RID: 41095
+		// Token: 0x0400A15C RID: 41308
 		UserNotConnectedToPlatform,
-		// Token: 0x0400A088 RID: 41096
+		// Token: 0x0400A15D RID: 41309
 		NoLicenseOrExpired,
-		// Token: 0x0400A089 RID: 41097
+		// Token: 0x0400A15E RID: 41310
 		PlatformBanned,
-		// Token: 0x0400A08A RID: 41098
+		// Token: 0x0400A15F RID: 41311
 		LoggedInElseWhere,
-		// Token: 0x0400A08B RID: 41099
+		// Token: 0x0400A160 RID: 41312
 		PlatformBanCheckTimedOut,
-		// Token: 0x0400A08C RID: 41100
+		// Token: 0x0400A161 RID: 41313
 		AuthTicketCanceled,
-		// Token: 0x0400A08D RID: 41101
+		// Token: 0x0400A162 RID: 41314
 		AuthTicketInvalidAlreadyUsed,
-		// Token: 0x0400A08E RID: 41102
+		// Token: 0x0400A163 RID: 41315
 		AuthTicketInvalid,
-		// Token: 0x0400A08F RID: 41103
+		// Token: 0x0400A164 RID: 41316
 		PublisherIssuedBan,
-		// Token: 0x0400A090 RID: 41104
+		// Token: 0x0400A165 RID: 41317
 		EosTicketFailed = 50
 	}
 }

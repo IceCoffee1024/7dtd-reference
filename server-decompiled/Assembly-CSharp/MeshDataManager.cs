@@ -8,29 +8,29 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000B5A RID: 2906
+// Token: 0x02000B6C RID: 2924
 public class MeshDataManager
 {
-	// Token: 0x06005825 RID: 22565 RVA: 0x0021A800 File Offset: 0x00218A00
+	// Token: 0x0600583F RID: 22591 RVA: 0x0021DA8C File Offset: 0x0021BC8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshDataManager()
 	{
 	}
 
-	// Token: 0x06005826 RID: 22566 RVA: 0x0021A81E File Offset: 0x00218A1E
+	// Token: 0x06005840 RID: 22592 RVA: 0x0021DAAA File Offset: 0x0021BCAA
 	public static void Init()
 	{
 		MeshDataManager.Enabled = true;
 	}
 
-	// Token: 0x06005827 RID: 22567 RVA: 0x0021A826 File Offset: 0x00218A26
+	// Token: 0x06005841 RID: 22593 RVA: 0x0021DAB2 File Offset: 0x0021BCB2
 	public void LateUpdate()
 	{
 		this.CheckUnstarted();
 		this.CompleteBatches();
 	}
 
-	// Token: 0x06005828 RID: 22568 RVA: 0x0021A834 File Offset: 0x00218A34
+	// Token: 0x06005842 RID: 22594 RVA: 0x0021DAC0 File Offset: 0x0021BCC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckUnstarted()
 	{
@@ -42,7 +42,7 @@ public class MeshDataManager
 		this.StartBatches();
 	}
 
-	// Token: 0x06005829 RID: 22569 RVA: 0x0021A858 File Offset: 0x00218A58
+	// Token: 0x06005843 RID: 22595 RVA: 0x0021DAE4 File Offset: 0x0021BCE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CompleteBatches()
 	{
@@ -89,7 +89,7 @@ public class MeshDataManager
 		}
 	}
 
-	// Token: 0x0600582A RID: 22570 RVA: 0x0021A948 File Offset: 0x00218B48
+	// Token: 0x06005844 RID: 22596 RVA: 0x0021DBD4 File Offset: 0x0021BDD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static bool PreValidateJobData(Mesh mesh, ReadOnlySpan<Vector3> vertices, ReadOnlySpan<int> indices, ReadOnlySpan<Vector3> normals, ReadOnlySpan<Vector4> tangents, ReadOnlySpan<Color> colors, ReadOnlySpan<Vector2> texCoord0s, ReadOnlySpan<Vector2> texCoord1s)
 	{
@@ -151,7 +151,7 @@ public class MeshDataManager
 		return true;
 	}
 
-	// Token: 0x0600582B RID: 22571 RVA: 0x0021AB84 File Offset: 0x00218D84
+	// Token: 0x06005845 RID: 22597 RVA: 0x0021DE10 File Offset: 0x0021C010
 	public void Add(Mesh mesh, ArrayListMP<Vector3> vertices, ArrayListMP<int> indices, ArrayListMP<Vector3> normals, ArrayListMP<Vector4> tangents, ArrayListMP<Color> colors, ArrayListMP<Vector2> texCoord0s, ArrayListMP<Vector2> texCoord1s, PinnedBuffer.Ownership ownership, bool generateNormals = false, bool generateTangents = false, bool recalculateUvDistributionMetrics = false, bool sameFrameUpload = false, Action onJobComplete = null)
 	{
 		using (MeshDataManager.s_markerAdd.Auto())
@@ -168,7 +168,7 @@ public class MeshDataManager
 		}
 	}
 
-	// Token: 0x0600582C RID: 22572 RVA: 0x0021AC38 File Offset: 0x00218E38
+	// Token: 0x06005846 RID: 22598 RVA: 0x0021DEC4 File Offset: 0x0021C0C4
 	public void StartBatches()
 	{
 		using (MeshDataManager.s_markerStartBatches.Auto())
@@ -188,7 +188,7 @@ public class MeshDataManager
 		}
 	}
 
-	// Token: 0x0600582D RID: 22573 RVA: 0x0021ACFC File Offset: 0x00218EFC
+	// Token: 0x06005847 RID: 22599 RVA: 0x0021DF88 File Offset: 0x0021C188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartBatch(IEnumerable<MeshDataManager.JobState> stateSupplier)
 	{
@@ -217,7 +217,7 @@ public class MeshDataManager
 		}
 	}
 
-	// Token: 0x0600582E RID: 22574 RVA: 0x0021AD6C File Offset: 0x00218F6C
+	// Token: 0x06005848 RID: 22600 RVA: 0x0021DFF8 File Offset: 0x0021C1F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ReadOnlySpan<T> ToReadOnlySpan<T>(ArrayListMP<T> list) where T : new()
 	{
@@ -228,7 +228,7 @@ public class MeshDataManager
 		return ReadOnlySpan<T>.Empty;
 	}
 
-	// Token: 0x0600582F RID: 22575 RVA: 0x0021AD90 File Offset: 0x00218F90
+	// Token: 0x06005849 RID: 22601 RVA: 0x0021E01C File Offset: 0x0021C21C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshDataManager.JobState CreateJobState(Mesh mesh, ArrayListMP<Vector3> vertices, ArrayListMP<int> indices, ArrayListMP<Vector3> normals, ArrayListMP<Vector4> tangents, ArrayListMP<Color> colors, ArrayListMP<Vector2> texCoord0s, ArrayListMP<Vector2> texCoord1s, PinnedBuffer.Ownership ownership, bool generateNormals, bool generateTangents, bool recalculateUvDistributionMetrics, bool sameFrameUpload, Action onJobComplete)
 	{
@@ -286,37 +286,37 @@ public class MeshDataManager
 		return jobState2;
 	}
 
-	// Token: 0x04004427 RID: 17447
+	// Token: 0x04004465 RID: 17509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_markerCompleteBatches = new ProfilerMarker("MeshDataManager.CompleteBatches");
 
-	// Token: 0x04004428 RID: 17448
+	// Token: 0x04004466 RID: 17510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_markerAdd = new ProfilerMarker("MeshDataManager.Add");
 
-	// Token: 0x04004429 RID: 17449
+	// Token: 0x04004467 RID: 17511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_markerStartBatches = new ProfilerMarker("MeshDataManager.StartBatches");
 
-	// Token: 0x0400442A RID: 17450
+	// Token: 0x04004468 RID: 17512
 	public static readonly MeshDataManager Instance = new MeshDataManager();
 
-	// Token: 0x0400442B RID: 17451
+	// Token: 0x04004469 RID: 17513
 	public static bool Enabled;
 
-	// Token: 0x0400442C RID: 17452
+	// Token: 0x0400446A RID: 17514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<MeshDataManager.JobState> m_toStart = new List<MeshDataManager.JobState>();
 
-	// Token: 0x0400442D RID: 17453
+	// Token: 0x0400446B RID: 17515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LinkedList<MeshDataManager.JobBatch> m_running = new LinkedList<MeshDataManager.JobBatch>();
 
-	// Token: 0x02000B5B RID: 2907
+	// Token: 0x02000B6D RID: 2925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class JobBatch : IDisposable
 	{
-		// Token: 0x06005831 RID: 22577 RVA: 0x0021AF30 File Offset: 0x00219130
+		// Token: 0x0600584B RID: 22603 RVA: 0x0021E1BC File Offset: 0x0021C3BC
 		public JobBatch(IEnumerable<MeshDataManager.JobState> stateSupplier)
 		{
 			this.m_states = stateSupplier.ToArray<MeshDataManager.JobState>();
@@ -330,8 +330,8 @@ public class MeshDataManager
 			this.m_disposedMeshData = true;
 		}
 
-		// Token: 0x1700094B RID: 2379
-		// (get) Token: 0x06005832 RID: 22578 RVA: 0x0021AFAA File Offset: 0x002191AA
+		// Token: 0x1700096D RID: 2413
+		// (get) Token: 0x0600584C RID: 22604 RVA: 0x0021E236 File Offset: 0x0021C436
 		public IReadOnlyList<MeshDataManager.JobState> States
 		{
 			get
@@ -340,7 +340,7 @@ public class MeshDataManager
 			}
 		}
 
-		// Token: 0x06005833 RID: 22579 RVA: 0x0021AFB4 File Offset: 0x002191B4
+		// Token: 0x0600584D RID: 22605 RVA: 0x0021E240 File Offset: 0x0021C440
 		public void Start()
 		{
 			Task[] array = new Task[this.m_states.Length];
@@ -351,7 +351,7 @@ public class MeshDataManager
 			this.m_statesAllComplete = Task.WhenAll(array);
 		}
 
-		// Token: 0x06005834 RID: 22580 RVA: 0x0021B00C File Offset: 0x0021920C
+		// Token: 0x0600584E RID: 22606 RVA: 0x0021E298 File Offset: 0x0021C498
 		public bool TryApplyAndDispose()
 		{
 			if (this.m_disposedMeshData || this.m_disposed)
@@ -389,7 +389,7 @@ public class MeshDataManager
 			return true;
 		}
 
-		// Token: 0x06005835 RID: 22581 RVA: 0x0021B0F4 File Offset: 0x002192F4
+		// Token: 0x0600584F RID: 22607 RVA: 0x0021E380 File Offset: 0x0021C580
 		public void Dispose()
 		{
 			if (this.m_disposed)
@@ -419,36 +419,36 @@ public class MeshDataManager
 			}
 		}
 
-		// Token: 0x0400442E RID: 17454
+		// Token: 0x0400446C RID: 17516
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Mesh.MeshDataArray m_meshDataArray;
 
-		// Token: 0x0400442F RID: 17455
+		// Token: 0x0400446D RID: 17517
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MeshDataManager.JobState[] m_states;
 
-		// Token: 0x04004430 RID: 17456
+		// Token: 0x0400446E RID: 17518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool m_sameFrameUpload;
 
-		// Token: 0x04004431 RID: 17457
+		// Token: 0x0400446F RID: 17519
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task m_statesAllComplete;
 
-		// Token: 0x04004432 RID: 17458
+		// Token: 0x04004470 RID: 17520
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposed;
 
-		// Token: 0x04004433 RID: 17459
+		// Token: 0x04004471 RID: 17521
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposedMeshData;
 	}
 
-	// Token: 0x02000B5D RID: 2909
+	// Token: 0x02000B6F RID: 2927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class JobState : IDisposable
 	{
-		// Token: 0x0600583A RID: 22586 RVA: 0x0021B190 File Offset: 0x00219390
+		// Token: 0x06005854 RID: 22612 RVA: 0x0021E41C File Offset: 0x0021C61C
 		public JobState(Mesh mesh, PinnedBuffer<Vector3> vertices, PinnedBuffer<int> indices, PinnedBuffer<Vector3> normals, PinnedBuffer<Vector4> tangents, PinnedBuffer<Color> colors, PinnedBuffer<Vector2> texCoord0s, PinnedBuffer<Vector2> texCoord1s, bool generateNormals, bool generateTangents, bool recalculateUvDistributionMetrics, bool sameFrameUpload, Action onJobComplete)
 		{
 			this.Mesh = mesh;
@@ -466,7 +466,7 @@ public class MeshDataManager
 			this.OnJobComplete = onJobComplete;
 		}
 
-		// Token: 0x0600583B RID: 22587 RVA: 0x0021B208 File Offset: 0x00219408
+		// Token: 0x06005855 RID: 22613 RVA: 0x0021E494 File Offset: 0x0021C694
 		public void Dispose()
 		{
 			CancellationTokenSource copyTaskCancellation = this.CopyTaskCancellation;
@@ -557,14 +557,14 @@ public class MeshDataManager
 			}
 		}
 
-		// Token: 0x0600583C RID: 22588 RVA: 0x0021B368 File Offset: 0x00219568
+		// Token: 0x06005856 RID: 22614 RVA: 0x0021E5F4 File Offset: 0x0021C7F4
 		public Task Start(Mesh.MeshData meshData)
 		{
 			this.CopyTaskCancellation = new CancellationTokenSource();
 			return this.CopyTask = Task.Run(() => this.CopyToMeshData(meshData, this.CopyTaskCancellation.Token), this.CopyTaskCancellation.Token);
 		}
 
-		// Token: 0x0600583D RID: 22589 RVA: 0x0021B3BC File Offset: 0x002195BC
+		// Token: 0x06005857 RID: 22615 RVA: 0x0021E648 File Offset: 0x0021C848
 		[PublicizedFrom(EAccessModifier.Private)]
 		public async Task CopyToMeshData(Mesh.MeshData meshData, CancellationToken cancellationToken)
 		{
@@ -625,7 +625,7 @@ public class MeshDataManager
 			await Task.WhenAll(list);
 		}
 
-		// Token: 0x0600583E RID: 22590 RVA: 0x0021B40F File Offset: 0x0021960F
+		// Token: 0x06005858 RID: 22616 RVA: 0x0021E69B File Offset: 0x0021C89B
 		public void PostApply()
 		{
 			this.Mesh.bounds = this.Bounds;
@@ -635,69 +635,69 @@ public class MeshDataManager
 			}
 		}
 
-		// Token: 0x04004437 RID: 17463
+		// Token: 0x04004475 RID: 17525
 		public readonly Mesh Mesh;
 
-		// Token: 0x04004438 RID: 17464
+		// Token: 0x04004476 RID: 17526
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Vector3> Vertices;
 
-		// Token: 0x04004439 RID: 17465
+		// Token: 0x04004477 RID: 17527
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<int> Indices;
 
-		// Token: 0x0400443A RID: 17466
+		// Token: 0x04004478 RID: 17528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Vector3> Normals;
 
-		// Token: 0x0400443B RID: 17467
+		// Token: 0x04004479 RID: 17529
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Vector4> Tangents;
 
-		// Token: 0x0400443C RID: 17468
+		// Token: 0x0400447A RID: 17530
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Color> Colors;
 
-		// Token: 0x0400443D RID: 17469
+		// Token: 0x0400447B RID: 17531
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Vector2> TexCoord0s;
 
-		// Token: 0x0400443E RID: 17470
+		// Token: 0x0400447C RID: 17532
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<Vector2> TexCoord1s;
 
-		// Token: 0x0400443F RID: 17471
+		// Token: 0x0400447D RID: 17533
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool GenerateNormals;
 
-		// Token: 0x04004440 RID: 17472
+		// Token: 0x0400447E RID: 17534
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool GenerateTangents;
 
-		// Token: 0x04004441 RID: 17473
+		// Token: 0x0400447F RID: 17535
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool RecalculateUvDistributionMetrics;
 
-		// Token: 0x04004442 RID: 17474
+		// Token: 0x04004480 RID: 17536
 		public readonly bool SameFrameUpload;
 
-		// Token: 0x04004443 RID: 17475
+		// Token: 0x04004481 RID: 17537
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action OnJobComplete;
 
-		// Token: 0x04004444 RID: 17476
+		// Token: 0x04004482 RID: 17538
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CancellationTokenSource CopyTaskCancellation;
 
-		// Token: 0x04004445 RID: 17477
+		// Token: 0x04004483 RID: 17539
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task CopyTask;
 
-		// Token: 0x04004446 RID: 17478
+		// Token: 0x04004484 RID: 17540
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PinnedBuffer<VertexAttributeDescriptor> VertexAttributes;
 
-		// Token: 0x04004447 RID: 17479
+		// Token: 0x04004485 RID: 17541
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Bounds Bounds;
 	}

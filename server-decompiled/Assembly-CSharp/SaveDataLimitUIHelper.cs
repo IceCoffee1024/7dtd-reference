@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000A14 RID: 2580
+// Token: 0x02000A1E RID: 2590
 public static class SaveDataLimitUIHelper
 {
-	// Token: 0x1700083F RID: 2111
-	// (get) Token: 0x06004D7B RID: 19835 RVA: 0x001DB1E9 File Offset: 0x001D93E9
+	// Token: 0x1700085F RID: 2143
+	// (get) Token: 0x06004D4A RID: 19786 RVA: 0x001DC499 File Offset: 0x001DA699
 	public static SaveDataLimitType CurrentValue
 	{
 		get
@@ -15,14 +15,14 @@ public static class SaveDataLimitUIHelper
 		}
 	}
 
-	// Token: 0x06004D7C RID: 19836 RVA: 0x001DB1F0 File Offset: 0x001D93F0
+	// Token: 0x06004D4B RID: 19787 RVA: 0x001DC4A0 File Offset: 0x001DA6A0
 	public static XUiC_ComboBoxEnum<SaveDataLimitType> AddComboBox(XUiC_ComboBoxEnum<SaveDataLimitType> saveDataLimitComboBox)
 	{
 		SaveDataLimitUIHelper.AddComboBoxInternal(saveDataLimitComboBox);
 		return saveDataLimitComboBox;
 	}
 
-	// Token: 0x06004D7D RID: 19837 RVA: 0x001DB1FC File Offset: 0x001D93FC
+	// Token: 0x06004D4C RID: 19788 RVA: 0x001DC4AC File Offset: 0x001DA6AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SaveDataLimitType Load()
 	{
@@ -34,14 +34,14 @@ public static class SaveDataLimitUIHelper
 		return saveDataLimitType;
 	}
 
-	// Token: 0x06004D7E RID: 19838 RVA: 0x001DB22C File Offset: 0x001D942C
+	// Token: 0x06004D4D RID: 19789 RVA: 0x001DC4DC File Offset: 0x001DA6DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Save()
 	{
 		GamePrefs.Set(EnumGamePrefs.SaveDataLimitType, SaveDataLimitUIHelper.s_currentValue.ToStringCached<SaveDataLimitType>());
 	}
 
-	// Token: 0x06004D7F RID: 19839 RVA: 0x001DB244 File Offset: 0x001D9444
+	// Token: 0x06004D4E RID: 19790 RVA: 0x001DC4F4 File Offset: 0x001DA6F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AddComboBoxInternal(XUiC_ComboBoxEnum<SaveDataLimitType> saveDataLimitComboBox)
 	{
@@ -59,7 +59,7 @@ public static class SaveDataLimitUIHelper
 		saveDataLimitComboBox.OnValueChanged += SaveDataLimitUIHelper.SaveDataLimitComboBox_OnValueChanged;
 	}
 
-	// Token: 0x06004D80 RID: 19840 RVA: 0x001DB2A0 File Offset: 0x001D94A0
+	// Token: 0x06004D4F RID: 19791 RVA: 0x001DC550 File Offset: 0x001DA750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetCurrentValue(SaveDataLimitType limitType)
 	{
@@ -89,25 +89,25 @@ public static class SaveDataLimitUIHelper
 		onValueChanged();
 	}
 
-	// Token: 0x06004D81 RID: 19841 RVA: 0x001DB33C File Offset: 0x001D953C
+	// Token: 0x06004D50 RID: 19792 RVA: 0x001DC5EC File Offset: 0x001DA7EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveDataLimitComboBox_OnValueChanged(XUiController _sender, SaveDataLimitType _oldvalue, SaveDataLimitType _newvalue)
 	{
 		SaveDataLimitUIHelper.SetCurrentValue(_newvalue);
 	}
 
-	// Token: 0x04003C1E RID: 15390
+	// Token: 0x04003C2B RID: 15403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ConditionalWeakTable<XUiC_ComboBoxEnum<SaveDataLimitType>, object> s_saveDataLimitComboBoxes = new ConditionalWeakTable<XUiC_ComboBoxEnum<SaveDataLimitType>, object>();
 
-	// Token: 0x04003C1F RID: 15391
+	// Token: 0x04003C2C RID: 15404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SaveDataLimitType s_defaultValue = (PlatformOptimizations.LimitedSaveData ? SaveDataLimitType.VeryLong : SaveDataLimitType.Unlimited);
 
-	// Token: 0x04003C20 RID: 15392
+	// Token: 0x04003C2D RID: 15405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SaveDataLimitType s_currentValue = SaveDataLimitUIHelper.Load();
 
-	// Token: 0x04003C21 RID: 15393
+	// Token: 0x04003C2E RID: 15406
 	public static Action OnValueChanged;
 }

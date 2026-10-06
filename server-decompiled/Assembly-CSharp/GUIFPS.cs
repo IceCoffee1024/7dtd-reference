@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001416 RID: 5142
+// Token: 0x02001436 RID: 5174
 public class GUIFPS : MonoBehaviour
 {
-	// Token: 0x170012F4 RID: 4852
-	// (get) Token: 0x0600A185 RID: 41349 RVA: 0x003C911B File Offset: 0x003C731B
-	// (set) Token: 0x0600A186 RID: 41350 RVA: 0x003C9123 File Offset: 0x003C7323
+	// Token: 0x17001339 RID: 4921
+	// (get) Token: 0x0600A230 RID: 41520 RVA: 0x003CDCB7 File Offset: 0x003CBEB7
+	// (set) Token: 0x0600A231 RID: 41521 RVA: 0x003CDCBF File Offset: 0x003CBEBF
 	public bool Enabled
 	{
 		get
@@ -27,9 +27,9 @@ public class GUIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170012F5 RID: 4853
-	// (get) Token: 0x0600A187 RID: 41351 RVA: 0x003C9160 File Offset: 0x003C7360
-	// (set) Token: 0x0600A188 RID: 41352 RVA: 0x003C9168 File Offset: 0x003C7368
+	// Token: 0x1700133A RID: 4922
+	// (get) Token: 0x0600A232 RID: 41522 RVA: 0x003CDCFC File Offset: 0x003CBEFC
+	// (set) Token: 0x0600A233 RID: 41523 RVA: 0x003CDD04 File Offset: 0x003CBF04
 	public bool ShowGraph
 	{
 		get
@@ -54,7 +54,7 @@ public class GUIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A189 RID: 41353 RVA: 0x003C91C1 File Offset: 0x003C73C1
+	// Token: 0x0600A234 RID: 41524 RVA: 0x003CDD5D File Offset: 0x003CBF5D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -62,14 +62,14 @@ public class GUIFPS : MonoBehaviour
 		GamePrefs.OnGamePrefChanged += this.OnGamePrefChanged;
 	}
 
-	// Token: 0x0600A18A RID: 41354 RVA: 0x003C91E0 File Offset: 0x003C73E0
+	// Token: 0x0600A235 RID: 41525 RVA: 0x003CDD7C File Offset: 0x003CBF7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		GamePrefs.OnGamePrefChanged -= this.OnGamePrefChanged;
 	}
 
-	// Token: 0x0600A18B RID: 41355 RVA: 0x003C91F3 File Offset: 0x003C73F3
+	// Token: 0x0600A236 RID: 41526 RVA: 0x003CDD8F File Offset: 0x003CBF8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs _obj)
 	{
@@ -79,7 +79,7 @@ public class GUIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A18C RID: 41356 RVA: 0x003C9208 File Offset: 0x003C7408
+	// Token: 0x0600A237 RID: 41527 RVA: 0x003CDDA4 File Offset: 0x003CBFA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -97,7 +97,7 @@ public class GUIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A18D RID: 41357 RVA: 0x003C925C File Offset: 0x003C745C
+	// Token: 0x0600A238 RID: 41528 RVA: 0x003CDDF8 File Offset: 0x003CBFF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -139,7 +139,7 @@ public class GUIFPS : MonoBehaviour
 		GUI.Box(new Rect(14f, (float)(Screen.height / 2 + 40), (float)this.boxAreaWidth, (float)this.boxAreaHeight), this.format, this.boxStyle);
 	}
 
-	// Token: 0x0600A18E RID: 41358 RVA: 0x003C938F File Offset: 0x003C758F
+	// Token: 0x0600A239 RID: 41529 RVA: 0x003CDF2B File Offset: 0x003CC12B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnApplicationQuit()
 	{
@@ -149,7 +149,7 @@ public class GUIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A18F RID: 41359 RVA: 0x003C93AA File Offset: 0x003C75AA
+	// Token: 0x0600A23A RID: 41530 RVA: 0x003CDF46 File Offset: 0x003CC146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initFpsGraph()
 	{
@@ -159,7 +159,7 @@ public class GUIFPS : MonoBehaviour
 		this.guiFpsGraphTexture.enabled = false;
 	}
 
-	// Token: 0x0600A190 RID: 41360 RVA: 0x003C93E8 File Offset: 0x003C75E8
+	// Token: 0x0600A23B RID: 41531 RVA: 0x003CDF84 File Offset: 0x003CC184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D createGUITexture()
 	{
@@ -175,7 +175,7 @@ public class GUIFPS : MonoBehaviour
 		return texture2D;
 	}
 
-	// Token: 0x0600A191 RID: 41361 RVA: 0x003C9444 File Offset: 0x003C7644
+	// Token: 0x0600A23C RID: 41532 RVA: 0x003CDFE0 File Offset: 0x003CC1E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateFPSGraph()
 	{
@@ -237,82 +237,82 @@ public class GUIFPS : MonoBehaviour
 		this.curGraphXPos %= this.texture.width - 1;
 	}
 
-	// Token: 0x0400798C RID: 31116
+	// Token: 0x04007A07 RID: 31239
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bEnabled;
 
-	// Token: 0x0400798D RID: 31117
+	// Token: 0x04007A08 RID: 31240
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public FPS fps = new FPS(0.5f);
 
-	// Token: 0x0400798E RID: 31118
+	// Token: 0x04007A09 RID: 31241
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string format;
 
-	// Token: 0x0400798F RID: 31119
+	// Token: 0x04007A0A RID: 31242
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int BaseTextSize = 13;
 
-	// Token: 0x04007990 RID: 31120
+	// Token: 0x04007A0B RID: 31243
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bShowGraph;
 
-	// Token: 0x04007991 RID: 31121
+	// Token: 0x04007A0C RID: 31244
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Texture2D texture;
 
-	// Token: 0x04007992 RID: 31122
+	// Token: 0x04007A0D RID: 31245
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int curGraphXPos;
 
-	// Token: 0x04007993 RID: 31123
+	// Token: 0x04007A0E RID: 31246
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UITexture guiFpsGraphTexture;
 
-	// Token: 0x04007994 RID: 31124
+	// Token: 0x04007A0F RID: 31247
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public long lastTotalMemory;
 
-	// Token: 0x04007995 RID: 31125
+	// Token: 0x04007A10 RID: 31248
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int gcSpikeCounter;
 
-	// Token: 0x04007996 RID: 31126
+	// Token: 0x04007A11 RID: 31249
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBarHeight = 2500f;
 
-	// Token: 0x04007997 RID: 31127
+	// Token: 0x04007A12 RID: 31250
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2i lastResolution;
 
-	// Token: 0x04007998 RID: 31128
+	// Token: 0x04007A13 RID: 31251
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIStyle boxStyle;
 
-	// Token: 0x04007999 RID: 31129
+	// Token: 0x04007A14 RID: 31252
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int boxAreaHeight;
 
-	// Token: 0x0400799A RID: 31130
+	// Token: 0x04007A15 RID: 31253
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int boxAreaWidth;
 
-	// Token: 0x0400799B RID: 31131
+	// Token: 0x04007A16 RID: 31254
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;

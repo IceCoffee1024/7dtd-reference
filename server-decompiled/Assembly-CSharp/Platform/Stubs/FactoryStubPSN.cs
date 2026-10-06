@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Stubs
 {
-	// Token: 0x02001C7A RID: 7290
+	// Token: 0x02001CAC RID: 7340
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.PSN)]
 	public class FactoryStubPSN : AbsPlatform
 	{
-		// Token: 0x0600D82D RID: 55341 RVA: 0x004DB964 File Offset: 0x004D9B64
+		// Token: 0x0600D9A6 RID: 55718 RVA: 0x004E04A0 File Offset: 0x004DE6A0
 		public override void CreateInstances()
 		{
 			if (!base.AsServerOnly)

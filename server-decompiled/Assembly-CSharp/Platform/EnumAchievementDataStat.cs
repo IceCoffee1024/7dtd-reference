@@ -2,48 +2,48 @@
 
 namespace Platform
 {
-	// Token: 0x02001B2E RID: 6958
+	// Token: 0x02001B60 RID: 7008
 	public enum EnumAchievementDataStat
 	{
-		// Token: 0x04009FA8 RID: 40872
+		// Token: 0x0400A07D RID: 41085
 		StoneAxeCrafted,
-		// Token: 0x04009FA9 RID: 40873
+		// Token: 0x0400A07E RID: 41086
 		BedrollPlaced,
-		// Token: 0x04009FAA RID: 40874
+		// Token: 0x0400A07F RID: 41087
 		BleedOutStopped,
-		// Token: 0x04009FAB RID: 40875
+		// Token: 0x0400A080 RID: 41088
 		WoodFrameCrafted,
-		// Token: 0x04009FAC RID: 40876
+		// Token: 0x0400A081 RID: 41089
 		LandClaimPlaced,
-		// Token: 0x04009FAD RID: 40877
+		// Token: 0x0400A082 RID: 41090
 		ItemsCrafted,
-		// Token: 0x04009FAE RID: 40878
+		// Token: 0x0400A083 RID: 41091
 		ZombiesKilled,
-		// Token: 0x04009FAF RID: 40879
+		// Token: 0x0400A084 RID: 41092
 		PlayersKilled,
-		// Token: 0x04009FB0 RID: 40880
+		// Token: 0x0400A085 RID: 41093
 		KMTravelled,
-		// Token: 0x04009FB1 RID: 40881
+		// Token: 0x0400A086 RID: 41094
 		LongestLifeLived,
-		// Token: 0x04009FB2 RID: 40882
+		// Token: 0x0400A087 RID: 41095
 		Deaths,
-		// Token: 0x04009FB3 RID: 40883
+		// Token: 0x0400A088 RID: 41096
 		HeightAchieved,
-		// Token: 0x04009FB4 RID: 40884
+		// Token: 0x0400A089 RID: 41097
 		DepthAchieved,
-		// Token: 0x04009FB5 RID: 40885
+		// Token: 0x0400A08A RID: 41098
 		SubZeroNakedSwim,
-		// Token: 0x04009FB6 RID: 40886
+		// Token: 0x0400A08B RID: 41099
 		KilledWith44Magnum,
-		// Token: 0x04009FB7 RID: 40887
+		// Token: 0x0400A08C RID: 41100
 		LegBroken,
-		// Token: 0x04009FB8 RID: 40888
+		// Token: 0x0400A08D RID: 41101
 		HighestFortitude,
-		// Token: 0x04009FB9 RID: 40889
+		// Token: 0x0400A08E RID: 41102
 		HighestGamestage,
-		// Token: 0x04009FBA RID: 40890
+		// Token: 0x0400A08F RID: 41103
 		HighestPlayerLevel,
-		// Token: 0x04009FBB RID: 40891
+		// Token: 0x0400A090 RID: 41104
 		Last
 	}
 }

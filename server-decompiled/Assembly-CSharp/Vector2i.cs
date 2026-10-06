@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x020014F1 RID: 5361
+// Token: 0x02001513 RID: 5395
 public struct Vector2i : IEquatable<Vector2i>
 {
-	// Token: 0x170013B4 RID: 5044
+	// Token: 0x170013F9 RID: 5113
 	public int this[int _index]
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,7 +37,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		}
 	}
 
-	// Token: 0x0600A890 RID: 43152 RVA: 0x003EBAD1 File Offset: 0x003E9CD1
+	// Token: 0x0600A943 RID: 43331 RVA: 0x003F0925 File Offset: 0x003EEB25
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2i(int _x, int _y)
 	{
@@ -45,7 +45,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		this.y = _y;
 	}
 
-	// Token: 0x0600A891 RID: 43153 RVA: 0x003EBAE1 File Offset: 0x003E9CE1
+	// Token: 0x0600A944 RID: 43332 RVA: 0x003F0935 File Offset: 0x003EEB35
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2i(Vector2 vector2)
 	{
@@ -54,7 +54,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		this.y = Mathf.FloorToInt(vector2.y);
 	}
 
-	// Token: 0x0600A892 RID: 43154 RVA: 0x003EBB0C File Offset: 0x003E9D0C
+	// Token: 0x0600A945 RID: 43333 RVA: 0x003F0960 File Offset: 0x003EEB60
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2i(Vector2Int vector2)
 	{
@@ -63,7 +63,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		this.y = vector2.y;
 	}
 
-	// Token: 0x0600A893 RID: 43155 RVA: 0x003EBAD1 File Offset: 0x003E9CD1
+	// Token: 0x0600A946 RID: 43334 RVA: 0x003F0925 File Offset: 0x003EEB25
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void Set(int _x, int _y)
 	{
@@ -71,21 +71,21 @@ public struct Vector2i : IEquatable<Vector2i>
 		this.y = _y;
 	}
 
-	// Token: 0x0600A894 RID: 43156 RVA: 0x003EBB2F File Offset: 0x003E9D2F
+	// Token: 0x0600A947 RID: 43335 RVA: 0x003F0983 File Offset: 0x003EEB83
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2Int AsVector2Int()
 	{
 		return new Vector2Int(this.x, this.y);
 	}
 
-	// Token: 0x0600A895 RID: 43157 RVA: 0x003EBB42 File Offset: 0x003E9D42
+	// Token: 0x0600A948 RID: 43336 RVA: 0x003F0996 File Offset: 0x003EEB96
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2 AsVector2()
 	{
 		return new Vector2((float)this.x, (float)this.y);
 	}
 
-	// Token: 0x0600A896 RID: 43158 RVA: 0x003EBB58 File Offset: 0x003E9D58
+	// Token: 0x0600A949 RID: 43337 RVA: 0x003F09AC File Offset: 0x003EEBAC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override bool Equals(object obj)
 	{
@@ -93,14 +93,14 @@ public struct Vector2i : IEquatable<Vector2i>
 		return this.Equals(vector2i);
 	}
 
-	// Token: 0x0600A897 RID: 43159 RVA: 0x003EBB73 File Offset: 0x003E9D73
+	// Token: 0x0600A94A RID: 43338 RVA: 0x003F09C7 File Offset: 0x003EEBC7
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Equals(Vector2i other)
 	{
 		return other.x == this.x && other.y == this.y;
 	}
 
-	// Token: 0x0600A898 RID: 43160 RVA: 0x003EBB94 File Offset: 0x003E9D94
+	// Token: 0x0600A94B RID: 43339 RVA: 0x003F09E8 File Offset: 0x003EEBE8
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Distance(Vector2i a, Vector2i b)
 	{
@@ -109,7 +109,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		return (float)Math.Sqrt(num * num + num2 * num2);
 	}
 
-	// Token: 0x0600A899 RID: 43161 RVA: 0x003EBBCC File Offset: 0x003E9DCC
+	// Token: 0x0600A94C RID: 43340 RVA: 0x003F0A20 File Offset: 0x003EEC20
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float DistanceSqr(Vector2i a, Vector2i b)
 	{
@@ -118,7 +118,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		return num * num + num2 * num2;
 	}
 
-	// Token: 0x0600A89A RID: 43162 RVA: 0x003EBBFC File Offset: 0x003E9DFC
+	// Token: 0x0600A94D RID: 43341 RVA: 0x003F0A50 File Offset: 0x003EEC50
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int DistanceSqrInt(Vector2i a, Vector2i b)
 	{
@@ -127,7 +127,7 @@ public struct Vector2i : IEquatable<Vector2i>
 		return num * num + num2 * num2;
 	}
 
-	// Token: 0x0600A89B RID: 43163 RVA: 0x003EBC2C File Offset: 0x003E9E2C
+	// Token: 0x0600A94E RID: 43342 RVA: 0x003F0A80 File Offset: 0x003EEC80
 	public void Normalize()
 	{
 		if (this.x < 0)
@@ -149,95 +149,95 @@ public struct Vector2i : IEquatable<Vector2i>
 		}
 	}
 
-	// Token: 0x0600A89C RID: 43164 RVA: 0x003EBC7C File Offset: 0x003E9E7C
+	// Token: 0x0600A94F RID: 43343 RVA: 0x003F0AD0 File Offset: 0x003EECD0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator ==(Vector2i one, Vector2i other)
 	{
 		return one.x == other.x && one.y == other.y;
 	}
 
-	// Token: 0x0600A89D RID: 43165 RVA: 0x003EBC9C File Offset: 0x003E9E9C
+	// Token: 0x0600A950 RID: 43344 RVA: 0x003F0AF0 File Offset: 0x003EECF0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override int GetHashCode()
 	{
 		return this.x * 8976890 + this.y * 981131;
 	}
 
-	// Token: 0x0600A89E RID: 43166 RVA: 0x003EBCB7 File Offset: 0x003E9EB7
+	// Token: 0x0600A951 RID: 43345 RVA: 0x003F0B0B File Offset: 0x003EED0B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool operator !=(Vector2i one, Vector2i other)
 	{
 		return !(one == other);
 	}
 
-	// Token: 0x0600A89F RID: 43167 RVA: 0x003EBCC3 File Offset: 0x003E9EC3
+	// Token: 0x0600A952 RID: 43346 RVA: 0x003F0B17 File Offset: 0x003EED17
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i operator +(Vector2i one, Vector2i other)
 	{
 		return new Vector2i(one.x + other.x, one.y + other.y);
 	}
 
-	// Token: 0x0600A8A0 RID: 43168 RVA: 0x003EBCE4 File Offset: 0x003E9EE4
+	// Token: 0x0600A953 RID: 43347 RVA: 0x003F0B38 File Offset: 0x003EED38
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i operator -(Vector2i one, Vector2i other)
 	{
 		return new Vector2i(one.x - other.x, one.y - other.y);
 	}
 
-	// Token: 0x0600A8A1 RID: 43169 RVA: 0x003EBD05 File Offset: 0x003E9F05
+	// Token: 0x0600A954 RID: 43348 RVA: 0x003F0B59 File Offset: 0x003EED59
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i operator /(Vector2i one, int div)
 	{
 		return new Vector2i(one.x / div, one.y / div);
 	}
 
-	// Token: 0x0600A8A2 RID: 43170 RVA: 0x003EBD1C File Offset: 0x003E9F1C
+	// Token: 0x0600A955 RID: 43349 RVA: 0x003F0B70 File Offset: 0x003EED70
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i operator *(Vector2i a, int i)
 	{
 		return new Vector2i(a.x * i, a.y * i);
 	}
 
-	// Token: 0x0600A8A3 RID: 43171 RVA: 0x003EBD33 File Offset: 0x003E9F33
+	// Token: 0x0600A956 RID: 43350 RVA: 0x003F0B87 File Offset: 0x003EED87
 	public override string ToString()
 	{
 		return string.Format("{0}, {1}", this.x, this.y);
 	}
 
-	// Token: 0x0600A8A4 RID: 43172 RVA: 0x003EBB2F File Offset: 0x003E9D2F
+	// Token: 0x0600A957 RID: 43351 RVA: 0x003F0983 File Offset: 0x003EEB83
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static implicit operator Vector2Int(Vector2i _v2i)
 	{
 		return new Vector2Int(_v2i.x, _v2i.y);
 	}
 
-	// Token: 0x04007CDA RID: 31962
+	// Token: 0x04007D5D RID: 32093
 	public static readonly Vector2i zero = new Vector2i(0, 0);
 
-	// Token: 0x04007CDB RID: 31963
+	// Token: 0x04007D5E RID: 32094
 	public static readonly Vector2i one = new Vector2i(1, 1);
 
-	// Token: 0x04007CDC RID: 31964
+	// Token: 0x04007D5F RID: 32095
 	public static readonly Vector2i min = new Vector2i(int.MinValue, int.MinValue);
 
-	// Token: 0x04007CDD RID: 31965
+	// Token: 0x04007D60 RID: 32096
 	public static readonly Vector2i max = new Vector2i(int.MaxValue, int.MaxValue);
 
-	// Token: 0x04007CDE RID: 31966
+	// Token: 0x04007D61 RID: 32097
 	public static readonly Vector2i up = new Vector2i(0, 1);
 
-	// Token: 0x04007CDF RID: 31967
+	// Token: 0x04007D62 RID: 32098
 	public static readonly Vector2i down = new Vector2i(0, -1);
 
-	// Token: 0x04007CE0 RID: 31968
+	// Token: 0x04007D63 RID: 32099
 	public static readonly Vector2i right = new Vector2i(1, 0);
 
-	// Token: 0x04007CE1 RID: 31969
+	// Token: 0x04007D64 RID: 32100
 	public static readonly Vector2i left = new Vector2i(-1, 0);
 
-	// Token: 0x04007CE2 RID: 31970
+	// Token: 0x04007D65 RID: 32101
 	public int x;
 
-	// Token: 0x04007CE3 RID: 31971
+	// Token: 0x04007D66 RID: 32102
 	public int y;
 }

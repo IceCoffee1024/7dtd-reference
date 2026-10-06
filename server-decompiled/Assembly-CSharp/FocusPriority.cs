@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x0200043E RID: 1086
+// Token: 0x02000440 RID: 1088
 public enum FocusPriority
 {
-	// Token: 0x040016E5 RID: 5861
+	// Token: 0x040016DC RID: 5852
 	Highest,
-	// Token: 0x040016E6 RID: 5862
+	// Token: 0x040016DD RID: 5853
 	Gameplay,
-	// Token: 0x040016E7 RID: 5863
+	// Token: 0x040016DE RID: 5854
 	Move,
-	// Token: 0x040016E8 RID: 5864
+	// Token: 0x040016DF RID: 5855
 	Default
 }

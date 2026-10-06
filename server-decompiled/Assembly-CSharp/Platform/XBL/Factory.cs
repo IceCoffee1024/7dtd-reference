@@ -8,12 +8,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C35 RID: 7221
+	// Token: 0x02001C67 RID: 7271
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.XBL)]
 	public class Factory : AbsPlatform
 	{
-		// Token: 0x0600D639 RID: 54841 RVA: 0x004D1630 File Offset: 0x004CF830
+		// Token: 0x0600D7B2 RID: 55218 RVA: 0x004D616C File Offset: 0x004D436C
 		public override void CreateInstances()
 		{
 			if (!base.AsServerOnly)

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F63 RID: 3939
+// Token: 0x02000F72 RID: 3954
 [Preserve]
 public class XUiC_ItemStackSlotGrid : XUiController
 {
-	// Token: 0x17000EA6 RID: 3750
-	// (get) Token: 0x06007C23 RID: 31779 RVA: 0x002EE1A5 File Offset: 0x002EC3A5
+	// Token: 0x17000ECC RID: 3788
+	// (get) Token: 0x06007C33 RID: 31795 RVA: 0x002F12B6 File Offset: 0x002EF4B6
 	public ItemStackGrid Source
 	{
 		get
@@ -15,7 +15,7 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007C24 RID: 31780 RVA: 0x002EE1B0 File Offset: 0x002EC3B0
+	// Token: 0x06007C34 RID: 31796 RVA: 0x002F12C0 File Offset: 0x002EF4C0
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007C25 RID: 31781 RVA: 0x002EE1F4 File Offset: 0x002EC3F4
+	// Token: 0x06007C35 RID: 31797 RVA: 0x002F1304 File Offset: 0x002EF504
 	public void SetSource(ItemStackGrid _source)
 	{
 		if (this.source != null)
@@ -38,22 +38,22 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		{
 			return;
 		}
-		if (this.source.SlotCount != this.itemControllers.Length)
+		if (this.source.Length != this.itemControllers.Length)
 		{
-			Log.Error(string.Format("[{0}] Length mismatch: Source has {1} slots, expected {2}.", "XUiC_ItemStackSlotGrid", this.source.SlotCount, this.itemControllers.Length));
+			Log.Error(string.Format("[{0}] Length mismatch: Source has {1} slots, expected {2}.", "XUiC_ItemStackSlotGrid", this.source.Length, this.itemControllers.Length));
 			return;
 		}
 		this.source.SlotChanged += this.OnSlotChanged;
 	}
 
-	// Token: 0x06007C26 RID: 31782 RVA: 0x002EE28E File Offset: 0x002EC48E
+	// Token: 0x06007C36 RID: 31798 RVA: 0x002F139E File Offset: 0x002EF59E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnSlotChanged(int _index)
 	{
 		this.itemControllers[_index].IsDirty = true;
 	}
 
-	// Token: 0x06007C27 RID: 31783 RVA: 0x002EE2A0 File Offset: 0x002EC4A0
+	// Token: 0x06007C37 RID: 31799 RVA: 0x002F13B0 File Offset: 0x002EF5B0
 	public void OnCellSelected(int _index)
 	{
 		if (this.source == null)
@@ -64,8 +64,8 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		if (!currentStack.IsEmpty())
 		{
 			ItemStack itemStack = this.source[_index].Clone();
-			this.source.SetSlot(_index, currentStack.Clone());
-			this.xui.DragAndDropWindow.CurrentStack = itemStack;
+			this.source.SetItem(_index, currentStack.Clone());
+			this.xui.DragAndDropWindow.SetCurrentStack(itemStack, true);
 			return;
 		}
 		ItemStack itemStack2 = this.source[_index];
@@ -73,11 +73,11 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		{
 			return;
 		}
-		this.xui.DragAndDropWindow.CurrentStack = itemStack2.Clone();
-		this.source.SetSlot(_index, ItemStack.Empty);
+		this.xui.DragAndDropWindow.SetCurrentStack(itemStack2.Clone(), true);
+		this.source.SetItem(_index, ItemStack.Empty);
 	}
 
-	// Token: 0x06007C28 RID: 31784 RVA: 0x002EE344 File Offset: 0x002EC544
+	// Token: 0x06007C38 RID: 31800 RVA: 0x002F1454 File Offset: 0x002EF654
 	public void MoveToPreferred(int _index)
 	{
 		if (this.source == null || this.source.IsLocked(_index))
@@ -95,10 +95,10 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		{
 			itemStack = ItemStack.Empty;
 		}
-		this.source.SetSlot(_index, (itemStack.count > 0) ? itemStack : ItemStack.Empty);
+		this.source.SetItem(_index, (itemStack.count > 0) ? itemStack : ItemStack.Empty);
 	}
 
-	// Token: 0x06007C29 RID: 31785 RVA: 0x002EE3CD File Offset: 0x002EC5CD
+	// Token: 0x06007C39 RID: 31801 RVA: 0x002F14DD File Offset: 0x002EF6DD
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -108,17 +108,17 @@ public class XUiC_ItemStackSlotGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007C2A RID: 31786 RVA: 0x002EE3F4 File Offset: 0x002EC5F4
+	// Token: 0x06007C3A RID: 31802 RVA: 0x002F1504 File Offset: 0x002EF704
 	public XUiC_ItemStackSlot[] GetItemStackControllers()
 	{
 		return this.itemControllers;
 	}
 
-	// Token: 0x04005BD6 RID: 23510
+	// Token: 0x04005BFF RID: 23551
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ItemStackSlot[] itemControllers;
 
-	// Token: 0x04005BD7 RID: 23511
+	// Token: 0x04005C00 RID: 23552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStackGrid source;
 }

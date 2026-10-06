@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FBC RID: 4028
+// Token: 0x02000FCB RID: 4043
 [Preserve]
 public class XUiC_PowerSourceWindowGroup : XUiController
 {
-	// Token: 0x06007F59 RID: 32601 RVA: 0x00304C0C File Offset: 0x00302E0C
+	// Token: 0x06007F68 RID: 32616 RVA: 0x00307BE4 File Offset: 0x00305DE4
 	public override void Init()
 	{
 		base.Init();
@@ -30,9 +30,9 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x17000EDF RID: 3807
-	// (get) Token: 0x06007F5A RID: 32602 RVA: 0x00304C79 File Offset: 0x00302E79
-	// (set) Token: 0x06007F5B RID: 32603 RVA: 0x00304C81 File Offset: 0x00302E81
+	// Token: 0x17000F06 RID: 3846
+	// (get) Token: 0x06007F69 RID: 32617 RVA: 0x00307C51 File Offset: 0x00305E51
+	// (set) Token: 0x06007F6A RID: 32618 RVA: 0x00307C59 File Offset: 0x00305E59
 	public TileEntityPowerSource TileEntity
 	{
 		get
@@ -47,7 +47,7 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F5C RID: 32604 RVA: 0x00304CAC File Offset: 0x00302EAC
+	// Token: 0x06007F6B RID: 32619 RVA: 0x00307C84 File Offset: 0x00305E84
 	public void SetOn(bool isOn)
 	{
 		if (this.PowerSourceSlots != null && this.PowerSourceSlots.ViewComponent.IsVisible)
@@ -56,7 +56,7 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F5D RID: 32605 RVA: 0x00304CD4 File Offset: 0x00302ED4
+	// Token: 0x06007F6C RID: 32620 RVA: 0x00307CAC File Offset: 0x00305EAC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -84,7 +84,7 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007F5E RID: 32606 RVA: 0x00304DB4 File Offset: 0x00302FB4
+	// Token: 0x06007F6D RID: 32621 RVA: 0x00307D8C File Offset: 0x00305F8C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -115,7 +115,7 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		this.TileEntity.Destroyed += this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007F5F RID: 32607 RVA: 0x00304EAC File Offset: 0x003030AC
+	// Token: 0x06007F6E RID: 32622 RVA: 0x00307E84 File Offset: 0x00306084
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -125,7 +125,7 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		this.TileEntity.Destroyed -= this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007F60 RID: 32608 RVA: 0x00304F18 File Offset: 0x00303118
+	// Token: 0x06007F6F RID: 32623 RVA: 0x00307EF0 File Offset: 0x003060F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_Destroyed(ITileEntity te)
 	{
@@ -143,30 +143,30 @@ public class XUiC_PowerSourceWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x04005E78 RID: 24184
+	// Token: 0x04005EA1 RID: 24225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04005E79 RID: 24185
+	// Token: 0x04005EA2 RID: 24226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PowerSourceStats GeneratorStats;
 
-	// Token: 0x04005E7A RID: 24186
+	// Token: 0x04005EA3 RID: 24227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PowerSourceSlots PowerSourceSlots;
 
-	// Token: 0x04005E7B RID: 24187
+	// Token: 0x04005EA4 RID: 24228
 	public static string ID = "powersource";
 
-	// Token: 0x04005E7C RID: 24188
+	// Token: 0x04005EA5 RID: 24229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005E7D RID: 24189
+	// Token: 0x04005EA6 RID: 24230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 
-	// Token: 0x04005E7E RID: 24190
+	// Token: 0x04005EA7 RID: 24231
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowerSource tileEntity;
 }

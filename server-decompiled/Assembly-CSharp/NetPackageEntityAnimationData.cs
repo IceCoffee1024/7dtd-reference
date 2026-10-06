@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.Profiling;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DA RID: 2010
+// Token: 0x020007DD RID: 2013
 [Preserve]
 public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPoolableObject
 {
-	// Token: 0x06003B78 RID: 15224 RVA: 0x0017EFCA File Offset: 0x0017D1CA
+	// Token: 0x06003B8F RID: 15247 RVA: 0x0017F50F File Offset: 0x0017D70F
 	public NetPackageEntityAnimationData Setup(int _entityId, List<AnimParamData> _animationParameterData)
 	{
 		base.Setup(_entityId);
@@ -15,7 +15,7 @@ public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPo
 		return this;
 	}
 
-	// Token: 0x06003B79 RID: 15225 RVA: 0x0017EFE0 File Offset: 0x0017D1E0
+	// Token: 0x06003B90 RID: 15248 RVA: 0x0017F525 File Offset: 0x0017D725
 	public NetPackageEntityAnimationData Setup(int _entityId, Dictionary<int, AnimParamData> _animationParameterData)
 	{
 		base.Setup(_entityId);
@@ -23,7 +23,7 @@ public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPo
 		return this;
 	}
 
-	// Token: 0x06003B7A RID: 15226 RVA: 0x0017EFF8 File Offset: 0x0017D1F8
+	// Token: 0x06003B91 RID: 15249 RVA: 0x0017F53C File Offset: 0x0017D73C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -34,7 +34,7 @@ public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPo
 		}
 	}
 
-	// Token: 0x06003B7B RID: 15227 RVA: 0x0017F048 File Offset: 0x0017D248
+	// Token: 0x06003B92 RID: 15250 RVA: 0x0017F58C File Offset: 0x0017D78C
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -45,7 +45,7 @@ public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPo
 		}
 	}
 
-	// Token: 0x06003B7C RID: 15228 RVA: 0x0017F080 File Offset: 0x0017D280
+	// Token: 0x06003B93 RID: 15251 RVA: 0x0017F5C4 File Offset: 0x0017D7C4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -75,30 +75,24 @@ public class NetPackageEntityAnimationData : NetPackageEntityTargeted, IMemoryPo
 		avatarController.SetAnimParameters(list);
 	}
 
-	// Token: 0x06003B7D RID: 15229 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x06003B7E RID: 15230 RVA: 0x0017F13C File Offset: 0x0017D33C
+	// Token: 0x06003B94 RID: 15252 RVA: 0x0017F680 File Offset: 0x0017D880
 	public void Reset()
 	{
 		this.entityId = 0;
 		this.animationParameterData.Clear();
 	}
 
-	// Token: 0x06003B7F RID: 15231 RVA: 0x0017F150 File Offset: 0x0017D350
+	// Token: 0x06003B95 RID: 15253 RVA: 0x0017F694 File Offset: 0x0017D894
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
-	// Token: 0x04003081 RID: 12417
+	// Token: 0x0400307A RID: 12410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<AnimParamData> animationParameterData = new List<AnimParamData>();
 
-	// Token: 0x04003082 RID: 12418
+	// Token: 0x0400307B RID: 12411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CustomSampler getSampler = CustomSampler.Create("NetPackageEntityAnimationData.read", false);
 }

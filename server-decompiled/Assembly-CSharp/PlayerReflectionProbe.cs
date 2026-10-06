@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x0200050C RID: 1292
+// Token: 0x02000512 RID: 1298
 [RequireComponent(typeof(ReflectionProbe))]
 public class PlayerReflectionProbe : MonoBehaviour
 {
-	// Token: 0x06002A5F RID: 10847 RVA: 0x0010AEB3 File Offset: 0x001090B3
+	// Token: 0x06002A54 RID: 10836 RVA: 0x0010B7EB File Offset: 0x001099EB
 	public static void UpdateCamera(Camera _mainCamera)
 	{
 		PlayerReflectionProbe.mainCamera = _mainCamera;
 	}
 
-	// Token: 0x06002A60 RID: 10848 RVA: 0x0010AEBB File Offset: 0x001090BB
+	// Token: 0x06002A55 RID: 10837 RVA: 0x0010B7F3 File Offset: 0x001099F3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -22,7 +22,7 @@ public class PlayerReflectionProbe : MonoBehaviour
 		PlayerReflectionProbe.SetReflectionSettings(GamePrefs.GetInt(EnumGamePrefs.OptionsGfxReflectQuality), GamePrefs.GetBool(EnumGamePrefs.OptionsGfxReflectShadows));
 	}
 
-	// Token: 0x06002A61 RID: 10849 RVA: 0x0010AEFB File Offset: 0x001090FB
+	// Token: 0x06002A56 RID: 10838 RVA: 0x0010B833 File Offset: 0x00109A33
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Destroy()
 	{
@@ -31,7 +31,7 @@ public class PlayerReflectionProbe : MonoBehaviour
 		this.allReflectionProbes = null;
 	}
 
-	// Token: 0x06002A62 RID: 10850 RVA: 0x0010AF14 File Offset: 0x00109114
+	// Token: 0x06002A57 RID: 10839 RVA: 0x0010B84C File Offset: 0x00109A4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -80,7 +80,7 @@ public class PlayerReflectionProbe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A63 RID: 10851 RVA: 0x0010B0D9 File Offset: 0x001092D9
+	// Token: 0x06002A58 RID: 10840 RVA: 0x0010BA11 File Offset: 0x00109C11
 	public static void SetReflectionSettings(int qualityLevel, bool bReflectedShadows)
 	{
 		if (!PlayerReflectionProbe.playerReflectionProbe)
@@ -90,7 +90,7 @@ public class PlayerReflectionProbe : MonoBehaviour
 		PlayerReflectionProbe.playerReflectionProbe.setReflectionSettings(qualityLevel, bReflectedShadows);
 	}
 
-	// Token: 0x06002A64 RID: 10852 RVA: 0x0010B0F4 File Offset: 0x001092F4
+	// Token: 0x06002A59 RID: 10841 RVA: 0x0010BA2C File Offset: 0x00109C2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setReflectionSettings(int qualityLevel, bool bReflectedShadows)
 	{
@@ -186,83 +186,83 @@ public class PlayerReflectionProbe : MonoBehaviour
 		this.SetOptions(array6);
 	}
 
-	// Token: 0x06002A65 RID: 10853 RVA: 0x0010B483 File Offset: 0x00109683
+	// Token: 0x06002A5A RID: 10842 RVA: 0x0010BDBB File Offset: 0x00109FBB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOptions(string[] cullingMasks)
 	{
 		this.reflectionProbe.cullingMask = LayerMask.GetMask(cullingMasks);
 	}
 
-	// Token: 0x04002051 RID: 8273
-	public int RefreshRate = 30;
-
-	// Token: 0x04002052 RID: 8274
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static PlayerReflectionProbe playerReflectionProbe = null;
-
-	// Token: 0x04002053 RID: 8275
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ReflectionProbe[] allReflectionProbes;
-
-	// Token: 0x04002054 RID: 8276
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ReflectionProbe reflectionProbe;
-
-	// Token: 0x04002055 RID: 8277
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static bool hasReflections = true;
-
-	// Token: 0x04002056 RID: 8278
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int lastRenderID = -1;
-
-	// Token: 0x04002057 RID: 8279
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float nextUpdate;
-
-	// Token: 0x04002058 RID: 8280
-	public float fWaterDisCheck = 2f;
-
 	// Token: 0x04002059 RID: 8281
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ReflectionProbeTimeSlicingMode timeSlicingMode = ReflectionProbeTimeSlicingMode.IndividualFaces;
+	public int RefreshRate = 30;
 
 	// Token: 0x0400205A RID: 8282
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bEyeNearWaterSurface;
+	public static PlayerReflectionProbe playerReflectionProbe = null;
 
 	// Token: 0x0400205B RID: 8283
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const int raycastMask = 16;
+	public ReflectionProbe[] allReflectionProbes;
 
 	// Token: 0x0400205C RID: 8284
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float updateEyeNearWaterTimer;
+	public ReflectionProbe reflectionProbe;
 
 	// Token: 0x0400205D RID: 8285
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float eyeNearWaterUpdateFreq = 1.25f;
+	public static bool hasReflections = true;
 
 	// Token: 0x0400205E RID: 8286
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastTimeUpdatedProbe;
+	public int lastRenderID = -1;
 
 	// Token: 0x0400205F RID: 8287
-	public float updateProbeWhileEyeNearWaterFreq = 3f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float nextUpdate;
 
 	// Token: 0x04002060 RID: 8288
+	public float fWaterDisCheck = 2f;
+
+	// Token: 0x04002061 RID: 8289
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public ReflectionProbeTimeSlicingMode timeSlicingMode = ReflectionProbeTimeSlicingMode.IndividualFaces;
+
+	// Token: 0x04002062 RID: 8290
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bEyeNearWaterSurface;
+
+	// Token: 0x04002063 RID: 8291
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const int raycastMask = 16;
+
+	// Token: 0x04002064 RID: 8292
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float updateEyeNearWaterTimer;
+
+	// Token: 0x04002065 RID: 8293
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float eyeNearWaterUpdateFreq = 1.25f;
+
+	// Token: 0x04002066 RID: 8294
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lastTimeUpdatedProbe;
+
+	// Token: 0x04002067 RID: 8295
+	public float updateProbeWhileEyeNearWaterFreq = 3f;
+
+	// Token: 0x04002068 RID: 8296
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int[] viewDistantToWaterTransparencyDistance = new int[]
@@ -271,17 +271,17 @@ public class PlayerReflectionProbe : MonoBehaviour
 		52, 56, 60
 	};
 
-	// Token: 0x04002061 RID: 8289
+	// Token: 0x04002069 RID: 8297
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Camera mainCamera = null;
 
-	// Token: 0x04002062 RID: 8290
+	// Token: 0x0400206A RID: 8298
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int catchUpFrameCount;
 
-	// Token: 0x04002063 RID: 8291
+	// Token: 0x0400206B RID: 8299
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMaxFramesToUpdate = 14;

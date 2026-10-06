@@ -5,10 +5,10 @@ using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020008C5 RID: 2245
+// Token: 0x020008CA RID: 2250
 public class ParticleEffect
 {
-	// Token: 0x060040FC RID: 16636 RVA: 0x00196086 File Offset: 0x00194286
+	// Token: 0x06004092 RID: 16530 RVA: 0x0019618A File Offset: 0x0019438A
 	public static void Init()
 	{
 		ParticleEffect.RootT = GameObject.Find("/Particles").transform;
@@ -16,7 +16,7 @@ public class ParticleEffect
 		ParticleEffect.entityParticles.Clear();
 	}
 
-	// Token: 0x060040FD RID: 16637 RVA: 0x001960B1 File Offset: 0x001942B1
+	// Token: 0x06004093 RID: 16531 RVA: 0x001961B5 File Offset: 0x001943B5
 	public static IEnumerator LoadResources()
 	{
 		ParticleEffect.loadedTs.Clear();
@@ -65,7 +65,7 @@ public class ParticleEffect
 		yield break;
 	}
 
-	// Token: 0x060040FE RID: 16638 RVA: 0x001960BC File Offset: 0x001942BC
+	// Token: 0x06004094 RID: 16532 RVA: 0x001961C0 File Offset: 0x001943C0
 	public static void LoadAsset(string _path)
 	{
 		DataLoader.DataPathIdentifier dataPathIdentifier = DataLoader.ParseDataPathIdentifier(_path);
@@ -83,12 +83,12 @@ public class ParticleEffect
 		ParticleEffect.loadedTs.Add(num, transform);
 	}
 
-	// Token: 0x060040FF RID: 16639 RVA: 0x00196119 File Offset: 0x00194319
+	// Token: 0x06004095 RID: 16533 RVA: 0x0019621D File Offset: 0x0019441D
 	public ParticleEffect()
 	{
 	}
 
-	// Token: 0x06004100 RID: 16640 RVA: 0x00196128 File Offset: 0x00194328
+	// Token: 0x06004096 RID: 16534 RVA: 0x0019622C File Offset: 0x0019442C
 	public ParticleEffect(ParticleType _type, Vector3 _pos, float _lightValue, Color _color)
 	{
 		this.type = _type;
@@ -97,14 +97,14 @@ public class ParticleEffect
 		this.color = _color;
 	}
 
-	// Token: 0x06004101 RID: 16641 RVA: 0x00196154 File Offset: 0x00194354
+	// Token: 0x06004097 RID: 16535 RVA: 0x00196258 File Offset: 0x00194458
 	public ParticleEffect(ParticleType _type, Vector3 _pos, float _lightValue, Color _color, Transform _parentTransform)
 		: this(_type, _pos, _lightValue, _color)
 	{
 		this.SetParent(_parentTransform);
 	}
 
-	// Token: 0x06004102 RID: 16642 RVA: 0x00196169 File Offset: 0x00194369
+	// Token: 0x06004098 RID: 16536 RVA: 0x0019626D File Offset: 0x0019446D
 	public ParticleEffect(ParticleType _type, Vector3 _pos, float _lightValue, Color _color, string _soundName, Transform _parentTransform)
 		: this(_type, _pos, _lightValue, _color)
 	{
@@ -112,13 +112,13 @@ public class ParticleEffect
 		this.SetParent(_parentTransform);
 	}
 
-	// Token: 0x06004103 RID: 16643 RVA: 0x00196188 File Offset: 0x00194388
+	// Token: 0x06004099 RID: 16537 RVA: 0x0019628C File Offset: 0x0019448C
 	public ParticleEffect(string _name, Vector3 _pos, Quaternion _rot, float _lightValue, Color _color)
 		: this(_name, _pos, _rot, _lightValue, _color, null, null, 1f, "")
 	{
 	}
 
-	// Token: 0x06004104 RID: 16644 RVA: 0x001961B0 File Offset: 0x001943B0
+	// Token: 0x0600409A RID: 16538 RVA: 0x001962B4 File Offset: 0x001944B4
 	public ParticleEffect(string _name, Vector3 _pos, Quaternion _rot, float _lightValue, Color _color, string _soundName, Transform _parentTransform, float _volumeScale = 1f, string _additionalHitSound = "")
 		: this(_name, _pos, _lightValue, _color, _soundName, _parentTransform, false, 1f, "")
 	{
@@ -127,7 +127,7 @@ public class ParticleEffect
 		this.additionalHitSoundName = _additionalHitSound;
 	}
 
-	// Token: 0x06004105 RID: 16645 RVA: 0x001961F0 File Offset: 0x001943F0
+	// Token: 0x0600409B RID: 16539 RVA: 0x001962F4 File Offset: 0x001944F4
 	public ParticleEffect(string _name, Vector3 _pos, float _lightValue, Color _color, string _soundName, Transform _parentTransform, bool _OLDCreateColliders, float _volumeScale = 1f, string _additionalHitSound = "")
 		: this(ParticleType.Dynamic, _pos, _lightValue, _color)
 	{
@@ -139,7 +139,7 @@ public class ParticleEffect
 		this.SetParent(_parentTransform);
 	}
 
-	// Token: 0x06004106 RID: 16646 RVA: 0x00196241 File Offset: 0x00194441
+	// Token: 0x0600409C RID: 16540 RVA: 0x00196345 File Offset: 0x00194545
 	public ParticleEffect(string _name, Vector3 _pos, float _lightValue, Color _color, string _soundName, int _parentEntityId, ParticleEffect.Attachment _attachment)
 		: this(ParticleType.Dynamic, _pos, _lightValue, _color)
 	{
@@ -149,13 +149,13 @@ public class ParticleEffect
 		this.SetParent(_parentEntityId, _attachment);
 	}
 
-	// Token: 0x06004107 RID: 16647 RVA: 0x000DB27C File Offset: 0x000D947C
+	// Token: 0x0600409D RID: 16541 RVA: 0x000DB224 File Offset: 0x000D9424
 	public static int ToId(string _name)
 	{
 		return _name.GetHashCode();
 	}
 
-	// Token: 0x06004108 RID: 16648 RVA: 0x0019627C File Offset: 0x0019447C
+	// Token: 0x0600409E RID: 16542 RVA: 0x00196380 File Offset: 0x00194580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform GetParentTransform()
 	{
@@ -195,7 +195,7 @@ public class ParticleEffect
 		return this.parentTransform;
 	}
 
-	// Token: 0x06004109 RID: 16649 RVA: 0x00196324 File Offset: 0x00194524
+	// Token: 0x0600409F RID: 16543 RVA: 0x00196428 File Offset: 0x00194628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetParent(Transform _parentT)
 	{
@@ -208,7 +208,7 @@ public class ParticleEffect
 		}
 	}
 
-	// Token: 0x0600410A RID: 16650 RVA: 0x00196365 File Offset: 0x00194565
+	// Token: 0x060040A0 RID: 16544 RVA: 0x00196469 File Offset: 0x00194669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetParent(int _entityId, ParticleEffect.Attachment _attachment = ParticleEffect.Attachment.None)
 	{
@@ -217,7 +217,7 @@ public class ParticleEffect
 		this.parentEntityId = _entityId;
 	}
 
-	// Token: 0x0600410B RID: 16651 RVA: 0x0019637C File Offset: 0x0019457C
+	// Token: 0x060040A1 RID: 16545 RVA: 0x00196480 File Offset: 0x00194680
 	public static Transform GetDynamicTransform(int _particleId)
 	{
 		Transform transform;
@@ -229,13 +229,13 @@ public class ParticleEffect
 		return null;
 	}
 
-	// Token: 0x0600410C RID: 16652 RVA: 0x001963B0 File Offset: 0x001945B0
+	// Token: 0x060040A2 RID: 16546 RVA: 0x001964B4 File Offset: 0x001946B4
 	public static bool IsAvailable(string _name)
 	{
 		return ParticleEffect.loadedTs.ContainsKey(ParticleEffect.ToId(_name));
 	}
 
-	// Token: 0x0600410D RID: 16653 RVA: 0x001963C4 File Offset: 0x001945C4
+	// Token: 0x060040A3 RID: 16547 RVA: 0x001964C8 File Offset: 0x001946C8
 	public void Read(BinaryReader _br)
 	{
 		this.ParticleId = _br.ReadInt32();
@@ -257,7 +257,7 @@ public class ParticleEffect
 		this.attachment = (ParticleEffect.Attachment)_br.ReadByte();
 	}
 
-	// Token: 0x0600410E RID: 16654 RVA: 0x00196470 File Offset: 0x00194670
+	// Token: 0x060040A4 RID: 16548 RVA: 0x00196574 File Offset: 0x00194774
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(this.ParticleId);
@@ -271,7 +271,7 @@ public class ParticleEffect
 		_bw.Write((byte)this.attachment);
 	}
 
-	// Token: 0x0600410F RID: 16655 RVA: 0x00196508 File Offset: 0x00194708
+	// Token: 0x060040A5 RID: 16549 RVA: 0x0019660C File Offset: 0x0019480C
 	public static Transform SpawnParticleEffect(ParticleEffect _pe, int _entityThatCausedIt, bool _forceCreation = false, bool _isWorldPos = false)
 	{
 		ParticleEffect.PlaySoundInServer(_entityThatCausedIt, _pe.pos, _pe.soundName, _pe.volumeScale);
@@ -394,7 +394,7 @@ public class ParticleEffect
 		return transform;
 	}
 
-	// Token: 0x06004110 RID: 16656 RVA: 0x00196899 File Offset: 0x00194A99
+	// Token: 0x060040A6 RID: 16550 RVA: 0x0019699D File Offset: 0x00194B9D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool PlaySoundInServer(int entityId, Vector3 position, string soundName, float volumeScale)
 	{
@@ -406,7 +406,7 @@ public class ParticleEffect
 		return false;
 	}
 
-	// Token: 0x06004111 RID: 16657 RVA: 0x001968CA File Offset: 0x00194ACA
+	// Token: 0x060040A7 RID: 16551 RVA: 0x001969CE File Offset: 0x00194BCE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool PlaySoundInClient(int entityId, Vector3 position, string soundName, float volumeScale)
 	{
@@ -418,90 +418,90 @@ public class ParticleEffect
 		return false;
 	}
 
-	// Token: 0x040034CC RID: 13516
+	// Token: 0x040034C0 RID: 13504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string prefix = "p_";
 
-	// Token: 0x040034CD RID: 13517
+	// Token: 0x040034C1 RID: 13505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cEntitySameParticleMax = 3;
 
-	// Token: 0x040034CE RID: 13518
+	// Token: 0x040034C2 RID: 13506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ParticleType type;
 
-	// Token: 0x040034CF RID: 13519
+	// Token: 0x040034C3 RID: 13507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ParticleEffect.Attachment attachment;
 
-	// Token: 0x040034D0 RID: 13520
+	// Token: 0x040034C4 RID: 13508
 	public Vector3 pos;
 
-	// Token: 0x040034D1 RID: 13521
+	// Token: 0x040034C5 RID: 13509
 	public Quaternion rot;
 
-	// Token: 0x040034D2 RID: 13522
+	// Token: 0x040034C6 RID: 13510
 	public Color color;
 
-	// Token: 0x040034D3 RID: 13523
+	// Token: 0x040034C7 RID: 13511
 	public float lightValue;
 
-	// Token: 0x040034D4 RID: 13524
+	// Token: 0x040034C8 RID: 13512
 	public int ParticleId;
 
-	// Token: 0x040034D5 RID: 13525
+	// Token: 0x040034C9 RID: 13513
 	public string soundName;
 
-	// Token: 0x040034D6 RID: 13526
+	// Token: 0x040034CA RID: 13514
 	public float volumeScale;
 
-	// Token: 0x040034D7 RID: 13527
+	// Token: 0x040034CB RID: 13515
 	public string additionalHitSoundName;
 
-	// Token: 0x040034D8 RID: 13528
+	// Token: 0x040034CC RID: 13516
 	public int opqueTextureId;
 
-	// Token: 0x040034D9 RID: 13529
+	// Token: 0x040034CD RID: 13517
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int parentEntityId = -1;
 
-	// Token: 0x040034DA RID: 13530
+	// Token: 0x040034CE RID: 13518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform parentTransform;
 
-	// Token: 0x040034DB RID: 13531
+	// Token: 0x040034CF RID: 13519
 	public string debugName;
 
-	// Token: 0x040034DC RID: 13532
+	// Token: 0x040034D0 RID: 13520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform RootT;
 
-	// Token: 0x040034DD RID: 13533
+	// Token: 0x040034D1 RID: 13521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, Transform> loadedTs = new Dictionary<int, Transform>();
 
-	// Token: 0x040034DE RID: 13534
+	// Token: 0x040034D2 RID: 13522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, List<ParticleEffect.EntityData>> entityParticles = new Dictionary<int, List<ParticleEffect.EntityData>>();
 
-	// Token: 0x020008C6 RID: 2246
+	// Token: 0x020008CB RID: 2251
 	public enum Attachment : byte
 	{
-		// Token: 0x040034E0 RID: 13536
+		// Token: 0x040034D4 RID: 13524
 		None,
-		// Token: 0x040034E1 RID: 13537
+		// Token: 0x040034D5 RID: 13525
 		Head,
-		// Token: 0x040034E2 RID: 13538
+		// Token: 0x040034D6 RID: 13526
 		Pelvis
 	}
 
-	// Token: 0x020008C7 RID: 2247
+	// Token: 0x020008CC RID: 2252
 	public struct EntityData
 	{
-		// Token: 0x040034E3 RID: 13539
+		// Token: 0x040034D7 RID: 13527
 		public int id;
 
-		// Token: 0x040034E4 RID: 13540
+		// Token: 0x040034D8 RID: 13528
 		public Transform t;
 	}
 }

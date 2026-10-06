@@ -3,11 +3,11 @@ using Unity.Burst;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001714 RID: 5908
+	// Token: 0x02001740 RID: 5952
 	[BurstCompile(CompileSynchronously = true)]
 	public struct PathNode
 	{
-		// Token: 0x0600B80B RID: 47115 RVA: 0x00444F07 File Offset: 0x00443107
+		// Token: 0x0600B962 RID: 47458 RVA: 0x00449427 File Offset: 0x00447627
 		public PathNode(Vector2i _position, float _travelledCost, float _totalCost, int _next)
 		{
 			this.position = _position;
@@ -17,7 +17,7 @@ namespace WorldGenerationEngineFinal
 			this.listNext = -1;
 		}
 
-		// Token: 0x0600B80C RID: 47116 RVA: 0x00444F2D File Offset: 0x0044312D
+		// Token: 0x0600B963 RID: 47459 RVA: 0x0044944D File Offset: 0x0044764D
 		public void Set(Vector2i _position, float _travelledCost, float _totalCost, int _next)
 		{
 			this.position = _position;
@@ -26,19 +26,19 @@ namespace WorldGenerationEngineFinal
 			this.pathNext = _next;
 		}
 
-		// Token: 0x0400897C RID: 35196
+		// Token: 0x04008A41 RID: 35393
 		public Vector2i position;
 
-		// Token: 0x0400897D RID: 35197
+		// Token: 0x04008A42 RID: 35394
 		public float travelledCost;
 
-		// Token: 0x0400897E RID: 35198
+		// Token: 0x04008A43 RID: 35395
 		public float totalCost;
 
-		// Token: 0x0400897F RID: 35199
+		// Token: 0x04008A44 RID: 35396
 		public int pathNext;
 
-		// Token: 0x04008980 RID: 35200
+		// Token: 0x04008A45 RID: 35397
 		public int listNext;
 	}
 }

@@ -3,12 +3,12 @@ using System.Collections;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001159 RID: 4441
+// Token: 0x02001171 RID: 4465
 public class XUiV_Label : XUiV_LabelBase
 {
-	// Token: 0x170010AC RID: 4268
-	// (get) Token: 0x06008D56 RID: 36182 RVA: 0x003572DE File Offset: 0x003554DE
-	// (set) Token: 0x06008D57 RID: 36183 RVA: 0x003572E6 File Offset: 0x003554E6
+	// Token: 0x170010E1 RID: 4321
+	// (get) Token: 0x06008DC1 RID: 36289 RVA: 0x0035B6FE File Offset: 0x003598FE
+	// (set) Token: 0x06008DC2 RID: 36290 RVA: 0x0035B706 File Offset: 0x00359906
 	[XuiXmlAttribute("overflow", false)]
 	public UILabel.Overflow Overflow
 	{
@@ -23,9 +23,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010AD RID: 4269
-	// (get) Token: 0x06008D58 RID: 36184 RVA: 0x003572F5 File Offset: 0x003554F5
-	// (set) Token: 0x06008D59 RID: 36185 RVA: 0x003572FD File Offset: 0x003554FD
+	// Token: 0x170010E2 RID: 4322
+	// (get) Token: 0x06008DC3 RID: 36291 RVA: 0x0035B715 File Offset: 0x00359915
+	// (set) Token: 0x06008DC4 RID: 36292 RVA: 0x0035B71D File Offset: 0x0035991D
 	[XuiXmlAttribute("overflow_height", false)]
 	public int OverflowHeight
 	{
@@ -40,9 +40,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010AE RID: 4270
-	// (get) Token: 0x06008D5A RID: 36186 RVA: 0x0035730C File Offset: 0x0035550C
-	// (set) Token: 0x06008D5B RID: 36187 RVA: 0x00357314 File Offset: 0x00355514
+	// Token: 0x170010E3 RID: 4323
+	// (get) Token: 0x06008DC5 RID: 36293 RVA: 0x0035B72C File Offset: 0x0035992C
+	// (set) Token: 0x06008DC6 RID: 36294 RVA: 0x0035B734 File Offset: 0x00359934
 	[XuiXmlAttribute("overflow_width", false)]
 	public int OverflowWidth
 	{
@@ -57,9 +57,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010AF RID: 4271
-	// (get) Token: 0x06008D5C RID: 36188 RVA: 0x00357323 File Offset: 0x00355523
-	// (set) Token: 0x06008D5D RID: 36189 RVA: 0x0035732B File Offset: 0x0035552B
+	// Token: 0x170010E4 RID: 4324
+	// (get) Token: 0x06008DC7 RID: 36295 RVA: 0x0035B743 File Offset: 0x00359943
+	// (set) Token: 0x06008DC8 RID: 36296 RVA: 0x0035B74B File Offset: 0x0035994B
 	[XuiXmlAttribute("overflow_ellipsis", false)]
 	public bool OverflowEllipsis
 	{
@@ -74,9 +74,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B0 RID: 4272
-	// (get) Token: 0x06008D5E RID: 36190 RVA: 0x0035733A File Offset: 0x0035553A
-	// (set) Token: 0x06008D5F RID: 36191 RVA: 0x00357342 File Offset: 0x00355542
+	// Token: 0x170010E5 RID: 4325
+	// (get) Token: 0x06008DC9 RID: 36297 RVA: 0x0035B75A File Offset: 0x0035995A
+	// (set) Token: 0x06008DCA RID: 36298 RVA: 0x0035B762 File Offset: 0x00359962
 	[XuiXmlAttribute("parse_actions", false)]
 	public bool ParseActions
 	{
@@ -95,9 +95,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B1 RID: 4273
-	// (get) Token: 0x06008D60 RID: 36192 RVA: 0x0035735B File Offset: 0x0035555B
-	// (set) Token: 0x06008D61 RID: 36193 RVA: 0x00357363 File Offset: 0x00355563
+	// Token: 0x170010E6 RID: 4326
+	// (get) Token: 0x06008DCB RID: 36299 RVA: 0x0035B77B File Offset: 0x0035997B
+	// (set) Token: 0x06008DCC RID: 36300 RVA: 0x0035B783 File Offset: 0x00359983
 	[XuiXmlAttribute("actions_default_format", false)]
 	public string ActionsDefaultFormat
 	{
@@ -116,9 +116,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B2 RID: 4274
-	// (get) Token: 0x06008D62 RID: 36194 RVA: 0x00357381 File Offset: 0x00355581
-	// (set) Token: 0x06008D63 RID: 36195 RVA: 0x00357389 File Offset: 0x00355589
+	// Token: 0x170010E7 RID: 4327
+	// (get) Token: 0x06008DCD RID: 36301 RVA: 0x0035B7A1 File Offset: 0x003599A1
+	// (set) Token: 0x06008DCE RID: 36302 RVA: 0x0035B7A9 File Offset: 0x003599A9
 	[XuiXmlAttribute("force_input_style", false)]
 	public XUiUtils.ForceLabelInputStyle ForceInputStyle
 	{
@@ -137,9 +137,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B3 RID: 4275
-	// (get) Token: 0x06008D64 RID: 36196 RVA: 0x003573A2 File Offset: 0x003555A2
-	// (set) Token: 0x06008D65 RID: 36197 RVA: 0x003573AC File Offset: 0x003555AC
+	// Token: 0x170010E8 RID: 4328
+	// (get) Token: 0x06008DCF RID: 36303 RVA: 0x0035B7C2 File Offset: 0x003599C2
+	// (set) Token: 0x06008DD0 RID: 36304 RVA: 0x0035B7CC File Offset: 0x003599CC
 	[XuiXmlAttribute("text", false)]
 	public string Text
 	{
@@ -164,9 +164,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B4 RID: 4276
-	// (get) Token: 0x06008D66 RID: 36198 RVA: 0x003573FB File Offset: 0x003555FB
-	// (set) Token: 0x06008D67 RID: 36199 RVA: 0x00357403 File Offset: 0x00355603
+	// Token: 0x170010E9 RID: 4329
+	// (get) Token: 0x06008DD1 RID: 36305 RVA: 0x0035B81B File Offset: 0x00359A1B
+	// (set) Token: 0x06008DD2 RID: 36306 RVA: 0x0035B823 File Offset: 0x00359A23
 	[XuiXmlAttribute("max_line_count", false)]
 	public int MaxLineCount
 	{
@@ -185,9 +185,9 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x170010B5 RID: 4277
-	// (get) Token: 0x06008D68 RID: 36200 RVA: 0x0035741C File Offset: 0x0035561C
-	// (set) Token: 0x06008D69 RID: 36201 RVA: 0x00357424 File Offset: 0x00355624
+	// Token: 0x170010EA RID: 4330
+	// (get) Token: 0x06008DD3 RID: 36307 RVA: 0x0035B83C File Offset: 0x00359A3C
+	// (set) Token: 0x06008DD4 RID: 36308 RVA: 0x0035B844 File Offset: 0x00359A44
 	[XuiXmlAttribute("use_ellipsis_animator", false)]
 	public bool UseEllipsisAnimator
 	{
@@ -206,13 +206,13 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D6A RID: 36202 RVA: 0x0035743D File Offset: 0x0035563D
+	// Token: 0x06008DD5 RID: 36309 RVA: 0x0035B85D File Offset: 0x00359A5D
 	public XUiV_Label(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008D6B RID: 36203 RVA: 0x00357454 File Offset: 0x00355654
+	// Token: 0x06008DD6 RID: 36310 RVA: 0x0035B874 File Offset: 0x00359A74
 	public override void InitView()
 	{
 		base.InitView();
@@ -230,14 +230,14 @@ public class XUiV_Label : XUiV_LabelBase
 		PlatformManager.NativePlatform.Input.OnLastInputStyleChanged += this.OnLastInputStyleChanged;
 	}
 
-	// Token: 0x06008D6C RID: 36204 RVA: 0x003574D6 File Offset: 0x003556D6
+	// Token: 0x06008DD7 RID: 36311 RVA: 0x0035B8F6 File Offset: 0x00359AF6
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
 		this.overflow = UILabel.Overflow.ShrinkContent;
 	}
 
-	// Token: 0x06008D6D RID: 36205 RVA: 0x003574E6 File Offset: 0x003556E6
+	// Token: 0x06008DD8 RID: 36312 RVA: 0x0035B906 File Offset: 0x00359B06
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -248,7 +248,7 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D6E RID: 36206 RVA: 0x0035751C File Offset: 0x0035571C
+	// Token: 0x06008DD9 RID: 36313 RVA: 0x0035B93C File Offset: 0x00359B3C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -260,8 +260,8 @@ public class XUiV_Label : XUiV_LabelBase
 		textEllipsisAnimator.GetNextAnimatedString(_dt);
 	}
 
-	// Token: 0x170010B6 RID: 4278
-	// (get) Token: 0x06008D6F RID: 36207 RVA: 0x00357536 File Offset: 0x00355736
+	// Token: 0x170010EB RID: 4331
+	// (get) Token: 0x06008DDA RID: 36314 RVA: 0x0035B956 File Offset: 0x00359B56
 	public override bool anchorsKeepSize
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -271,7 +271,7 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D70 RID: 36208 RVA: 0x0035754C File Offset: 0x0035574C
+	// Token: 0x06008DDB RID: 36315 RVA: 0x0035B96C File Offset: 0x00359B6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -288,7 +288,7 @@ public class XUiV_Label : XUiV_LabelBase
 		base.updateData();
 	}
 
-	// Token: 0x06008D71 RID: 36209 RVA: 0x003575DA File Offset: 0x003557DA
+	// Token: 0x06008DDC RID: 36316 RVA: 0x0035B9FA File Offset: 0x00359BFA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLastInputStyleChanged(PlayerInputManager.InputStyle _obj)
 	{
@@ -298,7 +298,7 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D72 RID: 36210 RVA: 0x003575F2 File Offset: 0x003557F2
+	// Token: 0x06008DDD RID: 36317 RVA: 0x0035BA12 File Offset: 0x00359C12
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getFormattedText(string _text)
 	{
@@ -310,7 +310,7 @@ public class XUiV_Label : XUiV_LabelBase
 		return _text;
 	}
 
-	// Token: 0x06008D73 RID: 36211 RVA: 0x00357626 File Offset: 0x00355826
+	// Token: 0x06008DDE RID: 36318 RVA: 0x0035BA46 File Offset: 0x00359C46
 	public void SetTextImmediately(string _text)
 	{
 		this.text = _text ?? "";
@@ -321,14 +321,14 @@ public class XUiV_Label : XUiV_LabelBase
 		this.label.text = this.getFormattedText(this.text);
 	}
 
-	// Token: 0x06008D74 RID: 36212 RVA: 0x0035765E File Offset: 0x0035585E
+	// Token: 0x06008DDF RID: 36319 RVA: 0x0035BA7E File Offset: 0x00359C7E
 	public void ForceTextUpdate()
 	{
 		this.bUpdateText = true;
 		base.SetDirty();
 	}
 
-	// Token: 0x06008D75 RID: 36213 RVA: 0x0035766D File Offset: 0x0035586D
+	// Token: 0x06008DE0 RID: 36320 RVA: 0x0035BA8D File Offset: 0x00359C8D
 	[XuiXmlAttribute("text_key", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeTextKey(string _value)
@@ -339,7 +339,7 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D76 RID: 36214 RVA: 0x00357688 File Offset: 0x00355888
+	// Token: 0x06008DE1 RID: 36321 RVA: 0x0035BAA8 File Offset: 0x00359CA8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -349,7 +349,7 @@ public class XUiV_Label : XUiV_LabelBase
 		}
 	}
 
-	// Token: 0x06008D77 RID: 36215 RVA: 0x003576D8 File Offset: 0x003558D8
+	// Token: 0x06008DE2 RID: 36322 RVA: 0x0035BAF8 File Offset: 0x00359CF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator markLabelChanged()
 	{
@@ -363,59 +363,59 @@ public class XUiV_Label : XUiV_LabelBase
 		yield break;
 	}
 
-	// Token: 0x04006802 RID: 26626
+	// Token: 0x04006857 RID: 26711
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UILabel.Overflow overflow;
 
-	// Token: 0x04006803 RID: 26627
+	// Token: 0x04006858 RID: 26712
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int overflowHeight;
 
-	// Token: 0x04006804 RID: 26628
+	// Token: 0x04006859 RID: 26713
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int overflowWidth;
 
-	// Token: 0x04006805 RID: 26629
+	// Token: 0x0400685A RID: 26714
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool overflowEllipsis;
 
-	// Token: 0x04006806 RID: 26630
+	// Token: 0x0400685B RID: 26715
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string text = "";
 
-	// Token: 0x04006807 RID: 26631
+	// Token: 0x0400685C RID: 26716
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int maxLineCount;
 
-	// Token: 0x04006808 RID: 26632
+	// Token: 0x0400685D RID: 26717
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool parseActions;
 
-	// Token: 0x04006809 RID: 26633
+	// Token: 0x0400685E RID: 26718
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string actionsDefaultFormat;
 
-	// Token: 0x0400680A RID: 26634
+	// Token: 0x0400685F RID: 26719
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool currentTextHasActions;
 
-	// Token: 0x0400680B RID: 26635
+	// Token: 0x04006860 RID: 26720
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiUtils.ForceLabelInputStyle forceInputStyle;
 
-	// Token: 0x0400680C RID: 26636
+	// Token: 0x04006861 RID: 26721
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bUpdateText;
 
-	// Token: 0x0400680D RID: 26637
+	// Token: 0x04006862 RID: 26722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useEllipsisAnimator;
 
-	// Token: 0x0400680E RID: 26638
+	// Token: 0x04006863 RID: 26723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextEllipsisAnimator ellipsisAnimator;
 
-	// Token: 0x0400680F RID: 26639
+	// Token: 0x04006864 RID: 26724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly WaitForSecondsRealtime markChangedDelay = new WaitForSecondsRealtime(0.01f);
 }

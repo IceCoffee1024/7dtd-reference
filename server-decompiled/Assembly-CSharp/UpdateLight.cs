@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020012F6 RID: 4854
+// Token: 0x02001316 RID: 4886
 public class UpdateLight : MonoBehaviour
 {
-	// Token: 0x060099B8 RID: 39352 RVA: 0x003A3484 File Offset: 0x003A1684
+	// Token: 0x06009A64 RID: 39524 RVA: 0x003A8034 File Offset: 0x003A6234
 	public void AddRendererNameToIgnore(string _name)
 	{
 		if (this.IgnoreNamedRenderersList == null)
@@ -15,7 +15,7 @@ public class UpdateLight : MonoBehaviour
 		this.IgnoreNamedRenderersList.Add(_name);
 	}
 
-	// Token: 0x060099B9 RID: 39353 RVA: 0x003A34A8 File Offset: 0x003A16A8
+	// Token: 0x06009A65 RID: 39525 RVA: 0x003A8058 File Offset: 0x003A6258
 	public void SetTintColorForItem(Vector3 _color)
 	{
 		Color color = new Color(_color.x, _color.y, _color.z, 1f);
@@ -31,7 +31,7 @@ public class UpdateLight : MonoBehaviour
 		UpdateLight.rendererList.Clear();
 	}
 
-	// Token: 0x060099BA RID: 39354 RVA: 0x003A3540 File Offset: 0x003A1740
+	// Token: 0x06009A66 RID: 39526 RVA: 0x003A80F0 File Offset: 0x003A62F0
 	public static void SetTintColor(Transform _t, Color _color)
 	{
 		_t.GetComponentsInChildren<Renderer>(UpdateLight.rendererList);
@@ -42,7 +42,7 @@ public class UpdateLight : MonoBehaviour
 		UpdateLight.rendererList.Clear();
 	}
 
-	// Token: 0x060099BB RID: 39355 RVA: 0x003A3588 File Offset: 0x003A1788
+	// Token: 0x06009A67 RID: 39527 RVA: 0x003A8138 File Offset: 0x003A6338
 	public static void SetTintColor(Renderer _r, Color _color)
 	{
 		Material[] materials = _r.materials;
@@ -60,7 +60,7 @@ public class UpdateLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060099BC RID: 39356 RVA: 0x003A35E3 File Offset: 0x003A17E3
+	// Token: 0x06009A68 RID: 39528 RVA: 0x003A8193 File Offset: 0x003A6393
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -71,19 +71,19 @@ public class UpdateLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060099BD RID: 39357 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009A69 RID: 39529 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 	}
 
-	// Token: 0x060099BE RID: 39358 RVA: 0x003A35F3 File Offset: 0x003A17F3
+	// Token: 0x06009A6A RID: 39530 RVA: 0x003A81A3 File Offset: 0x003A63A3
 	public void Reset()
 	{
 		this.appliedLit = -1f;
 	}
 
-	// Token: 0x060099BF RID: 39359 RVA: 0x003A3600 File Offset: 0x003A1800
+	// Token: 0x06009A6B RID: 39531 RVA: 0x003A81B0 File Offset: 0x003A63B0
 	public virtual void ManagerFirstUpdate()
 	{
 		base.gameObject.TryGetComponent<Entity>(out this.entity);
@@ -92,7 +92,7 @@ public class UpdateLight : MonoBehaviour
 		this.UpdateLighting(1f);
 	}
 
-	// Token: 0x060099C0 RID: 39360 RVA: 0x003A3638 File Offset: 0x003A1838
+	// Token: 0x06009A6C RID: 39532 RVA: 0x003A81E8 File Offset: 0x003A63E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetFloatProp<T>(string varName, float value, List<T> _rends) where T : Renderer
 	{
@@ -104,7 +104,7 @@ public class UpdateLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060099C1 RID: 39361 RVA: 0x003A3690 File Offset: 0x003A1890
+	// Token: 0x06009A6D RID: 39533 RVA: 0x003A8240 File Offset: 0x003A6440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLit(float _lit)
 	{
@@ -128,7 +128,7 @@ public class UpdateLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060099C2 RID: 39362 RVA: 0x003A3724 File Offset: 0x003A1924
+	// Token: 0x06009A6E RID: 39534 RVA: 0x003A82D4 File Offset: 0x003A64D4
 	public void UpdateLighting(float _step)
 	{
 		if (this.entity)
@@ -158,48 +158,48 @@ public class UpdateLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040073D7 RID: 29655
+	// Token: 0x04007452 RID: 29778
 	public bool IsDynamicObject;
 
-	// Token: 0x040073D8 RID: 29656
+	// Token: 0x04007453 RID: 29779
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentLit;
 
-	// Token: 0x040073D9 RID: 29657
+	// Token: 0x04007454 RID: 29780
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetLit;
 
-	// Token: 0x040073DA RID: 29658
+	// Token: 0x04007455 RID: 29781
 	public float appliedLit = -1f;
 
-	// Token: 0x040073DB RID: 29659
+	// Token: 0x04007456 RID: 29782
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<string> IgnoreNamedRenderersList;
 
-	// Token: 0x040073DC RID: 29660
+	// Token: 0x04007457 RID: 29783
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Entity entity;
 
-	// Token: 0x040073DD RID: 29661
+	// Token: 0x04007458 RID: 29784
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<Renderer> rendererList = new List<Renderer>();
 
-	// Token: 0x040073DE RID: 29662
+	// Token: 0x04007459 RID: 29785
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<MeshRenderer> meshRendererList = new List<MeshRenderer>();
 
-	// Token: 0x040073DF RID: 29663
+	// Token: 0x0400745A RID: 29786
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<SkinnedMeshRenderer> skinnedMeshRendererList = new List<SkinnedMeshRenderer>();
 
-	// Token: 0x040073E0 RID: 29664
+	// Token: 0x0400745B RID: 29787
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MaterialPropertyBlock props;

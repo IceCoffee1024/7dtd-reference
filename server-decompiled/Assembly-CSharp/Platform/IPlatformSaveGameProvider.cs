@@ -2,47 +2,47 @@
 
 namespace Platform
 {
-	// Token: 0x02001B8A RID: 7050
+	// Token: 0x02001BBC RID: 7100
 	public interface IPlatformSaveGameProvider : IPlatformSaveGameIOProvider
 	{
-		// Token: 0x17001A14 RID: 6676
-		// (get) Token: 0x0600D2D1 RID: 53969
+		// Token: 0x17001ABA RID: 6842
+		// (get) Token: 0x0600D449 RID: 54345
 		ESaveGameProviderStatus Status { get; }
 
-		// Token: 0x17001A15 RID: 6677
-		// (get) Token: 0x0600D2D2 RID: 53970
+		// Token: 0x17001ABB RID: 6843
+		// (get) Token: 0x0600D44A RID: 54346
 		IPlatformSaveGameIOProvider Cache { get; }
 
-		// Token: 0x14000125 RID: 293
-		// (add) Token: 0x0600D2D3 RID: 53971
-		// (remove) Token: 0x0600D2D4 RID: 53972
+		// Token: 0x14000124 RID: 292
+		// (add) Token: 0x0600D44B RID: 54347
+		// (remove) Token: 0x0600D44C RID: 54348
 		event Action Initialized;
 
-		// Token: 0x0600D2D5 RID: 53973
+		// Token: 0x0600D44D RID: 54349
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D2D6 RID: 53974
+		// Token: 0x0600D44E RID: 54350
 		void Destroy();
 
-		// Token: 0x0600D2D7 RID: 53975
+		// Token: 0x0600D44F RID: 54351
 		bool ShouldBackup();
 
-		// Token: 0x0600D2D8 RID: 53976
+		// Token: 0x0600D450 RID: 54352
 		bool ShouldCommit();
 
-		// Token: 0x0600D2D9 RID: 53977
+		// Token: 0x0600D451 RID: 54353
 		double GetCommitProgress();
 
-		// Token: 0x0600D2DA RID: 53978
+		// Token: 0x0600D452 RID: 54354
 		void Flush(bool waitForFlush);
 
-		// Token: 0x0600D2DB RID: 53979
+		// Token: 0x0600D453 RID: 54355
 		bool ShouldLimitSize();
 
-		// Token: 0x0600D2DC RID: 53980
+		// Token: 0x0600D454 RID: 54356
 		void UpdateSizes();
 
-		// Token: 0x0600D2DD RID: 53981
+		// Token: 0x0600D455 RID: 54357
 		SaveDataSizes GetSizes();
 	}
 }

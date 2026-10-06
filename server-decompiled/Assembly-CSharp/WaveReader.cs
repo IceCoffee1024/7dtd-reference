@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x020003C7 RID: 967
+// Token: 0x020003CA RID: 970
 public class WaveReader
 {
-	// Token: 0x06001D14 RID: 7444 RVA: 0x000AEF80 File Offset: 0x000AD180
+	// Token: 0x06001D0C RID: 7436 RVA: 0x000AF18C File Offset: 0x000AD38C
 	public WaveReader(string _fileName)
 	{
 		this.filename = _fileName;
@@ -16,8 +16,8 @@ public class WaveReader
 		}
 	}
 
-	// Token: 0x17000382 RID: 898
-	// (set) Token: 0x06001D15 RID: 7445 RVA: 0x000AF00C File Offset: 0x000AD20C
+	// Token: 0x1700037A RID: 890
+	// (set) Token: 0x06001D0D RID: 7437 RVA: 0x000AF218 File Offset: 0x000AD418
 	public int Position
 	{
 		set
@@ -26,7 +26,7 @@ public class WaveReader
 		}
 	}
 
-	// Token: 0x06001D16 RID: 7446 RVA: 0x000AF01C File Offset: 0x000AD21C
+	// Token: 0x06001D0E RID: 7438 RVA: 0x000AF228 File Offset: 0x000AD428
 	public void Read(float[] data, int count)
 	{
 		using (BinaryReader binaryReader = new BinaryReader(SdFile.Open(this.filename, FileMode.Open, FileAccess.Read, FileShare.Read)))
@@ -41,30 +41,30 @@ public class WaveReader
 		}
 	}
 
-	// Token: 0x06001D17 RID: 7447 RVA: 0x000AF0A8 File Offset: 0x000AD2A8
+	// Token: 0x06001D0F RID: 7439 RVA: 0x000AF2B4 File Offset: 0x000AD4B4
 	public void Cleanup()
 	{
 		MemoryPools.poolByte.Free(this.buffer);
 		this.buffer = null;
 	}
 
-	// Token: 0x040012FE RID: 4862
+	// Token: 0x040012F7 RID: 4855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filename;
 
-	// Token: 0x040012FF RID: 4863
+	// Token: 0x040012F8 RID: 4856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int bufferSize = 8192;
 
-	// Token: 0x04001300 RID: 4864
+	// Token: 0x040012F9 RID: 4857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] buffer;
 
-	// Token: 0x04001301 RID: 4865
+	// Token: 0x040012FA RID: 4858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int dataStartPos;
 
-	// Token: 0x04001302 RID: 4866
+	// Token: 0x040012FB RID: 4859
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int position;
 }

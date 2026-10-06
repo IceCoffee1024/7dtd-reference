@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001ED RID: 493
+// Token: 0x020001EE RID: 494
 [Preserve]
 public class ConsoleCmdBuff : ConsoleCmdAbstract
 {
-	// Token: 0x17000142 RID: 322
-	// (get) Token: 0x06000F38 RID: 3896 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700013A RID: 314
+	// (get) Token: 0x06000F2B RID: 3883 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdBuff : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000143 RID: 323
-	// (get) Token: 0x06000F39 RID: 3897 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700013B RID: 315
+	// (get) Token: 0x06000F2C RID: 3884 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -27,14 +27,14 @@ public class ConsoleCmdBuff : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F3A RID: 3898 RVA: 0x000634B7 File Offset: 0x000616B7
+	// Token: 0x06000F2D RID: 3885 RVA: 0x000634A7 File Offset: 0x000616A7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "buff" };
 	}
 
-	// Token: 0x06000F3B RID: 3899 RVA: 0x000634C8 File Offset: 0x000616C8
+	// Token: 0x06000F2E RID: 3886 RVA: 0x000634B8 File Offset: 0x000616B8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)
@@ -81,14 +81,14 @@ public class ConsoleCmdBuff : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F3C RID: 3900 RVA: 0x000635EF File Offset: 0x000617EF
+	// Token: 0x06000F2F RID: 3887 RVA: 0x000635DF File Offset: 0x000617DF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Applies a buff to the local player";
 	}
 
-	// Token: 0x06000F3D RID: 3901 RVA: 0x000635F8 File Offset: 0x000617F8
+	// Token: 0x06000F30 RID: 3888 RVA: 0x000635E8 File Offset: 0x000617E8
 	public static void PrintAvailableBuffNames()
 	{
 		SortedDictionary<string, BuffClass> sortedDictionary = new SortedDictionary<string, BuffClass>(BuffManager.Buffs, StringComparer.OrdinalIgnoreCase);

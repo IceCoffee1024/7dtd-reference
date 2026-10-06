@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-// Token: 0x020000E6 RID: 230
+// Token: 0x020000E8 RID: 232
 public class IKController : MonoBehaviour
 {
-	// Token: 0x060005D0 RID: 1488 RVA: 0x00029F20 File Offset: 0x00028120
+	// Token: 0x060005D6 RID: 1494 RVA: 0x0002A018 File Offset: 0x00028218
 	public unsafe void Start()
 	{
 		this.animator = base.GetComponent<Animator>();
@@ -40,7 +40,7 @@ public class IKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D1 RID: 1489 RVA: 0x00029FF0 File Offset: 0x000281F0
+	// Token: 0x060005D7 RID: 1495 RVA: 0x0002A0E8 File Offset: 0x000282E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NameToIndex(string name)
 	{
@@ -54,13 +54,13 @@ public class IKController : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x060005D2 RID: 1490 RVA: 0x0002A021 File Offset: 0x00028221
+	// Token: 0x060005D8 RID: 1496 RVA: 0x0002A119 File Offset: 0x00028319
 	public void SetTargets(List<IKController.Target> _targets)
 	{
 		this.targets = _targets;
 	}
 
-	// Token: 0x060005D3 RID: 1491 RVA: 0x0002A02A File Offset: 0x0002822A
+	// Token: 0x060005D9 RID: 1497 RVA: 0x0002A122 File Offset: 0x00028322
 	public void Cleanup()
 	{
 		this.targets = null;
@@ -70,7 +70,7 @@ public class IKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D4 RID: 1492 RVA: 0x0002A048 File Offset: 0x00028248
+	// Token: 0x060005DA RID: 1498 RVA: 0x0002A140 File Offset: 0x00028340
 	public void ModifyRig()
 	{
 		if (this.targets == null)
@@ -117,7 +117,7 @@ public class IKController : MonoBehaviour
 		base.GetComponent<RigBuilder>().Build();
 	}
 
-	// Token: 0x060005D5 RID: 1493 RVA: 0x0002A1A4 File Offset: 0x000283A4
+	// Token: 0x060005DB RID: 1499 RVA: 0x0002A29C File Offset: 0x0002849C
 	public void OnAnimatorIK()
 	{
 		if (!this.animator)
@@ -156,58 +156,58 @@ public class IKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000683 RID: 1667
+	// Token: 0x04000686 RID: 1670
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cTargetTypeCount = 4;
 
-	// Token: 0x04000684 RID: 1668
+	// Token: 0x04000687 RID: 1671
 	public static string[] IKNames = new string[] { "IKFootL", "IKFootR", "IKHandL", "IKHandR" };
 
-	// Token: 0x04000685 RID: 1669
+	// Token: 0x04000688 RID: 1672
 	public List<IKController.Target> targets;
 
-	// Token: 0x04000686 RID: 1670
+	// Token: 0x04000689 RID: 1673
 	public IKController.Constraint[] rigConstraints = new IKController.Constraint[4];
 
-	// Token: 0x04000687 RID: 1671
+	// Token: 0x0400068A RID: 1674
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator animator;
 
-	// Token: 0x04000688 RID: 1672
+	// Token: 0x0400068B RID: 1675
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Rig rig;
 
-	// Token: 0x020000E7 RID: 231
+	// Token: 0x020000E9 RID: 233
 	[Serializable]
 	public struct Target
 	{
-		// Token: 0x04000689 RID: 1673
+		// Token: 0x0400068C RID: 1676
 		public AvatarIKGoal avatarGoal;
 
-		// Token: 0x0400068A RID: 1674
+		// Token: 0x0400068D RID: 1677
 		public Transform transform;
 
-		// Token: 0x0400068B RID: 1675
+		// Token: 0x0400068E RID: 1678
 		public Vector3 position;
 
-		// Token: 0x0400068C RID: 1676
+		// Token: 0x0400068F RID: 1679
 		public Vector3 rotation;
 	}
 
-	// Token: 0x020000E8 RID: 232
+	// Token: 0x020000EA RID: 234
 	[Serializable]
 	public struct Constraint
 	{
-		// Token: 0x0400068D RID: 1677
+		// Token: 0x04000690 RID: 1680
 		public TwoBoneIKConstraint tbConstraint;
 
-		// Token: 0x0400068E RID: 1678
+		// Token: 0x04000691 RID: 1681
 		public float originalWeight;
 
-		// Token: 0x0400068F RID: 1679
+		// Token: 0x04000692 RID: 1682
 		public Transform originalTargetT;
 	}
 }

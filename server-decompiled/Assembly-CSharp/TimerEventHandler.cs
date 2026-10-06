@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02001085 RID: 4229
-// (Invoke) Token: 0x0600865A RID: 34394
+// Token: 0x02001095 RID: 4245
+// (Invoke) Token: 0x0600869C RID: 34460
 public delegate void TimerEventHandler(TimerEventData _data);

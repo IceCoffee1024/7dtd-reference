@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001493 RID: 5267
+// Token: 0x020014B3 RID: 5299
 public class RenderTextureSystem
 {
-	// Token: 0x0600A548 RID: 42312 RVA: 0x003D7E94 File Offset: 0x003D6094
+	// Token: 0x0600A5F6 RID: 42486 RVA: 0x003DCB20 File Offset: 0x003DAD20
 	public void Create(string _name, GameObject _target, Vector3 _targetRelPos, Vector3 _lightSourceRelPos, Vector2i _renderTexSize, bool _isAA, bool _orthographic = false, float _orthoSize = 1f)
 	{
 		GameObject gameObject = GameObject.Find("3D RenderTextures");
@@ -67,7 +67,7 @@ public class RenderTextureSystem
 		light.cullingMask = 2048;
 	}
 
-	// Token: 0x0600A549 RID: 42313 RVA: 0x003D81B0 File Offset: 0x003D63B0
+	// Token: 0x0600A5F7 RID: 42487 RVA: 0x003DCE3C File Offset: 0x003DB03C
 	public void SetTarget(GameObject _target, Vector3 _targetRelPos, bool _orthographic, float _orthoSize = 1f)
 	{
 		if (this.TargetGO != null)
@@ -97,7 +97,7 @@ public class RenderTextureSystem
 		}
 	}
 
-	// Token: 0x0600A54A RID: 42314 RVA: 0x003D8320 File Offset: 0x003D6520
+	// Token: 0x0600A5F8 RID: 42488 RVA: 0x003DCFAC File Offset: 0x003DB1AC
 	public void SetTargetNoCopy(GameObject _target, Vector3 _targetRelPos, bool _orthographic, float _orthoSize = 1f)
 	{
 		if (this.TargetGO != null)
@@ -125,14 +125,14 @@ public class RenderTextureSystem
 		}
 	}
 
-	// Token: 0x0600A54B RID: 42315 RVA: 0x003D8441 File Offset: 0x003D6641
+	// Token: 0x0600A5F9 RID: 42489 RVA: 0x003DD0CD File Offset: 0x003DB2CD
 	public void SetOrtho(bool enabled, float _orthoSize)
 	{
 		this.cam.orthographic = enabled;
 		this.cam.orthographicSize = _orthoSize;
 	}
 
-	// Token: 0x0600A54C RID: 42316 RVA: 0x003D845C File Offset: 0x003D665C
+	// Token: 0x0600A5FA RID: 42490 RVA: 0x003DD0E8 File Offset: 0x003DB2E8
 	public void RotateTarget(float _amount)
 	{
 		if (this.TargetGO != null)
@@ -142,7 +142,7 @@ public class RenderTextureSystem
 		}
 	}
 
-	// Token: 0x0600A54D RID: 42317 RVA: 0x003D84BC File Offset: 0x003D66BC
+	// Token: 0x0600A5FB RID: 42491 RVA: 0x003DD148 File Offset: 0x003DB348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void recursiveLayerSetup(GameObject _go, int _layer)
 	{
@@ -156,7 +156,7 @@ public class RenderTextureSystem
 		}
 	}
 
-	// Token: 0x0600A54E RID: 42318 RVA: 0x003D8534 File Offset: 0x003D6734
+	// Token: 0x0600A5FC RID: 42492 RVA: 0x003DD1C0 File Offset: 0x003DB3C0
 	public void Create(string _name, Camera _existingCamera, Vector2i _renderTexSize)
 	{
 		GameObject gameObject = GameObject.Find("3D RenderTextures");
@@ -172,13 +172,13 @@ public class RenderTextureSystem
 		_existingCamera.targetTexture = this.RenderTex;
 	}
 
-	// Token: 0x0600A54F RID: 42319 RVA: 0x003D85BC File Offset: 0x003D67BC
+	// Token: 0x0600A5FD RID: 42493 RVA: 0x003DD248 File Offset: 0x003DB448
 	public void SetEnabled(bool _b)
 	{
 		this.ParentGO.SetActive(_b);
 	}
 
-	// Token: 0x0600A550 RID: 42320 RVA: 0x003D85CA File Offset: 0x003D67CA
+	// Token: 0x0600A5FE RID: 42494 RVA: 0x003DD256 File Offset: 0x003DB456
 	public void Cleanup()
 	{
 		if (this.ParentGO != null)
@@ -191,26 +191,26 @@ public class RenderTextureSystem
 		}
 	}
 
-	// Token: 0x04007B20 RID: 31520
+	// Token: 0x04007B9B RID: 31643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cSceneParentName = "3D RenderTextures";
 
-	// Token: 0x04007B21 RID: 31521
+	// Token: 0x04007B9C RID: 31644
 	public GameObject ParentGO;
 
-	// Token: 0x04007B22 RID: 31522
+	// Token: 0x04007B9D RID: 31645
 	public GameObject CameraGO;
 
-	// Token: 0x04007B23 RID: 31523
+	// Token: 0x04007B9E RID: 31646
 	public GameObject TargetGO;
 
-	// Token: 0x04007B24 RID: 31524
+	// Token: 0x04007B9F RID: 31647
 	public GameObject LightGO;
 
-	// Token: 0x04007B25 RID: 31525
+	// Token: 0x04007BA0 RID: 31648
 	public RenderTexture RenderTex;
 
-	// Token: 0x04007B26 RID: 31526
+	// Token: 0x04007BA1 RID: 31649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera cam;
 }

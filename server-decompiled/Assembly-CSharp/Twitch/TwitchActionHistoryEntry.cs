@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x020017F0 RID: 6128
+	// Token: 0x0200181C RID: 6172
 	public class TwitchActionHistoryEntry
 	{
-		// Token: 0x0600BDE5 RID: 48613 RVA: 0x00463BE4 File Offset: 0x00461DE4
+		// Token: 0x0600BF3D RID: 48957 RVA: 0x00468120 File Offset: 0x00466320
 		public TwitchActionHistoryEntry(string username, string usercolor, TwitchAction action, TwitchVote vote, TwitchEventActionEntry eventEntry)
 		{
 			this.UserName = username;
@@ -26,8 +26,8 @@ namespace Twitch
 			});
 		}
 
-		// Token: 0x1700170D RID: 5901
-		// (get) Token: 0x0600BDE6 RID: 48614 RVA: 0x00463C84 File Offset: 0x00461E84
+		// Token: 0x170017AF RID: 6063
+		// (get) Token: 0x0600BF3E RID: 48958 RVA: 0x004681C0 File Offset: 0x004663C0
 		public string Command
 		{
 			get
@@ -48,8 +48,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700170E RID: 5902
-		// (get) Token: 0x0600BDE7 RID: 48615 RVA: 0x00463CF4 File Offset: 0x00461EF4
+		// Token: 0x170017B0 RID: 6064
+		// (get) Token: 0x0600BF3F RID: 48959 RVA: 0x00468230 File Offset: 0x00466430
 		public string Title
 		{
 			get
@@ -70,8 +70,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x1700170F RID: 5903
-		// (get) Token: 0x0600BDE8 RID: 48616 RVA: 0x00463D48 File Offset: 0x00461F48
+		// Token: 0x170017B1 RID: 6065
+		// (get) Token: 0x0600BF40 RID: 48960 RVA: 0x00468284 File Offset: 0x00466484
 		public string Description
 		{
 			get
@@ -92,8 +92,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001710 RID: 5904
-		// (get) Token: 0x0600BDE9 RID: 48617 RVA: 0x00463D9B File Offset: 0x00461F9B
+		// Token: 0x170017B2 RID: 6066
+		// (get) Token: 0x0600BF41 RID: 48961 RVA: 0x004682D7 File Offset: 0x004664D7
 		public string HistoryType
 		{
 			get
@@ -114,8 +114,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001711 RID: 5905
-		// (get) Token: 0x0600BDEA RID: 48618 RVA: 0x00463DCC File Offset: 0x00461FCC
+		// Token: 0x170017B3 RID: 6067
+		// (get) Token: 0x0600BF42 RID: 48962 RVA: 0x00468308 File Offset: 0x00466508
 		public bool IsRefunded
 		{
 			get
@@ -124,14 +124,14 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BDEB RID: 48619 RVA: 0x00463DD7 File Offset: 0x00461FD7
+		// Token: 0x0600BF43 RID: 48963 RVA: 0x00468313 File Offset: 0x00466513
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public bool IsValid()
 		{
 			return this.UserName != null && ((this.Action != null && this.Action.Command != null) || this.Vote != null || this.EventEntry != null);
 		}
 
-		// Token: 0x0600BDEC RID: 48620 RVA: 0x00463E0C File Offset: 0x0046200C
+		// Token: 0x0600BF44 RID: 48964 RVA: 0x00468348 File Offset: 0x00466548
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public void Refund()
 		{
@@ -144,7 +144,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BDED RID: 48621 RVA: 0x00463E64 File Offset: 0x00462064
+		// Token: 0x0600BF45 RID: 48965 RVA: 0x004683A0 File Offset: 0x004665A0
 		public void Retry()
 		{
 			if (!this.HasRetried)
@@ -163,7 +163,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BDEE RID: 48622 RVA: 0x00463EF0 File Offset: 0x004620F0
+		// Token: 0x0600BF46 RID: 48966 RVA: 0x0046842C File Offset: 0x0046662C
 		public bool CanRetry()
 		{
 			if (this.HasRetried)
@@ -204,60 +204,60 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BDEF RID: 48623 RVA: 0x00463FEA File Offset: 0x004621EA
+		// Token: 0x0600BF47 RID: 48967 RVA: 0x00468526 File Offset: 0x00466726
 		public bool CanRefund()
 		{
 			return this.PointsSpent > 0 && this.EntryState != TwitchActionHistoryEntry.EntryStates.Refunded && this.EntryState != TwitchActionHistoryEntry.EntryStates.Reimbursed && this.Action != null;
 		}
 
-		// Token: 0x04008E53 RID: 36435
+		// Token: 0x04008F19 RID: 36633
 		public string UserName;
 
-		// Token: 0x04008E54 RID: 36436
+		// Token: 0x04008F1A RID: 36634
 		public string UserColor;
 
-		// Token: 0x04008E55 RID: 36437
+		// Token: 0x04008F1B RID: 36635
 		public string Target;
 
-		// Token: 0x04008E56 RID: 36438
+		// Token: 0x04008F1C RID: 36636
 		public int UserID;
 
-		// Token: 0x04008E57 RID: 36439
+		// Token: 0x04008F1D RID: 36637
 		public TwitchAction Action;
 
-		// Token: 0x04008E58 RID: 36440
+		// Token: 0x04008F1E RID: 36638
 		public TwitchVote Vote;
 
-		// Token: 0x04008E59 RID: 36441
+		// Token: 0x04008F1F RID: 36639
 		public TwitchActionEntry ActionEntry;
 
-		// Token: 0x04008E5A RID: 36442
+		// Token: 0x04008F20 RID: 36640
 		public TwitchEventActionEntry EventEntry;
 
-		// Token: 0x04008E5B RID: 36443
+		// Token: 0x04008F21 RID: 36641
 		public int PointsSpent;
 
-		// Token: 0x04008E5C RID: 36444
+		// Token: 0x04008F22 RID: 36642
 		public bool HasRetried;
 
-		// Token: 0x04008E5D RID: 36445
+		// Token: 0x04008F23 RID: 36643
 		public string ActionTime;
 
-		// Token: 0x04008E5E RID: 36446
+		// Token: 0x04008F24 RID: 36644
 		public TwitchActionHistoryEntry.EntryStates EntryState;
 
-		// Token: 0x020017F1 RID: 6129
+		// Token: 0x0200181D RID: 6173
 		public enum EntryStates
 		{
-			// Token: 0x04008E60 RID: 36448
+			// Token: 0x04008F26 RID: 36646
 			Waiting,
-			// Token: 0x04008E61 RID: 36449
+			// Token: 0x04008F27 RID: 36647
 			Completed,
-			// Token: 0x04008E62 RID: 36450
+			// Token: 0x04008F28 RID: 36648
 			Reimbursed,
-			// Token: 0x04008E63 RID: 36451
+			// Token: 0x04008F29 RID: 36649
 			Despawned,
-			// Token: 0x04008E64 RID: 36452
+			// Token: 0x04008F2A RID: 36650
 			Refunded
 		}
 	}

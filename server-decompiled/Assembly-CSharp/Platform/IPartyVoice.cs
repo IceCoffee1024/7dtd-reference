@@ -4,150 +4,150 @@ using System.Runtime.CompilerServices;
 
 namespace Platform
 {
-	// Token: 0x02001B6C RID: 7020
+	// Token: 0x02001B9E RID: 7070
 	public interface IPartyVoice
 	{
-		// Token: 0x1400011E RID: 286
-		// (add) Token: 0x0600D217 RID: 53783
-		// (remove) Token: 0x0600D218 RID: 53784
+		// Token: 0x1400011D RID: 285
+		// (add) Token: 0x0600D38F RID: 54159
+		// (remove) Token: 0x0600D390 RID: 54160
 		event Action Initialized;
 
-		// Token: 0x170019DF RID: 6623
-		// (get) Token: 0x0600D219 RID: 53785
+		// Token: 0x17001A85 RID: 6789
+		// (get) Token: 0x0600D391 RID: 54161
 		EPartyVoiceStatus Status { get; }
 
-		// Token: 0x170019E0 RID: 6624
-		// (get) Token: 0x0600D21A RID: 53786
+		// Token: 0x17001A86 RID: 6790
+		// (get) Token: 0x0600D392 RID: 54162
 		bool InLobby { get; }
 
-		// Token: 0x170019E1 RID: 6625
-		// (get) Token: 0x0600D21B RID: 53787
+		// Token: 0x17001A87 RID: 6791
+		// (get) Token: 0x0600D393 RID: 54163
 		bool InLobbyOrProgress { get; }
 
-		// Token: 0x0600D21C RID: 53788
+		// Token: 0x0600D394 RID: 54164
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D21D RID: 53789
+		// Token: 0x0600D395 RID: 54165
 		void Destroy();
 
-		// Token: 0x0600D21E RID: 53790
+		// Token: 0x0600D396 RID: 54166
 		void CreateLobby(Action<string> _lobbyCreatedCallback);
 
-		// Token: 0x0600D21F RID: 53791
+		// Token: 0x0600D397 RID: 54167
 		void JoinLobby(string _lobbyId);
 
-		// Token: 0x0600D220 RID: 53792
+		// Token: 0x0600D398 RID: 54168
 		void LeaveLobby();
 
-		// Token: 0x0600D221 RID: 53793
+		// Token: 0x0600D399 RID: 54169
 		void PromoteLeader(PlatformUserIdentifierAbs _newLeaderIdentifier);
 
-		// Token: 0x0600D222 RID: 53794
+		// Token: 0x0600D39A RID: 54170
 		bool IsLobbyOwner();
 
-		// Token: 0x1400011F RID: 287
-		// (add) Token: 0x0600D223 RID: 53795
-		// (remove) Token: 0x0600D224 RID: 53796
+		// Token: 0x1400011E RID: 286
+		// (add) Token: 0x0600D39B RID: 54171
+		// (remove) Token: 0x0600D39C RID: 54172
 		event Action<IPartyVoice.EVoiceChannelAction> OnLocalPlayerStateChanged;
 
-		// Token: 0x14000120 RID: 288
-		// (add) Token: 0x0600D225 RID: 53797
-		// (remove) Token: 0x0600D226 RID: 53798
+		// Token: 0x1400011F RID: 287
+		// (add) Token: 0x0600D39D RID: 54173
+		// (remove) Token: 0x0600D39E RID: 54174
 		event Action<PlatformUserIdentifierAbs, IPartyVoice.EVoiceChannelAction> OnRemotePlayerStateChanged;
 
-		// Token: 0x14000121 RID: 289
-		// (add) Token: 0x0600D227 RID: 53799
-		// (remove) Token: 0x0600D228 RID: 53800
+		// Token: 0x14000120 RID: 288
+		// (add) Token: 0x0600D39F RID: 54175
+		// (remove) Token: 0x0600D3A0 RID: 54176
 		event Action<PlatformUserIdentifierAbs, IPartyVoice.EVoiceMemberState> OnRemotePlayerVoiceStateChanged;
 
-		// Token: 0x0600D229 RID: 53801
+		// Token: 0x0600D3A1 RID: 54177
 		[return: TupleElementNames(new string[] { "inputDevices", "outputDevices" })]
 		ValueTuple<IList<IPartyVoice.VoiceAudioDevice>, IList<IPartyVoice.VoiceAudioDevice>> GetDevicesList();
 
-		// Token: 0x0600D22A RID: 53802
+		// Token: 0x0600D3A2 RID: 54178
 		void SetInputDevice(string _device);
 
-		// Token: 0x0600D22B RID: 53803
+		// Token: 0x0600D3A3 RID: 54179
 		void SetOutputDevice(string _device);
 
-		// Token: 0x170019E2 RID: 6626
-		// (get) Token: 0x0600D22C RID: 53804
-		// (set) Token: 0x0600D22D RID: 53805
+		// Token: 0x17001A88 RID: 6792
+		// (get) Token: 0x0600D3A4 RID: 54180
+		// (set) Token: 0x0600D3A5 RID: 54181
 		bool MuteSelf { get; set; }
 
-		// Token: 0x170019E3 RID: 6627
-		// (get) Token: 0x0600D22E RID: 53806
-		// (set) Token: 0x0600D22F RID: 53807
+		// Token: 0x17001A89 RID: 6793
+		// (get) Token: 0x0600D3A6 RID: 54182
+		// (set) Token: 0x0600D3A7 RID: 54183
 		bool MuteOthers { get; set; }
 
-		// Token: 0x170019E4 RID: 6628
-		// (get) Token: 0x0600D230 RID: 53808
-		// (set) Token: 0x0600D231 RID: 53809
+		// Token: 0x17001A8A RID: 6794
+		// (get) Token: 0x0600D3A8 RID: 54184
+		// (set) Token: 0x0600D3A9 RID: 54185
 		float OutputVolume { get; set; }
 
-		// Token: 0x0600D232 RID: 53810
+		// Token: 0x0600D3AA RID: 54186
 		void BlockUser(PlatformUserIdentifierAbs _userIdentifier, bool _block);
 
-		// Token: 0x02001B6D RID: 7021
+		// Token: 0x02001B9F RID: 7071
 		public enum EVoiceMemberState
 		{
-			// Token: 0x0400A094 RID: 41108
+			// Token: 0x0400A169 RID: 41321
 			Disabled,
-			// Token: 0x0400A095 RID: 41109
+			// Token: 0x0400A16A RID: 41322
 			Normal,
-			// Token: 0x0400A096 RID: 41110
+			// Token: 0x0400A16B RID: 41323
 			Muted,
-			// Token: 0x0400A097 RID: 41111
+			// Token: 0x0400A16C RID: 41324
 			VoiceActive
 		}
 
-		// Token: 0x02001B6E RID: 7022
+		// Token: 0x02001BA0 RID: 7072
 		public enum EVoiceChannelAction
 		{
-			// Token: 0x0400A099 RID: 41113
+			// Token: 0x0400A16E RID: 41326
 			Joined,
-			// Token: 0x0400A09A RID: 41114
+			// Token: 0x0400A16F RID: 41327
 			Left
 		}
 
-		// Token: 0x02001B6F RID: 7023
+		// Token: 0x02001BA1 RID: 7073
 		public abstract class VoiceAudioDevice
 		{
-			// Token: 0x0600D233 RID: 53811 RVA: 0x004C6789 File Offset: 0x004C4989
+			// Token: 0x0600D3AB RID: 54187 RVA: 0x004CB271 File Offset: 0x004C9471
 			public VoiceAudioDevice(bool _isOutput, bool _isDefault)
 			{
 				this.IsOutput = _isOutput;
 				this.IsDefault = _isDefault;
 			}
 
-			// Token: 0x170019E5 RID: 6629
-			// (get) Token: 0x0600D234 RID: 53812
+			// Token: 0x17001A8B RID: 6795
+			// (get) Token: 0x0600D3AC RID: 54188
 			public abstract string Identifier { get; }
 
-			// Token: 0x0400A09B RID: 41115
+			// Token: 0x0400A170 RID: 41328
 			public readonly bool IsOutput;
 
-			// Token: 0x0400A09C RID: 41116
+			// Token: 0x0400A171 RID: 41329
 			public readonly bool IsDefault;
 		}
 
-		// Token: 0x02001B70 RID: 7024
+		// Token: 0x02001BA2 RID: 7074
 		public class VoiceAudioDeviceNotFound : IPartyVoice.VoiceAudioDevice
 		{
-			// Token: 0x0600D235 RID: 53813 RVA: 0x004C679F File Offset: 0x004C499F
+			// Token: 0x0600D3AD RID: 54189 RVA: 0x004CB287 File Offset: 0x004C9487
 			public VoiceAudioDeviceNotFound()
 				: base(false, false)
 			{
 			}
 
-			// Token: 0x0600D236 RID: 53814 RVA: 0x004C67A9 File Offset: 0x004C49A9
+			// Token: 0x0600D3AE RID: 54190 RVA: 0x004CB291 File Offset: 0x004C9491
 			public override string ToString()
 			{
 				return Localization.Get("noAudioDeviceFound", false, null);
 			}
 
-			// Token: 0x170019E6 RID: 6630
-			// (get) Token: 0x0600D237 RID: 53815 RVA: 0x00032147 File Offset: 0x00030347
+			// Token: 0x17001A8C RID: 6796
+			// (get) Token: 0x0600D3AF RID: 54191 RVA: 0x0003223F File Offset: 0x0003043F
 			public override string Identifier
 			{
 				get
@@ -157,23 +157,23 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x02001B71 RID: 7025
+		// Token: 0x02001BA3 RID: 7075
 		public class VoiceAudioDeviceDefault : IPartyVoice.VoiceAudioDevice
 		{
-			// Token: 0x0600D238 RID: 53816 RVA: 0x004C679F File Offset: 0x004C499F
+			// Token: 0x0600D3B0 RID: 54192 RVA: 0x004CB287 File Offset: 0x004C9487
 			public VoiceAudioDeviceDefault()
 				: base(false, false)
 			{
 			}
 
-			// Token: 0x0600D239 RID: 53817 RVA: 0x004C67B7 File Offset: 0x004C49B7
+			// Token: 0x0600D3B1 RID: 54193 RVA: 0x004CB29F File Offset: 0x004C949F
 			public override string ToString()
 			{
 				return Localization.Get("defaultAudioDevice", false, null);
 			}
 
-			// Token: 0x170019E7 RID: 6631
-			// (get) Token: 0x0600D23A RID: 53818 RVA: 0x00032147 File Offset: 0x00030347
+			// Token: 0x17001A8D RID: 6797
+			// (get) Token: 0x0600D3B2 RID: 54194 RVA: 0x0003223F File Offset: 0x0003043F
 			public override string Identifier
 			{
 				get

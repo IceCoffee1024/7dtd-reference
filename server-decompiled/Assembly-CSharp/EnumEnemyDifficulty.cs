@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020011E8 RID: 4584
+// Token: 0x02001200 RID: 4608
 public enum EnumEnemyDifficulty
 {
-	// Token: 0x04006D77 RID: 28023
+	// Token: 0x04006DE1 RID: 28129
 	Normal,
-	// Token: 0x04006D78 RID: 28024
+	// Token: 0x04006DE2 RID: 28130
 	Feral
 }

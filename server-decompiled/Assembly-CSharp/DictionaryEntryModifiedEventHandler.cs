@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02001457 RID: 5207
-// (Invoke) Token: 0x0600A35D RID: 41821
+// Token: 0x02001477 RID: 5239
+// (Invoke) Token: 0x0600A409 RID: 41993
 public delegate void DictionaryEntryModifiedEventHandler<TKey, TValue>(object sender, DictionaryChangedEventArgs<TKey, TValue> e);

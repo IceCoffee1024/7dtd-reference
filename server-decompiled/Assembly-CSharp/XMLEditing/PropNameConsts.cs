@@ -2,22 +2,22 @@
 
 namespace XMLEditing
 {
-	// Token: 0x0200166C RID: 5740
+	// Token: 0x0200168B RID: 5771
 	public static class PropNameConsts
 	{
-		// Token: 0x04008715 RID: 34581
+		// Token: 0x0400876B RID: 34667
 		public const string Extends = "Extends";
 
-		// Token: 0x04008716 RID: 34582
+		// Token: 0x0400876C RID: 34668
 		public const string MultiBlockDim = "MultiBlockDim";
 
-		// Token: 0x04008717 RID: 34583
+		// Token: 0x0400876D RID: 34669
 		public const string ModelOffset = "ModelOffset";
 
-		// Token: 0x04008718 RID: 34584
+		// Token: 0x0400876E RID: 34670
 		public const string Shape = "Shape";
 
-		// Token: 0x04008719 RID: 34585
+		// Token: 0x0400876F RID: 34671
 		public const string OversizedBounds = "OversizedBounds";
 	}
 }

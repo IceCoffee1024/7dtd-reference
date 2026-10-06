@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020001CD RID: 461
+// Token: 0x020001CE RID: 462
 public interface IEntityBuffsChanged
 {
-	// Token: 0x06000E45 RID: 3653
+	// Token: 0x06000E3C RID: 3644
 	void EntityBuffAdded(BuffValue _buff);
 
-	// Token: 0x06000E46 RID: 3654
+	// Token: 0x06000E3D RID: 3645
 	void EntityBuffRemoved(BuffValue _buff);
 }

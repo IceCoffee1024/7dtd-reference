@@ -2,10 +2,10 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x020016E2 RID: 5858
+	// Token: 0x0200170E RID: 5902
 	public struct Chromaticities
 	{
-		// Token: 0x0600B724 RID: 46884 RVA: 0x0043EEBF File Offset: 0x0043D0BF
+		// Token: 0x0600B87B RID: 47227 RVA: 0x004433DF File Offset: 0x004415DF
 		public Chromaticities(float redX, float redY, float greenX, float greenY, float blueX, float blueY, float whiteX, float whiteY)
 		{
 			this.RedX = redX;
@@ -18,28 +18,28 @@ namespace SharpEXR.AttributeTypes
 			this.WhiteY = whiteY;
 		}
 
-		// Token: 0x040088CC RID: 35020
+		// Token: 0x04008991 RID: 35217
 		public readonly float RedX;
 
-		// Token: 0x040088CD RID: 35021
+		// Token: 0x04008992 RID: 35218
 		public readonly float RedY;
 
-		// Token: 0x040088CE RID: 35022
+		// Token: 0x04008993 RID: 35219
 		public readonly float GreenX;
 
-		// Token: 0x040088CF RID: 35023
+		// Token: 0x04008994 RID: 35220
 		public readonly float GreenY;
 
-		// Token: 0x040088D0 RID: 35024
+		// Token: 0x04008995 RID: 35221
 		public readonly float BlueX;
 
-		// Token: 0x040088D1 RID: 35025
+		// Token: 0x04008996 RID: 35222
 		public readonly float BlueY;
 
-		// Token: 0x040088D2 RID: 35026
+		// Token: 0x04008997 RID: 35223
 		public readonly float WhiteX;
 
-		// Token: 0x040088D3 RID: 35027
+		// Token: 0x04008998 RID: 35224
 		public readonly float WhiteY;
 	}
 }

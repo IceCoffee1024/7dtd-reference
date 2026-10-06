@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000D0B RID: 3339
+// Token: 0x02000D19 RID: 3353
 public static class EventsFromXml
 {
-	// Token: 0x17000AB1 RID: 2737
-	// (get) Token: 0x060065F7 RID: 26103 RVA: 0x0027E984 File Offset: 0x0027CB84
+	// Token: 0x17000AC7 RID: 2759
+	// (get) Token: 0x060065E9 RID: 26089 RVA: 0x00281D28 File Offset: 0x0027FF28
 	public static DateTime Now
 	{
 		get
@@ -21,7 +21,7 @@ public static class EventsFromXml
 		}
 	}
 
-	// Token: 0x060065F8 RID: 26104 RVA: 0x0027E9A2 File Offset: 0x0027CBA2
+	// Token: 0x060065EA RID: 26090 RVA: 0x00281D46 File Offset: 0x0027FF46
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -41,7 +41,7 @@ public static class EventsFromXml
 		yield break;
 	}
 
-	// Token: 0x060065F9 RID: 26105 RVA: 0x0027E9B4 File Offset: 0x0027CBB4
+	// Token: 0x060065EB RID: 26091 RVA: 0x00281D58 File Offset: 0x0027FF58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseEvent(XElement _element)
 	{
@@ -159,7 +159,7 @@ public static class EventsFromXml
 		}
 	}
 
-	// Token: 0x060065FA RID: 26106 RVA: 0x0027ED58 File Offset: 0x0027CF58
+	// Token: 0x060065EC RID: 26092 RVA: 0x002820FC File Offset: 0x002802FC
 	public static bool TryParseDate(string _dateString, out DateTime _date)
 	{
 		_dateString = _dateString.Trim();
@@ -177,19 +177,19 @@ public static class EventsFromXml
 		return true;
 	}
 
-	// Token: 0x060065FB RID: 26107 RVA: 0x0027EDC0 File Offset: 0x0027CFC0
+	// Token: 0x060065ED RID: 26093 RVA: 0x00282164 File Offset: 0x00280364
 	public static DateTime ChangeYear(this DateTime _dt, int _newYear)
 	{
 		return _dt.AddYears(_newYear - _dt.Year);
 	}
 
-	// Token: 0x060065FC RID: 26108 RVA: 0x0027EDD2 File Offset: 0x0027CFD2
+	// Token: 0x060065EE RID: 26094 RVA: 0x00282176 File Offset: 0x00280376
 	public static void Cleanup()
 	{
 		EventsFromXml.Events.Clear();
 	}
 
-	// Token: 0x060065FD RID: 26109 RVA: 0x0027EDE0 File Offset: 0x0027CFE0
+	// Token: 0x060065EF RID: 26095 RVA: 0x00282184 File Offset: 0x00280384
 	[PublicizedFrom(EAccessModifier.Private)]
 	static EventsFromXml()
 	{
@@ -198,13 +198,13 @@ public static class EventsFromXml
 		EventsFromXml.specialDateHandlers["thanksgiving"] = new EventsFromXml.SpecialDateDelegate(EventsFromXml.ThanksgivingDate);
 	}
 
-	// Token: 0x060065FE RID: 26110 RVA: 0x0027EE5C File Offset: 0x0027D05C
+	// Token: 0x060065F0 RID: 26096 RVA: 0x00282200 File Offset: 0x00280400
 	public static DateTime EasterDate(string _origString)
 	{
 		return EventsFromXml.EasterSunday(DateTime.Now.Year);
 	}
 
-	// Token: 0x060065FF RID: 26111 RVA: 0x0027EE7C File Offset: 0x0027D07C
+	// Token: 0x060065F1 RID: 26097 RVA: 0x00282220 File Offset: 0x00280420
 	public static DateTime EasterSunday(int _year)
 	{
 		int num;
@@ -213,7 +213,7 @@ public static class EventsFromXml
 		return new DateTime(_year, num, num2);
 	}
 
-	// Token: 0x06006600 RID: 26112 RVA: 0x0027EE9C File Offset: 0x0027D09C
+	// Token: 0x060065F2 RID: 26098 RVA: 0x00282240 File Offset: 0x00280440
 	public static void EasterSunday(int _year, out int _month, out int _day)
 	{
 		int num = _year % 19;
@@ -229,13 +229,13 @@ public static class EventsFromXml
 		}
 	}
 
-	// Token: 0x06006601 RID: 26113 RVA: 0x0027EF1C File Offset: 0x0027D11C
+	// Token: 0x060065F3 RID: 26099 RVA: 0x002822C0 File Offset: 0x002804C0
 	public static DateTime FirstSundayOfAdvent(string _origString)
 	{
 		return EventsFromXml.FirstSundayOfAdvent(DateTime.Now.Year);
 	}
 
-	// Token: 0x06006602 RID: 26114 RVA: 0x0027EF3C File Offset: 0x0027D13C
+	// Token: 0x060065F4 RID: 26100 RVA: 0x002822E0 File Offset: 0x002804E0
 	public static DateTime FirstSundayOfAdvent(int _year)
 	{
 		int num = 4;
@@ -249,7 +249,7 @@ public static class EventsFromXml
 		return dateTime.AddDays((double)(-1 * (num * 7 + num2)));
 	}
 
-	// Token: 0x06006603 RID: 26115 RVA: 0x0027EF80 File Offset: 0x0027D180
+	// Token: 0x060065F5 RID: 26101 RVA: 0x00282324 File Offset: 0x00280524
 	public static DateTime ThanksgivingDate(string _origString)
 	{
 		DateTime dateTime = default(DateTime);
@@ -264,25 +264,25 @@ public static class EventsFromXml
 		return dateTime;
 	}
 
-	// Token: 0x04004F18 RID: 20248
+	// Token: 0x04004F4E RID: 20302
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string XMLName = "events.xml";
 
-	// Token: 0x04004F19 RID: 20249
+	// Token: 0x04004F4F RID: 20303
 	public static DateTime ForceTestDateTime = DateTime.MinValue;
 
-	// Token: 0x04004F1A RID: 20250
+	// Token: 0x04004F50 RID: 20304
 	public static readonly Dictionary<string, EventsFromXml.EventDefinition> Events = new CaseInsensitiveStringDictionary<EventsFromXml.EventDefinition>();
 
-	// Token: 0x04004F1B RID: 20251
+	// Token: 0x04004F51 RID: 20305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, EventsFromXml.SpecialDateDelegate> specialDateHandlers = new CaseInsensitiveStringDictionary<EventsFromXml.SpecialDateDelegate>();
 
-	// Token: 0x02000D0C RID: 3340
+	// Token: 0x02000D1A RID: 3354
 	public readonly struct EventDefinition
 	{
-		// Token: 0x17000AB2 RID: 2738
-		// (get) Token: 0x06006604 RID: 26116 RVA: 0x0027EFC8 File Offset: 0x0027D1C8
+		// Token: 0x17000AC8 RID: 2760
+		// (get) Token: 0x060065F6 RID: 26102 RVA: 0x0028236C File Offset: 0x0028056C
 		public bool Active
 		{
 			get
@@ -292,7 +292,7 @@ public static class EventsFromXml
 			}
 		}
 
-		// Token: 0x06006605 RID: 26117 RVA: 0x0027EFF7 File Offset: 0x0027D1F7
+		// Token: 0x060065F7 RID: 26103 RVA: 0x0028239B File Offset: 0x0028059B
 		public EventDefinition(string _name, DateTime _start, DateTime _end)
 		{
 			this.Name = _name;
@@ -300,18 +300,18 @@ public static class EventsFromXml
 			this.End = _end;
 		}
 
-		// Token: 0x04004F1C RID: 20252
+		// Token: 0x04004F52 RID: 20306
 		public readonly string Name;
 
-		// Token: 0x04004F1D RID: 20253
+		// Token: 0x04004F53 RID: 20307
 		public readonly DateTime Start;
 
-		// Token: 0x04004F1E RID: 20254
+		// Token: 0x04004F54 RID: 20308
 		public readonly DateTime End;
 	}
 
-	// Token: 0x02000D0D RID: 3341
-	// (Invoke) Token: 0x06006607 RID: 26119
+	// Token: 0x02000D1B RID: 3355
+	// (Invoke) Token: 0x060065F9 RID: 26105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate DateTime SpecialDateDelegate(string _origString);
 }

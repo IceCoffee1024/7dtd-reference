@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000E3 RID: 227
+// Token: 0x020000E5 RID: 229
 [Preserve]
 public class GameObjectAnimalAnimation : AvatarController
 {
-	// Token: 0x060005C3 RID: 1475 RVA: 0x000297CC File Offset: 0x000279CC
+	// Token: 0x060005C9 RID: 1481 RVA: 0x000298C4 File Offset: 0x00027AC4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -29,19 +29,19 @@ public class GameObjectAnimalAnimation : AvatarController
 		this.attack2AS = this.anim["Attack2"];
 	}
 
-	// Token: 0x060005C4 RID: 1476 RVA: 0x00029891 File Offset: 0x00027A91
+	// Token: 0x060005CA RID: 1482 RVA: 0x00029989 File Offset: 0x00027B89
 	public void SetAlwaysWalk(bool _b)
 	{
 		this.bAlwaysWalk = _b;
 	}
 
-	// Token: 0x060005C5 RID: 1477 RVA: 0x0002989A File Offset: 0x00027A9A
+	// Token: 0x060005CB RID: 1483 RVA: 0x00029992 File Offset: 0x00027B92
 	public override bool IsAnimationAttackPlaying()
 	{
 		return (this.attack1AS != null && this.attack1AS.enabled) || (this.attack2AS != null && this.attack2AS.enabled);
 	}
 
-	// Token: 0x060005C6 RID: 1478 RVA: 0x000298D4 File Offset: 0x00027AD4
+	// Token: 0x060005CC RID: 1484 RVA: 0x000299CC File Offset: 0x00027BCC
 	public override void StartAnimationAttack()
 	{
 		this.state = GameObjectAnimalAnimation.State.Attack;
@@ -64,7 +64,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C7 RID: 1479 RVA: 0x00029950 File Offset: 0x00027B50
+	// Token: 0x060005CD RID: 1485 RVA: 0x00029A48 File Offset: 0x00027C48
 	public override void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float _random, float _duration)
 	{
 		if (this.isDead)
@@ -78,7 +78,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C8 RID: 1480 RVA: 0x0002998C File Offset: 0x00027B8C
+	// Token: 0x060005CE RID: 1486 RVA: 0x00029A84 File Offset: 0x00027C84
 	public override void StartAnimationJumping()
 	{
 		if (!this.entity.IsSwimming() && this.anim["Jump"] != null)
@@ -88,7 +88,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C9 RID: 1481 RVA: 0x000299DC File Offset: 0x00027BDC
+	// Token: 0x060005CF RID: 1487 RVA: 0x00029AD4 File Offset: 0x00027CD4
 	public override void SetVisible(bool _b)
 	{
 		if (this.m_bVisible != _b || !this.visInit)
@@ -107,7 +107,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005CA RID: 1482 RVA: 0x00029A38 File Offset: 0x00027C38
+	// Token: 0x060005D0 RID: 1488 RVA: 0x00029B30 File Offset: 0x00027D30
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -225,151 +225,151 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005CB RID: 1483 RVA: 0x00029EA9 File Offset: 0x000280A9
+	// Token: 0x060005D1 RID: 1489 RVA: 0x00029FA1 File Offset: 0x000281A1
 	public override Transform GetActiveModelRoot()
 	{
 		return this.figureT;
 	}
 
-	// Token: 0x04000660 RID: 1632
+	// Token: 0x04000663 RID: 1635
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimIdle1 = "Idle1";
 
-	// Token: 0x04000661 RID: 1633
+	// Token: 0x04000664 RID: 1636
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimIdle2 = "Idle2";
 
-	// Token: 0x04000662 RID: 1634
+	// Token: 0x04000665 RID: 1637
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimAttack1 = "Attack1";
 
-	// Token: 0x04000663 RID: 1635
+	// Token: 0x04000666 RID: 1638
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimAttack2 = "Attack2";
 
-	// Token: 0x04000664 RID: 1636
+	// Token: 0x04000667 RID: 1639
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimPain = "Pain";
 
-	// Token: 0x04000665 RID: 1637
+	// Token: 0x04000668 RID: 1640
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimJump = "Jump";
 
-	// Token: 0x04000666 RID: 1638
+	// Token: 0x04000669 RID: 1641
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimDeath = "Death";
 
-	// Token: 0x04000667 RID: 1639
+	// Token: 0x0400066A RID: 1642
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimRun = "Run";
 
-	// Token: 0x04000668 RID: 1640
+	// Token: 0x0400066B RID: 1643
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimWalk = "Walk";
 
-	// Token: 0x04000669 RID: 1641
+	// Token: 0x0400066C RID: 1644
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAnimSwim = "Swim";
 
-	// Token: 0x0400066A RID: 1642
+	// Token: 0x0400066D RID: 1645
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform parentT;
 
-	// Token: 0x0400066B RID: 1643
+	// Token: 0x0400066E RID: 1646
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform figureT;
 
-	// Token: 0x0400066C RID: 1644
+	// Token: 0x0400066F RID: 1647
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public new Animation anim;
 
-	// Token: 0x0400066D RID: 1645
+	// Token: 0x04000670 RID: 1648
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AnimationState attack1AS;
 
-	// Token: 0x0400066E RID: 1646
+	// Token: 0x04000671 RID: 1649
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AnimationState attack2AS;
 
-	// Token: 0x0400066F RID: 1647
+	// Token: 0x04000672 RID: 1650
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool visInit;
 
-	// Token: 0x04000670 RID: 1648
+	// Token: 0x04000673 RID: 1651
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_bVisible;
 
-	// Token: 0x04000671 RID: 1649
+	// Token: 0x04000674 RID: 1652
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDead;
 
-	// Token: 0x04000672 RID: 1650
+	// Token: 0x04000675 RID: 1653
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bAlwaysWalk;
 
-	// Token: 0x04000673 RID: 1651
+	// Token: 0x04000676 RID: 1654
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastAbsMotionX;
 
-	// Token: 0x04000674 RID: 1652
+	// Token: 0x04000677 RID: 1655
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastAbsMotionZ;
 
-	// Token: 0x04000675 RID: 1653
+	// Token: 0x04000678 RID: 1656
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastAbsMotion;
 
-	// Token: 0x04000676 RID: 1654
+	// Token: 0x04000679 RID: 1657
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float stepSoundCounter;
 
-	// Token: 0x04000677 RID: 1655
+	// Token: 0x0400067A RID: 1658
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObjectAnimalAnimation.State state;
 
-	// Token: 0x020000E4 RID: 228
+	// Token: 0x020000E6 RID: 230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum State
 	{
-		// Token: 0x04000679 RID: 1657
-		None,
-		// Token: 0x0400067A RID: 1658
-		Attack,
-		// Token: 0x0400067B RID: 1659
-		Idle,
 		// Token: 0x0400067C RID: 1660
-		Jump,
+		None,
 		// Token: 0x0400067D RID: 1661
-		Pain,
+		Attack,
 		// Token: 0x0400067E RID: 1662
-		Run,
+		Idle,
 		// Token: 0x0400067F RID: 1663
-		Swim,
+		Jump,
 		// Token: 0x04000680 RID: 1664
+		Pain,
+		// Token: 0x04000681 RID: 1665
+		Run,
+		// Token: 0x04000682 RID: 1666
+		Swim,
+		// Token: 0x04000683 RID: 1667
 		Walk
 	}
 }

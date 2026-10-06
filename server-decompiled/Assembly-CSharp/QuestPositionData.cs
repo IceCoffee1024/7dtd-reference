@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 
-// Token: 0x020008F1 RID: 2289
+// Token: 0x020008F6 RID: 2294
 public class QuestPositionData
 {
-	// Token: 0x06004257 RID: 16983 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060041E9 RID: 16873 RVA: 0x0000640C File Offset: 0x0000460C
 	public QuestPositionData()
 	{
 	}
 
-	// Token: 0x06004258 RID: 16984 RVA: 0x0019DC5E File Offset: 0x0019BE5E
+	// Token: 0x060041EA RID: 16874 RVA: 0x0019DD62 File Offset: 0x0019BF62
 	public QuestPositionData(int questCode, Quest.PositionDataTypes positionDataType, Vector3i blockPosition)
 	{
 		this.questCode = questCode;
@@ -17,8 +16,8 @@ public class QuestPositionData
 		this.blockPosition = blockPosition;
 	}
 
-	// Token: 0x06004259 RID: 16985 RVA: 0x0019DC7B File Offset: 0x0019BE7B
-	public static QuestPositionData Read(BinaryReader reader)
+	// Token: 0x060041EB RID: 16875 RVA: 0x0019DD7F File Offset: 0x0019BF7F
+	public static QuestPositionData Read(PooledBinaryReader reader)
 	{
 		return new QuestPositionData
 		{
@@ -28,20 +27,20 @@ public class QuestPositionData
 		};
 	}
 
-	// Token: 0x0600425A RID: 16986 RVA: 0x0019DCA6 File Offset: 0x0019BEA6
-	public void Write(BinaryWriter writer)
+	// Token: 0x060041EC RID: 16876 RVA: 0x0019DDAA File Offset: 0x0019BFAA
+	public void Write(PooledBinaryWriter writer)
 	{
 		writer.Write(this.questCode);
 		writer.Write((int)this.positionDataType);
 		StreamUtils.Write(writer, this.blockPosition);
 	}
 
-	// Token: 0x040035BC RID: 13756
+	// Token: 0x040035B0 RID: 13744
 	public int questCode;
 
-	// Token: 0x040035BD RID: 13757
+	// Token: 0x040035B1 RID: 13745
 	public Quest.PositionDataTypes positionDataType;
 
-	// Token: 0x040035BE RID: 13758
+	// Token: 0x040035B2 RID: 13746
 	public Vector3i blockPosition;
 }

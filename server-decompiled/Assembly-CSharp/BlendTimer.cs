@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013A4 RID: 5028
+// Token: 0x020013C4 RID: 5060
 public class BlendTimer
 {
-	// Token: 0x06009E90 RID: 40592 RVA: 0x003BD1C4 File Offset: 0x003BB3C4
+	// Token: 0x06009F3B RID: 40763 RVA: 0x003C1D60 File Offset: 0x003BFF60
 	public BlendTimer()
 		: this(1f)
 	{
 	}
 
-	// Token: 0x06009E91 RID: 40593 RVA: 0x003BD1D4 File Offset: 0x003BB3D4
+	// Token: 0x06009F3C RID: 40764 RVA: 0x003C1D70 File Offset: 0x003BFF70
 	public BlendTimer(float initialValue)
 	{
 		this.m_time[0] = (this.m_time[1] = 0f);
@@ -22,7 +22,7 @@ public class BlendTimer
 		value[num] = (value2[num2] = initialValue);
 	}
 
-	// Token: 0x06009E92 RID: 40594 RVA: 0x003BD238 File Offset: 0x003BB438
+	// Token: 0x06009F3D RID: 40765 RVA: 0x003C1DD4 File Offset: 0x003BFFD4
 	public void Tick(float dt)
 	{
 		if (this.m_time[1] != 0f)
@@ -38,7 +38,7 @@ public class BlendTimer
 		}
 	}
 
-	// Token: 0x06009E93 RID: 40595 RVA: 0x003BD2C4 File Offset: 0x003BB4C4
+	// Token: 0x06009F3E RID: 40766 RVA: 0x003C1E60 File Offset: 0x003C0060
 	public void BlendTo(float value, float time)
 	{
 		if (time > 0f)
@@ -58,14 +58,14 @@ public class BlendTimer
 		this.m_time[1] = 0f;
 	}
 
-	// Token: 0x06009E94 RID: 40596 RVA: 0x003BD335 File Offset: 0x003BB535
+	// Token: 0x06009F3F RID: 40767 RVA: 0x003C1ED1 File Offset: 0x003C00D1
 	public void BlendToRate(float value, float unitsPerSecond)
 	{
 		this.BlendTo(value, Mathf.Abs(value - this.m_value[0]) / unitsPerSecond);
 	}
 
-	// Token: 0x170012C2 RID: 4802
-	// (get) Token: 0x06009E95 RID: 40597 RVA: 0x003BD34F File Offset: 0x003BB54F
+	// Token: 0x17001307 RID: 4871
+	// (get) Token: 0x06009F40 RID: 40768 RVA: 0x003C1EEB File Offset: 0x003C00EB
 	public float Value
 	{
 		get
@@ -74,8 +74,8 @@ public class BlendTimer
 		}
 	}
 
-	// Token: 0x170012C3 RID: 4803
-	// (get) Token: 0x06009E96 RID: 40598 RVA: 0x003BD359 File Offset: 0x003BB559
+	// Token: 0x17001308 RID: 4872
+	// (get) Token: 0x06009F41 RID: 40769 RVA: 0x003C1EF5 File Offset: 0x003C00F5
 	public float Target
 	{
 		get
@@ -84,11 +84,11 @@ public class BlendTimer
 		}
 	}
 
-	// Token: 0x04007820 RID: 30752
+	// Token: 0x0400789B RID: 30875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] m_value = new float[3];
 
-	// Token: 0x04007821 RID: 30753
+	// Token: 0x0400789C RID: 30876
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] m_time = new float[2];
 }

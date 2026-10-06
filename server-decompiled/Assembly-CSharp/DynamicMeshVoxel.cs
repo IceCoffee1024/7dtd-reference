@@ -5,10 +5,10 @@ using System.Linq;
 using Noemax.GZip;
 using UnityEngine;
 
-// Token: 0x020003B0 RID: 944
+// Token: 0x020003B3 RID: 947
 public static class DynamicMeshVoxel
 {
-	// Token: 0x06001C53 RID: 7251 RVA: 0x000A7C88 File Offset: 0x000A5E88
+	// Token: 0x06001C4C RID: 7244 RVA: 0x000A7EC8 File Offset: 0x000A60C8
 	public static void QefToFile(string path, string folderOut, string filename)
 	{
 		string[] array = SdFile.ReadAllLines(path);
@@ -48,13 +48,13 @@ public static class DynamicMeshVoxel
 		SdFile.WriteAllText(folderOut + filename + ".7base", text3);
 	}
 
-	// Token: 0x06001C54 RID: 7252 RVA: 0x000A7DEC File Offset: 0x000A5FEC
+	// Token: 0x06001C4D RID: 7245 RVA: 0x000A802C File Offset: 0x000A622C
 	public static string ToDebugLocation(this Vector3i pos)
 	{
 		return string.Format("{0},{1}", pos.x, pos.z);
 	}
 
-	// Token: 0x06001C55 RID: 7253 RVA: 0x000A7E10 File Offset: 0x000A6010
+	// Token: 0x06001C4E RID: 7246 RVA: 0x000A8050 File Offset: 0x000A6250
 	public static int GetByteLength(this VoxelMesh m)
 	{
 		if (m.Vertices.Count == 0)
@@ -72,7 +72,7 @@ public static class DynamicMeshVoxel
 		return num3;
 	}
 
-	// Token: 0x06001C56 RID: 7254 RVA: 0x000A7EE8 File Offset: 0x000A60E8
+	// Token: 0x06001C4F RID: 7247 RVA: 0x000A8128 File Offset: 0x000A6328
 	public static int GetByteLength(this VoxelMeshTerrain m)
 	{
 		if (m.Vertices.Count == 0)
@@ -94,7 +94,7 @@ public static class DynamicMeshVoxel
 		return num2 + num3 * 4 + m.ColorVertices.Count * 16;
 	}
 
-	// Token: 0x06001C57 RID: 7255 RVA: 0x000A7FA4 File Offset: 0x000A61A4
+	// Token: 0x06001C50 RID: 7248 RVA: 0x000A81E4 File Offset: 0x000A63E4
 	public static Transform FindRecursive(this Transform t, string name)
 	{
 		Queue<Transform> queue = new Queue<Transform>();
@@ -115,7 +115,7 @@ public static class DynamicMeshVoxel
 		return null;
 	}
 
-	// Token: 0x06001C58 RID: 7256 RVA: 0x000A802C File Offset: 0x000A622C
+	// Token: 0x06001C51 RID: 7249 RVA: 0x000A826C File Offset: 0x000A646C
 	public static Transform FindParent(this Transform t, string name)
 	{
 		Queue<Transform> queue = new Queue<Transform>();

@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A3 RID: 6563
+	// Token: 0x020019CF RID: 6607
 	[Preserve]
 	public class ActionRemoveFuel : ActionBaseTargetAction
 	{
-		// Token: 0x0600C909 RID: 51465 RVA: 0x0049C9E8 File Offset: 0x0049ABE8
+		// Token: 0x0600CA61 RID: 51809 RVA: 0x004A0EAC File Offset: 0x0049F0AC
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityVehicle entityVehicle = target as EntityVehicle;
@@ -20,13 +20,13 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C90A RID: 51466 RVA: 0x0049CA30 File Offset: 0x0049AC30
+		// Token: 0x0600CA62 RID: 51810 RVA: 0x004A0EF4 File Offset: 0x0049F0F4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 		}
 
-		// Token: 0x0600C90B RID: 51467 RVA: 0x0049CA39 File Offset: 0x0049AC39
+		// Token: 0x0600CA63 RID: 51811 RVA: 0x004A0EFD File Offset: 0x0049F0FD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

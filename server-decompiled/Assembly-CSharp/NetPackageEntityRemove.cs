@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E5 RID: 2021
+// Token: 0x020007E8 RID: 2024
 [Preserve]
 public class NetPackageEntityRemove : NetPackageEntityTargeted
 {
-	// Token: 0x17000635 RID: 1589
-	// (get) Token: 0x06003BC0 RID: 15296 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700065A RID: 1626
+	// (get) Token: 0x06003BCD RID: 15309 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BC1 RID: 15297 RVA: 0x0017FFEE File Offset: 0x0017E1EE
+	// Token: 0x06003BCE RID: 15310 RVA: 0x0018052A File Offset: 0x0017E72A
 	public NetPackageEntityRemove Setup(int _entityId, EnumRemoveEntityReason _reason)
 	{
 		base.Setup(_entityId);
@@ -23,21 +23,21 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BC2 RID: 15298 RVA: 0x00180000 File Offset: 0x0017E200
+	// Token: 0x06003BCF RID: 15311 RVA: 0x0018053C File Offset: 0x0017E73C
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.reason = _reader.ReadByte();
 	}
 
-	// Token: 0x06003BC3 RID: 15299 RVA: 0x00180015 File Offset: 0x0017E215
+	// Token: 0x06003BD0 RID: 15312 RVA: 0x00180551 File Offset: 0x0017E751
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.reason);
 	}
 
-	// Token: 0x06003BC4 RID: 15300 RVA: 0x0018002C File Offset: 0x0017E22C
+	// Token: 0x06003BD1 RID: 15313 RVA: 0x00180568 File Offset: 0x0017E768
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -51,13 +51,7 @@ public class NetPackageEntityRemove : NetPackageEntityTargeted
 		_world.RemoveEntity(this.entityId, (EnumRemoveEntityReason)this.reason);
 	}
 
-	// Token: 0x06003BC5 RID: 15301 RVA: 0x00080550 File Offset: 0x0007E750
-	public override int GetLength()
-	{
-		return 4;
-	}
-
-	// Token: 0x040030AD RID: 12461
+	// Token: 0x040030A6 RID: 12454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte reason;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 
-// Token: 0x020013E8 RID: 5096
+// Token: 0x02001408 RID: 5128
 public abstract class DynamicClassFactory
 {
-	// Token: 0x06009FE6 RID: 40934
+	// Token: 0x0600A091 RID: 41105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract object[] getTable();
 
-	// Token: 0x06009FE7 RID: 40935 RVA: 0x003C23A8 File Offset: 0x003C05A8
+	// Token: 0x0600A092 RID: 41106 RVA: 0x003C6F44 File Offset: 0x003C5144
 	public object Instantiate(string _className)
 	{
 		Type type = Type.GetType(_className);
@@ -33,7 +33,7 @@ public abstract class DynamicClassFactory
 		return null;
 	}
 
-	// Token: 0x06009FE8 RID: 40936 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600A093 RID: 41107 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DynamicClassFactory()
 	{

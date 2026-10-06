@@ -8,23 +8,23 @@ using UnityEngine;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x02001683 RID: 5763
+	// Token: 0x020016A3 RID: 5795
 	[JsonObject(MemberSerialization.OptIn, ItemNullValueHandling = NullValueHandling.Ignore)]
 	public abstract class BaseEventData : IAnalyticsEventData
 	{
-		// Token: 0x170015AE RID: 5550
-		// (get) Token: 0x0600B48F RID: 46223
+		// Token: 0x170015F3 RID: 5619
+		// (get) Token: 0x0600B529 RID: 46377
 		public abstract string EventType { get; }
 
-		// Token: 0x170015AF RID: 5551
-		// (get) Token: 0x0600B490 RID: 46224 RVA: 0x004374F8 File Offset: 0x004356F8
+		// Token: 0x170015F4 RID: 5620
+		// (get) Token: 0x0600B52A RID: 46378 RVA: 0x0043B20C File Offset: 0x0043940C
 		[JsonProperty(PropertyName = "provider_user_id")]
 		[Description("The unique player identifier based on the provider_id (anonymized)")]
 		[KrakenIdTransform("$.provider_user_id")]
 		public string ProviderUserId { get; }
 
-		// Token: 0x170015B0 RID: 5552
-		// (get) Token: 0x0600B491 RID: 46225 RVA: 0x00437500 File Offset: 0x00435700
+		// Token: 0x170015F5 RID: 5621
+		// (get) Token: 0x0600B52B RID: 46379 RVA: 0x0043B214 File Offset: 0x00439414
 		[JsonProperty(PropertyName = "session_build")]
 		[Description("The name of the build used for the game session initiated (patch/CL number)")]
 		public string SessionBuild
@@ -35,8 +35,8 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015B1 RID: 5553
-		// (get) Token: 0x0600B492 RID: 46226 RVA: 0x0043751F File Offset: 0x0043571F
+		// Token: 0x170015F6 RID: 5622
+		// (get) Token: 0x0600B52C RID: 46380 RVA: 0x0043B233 File Offset: 0x00439433
 		[JsonProperty(PropertyName = "game_version")]
 		[Description("The name of the game version (Major.Minor.Hotfix)")]
 		public string GameVersion
@@ -47,14 +47,14 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015B2 RID: 5554
-		// (get) Token: 0x0600B493 RID: 46227 RVA: 0x0043752B File Offset: 0x0043572B
+		// Token: 0x170015F7 RID: 5623
+		// (get) Token: 0x0600B52D RID: 46381 RVA: 0x0043B23F File Offset: 0x0043943F
 		[JsonProperty(PropertyName = "easy_anti_cheat_enabled")]
 		[Description("TRUE if the player launched with EAC activated")]
 		public bool EasyAntiCheatEnabled { get; }
 
-		// Token: 0x170015B3 RID: 5555
-		// (get) Token: 0x0600B494 RID: 46228 RVA: 0x00437533 File Offset: 0x00435733
+		// Token: 0x170015F8 RID: 5624
+		// (get) Token: 0x0600B52E RID: 46382 RVA: 0x0043B247 File Offset: 0x00439447
 		[JsonProperty(PropertyName = "steam_branch_name")]
 		[Description("The name of the steam branch")]
 		public string SteamBranchName
@@ -76,19 +76,19 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015B4 RID: 5556
-		// (get) Token: 0x0600B495 RID: 46229 RVA: 0x0043755B File Offset: 0x0043575B
+		// Token: 0x170015F9 RID: 5625
+		// (get) Token: 0x0600B52F RID: 46383 RVA: 0x0043B26F File Offset: 0x0043946F
 		[JsonProperty(PropertyName = "platform")]
 		[Description("The platform that the game session was initiated on.")]
 		public string Platform { get; }
 
-		// Token: 0x170015B5 RID: 5557
-		// (get) Token: 0x0600B496 RID: 46230 RVA: 0x00437563 File Offset: 0x00435763
+		// Token: 0x170015FA RID: 5626
+		// (get) Token: 0x0600B530 RID: 46384 RVA: 0x0043B277 File Offset: 0x00439477
 		[JsonProperty(PropertyName = "provider")]
 		[Description("Provider Used to launch the game (Steam, XBL, PSN)")]
 		public string Provider { get; }
 
-		// Token: 0x0600B497 RID: 46231 RVA: 0x0043756C File Offset: 0x0043576C
+		// Token: 0x0600B531 RID: 46385 RVA: 0x0043B280 File Offset: 0x00439480
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseEventData()
 		{

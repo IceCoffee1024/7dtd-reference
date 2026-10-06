@@ -3,12 +3,12 @@ using System.Globalization;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x020002FC RID: 764
+// Token: 0x020002FF RID: 767
 [Preserve]
 public class DialogRequirementQuestTierHighest : BaseDialogRequirement
 {
-	// Token: 0x17000276 RID: 630
-	// (get) Token: 0x060015BE RID: 5566 RVA: 0x00046EDA File Offset: 0x000450DA
+	// Token: 0x1700026E RID: 622
+	// (get) Token: 0x060015BB RID: 5563 RVA: 0x000470B6 File Offset: 0x000452B6
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -17,13 +17,13 @@ public class DialogRequirementQuestTierHighest : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015BF RID: 5567 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x060015BC RID: 5564 RVA: 0x0003223F File Offset: 0x0003043F
 	public override string GetRequiredDescription(EntityPlayer player)
 	{
 		return "";
 	}
 
-	// Token: 0x060015C0 RID: 5568 RVA: 0x00081720 File Offset: 0x0007F920
+	// Token: 0x060015BD RID: 5565 RVA: 0x000819D4 File Offset: 0x0007FBD4
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		int num = StringParsers.ParseSInt32(base.Value, 0, -1, NumberStyles.Integer);

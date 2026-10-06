@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FEC RID: 4076
+// Token: 0x02000FFB RID: 4091
 [Preserve]
 public class XUiC_QuestRewardsWindow : XUiController
 {
-	// Token: 0x17000F00 RID: 3840
-	// (get) Token: 0x060080A5 RID: 32933 RVA: 0x0030B8B5 File Offset: 0x00309AB5
-	// (set) Token: 0x060080A6 RID: 32934 RVA: 0x0030B8BD File Offset: 0x00309ABD
+	// Token: 0x17000F27 RID: 3879
+	// (get) Token: 0x060080B4 RID: 32948 RVA: 0x0030E89D File Offset: 0x0030CA9D
+	// (set) Token: 0x060080B5 RID: 32949 RVA: 0x0030E8A5 File Offset: 0x0030CAA5
 	public Quest CurrentQuest
 	{
 		get
@@ -22,14 +22,14 @@ public class XUiC_QuestRewardsWindow : XUiController
 		}
 	}
 
-	// Token: 0x060080A7 RID: 32935 RVA: 0x0030B8ED File Offset: 0x00309AED
+	// Token: 0x060080B6 RID: 32950 RVA: 0x0030E8D5 File Offset: 0x0030CAD5
 	public override void Init()
 	{
 		base.Init();
 		this.rewardList = base.GetChildByType<XUiC_QuestRewardList>();
 	}
 
-	// Token: 0x060080A8 RID: 32936 RVA: 0x0030B904 File Offset: 0x00309B04
+	// Token: 0x060080B7 RID: 32951 RVA: 0x0030E8EC File Offset: 0x0030CAEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -190,7 +190,7 @@ public class XUiC_QuestRewardsWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060080A9 RID: 32937 RVA: 0x0030BD9F File Offset: 0x00309F9F
+	// Token: 0x060080B8 RID: 32952 RVA: 0x0030ED87 File Offset: 0x0030CF87
 	public void SetQuest(XUiC_QuestEntry questEntry)
 	{
 		this.entry = questEntry;
@@ -202,23 +202,23 @@ public class XUiC_QuestRewardsWindow : XUiController
 		this.CurrentQuest = null;
 	}
 
-	// Token: 0x04005F4E RID: 24398
+	// Token: 0x04005F77 RID: 24439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestEntry entry;
 
-	// Token: 0x04005F4F RID: 24399
+	// Token: 0x04005F78 RID: 24440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestRewardList rewardList;
 
-	// Token: 0x04005F50 RID: 24400
+	// Token: 0x04005F79 RID: 24441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005F51 RID: 24401
+	// Token: 0x04005F7A RID: 24442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest currentQuest;
 
-	// Token: 0x04005F52 RID: 24402
+	// Token: 0x04005F7B RID: 24443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, int, int, int> daytimeFormatter = new CachedStringFormatter<string, int, int, int>((string _status, int _day, int _hour, int _min) => string.Format("{0} {1} {2}, {3:00}:{4:00}", new object[]
 	{
@@ -229,19 +229,19 @@ public class XUiC_QuestRewardsWindow : XUiController
 		_min
 	}));
 
-	// Token: 0x04005F53 RID: 24403
+	// Token: 0x04005F7C RID: 24444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardNumberFormat = "[DECEA3]{0}[-] {1}";
 
-	// Token: 0x04005F54 RID: 24404
+	// Token: 0x04005F7D RID: 24445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardNumberBonusFormat = "[DECEA3]{0}[-] {1} ([DECEA3]{2}[-] {3})";
 
-	// Token: 0x04005F55 RID: 24405
+	// Token: 0x04005F7E RID: 24446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardItemFormat = "[DECEA3]{0}[-] {1}";
 
-	// Token: 0x04005F56 RID: 24406
+	// Token: 0x04005F7F RID: 24447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rewardItemBonusFormat = "[DECEA3]{0}[-] {1} ([DECEA3]{2}[-] {3})";
 }

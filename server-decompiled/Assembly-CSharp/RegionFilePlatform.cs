@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000BA3 RID: 2979
+// Token: 0x02000BB5 RID: 2997
 public static class RegionFilePlatform
 {
-	// Token: 0x06005A1E RID: 23070 RVA: 0x00229448 File Offset: 0x00227648
+	// Token: 0x06005A37 RID: 23095 RVA: 0x0022C744 File Offset: 0x0022A944
 	public static IRegionFilePlatformFactory CreateFactory()
 	{
 		return new RegionFileFactorySectorBased();

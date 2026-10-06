@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000994 RID: 2452
+// Token: 0x0200099A RID: 2458
 [Preserve]
 public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 {
-	// Token: 0x1700079A RID: 1946
-	// (get) Token: 0x060047ED RID: 18413 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007BA RID: 1978
+	// (get) Token: 0x0600479C RID: 18332 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,7 +15,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		}
 	}
 
-	// Token: 0x060047EE RID: 18414 RVA: 0x001C256F File Offset: 0x001C076F
+	// Token: 0x0600479D RID: 18333 RVA: 0x001C2D1B File Offset: 0x001C0F1B
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveFetch_keyword", false, null);
@@ -26,26 +26,26 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		this.itemCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x060047EF RID: 18415 RVA: 0x001C25A4 File Offset: 0x001C07A4
+	// Token: 0x0600479E RID: 18334 RVA: 0x001C2D50 File Offset: 0x001C0F50
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = string.Format("{0}/{1}", this.currentCount, this.itemCount);
 	}
 
-	// Token: 0x060047F0 RID: 18416 RVA: 0x001C056D File Offset: 0x001BE76D
+	// Token: 0x0600479F RID: 18335 RVA: 0x001C0B15 File Offset: 0x001BED15
 	public override void SetupQuestTag()
 	{
 		base.OwnerQuest.AddQuestTag(QuestEventManager.fetchTag);
 	}
 
-	// Token: 0x060047F1 RID: 18417 RVA: 0x001C25F3 File Offset: 0x001C07F3
+	// Token: 0x060047A0 RID: 18336 RVA: 0x001C2D9F File Offset: 0x001C0F9F
 	public override void HandleFailed()
 	{
 		base.HandleFailed();
 	}
 
-	// Token: 0x060047F2 RID: 18418 RVA: 0x001C25FC File Offset: 0x001C07FC
+	// Token: 0x060047A1 RID: 18337 RVA: 0x001C2DA8 File Offset: 0x001C0FA8
 	public override void AddHooks()
 	{
 		base.CurrentValue = 0;
@@ -58,14 +58,14 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		QuestEventManager.Current.ContainerClosed += this.Current_ContainerClosed;
 	}
 
-	// Token: 0x060047F3 RID: 18419 RVA: 0x001C26A9 File Offset: 0x001C08A9
+	// Token: 0x060047A2 RID: 18338 RVA: 0x001C2E55 File Offset: 0x001C1055
 	public override void RemoveObjectives()
 	{
 		QuestEventManager.Current.ContainerOpened -= this.Current_ContainerOpened;
 		QuestEventManager.Current.ContainerClosed -= this.Current_ContainerClosed;
 	}
 
-	// Token: 0x060047F4 RID: 18420 RVA: 0x001C26D8 File Offset: 0x001C08D8
+	// Token: 0x060047A3 RID: 18339 RVA: 0x001C2E84 File Offset: 0x001C1084
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
@@ -77,7 +77,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		}
 	}
 
-	// Token: 0x060047F5 RID: 18421 RVA: 0x001C2744 File Offset: 0x001C0944
+	// Token: 0x060047A4 RID: 18340 RVA: 0x001C2EF0 File Offset: 0x001C10F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Backpack_OnBackpackItemsChangedInternal()
 	{
@@ -89,7 +89,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		this.Refresh();
 	}
 
-	// Token: 0x060047F6 RID: 18422 RVA: 0x001C2784 File Offset: 0x001C0984
+	// Token: 0x060047A5 RID: 18341 RVA: 0x001C2F30 File Offset: 0x001C1130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Toolbelt_OnToolbeltItemsChangedInternal()
 	{
@@ -101,9 +101,9 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		this.Refresh();
 	}
 
-	// Token: 0x060047F7 RID: 18423 RVA: 0x001C27C4 File Offset: 0x001C09C4
+	// Token: 0x060047A6 RID: 18342 RVA: 0x001C2F70 File Offset: 0x001C1170
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Current_ContainerOpened(Vector3i containerLocation, ITileEntityLootable tileEntity)
+	public void Current_ContainerOpened(Vector3i containerLocation, TEFeatureStorage tileEntity, bool firstTimeTouched)
 	{
 		if (base.GetItemCount(-2) >= this.itemCount)
 		{
@@ -115,9 +115,9 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		}
 	}
 
-	// Token: 0x060047F8 RID: 18424 RVA: 0x001C2828 File Offset: 0x001C0A28
+	// Token: 0x060047A7 RID: 18343 RVA: 0x001C2FD4 File Offset: 0x001C11D4
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Current_ContainerClosed(Vector3i containerLocation, ITileEntityLootable tileEntity)
+	public void Current_ContainerClosed(Vector3i containerLocation, TEFeatureStorage tileEntity)
 	{
 		if (tileEntity.blockValue.Block.GetBlockName() == this.defaultContainer)
 		{
@@ -126,7 +126,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		}
 	}
 
-	// Token: 0x060047F9 RID: 18425 RVA: 0x001C2868 File Offset: 0x001C0A68
+	// Token: 0x060047A8 RID: 18344 RVA: 0x001C3014 File Offset: 0x001C1214
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -148,7 +148,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		}
 	}
 
-	// Token: 0x060047FA RID: 18426 RVA: 0x001C28D0 File Offset: 0x001C0AD0
+	// Token: 0x060047A9 RID: 18345 RVA: 0x001C307C File Offset: 0x001C127C
 	public override BaseObjective Clone()
 	{
 		ObjectiveFetchAnyContainer objectiveFetchAnyContainer = new ObjectiveFetchAnyContainer();
@@ -156,7 +156,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		return objectiveFetchAnyContainer;
 	}
 
-	// Token: 0x060047FB RID: 18427 RVA: 0x001C28EB File Offset: 0x001C0AEB
+	// Token: 0x060047AA RID: 18346 RVA: 0x001C3097 File Offset: 0x001C1297
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -164,7 +164,7 @@ public class ObjectiveFetchAnyContainer : ObjectiveBaseFetchContainer
 		((ObjectiveFetchAnyContainer)objective).defaultContainer = this.defaultContainer;
 	}
 
-	// Token: 0x0400398B RID: 14731
+	// Token: 0x04003987 RID: 14727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int itemCount;
 }

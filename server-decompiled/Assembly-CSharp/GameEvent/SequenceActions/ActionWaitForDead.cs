@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D6 RID: 6614
+	// Token: 0x02001A02 RID: 6658
 	[Preserve]
 	public class ActionWaitForDead : BaseAction
 	{
-		// Token: 0x0600C9EF RID: 51695 RVA: 0x004A10D8 File Offset: 0x0049F2D8
+		// Token: 0x0600CB47 RID: 52039 RVA: 0x004A557C File Offset: 0x004A377C
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.entityList == null)
@@ -67,14 +67,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C9F0 RID: 51696 RVA: 0x004A11FF File Offset: 0x0049F3FF
+		// Token: 0x0600CB48 RID: 52040 RVA: 0x004A56A3 File Offset: 0x004A38A3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
 			this.entityList = null;
 		}
 
-		// Token: 0x0600C9F1 RID: 51697 RVA: 0x004A1208 File Offset: 0x0049F408
+		// Token: 0x0600CB49 RID: 52041 RVA: 0x004A56AC File Offset: 0x004A38AC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -85,7 +85,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseInt(ActionWaitForDead.PropPhaseOnDespawn, ref this.phaseOnDespawn);
 		}
 
-		// Token: 0x0600C9F2 RID: 51698 RVA: 0x004A1255 File Offset: 0x0049F455
+		// Token: 0x0600CB4A RID: 52042 RVA: 0x004A56F9 File Offset: 0x004A38F9
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -96,27 +96,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400993C RID: 39228
+		// Token: 0x04009A02 RID: 39426
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x0400993D RID: 39229
+		// Token: 0x04009A03 RID: 39427
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int phaseOnDespawn = -1;
 
-		// Token: 0x0400993E RID: 39230
+		// Token: 0x04009A04 RID: 39428
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x0400993F RID: 39231
+		// Token: 0x04009A05 RID: 39429
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPhaseOnDespawn = "phase_on_despawn";
 
-		// Token: 0x04009940 RID: 39232
+		// Token: 0x04009A06 RID: 39430
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<EntityAlive> entityList;
 
-		// Token: 0x04009941 RID: 39233
+		// Token: 0x04009A07 RID: 39431
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float checkTime = 1f;
 	}

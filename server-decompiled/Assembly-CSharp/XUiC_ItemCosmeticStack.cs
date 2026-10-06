@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F54 RID: 3924
+// Token: 0x02000F63 RID: 3939
 [Preserve]
 public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 {
-	// Token: 0x17000E60 RID: 3680
-	// (get) Token: 0x06007B47 RID: 31559 RVA: 0x002E9547 File Offset: 0x002E7747
-	// (set) Token: 0x06007B48 RID: 31560 RVA: 0x002E954F File Offset: 0x002E774F
+	// Token: 0x17000E7D RID: 3709
+	// (get) Token: 0x06007B44 RID: 31556 RVA: 0x002EC884 File Offset: 0x002EAA84
+	// (set) Token: 0x06007B45 RID: 31557 RVA: 0x002EC88C File Offset: 0x002EAA8C
 	public ItemValue ItemValue
 	{
 		get
@@ -21,9 +21,9 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		}
 	}
 
-	// Token: 0x17000E61 RID: 3681
-	// (get) Token: 0x06007B49 RID: 31561 RVA: 0x002E9565 File Offset: 0x002E7765
-	// (set) Token: 0x06007B4A RID: 31562 RVA: 0x002E956D File Offset: 0x002E776D
+	// Token: 0x17000E7E RID: 3710
+	// (get) Token: 0x06007B46 RID: 31558 RVA: 0x002EC8A2 File Offset: 0x002EAAA2
+	// (set) Token: 0x06007B47 RID: 31559 RVA: 0x002EC8AA File Offset: 0x002EAAAA
 	public ItemClass ExpectedItemClass
 	{
 		get
@@ -37,14 +37,14 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		}
 	}
 
-	// Token: 0x06007B4B RID: 31563 RVA: 0x002E957C File Offset: 0x002E777C
+	// Token: 0x06007B48 RID: 31560 RVA: 0x002EC8B9 File Offset: 0x002EAAB9
 	public override void Init()
 	{
 		base.Init();
 		this.lblStackMissing = Localization.Get("lblPartStackMissing", false, null);
 	}
 
-	// Token: 0x06007B4C RID: 31564 RVA: 0x002E9221 File Offset: 0x002E7421
+	// Token: 0x06007B49 RID: 31561 RVA: 0x002EC569 File Offset: 0x002EA769
 	public override string GetAtlas()
 	{
 		if (base.ItemStack.IsEmpty())
@@ -54,7 +54,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return "ItemIconAtlas";
 	}
 
-	// Token: 0x06007B4D RID: 31565 RVA: 0x002E9598 File Offset: 0x002E7798
+	// Token: 0x06007B4A RID: 31562 RVA: 0x002EC8D4 File Offset: 0x002EAAD4
 	public override string GetPartName()
 	{
 		if (this.itemClass == null && this.expectedItemClass == null)
@@ -68,7 +68,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return this.itemClass.GetLocalizedItemName();
 	}
 
-	// Token: 0x06007B4E RID: 31566 RVA: 0x002E95E5 File Offset: 0x002E77E5
+	// Token: 0x06007B4B RID: 31563 RVA: 0x002EC921 File Offset: 0x002EAB21
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetEmptySpriteName()
 	{
@@ -80,7 +80,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		this.emptySpriteName = "";
 	}
 
-	// Token: 0x06007B4F RID: 31567 RVA: 0x002E961C File Offset: 0x002E781C
+	// Token: 0x06007B4C RID: 31564 RVA: 0x002EC958 File Offset: 0x002EAB58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanSwap(ItemStack stack)
 	{
@@ -97,18 +97,18 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		{
 			return false;
 		}
-		if (itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.xui.AssembleItem.CurrentItem.itemValue.Modifications.Length != 0)
+		if (itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.xui.AssembleItem.CurrentItem.itemValue.ModificationCount > 0)
 		{
 			bool flag = false;
-			for (int i = 0; i < this.xui.AssembleItem.CurrentItem.itemValue.Modifications.Length; i++)
+			for (int i = 0; i < this.xui.AssembleItem.CurrentItem.itemValue.ModificationCount; i++)
 			{
-				if (this.xui.AssembleItem.CurrentItem.itemValue.Modifications[i] == null || this.xui.AssembleItem.CurrentItem.itemValue.Modifications[i].IsEmpty())
+				if (this.xui.AssembleItem.CurrentItem.itemValue.GetModification(i) == null || this.xui.AssembleItem.CurrentItem.itemValue.GetModification(i).IsEmpty())
 				{
 					flag = true;
 				}
 				else
 				{
-					ItemClassModifier itemClassModifier2 = this.xui.AssembleItem.CurrentItem.itemValue.Modifications[i].ItemClass as ItemClassModifier;
+					ItemClassModifier itemClassModifier2 = this.xui.AssembleItem.CurrentItem.itemValue.GetModification(i).ItemClass as ItemClassModifier;
 					if (itemClassModifier2 != null && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier2.ModifierTags))
 					{
 						flag = false;
@@ -119,12 +119,12 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 			return flag;
 		}
 		bool flag2 = itemClassModifier.InstallableTags.IsEmpty || this.xui.AssembleItem.CurrentItem.itemValue.ItemClass.HasAnyTags(itemClassModifier.InstallableTags);
-		for (int j = 0; j < this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods.Length; j++)
+		for (int j = 0; j < this.xui.AssembleItem.CurrentItem.itemValue.CosmeticModCount; j++)
 		{
-			if (this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods[j] != null && this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods[j].ItemClass != null && !this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods[j].ItemClass.ItemTags.IsEmpty)
+			if (this.xui.AssembleItem.CurrentItem.itemValue.GetCosmeticMod(j) != null && this.xui.AssembleItem.CurrentItem.itemValue.GetCosmeticMod(j).ItemClass != null && !this.xui.AssembleItem.CurrentItem.itemValue.GetCosmeticMod(j).ItemClass.ItemTags.IsEmpty)
 			{
-				ItemClassModifier itemClassModifier3 = this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods[j].ItemClass as ItemClassModifier;
-				if (itemClassModifier3 != null && this.xui.AssembleItem.CurrentItem.itemValue.CosmeticMods[j] != this.itemValue && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier3.ModifierTags))
+				ItemClassModifier itemClassModifier3 = this.xui.AssembleItem.CurrentItem.itemValue.GetCosmeticMod(j).ItemClass as ItemClassModifier;
+				if (itemClassModifier3 != null && this.xui.AssembleItem.CurrentItem.itemValue.GetCosmeticMod(j) != this.itemValue && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier3.ModifierTags))
 				{
 					return false;
 				}
@@ -133,25 +133,25 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return flag2 && (this.itemValue == null || this.itemValue.type == 0 || (this.itemValue.ItemClass as ItemClassModifier).Type == ItemClassModifier.ModifierTypes.Attachment);
 	}
 
-	// Token: 0x06007B50 RID: 31568 RVA: 0x002E9900 File Offset: 0x002E7B00
+	// Token: 0x06007B4D RID: 31565 RVA: 0x002ECC30 File Offset: 0x002EAE30
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanRemove()
 	{
 		return this.itemClass is ItemClassModifier && (this.itemClass as ItemClassModifier).Type == ItemClassModifier.ModifierTypes.Attachment;
 	}
 
-	// Token: 0x06007B51 RID: 31569 RVA: 0x002E9924 File Offset: 0x002E7B24
+	// Token: 0x06007B4E RID: 31566 RVA: 0x002ECC54 File Offset: 0x002EAE54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SwapItem()
 	{
 		ItemClassModifier itemClassModifier = this.xui.DragAndDropWindow.CurrentStack.itemValue.ItemClass as ItemClassModifier;
 		base.SwapItem();
-		if (itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.xui.AssembleItem.CurrentItem.itemValue.Modifications.Length != 0)
+		if (itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && itemClassModifier != null && !itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.xui.AssembleItem.CurrentItem.itemValue.ModificationCount > 0)
 		{
 			bool flag = false;
-			for (int i = 0; i < this.xui.AssembleItem.CurrentItem.itemValue.Modifications.Length; i++)
+			for (int i = 0; i < this.xui.AssembleItem.CurrentItem.itemValue.ModificationCount; i++)
 			{
-				ItemClassModifier itemClassModifier2 = this.xui.AssembleItem.CurrentItem.itemValue.Modifications[i].ItemClass as ItemClassModifier;
+				ItemClassModifier itemClassModifier2 = this.xui.AssembleItem.CurrentItem.itemValue.GetModification(i).ItemClass as ItemClassModifier;
 				if (itemClassModifier2 != null && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier2.ModifierTags))
 				{
 					flag = true;
@@ -160,21 +160,21 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 			}
 			if (flag)
 			{
-				this.xui.DragAndDropWindow.CurrentStack = ItemStack.Empty;
+				this.xui.DragAndDropWindow.SetCurrentStack(ItemStack.Empty, true);
 				this.xui.DragAndDropWindow.PickUpType = base.StackLocation;
 			}
 		}
 	}
 
-	// Token: 0x04005B52 RID: 23378
+	// Token: 0x04005B8A RID: 23434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue itemValue;
 
-	// Token: 0x04005B53 RID: 23379
+	// Token: 0x04005B8B RID: 23435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04005B54 RID: 23380
+	// Token: 0x04005B8C RID: 23436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblStackMissing;
 }

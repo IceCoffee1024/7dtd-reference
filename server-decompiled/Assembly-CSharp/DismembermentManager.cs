@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000DD RID: 221
+// Token: 0x020000DF RID: 223
 public class DismembermentManager
 {
-	// Token: 0x06000597 RID: 1431 RVA: 0x00027F7F File Offset: 0x0002617F
+	// Token: 0x0600059D RID: 1437 RVA: 0x00028077 File Offset: 0x00026277
 	public static string GetAssetBundlePath(string prefabPath)
 	{
 		return "@:Entities/Zombies/" + prefabPath + ".prefab";
 	}
 
-	// Token: 0x06000598 RID: 1432 RVA: 0x00027F94 File Offset: 0x00026194
+	// Token: 0x0600059E RID: 1438 RVA: 0x0002808C File Offset: 0x0002628C
 	public static bool IsDefaultGib(string matName)
 	{
 		for (int i = 0; i < DismembermentManager.DefaultBundleGibs.Length; i++)
@@ -25,7 +25,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005B RID: 91
-	// (get) Token: 0x06000599 RID: 1433 RVA: 0x00027FC8 File Offset: 0x000261C8
+	// (get) Token: 0x0600059F RID: 1439 RVA: 0x000280C0 File Offset: 0x000262C0
 	public Material GibCapsMaterial
 	{
 		get
@@ -49,7 +49,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005C RID: 92
-	// (get) Token: 0x0600059A RID: 1434 RVA: 0x00028058 File Offset: 0x00026258
+	// (get) Token: 0x060005A0 RID: 1440 RVA: 0x00028150 File Offset: 0x00026350
 	public Material GibCapsRadMaterial
 	{
 		get
@@ -72,7 +72,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x0600059B RID: 1435 RVA: 0x000280E6 File Offset: 0x000262E6
+	// Token: 0x060005A1 RID: 1441 RVA: 0x000281DE File Offset: 0x000263DE
 	public static Texture GetShaderTexture(Material _mat)
 	{
 		if (_mat.HasTexture("_ZombieColor"))
@@ -86,7 +86,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x0600059C RID: 1436 RVA: 0x0002811B File Offset: 0x0002631B
+	// Token: 0x060005A2 RID: 1442 RVA: 0x00028213 File Offset: 0x00026413
 	public static void SetShaderTexture(Material _mat, Texture _altColor)
 	{
 		if (_mat.HasTexture("_ZombieColor"))
@@ -100,7 +100,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005D RID: 93
-	// (get) Token: 0x0600059D RID: 1437 RVA: 0x0002814F File Offset: 0x0002634F
+	// (get) Token: 0x060005A3 RID: 1443 RVA: 0x00028247 File Offset: 0x00026447
 	public static DismembermentManager Instance
 	{
 		get
@@ -109,7 +109,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x0600059F RID: 1439 RVA: 0x00028169 File Offset: 0x00026369
+	// Token: 0x060005A5 RID: 1445 RVA: 0x00028261 File Offset: 0x00026461
 	public static void Init()
 	{
 		DismembermentManager.instance = new DismembermentManager();
@@ -119,7 +119,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A0 RID: 1440 RVA: 0x00028188 File Offset: 0x00026388
+	// Token: 0x060005A6 RID: 1446 RVA: 0x00028280 File Offset: 0x00026480
 	public static void Cleanup()
 	{
 		if (DismembermentManager.instance != null)
@@ -133,13 +133,13 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A1 RID: 1441 RVA: 0x000281CA File Offset: 0x000263CA
+	// Token: 0x060005A7 RID: 1447 RVA: 0x000282C2 File Offset: 0x000264C2
 	public void AddPart(DismemberedPart part)
 	{
 		this.parts.Add(part);
 	}
 
-	// Token: 0x060005A2 RID: 1442 RVA: 0x000281D8 File Offset: 0x000263D8
+	// Token: 0x060005A8 RID: 1448 RVA: 0x000282D0 File Offset: 0x000264D0
 	public void Update()
 	{
 		for (int i = 0; i < this.parts.Count; i++)
@@ -163,7 +163,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A3 RID: 1443 RVA: 0x00028268 File Offset: 0x00026468
+	// Token: 0x060005A9 RID: 1449 RVA: 0x00028360 File Offset: 0x00026560
 	public static float GetImpactForce(ItemClass ic, float strength)
 	{
 		if (ic != null)
@@ -184,7 +184,7 @@ public class DismembermentManager
 		return 1f;
 	}
 
-	// Token: 0x060005A4 RID: 1444 RVA: 0x000282DC File Offset: 0x000264DC
+	// Token: 0x060005AA RID: 1450 RVA: 0x000283D4 File Offset: 0x000265D4
 	public static EnumBodyPartHit GetBodyPartHit(uint bodyDamageFlag)
 	{
 		if (bodyDamageFlag == 1U)
@@ -226,7 +226,7 @@ public class DismembermentManager
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x060005A5 RID: 1445 RVA: 0x0002833C File Offset: 0x0002653C
+	// Token: 0x060005AB RID: 1451 RVA: 0x00028434 File Offset: 0x00026634
 	public static EnumBodyPartHit GetBodyPartHit(string _propKey)
 	{
 		if (_propKey.ContainsCaseInsensitive("L_HeadGore"))
@@ -268,7 +268,7 @@ public class DismembermentManager
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x060005A6 RID: 1446 RVA: 0x000283E0 File Offset: 0x000265E0
+	// Token: 0x060005AC RID: 1452 RVA: 0x000284D8 File Offset: 0x000266D8
 	public static string GetDamageTag(EnumDamageTypes _damageType, bool lastHitRanged)
 	{
 		if (_damageType == EnumDamageTypes.Piercing && lastHitRanged)
@@ -289,13 +289,13 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005A7 RID: 1447 RVA: 0x00028430 File Offset: 0x00026630
+	// Token: 0x060005AD RID: 1453 RVA: 0x00028528 File Offset: 0x00026728
 	public static DismemberedPartData DismemberPart(uint bodyDamageFlag, EnumDamageTypes damageType, EntityAlive _entity, bool isBiped, bool useLegacy = false)
 	{
 		return DismembermentManager.dismemberPart(DismembermentManager.GetBodyPartHit(bodyDamageFlag), damageType, _entity, isBiped, useLegacy);
 	}
 
-	// Token: 0x060005A8 RID: 1448 RVA: 0x00028444 File Offset: 0x00026644
+	// Token: 0x060005AE RID: 1454 RVA: 0x0002853C File Offset: 0x0002673C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData dismemberPart(EnumBodyPartHit partHit, EnumDamageTypes damageType, EntityAlive _entity, bool isBiped, bool useLegacy = false)
 	{
@@ -381,7 +381,7 @@ public class DismembermentManager
 		return dismemberedPartData;
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x00028740 File Offset: 0x00026940
+	// Token: 0x060005AF RID: 1455 RVA: 0x00028838 File Offset: 0x00026A38
 	public static void ActivateDetachable(Transform rootT, string targetPart)
 	{
 		Transform transform = rootT;
@@ -398,7 +398,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x00028798 File Offset: 0x00026998
+	// Token: 0x060005B0 RID: 1456 RVA: 0x00028890 File Offset: 0x00026A90
 	public static DismemberedPartData GetPartData(EntityAlive _entity)
 	{
 		string[] dismemberedPart = DismembermentManager.getDismemberedPart(_entity.bodyDamage.bodyPartHit, true);
@@ -431,7 +431,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x00028895 File Offset: 0x00026A95
+	// Token: 0x060005B1 RID: 1457 RVA: 0x0002898D File Offset: 0x00026B8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool hasDismemberedPart(EnumBodyPartHit part, bool isBiped = true)
 	{
@@ -442,7 +442,7 @@ public class DismembermentManager
 		return DismembermentManager.QuadrupedDismemberments.ContainsKey(part);
 	}
 
-	// Token: 0x060005AC RID: 1452 RVA: 0x000288B4 File Offset: 0x00026AB4
+	// Token: 0x060005B2 RID: 1458 RVA: 0x000289AC File Offset: 0x00026BAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] getDismemberedPart(EnumBodyPartHit part, bool isBiped = true)
 	{
@@ -458,7 +458,7 @@ public class DismembermentManager
 		return array;
 	}
 
-	// Token: 0x060005AD RID: 1453 RVA: 0x000288E8 File Offset: 0x00026AE8
+	// Token: 0x060005B3 RID: 1459 RVA: 0x000289E0 File Offset: 0x00026BE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void readString(string rawString, DismemberedPartData data)
 	{
@@ -668,7 +668,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005AE RID: 1454 RVA: 0x00028E78 File Offset: 0x00027078
+	// Token: 0x060005B4 RID: 1460 RVA: 0x00028F70 File Offset: 0x00027170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData readRandomPart(string[] prefabs, string[] data, string tag)
 	{
@@ -710,7 +710,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005AF RID: 1455 RVA: 0x00028F6C File Offset: 0x0002716C
+	// Token: 0x060005B5 RID: 1461 RVA: 0x00029064 File Offset: 0x00027264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData readPart(string[] data)
 	{
@@ -741,7 +741,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005B0 RID: 1456 RVA: 0x00028FFC File Offset: 0x000271FC
+	// Token: 0x060005B6 RID: 1462 RVA: 0x000290F4 File Offset: 0x000272F4
 	public static void SpawnParticleEffect(ParticleEffect _pe, int _entityId = -1)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -756,7 +756,7 @@ public class DismembermentManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageParticleEffect>().Setup(_pe, _entityId, false, false), false);
 	}
 
-	// Token: 0x060005B1 RID: 1457 RVA: 0x00029074 File Offset: 0x00027274
+	// Token: 0x060005B7 RID: 1463 RVA: 0x0002916C File Offset: 0x0002736C
 	public static void AddDebugArmObjects(Transform partT, Transform parentT)
 	{
 		if (partT && parentT && partT.name.ContainsCaseInsensitive("arm"))
@@ -787,241 +787,241 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x040005D1 RID: 1489
+	// Token: 0x040005D4 RID: 1492
 	public const string cClassName = "DismembermentManager";
 
-	// Token: 0x040005D2 RID: 1490
+	// Token: 0x040005D5 RID: 1493
 	public const string cManagedLimbsParentName = "DismemberedLimbs";
 
-	// Token: 0x040005D3 RID: 1491
+	// Token: 0x040005D6 RID: 1494
 	public static bool DebugLogEnabled;
 
-	// Token: 0x040005D4 RID: 1492
+	// Token: 0x040005D7 RID: 1495
 	public static bool DebugShowArmRotations;
 
-	// Token: 0x040005D5 RID: 1493
+	// Token: 0x040005D8 RID: 1496
 	public static bool DebugDismemberExplosions;
 
-	// Token: 0x040005D6 RID: 1494
+	// Token: 0x040005D9 RID: 1497
 	public static bool DebugBulletTime;
 
-	// Token: 0x040005D7 RID: 1495
+	// Token: 0x040005DA RID: 1498
 	public static bool DebugBloodParticles;
 
-	// Token: 0x040005D8 RID: 1496
+	// Token: 0x040005DB RID: 1499
 	public static bool DebugDontCreateParts;
 
-	// Token: 0x040005D9 RID: 1497
+	// Token: 0x040005DC RID: 1500
 	public static EnumBodyPartHit DebugBodyPartHit;
 
-	// Token: 0x040005DA RID: 1498
+	// Token: 0x040005DD RID: 1501
 	public static bool DebugUseLegacy;
 
-	// Token: 0x040005DB RID: 1499
+	// Token: 0x040005DE RID: 1502
 	public static bool DebugExplosiveCleanup;
 
-	// Token: 0x040005DC RID: 1500
+	// Token: 0x040005DF RID: 1503
 	public const string DestroyedCapRoot = "pos";
 
-	// Token: 0x040005DD RID: 1501
+	// Token: 0x040005E0 RID: 1504
 	public const string PhysicsRootName = "Physics";
 
-	// Token: 0x040005DE RID: 1502
+	// Token: 0x040005E1 RID: 1505
 	public const string DetachableRootName = "Detachable";
 
-	// Token: 0x040005DF RID: 1503
+	// Token: 0x040005E2 RID: 1506
 	public const string cSubTagHeadAccessories = "HeadAccessories";
 
-	// Token: 0x040005E0 RID: 1504
+	// Token: 0x040005E3 RID: 1507
 	public const string DetachableArmName = "HalfArm";
 
-	// Token: 0x040005E1 RID: 1505
+	// Token: 0x040005E4 RID: 1508
 	public const string DetachableLegName = "HalfLeg";
 
-	// Token: 0x040005E2 RID: 1506
+	// Token: 0x040005E5 RID: 1509
 	public const string ZombieSkinPrefix = "HD_";
 
-	// Token: 0x040005E3 RID: 1507
+	// Token: 0x040005E6 RID: 1510
 	public const string MatPropRadiated = "_IsRadiated";
 
-	// Token: 0x040005E4 RID: 1508
+	// Token: 0x040005E7 RID: 1511
 	public const string MatPropIrradiated = "_Irradiated";
 
-	// Token: 0x040005E5 RID: 1509
+	// Token: 0x040005E8 RID: 1512
 	public const string MatPropFade = "_Fade";
 
-	// Token: 0x040005E6 RID: 1510
+	// Token: 0x040005E9 RID: 1513
 	public static readonly FastTags<TagGroup.Global> radiatedTag = FastTags<TagGroup.Global>.Parse("radiated");
 
-	// Token: 0x040005E7 RID: 1511
+	// Token: 0x040005EA RID: 1514
 	public static readonly FastTags<TagGroup.Global> chargedTag = FastTags<TagGroup.Global>.Parse("charged");
 
-	// Token: 0x040005E8 RID: 1512
+	// Token: 0x040005EB RID: 1515
 	public static readonly FastTags<TagGroup.Global> infernalTag = FastTags<TagGroup.Global>.Parse("infernal");
 
-	// Token: 0x040005E9 RID: 1513
+	// Token: 0x040005EC RID: 1516
 	public static readonly FastTags<TagGroup.Global> radOrChargedTag = DismembermentManager.radiatedTag | DismembermentManager.chargedTag;
 
-	// Token: 0x040005EA RID: 1514
+	// Token: 0x040005ED RID: 1517
 	public static readonly FastTags<TagGroup.Global> specialTypeTags = DismembermentManager.radiatedTag | DismembermentManager.chargedTag | DismembermentManager.infernalTag;
 
-	// Token: 0x040005EB RID: 1515
+	// Token: 0x040005EE RID: 1518
 	public const string cCensorGoreSearch = "_CGore";
 
-	// Token: 0x040005EC RID: 1516
+	// Token: 0x040005EF RID: 1519
 	public static readonly List<string> BluntCensors = new List<string> { "zombieLab", "zombieUtilityWorker" };
 
-	// Token: 0x040005ED RID: 1517
+	// Token: 0x040005F0 RID: 1520
 	public const string cAssetBundleZombies = "@:Entities/Zombies/";
 
-	// Token: 0x040005EE RID: 1518
+	// Token: 0x040005F1 RID: 1521
 	public const string cAssetBundleSearchName = "Dismemberment";
 
-	// Token: 0x040005EF RID: 1519
+	// Token: 0x040005F2 RID: 1522
 	public const string cAssetBundleFolder = "@:Entities/Zombies/";
 
-	// Token: 0x040005F0 RID: 1520
+	// Token: 0x040005F3 RID: 1523
 	public const string cPrefabExt = ".prefab";
 
-	// Token: 0x040005F1 RID: 1521
+	// Token: 0x040005F4 RID: 1524
 	public const string cLOD0 = "LOD0";
 
-	// Token: 0x040005F2 RID: 1522
+	// Token: 0x040005F5 RID: 1525
 	public const string cLOD1 = "LOD1";
 
-	// Token: 0x040005F3 RID: 1523
+	// Token: 0x040005F6 RID: 1526
 	public const string cLOD2 = "LOD2";
 
-	// Token: 0x040005F4 RID: 1524
+	// Token: 0x040005F7 RID: 1527
 	public const string MatPropLeftLowerLeg = "_LeftLowerLeg";
 
-	// Token: 0x040005F5 RID: 1525
+	// Token: 0x040005F8 RID: 1528
 	public const string MatPropRightLowerLeg = "_RightLowerLeg";
 
-	// Token: 0x040005F6 RID: 1526
+	// Token: 0x040005F9 RID: 1529
 	public const string MatPropLeftUpperLeg = "_LeftUpperLeg";
 
-	// Token: 0x040005F7 RID: 1527
+	// Token: 0x040005FA RID: 1530
 	public const string MatPropRightUpperLeg = "_RightUpperLeg";
 
-	// Token: 0x040005F8 RID: 1528
+	// Token: 0x040005FB RID: 1531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cAssetBundleGibMats = "Common/Gibs/Materials";
 
-	// Token: 0x040005F9 RID: 1529
+	// Token: 0x040005FC RID: 1532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string CAssetBundleDefaultGib = "gib_dismemberment";
 
-	// Token: 0x040005FA RID: 1530
+	// Token: 0x040005FD RID: 1533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string CAssetBundleDefaultGibBlood = "gib_bloodcap";
 
-	// Token: 0x040005FB RID: 1531
+	// Token: 0x040005FE RID: 1534
 	public const string CAssetBundleDefaultGibChunk = "ZombieGibs_caps";
 
-	// Token: 0x040005FC RID: 1532
+	// Token: 0x040005FF RID: 1535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cDismemberMatXmlProp = "DismemberMaterial";
 
-	// Token: 0x040005FD RID: 1533
+	// Token: 0x04000600 RID: 1536
 	public static string[] DefaultBundleGibs = new string[] { "gib_dismemberment", "gib_bloodcap", "ZombieGibs_caps" };
 
-	// Token: 0x040005FE RID: 1534
+	// Token: 0x04000601 RID: 1537
 	public const string cGlobalMatName = "(global)";
 
-	// Token: 0x040005FF RID: 1535
+	// Token: 0x04000602 RID: 1538
 	public const string cLocalMatName = "(local)";
 
-	// Token: 0x04000600 RID: 1536
+	// Token: 0x04000603 RID: 1539
 	public const string cInstanceMatName = "(Instance)";
 
-	// Token: 0x04000601 RID: 1537
-	public const string cMatExt = ".mat";
-
-	// Token: 0x04000602 RID: 1538
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const string cGibCapsMatPath = "@:Entities/Zombies/Common/Gibs/Materials/ZombieGibs_caps.mat";
-
-	// Token: 0x04000603 RID: 1539
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const string cGibCapsMatRadPath = "@:Entities/Zombies/Common/Gibs/Materials/ZombieGibs_caps_IsRadiated.mat";
-
 	// Token: 0x04000604 RID: 1540
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Material zombieGibCapsMaterial;
+	public const string cMatExt = ".mat";
 
 	// Token: 0x04000605 RID: 1541
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Material zombieGibCapsMaterialRadiated;
+	public const string cGibCapsMatPath = "@:Entities/Zombies/Common/Gibs/Materials/ZombieGibs_caps.mat";
 
 	// Token: 0x04000606 RID: 1542
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const string cDefaultMatBaseTex = "_ZombieColor";
+	public const string cGibCapsMatRadPath = "@:Entities/Zombies/Common/Gibs/Materials/ZombieGibs_caps_IsRadiated.mat";
 
 	// Token: 0x04000607 RID: 1543
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const string cDefaultMatBaseTexAlt = "_Albedo";
+	public Material zombieGibCapsMaterial;
 
 	// Token: 0x04000608 RID: 1544
-	public const float cDefaultDetachLimbLifeTime = 10f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Material zombieGibCapsMaterialRadiated;
 
 	// Token: 0x04000609 RID: 1545
-	public const int cDefaultDetachLimbMax = 25;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const string cDefaultMatBaseTex = "_ZombieColor";
 
 	// Token: 0x0400060A RID: 1546
-	public const int cDefaultDetachLimbCleanupCount = 5;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const string cDefaultMatBaseTexAlt = "_Albedo";
 
 	// Token: 0x0400060B RID: 1547
-	public const int cMaxLimbsFromExplosiveDeath = 3;
+	public const float cDefaultDetachLimbLifeTime = 10f;
 
 	// Token: 0x0400060C RID: 1548
-	public List<DismemberedPart> parts = new List<DismemberedPart>();
+	public const int cDefaultDetachLimbMax = 25;
 
 	// Token: 0x0400060D RID: 1549
+	public const int cDefaultDetachLimbCleanupCount = 5;
+
+	// Token: 0x0400060E RID: 1550
+	public const int cMaxLimbsFromExplosiveDeath = 3;
+
+	// Token: 0x0400060F RID: 1551
+	public List<DismemberedPart> parts = new List<DismemberedPart>();
+
+	// Token: 0x04000610 RID: 1552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismembermentManager instance;
 
-	// Token: 0x0400060E RID: 1550
+	// Token: 0x04000611 RID: 1553
 	public const string cDynamicGore = "DynamicGore";
 
-	// Token: 0x0400060F RID: 1551
+	// Token: 0x04000612 RID: 1554
 	public static FastTags<TagGroup.Global> rangedTags = FastTags<TagGroup.Global>.Parse("ranged");
 
-	// Token: 0x04000610 RID: 1552
-	public static FastTags<TagGroup.Global> launcherTags = FastTags<TagGroup.Global>.Parse("launcher");
-
-	// Token: 0x04000611 RID: 1553
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static FastTags<TagGroup.Global> shotgunTags = FastTags<TagGroup.Global>.Parse("shotgun");
-
-	// Token: 0x04000612 RID: 1554
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static FastTags<TagGroup.Global> sledgeTags = FastTags<TagGroup.Global>.Parse("sledge");
-
 	// Token: 0x04000613 RID: 1555
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static FastTags<TagGroup.Global> knifeTags = FastTags<TagGroup.Global>.Parse("knife");
+	public static FastTags<TagGroup.Global> launcherTags = FastTags<TagGroup.Global>.Parse("launcher");
 
 	// Token: 0x04000614 RID: 1556
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float MaxForce = 1.5f;
+	public static FastTags<TagGroup.Global> shotgunTags = FastTags<TagGroup.Global>.Parse("shotgun");
 
 	// Token: 0x04000615 RID: 1557
-	public const string cXmlTag = "DismemberTag_";
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static FastTags<TagGroup.Global> sledgeTags = FastTags<TagGroup.Global>.Parse("sledge");
 
 	// Token: 0x04000616 RID: 1558
-	public const char cParamSplit = ';';
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static FastTags<TagGroup.Global> knifeTags = FastTags<TagGroup.Global>.Parse("knife");
 
 	// Token: 0x04000617 RID: 1559
-	public const char cRawSplit = '+';
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float MaxForce = 1.5f;
 
 	// Token: 0x04000618 RID: 1560
-	public const char cDataSplit = '=';
+	public const string cXmlTag = "DismemberTag_";
 
 	// Token: 0x04000619 RID: 1561
-	public const char cCommaDel = ',';
+	public const char cParamSplit = ';';
 
 	// Token: 0x0400061A RID: 1562
+	public const char cRawSplit = '+';
+
+	// Token: 0x0400061B RID: 1563
+	public const char cDataSplit = '=';
+
+	// Token: 0x0400061C RID: 1564
+	public const char cCommaDel = ',';
+
+	// Token: 0x0400061D RID: 1565
 	public static readonly Dictionary<EnumBodyPartHit, string[]> BipedDismemberments = new Dictionary<EnumBodyPartHit, string[]>
 	{
 		{
@@ -1062,7 +1062,7 @@ public class DismembermentManager
 		}
 	};
 
-	// Token: 0x0400061B RID: 1563
+	// Token: 0x0400061E RID: 1566
 	public static readonly Dictionary<EnumBodyPartHit, string[]> QuadrupedDismemberments = new Dictionary<EnumBodyPartHit, string[]>
 	{
 		{
@@ -1103,79 +1103,79 @@ public class DismembermentManager
 		}
 	};
 
-	// Token: 0x0400061C RID: 1564
+	// Token: 0x0400061F RID: 1567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cDebugAxisPath = "@:Entities/Zombies/Gibs/Debug/debugAxisObj.prefab";
 
-	// Token: 0x020000DE RID: 222
+	// Token: 0x020000E0 RID: 224
 	public static class DamageKeys
 	{
-		// Token: 0x0400061D RID: 1565
+		// Token: 0x04000620 RID: 1568
 		public const string blade = "blade";
 
-		// Token: 0x0400061E RID: 1566
+		// Token: 0x04000621 RID: 1569
 		public const string blunt = "blunt";
 
-		// Token: 0x0400061F RID: 1567
+		// Token: 0x04000622 RID: 1570
 		public const string bullet = "bullet";
 
-		// Token: 0x04000620 RID: 1568
+		// Token: 0x04000623 RID: 1571
 		public const string exlosive = "explosive";
 	}
 
-	// Token: 0x020000DF RID: 223
+	// Token: 0x020000E1 RID: 225
 	public enum DamageTags
 	{
-		// Token: 0x04000622 RID: 1570
-		none,
-		// Token: 0x04000623 RID: 1571
-		blade,
-		// Token: 0x04000624 RID: 1572
-		blunt,
 		// Token: 0x04000625 RID: 1573
+		none,
+		// Token: 0x04000626 RID: 1574
+		blade,
+		// Token: 0x04000627 RID: 1575
+		blunt,
+		// Token: 0x04000628 RID: 1576
 		any
 	}
 
-	// Token: 0x020000E0 RID: 224
+	// Token: 0x020000E2 RID: 226
 	public static class ParseKeys
 	{
-		// Token: 0x04000626 RID: 1574
+		// Token: 0x04000629 RID: 1577
 		public const string cType = "type";
 
-		// Token: 0x04000627 RID: 1575
+		// Token: 0x0400062A RID: 1578
 		public const string cTarget = "target";
 
-		// Token: 0x04000628 RID: 1576
+		// Token: 0x0400062B RID: 1579
 		public const string cAttachToParent = "atp";
 
-		// Token: 0x04000629 RID: 1577
+		// Token: 0x0400062C RID: 1580
 		public const string cDetach = "detach";
 
-		// Token: 0x0400062A RID: 1578
+		// Token: 0x0400062D RID: 1581
 		public const string cMask = "mask";
 
-		// Token: 0x0400062B RID: 1579
+		// Token: 0x0400062E RID: 1582
 		public const string cScaleOutLimb = "sol";
 
-		// Token: 0x0400062C RID: 1580
+		// Token: 0x0400062F RID: 1583
 		public const string cSolTarget = "soltarget";
 
-		// Token: 0x0400062D RID: 1581
+		// Token: 0x04000630 RID: 1584
 		public const string cSolScale = "solscale";
 
-		// Token: 0x0400062E RID: 1582
+		// Token: 0x04000631 RID: 1585
 		public const string cInsertChildObj = "ico";
 
-		// Token: 0x0400062F RID: 1583
+		// Token: 0x04000632 RID: 1586
 		public const string cInsertBoneObj = "ibo";
 
-		// Token: 0x04000630 RID: 1584
+		// Token: 0x04000633 RID: 1587
 		public const string cAddScalePoint = "asp";
 
-		// Token: 0x04000631 RID: 1585
+		// Token: 0x04000634 RID: 1588
 		public const string cMaskScaleBlend = "msb";
 
-		// Token: 0x04000632 RID: 1586
+		// Token: 0x04000635 RID: 1589
 		public const string cSetFixedValues = "sfv";
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000685 RID: 1669
+// Token: 0x02000687 RID: 1671
 [Preserve]
 public class CatapultStrainAmount : TargetedCompareRequirementBase
 {
-	// Token: 0x0600351C RID: 13596 RVA: 0x0015FEF0 File Offset: 0x0015E0F0
+	// Token: 0x0600355F RID: 13663 RVA: 0x00160874 File Offset: 0x0015EA74
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

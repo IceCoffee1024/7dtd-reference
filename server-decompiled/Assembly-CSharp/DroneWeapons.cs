@@ -5,21 +5,21 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003E6 RID: 998
+// Token: 0x020003E9 RID: 1001
 [Preserve]
 public class DroneWeapons
 {
-	// Token: 0x04001435 RID: 5173
+	// Token: 0x0400142E RID: 5166
 	public const string cSHOCK_BUFF_NAME = "buffShocked";
 
-	// Token: 0x04001436 RID: 5174
+	// Token: 0x0400142F RID: 5167
 	public const string cHealWeaponJoint = "WristLeft";
 
-	// Token: 0x020003E7 RID: 999
+	// Token: 0x020003EA RID: 1002
 	[Preserve]
 	public class Weapon
 	{
-		// Token: 0x06001E45 RID: 7749 RVA: 0x000B7DE8 File Offset: 0x000B5FE8
+		// Token: 0x06001E3D RID: 7741 RVA: 0x000B7FF4 File Offset: 0x000B61F4
 		public Weapon(EntityAlive _entity)
 		{
 			this.entity = _entity;
@@ -27,12 +27,12 @@ public class DroneWeapons
 			this.entityProperties = _entity.EntityClass.Properties;
 		}
 
-		// Token: 0x06001E46 RID: 7750 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06001E3E RID: 7742 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Init()
 		{
 		}
 
-		// Token: 0x06001E47 RID: 7751 RVA: 0x000B7E3C File Offset: 0x000B603C
+		// Token: 0x06001E3F RID: 7743 RVA: 0x000B8048 File Offset: 0x000B6248
 		public virtual void Update()
 		{
 			if (this.cooldownTimer > 0f)
@@ -49,7 +49,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E48 RID: 7752 RVA: 0x000B7E9C File Offset: 0x000B609C
+		// Token: 0x06001E40 RID: 7744 RVA: 0x000B80A8 File Offset: 0x000B62A8
 		public virtual void SetModProps(ItemValue itemValue)
 		{
 			this.modItem = itemValue;
@@ -68,8 +68,8 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x170003A1 RID: 929
-		// (get) Token: 0x06001E49 RID: 7753 RVA: 0x000B7F44 File Offset: 0x000B6144
+		// Token: 0x17000399 RID: 921
+		// (get) Token: 0x06001E41 RID: 7745 RVA: 0x000B8150 File Offset: 0x000B6350
 		public string ItemName
 		{
 			get
@@ -82,8 +82,8 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x170003A2 RID: 930
-		// (get) Token: 0x06001E4A RID: 7754 RVA: 0x000B7F64 File Offset: 0x000B6164
+		// Token: 0x1700039A RID: 922
+		// (get) Token: 0x06001E42 RID: 7746 RVA: 0x000B8170 File Offset: 0x000B6370
 		public float TimeRemaning
 		{
 			get
@@ -92,8 +92,8 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x170003A3 RID: 931
-		// (get) Token: 0x06001E4B RID: 7755 RVA: 0x000B7F6C File Offset: 0x000B616C
+		// Token: 0x1700039B RID: 923
+		// (get) Token: 0x06001E43 RID: 7747 RVA: 0x000B8178 File Offset: 0x000B6378
 		public float TimeLength
 		{
 			get
@@ -102,8 +102,8 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x170003A4 RID: 932
-		// (get) Token: 0x06001E4C RID: 7756 RVA: 0x000B7F7B File Offset: 0x000B617B
+		// Token: 0x1700039C RID: 924
+		// (get) Token: 0x06001E44 RID: 7748 RVA: 0x000B8187 File Offset: 0x000B6387
 		public float Range
 		{
 			get
@@ -112,8 +112,8 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x170003A5 RID: 933
-		// (get) Token: 0x06001E4D RID: 7757 RVA: 0x000B7F83 File Offset: 0x000B6183
+		// Token: 0x1700039D RID: 925
+		// (get) Token: 0x06001E45 RID: 7749 RVA: 0x000B818F File Offset: 0x000B638F
 		public float Cooldown
 		{
 			get
@@ -122,32 +122,32 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E4E RID: 7758 RVA: 0x000B7F8B File Offset: 0x000B618B
+		// Token: 0x06001E46 RID: 7750 RVA: 0x000B8197 File Offset: 0x000B6397
 		public virtual bool canFire()
 		{
 			return this.cooldownTimer <= 0f;
 		}
 
-		// Token: 0x06001E4F RID: 7759 RVA: 0x000B7F9D File Offset: 0x000B619D
+		// Token: 0x06001E47 RID: 7751 RVA: 0x000B81A9 File Offset: 0x000B63A9
 		public virtual void Fire(EntityAlive _target)
 		{
 			this.target = _target;
 			this.RefreshCooldown();
 		}
 
-		// Token: 0x06001E50 RID: 7760 RVA: 0x000B7FAC File Offset: 0x000B61AC
+		// Token: 0x06001E48 RID: 7752 RVA: 0x000B81B8 File Offset: 0x000B63B8
 		public void RefreshCooldown()
 		{
 			this.cooldownTimer = this.actionTime + this.cooldown;
 		}
 
-		// Token: 0x06001E51 RID: 7761 RVA: 0x000B7FC1 File Offset: 0x000B61C1
+		// Token: 0x06001E49 RID: 7753 RVA: 0x000B81CD File Offset: 0x000B63CD
 		public virtual bool hasActionCompleted()
 		{
 			return this.cooldownTimer < this.cooldown;
 		}
 
-		// Token: 0x06001E52 RID: 7762 RVA: 0x000B7FD1 File Offset: 0x000B61D1
+		// Token: 0x06001E4A RID: 7754 RVA: 0x000B81DD File Offset: 0x000B63DD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnReadyToFire()
 		{
@@ -157,19 +157,19 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E53 RID: 7763 RVA: 0x000B7FEC File Offset: 0x000B61EC
+		// Token: 0x06001E4B RID: 7755 RVA: 0x000B81F8 File Offset: 0x000B63F8
 		public void RegisterOnFireComplete(Action _onFireComplete)
 		{
 			this.onFireComplete = _onFireComplete;
 		}
 
-		// Token: 0x06001E54 RID: 7764 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06001E4C RID: 7756 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnFireComplete()
 		{
 		}
 
-		// Token: 0x06001E55 RID: 7765 RVA: 0x000B7FF5 File Offset: 0x000B61F5
+		// Token: 0x06001E4D RID: 7757 RVA: 0x000B8201 File Offset: 0x000B6401
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void InvokeFireComplete()
 		{
@@ -183,7 +183,7 @@ public class DroneWeapons
 			this.target = null;
 		}
 
-		// Token: 0x06001E56 RID: 7766 RVA: 0x000B801C File Offset: 0x000B621C
+		// Token: 0x06001E4E RID: 7758 RVA: 0x000B8228 File Offset: 0x000B6428
 		public virtual void Equip(ItemValue itemValue)
 		{
 			this.entity.MinEventContext.ItemValue = itemValue;
@@ -195,7 +195,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E57 RID: 7767 RVA: 0x000B8078 File Offset: 0x000B6278
+		// Token: 0x06001E4F RID: 7759 RVA: 0x000B8284 File Offset: 0x000B6484
 		public void Unequip()
 		{
 			this.modItem.FireEvent(MinEventTypes.onSelfEquipStop, this.entity.MinEventContext);
@@ -205,7 +205,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E58 RID: 7768 RVA: 0x000B80C9 File Offset: 0x000B62C9
+		// Token: 0x06001E50 RID: 7760 RVA: 0x000B82D5 File Offset: 0x000B64D5
 		public virtual void PlayBark()
 		{
 			if (!string.IsNullOrEmpty(this.soundWeaponUseBark))
@@ -214,28 +214,28 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E59 RID: 7769 RVA: 0x000B80E4 File Offset: 0x000B62E4
+		// Token: 0x06001E51 RID: 7761 RVA: 0x000B82F0 File Offset: 0x000B64F0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void PlaySound(string soundGroupKey)
 		{
 			Manager.Play(this.entity, soundGroupKey, 1f, false);
 		}
 
-		// Token: 0x06001E5A RID: 7770 RVA: 0x000B80F9 File Offset: 0x000B62F9
+		// Token: 0x06001E52 RID: 7762 RVA: 0x000B8305 File Offset: 0x000B6505
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void PlayVO(string soundGroupKey)
 		{
 			(this.entity as EntityDrone).BroadcastPlayVO(soundGroupKey, false, 1f);
 		}
 
-		// Token: 0x06001E5B RID: 7771 RVA: 0x000B8114 File Offset: 0x000B6314
+		// Token: 0x06001E53 RID: 7763 RVA: 0x000B8320 File Offset: 0x000B6520
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void TargetApplyBuff(string _buff, bool _fromElectrical)
 		{
 			this.target.Buffs.AddBuff(_buff, World.worldToBlockPos(this.entity.position), (this.belongsPlayerId != -1) ? this.belongsPlayerId : this.entity.entityId, true, _fromElectrical, -1f);
 		}
 
-		// Token: 0x06001E5C RID: 7772 RVA: 0x000B8168 File Offset: 0x000B6368
+		// Token: 0x06001E54 RID: 7764 RVA: 0x000B8374 File Offset: 0x000B6574
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void SpawnParticleEffect(ParticleEffect _pe, int _entityId)
 		{
@@ -251,7 +251,7 @@ public class DroneWeapons
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageParticleEffect>().Setup(_pe, _entityId, false, false), false);
 		}
 
-		// Token: 0x06001E5D RID: 7773 RVA: 0x000B81E0 File Offset: 0x000B63E0
+		// Token: 0x06001E55 RID: 7765 RVA: 0x000B83EC File Offset: 0x000B65EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Transform SpawnDroneParticleEffect(ParticleEffect _pe, int _entityId, DroneWeapons.NetPackageDroneParticleEffect.cActionType actionType)
 		{
@@ -270,79 +270,79 @@ public class DroneWeapons
 			return null;
 		}
 
-		// Token: 0x04001437 RID: 5175
+		// Token: 0x04001430 RID: 5168
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EntityAlive entity;
 
-		// Token: 0x04001438 RID: 5176
+		// Token: 0x04001431 RID: 5169
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int belongsPlayerId;
 
-		// Token: 0x04001439 RID: 5177
+		// Token: 0x04001432 RID: 5170
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public DynamicProperties entityProperties;
 
-		// Token: 0x0400143A RID: 5178
+		// Token: 0x04001433 RID: 5171
 		public Transform WeaponJoint;
 
-		// Token: 0x0400143B RID: 5179
+		// Token: 0x04001434 RID: 5172
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float actionTime;
 
-		// Token: 0x0400143C RID: 5180
+		// Token: 0x04001435 RID: 5173
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float cooldown = 1f;
 
-		// Token: 0x0400143D RID: 5181
+		// Token: 0x04001436 RID: 5174
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float range = 10f;
 
-		// Token: 0x0400143E RID: 5182
+		// Token: 0x04001437 RID: 5175
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EntityAlive target;
 
-		// Token: 0x0400143F RID: 5183
+		// Token: 0x04001438 RID: 5176
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float cooldownTimer;
 
-		// Token: 0x04001440 RID: 5184
+		// Token: 0x04001439 RID: 5177
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ItemValue modItem;
 
-		// Token: 0x04001441 RID: 5185
+		// Token: 0x0400143A RID: 5178
 		public string soundWeaponCharged;
 
-		// Token: 0x04001442 RID: 5186
+		// Token: 0x0400143B RID: 5179
 		public string soundWeaponUseBark;
 
-		// Token: 0x04001443 RID: 5187
+		// Token: 0x0400143C RID: 5180
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onFireComplete;
 
-		// Token: 0x04001444 RID: 5188
+		// Token: 0x0400143D RID: 5181
 		public const string cSoundWeaponCharged = "SoundWeaponCharged";
 
-		// Token: 0x04001445 RID: 5189
+		// Token: 0x0400143E RID: 5182
 		public const string cSoundWeaponUseBark = "SoundWeaponUseBark";
 	}
 
-	// Token: 0x020003E8 RID: 1000
+	// Token: 0x020003EB RID: 1003
 	[Preserve]
 	public class HealBeamWeapon : DroneWeapons.Weapon
 	{
-		// Token: 0x06001E5E RID: 7774 RVA: 0x000B8254 File Offset: 0x000B6454
+		// Token: 0x06001E56 RID: 7766 RVA: 0x000B8460 File Offset: 0x000B6660
 		public HealBeamWeapon(EntityAlive _entity)
 			: base(_entity)
 		{
 		}
 
-		// Token: 0x06001E5F RID: 7775 RVA: 0x000B82A7 File Offset: 0x000B64A7
+		// Token: 0x06001E57 RID: 7767 RVA: 0x000B84B3 File Offset: 0x000B66B3
 		public override void Init()
 		{
 			this.WeaponJoint = this.entity.transform.FindInChilds("WristLeft", false);
 		}
 
-		// Token: 0x06001E60 RID: 7776 RVA: 0x000B82C5 File Offset: 0x000B64C5
+		// Token: 0x06001E58 RID: 7768 RVA: 0x000B84D1 File Offset: 0x000B66D1
 		public override void SetModProps(ItemValue itemValue)
 		{
 			DynamicProperties properties = itemValue.ItemClass.Properties;
@@ -351,7 +351,7 @@ public class DroneWeapons
 			base.SetModProps(itemValue);
 		}
 
-		// Token: 0x06001E61 RID: 7777 RVA: 0x000B82FC File Offset: 0x000B64FC
+		// Token: 0x06001E59 RID: 7769 RVA: 0x000B8508 File Offset: 0x000B6708
 		public override void Equip(ItemValue itemValue)
 		{
 			base.Equip(itemValue);
@@ -363,7 +363,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E62 RID: 7778 RVA: 0x000B8370 File Offset: 0x000B6570
+		// Token: 0x06001E5A RID: 7770 RVA: 0x000B857C File Offset: 0x000B677C
 		public override void Fire(EntityAlive _target)
 		{
 			base.Fire(_target);
@@ -384,7 +384,6 @@ public class DroneWeapons
 				}
 				this.entity.inventory.SetItem(0, healingItemStack);
 				this.entity.inventory.SetHoldingItemIdx(0);
-				this.entity.inventory.ForceHoldingItemUpdate();
 				ItemAction itemAction = this.entity.inventory.holdingItem.Actions[1];
 				ItemActionData itemActionData = this.entity.inventory.holdingItemData.actionData[1];
 				ItemActionUseOther.FeedInventoryData feedInventoryData = itemActionData as ItemActionUseOther.FeedInventoryData;
@@ -424,19 +423,19 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E63 RID: 7779 RVA: 0x000B85B2 File Offset: 0x000B67B2
+		// Token: 0x06001E5B RID: 7771 RVA: 0x000B87AE File Offset: 0x000B69AE
 		public override bool canFire()
 		{
 			return base.canFire() && this.hasHealingItem();
 		}
 
-		// Token: 0x06001E64 RID: 7780 RVA: 0x000B85C4 File Offset: 0x000B67C4
+		// Token: 0x06001E5C RID: 7772 RVA: 0x000B87C0 File Offset: 0x000B69C0
 		public bool hasHealingItem()
 		{
 			return this.hasSupportedHealingItem();
 		}
 
-		// Token: 0x06001E65 RID: 7781 RVA: 0x000B85CC File Offset: 0x000B67CC
+		// Token: 0x06001E5D RID: 7773 RVA: 0x000B87C8 File Offset: 0x000B69C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasSupportedHealingItem()
 		{
@@ -450,13 +449,13 @@ public class DroneWeapons
 			return false;
 		}
 
-		// Token: 0x06001E66 RID: 7782 RVA: 0x000B8600 File Offset: 0x000B6800
+		// Token: 0x06001E5E RID: 7774 RVA: 0x000B87FC File Offset: 0x000B69FC
 		public bool targetCanBeHealed(EntityAlive _target)
 		{
 			return _target.IsAlive() && !_target.Buffs.HasBuff("buffHealHealth") && _target.GetCVar("medicalRegHealthAmount") == 0f && (float)_target.Health < _target.Stats.Health.ModifiedMax;
 		}
 
-		// Token: 0x06001E67 RID: 7783 RVA: 0x000B8658 File Offset: 0x000B6858
+		// Token: 0x06001E5F RID: 7775 RVA: 0x000B8854 File Offset: 0x000B6A54
 		public bool isTargetInNeedOfMedical(EntityAlive _target)
 		{
 			if (!_target)
@@ -468,20 +467,20 @@ public class DroneWeapons
 			return ((num == modifiedMax && (float)_target.Health < num - this.HealDamageThreshold) || (float)_target.Health < modifiedMax * 0.67f) && _target.GetCVar("medicalRegHealthAmount") == 0f;
 		}
 
-		// Token: 0x06001E68 RID: 7784 RVA: 0x000B86C1 File Offset: 0x000B68C1
+		// Token: 0x06001E60 RID: 7776 RVA: 0x000B88BD File Offset: 0x000B6ABD
 		public bool targetNeedsHealing(EntityAlive _target)
 		{
 			return this.findNeededHealType(_target) > DroneWeapons.HealBeamWeapon.HealItemType.None;
 		}
 
-		// Token: 0x06001E69 RID: 7785 RVA: 0x000B86CD File Offset: 0x000B68CD
+		// Token: 0x06001E61 RID: 7777 RVA: 0x000B88C9 File Offset: 0x000B6AC9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isTargetBleeding(EntityAlive _target)
 		{
 			return _target.Buffs.ActiveBuffs.Find((BuffValue b) => b.BuffName.ContainsCaseInsensitive("buffInjuryBleeding")) != null;
 		}
 
-		// Token: 0x06001E6A RID: 7786 RVA: 0x000B8704 File Offset: 0x000B6904
+		// Token: 0x06001E62 RID: 7778 RVA: 0x000B8900 File Offset: 0x000B6B00
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DroneWeapons.HealBeamWeapon.HealItemType findNeededHealType(EntityAlive _entity)
 		{
@@ -521,14 +520,15 @@ public class DroneWeapons
 			return DroneWeapons.HealBeamWeapon.HealItemType.None;
 		}
 
-		// Token: 0x06001E6B RID: 7787 RVA: 0x000B876C File Offset: 0x000B696C
+		// Token: 0x06001E63 RID: 7779 RVA: 0x000B8968 File Offset: 0x000B6B68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemStack getHealingItemStack(DroneWeapons.HealBeamWeapon.HealItemType healType)
 		{
 			Bag bag = this.entity.bag;
-			foreach (ItemStack itemStack in bag.GetSlots())
+			for (int i = 0; i < bag.SlotCount; i++)
 			{
-				if (itemStack != null && this.isItem(itemStack.itemValue, healType))
+				ItemStack itemStack = bag.ItemGrid[i];
+				if (this.isItem(itemStack.itemValue, healType))
 				{
 					ItemStack itemStack2 = new ItemStack(itemStack.itemValue.Clone(), 1);
 					bag.DecItem(itemStack.itemValue, 1, false, null);
@@ -538,14 +538,15 @@ public class DroneWeapons
 			return null;
 		}
 
-		// Token: 0x06001E6C RID: 7788 RVA: 0x000B87D4 File Offset: 0x000B69D4
+		// Token: 0x06001E64 RID: 7780 RVA: 0x000B89D4 File Offset: 0x000B6BD4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasItem(string itemGroupOrName)
 		{
 			Bag bag = this.entity.bag;
-			foreach (ItemStack itemStack in bag.GetSlots())
+			for (int i = 0; i < bag.SlotCount; i++)
 			{
-				if (itemStack != null && this.isItem(itemStack.itemValue, itemGroupOrName) && bag.CanTakeItem(itemStack))
+				ItemStack itemStack = bag.ItemGrid[i];
+				if (this.isItem(itemStack.itemValue, itemGroupOrName) && bag.CanTakeItem(itemStack))
 				{
 					return true;
 				}
@@ -553,107 +554,107 @@ public class DroneWeapons
 			return false;
 		}
 
-		// Token: 0x06001E6D RID: 7789 RVA: 0x000B8824 File Offset: 0x000B6A24
+		// Token: 0x06001E65 RID: 7781 RVA: 0x000B8A26 File Offset: 0x000B6C26
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasItem(DroneWeapons.HealBeamWeapon.HealItemType itemType)
 		{
 			return this.hasItem(this.supportedItems[(int)itemType]);
 		}
 
-		// Token: 0x06001E6E RID: 7790 RVA: 0x000B8834 File Offset: 0x000B6A34
+		// Token: 0x06001E66 RID: 7782 RVA: 0x000B8A36 File Offset: 0x000B6C36
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isItem(ItemValue iv, string itemGroupOrName)
 		{
 			return iv.ItemClass != null && iv.ItemClass.Name.Equals(itemGroupOrName);
 		}
 
-		// Token: 0x06001E6F RID: 7791 RVA: 0x000B8854 File Offset: 0x000B6A54
+		// Token: 0x06001E67 RID: 7783 RVA: 0x000B8A56 File Offset: 0x000B6C56
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isItem(ItemValue iv, DroneWeapons.HealBeamWeapon.HealItemType itemType)
 		{
 			return this.isItem(iv, this.supportedItems[(int)itemType]);
 		}
 
-		// Token: 0x04001446 RID: 5190
+		// Token: 0x0400143F RID: 5183
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cHealBeam = "drone_heal_beam";
 
-		// Token: 0x04001447 RID: 5191
+		// Token: 0x04001440 RID: 5184
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cHealPlayer = "drone_heal_player";
 
-		// Token: 0x04001448 RID: 5192
+		// Token: 0x04001441 RID: 5185
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cHealEffect = "drone_healeffect";
 
-		// Token: 0x04001449 RID: 5193
+		// Token: 0x04001442 RID: 5186
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cIdxHealing = 0;
 
-		// Token: 0x0400144A RID: 5194
+		// Token: 0x04001443 RID: 5187
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cActionIdx = 1;
 
-		// Token: 0x0400144B RID: 5195
+		// Token: 0x04001444 RID: 5188
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cHealingBuff = "buffHealHealth";
 
-		// Token: 0x0400144C RID: 5196
+		// Token: 0x04001445 RID: 5189
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cHealCVar = "medicalRegHealthAmount";
 
-		// Token: 0x0400144D RID: 5197
+		// Token: 0x04001446 RID: 5190
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cModifiedHealthCutoff = 0.67f;
 
-		// Token: 0x0400144E RID: 5198
+		// Token: 0x04001447 RID: 5191
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cBuffHealCooldown = "buffJunkDroneHealCooldownEffect";
 
-		// Token: 0x0400144F RID: 5199
+		// Token: 0x04001448 RID: 5192
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cBuffInjuryBleeding = "buffInjuryBleeding";
 
-		// Token: 0x04001450 RID: 5200
+		// Token: 0x04001449 RID: 5193
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static FastTags<TagGroup.Global> healingItemTags = FastTags<TagGroup.Global>.Parse("medical");
 
-		// Token: 0x04001451 RID: 5201
+		// Token: 0x0400144A RID: 5194
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float HealDamageThreshold = 35f;
 
-		// Token: 0x04001452 RID: 5202
+		// Token: 0x0400144B RID: 5195
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] supportedItems = new string[] { "none", "medicalAloeCream", "medicalBandage", "medicalFirstAidBandage", "medicalFirstAidKit" };
 
-		// Token: 0x020003E9 RID: 1001
+		// Token: 0x020003EC RID: 1004
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum HealItemType
 		{
-			// Token: 0x04001454 RID: 5204
+			// Token: 0x0400144D RID: 5197
 			None,
-			// Token: 0x04001455 RID: 5205
+			// Token: 0x0400144E RID: 5198
 			AloeCream,
-			// Token: 0x04001456 RID: 5206
+			// Token: 0x0400144F RID: 5199
 			Bandage,
-			// Token: 0x04001457 RID: 5207
+			// Token: 0x04001450 RID: 5200
 			MedicalBandage,
-			// Token: 0x04001458 RID: 5208
+			// Token: 0x04001451 RID: 5201
 			FirstAidKit
 		}
 	}
 
-	// Token: 0x020003EB RID: 1003
+	// Token: 0x020003EE RID: 1006
 	[Preserve]
 	public class StunBeamWeapon : DroneWeapons.Weapon
 	{
-		// Token: 0x06001E74 RID: 7796 RVA: 0x000B8894 File Offset: 0x000B6A94
+		// Token: 0x06001E6C RID: 7788 RVA: 0x000B8A96 File Offset: 0x000B6C96
 		public StunBeamWeapon(EntityAlive _entity)
 			: base(_entity)
 		{
 		}
 
-		// Token: 0x06001E75 RID: 7797 RVA: 0x000B889D File Offset: 0x000B6A9D
+		// Token: 0x06001E6D RID: 7789 RVA: 0x000B8A9F File Offset: 0x000B6C9F
 		public override void Init()
 		{
 			this.WeaponJoint = this.entity.transform.FindInChilds("WristRight", false);
@@ -661,7 +662,7 @@ public class DroneWeapons
 			this.range = 2f;
 		}
 
-		// Token: 0x06001E76 RID: 7798 RVA: 0x000B88D4 File Offset: 0x000B6AD4
+		// Token: 0x06001E6E RID: 7790 RVA: 0x000B8AD4 File Offset: 0x000B6CD4
 		public override void Fire(EntityAlive _target)
 		{
 			base.Fire(_target);
@@ -673,38 +674,38 @@ public class DroneWeapons
 			FireControllerUtils.SpawnParticleEffect(new ParticleEffect("nozzlesmokeuzi", this.WeaponJoint.position + Origin.position, num, new Color(1f, 1f, 1f, 0.3f), null, this.WeaponJoint, false, 1f, ""), -1);
 		}
 
-		// Token: 0x0400145B RID: 5211
+		// Token: 0x04001454 RID: 5204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cStunWeaponJoint = "WristRight";
 
-		// Token: 0x0400145C RID: 5212
+		// Token: 0x04001455 RID: 5205
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cAttackEffect = "drone_attackeffect";
 
-		// Token: 0x0400145D RID: 5213
+		// Token: 0x04001456 RID: 5206
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cShockBuffDmgReq = "_droneStunDamage";
 
-		// Token: 0x0400145E RID: 5214
+		// Token: 0x04001457 RID: 5207
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cShockMuzzleFlash = "nozzleflashuzi";
 
-		// Token: 0x0400145F RID: 5215
+		// Token: 0x04001458 RID: 5208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string cShockMuzzleSmoke = "nozzlesmokeuzi";
 	}
 
-	// Token: 0x020003EC RID: 1004
+	// Token: 0x020003EF RID: 1007
 	[Preserve]
 	public class MachineGunWeapon : DroneWeapons.Weapon
 	{
-		// Token: 0x06001E77 RID: 7799 RVA: 0x000B89E5 File Offset: 0x000B6BE5
+		// Token: 0x06001E6F RID: 7791 RVA: 0x000B8BE5 File Offset: 0x000B6DE5
 		public MachineGunWeapon(EntityAlive _entity)
 			: base(_entity)
 		{
 		}
 
-		// Token: 0x06001E78 RID: 7800 RVA: 0x000B8A0C File Offset: 0x000B6C0C
+		// Token: 0x06001E70 RID: 7792 RVA: 0x000B8C0C File Offset: 0x000B6E0C
 		public override void Init()
 		{
 			this.damageMultiplier = new DamageMultiplier(this.entityProperties);
@@ -751,7 +752,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E79 RID: 7801 RVA: 0x000B8CA8 File Offset: 0x000B6EA8
+		// Token: 0x06001E71 RID: 7793 RVA: 0x000B8EA8 File Offset: 0x000B70A8
 		public override void Update()
 		{
 			base.Update();
@@ -761,7 +762,7 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E7A RID: 7802 RVA: 0x000B8D14 File Offset: 0x000B6F14
+		// Token: 0x06001E72 RID: 7794 RVA: 0x000B8F14 File Offset: 0x000B7114
 		public override void Fire(EntityAlive _target)
 		{
 			if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -772,7 +773,7 @@ public class DroneWeapons
 			this._fireWeapon();
 		}
 
-		// Token: 0x06001E7B RID: 7803 RVA: 0x000B8D30 File Offset: 0x000B6F30
+		// Token: 0x06001E73 RID: 7795 RVA: 0x000B8F30 File Offset: 0x000B7130
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnFireComplete()
 		{
@@ -780,7 +781,7 @@ public class DroneWeapons
 			this.burstRoundCount = 0;
 		}
 
-		// Token: 0x06001E7C RID: 7804 RVA: 0x000B8D40 File Offset: 0x000B6F40
+		// Token: 0x06001E74 RID: 7796 RVA: 0x000B8F40 File Offset: 0x000B7140
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void _fireWeapon()
 		{
@@ -842,14 +843,14 @@ public class DroneWeapons
 			entityDrone.OriginalItemValue.UseTimes += EffectManager.GetValue(PassiveEffects.DegradationPerUse, entityDrone.OriginalItemValue, 1f, entityAlive, null, entityDrone.OriginalItemValue.ItemClass.ItemTags, true, false, true, true, true, 1, true, false) * ItemAction.ItemDegradationModifier;
 		}
 
-		// Token: 0x06001E7D RID: 7805 RVA: 0x000B920C File Offset: 0x000B740C
+		// Token: 0x06001E75 RID: 7797 RVA: 0x000B940C File Offset: 0x000B760C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float GetDamageEntity(ItemValue _itemValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 		{
 			return EffectManager.GetValue(PassiveEffects.EntityDamage, _itemValue, (float)this.entityDamage, _holdingEntity, null, _itemValue.ItemClass.ItemTags, true, false, true, true, true, 1, true, false);
 		}
 
-		// Token: 0x06001E7E RID: 7806 RVA: 0x000B923C File Offset: 0x000B743C
+		// Token: 0x06001E76 RID: 7798 RVA: 0x000B943C File Offset: 0x000B763C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float GetDamageBlock(ItemValue _itemValue, BlockValue _blockValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 		{
@@ -859,60 +860,60 @@ public class DroneWeapons
 			return Utils.FastMin((float)_blockValue.Block.blockMaterial.MaxIncomingDamage, value);
 		}
 
-		// Token: 0x04001460 RID: 5216
+		// Token: 0x04001459 RID: 5209
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float RayCount = 1f;
 
-		// Token: 0x04001461 RID: 5217
+		// Token: 0x0400145A RID: 5210
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2 spreadHorizontal;
 
-		// Token: 0x04001462 RID: 5218
+		// Token: 0x0400145B RID: 5211
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2 spreadVertical;
 
-		// Token: 0x04001463 RID: 5219
+		// Token: 0x0400145C RID: 5212
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int burstRoundCountMax = 1;
 
-		// Token: 0x04001464 RID: 5220
+		// Token: 0x0400145D RID: 5213
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int burstRoundCount;
 
-		// Token: 0x04001465 RID: 5221
+		// Token: 0x0400145E RID: 5214
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float burstFireRateMax = 0.1f;
 
-		// Token: 0x04001466 RID: 5222
+		// Token: 0x0400145F RID: 5215
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float burstFireRate = 1f;
 
-		// Token: 0x04001467 RID: 5223
+		// Token: 0x04001460 RID: 5216
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int entityDamage;
 
-		// Token: 0x04001468 RID: 5224
+		// Token: 0x04001461 RID: 5217
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int blockDamage;
 
-		// Token: 0x04001469 RID: 5225
+		// Token: 0x04001462 RID: 5218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DamageMultiplier damageMultiplier;
 
-		// Token: 0x0400146A RID: 5226
+		// Token: 0x04001463 RID: 5219
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<string> buffActions;
 
-		// Token: 0x0400146B RID: 5227
+		// Token: 0x04001464 RID: 5220
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> tmpTag;
 	}
 
-	// Token: 0x020003ED RID: 1005
+	// Token: 0x020003F0 RID: 1008
 	[Preserve]
 	public class NetPackageDroneParticleEffect : NetPackage
 	{
-		// Token: 0x06001E7F RID: 7807 RVA: 0x000B92B0 File Offset: 0x000B74B0
+		// Token: 0x06001E77 RID: 7799 RVA: 0x000B94B0 File Offset: 0x000B76B0
 		public DroneWeapons.NetPackageDroneParticleEffect Setup(ParticleEffect _pe, int _entityThatCausedIt, DroneWeapons.NetPackageDroneParticleEffect.cActionType _actionType)
 		{
 			this.pe = _pe;
@@ -921,7 +922,7 @@ public class DroneWeapons
 			return this;
 		}
 
-		// Token: 0x06001E80 RID: 7808 RVA: 0x000B92C8 File Offset: 0x000B74C8
+		// Token: 0x06001E78 RID: 7800 RVA: 0x000B94C8 File Offset: 0x000B76C8
 		public override void read(PooledBinaryReader _br)
 		{
 			this.pe = new ParticleEffect();
@@ -929,7 +930,7 @@ public class DroneWeapons
 			this.entityThatCausedIt = _br.ReadInt32();
 		}
 
-		// Token: 0x06001E81 RID: 7809 RVA: 0x000B92ED File Offset: 0x000B74ED
+		// Token: 0x06001E79 RID: 7801 RVA: 0x000B94ED File Offset: 0x000B76ED
 		public override void write(PooledBinaryWriter _bw)
 		{
 			base.write(_bw);
@@ -937,7 +938,7 @@ public class DroneWeapons
 			_bw.Write(this.entityThatCausedIt);
 		}
 
-		// Token: 0x06001E82 RID: 7810 RVA: 0x000B9310 File Offset: 0x000B7510
+		// Token: 0x06001E7A RID: 7802 RVA: 0x000B9510 File Offset: 0x000B7710
 		public override void ProcessPackage(World _world, GameManager _callbacks)
 		{
 			if (_world == null)
@@ -972,30 +973,24 @@ public class DroneWeapons
 			}
 		}
 
-		// Token: 0x06001E83 RID: 7811 RVA: 0x000B93F5 File Offset: 0x000B75F5
-		public override int GetLength()
-		{
-			return 20;
-		}
-
-		// Token: 0x0400146C RID: 5228
+		// Token: 0x04001465 RID: 5221
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ParticleEffect pe;
 
-		// Token: 0x0400146D RID: 5229
+		// Token: 0x04001466 RID: 5222
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int entityThatCausedIt;
 
-		// Token: 0x0400146E RID: 5230
+		// Token: 0x04001467 RID: 5223
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DroneWeapons.NetPackageDroneParticleEffect.cActionType actionType;
 
-		// Token: 0x020003EE RID: 1006
+		// Token: 0x020003F1 RID: 1009
 		public enum cActionType
 		{
-			// Token: 0x04001470 RID: 5232
+			// Token: 0x04001469 RID: 5225
 			Attack,
-			// Token: 0x04001471 RID: 5233
+			// Token: 0x0400146A RID: 5226
 			Heal
 		}
 	}

@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x020012DF RID: 4831
+// Token: 0x020012FF RID: 4863
 public class TexturesSkybox
 {
-	// Token: 0x0600994D RID: 39245 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060099F9 RID: 39417 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool LoadSkybox(XmlFile _xmlFile)
 	{
 		return false;
 	}
 
-	// Token: 0x04007385 RID: 29573
+	// Token: 0x04007400 RID: 29696
 	public string clouds;
 
-	// Token: 0x04007386 RID: 29574
+	// Token: 0x04007401 RID: 29697
 	public string sun;
 
-	// Token: 0x04007387 RID: 29575
+	// Token: 0x04007402 RID: 29698
 	public string moon;
 }

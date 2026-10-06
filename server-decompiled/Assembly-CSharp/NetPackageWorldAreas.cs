@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200086F RID: 2159
+// Token: 0x02000872 RID: 2162
 [Preserve]
 public class NetPackageWorldAreas : NetPackage
 {
-	// Token: 0x06003EFF RID: 16127 RVA: 0x0018C869 File Offset: 0x0018AA69
+	// Token: 0x06003E94 RID: 16020 RVA: 0x0018C6E1 File Offset: 0x0018A8E1
 	public NetPackageWorldAreas Setup(List<TraderArea> _list)
 	{
 		this.traders = _list;
 		return this;
 	}
 
-	// Token: 0x06003F00 RID: 16128 RVA: 0x0018C874 File Offset: 0x0018AA74
+	// Token: 0x06003E95 RID: 16021 RVA: 0x0018C6EC File Offset: 0x0018A8EC
 	public override void read(PooledBinaryReader _reader)
 	{
 		_reader.ReadByte();
@@ -26,7 +26,7 @@ public class NetPackageWorldAreas : NetPackage
 		}
 	}
 
-	// Token: 0x06003F01 RID: 16129 RVA: 0x0018C8BC File Offset: 0x0018AABC
+	// Token: 0x06003E96 RID: 16022 RVA: 0x0018C734 File Offset: 0x0018A934
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -38,25 +38,14 @@ public class NetPackageWorldAreas : NetPackage
 		}
 	}
 
-	// Token: 0x06003F02 RID: 16130 RVA: 0x0018C911 File Offset: 0x0018AB11
+	// Token: 0x06003E97 RID: 16023 RVA: 0x0018C789 File Offset: 0x0018A989
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		World.SetWorldAreas(this.traders);
 	}
 
-	// Token: 0x06003F03 RID: 16131 RVA: 0x0018C920 File Offset: 0x0018AB20
-	public override int GetLength()
-	{
-		int num = 2;
-		for (int i = 0; i < this.traders.Count; i++)
-		{
-			num += this.traders[i].GetReadWriteSize();
-		}
-		return num;
-	}
-
-	// Token: 0x17000684 RID: 1668
-	// (get) Token: 0x06003F04 RID: 16132 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x170006A3 RID: 1699
+	// (get) Token: 0x06003E98 RID: 16024 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -65,11 +54,11 @@ public class NetPackageWorldAreas : NetPackage
 		}
 	}
 
-	// Token: 0x040032DB RID: 13019
+	// Token: 0x040032C6 RID: 12998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cVersion = 1;
 
-	// Token: 0x040032DC RID: 13020
+	// Token: 0x040032C7 RID: 12999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<TraderArea> traders;
 }

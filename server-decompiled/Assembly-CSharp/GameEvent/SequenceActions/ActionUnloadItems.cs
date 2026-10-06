@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D4 RID: 6612
+	// Token: 0x02001A00 RID: 6656
 	[Preserve]
 	public class ActionUnloadItems : ActionBaseItemAction
 	{
-		// Token: 0x0600C9E6 RID: 51686 RVA: 0x004A0EEC File Offset: 0x0049F0EC
+		// Token: 0x0600CB3E RID: 52030 RVA: 0x004A5390 File Offset: 0x004A3590
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600C9E7 RID: 51687 RVA: 0x004A0FA4 File Offset: 0x0049F1A4
+		// Token: 0x0600CB3F RID: 52031 RVA: 0x004A5448 File Offset: 0x004A3648
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionEnded(EntityPlayer player)
 		{
@@ -51,20 +51,20 @@ namespace GameEvent.SequenceActions
 				EntityLootContainer entityLootContainer = EntityFactory.CreateEntity(player.entityId, text.GetHashCode(), player.position, Vector3.zero) as EntityLootContainer;
 				if (entityLootContainer != null)
 				{
-					entityLootContainer.SetContent(ItemStack.Clone(this.ItemStacks));
+					entityLootContainer.SetContent(ItemStack.Clone(this.ItemStacks), 0);
 				}
 				GameManager.Instance.World.SpawnEntityInWorld(entityLootContainer);
 			}
 		}
 
-		// Token: 0x0600C9E8 RID: 51688 RVA: 0x004A1066 File Offset: 0x0049F266
+		// Token: 0x0600CB40 RID: 52032 RVA: 0x004A550B File Offset: 0x004A370B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
 			return new ActionUnloadItems();
 		}
 
-		// Token: 0x04009939 RID: 39225
+		// Token: 0x040099FF RID: 39423
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<ItemStack> ItemStacks = new List<ItemStack>();
 	}

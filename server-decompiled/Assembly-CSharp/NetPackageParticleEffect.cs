@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081C RID: 2076
+// Token: 0x0200081A RID: 2074
 [Preserve]
 public class NetPackageParticleEffect : NetPackage
 {
-	// Token: 0x06003D11 RID: 15633 RVA: 0x00184B3A File Offset: 0x00182D3A
+	// Token: 0x06003CD6 RID: 15574 RVA: 0x00184706 File Offset: 0x00182906
 	public NetPackageParticleEffect Setup(ParticleEffect _pe, int _entityThatCausedIt, bool _forceCreation = false, bool _worldSpawn = false)
 	{
 		this.pe = _pe;
@@ -15,7 +15,7 @@ public class NetPackageParticleEffect : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D12 RID: 15634 RVA: 0x00184B5A File Offset: 0x00182D5A
+	// Token: 0x06003CD7 RID: 15575 RVA: 0x00184726 File Offset: 0x00182926
 	public override void read(PooledBinaryReader _br)
 	{
 		this.pe = new ParticleEffect();
@@ -25,7 +25,7 @@ public class NetPackageParticleEffect : NetPackage
 		this.worldSpawn = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003D13 RID: 15635 RVA: 0x00184B97 File Offset: 0x00182D97
+	// Token: 0x06003CD8 RID: 15576 RVA: 0x00184763 File Offset: 0x00182963
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -35,7 +35,7 @@ public class NetPackageParticleEffect : NetPackage
 		_bw.Write(this.worldSpawn);
 	}
 
-	// Token: 0x06003D14 RID: 15636 RVA: 0x00184BD0 File Offset: 0x00182DD0
+	// Token: 0x06003CD9 RID: 15577 RVA: 0x0018479C File Offset: 0x0018299C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -50,25 +50,19 @@ public class NetPackageParticleEffect : NetPackage
 		_world.GetGameManager().SpawnParticleEffectClient(this.pe, this.entityThatCausedIt, this.forceCreation, this.worldSpawn);
 	}
 
-	// Token: 0x06003D15 RID: 15637 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x0400318F RID: 12687
+	// Token: 0x04003173 RID: 12659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ParticleEffect pe;
 
-	// Token: 0x04003190 RID: 12688
+	// Token: 0x04003174 RID: 12660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityThatCausedIt;
 
-	// Token: 0x04003191 RID: 12689
+	// Token: 0x04003175 RID: 12661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool forceCreation;
 
-	// Token: 0x04003192 RID: 12690
+	// Token: 0x04003176 RID: 12662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool worldSpawn;
 }

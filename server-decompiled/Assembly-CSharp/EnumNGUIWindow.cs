@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x020012A7 RID: 4775
+// Token: 0x020012BF RID: 4799
 public enum EnumNGUIWindow
 {
-	// Token: 0x04007186 RID: 29062
+	// Token: 0x040071F0 RID: 29168
 	InGameHUD,
-	// Token: 0x04007187 RID: 29063
+	// Token: 0x040071F1 RID: 29169
 	MainMenuBackground,
-	// Token: 0x04007188 RID: 29064
+	// Token: 0x040071F2 RID: 29170
 	PowerInfo,
-	// Token: 0x04007189 RID: 29065
+	// Token: 0x040071F3 RID: 29171
 	CriticalHitText,
-	// Token: 0x0400718A RID: 29066
+	// Token: 0x040071F4 RID: 29172
 	Version,
-	// Token: 0x0400718B RID: 29067
+	// Token: 0x040071F5 RID: 29173
 	Loading
 }

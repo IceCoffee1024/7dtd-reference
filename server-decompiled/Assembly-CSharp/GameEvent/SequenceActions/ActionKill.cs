@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200198B RID: 6539
+	// Token: 0x020019B7 RID: 6583
 	[Preserve]
 	public class ActionKill : ActionBaseTargetAction
 	{
-		// Token: 0x0600C89F RID: 51359 RVA: 0x0049AE88 File Offset: 0x00499088
+		// Token: 0x0600C9F7 RID: 51703 RVA: 0x0049F34C File Offset: 0x0049D54C
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8A0 RID: 51360 RVA: 0x0049AEC0 File Offset: 0x004990C0
+		// Token: 0x0600C9F8 RID: 51704 RVA: 0x0049F384 File Offset: 0x0049D584
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

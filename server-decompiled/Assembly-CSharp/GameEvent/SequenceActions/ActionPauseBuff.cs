@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001993 RID: 6547
+	// Token: 0x020019BF RID: 6591
 	[Preserve]
 	public class ActionPauseBuff : ActionBaseClientAction
 	{
-		// Token: 0x0600C8B2 RID: 51378 RVA: 0x0049B4E0 File Offset: 0x004996E0
+		// Token: 0x0600CA0A RID: 51722 RVA: 0x0049F9A4 File Offset: 0x0049DBA4
 		public override bool CanPerform(Entity target)
 		{
 			if (!this.checkAlreadyExists)
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			return entityAlive == null || entityAlive.Buffs.HasBuffByTag(this.buffTags);
 		}
 
-		// Token: 0x0600C8B3 RID: 51379 RVA: 0x0049B518 File Offset: 0x00499718
+		// Token: 0x0600CA0B RID: 51723 RVA: 0x0049F9DC File Offset: 0x0049DBDC
 		public override void OnClientPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8B4 RID: 51380 RVA: 0x0049B580 File Offset: 0x00499780
+		// Token: 0x0600CA0C RID: 51724 RVA: 0x0049FA44 File Offset: 0x0049DC44
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnServerPerform(Entity target)
 		{
@@ -53,7 +53,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8B5 RID: 51381 RVA: 0x0049B5E8 File Offset: 0x004997E8
+		// Token: 0x0600CA0D RID: 51725 RVA: 0x0049FAAC File Offset: 0x0049DCAC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -67,7 +67,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionPauseBuff.PropCheckAlreadyExists, ref this.checkAlreadyExists);
 		}
 
-		// Token: 0x0600C8B6 RID: 51382 RVA: 0x0049B64A File Offset: 0x0049984A
+		// Token: 0x0600CA0E RID: 51726 RVA: 0x0049FB0E File Offset: 0x0049DD0E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -80,27 +80,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009806 RID: 38918
+		// Token: 0x040098CC RID: 39116
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> buffTags = FastTags<TagGroup.Global>.none;
 
-		// Token: 0x04009807 RID: 38919
+		// Token: 0x040098CD RID: 39117
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool checkAlreadyExists = true;
 
-		// Token: 0x04009808 RID: 38920
+		// Token: 0x040098CE RID: 39118
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool pauseState = true;
 
-		// Token: 0x04009809 RID: 38921
+		// Token: 0x040098CF RID: 39119
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffTags = "buff_tags";
 
-		// Token: 0x0400980A RID: 38922
+		// Token: 0x040098D0 RID: 39120
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPauseState = "state";
 
-		// Token: 0x0400980B RID: 38923
+		// Token: 0x040098D1 RID: 39121
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropCheckAlreadyExists = "check_already_exists";
 	}

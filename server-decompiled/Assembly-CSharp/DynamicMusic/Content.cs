@@ -7,75 +7,75 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A27 RID: 6695
+	// Token: 0x02001A53 RID: 6739
 	[Preserve]
 	public abstract class Content
 	{
-		// Token: 0x0600CB2C RID: 52012 RVA: 0x004A5D3B File Offset: 0x004A3F3B
+		// Token: 0x0600CC84 RID: 52356 RVA: 0x004AA207 File Offset: 0x004A8407
 		public Content()
 		{
 			Content.AllContent.Add(this);
 		}
 
-		// Token: 0x170018C9 RID: 6345
-		// (get) Token: 0x0600CB2D RID: 52013 RVA: 0x004A5D4E File Offset: 0x004A3F4E
-		// (set) Token: 0x0600CB2E RID: 52014 RVA: 0x004A5D56 File Offset: 0x004A3F56
+		// Token: 0x1700196B RID: 6507
+		// (get) Token: 0x0600CC85 RID: 52357 RVA: 0x004AA21A File Offset: 0x004A841A
+		// (set) Token: 0x0600CC86 RID: 52358 RVA: 0x004AA222 File Offset: 0x004A8422
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170018CA RID: 6346
-		// (get) Token: 0x0600CB2F RID: 52015 RVA: 0x004A5D5F File Offset: 0x004A3F5F
-		// (set) Token: 0x0600CB30 RID: 52016 RVA: 0x004A5D67 File Offset: 0x004A3F67
+		// Token: 0x1700196C RID: 6508
+		// (get) Token: 0x0600CC87 RID: 52359 RVA: 0x004AA22B File Offset: 0x004A842B
+		// (set) Token: 0x0600CC88 RID: 52360 RVA: 0x004AA233 File Offset: 0x004A8433
 		public SectionType Section
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170018CB RID: 6347
-		// (get) Token: 0x0600CB31 RID: 52017 RVA: 0x004A5D70 File Offset: 0x004A3F70
-		// (set) Token: 0x0600CB32 RID: 52018 RVA: 0x004A5D78 File Offset: 0x004A3F78
+		// Token: 0x1700196D RID: 6509
+		// (get) Token: 0x0600CC89 RID: 52361 RVA: 0x004AA23C File Offset: 0x004A843C
+		// (set) Token: 0x0600CC8A RID: 52362 RVA: 0x004AA244 File Offset: 0x004A8444
 		public virtual bool IsLoaded
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600CB33 RID: 52019
+		// Token: 0x0600CC8B RID: 52363
 		[Preserve]
 		public abstract IEnumerator Load();
 
-		// Token: 0x0600CB34 RID: 52020
+		// Token: 0x0600CC8C RID: 52364
 		[Preserve]
 		public abstract void Unload();
 
-		// Token: 0x0600CB35 RID: 52021 RVA: 0x004A5D81 File Offset: 0x004A3F81
+		// Token: 0x0600CC8D RID: 52365 RVA: 0x004AA24D File Offset: 0x004A844D
 		[Preserve]
 		public static Content CreateWrapper(string _type)
 		{
 			return (Content)Activator.CreateInstance(ReflectionHelpers.GetTypeWithPrefix("DynamicMusic.", _type));
 		}
 
-		// Token: 0x0600CB36 RID: 52022 RVA: 0x004A5D98 File Offset: 0x004A3F98
+		// Token: 0x0600CC8E RID: 52366 RVA: 0x004AA264 File Offset: 0x004A8464
 		public virtual void ParseFromXml(XElement _xmlNode)
 		{
 			this.Name = _xmlNode.GetAttribute("name");
 		}
 
-		// Token: 0x04009A9D RID: 39581
+		// Token: 0x04009B63 RID: 39779
 		public static Dictionary<SectionType, int> SamplesFor = new Dictionary<SectionType, int>();
 
-		// Token: 0x04009A9E RID: 39582
+		// Token: 0x04009B64 RID: 39780
 		public static Dictionary<SectionType, string> SourcePathFor = new Dictionary<SectionType, string>();
 
-		// Token: 0x04009A9F RID: 39583
+		// Token: 0x04009B65 RID: 39781
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static GameRandom rng = GameRandomManager.Instance.CreateGameRandom();
 
-		// Token: 0x04009AA0 RID: 39584
+		// Token: 0x04009B66 RID: 39782
 		public static List<Content> AllContent = new List<Content>();
 	}
 }

@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001938 RID: 6456
+	// Token: 0x02001964 RID: 6500
 	[Preserve]
 	public class RequirementInVehicle : BaseRequirement
 	{
-		// Token: 0x0600C725 RID: 50981 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C87D RID: 51325 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C726 RID: 50982 RVA: 0x004915B2 File Offset: 0x0048F7B2
+		// Token: 0x0600C87E RID: 51326 RVA: 0x00495A9E File Offset: 0x00493C9E
 		public override bool CanPerform(Entity target)
 		{
 			if (target == null)
@@ -27,7 +27,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C727 RID: 50983 RVA: 0x004915DC File Offset: 0x0048F7DC
+		// Token: 0x0600C87F RID: 51327 RVA: 0x00495AC8 File Offset: 0x00493CC8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

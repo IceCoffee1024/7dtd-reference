@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E06 RID: 3590
+// Token: 0x02000E15 RID: 3605
 [Preserve]
 public abstract class XUiC_EditingToolsDialogBase : XUiController
 {
-	// Token: 0x06006DF7 RID: 28151 RVA: 0x002AAC6A File Offset: 0x002A8E6A
+	// Token: 0x06006DEF RID: 28143 RVA: 0x002AE012 File Offset: 0x002AC212
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Event_BackOnPress(XUiController _sender, int _mouseButton)
@@ -13,7 +13,7 @@ public abstract class XUiC_EditingToolsDialogBase : XUiController
 		this.close();
 	}
 
-	// Token: 0x06006DF8 RID: 28152 RVA: 0x002AAC74 File Offset: 0x002A8E74
+	// Token: 0x06006DF0 RID: 28144 RVA: 0x002AE01C File Offset: 0x002AC21C
 	public override void OnOpen()
 	{
 		this.xui.GetChildByType<XUiC_EditingTools>().SetWindow(this.windowGroup.Id);
@@ -23,7 +23,7 @@ public abstract class XUiC_EditingToolsDialogBase : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_EditingTools.ID, false);
 	}
 
-	// Token: 0x06006DF9 RID: 28153 RVA: 0x002AACE3 File Offset: 0x002A8EE3
+	// Token: 0x06006DF1 RID: 28145 RVA: 0x002AE08B File Offset: 0x002AC28B
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -31,7 +31,7 @@ public abstract class XUiC_EditingToolsDialogBase : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x06006DFA RID: 28154 RVA: 0x002AAD20 File Offset: 0x002A8F20
+	// Token: 0x06006DF2 RID: 28146 RVA: 0x002AE0C8 File Offset: 0x002AC2C8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -45,26 +45,26 @@ public abstract class XUiC_EditingToolsDialogBase : XUiController
 		}
 	}
 
-	// Token: 0x06006DFB RID: 28155 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006DF3 RID: 28147 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onDirtyUpdate()
 	{
 	}
 
-	// Token: 0x06006DFC RID: 28156 RVA: 0x00089495 File Offset: 0x00087695
+	// Token: 0x06006DF4 RID: 28148 RVA: 0x00089715 File Offset: 0x00087915
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void close()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006DFD RID: 28157 RVA: 0x00089481 File Offset: 0x00087681
+	// Token: 0x06006DF5 RID: 28149 RVA: 0x00089701 File Offset: 0x00087901
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_EditingToolsDialogBase()
 	{
 	}
 
-	// Token: 0x040053AB RID: 21419
+	// Token: 0x040053E2 RID: 21474
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;

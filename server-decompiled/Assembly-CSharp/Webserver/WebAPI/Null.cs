@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace Webserver.WebAPI
 {
-	// Token: 0x02001ACF RID: 6863
+	// Token: 0x02001AFB RID: 6907
 	[Preserve]
 	public class Null : AbsWebAPI
 	{
-		// Token: 0x0600CEC0 RID: 52928 RVA: 0x004B4168 File Offset: 0x004B2368
+		// Token: 0x0600D018 RID: 53272 RVA: 0x004B8634 File Offset: 0x004B6834
 		public Null(string _name)
 			: base(_name)
 		{
 		}
 
-		// Token: 0x0600CEC1 RID: 52929 RVA: 0x004B4174 File Offset: 0x004B2374
+		// Token: 0x0600D019 RID: 53273 RVA: 0x004B8640 File Offset: 0x004B6840
 		public override void HandleRequest(RequestContext _context)
 		{
 			_context.Response.ContentLength64 = 0L;

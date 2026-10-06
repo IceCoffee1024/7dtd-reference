@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000526 RID: 1318
-// (Invoke) Token: 0x06002B6C RID: 11116
+// Token: 0x0200052C RID: 1324
+// (Invoke) Token: 0x06002B62 RID: 11106
 public delegate void OnGameEventAccessApproved();

@@ -1,17 +1,17 @@
 ﻿using System;
 
-// Token: 0x020009FC RID: 2556
+// Token: 0x02000A06 RID: 2566
 public readonly struct SaveDataSizes
 {
-	// Token: 0x06004C51 RID: 19537 RVA: 0x001D8950 File Offset: 0x001D6B50
+	// Token: 0x06004C20 RID: 19488 RVA: 0x001D9C00 File Offset: 0x001D7E00
 	public SaveDataSizes(long total, long remaining)
 	{
 		this.m_total = total;
 		this.m_remaining = remaining;
 	}
 
-	// Token: 0x17000824 RID: 2084
-	// (get) Token: 0x06004C52 RID: 19538 RVA: 0x001D8960 File Offset: 0x001D6B60
+	// Token: 0x17000844 RID: 2116
+	// (get) Token: 0x06004C21 RID: 19489 RVA: 0x001D9C10 File Offset: 0x001D7E10
 	public long Total
 	{
 		get
@@ -20,8 +20,8 @@ public readonly struct SaveDataSizes
 		}
 	}
 
-	// Token: 0x17000825 RID: 2085
-	// (get) Token: 0x06004C53 RID: 19539 RVA: 0x001D8968 File Offset: 0x001D6B68
+	// Token: 0x17000845 RID: 2117
+	// (get) Token: 0x06004C22 RID: 19490 RVA: 0x001D9C18 File Offset: 0x001D7E18
 	public long Used
 	{
 		get
@@ -30,8 +30,8 @@ public readonly struct SaveDataSizes
 		}
 	}
 
-	// Token: 0x17000826 RID: 2086
-	// (get) Token: 0x06004C54 RID: 19540 RVA: 0x001D8977 File Offset: 0x001D6B77
+	// Token: 0x17000846 RID: 2118
+	// (get) Token: 0x06004C23 RID: 19491 RVA: 0x001D9C27 File Offset: 0x001D7E27
 	public long Remaining
 	{
 		get
@@ -40,11 +40,11 @@ public readonly struct SaveDataSizes
 		}
 	}
 
-	// Token: 0x04003BE2 RID: 15330
+	// Token: 0x04003BEF RID: 15343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly long m_total;
 
-	// Token: 0x04003BE3 RID: 15331
+	// Token: 0x04003BF0 RID: 15344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly long m_remaining;
 }

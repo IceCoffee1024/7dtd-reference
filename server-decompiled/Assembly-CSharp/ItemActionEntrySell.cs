@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D62 RID: 3426
+// Token: 0x02000D73 RID: 3443
 [Preserve]
 public class ItemActionEntrySell : BaseItemActionEntry
 {
-	// Token: 0x06006828 RID: 26664 RVA: 0x00291B9C File Offset: 0x0028FD9C
+	// Token: 0x0600682F RID: 26671 RVA: 0x0029514C File Offset: 0x0029334C
 	public ItemActionEntrySell(XUiController _controller)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.None, "", "ui/ui_denied")
 	{
@@ -33,15 +33,15 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.IconName = "ui_game_symbol_coin";
 	}
 
-	// Token: 0x06006829 RID: 26665 RVA: 0x00291C68 File Offset: 0x0028FE68
+	// Token: 0x06006830 RID: 26672 RVA: 0x00295218 File Offset: 0x00293418
 	public override void RefreshEnabled()
 	{
-		XUiC_ItemStack xuiC_ItemStack = (XUiC_ItemStack)base.ItemController;
-		int count = xuiC_ItemStack.InfoWindow.BuySellCounter.Count;
+		IItemStackController itemStackController = (IItemStackController)base.ItemController;
+		int count = itemStackController.InfoWindow.BuySellCounter.Count;
 		this.state = ItemActionEntrySell.StateTypes.Normal;
 		if (this.isOwner)
 		{
-			ItemStack itemStack = xuiC_ItemStack.ItemStack.Clone();
+			ItemStack itemStack = itemStackController.ItemStack.Clone();
 			if (count <= 0)
 			{
 				this.state = ItemActionEntrySell.StateTypes.NotEnoughItems;
@@ -55,9 +55,9 @@ public class ItemActionEntrySell : BaseItemActionEntry
 				}
 			}
 		}
-		else if (!xuiC_ItemStack.ItemStack.IsEmpty())
+		else if (!itemStackController.ItemStack.IsEmpty())
 		{
-			ItemStack itemStack2 = xuiC_ItemStack.ItemStack.Clone();
+			ItemStack itemStack2 = itemStackController.ItemStack.Clone();
 			ItemClass itemClass = itemStack2.itemValue.ItemClass;
 			if (!(itemClass.IsBlock() ? Block.list[itemStack2.itemValue.type].SellableToTrader : itemClass.SellableToTrader))
 			{
@@ -71,7 +71,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.Enabled = this.state == ItemActionEntrySell.StateTypes.Normal;
 	}
 
-	// Token: 0x0600682A RID: 26666 RVA: 0x00291DBC File Offset: 0x0028FFBC
+	// Token: 0x06006831 RID: 26673 RVA: 0x0029536C File Offset: 0x0029356C
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -95,29 +95,29 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x0600682B RID: 26667 RVA: 0x00291E68 File Offset: 0x00290068
+	// Token: 0x06006832 RID: 26674 RVA: 0x00295418 File Offset: 0x00293618
 	public override void OnActivated()
 	{
 		TraderData traderData = base.ItemController.xui.Trader.TraderData;
 		try
 		{
 			EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
-			XUiC_ItemStack xuiC_ItemStack = (XUiC_ItemStack)base.ItemController;
-			ItemValue itemValue = xuiC_ItemStack.ItemStack.itemValue;
-			ItemClass forId = ItemClass.GetForId(xuiC_ItemStack.ItemStack.itemValue.type);
+			IItemStackController itemStackController = (IItemStackController)base.ItemController;
+			ItemValue itemValue = itemStackController.ItemStack.itemValue;
+			ItemClass forId = ItemClass.GetForId(itemStackController.ItemStack.itemValue.type);
 			ItemValue item = ItemClass.GetItem(TraderInfo.CurrencyItem, false);
-			if (!xuiC_ItemStack.ItemStack.IsEmpty() && forId != null)
+			if (!itemStackController.ItemStack.IsEmpty() && forId != null)
 			{
 				int num = (forId.IsBlock() ? Block.list[itemValue.type].EconomicBundleSize : forId.EconomicBundleSize);
-				if (xuiC_ItemStack.ItemStack.count < num)
+				if (itemStackController.ItemStack.count < num)
 				{
 					GameManager.ShowTooltip(entityPlayer, string.Format(Localization.Get("ttItemCountNotBundleSize", false, null), num), false, false, 0f);
 					Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 				}
 				else if (this.isOwner)
 				{
-					int num2 = xuiC_ItemStack.InfoWindow.BuySellCounter.Count;
-					if (xuiC_ItemStack.ItemStack.itemValue.type == item.type)
+					int num2 = itemStackController.InfoWindow.BuySellCounter.Count;
+					if (itemStackController.ItemStack.itemValue.type == item.type)
 					{
 						if (traderData.AvailableMoney + num2 > 6 * traderData.TraderInfo.RentCost)
 						{
@@ -136,7 +136,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 							int num4 = num2;
 							for (int i = 0; i < traderData.PrimaryInventory.Count; i++)
 							{
-								if (traderData.PrimaryInventory[i].Item.itemValue.type == xuiC_ItemStack.ItemStack.itemValue.type)
+								if (traderData.PrimaryInventory[i].Item.itemValue.type == itemStackController.ItemStack.itemValue.type)
 								{
 									int num5 = forId.MaxCount - traderData.PrimaryInventory[i].Item.count;
 									num4 -= num5;
@@ -158,33 +158,33 @@ public class ItemActionEntrySell : BaseItemActionEntry
 						{
 							GameManager.ShowTooltip(entityPlayer, string.Format(Localization.Get("ttItemCountNotBundleSize", false, null), num), false, false, 0f);
 							num2 -= num6;
-							xuiC_ItemStack.InfoWindow.BuySellCounter.Count = num2;
+							itemStackController.InfoWindow.BuySellCounter.Count = num2;
 							Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 							return;
 						}
-						ItemStack itemStack = xuiC_ItemStack.ItemStack.Clone();
+						ItemStack itemStack = itemStackController.ItemStack.Clone();
 						itemStack = ItemActionEntryScrap.HandleRemoveAmmo(itemStack, base.ItemController.xui);
 						itemStack.count = num2;
 						traderData.AddToPrimaryInventory(itemStack, true);
 					}
 					base.ItemController.xui.Trader.TraderWindowGroup.RefreshTraderItems();
 					Manager.PlayInsidePlayerHead("craft_place_item", -1, 0f, false, false);
-					xuiC_ItemStack.ItemStack.count -= num2;
-					xuiC_ItemStack.InfoWindow.BuySellCounter.MaxCount -= num2;
-					if (xuiC_ItemStack.ItemStack.count == 0)
+					itemStackController.ItemStack.count -= num2;
+					itemStackController.InfoWindow.BuySellCounter.MaxCount -= num2;
+					if (itemStackController.ItemStack.count == 0)
 					{
-						xuiC_ItemStack.ItemStack = ItemStack.Empty;
-						xuiC_ItemStack.IsSelected = false;
+						itemStackController.ItemStack = ItemStack.Empty;
+						itemStackController.IsSelected = false;
 					}
 					else
 					{
-						xuiC_ItemStack.ForceRefreshItemStack();
+						itemStackController.ForceRefreshItemStack();
 					}
 				}
 				else
 				{
-					int count = xuiC_ItemStack.InfoWindow.BuySellCounter.Count;
-					int primaryItemCount = traderData.GetPrimaryItemCount(xuiC_ItemStack.ItemStack.itemValue);
+					int count = itemStackController.InfoWindow.BuySellCounter.Count;
+					int primaryItemCount = traderData.GetPrimaryItemCount(itemStackController.ItemStack.itemValue);
 					int num7 = forId.MaxCount * TraderInfo.TraderBuyLimit;
 					int num8 = Math.Min(num7 - primaryItemCount, count);
 					if (num7 > 0 && num8 <= 0)
@@ -195,7 +195,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 					else if (num7 > 0 && num8 != count)
 					{
 						GameManager.ShowTooltip(entityPlayer, string.Format(Localization.Get("ttCanOnlySellAmount", false, null), num8), false, false, 0f);
-						xuiC_ItemStack.InfoWindow.BuySellCounter.Count = num8;
+						itemStackController.InfoWindow.BuySellCounter.Count = num8;
 						Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 					}
 					else
@@ -205,31 +205,31 @@ public class ItemActionEntrySell : BaseItemActionEntry
 						{
 							GameManager.ShowTooltip(entityPlayer, string.Format(Localization.Get("ttItemCountNotBundleSize", false, null), num), false, false, 0f);
 							num8 -= num9;
-							xuiC_ItemStack.InfoWindow.BuySellCounter.Count = num8;
+							itemStackController.InfoWindow.BuySellCounter.Count = num8;
 							Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 						}
 						else
 						{
-							ItemStack itemStack2 = xuiC_ItemStack.ItemStack.Clone();
+							ItemStack itemStack2 = itemStackController.ItemStack.Clone();
 							int sellPrice = XUiM_Trader.GetSellPrice(base.ItemController.xui, itemStack2.itemValue, count, forId);
 							XUiM_PlayerInventory playerInventory = base.ItemController.xui.PlayerInventory;
 							ItemStack itemStack3 = new ItemStack(item.Clone(), sellPrice);
 							itemStack2.count = count;
-							int slotCount = xuiC_ItemStack.xui.PlayerInventory.Backpack.SlotCount;
-							int num10 = xuiC_ItemStack.SlotNumber + ((xuiC_ItemStack.StackLocation == XUiC_ItemStack.StackLocationTypes.ToolBelt) ? slotCount : 0);
+							int slotCount = itemStackController.xui.PlayerInventory.Backpack.SlotCount;
+							int num10 = itemStackController.SlotNumber + ((itemStackController.StackLocation == XUiC_ItemStack.StackLocationTypes.ToolBelt) ? slotCount : 0);
 							if (playerInventory.CanSwapItems(itemStack2, itemStack3, num10))
 							{
 								itemStack2 = ItemActionEntryScrap.HandleRemoveAmmo(itemStack2, base.ItemController.xui);
-								xuiC_ItemStack.ItemStack.count -= count;
-								xuiC_ItemStack.InfoWindow.BuySellCounter.MaxCount -= count;
-								if (xuiC_ItemStack.ItemStack.count == 0)
+								itemStackController.ItemStack.count -= count;
+								itemStackController.InfoWindow.BuySellCounter.MaxCount -= count;
+								if (itemStackController.ItemStack.count == 0)
 								{
-									xuiC_ItemStack.ItemStack = ItemStack.Empty;
-									xuiC_ItemStack.IsSelected = false;
+									itemStackController.ItemStack = ItemStack.Empty;
+									itemStackController.IsSelected = false;
 								}
 								else
 								{
-									xuiC_ItemStack.ForceRefreshItemStack();
+									itemStackController.ForceRefreshItemStack();
 								}
 								traderData.AddToPrimaryInventory(itemStack2, true);
 								if (base.ItemController.xui.Trader.TraderWindowGroup != null)
@@ -261,29 +261,29 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x04005002 RID: 20482
+	// Token: 0x04005041 RID: 20545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 
-	// Token: 0x04005003 RID: 20483
+	// Token: 0x04005042 RID: 20546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntrySell.StateTypes state;
 
-	// Token: 0x02000D63 RID: 3427
+	// Token: 0x02000D74 RID: 3444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04005005 RID: 20485
+		// Token: 0x04005044 RID: 20548
 		Normal,
-		// Token: 0x04005006 RID: 20486
+		// Token: 0x04005045 RID: 20549
 		ItemNotSellable,
-		// Token: 0x04005007 RID: 20487
+		// Token: 0x04005046 RID: 20550
 		ItemNotSellableVending,
-		// Token: 0x04005008 RID: 20488
+		// Token: 0x04005047 RID: 20551
 		PriceTooLow,
-		// Token: 0x04005009 RID: 20489
+		// Token: 0x04005048 RID: 20552
 		NotEnoughItems,
-		// Token: 0x0400500A RID: 20490
+		// Token: 0x04005049 RID: 20553
 		NotBundleSize
 	}
 }

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200023F RID: 575
+// Token: 0x02000242 RID: 578
 [Preserve]
 public class ConsoleCmdLoot : ConsoleCmdAbstract
 {
-	// Token: 0x170001B5 RID: 437
-	// (get) Token: 0x0600114C RID: 4428 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001AD RID: 429
+	// (get) Token: 0x06001149 RID: 4425 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,8 +16,8 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001B6 RID: 438
-	// (get) Token: 0x0600114D RID: 4429 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001AE RID: 430
+	// (get) Token: 0x0600114A RID: 4426 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,8 +26,8 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001B7 RID: 439
-	// (get) Token: 0x0600114E RID: 4430 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x170001AF RID: 431
+	// (get) Token: 0x0600114B RID: 4427 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -36,28 +36,28 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600114F RID: 4431 RVA: 0x0006DA47 File Offset: 0x0006BC47
+	// Token: 0x0600114C RID: 4428 RVA: 0x0006DCEF File Offset: 0x0006BEEF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "loot" };
 	}
 
-	// Token: 0x06001150 RID: 4432 RVA: 0x0006DA57 File Offset: 0x0006BC57
+	// Token: 0x0600114D RID: 4429 RVA: 0x0006DCFF File Offset: 0x0006BEFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Loot commands";
 	}
 
-	// Token: 0x06001151 RID: 4433 RVA: 0x0006DA5E File Offset: 0x0006BC5E
+	// Token: 0x0600114E RID: 4430 RVA: 0x0006DD06 File Offset: 0x0006BF06
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Loot commands:\ncontainer [name] <count> <stage> <abundance> - list loot from named container for count times";
 	}
 
-	// Token: 0x06001152 RID: 4434 RVA: 0x0006DA68 File Offset: 0x0006BC68
+	// Token: 0x0600114F RID: 4431 RVA: 0x0006DD10 File Offset: 0x0006BF10
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -99,7 +99,7 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001153 RID: 4435 RVA: 0x0006DB4C File Offset: 0x0006BD4C
+	// Token: 0x06001150 RID: 4432 RVA: 0x0006DDF4 File Offset: 0x0006BFF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ContainerList(string _name, int _count, int _stage, float _abundance)
 	{
@@ -160,7 +160,7 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		this.Print("Unknown container " + _name, Array.Empty<object>());
 	}
 
-	// Token: 0x06001154 RID: 4436 RVA: 0x0006DD34 File Offset: 0x0006BF34
+	// Token: 0x06001151 RID: 4433 RVA: 0x0006DFDC File Offset: 0x0006C1DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CountItems(List<ItemStack> _list)
 	{
@@ -173,7 +173,7 @@ public class ConsoleCmdLoot : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x06001155 RID: 4437 RVA: 0x0006DD68 File Offset: 0x0006BF68
+	// Token: 0x06001152 RID: 4434 RVA: 0x0006E010 File Offset: 0x0006C210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Print(string _s, params object[] _values)
 	{

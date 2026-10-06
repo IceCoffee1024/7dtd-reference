@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using Twitch;
 
-// Token: 0x02000D3A RID: 3386
+// Token: 0x02000D4A RID: 3402
 public class TwitchActionsFromXml
 {
-	// Token: 0x0600670C RID: 26380 RVA: 0x0028A281 File Offset: 0x00288481
+	// Token: 0x06006706 RID: 26374 RVA: 0x0028D7E9 File Offset: 0x0028B9E9
 	public static IEnumerator CreateTwitchActions(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -111,7 +111,7 @@ public class TwitchActionsFromXml
 		yield break;
 	}
 
-	// Token: 0x0600670D RID: 26381 RVA: 0x0028A290 File Offset: 0x00288490
+	// Token: 0x06006707 RID: 26375 RVA: 0x0028D7F8 File Offset: 0x0028B9F8
 	public static IEnumerator CreateTwitchEvents(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -177,7 +177,7 @@ public class TwitchActionsFromXml
 		yield break;
 	}
 
-	// Token: 0x0600670E RID: 26382 RVA: 0x0028A2A0 File Offset: 0x002884A0
+	// Token: 0x06006708 RID: 26376 RVA: 0x0028D808 File Offset: 0x0028BA08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void HandleTwitchSettings(XElement e)
 	{
@@ -284,13 +284,13 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x0600670F RID: 26383 RVA: 0x0028A674 File Offset: 0x00288874
+	// Token: 0x06006709 RID: 26377 RVA: 0x0028DBDC File Offset: 0x0028BDDC
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(TwitchActionsFromXml.CreateTwitchActions(xmlFile));
 	}
 
-	// Token: 0x06006710 RID: 26384 RVA: 0x0028A681 File Offset: 0x00288881
+	// Token: 0x0600670A RID: 26378 RVA: 0x0028DBE9 File Offset: 0x0028BDE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DynamicProperties HandleExtends(TwitchAction extendedClass)
 	{
@@ -303,7 +303,7 @@ public class TwitchActionsFromXml
 		return null;
 	}
 
-	// Token: 0x06006711 RID: 26385 RVA: 0x0028A6A4 File Offset: 0x002888A4
+	// Token: 0x0600670B RID: 26379 RVA: 0x0028DC0C File Offset: 0x0028BE0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseActionsPreset(XElement e)
 	{
@@ -362,7 +362,7 @@ public class TwitchActionsFromXml
 		TwitchManager.Current.AddTwitchActionPreset(twitchActionPreset);
 	}
 
-	// Token: 0x06006712 RID: 26386 RVA: 0x0028A910 File Offset: 0x00288B10
+	// Token: 0x0600670C RID: 26380 RVA: 0x0028DE78 File Offset: 0x0028C078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCooldownModifier(XElement e, TwitchActionPreset actionPreset)
 	{
@@ -386,7 +386,7 @@ public class TwitchActionsFromXml
 		actionPreset.AddCooldownModifier(twitchActionCooldownModifier);
 	}
 
-	// Token: 0x06006713 RID: 26387 RVA: 0x0028A9DC File Offset: 0x00288BDC
+	// Token: 0x0600670D RID: 26381 RVA: 0x0028DF44 File Offset: 0x0028C144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseVotesPreset(XElement e)
 	{
@@ -426,7 +426,7 @@ public class TwitchActionsFromXml
 		TwitchManager.Current.AddTwitchVotePreset(twitchVotePreset);
 	}
 
-	// Token: 0x06006714 RID: 26388 RVA: 0x0028AB70 File Offset: 0x00288D70
+	// Token: 0x0600670E RID: 26382 RVA: 0x0028E0D8 File Offset: 0x0028C2D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTwitchActions(XElement e)
 	{
@@ -480,7 +480,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006715 RID: 26389 RVA: 0x0028ACD4 File Offset: 0x00288ED4
+	// Token: 0x0600670F RID: 26383 RVA: 0x0028E23C File Offset: 0x0028C43C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DynamicProperties HandleExtends(TwitchVote extendedClass)
 	{
@@ -493,7 +493,7 @@ public class TwitchActionsFromXml
 		return null;
 	}
 
-	// Token: 0x06006716 RID: 26390 RVA: 0x0028ACF8 File Offset: 0x00288EF8
+	// Token: 0x06006710 RID: 26384 RVA: 0x0028E260 File Offset: 0x0028C460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseVoteEntry(XElement e)
 	{
@@ -539,7 +539,7 @@ public class TwitchActionsFromXml
 		TwitchActionManager.Current.AddVoteClass(twitchVote2);
 	}
 
-	// Token: 0x06006717 RID: 26391 RVA: 0x0028AE38 File Offset: 0x00289038
+	// Token: 0x06006711 RID: 26385 RVA: 0x0028E3A0 File Offset: 0x0028C5A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCommandPermission(XElement e)
 	{
@@ -552,7 +552,7 @@ public class TwitchActionsFromXml
 		BaseTwitchCommand.AddCommandPermissionOverride(attribute, permissionLevels);
 	}
 
-	// Token: 0x06006718 RID: 26392 RVA: 0x0028AE98 File Offset: 0x00289098
+	// Token: 0x06006712 RID: 26386 RVA: 0x0028E400 File Offset: 0x0028C600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseVoteTypeEntry(XElement e)
 	{
@@ -574,7 +574,7 @@ public class TwitchActionsFromXml
 		TwitchManager.Current.VotingManager.AddVoteType(twitchVoteType);
 	}
 
-	// Token: 0x06006719 RID: 26393 RVA: 0x0028AF34 File Offset: 0x00289134
+	// Token: 0x06006713 RID: 26387 RVA: 0x0028E49C File Offset: 0x0028C69C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCooldownPreset(XElement e)
 	{
@@ -603,7 +603,7 @@ public class TwitchActionsFromXml
 		TwitchManager.Current.AddCooldownPreset(cooldownPreset);
 	}
 
-	// Token: 0x0600671A RID: 26394 RVA: 0x0028AFF8 File Offset: 0x002891F8
+	// Token: 0x06006714 RID: 26388 RVA: 0x0028E560 File Offset: 0x0028C760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCooldownEntry(XElement e, CooldownPreset preset)
 	{
@@ -637,7 +637,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x0600671B RID: 26395 RVA: 0x0028B0F4 File Offset: 0x002892F4
+	// Token: 0x06006715 RID: 26389 RVA: 0x0028E65C File Offset: 0x0028C85C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseRandomGroup(XElement e)
 	{
@@ -657,7 +657,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x0600671C RID: 26396 RVA: 0x0028B170 File Offset: 0x00289370
+	// Token: 0x06006716 RID: 26390 RVA: 0x0028E6D8 File Offset: 0x0028C8D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCooldownAddition(XElement e, TwitchAction action, TwitchVote vote)
 	{
@@ -700,7 +700,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x0600671D RID: 26397 RVA: 0x0028B258 File Offset: 0x00289458
+	// Token: 0x06006717 RID: 26391 RVA: 0x0028E7C0 File Offset: 0x0028C9C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseTwitchRequirement ParseRequirement(XElement e)
 	{
@@ -744,7 +744,7 @@ public class TwitchActionsFromXml
 		return baseTwitchRequirement;
 	}
 
-	// Token: 0x0600671E RID: 26398 RVA: 0x0028B368 File Offset: 0x00289568
+	// Token: 0x06006718 RID: 26392 RVA: 0x0028E8D0 File Offset: 0x0028CAD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseRequirement(XElement e, TwitchAction action)
 	{
@@ -755,7 +755,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x0600671F RID: 26399 RVA: 0x0028B388 File Offset: 0x00289588
+	// Token: 0x06006719 RID: 26393 RVA: 0x0028E8F0 File Offset: 0x0028CAF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseRequirement(XElement e, TwitchVote vote)
 	{
@@ -766,7 +766,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006720 RID: 26400 RVA: 0x0028B3A8 File Offset: 0x002895A8
+	// Token: 0x0600671A RID: 26394 RVA: 0x0028E910 File Offset: 0x0028CB10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseEventsPreset(XElement e, string nodeName)
 	{
@@ -802,7 +802,7 @@ public class TwitchActionsFromXml
 		TwitchManager.Current.AddTwitchEventPreset(twitchEventPreset);
 	}
 
-	// Token: 0x06006721 RID: 26401 RVA: 0x0028B4FC File Offset: 0x002896FC
+	// Token: 0x0600671B RID: 26395 RVA: 0x0028EA64 File Offset: 0x0028CC64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseEvent(XElement e, string nodeName)
 	{
@@ -893,7 +893,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006722 RID: 26402 RVA: 0x0028B86C File Offset: 0x00289A6C
+	// Token: 0x0600671C RID: 26396 RVA: 0x0028EDD4 File Offset: 0x0028CFD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseHypeTrainEvent(XElement e, string nodeName)
 	{
@@ -983,7 +983,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006723 RID: 26403 RVA: 0x0028BC28 File Offset: 0x00289E28
+	// Token: 0x0600671D RID: 26397 RVA: 0x0028F190 File Offset: 0x0028D390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCreatorGoalEvent(XElement e, string nodeName)
 	{
@@ -1073,7 +1073,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006724 RID: 26404 RVA: 0x0028BFC0 File Offset: 0x0028A1C0
+	// Token: 0x0600671E RID: 26398 RVA: 0x0028F528 File Offset: 0x0028D728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseSubEvent(XElement e, string nodeName)
 	{
@@ -1167,7 +1167,7 @@ public class TwitchActionsFromXml
 		}
 	}
 
-	// Token: 0x06006725 RID: 26405 RVA: 0x0028C37C File Offset: 0x0028A57C
+	// Token: 0x0600671F RID: 26399 RVA: 0x0028F8E4 File Offset: 0x0028DAE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseChannelPointEvent(XElement e)
 	{

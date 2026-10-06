@@ -5,10 +5,10 @@ using Webserver.FileCache;
 
 namespace MapRendering
 {
-	// Token: 0x02001AB3 RID: 6835
+	// Token: 0x02001ADF RID: 6879
 	public class MapTileCache : AbstractCache
 	{
-		// Token: 0x0600CE32 RID: 52786 RVA: 0x004AF030 File Offset: 0x004AD230
+		// Token: 0x0600CF8A RID: 53130 RVA: 0x004B34FC File Offset: 0x004B16FC
 		public MapTileCache(int _tileSize)
 		{
 			Texture2D texture2D = new Texture2D(_tileSize, _tileSize);
@@ -24,7 +24,7 @@ namespace MapRendering
 			global::UnityEngine.Object.Destroy(texture2D);
 		}
 
-		// Token: 0x0600CE33 RID: 52787 RVA: 0x004AF09C File Offset: 0x004AD29C
+		// Token: 0x0600CF8B RID: 53131 RVA: 0x004B3568 File Offset: 0x004B1768
 		public void SetZoomCount(int _count)
 		{
 			this.cache = new MapTileCache.CurrentZoomFile[_count];
@@ -34,7 +34,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE34 RID: 52788 RVA: 0x004AF0D8 File Offset: 0x004AD2D8
+		// Token: 0x0600CF8C RID: 53132 RVA: 0x004B35A4 File Offset: 0x004B17A4
 		public byte[] LoadTile(int _zoomlevel, string _filename)
 		{
 			try
@@ -64,7 +64,7 @@ namespace MapRendering
 			return null;
 		}
 
-		// Token: 0x0600CE35 RID: 52789 RVA: 0x004AF18C File Offset: 0x004AD38C
+		// Token: 0x0600CF8D RID: 53133 RVA: 0x004B3658 File Offset: 0x004B1858
 		public void SaveTile(int _zoomlevel, byte[] _contentPng)
 		{
 			try
@@ -90,7 +90,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE36 RID: 52790 RVA: 0x004AF240 File Offset: 0x004AD440
+		// Token: 0x0600CF8E RID: 53134 RVA: 0x004B370C File Offset: 0x004B190C
 		public void ResetTile(int _zoomlevel)
 		{
 			try
@@ -108,7 +108,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE37 RID: 52791 RVA: 0x004AF2B8 File Offset: 0x004AD4B8
+		// Token: 0x0600CF8F RID: 53135 RVA: 0x004B3784 File Offset: 0x004B1984
 		public override byte[] GetFileContent(string _filename)
 		{
 			try
@@ -133,13 +133,13 @@ namespace MapRendering
 			return null;
 		}
 
-		// Token: 0x0600CE38 RID: 52792 RVA: 0x004AF36C File Offset: 0x004AD56C
+		// Token: 0x0600CF90 RID: 53136 RVA: 0x004B3838 File Offset: 0x004B1A38
 		public override ValueTuple<int, int> Invalidate()
 		{
 			return new ValueTuple<int, int>(0, 0);
 		}
 
-		// Token: 0x0600CE39 RID: 52793 RVA: 0x004AF378 File Offset: 0x004AD578
+		// Token: 0x0600CF91 RID: 53137 RVA: 0x004B3844 File Offset: 0x004B1A44
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static byte[] ReadAllBytes(string _path)
 		{
@@ -164,22 +164,22 @@ namespace MapRendering
 			return array2;
 		}
 
-		// Token: 0x04009C2F RID: 39983
+		// Token: 0x04009CF5 RID: 40181
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly byte[] transparentTile;
 
-		// Token: 0x04009C30 RID: 39984
+		// Token: 0x04009CF6 RID: 40182
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MapTileCache.CurrentZoomFile[] cache;
 
-		// Token: 0x02001AB4 RID: 6836
+		// Token: 0x02001AE0 RID: 6880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class CurrentZoomFile
 		{
-			// Token: 0x04009C31 RID: 39985
+			// Token: 0x04009CF7 RID: 40183
 			public string filename;
 
-			// Token: 0x04009C32 RID: 39986
+			// Token: 0x04009CF8 RID: 40184
 			public byte[] pngData;
 		}
 	}

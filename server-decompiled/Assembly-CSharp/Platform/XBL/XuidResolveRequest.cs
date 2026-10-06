@@ -2,22 +2,22 @@
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C29 RID: 7209
+	// Token: 0x02001C5B RID: 7259
 	public class XuidResolveRequest
 	{
-		// Token: 0x0600D604 RID: 54788 RVA: 0x004D0A1C File Offset: 0x004CEC1C
+		// Token: 0x0600D77C RID: 55164 RVA: 0x004D5504 File Offset: 0x004D3704
 		public XuidResolveRequest(PlatformUserIdentifierAbs id)
 		{
 			this.Id = id;
 		}
 
-		// Token: 0x0400A306 RID: 41734
+		// Token: 0x0400A3DB RID: 41947
 		public readonly PlatformUserIdentifierAbs Id;
 
-		// Token: 0x0400A307 RID: 41735
+		// Token: 0x0400A3DC RID: 41948
 		public bool IsSuccess;
 
-		// Token: 0x0400A308 RID: 41736
+		// Token: 0x0400A3DD RID: 41949
 		public ulong Xuid;
 	}
 }

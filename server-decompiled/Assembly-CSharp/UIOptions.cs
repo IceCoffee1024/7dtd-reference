@@ -1,12 +1,12 @@
 ﻿using System;
 using Platform;
 
-// Token: 0x02001118 RID: 4376
+// Token: 0x02001130 RID: 4400
 public static class UIOptions
 {
-	// Token: 0x1700100F RID: 4111
-	// (get) Token: 0x06008A9A RID: 35482 RVA: 0x0034C388 File Offset: 0x0034A588
-	// (set) Token: 0x06008A9B RID: 35483 RVA: 0x0034C38F File Offset: 0x0034A58F
+	// Token: 0x17001044 RID: 4164
+	// (get) Token: 0x06008B06 RID: 35590 RVA: 0x00350834 File Offset: 0x0034EA34
+	// (set) Token: 0x06008B07 RID: 35591 RVA: 0x0035083B File Offset: 0x0034EA3B
 	public static OptionsVideoWindowMode OptionsVideoWindow
 	{
 		get
@@ -25,18 +25,18 @@ public static class UIOptions
 		}
 	}
 
-	// Token: 0x140000E3 RID: 227
-	// (add) Token: 0x06008A9C RID: 35484 RVA: 0x0034C3A8 File Offset: 0x0034A5A8
-	// (remove) Token: 0x06008A9D RID: 35485 RVA: 0x0034C3DC File Offset: 0x0034A5DC
+	// Token: 0x140000E2 RID: 226
+	// (add) Token: 0x06008B08 RID: 35592 RVA: 0x00350854 File Offset: 0x0034EA54
+	// (remove) Token: 0x06008B09 RID: 35593 RVA: 0x00350888 File Offset: 0x0034EA88
 	public static event Action<OptionsVideoWindowMode> OnOptionsVideoWindowChanged;
 
-	// Token: 0x06008A9E RID: 35486 RVA: 0x0034C40F File Offset: 0x0034A60F
+	// Token: 0x06008B0A RID: 35594 RVA: 0x003508BB File Offset: 0x0034EABB
 	public static void Init()
 	{
 		UIOptions.optionsVideoWindow = ((DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent() ? OptionsVideoWindowMode.Simplified : OptionsVideoWindowMode.Detailed);
 	}
 
-	// Token: 0x040066DB RID: 26331
+	// Token: 0x04006730 RID: 26416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static OptionsVideoWindowMode optionsVideoWindow;
 }

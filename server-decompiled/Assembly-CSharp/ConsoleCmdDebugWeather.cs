@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020D RID: 525
+// Token: 0x0200020E RID: 526
 [Preserve]
 public class ConsoleCmdDebugWeather : ConsoleCmdAbstract
 {
-	// Token: 0x06000FFE RID: 4094 RVA: 0x000667C8 File Offset: 0x000649C8
+	// Token: 0x06000FF1 RID: 4081 RVA: 0x000667B8 File Offset: 0x000649B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debugweather" };
 	}
 
-	// Token: 0x17000169 RID: 361
-	// (get) Token: 0x06000FFF RID: 4095 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x17000161 RID: 353
+	// (get) Token: 0x06000FF2 RID: 4082 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdDebugWeather : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700016A RID: 362
-	// (get) Token: 0x06001000 RID: 4096 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000162 RID: 354
+	// (get) Token: 0x06000FF3 RID: 4083 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,8 +34,8 @@ public class ConsoleCmdDebugWeather : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700016B RID: 363
-	// (get) Token: 0x06001001 RID: 4097 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000163 RID: 355
+	// (get) Token: 0x06000FF4 RID: 4084 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -44,15 +44,15 @@ public class ConsoleCmdDebugWeather : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001002 RID: 4098 RVA: 0x000667D8 File Offset: 0x000649D8
+	// Token: 0x06000FF5 RID: 4085 RVA: 0x000667C8 File Offset: 0x000649C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Dumps internal weather state to the console.";
 	}
 
-	// Token: 0x1700016C RID: 364
-	// (get) Token: 0x06001003 RID: 4099 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000164 RID: 356
+	// (get) Token: 0x06000FF6 RID: 4086 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -61,7 +61,7 @@ public class ConsoleCmdDebugWeather : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001004 RID: 4100 RVA: 0x000667E0 File Offset: 0x000649E0
+	// Token: 0x06000FF7 RID: 4087 RVA: 0x000667D0 File Offset: 0x000649D0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0)

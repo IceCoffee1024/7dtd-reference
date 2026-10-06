@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000768 RID: 1896
+// Token: 0x0200076A RID: 1898
 public interface IAuthorizationResponses
 {
-	// Token: 0x0600383E RID: 14398
+	// Token: 0x06003881 RID: 14465
 	void AuthorizationDenied(IAuthorizer _authorizer, ClientInfo _clientInfo, GameUtils.KickPlayerData _kickPlayerData);
 
-	// Token: 0x0600383F RID: 14399
+	// Token: 0x06003882 RID: 14466
 	void AuthorizationAccepted(IAuthorizer _authorizer, ClientInfo _clientInfo);
 }

@@ -4,19 +4,19 @@ using System.Runtime.CompilerServices;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x0200021F RID: 543
+// Token: 0x02000220 RID: 544
 [Preserve]
 public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 {
-	// Token: 0x0600107B RID: 4219 RVA: 0x00067B58 File Offset: 0x00065D58
+	// Token: 0x0600106E RID: 4206 RVA: 0x00067B48 File Offset: 0x00065D48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "getsandboxoptions", "gso" };
 	}
 
-	// Token: 0x17000192 RID: 402
-	// (get) Token: 0x0600107C RID: 4220 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x1700018A RID: 394
+	// (get) Token: 0x0600106F RID: 4207 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -25,28 +25,28 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600107D RID: 4221 RVA: 0x00067B70 File Offset: 0x00065D70
+	// Token: 0x06001070 RID: 4208 RVA: 0x00067B60 File Offset: 0x00065D60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gets the current game's Sandbox Options";
 	}
 
-	// Token: 0x0600107E RID: 4222 RVA: 0x00067B77 File Offset: 0x00065D77
+	// Token: 0x06001071 RID: 4209 RVA: 0x00067B67 File Offset: 0x00065D67
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return ("\n\t\t\t|Usage:\n\t\t\t|  " + this.PrimaryCommand + " [show all]\n\t\t\t|Shows the currently loaded game's Sandbox Options.\n\t\t\t|By default only shows those that have non-default values, but can show all options by specifying the optional argument with \"true\".\n\t\t\t").Unindent(true);
 	}
 
-	// Token: 0x0600107F RID: 4223 RVA: 0x00067B94 File Offset: 0x00065D94
+	// Token: 0x06001072 RID: 4210 RVA: 0x00067B84 File Offset: 0x00065D84
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		bool flag = _params.Count > 0 && StringParsers.ParseBool(_params[0], 0, -1, true);
 		ConsoleCmdGetSandboxOptions.LogOptions(GameStats.GetString(EnumGameStats.SandboxCode), flag, ConsoleCmdGetSandboxOptions.ELogType.RemoteConsole);
 	}
 
-	// Token: 0x06001080 RID: 4224 RVA: 0x00067BCC File Offset: 0x00065DCC
+	// Token: 0x06001073 RID: 4211 RVA: 0x00067BBC File Offset: 0x00065DBC
 	public static void LogOptions(string _code, bool _showAll, ConsoleCmdGetSandboxOptions.ELogType _logTarget)
 	{
 		Action<string> action;
@@ -112,7 +112,7 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001082 RID: 4226 RVA: 0x00067DD0 File Offset: 0x00065FD0
+	// Token: 0x06001075 RID: 4213 RVA: 0x00067DC0 File Offset: 0x00065FC0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <LogOptions>g__PrintLog|7_0(string _line)
@@ -120,7 +120,7 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		Log.WriteLine(_line);
 	}
 
-	// Token: 0x06001083 RID: 4227 RVA: 0x00067DD8 File Offset: 0x00065FD8
+	// Token: 0x06001076 RID: 4214 RVA: 0x00067DC8 File Offset: 0x00065FC8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <LogOptions>g__PrintConsole|7_1(string _line)
@@ -128,7 +128,7 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		Log.Out(_line);
 	}
 
-	// Token: 0x06001084 RID: 4228 RVA: 0x00067DE0 File Offset: 0x00065FE0
+	// Token: 0x06001077 RID: 4215 RVA: 0x00067DD0 File Offset: 0x00065FD0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <LogOptions>g__PrintRemoteConsole|7_2(string _line)
@@ -136,14 +136,14 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(_line);
 	}
 
-	// Token: 0x02000220 RID: 544
+	// Token: 0x02000221 RID: 545
 	public enum ELogType
 	{
-		// Token: 0x04000CB8 RID: 3256
+		// Token: 0x04000CB1 RID: 3249
 		LogOnly,
-		// Token: 0x04000CB9 RID: 3257
+		// Token: 0x04000CB2 RID: 3250
 		Console,
-		// Token: 0x04000CBA RID: 3258
+		// Token: 0x04000CB3 RID: 3251
 		RemoteConsole
 	}
 }

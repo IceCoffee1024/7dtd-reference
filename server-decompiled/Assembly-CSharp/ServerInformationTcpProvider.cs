@@ -3,11 +3,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-// Token: 0x020008A3 RID: 2211
+// Token: 0x020008A6 RID: 2214
 public class ServerInformationTcpProvider
 {
-	// Token: 0x170006AB RID: 1707
-	// (get) Token: 0x06004037 RID: 16439 RVA: 0x00191868 File Offset: 0x0018FA68
+	// Token: 0x170006CA RID: 1738
+	// (get) Token: 0x06003FC5 RID: 16325 RVA: 0x00191658 File Offset: 0x0018F858
 	public static ServerInformationTcpProvider Instance
 	{
 		get
@@ -21,14 +21,14 @@ public class ServerInformationTcpProvider
 		}
 	}
 
-	// Token: 0x06004038 RID: 16440 RVA: 0x0019187E File Offset: 0x0018FA7E
+	// Token: 0x06003FC6 RID: 16326 RVA: 0x0019166E File Offset: 0x0018F86E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ServerInformationTcpProvider()
 	{
 		this.gameInfoProviderCallback = new AsyncCallback(this.AcceptTcpClient);
 	}
 
-	// Token: 0x06004039 RID: 16441 RVA: 0x001918B4 File Offset: 0x0018FAB4
+	// Token: 0x06003FC7 RID: 16327 RVA: 0x001916A4 File Offset: 0x0018F8A4
 	public void StartServer()
 	{
 		object obj = this.gameInfoLock;
@@ -51,7 +51,7 @@ public class ServerInformationTcpProvider
 		}
 	}
 
-	// Token: 0x0600403A RID: 16442 RVA: 0x0019196C File Offset: 0x0018FB6C
+	// Token: 0x06003FC8 RID: 16328 RVA: 0x0019175C File Offset: 0x0018F95C
 	public void StopServer()
 	{
 		object obj = this.gameInfoLock;
@@ -70,13 +70,13 @@ public class ServerInformationTcpProvider
 		}
 	}
 
-	// Token: 0x0600403B RID: 16443 RVA: 0x00191A00 File Offset: 0x0018FC00
+	// Token: 0x06003FC9 RID: 16329 RVA: 0x001917F0 File Offset: 0x0018F9F0
 	public string GetServerPorts()
 	{
 		return GamePrefs.GetInt(EnumGamePrefs.ServerPort).ToString() + "/TCP";
 	}
 
-	// Token: 0x0600403C RID: 16444 RVA: 0x00191A28 File Offset: 0x0018FC28
+	// Token: 0x06003FCA RID: 16330 RVA: 0x00191818 File Offset: 0x0018FA18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateServer(GameServerInfo _gameServerInfo)
 	{
@@ -90,7 +90,7 @@ public class ServerInformationTcpProvider
 		}
 	}
 
-	// Token: 0x0600403D RID: 16445 RVA: 0x00191A74 File Offset: 0x0018FC74
+	// Token: 0x06003FCB RID: 16331 RVA: 0x00191864 File Offset: 0x0018FA64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AcceptTcpClient(IAsyncResult _asyncResult)
 	{
@@ -168,30 +168,30 @@ public class ServerInformationTcpProvider
 		}
 	}
 
-	// Token: 0x040033D3 RID: 13267
+	// Token: 0x040033BE RID: 13246
 	public const int BufferSize = 32768;
 
-	// Token: 0x040033D4 RID: 13268
+	// Token: 0x040033BF RID: 13247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ServerInformationTcpProvider instance;
 
-	// Token: 0x040033D5 RID: 13269
+	// Token: 0x040033C0 RID: 13248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object gameInfoLock = new object();
 
-	// Token: 0x040033D6 RID: 13270
+	// Token: 0x040033C1 RID: 13249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TcpListener gameInfoProvider;
 
-	// Token: 0x040033D7 RID: 13271
+	// Token: 0x040033C2 RID: 13250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly AsyncCallback gameInfoProviderCallback;
 
-	// Token: 0x040033D8 RID: 13272
+	// Token: 0x040033C3 RID: 13251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] buffer = new byte[32768];
 
-	// Token: 0x040033D9 RID: 13273
+	// Token: 0x040033C4 RID: 13252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bufferLength;
 }

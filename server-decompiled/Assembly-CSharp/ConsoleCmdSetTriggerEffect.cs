@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000289 RID: 649
+// Token: 0x0200028C RID: 652
 [Preserve]
 public class ConsoleCmdSetTriggerEffect : ConsoleCmdAbstract
 {
-	// Token: 0x06001303 RID: 4867 RVA: 0x00075781 File Offset: 0x00073981
+	// Token: 0x06001300 RID: 4864 RVA: 0x00075A35 File Offset: 0x00073C35
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "sette" };
 	}
 
-	// Token: 0x17000202 RID: 514
-	// (get) Token: 0x06001304 RID: 4868 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001FA RID: 506
+	// (get) Token: 0x06001301 RID: 4865 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdSetTriggerEffect : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000203 RID: 515
-	// (get) Token: 0x06001305 RID: 4869 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001FB RID: 507
+	// (get) Token: 0x06001302 RID: 4866 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -33,14 +33,14 @@ public class ConsoleCmdSetTriggerEffect : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001306 RID: 4870 RVA: 0x00075791 File Offset: 0x00073991
+	// Token: 0x06001303 RID: 4867 RVA: 0x00075A45 File Offset: 0x00073C45
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Sets the UseTriggerEffects flag, if true controller trigger effects are to be used";
 	}
 
-	// Token: 0x06001307 RID: 4871 RVA: 0x00075798 File Offset: 0x00073998
+	// Token: 0x06001304 RID: 4868 RVA: 0x00075A4C File Offset: 0x00073C4C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)

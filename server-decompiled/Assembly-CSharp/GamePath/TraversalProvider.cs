@@ -3,17 +3,17 @@ using Pathfinding;
 
 namespace GamePath
 {
-	// Token: 0x020018D7 RID: 6359
+	// Token: 0x02001903 RID: 6403
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class TraversalProvider : ITraversalProvider
 	{
-		// Token: 0x0600C43C RID: 50236 RVA: 0x00486EE8 File Offset: 0x004850E8
+		// Token: 0x0600C594 RID: 50580 RVA: 0x0048B430 File Offset: 0x00489630
 		public bool CanTraverseConnection(Path path, Connection conn)
 		{
 			return conn.node.Walkable && ((path.enabledTags >> (int)conn.node.Tag) & 1) != 0;
 		}
 
-		// Token: 0x0600C43D RID: 50237 RVA: 0x00486F14 File Offset: 0x00485114
+		// Token: 0x0600C595 RID: 50581 RVA: 0x0048B45C File Offset: 0x0048965C
 		public bool CanTraverse(Path path, GraphNode node, int gridDirection)
 		{
 			if (!node.Walkable)
@@ -31,7 +31,7 @@ namespace GamePath
 			return ((path.enabledTags >> (int)node.Tag) & 1) != 0;
 		}
 
-		// Token: 0x0600C43E RID: 50238 RVA: 0x00486F69 File Offset: 0x00485169
+		// Token: 0x0600C596 RID: 50582 RVA: 0x0048B4B1 File Offset: 0x004896B1
 		public uint GetTraversalCost(Path path, GraphNode node)
 		{
 			return (uint)(node.Penalty * path.CostScale);

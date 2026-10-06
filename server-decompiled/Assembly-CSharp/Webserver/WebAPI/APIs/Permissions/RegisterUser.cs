@@ -10,17 +10,17 @@ using Webserver.UrlHandlers;
 
 namespace Webserver.WebAPI.APIs.Permissions
 {
-	// Token: 0x02001AE4 RID: 6884
+	// Token: 0x02001B10 RID: 6928
 	[Preserve]
 	public class RegisterUser : AbsRestApi
 	{
-		// Token: 0x0600CF22 RID: 53026 RVA: 0x004B4EEC File Offset: 0x004B30EC
+		// Token: 0x0600D07A RID: 53370 RVA: 0x004B93B8 File Offset: 0x004B75B8
 		public RegisterUser(Web _parentWeb)
 			: base(_parentWeb, null)
 		{
 		}
 
-		// Token: 0x0600CF23 RID: 53027 RVA: 0x004B68E4 File Offset: 0x004B4AE4
+		// Token: 0x0600D07B RID: 53371 RVA: 0x004BADB0 File Offset: 0x004B8FB0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -46,7 +46,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CF24 RID: 53028 RVA: 0x004B698C File Offset: 0x004B4B8C
+		// Token: 0x0600D07C RID: 53372 RVA: 0x004BAE58 File Offset: 0x004B9058
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestPost(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
@@ -114,25 +114,25 @@ namespace Webserver.WebAPI.APIs.Permissions
 			_context.Response.ContentLength64 = 0L;
 		}
 
-		// Token: 0x0600CF25 RID: 53029 RVA: 0x004B4F59 File Offset: 0x004B3159
+		// Token: 0x0600D07D RID: 53373 RVA: 0x004B9425 File Offset: 0x004B7625
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;
 		}
 
-		// Token: 0x04009D34 RID: 40244
+		// Token: 0x04009DFA RID: 40442
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonPlayerNameKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("playerName");
 
-		// Token: 0x04009D35 RID: 40245
+		// Token: 0x04009DFB RID: 40443
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonExpirationKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("expirationSeconds");
 
-		// Token: 0x04009D36 RID: 40246
+		// Token: 0x04009DFC RID: 40444
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex userValidationRegex = new Regex("^\\w{4,16}$", RegexOptions.Compiled | RegexOptions.ECMAScript);
 
-		// Token: 0x04009D37 RID: 40247
+		// Token: 0x04009DFD RID: 40445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex passValidationRegex = new Regex("^\\w{4,16}$", RegexOptions.Compiled | RegexOptions.ECMAScript);
 	}

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x020017B4 RID: 6068
+	// Token: 0x020017E0 RID: 6112
 	public class Lookup<TKey, TElement> : IEnumerable<IGrouping<TKey, TElement>>, IEnumerable, ILookup<TKey, TElement>
 	{
-		// Token: 0x170016EA RID: 5866
-		// (get) Token: 0x0600BCBB RID: 48315 RVA: 0x0045F12B File Offset: 0x0045D32B
+		// Token: 0x1700178C RID: 6028
+		// (get) Token: 0x0600BE12 RID: 48658 RVA: 0x0046364B File Offset: 0x0046184B
 		public int Count
 		{
 			get
@@ -21,7 +21,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x170016EB RID: 5867
+		// Token: 0x1700178D RID: 6029
 		public IEnumerable<TElement> this[TKey key]
 		{
 			get
@@ -39,7 +39,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BCBD RID: 48317 RVA: 0x0045F194 File Offset: 0x0045D394
+		// Token: 0x0600BE14 RID: 48660 RVA: 0x004636B4 File Offset: 0x004618B4
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public Lookup(Dictionary<TKey, List<TElement>> lookup, IEnumerable<TElement> nullKeyElements)
 		{
@@ -54,7 +54,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BCBE RID: 48318 RVA: 0x0045F230 File Offset: 0x0045D430
+		// Token: 0x0600BE15 RID: 48661 RVA: 0x00463750 File Offset: 0x00461950
 		public IEnumerable<TResult> ApplyResultSelector<TResult>(Func<TKey, IEnumerable<TElement>, TResult> resultSelector)
 		{
 			if (this.nullGrouping != null)
@@ -70,7 +70,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BCBF RID: 48319 RVA: 0x0045F247 File Offset: 0x0045D447
+		// Token: 0x0600BE16 RID: 48662 RVA: 0x00463767 File Offset: 0x00461967
 		public bool Contains(TKey key)
 		{
 			if (key == null)
@@ -80,7 +80,7 @@ namespace UniLinq
 			return this.groups.ContainsKey(key);
 		}
 
-		// Token: 0x0600BCC0 RID: 48320 RVA: 0x0045F267 File Offset: 0x0045D467
+		// Token: 0x0600BE17 RID: 48663 RVA: 0x00463787 File Offset: 0x00461987
 		public IEnumerator<IGrouping<TKey, TElement>> GetEnumerator()
 		{
 			if (this.nullGrouping != null)
@@ -96,18 +96,18 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BCC1 RID: 48321 RVA: 0x0045F276 File Offset: 0x0045D476
+		// Token: 0x0600BE18 RID: 48664 RVA: 0x00463796 File Offset: 0x00461996
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x04008D34 RID: 36148
+		// Token: 0x04008DF9 RID: 36345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IGrouping<TKey, TElement> nullGrouping;
 
-		// Token: 0x04008D35 RID: 36149
+		// Token: 0x04008DFA RID: 36346
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<TKey, IGrouping<TKey, TElement>> groups;
 	}

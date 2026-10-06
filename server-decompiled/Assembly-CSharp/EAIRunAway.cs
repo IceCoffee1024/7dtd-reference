@@ -4,29 +4,29 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000450 RID: 1104
+// Token: 0x02000452 RID: 1106
 [Preserve]
 public abstract class EAIRunAway : EAIBase
 {
-	// Token: 0x060021AF RID: 8623 RVA: 0x000CBA1B File Offset: 0x000C9C1B
+	// Token: 0x0600219E RID: 8606 RVA: 0x000CBACF File Offset: 0x000C9CCF
 	public EAIRunAway()
 	{
 	}
 
-	// Token: 0x060021B0 RID: 8624 RVA: 0x000CBA2B File Offset: 0x000C9C2B
+	// Token: 0x0600219F RID: 8607 RVA: 0x000CBADF File Offset: 0x000C9CDF
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
 		base.GetData(data, "fleeDistance", ref this.fleeDistance);
 	}
 
-	// Token: 0x060021B1 RID: 8625 RVA: 0x000CBA46 File Offset: 0x000C9C46
+	// Token: 0x060021A0 RID: 8608 RVA: 0x000CBAFA File Offset: 0x000C9CFA
 	public override bool CanExecute()
 	{
 		return this.FindFleePos(this.GetFleeFromPos());
 	}
 
-	// Token: 0x060021B2 RID: 8626 RVA: 0x000CBA54 File Offset: 0x000C9C54
+	// Token: 0x060021A1 RID: 8609 RVA: 0x000CBB08 File Offset: 0x000C9D08
 	public override void Start()
 	{
 		this.timeoutTicks = (30 + base.GetRandom(20)) * 20;
@@ -38,13 +38,13 @@ public abstract class EAIRunAway : EAIBase
 		}
 	}
 
-	// Token: 0x060021B3 RID: 8627 RVA: 0x000CBAAE File Offset: 0x000C9CAE
+	// Token: 0x060021A2 RID: 8610 RVA: 0x000CBB62 File Offset: 0x000C9D62
 	public override bool Continue()
 	{
 		return this.timeoutTicks > 0;
 	}
 
-	// Token: 0x060021B4 RID: 8628 RVA: 0x000CBABC File Offset: 0x000C9CBC
+	// Token: 0x060021A3 RID: 8611 RVA: 0x000CBB70 File Offset: 0x000C9D70
 	public override void Update()
 	{
 		this.timeoutTicks--;
@@ -82,13 +82,13 @@ public abstract class EAIRunAway : EAIBase
 		}
 	}
 
-	// Token: 0x060021B5 RID: 8629 RVA: 0x000CBBD1 File Offset: 0x000C9DD1
+	// Token: 0x060021A4 RID: 8612 RVA: 0x000CBC85 File Offset: 0x000C9E85
 	public override void Reset()
 	{
 		this.enemy = null;
 	}
 
-	// Token: 0x060021B6 RID: 8630 RVA: 0x000CBBDC File Offset: 0x000C9DDC
+	// Token: 0x060021A5 RID: 8613 RVA: 0x000CBC90 File Offset: 0x000C9E90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool FindFleePos(Vector3 fleeFromPos)
 	{
@@ -105,7 +105,7 @@ public abstract class EAIRunAway : EAIBase
 		return true;
 	}
 
-	// Token: 0x060021B7 RID: 8631 RVA: 0x000CBC4C File Offset: 0x000C9E4C
+	// Token: 0x060021A6 RID: 8614 RVA: 0x000CBD00 File Offset: 0x000C9F00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool FindRandomPos()
 	{
@@ -122,11 +122,11 @@ public abstract class EAIRunAway : EAIBase
 		return true;
 	}
 
-	// Token: 0x060021B8 RID: 8632
+	// Token: 0x060021A7 RID: 8615
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract Vector3 GetFleeFromPos();
 
-	// Token: 0x060021B9 RID: 8633 RVA: 0x000CBCA0 File Offset: 0x000C9EA0
+	// Token: 0x060021A8 RID: 8616 RVA: 0x000CBD54 File Offset: 0x000C9F54
 	public override string ToString()
 	{
 		return string.Format("{0}, flee {1}, timeout {2}, {3}", new object[]
@@ -138,31 +138,31 @@ public abstract class EAIRunAway : EAIBase
 		});
 	}
 
-	// Token: 0x04001748 RID: 5960
+	// Token: 0x0400173F RID: 5951
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAlive enemy;
 
-	// Token: 0x04001749 RID: 5961
+	// Token: 0x04001740 RID: 5952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 targetPos;
 
-	// Token: 0x0400174A RID: 5962
+	// Token: 0x04001741 RID: 5953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int timeoutTicks;
 
-	// Token: 0x0400174B RID: 5963
+	// Token: 0x04001742 RID: 5954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fleeTicks;
 
-	// Token: 0x0400174C RID: 5964
+	// Token: 0x04001743 RID: 5955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pathTicks;
 
-	// Token: 0x0400174D RID: 5965
+	// Token: 0x04001744 RID: 5956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkedPath;
 
-	// Token: 0x0400174E RID: 5966
+	// Token: 0x04001745 RID: 5957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fleeDistance = 20;
 }

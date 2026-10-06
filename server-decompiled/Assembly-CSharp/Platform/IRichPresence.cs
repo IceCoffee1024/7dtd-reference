@@ -2,25 +2,25 @@
 
 namespace Platform
 {
-	// Token: 0x02001B9D RID: 7069
+	// Token: 0x02001BCF RID: 7119
 	public interface IRichPresence
 	{
-		// Token: 0x0600D324 RID: 54052
+		// Token: 0x0600D49C RID: 54428
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D325 RID: 54053
+		// Token: 0x0600D49D RID: 54429
 		void UpdateRichPresence(IRichPresence.PresenceStates _state);
 
-		// Token: 0x02001B9E RID: 7070
+		// Token: 0x02001BD0 RID: 7120
 		public enum PresenceStates
 		{
-			// Token: 0x0400A0DE RID: 41182
+			// Token: 0x0400A1B3 RID: 41395
 			Menu,
-			// Token: 0x0400A0DF RID: 41183
+			// Token: 0x0400A1B4 RID: 41396
 			Loading,
-			// Token: 0x0400A0E0 RID: 41184
+			// Token: 0x0400A1B5 RID: 41397
 			Connecting,
-			// Token: 0x0400A0E1 RID: 41185
+			// Token: 0x0400A1B6 RID: 41398
 			InGame
 		}
 	}

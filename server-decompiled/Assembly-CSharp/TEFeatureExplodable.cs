@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200017C RID: 380
+// Token: 0x0200017D RID: 381
 [Preserve]
 public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 {
-	// Token: 0x170000E0 RID: 224
-	// (get) Token: 0x06000B21 RID: 2849 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170000DF RID: 223
+	// (get) Token: 0x06000B2A RID: 2858 RVA: 0x00020119 File Offset: 0x0001E319
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get
@@ -17,7 +17,7 @@ public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B22 RID: 2850 RVA: 0x00047A88 File Offset: 0x00045C88
+	// Token: 0x06000B2B RID: 2859 RVA: 0x00047C64 File Offset: 0x00045E64
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -29,33 +29,33 @@ public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B23 RID: 2851 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000B2C RID: 2860 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
 	}
 
-	// Token: 0x06000B24 RID: 2852 RVA: 0x00047AE7 File Offset: 0x00045CE7
+	// Token: 0x06000B2D RID: 2861 RVA: 0x00047CC3 File Offset: 0x00045EC3
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		this.Explode(_blockPos, _blockValue);
 	}
 
-	// Token: 0x06000B25 RID: 2853 RVA: 0x00047AF1 File Offset: 0x00045CF1
+	// Token: 0x06000B2E RID: 2862 RVA: 0x00047CCD File Offset: 0x00045ECD
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
 		_blockValue.rotation = (byte)(GameManager.Instance.World.GetGameRandom().RandomFloat * 4f);
 	}
 
-	// Token: 0x06000B26 RID: 2854 RVA: 0x00047B1D File Offset: 0x00045D1D
+	// Token: 0x06000B2F RID: 2863 RVA: 0x00047CF9 File Offset: 0x00045EF9
 	public override void OnBlockStartsToFall(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockStartsToFall(_blockPos, _blockValue);
 		this.Explode(_blockPos, _blockValue);
 	}
 
-	// Token: 0x06000B27 RID: 2855 RVA: 0x00047B2F File Offset: 0x00045D2F
+	// Token: 0x06000B30 RID: 2864 RVA: 0x00047D0B File Offset: 0x00045F0B
 	public override Block.DestroyedResult OnBlockDestroyedBy(Vector3i _blockPos, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		base.OnBlockDestroyedBy(_blockPos, _blockValue, _entityId, _bUseHarvestTool);
@@ -67,7 +67,7 @@ public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 		return Block.DestroyedResult.None;
 	}
 
-	// Token: 0x06000B28 RID: 2856 RVA: 0x00047B4C File Offset: 0x00045D4C
+	// Token: 0x06000B31 RID: 2865 RVA: 0x00047D28 File Offset: 0x00045F28
 	public override Block.DestroyedResult OnBlockDestroyedByExplosion(Vector3i _blockPos, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		base.OnBlockDestroyedByExplosion(_blockPos, _blockValue, _playerThatStartedExpl);
@@ -75,27 +75,27 @@ public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 		return Block.DestroyedResult.Remove;
 	}
 
-	// Token: 0x06000B29 RID: 2857 RVA: 0x00047B61 File Offset: 0x00045D61
-	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x06000B32 RID: 2866 RVA: 0x00047D3D File Offset: 0x00045F3D
+	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			_br.ReadUInt16();
 		}
 	}
 
-	// Token: 0x06000B2A RID: 2858 RVA: 0x00047B75 File Offset: 0x00045D75
-	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06000B33 RID: 2867 RVA: 0x00047D51 File Offset: 0x00045F51
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(1);
 		}
 	}
 
-	// Token: 0x06000B2B RID: 2859 RVA: 0x00047B8C File Offset: 0x00045D8C
+	// Token: 0x06000B34 RID: 2868 RVA: 0x00047D68 File Offset: 0x00045F68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Explode(Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -114,11 +114,11 @@ public class TEFeatureExplodable : TEFeatureAbs, IFeatureTriggerCapability
 		GameManager.Instance.ExplosionServer(vector, _blockPos, quaternion, this.explosionData, -1, 0.1f, false, null);
 	}
 
-	// Token: 0x04000A7D RID: 2685
+	// Token: 0x04000A7C RID: 2684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 1;
 
-	// Token: 0x04000A7E RID: 2686
+	// Token: 0x04000A7D RID: 2685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ExplosionData explosionData;
 }

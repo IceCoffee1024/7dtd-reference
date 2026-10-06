@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019EC RID: 6636
+	// Token: 0x02001A18 RID: 6680
 	[Preserve]
 	public class ActionBaseContainersAction : BaseAction
 	{
-		// Token: 0x170018B9 RID: 6329
-		// (get) Token: 0x0600CA6D RID: 51821 RVA: 0x004A2F3E File Offset: 0x004A113E
+		// Token: 0x1700195B RID: 6491
+		// (get) Token: 0x0600CBC5 RID: 52165 RVA: 0x004A73E2 File Offset: 0x004A55E2
 		public string ModifiedName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -19,20 +19,20 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CA6E RID: 51822 RVA: 0x004A2F4C File Offset: 0x004A114C
+		// Token: 0x0600CBC6 RID: 52166 RVA: 0x004A73F0 File Offset: 0x004A55F0
 		public override bool CanPerform(Entity target)
 		{
 			return base.CanPerform(target) && this.GetTileEntityList(target);
 		}
 
-		// Token: 0x0600CA6F RID: 51823 RVA: 0x004A2F60 File Offset: 0x004A1160
+		// Token: 0x0600CBC7 RID: 52167 RVA: 0x004A7404 File Offset: 0x004A5604
 		public virtual bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			isEmpty = true;
 			return true;
 		}
 
-		// Token: 0x0600CA70 RID: 51824 RVA: 0x004A2F68 File Offset: 0x004A1168
+		// Token: 0x0600CBC8 RID: 52168 RVA: 0x004A740C File Offset: 0x004A560C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool GetTileEntityList(Entity target)
 		{
@@ -66,10 +66,10 @@ namespace GameEvent.SequenceActions
 									{
 										if (target.GetDistanceSq(tileEntity.ToWorldPos().ToVector3()) < this.maxDistance)
 										{
-											ITileEntityLootable tileEntityLootable;
-											if (tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable) && !tileEntityLootable.bPlayerStorage)
+											TEFeatureStorage tefeatureStorage;
+											if (tileEntity.TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage) && !tefeatureStorage.ItemGrid.PlayerOwned)
 											{
-												goto IL_016D;
+												goto IL_0177;
 											}
 											flag2 = true;
 										}
@@ -77,10 +77,10 @@ namespace GameEvent.SequenceActions
 								}
 								else
 								{
-									ITileEntityLootable tileEntityLootable2;
-									if (tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable2) && !tileEntityLootable2.bPlayerStorage)
+									TEFeatureStorage tefeatureStorage2;
+									if (tileEntity.TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage2) && !tefeatureStorage2.ItemGrid.PlayerOwned)
 									{
-										goto IL_016D;
+										goto IL_0177;
 									}
 									flag2 = world.IsMyLandProtectedBlock(tileEntity.ToWorldPos(), world.gameManager.GetPersistentPlayerList().GetPlayerDataFromEntityID(target.entityId));
 								}
@@ -101,7 +101,7 @@ namespace GameEvent.SequenceActions
 									}
 								}
 							}
-							IL_016D:;
+							IL_0177:;
 						}
 					}
 				}
@@ -109,7 +109,7 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600CA71 RID: 51825 RVA: 0x004A311C File Offset: 0x004A131C
+		// Token: 0x0600CBC9 RID: 52169 RVA: 0x004A75C8 File Offset: 0x004A57C8
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			World world = GameManager.Instance.World;
@@ -128,14 +128,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CA72 RID: 51826 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600CBCA RID: 52170 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
 			return false;
 		}
 
-		// Token: 0x0600CA73 RID: 51827 RVA: 0x004A3184 File Offset: 0x004A1384
+		// Token: 0x0600CBCB RID: 52171 RVA: 0x004A7630 File Offset: 0x004A5830
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string ParseTextElement(string element)
 		{
@@ -150,7 +150,7 @@ namespace GameEvent.SequenceActions
 			return base.Owner.ExtraData.Insert(12, "\n");
 		}
 
-		// Token: 0x0600CA74 RID: 51828 RVA: 0x004A31D8 File Offset: 0x004A13D8
+		// Token: 0x0600CBCC RID: 52172 RVA: 0x004A7684 File Offset: 0x004A5884
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -164,66 +164,66 @@ namespace GameEvent.SequenceActions
 			this.maxDistance *= this.maxDistance;
 		}
 
-		// Token: 0x0600CA75 RID: 51829 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x0600CBCD RID: 52173 RVA: 0x000200DA File Offset: 0x0001E2DA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
 			return null;
 		}
 
-		// Token: 0x040099AD RID: 39341
+		// Token: 0x04009A73 RID: 39539
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 5f;
 
-		// Token: 0x040099AE RID: 39342
+		// Token: 0x04009A74 RID: 39540
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string newName = "";
 
-		// Token: 0x040099AF RID: 39343
+		// Token: 0x04009A75 RID: 39541
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool changeName;
 
-		// Token: 0x040099B0 RID: 39344
+		// Token: 0x04009A76 RID: 39542
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<TileEntity> tileEntityList = new List<TileEntity>();
 
-		// Token: 0x040099B1 RID: 39345
+		// Token: 0x04009A77 RID: 39543
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBaseContainersAction.ContainerActionStates ActionState;
 
-		// Token: 0x040099B2 RID: 39346
+		// Token: 0x04009A78 RID: 39544
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBaseContainersAction.TargetingTypes TargetingType;
 
-		// Token: 0x040099B3 RID: 39347
+		// Token: 0x04009A79 RID: 39545
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x040099B4 RID: 39348
+		// Token: 0x04009A7A RID: 39546
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropNewName = "new_name";
 
-		// Token: 0x040099B5 RID: 39349
+		// Token: 0x04009A7B RID: 39547
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetingType = "targeting_type";
 
-		// Token: 0x020019ED RID: 6637
+		// Token: 0x02001A19 RID: 6681
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ContainerActionStates
 		{
-			// Token: 0x040099B7 RID: 39351
+			// Token: 0x04009A7D RID: 39549
 			FindContainers,
-			// Token: 0x040099B8 RID: 39352
+			// Token: 0x04009A7E RID: 39550
 			Action
 		}
 
-		// Token: 0x020019EE RID: 6638
+		// Token: 0x02001A1A RID: 6682
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum TargetingTypes
 		{
-			// Token: 0x040099BA RID: 39354
+			// Token: 0x04009A80 RID: 39552
 			SafeZone,
-			// Token: 0x040099BB RID: 39355
+			// Token: 0x04009A81 RID: 39553
 			Distance
 		}
 	}

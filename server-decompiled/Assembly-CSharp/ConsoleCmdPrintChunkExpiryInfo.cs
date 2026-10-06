@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200026B RID: 619
+// Token: 0x0200026E RID: 622
 [Preserve]
 public class ConsoleCmdPrintChunkExpiryInfo : ConsoleCmdAbstract
 {
-	// Token: 0x0600125F RID: 4703 RVA: 0x0007338C File Offset: 0x0007158C
+	// Token: 0x0600125C RID: 4700 RVA: 0x00073640 File Offset: 0x00071840
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "expiryinfo" };
 	}
 
-	// Token: 0x06001260 RID: 4704 RVA: 0x0007339C File Offset: 0x0007159C
+	// Token: 0x0600125D RID: 4701 RVA: 0x00073650 File Offset: 0x00071850
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Prints location and expiry day/time for the next [x] chunks set to expire.";
 	}
 
-	// Token: 0x06001261 RID: 4705 RVA: 0x000733A3 File Offset: 0x000715A3
+	// Token: 0x0600125E RID: 4702 RVA: 0x00073657 File Offset: 0x00071857
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "expiryinfo [x]\n" + this.GetDescription();
 	}
 
-	// Token: 0x06001262 RID: 4706 RVA: 0x000733B8 File Offset: 0x000715B8
+	// Token: 0x0600125F RID: 4703 RVA: 0x0007366C File Offset: 0x0007186C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ChunkProviderGenerateWorld chunkProviderGenerateWorld = GameManager.Instance.World.ChunkCache.ChunkProvider as ChunkProviderGenerateWorld;

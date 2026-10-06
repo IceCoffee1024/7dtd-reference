@@ -4,10 +4,10 @@ using Platform;
 using SDF;
 using UnityEngine;
 
-// Token: 0x02000A47 RID: 2631
+// Token: 0x02000A51 RID: 2641
 public static class ProfileSDF
 {
-	// Token: 0x06004FA1 RID: 20385 RVA: 0x001E29C8 File Offset: 0x001E0BC8
+	// Token: 0x06004F70 RID: 20336 RVA: 0x001E3C78 File Offset: 0x001E1E78
 	public static void InitializeStatics()
 	{
 		string text = Path.Combine(GameIO.GetSaveGameRootDir(), "sdcs_profiles.sdf");
@@ -27,19 +27,19 @@ public static class ProfileSDF
 		}
 	}
 
-	// Token: 0x06004FA2 RID: 20386 RVA: 0x001E2A4A File Offset: 0x001E0C4A
+	// Token: 0x06004F71 RID: 20337 RVA: 0x001E3CFA File Offset: 0x001E1EFA
 	public static string CurrentProfileName()
 	{
 		return ProfileSDF.profileSDF.GetString("selectedProfile") ?? "";
 	}
 
-	// Token: 0x06004FA3 RID: 20387 RVA: 0x001E2A64 File Offset: 0x001E0C64
+	// Token: 0x06004F72 RID: 20338 RVA: 0x001E3D14 File Offset: 0x001E1F14
 	public static void Save()
 	{
 		ProfileSDF.profileSDF.Save();
 	}
 
-	// Token: 0x06004FA4 RID: 20388 RVA: 0x001E2A70 File Offset: 0x001E0C70
+	// Token: 0x06004F73 RID: 20339 RVA: 0x001E3D20 File Offset: 0x001E1F20
 	public static bool ProfileExists(string _profileName)
 	{
 		string @string = ProfileSDF.profileSDF.GetString("profileNames");
@@ -62,7 +62,7 @@ public static class ProfileSDF
 		return false;
 	}
 
-	// Token: 0x06004FA5 RID: 20389 RVA: 0x001E2AD0 File Offset: 0x001E0CD0
+	// Token: 0x06004F74 RID: 20340 RVA: 0x001E3D80 File Offset: 0x001E1F80
 	public static void DeleteProfile(string _profileName)
 	{
 		if (!ProfileSDF.ProfileExists(_profileName))
@@ -81,7 +81,7 @@ public static class ProfileSDF
 		ProfileSDF.Save();
 	}
 
-	// Token: 0x06004FA6 RID: 20390 RVA: 0x001E2B31 File Offset: 0x001E0D31
+	// Token: 0x06004F75 RID: 20341 RVA: 0x001E3DE1 File Offset: 0x001E1FE1
 	public static void SaveArchetype(string _archetype, bool _isMale)
 	{
 		if (!ProfileSDF.ProfileExists(_archetype))
@@ -93,7 +93,7 @@ public static class ProfileSDF
 		ProfileSDF.Save();
 	}
 
-	// Token: 0x06004FA7 RID: 20391 RVA: 0x001E2B54 File Offset: 0x001E0D54
+	// Token: 0x06004F76 RID: 20342 RVA: 0x001E3E04 File Offset: 0x001E2004
 	public static void SaveProfile(string _profileName, string _archetype, bool _isMale, string _raceName, int _variantNumber, string _eyeColorName, string _hairName, string _hairColor, string _mustacheName, string _chopsName, string _beardName)
 	{
 		if (!ProfileSDF.ProfileExists(_profileName))
@@ -125,7 +125,7 @@ public static class ProfileSDF
 		ProfileSDF.Save();
 	}
 
-	// Token: 0x06004FA8 RID: 20392 RVA: 0x001E2BE8 File Offset: 0x001E0DE8
+	// Token: 0x06004F77 RID: 20343 RVA: 0x001E3E98 File Offset: 0x001E2098
 	public static Archetype CreateTempArchetype(string _profileName)
 	{
 		Archetype archetype = new Archetype(_profileName, ProfileSDF.GetIsMale(_profileName), true);
@@ -158,13 +158,13 @@ public static class ProfileSDF
 		return archetype;
 	}
 
-	// Token: 0x06004FA9 RID: 20393 RVA: 0x001E2CE6 File Offset: 0x001E0EE6
+	// Token: 0x06004F78 RID: 20344 RVA: 0x001E3F96 File Offset: 0x001E2196
 	public static void SetSelectedProfile(string _profileName)
 	{
 		ProfileSDF.profileSDF.Set("selectedProfile", _profileName);
 	}
 
-	// Token: 0x06004FAA RID: 20394 RVA: 0x001E2CF8 File Offset: 0x001E0EF8
+	// Token: 0x06004F79 RID: 20345 RVA: 0x001E3FA8 File Offset: 0x001E21A8
 	public static void addProfileName(string _profileName)
 	{
 		string @string = ProfileSDF.profileSDF.GetString("profileNames");
@@ -176,7 +176,7 @@ public static class ProfileSDF
 		ProfileSDF.profileSDF.Set("profileNames", ProfileSDF.profileSDF.GetString("profileNames") + "," + _profileName, false);
 	}
 
-	// Token: 0x06004FAB RID: 20395 RVA: 0x001E2D5C File Offset: 0x001E0F5C
+	// Token: 0x06004F7A RID: 20346 RVA: 0x001E400C File Offset: 0x001E220C
 	public static void removeProfileName(string _profileName)
 	{
 		string @string = ProfileSDF.profileSDF.GetString("profileNames");
@@ -202,25 +202,25 @@ public static class ProfileSDF
 		ProfileSDF.profileSDF.Set("profileNames", text, false);
 	}
 
-	// Token: 0x06004FAC RID: 20396 RVA: 0x001E2DF9 File Offset: 0x001E0FF9
+	// Token: 0x06004F7B RID: 20347 RVA: 0x001E40A9 File Offset: 0x001E22A9
 	public static void setSex(string _profileName, bool _isMale)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".isMale", _isMale);
 	}
 
-	// Token: 0x06004FAD RID: 20397 RVA: 0x001E2E11 File Offset: 0x001E1011
+	// Token: 0x06004F7C RID: 20348 RVA: 0x001E40C1 File Offset: 0x001E22C1
 	public static void setRace(string _profileName, string _raceName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".race", _raceName);
 	}
 
-	// Token: 0x06004FAE RID: 20398 RVA: 0x001E2E29 File Offset: 0x001E1029
+	// Token: 0x06004F7D RID: 20349 RVA: 0x001E40D9 File Offset: 0x001E22D9
 	public static void setVariant(string _profileName, int _variantNumber)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".variant", _variantNumber);
 	}
 
-	// Token: 0x06004FAF RID: 20399 RVA: 0x001E2E44 File Offset: 0x001E1044
+	// Token: 0x06004F7E RID: 20350 RVA: 0x001E40F4 File Offset: 0x001E22F4
 	public static void setColor(string _profileName, string _colorName, Color _color)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + "." + _colorName + ".r", _color.r);
@@ -229,55 +229,55 @@ public static class ProfileSDF
 		ProfileSDF.profileSDF.Set(_profileName + "." + _colorName + ".a", _color.a);
 	}
 
-	// Token: 0x06004FB0 RID: 20400 RVA: 0x001E2ED5 File Offset: 0x001E10D5
+	// Token: 0x06004F7F RID: 20351 RVA: 0x001E4185 File Offset: 0x001E2385
 	public static void setEyeColor(string _profileName, string _eyeColorName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".eyeColor", _eyeColorName);
 	}
 
-	// Token: 0x06004FB1 RID: 20401 RVA: 0x001E2EED File Offset: 0x001E10ED
+	// Token: 0x06004F80 RID: 20352 RVA: 0x001E419D File Offset: 0x001E239D
 	public static void setHairName(string _profileName, string _hairName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".hairName", _hairName);
 	}
 
-	// Token: 0x06004FB2 RID: 20402 RVA: 0x001E2F05 File Offset: 0x001E1105
+	// Token: 0x06004F81 RID: 20353 RVA: 0x001E41B5 File Offset: 0x001E23B5
 	public static void setHairColor(string _profileName, string _hairColorName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".hairColor", _hairColorName);
 	}
 
-	// Token: 0x06004FB3 RID: 20403 RVA: 0x001E2F1D File Offset: 0x001E111D
+	// Token: 0x06004F82 RID: 20354 RVA: 0x001E41CD File Offset: 0x001E23CD
 	public static void setMustacheName(string _profileName, string _mustacheName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".mustacheName", _mustacheName);
 	}
 
-	// Token: 0x06004FB4 RID: 20404 RVA: 0x001E2F35 File Offset: 0x001E1135
+	// Token: 0x06004F83 RID: 20355 RVA: 0x001E41E5 File Offset: 0x001E23E5
 	public static void setChopsName(string _profileName, string _chopsName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".chopsName", _chopsName);
 	}
 
-	// Token: 0x06004FB5 RID: 20405 RVA: 0x001E2F4D File Offset: 0x001E114D
+	// Token: 0x06004F84 RID: 20356 RVA: 0x001E41FD File Offset: 0x001E23FD
 	public static void setBeardName(string _profileName, string _beardName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".beardName", _beardName);
 	}
 
-	// Token: 0x06004FB6 RID: 20406 RVA: 0x001E2F65 File Offset: 0x001E1165
+	// Token: 0x06004F85 RID: 20357 RVA: 0x001E4215 File Offset: 0x001E2415
 	public static void setEyebrowName(string _profileName, string _eyebrowName)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".eyebrowName", _eyebrowName);
 	}
 
-	// Token: 0x06004FB7 RID: 20407 RVA: 0x001E2F7D File Offset: 0x001E117D
+	// Token: 0x06004F86 RID: 20358 RVA: 0x001E422D File Offset: 0x001E242D
 	public static void setArchetype(string _profileName, string _archetype)
 	{
 		ProfileSDF.profileSDF.Set(_profileName + ".archetype", _archetype);
 	}
 
-	// Token: 0x06004FB8 RID: 20408 RVA: 0x001E2F98 File Offset: 0x001E1198
+	// Token: 0x06004F87 RID: 20359 RVA: 0x001E4248 File Offset: 0x001E2448
 	public static Color GetSkinColor(string _profileName)
 	{
 		float num = ProfileSDF.profileSDF.GetFloat(_profileName + ".skin.r").GetValueOrDefault();
@@ -287,7 +287,7 @@ public static class ProfileSDF
 		return new Color(num, num2, num3, num4);
 	}
 
-	// Token: 0x06004FB9 RID: 20409 RVA: 0x001E3028 File Offset: 0x001E1228
+	// Token: 0x06004F88 RID: 20360 RVA: 0x001E42D8 File Offset: 0x001E24D8
 	public static Color GetEyebrowColor(string _profileName)
 	{
 		float num = ProfileSDF.profileSDF.GetFloat(_profileName + ".eyebrow.r").GetValueOrDefault();
@@ -297,13 +297,13 @@ public static class ProfileSDF
 		return new Color(num, num2, num3, num4);
 	}
 
-	// Token: 0x06004FBA RID: 20410 RVA: 0x001E30B8 File Offset: 0x001E12B8
+	// Token: 0x06004F89 RID: 20361 RVA: 0x001E4368 File Offset: 0x001E2568
 	public static bool GetIsMale(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetBool(_profileName + ".isMale").GetValueOrDefault();
 	}
 
-	// Token: 0x06004FBB RID: 20411 RVA: 0x001E30E4 File Offset: 0x001E12E4
+	// Token: 0x06004F8A RID: 20362 RVA: 0x001E4394 File Offset: 0x001E2594
 	public static string GetRaceName(string _profileName)
 	{
 		string @string = ProfileSDF.profileSDF.GetString(_profileName + ".race");
@@ -314,13 +314,13 @@ public static class ProfileSDF
 		return @string;
 	}
 
-	// Token: 0x06004FBC RID: 20412 RVA: 0x001E3114 File Offset: 0x001E1314
+	// Token: 0x06004F8B RID: 20363 RVA: 0x001E43C4 File Offset: 0x001E25C4
 	public static int GetVariantNumber(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetInt(_profileName + ".variant").GetValueOrDefault();
 	}
 
-	// Token: 0x06004FBD RID: 20413 RVA: 0x001E3140 File Offset: 0x001E1340
+	// Token: 0x06004F8C RID: 20364 RVA: 0x001E43F0 File Offset: 0x001E25F0
 	public static string GetArchetype(string _profileName)
 	{
 		string @string = ProfileSDF.profileSDF.GetString(_profileName + ".archetype");
@@ -335,55 +335,55 @@ public static class ProfileSDF
 		return "BaseMale";
 	}
 
-	// Token: 0x06004FBE RID: 20414 RVA: 0x001E317C File Offset: 0x001E137C
+	// Token: 0x06004F8D RID: 20365 RVA: 0x001E442C File Offset: 0x001E262C
 	public static float GetBodyDna(string _profileName, string _bodyPartName)
 	{
 		return Mathf.Clamp01(ProfileSDF.profileSDF.GetFloat(_profileName + ".bodyData." + _bodyPartName).GetValueOrDefault());
 	}
 
-	// Token: 0x06004FBF RID: 20415 RVA: 0x001E31AC File Offset: 0x001E13AC
+	// Token: 0x06004F8E RID: 20366 RVA: 0x001E445C File Offset: 0x001E265C
 	public static string GetEyeColorName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".eyeColor");
 	}
 
-	// Token: 0x06004FC0 RID: 20416 RVA: 0x001E31C3 File Offset: 0x001E13C3
+	// Token: 0x06004F8F RID: 20367 RVA: 0x001E4473 File Offset: 0x001E2673
 	public static string GetHairName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".hairName");
 	}
 
-	// Token: 0x06004FC1 RID: 20417 RVA: 0x001E31DA File Offset: 0x001E13DA
+	// Token: 0x06004F90 RID: 20368 RVA: 0x001E448A File Offset: 0x001E268A
 	public static string GetHairColorName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".hairColor");
 	}
 
-	// Token: 0x06004FC2 RID: 20418 RVA: 0x001E31F1 File Offset: 0x001E13F1
+	// Token: 0x06004F91 RID: 20369 RVA: 0x001E44A1 File Offset: 0x001E26A1
 	public static string GetMustacheName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".mustacheName");
 	}
 
-	// Token: 0x06004FC3 RID: 20419 RVA: 0x001E3208 File Offset: 0x001E1408
+	// Token: 0x06004F92 RID: 20370 RVA: 0x001E44B8 File Offset: 0x001E26B8
 	public static string GetChopsName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".chopsName");
 	}
 
-	// Token: 0x06004FC4 RID: 20420 RVA: 0x001E321F File Offset: 0x001E141F
+	// Token: 0x06004F93 RID: 20371 RVA: 0x001E44CF File Offset: 0x001E26CF
 	public static string GetBeardName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".beardName");
 	}
 
-	// Token: 0x06004FC5 RID: 20421 RVA: 0x001E3236 File Offset: 0x001E1436
+	// Token: 0x06004F94 RID: 20372 RVA: 0x001E44E6 File Offset: 0x001E26E6
 	public static string GetEyebrowName(string _profileName)
 	{
 		return ProfileSDF.profileSDF.GetString(_profileName + ".eyebrowName");
 	}
 
-	// Token: 0x06004FC6 RID: 20422 RVA: 0x001E3250 File Offset: 0x001E1450
+	// Token: 0x06004F95 RID: 20373 RVA: 0x001E4500 File Offset: 0x001E2700
 	public static string[] GetProfiles()
 	{
 		string @string = ProfileSDF.profileSDF.GetString("profileNames");
@@ -398,15 +398,15 @@ public static class ProfileSDF
 		return new string[] { @string };
 	}
 
-	// Token: 0x04003D34 RID: 15668
+	// Token: 0x04003D41 RID: 15681
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SdfFile profileSDF;
 
-	// Token: 0x04003D35 RID: 15669
+	// Token: 0x04003D42 RID: 15682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PROFILE_NAMES = "profileNames";
 
-	// Token: 0x04003D36 RID: 15670
+	// Token: 0x04003D43 RID: 15683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PROFILE_FILENAME = "sdcs_profiles.sdf";
 }

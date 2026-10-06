@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000A10 RID: 2576
+// Token: 0x02000A1A RID: 2586
 public static class SaveDataLimit
 {
-	// Token: 0x06004D71 RID: 19825 RVA: 0x001DAF51 File Offset: 0x001D9151
+	// Token: 0x06004D40 RID: 19776 RVA: 0x001DC201 File Offset: 0x001DA401
 	public static void SetLimitToPref(long limit)
 	{
 		GamePrefs.Set(EnumGamePrefs.SaveDataLimit, SaveDataLimit.ToPrefValue(limit));
 	}
 
-	// Token: 0x06004D72 RID: 19826 RVA: 0x001DAF63 File Offset: 0x001D9163
+	// Token: 0x06004D41 RID: 19777 RVA: 0x001DC213 File Offset: 0x001DA413
 	public static long GetLimitFromPref()
 	{
 		return SaveDataLimit.FromPrefValue(GamePrefs.GetInt(EnumGamePrefs.SaveDataLimit));
 	}
 
-	// Token: 0x06004D73 RID: 19827 RVA: 0x001DAF74 File Offset: 0x001D9174
+	// Token: 0x06004D42 RID: 19778 RVA: 0x001DC224 File Offset: 0x001DA424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int ToPrefValue(long limit)
 	{
@@ -30,7 +30,7 @@ public static class SaveDataLimit
 		return -1;
 	}
 
-	// Token: 0x06004D74 RID: 19828 RVA: 0x001DAFC1 File Offset: 0x001D91C1
+	// Token: 0x06004D43 RID: 19779 RVA: 0x001DC271 File Offset: 0x001DA471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long FromPrefValue(int limit)
 	{
@@ -45,10 +45,10 @@ public static class SaveDataLimit
 		return -1L;
 	}
 
-	// Token: 0x04003C10 RID: 15376
+	// Token: 0x04003C1D RID: 15389
 	public const int SAVE_DATA_LIMIT_DISABLED = -1;
 
-	// Token: 0x04003C11 RID: 15377
+	// Token: 0x04003C1E RID: 15390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int SAVE_DATA_LIMIT_PREF_BYTES_PER = 1048576;
 }

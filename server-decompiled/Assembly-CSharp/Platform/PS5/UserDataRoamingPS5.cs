@@ -2,11 +2,11 @@
 
 namespace Platform.PS5
 {
-	// Token: 0x02001CBB RID: 7355
+	// Token: 0x02001CED RID: 7405
 	public class UserDataRoamingPS5 : UserDataRoamingAbs
 	{
-		// Token: 0x17001B23 RID: 6947
-		// (get) Token: 0x0600DA3F RID: 55871 RVA: 0x0002F168 File Offset: 0x0002D368
+		// Token: 0x17001BC9 RID: 7113
+		// (get) Token: 0x0600DBB9 RID: 56249 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override SaveRoamingMode SaveRoamingMode
 		{
 			get
@@ -15,8 +15,8 @@ namespace Platform.PS5
 			}
 		}
 
-		// Token: 0x17001B24 RID: 6948
-		// (get) Token: 0x0600DA40 RID: 55872 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001BCA RID: 7114
+		// (get) Token: 0x0600DBBA RID: 56250 RVA: 0x00020119 File Offset: 0x0001E319
 		public override UserDataStorageType DefaultSaveStorage
 		{
 			get

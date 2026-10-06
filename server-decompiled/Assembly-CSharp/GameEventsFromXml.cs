@@ -7,10 +7,10 @@ using GameEvent.SequenceDecisions;
 using GameEvent.SequenceLoops;
 using GameEvent.SequenceRequirements;
 
-// Token: 0x02000D0F RID: 3343
+// Token: 0x02000D1D RID: 3357
 public class GameEventsFromXml
 {
-	// Token: 0x06006610 RID: 26128 RVA: 0x0027F0A8 File Offset: 0x0027D2A8
+	// Token: 0x06006602 RID: 26114 RVA: 0x0028244C File Offset: 0x0028064C
 	public static IEnumerator CreateGameEvents(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -74,13 +74,13 @@ public class GameEventsFromXml
 		yield break;
 	}
 
-	// Token: 0x06006611 RID: 26129 RVA: 0x0027F0B7 File Offset: 0x0027D2B7
+	// Token: 0x06006603 RID: 26115 RVA: 0x0028245B File Offset: 0x0028065B
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(GameEventsFromXml.CreateGameEvents(xmlFile));
 	}
 
-	// Token: 0x06006612 RID: 26130 RVA: 0x0027F0C4 File Offset: 0x0027D2C4
+	// Token: 0x06006604 RID: 26116 RVA: 0x00282468 File Offset: 0x00280668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseGameEventSequence(XElement e)
 	{
@@ -147,7 +147,7 @@ public class GameEventsFromXml
 		GameEventManager.Current.AddSequence(gameEventActionSequence);
 	}
 
-	// Token: 0x06006613 RID: 26131 RVA: 0x0027F2D0 File Offset: 0x0027D4D0
+	// Token: 0x06006605 RID: 26117 RVA: 0x00282674 File Offset: 0x00280874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseAction ParseGameEventSequenceAction(XElement e, GameEventActionSequence owner, bool addToSequence = true)
 	{
@@ -199,7 +199,7 @@ public class GameEventsFromXml
 		return baseAction;
 	}
 
-	// Token: 0x06006614 RID: 26132 RVA: 0x0027F434 File Offset: 0x0027D634
+	// Token: 0x06006606 RID: 26118 RVA: 0x002827D8 File Offset: 0x002809D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseAction ParseGameEventSequenceLoop(XElement e, GameEventActionSequence owner, bool addToSequence = true)
 	{
@@ -286,7 +286,7 @@ public class GameEventsFromXml
 		return baseLoop;
 	}
 
-	// Token: 0x06006615 RID: 26133 RVA: 0x0027F6B8 File Offset: 0x0027D8B8
+	// Token: 0x06006607 RID: 26119 RVA: 0x00282A5C File Offset: 0x00280C5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseAction ParseGameEventSequenceWait(XElement e, GameEventActionSequence owner, bool addToSequence = true)
 	{
@@ -338,7 +338,7 @@ public class GameEventsFromXml
 		return baseWait;
 	}
 
-	// Token: 0x06006616 RID: 26134 RVA: 0x0027F81C File Offset: 0x0027DA1C
+	// Token: 0x06006608 RID: 26120 RVA: 0x00282BC0 File Offset: 0x00280DC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseRequirement ParseGameEventSequenceRequirement(XElement e, GameEventActionSequence owner)
 	{
@@ -383,7 +383,7 @@ public class GameEventsFromXml
 		return baseRequirement;
 	}
 
-	// Token: 0x06006617 RID: 26135 RVA: 0x0027F938 File Offset: 0x0027DB38
+	// Token: 0x06006609 RID: 26121 RVA: 0x00282CDC File Offset: 0x00280EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseAction ParseGameEventSequenceDecision(XElement e, GameEventActionSequence owner, bool addToSequence = true)
 	{
@@ -446,7 +446,7 @@ public class GameEventsFromXml
 		return baseDecision;
 	}
 
-	// Token: 0x06006618 RID: 26136 RVA: 0x0027FAE4 File Offset: 0x0027DCE4
+	// Token: 0x0600660A RID: 26122 RVA: 0x00282E88 File Offset: 0x00281088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseRequirement ParseGameEventActionRequirement(XElement e, BaseAction owner)
 	{
@@ -491,7 +491,7 @@ public class GameEventsFromXml
 		return baseRequirement;
 	}
 
-	// Token: 0x06006619 RID: 26137 RVA: 0x0027FC00 File Offset: 0x0027DE00
+	// Token: 0x0600660B RID: 26123 RVA: 0x00282FA4 File Offset: 0x002811A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseGameEventSequenceVariable(XElement e, GameEventActionSequence owner)
 	{

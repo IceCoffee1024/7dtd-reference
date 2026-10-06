@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using NCalc;
 
-// Token: 0x020014FE RID: 5374
+// Token: 0x02001520 RID: 5408
 public static class XmlPatchConditionEvaluator
 {
-	// Token: 0x0600A931 RID: 43313 RVA: 0x003EDD9C File Offset: 0x003EBF9C
+	// Token: 0x0600A9E4 RID: 43492 RVA: 0x003F2BF0 File Offset: 0x003F0DF0
 	public static XElement FindActiveConditionalBranchElement(XmlFile _xmlFile, XElement _conditionalElement)
 	{
 		foreach (XElement xelement in _conditionalElement.Elements())
@@ -37,7 +37,7 @@ public static class XmlPatchConditionEvaluator
 		return null;
 	}
 
-	// Token: 0x0600A932 RID: 43314 RVA: 0x003EDE6C File Offset: 0x003EC06C
+	// Token: 0x0600A9E5 RID: 43493 RVA: 0x003F2CC0 File Offset: 0x003F0EC0
 	public static bool Evaluate(XmlFile _xmlFile, XElement _xmlElement, string _expression)
 	{
 		Expression expression = new Expression(_expression, EvaluateOptions.IgnoreCase | EvaluateOptions.NoCache | EvaluateOptions.UseDoubleForAbsFunction | EvaluateOptions.AllowNullParameter);
@@ -59,7 +59,7 @@ public static class XmlPatchConditionEvaluator
 		throw new XmlPatchException(_xmlElement, "Evaluate", string.Format("Conditional expression did not evaluate to a boolean value: {0} == {1}", _expression, obj));
 	}
 
-	// Token: 0x0600A933 RID: 43315 RVA: 0x003EDF04 File Offset: 0x003EC104
+	// Token: 0x0600A9E6 RID: 43494 RVA: 0x003F2D58 File Offset: 0x003F0F58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void NCalcEvaluateFunction(string _name, FunctionArgs _args, bool _ignoreCase)
 	{
@@ -120,7 +120,7 @@ public static class XmlPatchConditionEvaluator
 		}
 	}
 
-	// Token: 0x0600A934 RID: 43316 RVA: 0x003EDFF0 File Offset: 0x003EC1F0
+	// Token: 0x0600A9E7 RID: 43495 RVA: 0x003F2E44 File Offset: 0x003F1044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void mod_loaded(FunctionArgs _args)
 	{
@@ -136,7 +136,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = ModManager.ModLoaded(text.Trim());
 	}
 
-	// Token: 0x0600A935 RID: 43317 RVA: 0x003EE068 File Offset: 0x003EC268
+	// Token: 0x0600A9E8 RID: 43496 RVA: 0x003F2EBC File Offset: 0x003F10BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void mod_version(FunctionArgs _args)
 	{
@@ -153,7 +153,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = ((mod != null) ? mod.Version : null) ?? new Version(0, 0);
 	}
 
-	// Token: 0x0600A936 RID: 43318 RVA: 0x003EE0F4 File Offset: 0x003EC2F4
+	// Token: 0x0600A9E9 RID: 43497 RVA: 0x003F2F48 File Offset: 0x003F1148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void game_version(FunctionArgs _args)
 	{
@@ -164,7 +164,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = Constants.cVersionInformation.Version;
 	}
 
-	// Token: 0x0600A937 RID: 43319 RVA: 0x003EE144 File Offset: 0x003EC344
+	// Token: 0x0600A9EA RID: 43498 RVA: 0x003F2F98 File Offset: 0x003F1198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void version(FunctionArgs _args)
 	{
@@ -227,7 +227,7 @@ public static class XmlPatchConditionEvaluator
 		throw new ArgumentException("Calling function version: Expected int arguments");
 	}
 
-	// Token: 0x0600A938 RID: 43320 RVA: 0x003EE298 File Offset: 0x003EC498
+	// Token: 0x0600A9EB RID: 43499 RVA: 0x003F30EC File Offset: 0x003F12EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void gamepref(FunctionArgs _args)
 	{
@@ -248,7 +248,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = GamePrefs.GetObject(enumGamePrefs);
 	}
 
-	// Token: 0x0600A939 RID: 43321 RVA: 0x003EE328 File Offset: 0x003EC528
+	// Token: 0x0600A9EC RID: 43500 RVA: 0x003F317C File Offset: 0x003F137C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void eventActive(FunctionArgs _args)
 	{
@@ -269,7 +269,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = eventDefinition.Active && !GamePrefs.GetBool(EnumGamePrefs.OptionsDisableXmlEvents);
 	}
 
-	// Token: 0x0600A93A RID: 43322 RVA: 0x003EE3D4 File Offset: 0x003EC5D4
+	// Token: 0x0600A9ED RID: 43501 RVA: 0x003F3228 File Offset: 0x003F1428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void serverinfo(FunctionArgs _args)
 	{
@@ -308,7 +308,7 @@ public static class XmlPatchConditionEvaluator
 		throw new ArgumentException("Calling function serverinfo: Unknown ServerInfo name '" + text + "'");
 	}
 
-	// Token: 0x0600A93B RID: 43323 RVA: 0x003EE4D4 File Offset: 0x003EC6D4
+	// Token: 0x0600A9EE RID: 43502 RVA: 0x003F3328 File Offset: 0x003F1528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void time_minutes(FunctionArgs _args)
 	{
@@ -319,7 +319,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = DateTime.Now.Minute;
 	}
 
-	// Token: 0x0600A93C RID: 43324 RVA: 0x003EE52C File Offset: 0x003EC72C
+	// Token: 0x0600A9EF RID: 43503 RVA: 0x003F3380 File Offset: 0x003F1580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void game_loaded(FunctionArgs _args)
 	{
@@ -330,7 +330,7 @@ public static class XmlPatchConditionEvaluator
 		_args.Result = SingletonMonoBehaviour<ConnectionManager>.Instance.CurrentMode > ProtocolManager.NetworkType.None;
 	}
 
-	// Token: 0x0600A93D RID: 43325 RVA: 0x003EE584 File Offset: 0x003EC784
+	// Token: 0x0600A9F0 RID: 43504 RVA: 0x003F33D8 File Offset: 0x003F15D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void xpath(FunctionArgs _args)
 	{
@@ -370,7 +370,7 @@ public static class XmlPatchConditionEvaluator
 		throw new ArgumentException("Calling function xpath: XML file reference not found");
 	}
 
-	// Token: 0x0600A93E RID: 43326 RVA: 0x003EE698 File Offset: 0x003EC898
+	// Token: 0x0600A9F1 RID: 43505 RVA: 0x003F34EC File Offset: 0x003F16EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void has_entitlement(FunctionArgs _args)
 	{

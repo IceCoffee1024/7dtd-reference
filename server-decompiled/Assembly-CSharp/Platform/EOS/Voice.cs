@@ -11,11 +11,11 @@ using UnityEngine;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D2F RID: 7471
+	// Token: 0x02001D61 RID: 7521
 	public class Voice : IPartyVoice
 	{
-		// Token: 0x17001B9C RID: 7068
-		// (get) Token: 0x0600DD4E RID: 56654 RVA: 0x004F228B File Offset: 0x004F048B
+		// Token: 0x17001C42 RID: 7234
+		// (get) Token: 0x0600DEC9 RID: 57033 RVA: 0x004F6ED3 File Offset: 0x004F50D3
 		public UserIdentifierEos localUserIdentifier
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -36,8 +36,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B9D RID: 7069
-		// (get) Token: 0x0600DD4F RID: 56655 RVA: 0x004F22B0 File Offset: 0x004F04B0
+		// Token: 0x17001C43 RID: 7235
+		// (get) Token: 0x0600DECA RID: 57034 RVA: 0x004F6EF8 File Offset: 0x004F50F8
 		public ProductUserId localProductUserId
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -52,9 +52,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x14000144 RID: 324
-		// (add) Token: 0x0600DD50 RID: 56656 RVA: 0x004F22C4 File Offset: 0x004F04C4
-		// (remove) Token: 0x0600DD51 RID: 56657 RVA: 0x004F2324 File Offset: 0x004F0524
+		// Token: 0x14000143 RID: 323
+		// (add) Token: 0x0600DECB RID: 57035 RVA: 0x004F6F0C File Offset: 0x004F510C
+		// (remove) Token: 0x0600DECC RID: 57036 RVA: 0x004F6F6C File Offset: 0x004F516C
 		public event Action Initialized
 		{
 			add
@@ -79,17 +79,17 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B9E RID: 7070
-		// (get) Token: 0x0600DD52 RID: 56658 RVA: 0x004F2378 File Offset: 0x004F0578
-		// (set) Token: 0x0600DD53 RID: 56659 RVA: 0x004F2380 File Offset: 0x004F0580
+		// Token: 0x17001C44 RID: 7236
+		// (get) Token: 0x0600DECD RID: 57037 RVA: 0x004F6FC0 File Offset: 0x004F51C0
+		// (set) Token: 0x0600DECE RID: 57038 RVA: 0x004F6FC8 File Offset: 0x004F51C8
 		public EPartyVoiceStatus Status
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = EPartyVoiceStatus.Uninitialized;
 
-		// Token: 0x17001B9F RID: 7071
-		// (get) Token: 0x0600DD54 RID: 56660 RVA: 0x004F2389 File Offset: 0x004F0589
+		// Token: 0x17001C45 RID: 7237
+		// (get) Token: 0x0600DECF RID: 57039 RVA: 0x004F6FD1 File Offset: 0x004F51D1
 		public bool InLobby
 		{
 			get
@@ -98,8 +98,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001BA0 RID: 7072
-		// (get) Token: 0x0600DD55 RID: 56661 RVA: 0x004F239B File Offset: 0x004F059B
+		// Token: 0x17001C46 RID: 7238
+		// (get) Token: 0x0600DED0 RID: 57040 RVA: 0x004F6FE3 File Offset: 0x004F51E3
 		public bool InLobbyOrProgress
 		{
 			get
@@ -108,7 +108,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD56 RID: 56662 RVA: 0x004F23B5 File Offset: 0x004F05B5
+		// Token: 0x0600DED1 RID: 57041 RVA: 0x004F6FFD File Offset: 0x004F51FD
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -116,7 +116,7 @@ namespace Platform.EOS
 			this.api.ClientApiInitialized += this.OnClientApiInitialized;
 		}
 
-		// Token: 0x0600DD57 RID: 56663 RVA: 0x004F23EC File Offset: 0x004F05EC
+		// Token: 0x0600DED2 RID: 57042 RVA: 0x004F7034 File Offset: 0x004F5234
 		public void Destroy()
 		{
 			if (this.Status == EPartyVoiceStatus.Ok)
@@ -132,7 +132,7 @@ namespace Platform.EOS
 			this.owner = null;
 		}
 
-		// Token: 0x0600DD58 RID: 56664 RVA: 0x004F2448 File Offset: 0x004F0648
+		// Token: 0x0600DED3 RID: 57043 RVA: 0x004F7090 File Offset: 0x004F5290
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientApiInitialized()
 		{
@@ -167,21 +167,21 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD59 RID: 56665 RVA: 0x004F2558 File Offset: 0x004F0758
+		// Token: 0x0600DED4 RID: 57044 RVA: 0x004F71A0 File Offset: 0x004F53A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPartyVoiceInitialized()
 		{
 			this.AddNotifications();
 		}
 
-		// Token: 0x0600DD5A RID: 56666 RVA: 0x004F2560 File Offset: 0x004F0760
+		// Token: 0x0600DED5 RID: 57045 RVA: 0x004F71A8 File Offset: 0x004F53A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPartyVoiceUninitialize()
 		{
 			this.RemoveNotifications();
 		}
 
-		// Token: 0x0600DD5B RID: 56667 RVA: 0x004F2568 File Offset: 0x004F0768
+		// Token: 0x0600DED6 RID: 57046 RVA: 0x004F71B0 File Offset: 0x004F53B0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddNotifications()
 		{
@@ -193,7 +193,7 @@ namespace Platform.EOS
 			this.AddAudioDevicesNotifications();
 		}
 
-		// Token: 0x0600DD5C RID: 56668 RVA: 0x004F2583 File Offset: 0x004F0783
+		// Token: 0x0600DED7 RID: 57047 RVA: 0x004F71CB File Offset: 0x004F53CB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RemoveNotifications()
 		{
@@ -205,7 +205,7 @@ namespace Platform.EOS
 			this.RemoveAudioDevicesNotifications();
 		}
 
-		// Token: 0x0600DD5D RID: 56669 RVA: 0x004F25A0 File Offset: 0x004F07A0
+		// Token: 0x0600DED8 RID: 57048 RVA: 0x004F71E8 File Offset: 0x004F53E8
 		public void CreateLobby(Action<string> _lobbyCreatedCallback)
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -268,7 +268,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD5E RID: 56670 RVA: 0x004F26B0 File Offset: 0x004F08B0
+		// Token: 0x0600DED9 RID: 57049 RVA: 0x004F72F8 File Offset: 0x004F54F8
 		public void JoinLobby(string _lobbyId)
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -294,7 +294,7 @@ namespace Platform.EOS
 			ThreadManager.StartCoroutine(this.tryJoinLobbyCo(_lobbyId));
 		}
 
-		// Token: 0x0600DD5F RID: 56671 RVA: 0x004F2724 File Offset: 0x004F0924
+		// Token: 0x0600DEDA RID: 57050 RVA: 0x004F736C File Offset: 0x004F556C
 		public void LeaveLobby()
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -333,7 +333,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD60 RID: 56672 RVA: 0x004F27E0 File Offset: 0x004F09E0
+		// Token: 0x0600DEDB RID: 57051 RVA: 0x004F7428 File Offset: 0x004F5628
 		public void PromoteLeader(PlatformUserIdentifierAbs _newLeaderIdentifier)
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -372,7 +372,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD61 RID: 56673 RVA: 0x004F28CC File Offset: 0x004F0ACC
+		// Token: 0x0600DEDC RID: 57052 RVA: 0x004F7514 File Offset: 0x004F5714
 		public bool IsLobbyOwner()
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -414,22 +414,22 @@ namespace Platform.EOS
 			return flag2;
 		}
 
-		// Token: 0x14000145 RID: 325
-		// (add) Token: 0x0600DD62 RID: 56674 RVA: 0x004F29D8 File Offset: 0x004F0BD8
-		// (remove) Token: 0x0600DD63 RID: 56675 RVA: 0x004F2A10 File Offset: 0x004F0C10
+		// Token: 0x14000144 RID: 324
+		// (add) Token: 0x0600DEDD RID: 57053 RVA: 0x004F7620 File Offset: 0x004F5820
+		// (remove) Token: 0x0600DEDE RID: 57054 RVA: 0x004F7658 File Offset: 0x004F5858
 		public event Action<IPartyVoice.EVoiceChannelAction> OnLocalPlayerStateChanged;
 
-		// Token: 0x14000146 RID: 326
-		// (add) Token: 0x0600DD64 RID: 56676 RVA: 0x004F2A48 File Offset: 0x004F0C48
-		// (remove) Token: 0x0600DD65 RID: 56677 RVA: 0x004F2A80 File Offset: 0x004F0C80
+		// Token: 0x14000145 RID: 325
+		// (add) Token: 0x0600DEDF RID: 57055 RVA: 0x004F7690 File Offset: 0x004F5890
+		// (remove) Token: 0x0600DEE0 RID: 57056 RVA: 0x004F76C8 File Offset: 0x004F58C8
 		public event Action<PlatformUserIdentifierAbs, IPartyVoice.EVoiceChannelAction> OnRemotePlayerStateChanged;
 
-		// Token: 0x14000147 RID: 327
-		// (add) Token: 0x0600DD66 RID: 56678 RVA: 0x004F2AB8 File Offset: 0x004F0CB8
-		// (remove) Token: 0x0600DD67 RID: 56679 RVA: 0x004F2AF0 File Offset: 0x004F0CF0
+		// Token: 0x14000146 RID: 326
+		// (add) Token: 0x0600DEE1 RID: 57057 RVA: 0x004F7700 File Offset: 0x004F5900
+		// (remove) Token: 0x0600DEE2 RID: 57058 RVA: 0x004F7738 File Offset: 0x004F5938
 		public event Action<PlatformUserIdentifierAbs, IPartyVoice.EVoiceMemberState> OnRemotePlayerVoiceStateChanged;
 
-		// Token: 0x0600DD68 RID: 56680 RVA: 0x004F2B28 File Offset: 0x004F0D28
+		// Token: 0x0600DEE3 RID: 57059 RVA: 0x004F7770 File Offset: 0x004F5970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddAudioDevicesNotifications()
 		{
@@ -445,7 +445,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD69 RID: 56681 RVA: 0x004F2B98 File Offset: 0x004F0D98
+		// Token: 0x0600DEE4 RID: 57060 RVA: 0x004F77E0 File Offset: 0x004F59E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RemoveAudioDevicesNotifications()
 		{
@@ -464,7 +464,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD6A RID: 56682 RVA: 0x004F2BF8 File Offset: 0x004F0DF8
+		// Token: 0x0600DEE5 RID: 57061 RVA: 0x004F7840 File Offset: 0x004F5A40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RefreshAudioDevices()
 		{
@@ -487,7 +487,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD6B RID: 56683 RVA: 0x004F2CB0 File Offset: 0x004F0EB0
+		// Token: 0x0600DEE6 RID: 57062 RVA: 0x004F78F8 File Offset: 0x004F5AF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnQueryInputDevicesInformation(ref OnQueryInputDevicesInformationCallbackInfo data)
 		{
@@ -541,7 +541,7 @@ namespace Platform.EOS
 			this.inputDevices = list;
 		}
 
-		// Token: 0x0600DD6C RID: 56684 RVA: 0x004F2E10 File Offset: 0x004F1010
+		// Token: 0x0600DEE7 RID: 57063 RVA: 0x004F7A58 File Offset: 0x004F5C58
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnQueryOutputDevicesInformation(ref OnQueryOutputDevicesInformationCallbackInfo data)
 		{
@@ -595,7 +595,7 @@ namespace Platform.EOS
 			this.outputDevices = list;
 		}
 
-		// Token: 0x0600DD6D RID: 56685 RVA: 0x004F2F70 File Offset: 0x004F1170
+		// Token: 0x0600DEE8 RID: 57064 RVA: 0x004F7BB8 File Offset: 0x004F5DB8
 		[return: TupleElementNames(new string[] { "inputDevices", "outputDevices" })]
 		public ValueTuple<IList<IPartyVoice.VoiceAudioDevice>, IList<IPartyVoice.VoiceAudioDevice>> GetDevicesList()
 		{
@@ -608,7 +608,7 @@ namespace Platform.EOS
 			return new ValueTuple<IList<IPartyVoice.VoiceAudioDevice>, IList<IPartyVoice.VoiceAudioDevice>>(this.inputDevices, this.outputDevices);
 		}
 
-		// Token: 0x0600DD6E RID: 56686 RVA: 0x004F2FB0 File Offset: 0x004F11B0
+		// Token: 0x0600DEE9 RID: 57065 RVA: 0x004F7BF8 File Offset: 0x004F5DF8
 		public void SetInputDevice(string _device)
 		{
 			Voice.<>c__DisplayClass66_0 CS$<>8__locals1 = new Voice.<>c__DisplayClass66_0();
@@ -633,7 +633,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD6F RID: 56687 RVA: 0x004F3068 File Offset: 0x004F1268
+		// Token: 0x0600DEEA RID: 57066 RVA: 0x004F7CB0 File Offset: 0x004F5EB0
 		public void SetOutputDevice(string _device)
 		{
 			Voice.<>c__DisplayClass67_0 CS$<>8__locals1 = new Voice.<>c__DisplayClass67_0();
@@ -657,9 +657,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001BA1 RID: 7073
-		// (get) Token: 0x0600DD70 RID: 56688 RVA: 0x004F3118 File Offset: 0x004F1318
-		// (set) Token: 0x0600DD71 RID: 56689 RVA: 0x004F3120 File Offset: 0x004F1320
+		// Token: 0x17001C47 RID: 7239
+		// (get) Token: 0x0600DEEB RID: 57067 RVA: 0x004F7D60 File Offset: 0x004F5F60
+		// (set) Token: 0x0600DEEC RID: 57068 RVA: 0x004F7D68 File Offset: 0x004F5F68
 		public bool MuteSelf
 		{
 			get
@@ -703,9 +703,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001BA2 RID: 7074
-		// (get) Token: 0x0600DD72 RID: 56690 RVA: 0x004F31F4 File Offset: 0x004F13F4
-		// (set) Token: 0x0600DD73 RID: 56691 RVA: 0x004F31FC File Offset: 0x004F13FC
+		// Token: 0x17001C48 RID: 7240
+		// (get) Token: 0x0600DEED RID: 57069 RVA: 0x004F7E3C File Offset: 0x004F603C
+		// (set) Token: 0x0600DEEE RID: 57070 RVA: 0x004F7E44 File Offset: 0x004F6044
 		public bool MuteOthers
 		{
 			get
@@ -751,9 +751,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001BA3 RID: 7075
-		// (get) Token: 0x0600DD74 RID: 56692 RVA: 0x004F32D8 File Offset: 0x004F14D8
-		// (set) Token: 0x0600DD75 RID: 56693 RVA: 0x004F32E0 File Offset: 0x004F14E0
+		// Token: 0x17001C49 RID: 7241
+		// (get) Token: 0x0600DEEF RID: 57071 RVA: 0x004F7F20 File Offset: 0x004F6120
+		// (set) Token: 0x0600DEF0 RID: 57072 RVA: 0x004F7F28 File Offset: 0x004F6128
 		public float OutputVolume
 		{
 			get
@@ -776,7 +776,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD76 RID: 56694 RVA: 0x004F3340 File Offset: 0x004F1540
+		// Token: 0x0600DEF1 RID: 57073 RVA: 0x004F7F88 File Offset: 0x004F6188
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetRoomReceivingVolume(float platformVolume)
 		{
@@ -803,7 +803,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD77 RID: 56695 RVA: 0x004F33F0 File Offset: 0x004F15F0
+		// Token: 0x0600DEF2 RID: 57074 RVA: 0x004F8038 File Offset: 0x004F6238
 		public void BlockUser(PlatformUserIdentifierAbs _userIdentifier, bool _block)
 		{
 			if (this.Status != EPartyVoiceStatus.Ok)
@@ -870,7 +870,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD78 RID: 56696 RVA: 0x004F3518 File Offset: 0x004F1718
+		// Token: 0x0600DEF3 RID: 57075 RVA: 0x004F8160 File Offset: 0x004F6360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator tryJoinLobbyCo(string _lobbyId)
 		{
@@ -1105,7 +1105,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DD79 RID: 56697 RVA: 0x004F3530 File Offset: 0x004F1730
+		// Token: 0x0600DEF4 RID: 57076 RVA: 0x004F8178 File Offset: 0x004F6378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void lobbyEntered(string _lobbyId)
 		{
@@ -1151,7 +1151,7 @@ namespace Platform.EOS
 			this.SetRoomReceivingVolume(this.outputVolume);
 		}
 
-		// Token: 0x0600DD7A RID: 56698 RVA: 0x004F36DC File Offset: 0x004F18DC
+		// Token: 0x0600DEF5 RID: 57077 RVA: 0x004F8324 File Offset: 0x004F6524
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void participantVoiceChanged(ref ParticipantUpdatedCallbackInfo _data)
 		{
@@ -1203,7 +1203,7 @@ namespace Platform.EOS
 			onRemotePlayerVoiceStateChanged2(userIdentifierEos, IPartyVoice.EVoiceMemberState.Muted);
 		}
 
-		// Token: 0x0600DD7B RID: 56699 RVA: 0x004F37AC File Offset: 0x004F19AC
+		// Token: 0x0600DEF6 RID: 57078 RVA: 0x004F83F4 File Offset: 0x004F65F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void participantStatusChanged(ref ParticipantStatusChangedCallbackInfo _data)
 		{
@@ -1246,7 +1246,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD7C RID: 56700 RVA: 0x004F3874 File Offset: 0x004F1A74
+		// Token: 0x0600DEF7 RID: 57079 RVA: 0x004F84BC File Offset: 0x004F66BC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void lobbyLeft()
 		{
@@ -1279,7 +1279,7 @@ namespace Platform.EOS
 			this.participantUpdatedHandle = 0UL;
 		}
 
-		// Token: 0x0600DD80 RID: 56704 RVA: 0x004F3A22 File Offset: 0x004F1C22
+		// Token: 0x0600DEFB RID: 57083 RVA: 0x004F866A File Offset: 0x004F686A
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <AddAudioDevicesNotifications>g__OnAudioDevicesChanged|60_0(ref AudioDevicesChangedCallbackInfo data)
@@ -1287,7 +1287,7 @@ namespace Platform.EOS
 			this.RefreshAudioDevices();
 		}
 
-		// Token: 0x0600DD81 RID: 56705 RVA: 0x004F3A2A File Offset: 0x004F1C2A
+		// Token: 0x0600DEFC RID: 57084 RVA: 0x004F8672 File Offset: 0x004F6872
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <SetRoomReceivingVolume>g__OnUpdateReceivingVolume|80_0(ref UpdateReceivingVolumeCallbackInfo data)
@@ -1298,118 +1298,118 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A727 RID: 42791
+		// Token: 0x0400A7FE RID: 43006
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int voiceLobbyConnectAttempts = 5;
 
-		// Token: 0x0400A728 RID: 42792
+		// Token: 0x0400A7FF RID: 43007
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float voiceLobbyConnectAttemptInterval = 0.5f;
 
-		// Token: 0x0400A729 RID: 42793
+		// Token: 0x0400A800 RID: 43008
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float platformVolumeToEosRtcVolume = 50f;
 
-		// Token: 0x0400A72A RID: 42794
+		// Token: 0x0400A801 RID: 43009
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A72B RID: 42795
+		// Token: 0x0400A802 RID: 43010
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Api api;
 
-		// Token: 0x0400A72C RID: 42796
+		// Token: 0x0400A803 RID: 43011
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RTCInterface rtcInterface;
 
-		// Token: 0x0400A72D RID: 42797
+		// Token: 0x0400A804 RID: 43012
 		[PublicizedFrom(EAccessModifier.Private)]
 		public RTCAudioInterface audioInterface;
 
-		// Token: 0x0400A72E RID: 42798
+		// Token: 0x0400A805 RID: 43013
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LobbyInterface lobbyInterface;
 
-		// Token: 0x0400A72F RID: 42799
+		// Token: 0x0400A806 RID: 43014
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string lobbyId;
 
-		// Token: 0x0400A730 RID: 42800
+		// Token: 0x0400A807 RID: 43015
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool createInProgress;
 
-		// Token: 0x0400A731 RID: 42801
+		// Token: 0x0400A808 RID: 43016
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool joinInProgress;
 
-		// Token: 0x0400A732 RID: 42802
+		// Token: 0x0400A809 RID: 43017
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool leaveInProgress;
 
-		// Token: 0x0400A733 RID: 42803
+		// Token: 0x0400A80A RID: 43018
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string roomName;
 
-		// Token: 0x0400A734 RID: 42804
+		// Token: 0x0400A80B RID: 43019
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool roomEntered;
 
-		// Token: 0x0400A735 RID: 42805
+		// Token: 0x0400A80C RID: 43020
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong participantStatusChangedHandle;
 
-		// Token: 0x0400A736 RID: 42806
+		// Token: 0x0400A80D RID: 43021
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong participantUpdatedHandle;
 
-		// Token: 0x0400A737 RID: 42807
+		// Token: 0x0400A80E RID: 43022
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action initializedDelegates;
 
-		// Token: 0x0400A738 RID: 42808
+		// Token: 0x0400A80F RID: 43023
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object initializedDelegateLock = new object();
 
-		// Token: 0x0400A73D RID: 42813
+		// Token: 0x0400A814 RID: 43028
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string activeInputDeviceId;
 
-		// Token: 0x0400A73E RID: 42814
+		// Token: 0x0400A815 RID: 43029
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string activeOutputDeviceId;
 
-		// Token: 0x0400A73F RID: 42815
+		// Token: 0x0400A816 RID: 43030
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong audioDevicesChangedNotificationId;
 
-		// Token: 0x0400A740 RID: 42816
+		// Token: 0x0400A817 RID: 43031
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IList<IPartyVoice.VoiceAudioDevice> inputDevices;
 
-		// Token: 0x0400A741 RID: 42817
+		// Token: 0x0400A818 RID: 43032
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IList<IPartyVoice.VoiceAudioDevice> outputDevices;
 
-		// Token: 0x0400A742 RID: 42818
+		// Token: 0x0400A819 RID: 43033
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool muteSelf;
 
-		// Token: 0x0400A743 RID: 42819
+		// Token: 0x0400A81A RID: 43034
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool muteOthers;
 
-		// Token: 0x0400A744 RID: 42820
+		// Token: 0x0400A81B RID: 43035
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float outputVolume = 1f;
 
-		// Token: 0x0400A745 RID: 42821
+		// Token: 0x0400A81C RID: 43036
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<PlatformUserIdentifierAbs> blockedUsers = new HashSet<PlatformUserIdentifierAbs>();
 
-		// Token: 0x02001D30 RID: 7472
+		// Token: 0x02001D62 RID: 7522
 		public class EosAudioDevice : IPartyVoice.VoiceAudioDevice
 		{
-			// Token: 0x0600DD82 RID: 56706 RVA: 0x004F3A54 File Offset: 0x004F1C54
+			// Token: 0x0600DEFD RID: 57085 RVA: 0x004F869C File Offset: 0x004F689C
 			public EosAudioDevice(InputDeviceInformation _device)
 				: base(false, _device.DefaultDevice)
 			{
@@ -1418,7 +1418,7 @@ namespace Platform.EOS
 				this.LogDevice("Input");
 			}
 
-			// Token: 0x0600DD83 RID: 56707 RVA: 0x004F3A93 File Offset: 0x004F1C93
+			// Token: 0x0600DEFE RID: 57086 RVA: 0x004F86DB File Offset: 0x004F68DB
 			public EosAudioDevice(OutputDeviceInformation _device)
 				: base(true, _device.DefaultDevice)
 			{
@@ -1427,7 +1427,7 @@ namespace Platform.EOS
 				this.LogDevice("Output");
 			}
 
-			// Token: 0x0600DD84 RID: 56708 RVA: 0x004F3AD4 File Offset: 0x004F1CD4
+			// Token: 0x0600DEFF RID: 57087 RVA: 0x004F871C File Offset: 0x004F691C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public void LogDevice(string _inOutString)
 			{
@@ -1437,7 +1437,7 @@ namespace Platform.EOS
 				}
 			}
 
-			// Token: 0x0600DD85 RID: 56709 RVA: 0x004F3B26 File Offset: 0x004F1D26
+			// Token: 0x0600DF00 RID: 57088 RVA: 0x004F876E File Offset: 0x004F696E
 			public override string ToString()
 			{
 				if (!this.IsDefault)
@@ -1447,8 +1447,8 @@ namespace Platform.EOS
 				return "(Default) " + this.Name;
 			}
 
-			// Token: 0x17001BA4 RID: 7076
-			// (get) Token: 0x0600DD86 RID: 56710 RVA: 0x004F3B47 File Offset: 0x004F1D47
+			// Token: 0x17001C4A RID: 7242
+			// (get) Token: 0x0600DF01 RID: 57089 RVA: 0x004F878F File Offset: 0x004F698F
 			public override string Identifier
 			{
 				get
@@ -1457,10 +1457,10 @@ namespace Platform.EOS
 				}
 			}
 
-			// Token: 0x0400A746 RID: 42822
+			// Token: 0x0400A81D RID: 43037
 			public readonly string Id;
 
-			// Token: 0x0400A747 RID: 42823
+			// Token: 0x0400A81E RID: 43038
 			public readonly string Name;
 		}
 	}

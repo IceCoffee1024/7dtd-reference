@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000420 RID: 1056
+// Token: 0x02000422 RID: 1058
 [Preserve]
 public class AIHordeSpawner
 {
-	// Token: 0x060020A4 RID: 8356 RVA: 0x000C486E File Offset: 0x000C2A6E
+	// Token: 0x06002093 RID: 8339 RVA: 0x000C4922 File Offset: 0x000C2B22
 	public AIHordeSpawner(World _world, string _spawnerDefinition, Vector3 _targetPos, float _playerSearchBounds)
 	{
 		this.world = _world;
@@ -16,7 +16,7 @@ public class AIHordeSpawner
 		this.targetPos = _targetPos;
 	}
 
-	// Token: 0x060020A5 RID: 8357 RVA: 0x000C48A4 File Offset: 0x000C2AA4
+	// Token: 0x06002094 RID: 8340 RVA: 0x000C4958 File Offset: 0x000C2B58
 	public bool Tick(double _dt)
 	{
 		if (this.world.GetPlayers().Count == 0 || !AIDirector.CanSpawn(1f))
@@ -85,8 +85,8 @@ public class AIHordeSpawner
 		return false;
 	}
 
-	// Token: 0x170003D7 RID: 983
-	// (get) Token: 0x060020A6 RID: 8358 RVA: 0x000C4B35 File Offset: 0x000C2D35
+	// Token: 0x170003CB RID: 971
+	// (get) Token: 0x06002095 RID: 8341 RVA: 0x000C4BE9 File Offset: 0x000C2DE9
 	public bool isSpawning
 	{
 		get
@@ -95,7 +95,7 @@ public class AIHordeSpawner
 		}
 	}
 
-	// Token: 0x060020A7 RID: 8359 RVA: 0x000C4B44 File Offset: 0x000C2D44
+	// Token: 0x06002096 RID: 8342 RVA: 0x000C4BF8 File Offset: 0x000C2DF8
 	public void Cleanup()
 	{
 		for (int i = 0; i < this.hordeList.Count; i++)
@@ -107,37 +107,37 @@ public class AIHordeSpawner
 		this.hordeList.Clear();
 	}
 
-	// Token: 0x04001648 RID: 5704
+	// Token: 0x0400163F RID: 5695
 	public Vector3 targetPos;
 
-	// Token: 0x04001649 RID: 5705
+	// Token: 0x04001640 RID: 5696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorGameStagePartySpawner spawner;
 
-	// Token: 0x0400164A RID: 5706
+	// Token: 0x04001641 RID: 5697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x0400164B RID: 5707
+	// Token: 0x04001642 RID: 5698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityEnemy> hordeList = new List<EntityEnemy>();
 
-	// Token: 0x0400164C RID: 5708
+	// Token: 0x04001643 RID: 5699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x0400164D RID: 5709
+	// Token: 0x04001644 RID: 5700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float playerSearchBounds;
 
-	// Token: 0x0400164E RID: 5710
+	// Token: 0x04001645 RID: 5701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInited;
 
-	// Token: 0x0400164F RID: 5711
+	// Token: 0x04001646 RID: 5702
 	public int numToSpawn;
 
-	// Token: 0x04001650 RID: 5712
+	// Token: 0x04001647 RID: 5703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numSpawned;
 }

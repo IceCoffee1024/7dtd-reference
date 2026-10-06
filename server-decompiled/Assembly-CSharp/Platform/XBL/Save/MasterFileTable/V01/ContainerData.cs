@@ -2,11 +2,11 @@
 
 namespace Platform.XBL.Save.MasterFileTable.V01
 {
-	// Token: 0x02001C72 RID: 7282
+	// Token: 0x02001CA4 RID: 7332
 	public sealed class ContainerData : IDisposable, IMigratable
 	{
-		// Token: 0x17001AC2 RID: 6850
-		// (get) Token: 0x0600D7DD RID: 55261 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001B68 RID: 7016
+		// (get) Token: 0x0600D956 RID: 55638 RVA: 0x00020119 File Offset: 0x0001E319
 		public ushort Version
 		{
 			get
@@ -15,30 +15,30 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			}
 		}
 
-		// Token: 0x17001AC3 RID: 6851
-		// (get) Token: 0x0600D7DE RID: 55262 RVA: 0x004DA53C File Offset: 0x004D873C
-		// (set) Token: 0x0600D7DF RID: 55263 RVA: 0x004DA544 File Offset: 0x004D8744
+		// Token: 0x17001B69 RID: 7017
+		// (get) Token: 0x0600D957 RID: 55639 RVA: 0x004DF078 File Offset: 0x004DD278
+		// (set) Token: 0x0600D958 RID: 55640 RVA: 0x004DF080 File Offset: 0x004DD280
 		public Node RootNode
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = new Node();
 
-		// Token: 0x0600D7E0 RID: 55264 RVA: 0x004DA54D File Offset: 0x004D874D
+		// Token: 0x0600D959 RID: 55641 RVA: 0x004DF089 File Offset: 0x004DD289
 		public void Write(PooledBinaryWriter writer)
 		{
 			writer.Write(1);
 			this.RootNode.Write(writer);
 		}
 
-		// Token: 0x0600D7E1 RID: 55265 RVA: 0x004DA562 File Offset: 0x004D8762
+		// Token: 0x0600D95A RID: 55642 RVA: 0x004DF09E File Offset: 0x004DD29E
 		public void Read(PooledBinaryReader reader)
 		{
 			reader.ReadUInt16();
 			this.RootNode.Read(reader);
 		}
 
-		// Token: 0x0600D7E2 RID: 55266 RVA: 0x004DA577 File Offset: 0x004D8777
+		// Token: 0x0600D95B RID: 55643 RVA: 0x004DF0B3 File Offset: 0x004DD2B3
 		public void Dispose()
 		{
 			Node rootNode = this.RootNode;
@@ -49,7 +49,7 @@ namespace Platform.XBL.Save.MasterFileTable.V01
 			this.RootNode = null;
 		}
 
-		// Token: 0x0400A423 RID: 42019
+		// Token: 0x0400A4F8 RID: 42232
 		public const ushort VERSION = 1;
 	}
 }

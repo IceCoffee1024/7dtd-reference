@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001341 RID: 4929
+// Token: 0x02001361 RID: 4961
 [CreateAssetMenu(fileName = "HairColorSwatch", menuName = "Hair Color Management/Hair Color Swatch", order = 1)]
 public class HairColorSwatch : ScriptableObject
 {
-	// Token: 0x06009BC6 RID: 39878 RVA: 0x003ACA58 File Offset: 0x003AAC58
+	// Token: 0x06009C72 RID: 40050 RVA: 0x003B15D4 File Offset: 0x003AF7D4
 	public void ApplyToMaterial(Material material)
 	{
 		if (material.GetFloat("_HoldColor") > 0.5f)
@@ -26,7 +26,7 @@ public class HairColorSwatch : ScriptableObject
 		material.SetColor("_SubsurfaceColor", this.subsurfaceColor);
 	}
 
-	// Token: 0x06009BC7 RID: 39879 RVA: 0x003ACB44 File Offset: 0x003AAD44
+	// Token: 0x06009C73 RID: 40051 RVA: 0x003B16C0 File Offset: 0x003AF8C0
 	public void ApplySwatchToGameObject(GameObject targetGameObject)
 	{
 		Shader shader = Shader.Find("Game/SDCS/Hair");
@@ -56,51 +56,51 @@ public class HairColorSwatch : ScriptableObject
 		Debug.LogWarning("No target GameObject selected.");
 	}
 
-	// Token: 0x0400757E RID: 30078
+	// Token: 0x040075F9 RID: 30201
 	[ColorUsage(false, false)]
 	public Color tint1 = Color.red;
 
-	// Token: 0x0400757F RID: 30079
+	// Token: 0x040075FA RID: 30202
 	[ColorUsage(false, false)]
 	public Color tint2 = Color.green;
 
-	// Token: 0x04007580 RID: 30080
+	// Token: 0x040075FB RID: 30203
 	[ColorUsage(false, false)]
 	public Color tint3 = Color.blue;
 
-	// Token: 0x04007581 RID: 30081
+	// Token: 0x040075FC RID: 30204
 	[Range(0f, 1f)]
 	public float tintSharpness = 0.5f;
 
-	// Token: 0x04007582 RID: 30082
+	// Token: 0x040075FD RID: 30205
 	[Range(0f, 1f)]
 	public float idMapStrength;
 
-	// Token: 0x04007583 RID: 30083
+	// Token: 0x040075FE RID: 30206
 	[Range(0f, 1f)]
 	public float rootDarkening;
 
-	// Token: 0x04007584 RID: 30084
+	// Token: 0x040075FF RID: 30207
 	[Range(0f, 1f)]
 	public float metallic;
 
-	// Token: 0x04007585 RID: 30085
+	// Token: 0x04007600 RID: 30208
 	[ColorUsage(false, true)]
 	public Color cuticleSpecularColor = Color.white;
 
-	// Token: 0x04007586 RID: 30086
+	// Token: 0x04007601 RID: 30209
 	[ColorUsage(false, true)]
 	public Color cortexSpecularColor = Color.white;
 
-	// Token: 0x04007587 RID: 30087
+	// Token: 0x04007602 RID: 30210
 	[Range(0f, 10f)]
 	public float smoothnessMultiplier = 1f;
 
-	// Token: 0x04007588 RID: 30088
+	// Token: 0x04007603 RID: 30211
 	[ColorUsage(false, false)]
 	public Color subsurfaceAmbient = Color.white;
 
-	// Token: 0x04007589 RID: 30089
+	// Token: 0x04007604 RID: 30212
 	[ColorUsage(false, false)]
 	public Color subsurfaceColor = Color.white;
 }

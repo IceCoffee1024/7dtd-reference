@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001144 RID: 4420
+// Token: 0x0200115C RID: 4444
 public abstract class XUiTweenAbs : IXUiElement
 {
-	// Token: 0x17001021 RID: 4129
-	// (get) Token: 0x06008BD2 RID: 35794 RVA: 0x00352E59 File Offset: 0x00351059
-	// (set) Token: 0x06008BD3 RID: 35795 RVA: 0x00352E61 File Offset: 0x00351061
+	// Token: 0x17001056 RID: 4182
+	// (get) Token: 0x06008C3D RID: 35901 RVA: 0x00357279 File Offset: 0x00355479
+	// (set) Token: 0x06008C3E RID: 35902 RVA: 0x00357281 File Offset: 0x00355481
 	[XuiXmlAttribute("repeat", false)]
 	public UITweener.Style RepeatStyle
 	{
@@ -28,9 +28,9 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x17001022 RID: 4130
-	// (get) Token: 0x06008BD4 RID: 35796 RVA: 0x00352E8E File Offset: 0x0035108E
-	// (set) Token: 0x06008BD5 RID: 35797 RVA: 0x00352E96 File Offset: 0x00351096
+	// Token: 0x17001057 RID: 4183
+	// (get) Token: 0x06008C3F RID: 35903 RVA: 0x003572AE File Offset: 0x003554AE
+	// (set) Token: 0x06008C40 RID: 35904 RVA: 0x003572B6 File Offset: 0x003554B6
 	[XuiXmlAttribute("duration", false)]
 	public float Duration
 	{
@@ -52,9 +52,9 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x17001023 RID: 4131
-	// (get) Token: 0x06008BD6 RID: 35798 RVA: 0x00352EC8 File Offset: 0x003510C8
-	// (set) Token: 0x06008BD7 RID: 35799 RVA: 0x00352ED0 File Offset: 0x003510D0
+	// Token: 0x17001058 RID: 4184
+	// (get) Token: 0x06008C41 RID: 35905 RVA: 0x003572E8 File Offset: 0x003554E8
+	// (set) Token: 0x06008C42 RID: 35906 RVA: 0x003572F0 File Offset: 0x003554F0
 	[XuiXmlAttribute("method", false)]
 	public UITweener.Method Method
 	{
@@ -76,9 +76,9 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x17001024 RID: 4132
-	// (get) Token: 0x06008BD8 RID: 35800 RVA: 0x00352EFD File Offset: 0x003510FD
-	// (set) Token: 0x06008BD9 RID: 35801 RVA: 0x00352F05 File Offset: 0x00351105
+	// Token: 0x17001059 RID: 4185
+	// (get) Token: 0x06008C43 RID: 35907 RVA: 0x0035731D File Offset: 0x0035551D
+	// (set) Token: 0x06008C44 RID: 35908 RVA: 0x00357325 File Offset: 0x00355525
 	[XuiXmlAttribute("enabled", false)]
 	public bool Enabled
 	{
@@ -100,7 +100,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDA RID: 35802 RVA: 0x00352F32 File Offset: 0x00351132
+	// Token: 0x06008C45 RID: 35909 RVA: 0x00357352 File Offset: 0x00355552
 	[XuiXmlAttribute("curve", false)]
 	public void AttributeCurve(string _curveString)
 	{
@@ -111,7 +111,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDB RID: 35803 RVA: 0x00352F5F File Offset: 0x0035115F
+	// Token: 0x06008C46 RID: 35910 RVA: 0x0035737F File Offset: 0x0035557F
 	[XuiXmlAttribute("play_forward", false)]
 	public void AttributePlayForward(bool _play)
 	{
@@ -126,7 +126,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDC RID: 35804 RVA: 0x00352F85 File Offset: 0x00351185
+	// Token: 0x06008C47 RID: 35911 RVA: 0x003573A5 File Offset: 0x003555A5
 	[XuiXmlAttribute("play_reverse", false)]
 	public void AttributePlayReverse(bool _play)
 	{
@@ -141,7 +141,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDD RID: 35805 RVA: 0x00352FAB File Offset: 0x003511AB
+	// Token: 0x06008C48 RID: 35912 RVA: 0x003573CB File Offset: 0x003555CB
 	[XuiXmlAttribute("set_to_start", false)]
 	public void AttributeSetToStart(bool _set)
 	{
@@ -157,7 +157,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDE RID: 35806 RVA: 0x00352FE7 File Offset: 0x003511E7
+	// Token: 0x06008C49 RID: 35913 RVA: 0x00357407 File Offset: 0x00355607
 	[XuiXmlAttribute("set_to_end", false)]
 	public void AttributeSetToEnd(bool _set)
 	{
@@ -173,14 +173,14 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BDF RID: 35807 RVA: 0x00353023 File Offset: 0x00351223
+	// Token: 0x06008C4A RID: 35914 RVA: 0x00357443 File Offset: 0x00355643
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiTweenAbs(XUiView _targetView)
 	{
 		this.targetView = _targetView;
 	}
 
-	// Token: 0x06008BE0 RID: 35808 RVA: 0x00353050 File Offset: 0x00351250
+	// Token: 0x06008C4B RID: 35915 RVA: 0x00357470 File Offset: 0x00355670
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void setCommonTweenValues(UITweener _tween)
 	{
@@ -192,11 +192,11 @@ public abstract class XUiTweenAbs : IXUiElement
 		_tween.enabled = this.enabled;
 	}
 
-	// Token: 0x06008BE1 RID: 35809
+	// Token: 0x06008C4C RID: 35916
 	public abstract void CreateTween(GameObject _uiGameObject);
 
-	// Token: 0x17001025 RID: 4133
-	// (get) Token: 0x06008BE2 RID: 35810 RVA: 0x003530A0 File Offset: 0x003512A0
+	// Token: 0x1700105A RID: 4186
+	// (get) Token: 0x06008C4D RID: 35917 RVA: 0x003574C0 File Offset: 0x003556C0
 	public XUiController Controller
 	{
 		get
@@ -205,13 +205,13 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BE3 RID: 35811 RVA: 0x003530AD File Offset: 0x003512AD
+	// Token: 0x06008C4E RID: 35918 RVA: 0x003574CD File Offset: 0x003556CD
 	public string GetXuiHierarchy()
 	{
 		return XUiUtils.GetXuiHierarchy(this.targetView.Controller);
 	}
 
-	// Token: 0x06008BE4 RID: 35812 RVA: 0x003530C0 File Offset: 0x003512C0
+	// Token: 0x06008C4F RID: 35919 RVA: 0x003574E0 File Offset: 0x003556E0
 	public void ParseInitialAttributeValue(string _attribute, string _value)
 	{
 		if (_value.Contains("{"))
@@ -226,8 +226,8 @@ public abstract class XUiTweenAbs : IXUiElement
 		Log.Error("[XUi] Unknown Tween attribute '" + _attribute + "', hierarchy: " + this.GetXuiHierarchy());
 	}
 
-	// Token: 0x17001026 RID: 4134
-	// (get) Token: 0x06008BE5 RID: 35813 RVA: 0x00353110 File Offset: 0x00351310
+	// Token: 0x1700105B RID: 4187
+	// (get) Token: 0x06008C50 RID: 35920 RVA: 0x00357530 File Offset: 0x00355730
 	public static AnimationCurve SecondHalfLinear
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -242,7 +242,7 @@ public abstract class XUiTweenAbs : IXUiElement
 		}
 	}
 
-	// Token: 0x06008BE6 RID: 35814 RVA: 0x00353188 File Offset: 0x00351388
+	// Token: 0x06008C51 RID: 35921 RVA: 0x003575A8 File Offset: 0x003557A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static AnimationCurve parseCurve(string _curveString)
 	{
@@ -269,52 +269,52 @@ public abstract class XUiTweenAbs : IXUiElement
 		return animationCurve;
 	}
 
-	// Token: 0x04006751 RID: 26449
+	// Token: 0x040067A6 RID: 26534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView targetView;
 
-	// Token: 0x04006752 RID: 26450
+	// Token: 0x040067A7 RID: 26535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UITweener tweenGeneric;
 
-	// Token: 0x04006753 RID: 26451
+	// Token: 0x040067A8 RID: 26536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UITweener.Style repeatStyle;
 
-	// Token: 0x04006754 RID: 26452
+	// Token: 0x040067A9 RID: 26537
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float duration = 1f;
 
-	// Token: 0x04006755 RID: 26453
+	// Token: 0x040067AA RID: 26538
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UITweener.Method method;
 
-	// Token: 0x04006756 RID: 26454
+	// Token: 0x040067AB RID: 26539
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool enabled;
 
-	// Token: 0x04006757 RID: 26455
+	// Token: 0x040067AC RID: 26540
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AnimationCurve curve = XUiTweenAbs.parseCurve("Linear");
 
-	// Token: 0x02001145 RID: 4421
+	// Token: 0x0200115D RID: 4445
 	public enum ETweenType
 	{
-		// Token: 0x04006759 RID: 26457
+		// Token: 0x040067AE RID: 26542
 		Alpha,
-		// Token: 0x0400675A RID: 26458
+		// Token: 0x040067AF RID: 26543
 		Color,
-		// Token: 0x0400675B RID: 26459
+		// Token: 0x040067B0 RID: 26544
 		Fill,
-		// Token: 0x0400675C RID: 26460
+		// Token: 0x040067B1 RID: 26545
 		Height,
-		// Token: 0x0400675D RID: 26461
+		// Token: 0x040067B2 RID: 26546
 		Position,
-		// Token: 0x0400675E RID: 26462
+		// Token: 0x040067B3 RID: 26547
 		Rotation,
-		// Token: 0x0400675F RID: 26463
+		// Token: 0x040067B4 RID: 26548
 		Scale,
-		// Token: 0x04006760 RID: 26464
+		// Token: 0x040067B5 RID: 26549
 		Width
 	}
 }

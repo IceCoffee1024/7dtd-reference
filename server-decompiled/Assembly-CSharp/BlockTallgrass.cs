@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000157 RID: 343
+// Token: 0x02000159 RID: 345
 [Preserve]
 public class BlockTallgrass : BlockPlant
 {
-	// Token: 0x0600097B RID: 2427 RVA: 0x00041C8C File Offset: 0x0003FE8C
+	// Token: 0x06000981 RID: 2433 RVA: 0x00041D6C File Offset: 0x0003FF6C
 	public BlockTallgrass()
 	{
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x0600097C RID: 2428 RVA: 0x00041C9B File Offset: 0x0003FE9B
+	// Token: 0x06000982 RID: 2434 RVA: 0x00041D7B File Offset: 0x0003FF7B
 	public override bool CheckPlantAlive(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!this.CanPlantStay(_world, _blockPos, _blockValue))
@@ -22,14 +22,14 @@ public class BlockTallgrass : BlockPlant
 		return true;
 	}
 
-	// Token: 0x0600097D RID: 2429 RVA: 0x00041CBC File Offset: 0x0003FEBC
+	// Token: 0x06000983 RID: 2435 RVA: 0x00041D9C File Offset: 0x0003FF9C
 	public override void OnBlockPlaceBefore(WorldBase _world, ref BlockPlacement.Result _bpResult, EntityAlive _ea, GameRandom _rnd)
 	{
 		_bpResult.blockValue.meta2and1 = this.CalcMeta(_rnd);
 		_bpResult.blockValue.rotation = (byte)_rnd.RandomRange(32);
 	}
 
-	// Token: 0x0600097E RID: 2430 RVA: 0x00041CE6 File Offset: 0x0003FEE6
+	// Token: 0x06000984 RID: 2436 RVA: 0x00041DC6 File Offset: 0x0003FFC6
 	public override BlockValue OnBlockPlaced(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, GameRandom _rnd)
 	{
 		_blockValue.meta2and1 = this.CalcMeta(_rnd);
@@ -37,7 +37,7 @@ public class BlockTallgrass : BlockPlant
 		return _blockValue;
 	}
 
-	// Token: 0x0600097F RID: 2431 RVA: 0x00041D09 File Offset: 0x0003FF09
+	// Token: 0x06000985 RID: 2437 RVA: 0x00041DE9 File Offset: 0x0003FFE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte CalcMeta(GameRandom _rnd)
 	{

@@ -2,14 +2,14 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016D4 RID: 5844
+	// Token: 0x02001700 RID: 5888
 	public enum LevelMode
 	{
-		// Token: 0x040088A2 RID: 34978
+		// Token: 0x04008967 RID: 35175
 		One,
-		// Token: 0x040088A3 RID: 34979
+		// Token: 0x04008968 RID: 35176
 		Mipmap,
-		// Token: 0x040088A4 RID: 34980
+		// Token: 0x04008969 RID: 35177
 		Ripmap
 	}
 }

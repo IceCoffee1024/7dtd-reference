@@ -6,12 +6,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001000 RID: 4096
+// Token: 0x0200100F RID: 4111
 [Preserve]
 public class XUiC_Radial : XUiController
 {
-	// Token: 0x17000F15 RID: 3861
-	// (get) Token: 0x0600814D RID: 33101 RVA: 0x003107DC File Offset: 0x0030E9DC
+	// Token: 0x17000F3C RID: 3900
+	// (get) Token: 0x0600815C RID: 33116 RVA: 0x003137C4 File Offset: 0x003119C4
 	public XUiC_RadialEntry mCurrentlySelectedEntry
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -25,7 +25,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600814E RID: 33102 RVA: 0x00310808 File Offset: 0x0030EA08
+	// Token: 0x0600815D RID: 33117 RVA: 0x003137F0 File Offset: 0x003119F0
 	public override void Init()
 	{
 		base.Init();
@@ -42,14 +42,14 @@ public class XUiC_Radial : XUiController
 		this.xui.RadialWindow = this;
 	}
 
-	// Token: 0x0600814F RID: 33103 RVA: 0x003108B8 File Offset: 0x0030EAB8
+	// Token: 0x0600815E RID: 33118 RVA: 0x003138A0 File Offset: 0x00311AA0
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.RadialWindow = null;
 	}
 
-	// Token: 0x06008150 RID: 33104 RVA: 0x003108CC File Offset: 0x0030EACC
+	// Token: 0x0600815F RID: 33119 RVA: 0x003138B4 File Offset: 0x00311AB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_Radial_OnPress(XUiC_RadialEntry _sender)
 	{
@@ -57,7 +57,7 @@ public class XUiC_Radial : XUiController
 		this.CallContextAction();
 	}
 
-	// Token: 0x06008151 RID: 33105 RVA: 0x003108E0 File Offset: 0x0030EAE0
+	// Token: 0x06008160 RID: 33120 RVA: 0x003138C8 File Offset: 0x00311AC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_Radial_OnHover(XUiController _sender, bool _isOver)
 	{
@@ -72,14 +72,14 @@ public class XUiC_Radial : XUiController
 		this.selectedIndex = int.MinValue;
 	}
 
-	// Token: 0x06008152 RID: 33106 RVA: 0x0031091F File Offset: 0x0030EB1F
+	// Token: 0x06008161 RID: 33121 RVA: 0x00313907 File Offset: 0x00311B07
 	public void Open()
 	{
 		this.openTime = Time.time;
 		this.isOpenRequested = true;
 	}
 
-	// Token: 0x06008153 RID: 33107 RVA: 0x00310934 File Offset: 0x0030EB34
+	// Token: 0x06008162 RID: 33122 RVA: 0x0031391C File Offset: 0x00311B1C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -104,7 +104,7 @@ public class XUiC_Radial : XUiController
 		this.xui.playerUI.entityPlayer.ClearMovementInputs();
 	}
 
-	// Token: 0x06008154 RID: 33108 RVA: 0x00310A4C File Offset: 0x0030EC4C
+	// Token: 0x06008163 RID: 33123 RVA: 0x00313A34 File Offset: 0x00311C34
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -122,7 +122,7 @@ public class XUiC_Radial : XUiController
 		this.xui.playerUI.CursorController.SetCursorHidden(false);
 	}
 
-	// Token: 0x06008155 RID: 33109 RVA: 0x00310AE4 File Offset: 0x0030ECE4
+	// Token: 0x06008164 RID: 33124 RVA: 0x00313ACC File Offset: 0x00311CCC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -190,21 +190,21 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x06008156 RID: 33110 RVA: 0x00310C30 File Offset: 0x0030EE30
+	// Token: 0x06008165 RID: 33125 RVA: 0x00313C18 File Offset: 0x00311E18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool radialButtonPressed(PlayerActionsLocal _actionSet)
 	{
 		return _actionSet.Activate.IsPressed || _actionSet.PermanentActions.Activate.IsPressed || _actionSet.Reload.IsPressed || _actionSet.PermanentActions.Reload.IsPressed || _actionSet.ToggleFlashlight.IsPressed || _actionSet.PermanentActions.ToggleFlashlight.IsPressed || _actionSet.Inventory.IsPressed || _actionSet.VehicleActions.Inventory.IsPressed || _actionSet.PermanentActions.Inventory.IsPressed || _actionSet.Swap.IsPressed || _actionSet.PermanentActions.Swap.IsPressed || _actionSet.InventorySlotLeft.IsPressed || _actionSet.InventorySlotRight.IsPressed || _actionSet.QuickMenu.IsPressed || _actionSet.PermanentActions.QuickMenu.IsPressed;
 	}
 
-	// Token: 0x06008157 RID: 33111 RVA: 0x00310D37 File Offset: 0x0030EF37
+	// Token: 0x06008166 RID: 33126 RVA: 0x00313D1F File Offset: 0x00311F1F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool radialButtonIsLeftSide(PlayerActionsLocal _actionSet)
 	{
 		return _actionSet.ToggleFlashlight.IsPressed || _actionSet.PermanentActions.ToggleFlashlight.IsPressed;
 	}
 
-	// Token: 0x06008158 RID: 33112 RVA: 0x00310D58 File Offset: 0x0030EF58
+	// Token: 0x06008167 RID: 33127 RVA: 0x00313D40 File Offset: 0x00311F40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CallContextAction()
 	{
@@ -248,7 +248,7 @@ public class XUiC_Radial : XUiController
 		commandHandlerDelegate(this, commandIndex, radialContextAbs);
 	}
 
-	// Token: 0x06008159 RID: 33113 RVA: 0x00310E24 File Offset: 0x0030F024
+	// Token: 0x06008168 RID: 33128 RVA: 0x00313E0C File Offset: 0x0031200C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Close()
 	{
@@ -264,7 +264,7 @@ public class XUiC_Radial : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x0600815A RID: 33114 RVA: 0x00310E90 File Offset: 0x0030F090
+	// Token: 0x06008169 RID: 33129 RVA: 0x00313E78 File Offset: 0x00312078
 	public void ResetRadialEntries()
 	{
 		for (int i = 0; i < this.menuItemState.Length; i++)
@@ -274,7 +274,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600815B RID: 33115 RVA: 0x00310EC8 File Offset: 0x0030F0C8
+	// Token: 0x0600816A RID: 33130 RVA: 0x00313EB0 File Offset: 0x003120B0
 	public void SetCommonData(UIUtils.ButtonIcon _controllerButtonForSelect, XUiC_Radial.CommandHandlerDelegate _commandHandlerFunc, XUiC_Radial.RadialContextAbs _context = null, int _preSelectedCommandIndex = -1, bool _hasSpecialActionPriorToRadialVisibility = false, XUiC_Radial.RadialStillValidDelegate _radialValidityCallback = null)
 	{
 		this.updateRadialButtonPositions();
@@ -324,7 +324,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600815C RID: 33116 RVA: 0x00310FD9 File Offset: 0x0030F1D9
+	// Token: 0x0600816B RID: 33131 RVA: 0x00313FC1 File Offset: 0x003121C1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DefaultSelect()
 	{
@@ -332,7 +332,7 @@ public class XUiC_Radial : XUiController
 		this.ResetIconsScale();
 	}
 
-	// Token: 0x0600815D RID: 33117 RVA: 0x00310FE8 File Offset: 0x0030F1E8
+	// Token: 0x0600816C RID: 33132 RVA: 0x00313FD0 File Offset: 0x003121D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalculateSelectionFromController(PlayerActionsLocal _actionSet)
 	{
@@ -369,7 +369,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600815E RID: 33118 RVA: 0x00311108 File Offset: 0x0030F308
+	// Token: 0x0600816D RID: 33133 RVA: 0x003140F0 File Offset: 0x003122F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetIconsScale()
 	{
@@ -379,7 +379,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600815F RID: 33119 RVA: 0x00311138 File Offset: 0x0030F338
+	// Token: 0x0600816E RID: 33134 RVA: 0x00314120 File Offset: 0x00312320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectionEffect(XUiC_RadialEntry _entry, bool _selected)
 	{
@@ -405,7 +405,7 @@ public class XUiC_Radial : XUiController
 		this.selectionText.Text = "";
 	}
 
-	// Token: 0x06008160 RID: 33120 RVA: 0x003111B6 File Offset: 0x0030F3B6
+	// Token: 0x0600816F RID: 33135 RVA: 0x0031419E File Offset: 0x0031239E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetHovered(XUiC_RadialEntry _newSelected)
 	{
@@ -417,7 +417,7 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x06008161 RID: 33121 RVA: 0x003111F0 File Offset: 0x0030F3F0
+	// Token: 0x06008170 RID: 33136 RVA: 0x003141D8 File Offset: 0x003123D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentEnabledEntriesCount()
 	{
@@ -432,13 +432,13 @@ public class XUiC_Radial : XUiController
 		return num;
 	}
 
-	// Token: 0x06008162 RID: 33122 RVA: 0x00311221 File Offset: 0x0030F421
+	// Token: 0x06008171 RID: 33137 RVA: 0x00314209 File Offset: 0x00312409
 	public void CreateRadialEntry(int _commandIdx, string _icon, string _atlas = "UIAtlas", string _text = "", string _selectionText = "", bool _highlighted = false)
 	{
 		this.CreateRadialEntry(_commandIdx, _icon, Color.white, _atlas, _text, _selectionText, _highlighted);
 	}
 
-	// Token: 0x06008163 RID: 33123 RVA: 0x00311238 File Offset: 0x0030F438
+	// Token: 0x06008172 RID: 33138 RVA: 0x00314220 File Offset: 0x00312420
 	public void CreateRadialEntry(int _commandIdx, string _icon, Color _iconColor, string _atlas = "UIAtlas", string _text = "", string _selectionText = "", bool _highlighted = false)
 	{
 		int num = this.currentEnabledEntriesCount();
@@ -456,7 +456,7 @@ public class XUiC_Radial : XUiController
 		xuiC_RadialEntry.SelectionText = _selectionText;
 	}
 
-	// Token: 0x06008164 RID: 33124 RVA: 0x00311298 File Offset: 0x0030F498
+	// Token: 0x06008173 RID: 33139 RVA: 0x00314280 File Offset: 0x00312480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateRadialButtonPositions()
 	{
@@ -474,14 +474,14 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x06008165 RID: 33125 RVA: 0x00311348 File Offset: 0x0030F548
+	// Token: 0x06008174 RID: 33140 RVA: 0x00314330 File Offset: 0x00312530
 	public static bool RadialValidSameHoldingSlotIndex(XUiC_Radial _sender, XUiC_Radial.RadialContextAbs _context)
 	{
 		XUiC_Radial.RadialContextHoldingSlotIndex radialContextHoldingSlotIndex = _context as XUiC_Radial.RadialContextHoldingSlotIndex;
 		return radialContextHoldingSlotIndex != null && _sender.xui.playerUI.entityPlayer.inventory.holdingItemIdx == radialContextHoldingSlotIndex.ItemSlotIndex;
 	}
 
-	// Token: 0x06008166 RID: 33126 RVA: 0x00311384 File Offset: 0x0030F584
+	// Token: 0x06008175 RID: 33141 RVA: 0x0031436C File Offset: 0x0031256C
 	public void SetCurrentBlockData(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _entityFocusing)
 	{
 		this.ResetRadialEntries();
@@ -509,7 +509,7 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Activate), new XUiC_Radial.CommandHandlerDelegate(this.handleBlockCommand), new XUiC_Radial.RadialContextBlock(_blockPos, _blockValue, _entityFocusing, blockActivationCommands, customCmds), -1, false, null);
 	}
 
-	// Token: 0x06008167 RID: 33127 RVA: 0x003114D8 File Offset: 0x0030F6D8
+	// Token: 0x06008176 RID: 33142 RVA: 0x003144C0 File Offset: 0x003126C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleBlockCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -537,7 +537,7 @@ public class XUiC_Radial : XUiController
 		GameEventManager.Current.HandleAction(blockActivationCommand.eventName, null, radialContextBlock.EntityFocusing, false, radialContextBlock.BlockPos, "", "", false, true, "", null, null);
 	}
 
-	// Token: 0x06008168 RID: 33128 RVA: 0x00311614 File Offset: 0x0030F814
+	// Token: 0x06008177 RID: 33143 RVA: 0x003145FC File Offset: 0x003127FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_Event(TimerEventData timerData)
 	{
@@ -548,7 +548,7 @@ public class XUiC_Radial : XUiController
 		GameEventManager.Current.HandleAction(text, null, entityPlayerLocal, false, vector3i, "", "", false, true, "", null, null);
 	}
 
-	// Token: 0x06008169 RID: 33129 RVA: 0x00311670 File Offset: 0x0030F870
+	// Token: 0x06008178 RID: 33144 RVA: 0x00314658 File Offset: 0x00312858
 	public void SetCurrentEntityData(Entity _entity, EntityAlive _entityFocusing)
 	{
 		this.ResetRadialEntries();
@@ -572,7 +572,7 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Activate), new XUiC_Radial.CommandHandlerDelegate(this.handleEntityCommand), new XUiC_Radial.RadialContextEntity(default(Vector3i), _entityFocusing, _entity, list.ToArray()), -1, false, null);
 	}
 
-	// Token: 0x0600816A RID: 33130 RVA: 0x00311758 File Offset: 0x0030F958
+	// Token: 0x06008179 RID: 33145 RVA: 0x00314740 File Offset: 0x00312940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleEntityCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -594,7 +594,7 @@ public class XUiC_Radial : XUiController
 		radialContextEntity.EntityFocused.ActivateEntityCommand(entityActivationCommand, entityPlayerLocal);
 	}
 
-	// Token: 0x0600816B RID: 33131 RVA: 0x003117C0 File Offset: 0x0030F9C0
+	// Token: 0x0600817A RID: 33146 RVA: 0x003147A8 File Offset: 0x003129A8
 	public void SetActivatableItemData(EntityPlayerLocal _epl)
 	{
 		this.ResetRadialEntries();
@@ -607,7 +607,7 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(_epl.playerInput.Activate), new XUiC_Radial.CommandHandlerDelegate(this.handleActivatableItemCommand), new XUiC_Radial.RadialContextHoldingSlotIndex(_epl.inventory.holdingItemIdx), -1, false, new XUiC_Radial.RadialStillValidDelegate(XUiC_Radial.RadialValidSameHoldingSlotIndex));
 	}
 
-	// Token: 0x0600816C RID: 33132 RVA: 0x00311898 File Offset: 0x0030FA98
+	// Token: 0x0600817B RID: 33147 RVA: 0x00314880 File Offset: 0x00312A80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleActivatableItemCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -632,7 +632,7 @@ public class XUiC_Radial : XUiController
 		entityPlayer.inventory.CallOnToolbeltChangedInternal();
 	}
 
-	// Token: 0x0600816D RID: 33133 RVA: 0x0031198C File Offset: 0x0030FB8C
+	// Token: 0x0600817C RID: 33148 RVA: 0x00314974 File Offset: 0x00312B74
 	public void SetupMenuData()
 	{
 		this.ResetRadialEntries();
@@ -662,7 +662,7 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Inventory), new XUiC_Radial.CommandHandlerDelegate(this.handleMenuCommand), null, -1, false, null);
 	}
 
-	// Token: 0x0600816E RID: 33134 RVA: 0x00311B60 File Offset: 0x0030FD60
+	// Token: 0x0600817D RID: 33149 RVA: 0x00314B48 File Offset: 0x00312D48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleMenuCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -708,72 +708,74 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x0600816F RID: 33135 RVA: 0x00311C4C File Offset: 0x0030FE4C
+	// Token: 0x0600817E RID: 33150 RVA: 0x00314C34 File Offset: 0x00312E34
 	public void SetupToolbeltMenu(int _direction)
 	{
 		this.toolbeltSwapDirection = _direction;
 		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
 		this.ResetRadialEntries();
-		ItemStack[] slots = entityPlayer.inventory.GetSlots();
-		for (int i = 0; i < Mathf.Min(slots.Length, this.menuItem.Length); i++)
+		for (int i = 0; i < Mathf.Min(entityPlayer.inventory.Length, this.menuItem.Length); i++)
 		{
-			if (i != entityPlayer.inventory.DUMMY_SLOT_IDX)
+			ItemStack item = entityPlayer.inventory.GetItem(i);
+			if (item.IsEmpty())
 			{
-				if (slots[i].IsEmpty())
-				{
-					this.CreateRadialEntry(i, "", "UIAtlas", "", "", false);
-				}
-				else
-				{
-					this.CreateRadialEntry(i, slots[i].itemValue.ItemClass.GetIconName(), slots[i].itemValue.ItemClass.GetIconTint(slots[i].itemValue), "ItemIconAtlas", slots[i].itemValue.ItemClass.CanStack() ? slots[i].count.ToString() : "", slots[i].itemValue.ItemClass.GetLocalizedItemName(), false);
-				}
+				this.CreateRadialEntry(i, "", "UIAtlas", "", "", false);
+			}
+			else
+			{
+				this.CreateRadialEntry(i, item.itemValue.ItemClass.GetIconName(), item.itemValue.ItemClass.GetIconTint(item.itemValue), "ItemIconAtlas", item.itemValue.ItemClass.CanStack() ? item.count.ToString() : "", item.itemValue.ItemClass.GetLocalizedItemName(), false);
 			}
 		}
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Swap), new XUiC_Radial.CommandHandlerDelegate(this.HandleToolbeltCommand), null, -1, false, null);
 	}
 
-	// Token: 0x06008170 RID: 33136 RVA: 0x00311D80 File Offset: 0x0030FF80
+	// Token: 0x0600817F RID: 33151 RVA: 0x00314D58 File Offset: 0x00312F58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleToolbeltCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
-		if (_commandIndex >= 0 && Time.time - this.openTime >= 0.4f)
+		if (_commandIndex < 0 || Time.time - this.openTime < 0.4f)
 		{
-			if (_commandIndex >= 0 && this.xui.playerUI.entityPlayer.inventory.holdingItemIdx != _commandIndex)
+			EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
+			if (this.toolbeltSwapDirection == 0)
 			{
-				this.xui.playerUI.entityPlayer.inventory.SetHoldingItemIdx(_commandIndex);
+				int bestQuickSwapSlot = entityPlayer.inventory.GetBestQuickSwapSlot();
+				entityPlayer.MoveController.SetInventoryIdxFromScroll(bestQuickSwapSlot);
+				return;
 			}
-			return;
-		}
-		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
-		if (this.toolbeltSwapDirection == 0)
-		{
-			int bestQuickSwapSlot = entityPlayer.inventory.GetBestQuickSwapSlot();
-			entityPlayer.MoveController.SetInventoryIdxFromScroll(bestQuickSwapSlot);
-			return;
-		}
-		int num = entityPlayer.inventory.GetFocusedItemIdx();
-		if (this.toolbeltSwapDirection < 0)
-		{
-			num--;
-			if (num < 0)
+			if (!InputUtils.AltKeyPressed)
 			{
-				num = entityPlayer.inventory.PUBLIC_SLOTS - 1;
+				int num = entityPlayer.inventory.GetFocusedItemIdx();
+				XUiController xuiController = this.xui.FindWindowGroupByName("toolbelt");
+				XUiC_Toolbelt xuiC_Toolbelt = ((xuiController != null) ? xuiController.GetChildByType<XUiC_Toolbelt>() : null);
+				if (xuiC_Toolbelt != null)
+				{
+					num = xuiC_Toolbelt.WrapFocusWithinPage(num, (this.toolbeltSwapDirection < 0) ? (-1) : 1);
+				}
+				entityPlayer.MoveController.SetInventoryIdxFromScroll(num);
+				return;
 			}
-		}
-		else
-		{
-			num++;
-			if (num >= entityPlayer.inventory.PUBLIC_SLOTS)
+			XUiController xuiController2 = this.xui.FindWindowGroupByName("toolbelt");
+			XUiC_Toolbelt xuiC_Toolbelt2 = ((xuiController2 != null) ? xuiController2.GetChildByType<XUiC_Toolbelt>() : null);
+			if (xuiC_Toolbelt2 != null)
 			{
-				num = 0;
+				if (this.toolbeltSwapDirection < 0)
+				{
+					xuiC_Toolbelt2.PrevPage();
+					return;
+				}
+				xuiC_Toolbelt2.NextPage();
+				return;
 			}
 		}
-		entityPlayer.MoveController.SetInventoryIdxFromScroll(num);
+		else if (_commandIndex >= 0 && this.xui.playerUI.entityPlayer.inventory.holdingItemIdx != _commandIndex)
+		{
+			this.xui.playerUI.entityPlayer.inventory.SetHoldingItemIdx(_commandIndex);
+		}
 	}
 
-	// Token: 0x06008171 RID: 33137 RVA: 0x00311E64 File Offset: 0x00310064
+	// Token: 0x06008180 RID: 33152 RVA: 0x00314E80 File Offset: 0x00313080
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool getBasicBlockInfo(out EntityPlayerLocal _epl, out ItemClassBlock.ItemBlockInventoryData _ibid, out Block _blockHolding, out Block _blockSelectedShape, out bool _hasAutoRotation, out bool _onlySimpleRotations, out bool _hasCopyRotation, out bool _allowShapes, out bool _hasCopyAutoShape, out bool _hasCopyShapeLegacy, out bool _allowPainting, out bool _allowProp, out BlockPlacement.EnumPlacement _blockPlacement)
+	public bool getBasicBlockInfo(out EntityPlayerLocal _epl, out ItemInventoryData _ibid, out Block _blockHolding, out Block _blockSelectedShape, out bool _hasAutoRotation, out bool _onlySimpleRotations, out bool _hasCopyRotation, out bool _allowShapes, out bool _hasCopyAutoShape, out bool _hasCopyShapeLegacy, out bool _allowPainting, out bool _allowProp, out BlockPlacement.EnumPlacement _blockPlacement)
 	{
 		_hasAutoRotation = false;
 		_onlySimpleRotations = false;
@@ -784,7 +786,7 @@ public class XUiC_Radial : XUiController
 		_epl = this.xui.playerUI.entityPlayer;
 		Inventory inventory = _epl.inventory;
 		_blockHolding = inventory.GetHoldingBlock().GetBlock();
-		_ibid = inventory.holdingItemData as ItemClassBlock.ItemBlockInventoryData;
+		_ibid = (inventory.holdingItemData.IsBlock ? inventory.holdingItemData : null);
 		_allowShapes = _blockHolding.SelectAlternates;
 		_blockSelectedShape = null;
 		_allowProp = false;
@@ -816,12 +818,12 @@ public class XUiC_Radial : XUiController
 		return true;
 	}
 
-	// Token: 0x06008172 RID: 33138 RVA: 0x0031205C File Offset: 0x0031025C
+	// Token: 0x06008181 RID: 33153 RVA: 0x00315084 File Offset: 0x00313284
 	public void SetupBlockShapeData()
 	{
 		this.ResetRadialEntries();
 		EntityPlayerLocal entityPlayerLocal;
-		ItemClassBlock.ItemBlockInventoryData itemBlockInventoryData;
+		ItemInventoryData itemInventoryData;
 		Block block;
 		Block block2;
 		bool flag;
@@ -833,7 +835,7 @@ public class XUiC_Radial : XUiController
 		bool flag7;
 		bool flag8;
 		BlockPlacement.EnumPlacement enumPlacement;
-		if (!this.getBasicBlockInfo(out entityPlayerLocal, out itemBlockInventoryData, out block, out block2, out flag, out flag2, out flag3, out flag4, out flag5, out flag6, out flag7, out flag8, out enumPlacement))
+		if (!this.getBasicBlockInfo(out entityPlayerLocal, out itemInventoryData, out block, out block2, out flag, out flag2, out flag3, out flag4, out flag5, out flag6, out flag7, out flag8, out enumPlacement))
 		{
 			this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Activate), new XUiC_Radial.CommandHandlerDelegate(this.handleBlockShapeCommand), null, -1, false, null);
 			return;
@@ -876,12 +878,12 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.Activate), new XUiC_Radial.CommandHandlerDelegate(this.handleBlockShapeCommand), new XUiC_Radial.RadialContextHoldingSlotIndex(entityPlayerLocal.inventory.holdingItemIdx), -1, true, new XUiC_Radial.RadialStillValidDelegate(XUiC_Radial.RadialValidSameHoldingSlotIndex));
 	}
 
-	// Token: 0x06008173 RID: 33139 RVA: 0x003122C8 File Offset: 0x003104C8
+	// Token: 0x06008182 RID: 33154 RVA: 0x003152F0 File Offset: 0x003134F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleBlockShapeCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
 		EntityPlayerLocal entityPlayerLocal;
-		ItemClassBlock.ItemBlockInventoryData itemBlockInventoryData;
+		ItemInventoryData itemInventoryData;
 		Block block;
 		Block block2;
 		bool flag;
@@ -893,7 +895,7 @@ public class XUiC_Radial : XUiController
 		bool flag7;
 		bool flag8;
 		BlockPlacement.EnumPlacement enumPlacement;
-		if (!this.getBasicBlockInfo(out entityPlayerLocal, out itemBlockInventoryData, out block, out block2, out flag, out flag2, out flag3, out flag4, out flag5, out flag6, out flag7, out flag8, out enumPlacement))
+		if (!this.getBasicBlockInfo(out entityPlayerLocal, out itemInventoryData, out block, out block2, out flag, out flag2, out flag3, out flag4, out flag5, out flag6, out flag7, out flag8, out enumPlacement))
 		{
 			return;
 		}
@@ -909,37 +911,37 @@ public class XUiC_Radial : XUiController
 			}
 			break;
 		case -1:
-			block2.RotateHoldingBlock(itemBlockInventoryData, false, true);
+			block2.RotateHoldingBlock(itemInventoryData, false, true);
 			return;
 		case 1:
 			if (flag5 || flag6)
 			{
 				Block block3 = entityPlayerLocal.HitInfo.hit.blockValue.Block;
-				this.<handleBlockShapeCommand>g__copyShape|72_0(entityPlayerLocal, flag5, block, block3, itemBlockInventoryData);
+				this.<handleBlockShapeCommand>g__copyShape|72_0(entityPlayerLocal, flag5, block, block3, itemInventoryData);
 				return;
 			}
 			break;
 		case 2:
-			itemBlockInventoryData.mode = BlockPlacement.EnumRotationMode.Simple;
+			itemInventoryData.mode = BlockPlacement.EnumRotationMode.Simple;
 			return;
 		case 3:
 			if (!flag2)
 			{
-				itemBlockInventoryData.mode = BlockPlacement.EnumRotationMode.Advanced;
+				itemInventoryData.mode = BlockPlacement.EnumRotationMode.Advanced;
 				return;
 			}
 			break;
 		case 4:
 			if (!flag2)
 			{
-				itemBlockInventoryData.mode = BlockPlacement.EnumRotationMode.ToFace;
+				itemInventoryData.mode = BlockPlacement.EnumRotationMode.ToFace;
 				return;
 			}
 			break;
 		case 5:
 			if (!flag2 && flag)
 			{
-				itemBlockInventoryData.mode = BlockPlacement.EnumRotationMode.Auto;
+				itemInventoryData.mode = BlockPlacement.EnumRotationMode.Auto;
 				return;
 			}
 			break;
@@ -951,7 +953,7 @@ public class XUiC_Radial : XUiController
 				{
 					blockValue = entityPlayerLocal.world.GetBlock(blockValue.Block.multiBlockPos.GetParentPos(entityPlayerLocal.HitInfo.hit.blockPos, blockValue));
 				}
-				XUiC_Radial.<handleBlockShapeCommand>g__copyRotation|72_1(itemBlockInventoryData, blockValue);
+				XUiC_Radial.<handleBlockShapeCommand>g__copyRotation|72_1(itemInventoryData, blockValue);
 				return;
 			}
 			break;
@@ -966,23 +968,23 @@ public class XUiC_Radial : XUiController
 				{
 					blockValue2 = entityPlayerLocal.world.GetBlock(blockValue2.Block.multiBlockPos.GetParentPos(entityPlayerLocal.HitInfo.hit.blockPos, blockValue2));
 				}
-				this.<handleBlockShapeCommand>g__copyShape|72_0(entityPlayerLocal, flag5, block, blockValue2.Block, itemBlockInventoryData);
-				XUiC_Radial.<handleBlockShapeCommand>g__copyRotation|72_1(itemBlockInventoryData, blockValue2);
+				this.<handleBlockShapeCommand>g__copyShape|72_0(entityPlayerLocal, flag5, block, blockValue2.Block, itemInventoryData);
+				XUiC_Radial.<handleBlockShapeCommand>g__copyRotation|72_1(itemInventoryData, blockValue2);
 				return;
 			}
 			break;
 		case 9:
-			itemBlockInventoryData.Placement = BlockPlacement.EnumPlacement.Voxel;
+			itemInventoryData.Placement = BlockPlacement.EnumPlacement.Voxel;
 			return;
 		case 10:
-			itemBlockInventoryData.Placement = BlockPlacement.EnumPlacement.Free;
+			itemInventoryData.Placement = BlockPlacement.EnumPlacement.Free;
 			break;
 		default:
 			return;
 		}
 	}
 
-	// Token: 0x06008174 RID: 33140 RVA: 0x003124F4 File Offset: 0x003106F4
+	// Token: 0x06008183 RID: 33155 RVA: 0x0031551C File Offset: 0x0031371C
 	public void SetupQuickActionsMenu(EntityPlayerLocal _epl)
 	{
 		this.ResetRadialEntries();
@@ -1015,7 +1017,7 @@ public class XUiC_Radial : XUiController
 		this.SetCommonData(UIUtils.GetButtonIconForAction(this.xui.playerUI.playerInput.PermanentActions.QuickMenu), new XUiC_Radial.CommandHandlerDelegate(this.HandleQuickActionsCommand), null, -1, false, null);
 	}
 
-	// Token: 0x06008175 RID: 33141 RVA: 0x003126F4 File Offset: 0x003108F4
+	// Token: 0x06008184 RID: 33156 RVA: 0x0031571C File Offset: 0x0031391C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleQuickActionsCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -1060,173 +1062,173 @@ public class XUiC_Radial : XUiController
 		}
 	}
 
-	// Token: 0x06008177 RID: 33143 RVA: 0x003127C0 File Offset: 0x003109C0
+	// Token: 0x06008186 RID: 33158 RVA: 0x003157E8 File Offset: 0x003139E8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <handleBlockShapeCommand>g__copyShape|72_0(EntityPlayerLocal _epl, bool _hasCopyAutoShape, Block _block, Block _targetedBlock, ItemClassBlock.ItemBlockInventoryData _ibid)
+	public void <handleBlockShapeCommand>g__copyShape|72_0(EntityPlayerLocal _epl, bool _hasCopyAutoShape, Block _block, Block _targetedBlock, ItemInventoryData _ibid)
 	{
 		int num = (_hasCopyAutoShape ? _block.AutoShapeAlternateShapeNameIndex(_targetedBlock.GetAutoShapeShapeName()) : _block.GetAlternateBlockIndex(_targetedBlock.GetBlockName()));
 		if (num >= 0)
 		{
 			_ibid.itemValue.Meta = num;
+			int holdingItemIdx = _epl.inventory.holdingItemIdx;
 			XUiC_Toolbelt childByType = ((XUiWindowGroup)this.xui.playerUI.windowManager.GetWindow("toolbelt")).Controller.GetChildByType<XUiC_Toolbelt>();
-			if (childByType != null)
+			XUiC_ItemStack xuiC_ItemStack;
+			if (childByType != null && childByType.TryGetSlotControl(holdingItemIdx, out xuiC_ItemStack))
 			{
-				int holdingItemIdx = _epl.inventory.holdingItemIdx;
-				XUiC_ItemStack slotControl = childByType.GetSlotControl(holdingItemIdx);
-				slotControl.ItemStack = new ItemStack(_ibid.itemValue, _ibid.itemStack.count);
-				slotControl.ForceRefreshItemStack();
+				xuiC_ItemStack.ItemStack = new ItemStack(_ibid.itemValue, _ibid.itemStack.count);
+				xuiC_ItemStack.ForceRefreshItemStack();
 			}
 		}
 	}
 
-	// Token: 0x06008178 RID: 33144 RVA: 0x00312861 File Offset: 0x00310A61
+	// Token: 0x06008187 RID: 33159 RVA: 0x0031588E File Offset: 0x00313A8E
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static void <handleBlockShapeCommand>g__copyRotation|72_1(ItemClassBlock.ItemBlockInventoryData _ibid, BlockValue _bvLookingAt)
+	public static void <handleBlockShapeCommand>g__copyRotation|72_1(ItemInventoryData _ibid, BlockValue _bvLookingAt)
 	{
 		_ibid.rotation = _bvLookingAt.rotation;
 		_ibid.mode = BlockPlacement.EnumRotationMode.Advanced;
 	}
 
-	// Token: 0x04005FD9 RID: 24537
+	// Token: 0x04006002 RID: 24578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RadialEntry[] menuItem;
 
-	// Token: 0x04005FDA RID: 24538
+	// Token: 0x04006003 RID: 24579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool[] menuItemState;
 
-	// Token: 0x04005FDB RID: 24539
+	// Token: 0x04006004 RID: 24580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selectedIndex;
 
-	// Token: 0x04005FDC RID: 24540
+	// Token: 0x04006005 RID: 24581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasSpecialActionPriorToRadialVisibility;
 
-	// Token: 0x04005FDD RID: 24541
+	// Token: 0x04006006 RID: 24582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Radial.RadialContextAbs context;
 
-	// Token: 0x04005FDE RID: 24542
+	// Token: 0x04006007 RID: 24583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIUtils.ButtonIcon selectionControllerButton;
 
-	// Token: 0x04005FDF RID: 24543
+	// Token: 0x04006008 RID: 24584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Radial.CommandHandlerDelegate commandHandler;
 
-	// Token: 0x04005FE0 RID: 24544
+	// Token: 0x04006009 RID: 24585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Radial.RadialStillValidDelegate validCheckDelegate;
 
-	// Token: 0x04005FE1 RID: 24545
+	// Token: 0x0400600A RID: 24586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOpenRequested;
 
-	// Token: 0x04005FE2 RID: 24546
+	// Token: 0x0400600B RID: 24587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float displayDelay = 0.25f;
 
-	// Token: 0x04005FE3 RID: 24547
+	// Token: 0x0400600C RID: 24588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float openTime;
 
-	// Token: 0x04005FE4 RID: 24548
+	// Token: 0x0400600D RID: 24589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRadialSelectedScale = 1.5f;
 
-	// Token: 0x04005FE5 RID: 24549
+	// Token: 0x0400600E RID: 24590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showingCallouts;
 
-	// Token: 0x04005FE6 RID: 24550
+	// Token: 0x0400600F RID: 24591
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label selectionText;
 
-	// Token: 0x04005FE7 RID: 24551
+	// Token: 0x04006010 RID: 24592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemValue> activatableItemPool = new List<ItemValue>();
 
-	// Token: 0x04005FE8 RID: 24552
+	// Token: 0x04006011 RID: 24593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int toolbeltSwapDirection;
 
-	// Token: 0x04005FE9 RID: 24553
+	// Token: 0x04006012 RID: 24594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_ALL_BLOCKS = 0;
 
-	// Token: 0x04005FEA RID: 24554
+	// Token: 0x04006013 RID: 24595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_COPY_SHAPE = 1;
 
-	// Token: 0x04005FEB RID: 24555
+	// Token: 0x04006014 RID: 24596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_ROTATE_SIMPLE = 2;
 
-	// Token: 0x04005FEC RID: 24556
+	// Token: 0x04006015 RID: 24597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_ROTATE_ADVANCED = 3;
 
-	// Token: 0x04005FED RID: 24557
+	// Token: 0x04006016 RID: 24598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_ROTATE_ON_FACE = 4;
 
-	// Token: 0x04005FEE RID: 24558
+	// Token: 0x04006017 RID: 24599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_ROTATE_AUTO = 5;
 
-	// Token: 0x04005FEF RID: 24559
+	// Token: 0x04006018 RID: 24600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_PAINT_COPY_BLOCK = 6;
 
-	// Token: 0x04005FF0 RID: 24560
+	// Token: 0x04006019 RID: 24601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_PAINT_MATERIALS = 7;
 
-	// Token: 0x04005FF1 RID: 24561
+	// Token: 0x0400601A RID: 24602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_COPY_SHAPE_AND_ROTATION = 8;
 
-	// Token: 0x04005FF2 RID: 24562
+	// Token: 0x0400601B RID: 24603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_PLACEMENT_VOXEL = 9;
 
-	// Token: 0x04005FF3 RID: 24563
+	// Token: 0x0400601C RID: 24604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BLOCK_SHAPE_COMMAND_PLACEMENT_FREE = 10;
 
-	// Token: 0x02001001 RID: 4097
-	// (Invoke) Token: 0x0600817A RID: 33146
+	// Token: 0x02001010 RID: 4112
+	// (Invoke) Token: 0x06008189 RID: 33161
 	public delegate void CommandHandlerDelegate(XUiC_Radial _xuiRadial, int _commandIndex, XUiC_Radial.RadialContextAbs _context);
 
-	// Token: 0x02001002 RID: 4098
-	// (Invoke) Token: 0x0600817E RID: 33150
+	// Token: 0x02001011 RID: 4113
+	// (Invoke) Token: 0x0600818D RID: 33165
 	public delegate bool RadialStillValidDelegate(XUiC_Radial _xuiRadial, XUiC_Radial.RadialContextAbs _context);
 
-	// Token: 0x02001003 RID: 4099
+	// Token: 0x02001012 RID: 4114
 	public class RadialContextAbs
 	{
 	}
 
-	// Token: 0x02001004 RID: 4100
+	// Token: 0x02001013 RID: 4115
 	public class RadialContextHoldingSlotIndex : XUiC_Radial.RadialContextAbs
 	{
-		// Token: 0x06008182 RID: 33154 RVA: 0x00312877 File Offset: 0x00310A77
+		// Token: 0x06008191 RID: 33169 RVA: 0x003158A4 File Offset: 0x00313AA4
 		public RadialContextHoldingSlotIndex(int _itemSlotIndex)
 		{
 			this.ItemSlotIndex = _itemSlotIndex;
 		}
 
-		// Token: 0x04005FF4 RID: 24564
+		// Token: 0x0400601D RID: 24605
 		public readonly int ItemSlotIndex;
 	}
 
-	// Token: 0x02001005 RID: 4101
+	// Token: 0x02001014 RID: 4116
 	public class RadialContextBlock : XUiC_Radial.RadialContextAbs
 	{
-		// Token: 0x06008183 RID: 33155 RVA: 0x00312886 File Offset: 0x00310A86
+		// Token: 0x06008192 RID: 33170 RVA: 0x003158B3 File Offset: 0x00313AB3
 		public RadialContextBlock(Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _entityFocusing, BlockActivationCommand[] _commands, BlockActivationCommand[] _customCommands)
 		{
 			this.BlockPos = _blockPos;
@@ -1236,26 +1238,26 @@ public class XUiC_Radial : XUiController
 			this.CustomCommands = _customCommands;
 		}
 
-		// Token: 0x04005FF5 RID: 24565
+		// Token: 0x0400601E RID: 24606
 		public readonly Vector3i BlockPos;
 
-		// Token: 0x04005FF6 RID: 24566
+		// Token: 0x0400601F RID: 24607
 		public readonly BlockValue BlockValue;
 
-		// Token: 0x04005FF7 RID: 24567
+		// Token: 0x04006020 RID: 24608
 		public readonly EntityPlayerLocal EntityFocusing;
 
-		// Token: 0x04005FF8 RID: 24568
+		// Token: 0x04006021 RID: 24609
 		public readonly BlockActivationCommand[] Commands;
 
-		// Token: 0x04005FF9 RID: 24569
+		// Token: 0x04006022 RID: 24610
 		public readonly BlockActivationCommand[] CustomCommands;
 	}
 
-	// Token: 0x02001006 RID: 4102
+	// Token: 0x02001015 RID: 4117
 	public class RadialContextEntity : XUiC_Radial.RadialContextAbs
 	{
-		// Token: 0x06008184 RID: 33156 RVA: 0x003128B3 File Offset: 0x00310AB3
+		// Token: 0x06008193 RID: 33171 RVA: 0x003158E0 File Offset: 0x00313AE0
 		public RadialContextEntity(Vector3i _blockPos, EntityAlive _entityFocusing, Entity _entityFocused, EntityActivationCommand[] _commands)
 		{
 			this.BlockPos = _blockPos;
@@ -1264,25 +1266,25 @@ public class XUiC_Radial : XUiController
 			this.Commands = _commands;
 		}
 
-		// Token: 0x04005FFA RID: 24570
+		// Token: 0x04006023 RID: 24611
 		public readonly Vector3i BlockPos;
 
-		// Token: 0x04005FFB RID: 24571
+		// Token: 0x04006024 RID: 24612
 		public readonly EntityAlive EntityFocusing;
 
-		// Token: 0x04005FFC RID: 24572
+		// Token: 0x04006025 RID: 24613
 		public readonly Entity EntityFocused;
 
-		// Token: 0x04005FFD RID: 24573
+		// Token: 0x04006026 RID: 24614
 		public readonly EntityActivationCommand[] Commands;
 	}
 
-	// Token: 0x02001007 RID: 4103
+	// Token: 0x02001016 RID: 4118
 	public enum eDefaultQuickAction
 	{
-		// Token: 0x04005FFF RID: 24575
+		// Token: 0x04006028 RID: 24616
 		CameraChange,
-		// Token: 0x04006000 RID: 24576
+		// Token: 0x04006029 RID: 24617
 		ToggleAttachment
 	}
 }

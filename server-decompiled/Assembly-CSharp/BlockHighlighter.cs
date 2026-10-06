@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200091D RID: 2333
+// Token: 0x02000922 RID: 2338
 public static class BlockHighlighter
 {
-	// Token: 0x0600439B RID: 17307 RVA: 0x001A4C3F File Offset: 0x001A2E3F
+	// Token: 0x0600432D RID: 17197 RVA: 0x001A4D43 File Offset: 0x001A2F43
 	public static void AddBlock(Vector3i _pos)
 	{
 		BlockHighlighter.EnforceGo();
@@ -12,7 +12,7 @@ public static class BlockHighlighter
 		global::UnityEngine.Object.Instantiate<GameObject>(BlockHighlighter.blockPrefab, BlockHighlighter.topGameObject.transform).transform.position = _pos.ToVector3() + BlockHighlighter.halfBlockOffset;
 	}
 
-	// Token: 0x0600439C RID: 17308 RVA: 0x001A4C7A File Offset: 0x001A2E7A
+	// Token: 0x0600432E RID: 17198 RVA: 0x001A4D7E File Offset: 0x001A2F7E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void EnforceGo()
 	{
@@ -23,7 +23,7 @@ public static class BlockHighlighter
 		BlockHighlighter.topGameObject = new GameObject("BlockHighlighter");
 	}
 
-	// Token: 0x0600439D RID: 17309 RVA: 0x001A4C99 File Offset: 0x001A2E99
+	// Token: 0x0600432F RID: 17199 RVA: 0x001A4D9D File Offset: 0x001A2F9D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void EnforceTemplateLoaded()
 	{
@@ -34,7 +34,7 @@ public static class BlockHighlighter
 		BlockHighlighter.blockPrefab = DataLoader.LoadAsset<GameObject>("@:Entities/Misc/block_highlightPrefab.prefab", false);
 	}
 
-	// Token: 0x0600439E RID: 17310 RVA: 0x001A4CB9 File Offset: 0x001A2EB9
+	// Token: 0x06004330 RID: 17200 RVA: 0x001A4DBD File Offset: 0x001A2FBD
 	public static void Cleanup()
 	{
 		if (BlockHighlighter.topGameObject != null)
@@ -44,19 +44,19 @@ public static class BlockHighlighter
 		}
 	}
 
-	// Token: 0x040036A3 RID: 13987
+	// Token: 0x04003697 RID: 13975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string TemplatePath = "@:Entities/Misc/block_highlightPrefab.prefab";
 
-	// Token: 0x040036A4 RID: 13988
+	// Token: 0x04003698 RID: 13976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3 halfBlockOffset = new Vector3(0.5f, 0.5f, 0.5f);
 
-	// Token: 0x040036A5 RID: 13989
+	// Token: 0x04003699 RID: 13977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject topGameObject;
 
-	// Token: 0x040036A6 RID: 13990
+	// Token: 0x0400369A RID: 13978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject blockPrefab;
 }

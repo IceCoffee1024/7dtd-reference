@@ -6,11 +6,11 @@ using System.Xml;
 
 namespace Webserver.Permissions
 {
-	// Token: 0x02001B02 RID: 6914
+	// Token: 0x02001B2E RID: 6958
 	public class AdminWebUsers : AdminSectionAbs
 	{
-		// Token: 0x17001992 RID: 6546
-		// (get) Token: 0x0600CFDB RID: 53211 RVA: 0x004BB08A File Offset: 0x004B928A
+		// Token: 0x17001A34 RID: 6708
+		// (get) Token: 0x0600D133 RID: 53555 RVA: 0x004BF556 File Offset: 0x004BD756
 		public static AdminWebUsers Instance
 		{
 			get
@@ -19,19 +19,19 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600CFDC RID: 53212 RVA: 0x004BB09B File Offset: 0x004B929B
+		// Token: 0x0600D134 RID: 53556 RVA: 0x004BF567 File Offset: 0x004BD767
 		public AdminWebUsers(AdminTools _parent)
 			: base(_parent, "webusers")
 		{
 		}
 
-		// Token: 0x0600CFDD RID: 53213 RVA: 0x004BB0B4 File Offset: 0x004B92B4
+		// Token: 0x0600D135 RID: 53557 RVA: 0x004BF580 File Offset: 0x004BD780
 		public override void Clear()
 		{
 			this.users.Clear();
 		}
 
-		// Token: 0x0600CFDE RID: 53214 RVA: 0x004BB0C4 File Offset: 0x004B92C4
+		// Token: 0x0600D136 RID: 53558 RVA: 0x004BF590 File Offset: 0x004BD790
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ParseElement(XmlElement _childElement)
 		{
@@ -42,7 +42,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600CFDF RID: 53215 RVA: 0x004BB0F0 File Offset: 0x004B92F0
+		// Token: 0x0600D137 RID: 53559 RVA: 0x004BF5BC File Offset: 0x004BD7BC
 		public override void Save(XmlElement _root)
 		{
 			XmlElement xmlElement = _root.AddXmlElement(this.SectionTypeName);
@@ -56,7 +56,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600CFE0 RID: 53216 RVA: 0x004BB160 File Offset: 0x004B9360
+		// Token: 0x0600D138 RID: 53560 RVA: 0x004BF62C File Offset: 0x004BD82C
 		public void AddUser(string _name, string _password, PlatformUserIdentifierAbs _userIdentifier, PlatformUserIdentifierAbs _crossPlatformIdentifier)
 		{
 			AdminTools parent = this.Parent;
@@ -68,7 +68,7 @@ namespace Webserver.Permissions
 			}
 		}
 
-		// Token: 0x0600CFE1 RID: 53217 RVA: 0x004BB1C0 File Offset: 0x004B93C0
+		// Token: 0x0600D139 RID: 53561 RVA: 0x004BF68C File Offset: 0x004BD88C
 		public bool RemoveUser(string _name)
 		{
 			AdminTools parent = this.Parent;
@@ -85,7 +85,7 @@ namespace Webserver.Permissions
 			return flag3;
 		}
 
-		// Token: 0x0600CFE2 RID: 53218 RVA: 0x004BB218 File Offset: 0x004B9418
+		// Token: 0x0600D13A RID: 53562 RVA: 0x004BF6E4 File Offset: 0x004BD8E4
 		public Dictionary<string, AdminWebUsers.WebUser> GetUsers()
 		{
 			AdminTools parent = this.Parent;
@@ -97,14 +97,14 @@ namespace Webserver.Permissions
 			return dictionary;
 		}
 
-		// Token: 0x0600CFE3 RID: 53219 RVA: 0x004BB25C File Offset: 0x004B945C
+		// Token: 0x0600D13B RID: 53563 RVA: 0x004BF728 File Offset: 0x004BD928
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static byte[] Hash(string _input)
 		{
 			return new MD5Cng().ComputeHash(Encoding.UTF8.GetBytes(_input));
 		}
 
-		// Token: 0x0600CFE4 RID: 53220 RVA: 0x004BB274 File Offset: 0x004B9474
+		// Token: 0x0600D13C RID: 53564 RVA: 0x004BF740 File Offset: 0x004BD940
 		public bool TryGetUser(string _name, string _password, out AdminWebUsers.WebUser _result)
 		{
 			AdminTools parent = this.Parent;
@@ -124,7 +124,7 @@ namespace Webserver.Permissions
 			return flag2;
 		}
 
-		// Token: 0x0600CFE5 RID: 53221 RVA: 0x004BB2D4 File Offset: 0x004B94D4
+		// Token: 0x0600D13D RID: 53565 RVA: 0x004BF7A0 File Offset: 0x004BD9A0
 		public bool HasUser(PlatformUserIdentifierAbs _platformUser, PlatformUserIdentifierAbs _crossPlatformUser, out AdminWebUsers.WebUser _result)
 		{
 			AdminTools parent = this.Parent;
@@ -149,14 +149,14 @@ namespace Webserver.Permissions
 			return flag2;
 		}
 
-		// Token: 0x04009DE9 RID: 40425
+		// Token: 0x04009EAF RID: 40623
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AdminWebUsers.WebUser> users = new CaseInsensitiveStringDictionary<AdminWebUsers.WebUser>();
 
-		// Token: 0x02001B03 RID: 6915
+		// Token: 0x02001B2F RID: 6959
 		public readonly struct WebUser
 		{
-			// Token: 0x0600CFE6 RID: 53222 RVA: 0x004BB38C File Offset: 0x004B958C
+			// Token: 0x0600D13E RID: 53566 RVA: 0x004BF858 File Offset: 0x004BDA58
 			public WebUser(string _name, byte[] _passwordHash, PlatformUserIdentifierAbs _platformUser, PlatformUserIdentifierAbs _crossPlatformUser)
 			{
 				this.Name = _name;
@@ -165,7 +165,7 @@ namespace Webserver.Permissions
 				this.CrossPlatformUser = _crossPlatformUser;
 			}
 
-			// Token: 0x0600CFE7 RID: 53223 RVA: 0x004BB3AB File Offset: 0x004B95AB
+			// Token: 0x0600D13F RID: 53567 RVA: 0x004BF877 File Offset: 0x004BDA77
 			public WebUser(string _name, string _password, PlatformUserIdentifierAbs _platformUser, PlatformUserIdentifierAbs _crossPlatformUser)
 			{
 				this.Name = _name;
@@ -174,7 +174,7 @@ namespace Webserver.Permissions
 				this.CrossPlatformUser = _crossPlatformUser;
 			}
 
-			// Token: 0x0600CFE8 RID: 53224 RVA: 0x004BB3D0 File Offset: 0x004B95D0
+			// Token: 0x0600D140 RID: 53568 RVA: 0x004BF89C File Offset: 0x004BDA9C
 			public void ToXml(XmlElement _parent)
 			{
 				XmlElement xmlElement = _parent.AddXmlElement("user");
@@ -188,7 +188,7 @@ namespace Webserver.Permissions
 				crossPlatformUser.ToXml(xmlElement, "cross");
 			}
 
-			// Token: 0x0600CFE9 RID: 53225 RVA: 0x004BB438 File Offset: 0x004B9638
+			// Token: 0x0600D141 RID: 53569 RVA: 0x004BF904 File Offset: 0x004BDB04
 			public static bool TryParse(XmlElement _element, out AdminWebUsers.WebUser _result)
 			{
 				_result = default(AdminWebUsers.WebUser);
@@ -216,22 +216,22 @@ namespace Webserver.Permissions
 				return true;
 			}
 
-			// Token: 0x0600CFEA RID: 53226 RVA: 0x004BB4E1 File Offset: 0x004B96E1
+			// Token: 0x0600D142 RID: 53570 RVA: 0x004BF9AD File Offset: 0x004BDBAD
 			public bool ValidatePassword(string _password)
 			{
 				return Utils.ArrayEquals(AdminWebUsers.Hash(_password), this.PasswordHash);
 			}
 
-			// Token: 0x04009DEA RID: 40426
+			// Token: 0x04009EB0 RID: 40624
 			public readonly string Name;
 
-			// Token: 0x04009DEB RID: 40427
+			// Token: 0x04009EB1 RID: 40625
 			public readonly byte[] PasswordHash;
 
-			// Token: 0x04009DEC RID: 40428
+			// Token: 0x04009EB2 RID: 40626
 			public readonly PlatformUserIdentifierAbs PlatformUser;
 
-			// Token: 0x04009DED RID: 40429
+			// Token: 0x04009EB3 RID: 40627
 			public readonly PlatformUserIdentifierAbs CrossPlatformUser;
 		}
 	}

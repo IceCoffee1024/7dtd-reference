@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A58 RID: 6744
+	// Token: 0x02001A84 RID: 6788
 	[Preserve]
 	public class Adventure : LayeredSection<FixedLayerMixer>
 	{
-		// Token: 0x0600CC6A RID: 52330 RVA: 0x004A9C4C File Offset: 0x004A7E4C
+		// Token: 0x0600CDC2 RID: 52674 RVA: 0x004AE118 File Offset: 0x004AC318
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator PlayCoroutine()
 		{

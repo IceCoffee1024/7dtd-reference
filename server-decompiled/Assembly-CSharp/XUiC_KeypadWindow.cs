@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F64 RID: 3940
+// Token: 0x02000F73 RID: 3955
 [Preserve]
 public class XUiC_KeypadWindow : XUiController
 {
-	// Token: 0x06007C2C RID: 31788 RVA: 0x002EE3FC File Offset: 0x002EC5FC
+	// Token: 0x06007C3C RID: 31804 RVA: 0x002F150C File Offset: 0x002EF70C
 	public override void Init()
 	{
 		XUiC_KeypadWindow.ID = this.windowGroup.Id;
@@ -23,21 +23,21 @@ public class XUiC_KeypadWindow : XUiController
 		this.txtPassword.ViewComponent.NavDownTarget = xuiC_SimpleButton.ViewComponent;
 	}
 
-	// Token: 0x06007C2D RID: 31789 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
+	// Token: 0x06007C3D RID: 31805 RVA: 0x002AAE45 File Offset: 0x002A9045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TextInput_OnInputAbortedHandler(XUiController _sender)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06007C2E RID: 31790 RVA: 0x002EE4D2 File Offset: 0x002EC6D2
+	// Token: 0x06007C3E RID: 31806 RVA: 0x002F15E2 File Offset: 0x002EF7E2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtPassword_OnSubmitHandler(XUiController _sender, string _text)
 	{
 		this.BtnOk_OnPressed(_sender, -1);
 	}
 
-	// Token: 0x06007C2F RID: 31791 RVA: 0x002EE4DC File Offset: 0x002EC6DC
+	// Token: 0x06007C3F RID: 31807 RVA: 0x002F15EC File Offset: 0x002EF7EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOk_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -73,14 +73,14 @@ public class XUiC_KeypadWindow : XUiController
 		GameManager.ShowTooltip(this.xui.playerUI.entityPlayer, "passcodeRejected", false, false, 0f);
 	}
 
-	// Token: 0x06007C30 RID: 31792 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
+	// Token: 0x06007C40 RID: 31808 RVA: 0x002AAE45 File Offset: 0x002A9045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06007C31 RID: 31793 RVA: 0x002EE63C File Offset: 0x002EC83C
+	// Token: 0x06007C41 RID: 31809 RVA: 0x002F174C File Offset: 0x002EF94C
 	public static void Open(LocalPlayerUI _playerUi, ILockable _lockedItem, Action _onClose = null, Func<bool> _interactionCheck = null)
 	{
 		XUiC_KeypadWindow childByType = _playerUi.xui.FindWindowGroupByName(XUiC_KeypadWindow.ID).GetChildByType<XUiC_KeypadWindow>();
@@ -90,7 +90,7 @@ public class XUiC_KeypadWindow : XUiController
 		_playerUi.windowManager.Open(XUiC_KeypadWindow.ID, true);
 	}
 
-	// Token: 0x06007C32 RID: 31794 RVA: 0x002EE678 File Offset: 0x002EC878
+	// Token: 0x06007C42 RID: 31810 RVA: 0x002F1788 File Offset: 0x002EF988
 	public override void Update(float _dt)
 	{
 		if (this.checkInteraction != null && !this.checkInteraction())
@@ -100,14 +100,14 @@ public class XUiC_KeypadWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007C33 RID: 31795 RVA: 0x002EE6B0 File Offset: 0x002EC8B0
+	// Token: 0x06007C43 RID: 31811 RVA: 0x002F17C0 File Offset: 0x002EF9C0
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.playerUI.entityPlayer.PlayOneShot("open_sign", false, false, false, null, 1f);
 	}
 
-	// Token: 0x06007C34 RID: 31796 RVA: 0x002EE6DC File Offset: 0x002EC8DC
+	// Token: 0x06007C44 RID: 31812 RVA: 0x002F17EC File Offset: 0x002EF9EC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -122,22 +122,22 @@ public class XUiC_KeypadWindow : XUiController
 		this.checkInteraction = null;
 	}
 
-	// Token: 0x04005BD8 RID: 23512
+	// Token: 0x04005C01 RID: 23553
 	public static string ID = "";
 
-	// Token: 0x04005BD9 RID: 23513
+	// Token: 0x04005C02 RID: 23554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtPassword;
 
-	// Token: 0x04005BDA RID: 23514
+	// Token: 0x04005C03 RID: 23555
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ILockable LockedItem;
 
-	// Token: 0x04005BDB RID: 23515
+	// Token: 0x04005C04 RID: 23556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onCloseCallback;
 
-	// Token: 0x04005BDC RID: 23516
+	// Token: 0x04005C05 RID: 23557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> checkInteraction;
 }

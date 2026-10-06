@@ -1,21 +1,21 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000C42 RID: 3138
+// Token: 0x02000C54 RID: 3156
 public class BiomeIntensityMap
 {
-	// Token: 0x06005F8A RID: 24458 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06005FA3 RID: 24483 RVA: 0x0000640C File Offset: 0x0000460C
 	public BiomeIntensityMap()
 	{
 	}
 
-	// Token: 0x06005F8B RID: 24459 RVA: 0x0025C4A0 File Offset: 0x0025A6A0
+	// Token: 0x06005FA4 RID: 24484 RVA: 0x0025F79C File Offset: 0x0025D99C
 	public BiomeIntensityMap(int _w, int _h)
 	{
 		this.intensities = new ArrayWithOffset<BiomeIntensity>(_w, _h);
 	}
 
-	// Token: 0x06005F8C RID: 24460 RVA: 0x0025C4B8 File Offset: 0x0025A6B8
+	// Token: 0x06005FA5 RID: 24485 RVA: 0x0025F7B4 File Offset: 0x0025D9B4
 	public void Load(string _worldName)
 	{
 		try
@@ -61,7 +61,7 @@ public class BiomeIntensityMap
 		}
 	}
 
-	// Token: 0x06005F8D RID: 24461 RVA: 0x0025C648 File Offset: 0x0025A848
+	// Token: 0x06005FA6 RID: 24486 RVA: 0x0025F944 File Offset: 0x0025DB44
 	public void Save(string _worldPath)
 	{
 		try
@@ -98,7 +98,7 @@ public class BiomeIntensityMap
 		}
 	}
 
-	// Token: 0x06005F8E RID: 24462 RVA: 0x0025C768 File Offset: 0x0025A968
+	// Token: 0x06005FA7 RID: 24487 RVA: 0x0025FA64 File Offset: 0x0025DC64
 	public void SetBiomeIntensity(int _x, int _y, BiomeIntensity _bi)
 	{
 		if (this.intensities != null && this.intensities.Contains(_x, _y))
@@ -107,7 +107,7 @@ public class BiomeIntensityMap
 		}
 	}
 
-	// Token: 0x06005F8F RID: 24463 RVA: 0x0025C78F File Offset: 0x0025A98F
+	// Token: 0x06005FA8 RID: 24488 RVA: 0x0025FA8B File Offset: 0x0025DC8B
 	public BiomeIntensity GetBiomeIntensity(int _x, int _y)
 	{
 		if (this.intensities != null && this.intensities.Contains(_x, _y))
@@ -117,7 +117,7 @@ public class BiomeIntensityMap
 		return BiomeIntensity.Default;
 	}
 
-	// Token: 0x04004AF0 RID: 19184
+	// Token: 0x04004B2F RID: 19247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayWithOffset<BiomeIntensity> intensities;
 }

@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A4 RID: 1956
+// Token: 0x020007A7 RID: 1959
 [Preserve]
 public class NetPackageAnimateBlock : NetPackage
 {
-	// Token: 0x17000600 RID: 1536
-	// (get) Token: 0x06003A2D RID: 14893 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000625 RID: 1573
+	// (get) Token: 0x06003A6F RID: 14959 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -17,7 +17,7 @@ public class NetPackageAnimateBlock : NetPackage
 		}
 	}
 
-	// Token: 0x06003A2E RID: 14894 RVA: 0x0017B4E4 File Offset: 0x001796E4
+	// Token: 0x06003A70 RID: 14960 RVA: 0x0017BC9C File Offset: 0x00179E9C
 	public NetPackageAnimateBlock Setup(Vector3i _blockPosition, string _animParamater, int _animationInteger = 0)
 	{
 		this.blockPosition = _blockPosition;
@@ -27,7 +27,7 @@ public class NetPackageAnimateBlock : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A2F RID: 14895 RVA: 0x0017B503 File Offset: 0x00179703
+	// Token: 0x06003A71 RID: 14961 RVA: 0x0017BCBB File Offset: 0x00179EBB
 	public NetPackageAnimateBlock Setup(Vector3i _blockPosition, string _animParamater, bool _animationBool = false)
 	{
 		this.blockPosition = _blockPosition;
@@ -37,7 +37,7 @@ public class NetPackageAnimateBlock : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A30 RID: 14896 RVA: 0x0017B522 File Offset: 0x00179722
+	// Token: 0x06003A72 RID: 14962 RVA: 0x0017BCDA File Offset: 0x00179EDA
 	public NetPackageAnimateBlock Setup(Vector3i _blockPosition, string _animParamater)
 	{
 		this.blockPosition = _blockPosition;
@@ -46,7 +46,7 @@ public class NetPackageAnimateBlock : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A31 RID: 14897 RVA: 0x0017B53A File Offset: 0x0017973A
+	// Token: 0x06003A73 RID: 14963 RVA: 0x0017BCF2 File Offset: 0x00179EF2
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.blockPosition = StreamUtils.ReadVector3i(_reader);
@@ -56,7 +56,7 @@ public class NetPackageAnimateBlock : NetPackage
 		this.animationBool = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003A32 RID: 14898 RVA: 0x0017B578 File Offset: 0x00179778
+	// Token: 0x06003A74 RID: 14964 RVA: 0x0017BD30 File Offset: 0x00179F30
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -67,7 +67,7 @@ public class NetPackageAnimateBlock : NetPackage
 		_writer.Write(this.animationBool);
 	}
 
-	// Token: 0x06003A33 RID: 14899 RVA: 0x0017B5C8 File Offset: 0x001797C8
+	// Token: 0x06003A75 RID: 14965 RVA: 0x0017BD80 File Offset: 0x00179F80
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -89,7 +89,7 @@ public class NetPackageAnimateBlock : NetPackage
 		}
 	}
 
-	// Token: 0x06003A34 RID: 14900 RVA: 0x0017B629 File Offset: 0x00179829
+	// Token: 0x06003A76 RID: 14966 RVA: 0x0017BDE1 File Offset: 0x00179FE1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator WaitForBEDTransform(BlockEntityData bed)
 	{
@@ -111,7 +111,7 @@ public class NetPackageAnimateBlock : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003A35 RID: 14901 RVA: 0x0017B640 File Offset: 0x00179840
+	// Token: 0x06003A77 RID: 14967 RVA: 0x0017BDF8 File Offset: 0x00179FF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AnimateBlock(BlockEntityData bed)
 	{
@@ -138,33 +138,27 @@ public class NetPackageAnimateBlock : NetPackage
 		}
 	}
 
-	// Token: 0x06003A36 RID: 14902 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x04002FBC RID: 12220
+	// Token: 0x04002FB6 RID: 12214
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3i blockPosition;
 
-	// Token: 0x04002FBD RID: 12221
+	// Token: 0x04002FB7 RID: 12215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string animParamater;
 
-	// Token: 0x04002FBE RID: 12222
+	// Token: 0x04002FB8 RID: 12216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int animType;
 
-	// Token: 0x04002FBF RID: 12223
+	// Token: 0x04002FB9 RID: 12217
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int animationInteger;
 
-	// Token: 0x04002FC0 RID: 12224
+	// Token: 0x04002FBA RID: 12218
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool animationBool;
 
-	// Token: 0x04002FC1 RID: 12225
+	// Token: 0x04002FBB RID: 12219
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string animationTrigger;
 }

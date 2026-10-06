@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200159F RID: 5535
+// Token: 0x020015C1 RID: 5569
 public class vp_FPSDemo3 : MonoBehaviour
 {
-	// Token: 0x0600AD35 RID: 44341 RVA: 0x004092C0 File Offset: 0x004074C0
+	// Token: 0x0600ADE8 RID: 44520 RVA: 0x0040E114 File Offset: 0x0040C314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -19,7 +19,7 @@ public class vp_FPSDemo3 : MonoBehaviour
 		vp_Utility.LockCursor = false;
 	}
 
-	// Token: 0x0600AD36 RID: 44342 RVA: 0x004093A8 File Offset: 0x004075A8
+	// Token: 0x0600ADE9 RID: 44521 RVA: 0x0040E1FC File Offset: 0x0040C3FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -30,7 +30,7 @@ public class vp_FPSDemo3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD37 RID: 44343 RVA: 0x004093FC File Offset: 0x004075FC
+	// Token: 0x0600ADEA RID: 44522 RVA: 0x0040E250 File Offset: 0x0040C450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoIntro()
 	{
@@ -50,7 +50,7 @@ public class vp_FPSDemo3 : MonoBehaviour
 		this.m_Demo.ForceCameraShake();
 	}
 
-	// Token: 0x0600AD38 RID: 44344 RVA: 0x004094AC File Offset: 0x004076AC
+	// Token: 0x0600ADEB RID: 44523 RVA: 0x0040E300 File Offset: 0x0040C500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoGameplay()
 	{
@@ -79,7 +79,7 @@ public class vp_FPSDemo3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD39 RID: 44345 RVA: 0x00409634 File Offset: 0x00407834
+	// Token: 0x0600ADEC RID: 44524 RVA: 0x0040E488 File Offset: 0x0040C688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoOutro()
 	{
@@ -99,7 +99,7 @@ public class vp_FPSDemo3 : MonoBehaviour
 		this.m_Demo.DrawImage(this.ImageAllParams);
 	}
 
-	// Token: 0x0600AD3A RID: 44346 RVA: 0x00409724 File Offset: 0x00407924
+	// Token: 0x0600ADED RID: 44525 RVA: 0x0040E578 File Offset: 0x0040C778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
@@ -120,78 +120,78 @@ public class vp_FPSDemo3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040080B9 RID: 32953
+	// Token: 0x0400813C RID: 33084
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPCamera m_FPSCamera;
 
-	// Token: 0x040080BA RID: 32954
+	// Token: 0x0400813D RID: 33085
 	public GameObject PlayerGameObject;
 
-	// Token: 0x040080BB RID: 32955
+	// Token: 0x0400813E RID: 33086
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPSDemoManager m_Demo;
 
-	// Token: 0x040080BC RID: 32956
+	// Token: 0x0400813F RID: 33087
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_BodyAnimator m_BodyAnimator;
 
-	// Token: 0x040080BD RID: 32957
+	// Token: 0x04008140 RID: 33088
 	public Texture ImageLeftArrow;
 
-	// Token: 0x040080BE RID: 32958
+	// Token: 0x04008141 RID: 33089
 	public Texture ImageRightArrow;
 
-	// Token: 0x040080BF RID: 32959
+	// Token: 0x04008142 RID: 33090
 	public Texture ImageCheckmark;
 
-	// Token: 0x040080C0 RID: 32960
+	// Token: 0x04008143 RID: 33091
 	public Texture ImagePresetDialogs;
 
-	// Token: 0x040080C1 RID: 32961
+	// Token: 0x04008144 RID: 33092
 	public Texture ImageShooter;
 
-	// Token: 0x040080C2 RID: 32962
+	// Token: 0x04008145 RID: 33093
 	public Texture ImageAllParams;
 
-	// Token: 0x040080C3 RID: 32963
+	// Token: 0x04008146 RID: 33094
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_StartPos = new Vector3(113f, 106f, -87f);
 
-	// Token: 0x040080C4 RID: 32964
+	// Token: 0x04008147 RID: 33095
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OverviewPos = new Vector3(113f, 106f, -87f);
 
-	// Token: 0x040080C5 RID: 32965
+	// Token: 0x04008148 RID: 33096
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OutroPos = new Vector3(135f, 105.8f, -70.7f);
 
-	// Token: 0x040080C6 RID: 32966
+	// Token: 0x04008149 RID: 33097
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_StartAngle = new Vector2(13f, 153.5f);
 
-	// Token: 0x040080C7 RID: 32967
+	// Token: 0x0400814A RID: 33098
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OverviewAngle = new Vector2(13f, 153.5f);
 
-	// Token: 0x040080C8 RID: 32968
+	// Token: 0x0400814B RID: 33099
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OutroAngle = new Vector2(-19.3f, 241.7f);
 
-	// Token: 0x040080C9 RID: 32969
+	// Token: 0x0400814C RID: 33100
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_OutroStartTime;
 
-	// Token: 0x040080CA RID: 32970
+	// Token: 0x0400814D RID: 33101
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_LoadingNextLevel;

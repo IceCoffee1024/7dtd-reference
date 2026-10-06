@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000D80 RID: 3456
+// Token: 0x02000D8F RID: 3471
 public abstract class XUiC_DMBaseList<T> : XUiC_List<T> where T : XUiListEntry<T>
 {
-	// Token: 0x1400008F RID: 143
-	// (add) Token: 0x060068E6 RID: 26854 RVA: 0x002967DC File Offset: 0x002949DC
-	// (remove) Token: 0x060068E7 RID: 26855 RVA: 0x00296814 File Offset: 0x00294A14
+	// Token: 0x1400008E RID: 142
+	// (add) Token: 0x060068DE RID: 26846 RVA: 0x00299B68 File Offset: 0x00297D68
+	// (remove) Token: 0x060068DF RID: 26847 RVA: 0x00299BA0 File Offset: 0x00297DA0
 	public event XUiC_DMBaseList<T>.ListEntryHoveredDelegate OnEntryHovered;
 
-	// Token: 0x060068E8 RID: 26856 RVA: 0x0029684C File Offset: 0x00294A4C
+	// Token: 0x060068E0 RID: 26848 RVA: 0x00299BD8 File Offset: 0x00297DD8
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public abstract class XUiC_DMBaseList<T> : XUiC_List<T> where T : XUiListEntry<T
 		this.searchBox.OnHover += this.childElementHovered;
 	}
 
-	// Token: 0x060068E9 RID: 26857 RVA: 0x00296908 File Offset: 0x00294B08
+	// Token: 0x060068E1 RID: 26849 RVA: 0x00299C94 File Offset: 0x00297E94
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void pageContentsChangedHandler(XUiC_List<T> _list)
 	{
@@ -43,7 +43,7 @@ public abstract class XUiC_DMBaseList<T> : XUiC_List<T> where T : XUiListEntry<T
 		this.OnEntryHovered(t, true);
 	}
 
-	// Token: 0x060068EA RID: 26858 RVA: 0x00296960 File Offset: 0x00294B60
+	// Token: 0x060068E2 RID: 26850 RVA: 0x00299CEC File Offset: 0x00297EEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void childElementHovered(XUiController _sender, bool _isOver)
 	{
@@ -57,17 +57,17 @@ public abstract class XUiC_DMBaseList<T> : XUiC_List<T> where T : XUiListEntry<T
 		onEntryHovered((xuiC_ListEntry != null) ? xuiC_ListEntry.GetEntry() : default(T), _isOver);
 	}
 
-	// Token: 0x060068EB RID: 26859 RVA: 0x002969A6 File Offset: 0x00294BA6
+	// Token: 0x060068E3 RID: 26851 RVA: 0x00299D32 File Offset: 0x00297F32
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_DMBaseList()
 	{
 	}
 
-	// Token: 0x040050A3 RID: 20643
+	// Token: 0x040050DA RID: 20698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController hoveredElement;
 
-	// Token: 0x02000D81 RID: 3457
-	// (Invoke) Token: 0x060068ED RID: 26861
+	// Token: 0x02000D90 RID: 3472
+	// (Invoke) Token: 0x060068E5 RID: 26853
 	public delegate void ListEntryHoveredDelegate(T _entry, bool _isOver);
 }

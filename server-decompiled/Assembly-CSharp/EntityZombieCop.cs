@@ -3,24 +3,24 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004F6 RID: 1270
+// Token: 0x020004FC RID: 1276
 [Preserve]
 public class EntityZombieCop : EntityZombie
 {
-	// Token: 0x06002991 RID: 10641 RVA: 0x00105791 File Offset: 0x00103991
+	// Token: 0x06002986 RID: 10630 RVA: 0x001060C5 File Offset: 0x001042C5
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
 	}
 
-	// Token: 0x06002992 RID: 10642 RVA: 0x0010579C File Offset: 0x0010399C
+	// Token: 0x06002987 RID: 10631 RVA: 0x001060D0 File Offset: 0x001042D0
 	public override void PostInit()
 	{
 		base.PostInit();
-		this.inventory.SetItem(0, this.inventory.GetBareHandItemValue(), 1, true);
+		this.inventory.SetItem(0, base.Hand.BareHandItemValue, 1);
 	}
 
-	// Token: 0x06002993 RID: 10643 RVA: 0x001057C0 File Offset: 0x001039C0
+	// Token: 0x06002988 RID: 10632 RVA: 0x001060F0 File Offset: 0x001042F0
 	public override void CopyPropertiesFromEntityClass()
 	{
 		DynamicProperties properties = EntityClass.list[this.entityClass].Properties;
@@ -44,7 +44,7 @@ public class EntityZombieCop : EntityZombie
 		base.CopyPropertiesFromEntityClass();
 	}
 
-	// Token: 0x06002994 RID: 10644 RVA: 0x00105884 File Offset: 0x00103A84
+	// Token: 0x06002989 RID: 10633 RVA: 0x001061B4 File Offset: 0x001043B4
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -105,7 +105,7 @@ public class EntityZombieCop : EntityZombie
 		}
 	}
 
-	// Token: 0x06002995 RID: 10645 RVA: 0x00105A96 File Offset: 0x00103C96
+	// Token: 0x0600298A RID: 10634 RVA: 0x001063C6 File Offset: 0x001045C6
 	public override float GetMoveSpeed()
 	{
 		if (this.ticksToExplode != 0)
@@ -115,7 +115,7 @@ public class EntityZombieCop : EntityZombie
 		return base.GetMoveSpeed();
 	}
 
-	// Token: 0x06002996 RID: 10646 RVA: 0x00105AAC File Offset: 0x00103CAC
+	// Token: 0x0600298B RID: 10635 RVA: 0x001063DC File Offset: 0x001045DC
 	public override float GetMoveSpeedAggro()
 	{
 		if (this.ticksToExplode != 0)
@@ -129,13 +129,13 @@ public class EntityZombieCop : EntityZombie
 		return base.GetMoveSpeedAggro();
 	}
 
-	// Token: 0x06002997 RID: 10647 RVA: 0x00105AD1 File Offset: 0x00103CD1
+	// Token: 0x0600298C RID: 10636 RVA: 0x00106401 File Offset: 0x00104601
 	public override bool IsAttackValid()
 	{
 		return !this.isPrimed && base.IsAttackValid();
 	}
 
-	// Token: 0x06002998 RID: 10648 RVA: 0x00105AE3 File Offset: 0x00103CE3
+	// Token: 0x0600298D RID: 10637 RVA: 0x00106413 File Offset: 0x00104613
 	public override void ProcessDamageResponseLocal(DamageResponse _dmResponse)
 	{
 		if (!this.isEntityRemote && !this.isPrimed && (_dmResponse.HitBodyPart & EnumBodyPartHit.Special) > EnumBodyPartHit.None && _dmResponse.Source.canHitSpecialBodyParts)
@@ -145,7 +145,7 @@ public class EntityZombieCop : EntityZombie
 		base.ProcessDamageResponseLocal(_dmResponse);
 	}
 
-	// Token: 0x06002999 RID: 10649 RVA: 0x00105B24 File Offset: 0x00103D24
+	// Token: 0x0600298E RID: 10638 RVA: 0x00106454 File Offset: 0x00104654
 	public void PrimeDetonator()
 	{
 		Detonator componentInChildren = base.gameObject.GetComponentInChildren<Detonator>(true);
@@ -159,7 +159,7 @@ public class EntityZombieCop : EntityZombie
 		Log.Out("PrimeDetonator found no Detonator component");
 	}
 
-	// Token: 0x0600299A RID: 10650 RVA: 0x00105B78 File Offset: 0x00103D78
+	// Token: 0x0600298F RID: 10639 RVA: 0x001064A8 File Offset: 0x001046A8
 	public void HandlePrimingDetonator(float overrideDelay = -1f)
 	{
 		this.PlayOneShot(this.warnSoundName, false, false, false, null, 1f);
@@ -169,52 +169,52 @@ public class EntityZombieCop : EntityZombie
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityPrimeDetonator>().Setup(this), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x04001F8C RID: 8076
+	// Token: 0x04001F94 RID: 8084
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int ticksToStartToExplode;
 
-	// Token: 0x04001F8D RID: 8077
+	// Token: 0x04001F95 RID: 8085
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int ticksToExplode;
 
-	// Token: 0x04001F8E RID: 8078
+	// Token: 0x04001F96 RID: 8086
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float explodeDelay = 5f;
 
-	// Token: 0x04001F8F RID: 8079
+	// Token: 0x04001F97 RID: 8087
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float explodeHealthThreshold = 0.4f;
 
-	// Token: 0x04001F90 RID: 8080
+	// Token: 0x04001F98 RID: 8088
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isPrimed;
 
-	// Token: 0x04001F91 RID: 8081
+	// Token: 0x04001F99 RID: 8089
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string warnSoundName;
 
-	// Token: 0x04001F92 RID: 8082
+	// Token: 0x04001F9A RID: 8090
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string tickSoundName;
 
-	// Token: 0x04001F93 RID: 8083
+	// Token: 0x04001F9B RID: 8091
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float tickSoundDelayStart = 1f;
 
-	// Token: 0x04001F94 RID: 8084
+	// Token: 0x04001F9C RID: 8092
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float tickSoundDelayScale = 1f;
 
-	// Token: 0x04001F95 RID: 8085
+	// Token: 0x04001F9D RID: 8093
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float tickSoundDelay;

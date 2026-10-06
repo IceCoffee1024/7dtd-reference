@@ -3,11 +3,11 @@ using Audio;
 using DynamicMusic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000712 RID: 1810
+// Token: 0x02000714 RID: 1812
 [Preserve]
 public class MinEventActionPlaySound : MinEventActionSoundBase
 {
-	// Token: 0x06003703 RID: 14083 RVA: 0x0016B2F4 File Offset: 0x001694F4
+	// Token: 0x06003746 RID: 14150 RVA: 0x0016BC58 File Offset: 0x00169E58
 	public override void Execute(MinEventParams _params)
 	{
 		if (!this.silentOnEquip || !((_params.Self != null) & _params.Self.IsEquipping))

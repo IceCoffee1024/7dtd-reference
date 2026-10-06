@@ -9,10 +9,10 @@ using Webserver.WebAPI;
 
 namespace Webserver
 {
-	// Token: 0x02001ACA RID: 6858
+	// Token: 0x02001AF6 RID: 6902
 	public static class WebUtils
 	{
-		// Token: 0x0600CE93 RID: 52883 RVA: 0x004B35E4 File Offset: 0x004B17E4
+		// Token: 0x0600CFEB RID: 53227 RVA: 0x004B7AB0 File Offset: 0x004B5CB0
 		[PublicizedFrom(EAccessModifier.Private)]
 		static WebUtils()
 		{
@@ -22,7 +22,7 @@ namespace Webserver
 			WebUtils.JsonEmptyData = jsonWriter.ToUtf8ByteArray();
 		}
 
-		// Token: 0x0600CE94 RID: 52884 RVA: 0x004B36BC File Offset: 0x004B18BC
+		// Token: 0x0600CFEC RID: 53228 RVA: 0x004B7B88 File Offset: 0x004B5D88
 		public static void WriteText(SpaceWizards.HttpListener.HttpListenerResponse _resp, string _text, HttpStatusCode _statusCode = HttpStatusCode.OK, string _mimeType = null)
 		{
 			_resp.StatusCode = (int)_statusCode;
@@ -38,20 +38,20 @@ namespace Webserver
 			_resp.OutputStream.Write(bytes, 0, bytes.Length);
 		}
 
-		// Token: 0x0600CE95 RID: 52885 RVA: 0x004B3724 File Offset: 0x004B1924
+		// Token: 0x0600CFED RID: 53229 RVA: 0x004B7BF0 File Offset: 0x004B5DF0
 		public static bool IsSslRedirected(SpaceWizards.HttpListener.HttpListenerRequest _req)
 		{
 			string text = _req.Headers["X-Forwarded-Proto"];
 			return !string.IsNullOrEmpty(text) && text.Equals("https", StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x0600CE96 RID: 52886 RVA: 0x004B3758 File Offset: 0x004B1958
+		// Token: 0x0600CFEE RID: 53230 RVA: 0x004B7C24 File Offset: 0x004B5E24
 		public static string GenerateGuid()
 		{
 			return Guid.NewGuid().ToString();
 		}
 
-		// Token: 0x0600CE97 RID: 52887 RVA: 0x004B3778 File Offset: 0x004B1978
+		// Token: 0x0600CFEF RID: 53231 RVA: 0x004B7C44 File Offset: 0x004B5E44
 		public static void WriteJsonData(SpaceWizards.HttpListener.HttpListenerResponse _resp, ref JsonWriter _jsonWriter, HttpStatusCode _statusCode = HttpStatusCode.OK)
 		{
 			ArraySegment<byte> buffer = _jsonWriter.GetBuffer();
@@ -62,14 +62,14 @@ namespace Webserver
 			_resp.OutputStream.Write(buffer.Array, 0, buffer.Count);
 		}
 
-		// Token: 0x0600CE98 RID: 52888 RVA: 0x004B37D1 File Offset: 0x004B19D1
+		// Token: 0x0600CFF0 RID: 53232 RVA: 0x004B7C9D File Offset: 0x004B5E9D
 		public static void PrepareEnvelopedResult(out JsonWriter _writer)
 		{
 			_writer = default(JsonWriter);
 			_writer.WriteRaw(WebUtils.jsonRawDataKey);
 		}
 
-		// Token: 0x0600CE99 RID: 52889 RVA: 0x004B37E8 File Offset: 0x004B19E8
+		// Token: 0x0600CFF1 RID: 53233 RVA: 0x004B7CB4 File Offset: 0x004B5EB4
 		public static void SendEnvelopedResult(RequestContext _context, ref JsonWriter _writer, HttpStatusCode _statusCode = HttpStatusCode.OK, byte[] _jsonInputData = null, string _errorCode = null, Exception _exception = null)
 		{
 			_writer.WriteRaw(WebUtils.jsonRawMetaKey);
@@ -105,7 +105,7 @@ namespace Webserver
 			WebUtils.WriteJsonData(_context.Response, ref _writer, _statusCode);
 		}
 
-		// Token: 0x0600CE9A RID: 52890 RVA: 0x004B38D4 File Offset: 0x004B1AD4
+		// Token: 0x0600CFF2 RID: 53234 RVA: 0x004B7DA0 File Offset: 0x004B5FA0
 		public static void SendEmptyResponse(RequestContext _context, HttpStatusCode _statusCode = HttpStatusCode.OK, byte[] _jsonInputData = null, string _errorCode = null, Exception _exception = null)
 		{
 			JsonWriter jsonWriter;
@@ -114,66 +114,66 @@ namespace Webserver
 			WebUtils.SendEnvelopedResult(_context, ref jsonWriter, _statusCode, _jsonInputData, _errorCode, _exception);
 		}
 
-		// Token: 0x0600CE9B RID: 52891 RVA: 0x004B3901 File Offset: 0x004B1B01
+		// Token: 0x0600CFF3 RID: 53235 RVA: 0x004B7DCD File Offset: 0x004B5FCD
 		public static bool TryGetValue(this NameValueCollection _nameValueCollection, string _name, out string _result)
 		{
 			_result = _nameValueCollection[_name];
 			return _result != null;
 		}
 
-		// Token: 0x04009C92 RID: 40082
+		// Token: 0x04009D58 RID: 40280
 		public const string MimePlain = "text/plain";
 
-		// Token: 0x04009C93 RID: 40083
+		// Token: 0x04009D59 RID: 40281
 		public const string MimeHtml = "text/html";
 
-		// Token: 0x04009C94 RID: 40084
+		// Token: 0x04009D5A RID: 40282
 		public const string MimeJson = "application/json";
 
-		// Token: 0x04009C95 RID: 40085
+		// Token: 0x04009D5B RID: 40283
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly CustomSampler envelopeBuildSampler = CustomSampler.Create("JSON_EnvelopeBuilding", false);
 
-		// Token: 0x04009C96 RID: 40086
+		// Token: 0x04009D5C RID: 40284
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly CustomSampler netWriteSampler = CustomSampler.Create("JSON_Write", false);
 
-		// Token: 0x04009C97 RID: 40087
+		// Token: 0x04009D5D RID: 40285
 		public static readonly byte[] JsonEmptyData;
 
-		// Token: 0x04009C98 RID: 40088
+		// Token: 0x04009D5E RID: 40286
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawDataKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("data");
 
-		// Token: 0x04009C99 RID: 40089
+		// Token: 0x04009D5F RID: 40287
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("meta");
 
-		// Token: 0x04009C9A RID: 40090
+		// Token: 0x04009D60 RID: 40288
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaServertimeKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("serverTime");
 
-		// Token: 0x04009C9B RID: 40091
+		// Token: 0x04009D61 RID: 40289
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaRequestMethodKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("requestMethod");
 
-		// Token: 0x04009C9C RID: 40092
+		// Token: 0x04009D62 RID: 40290
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaRequestSubpathKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("requestSubpath");
 
-		// Token: 0x04009C9D RID: 40093
+		// Token: 0x04009D63 RID: 40291
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaRequestBodyKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("requestBody");
 
-		// Token: 0x04009C9E RID: 40094
+		// Token: 0x04009D64 RID: 40292
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaErrorCodeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("errorCode");
 
-		// Token: 0x04009C9F RID: 40095
+		// Token: 0x04009D65 RID: 40293
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaExceptionMessageKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("exceptionMessage");
 
-		// Token: 0x04009CA0 RID: 40096
+		// Token: 0x04009D66 RID: 40294
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonRawMetaExceptionTraceKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("exceptionTrace");
 	}

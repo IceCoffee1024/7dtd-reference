@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E1 RID: 1761
+// Token: 0x020006E3 RID: 1763
 [Preserve]
 public class MinEventActionAddPart : MinEventActionTargetedBase
 {
-	// Token: 0x0600364C RID: 13900 RVA: 0x00166F54 File Offset: 0x00165154
+	// Token: 0x0600368F RID: 13967 RVA: 0x001678C4 File Offset: 0x00165AC4
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -28,7 +28,7 @@ public class MinEventActionAddPart : MinEventActionTargetedBase
 		{
 			if (this.parentTransformPath.EqualsCaseInsensitive("#HeldItemRoot") && _params.Self.emodel != null)
 			{
-				transform = _params.Self.inventory.models[_params.Self.inventory.holdingItemIdx];
+				transform = _params.Self.inventory.holdingItemData.model;
 				if (transform == null)
 				{
 					transform = GameUtils.FindDeepChildActive(_params.Self.RootTransform, this.parentTransformPath);
@@ -90,13 +90,13 @@ public class MinEventActionAddPart : MinEventActionTargetedBase
 		_params.Self.AddPart(this.partName, transform2);
 	}
 
-	// Token: 0x0600364D RID: 13901 RVA: 0x00167234 File Offset: 0x00165434
+	// Token: 0x06003690 RID: 13968 RVA: 0x00167B98 File Offset: 0x00165D98
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && (this.goToInstantiate != null || this.itemPropertyName != null);
 	}
 
-	// Token: 0x0600364E RID: 13902 RVA: 0x0016726C File Offset: 0x0016546C
+	// Token: 0x06003691 RID: 13969 RVA: 0x00167BD0 File Offset: 0x00165DD0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -145,31 +145,31 @@ public class MinEventActionAddPart : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BDE RID: 11230
+	// Token: 0x04002BD7 RID: 11223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 
-	// Token: 0x04002BDF RID: 11231
+	// Token: 0x04002BD8 RID: 11224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goToInstantiate;
 
-	// Token: 0x04002BE0 RID: 11232
+	// Token: 0x04002BD9 RID: 11225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string itemPropertyName;
 
-	// Token: 0x04002BE1 RID: 11233
+	// Token: 0x04002BDA RID: 11226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parentTransformPath;
 
-	// Token: 0x04002BE2 RID: 11234
+	// Token: 0x04002BDB RID: 11227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 localPos;
 
-	// Token: 0x04002BE3 RID: 11235
+	// Token: 0x04002BDC RID: 11228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 localRot;
 
-	// Token: 0x04002BE4 RID: 11236
+	// Token: 0x04002BDD RID: 11229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool colorTint;
 }

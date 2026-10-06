@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using MemoryPack;
 
-// Token: 0x020013EB RID: 5099
+// Token: 0x0200140B RID: 5131
 public class DataItem<T> : IDataItem
 {
-	// Token: 0x14000102 RID: 258
-	// (add) Token: 0x06009FEC RID: 40940 RVA: 0x003C2450 File Offset: 0x003C0650
-	// (remove) Token: 0x06009FED RID: 40941 RVA: 0x003C2488 File Offset: 0x003C0688
+	// Token: 0x14000101 RID: 257
+	// (add) Token: 0x0600A097 RID: 41111 RVA: 0x003C6FEC File Offset: 0x003C51EC
+	// (remove) Token: 0x0600A098 RID: 41112 RVA: 0x003C7024 File Offset: 0x003C5224
 	public event DataItem<T>.OnChangeDelegate OnChangeDelegates;
 
-	// Token: 0x170012E1 RID: 4833
-	// (get) Token: 0x06009FEE RID: 40942 RVA: 0x003C24BD File Offset: 0x003C06BD
+	// Token: 0x17001326 RID: 4902
+	// (get) Token: 0x0600A099 RID: 41113 RVA: 0x003C7059 File Offset: 0x003C5259
 	public string Name
 	{
 		get
@@ -20,29 +20,29 @@ public class DataItem<T> : IDataItem
 		}
 	}
 
-	// Token: 0x06009FEF RID: 40943 RVA: 0x003C24C8 File Offset: 0x003C06C8
+	// Token: 0x0600A09A RID: 41114 RVA: 0x003C7064 File Offset: 0x003C5264
 	[MemoryPackConstructor]
 	public DataItem()
 		: this(default(T))
 	{
 	}
 
-	// Token: 0x06009FF0 RID: 40944 RVA: 0x003C24E4 File Offset: 0x003C06E4
+	// Token: 0x0600A09B RID: 41115 RVA: 0x003C7080 File Offset: 0x003C5280
 	public DataItem(T _startValue)
 		: this(null, _startValue)
 	{
 	}
 
-	// Token: 0x06009FF1 RID: 40945 RVA: 0x003C24EE File Offset: 0x003C06EE
+	// Token: 0x0600A09C RID: 41116 RVA: 0x003C708A File Offset: 0x003C528A
 	public DataItem(string _name, T _startValue)
 	{
 		this.name = _name;
 		this.internalValue = _startValue;
 	}
 
-	// Token: 0x170012E2 RID: 4834
-	// (get) Token: 0x06009FF3 RID: 40947 RVA: 0x003C2534 File Offset: 0x003C0734
-	// (set) Token: 0x06009FF2 RID: 40946 RVA: 0x003C2504 File Offset: 0x003C0704
+	// Token: 0x17001327 RID: 4903
+	// (get) Token: 0x0600A09E RID: 41118 RVA: 0x003C70D0 File Offset: 0x003C52D0
+	// (set) Token: 0x0600A09D RID: 41117 RVA: 0x003C70A0 File Offset: 0x003C52A0
 	public T Value
 	{
 		get
@@ -60,7 +60,7 @@ public class DataItem<T> : IDataItem
 		}
 	}
 
-	// Token: 0x06009FF4 RID: 40948 RVA: 0x003C253C File Offset: 0x003C073C
+	// Token: 0x0600A09F RID: 41119 RVA: 0x003C70D8 File Offset: 0x003C52D8
 	public override string ToString()
 	{
 		if (this.Formatter != null)
@@ -74,7 +74,7 @@ public class DataItem<T> : IDataItem
 		return this.internalValue.ToString();
 	}
 
-	// Token: 0x06009FF5 RID: 40949 RVA: 0x003C258C File Offset: 0x003C078C
+	// Token: 0x0600A0A0 RID: 41120 RVA: 0x003C7128 File Offset: 0x003C5328
 	public static bool operator ==(DataItem<T> v1, T v2)
 	{
 		if (v1 != null)
@@ -84,7 +84,7 @@ public class DataItem<T> : IDataItem
 		return v2 == null;
 	}
 
-	// Token: 0x06009FF6 RID: 40950 RVA: 0x003C25AC File Offset: 0x003C07AC
+	// Token: 0x0600A0A1 RID: 41121 RVA: 0x003C7148 File Offset: 0x003C5348
 	public static bool operator !=(DataItem<T> v1, T v2)
 	{
 		if (v1 != null)
@@ -94,30 +94,30 @@ public class DataItem<T> : IDataItem
 		return v2 != null;
 	}
 
-	// Token: 0x06009FF7 RID: 40951 RVA: 0x003C25CF File Offset: 0x003C07CF
+	// Token: 0x0600A0A2 RID: 41122 RVA: 0x003C716B File Offset: 0x003C536B
 	public override bool Equals(object obj)
 	{
 		return obj != null && this.internalValue.Equals(obj);
 	}
 
-	// Token: 0x06009FF8 RID: 40952 RVA: 0x003C25E8 File Offset: 0x003C07E8
+	// Token: 0x0600A0A3 RID: 41123 RVA: 0x003C7184 File Offset: 0x003C5384
 	public override int GetHashCode()
 	{
 		return this.internalValue.GetHashCode();
 	}
 
-	// Token: 0x040078F7 RID: 30967
+	// Token: 0x04007972 RID: 31090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x040078F8 RID: 30968
+	// Token: 0x04007973 RID: 31091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T internalValue;
 
-	// Token: 0x040078F9 RID: 30969
+	// Token: 0x04007974 RID: 31092
 	public IDataItemFormatter Formatter;
 
-	// Token: 0x020013EC RID: 5100
-	// (Invoke) Token: 0x06009FFA RID: 40954
+	// Token: 0x0200140C RID: 5132
+	// (Invoke) Token: 0x0600A0A5 RID: 41125
 	public delegate void OnChangeDelegate(T _oldValue, T _newValue);
 }

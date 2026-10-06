@@ -4,27 +4,27 @@ using System.Collections.Generic;
 
 namespace SharpEXR
 {
-	// Token: 0x020016D6 RID: 5846
+	// Token: 0x02001702 RID: 5890
 	public class OffsetTable : IEnumerable<uint>, IEnumerable
 	{
-		// Token: 0x17001653 RID: 5715
-		// (get) Token: 0x0600B6FA RID: 46842 RVA: 0x0043E382 File Offset: 0x0043C582
-		// (set) Token: 0x0600B6FB RID: 46843 RVA: 0x0043E38A File Offset: 0x0043C58A
+		// Token: 0x170016F5 RID: 5877
+		// (get) Token: 0x0600B851 RID: 47185 RVA: 0x004428A2 File Offset: 0x00440AA2
+		// (set) Token: 0x0600B852 RID: 47186 RVA: 0x004428AA File Offset: 0x00440AAA
 		public List<uint> Offsets { get; set; }
 
-		// Token: 0x0600B6FC RID: 46844 RVA: 0x0043E393 File Offset: 0x0043C593
+		// Token: 0x0600B853 RID: 47187 RVA: 0x004428B3 File Offset: 0x00440AB3
 		public OffsetTable()
 		{
 			this.Offsets = new List<uint>();
 		}
 
-		// Token: 0x0600B6FD RID: 46845 RVA: 0x0043E3A6 File Offset: 0x0043C5A6
+		// Token: 0x0600B854 RID: 47188 RVA: 0x004428C6 File Offset: 0x00440AC6
 		public OffsetTable(int capacity)
 		{
 			this.Offsets = new List<uint>(capacity);
 		}
 
-		// Token: 0x0600B6FE RID: 46846 RVA: 0x0043E3BC File Offset: 0x0043C5BC
+		// Token: 0x0600B855 RID: 47189 RVA: 0x004428DC File Offset: 0x00440ADC
 		public void Read(IEXRReader reader, int count)
 		{
 			for (int i = 0; i < count; i++)
@@ -34,13 +34,13 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B6FF RID: 46847 RVA: 0x0043E3ED File Offset: 0x0043C5ED
+		// Token: 0x0600B856 RID: 47190 RVA: 0x0044290D File Offset: 0x00440B0D
 		public IEnumerator<uint> GetEnumerator()
 		{
 			return this.Offsets.GetEnumerator();
 		}
 
-		// Token: 0x0600B700 RID: 46848 RVA: 0x0043E3FF File Offset: 0x0043C5FF
+		// Token: 0x0600B857 RID: 47191 RVA: 0x0044291F File Offset: 0x00440B1F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{

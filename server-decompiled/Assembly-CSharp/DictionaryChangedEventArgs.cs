@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02001458 RID: 5208
+// Token: 0x02001478 RID: 5240
 public class DictionaryChangedEventArgs<TKey, TValue> : EventArgs
 {
-	// Token: 0x1700132D RID: 4909
-	// (get) Token: 0x0600A360 RID: 41824 RVA: 0x003D0FB3 File Offset: 0x003CF1B3
+	// Token: 0x17001372 RID: 4978
+	// (get) Token: 0x0600A40C RID: 41996 RVA: 0x003D5BC3 File Offset: 0x003D3DC3
 	public TKey Key { get; }
 
-	// Token: 0x1700132E RID: 4910
-	// (get) Token: 0x0600A361 RID: 41825 RVA: 0x003D0FBB File Offset: 0x003CF1BB
+	// Token: 0x17001373 RID: 4979
+	// (get) Token: 0x0600A40D RID: 41997 RVA: 0x003D5BCB File Offset: 0x003D3DCB
 	public TValue Value { get; }
 
-	// Token: 0x1700132F RID: 4911
-	// (get) Token: 0x0600A362 RID: 41826 RVA: 0x003D0FC3 File Offset: 0x003CF1C3
+	// Token: 0x17001374 RID: 4980
+	// (get) Token: 0x0600A40E RID: 41998 RVA: 0x003D5BD3 File Offset: 0x003D3DD3
 	public ObservableDictionary<TKey, TValue>.EChangeType Action { get; }
 
-	// Token: 0x0600A363 RID: 41827 RVA: 0x003D0FCB File Offset: 0x003CF1CB
+	// Token: 0x0600A40F RID: 41999 RVA: 0x003D5BDB File Offset: 0x003D3DDB
 	public DictionaryChangedEventArgs(TKey key, TValue value, ObservableDictionary<TKey, TValue>.EChangeType action)
 	{
 		this.Key = key;

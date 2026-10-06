@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200023E RID: 574
+// Token: 0x02000241 RID: 577
 [Preserve]
 public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 {
-	// Token: 0x170001B2 RID: 434
-	// (get) Token: 0x06001141 RID: 4417 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001AA RID: 426
+	// (get) Token: 0x0600113E RID: 4414 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001B3 RID: 435
-	// (get) Token: 0x06001142 RID: 4418 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x170001AB RID: 427
+	// (get) Token: 0x0600113F RID: 4415 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -27,8 +27,8 @@ public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001B4 RID: 436
-	// (get) Token: 0x06001143 RID: 4419 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x170001AC RID: 428
+	// (get) Token: 0x06001140 RID: 4416 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,35 +37,35 @@ public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001144 RID: 4420 RVA: 0x0006D744 File Offset: 0x0006B944
+	// Token: 0x06001141 RID: 4417 RVA: 0x0006D9EC File Offset: 0x0006BBEC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "playerOwnedEntities", "poe" };
 	}
 
-	// Token: 0x06001145 RID: 4421 RVA: 0x0006D75C File Offset: 0x0006B95C
+	// Token: 0x06001142 RID: 4418 RVA: 0x0006DA04 File Offset: 0x0006BC04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Lists player owned entities.";
 	}
 
-	// Token: 0x06001146 RID: 4422 RVA: 0x0006D763 File Offset: 0x0006B963
+	// Token: 0x06001143 RID: 4419 RVA: 0x0006DA0B File Offset: 0x0006BC0B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return this.buildHelpLog();
 	}
 
-	// Token: 0x06001147 RID: 4423 RVA: 0x0006D76C File Offset: 0x0006B96C
+	// Token: 0x06001144 RID: 4420 RVA: 0x0006DA14 File Offset: 0x0006BC14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buildHelpLog()
 	{
 		return "Player Owned Entities help:" + Environment.NewLine + "[Client Commands]" + Environment.NewLine + "poe - Lists owned entities for the local player" + Environment.NewLine + "[Server/Host Commands]" + Environment.NewLine + "poe - Lists owned entities for all players online" + Environment.NewLine + "[PlayerName] - Lists the owned entities for passed online player (ex. poe [PlayerName])" + Environment.NewLine;
 	}
 
-	// Token: 0x06001148 RID: 4424 RVA: 0x0006D7D4 File Offset: 0x0006B9D4
+	// Token: 0x06001145 RID: 4421 RVA: 0x0006DA7C File Offset: 0x0006BC7C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -107,7 +107,7 @@ public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001149 RID: 4425 RVA: 0x0006D8EC File Offset: 0x0006BAEC
+	// Token: 0x06001146 RID: 4422 RVA: 0x0006DB94 File Offset: 0x0006BD94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string logPlayerOwnedEntities(string header)
 	{
@@ -119,7 +119,7 @@ public class ConsoleCmdLogOwnedEntities : ConsoleCmdAbstract
 		return text;
 	}
 
-	// Token: 0x0600114A RID: 4426 RVA: 0x0006D964 File Offset: 0x0006BB64
+	// Token: 0x06001147 RID: 4423 RVA: 0x0006DC0C File Offset: 0x0006BE0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string logPlayerOwnedEntities(int entityId)
 	{

@@ -6,16 +6,16 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x02001773 RID: 6003
+	// Token: 0x0200179F RID: 6047
 	[Preserve]
 	public class UAIConsiderationBase
 	{
-		// Token: 0x1700169C RID: 5788
-		// (get) Token: 0x0600BA3C RID: 47676 RVA: 0x00455808 File Offset: 0x00453A08
-		// (set) Token: 0x0600BA3D RID: 47677 RVA: 0x00455810 File Offset: 0x00453A10
+		// Token: 0x1700173E RID: 5950
+		// (get) Token: 0x0600BB93 RID: 48019 RVA: 0x00459D28 File Offset: 0x00457F28
+		// (set) Token: 0x0600BB94 RID: 48020 RVA: 0x00459D30 File Offset: 0x00457F30
 		public string Name { get; set; }
 
-		// Token: 0x0600BA3E RID: 47678 RVA: 0x0045581C File Offset: 0x00453A1C
+		// Token: 0x0600BB95 RID: 48021 RVA: 0x00459D3C File Offset: 0x00457F3C
 		public virtual void Init(Dictionary<string, string> parameters)
 		{
 			if (parameters.ContainsKey("curve"))
@@ -60,13 +60,13 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA3F RID: 47679 RVA: 0x00040F84 File Offset: 0x0003F184
+		// Token: 0x0600BB96 RID: 48022 RVA: 0x00041064 File Offset: 0x0003F264
 		public virtual float GetScore(Context _context, object currentTargetConsideration)
 		{
 			return 1f;
 		}
 
-		// Token: 0x0600BA40 RID: 47680 RVA: 0x0045595C File Offset: 0x00453B5C
+		// Token: 0x0600BB97 RID: 48023 RVA: 0x00459E7C File Offset: 0x0045807C
 		public float ComputeResponseCurve(float x)
 		{
 			if (this.flipX)
@@ -114,31 +114,31 @@ namespace UAI
 			return Mathf.Clamp01(num);
 		}
 
-		// Token: 0x04008BA1 RID: 35745
+		// Token: 0x04008C66 RID: 35942
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public CurveType curveType;
 
-		// Token: 0x04008BA2 RID: 35746
+		// Token: 0x04008C67 RID: 35943
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float xIntercept;
 
-		// Token: 0x04008BA3 RID: 35747
+		// Token: 0x04008C68 RID: 35944
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float yIntercept;
 
-		// Token: 0x04008BA4 RID: 35748
+		// Token: 0x04008C69 RID: 35945
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float slopeIntercept = 1f;
 
-		// Token: 0x04008BA5 RID: 35749
+		// Token: 0x04008C6A RID: 35946
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float exponent = 1f;
 
-		// Token: 0x04008BA6 RID: 35750
+		// Token: 0x04008C6B RID: 35947
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool flipY;
 
-		// Token: 0x04008BA7 RID: 35751
+		// Token: 0x04008C6C RID: 35948
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool flipX;
 	}

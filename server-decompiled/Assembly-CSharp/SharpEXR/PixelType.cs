@@ -2,14 +2,14 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016D8 RID: 5848
+	// Token: 0x02001704 RID: 5892
 	public enum PixelType
 	{
-		// Token: 0x040088B0 RID: 34992
+		// Token: 0x04008975 RID: 35189
 		UInt,
-		// Token: 0x040088B1 RID: 34993
+		// Token: 0x04008976 RID: 35190
 		Half,
-		// Token: 0x040088B2 RID: 34994
+		// Token: 0x04008977 RID: 35191
 		Float
 	}
 }

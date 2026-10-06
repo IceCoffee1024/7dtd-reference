@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000D16 RID: 3350
+// Token: 0x02000D24 RID: 3364
 public class LootFromXml
 {
-	// Token: 0x0600663C RID: 26172 RVA: 0x0028159C File Offset: 0x0027F79C
+	// Token: 0x0600662E RID: 26158 RVA: 0x00284940 File Offset: 0x00282B40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseItemList(string _containerId, IEnumerable<XElement> _childNodes, List<LootContainer.LootEntry> _itemList, int _minQualityBase, int _maxQualityBase)
 	{
@@ -117,7 +117,7 @@ public class LootFromXml
 		}
 	}
 
-	// Token: 0x0600663D RID: 26173 RVA: 0x00281A14 File Offset: 0x0027FC14
+	// Token: 0x0600662F RID: 26159 RVA: 0x00284DB8 File Offset: 0x00282FB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseLootEntryRequirement ParseLootEntryRequirement(XElement e)
 	{
@@ -140,7 +140,7 @@ public class LootFromXml
 		throw new Exception("Loot Entry Requirement must have a class!");
 	}
 
-	// Token: 0x0600663E RID: 26174 RVA: 0x00281AA0 File Offset: 0x0027FCA0
+	// Token: 0x06006630 RID: 26160 RVA: 0x00284E44 File Offset: 0x00283044
 	public static IEnumerator LoadLootContainers(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -179,7 +179,7 @@ public class LootFromXml
 		yield break;
 	}
 
-	// Token: 0x0600663F RID: 26175 RVA: 0x00281AB0 File Offset: 0x0027FCB0
+	// Token: 0x06006631 RID: 26161 RVA: 0x00284E54 File Offset: 0x00283054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadLootSetting(XElement _rootNode)
 	{
@@ -228,7 +228,7 @@ public class LootFromXml
 		}
 	}
 
-	// Token: 0x06006640 RID: 26176 RVA: 0x00281C30 File Offset: 0x0027FE30
+	// Token: 0x06006632 RID: 26162 RVA: 0x00284FD4 File Offset: 0x002831D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadLootQualityTemplate(XElement _rootNode)
 	{
@@ -292,7 +292,7 @@ public class LootFromXml
 		}
 	}
 
-	// Token: 0x06006641 RID: 26177 RVA: 0x00281F80 File Offset: 0x00280180
+	// Token: 0x06006633 RID: 26163 RVA: 0x00285324 File Offset: 0x00283524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadLootProbabilityTemplate(XElement _rootNode)
 	{
@@ -339,7 +339,7 @@ public class LootFromXml
 		}
 	}
 
-	// Token: 0x06006642 RID: 26178 RVA: 0x002821C8 File Offset: 0x002803C8
+	// Token: 0x06006634 RID: 26164 RVA: 0x0028556C File Offset: 0x0028376C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadLootGroup(XElement _elementGroup)
 	{
@@ -407,7 +407,7 @@ public class LootFromXml
 		LootContainer.lootGroups[lootGroup.name] = lootGroup;
 	}
 
-	// Token: 0x06006643 RID: 26179 RVA: 0x00282460 File Offset: 0x00280660
+	// Token: 0x06006635 RID: 26165 RVA: 0x00285804 File Offset: 0x00283A04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LoadLootContainer(XElement _elementContainer)
 	{

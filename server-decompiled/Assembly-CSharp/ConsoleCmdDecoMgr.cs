@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020E RID: 526
+// Token: 0x0200020F RID: 527
 [Preserve]
 public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 {
-	// Token: 0x06001006 RID: 4102 RVA: 0x00066843 File Offset: 0x00064A43
+	// Token: 0x06000FF9 RID: 4089 RVA: 0x00066833 File Offset: 0x00064A33
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "decomgr" };
 	}
 
-	// Token: 0x06001007 RID: 4103 RVA: 0x00066853 File Offset: 0x00064A53
+	// Token: 0x06000FFA RID: 4090 RVA: 0x00066843 File Offset: 0x00064A43
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "\"decomgr\": Saves a debug texture visualising the DecoOccupiedMap.\n\"decomgr state\": Saves a debug texture visualising the location/state of all of the DecoObjects saved in decorations.7dtd.";
 	}
 
-	// Token: 0x1700016D RID: 365
-	// (get) Token: 0x06001008 RID: 4104 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000165 RID: 357
+	// (get) Token: 0x06000FFB RID: 4091 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -31,8 +31,8 @@ public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700016E RID: 366
-	// (get) Token: 0x06001009 RID: 4105 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x17000166 RID: 358
+	// (get) Token: 0x06000FFC RID: 4092 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -41,7 +41,7 @@ public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600100A RID: 4106 RVA: 0x0006685C File Offset: 0x00064A5C
+	// Token: 0x06000FFD RID: 4093 RVA: 0x0006684C File Offset: 0x00064A4C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0 && _params[0] == "state")

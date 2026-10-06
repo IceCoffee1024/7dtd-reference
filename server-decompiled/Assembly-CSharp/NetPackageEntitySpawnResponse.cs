@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EA RID: 2026
+// Token: 0x020007ED RID: 2029
 [Preserve]
 public class NetPackageEntitySpawnResponse : NetPackage
 {
-	// Token: 0x06003BDD RID: 15325 RVA: 0x00180492 File Offset: 0x0017E692
+	// Token: 0x06003BE6 RID: 15334 RVA: 0x001809CA File Offset: 0x0017EBCA
 	public NetPackageEntitySpawnResponse Setup(bool _success, ItemValue _itemValue)
 	{
 		this.success = _success;
@@ -13,7 +13,7 @@ public class NetPackageEntitySpawnResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BDE RID: 15326 RVA: 0x001804A3 File Offset: 0x0017E6A3
+	// Token: 0x06003BE7 RID: 15335 RVA: 0x001809DB File Offset: 0x0017EBDB
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.success = _reader.ReadBoolean();
@@ -21,7 +21,7 @@ public class NetPackageEntitySpawnResponse : NetPackage
 		this.itemValue.Read(_reader);
 	}
 
-	// Token: 0x06003BDF RID: 15327 RVA: 0x001804C8 File Offset: 0x0017E6C8
+	// Token: 0x06003BE8 RID: 15336 RVA: 0x00180A00 File Offset: 0x0017EC00
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -29,7 +29,7 @@ public class NetPackageEntitySpawnResponse : NetPackage
 		this.itemValue.Write(_writer);
 	}
 
-	// Token: 0x06003BE0 RID: 15328 RVA: 0x001804EC File Offset: 0x0017E6EC
+	// Token: 0x06003BE9 RID: 15337 RVA: 0x00180A24 File Offset: 0x0017EC24
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		EntityPlayerLocal primaryPlayer = _world.GetPrimaryPlayer();
@@ -84,15 +84,9 @@ public class NetPackageEntitySpawnResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003BE1 RID: 15329 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x040030B6 RID: 12470
+	// Token: 0x040030AF RID: 12463
 	public bool success;
 
-	// Token: 0x040030B7 RID: 12471
+	// Token: 0x040030B0 RID: 12464
 	public ItemValue itemValue;
 }

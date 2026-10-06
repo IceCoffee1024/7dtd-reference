@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B0F RID: 2831
+// Token: 0x02000B21 RID: 2849
 public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 {
-	// Token: 0x0600555C RID: 21852 RVA: 0x0020A2C9 File Offset: 0x002084C9
+	// Token: 0x06005575 RID: 21877 RVA: 0x0020D539 File Offset: 0x0020B739
 	public ChunkBlockLayerLegacy()
 	{
 		this.wPow = 4;
@@ -13,20 +13,20 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		this.m_Stability = new SmartArray(this.wPow, 0, this.hPow);
 	}
 
-	// Token: 0x0600555D RID: 21853 RVA: 0x0020A308 File Offset: 0x00208508
+	// Token: 0x06005576 RID: 21878 RVA: 0x0020D578 File Offset: 0x0020B778
 	public BlockValue GetAt(int _x, int _y, int _z)
 	{
 		return new BlockValue((uint)((this.m_Upper16Bits != null) ? (((int)this.m_Upper16Bits[_x + (_z << this.wPow)] << 16) | (int)this.m_Lower16Bits[_x + (_z << this.wPow)]) : ((int)this.m_Lower16Bits[_x + (_z << this.wPow)])));
 	}
 
-	// Token: 0x0600555E RID: 21854 RVA: 0x0020A364 File Offset: 0x00208564
+	// Token: 0x06005577 RID: 21879 RVA: 0x0020D5D4 File Offset: 0x0020B7D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue getAt(int _offs)
 	{
 		return new BlockValue((uint)((this.m_Upper16Bits != null) ? (((int)this.m_Upper16Bits[_offs] << 16) | (int)this.m_Lower16Bits[_offs]) : ((int)this.m_Lower16Bits[_offs])));
 	}
 
-	// Token: 0x0600555F RID: 21855 RVA: 0x0020A394 File Offset: 0x00208594
+	// Token: 0x06005578 RID: 21880 RVA: 0x0020D604 File Offset: 0x0020B804
 	public void SetAt(int _x, int _y, int _z, uint _fullBlock)
 	{
 		int num = _x + (_z << this.wPow);
@@ -81,19 +81,19 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06005560 RID: 21856 RVA: 0x0020A509 File Offset: 0x00208709
+	// Token: 0x06005579 RID: 21881 RVA: 0x0020D779 File Offset: 0x0020B979
 	public byte GetStabilityAt(int _x, int _y)
 	{
 		return this.m_Stability.get(_x, 0, _y);
 	}
 
-	// Token: 0x06005561 RID: 21857 RVA: 0x0020A519 File Offset: 0x00208719
+	// Token: 0x0600557A RID: 21882 RVA: 0x0020D789 File Offset: 0x0020B989
 	public void SetStabilityAt(int _x, int _y, byte _v)
 	{
 		this.m_Stability.set(_x, 0, _y, _v);
 	}
 
-	// Token: 0x06005562 RID: 21858 RVA: 0x0020A52A File Offset: 0x0020872A
+	// Token: 0x0600557B RID: 21883 RVA: 0x0020D79A File Offset: 0x0020B99A
 	public void Reset()
 	{
 		Array.Clear(this.m_Lower16Bits, 0, this.m_Lower16Bits.Length);
@@ -106,30 +106,30 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		this.tickRefCount = 0;
 	}
 
-	// Token: 0x06005563 RID: 21859 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600557C RID: 21884 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06005564 RID: 21860 RVA: 0x0020A568 File Offset: 0x00208768
+	// Token: 0x0600557D RID: 21885 RVA: 0x0020D7D8 File Offset: 0x0020B9D8
 	public static int CalcOffset(int _x, int _z)
 	{
 		return (_x & 15) + ((_z & 15) << 4);
 	}
 
-	// Token: 0x06005565 RID: 21861 RVA: 0x0020A575 File Offset: 0x00208775
+	// Token: 0x0600557E RID: 21886 RVA: 0x0020D7E5 File Offset: 0x0020B9E5
 	public static int OffsetX(int _offset)
 	{
 		return _offset & 15;
 	}
 
-	// Token: 0x06005566 RID: 21862 RVA: 0x0020A57B File Offset: 0x0020877B
+	// Token: 0x0600557F RID: 21887 RVA: 0x0020D7EB File Offset: 0x0020B9EB
 	public static int OffsetY(int _offset)
 	{
 		return _offset >> 4;
 	}
 
-	// Token: 0x06005567 RID: 21863 RVA: 0x0020A580 File Offset: 0x00208780
+	// Token: 0x06005580 RID: 21888 RVA: 0x0020D7F0 File Offset: 0x0020B9F0
 	public void UpdateRefCounts()
 	{
 		this.blockRefCount = 0;
@@ -148,19 +148,19 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06005568 RID: 21864 RVA: 0x0020A5EE File Offset: 0x002087EE
+	// Token: 0x06005581 RID: 21889 RVA: 0x0020D85E File Offset: 0x0020BA5E
 	public int GetTickRefCount()
 	{
 		return this.tickRefCount;
 	}
 
-	// Token: 0x06005569 RID: 21865 RVA: 0x0020A5F6 File Offset: 0x002087F6
+	// Token: 0x06005582 RID: 21890 RVA: 0x0020D866 File Offset: 0x0020BA66
 	public bool IsOnlyTerrain()
 	{
 		return this.bOnlyTerrain;
 	}
 
-	// Token: 0x0600556A RID: 21866 RVA: 0x0020A600 File Offset: 0x00208800
+	// Token: 0x06005583 RID: 21891 RVA: 0x0020D870 File Offset: 0x0020BA70
 	public void Read(BinaryReader stream, uint _version, bool _bNetworkRead, byte[] _tempReadBuf)
 	{
 		if (_version >= 19U)
@@ -229,7 +229,7 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		this.CheckOnlyTerrain();
 	}
 
-	// Token: 0x0600556B RID: 21867 RVA: 0x0020A80C File Offset: 0x00208A0C
+	// Token: 0x06005584 RID: 21892 RVA: 0x0020DA7C File Offset: 0x0020BC7C
 	public void Write(BinaryWriter _bw, bool _bNetworkWrite, byte[] _tempSaveBuf)
 	{
 		for (int i = 0; i < this.m_Lower16Bits.Length; i++)
@@ -252,7 +252,7 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x0600556C RID: 21868 RVA: 0x0020A8C8 File Offset: 0x00208AC8
+	// Token: 0x06005585 RID: 21893 RVA: 0x0020DB38 File Offset: 0x0020BD38
 	public void CheckOnlyTerrain()
 	{
 		this.bOnlyTerrain = true;
@@ -268,54 +268,54 @@ public class ChunkBlockLayerLegacy : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x0600556D RID: 21869 RVA: 0x0020A929 File Offset: 0x00208B29
+	// Token: 0x06005586 RID: 21894 RVA: 0x0020DB99 File Offset: 0x0020BD99
 	public int GetUsedMem()
 	{
 		return this.m_Lower16Bits.Length * 2 + ((this.m_Upper16Bits != null) ? (this.m_Upper16Bits.Length * 2) : 0) + 20 + 2;
 	}
 
-	// Token: 0x0400423B RID: 16955
+	// Token: 0x04004278 RID: 17016
 	public ushort[] m_Lower16Bits;
 
-	// Token: 0x0400423C RID: 16956
+	// Token: 0x04004279 RID: 17017
 	public ushort[] m_Upper16Bits;
 
-	// Token: 0x0400423D RID: 16957
+	// Token: 0x0400427A RID: 17018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SmartArray m_Stability;
 
-	// Token: 0x0400423E RID: 16958
+	// Token: 0x0400427B RID: 17019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int wPow;
 
-	// Token: 0x0400423F RID: 16959
+	// Token: 0x0400427C RID: 17020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hPow;
 
-	// Token: 0x04004240 RID: 16960
+	// Token: 0x0400427D RID: 17021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bOnlyTerrain;
 
-	// Token: 0x04004241 RID: 16961
+	// Token: 0x0400427E RID: 17022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bOnlyBlocks;
 
-	// Token: 0x04004242 RID: 16962
+	// Token: 0x0400427F RID: 17023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blockRefCount;
 
-	// Token: 0x04004243 RID: 16963
+	// Token: 0x04004280 RID: 17024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tickRefCount;
 
-	// Token: 0x04004244 RID: 16964
+	// Token: 0x04004281 RID: 17025
 	public static int InstanceCount;
 
-	// Token: 0x04004245 RID: 16965
+	// Token: 0x04004282 RID: 17026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cLayerHeight = 1;
 
-	// Token: 0x04004246 RID: 16966
+	// Token: 0x04004283 RID: 17027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cArrSize = 256;
 }

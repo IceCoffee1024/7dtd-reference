@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001228 RID: 4648
+// Token: 0x02001240 RID: 4672
 public abstract class GUIWindowUGUI : GUIWindow
 {
-	// Token: 0x1700119E RID: 4510
-	// (get) Token: 0x06009477 RID: 38007
+	// Token: 0x170011E2 RID: 4578
+	// (get) Token: 0x06009505 RID: 38149
 	public abstract string UIPrefabPath { get; }
 
-	// Token: 0x06009478 RID: 38008 RVA: 0x00381E50 File Offset: 0x00380050
+	// Token: 0x06009506 RID: 38150 RVA: 0x00386698 File Offset: 0x00384898
 	public GUIWindowUGUI(string _id)
 		: base(_id)
 	{
@@ -17,7 +17,7 @@ public abstract class GUIWindowUGUI : GUIWindow
 		this.canvas.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06009479 RID: 38009 RVA: 0x00381E9D File Offset: 0x0038009D
+	// Token: 0x06009507 RID: 38151 RVA: 0x003866E5 File Offset: 0x003848E5
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -29,7 +29,7 @@ public abstract class GUIWindowUGUI : GUIWindow
 		this.shouldOpen = true;
 	}
 
-	// Token: 0x0600947A RID: 38010 RVA: 0x00381EC5 File Offset: 0x003800C5
+	// Token: 0x06009508 RID: 38152 RVA: 0x0038670D File Offset: 0x0038490D
 	public override void Update()
 	{
 		if (this.shouldOpen && !this.canvas.gameObject.activeSelf)
@@ -39,29 +39,29 @@ public abstract class GUIWindowUGUI : GUIWindow
 		}
 	}
 
-	// Token: 0x0600947B RID: 38011 RVA: 0x00381EF9 File Offset: 0x003800F9
+	// Token: 0x06009509 RID: 38153 RVA: 0x00386741 File Offset: 0x00384941
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.canvas.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600947C RID: 38012 RVA: 0x00381F12 File Offset: 0x00380112
+	// Token: 0x0600950A RID: 38154 RVA: 0x0038675A File Offset: 0x0038495A
 	public override void Cleanup()
 	{
 		global::UnityEngine.Object.Destroy(this.canvas.gameObject);
 		this.uiPrefab = null;
 	}
 
-	// Token: 0x04006F3B RID: 28475
+	// Token: 0x04006FA5 RID: 28581
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GameObject uiPrefab;
 
-	// Token: 0x04006F3C RID: 28476
+	// Token: 0x04006FA6 RID: 28582
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Canvas canvas;
 
-	// Token: 0x04006F3D RID: 28477
+	// Token: 0x04006FA7 RID: 28583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldOpen;
 }

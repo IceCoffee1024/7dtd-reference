@@ -2,11 +2,11 @@
 using SandboxOptions;
 using UnityEngine;
 
-// Token: 0x02001141 RID: 4417
+// Token: 0x02001159 RID: 4441
 public class XUiM_Trader : XUiModel
 {
-	// Token: 0x1700101E RID: 4126
-	// (get) Token: 0x06008BA8 RID: 35752 RVA: 0x003524BB File Offset: 0x003506BB
+	// Token: 0x17001053 RID: 4179
+	// (get) Token: 0x06008C13 RID: 35859 RVA: 0x003568E3 File Offset: 0x00354AE3
 	public TraderData TraderData
 	{
 		get
@@ -19,7 +19,7 @@ public class XUiM_Trader : XUiModel
 		}
 	}
 
-	// Token: 0x06008BA9 RID: 35753 RVA: 0x003524D4 File Offset: 0x003506D4
+	// Token: 0x06008C14 RID: 35860 RVA: 0x003568FC File Offset: 0x00354AFC
 	public static int GetBuyPrice(XUi _xui, ItemValue itemValue, int count, ItemClass itemClass = null, int index = -1)
 	{
 		bool flag = false;
@@ -80,12 +80,12 @@ public class XUiM_Trader : XUiModel
 		}
 		else if (itemClass.HasSubItems)
 		{
-			for (int i = 0; i < itemValue.Modifications.Length; i++)
+			for (int i = 0; i < itemValue.ModificationCount; i++)
 			{
-				ItemValue itemValue2 = itemValue.Modifications[i];
-				if (!itemValue2.IsEmpty())
+				ItemValue modification = itemValue.GetModification(i);
+				if (!modification.IsEmpty())
 				{
-					num3 += (float)XUiM_Trader.GetBuyPrice(_xui, itemValue2, 1, null, -1);
+					num3 += (float)XUiM_Trader.GetBuyPrice(_xui, modification, 1, null, -1);
 				}
 			}
 		}
@@ -100,7 +100,7 @@ public class XUiM_Trader : XUiModel
 		return Mathf.CeilToInt((float)((int)(num3 * (float)(count / num2))) * SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.TraderBuyPrices));
 	}
 
-	// Token: 0x06008BAA RID: 35754 RVA: 0x0035271C File Offset: 0x0035091C
+	// Token: 0x06008C15 RID: 35861 RVA: 0x00356B40 File Offset: 0x00354D40
 	public static int GetSellPrice(XUi _xui, ItemValue itemValue, int count, ItemClass itemClass = null)
 	{
 		bool flag = false;
@@ -157,12 +157,12 @@ public class XUiM_Trader : XUiModel
 		}
 		else if (itemClass.HasSubItems)
 		{
-			for (int i = 0; i < itemValue.Modifications.Length; i++)
+			for (int i = 0; i < itemValue.ModificationCount; i++)
 			{
-				ItemValue itemValue2 = itemValue.Modifications[i];
-				if (!itemValue2.IsEmpty())
+				ItemValue modification = itemValue.GetModification(i);
+				if (!modification.IsEmpty())
 				{
-					num3 += (float)XUiM_Trader.GetSellPrice(_xui, itemValue2, 1, null);
+					num3 += (float)XUiM_Trader.GetSellPrice(_xui, modification, 1, null);
 				}
 			}
 		}
@@ -177,9 +177,9 @@ public class XUiM_Trader : XUiModel
 		return Mathf.CeilToInt((float)((int)(num3 * (float)(count / num2))) * SandboxOptionManager.GetFloat(global::SandboxOptions.SandboxOptions.TraderSellPrices));
 	}
 
-	// Token: 0x0400674A RID: 26442
+	// Token: 0x0400679F RID: 26527
 	public ITrader Trader;
 
-	// Token: 0x0400674B RID: 26443
+	// Token: 0x040067A0 RID: 26528
 	public XUiC_TraderWindowGroup TraderWindowGroup;
 }

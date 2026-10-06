@@ -5,10 +5,10 @@ using System.IO;
 using System.Xml;
 using UnityEngine;
 
-// Token: 0x020012A5 RID: 4773
+// Token: 0x020012BD RID: 4797
 public class UIAtlasFromFolder
 {
-	// Token: 0x06009776 RID: 38774 RVA: 0x00390CDB File Offset: 0x0038EEDB
+	// Token: 0x06009803 RID: 38915 RVA: 0x00395543 File Offset: 0x00393743
 	public static IEnumerator CreateUiAtlasFromFolder(string _folder, Shader _shader, Action<UIAtlas> _resultHandler)
 	{
 		MicroStopwatch coRoutineSw = new MicroStopwatch(true);
@@ -87,7 +87,7 @@ public class UIAtlasFromFolder
 		yield break;
 	}
 
-	// Token: 0x06009777 RID: 38775 RVA: 0x00390CF8 File Offset: 0x0038EEF8
+	// Token: 0x06009804 RID: 38916 RVA: 0x00395560 File Offset: 0x00393760
 	public static UIAtlas createUiAtlasFromTextures(string _name, Dictionary<string, Texture2D> _textures, Dictionary<string, UISpriteData> _customSpriteSettings, Shader _shader, string _dumpFolder = null, bool _applyAndUnreadable = true)
 	{
 		string[] array = new string[_textures.Count];
@@ -141,7 +141,7 @@ public class UIAtlasFromFolder
 		return uiatlas;
 	}
 
-	// Token: 0x06009778 RID: 38776 RVA: 0x00390F08 File Offset: 0x0038F108
+	// Token: 0x06009805 RID: 38917 RVA: 0x00395770 File Offset: 0x00393970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, UISpriteData> loadSpriteSettings(string _filename)
 	{

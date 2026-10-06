@@ -6,11 +6,11 @@ using Twitch;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000402 RID: 1026
+// Token: 0x02000404 RID: 1028
 [Preserve]
 public class AIDirector
 {
-	// Token: 0x06001FAC RID: 8108 RVA: 0x000BF931 File Offset: 0x000BDB31
+	// Token: 0x06001F9B RID: 8091 RVA: 0x000BF9E5 File Offset: 0x000BDBE5
 	public AIDirector(World _world)
 	{
 		this.World = _world;
@@ -18,7 +18,7 @@ public class AIDirector
 		this.Init();
 	}
 
-	// Token: 0x06001FAD RID: 8109 RVA: 0x000BF962 File Offset: 0x000BDB62
+	// Token: 0x06001F9C RID: 8092 RVA: 0x000BFA16 File Offset: 0x000BDC16
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -26,7 +26,7 @@ public class AIDirector
 		this.ComponentsInitNewGame();
 	}
 
-	// Token: 0x06001FAE RID: 8110 RVA: 0x000BF97C File Offset: 0x000BDB7C
+	// Token: 0x06001F9D RID: 8093 RVA: 0x000BFA30 File Offset: 0x000BDC30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateComponents()
 	{
@@ -41,7 +41,7 @@ public class AIDirector
 		this.bloodMoonComponent = this.GetComponent<AIDirectorBloodMoonComponent>();
 	}
 
-	// Token: 0x06001FAF RID: 8111 RVA: 0x000BF9D8 File Offset: 0x000BDBD8
+	// Token: 0x06001F9E RID: 8094 RVA: 0x000BFA8C File Offset: 0x000BDC8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T CreateComponent<T>() where T : AIDirectorComponent, new()
 	{
@@ -56,7 +56,7 @@ public class AIDirector
 		return t;
 	}
 
-	// Token: 0x06001FB0 RID: 8112 RVA: 0x000BFA38 File Offset: 0x000BDC38
+	// Token: 0x06001F9F RID: 8095 RVA: 0x000BFAEC File Offset: 0x000BDCEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComponentsInitNewGame()
 	{
@@ -66,7 +66,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB1 RID: 8113 RVA: 0x000BFA78 File Offset: 0x000BDC78
+	// Token: 0x06001FA0 RID: 8096 RVA: 0x000BFB2C File Offset: 0x000BDD2C
 	public T GetComponent<T>() where T : AIDirectorComponent
 	{
 		string fullName = typeof(T).FullName;
@@ -78,8 +78,8 @@ public class AIDirector
 		return default(T);
 	}
 
-	// Token: 0x170003B7 RID: 951
-	// (get) Token: 0x06001FB2 RID: 8114 RVA: 0x000BFABF File Offset: 0x000BDCBF
+	// Token: 0x170003AB RID: 939
+	// (get) Token: 0x06001FA1 RID: 8097 RVA: 0x000BFB73 File Offset: 0x000BDD73
 	public AIDirectorBloodMoonComponent BloodMoonComponent
 	{
 		get
@@ -88,8 +88,8 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB3 RID: 8115 RVA: 0x000BFAC8 File Offset: 0x000BDCC8
-	public void Load(BinaryReader stream)
+	// Token: 0x06001FA2 RID: 8098 RVA: 0x000BFB7C File Offset: 0x000BDD7C
+	public void Load(PooledBinaryReader stream)
 	{
 		int num = stream.ReadInt32();
 		this.ComponentsLoad(stream, num);
@@ -99,16 +99,16 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB4 RID: 8116 RVA: 0x000BFAF7 File Offset: 0x000BDCF7
-	public void Save(BinaryWriter stream)
+	// Token: 0x06001FA3 RID: 8099 RVA: 0x000BFBAB File Offset: 0x000BDDAB
+	public void Save(PooledBinaryWriter stream)
 	{
 		stream.Write(10);
 		this.ComponentsSave(stream);
 	}
 
-	// Token: 0x06001FB5 RID: 8117 RVA: 0x000BFB08 File Offset: 0x000BDD08
+	// Token: 0x06001FA4 RID: 8100 RVA: 0x000BFBBC File Offset: 0x000BDDBC
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void ComponentsLoad(BinaryReader reader, int version)
+	public void ComponentsLoad(PooledBinaryReader reader, int version)
 	{
 		for (int i = 0; i < this.components.list.Count; i++)
 		{
@@ -116,9 +116,9 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB6 RID: 8118 RVA: 0x000BFB48 File Offset: 0x000BDD48
+	// Token: 0x06001FA5 RID: 8101 RVA: 0x000BFBFC File Offset: 0x000BDDFC
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void ComponentsSave(BinaryWriter writer)
+	public void ComponentsSave(PooledBinaryWriter writer)
 	{
 		for (int i = 0; i < this.components.list.Count; i++)
 		{
@@ -126,14 +126,14 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB7 RID: 8119 RVA: 0x000BFB87 File Offset: 0x000BDD87
+	// Token: 0x06001FA6 RID: 8102 RVA: 0x000BFC3B File Offset: 0x000BDE3B
 	public void Tick(double dt)
 	{
 		this.ComponentsTick(dt);
 		this.DebugTick();
 	}
 
-	// Token: 0x06001FB8 RID: 8120 RVA: 0x000BFB98 File Offset: 0x000BDD98
+	// Token: 0x06001FA7 RID: 8103 RVA: 0x000BFC4C File Offset: 0x000BDE4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComponentsTick(double _dt)
 	{
@@ -143,13 +143,13 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FB9 RID: 8121 RVA: 0x000BFBD7 File Offset: 0x000BDDD7
+	// Token: 0x06001FA8 RID: 8104 RVA: 0x000BFC8B File Offset: 0x000BDE8B
 	public static bool CanSpawn(float _priority = 1f)
 	{
 		return (float)GameStats.GetInt(EnumGameStats.EnemyCount) < (float)GamePrefs.GetInt(EnumGamePrefs.MaxSpawnedZombies) * _priority;
 	}
 
-	// Token: 0x06001FBA RID: 8122 RVA: 0x000BFBF0 File Offset: 0x000BDDF0
+	// Token: 0x06001FA9 RID: 8105 RVA: 0x000BFCA4 File Offset: 0x000BDEA4
 	public static ulong GetActivityWorldTimeDelay()
 	{
 		float num = (float)GameStats.GetInt(EnumGameStats.TimeOfDayIncPerSec) / 6f;
@@ -157,7 +157,7 @@ public class AIDirector
 		return (ulong)(1000f * num);
 	}
 
-	// Token: 0x06001FBB RID: 8123 RVA: 0x000BFC28 File Offset: 0x000BDE28
+	// Token: 0x06001FAA RID: 8106 RVA: 0x000BFCDC File Offset: 0x000BDEDC
 	public void NotifyActivity(EnumAIDirectorChunkEvent type, Vector3i position, float value, float _duration = 720f)
 	{
 		if (value > 0f && GameStats.GetBool(EnumGameStats.ZombieHordeMeter) && GameStats.GetBool(EnumGameStats.IsSpawnEnemies) && AIDirector.HeatMapSensitivityModifier > 0f && !this.BloodMoonComponent.BloodMoonActive && !TwitchManager.BossHordeActive)
@@ -167,7 +167,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FBC RID: 8124 RVA: 0x000BFC8C File Offset: 0x000BDE8C
+	// Token: 0x06001FAB RID: 8107 RVA: 0x000BFD40 File Offset: 0x000BDF40
 	public void NotifyNoise(Entity instigator, Vector3 position, string clipName, float volumeScale)
 	{
 		AIDirectorData.Noise noise;
@@ -211,24 +211,24 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FBD RID: 8125 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001FAC RID: 8108 RVA: 0x000027FC File Offset: 0x000009FC
 	public void NotifyIntentToAttack(EntityAlive zombie, EntityAlive player)
 	{
 	}
 
-	// Token: 0x06001FBE RID: 8126 RVA: 0x000BFD7C File Offset: 0x000BDF7C
+	// Token: 0x06001FAD RID: 8109 RVA: 0x000BFE30 File Offset: 0x000BE030
 	public void UpdatePlayerInventory(EntityPlayerLocal player)
 	{
 		this.playerManagementComponent.UpdatePlayerInventory(player);
 	}
 
-	// Token: 0x06001FBF RID: 8127 RVA: 0x000BFD8A File Offset: 0x000BDF8A
+	// Token: 0x06001FAE RID: 8110 RVA: 0x000BFE3E File Offset: 0x000BE03E
 	public void UpdatePlayerInventory(int entityId, AIDirectorPlayerInventory inventory)
 	{
 		this.playerManagementComponent.UpdatePlayerInventory(entityId, inventory);
 	}
 
-	// Token: 0x06001FC0 RID: 8128 RVA: 0x000BFD9C File Offset: 0x000BDF9C
+	// Token: 0x06001FAF RID: 8111 RVA: 0x000BFE50 File Offset: 0x000BE050
 	public void OnSoundPlayedAtPosition(int _entityThatCausedSound, Vector3 _position, string clipName, float volumeScale)
 	{
 		Entity entity = null;
@@ -239,7 +239,7 @@ public class AIDirector
 		this.NotifyNoise(entity, _position, clipName, volumeScale);
 	}
 
-	// Token: 0x06001FC1 RID: 8129 RVA: 0x000BFDC8 File Offset: 0x000BDFC8
+	// Token: 0x06001FB0 RID: 8112 RVA: 0x000BFE7C File Offset: 0x000BE07C
 	public void AddEntity(Entity entity)
 	{
 		EntityPlayer entityPlayer;
@@ -249,7 +249,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FC2 RID: 8130 RVA: 0x000BFDEC File Offset: 0x000BDFEC
+	// Token: 0x06001FB1 RID: 8113 RVA: 0x000BFEA0 File Offset: 0x000BE0A0
 	public void RemoveEntity(Entity entity)
 	{
 		EntityPlayer entityPlayer;
@@ -259,7 +259,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FC3 RID: 8131 RVA: 0x000BFE0F File Offset: 0x000BE00F
+	// Token: 0x06001FB2 RID: 8114 RVA: 0x000BFEC3 File Offset: 0x000BE0C3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddPlayer(EntityPlayer player)
 	{
@@ -267,7 +267,7 @@ public class AIDirector
 		this.BloodMoonComponent.AddPlayer(player);
 	}
 
-	// Token: 0x06001FC4 RID: 8132 RVA: 0x000BFE29 File Offset: 0x000BE029
+	// Token: 0x06001FB3 RID: 8115 RVA: 0x000BFEDD File Offset: 0x000BE0DD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemovePlayer(EntityPlayer player)
 	{
@@ -275,14 +275,14 @@ public class AIDirector
 		this.BloodMoonComponent.RemovePlayer(player);
 	}
 
-	// Token: 0x06001FC5 RID: 8133 RVA: 0x000BFE43 File Offset: 0x000BE043
+	// Token: 0x06001FB4 RID: 8116 RVA: 0x000BFEF7 File Offset: 0x000BE0F7
 	public static void LogAI(string _format, params object[] _args)
 	{
 		_format = string.Format("AIDirector: {0}", _format);
 		Log.Out(_format, _args);
 	}
 
-	// Token: 0x06001FC6 RID: 8134 RVA: 0x000BFE59 File Offset: 0x000BE059
+	// Token: 0x06001FB5 RID: 8117 RVA: 0x000BFF0D File Offset: 0x000BE10D
 	public static void LogAIExtra(string _format, params object[] _args)
 	{
 		if (AIDirectorConstants.DebugOutput)
@@ -291,7 +291,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FC7 RID: 8135 RVA: 0x000BFE69 File Offset: 0x000BE069
+	// Token: 0x06001FB6 RID: 8118 RVA: 0x000BFF1D File Offset: 0x000BE11D
 	public void DebugFrameLateUpdate()
 	{
 		if (AIDirector.debugSendLatencyToPlayerIds.Count > 0)
@@ -300,7 +300,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FC8 RID: 8136 RVA: 0x000BFE7E File Offset: 0x000BE07E
+	// Token: 0x06001FB7 RID: 8119 RVA: 0x000BFF32 File Offset: 0x000BE132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DebugTick()
 	{
@@ -310,7 +310,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FC9 RID: 8137 RVA: 0x000BFE94 File Offset: 0x000BE094
+	// Token: 0x06001FB8 RID: 8120 RVA: 0x000BFF48 File Offset: 0x000BE148
 	public static void DebugToggleSendNameInfo(int playerId)
 	{
 		if (AIDirector.debugSendNameInfoToPlayerIds.Remove(playerId))
@@ -324,7 +324,7 @@ public class AIDirector
 		AIDirector.debugSendNameInfoToPlayerIds.Add(playerId);
 	}
 
-	// Token: 0x06001FCA RID: 8138 RVA: 0x000BFF18 File Offset: 0x000BE118
+	// Token: 0x06001FB9 RID: 8121 RVA: 0x000BFFCC File Offset: 0x000BE1CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DebugSendNameInfo()
 	{
@@ -364,7 +364,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FCB RID: 8139 RVA: 0x000C0064 File Offset: 0x000BE264
+	// Token: 0x06001FBA RID: 8122 RVA: 0x000C0118 File Offset: 0x000BE318
 	public static void DebugReceiveNameInfo(int entityId, byte[] _data)
 	{
 		World world = GameManager.Instance.World;
@@ -381,14 +381,14 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FCC RID: 8140 RVA: 0x000C00AF File Offset: 0x000BE2AF
+	// Token: 0x06001FBB RID: 8123 RVA: 0x000C0163 File Offset: 0x000BE363
 	public static void DebugToggleFreezePos()
 	{
 		AIDirector.debugFreezePos = !AIDirector.debugFreezePos;
 		Log.Out("DebugToggleFreezePos {0}", new object[] { AIDirector.debugFreezePos });
 	}
 
-	// Token: 0x06001FCD RID: 8141 RVA: 0x000C00DC File Offset: 0x000BE2DC
+	// Token: 0x06001FBC RID: 8124 RVA: 0x000C0190 File Offset: 0x000BE390
 	public static void DebugToggleSendLatency(int playerId)
 	{
 		if (!AIDirector.debugSendLatencyToPlayerIds.Remove(playerId))
@@ -407,7 +407,7 @@ public class AIDirector
 		AIDirector.DebugLatencyOff();
 	}
 
-	// Token: 0x06001FCE RID: 8142 RVA: 0x000C0178 File Offset: 0x000BE378
+	// Token: 0x06001FBD RID: 8125 RVA: 0x000C022C File Offset: 0x000BE42C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DebugSendLatency()
 	{
@@ -466,7 +466,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FCF RID: 8143 RVA: 0x000C03D8 File Offset: 0x000BE5D8
+	// Token: 0x06001FBE RID: 8126 RVA: 0x000C048C File Offset: 0x000BE68C
 	public static void DebugReceiveLatency(int entityId, byte[] _data)
 	{
 		World world = GameManager.Instance.World;
@@ -523,7 +523,7 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x06001FD0 RID: 8144 RVA: 0x000C05CC File Offset: 0x000BE7CC
+	// Token: 0x06001FBF RID: 8127 RVA: 0x000C0680 File Offset: 0x000BE880
 	public static void DebugLatencyOff()
 	{
 		World world = GameManager.Instance.World;
@@ -545,80 +545,80 @@ public class AIDirector
 		}
 	}
 
-	// Token: 0x0400156E RID: 5486
+	// Token: 0x04001565 RID: 5477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cActivityDuration = 720f;
 
-	// Token: 0x0400156F RID: 5487
+	// Token: 0x04001566 RID: 5478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cActivityNoiseDuration = 240f;
 
-	// Token: 0x04001570 RID: 5488
+	// Token: 0x04001567 RID: 5479
 	public readonly World World;
 
-	// Token: 0x04001571 RID: 5489
+	// Token: 0x04001568 RID: 5480
 	public GameRandom random;
 
-	// Token: 0x04001572 RID: 5490
+	// Token: 0x04001569 RID: 5481
 	public static float HeatMapSensitivityModifier = 1f;
 
-	// Token: 0x04001573 RID: 5491
+	// Token: 0x0400156A RID: 5482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DictionaryList<string, AIDirectorComponent> components = new DictionaryList<string, AIDirectorComponent>();
 
-	// Token: 0x04001574 RID: 5492
+	// Token: 0x0400156B RID: 5483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorPlayerManagementComponent playerManagementComponent;
 
-	// Token: 0x04001575 RID: 5493
+	// Token: 0x0400156C RID: 5484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorChunkEventComponent chunkEventComponent;
 
-	// Token: 0x04001576 RID: 5494
+	// Token: 0x0400156D RID: 5485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorBloodMoonComponent bloodMoonComponent;
 
-	// Token: 0x04001577 RID: 5495
+	// Token: 0x0400156E RID: 5486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> debugEntities = new List<Entity>();
 
-	// Token: 0x04001578 RID: 5496
+	// Token: 0x0400156F RID: 5487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cDebugSendNameInfoTickRate = 5;
 
-	// Token: 0x04001579 RID: 5497
+	// Token: 0x04001570 RID: 5488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> debugSendNameInfoToPlayerIds = new List<int>();
 
-	// Token: 0x0400157A RID: 5498
+	// Token: 0x04001571 RID: 5489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int debugNameInfoTicks;
 
-	// Token: 0x0400157B RID: 5499
+	// Token: 0x04001572 RID: 5490
 	public static bool debugFreezePos;
 
-	// Token: 0x0400157C RID: 5500
+	// Token: 0x04001573 RID: 5491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cLatencyName = "DebugLatency";
 
-	// Token: 0x0400157D RID: 5501
+	// Token: 0x04001574 RID: 5492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryStream latencyStream = new MemoryStream();
 
-	// Token: 0x0400157E RID: 5502
+	// Token: 0x04001575 RID: 5493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> debugSendLatencyToPlayerIds = new List<int>();
 
-	// Token: 0x02000403 RID: 1027
+	// Token: 0x02000405 RID: 1029
 	public enum HordeEvent
 	{
-		// Token: 0x04001580 RID: 5504
+		// Token: 0x04001577 RID: 5495
 		None,
-		// Token: 0x04001581 RID: 5505
+		// Token: 0x04001578 RID: 5496
 		Warn1,
-		// Token: 0x04001582 RID: 5506
+		// Token: 0x04001579 RID: 5497
 		Warn2,
-		// Token: 0x04001583 RID: 5507
+		// Token: 0x0400157A RID: 5498
 		Spawn
 	}
 }

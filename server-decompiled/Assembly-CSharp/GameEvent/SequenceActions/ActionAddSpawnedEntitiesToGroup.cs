@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001963 RID: 6499
+	// Token: 0x0200198F RID: 6543
 	[Preserve]
 	public class ActionAddSpawnedEntitiesToGroup : BaseAction
 	{
-		// Token: 0x0600C7F7 RID: 51191 RVA: 0x0049539C File Offset: 0x0049359C
+		// Token: 0x0600C94F RID: 51535 RVA: 0x0049988C File Offset: 0x00497A8C
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			FastTags<TagGroup.Global> fastTags = FastTags<TagGroup.Global>.Parse(this.tag);
@@ -25,7 +25,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7F8 RID: 51192 RVA: 0x00495468 File Offset: 0x00493668
+		// Token: 0x0600C950 RID: 51536 RVA: 0x00499958 File Offset: 0x00497B58
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddSpawnedEntitiesToGroup.PropTargetOnly, ref this.targetOnly);
 		}
 
-		// Token: 0x0600C7F9 RID: 51193 RVA: 0x004954C0 File Offset: 0x004936C0
+		// Token: 0x0600C951 RID: 51537 RVA: 0x004999B0 File Offset: 0x00497BB0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -48,35 +48,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040096BE RID: 38590
+		// Token: 0x04009784 RID: 38788
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x040096BF RID: 38591
+		// Token: 0x04009785 RID: 38789
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string tag;
 
-		// Token: 0x040096C0 RID: 38592
+		// Token: 0x04009786 RID: 38790
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool targetOnly;
 
-		// Token: 0x040096C1 RID: 38593
+		// Token: 0x04009787 RID: 38791
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string excludeBuff = "";
 
-		// Token: 0x040096C2 RID: 38594
+		// Token: 0x04009788 RID: 38792
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 
-		// Token: 0x040096C3 RID: 38595
+		// Token: 0x04009789 RID: 38793
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTag = "entity_tags";
 
-		// Token: 0x040096C4 RID: 38596
+		// Token: 0x0400978A RID: 38794
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetOnly = "target_only";
 
-		// Token: 0x040096C5 RID: 38597
+		// Token: 0x0400978B RID: 38795
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeBuff = "exclude_buff";
 	}

@@ -4,12 +4,12 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000121 RID: 289
+// Token: 0x02000123 RID: 291
 [Preserve]
 public class BlockHazard : BlockParticle
 {
 	// Token: 0x17000093 RID: 147
-	// (get) Token: 0x0600079D RID: 1949 RVA: 0x00020021 File Offset: 0x0001E221
+	// (get) Token: 0x060007A3 RID: 1955 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowBlockTriggers
 	{
 		get
@@ -18,7 +18,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x0600079F RID: 1951 RVA: 0x000361F8 File Offset: 0x000343F8
+	// Token: 0x060007A5 RID: 1957 RVA: 0x000362EC File Offset: 0x000344EC
 	public override void Init()
 	{
 		base.Init();
@@ -58,7 +58,7 @@ public class BlockHazard : BlockParticle
 		base.Properties.ParseString(BlockHazard.PropStopSound, ref this.StopSound);
 	}
 
-	// Token: 0x060007A0 RID: 1952 RVA: 0x00036388 File Offset: 0x00034588
+	// Token: 0x060007A6 RID: 1958 RVA: 0x0003647C File Offset: 0x0003467C
 	public override byte GetLightValue(BlockValue _blockValue)
 	{
 		if ((_blockValue.meta & 2) == 0)
@@ -68,7 +68,7 @@ public class BlockHazard : BlockParticle
 		return base.GetLightValue(_blockValue);
 	}
 
-	// Token: 0x060007A1 RID: 1953 RVA: 0x000363A0 File Offset: 0x000345A0
+	// Token: 0x060007A7 RID: 1959 RVA: 0x00036494 File Offset: 0x00034694
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -84,7 +84,7 @@ public class BlockHazard : BlockParticle
 		return string.Format(Localization.Get("useSwitchLightOn", false, null), text);
 	}
 
-	// Token: 0x060007A2 RID: 1954 RVA: 0x00036420 File Offset: 0x00034620
+	// Token: 0x060007A8 RID: 1960 RVA: 0x00036514 File Offset: 0x00034714
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "light"))
@@ -101,7 +101,7 @@ public class BlockHazard : BlockParticle
 		return false;
 	}
 
-	// Token: 0x060007A3 RID: 1955 RVA: 0x00036474 File Offset: 0x00034674
+	// Token: 0x060007A9 RID: 1961 RVA: 0x00036568 File Offset: 0x00034768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool toggleHazardStateForEditor(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -113,7 +113,7 @@ public class BlockHazard : BlockParticle
 		return true;
 	}
 
-	// Token: 0x060007A4 RID: 1956 RVA: 0x000364D8 File Offset: 0x000346D8
+	// Token: 0x060007AA RID: 1962 RVA: 0x000365CC File Offset: 0x000347CC
 	public bool IsHazardOn(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -125,7 +125,7 @@ public class BlockHazard : BlockParticle
 		return (_blockValue.meta & 2) > 0;
 	}
 
-	// Token: 0x060007A5 RID: 1957 RVA: 0x00036524 File Offset: 0x00034724
+	// Token: 0x060007AB RID: 1963 RVA: 0x00036618 File Offset: 0x00034818
 	public bool OriginalHazardState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -137,14 +137,14 @@ public class BlockHazard : BlockParticle
 		return (_blockValue.meta & 1) > 0;
 	}
 
-	// Token: 0x060007A6 RID: 1958 RVA: 0x0003656E File Offset: 0x0003476E
+	// Token: 0x060007AC RID: 1964 RVA: 0x00036662 File Offset: 0x00034862
 	public BlockValue SetHazardState(BlockValue _blockValue, bool isOn)
 	{
 		_blockValue.meta = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
 		return _blockValue;
 	}
 
-	// Token: 0x060007A7 RID: 1959 RVA: 0x0003658C File Offset: 0x0003478C
+	// Token: 0x060007AD RID: 1965 RVA: 0x00036680 File Offset: 0x00034880
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (_newBlockValue.ischild)
@@ -158,7 +158,7 @@ public class BlockHazard : BlockParticle
 		this.checkParticles(_world, _blockPos, _newBlockValue);
 	}
 
-	// Token: 0x060007A8 RID: 1960 RVA: 0x000365DC File Offset: 0x000347DC
+	// Token: 0x060007AE RID: 1966 RVA: 0x000366D0 File Offset: 0x000348D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateHazardState(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -227,7 +227,7 @@ public class BlockHazard : BlockParticle
 		return true;
 	}
 
-	// Token: 0x060007A9 RID: 1961 RVA: 0x00036798 File Offset: 0x00034998
+	// Token: 0x060007AF RID: 1967 RVA: 0x0003688C File Offset: 0x00034A8C
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		if (_blockValue.ischild)
@@ -239,13 +239,13 @@ public class BlockHazard : BlockParticle
 		this.checkParticles(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x060007AA RID: 1962 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060007B0 RID: 1968 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x060007AB RID: 1963 RVA: 0x000367C4 File Offset: 0x000349C4
+	// Token: 0x060007B1 RID: 1969 RVA: 0x000368B8 File Offset: 0x00034AB8
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = _world.IsEditor();
@@ -253,7 +253,7 @@ public class BlockHazard : BlockParticle
 		return this.cmds;
 	}
 
-	// Token: 0x060007AC RID: 1964 RVA: 0x00036814 File Offset: 0x00034A14
+	// Token: 0x060007B2 RID: 1970 RVA: 0x00036908 File Offset: 0x00034B08
 	public override void OnBlockReset(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (_blockValue.ischild)
@@ -272,7 +272,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x060007AD RID: 1965 RVA: 0x0003686C File Offset: 0x00034A6C
+	// Token: 0x060007B3 RID: 1971 RVA: 0x00036960 File Offset: 0x00034B60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -292,7 +292,7 @@ public class BlockHazard : BlockParticle
 		}
 	}
 
-	// Token: 0x060007AE RID: 1966 RVA: 0x000368E4 File Offset: 0x00034AE4
+	// Token: 0x060007B4 RID: 1972 RVA: 0x000369D8 File Offset: 0x00034BD8
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);
@@ -309,7 +309,7 @@ public class BlockHazard : BlockParticle
 		_blockChanges.Add(new BlockChangeInfo(_blockPos, _blockValue));
 	}
 
-	// Token: 0x060007AF RID: 1967 RVA: 0x00036980 File Offset: 0x00034B80
+	// Token: 0x060007B5 RID: 1973 RVA: 0x00036A74 File Offset: 0x00034C74
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (this.IsHazardOn(_world, _bvRef, _blockValue) && _damagePoints > 0 && this.buffActions != null && this.buffActions.Count > 0)
@@ -339,73 +339,73 @@ public class BlockHazard : BlockParticle
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x040008F9 RID: 2297
+	// Token: 0x040008FC RID: 2300
 	public const int cMetaOriginalState = 1;
 
-	// Token: 0x040008FA RID: 2298
+	// Token: 0x040008FD RID: 2301
 	public const int cMetaOn = 2;
 
-	// Token: 0x040008FB RID: 2299
+	// Token: 0x040008FE RID: 2302
 	public Vector3 DamageOffset = Vector3.zero;
 
-	// Token: 0x040008FC RID: 2300
+	// Token: 0x040008FF RID: 2303
 	public Vector3 DamageSize = Vector3.one;
 
-	// Token: 0x040008FD RID: 2301
+	// Token: 0x04000900 RID: 2304
 	public Vector3 SecondaryOffset = Vector3.zero;
 
-	// Token: 0x040008FE RID: 2302
+	// Token: 0x04000901 RID: 2305
 	public Vector3 SecondarySize = Vector3.one;
 
-	// Token: 0x040008FF RID: 2303
+	// Token: 0x04000902 RID: 2306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> buffActions;
 
-	// Token: 0x04000900 RID: 2304
+	// Token: 0x04000903 RID: 2307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> buffSecondaryActions;
 
-	// Token: 0x04000901 RID: 2305
+	// Token: 0x04000904 RID: 2308
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDamageOffset = "DamageOffset";
 
-	// Token: 0x04000902 RID: 2306
+	// Token: 0x04000905 RID: 2309
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDamageSize = "DamageSize";
 
-	// Token: 0x04000903 RID: 2307
+	// Token: 0x04000906 RID: 2310
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDamageBuffs = "DamageBuffs";
 
-	// Token: 0x04000904 RID: 2308
+	// Token: 0x04000907 RID: 2311
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSecondaryOffset = "SecondaryOffset";
 
-	// Token: 0x04000905 RID: 2309
+	// Token: 0x04000908 RID: 2312
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSecondarySize = "SecondarySize";
 
-	// Token: 0x04000906 RID: 2310
+	// Token: 0x04000909 RID: 2313
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSecondaryBuffs = "SecondaryBuffs";
 
-	// Token: 0x04000907 RID: 2311
+	// Token: 0x0400090A RID: 2314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStartSound = "StartSound";
 
-	// Token: 0x04000908 RID: 2312
+	// Token: 0x0400090B RID: 2315
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropStopSound = "StopSound";
 
-	// Token: 0x04000909 RID: 2313
+	// Token: 0x0400090C RID: 2316
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string StartSound;
 
-	// Token: 0x0400090A RID: 2314
+	// Token: 0x0400090D RID: 2317
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string StopSound;
 
-	// Token: 0x0400090B RID: 2315
+	// Token: 0x0400090E RID: 2318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

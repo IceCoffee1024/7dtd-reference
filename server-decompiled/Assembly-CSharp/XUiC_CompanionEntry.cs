@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EFC RID: 3836
+// Token: 0x02000F0B RID: 3851
 [Preserve]
 public class XUiC_CompanionEntry : XUiController
 {
-	// Token: 0x17000E15 RID: 3605
-	// (get) Token: 0x0600784A RID: 30794 RVA: 0x002D5713 File Offset: 0x002D3913
-	// (set) Token: 0x0600784B RID: 30795 RVA: 0x002D571B File Offset: 0x002D391B
+	// Token: 0x17000E32 RID: 3634
+	// (get) Token: 0x06007845 RID: 30789 RVA: 0x002D8AA7 File Offset: 0x002D6CA7
+	// (set) Token: 0x06007846 RID: 30790 RVA: 0x002D8AAF File Offset: 0x002D6CAF
 	public EntityAlive Companion { get; set; }
 
-	// Token: 0x0600784C RID: 30796 RVA: 0x002D5724 File Offset: 0x002D3924
+	// Token: 0x06007847 RID: 30791 RVA: 0x002D8AB8 File Offset: 0x002D6CB8
 	public override void Init()
 	{
 		base.Init();
@@ -59,7 +59,7 @@ public class XUiC_CompanionEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600784D RID: 30797 RVA: 0x002D5870 File Offset: 0x002D3A70
+	// Token: 0x06007848 RID: 30792 RVA: 0x002D8C04 File Offset: 0x002D6E04
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -104,7 +104,7 @@ public class XUiC_CompanionEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600784E RID: 30798 RVA: 0x002D59C9 File Offset: 0x002D3BC9
+	// Token: 0x06007849 RID: 30793 RVA: 0x002D8D5D File Offset: 0x002D6F5D
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetCompanion(EntityAlive entity)
 	{
@@ -117,7 +117,7 @@ public class XUiC_CompanionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600784F RID: 30799 RVA: 0x002D59F0 File Offset: 0x002D3BF0
+	// Token: 0x0600784A RID: 30794 RVA: 0x002D8D84 File Offset: 0x002D6F84
 	public bool HasChanged()
 	{
 		EntityPlayer entityPlayer = this.xui.playerUI.entityPlayer;
@@ -128,7 +128,7 @@ public class XUiC_CompanionEntry : XUiController
 		return flag;
 	}
 
-	// Token: 0x06007850 RID: 30800 RVA: 0x002D5A48 File Offset: 0x002D3C48
+	// Token: 0x0600784B RID: 30795 RVA: 0x002D8DDC File Offset: 0x002D6FDC
 	public void RefreshFill()
 	{
 		if (this.Companion == null)
@@ -172,7 +172,7 @@ public class XUiC_CompanionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007851 RID: 30801 RVA: 0x002D5C00 File Offset: 0x002D3E00
+	// Token: 0x0600784C RID: 30796 RVA: 0x002D8F94 File Offset: 0x002D7194
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -361,21 +361,21 @@ public class XUiC_CompanionEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007852 RID: 30802 RVA: 0x00295FE1 File Offset: 0x002941E1
+	// Token: 0x0600784D RID: 30797 RVA: 0x0029936D File Offset: 0x0029756D
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007853 RID: 30803 RVA: 0x002D609E File Offset: 0x002D429E
+	// Token: 0x0600784E RID: 30798 RVA: 0x002D9432 File Offset: 0x002D7632
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.SetCompanion(null);
 	}
 
-	// Token: 0x06007854 RID: 30804 RVA: 0x002D60B0 File Offset: 0x002D42B0
+	// Token: 0x0600784F RID: 30799 RVA: 0x002D9444 File Offset: 0x002D7644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ReturnRotation(EntityAlive _self, EntityAlive _other)
 	{
@@ -391,71 +391,71 @@ public class XUiC_CompanionEntry : XUiController
 		return num;
 	}
 
-	// Token: 0x040058F3 RID: 22771
+	// Token: 0x0400592B RID: 22827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barHealth;
 
-	// Token: 0x040058F4 RID: 22772
+	// Token: 0x0400592C RID: 22828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barHealthModifiedMax;
 
-	// Token: 0x040058F5 RID: 22773
+	// Token: 0x0400592D RID: 22829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barStamina;
 
-	// Token: 0x040058F6 RID: 22774
+	// Token: 0x0400592E RID: 22830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barStaminaModifiedMax;
 
-	// Token: 0x040058F7 RID: 22775
+	// Token: 0x0400592F RID: 22831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite arrowContent;
 
-	// Token: 0x040058F8 RID: 22776
+	// Token: 0x04005930 RID: 22832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastHealthValue;
 
-	// Token: 0x040058F9 RID: 22777
+	// Token: 0x04005931 RID: 22833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastStaminaValue;
 
-	// Token: 0x040058FA RID: 22778
+	// Token: 0x04005932 RID: 22834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float distance;
 
-	// Token: 0x040058FB RID: 22779
+	// Token: 0x04005933 RID: 22835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float deltaTime;
 
-	// Token: 0x040058FC RID: 22780
+	// Token: 0x04005934 RID: 22836
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float updateTime;
 
-	// Token: 0x040058FD RID: 22781
+	// Token: 0x04005935 RID: 22837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float arrowRotation;
 
-	// Token: 0x040058FE RID: 22782
+	// Token: 0x04005936 RID: 22838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastArrowRotation;
 
-	// Token: 0x040058FF RID: 22783
+	// Token: 0x04005937 RID: 22839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float oldValue;
 
-	// Token: 0x04005900 RID: 22784
+	// Token: 0x04005938 RID: 22840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt healthcurrentFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005901 RID: 22785
+	// Token: 0x04005939 RID: 22841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> healthcurrentWMaxFormatter = new CachedStringFormatter<int, int>((int _i, int _i2) => string.Format("{0}/{1}", _i, _i2));
 
-	// Token: 0x04005902 RID: 22786
+	// Token: 0x0400593A RID: 22842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat healthfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005903 RID: 22787
+	// Token: 0x0400593B RID: 22843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float> distanceFormatter = new CachedStringFormatter<float>(delegate(float _f)
 	{
@@ -466,11 +466,11 @@ public class XUiC_CompanionEntry : XUiController
 		return _f.ToCultureInvariantString("0.0") + " M";
 	});
 
-	// Token: 0x04005904 RID: 22788
+	// Token: 0x0400593C RID: 22844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005905 RID: 22789
+	// Token: 0x0400593D RID: 22845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor arrowcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

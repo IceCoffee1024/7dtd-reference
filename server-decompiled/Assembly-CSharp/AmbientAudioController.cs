@@ -2,11 +2,11 @@
 using MusicUtils;
 using UnityEngine.Audio;
 
-// Token: 0x020000AE RID: 174
+// Token: 0x020000B0 RID: 176
 public class AmbientAudioController : IGamePrefsChangedListener
 {
 	// Token: 0x17000048 RID: 72
-	// (get) Token: 0x06000351 RID: 849 RVA: 0x0001877E File Offset: 0x0001697E
+	// (get) Token: 0x06000357 RID: 855 RVA: 0x000188AE File Offset: 0x00016AAE
 	public static AmbientAudioController Instance
 	{
 		get
@@ -19,14 +19,14 @@ public class AmbientAudioController : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000352 RID: 850 RVA: 0x00018796 File Offset: 0x00016996
+	// Token: 0x06000358 RID: 856 RVA: 0x000188C6 File Offset: 0x00016AC6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AmbientAudioController()
 	{
 		GamePrefs.AddChangeListener(this);
 	}
 
-	// Token: 0x06000354 RID: 852 RVA: 0x000187F1 File Offset: 0x000169F1
+	// Token: 0x0600035A RID: 858 RVA: 0x00018921 File Offset: 0x00016B21
 	public void SetAmbientVolume(float _val)
 	{
 		if (AmbientAudioController.master)
@@ -35,7 +35,7 @@ public class AmbientAudioController : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000355 RID: 853 RVA: 0x0001881A File Offset: 0x00016A1A
+	// Token: 0x0600035B RID: 859 RVA: 0x0001894A File Offset: 0x00016B4A
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsAmbientVolumeLevel)
@@ -44,15 +44,15 @@ public class AmbientAudioController : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x040003C8 RID: 968
+	// Token: 0x040003CB RID: 971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AmbientAudioController instance;
 
-	// Token: 0x040003C9 RID: 969
+	// Token: 0x040003CC RID: 972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AudioMixer master = DataLoader.LoadAsset<AudioMixer>("@:Sound_Mixers/MasterAudioMixer.mixer", false);
 
-	// Token: 0x040003CA RID: 970
+	// Token: 0x040003CD RID: 973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LogarithmicCurve volumeCurve = new LogarithmicCurve(2.0, 6.0, -80f, 0f, 0f, 1f);
 }

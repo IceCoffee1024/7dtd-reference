@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000832 RID: 2098
+// Token: 0x02000833 RID: 2099
 [Preserve]
 public class NetPackagePlayerVendingMachine : NetPackage
 {
-	// Token: 0x06003D9C RID: 15772 RVA: 0x00186A3D File Offset: 0x00184C3D
+	// Token: 0x06003D56 RID: 15702 RVA: 0x00186575 File Offset: 0x00184775
 	public NetPackagePlayerVendingMachine Setup(PlatformUserIdentifierAbs _userId, Vector3i _position, bool _removing)
 	{
 		this.userId = _userId;
@@ -14,7 +14,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D9D RID: 15773 RVA: 0x00186A55 File Offset: 0x00184C55
+	// Token: 0x06003D57 RID: 15703 RVA: 0x0018658D File Offset: 0x0018478D
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.userId = PlatformUserIdentifierAbs.FromStream(_reader, false, false);
@@ -22,7 +22,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		this.removing = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003D9E RID: 15774 RVA: 0x00186A90 File Offset: 0x00184C90
+	// Token: 0x06003D58 RID: 15704 RVA: 0x001865C8 File Offset: 0x001847C8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -33,7 +33,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		_writer.Write(this.removing);
 	}
 
-	// Token: 0x06003D9F RID: 15775 RVA: 0x00186AF0 File Offset: 0x00184CF0
+	// Token: 0x06003D59 RID: 15705 RVA: 0x00186628 File Offset: 0x00184828
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PersistentPlayerData persistentPlayerData2;
@@ -52,18 +52,12 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		}
 	}
 
-	// Token: 0x06003DA0 RID: 15776 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x040031E3 RID: 12771
+	// Token: 0x040031CA RID: 12746
 	public PlatformUserIdentifierAbs userId;
 
-	// Token: 0x040031E4 RID: 12772
+	// Token: 0x040031CB RID: 12747
 	public Vector3i position;
 
-	// Token: 0x040031E5 RID: 12773
+	// Token: 0x040031CC RID: 12748
 	public bool removing;
 }

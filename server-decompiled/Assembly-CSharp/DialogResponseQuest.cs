@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002EE RID: 750
+// Token: 0x020002F1 RID: 753
 public class DialogResponseQuest : DialogResponse
 {
-	// Token: 0x06001587 RID: 5511 RVA: 0x00080C20 File Offset: 0x0007EE20
+	// Token: 0x06001584 RID: 5508 RVA: 0x00080ED4 File Offset: 0x0007F0D4
 	public DialogResponseQuest(string _questID, string _nextStatementID, string _returnStatementID, string _type, Dialog _ownerDialog, int _listIndex = -1, int _tier = -1)
 		: base(_questID)
 	{
@@ -121,22 +121,22 @@ public class DialogResponseQuest : DialogResponse
 		}
 	}
 
-	// Token: 0x04000E76 RID: 3702
+	// Token: 0x04000E6F RID: 3695
 	public bool IsValid = true;
 
-	// Token: 0x04000E77 RID: 3703
+	// Token: 0x04000E70 RID: 3696
 	public Quest Quest;
 
-	// Token: 0x04000E78 RID: 3704
+	// Token: 0x04000E71 RID: 3697
 	public int Variation = -1;
 
-	// Token: 0x04000E79 RID: 3705
+	// Token: 0x04000E72 RID: 3698
 	public int Tier = -1;
 
-	// Token: 0x04000E7A RID: 3706
+	// Token: 0x04000E73 RID: 3699
 	public string LastStatementID;
 
-	// Token: 0x04000E7B RID: 3707
+	// Token: 0x04000E74 RID: 3700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> introtag = FastTags<TagGroup.Global>.Parse("introquest");
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceLoops
 {
-	// Token: 0x0200194B RID: 6475
+	// Token: 0x02001977 RID: 6519
 	[Preserve]
 	public class LoopFor : BaseLoop
 	{
-		// Token: 0x0600C789 RID: 51081 RVA: 0x0049255C File Offset: 0x0049075C
+		// Token: 0x0600C8E1 RID: 51425 RVA: 0x00496A48 File Offset: 0x00494C48
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.loopCount == -1)
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceLoops
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C78A RID: 51082 RVA: 0x004925F1 File Offset: 0x004907F1
+		// Token: 0x0600C8E2 RID: 51426 RVA: 0x00496ADD File Offset: 0x00494CDD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
@@ -41,14 +41,14 @@ namespace GameEvent.SequenceLoops
 			this.currentLoop = 0;
 		}
 
-		// Token: 0x0600C78B RID: 51083 RVA: 0x00492607 File Offset: 0x00490807
+		// Token: 0x0600C8E3 RID: 51427 RVA: 0x00496AF3 File Offset: 0x00494CF3
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(LoopFor.PropLoopCount, ref this.loopCountText);
 		}
 
-		// Token: 0x0600C78C RID: 51084 RVA: 0x00492621 File Offset: 0x00490821
+		// Token: 0x0600C8E4 RID: 51428 RVA: 0x00496B0D File Offset: 0x00494D0D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -58,18 +58,18 @@ namespace GameEvent.SequenceLoops
 			};
 		}
 
-		// Token: 0x0400962D RID: 38445
+		// Token: 0x040096F3 RID: 38643
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int loopCount = -1;
 
-		// Token: 0x0400962E RID: 38446
+		// Token: 0x040096F4 RID: 38644
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentLoop;
 
-		// Token: 0x0400962F RID: 38447
+		// Token: 0x040096F5 RID: 38645
 		public string loopCountText;
 
-		// Token: 0x04009630 RID: 38448
+		// Token: 0x040096F6 RID: 38646
 		public static string PropLoopCount = "loop_count";
 	}
 }

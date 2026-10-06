@@ -9,18 +9,18 @@ using Noemax.GZip;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000372 RID: 882
+// Token: 0x02000375 RID: 885
 public class DynamicMeshFile
 {
-	// Token: 0x060019EF RID: 6639 RVA: 0x00094FAE File Offset: 0x000931AE
+	// Token: 0x060019EA RID: 6634 RVA: 0x0009522E File Offset: 0x0009342E
 	public static void CleanUp()
 	{
 		MeshLists.MeshListCache.Clear();
 		MeshLists.LastLargest = 0;
 	}
 
-	// Token: 0x17000311 RID: 785
-	// (get) Token: 0x060019F0 RID: 6640 RVA: 0x00094FC0 File Offset: 0x000931C0
+	// Token: 0x17000309 RID: 777
+	// (get) Token: 0x060019EB RID: 6635 RVA: 0x00095240 File Offset: 0x00093440
 	public static string DisabledImpostersFile
 	{
 		get
@@ -29,7 +29,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x060019F1 RID: 6641 RVA: 0x00094FD4 File Offset: 0x000931D4
+	// Token: 0x060019EC RID: 6636 RVA: 0x00095254 File Offset: 0x00093454
 	public static Bounds GetBoundsFromVerts(ArrayListMP<Vector3> verts)
 	{
 		float num = verts[0].x;
@@ -56,7 +56,7 @@ public class DynamicMeshFile
 		return bounds;
 	}
 
-	// Token: 0x060019F2 RID: 6642 RVA: 0x000950F8 File Offset: 0x000932F8
+	// Token: 0x060019ED RID: 6637 RVA: 0x00095378 File Offset: 0x00093578
 	public static Bounds GetBoundsFromVerts(List<Vector3> verts)
 	{
 		float num = verts[0].x;
@@ -83,7 +83,7 @@ public class DynamicMeshFile
 		return bounds;
 	}
 
-	// Token: 0x060019F3 RID: 6643 RVA: 0x0009521C File Offset: 0x0009341C
+	// Token: 0x060019EE RID: 6638 RVA: 0x0009549C File Offset: 0x0009369C
 	public static Bounds GetBoundsFromVerts(Vector3[] verts)
 	{
 		float num = verts[0].x;
@@ -109,7 +109,7 @@ public class DynamicMeshFile
 		return bounds;
 	}
 
-	// Token: 0x060019F4 RID: 6644 RVA: 0x0009533C File Offset: 0x0009353C
+	// Token: 0x060019EF RID: 6639 RVA: 0x000955BC File Offset: 0x000937BC
 	public static Bounds GetBoundsFromVertsJustY(ArrayListMP<Vector3> verts, Bounds bounds)
 	{
 		float num = verts[0].y;
@@ -126,7 +126,7 @@ public class DynamicMeshFile
 		return bounds;
 	}
 
-	// Token: 0x060019F5 RID: 6645 RVA: 0x000953CC File Offset: 0x000935CC
+	// Token: 0x060019F0 RID: 6640 RVA: 0x0009564C File Offset: 0x0009384C
 	public static Bounds GetBoundsFromVerts(ArrayListMP<Vector3> verts, List<Bounds> boundsList, int index)
 	{
 		if (index == boundsList.Count)
@@ -161,13 +161,13 @@ public class DynamicMeshFile
 		return bounds;
 	}
 
-	// Token: 0x060019F6 RID: 6646 RVA: 0x00095526 File Offset: 0x00093726
+	// Token: 0x060019F1 RID: 6641 RVA: 0x000957A6 File Offset: 0x000939A6
 	public static VoxelMesh GetMeshFromPool()
 	{
 		return DynamicMeshFile.GetMeshFromPool(500);
 	}
 
-	// Token: 0x060019F7 RID: 6647 RVA: 0x00095534 File Offset: 0x00093734
+	// Token: 0x060019F2 RID: 6642 RVA: 0x000957B4 File Offset: 0x000939B4
 	public static VoxelMesh GetMeshFromPool(int size)
 	{
 		VoxelMesh voxelMesh;
@@ -178,13 +178,13 @@ public class DynamicMeshFile
 		return new VoxelMesh(0, size, VoxelMesh.CreateFlags.Default);
 	}
 
-	// Token: 0x060019F8 RID: 6648 RVA: 0x00095559 File Offset: 0x00093759
+	// Token: 0x060019F3 RID: 6643 RVA: 0x000957D9 File Offset: 0x000939D9
 	public static VoxelMeshTerrain GetTerrainMeshFromPool()
 	{
 		return DynamicMeshFile.GetTerrainMeshFromPool(500);
 	}
 
-	// Token: 0x060019F9 RID: 6649 RVA: 0x00095568 File Offset: 0x00093768
+	// Token: 0x060019F4 RID: 6644 RVA: 0x000957E8 File Offset: 0x000939E8
 	public static VoxelMeshTerrain GetTerrainMeshFromPool(int size)
 	{
 		VoxelMeshTerrain voxelMeshTerrain;
@@ -196,7 +196,7 @@ public class DynamicMeshFile
 		return voxelMeshTerrain;
 	}
 
-	// Token: 0x060019FA RID: 6650 RVA: 0x0009558E File Offset: 0x0009378E
+	// Token: 0x060019F5 RID: 6645 RVA: 0x0009580E File Offset: 0x00093A0E
 	public static void AddMeshToPool(VoxelMesh mesh)
 	{
 		if (mesh is VoxelMeshTerrain)
@@ -208,14 +208,14 @@ public class DynamicMeshFile
 		DynamicMeshFile.VoxelMeshPool.Enqueue(mesh);
 	}
 
-	// Token: 0x060019FB RID: 6651 RVA: 0x000955B5 File Offset: 0x000937B5
+	// Token: 0x060019F6 RID: 6646 RVA: 0x00095835 File Offset: 0x00093A35
 	public static void AddMeshToPool(VoxelMeshTerrain mesh)
 	{
 		mesh.ClearMesh();
 		DynamicMeshFile.VoxelTerrainMeshPool.Enqueue(mesh);
 	}
 
-	// Token: 0x060019FC RID: 6652 RVA: 0x000955C8 File Offset: 0x000937C8
+	// Token: 0x060019F7 RID: 6647 RVA: 0x00095848 File Offset: 0x00093A48
 	public static GameObject CreateMeshObject(string name, bool isRegion)
 	{
 		GameObject gameObject = new GameObject(name);
@@ -228,7 +228,7 @@ public class DynamicMeshFile
 		return gameObject;
 	}
 
-	// Token: 0x060019FD RID: 6653 RVA: 0x000955FD File Offset: 0x000937FD
+	// Token: 0x060019F8 RID: 6648 RVA: 0x0009587D File Offset: 0x00093A7D
 	public static GameObject CreateTerrainMeshObject(string name)
 	{
 		GameObject gameObject = new GameObject(name);
@@ -240,7 +240,7 @@ public class DynamicMeshFile
 		return gameObject;
 	}
 
-	// Token: 0x060019FE RID: 6654 RVA: 0x00095628 File Offset: 0x00093828
+	// Token: 0x060019F9 RID: 6649 RVA: 0x000958A8 File Offset: 0x00093AA8
 	public static void LoadRegionGameObjectSync(string path, DynamicMeshRegion region)
 	{
 		if (!SdFile.Exists(path))
@@ -358,7 +358,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x060019FF RID: 6655 RVA: 0x00095A10 File Offset: 0x00093C10
+	// Token: 0x060019FA RID: 6650 RVA: 0x00095C90 File Offset: 0x00093E90
 	public static Stream GetCreateStream(string path)
 	{
 		Stream stream = SdFile.Create(path);
@@ -369,7 +369,7 @@ public class DynamicMeshFile
 		return stream;
 	}
 
-	// Token: 0x06001A00 RID: 6656 RVA: 0x00095A38 File Offset: 0x00093C38
+	// Token: 0x060019FB RID: 6651 RVA: 0x00095CB8 File Offset: 0x00093EB8
 	public static Stream GetReadStream(string path)
 	{
 		Stream stream = SdFile.OpenRead(path);
@@ -380,7 +380,7 @@ public class DynamicMeshFile
 		return stream;
 	}
 
-	// Token: 0x06001A01 RID: 6657 RVA: 0x00095A5C File Offset: 0x00093C5C
+	// Token: 0x060019FC RID: 6652 RVA: 0x00095CDC File Offset: 0x00093EDC
 	public static void WriteRegionHeaderData(DynamicMeshRegion region, int tryCount)
 	{
 		if (tryCount > 10)
@@ -428,7 +428,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A02 RID: 6658 RVA: 0x00095BF8 File Offset: 0x00093DF8
+	// Token: 0x060019FD RID: 6653 RVA: 0x00095E78 File Offset: 0x00094078
 	public static void WriteRegion(DynamicMeshRegion region, int tryCount)
 	{
 		if (tryCount > 5)
@@ -487,7 +487,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A03 RID: 6659 RVA: 0x00095DC4 File Offset: 0x00093FC4
+	// Token: 0x060019FE RID: 6654 RVA: 0x00096044 File Offset: 0x00094244
 	public static void WriteVoxelMeshes(BinaryWriter _bw, List<VoxelMesh> meshes, Vector3i worldPos, int updateTime, DynamicMeshChunkProcessor builder)
 	{
 		if (DynamicMeshManager.Allow32BitMeshes)
@@ -498,7 +498,7 @@ public class DynamicMeshFile
 		DynamicMeshFile.Write16BitVoxelMeshes(_bw, meshes, worldPos, updateTime, builder);
 	}
 
-	// Token: 0x06001A04 RID: 6660 RVA: 0x00095DE4 File Offset: 0x00093FE4
+	// Token: 0x060019FF RID: 6655 RVA: 0x00096064 File Offset: 0x00094264
 	public static void Write32BitVoxelMeshes(BinaryWriter _bw, List<VoxelMesh> meshes, Vector3i worldPos, int updateTime, DynamicMeshChunkProcessor builder)
 	{
 		int num = 1;
@@ -542,7 +542,7 @@ public class DynamicMeshFile
 		DynamicMeshFile.WriteVoxelMeshesToDisk(_bw, meshes);
 	}
 
-	// Token: 0x06001A05 RID: 6661 RVA: 0x00095F0C File Offset: 0x0009410C
+	// Token: 0x06001A00 RID: 6656 RVA: 0x0009618C File Offset: 0x0009438C
 	public static void Write16BitVoxelMeshes(BinaryWriter _bw, List<VoxelMesh> meshes, Vector3i worldPos, int updateTime, DynamicMeshChunkProcessor builder)
 	{
 		int num = 0;
@@ -599,7 +599,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A06 RID: 6662 RVA: 0x000960E8 File Offset: 0x000942E8
+	// Token: 0x06001A01 RID: 6657 RVA: 0x00096368 File Offset: 0x00094568
 	public static void WriteVoxelMeshesWithTerrain(BinaryWriter _bw, List<VoxelMesh> meshes, List<VoxelMeshTerrain> terrain, Vector3i worldPos, int updateTime, DynamicMeshChunkProcessor builder, DynamicMeshRegion region)
 	{
 		DynamicMeshFile.WriteVoxelMeshes(_bw, meshes, worldPos, updateTime, builder);
@@ -652,7 +652,7 @@ public class DynamicMeshFile
 		DynamicMeshFile.WriteTerrainVoxelMeshesToDisk(_bw, terrain);
 	}
 
-	// Token: 0x06001A07 RID: 6663 RVA: 0x000962CC File Offset: 0x000944CC
+	// Token: 0x06001A02 RID: 6658 RVA: 0x0009654C File Offset: 0x0009474C
 	public static void InitTiles()
 	{
 		DynamicMeshFile.TileLinks.Clear();
@@ -1013,7 +1013,7 @@ public class DynamicMeshFile
 		DynamicMeshFile.TileLinks.TryAdd(99, 169);
 	}
 
-	// Token: 0x06001A08 RID: 6664 RVA: 0x00097D60 File Offset: 0x00095F60
+	// Token: 0x06001A03 RID: 6659 RVA: 0x00097FE0 File Offset: 0x000961E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteVoxelMeshesToDisk(BinaryWriter writer, List<VoxelMesh> meshes)
 	{
@@ -1089,7 +1089,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A09 RID: 6665 RVA: 0x00098078 File Offset: 0x00096278
+	// Token: 0x06001A04 RID: 6660 RVA: 0x000982F8 File Offset: 0x000964F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int WriteVoxelMeshToDisk(BinaryWriter writer, VoxelMesh mesh, UVRectTiling[] tiling, float yOff, DynamicMeshChunkProcessor builder, int vertOffset)
 	{
@@ -1171,7 +1171,7 @@ public class DynamicMeshFile
 		return num;
 	}
 
-	// Token: 0x06001A0A RID: 6666 RVA: 0x00098354 File Offset: 0x00096554
+	// Token: 0x06001A05 RID: 6661 RVA: 0x000985D4 File Offset: 0x000967D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteTerrainVoxelMeshesToDisk(BinaryWriter writer, List<VoxelMeshTerrain> meshes)
 	{
@@ -1298,7 +1298,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A0B RID: 6667 RVA: 0x0009891C File Offset: 0x00096B1C
+	// Token: 0x06001A06 RID: 6662 RVA: 0x00098B9C File Offset: 0x00096D9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteTerrainVoxelMeshToDisk(BinaryWriter writer, VoxelMeshTerrain mesh, float yOff, DynamicMeshChunkProcessor builder, DynamicMeshRegion region, int vertOffset)
 	{
@@ -1385,7 +1385,7 @@ public class DynamicMeshFile
 		}
 	}
 
-	// Token: 0x06001A0C RID: 6668 RVA: 0x00098CC8 File Offset: 0x00096EC8
+	// Token: 0x06001A07 RID: 6663 RVA: 0x00098F48 File Offset: 0x00097148
 	public static void ReadItemMesh(BinaryReader reader, DynamicMeshItem item, bool isVisible)
 	{
 		if (reader.BaseStream.Position == reader.BaseStream.Length)
@@ -1474,7 +1474,7 @@ public class DynamicMeshFile
 		goto IL_022A;
 	}
 
-	// Token: 0x06001A0D RID: 6669 RVA: 0x00098F28 File Offset: 0x00097128
+	// Token: 0x06001A08 RID: 6664 RVA: 0x000991A8 File Offset: 0x000973A8
 	public static Material GetOpaqueMaterial(bool isRegion)
 	{
 		Material material = (isRegion ? DynamicMeshFile._RegionMaterial : DynamicMeshFile._itemMaterial);
@@ -1492,7 +1492,7 @@ public class DynamicMeshFile
 		return material;
 	}
 
-	// Token: 0x06001A0E RID: 6670 RVA: 0x00098FB0 File Offset: 0x000971B0
+	// Token: 0x06001A09 RID: 6665 RVA: 0x00099230 File Offset: 0x00097430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static VoxelMesh ReadVoxelMesh(BinaryReader reader, UVRectTiling[] tilings, Vector3i worldPos)
 	{
@@ -1564,7 +1564,7 @@ public class DynamicMeshFile
 		return DynamicMeshFile.GetMeshFromPool(1);
 	}
 
-	// Token: 0x06001A0F RID: 6671 RVA: 0x000991D4 File Offset: 0x000973D4
+	// Token: 0x06001A0A RID: 6666 RVA: 0x00099454 File Offset: 0x00097654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static VoxelMeshTerrain ReadVoxelMeshTerrain(BinaryReader reader, Vector3i worldPos, out bool cancelLoad)
 	{
@@ -1659,7 +1659,7 @@ public class DynamicMeshFile
 		return DynamicMeshFile.GetTerrainMeshFromPool(1);
 	}
 
-	// Token: 0x06001A10 RID: 6672 RVA: 0x00099518 File Offset: 0x00097718
+	// Token: 0x06001A0B RID: 6667 RVA: 0x00099798 File Offset: 0x00097998
 	public static void SetMeshMax(int max, bool orMore)
 	{
 		if (orMore && DynamicMeshFile.ReadMeshMax >= max)
@@ -1669,7 +1669,7 @@ public class DynamicMeshFile
 		DynamicMeshFile.ReadMeshMax = max;
 	}
 
-	// Token: 0x06001A11 RID: 6673 RVA: 0x0009952C File Offset: 0x0009772C
+	// Token: 0x06001A0C RID: 6668 RVA: 0x000997AC File Offset: 0x000979AC
 	public static IEnumerator ReadMeshCoroutine(int version, BinaryReader reader, UVRectTiling[] tilings, Mesh mesh, DynamicMeshRegion region, DynamicMeshItem item, int maxTime)
 	{
 		MeshLists cache = MeshLists.GetList();
@@ -1847,7 +1847,7 @@ public class DynamicMeshFile
 		yield break;
 	}
 
-	// Token: 0x06001A12 RID: 6674 RVA: 0x00099564 File Offset: 0x00097764
+	// Token: 0x06001A0D RID: 6669 RVA: 0x000997E4 File Offset: 0x000979E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mesh ReadMesh(int version, BinaryReader reader, UVRectTiling[] tilings, Mesh mesh, bool lockMesh, DynamicMeshItem item)
 	{
@@ -1919,7 +1919,7 @@ public class DynamicMeshFile
 		return mesh;
 	}
 
-	// Token: 0x06001A13 RID: 6675 RVA: 0x0009979C File Offset: 0x0009799C
+	// Token: 0x06001A0E RID: 6670 RVA: 0x00099A1C File Offset: 0x00097C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mesh ReadMeshTerrain(BinaryReader reader, Mesh mesh, MeshRenderer rend, bool lockMesh)
 	{
@@ -2020,7 +2020,7 @@ public class DynamicMeshFile
 		return mesh;
 	}
 
-	// Token: 0x06001A14 RID: 6676 RVA: 0x00099B01 File Offset: 0x00097D01
+	// Token: 0x06001A0F RID: 6671 RVA: 0x00099D81 File Offset: 0x00097F81
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator ReadMeshTerrainCoroutine(BinaryReader reader, Mesh mesh, MeshRenderer rend, bool lockMesh, int maxTime, DynamicMeshRegion region, DynamicMeshItem item)
 	{
@@ -2182,68 +2182,68 @@ public class DynamicMeshFile
 		yield break;
 	}
 
-	// Token: 0x04001069 RID: 4201
+	// Token: 0x04001062 RID: 4194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MicroStopwatch stop = new MicroStopwatch();
 
-	// Token: 0x0400106A RID: 4202
+	// Token: 0x04001063 RID: 4195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Bounds> bounds = new List<Bounds>(10);
 
-	// Token: 0x0400106B RID: 4203
+	// Token: 0x04001064 RID: 4196
 	public static ConcurrentDictionary<int, int> TileLinks = new ConcurrentDictionary<int, int>();
 
-	// Token: 0x0400106C RID: 4204
+	// Token: 0x04001065 RID: 4197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 TerrainMeshOffset = new Vector3(0f, -0.2f, 0f);
 
-	// Token: 0x0400106D RID: 4205
+	// Token: 0x04001066 RID: 4198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Material _itemMaterial = null;
 
-	// Token: 0x0400106E RID: 4206
+	// Token: 0x04001067 RID: 4199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Material _RegionMaterial = null;
 
-	// Token: 0x0400106F RID: 4207
+	// Token: 0x04001068 RID: 4200
 	public static int ReadMeshMax = 2;
 
-	// Token: 0x04001070 RID: 4208
+	// Token: 0x04001069 RID: 4201
 	public static WaitForSeconds ReadMeshWait = null;
 
-	// Token: 0x04001071 RID: 4209
+	// Token: 0x0400106A RID: 4202
 	public static string MeshLocation;
 
-	// Token: 0x04001072 RID: 4210
+	// Token: 0x0400106B RID: 4203
 	public static DateTime ItemMin = new DateTime(2000, 1, 1, 0, 0, 0);
 
-	// Token: 0x04001073 RID: 4211
+	// Token: 0x0400106C RID: 4204
 	public static WaitForSeconds WaitForSecond = new WaitForSeconds(1f);
 
-	// Token: 0x04001074 RID: 4212
+	// Token: 0x0400106D RID: 4205
 	public static WaitForSeconds WaitForPoint1Second = new WaitForSeconds(0.1f);
 
-	// Token: 0x04001075 RID: 4213
+	// Token: 0x0400106E RID: 4206
 	public static ConcurrentQueue<VoxelMesh> VoxelMeshPool = new ConcurrentQueue<VoxelMesh>();
 
-	// Token: 0x04001076 RID: 4214
+	// Token: 0x0400106F RID: 4207
 	public static ConcurrentQueue<VoxelMeshTerrain> VoxelTerrainMeshPool = new ConcurrentQueue<VoxelMeshTerrain>();
 
-	// Token: 0x04001077 RID: 4215
+	// Token: 0x04001070 RID: 4208
 	public static WaitForSeconds WaitPointOne = new WaitForSeconds(0.1f);
 
-	// Token: 0x04001078 RID: 4216
+	// Token: 0x04001071 RID: 4209
 	public static WaitForSeconds WaitPointTwo = new WaitForSeconds(0.2f);
 
-	// Token: 0x04001079 RID: 4217
+	// Token: 0x04001072 RID: 4210
 	public static WaitForSeconds WaitOne = new WaitForSeconds(1f);
 
-	// Token: 0x0400107A RID: 4218
+	// Token: 0x04001073 RID: 4211
 	public static Vector3i CurrentlyLoadingRegionPosition = new Vector3i(int.MaxValue, 0, 0);
 
-	// Token: 0x0400107B RID: 4219
+	// Token: 0x04001074 RID: 4212
 	public static Dictionary<int, Material[]> TerrainSharedMaterials = new Dictionary<int, Material[]>();
 
-	// Token: 0x0400107C RID: 4220
+	// Token: 0x04001075 RID: 4213
 	public static DynamicMeshContainer CurrentlyLoadingItem;
 }

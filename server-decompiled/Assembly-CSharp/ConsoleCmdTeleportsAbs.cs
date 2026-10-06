@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002AF RID: 687
+// Token: 0x020002B2 RID: 690
 [Preserve]
 public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 {
-	// Token: 0x060013D8 RID: 5080 RVA: 0x00078C1C File Offset: 0x00076E1C
+	// Token: 0x060013D5 RID: 5077 RVA: 0x00078ED0 File Offset: 0x000770D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool TryParseV3i(List<string> _params, int _startIndex, out Vector3i _result)
 	{
@@ -30,7 +30,7 @@ public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x060013D9 RID: 5081 RVA: 0x00078CA4 File Offset: 0x00076EA4
+	// Token: 0x060013D6 RID: 5078 RVA: 0x00078F58 File Offset: 0x00077158
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3? TryParseViewDirection(string _viewDirectionString)
 	{
@@ -69,7 +69,7 @@ public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 		return null;
 	}
 
-	// Token: 0x060013DA RID: 5082 RVA: 0x00078E5C File Offset: 0x0007705C
+	// Token: 0x060013D7 RID: 5079 RVA: 0x00079110 File Offset: 0x00077310
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityPlayer GetExecutingEntityPlayer(CommandSenderInfo _senderInfo)
 	{
@@ -84,7 +84,7 @@ public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 		return null;
 	}
 
-	// Token: 0x060013DB RID: 5083 RVA: 0x00078EB0 File Offset: 0x000770B0
+	// Token: 0x060013D8 RID: 5080 RVA: 0x00079164 File Offset: 0x00077364
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool TryGetDestinationFromPlayer(string _targetPlayerString, out Vector3 _destination)
 	{
@@ -110,7 +110,7 @@ public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x060013DC RID: 5084 RVA: 0x00078F50 File Offset: 0x00077150
+	// Token: 0x060013D9 RID: 5081 RVA: 0x00079204 File Offset: 0x00077404
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void ExecuteTeleport(ClientInfo _player, Vector3 _destPos, Vector3? _viewDirection)
 	{
@@ -125,7 +125,7 @@ public abstract class ConsoleCmdTeleportsAbs : ConsoleCmdAbstract
 		_player.SendPackage(netPackageTeleportPlayer);
 	}
 
-	// Token: 0x060013DD RID: 5085 RVA: 0x0006037F File Offset: 0x0005E57F
+	// Token: 0x060013DA RID: 5082 RVA: 0x0006036F File Offset: 0x0005E56F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ConsoleCmdTeleportsAbs()
 	{

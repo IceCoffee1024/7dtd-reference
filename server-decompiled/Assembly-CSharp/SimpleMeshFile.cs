@@ -7,11 +7,11 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000956 RID: 2390
+// Token: 0x0200095C RID: 2396
 public static class SimpleMeshFile
 {
-	// Token: 0x06004635 RID: 17973 RVA: 0x001BC5BC File Offset: 0x001BA7BC
-	public static void WriteGameObject(BinaryWriter _bw, GameObject _go, List<ImposterCanvas> _signs = null)
+	// Token: 0x060045D6 RID: 17878 RVA: 0x001BCAC4 File Offset: 0x001BACC4
+	public static void WriteGameObject(PooledBinaryWriter _bw, GameObject _go, List<ImposterCanvas> _signs = null)
 	{
 		try
 		{
@@ -41,9 +41,9 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x06004636 RID: 17974 RVA: 0x001BC6D0 File Offset: 0x001BA8D0
+	// Token: 0x060045D7 RID: 17879 RVA: 0x001BCBD8 File Offset: 0x001BADD8
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static void writeMesh(BinaryWriter _bw, Mesh _mesh, UVRectTiling[] _uvMapping)
+	public static void writeMesh(PooledBinaryWriter _bw, Mesh _mesh, UVRectTiling[] _uvMapping)
 	{
 		try
 		{
@@ -93,20 +93,20 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x06004637 RID: 17975 RVA: 0x001BC8B4 File Offset: 0x001BAAB4
+	// Token: 0x060045D8 RID: 17880 RVA: 0x001BCDBC File Offset: 0x001BAFBC
 	public static GameObject ReadGameObject(PathAbstractions.AbstractedLocation _meshLocation, float _offsetY = 0f, Material _mat = null, bool _bTextureArray = true, bool _markMeshesNoLongerReadable = false, object _userCallbackData = null, SimpleMeshFile.GameObjectLoadedCallback _asyncCallback = null)
 	{
 		return SimpleMeshFile.ReadGameObject(_meshLocation.FullPath, _offsetY, _mat, _bTextureArray, _markMeshesNoLongerReadable, _userCallbackData, _asyncCallback);
 	}
 
-	// Token: 0x06004638 RID: 17976 RVA: 0x001BC8CC File Offset: 0x001BAACC
+	// Token: 0x060045D9 RID: 17881 RVA: 0x001BCDD4 File Offset: 0x001BAFD4
 	public static GameObject ReadGameObject(string _filename, float _offsetY = 0f, Material _mat = null, bool _bTextureArray = true, bool _markMeshesNoLongerReadable = false, object _userCallbackData = null, SimpleMeshFile.GameObjectLoadedCallback _asyncCallback = null)
 	{
 		SimpleMeshInfo simpleMeshInfo;
 		return SimpleMeshFile.ReadGameObject(_filename, out simpleMeshInfo, _offsetY, _mat, _bTextureArray, _markMeshesNoLongerReadable, _userCallbackData, _asyncCallback);
 	}
 
-	// Token: 0x06004639 RID: 17977 RVA: 0x001BC8EC File Offset: 0x001BAAEC
+	// Token: 0x060045DA RID: 17882 RVA: 0x001BCDF4 File Offset: 0x001BAFF4
 	public static GameObject ReadGameObject(string _filename, out SimpleMeshInfo _meshInfo, float _offsetY = 0f, Material _mat = null, bool _bTextureArray = true, bool _markMeshesNoLongerReadable = false, object _userCallbackData = null, SimpleMeshFile.GameObjectLoadedCallback _asyncCallback = null)
 	{
 		_meshInfo = null;
@@ -137,7 +137,7 @@ public static class SimpleMeshFile
 		return null;
 	}
 
-	// Token: 0x0600463A RID: 17978 RVA: 0x001BC9CC File Offset: 0x001BABCC
+	// Token: 0x060045DB RID: 17883 RVA: 0x001BCED4 File Offset: 0x001BB0D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SimpleMeshInfo ReadGameObjectSync(string _filename, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable)
 	{
@@ -156,7 +156,7 @@ public static class SimpleMeshFile
 		return null;
 	}
 
-	// Token: 0x0600463B RID: 17979 RVA: 0x001BCA34 File Offset: 0x001BAC34
+	// Token: 0x060045DC RID: 17884 RVA: 0x001BCF3C File Offset: 0x001BB13C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static async Task ReadGameObjectAsync(string _filename, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable, object _userCallbackData, SimpleMeshFile.GameObjectLoadedCallback _asyncCallback)
 	{
@@ -199,7 +199,7 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x0600463C RID: 17980 RVA: 0x001BCAAC File Offset: 0x001BACAC
+	// Token: 0x060045DD RID: 17885 RVA: 0x001BCFB4 File Offset: 0x001BB1B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SimpleMeshInfo ReadGameObjectSync(Stream _inputStream, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable)
 	{
@@ -213,7 +213,7 @@ public static class SimpleMeshFile
 		return simpleMeshInfo;
 	}
 
-	// Token: 0x0600463D RID: 17981 RVA: 0x001BCB00 File Offset: 0x001BAD00
+	// Token: 0x060045DE RID: 17886 RVA: 0x001BD008 File Offset: 0x001BB208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static async Task ReadGameObjectAsync(Stream _inputStream, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable, object _userCallbackData, SimpleMeshFile.GameObjectLoadedCallback _asyncCallback)
 	{
@@ -231,7 +231,7 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x0600463E RID: 17982 RVA: 0x001BCB78 File Offset: 0x001BAD78
+	// Token: 0x060045DF RID: 17887 RVA: 0x001BD080 File Offset: 0x001BB280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int readLengthFromHeaderAndReset(Stream _inputStream)
 	{
@@ -249,7 +249,7 @@ public static class SimpleMeshFile
 		return num2;
 	}
 
-	// Token: 0x0600463F RID: 17983 RVA: 0x001BCBDC File Offset: 0x001BADDC
+	// Token: 0x060045E0 RID: 17888 RVA: 0x001BD0E4 File Offset: 0x001BB2E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void readData(SimpleMeshFile.SimpleMeshDataArray _meshDatas, Stream _inputStream, bool _bTextureArray, out List<ImposterCanvas> _signs)
 	{
@@ -286,7 +286,7 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x06004640 RID: 17984 RVA: 0x001BCCB8 File Offset: 0x001BAEB8
+	// Token: 0x060045E1 RID: 17889 RVA: 0x001BD1C0 File Offset: 0x001BB3C0
 	public static GameObject CreateUnityObjects(SimpleMeshInfo _meshInfo)
 	{
 		GameObject gameObject3;
@@ -320,7 +320,7 @@ public static class SimpleMeshFile
 		return gameObject3;
 	}
 
-	// Token: 0x06004641 RID: 17985 RVA: 0x001BCD78 File Offset: 0x001BAF78
+	// Token: 0x060045E2 RID: 17890 RVA: 0x001BD280 File Offset: 0x001BB480
 	public static Mesh[] ReadMesh(string _filename, float _offsetY = 0f, Material _mat = null, bool _bTextureArray = true, bool _markMeshesNoLongerReadable = false, object _userCallbackData = null, SimpleMeshFile.GameObjectMeshesReadCallback _asyncCallback = null)
 	{
 		try
@@ -342,7 +342,7 @@ public static class SimpleMeshFile
 		return null;
 	}
 
-	// Token: 0x06004642 RID: 17986 RVA: 0x001BCE44 File Offset: 0x001BB044
+	// Token: 0x060045E3 RID: 17891 RVA: 0x001BD34C File Offset: 0x001BB54C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mesh[] ReadMeshSync(string _filename, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable)
 	{
@@ -354,7 +354,7 @@ public static class SimpleMeshFile
 		return array;
 	}
 
-	// Token: 0x06004643 RID: 17987 RVA: 0x001BCE84 File Offset: 0x001BB084
+	// Token: 0x060045E4 RID: 17892 RVA: 0x001BD38C File Offset: 0x001BB58C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static async Task ReadMeshAsync(string _filename, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable, object _userCallbackData, SimpleMeshFile.GameObjectMeshesReadCallback _asyncCallback)
 	{
@@ -373,7 +373,7 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x06004644 RID: 17988 RVA: 0x001BCEFC File Offset: 0x001BB0FC
+	// Token: 0x060045E5 RID: 17893 RVA: 0x001BD404 File Offset: 0x001BB604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mesh[] ReadMeshSync(Stream _inputStream, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable)
 	{
@@ -387,7 +387,7 @@ public static class SimpleMeshFile
 		return meshes;
 	}
 
-	// Token: 0x06004645 RID: 17989 RVA: 0x001BCF54 File Offset: 0x001BB154
+	// Token: 0x060045E6 RID: 17894 RVA: 0x001BD45C File Offset: 0x001BB65C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static async Task ReadMeshAsyncInternal(string _filename, float _offsetY, Material _mat, bool _bTextureArray, bool _markMeshesNoLongerReadable, object _userCallbackData, SimpleMeshFile.GameObjectMeshesReadCallback _asyncCallback)
 	{
@@ -409,7 +409,7 @@ public static class SimpleMeshFile
 		}
 	}
 
-	// Token: 0x06004646 RID: 17990 RVA: 0x001BCFCC File Offset: 0x001BB1CC
+	// Token: 0x060045E7 RID: 17895 RVA: 0x001BD4D4 File Offset: 0x001BB6D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SimpleMeshInfo createMeshInfo(SimpleMeshFile.SimpleMeshDataArray _meshDatas, bool _markMeshesNoLongerReadable, float _offsetY, Material _mat, List<ImposterCanvas> _signs)
 	{
@@ -422,27 +422,27 @@ public static class SimpleMeshFile
 		return new SimpleMeshInfo(array, array2, _offsetY, _mat, _signs);
 	}
 
-	// Token: 0x0400385E RID: 14430
+	// Token: 0x0400385A RID: 14426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSaveFileVersion = 7;
 
-	// Token: 0x0400385F RID: 14431
+	// Token: 0x0400385B RID: 14427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cHeader = 1835365224;
 
-	// Token: 0x02000957 RID: 2391
-	// (Invoke) Token: 0x06004648 RID: 17992
+	// Token: 0x0200095D RID: 2397
+	// (Invoke) Token: 0x060045E9 RID: 17897
 	public delegate void GameObjectLoadedCallback(GameObject _go, object _userCallbackData);
 
-	// Token: 0x02000958 RID: 2392
-	// (Invoke) Token: 0x0600464C RID: 17996
+	// Token: 0x0200095E RID: 2398
+	// (Invoke) Token: 0x060045ED RID: 17901
 	public delegate void GameObjectMeshesReadCallback(SimpleMeshInfo _meshInfo, object _userCallbackData);
 
-	// Token: 0x02000959 RID: 2393
+	// Token: 0x0200095F RID: 2399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class SimpleMeshDataArray : IDisposable
 	{
-		// Token: 0x0600464F RID: 17999 RVA: 0x001BD01C File Offset: 0x001BB21C
+		// Token: 0x060045F0 RID: 17904 RVA: 0x001BD524 File Offset: 0x001BB724
 		public SimpleMeshDataArray(Mesh.MeshDataArray _array)
 		{
 			this.meshData = _array;
@@ -454,7 +454,7 @@ public static class SimpleMeshFile
 			}
 		}
 
-		// Token: 0x06004650 RID: 18000 RVA: 0x001BD088 File Offset: 0x001BB288
+		// Token: 0x060045F1 RID: 17905 RVA: 0x001BD590 File Offset: 0x001BB790
 		public void Dispose()
 		{
 			if (this.disposed)
@@ -467,7 +467,7 @@ public static class SimpleMeshFile
 			this.wrappers = null;
 		}
 
-		// Token: 0x06004651 RID: 18001 RVA: 0x001BD0AE File Offset: 0x001BB2AE
+		// Token: 0x060045F2 RID: 17906 RVA: 0x001BD5B6 File Offset: 0x001BB7B6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void DisposeMeshData()
 		{
@@ -480,8 +480,8 @@ public static class SimpleMeshFile
 			this.meshData = default(Mesh.MeshDataArray);
 		}
 
-		// Token: 0x17000767 RID: 1895
-		// (get) Token: 0x06004652 RID: 18002 RVA: 0x001BD0D7 File Offset: 0x001BB2D7
+		// Token: 0x17000787 RID: 1927
+		// (get) Token: 0x060045F3 RID: 17907 RVA: 0x001BD5DF File Offset: 0x001BB7DF
 		public int Length
 		{
 			get
@@ -490,7 +490,7 @@ public static class SimpleMeshFile
 			}
 		}
 
-		// Token: 0x17000768 RID: 1896
+		// Token: 0x17000788 RID: 1928
 		public SimpleMeshFile.SimpleMeshDataArray.SimpleMeshDataWrapper this[int i]
 		{
 			get
@@ -499,14 +499,14 @@ public static class SimpleMeshFile
 			}
 		}
 
-		// Token: 0x06004654 RID: 18004 RVA: 0x001BD0F2 File Offset: 0x001BB2F2
+		// Token: 0x060045F5 RID: 17909 RVA: 0x001BD5FA File Offset: 0x001BB7FA
 		public void ApplyAndDisposeWritableMeshData(Mesh[] meshes, MeshUpdateFlags flags = MeshUpdateFlags.Default)
 		{
 			Mesh.ApplyAndDisposeWritableMeshData(this.meshData, meshes, flags);
 			this.meshDataDisposed = true;
 		}
 
-		// Token: 0x06004655 RID: 18005 RVA: 0x001BD108 File Offset: 0x001BB308
+		// Token: 0x060045F6 RID: 17910 RVA: 0x001BD610 File Offset: 0x001BB810
 		public static void ReadFromReader(SimpleMeshFile.SimpleMeshDataArray.SimpleMeshDataWrapper _meshDataWrapper, int _version, BinaryReader _br, UVRectTiling[] _uvMapping, bool _bTextureArray)
 		{
 			try
@@ -611,7 +611,7 @@ public static class SimpleMeshFile
 			}
 		}
 
-		// Token: 0x06004656 RID: 18006 RVA: 0x001BD434 File Offset: 0x001BB634
+		// Token: 0x060045F7 RID: 17911 RVA: 0x001BD93C File Offset: 0x001BBB3C
 		public static Mesh[] ToMeshes(SimpleMeshFile.SimpleMeshDataArray _meshDataArray, bool _markMeshesNoLongerReadable)
 		{
 			Mesh[] array = new Mesh[_meshDataArray.Length];
@@ -632,38 +632,38 @@ public static class SimpleMeshFile
 			return array;
 		}
 
-		// Token: 0x04003860 RID: 14432
+		// Token: 0x0400385C RID: 14428
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool disposed;
 
-		// Token: 0x04003861 RID: 14433
+		// Token: 0x0400385D RID: 14429
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Mesh.MeshDataArray meshData;
 
-		// Token: 0x04003862 RID: 14434
+		// Token: 0x0400385E RID: 14430
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool meshDataDisposed;
 
-		// Token: 0x04003863 RID: 14435
+		// Token: 0x0400385F RID: 14431
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] names;
 
-		// Token: 0x04003864 RID: 14436
+		// Token: 0x04003860 RID: 14432
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SimpleMeshFile.SimpleMeshDataArray.SimpleMeshDataWrapper[] wrappers;
 
-		// Token: 0x0200095A RID: 2394
+		// Token: 0x02000960 RID: 2400
 		public readonly struct SimpleMeshDataWrapper
 		{
-			// Token: 0x06004657 RID: 18007 RVA: 0x001BD4AA File Offset: 0x001BB6AA
+			// Token: 0x060045F8 RID: 17912 RVA: 0x001BD9B2 File Offset: 0x001BBBB2
 			public SimpleMeshDataWrapper(SimpleMeshFile.SimpleMeshDataArray _array, int _offset)
 			{
 				this.array = _array;
 				this.offset = _offset;
 			}
 
-			// Token: 0x17000769 RID: 1897
-			// (get) Token: 0x06004658 RID: 18008 RVA: 0x001BD4BA File Offset: 0x001BB6BA
+			// Token: 0x17000789 RID: 1929
+			// (get) Token: 0x060045F9 RID: 17913 RVA: 0x001BD9C2 File Offset: 0x001BBBC2
 			public Mesh.MeshData MeshData
 			{
 				get
@@ -672,9 +672,9 @@ public static class SimpleMeshFile
 				}
 			}
 
-			// Token: 0x1700076A RID: 1898
-			// (get) Token: 0x06004659 RID: 18009 RVA: 0x001BD4D2 File Offset: 0x001BB6D2
-			// (set) Token: 0x0600465A RID: 18010 RVA: 0x001BD4E6 File Offset: 0x001BB6E6
+			// Token: 0x1700078A RID: 1930
+			// (get) Token: 0x060045FA RID: 17914 RVA: 0x001BD9DA File Offset: 0x001BBBDA
+			// (set) Token: 0x060045FB RID: 17915 RVA: 0x001BD9EE File Offset: 0x001BBBEE
 			public string Name
 			{
 				get
@@ -687,11 +687,11 @@ public static class SimpleMeshFile
 				}
 			}
 
-			// Token: 0x04003865 RID: 14437
+			// Token: 0x04003861 RID: 14433
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly SimpleMeshFile.SimpleMeshDataArray array;
 
-			// Token: 0x04003866 RID: 14438
+			// Token: 0x04003862 RID: 14434
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly int offset;
 		}

@@ -5,37 +5,37 @@ using ConcurrentCollections;
 using UniLinq;
 using UnityEngine;
 
-// Token: 0x02000395 RID: 917
+// Token: 0x02000398 RID: 920
 public class DynamicMeshRegion : DynamicMeshContainer
 {
-	// Token: 0x17000339 RID: 825
-	// (get) Token: 0x06001B39 RID: 6969 RVA: 0x000A1531 File Offset: 0x0009F731
-	// (set) Token: 0x06001B3A RID: 6970 RVA: 0x000A1539 File Offset: 0x0009F739
+	// Token: 0x17000331 RID: 817
+	// (get) Token: 0x06001B32 RID: 6962 RVA: 0x000A1773 File Offset: 0x0009F973
+	// (set) Token: 0x06001B33 RID: 6963 RVA: 0x000A177B File Offset: 0x0009F97B
 	public Rect Rect { get; set; }
 
-	// Token: 0x1700033A RID: 826
-	// (get) Token: 0x06001B3B RID: 6971 RVA: 0x000A1542 File Offset: 0x0009F742
-	// (set) Token: 0x06001B3C RID: 6972 RVA: 0x000A154A File Offset: 0x0009F74A
+	// Token: 0x17000332 RID: 818
+	// (get) Token: 0x06001B34 RID: 6964 RVA: 0x000A1784 File Offset: 0x0009F984
+	// (set) Token: 0x06001B35 RID: 6965 RVA: 0x000A178C File Offset: 0x0009F98C
 	public bool RegenRequired { get; set; }
 
-	// Token: 0x1700033B RID: 827
-	// (get) Token: 0x06001B3D RID: 6973 RVA: 0x000A1553 File Offset: 0x0009F753
-	// (set) Token: 0x06001B3E RID: 6974 RVA: 0x000A155B File Offset: 0x0009F75B
+	// Token: 0x17000333 RID: 819
+	// (get) Token: 0x06001B36 RID: 6966 RVA: 0x000A1795 File Offset: 0x0009F995
+	// (set) Token: 0x06001B37 RID: 6967 RVA: 0x000A179D File Offset: 0x0009F99D
 	public int xIndex { get; set; }
 
-	// Token: 0x1700033C RID: 828
-	// (get) Token: 0x06001B3F RID: 6975 RVA: 0x000A1564 File Offset: 0x0009F764
-	// (set) Token: 0x06001B40 RID: 6976 RVA: 0x000A156C File Offset: 0x0009F76C
+	// Token: 0x17000334 RID: 820
+	// (get) Token: 0x06001B38 RID: 6968 RVA: 0x000A17A6 File Offset: 0x0009F9A6
+	// (set) Token: 0x06001B39 RID: 6969 RVA: 0x000A17AE File Offset: 0x0009F9AE
 	public int zIndex { get; set; }
 
-	// Token: 0x1700033D RID: 829
-	// (get) Token: 0x06001B41 RID: 6977 RVA: 0x000A1575 File Offset: 0x0009F775
-	// (set) Token: 0x06001B42 RID: 6978 RVA: 0x000A157D File Offset: 0x0009F77D
+	// Token: 0x17000335 RID: 821
+	// (get) Token: 0x06001B3A RID: 6970 RVA: 0x000A17B7 File Offset: 0x0009F9B7
+	// (set) Token: 0x06001B3B RID: 6971 RVA: 0x000A17BF File Offset: 0x0009F9BF
 	public List<PrefabInstance> Instances { get; set; }
 
-	// Token: 0x1700033E RID: 830
-	// (get) Token: 0x06001B43 RID: 6979 RVA: 0x000A1586 File Offset: 0x0009F786
-	// (set) Token: 0x06001B44 RID: 6980 RVA: 0x000A1590 File Offset: 0x0009F790
+	// Token: 0x17000336 RID: 822
+	// (get) Token: 0x06001B3C RID: 6972 RVA: 0x000A17C8 File Offset: 0x0009F9C8
+	// (set) Token: 0x06001B3D RID: 6973 RVA: 0x000A17D0 File Offset: 0x0009F9D0
 	public GameObject RegionObject
 	{
 		get
@@ -66,12 +66,12 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x1700033F RID: 831
-	// (get) Token: 0x06001B45 RID: 6981 RVA: 0x000A1653 File Offset: 0x0009F853
-	// (set) Token: 0x06001B46 RID: 6982 RVA: 0x000A165B File Offset: 0x0009F85B
+	// Token: 0x17000337 RID: 823
+	// (get) Token: 0x06001B3E RID: 6974 RVA: 0x000A1893 File Offset: 0x0009FA93
+	// (set) Token: 0x06001B3F RID: 6975 RVA: 0x000A189B File Offset: 0x0009FA9B
 	public bool IsMeshLoaded { get; set; }
 
-	// Token: 0x06001B47 RID: 6983 RVA: 0x000A1664 File Offset: 0x0009F864
+	// Token: 0x06001B40 RID: 6976 RVA: 0x000A18A4 File Offset: 0x0009FAA4
 	public DynamicMeshRegion(long key)
 	{
 		Vector3i vector3i = new Vector3i(WorldChunkCache.extractX(key) * 16, 0, WorldChunkCache.extractZ(key) * 16);
@@ -82,7 +82,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.zIndex = (int)((double)vector3i.z / 160.0);
 	}
 
-	// Token: 0x06001B48 RID: 6984 RVA: 0x000A1754 File Offset: 0x0009F954
+	// Token: 0x06001B41 RID: 6977 RVA: 0x000A1994 File Offset: 0x0009FB94
 	public DynamicMeshRegion(Vector3i worldPos)
 	{
 		this.WorldPosition = DynamicMeshUnity.GetRegionPositionFromWorldPosition(worldPos);
@@ -92,7 +92,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.zIndex = (int)((double)worldPos.z / 160.0);
 	}
 
-	// Token: 0x06001B49 RID: 6985 RVA: 0x000A185A File Offset: 0x0009FA5A
+	// Token: 0x06001B42 RID: 6978 RVA: 0x000A1A9A File Offset: 0x0009FC9A
 	public void AddToLoadingQueue(DynamicMeshItem item)
 	{
 		this.OnLoadingQueue.Add(item);
@@ -102,33 +102,33 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B4A RID: 6986 RVA: 0x000A1883 File Offset: 0x0009FA83
+	// Token: 0x06001B43 RID: 6979 RVA: 0x000A1AC3 File Offset: 0x0009FCC3
 	public void RemoveFromLoadingQueue(DynamicMeshItem item)
 	{
 		this.OnLoadingQueue.Remove(item);
 	}
 
-	// Token: 0x06001B4B RID: 6987 RVA: 0x000A1892 File Offset: 0x0009FA92
+	// Token: 0x06001B44 RID: 6980 RVA: 0x000A1AD2 File Offset: 0x0009FCD2
 	public override GameObject GetGameObject()
 	{
 		return this.RegionObject;
 	}
 
-	// Token: 0x06001B4C RID: 6988 RVA: 0x000A189C File Offset: 0x0009FA9C
+	// Token: 0x06001B45 RID: 6981 RVA: 0x000A1ADC File Offset: 0x0009FCDC
 	public bool IsInBuffer()
 	{
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
 		return !(primaryPlayer == null) && DynamicMeshUnity.IsInBuffer(primaryPlayer.position.x, primaryPlayer.position.z, DynamicMeshRegion.BufferIndexSize, this.xIndex, this.zIndex);
 	}
 
-	// Token: 0x06001B4D RID: 6989 RVA: 0x000A18F0 File Offset: 0x0009FAF0
+	// Token: 0x06001B46 RID: 6982 RVA: 0x000A1B30 File Offset: 0x0009FD30
 	public static bool IsInBuffer(int x, int z)
 	{
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
 		return !(primaryPlayer == null) && Math.Abs((int)(primaryPlayer.position.x / 160f) - x / 160) <= DynamicMeshRegion.BufferIndexSize && Math.Abs((int)(primaryPlayer.position.x / 160f) - z / 160) <= DynamicMeshRegion.BufferIndexSize;
 	}
 
-	// Token: 0x06001B4E RID: 6990 RVA: 0x000A196C File Offset: 0x0009FB6C
+	// Token: 0x06001B47 RID: 6983 RVA: 0x000A1BAC File Offset: 0x0009FDAC
 	public bool IsInItemLoad()
 	{
 		if (GameManager.Instance == null)
@@ -143,27 +143,27 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return !(primaryPlayer == null) && DynamicMeshUnity.IsInBuffer(primaryPlayer.position.x, primaryPlayer.position.z, DynamicMeshRegion.ItemLoadIndex, this.xIndex, this.zIndex);
 	}
 
-	// Token: 0x06001B4F RID: 6991 RVA: 0x000A19DD File Offset: 0x0009FBDD
+	// Token: 0x06001B48 RID: 6984 RVA: 0x000A1C1D File Offset: 0x0009FE1D
 	public bool IsInItemLoad(float x, float z)
 	{
 		return DynamicMeshUnity.IsInBuffer(x, z, DynamicMeshRegion.ItemLoadIndex, this.xIndex, this.zIndex);
 	}
 
-	// Token: 0x06001B50 RID: 6992 RVA: 0x000A19F8 File Offset: 0x0009FBF8
+	// Token: 0x06001B49 RID: 6985 RVA: 0x000A1C38 File Offset: 0x0009FE38
 	public bool IsInItemUnload()
 	{
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
 		return !(primaryPlayer == null) && !DynamicMeshUnity.IsInBuffer(primaryPlayer.position.x, primaryPlayer.position.z, DynamicMeshRegion.ItemUnloadIndex, this.xIndex, this.zIndex);
 	}
 
-	// Token: 0x06001B51 RID: 6993 RVA: 0x000A1A4F File Offset: 0x0009FC4F
+	// Token: 0x06001B4A RID: 6986 RVA: 0x000A1C8F File Offset: 0x0009FE8F
 	public bool FileExists()
 	{
 		return SdFile.Exists(this.Path);
 	}
 
-	// Token: 0x17000340 RID: 832
-	// (get) Token: 0x06001B52 RID: 6994 RVA: 0x000A1A5C File Offset: 0x0009FC5C
+	// Token: 0x17000338 RID: 824
+	// (get) Token: 0x06001B4B RID: 6987 RVA: 0x000A1C9C File Offset: 0x0009FE9C
 	public string Path
 	{
 		get
@@ -172,19 +172,19 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B53 RID: 6995 RVA: 0x000A1A78 File Offset: 0x0009FC78
+	// Token: 0x06001B4C RID: 6988 RVA: 0x000A1CB8 File Offset: 0x0009FEB8
 	public static DynamicMeshRegion GetRegionFromWorldPosition(Vector3i worldPos)
 	{
 		return DynamicMeshManager.Instance.GetRegion(worldPos);
 	}
 
-	// Token: 0x06001B54 RID: 6996 RVA: 0x000A1A85 File Offset: 0x0009FC85
+	// Token: 0x06001B4D RID: 6989 RVA: 0x000A1CC5 File Offset: 0x0009FEC5
 	public static DynamicMeshRegion GetRegionFromWorldPosition(float worldX, float worldZ)
 	{
 		return DynamicMeshRegion.GetRegionFromWorldPosition((int)worldX, (int)worldZ);
 	}
 
-	// Token: 0x06001B55 RID: 6997 RVA: 0x000A1A90 File Offset: 0x0009FC90
+	// Token: 0x06001B4E RID: 6990 RVA: 0x000A1CD0 File Offset: 0x0009FED0
 	public static DynamicMeshRegion GetRegionFromWorldPosition(int worldX, int worldZ)
 	{
 		long regionKeyFromWorldPosition = DynamicMeshUnity.GetRegionKeyFromWorldPosition(worldX, worldZ);
@@ -193,7 +193,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return dynamicMeshRegion;
 	}
 
-	// Token: 0x06001B56 RID: 6998 RVA: 0x000A1AB4 File Offset: 0x0009FCB4
+	// Token: 0x06001B4F RID: 6991 RVA: 0x000A1CF4 File Offset: 0x0009FEF4
 	public bool AddItemToLoadedList(DynamicMeshItem item)
 	{
 		if (item == null)
@@ -215,7 +215,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x06001B57 RID: 6999 RVA: 0x000A1B38 File Offset: 0x0009FD38
+	// Token: 0x06001B50 RID: 6992 RVA: 0x000A1D78 File Offset: 0x0009FF78
 	public bool HideIfAllLoaded()
 	{
 		if (this.RegionObject == null)
@@ -247,13 +247,13 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001B58 RID: 7000 RVA: 0x000A1C07 File Offset: 0x0009FE07
+	// Token: 0x06001B51 RID: 6993 RVA: 0x000A1E47 File Offset: 0x000A0047
 	public bool IsVisible()
 	{
 		return this.RegionObject != null && this.RegionObject.activeSelf;
 	}
 
-	// Token: 0x06001B59 RID: 7001 RVA: 0x000A1C24 File Offset: 0x0009FE24
+	// Token: 0x06001B52 RID: 6994 RVA: 0x000A1E64 File Offset: 0x000A0064
 	public bool AddChunk(int x, int z)
 	{
 		if (this.HasChunk(x, z))
@@ -264,7 +264,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001B5A RID: 7002 RVA: 0x000A1C46 File Offset: 0x0009FE46
+	// Token: 0x06001B53 RID: 6995 RVA: 0x000A1E86 File Offset: 0x000A0086
 	public bool AddChunk(Vector3i chunk)
 	{
 		if (this.HasChunk(chunk.x, chunk.z))
@@ -275,14 +275,14 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001B5B RID: 7003 RVA: 0x000A1C6B File Offset: 0x0009FE6B
+	// Token: 0x06001B54 RID: 6996 RVA: 0x000A1EAB File Offset: 0x000A00AB
 	public bool AddThreadedChunk(int x, int z)
 	{
 		this.AddChunksThreaded.Enqueue(new Vector3i(x, 0, z));
 		return true;
 	}
 
-	// Token: 0x06001B5C RID: 7004 RVA: 0x000A1C84 File Offset: 0x0009FE84
+	// Token: 0x06001B55 RID: 6997 RVA: 0x000A1EC4 File Offset: 0x000A00C4
 	public bool HasChunk(int x, int z)
 	{
 		for (int i = 0; i < this.LoadedChunks.Count; i++)
@@ -295,7 +295,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x06001B5D RID: 7005 RVA: 0x000A1CD4 File Offset: 0x0009FED4
+	// Token: 0x06001B56 RID: 6998 RVA: 0x000A1F14 File Offset: 0x000A0114
 	public bool HasChunkAny(int x, int z)
 	{
 		for (int i = 0; i < this.LoadedItems.Count; i++)
@@ -317,7 +317,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x06001B5E RID: 7006 RVA: 0x000A1D5C File Offset: 0x0009FF5C
+	// Token: 0x06001B57 RID: 6999 RVA: 0x000A1F9C File Offset: 0x000A019C
 	public bool IsRegionLoadedAndActive(bool doDebug)
 	{
 		if (DynamicMeshManager.Instance.PrefabCheck == PrefabCheckState.Run)
@@ -365,13 +365,13 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x06001B5F RID: 7007 RVA: 0x000A1EDC File Offset: 0x000A00DC
+	// Token: 0x06001B58 RID: 7000 RVA: 0x000A211C File Offset: 0x000A031C
 	public bool ContainsPrefab(PrefabInstance p)
 	{
 		return this.Intersects(p.boundingBoxPosition.x, p.boundingBoxPosition.z, p.boundingBoxPosition.x + p.boundingBoxSize.x, p.boundingBoxPosition.z + p.boundingBoxSize.z) || this.Intersects(p.boundingBoxPosition.x, p.boundingBoxPosition.z + p.boundingBoxSize.z, p.boundingBoxPosition.x + p.boundingBoxSize.x, p.boundingBoxPosition.z);
 	}
 
-	// Token: 0x06001B60 RID: 7008 RVA: 0x000A1F84 File Offset: 0x000A0184
+	// Token: 0x06001B59 RID: 7001 RVA: 0x000A21C4 File Offset: 0x000A03C4
 	public bool Intersects(int x1, int y1, int x2, int y2)
 	{
 		int num = Math.Min(x1, x2);
@@ -400,7 +400,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return (this.Rect.yMax >= num5 || this.Rect.yMax >= num6) && (this.Rect.yMin <= num5 || this.Rect.yMin <= num6);
 	}
 
-	// Token: 0x06001B61 RID: 7009 RVA: 0x000A2129 File Offset: 0x000A0329
+	// Token: 0x06001B5A RID: 7002 RVA: 0x000A2369 File Offset: 0x000A0569
 	public void OnChunkVisible(DynamicMeshItem item)
 	{
 		this.VisibleChunks += 1;
@@ -408,7 +408,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.HideRegion("onChunkVisible");
 	}
 
-	// Token: 0x06001B62 RID: 7010 RVA: 0x000A214C File Offset: 0x000A034C
+	// Token: 0x06001B5B RID: 7003 RVA: 0x000A238C File Offset: 0x000A058C
 	public void OnChunkUnloaded(DynamicMeshItem item)
 	{
 		if (this.VisibleChunks > 0)
@@ -425,7 +425,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B63 RID: 7011 RVA: 0x000A21A8 File Offset: 0x000A03A8
+	// Token: 0x06001B5C RID: 7004 RVA: 0x000A23E8 File Offset: 0x000A05E8
 	public void SetVisibleNew(bool active, string reason, bool updateItems = true)
 	{
 		if (this.RegionObject != null && active != this.RegionObject.activeSelf)
@@ -454,7 +454,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B64 RID: 7012 RVA: 0x000A2258 File Offset: 0x000A0458
+	// Token: 0x06001B5D RID: 7005 RVA: 0x000A2498 File Offset: 0x000A0698
 	public void HideItems()
 	{
 		foreach (DynamicMeshItem dynamicMeshItem in this.LoadedItems)
@@ -463,7 +463,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B65 RID: 7013 RVA: 0x000A22B0 File Offset: 0x000A04B0
+	// Token: 0x06001B5E RID: 7006 RVA: 0x000A24F0 File Offset: 0x000A06F0
 	public void ShowItems()
 	{
 		foreach (DynamicMeshItem dynamicMeshItem in this.LoadedItems)
@@ -476,7 +476,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B66 RID: 7014 RVA: 0x000A2328 File Offset: 0x000A0528
+	// Token: 0x06001B5F RID: 7007 RVA: 0x000A2568 File Offset: 0x000A0768
 	public bool LoadItems(bool urgent, bool visible, bool includeUnloaded, string reason)
 	{
 		if (!this.IsInItemLoad())
@@ -511,7 +511,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return this.UnloadedItems.Count > 0 || flag;
 	}
 
-	// Token: 0x06001B67 RID: 7015 RVA: 0x000A2400 File Offset: 0x000A0600
+	// Token: 0x06001B60 RID: 7008 RVA: 0x000A2640 File Offset: 0x000A0840
 	public void ShowDebug()
 	{
 		if (DynamicMeshManager.DoLog)
@@ -568,7 +568,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B68 RID: 7016 RVA: 0x000A26BC File Offset: 0x000A08BC
+	// Token: 0x06001B61 RID: 7009 RVA: 0x000A28FC File Offset: 0x000A0AFC
 	public void OnCorrupted()
 	{
 		if (DynamicMeshManager.DoLog)
@@ -583,8 +583,8 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x17000341 RID: 833
-	// (get) Token: 0x06001B69 RID: 7017 RVA: 0x000A2744 File Offset: 0x000A0944
+	// Token: 0x17000339 RID: 825
+	// (get) Token: 0x06001B62 RID: 7010 RVA: 0x000A2984 File Offset: 0x000A0B84
 	public int Triangles
 	{
 		get
@@ -603,8 +603,8 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x17000342 RID: 834
-	// (get) Token: 0x06001B6A RID: 7018 RVA: 0x000A27FC File Offset: 0x000A09FC
+	// Token: 0x1700033A RID: 826
+	// (get) Token: 0x06001B63 RID: 7011 RVA: 0x000A2A3C File Offset: 0x000A0C3C
 	public int Vertices
 	{
 		get
@@ -623,8 +623,8 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x17000343 RID: 835
-	// (get) Token: 0x06001B6B RID: 7019 RVA: 0x000A28B0 File Offset: 0x000A0AB0
+	// Token: 0x1700033B RID: 827
+	// (get) Token: 0x06001B64 RID: 7012 RVA: 0x000A2AF0 File Offset: 0x000A0CF0
 	public int RegionObjects
 	{
 		get
@@ -638,7 +638,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B6C RID: 7020 RVA: 0x000A28E4 File Offset: 0x000A0AE4
+	// Token: 0x06001B65 RID: 7013 RVA: 0x000A2B24 File Offset: 0x000A0D24
 	public void SetPosition()
 	{
 		if (this.RegionObject != null)
@@ -651,14 +651,14 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B6D RID: 7021 RVA: 0x000A293E File Offset: 0x000A0B3E
+	// Token: 0x06001B66 RID: 7014 RVA: 0x000A2B7E File Offset: 0x000A0D7E
 	public void HideRegion(string debugReason)
 	{
 		this.SetVisibleNew(false, debugReason, true);
 		this.ShowItems();
 	}
 
-	// Token: 0x06001B6E RID: 7022 RVA: 0x000A2950 File Offset: 0x000A0B50
+	// Token: 0x06001B67 RID: 7015 RVA: 0x000A2B90 File Offset: 0x000A0D90
 	public void SetViewStats(bool inBuffer, bool shouldLoadItems, bool shouldUnloadItems, bool isOutsideMaxRegionArea)
 	{
 		this.OutsideLoadArea = isOutsideMaxRegionArea;
@@ -707,8 +707,8 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x17000344 RID: 836
-	// (get) Token: 0x06001B6F RID: 7023 RVA: 0x000A2A30 File Offset: 0x000A0C30
+	// Token: 0x1700033C RID: 828
+	// (get) Token: 0x06001B68 RID: 7016 RVA: 0x000A2C70 File Offset: 0x000A0E70
 	public EntityPlayer GetPlayer
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -734,7 +734,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B70 RID: 7024 RVA: 0x000A2AA4 File Offset: 0x000A0CA4
+	// Token: 0x06001B69 RID: 7017 RVA: 0x000A2CE4 File Offset: 0x000A0EE4
 	public float DistanceToPlayer()
 	{
 		EntityPlayer getPlayer = this.GetPlayer;
@@ -747,7 +747,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		return Math.Abs(Mathf.Sqrt(Mathf.Pow(position.x - (float)(this.WorldPosition.x + num), 2f) + Mathf.Pow(position.z - (float)(this.WorldPosition.z + num), 2f)));
 	}
 
-	// Token: 0x06001B71 RID: 7025 RVA: 0x000A2B1A File Offset: 0x000A0D1A
+	// Token: 0x06001B6A RID: 7018 RVA: 0x000A2D5A File Offset: 0x000A0F5A
 	public void SetState(DynamicRegionState newState, bool forceChange)
 	{
 		if (!forceChange && newState == DynamicRegionState.Unloading && this.State == DynamicRegionState.Unloaded)
@@ -761,7 +761,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.State = newState;
 	}
 
-	// Token: 0x06001B72 RID: 7026 RVA: 0x000A2B44 File Offset: 0x000A0D44
+	// Token: 0x06001B6B RID: 7019 RVA: 0x000A2D84 File Offset: 0x000A0F84
 	public void RemoveChunk(int x, int z, string reason, bool removedFromWorld)
 	{
 		if (DynamicMeshManager.DoLog)
@@ -820,7 +820,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.LoadedChunks.Remove(new Vector3i(x, 0, z));
 	}
 
-	// Token: 0x06001B73 RID: 7027 RVA: 0x000A2C88 File Offset: 0x000A0E88
+	// Token: 0x06001B6C RID: 7020 RVA: 0x000A2EC8 File Offset: 0x000A10C8
 	public void AddItem(DynamicMeshItem item)
 	{
 		int num = 0;
@@ -895,14 +895,14 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B74 RID: 7028 RVA: 0x000A2DE0 File Offset: 0x000A0FE0
+	// Token: 0x06001B6D RID: 7021 RVA: 0x000A3020 File Offset: 0x000A1220
 	public int GetStreamLength()
 	{
 		int num = 8 + this.LoadedChunks.Distinct<Vector3i>().Count<Vector3i>() * 8 + 8 + 12 + 1 + 4;
 		return Math.Max(10240, num);
 	}
 
-	// Token: 0x06001B75 RID: 7029 RVA: 0x000A2E16 File Offset: 0x000A1016
+	// Token: 0x06001B6E RID: 7022 RVA: 0x000A3056 File Offset: 0x000A1256
 	public void CleanUp()
 	{
 		if (this.RegionObject != null)
@@ -915,14 +915,14 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.IsMeshLoaded = false;
 	}
 
-	// Token: 0x06001B76 RID: 7030 RVA: 0x000A2E4C File Offset: 0x000A104C
+	// Token: 0x06001B6F RID: 7023 RVA: 0x000A308C File Offset: 0x000A128C
 	public bool IsPlayerInRegion()
 	{
 		EntityPlayerLocal player = DynamicMeshManager.player;
 		return !(player == null) && DynamicMeshManager.Instance.GetRegion((int)player.position.x, (int)player.position.z).WorldPosition == this.WorldPosition;
 	}
 
-	// Token: 0x06001B77 RID: 7031 RVA: 0x000A2E9C File Offset: 0x000A109C
+	// Token: 0x06001B70 RID: 7024 RVA: 0x000A30DC File Offset: 0x000A12DC
 	public void DistanceChecks()
 	{
 		float num = this.DistanceToPlayer();
@@ -945,7 +945,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B78 RID: 7032 RVA: 0x000A2F53 File Offset: 0x000A1153
+	// Token: 0x06001B71 RID: 7025 RVA: 0x000A3193 File Offset: 0x000A1393
 	public static void LogMsg(string msg)
 	{
 		if (DynamicMeshManager.DoLog)
@@ -954,7 +954,7 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x06001B79 RID: 7033 RVA: 0x000A2F64 File Offset: 0x000A1164
+	// Token: 0x06001B72 RID: 7026 RVA: 0x000A31A4 File Offset: 0x000A13A4
 	public void ClearItems()
 	{
 		foreach (DynamicMeshItem dynamicMeshItem in this.LoadedItems)
@@ -966,69 +966,69 @@ public class DynamicMeshRegion : DynamicMeshContainer
 		this.SetVisibleNew(true, "itemsUnloaded", true);
 	}
 
-	// Token: 0x06001B7A RID: 7034 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001B73 RID: 7027 RVA: 0x000027FC File Offset: 0x000009FC
 	public void ClearMeshes()
 	{
 	}
 
-	// Token: 0x04001189 RID: 4489
+	// Token: 0x04001182 RID: 4482
 	public static ConcurrentDictionary<long, DynamicMeshRegion> Regions = new ConcurrentDictionary<long, DynamicMeshRegion>();
 
-	// Token: 0x0400118A RID: 4490
+	// Token: 0x04001183 RID: 4483
 	public static int BufferIndexSize = 1;
 
-	// Token: 0x0400118B RID: 4491
+	// Token: 0x04001184 RID: 4484
 	public static int ItemLoadIndex = 3;
 
-	// Token: 0x0400118C RID: 4492
+	// Token: 0x04001185 RID: 4485
 	public static int ItemUnloadIndex = DynamicMeshRegion.ItemLoadIndex + 1;
 
-	// Token: 0x04001191 RID: 4497
+	// Token: 0x0400118A RID: 4490
 	public byte VisibleChunks;
 
-	// Token: 0x04001193 RID: 4499
+	// Token: 0x0400118C RID: 4492
 	public List<DynamicMeshItem> LoadedItems = new List<DynamicMeshItem>();
 
-	// Token: 0x04001194 RID: 4500
+	// Token: 0x0400118D RID: 4493
 	public List<DynamicMeshItem> UnloadedItems = new List<DynamicMeshItem>();
 
-	// Token: 0x04001195 RID: 4501
+	// Token: 0x0400118E RID: 4494
 	public HashSet<DynamicMeshItem> OnLoadingQueue = new HashSet<DynamicMeshItem>();
 
-	// Token: 0x04001196 RID: 4502
+	// Token: 0x0400118F RID: 4495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject _regionObject;
 
-	// Token: 0x04001197 RID: 4503
+	// Token: 0x04001190 RID: 4496
 	public ConcurrentQueue<Vector3i> AddChunksThreaded = new ConcurrentQueue<Vector3i>();
 
-	// Token: 0x04001198 RID: 4504
+	// Token: 0x04001191 RID: 4497
 	public ConcurrentHashSet<Vector3i> LoadedChunksThreaded = new ConcurrentHashSet<Vector3i>();
 
-	// Token: 0x04001199 RID: 4505
+	// Token: 0x04001192 RID: 4498
 	public List<Vector3i> LoadedChunks = new List<Vector3i>();
 
-	// Token: 0x0400119B RID: 4507
+	// Token: 0x04001194 RID: 4500
 	public DateTime CreateDate = DateTime.Now;
 
-	// Token: 0x0400119C RID: 4508
+	// Token: 0x04001195 RID: 4501
 	public DateTime NextLoadTime = DateTime.Now;
 
-	// Token: 0x0400119D RID: 4509
+	// Token: 0x04001196 RID: 4502
 	public DynamicRegionState State;
 
-	// Token: 0x0400119E RID: 4510
+	// Token: 0x04001197 RID: 4503
 	public bool InBuffer;
 
-	// Token: 0x0400119F RID: 4511
+	// Token: 0x04001198 RID: 4504
 	public bool FastTrackLoaded;
 
-	// Token: 0x040011A0 RID: 4512
+	// Token: 0x04001199 RID: 4505
 	public bool MarkedForDeletion;
 
-	// Token: 0x040011A1 RID: 4513
+	// Token: 0x0400119A RID: 4506
 	public bool OutsideLoadArea = true;
 
-	// Token: 0x040011A2 RID: 4514
+	// Token: 0x0400119B RID: 4507
 	public bool IsThreadedRegion;
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1D RID: 3869
+// Token: 0x02000F2C RID: 3884
 [Preserve]
 public class XUiC_DewCollectorModGrid : XUiC_ItemStackGrid
 {
-	// Token: 0x17000E2F RID: 3631
-	// (get) Token: 0x06007962 RID: 31074 RVA: 0x000817FC File Offset: 0x0007F9FC
+	// Token: 0x17000E4C RID: 3660
+	// (get) Token: 0x0600795D RID: 31069 RVA: 0x000601CD File Offset: 0x0005E3CD
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -16,13 +16,13 @@ public class XUiC_DewCollectorModGrid : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007963 RID: 31075 RVA: 0x002DC3A5 File Offset: 0x002DA5A5
+	// Token: 0x0600795E RID: 31070 RVA: 0x002DF741 File Offset: 0x002DD941
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x06007964 RID: 31076 RVA: 0x002DC3AD File Offset: 0x002DA5AD
+	// Token: 0x0600795F RID: 31071 RVA: 0x002DF749 File Offset: 0x002DD949
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -32,7 +32,7 @@ public class XUiC_DewCollectorModGrid : XUiC_ItemStackGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007965 RID: 31077 RVA: 0x002DC3E0 File Offset: 0x002DA5E0
+	// Token: 0x06007960 RID: 31072 RVA: 0x002DF77C File Offset: 0x002DD97C
 	public void SetTileEntity(TileEntityCollector te)
 	{
 		this.tileEntity = te;
@@ -58,7 +58,7 @@ public class XUiC_DewCollectorModGrid : XUiC_ItemStackGrid
 		this.SetStacks(te.ModSlots);
 	}
 
-	// Token: 0x06007966 RID: 31078 RVA: 0x002DC48C File Offset: 0x002DA68C
+	// Token: 0x06007961 RID: 31073 RVA: 0x002DF828 File Offset: 0x002DDA28
 	public bool TryAddMod(ItemClass newItemClass, ItemStack newItemStack)
 	{
 		if (!this.blockCollector.RequiredModsOnly)
@@ -77,25 +77,25 @@ public class XUiC_DewCollectorModGrid : XUiC_ItemStackGrid
 		return newItemStack.count == 0;
 	}
 
-	// Token: 0x06007967 RID: 31079 RVA: 0x002DC4E0 File Offset: 0x002DA6E0
+	// Token: 0x06007962 RID: 31074 RVA: 0x002DF87C File Offset: 0x002DDA7C
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.CurrentCollectorModGrid = this;
 	}
 
-	// Token: 0x06007968 RID: 31080 RVA: 0x002DC4F4 File Offset: 0x002DA6F4
+	// Token: 0x06007963 RID: 31075 RVA: 0x002DF890 File Offset: 0x002DDA90
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CurrentCollectorModGrid = null;
 	}
 
-	// Token: 0x040059BB RID: 22971
+	// Token: 0x040059F3 RID: 23027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCollector tileEntity;
 
-	// Token: 0x040059BC RID: 22972
+	// Token: 0x040059F4 RID: 23028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockCollector blockCollector;
 }

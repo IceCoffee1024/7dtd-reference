@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001613 RID: 5651
+// Token: 0x02001632 RID: 5682
 public class vp_WeaponHandler : MonoBehaviour
 {
-	// Token: 0x170014C5 RID: 5317
-	// (get) Token: 0x0600B192 RID: 45458 RVA: 0x00424571 File Offset: 0x00422771
-	// (set) Token: 0x0600B193 RID: 45459 RVA: 0x00424587 File Offset: 0x00422787
+	// Token: 0x17001508 RID: 5384
+	// (get) Token: 0x0600B224 RID: 45604 RVA: 0x0042824D File Offset: 0x0042644D
+	// (set) Token: 0x0600B225 RID: 45605 RVA: 0x00428263 File Offset: 0x00426463
 	public List<vp_Weapon> Weapons
 	{
 		get
@@ -25,8 +25,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014C6 RID: 5318
-	// (get) Token: 0x0600B194 RID: 45460 RVA: 0x00424590 File Offset: 0x00422790
+	// Token: 0x17001509 RID: 5385
+	// (get) Token: 0x0600B226 RID: 45606 RVA: 0x0042826C File Offset: 0x0042646C
 	public vp_Weapon CurrentWeapon
 	{
 		get
@@ -35,8 +35,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014C7 RID: 5319
-	// (get) Token: 0x0600B195 RID: 45461 RVA: 0x00424598 File Offset: 0x00422798
+	// Token: 0x1700150A RID: 5386
+	// (get) Token: 0x0600B227 RID: 45607 RVA: 0x00428274 File Offset: 0x00426474
 	[Obsolete("Please use the 'CurrentWeaponIndex' parameter instead.")]
 	public int CurrentWeaponID
 	{
@@ -46,8 +46,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014C8 RID: 5320
-	// (get) Token: 0x0600B196 RID: 45462 RVA: 0x00424598 File Offset: 0x00422798
+	// Token: 0x1700150B RID: 5387
+	// (get) Token: 0x0600B228 RID: 45608 RVA: 0x00428274 File Offset: 0x00426474
 	public int CurrentWeaponIndex
 	{
 		get
@@ -56,7 +56,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B197 RID: 45463 RVA: 0x004245A0 File Offset: 0x004227A0
+	// Token: 0x0600B229 RID: 45609 RVA: 0x0042827C File Offset: 0x0042647C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -67,7 +67,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B198 RID: 45464 RVA: 0x004245F8 File Offset: 0x004227F8
+	// Token: 0x0600B22A RID: 45610 RVA: 0x004282D4 File Offset: 0x004264D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void InitWeaponLists()
 	{
@@ -110,7 +110,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.Weapons = this.m_WeaponLists[0];
 	}
 
-	// Token: 0x0600B199 RID: 45465 RVA: 0x0042478C File Offset: 0x0042298C
+	// Token: 0x0600B22B RID: 45611 RVA: 0x00428468 File Offset: 0x00426668
 	public void EnableWeaponList(int index)
 	{
 		if (this.m_WeaponLists == null)
@@ -128,7 +128,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.Weapons = this.m_WeaponLists[index];
 	}
 
-	// Token: 0x0600B19A RID: 45466 RVA: 0x004247D8 File Offset: 0x004229D8
+	// Token: 0x0600B22C RID: 45612 RVA: 0x004284B4 File Offset: 0x004266B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<vp_Weapon> GetWeaponList(Transform target)
 	{
@@ -152,7 +152,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		return list;
 	}
 
-	// Token: 0x0600B19B RID: 45467 RVA: 0x00424889 File Offset: 0x00422A89
+	// Token: 0x0600B22D RID: 45613 RVA: 0x00428565 File Offset: 0x00426765
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -162,7 +162,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B19C RID: 45468 RVA: 0x004248A5 File Offset: 0x00422AA5
+	// Token: 0x0600B22E RID: 45614 RVA: 0x00428581 File Offset: 0x00426781
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -172,7 +172,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B19D RID: 45469 RVA: 0x004248C1 File Offset: 0x00422AC1
+	// Token: 0x0600B22F RID: 45615 RVA: 0x0042859D File Offset: 0x0042679D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -180,7 +180,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.UpdateFiring();
 	}
 
-	// Token: 0x0600B19E RID: 45470 RVA: 0x004248D0 File Offset: 0x00422AD0
+	// Token: 0x0600B230 RID: 45616 RVA: 0x004285AC File Offset: 0x004267AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateFiring()
 	{
@@ -199,7 +199,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.m_Player.Fire.Try();
 	}
 
-	// Token: 0x0600B19F RID: 45471 RVA: 0x00424958 File Offset: 0x00422B58
+	// Token: 0x0600B231 RID: 45617 RVA: 0x00428634 File Offset: 0x00426834
 	public virtual void SetWeapon(int weaponIndex)
 	{
 		if (this.Weapons == null || this.Weapons.Count < 1)
@@ -220,7 +220,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.ActivateWeapon(weaponIndex);
 	}
 
-	// Token: 0x0600B1A0 RID: 45472 RVA: 0x00424A04 File Offset: 0x00422C04
+	// Token: 0x0600B232 RID: 45618 RVA: 0x004286E0 File Offset: 0x004268E0
 	public void DeactivateAll(List<vp_Weapon> weaponList)
 	{
 		foreach (vp_Weapon vp_Weapon in weaponList)
@@ -234,7 +234,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1A1 RID: 45473 RVA: 0x00424A7C File Offset: 0x00422C7C
+	// Token: 0x0600B233 RID: 45619 RVA: 0x00428758 File Offset: 0x00426958
 	public void ActivateWeapon(int index)
 	{
 		this.m_CurrentWeaponIndex = index;
@@ -249,7 +249,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1A2 RID: 45474 RVA: 0x00424AD3 File Offset: 0x00422CD3
+	// Token: 0x0600B234 RID: 45620 RVA: 0x004287AF File Offset: 0x004269AF
 	public virtual void CancelTimers()
 	{
 		vp_Timer.CancelAll("EjectShell");
@@ -258,7 +258,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.m_SetWeaponRefreshTimer.Cancel();
 	}
 
-	// Token: 0x0600B1A3 RID: 45475 RVA: 0x00424B00 File Offset: 0x00422D00
+	// Token: 0x0600B235 RID: 45621 RVA: 0x004287DC File Offset: 0x004269DC
 	public virtual void SetWeaponLayer(int layer)
 	{
 		if (this.m_CurrentWeaponIndex < 1 || this.m_CurrentWeaponIndex > this.Weapons.Count)
@@ -268,7 +268,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		vp_Layer.Set(this.Weapons[this.m_CurrentWeaponIndex - 1].gameObject, layer, true);
 	}
 
-	// Token: 0x0600B1A4 RID: 45476 RVA: 0x00424B3E File Offset: 0x00422D3E
+	// Token: 0x0600B236 RID: 45622 RVA: 0x0042881A File Offset: 0x00426A1A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitWeapon()
 	{
@@ -292,7 +292,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1A5 RID: 45477 RVA: 0x00424B70 File Offset: 0x00422D70
+	// Token: 0x0600B237 RID: 45623 RVA: 0x0042884C File Offset: 0x00426A4C
 	public void RefreshAllWeapons()
 	{
 		foreach (vp_Weapon vp_Weapon in this.Weapons)
@@ -302,20 +302,20 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1A6 RID: 45478 RVA: 0x00424BC8 File Offset: 0x00422DC8
+	// Token: 0x0600B238 RID: 45624 RVA: 0x004288A4 File Offset: 0x00426AA4
 	public int GetWeaponIndex(vp_Weapon weapon)
 	{
 		return this.Weapons.IndexOf(weapon) + 1;
 	}
 
-	// Token: 0x0600B1A7 RID: 45479 RVA: 0x00424BD8 File Offset: 0x00422DD8
+	// Token: 0x0600B239 RID: 45625 RVA: 0x004288B4 File Offset: 0x00426AB4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Reload()
 	{
 		this.m_Player.Attack.Stop(this.m_Player.CurrentWeaponReloadDuration.Get() + this.ReloadAttackSleepDuration);
 	}
 
-	// Token: 0x0600B1A8 RID: 45480 RVA: 0x00424C08 File Offset: 0x00422E08
+	// Token: 0x0600B23A RID: 45626 RVA: 0x004288E4 File Offset: 0x00426AE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_SetWeapon()
 	{
@@ -330,7 +330,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		this.m_Player.SetWeapon.AutoDuration = this.SetWeaponDuration;
 	}
 
-	// Token: 0x0600B1A9 RID: 45481 RVA: 0x00424CA4 File Offset: 0x00422EA4
+	// Token: 0x0600B23B RID: 45627 RVA: 0x00428980 File Offset: 0x00426B80
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_SetWeapon()
 	{
@@ -354,7 +354,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}, this.m_SetWeaponRefreshTimer);
 	}
 
-	// Token: 0x0600B1AA RID: 45482 RVA: 0x00424D1C File Offset: 0x00422F1C
+	// Token: 0x0600B23C RID: 45628 RVA: 0x004289F8 File Offset: 0x00426BF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_SetWeapon()
 	{
@@ -362,14 +362,14 @@ public class vp_WeaponHandler : MonoBehaviour
 		return num != this.m_CurrentWeaponIndex && num >= 0 && num <= this.Weapons.Count && !this.m_Player.Reload.Active;
 	}
 
-	// Token: 0x0600B1AB RID: 45483 RVA: 0x00424D74 File Offset: 0x00422F74
+	// Token: 0x0600B23D RID: 45629 RVA: 0x00428A50 File Offset: 0x00426C50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_Attack()
 	{
 		return !(this.m_CurrentWeapon == null) && !this.m_Player.Attack.Active && !this.m_Player.SetWeapon.Active && !this.m_Player.Reload.Active;
 	}
 
-	// Token: 0x0600B1AC RID: 45484 RVA: 0x00424DCE File Offset: 0x00422FCE
+	// Token: 0x0600B23E RID: 45630 RVA: 0x00428AAA File Offset: 0x00426CAA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Attack()
 	{
@@ -382,7 +382,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		}, this.m_DisableAttackStateTimer);
 	}
 
-	// Token: 0x0600B1AD RID: 45485 RVA: 0x00424DF0 File Offset: 0x00422FF0
+	// Token: 0x0600B23F RID: 45631 RVA: 0x00428ACC File Offset: 0x00426CCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_SetPrevWeapon()
 	{
@@ -408,7 +408,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600B1AE RID: 45486 RVA: 0x00424E58 File Offset: 0x00423058
+	// Token: 0x0600B240 RID: 45632 RVA: 0x00428B34 File Offset: 0x00426D34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_SetNextWeapon()
 	{
@@ -430,7 +430,7 @@ public class vp_WeaponHandler : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600B1AF RID: 45487 RVA: 0x00424EB0 File Offset: 0x004230B0
+	// Token: 0x0600B241 RID: 45633 RVA: 0x00428B8C File Offset: 0x00426D8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_SetWeaponByName(string name)
 	{
@@ -444,8 +444,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x170014C9 RID: 5321
-	// (get) Token: 0x0600B1B0 RID: 45488 RVA: 0x00424F01 File Offset: 0x00423101
+	// Token: 0x1700150C RID: 5388
+	// (get) Token: 0x0600B242 RID: 45634 RVA: 0x00428BDD File Offset: 0x00426DDD
 	public virtual bool OnValue_CurrentWeaponWielded
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -455,8 +455,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014CA RID: 5322
-	// (get) Token: 0x0600B1B1 RID: 45489 RVA: 0x00424F1E File Offset: 0x0042311E
+	// Token: 0x1700150D RID: 5389
+	// (get) Token: 0x0600B243 RID: 45635 RVA: 0x00428BFA File Offset: 0x00426DFA
 	public virtual string OnValue_CurrentWeaponName
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -470,8 +470,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014CB RID: 5323
-	// (get) Token: 0x0600B1B2 RID: 45490 RVA: 0x00424598 File Offset: 0x00422798
+	// Token: 0x1700150E RID: 5390
+	// (get) Token: 0x0600B244 RID: 45636 RVA: 0x00428274 File Offset: 0x00426474
 	public virtual int OnValue_CurrentWeaponID
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -481,8 +481,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014CC RID: 5324
-	// (get) Token: 0x0600B1B3 RID: 45491 RVA: 0x00424598 File Offset: 0x00422798
+	// Token: 0x1700150F RID: 5391
+	// (get) Token: 0x0600B245 RID: 45637 RVA: 0x00428274 File Offset: 0x00426474
 	public virtual int OnValue_CurrentWeaponIndex
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -492,8 +492,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014CD RID: 5325
-	// (get) Token: 0x0600B1B4 RID: 45492 RVA: 0x00424F47 File Offset: 0x00423147
+	// Token: 0x17001510 RID: 5392
+	// (get) Token: 0x0600B246 RID: 45638 RVA: 0x00428C23 File Offset: 0x00426E23
 	public virtual int OnValue_CurrentWeaponType
 	{
 		get
@@ -506,8 +506,8 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014CE RID: 5326
-	// (get) Token: 0x0600B1B5 RID: 45493 RVA: 0x00424F64 File Offset: 0x00423164
+	// Token: 0x17001511 RID: 5393
+	// (get) Token: 0x0600B247 RID: 45639 RVA: 0x00428C40 File Offset: 0x00426E40
 	public virtual int OnValue_CurrentWeaponGrip
 	{
 		get
@@ -520,83 +520,83 @@ public class vp_WeaponHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04008578 RID: 34168
+	// Token: 0x040085CE RID: 34254
 	public int StartWeapon;
 
-	// Token: 0x04008579 RID: 34169
+	// Token: 0x040085CF RID: 34255
 	public float AttackStateDisableDelay = 0.5f;
 
-	// Token: 0x0400857A RID: 34170
+	// Token: 0x040085D0 RID: 34256
 	public float SetWeaponRefreshStatesDelay = 0.5f;
 
-	// Token: 0x0400857B RID: 34171
+	// Token: 0x040085D1 RID: 34257
 	public float SetWeaponDuration = 0.1f;
 
-	// Token: 0x0400857C RID: 34172
+	// Token: 0x040085D2 RID: 34258
 	public float SetWeaponReloadSleepDuration = 0.3f;
 
-	// Token: 0x0400857D RID: 34173
+	// Token: 0x040085D3 RID: 34259
 	public float SetWeaponZoomSleepDuration = 0.3f;
 
-	// Token: 0x0400857E RID: 34174
+	// Token: 0x040085D4 RID: 34260
 	public float SetWeaponAttackSleepDuration = 0.3f;
 
-	// Token: 0x0400857F RID: 34175
+	// Token: 0x040085D5 RID: 34261
 	public float ReloadAttackSleepDuration = 0.3f;
 
-	// Token: 0x04008580 RID: 34176
+	// Token: 0x040085D6 RID: 34262
 	public bool ReloadAutomatically = true;
 
-	// Token: 0x04008581 RID: 34177
+	// Token: 0x040085D7 RID: 34263
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x04008582 RID: 34178
+	// Token: 0x040085D8 RID: 34264
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<vp_Weapon> m_Weapons;
 
-	// Token: 0x04008583 RID: 34179
+	// Token: 0x040085D9 RID: 34265
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<List<vp_Weapon>> m_WeaponLists = new List<List<vp_Weapon>>();
 
-	// Token: 0x04008584 RID: 34180
+	// Token: 0x040085DA RID: 34266
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_CurrentWeaponIndex = -1;
 
-	// Token: 0x04008585 RID: 34181
+	// Token: 0x040085DB RID: 34267
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Weapon m_CurrentWeapon;
 
-	// Token: 0x04008586 RID: 34182
+	// Token: 0x040085DC RID: 34268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_SetWeaponTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008587 RID: 34183
+	// Token: 0x040085DD RID: 34269
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_SetWeaponRefreshTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008588 RID: 34184
+	// Token: 0x040085DE RID: 34270
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_DisableAttackStateTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008589 RID: 34185
+	// Token: 0x040085DF RID: 34271
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_DisableReloadStateTimer = new vp_Timer.Handle();
 
-	// Token: 0x02001614 RID: 5652
+	// Token: 0x02001633 RID: 5683
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class WeaponComparer : IComparer
 	{
-		// Token: 0x0600B1BA RID: 45498 RVA: 0x00425150 File Offset: 0x00423350
+		// Token: 0x0600B24C RID: 45644 RVA: 0x00428E2C File Offset: 0x0042702C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int System.Collections.IComparer.Compare(object x, object y)
 		{

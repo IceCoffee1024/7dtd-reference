@@ -6,11 +6,11 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Audio;
 
-// Token: 0x020000B3 RID: 179
+// Token: 0x020000B5 RID: 181
 [Serializable]
 public class AudioObject
 {
-	// Token: 0x06000370 RID: 880 RVA: 0x00018EB0 File Offset: 0x000170B0
+	// Token: 0x06000376 RID: 886 RVA: 0x00018FA8 File Offset: 0x000171A8
 	public void Init()
 	{
 		foreach (AudioClip audioClip in this.audioClips)
@@ -42,7 +42,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00018FB0 File Offset: 0x000171B0
+	// Token: 0x06000377 RID: 887 RVA: 0x000190A8 File Offset: 0x000172A8
 	public void SetValue(float _value)
 	{
 		this.value = _value;
@@ -83,13 +83,13 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00019168 File Offset: 0x00017368
+	// Token: 0x06000378 RID: 888 RVA: 0x00019260 File Offset: 0x00017460
 	public void SetBiomeVolume(float _volume)
 	{
 		this.biomeVolume = _volume;
 	}
 
-	// Token: 0x06000373 RID: 883 RVA: 0x00019174 File Offset: 0x00017374
+	// Token: 0x06000379 RID: 889 RVA: 0x0001926C File Offset: 0x0001746C
 	public void Pause()
 	{
 		if (this.currentAudioSrc != null)
@@ -108,7 +108,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000374 RID: 884 RVA: 0x000191F0 File Offset: 0x000173F0
+	// Token: 0x0600037A RID: 890 RVA: 0x000192E8 File Offset: 0x000174E8
 	public void UnPause()
 	{
 		if (this.currentAudioSrc != null)
@@ -127,7 +127,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000375 RID: 885 RVA: 0x00019274 File Offset: 0x00017474
+	// Token: 0x0600037B RID: 891 RVA: 0x0001936C File Offset: 0x0001756C
 	public void TurnOff(bool immediate = false)
 	{
 		this.fadingOut = true;
@@ -148,7 +148,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000376 RID: 886 RVA: 0x000192F8 File Offset: 0x000174F8
+	// Token: 0x0600037C RID: 892 RVA: 0x000193F0 File Offset: 0x000175F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool PlayConditionPasses()
 	{
@@ -277,7 +277,7 @@ public class AudioObject
 		return true;
 	}
 
-	// Token: 0x06000377 RID: 887 RVA: 0x00019618 File Offset: 0x00017818
+	// Token: 0x0600037D RID: 893 RVA: 0x00019710 File Offset: 0x00017910
 	public void DestroySources()
 	{
 		if (this.playOrder == AudioObject.PlayOrder.ByValue)
@@ -298,7 +298,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000378 RID: 888 RVA: 0x000196B4 File Offset: 0x000178B4
+	// Token: 0x0600037E RID: 894 RVA: 0x000197AC File Offset: 0x000179AC
 	public void SetVolume(float volume)
 	{
 		if (this.currentAudioSrc != null)
@@ -307,7 +307,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000379 RID: 889 RVA: 0x000196D0 File Offset: 0x000178D0
+	// Token: 0x0600037F RID: 895 RVA: 0x000197C8 File Offset: 0x000179C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayAtPoint()
 	{
@@ -321,7 +321,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x0600037A RID: 890 RVA: 0x00019730 File Offset: 0x00017930
+	// Token: 0x06000380 RID: 896 RVA: 0x00019828 File Offset: 0x00017A28
 	public void Play()
 	{
 		int num = 0;
@@ -358,19 +358,19 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x0600037B RID: 891 RVA: 0x00019819 File Offset: 0x00017A19
+	// Token: 0x06000381 RID: 897 RVA: 0x00019911 File Offset: 0x00017B11
 	public bool IsPlaying()
 	{
 		return !(this.currentAudioSrc == null) && this.currentAudioSrc.isPlaying;
 	}
 
-	// Token: 0x0600037C RID: 892 RVA: 0x00019836 File Offset: 0x00017A36
+	// Token: 0x06000382 RID: 898 RVA: 0x0001992E File Offset: 0x00017B2E
 	public void SetPosition(Vector3 _position)
 	{
 		this.playAtPosition = _position;
 	}
 
-	// Token: 0x0600037D RID: 893 RVA: 0x00019840 File Offset: 0x00017A40
+	// Token: 0x06000383 RID: 899 RVA: 0x00019938 File Offset: 0x00017B38
 	public void Update(float deltaTime)
 	{
 		if (this.runtimeAudioSrcs.Count == 0)
@@ -522,166 +522,166 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x040003D7 RID: 983
+	// Token: 0x040003DA RID: 986
 	public static Dictionary<byte, BiomeDefinition.BiomeType> biomeIdMap;
 
-	// Token: 0x040003D8 RID: 984
+	// Token: 0x040003DB RID: 987
 	public string name;
 
-	// Token: 0x040003D9 RID: 985
+	// Token: 0x040003DC RID: 988
 	public AudioMixerGroup audioMixerGroup;
 
-	// Token: 0x040003DA RID: 986
+	// Token: 0x040003DD RID: 989
 	public AudioSource masterAudioSource;
 
-	// Token: 0x040003DB RID: 987
+	// Token: 0x040003DE RID: 990
 	public AudioClip[] audioClips;
 
-	// Token: 0x040003DC RID: 988
+	// Token: 0x040003DF RID: 991
 	public List<AudioSource> runtimeAudioSrcs = new List<AudioSource>();
 
-	// Token: 0x040003DD RID: 989
+	// Token: 0x040003E0 RID: 992
 	public AudioObject.Trigger trigger;
 
-	// Token: 0x040003DE RID: 990
+	// Token: 0x040003E1 RID: 993
 	public bool indoorOnly;
 
-	// Token: 0x040003DF RID: 991
+	// Token: 0x040003E2 RID: 994
 	public bool outdoorOnly;
 
-	// Token: 0x040003E0 RID: 992
+	// Token: 0x040003E3 RID: 995
 	public bool dayOnly;
 
-	// Token: 0x040003E1 RID: 993
+	// Token: 0x040003E4 RID: 996
 	public bool nightOnly;
 
-	// Token: 0x040003E2 RID: 994
+	// Token: 0x040003E5 RID: 997
 	public float duskOffset;
 
-	// Token: 0x040003E3 RID: 995
+	// Token: 0x040003E6 RID: 998
 	public float dawnOffset;
 
-	// Token: 0x040003E4 RID: 996
+	// Token: 0x040003E7 RID: 999
 	public float minWind;
 
-	// Token: 0x040003E5 RID: 997
+	// Token: 0x040003E8 RID: 1000
 	public bool affectedByEnv;
 
-	// Token: 0x040003E6 RID: 998
+	// Token: 0x040003E9 RID: 1001
 	public AudioObject.PlayOrder playOrder;
 
-	// Token: 0x040003E7 RID: 999
+	// Token: 0x040003EA RID: 1002
 	public BiomeDefinition.BiomeType[] validBiomes;
 
-	// Token: 0x040003E8 RID: 1000
+	// Token: 0x040003EB RID: 1003
 	public AnimationCurve fadeInSec = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(0f, 0f),
 		new Keyframe(1f, 1f)
 	});
 
-	// Token: 0x040003E9 RID: 1001
+	// Token: 0x040003EC RID: 1004
 	public AnimationCurve transitionCurve;
 
-	// Token: 0x040003EA RID: 1002
+	// Token: 0x040003ED RID: 1005
 	public Vector2 repeatFreqRange;
 
-	// Token: 0x040003EB RID: 1003
+	// Token: 0x040003EE RID: 1006
 	public float loopDuration;
 
-	// Token: 0x040003EC RID: 1004
+	// Token: 0x040003EF RID: 1007
 	public bool music;
 
-	// Token: 0x040003ED RID: 1005
-	public ThreatLevelType[] validThreatLevels;
-
-	// Token: 0x040003EE RID: 1006
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public AudioSource currentAudioSrc;
-
-	// Token: 0x040003EF RID: 1007
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float loopTime;
-
 	// Token: 0x040003F0 RID: 1008
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float repeatTime;
+	public ThreatLevelType[] validThreatLevels;
 
 	// Token: 0x040003F1 RID: 1009
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool fadingOut;
+	public AudioSource currentAudioSrc;
 
 	// Token: 0x040003F2 RID: 1010
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float value;
+	public float loopTime;
 
 	// Token: 0x040003F3 RID: 1011
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float playTime;
+	public float repeatTime;
 
 	// Token: 0x040003F4 RID: 1012
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float biomeVolume = 1f;
+	public bool fadingOut;
 
 	// Token: 0x040003F5 RID: 1013
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int currentPlayNum;
+	public float value;
 
 	// Token: 0x040003F6 RID: 1014
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 playAtPosition;
+	public float playTime;
 
 	// Token: 0x040003F7 RID: 1015
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public float biomeVolume = 1f;
+
+	// Token: 0x040003F8 RID: 1016
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int currentPlayNum;
+
+	// Token: 0x040003F9 RID: 1017
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 playAtPosition;
+
+	// Token: 0x040003FA RID: 1018
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public const float timeEpsilon = 0.01f;
 
-	// Token: 0x020000B4 RID: 180
+	// Token: 0x020000B6 RID: 182
 	public enum Trigger
 	{
-		// Token: 0x040003F9 RID: 1017
-		Rain,
-		// Token: 0x040003FA RID: 1018
-		Snow,
-		// Token: 0x040003FB RID: 1019
-		Thunder,
 		// Token: 0x040003FC RID: 1020
-		TimeOfDay,
+		Rain,
 		// Token: 0x040003FD RID: 1021
-		Dusk,
+		Snow,
 		// Token: 0x040003FE RID: 1022
-		Dawn,
+		Thunder,
 		// Token: 0x040003FF RID: 1023
-		Day7Times,
+		TimeOfDay,
 		// Token: 0x04000400 RID: 1024
-		Day7Dusk,
+		Dusk,
 		// Token: 0x04000401 RID: 1025
-		Day8Dawn,
+		Dawn,
 		// Token: 0x04000402 RID: 1026
-		Random,
+		Day7Times,
 		// Token: 0x04000403 RID: 1027
-		Continual,
+		Day7Dusk,
 		// Token: 0x04000404 RID: 1028
+		Day8Dawn,
+		// Token: 0x04000405 RID: 1029
+		Random,
+		// Token: 0x04000406 RID: 1030
+		Continual,
+		// Token: 0x04000407 RID: 1031
 		Wind
 	}
 
-	// Token: 0x020000B5 RID: 181
+	// Token: 0x020000B7 RID: 183
 	public enum PlayOrder
 	{
-		// Token: 0x04000406 RID: 1030
+		// Token: 0x04000409 RID: 1033
 		Random,
-		// Token: 0x04000407 RID: 1031
+		// Token: 0x0400040A RID: 1034
 		FirstToLast,
-		// Token: 0x04000408 RID: 1032
+		// Token: 0x0400040B RID: 1035
 		ByValue
 	}
 }

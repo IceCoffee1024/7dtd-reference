@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000A41 RID: 2625
+// Token: 0x02000A4B RID: 2635
 public sealed class SaveDataPrefsUnity : ISaveDataPrefs
 {
-	// Token: 0x17000878 RID: 2168
-	// (get) Token: 0x06004F53 RID: 20307 RVA: 0x001E1CD5 File Offset: 0x001DFED5
+	// Token: 0x17000898 RID: 2200
+	// (get) Token: 0x06004F22 RID: 20258 RVA: 0x001E2F85 File Offset: 0x001E1185
 	public static SaveDataPrefsUnity INSTANCE
 	{
 		get
@@ -19,80 +19,80 @@ public sealed class SaveDataPrefsUnity : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x06004F54 RID: 20308 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06004F23 RID: 20259 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataPrefsUnity()
 	{
 	}
 
-	// Token: 0x06004F55 RID: 20309 RVA: 0x001E1CEB File Offset: 0x001DFEEB
+	// Token: 0x06004F24 RID: 20260 RVA: 0x001E2F9B File Offset: 0x001E119B
 	public float GetFloat(string key, float defaultValue)
 	{
 		return PlayerPrefs.GetFloat(key, defaultValue);
 	}
 
-	// Token: 0x06004F56 RID: 20310 RVA: 0x001E1CF4 File Offset: 0x001DFEF4
+	// Token: 0x06004F25 RID: 20261 RVA: 0x001E2FA4 File Offset: 0x001E11A4
 	public void SetFloat(string key, float value)
 	{
 		PlayerPrefs.SetFloat(key, value);
 	}
 
-	// Token: 0x06004F57 RID: 20311 RVA: 0x001E1CFD File Offset: 0x001DFEFD
+	// Token: 0x06004F26 RID: 20262 RVA: 0x001E2FAD File Offset: 0x001E11AD
 	public int GetInt(string key, int defaultValue)
 	{
 		return PlayerPrefs.GetInt(key, defaultValue);
 	}
 
-	// Token: 0x06004F58 RID: 20312 RVA: 0x001E1D06 File Offset: 0x001DFF06
+	// Token: 0x06004F27 RID: 20263 RVA: 0x001E2FB6 File Offset: 0x001E11B6
 	public void SetInt(string key, int value)
 	{
 		PlayerPrefs.SetInt(key, value);
 	}
 
-	// Token: 0x06004F59 RID: 20313 RVA: 0x001E1D0F File Offset: 0x001DFF0F
+	// Token: 0x06004F28 RID: 20264 RVA: 0x001E2FBF File Offset: 0x001E11BF
 	public string GetString(string key, string defaultValue)
 	{
 		return PlayerPrefs.GetString(key, defaultValue);
 	}
 
-	// Token: 0x06004F5A RID: 20314 RVA: 0x001E1D18 File Offset: 0x001DFF18
+	// Token: 0x06004F29 RID: 20265 RVA: 0x001E2FC8 File Offset: 0x001E11C8
 	public void SetString(string key, string value)
 	{
 		PlayerPrefs.SetString(key, value);
 	}
 
-	// Token: 0x06004F5B RID: 20315 RVA: 0x001E1D21 File Offset: 0x001DFF21
+	// Token: 0x06004F2A RID: 20266 RVA: 0x001E2FD1 File Offset: 0x001E11D1
 	public bool HasKey(string key)
 	{
 		return PlayerPrefs.HasKey(key);
 	}
 
-	// Token: 0x06004F5C RID: 20316 RVA: 0x001E1D29 File Offset: 0x001DFF29
+	// Token: 0x06004F2B RID: 20267 RVA: 0x001E2FD9 File Offset: 0x001E11D9
 	public void DeleteKey(string key)
 	{
 		PlayerPrefs.DeleteKey(key);
 	}
 
-	// Token: 0x06004F5D RID: 20317 RVA: 0x001E1D31 File Offset: 0x001DFF31
+	// Token: 0x06004F2C RID: 20268 RVA: 0x001E2FE1 File Offset: 0x001E11E1
 	public void DeleteAll()
 	{
 		PlayerPrefs.DeleteAll();
 	}
 
-	// Token: 0x06004F5E RID: 20318 RVA: 0x001E1D38 File Offset: 0x001DFF38
+	// Token: 0x06004F2D RID: 20269 RVA: 0x001E2FE8 File Offset: 0x001E11E8
 	public void Save()
 	{
 		PlayerPrefs.Save();
 	}
 
-	// Token: 0x06004F5F RID: 20319 RVA: 0x001E1D3F File Offset: 0x001DFF3F
+	// Token: 0x06004F2E RID: 20270 RVA: 0x001E2FEF File Offset: 0x001E11EF
 	public void Load()
 	{
 		throw new NotSupportedException("Unity PlayerPrefs does not support explicit loading.");
 	}
 
-	// Token: 0x17000879 RID: 2169
-	// (get) Token: 0x06004F60 RID: 20320 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000899 RID: 2201
+	// (get) Token: 0x06004F2F RID: 20271 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool CanLoad
 	{
 		get
@@ -101,7 +101,7 @@ public sealed class SaveDataPrefsUnity : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x04003D0D RID: 15629
+	// Token: 0x04003D1A RID: 15642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SaveDataPrefsUnity s_instance;
 }

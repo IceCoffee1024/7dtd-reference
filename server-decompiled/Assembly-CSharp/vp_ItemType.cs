@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015B8 RID: 5560
+// Token: 0x020015DA RID: 5594
 [Serializable]
 public class vp_ItemType : ScriptableObject
 {
-	// Token: 0x1700141B RID: 5147
-	// (get) Token: 0x0600ADFC RID: 44540 RVA: 0x0040D1F6 File Offset: 0x0040B3F6
+	// Token: 0x17001460 RID: 5216
+	// (get) Token: 0x0600AEAF RID: 44719 RVA: 0x0041204A File Offset: 0x0041024A
 	public string DisplayNameFull
 	{
 		get
@@ -15,18 +15,18 @@ public class vp_ItemType : ScriptableObject
 		}
 	}
 
-	// Token: 0x04008185 RID: 33157
+	// Token: 0x04008208 RID: 33288
 	public string IndefiniteArticle = "a";
 
-	// Token: 0x04008186 RID: 33158
+	// Token: 0x04008209 RID: 33289
 	public string DisplayName;
 
-	// Token: 0x04008187 RID: 33159
+	// Token: 0x0400820A RID: 33290
 	public string Description;
 
-	// Token: 0x04008188 RID: 33160
+	// Token: 0x0400820B RID: 33291
 	public Texture2D Icon;
 
-	// Token: 0x04008189 RID: 33161
+	// Token: 0x0400820C RID: 33292
 	public float Space;
 }

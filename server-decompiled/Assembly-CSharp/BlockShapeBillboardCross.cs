@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A1 RID: 417
+// Token: 0x020001A2 RID: 418
 [Preserve]
 public class BlockShapeBillboardCross : BlockShapeBillboardAbstract
 {
-	// Token: 0x06000CA9 RID: 3241 RVA: 0x0004EB28 File Offset: 0x0004CD28
+	// Token: 0x06000CA0 RID: 3232 RVA: 0x0004EB2C File Offset: 0x0004CD2C
 	public BlockShapeBillboardCross()
 	{
 	}
 
-	// Token: 0x06000CAA RID: 3242 RVA: 0x0004EB48 File Offset: 0x0004CD48
+	// Token: 0x06000CA1 RID: 3233 RVA: 0x0004EB4C File Offset: 0x0004CD4C
 	public BlockShapeBillboardCross(float _scaleAdd)
 	{
 		this.s = _scaleAdd;
@@ -19,7 +19,7 @@ public class BlockShapeBillboardCross : BlockShapeBillboardAbstract
 		this.yPosSubtract += _scaleAdd;
 	}
 
-	// Token: 0x06000CAB RID: 3243 RVA: 0x0004EB94 File Offset: 0x0004CD94
+	// Token: 0x06000CA2 RID: 3234 RVA: 0x0004EB98 File Offset: 0x0004CD98
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -52,21 +52,21 @@ public class BlockShapeBillboardCross : BlockShapeBillboardAbstract
 		voxelMesh.AddBlockSide(this.v[2], this.v[3], this.v[7], this.v[6], _blockValue, VoxelMesh.COLOR_TOP, BlockFace.Top, sun, block, (int)block2.MeshIndex);
 	}
 
-	// Token: 0x06000CAC RID: 3244 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000CA3 RID: 3235 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return false;
 	}
 
-	// Token: 0x04000B5E RID: 2910
+	// Token: 0x04000B57 RID: 2903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float h = 1f;
 
-	// Token: 0x04000B5F RID: 2911
+	// Token: 0x04000B58 RID: 2904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float s;
 
-	// Token: 0x04000B60 RID: 2912
+	// Token: 0x04000B59 RID: 2905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] v = new Vector3[8];
 }

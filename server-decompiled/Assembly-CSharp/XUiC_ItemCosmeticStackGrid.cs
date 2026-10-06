@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F56 RID: 3926
+// Token: 0x02000F65 RID: 3941
 [Preserve]
 public class XUiC_ItemCosmeticStackGrid : XUiController
 {
-	// Token: 0x17000E65 RID: 3685
-	// (get) Token: 0x06007B60 RID: 31584 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000E82 RID: 3714
+	// (get) Token: 0x06007B5D RID: 31581 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -16,17 +16,28 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x17000E66 RID: 3686
-	// (get) Token: 0x06007B61 RID: 31585 RVA: 0x002E9CD7 File Offset: 0x002E7ED7
-	// (set) Token: 0x06007B62 RID: 31586 RVA: 0x002E9CDF File Offset: 0x002E7EDF
-	public ItemStack CurrentItem { get; set; }
+	// Token: 0x17000E83 RID: 3715
+	// (get) Token: 0x06007B5E RID: 31582 RVA: 0x002ECFE8 File Offset: 0x002EB1E8
+	// (set) Token: 0x06007B5F RID: 31583 RVA: 0x002ECFF0 File Offset: 0x002EB1F0
+	public ItemStack CurrentItem
+	{
+		get
+		{
+			return this.currentItem;
+		}
+		set
+		{
+			this.currentItem = value;
+			this.SetParts();
+		}
+	}
 
-	// Token: 0x17000E67 RID: 3687
-	// (get) Token: 0x06007B63 RID: 31587 RVA: 0x002E9CE8 File Offset: 0x002E7EE8
-	// (set) Token: 0x06007B64 RID: 31588 RVA: 0x002E9CF0 File Offset: 0x002E7EF0
+	// Token: 0x17000E84 RID: 3716
+	// (get) Token: 0x06007B60 RID: 31584 RVA: 0x002ECFFF File Offset: 0x002EB1FF
+	// (set) Token: 0x06007B61 RID: 31585 RVA: 0x002ED007 File Offset: 0x002EB207
 	public XUiC_AssembleWindow AssembleWindow { get; set; }
 
-	// Token: 0x06007B65 RID: 31589 RVA: 0x002E9CFC File Offset: 0x002E7EFC
+	// Token: 0x06007B62 RID: 31586 RVA: 0x002ED010 File Offset: 0x002EB210
 	public override void Init()
 	{
 		base.Init();
@@ -35,7 +46,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06007B66 RID: 31590 RVA: 0x002E9A91 File Offset: 0x002E7C91
+	// Token: 0x06007B63 RID: 31587 RVA: 0x002ECDC5 File Offset: 0x002EAFC5
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -45,27 +56,24 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007B67 RID: 31591 RVA: 0x002E9D28 File Offset: 0x002E7F28
-	public void SetParts(ItemValue[] stackList)
+	// Token: 0x06007B64 RID: 31588 RVA: 0x002ED03C File Offset: 0x002EB23C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void SetParts()
 	{
-		if (stackList == null)
-		{
-			return;
-		}
-		this.currentItemClass = this.CurrentItem.itemValue.ItemClass;
+		ItemValue itemValue = this.currentItem.itemValue;
 		XUiC_ItemInfoWindow childByType = this.xui.GetChildByType<XUiC_ItemInfoWindow>();
 		for (int i = 0; i < this.itemControllers.Length; i++)
 		{
 			XUiC_ItemCosmeticStack xuiC_ItemCosmeticStack = (XUiC_ItemCosmeticStack)this.itemControllers[i];
-			if (i < this.CurrentItem.itemValue.CosmeticMods.Length)
+			if (i < itemValue.CosmeticModCount)
 			{
-				ItemValue itemValue = this.CurrentItem.itemValue.CosmeticMods[i];
-				if (itemValue != null && itemValue.ItemClass is ItemClassModifier)
+				ItemValue cosmeticMod = itemValue.GetCosmeticMod(i);
+				if (cosmeticMod != null && cosmeticMod.ItemClass is ItemClassModifier)
 				{
-					xuiC_ItemCosmeticStack.SlotType = (itemValue.ItemClass as ItemClassModifier).Type.ToStringCached<ItemClassModifier.ModifierTypes>().ToLower();
+					xuiC_ItemCosmeticStack.SlotType = (cosmeticMod.ItemClass as ItemClassModifier).Type.ToStringCached<ItemClassModifier.ModifierTypes>().ToLower();
 				}
 				xuiC_ItemCosmeticStack.SlotChangedEvent -= this.HandleSlotChangedEvent;
-				xuiC_ItemCosmeticStack.ItemValue = ((itemValue != null) ? itemValue : ItemValue.None);
+				xuiC_ItemCosmeticStack.ItemValue = ((cosmeticMod != null) ? cosmeticMod : ItemValue.None);
 				xuiC_ItemCosmeticStack.SlotChangedEvent += this.HandleSlotChangedEvent;
 				xuiC_ItemCosmeticStack.SlotNumber = i;
 				xuiC_ItemCosmeticStack.InfoWindow = childByType;
@@ -79,7 +87,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007B68 RID: 31592 RVA: 0x002E9E48 File Offset: 0x002E8048
+	// Token: 0x06007B65 RID: 31589 RVA: 0x002ED13C File Offset: 0x002EB33C
 	public void HandleSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		XUiC_ItemCosmeticStack xuiC_ItemCosmeticStack = (XUiC_ItemCosmeticStack)this.itemControllers[slotNumber];
@@ -89,37 +97,37 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 			ItemClassModifier itemClassModifier = itemValue.ItemClass as ItemClassModifier;
 			if (itemClassModifier != null)
 			{
-				if (!itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.CurrentItem.itemValue.Modifications.Length != 0)
+				if (!itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes) && this.CurrentItem.itemValue.ModificationCount > 0)
 				{
-					for (int i = 0; i < this.CurrentItem.itemValue.Modifications.Length; i++)
+					for (int i = 0; i < this.CurrentItem.itemValue.ModificationCount; i++)
 					{
-						ItemValue itemValue2 = this.CurrentItem.itemValue.Modifications[i];
-						if (itemValue2 == null || itemValue2.IsEmpty())
+						ItemValue modification = this.CurrentItem.itemValue.GetModification(i);
+						if (modification == null || modification.IsEmpty())
 						{
-							this.CurrentItem.itemValue.Modifications[i] = itemValue;
+							this.CurrentItem.itemValue.SetModification(i, itemValue);
 							break;
 						}
 					}
-					goto IL_00ED;
+					goto IL_00E7;
 				}
-				this.CurrentItem.itemValue.CosmeticMods[slotNumber] = itemValue;
-				goto IL_00ED;
+				this.CurrentItem.itemValue.SetCosmeticMod(slotNumber, itemValue);
+				goto IL_00E7;
 			}
 		}
-		this.CurrentItem.itemValue.CosmeticMods[slotNumber] = itemValue;
-		IL_00ED:
+		this.CurrentItem.itemValue.SetCosmeticMod(slotNumber, itemValue);
+		IL_00E7:
 		this.AssembleWindow.ItemStack = this.CurrentItem;
 		this.AssembleWindow.OnChanged();
 		this.xui.AssembleItem.RefreshAssembleItem();
 	}
 
-	// Token: 0x06007B69 RID: 31593 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007B66 RID: 31590 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x06007B6A RID: 31594 RVA: 0x002E146D File Offset: 0x002DF66D
+	// Token: 0x06007B67 RID: 31591 RVA: 0x002E47DD File Offset: 0x002E29DD
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -129,7 +137,7 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007B6B RID: 31595 RVA: 0x002E9CB4 File Offset: 0x002E7EB4
+	// Token: 0x06007B68 RID: 31592 RVA: 0x002ECFC5 File Offset: 0x002EB1C5
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -138,23 +146,23 @@ public class XUiC_ItemCosmeticStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x04005B5C RID: 23388
+	// Token: 0x04005B93 RID: 23443
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int curPageIdx;
 
-	// Token: 0x04005B5D RID: 23389
+	// Token: 0x04005B94 RID: 23444
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int numPages;
 
-	// Token: 0x04005B5E RID: 23390
+	// Token: 0x04005B95 RID: 23445
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController[] itemControllers;
 
-	// Token: 0x04005B5F RID: 23391
+	// Token: 0x04005B96 RID: 23446
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemStack[] items;
 
-	// Token: 0x04005B62 RID: 23394
+	// Token: 0x04005B97 RID: 23447
 	[PublicizedFrom(EAccessModifier.Private)]
-	public ItemClass currentItemClass;
+	public ItemStack currentItem;
 }

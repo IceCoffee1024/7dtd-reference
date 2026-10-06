@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001573 RID: 5491
+// Token: 0x02001595 RID: 5525
 public class vp_AngleBob : MonoBehaviour
 {
-	// Token: 0x0600ABE7 RID: 44007 RVA: 0x004002FF File Offset: 0x003FE4FF
+	// Token: 0x0600AC9A RID: 44186 RVA: 0x00405153 File Offset: 0x00403353
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -12,7 +12,7 @@ public class vp_AngleBob : MonoBehaviour
 		this.m_InitialRotation = this.m_Transform.eulerAngles;
 	}
 
-	// Token: 0x0600ABE8 RID: 44008 RVA: 0x0040031E File Offset: 0x003FE51E
+	// Token: 0x0600AC9B RID: 44187 RVA: 0x00405172 File Offset: 0x00403372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -23,7 +23,7 @@ public class vp_AngleBob : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ABE9 RID: 44009 RVA: 0x00400344 File Offset: 0x003FE544
+	// Token: 0x0600AC9C RID: 44188 RVA: 0x00405198 File Offset: 0x00403398
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -53,35 +53,35 @@ public class vp_AngleBob : MonoBehaviour
 		this.m_Transform.eulerAngles = this.m_InitialRotation + this.m_Offset + Vector3.up * this.YOffset;
 	}
 
-	// Token: 0x04007F27 RID: 32551
+	// Token: 0x04007FAA RID: 32682
 	public Vector3 BobAmp = new Vector3(0f, 0.1f, 0f);
 
-	// Token: 0x04007F28 RID: 32552
+	// Token: 0x04007FAB RID: 32683
 	public Vector3 BobRate = new Vector3(0f, 4f, 0f);
 
-	// Token: 0x04007F29 RID: 32553
+	// Token: 0x04007FAC RID: 32684
 	public float YOffset;
 
-	// Token: 0x04007F2A RID: 32554
+	// Token: 0x04007FAD RID: 32685
 	public bool RandomizeBobOffset;
 
-	// Token: 0x04007F2B RID: 32555
+	// Token: 0x04007FAE RID: 32686
 	public bool LocalMotion;
 
-	// Token: 0x04007F2C RID: 32556
+	// Token: 0x04007FAF RID: 32687
 	public bool FadeToTarget;
 
-	// Token: 0x04007F2D RID: 32557
+	// Token: 0x04007FB0 RID: 32688
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04007F2E RID: 32558
+	// Token: 0x04007FB1 RID: 32689
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_InitialRotation;
 
-	// Token: 0x04007F2F RID: 32559
+	// Token: 0x04007FB2 RID: 32690
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_Offset;

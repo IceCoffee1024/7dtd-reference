@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using NCalc;
 using Unity.Profiling;
 
-// Token: 0x020010F5 RID: 4341
+// Token: 0x02001106 RID: 4358
 public class BindingItemNcalc : BindingItem, IBindingNcalc
 {
-	// Token: 0x060089D6 RID: 35286 RVA: 0x003487E0 File Offset: 0x003469E0
+	// Token: 0x06008A28 RID: 35368 RVA: 0x0034C808 File Offset: 0x0034AA08
 	public BindingItemNcalc(BindingInfo _parent, string _sourceText)
 		: base(_sourceText)
 	{
@@ -37,7 +37,7 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		}
 	}
 
-	// Token: 0x060089D7 RID: 35287 RVA: 0x00348910 File Offset: 0x00346B10
+	// Token: 0x06008A29 RID: 35369 RVA: 0x0034C938 File Offset: 0x0034AB38
 	public override string GetValue()
 	{
 		bool flag = this.usesIndeterministicFunctions;
@@ -60,7 +60,7 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		return this.currentValue;
 	}
 
-	// Token: 0x060089D8 RID: 35288 RVA: 0x003489DC File Offset: 0x00346BDC
+	// Token: 0x06008A2A RID: 35370 RVA: 0x0034CA04 File Offset: 0x0034AC04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string evaluateExpression()
 	{
@@ -111,7 +111,7 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		return text;
 	}
 
-	// Token: 0x060089D9 RID: 35289 RVA: 0x00348AF0 File Offset: 0x00346CF0
+	// Token: 0x06008A2B RID: 35371 RVA: 0x0034CB18 File Offset: 0x0034AD18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void nCalcEvaluateParameter(string _name, ParameterArgs _args)
 	{
@@ -122,7 +122,7 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		}
 	}
 
-	// Token: 0x060089DA RID: 35290 RVA: 0x00348B10 File Offset: 0x00346D10
+	// Token: 0x06008A2C RID: 35372 RVA: 0x0034CB38 File Offset: 0x0034AD38
 	public bool FindParameter(string _name, out object _value)
 	{
 		BindingItemNcalc.BindingState bindingState;
@@ -162,15 +162,15 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		return false;
 	}
 
-	// Token: 0x060089DB RID: 35291 RVA: 0x00347EEB File Offset: 0x003460EB
+	// Token: 0x06008A2D RID: 35373 RVA: 0x0034BE7B File Offset: 0x0034A07B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void nCalcEvaluateFunction(string _name, FunctionArgs _args, bool _ignoreCase)
 	{
 		BindingNcalcFunctions.EvaluateFunc(this, _name, _args);
 	}
 
-	// Token: 0x17001007 RID: 4103
-	// (get) Token: 0x060089DC RID: 35292 RVA: 0x00348C20 File Offset: 0x00346E20
+	// Token: 0x1700103C RID: 4156
+	// (get) Token: 0x06008A2E RID: 35374 RVA: 0x0034CC48 File Offset: 0x0034AE48
 	public new string SourceText
 	{
 		get
@@ -179,8 +179,8 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		}
 	}
 
-	// Token: 0x17001008 RID: 4104
-	// (get) Token: 0x060089DD RID: 35293 RVA: 0x00348C28 File Offset: 0x00346E28
+	// Token: 0x1700103D RID: 4157
+	// (get) Token: 0x06008A2F RID: 35375 RVA: 0x0034CC50 File Offset: 0x0034AE50
 	public IXUiElement TargetElement
 	{
 		get
@@ -189,54 +189,54 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 		}
 	}
 
-	// Token: 0x17001009 RID: 4105
-	// (get) Token: 0x060089DE RID: 35294 RVA: 0x00348C35 File Offset: 0x00346E35
+	// Token: 0x1700103E RID: 4158
+	// (get) Token: 0x06008A30 RID: 35376 RVA: 0x0034CC5D File Offset: 0x0034AE5D
 	public bool IsInitializing { get; }
 
-	// Token: 0x060089DF RID: 35295 RVA: 0x00348C3D File Offset: 0x00346E3D
+	// Token: 0x06008A31 RID: 35377 RVA: 0x0034CC65 File Offset: 0x0034AE65
 	public void SetIndeterministic()
 	{
 		this.usesIndeterministicFunctions = true;
 	}
 
-	// Token: 0x060089E0 RID: 35296 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06008A32 RID: 35378 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool RegisterVariable(BindingInfoNcalc.VariableStateAbs _var)
 	{
 		return false;
 	}
 
-	// Token: 0x0400668F RID: 26255
+	// Token: 0x040066D8 RID: 26328
 	public readonly BindingInfo Parent;
 
-	// Token: 0x04006690 RID: 26256
+	// Token: 0x040066D9 RID: 26329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, BindingItemNcalc.BindingState> bindings = new Dictionary<string, BindingItemNcalc.BindingState>(StringComparer.Ordinal);
 
-	// Token: 0x04006691 RID: 26257
+	// Token: 0x040066DA RID: 26330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, object> expressionParamDict = new Dictionary<string, object>(StringComparer.Ordinal);
 
-	// Token: 0x04006692 RID: 26258
+	// Token: 0x040066DB RID: 26331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Expression expression;
 
-	// Token: 0x04006693 RID: 26259
+	// Token: 0x040066DC RID: 26332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool usesIndeterministicFunctions;
 
-	// Token: 0x04006694 RID: 26260
+	// Token: 0x040066DD RID: 26333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string currentValue;
 
-	// Token: 0x04006695 RID: 26261
+	// Token: 0x040066DE RID: 26334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmNcalcEval = new ProfilerMarker("NCalc.Evaluate");
 
-	// Token: 0x020010F6 RID: 4342
+	// Token: 0x02001107 RID: 4359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BindingState
 	{
-		// Token: 0x060089E1 RID: 35297 RVA: 0x00348C46 File Offset: 0x00346E46
+		// Token: 0x06008A33 RID: 35379 RVA: 0x0034CC6E File Offset: 0x0034AE6E
 		public BindingState(string _bindingName, XUiController _controller, string _initialValue, XuiBindingDelegate _bindingDelegate)
 		{
 			this.bindingName = _bindingName;
@@ -245,7 +245,7 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 			this.bindingDelegate = _bindingDelegate;
 		}
 
-		// Token: 0x060089E2 RID: 35298 RVA: 0x00348C6C File Offset: 0x00346E6C
+		// Token: 0x06008A34 RID: 35380 RVA: 0x0034CC94 File Offset: 0x0034AE94
 		public bool RefreshValue()
 		{
 			string text = "";
@@ -282,25 +282,25 @@ public class BindingItemNcalc : BindingItem, IBindingNcalc
 			return true;
 		}
 
-		// Token: 0x060089E3 RID: 35299 RVA: 0x00348D40 File Offset: 0x00346F40
+		// Token: 0x06008A35 RID: 35381 RVA: 0x0034CD68 File Offset: 0x0034AF68
 		public override string ToString()
 		{
 			return "Binding:" + this.bindingName + "=" + this.CurrentValue;
 		}
 
-		// Token: 0x04006697 RID: 26263
+		// Token: 0x040066E0 RID: 26336
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string bindingName;
 
-		// Token: 0x04006698 RID: 26264
+		// Token: 0x040066E1 RID: 26337
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiController controller;
 
-		// Token: 0x04006699 RID: 26265
+		// Token: 0x040066E2 RID: 26338
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XuiBindingDelegate bindingDelegate;
 
-		// Token: 0x0400669A RID: 26266
+		// Token: 0x040066E3 RID: 26339
 		public string CurrentValue;
 	}
 }

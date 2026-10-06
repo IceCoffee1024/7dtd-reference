@@ -1,25 +1,24 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000CEB RID: 3307
+// Token: 0x02000CF9 RID: 3321
 public struct WaterValue
 {
-	// Token: 0x0600653C RID: 25916 RVA: 0x00278D48 File Offset: 0x00276F48
+	// Token: 0x0600652E RID: 25902 RVA: 0x0027C0EC File Offset: 0x0027A2EC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool HasMass()
 	{
 		return this.mass > 195;
 	}
 
-	// Token: 0x0600653D RID: 25917 RVA: 0x00278D57 File Offset: 0x00276F57
+	// Token: 0x0600652F RID: 25903 RVA: 0x0027C0FB File Offset: 0x0027A2FB
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int GetMass()
 	{
 		return (int)this.mass;
 	}
 
-	// Token: 0x0600653E RID: 25918 RVA: 0x00278D5F File Offset: 0x00276F5F
+	// Token: 0x06006530 RID: 25904 RVA: 0x0027C103 File Offset: 0x0027A303
 	public float GetMassPercent()
 	{
 		if (this.mass <= 195)
@@ -33,20 +32,20 @@ public struct WaterValue
 		return (float)(this.mass - 195) / 15405f;
 	}
 
-	// Token: 0x0600653F RID: 25919 RVA: 0x00278D9A File Offset: 0x00276F9A
+	// Token: 0x06006531 RID: 25905 RVA: 0x0027C13E File Offset: 0x0027A33E
 	public void SetMass(int value)
 	{
 		this.mass = (ushort)Utils.FastClamp(value, 0, 65535);
 	}
 
-	// Token: 0x06006540 RID: 25920 RVA: 0x00278DAF File Offset: 0x00276FAF
+	// Token: 0x06006532 RID: 25906 RVA: 0x0027C153 File Offset: 0x0027A353
 	public override string ToString()
 	{
 		return string.Format("Raw Mass: {0:d}", this.mass);
 	}
 
-	// Token: 0x17000A92 RID: 2706
-	// (get) Token: 0x06006541 RID: 25921 RVA: 0x00278DC6 File Offset: 0x00276FC6
+	// Token: 0x17000AA8 RID: 2728
+	// (get) Token: 0x06006533 RID: 25907 RVA: 0x0027C16A File Offset: 0x0027A36A
 	public long RawData
 	{
 		get
@@ -55,7 +54,7 @@ public struct WaterValue
 		}
 	}
 
-	// Token: 0x06006542 RID: 25922 RVA: 0x00278DD0 File Offset: 0x00276FD0
+	// Token: 0x06006534 RID: 25908 RVA: 0x0027C174 File Offset: 0x0027A374
 	public static WaterValue FromRawData(long rawData)
 	{
 		return new WaterValue
@@ -64,7 +63,7 @@ public struct WaterValue
 		};
 	}
 
-	// Token: 0x06006543 RID: 25923 RVA: 0x00278DEF File Offset: 0x00276FEF
+	// Token: 0x06006535 RID: 25909 RVA: 0x0027C193 File Offset: 0x0027A393
 	public static WaterValue FromBlockType(int type)
 	{
 		if (type == 240 || type == 241 || type == 242)
@@ -74,57 +73,57 @@ public struct WaterValue
 		return WaterValue.Empty;
 	}
 
-	// Token: 0x06006544 RID: 25924 RVA: 0x00278E1C File Offset: 0x0027701C
-	public static WaterValue FromStream(BinaryReader _reader)
+	// Token: 0x06006536 RID: 25910 RVA: 0x0027C1C0 File Offset: 0x0027A3C0
+	public static WaterValue FromStream(PooledBinaryReader _reader)
 	{
 		WaterValue waterValue = default(WaterValue);
 		waterValue.Read(_reader);
 		return waterValue;
 	}
 
-	// Token: 0x06006545 RID: 25925 RVA: 0x00278E3A File Offset: 0x0027703A
+	// Token: 0x06006537 RID: 25911 RVA: 0x0027C1DE File Offset: 0x0027A3DE
 	public WaterValue(BlockValue _bv)
 	{
 		this.mass = (_bv.isWater ? 19500 : 0);
 	}
 
-	// Token: 0x06006546 RID: 25926 RVA: 0x00278D9A File Offset: 0x00276F9A
+	// Token: 0x06006538 RID: 25912 RVA: 0x0027C13E File Offset: 0x0027A33E
 	public WaterValue(int mass)
 	{
 		this.mass = (ushort)Utils.FastClamp(mass, 0, 65535);
 	}
 
-	// Token: 0x06006547 RID: 25927 RVA: 0x00278E54 File Offset: 0x00277054
-	public void Write(BinaryWriter writer)
+	// Token: 0x06006539 RID: 25913 RVA: 0x0027C1F8 File Offset: 0x0027A3F8
+	public void Write(PooledBinaryWriter writer)
 	{
 		writer.Write(this.mass);
 	}
 
-	// Token: 0x06006548 RID: 25928 RVA: 0x00278E62 File Offset: 0x00277062
-	public void Read(BinaryReader reader)
+	// Token: 0x0600653A RID: 25914 RVA: 0x0027C206 File Offset: 0x0027A406
+	public void Read(PooledBinaryReader reader)
 	{
 		this.mass = reader.ReadUInt16();
 	}
 
-	// Token: 0x06006549 RID: 25929 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x0600653B RID: 25915 RVA: 0x0002F260 File Offset: 0x0002D460
 	public static int SerializedLength()
 	{
 		return 2;
 	}
 
-	// Token: 0x04004EBD RID: 20157
+	// Token: 0x04004EF3 RID: 20211
 	public const float cTopPerCap = 0.6f;
 
-	// Token: 0x04004EBE RID: 20158
+	// Token: 0x04004EF4 RID: 20212
 	public const int MAX_MASS_VALUE = 65535;
 
-	// Token: 0x04004EBF RID: 20159
+	// Token: 0x04004EF5 RID: 20213
 	public static readonly WaterValue Empty = new WaterValue(0);
 
-	// Token: 0x04004EC0 RID: 20160
+	// Token: 0x04004EF6 RID: 20214
 	public static readonly WaterValue Full = new WaterValue(19500);
 
-	// Token: 0x04004EC1 RID: 20161
+	// Token: 0x04004EF7 RID: 20215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort mass;
 }

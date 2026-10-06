@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000212 RID: 530
+// Token: 0x02000213 RID: 531
 [Preserve]
 public class ConsoleCmdExhausted : ConsoleCmdAbstract
 {
-	// Token: 0x17000174 RID: 372
-	// (get) Token: 0x0600101E RID: 4126 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700016C RID: 364
+	// (get) Token: 0x06001011 RID: 4113 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,14 +17,14 @@ public class ConsoleCmdExhausted : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600101F RID: 4127 RVA: 0x00066CEB File Offset: 0x00064EEB
+	// Token: 0x06001012 RID: 4114 RVA: 0x00066CDB File Offset: 0x00064EDB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "exhausted" };
 	}
 
-	// Token: 0x06001020 RID: 4128 RVA: 0x00066CFC File Offset: 0x00064EFC
+	// Token: 0x06001013 RID: 4115 RVA: 0x00066CEC File Offset: 0x00064EEC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		EntityPlayer primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -39,7 +39,7 @@ public class ConsoleCmdExhausted : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001021 RID: 4129 RVA: 0x00066D67 File Offset: 0x00064F67
+	// Token: 0x06001014 RID: 4116 RVA: 0x00066D57 File Offset: 0x00064F57
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

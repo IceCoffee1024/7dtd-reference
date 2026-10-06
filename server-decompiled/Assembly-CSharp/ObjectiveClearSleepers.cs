@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200098C RID: 2444
+// Token: 0x02000992 RID: 2450
 [Preserve]
 public class ObjectiveClearSleepers : BaseObjective
 {
-	// Token: 0x17000792 RID: 1938
-	// (get) Token: 0x0600479F RID: 18335 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007B2 RID: 1970
+	// (get) Token: 0x06004749 RID: 18249 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -17,8 +17,8 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x17000793 RID: 1939
-	// (get) Token: 0x060047A0 RID: 18336 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007B3 RID: 1971
+	// (get) Token: 0x0600474A RID: 18250 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool RequiresZombies
 	{
 		get
@@ -27,21 +27,21 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047A1 RID: 18337 RVA: 0x001C10B0 File Offset: 0x001BF2B0
+	// Token: 0x0600474B RID: 18251 RVA: 0x001C1724 File Offset: 0x001BF924
 	public override void SetupQuestTag()
 	{
 		base.OwnerQuest.AddQuestTag(QuestEventManager.clearTag);
 	}
 
-	// Token: 0x060047A2 RID: 18338 RVA: 0x001C10C2 File Offset: 0x001BF2C2
+	// Token: 0x0600474C RID: 18252 RVA: 0x001C1736 File Offset: 0x001BF936
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveClearAreas_keyword", false, null);
 		this.SetupIcon();
 	}
 
-	// Token: 0x17000794 RID: 1940
-	// (get) Token: 0x060047A3 RID: 18339 RVA: 0x001C10DC File Offset: 0x001BF2DC
+	// Token: 0x170007B4 RID: 1972
+	// (get) Token: 0x0600474D RID: 18253 RVA: 0x001C1750 File Offset: 0x001BF950
 	public override bool UpdateUI
 	{
 		get
@@ -50,14 +50,14 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047A4 RID: 18340 RVA: 0x001C10EA File Offset: 0x001BF2EA
+	// Token: 0x0600474E RID: 18254 RVA: 0x001C175E File Offset: 0x001BF95E
 	public override void SetupDisplay()
 	{
 		base.Description = this.keyword;
 		this.StatusText = "";
 	}
 
-	// Token: 0x060047A5 RID: 18341 RVA: 0x001C1104 File Offset: 0x001BF304
+	// Token: 0x0600474F RID: 18255 RVA: 0x001C1778 File Offset: 0x001BF978
 	public override void AddHooks()
 	{
 		this.GetPosition();
@@ -72,7 +72,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		this.SetupZombieCompassBounds(zero, zero2);
 	}
 
-	// Token: 0x060047A6 RID: 18342 RVA: 0x001C11AC File Offset: 0x001BF3AC
+	// Token: 0x06004750 RID: 18256 RVA: 0x001C1820 File Offset: 0x001BFA20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_SleeperVolumePositionAdd(Vector3 position)
 	{
@@ -93,7 +93,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047A7 RID: 18343 RVA: 0x001C1234 File Offset: 0x001BF434
+	// Token: 0x06004751 RID: 18257 RVA: 0x001C18A8 File Offset: 0x001BFAA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_SleeperVolumePositionRemove(Vector3 position)
 	{
@@ -115,7 +115,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047A8 RID: 18344 RVA: 0x001C12CC File Offset: 0x001BF4CC
+	// Token: 0x06004752 RID: 18258 RVA: 0x001C1940 File Offset: 0x001BFB40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveSleeperVolumeMapObjects()
 	{
@@ -129,14 +129,14 @@ public class ObjectiveClearSleepers : BaseObjective
 		this.SleeperNavObjectList.Clear();
 	}
 
-	// Token: 0x060047A9 RID: 18345 RVA: 0x001C1323 File Offset: 0x001BF523
+	// Token: 0x06004753 RID: 18259 RVA: 0x001C1997 File Offset: 0x001BFB97
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupZombieCompassBounds(Vector3 poiPos, Vector3 poiSize)
 	{
 		base.OwnerQuest.OwnerJournal.OwnerPlayer.ZombieCompassBounds = new Rect(poiPos.x, poiPos.z, poiSize.x, poiSize.z);
 	}
 
-	// Token: 0x060047AA RID: 18346 RVA: 0x001C1358 File Offset: 0x001BF558
+	// Token: 0x06004754 RID: 18260 RVA: 0x001C19CC File Offset: 0x001BFBCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_SleepersCleared(Vector3 prefabPos)
 	{
@@ -153,7 +153,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047AB RID: 18347 RVA: 0x001C13BC File Offset: 0x001BF5BC
+	// Token: 0x06004755 RID: 18261 RVA: 0x001C1A30 File Offset: 0x001BFC30
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.SleepersCleared -= this.Current_SleepersCleared;
@@ -167,13 +167,13 @@ public class ObjectiveClearSleepers : BaseObjective
 		this.RemoveSleeperVolumeMapObjects();
 	}
 
-	// Token: 0x060047AC RID: 18348 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004756 RID: 18262 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupIcon()
 	{
 	}
 
-	// Token: 0x060047AD RID: 18349 RVA: 0x001C144D File Offset: 0x001BF64D
+	// Token: 0x06004757 RID: 18263 RVA: 0x001C1AC1 File Offset: 0x001BFCC1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 GetPosition()
 	{
@@ -184,7 +184,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		return Vector3.zero;
 	}
 
-	// Token: 0x060047AE RID: 18350 RVA: 0x001C147C File Offset: 0x001BF67C
+	// Token: 0x06004758 RID: 18264 RVA: 0x001C1AF0 File Offset: 0x001BFCF0
 	public void FinalizePoint(float offset, float x, float y, float z)
 	{
 		this.distanceOffset = offset;
@@ -200,7 +200,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		base.CurrentValue = 1;
 	}
 
-	// Token: 0x060047AF RID: 18351 RVA: 0x001C1502 File Offset: 0x001BF702
+	// Token: 0x06004759 RID: 18265 RVA: 0x001C1B76 File Offset: 0x001BFD76
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -209,7 +209,7 @@ public class ObjectiveClearSleepers : BaseObjective
 		}
 	}
 
-	// Token: 0x060047B0 RID: 18352 RVA: 0x001C151C File Offset: 0x001BF71C
+	// Token: 0x0600475A RID: 18266 RVA: 0x001C1B90 File Offset: 0x001BFD90
 	public override BaseObjective Clone()
 	{
 		ObjectiveClearSleepers objectiveClearSleepers = new ObjectiveClearSleepers();
@@ -217,46 +217,53 @@ public class ObjectiveClearSleepers : BaseObjective
 		return objectiveClearSleepers;
 	}
 
-	// Token: 0x060047B1 RID: 18353 RVA: 0x001C1537 File Offset: 0x001BF737
+	// Token: 0x0600475B RID: 18267 RVA: 0x001C1BAB File Offset: 0x001BFDAB
 	public override bool SetLocation(Vector3 pos, Vector3 size)
 	{
 		this.FinalizePoint(this.distanceOffset, pos.x, pos.y, pos.z);
 		return true;
 	}
 
-	// Token: 0x0400396B RID: 14699
+	// Token: 0x0600475C RID: 18268 RVA: 0x001C1BCC File Offset: 0x001BFDCC
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("position", this.position.ToString());
+	}
+
+	// Token: 0x04003967 RID: 14695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x0400396C RID: 14700
+	// Token: 0x04003968 RID: 14696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float distanceOffset;
 
-	// Token: 0x0400396D RID: 14701
+	// Token: 0x04003969 RID: 14697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string icon = "ui_game_symbol_quest";
 
-	// Token: 0x0400396E RID: 14702
+	// Token: 0x0400396A RID: 14698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string locationVariable = "gotolocation";
 
-	// Token: 0x0400396F RID: 14703
+	// Token: 0x0400396B RID: 14699
 	public Dictionary<Vector3, MapObjectSleeperVolume> SleeperMapObjectList = new Dictionary<Vector3, MapObjectSleeperVolume>();
 
-	// Token: 0x04003970 RID: 14704
+	// Token: 0x0400396C RID: 14700
 	public Dictionary<Vector3, NavObject> SleeperNavObjectList = new Dictionary<Vector3, NavObject>();
 
-	// Token: 0x0200098D RID: 2445
+	// Token: 0x02000993 RID: 2451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum GotoStates
 	{
-		// Token: 0x04003972 RID: 14706
+		// Token: 0x0400396E RID: 14702
 		NoPosition,
-		// Token: 0x04003973 RID: 14707
+		// Token: 0x0400396F RID: 14703
 		TryRefresh,
-		// Token: 0x04003974 RID: 14708
+		// Token: 0x04003970 RID: 14704
 		TryComplete,
-		// Token: 0x04003975 RID: 14709
+		// Token: 0x04003971 RID: 14705
 		Completed
 	}
 }

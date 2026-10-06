@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006B0 RID: 1712
+// Token: 0x020006B2 RID: 1714
 [Preserve]
 public class WornItemMods : TargetedCompareRequirementBase
 {
-	// Token: 0x060035A4 RID: 13732 RVA: 0x00161DA4 File Offset: 0x0015FFA4
+	// Token: 0x060035E7 RID: 13799 RVA: 0x00162710 File Offset: 0x00160910
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -19,15 +19,15 @@ public class WornItemMods : TargetedCompareRequirementBase
 		for (int i = 0; i < slotCount; i++)
 		{
 			ItemValue slotItem = this.target.equipment.GetSlotItem(i);
-			if (slotItem != null)
+			if (!slotItem.IsEmpty())
 			{
-				int num2 = slotItem.Modifications.Length;
-				for (int j = 0; j < num2; j++)
+				int modificationCount = slotItem.ModificationCount;
+				for (int j = 0; j < modificationCount; j++)
 				{
-					ItemValue itemValue = slotItem.Modifications[j];
-					if (itemValue != null)
+					ItemValue modification = slotItem.GetModification(j);
+					if (modification != null)
 					{
-						ItemClass itemClass = itemValue.ItemClass;
+						ItemClass itemClass = modification.ItemClass;
 						if (itemClass != null && itemClass.HasAnyTags(this.tags))
 						{
 							num++;
@@ -39,13 +39,13 @@ public class WornItemMods : TargetedCompareRequirementBase
 		return this.invert != RequirementBase.compareValues((float)num, this.operation, this.value);
 	}
 
-	// Token: 0x060035A5 RID: 13733 RVA: 0x00161D21 File Offset: 0x0015FF21
+	// Token: 0x060035E8 RID: 13800 RVA: 0x0016268E File Offset: 0x0016088E
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("WornItems: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x060035A6 RID: 13734 RVA: 0x00161E58 File Offset: 0x00160058
+	// Token: 0x060035E9 RID: 13801 RVA: 0x001627C8 File Offset: 0x001609C8
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -57,7 +57,7 @@ public class WornItemMods : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B62 RID: 11106
+	// Token: 0x04002B5B RID: 11099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tags;
 }

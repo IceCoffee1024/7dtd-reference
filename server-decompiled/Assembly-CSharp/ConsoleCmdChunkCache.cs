@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F8 RID: 504
+// Token: 0x020001F9 RID: 505
 [Preserve]
 public class ConsoleCmdChunkCache : ConsoleCmdAbstract
 {
-	// Token: 0x17000150 RID: 336
-	// (get) Token: 0x06000F79 RID: 3961 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000148 RID: 328
+	// (get) Token: 0x06000F6C RID: 3948 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,15 +17,15 @@ public class ConsoleCmdChunkCache : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F7A RID: 3962 RVA: 0x000643F3 File Offset: 0x000625F3
+	// Token: 0x06000F6D RID: 3949 RVA: 0x000643E3 File Offset: 0x000625E3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "chunkcache", "cc" };
 	}
 
-	// Token: 0x17000151 RID: 337
-	// (get) Token: 0x06000F7B RID: 3963 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x17000149 RID: 329
+	// (get) Token: 0x06000F6E RID: 3950 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -34,7 +34,7 @@ public class ConsoleCmdChunkCache : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F7C RID: 3964 RVA: 0x0006440C File Offset: 0x0006260C
+	// Token: 0x06000F6F RID: 3951 RVA: 0x000643FC File Offset: 0x000625FC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num = 1;
@@ -84,7 +84,7 @@ public class ConsoleCmdChunkCache : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("VML: " + num4.ToString());
 	}
 
-	// Token: 0x06000F7D RID: 3965 RVA: 0x000646C4 File Offset: 0x000628C4
+	// Token: 0x06000F70 RID: 3952 RVA: 0x000646B4 File Offset: 0x000628B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001941 RID: 6465
+	// Token: 0x0200196D RID: 6509
 	[Preserve]
 	public class RequirementProgression : BaseOperationRequirement
 	{
-		// Token: 0x0600C747 RID: 51015 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C89F RID: 51359 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C748 RID: 51016 RVA: 0x00491B30 File Offset: 0x0048FD30
+		// Token: 0x0600C8A0 RID: 51360 RVA: 0x0049601C File Offset: 0x0049421C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
@@ -29,14 +29,14 @@ namespace GameEvent.SequenceRequirements
 			return 0;
 		}
 
-		// Token: 0x0600C749 RID: 51017 RVA: 0x00491B86 File Offset: 0x0048FD86
+		// Token: 0x0600C8A1 RID: 51361 RVA: 0x00496072 File Offset: 0x00494272
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetIntValue(target as EntityAlive, this.valueText, 0);
 		}
 
-		// Token: 0x0600C74A RID: 51018 RVA: 0x00491B9F File Offset: 0x0048FD9F
+		// Token: 0x0600C8A2 RID: 51362 RVA: 0x0049608B File Offset: 0x0049428B
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -44,7 +44,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementProgression.PropValue, ref this.valueText);
 		}
 
-		// Token: 0x0600C74B RID: 51019 RVA: 0x00491BCA File Offset: 0x0048FDCA
+		// Token: 0x0600C8A3 RID: 51363 RVA: 0x004960B6 File Offset: 0x004942B6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -57,23 +57,23 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x04009606 RID: 38406
+		// Token: 0x040096CC RID: 38604
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string progressionName = "";
 
-		// Token: 0x04009607 RID: 38407
+		// Token: 0x040096CD RID: 38605
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ProgressionValue pv;
 
-		// Token: 0x04009608 RID: 38408
+		// Token: 0x040096CE RID: 38606
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x04009609 RID: 38409
+		// Token: 0x040096CF RID: 38607
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropProgressionName = "name";
 
-		// Token: 0x0400960A RID: 38410
+		// Token: 0x040096D0 RID: 38608
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

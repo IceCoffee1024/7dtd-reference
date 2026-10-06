@@ -5,11 +5,11 @@ using InControl;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DA8 RID: 3496
+// Token: 0x02000DB7 RID: 3511
 [UnityEngine.Scripting.Preserve]
 public class XUiC_OptionsControlsNewBinding : XUiController
 {
-	// Token: 0x06006ABC RID: 27324 RVA: 0x0029BF08 File Offset: 0x0029A108
+	// Token: 0x06006AB4 RID: 27316 RVA: 0x0029F298 File Offset: 0x0029D498
 	public override void Init()
 	{
 		base.Init();
@@ -19,21 +19,21 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		((XUiC_SimpleButton)base.GetChildById("btnGrabBinding")).OnPressed += this.BtnGrabBinding_OnPressed;
 	}
 
-	// Token: 0x06006ABD RID: 27325 RVA: 0x00089495 File Offset: 0x00087695
+	// Token: 0x06006AB5 RID: 27317 RVA: 0x00089715 File Offset: 0x00087915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006ABE RID: 27326 RVA: 0x0029BF8E File Offset: 0x0029A18E
+	// Token: 0x06006AB6 RID: 27318 RVA: 0x0029F31E File Offset: 0x0029D51E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnNewBinding_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.startGetBinding();
 	}
 
-	// Token: 0x06006ABF RID: 27327 RVA: 0x0029BF98 File Offset: 0x0029A198
+	// Token: 0x06006AB7 RID: 27319 RVA: 0x0029F328 File Offset: 0x0029D528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnGrabBinding_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -44,7 +44,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		ThreadManager.StartCoroutine(this.closeNextFrame());
 	}
 
-	// Token: 0x06006AC0 RID: 27328 RVA: 0x0029BFF0 File Offset: 0x0029A1F0
+	// Token: 0x06006AB8 RID: 27320 RVA: 0x0029F380 File Offset: 0x0029D580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startGetBinding()
 	{
@@ -62,7 +62,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		this.action.ListenForBinding();
 	}
 
-	// Token: 0x06006AC1 RID: 27329 RVA: 0x0029C0D3 File Offset: 0x0029A2D3
+	// Token: 0x06006AB9 RID: 27321 RVA: 0x0029F463 File Offset: 0x0029D663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stoppedGetBinding(bool _alsoStopListening = true)
 	{
@@ -75,7 +75,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		GameManager.Instance.SetCursorEnabledOverride(false, false);
 	}
 
-	// Token: 0x06006AC2 RID: 27330 RVA: 0x0029C10C File Offset: 0x0029A30C
+	// Token: 0x06006ABA RID: 27322 RVA: 0x0029F49C File Offset: 0x0029D69C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool onBindingReceived(PlayerAction _action, BindingSource _binding)
 	{
@@ -136,7 +136,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		return true;
 	}
 
-	// Token: 0x06006AC3 RID: 27331 RVA: 0x0029C2B8 File Offset: 0x0029A4B8
+	// Token: 0x06006ABB RID: 27323 RVA: 0x0029F648 File Offset: 0x0029D848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool alreadyBound(BindingSource _binding, PlayerAction _selfAction)
 	{
@@ -212,7 +212,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		return true;
 	}
 
-	// Token: 0x06006AC4 RID: 27332 RVA: 0x0029C5F8 File Offset: 0x0029A7F8
+	// Token: 0x06006ABC RID: 27324 RVA: 0x0029F988 File Offset: 0x0029DB88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeNextFrame()
 	{
@@ -221,7 +221,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		yield break;
 	}
 
-	// Token: 0x06006AC5 RID: 27333 RVA: 0x0029C607 File Offset: 0x0029A807
+	// Token: 0x06006ABD RID: 27325 RVA: 0x0029F997 File Offset: 0x0029DB97
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startNextFrame()
 	{
@@ -230,7 +230,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		yield break;
 	}
 
-	// Token: 0x06006AC6 RID: 27334 RVA: 0x0029C618 File Offset: 0x0029A818
+	// Token: 0x06006ABE RID: 27326 RVA: 0x0029F9A8 File Offset: 0x0029DBA8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -258,7 +258,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		ThreadManager.StartCoroutine(this.startNextFrame());
 	}
 
-	// Token: 0x06006AC7 RID: 27335 RVA: 0x0029C734 File Offset: 0x0029A934
+	// Token: 0x06006ABF RID: 27327 RVA: 0x0029FAC4 File Offset: 0x0029DCC4
 	public static void GetNewBinding(XUi _xuiInstance, PlayerAction _action, bool _forController = false)
 	{
 		XUiC_OptionsControlsNewBinding childByType = _xuiInstance.FindWindowGroupByName(XUiC_OptionsControlsNewBinding.id).GetChildByType<XUiC_OptionsControlsNewBinding>();
@@ -267,47 +267,47 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		_xuiInstance.playerUI.windowManager.Open(childByType.WindowGroup, false);
 	}
 
-	// Token: 0x04005166 RID: 20838
+	// Token: 0x0400519D RID: 20893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string id;
 
-	// Token: 0x04005167 RID: 20839
+	// Token: 0x0400519E RID: 20894
 	[XuiBindComponent("forAction", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblAction;
 
-	// Token: 0x04005168 RID: 20840
+	// Token: 0x0400519F RID: 20895
 	[XuiBindComponent("newBindingAbort", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblAbort;
 
-	// Token: 0x04005169 RID: 20841
+	// Token: 0x040051A0 RID: 20896
 	[XuiBindComponent("inUse", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Rect rectInUse;
 
-	// Token: 0x0400516A RID: 20842
+	// Token: 0x040051A1 RID: 20897
 	[XuiBindComponent("inUseBy", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblInUseBy;
 
-	// Token: 0x0400516B RID: 20843
+	// Token: 0x040051A2 RID: 20898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerAction action;
 
-	// Token: 0x0400516C RID: 20844
+	// Token: 0x040051A3 RID: 20899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerAction conflictingAction;
 
-	// Token: 0x0400516D RID: 20845
+	// Token: 0x040051A4 RID: 20900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BindingSource binding;
 
-	// Token: 0x0400516E RID: 20846
+	// Token: 0x040051A5 RID: 20901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool forController;
 
-	// Token: 0x0400516F RID: 20847
+	// Token: 0x040051A6 RID: 20902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<BindingSource> bindingAbortActions = new List<BindingSource>
 	{
@@ -318,7 +318,7 @@ public class XUiC_OptionsControlsNewBinding : XUiController
 		new KeyBindingSource(new Key[] { Key.Escape })
 	};
 
-	// Token: 0x04005170 RID: 20848
+	// Token: 0x040051A7 RID: 20903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly BindingSource[] bindingForbidden = new BindingSource[]
 	{

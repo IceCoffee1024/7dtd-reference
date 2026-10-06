@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015C2 RID: 5570
+// Token: 0x020015E4 RID: 5604
 public class vp_ItemIdentifier : MonoBehaviour
 {
-	// Token: 0x0600AE40 RID: 44608 RVA: 0x0040E9D8 File Offset: 0x0040CBD8
+	// Token: 0x0600AEF3 RID: 44787 RVA: 0x0041382C File Offset: 0x00411A2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -12,27 +12,27 @@ public class vp_ItemIdentifier : MonoBehaviour
 		vp_TargetEventReturn<int>.Register(base.transform, "GetItemID", new Func<int>(this.GetItemID));
 	}
 
-	// Token: 0x0600AE41 RID: 44609 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AEF4 RID: 44788 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 	}
 
-	// Token: 0x0600AE42 RID: 44610 RVA: 0x0040EA14 File Offset: 0x0040CC14
+	// Token: 0x0600AEF5 RID: 44789 RVA: 0x00413868 File Offset: 0x00411A68
 	public virtual vp_ItemType GetItemType()
 	{
 		return this.Type;
 	}
 
-	// Token: 0x0600AE43 RID: 44611 RVA: 0x0040EA1C File Offset: 0x0040CC1C
+	// Token: 0x0600AEF6 RID: 44790 RVA: 0x00413870 File Offset: 0x00411A70
 	public virtual int GetItemID()
 	{
 		return this.ID;
 	}
 
-	// Token: 0x040081AF RID: 33199
+	// Token: 0x04008232 RID: 33330
 	public vp_ItemType Type;
 
-	// Token: 0x040081B0 RID: 33200
+	// Token: 0x04008233 RID: 33331
 	public int ID;
 }

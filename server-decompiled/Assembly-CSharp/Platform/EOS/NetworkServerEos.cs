@@ -9,11 +9,11 @@ using UnityEngine.Networking;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CFA RID: 7418
+	// Token: 0x02001D2C RID: 7468
 	public class NetworkServerEos : IPlatformNetworkServer, INetworkServer
 	{
-		// Token: 0x17001B6F RID: 7023
-		// (get) Token: 0x0600DC03 RID: 56323 RVA: 0x004EA642 File Offset: 0x004E8842
+		// Token: 0x17001C15 RID: 7189
+		// (get) Token: 0x0600DD7E RID: 56702 RVA: 0x004EF18A File Offset: 0x004ED38A
 		public bool ServerRunning
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -23,7 +23,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC04 RID: 56324 RVA: 0x004EA64C File Offset: 0x004E884C
+		// Token: 0x0600DD7F RID: 56703 RVA: 0x004EF194 File Offset: 0x004ED394
 		public NetworkServerEos(IPlatform _owner, IProtocolManagerProtocolInterface _protoManager)
 		{
 			this.owner = _owner;
@@ -83,7 +83,7 @@ namespace Platform.EOS
 			};
 		}
 
-		// Token: 0x0600DC05 RID: 56325 RVA: 0x004EA6BF File Offset: 0x004E88BF
+		// Token: 0x0600DD80 RID: 56704 RVA: 0x004EF207 File Offset: 0x004ED407
 		public NetworkConnectionError StartServer(int _basePort, string _password)
 		{
 			if (this.ServerRunning)
@@ -97,13 +97,13 @@ namespace Platform.EOS
 			return NetworkConnectionError.NoError;
 		}
 
-		// Token: 0x0600DC06 RID: 56326 RVA: 0x004EA6FA File Offset: 0x004E88FA
+		// Token: 0x0600DD81 RID: 56705 RVA: 0x004EF242 File Offset: 0x004ED442
 		public void SetServerPassword(string _password)
 		{
 			this.serverPassword = (string.IsNullOrEmpty(_password) ? null : _password);
 		}
 
-		// Token: 0x0600DC07 RID: 56327 RVA: 0x004EA710 File Offset: 0x004E8910
+		// Token: 0x0600DD82 RID: 56706 RVA: 0x004EF258 File Offset: 0x004ED458
 		public void StopServer()
 		{
 			if (!this.ServerRunning)
@@ -131,14 +131,14 @@ namespace Platform.EOS
 			Log.Out("[EOS-P2PS] Server stopped");
 		}
 
-		// Token: 0x0600DC08 RID: 56328 RVA: 0x004EA7CC File Offset: 0x004E89CC
+		// Token: 0x0600DD83 RID: 56707 RVA: 0x004EF314 File Offset: 0x004ED514
 		public void DropClient(ClientInfo _clientInfo, bool _clientDisconnect)
 		{
 			ProductUserId productUserId = ((UserIdentifierEos)_clientInfo.CrossplatformId).ProductUserId;
 			ThreadManager.StartCoroutine(this.dropLater(productUserId, 0.2f));
 		}
 
-		// Token: 0x0600DC09 RID: 56329 RVA: 0x004EA7FC File Offset: 0x004E89FC
+		// Token: 0x0600DD84 RID: 56708 RVA: 0x004EF344 File Offset: 0x004ED544
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator dropLater(ProductUserId _id, float _delay)
 		{
@@ -173,7 +173,7 @@ namespace Platform.EOS
 			yield break;
 		}
 
-		// Token: 0x0600DC0A RID: 56330 RVA: 0x004EA819 File Offset: 0x004E8A19
+		// Token: 0x0600DD85 RID: 56709 RVA: 0x004EF361 File Offset: 0x004ED561
 		public NetworkError SendData(ClientInfo _clientInfo, int _channel, ArrayListMP<byte> _data, bool _reliableDelivery = true)
 		{
 			if (this.ServerRunning)
@@ -188,7 +188,7 @@ namespace Platform.EOS
 			return NetworkError.Ok;
 		}
 
-		// Token: 0x0600DC0B RID: 56331 RVA: 0x004EA84C File Offset: 0x004E8A4C
+		// Token: 0x0600DD86 RID: 56710 RVA: 0x004EF394 File Offset: 0x004ED594
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConnectionRequestHandler(ref OnIncomingConnectionRequestInfo _data)
 		{
@@ -235,7 +235,7 @@ namespace Platform.EOS
 			};
 		}
 
-		// Token: 0x0600DC0C RID: 56332 RVA: 0x004EA9A0 File Offset: 0x004E8BA0
+		// Token: 0x0600DD87 RID: 56711 RVA: 0x004EF4E8 File Offset: 0x004ED6E8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConnectionEstablishedHandler(ref OnPeerConnectionEstablishedInfo _data)
 		{
@@ -246,7 +246,7 @@ namespace Platform.EOS
 			Log.Out(string.Format("[EOS-P2PS] Connection established: {0}", _data.RemoteUserId));
 		}
 
-		// Token: 0x0600DC0D RID: 56333 RVA: 0x004EA9C0 File Offset: 0x004E8BC0
+		// Token: 0x0600DD88 RID: 56712 RVA: 0x004EF508 File Offset: 0x004ED708
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConnectionClosedHandler(ref OnRemoteConnectionClosedInfo _data)
 		{
@@ -281,7 +281,7 @@ namespace Platform.EOS
 			this.OnPlayerDisconnected(remoteUserId);
 		}
 
-		// Token: 0x0600DC0E RID: 56334 RVA: 0x004EAAB0 File Offset: 0x004E8CB0
+		// Token: 0x0600DD89 RID: 56713 RVA: 0x004EF5F8 File Offset: 0x004ED7F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void IncomingPacketQueueFullHandler(ref OnIncomingPacketQueueFullInfo _data)
 		{
@@ -292,7 +292,7 @@ namespace Platform.EOS
 			Log.Error(string.Format("[EOS-P2PS] Packet queue full: Chn={0}, IncSize={1}, Used={2}, Max={3}", new object[] { _data.OverflowPacketChannel, _data.OverflowPacketSizeBytes, _data.PacketQueueCurrentSizeBytes, _data.PacketQueueMaxSizeBytes }));
 		}
 
-		// Token: 0x0600DC0F RID: 56335 RVA: 0x004EAB14 File Offset: 0x004E8D14
+		// Token: 0x0600DD8A RID: 56714 RVA: 0x004EF65C File Offset: 0x004ED85C
 		public void Update()
 		{
 			if (!this.ServerRunning)
@@ -398,7 +398,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC10 RID: 56336 RVA: 0x004EAE10 File Offset: 0x004E9010
+		// Token: 0x0600DD8B RID: 56715 RVA: 0x004EF958 File Offset: 0x004EDB58
 		public void LateUpdate()
 		{
 			if (!this.ServerRunning)
@@ -417,7 +417,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC11 RID: 56337 RVA: 0x004EAEBC File Offset: 0x004E90BC
+		// Token: 0x0600DD8C RID: 56716 RVA: 0x004EFA04 File Offset: 0x004EDC04
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void sendBuffers(BlockingQueue<NetworkCommonEos.SendInfo> _buffers, PacketReliability _queue)
 		{
@@ -452,7 +452,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC12 RID: 56338 RVA: 0x004EAFE0 File Offset: 0x004E91E0
+		// Token: 0x0600DD8D RID: 56717 RVA: 0x004EFB28 File Offset: 0x004EDD28
 		public string GetIP(ClientInfo _cInfo)
 		{
 			NetworkServerEos.ConnectionInformation connectionInformation;
@@ -463,7 +463,7 @@ namespace Platform.EOS
 			return NetworkUtils.ToAddr(connectionInformation.Ip);
 		}
 
-		// Token: 0x0600DC13 RID: 56339 RVA: 0x004EB020 File Offset: 0x004E9220
+		// Token: 0x0600DD8E RID: 56718 RVA: 0x004EFB68 File Offset: 0x004EDD68
 		public int GetPing(ClientInfo _cInfo)
 		{
 			NetworkServerEos.ConnectionInformation connectionInformation;
@@ -479,7 +479,7 @@ namespace Platform.EOS
 			return num / 50;
 		}
 
-		// Token: 0x0600DC14 RID: 56340 RVA: 0x004EB06C File Offset: 0x004E926C
+		// Token: 0x0600DD8F RID: 56719 RVA: 0x004EFBB4 File Offset: 0x004EDDB4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerDisconnected(ProductUserId _id)
 		{
@@ -488,13 +488,13 @@ namespace Platform.EOS
 			SingletonMonoBehaviour<ConnectionManager>.Instance.Net_PlayerDisconnected(clientInfo);
 		}
 
-		// Token: 0x0600DC15 RID: 56341 RVA: 0x00032147 File Offset: 0x00030347
+		// Token: 0x0600DD90 RID: 56720 RVA: 0x0003223F File Offset: 0x0003043F
 		public string GetServerPorts(int _basePort)
 		{
 			return "";
 		}
 
-		// Token: 0x0600DC16 RID: 56342 RVA: 0x004EB09C File Offset: 0x004E929C
+		// Token: 0x0600DD91 RID: 56721 RVA: 0x004EFBE4 File Offset: 0x004EDDE4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool Authenticate(ProductUserId _id, string _password)
 		{
@@ -510,7 +510,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DC17 RID: 56343 RVA: 0x004EB118 File Offset: 0x004E9318
+		// Token: 0x0600DD92 RID: 56722 RVA: 0x004EFC60 File Offset: 0x004EDE60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerConnected(ProductUserId _id)
 		{
@@ -528,7 +528,7 @@ namespace Platform.EOS
 			SingletonMonoBehaviour<ConnectionManager>.Instance.Net_PlayerConnected(clientInfo);
 		}
 
-		// Token: 0x0600DC18 RID: 56344 RVA: 0x004EB190 File Offset: 0x004E9390
+		// Token: 0x0600DD93 RID: 56723 RVA: 0x004EFCD8 File Offset: 0x004EDED8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FlushBuffer(ProductUserId _id)
 		{
@@ -554,7 +554,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC19 RID: 56345 RVA: 0x004EB248 File Offset: 0x004E9448
+		// Token: 0x0600DD94 RID: 56724 RVA: 0x004EFD90 File Offset: 0x004EDF90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdatePing(ProductUserId _sourceId, byte[] _data, long _curTime)
 		{
@@ -569,50 +569,50 @@ namespace Platform.EOS
 			connectionInformation.Pings[connectionInformation.LastPingIndex] = num2;
 		}
 
-		// Token: 0x0600DC1A RID: 56346 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD95 RID: 56725 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetLatencySimulation(bool _enable, int _minLatency, int _maxLatency)
 		{
 		}
 
-		// Token: 0x0600DC1B RID: 56347 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD96 RID: 56726 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetPacketLossSimulation(bool _enable, int _chance)
 		{
 		}
 
-		// Token: 0x0600DC1C RID: 56348 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD97 RID: 56727 RVA: 0x000027FC File Offset: 0x000009FC
 		public void EnableStatistics()
 		{
 		}
 
-		// Token: 0x0600DC1D RID: 56349 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD98 RID: 56728 RVA: 0x000027FC File Offset: 0x000009FC
 		public void DisableStatistics()
 		{
 		}
 
-		// Token: 0x0600DC1E RID: 56350 RVA: 0x00032147 File Offset: 0x00030347
+		// Token: 0x0600DD99 RID: 56729 RVA: 0x0003223F File Offset: 0x0003043F
 		public string PrintNetworkStatistics()
 		{
 			return "";
 		}
 
-		// Token: 0x0600DC1F RID: 56351 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DD9A RID: 56730 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ResetNetworkStatistics()
 		{
 		}
 
-		// Token: 0x0600DC20 RID: 56352 RVA: 0x004EB29C File Offset: 0x004E949C
+		// Token: 0x0600DD9B RID: 56731 RVA: 0x004EFDE4 File Offset: 0x004EDFE4
 		public int GetMaximumPacketSize(ClientInfo _cInfo, bool _reliable = false)
 		{
 			return 1170;
 		}
 
-		// Token: 0x0600DC21 RID: 56353 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DD9C RID: 56732 RVA: 0x00010E62 File Offset: 0x0000F062
 		public int GetBadPacketCount(ClientInfo _cInfo)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600DC22 RID: 56354 RVA: 0x004EB2A4 File Offset: 0x004E94A4
+		// Token: 0x0600DD9D RID: 56733 RVA: 0x004EFDEC File Offset: 0x004EDFEC
 		// Note: this type is marked as 'beforefieldinit'.
 		[PublicizedFrom(EAccessModifier.Private)]
 		static NetworkServerEos()
@@ -625,99 +625,99 @@ namespace Platform.EOS
 			NetworkServerEos.timeData = new ArraySegment<byte>(array2);
 		}
 
-		// Token: 0x0400A64E RID: 42574
+		// Token: 0x0400A723 RID: 42787
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string socketName = "Game";
 
-		// Token: 0x0400A64F RID: 42575
+		// Token: 0x0400A724 RID: 42788
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A650 RID: 42576
+		// Token: 0x0400A725 RID: 42789
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IProtocolManagerProtocolInterface protoManager;
 
-		// Token: 0x0400A651 RID: 42577
+		// Token: 0x0400A726 RID: 42790
 		[PublicizedFrom(EAccessModifier.Private)]
 		public P2PInterface ptpInterface;
 
-		// Token: 0x0400A652 RID: 42578
+		// Token: 0x0400A727 RID: 42791
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool serverStarted;
 
-		// Token: 0x0400A653 RID: 42579
+		// Token: 0x0400A728 RID: 42792
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PingCount = 50;
 
-		// Token: 0x0400A654 RID: 42580
+		// Token: 0x0400A729 RID: 42793
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ProductUserId, NetworkServerEos.ConnectionInformation> connections = new Dictionary<ProductUserId, NetworkServerEos.ConnectionInformation>();
 
-		// Token: 0x0400A655 RID: 42581
+		// Token: 0x0400A72A RID: 42794
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<NetworkCommonEos.SendInfo> sendBufs = new BlockingQueue<NetworkCommonEos.SendInfo>();
 
-		// Token: 0x0400A656 RID: 42582
+		// Token: 0x0400A72B RID: 42795
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<NetworkCommonEos.SendInfo> sendBufsUnreliable = new BlockingQueue<NetworkCommonEos.SendInfo>();
 
-		// Token: 0x0400A657 RID: 42583
+		// Token: 0x0400A72C RID: 42796
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string serverPassword;
 
-		// Token: 0x0400A658 RID: 42584
+		// Token: 0x0400A72D RID: 42797
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ProductUserId localUser;
 
-		// Token: 0x0400A659 RID: 42585
+		// Token: 0x0400A72E RID: 42798
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SocketId socketId;
 
-		// Token: 0x0400A65A RID: 42586
+		// Token: 0x0400A72F RID: 42799
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ArraySegment<byte> receiveBuffer = new ArraySegment<byte>(new byte[1170]);
 
-		// Token: 0x0400A65B RID: 42587
+		// Token: 0x0400A730 RID: 42800
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ArraySegment<byte> passwordValidPacket = new ArraySegment<byte>(new byte[] { 50, 1 });
 
-		// Token: 0x0400A65C RID: 42588
+		// Token: 0x0400A731 RID: 42801
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ArraySegment<byte> passwordInvalidPacket;
 
-		// Token: 0x0400A65D RID: 42589
+		// Token: 0x0400A732 RID: 42802
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ArraySegment<byte> timeData;
 
-		// Token: 0x02001CFB RID: 7419
+		// Token: 0x02001D2D RID: 7469
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum EConnectionState
 		{
-			// Token: 0x0400A65F RID: 42591
+			// Token: 0x0400A734 RID: 42804
 			Disconnected,
-			// Token: 0x0400A660 RID: 42592
+			// Token: 0x0400A735 RID: 42805
 			Authenticating,
-			// Token: 0x0400A661 RID: 42593
+			// Token: 0x0400A736 RID: 42806
 			Connected
 		}
 
-		// Token: 0x02001CFC RID: 7420
+		// Token: 0x02001D2E RID: 7470
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class ConnectionInformation
 		{
-			// Token: 0x0400A662 RID: 42594
+			// Token: 0x0400A737 RID: 42807
 			public NetworkServerEos.EConnectionState State;
 
-			// Token: 0x0400A663 RID: 42595
+			// Token: 0x0400A738 RID: 42808
 			public uint Ip;
 
-			// Token: 0x0400A664 RID: 42596
+			// Token: 0x0400A739 RID: 42809
 			public UserIdentifierEos UserIdentifier;
 
-			// Token: 0x0400A665 RID: 42597
+			// Token: 0x0400A73A RID: 42810
 			public int LastPingIndex = -1;
 
-			// Token: 0x0400A666 RID: 42598
+			// Token: 0x0400A73B RID: 42811
 			public readonly int[] Pings = new int[50];
 		}
 	}

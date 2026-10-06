@@ -4,23 +4,23 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019F1 RID: 6641
+	// Token: 0x02001A1D RID: 6685
 	[Preserve]
 	public class ActionReplaceItemsContainers : ActionBaseContainersAction
 	{
-		// Token: 0x0600CA82 RID: 51842 RVA: 0x004A37D4 File Offset: 0x004A19D4
+		// Token: 0x0600CBDA RID: 52186 RVA: 0x004A7C80 File Offset: 0x004A5E80
 		public override bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			isEmpty = true;
 			TileEntityType tileEntityType = te.GetTileEntityType();
 			if (tileEntityType != TileEntityType.Workstation)
 			{
-				ITileEntityLootable tileEntityLootable;
-				if (tileEntityType == TileEntityType.Composite && te.TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable))
+				TEFeatureStorage tefeatureStorage;
+				if (tileEntityType == TileEntityType.Composite && te.TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage))
 				{
-					for (int i = 0; i < tileEntityLootable.items.Length; i++)
+					for (int i = 0; i < tefeatureStorage.ItemGrid.Length; i++)
 					{
-						ItemStack itemStack = tileEntityLootable.items[i];
+						ItemStack itemStack = tefeatureStorage.ItemGrid[i];
 						if (!itemStack.IsEmpty() && itemStack.itemValue.ItemClass.HasAnyTags(this.fastItemTags) && itemStack.itemValue.ItemClass.GetItemName() != this.ReplacedByItem)
 						{
 							isEmpty = false;
@@ -47,7 +47,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CA83 RID: 51843 RVA: 0x004A38E0 File Offset: 0x004A1AE0
+		// Token: 0x0600CBDB RID: 52187 RVA: 0x004A7D94 File Offset: 0x004A5F94
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
@@ -60,15 +60,15 @@ namespace GameEvent.SequenceActions
 				TileEntityType tileEntityType = tileEntityList[i].GetTileEntityType();
 				if (tileEntityType != TileEntityType.Workstation)
 				{
-					ITileEntityLootable tileEntityLootable;
-					if (tileEntityType == TileEntityType.Composite && tileEntityList[i].TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable))
+					TEFeatureStorage tefeatureStorage;
+					if (tileEntityType == TileEntityType.Composite && tileEntityList[i].TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage))
 					{
-						for (int j = 0; j < tileEntityLootable.items.Length; j++)
+						for (int j = 0; j < tefeatureStorage.ItemGrid.Length; j++)
 						{
-							ItemStack itemStack = tileEntityLootable.items[j];
+							ItemStack itemStack = tefeatureStorage.ItemGrid[j];
 							if (!itemStack.IsEmpty() && itemStack.itemValue.ItemClass.HasAnyTags(this.fastItemTags) && itemStack.itemValue.ItemClass.GetItemName() != this.ReplacedByItem)
 							{
-								tileEntityLootable.items[j] = new ItemStack(ItemClass.GetItem(this.ReplacedByItem, false), itemStack.count);
+								tefeatureStorage.ItemGrid[j] = new ItemStack(ItemClass.GetItem(this.ReplacedByItem, false), itemStack.count);
 								flag = true;
 								flag2 = true;
 							}
@@ -118,7 +118,7 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600CA84 RID: 51844 RVA: 0x004A3B24 File Offset: 0x004A1D24
+		// Token: 0x0600CBDC RID: 52188 RVA: 0x004A7FE4 File Offset: 0x004A61E4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -128,7 +128,7 @@ namespace GameEvent.SequenceActions
 			this.fastItemTags = FastTags<TagGroup.Global>.Parse(this.itemTags);
 		}
 
-		// Token: 0x0600CA85 RID: 51845 RVA: 0x004A3B7C File Offset: 0x004A1D7C
+		// Token: 0x0600CBDD RID: 52189 RVA: 0x004A803C File Offset: 0x004A623C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -145,29 +145,29 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099C4 RID: 39364
+		// Token: 0x04009A8A RID: 39562
 		public string ReplacedByItem = "";
 
-		// Token: 0x040099C5 RID: 39365
+		// Token: 0x04009A8B RID: 39563
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeOutputs;
 
-		// Token: 0x040099C6 RID: 39366
+		// Token: 0x04009A8C RID: 39564
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string itemTags = "";
 
-		// Token: 0x040099C7 RID: 39367
+		// Token: 0x04009A8D RID: 39565
 		public static string PropReplacedByItem = "replaced_by_item";
 
-		// Token: 0x040099C8 RID: 39368
+		// Token: 0x04009A8E RID: 39566
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeOutputs = "include_outputs";
 
-		// Token: 0x040099C9 RID: 39369
+		// Token: 0x04009A8F RID: 39567
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropItemTag = "items_tags";
 
-		// Token: 0x040099CA RID: 39370
+		// Token: 0x04009A90 RID: 39568
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> fastItemTags = FastTags<TagGroup.Global>.none;
 	}

@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x02001853 RID: 6227
+	// Token: 0x0200187F RID: 6271
 	public class TwitchEventActionEntry
 	{
-		// Token: 0x0600C080 RID: 49280 RVA: 0x004744ED File Offset: 0x004726ED
+		// Token: 0x0600C1D8 RID: 49624 RVA: 0x00478A29 File Offset: 0x00476C29
 		public bool HandleEvent(TwitchManager tm)
 		{
 			if (this.Event.HandleEvent(this.UserName, tm))
@@ -16,28 +16,28 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0400910D RID: 37133
+		// Token: 0x040091D3 RID: 37331
 		public string UserName;
 
-		// Token: 0x0400910E RID: 37134
+		// Token: 0x040091D4 RID: 37332
 		public byte Tier;
 
-		// Token: 0x0400910F RID: 37135
+		// Token: 0x040091D5 RID: 37333
 		public short Count;
 
-		// Token: 0x04009110 RID: 37136
+		// Token: 0x040091D6 RID: 37334
 		public bool IsSent;
 
-		// Token: 0x04009111 RID: 37137
+		// Token: 0x040091D7 RID: 37335
 		public bool IsRetry;
 
-		// Token: 0x04009112 RID: 37138
+		// Token: 0x040091D8 RID: 37336
 		public bool ReadyForRemove;
 
-		// Token: 0x04009113 RID: 37139
+		// Token: 0x040091D9 RID: 37337
 		public TwitchActionHistoryEntry HistoryEntry;
 
-		// Token: 0x04009114 RID: 37140
+		// Token: 0x040091DA RID: 37338
 		public BaseTwitchEventEntry Event;
 	}
 }

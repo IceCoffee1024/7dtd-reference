@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECB RID: 3787
+// Token: 0x02000EDA RID: 3802
 [Preserve]
 public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x17000DF8 RID: 3576
-	// (get) Token: 0x06007693 RID: 30355 RVA: 0x002C7A70 File Offset: 0x002C5C70
-	// (set) Token: 0x06007694 RID: 30356 RVA: 0x002C7A78 File Offset: 0x002C5C78
+	// Token: 0x17000E15 RID: 3605
+	// (get) Token: 0x0600768E RID: 30350 RVA: 0x002CAE48 File Offset: 0x002C9048
+	// (set) Token: 0x0600768F RID: 30351 RVA: 0x002CAE50 File Offset: 0x002C9050
 	public EntityUINotification Notification
 	{
 		get
@@ -36,7 +36,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007695 RID: 30357 RVA: 0x002C7B60 File Offset: 0x002C5D60
+	// Token: 0x06007690 RID: 30352 RVA: 0x002CAF38 File Offset: 0x002C9138
 	public override void Init()
 	{
 		base.Init();
@@ -58,7 +58,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007696 RID: 30358 RVA: 0x002C7C3E File Offset: 0x002C5E3E
+	// Token: 0x06007691 RID: 30353 RVA: 0x002CB016 File Offset: 0x002C9216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DescriptionButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -68,7 +68,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007697 RID: 30359 RVA: 0x002C7C7A File Offset: 0x002C5E7A
+	// Token: 0x06007692 RID: 30354 RVA: 0x002CB052 File Offset: 0x002C9252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StatButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -78,7 +78,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007698 RID: 30360 RVA: 0x002C7CB6 File Offset: 0x002C5EB6
+	// Token: 0x06007693 RID: 30355 RVA: 0x002CB08E File Offset: 0x002C928E
 	public override void Deselect()
 	{
 		if (this.selectedEntry != null)
@@ -87,7 +87,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007699 RID: 30361 RVA: 0x0008A73D File Offset: 0x0008893D
+	// Token: 0x06007694 RID: 30356 RVA: 0x0008A9BD File Offset: 0x00088BBD
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -98,7 +98,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x0600769A RID: 30362 RVA: 0x002C7CCC File Offset: 0x002C5ECC
+	// Token: 0x06007695 RID: 30357 RVA: 0x002CB0A4 File Offset: 0x002C92A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -181,7 +181,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600769B RID: 30363 RVA: 0x002C7F64 File Offset: 0x002C6164
+	// Token: 0x06007696 RID: 30358 RVA: 0x002CB33C File Offset: 0x002C953C
 	public void SetBuff(XUiC_ActiveBuffEntry buffEntry)
 	{
 		this.ensureReferencesSet();
@@ -204,7 +204,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600769C RID: 30364 RVA: 0x002C7FEA File Offset: 0x002C61EA
+	// Token: 0x06007697 RID: 30359 RVA: 0x002CB3C2 File Offset: 0x002C95C2
 	public void SetBuffInfo(XUiC_ActiveBuffEntry buff)
 	{
 		if (buff != null)
@@ -214,7 +214,7 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		this.SetBuff(buff);
 	}
 
-	// Token: 0x0600769D RID: 30365 RVA: 0x002C8004 File Offset: 0x002C6204
+	// Token: 0x06007698 RID: 30360 RVA: 0x002CB3DC File Offset: 0x002C95DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ensureReferencesSet()
 	{
@@ -228,71 +228,71 @@ public class XUiC_BuffInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x0400579B RID: 22427
+	// Token: 0x040057D3 RID: 22483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityUINotification notification;
 
-	// Token: 0x0400579C RID: 22428
+	// Token: 0x040057D4 RID: 22484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BuffValue overridenBuff;
 
-	// Token: 0x0400579D RID: 22429
+	// Token: 0x040057D5 RID: 22485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ActiveBuffEntry selectedEntry;
 
-	// Token: 0x0400579E RID: 22430
+	// Token: 0x040057D6 RID: 22486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buffName = "";
 
-	// Token: 0x0400579F RID: 22431
+	// Token: 0x040057D7 RID: 22487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController itemPreview;
 
-	// Token: 0x040057A0 RID: 22432
+	// Token: 0x040057D8 RID: 22488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowName;
 
-	// Token: 0x040057A1 RID: 22433
+	// Token: 0x040057D9 RID: 22489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x040057A2 RID: 22434
+	// Token: 0x040057DA RID: 22490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController description;
 
-	// Token: 0x040057A3 RID: 22435
+	// Token: 0x040057DB RID: 22491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController stats;
 
-	// Token: 0x040057A4 RID: 22436
+	// Token: 0x040057DC RID: 22492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController craftingTime;
 
-	// Token: 0x040057A5 RID: 22437
+	// Token: 0x040057DD RID: 22493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList actionItemList;
 
-	// Token: 0x040057A6 RID: 22438
+	// Token: 0x040057DE RID: 22494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_InfoWindow emptyInfoWindow;
 
-	// Token: 0x040057A7 RID: 22439
+	// Token: 0x040057DF RID: 22495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemInfoWindow itemInfoWindow;
 
-	// Token: 0x040057A8 RID: 22440
+	// Token: 0x040057E0 RID: 22496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showStats;
 
-	// Token: 0x040057A9 RID: 22441
+	// Token: 0x040057E1 RID: 22497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController statButton;
 
-	// Token: 0x040057AA RID: 22442
+	// Token: 0x040057E2 RID: 22498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController descriptionButton;
 
-	// Token: 0x040057AB RID: 22443
+	// Token: 0x040057E3 RID: 22499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 valueColor = new Color32(222, 206, 163, byte.MaxValue);
 }

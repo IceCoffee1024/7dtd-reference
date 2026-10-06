@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000972 RID: 2418
+// Token: 0x02000978 RID: 2424
 [Preserve]
 public class QuestActionUnlockPOI : BaseQuestAction
 {
-	// Token: 0x060046C9 RID: 18121 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600466A RID: 18026 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupAction()
 	{
 	}
 
-	// Token: 0x060046CA RID: 18122 RVA: 0x001BEE9F File Offset: 0x001BD09F
+	// Token: 0x0600466B RID: 18027 RVA: 0x001BF3A7 File Offset: 0x001BD5A7
 	public override void PerformAction(Quest ownerQuest)
 	{
 		ownerQuest.HandleUnlockPOI(null);
 	}
 
-	// Token: 0x060046CB RID: 18123 RVA: 0x001BEEA8 File Offset: 0x001BD0A8
+	// Token: 0x0600466C RID: 18028 RVA: 0x001BF3B0 File Offset: 0x001BD5B0
 	public override BaseQuestAction Clone()
 	{
 		QuestActionUnlockPOI questActionUnlockPOI = new QuestActionUnlockPOI();

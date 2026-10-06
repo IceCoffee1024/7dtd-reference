@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013DF RID: 5087
+// Token: 0x020013FF RID: 5119
 public class DictionaryKeyValueList<T, S>
 {
-	// Token: 0x06009FB0 RID: 40880 RVA: 0x003C1C74 File Offset: 0x003BFE74
+	// Token: 0x0600A05B RID: 41051 RVA: 0x003C6810 File Offset: 0x003C4A10
 	public void Add(T _key, S _value)
 	{
 		this.dict.Add(_key, _value);
@@ -12,7 +12,7 @@ public class DictionaryKeyValueList<T, S>
 		this.valueList.Add(_value);
 	}
 
-	// Token: 0x06009FB1 RID: 40881 RVA: 0x003C1C9B File Offset: 0x003BFE9B
+	// Token: 0x0600A05C RID: 41052 RVA: 0x003C6837 File Offset: 0x003C4A37
 	public void Set(T _key, S _value)
 	{
 		if (this.dict.ContainsKey(_key))
@@ -22,7 +22,7 @@ public class DictionaryKeyValueList<T, S>
 		this.Add(_key, _value);
 	}
 
-	// Token: 0x06009FB2 RID: 40882 RVA: 0x003C1CBC File Offset: 0x003BFEBC
+	// Token: 0x0600A05D RID: 41053 RVA: 0x003C6858 File Offset: 0x003C4A58
 	public void Remove(T _key)
 	{
 		int num = this.keyList.IndexOf(_key);
@@ -34,7 +34,7 @@ public class DictionaryKeyValueList<T, S>
 		}
 	}
 
-	// Token: 0x06009FB3 RID: 40883 RVA: 0x003C1CFF File Offset: 0x003BFEFF
+	// Token: 0x0600A05E RID: 41054 RVA: 0x003C689B File Offset: 0x003C4A9B
 	public void Clear()
 	{
 		this.keyList.Clear();
@@ -42,12 +42,12 @@ public class DictionaryKeyValueList<T, S>
 		this.dict.Clear();
 	}
 
-	// Token: 0x040078E6 RID: 30950
+	// Token: 0x04007961 RID: 31073
 	public Dictionary<T, S> dict = new Dictionary<T, S>();
 
-	// Token: 0x040078E7 RID: 30951
+	// Token: 0x04007962 RID: 31074
 	public List<S> valueList = new List<S>();
 
-	// Token: 0x040078E8 RID: 30952
+	// Token: 0x04007963 RID: 31075
 	public List<T> keyList = new List<T>();
 }

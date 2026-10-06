@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001304 RID: 4868
+// Token: 0x02001324 RID: 4900
 public class WorldRayHitInfo
 {
-	// Token: 0x06009A1C RID: 39452 RVA: 0x003A5604 File Offset: 0x003A3804
+	// Token: 0x06009AC8 RID: 39624 RVA: 0x003AA1B4 File Offset: 0x003A83B4
 	public virtual void Clear()
 	{
 		this.ray = new Ray(Vector3.zero, Vector3.zero);
@@ -18,7 +18,7 @@ public class WorldRayHitInfo
 		this.hitTriangleIdx = 0;
 	}
 
-	// Token: 0x06009A1D RID: 39453 RVA: 0x003A5670 File Offset: 0x003A3870
+	// Token: 0x06009AC9 RID: 39625 RVA: 0x003AA220 File Offset: 0x003A8420
 	public virtual void CopyFrom(WorldRayHitInfo _other)
 	{
 		this.ray = _other.ray;
@@ -32,7 +32,7 @@ public class WorldRayHitInfo
 		this.hitTriangleIdx = _other.hitTriangleIdx;
 	}
 
-	// Token: 0x06009A1E RID: 39454 RVA: 0x003A56F4 File Offset: 0x003A38F4
+	// Token: 0x06009ACA RID: 39626 RVA: 0x003AA2A4 File Offset: 0x003A84A4
 	public virtual WorldRayHitInfo Clone()
 	{
 		return new WorldRayHitInfo
@@ -49,30 +49,30 @@ public class WorldRayHitInfo
 		};
 	}
 
-	// Token: 0x04007427 RID: 29735
+	// Token: 0x040074A2 RID: 29858
 	public Ray ray;
 
-	// Token: 0x04007428 RID: 29736
+	// Token: 0x040074A3 RID: 29859
 	public bool bHitValid;
 
-	// Token: 0x04007429 RID: 29737
+	// Token: 0x040074A4 RID: 29860
 	public string tag;
 
-	// Token: 0x0400742A RID: 29738
+	// Token: 0x040074A5 RID: 29861
 	public Transform transform;
 
-	// Token: 0x0400742B RID: 29739
+	// Token: 0x040074A6 RID: 29862
 	public HitInfoDetails hit;
 
-	// Token: 0x0400742C RID: 29740
+	// Token: 0x040074A7 RID: 29863
 	public HitInfoDetails fmcHit;
 
-	// Token: 0x0400742D RID: 29741
+	// Token: 0x040074A8 RID: 29864
 	public Vector3i lastBlockPos;
 
-	// Token: 0x0400742E RID: 29742
+	// Token: 0x040074A9 RID: 29865
 	public Collider hitCollider;
 
-	// Token: 0x0400742F RID: 29743
+	// Token: 0x040074AA RID: 29866
 	public int hitTriangleIdx;
 }

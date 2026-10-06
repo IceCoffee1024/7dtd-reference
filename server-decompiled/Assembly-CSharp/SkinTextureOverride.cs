@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-// Token: 0x02000A61 RID: 2657
+// Token: 0x02000A6B RID: 2667
 public class SkinTextureOverride : MonoBehaviour
 {
-	// Token: 0x06005058 RID: 20568 RVA: 0x001E8938 File Offset: 0x001E6B38
+	// Token: 0x0600502C RID: 20524 RVA: 0x001E9E84 File Offset: 0x001E8084
 	public void ApplyOverrides()
 	{
 		Texture2D texture2D = this.skinAlbedo.LoadAssetAsync<Texture2D>().WaitForCompletion();
@@ -30,12 +30,12 @@ public class SkinTextureOverride : MonoBehaviour
 		component.materials = materials;
 	}
 
-	// Token: 0x04003DC2 RID: 15810
+	// Token: 0x04003DD0 RID: 15824
 	public AssetReference skinAlbedo;
 
-	// Token: 0x04003DC3 RID: 15811
+	// Token: 0x04003DD1 RID: 15825
 	public AssetReference skinNormal;
 
-	// Token: 0x04003DC4 RID: 15812
+	// Token: 0x04003DD2 RID: 15826
 	public AssetReference skinRMOE;
 }

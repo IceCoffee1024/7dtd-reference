@@ -1,32 +1,32 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AF RID: 1967
+// Token: 0x020007B2 RID: 1970
 [Preserve]
 public class NetPackageBiomeIntensity : NetPackage
 {
-	// Token: 0x06003A7F RID: 14975 RVA: 0x0017BEF9 File Offset: 0x0017A0F9
+	// Token: 0x06003AB7 RID: 15031 RVA: 0x0017C599 File Offset: 0x0017A799
 	public NetPackageBiomeIntensity Setup(BiomeIntensity _bi)
 	{
 		this.bi = _bi;
 		return this;
 	}
 
-	// Token: 0x06003A80 RID: 14976 RVA: 0x0017BF03 File Offset: 0x0017A103
+	// Token: 0x06003AB8 RID: 15032 RVA: 0x0017C5A3 File Offset: 0x0017A7A3
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.bi = BiomeIntensity.Default;
 		this.bi.Read(_reader);
 	}
 
-	// Token: 0x06003A81 RID: 14977 RVA: 0x0017BF1C File Offset: 0x0017A11C
+	// Token: 0x06003AB9 RID: 15033 RVA: 0x0017C5BC File Offset: 0x0017A7BC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.bi.Write(_writer);
 	}
 
-	// Token: 0x06003A82 RID: 14978 RVA: 0x0017BF31 File Offset: 0x0017A131
+	// Token: 0x06003ABA RID: 15034 RVA: 0x0017C5D1 File Offset: 0x0017A7D1
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -36,13 +36,7 @@ public class NetPackageBiomeIntensity : NetPackage
 		_world.LocalPlayerBiomeIntensityStandingOn = this.bi;
 	}
 
-	// Token: 0x06003A83 RID: 14979 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x04002FD4 RID: 12244
+	// Token: 0x04002FCE RID: 12238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeIntensity bi;
 }

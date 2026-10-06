@@ -3,17 +3,17 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001B7A RID: 7034
+	// Token: 0x02001BAC RID: 7084
 	public interface IPlatformMemoryStat
 	{
-		// Token: 0x17001A0E RID: 6670
-		// (get) Token: 0x0600D27B RID: 53883
+		// Token: 0x17001AB4 RID: 6836
+		// (get) Token: 0x0600D3F3 RID: 54259
 		string Name { get; }
 
-		// Token: 0x0600D27C RID: 53884
+		// Token: 0x0600D3F4 RID: 54260
 		void RenderColumn(StringBuilder builder, MemoryStatColumn column, bool delta);
 
-		// Token: 0x0600D27D RID: 53885
+		// Token: 0x0600D3F5 RID: 54261
 		void UpdateLast();
 	}
 }

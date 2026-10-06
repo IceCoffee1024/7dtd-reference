@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02000359 RID: 857
+// Token: 0x0200035C RID: 860
 public class ChunkPreviewData
 {
-	// Token: 0x170002EF RID: 751
-	// (get) Token: 0x060018CA RID: 6346 RVA: 0x0008BFBD File Offset: 0x0008A1BD
-	// (set) Token: 0x060018CB RID: 6347 RVA: 0x0008BFC5 File Offset: 0x0008A1C5
+	// Token: 0x170002E7 RID: 743
+	// (get) Token: 0x060018C5 RID: 6341 RVA: 0x0008C23D File Offset: 0x0008A43D
+	// (set) Token: 0x060018C6 RID: 6342 RVA: 0x0008C245 File Offset: 0x0008A445
 	public Vector3i WorldPosition { get; set; }
 
-	// Token: 0x170002F0 RID: 752
-	// (get) Token: 0x060018CC RID: 6348 RVA: 0x0008BFCE File Offset: 0x0008A1CE
-	// (set) Token: 0x060018CD RID: 6349 RVA: 0x0008BFD6 File Offset: 0x0008A1D6
+	// Token: 0x170002E8 RID: 744
+	// (get) Token: 0x060018C7 RID: 6343 RVA: 0x0008C24E File Offset: 0x0008A44E
+	// (set) Token: 0x060018C8 RID: 6344 RVA: 0x0008C256 File Offset: 0x0008A456
 	public Prefab PrefabData { get; set; }
 
-	// Token: 0x170002F1 RID: 753
-	// (get) Token: 0x060018CE RID: 6350 RVA: 0x0008BFDF File Offset: 0x0008A1DF
-	// (set) Token: 0x060018CF RID: 6351 RVA: 0x0008BFE7 File Offset: 0x0008A1E7
+	// Token: 0x170002E9 RID: 745
+	// (get) Token: 0x060018C9 RID: 6345 RVA: 0x0008C25F File Offset: 0x0008A45F
+	// (set) Token: 0x060018CA RID: 6346 RVA: 0x0008C267 File Offset: 0x0008A467
 	public PrefabInstance PrefabInstance { get; set; }
 }

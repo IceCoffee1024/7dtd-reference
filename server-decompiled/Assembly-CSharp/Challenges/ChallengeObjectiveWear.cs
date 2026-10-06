@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001914 RID: 6420
+	// Token: 0x02001940 RID: 6464
 	[Preserve]
 	public class ChallengeObjectiveWear : BaseChallengeObjective
 	{
-		// Token: 0x17001894 RID: 6292
-		// (get) Token: 0x0600C650 RID: 50768 RVA: 0x0017E246 File Offset: 0x0017C446
+		// Token: 0x17001936 RID: 6454
+		// (get) Token: 0x0600C7A8 RID: 51112 RVA: 0x0026C7C8 File Offset: 0x0026A9C8
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001895 RID: 6293
-		// (get) Token: 0x0600C651 RID: 50769 RVA: 0x0048E868 File Offset: 0x0048CA68
+		// Token: 0x17001937 RID: 6455
+		// (get) Token: 0x0600C7A9 RID: 51113 RVA: 0x00492D54 File Offset: 0x00490F54
 		public override string DescriptionText
 		{
 			get
@@ -32,14 +32,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C652 RID: 50770 RVA: 0x0048E8C5 File Offset: 0x0048CAC5
+		// Token: 0x0600C7AA RID: 51114 RVA: 0x00492DB1 File Offset: 0x00490FB1
 		public override void Init()
 		{
 			this.expectedItem = ItemClass.GetItem(this.itemClassID, false);
 			this.expectedItemClass = ItemClass.GetItemClass(this.itemClassID, false);
 		}
 
-		// Token: 0x0600C653 RID: 50771 RVA: 0x0048E8EC File Offset: 0x0048CAEC
+		// Token: 0x0600C7AB RID: 51115 RVA: 0x00492DD8 File Offset: 0x00490FD8
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.WearItem -= this.Current_WearItem;
@@ -54,13 +54,13 @@ namespace Challenges
 			QuestEventManager.Current.WearItem += this.Current_WearItem;
 		}
 
-		// Token: 0x0600C654 RID: 50772 RVA: 0x0048E96D File Offset: 0x0048CB6D
+		// Token: 0x0600C7AC RID: 51116 RVA: 0x00492E59 File Offset: 0x00491059
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.WearItem -= this.Current_WearItem;
 		}
 
-		// Token: 0x0600C655 RID: 50773 RVA: 0x0048E988 File Offset: 0x0048CB88
+		// Token: 0x0600C7AD RID: 51117 RVA: 0x00492E74 File Offset: 0x00491074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_WearItem(ItemValue itemValue)
 		{
@@ -80,7 +80,7 @@ namespace Challenges
 			this.CheckObjectiveComplete(true);
 		}
 
-		// Token: 0x0600C656 RID: 50774 RVA: 0x0048EA00 File Offset: 0x0048CC00
+		// Token: 0x0600C7AE RID: 51118 RVA: 0x00492EEC File Offset: 0x004910EC
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -103,7 +103,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C657 RID: 50775 RVA: 0x0048EAC4 File Offset: 0x0048CCC4
+		// Token: 0x0600C7AF RID: 51119 RVA: 0x00492FB0 File Offset: 0x004911B0
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveWear
@@ -116,22 +116,22 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009586 RID: 38278
+		// Token: 0x0400964C RID: 38476
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemValue expectedItem = ItemValue.None;
 
-		// Token: 0x04009587 RID: 38279
+		// Token: 0x0400964D RID: 38477
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemClass expectedItemClass;
 
-		// Token: 0x04009588 RID: 38280
+		// Token: 0x0400964E RID: 38478
 		public string itemClassID = "";
 
-		// Token: 0x04009589 RID: 38281
+		// Token: 0x0400964F RID: 38479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string wearName = "";
 
-		// Token: 0x0400958A RID: 38282
+		// Token: 0x04009650 RID: 38480
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> armorTags;
 	}

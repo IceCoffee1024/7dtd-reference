@@ -5,32 +5,32 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000233 RID: 563
+// Token: 0x02000235 RID: 565
 [Preserve]
 public class ConsoleCmdLights : ConsoleCmdAbstract
 {
-	// Token: 0x060010F8 RID: 4344 RVA: 0x0006BC5E File Offset: 0x00069E5E
+	// Token: 0x060010F0 RID: 4336 RVA: 0x0006BE22 File Offset: 0x0006A022
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "lights" };
 	}
 
-	// Token: 0x060010F9 RID: 4345 RVA: 0x0006BC6E File Offset: 0x00069E6E
+	// Token: 0x060010F1 RID: 4337 RVA: 0x0006BE32 File Offset: 0x0006A032
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Light debugging";
 	}
 
-	// Token: 0x060010FA RID: 4346 RVA: 0x0006BC75 File Offset: 0x00069E75
+	// Token: 0x060010F2 RID: 4338 RVA: 0x0006BE39 File Offset: 0x0006A039
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Light debugging:\nv - toggle viewer enable\noff - viewer lights off\non - viewer lights on\nclearreg - clear registered\ndisableall - \nenableall - \nlist - list all lights\nlistfile - list all lights to Lights.txt\nliste - list lights effecting the player position\nlodviewdistance <d> - set the light LOD view distance (0 uses defaults)";
 	}
 
-	// Token: 0x060010FB RID: 4347 RVA: 0x0006BC7C File Offset: 0x00069E7C
+	// Token: 0x060010F3 RID: 4339 RVA: 0x0006BE40 File Offset: 0x0006A040
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -249,7 +249,7 @@ public class ConsoleCmdLights : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CCD RID: 3277
+	// Token: 0x04000CC6 RID: 3270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Light[] allLights;
 }

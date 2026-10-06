@@ -3,11 +3,11 @@ using InControl;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F30 RID: 3888
+// Token: 0x02000F3F RID: 3903
 [UnityEngine.Scripting.Preserve]
 public class XUiC_EmptyInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x06007A04 RID: 31236 RVA: 0x002DF491 File Offset: 0x002DD691
+	// Token: 0x06007A01 RID: 31233 RVA: 0x002E27FD File Offset: 0x002E09FD
 	public override void Init()
 	{
 		base.Init();
@@ -15,14 +15,14 @@ public class XUiC_EmptyInfoWindow : XUiC_InfoWindow
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06007A05 RID: 31237 RVA: 0x002DF4BA File Offset: 0x002DD6BA
+	// Token: 0x06007A02 RID: 31234 RVA: 0x002E2826 File Offset: 0x002E0A26
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.UpdateDescriptionText();
 	}
 
-	// Token: 0x06007A06 RID: 31238 RVA: 0x002DF4C8 File Offset: 0x002DD6C8
+	// Token: 0x06007A03 RID: 31235 RVA: 0x002E2834 File Offset: 0x002E0A34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -30,7 +30,7 @@ public class XUiC_EmptyInfoWindow : XUiC_InfoWindow
 		this.UpdateDescriptionText();
 	}
 
-	// Token: 0x06007A07 RID: 31239 RVA: 0x002DF4D8 File Offset: 0x002DD6D8
+	// Token: 0x06007A04 RID: 31236 RVA: 0x002E2844 File Offset: 0x002E0A44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateDescriptionText()
 	{
@@ -58,7 +58,7 @@ public class XUiC_EmptyInfoWindow : XUiC_InfoWindow
 		this.descriptionText.Text = text;
 	}
 
-	// Token: 0x04005A37 RID: 23095
+	// Token: 0x04005A6F RID: 23151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label descriptionText;
 }

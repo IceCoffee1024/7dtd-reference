@@ -2,18 +2,18 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02001098 RID: 4248
+// Token: 0x020010A9 RID: 4265
 [Preserve]
 public class XUiC_TwitchCommandEntry : XUiController
 {
-	// Token: 0x17000FC9 RID: 4041
-	// (get) Token: 0x06008737 RID: 34615 RVA: 0x00338998 File Offset: 0x00336B98
-	// (set) Token: 0x06008738 RID: 34616 RVA: 0x003389A0 File Offset: 0x00336BA0
+	// Token: 0x17000FFE RID: 4094
+	// (get) Token: 0x06008786 RID: 34694 RVA: 0x0033C7B0 File Offset: 0x0033A9B0
+	// (set) Token: 0x06008787 RID: 34695 RVA: 0x0033C7B8 File Offset: 0x0033A9B8
 	public XUiC_TwitchWindow Owner { get; set; }
 
-	// Token: 0x17000FCA RID: 4042
-	// (get) Token: 0x06008739 RID: 34617 RVA: 0x003389A9 File Offset: 0x00336BA9
-	// (set) Token: 0x0600873A RID: 34618 RVA: 0x003389B1 File Offset: 0x00336BB1
+	// Token: 0x17000FFF RID: 4095
+	// (get) Token: 0x06008788 RID: 34696 RVA: 0x0033C7C1 File Offset: 0x0033A9C1
+	// (set) Token: 0x06008789 RID: 34697 RVA: 0x0033C7C9 File Offset: 0x0033A9C9
 	public TwitchAction Action
 	{
 		get
@@ -27,7 +27,7 @@ public class XUiC_TwitchCommandEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600873B RID: 34619 RVA: 0x003389C4 File Offset: 0x00336BC4
+	// Token: 0x0600878A RID: 34698 RVA: 0x0033C7DC File Offset: 0x0033A9DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -142,7 +142,7 @@ public class XUiC_TwitchCommandEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600873C RID: 34620 RVA: 0x00338BC0 File Offset: 0x00336DC0
+	// Token: 0x0600878B RID: 34699 RVA: 0x0033C9D8 File Offset: 0x0033ABD8
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "positive_color")
@@ -173,14 +173,14 @@ public class XUiC_TwitchCommandEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600873D RID: 34621 RVA: 0x0008B2BB File Offset: 0x000894BB
+	// Token: 0x0600878C RID: 34700 RVA: 0x0008B53B File Offset: 0x0008973B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600873E RID: 34622 RVA: 0x00338C48 File Offset: 0x00336E48
+	// Token: 0x0600878D RID: 34701 RVA: 0x0033CA60 File Offset: 0x0033AC60
 	public override void Update(float _dt)
 	{
 		if (this.Action != null)
@@ -200,43 +200,43 @@ public class XUiC_TwitchCommandEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04006477 RID: 25719
+	// Token: 0x040064B9 RID: 25785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchAction action;
 
-	// Token: 0x04006478 RID: 25720
+	// Token: 0x040064BA RID: 25786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBool;
 
-	// Token: 0x04006479 RID: 25721
+	// Token: 0x040064BB RID: 25787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string positiveColor = "0,0,255";
 
-	// Token: 0x0400647A RID: 25722
+	// Token: 0x040064BC RID: 25788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string negativeColor = "255,0,0";
 
-	// Token: 0x0400647B RID: 25723
+	// Token: 0x040064BD RID: 25789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor = "80,80,80";
 
-	// Token: 0x0400647C RID: 25724
+	// Token: 0x040064BE RID: 25790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultCostColor = "255,255,255,255";
 
-	// Token: 0x0400647D RID: 25725
+	// Token: 0x040064BF RID: 25791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string specialCostColor = "0,125,125,255";
 
-	// Token: 0x0400647E RID: 25726
+	// Token: 0x040064C0 RID: 25792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string bitCostColor = "145,70,255,255";
 
-	// Token: 0x04006480 RID: 25728
+	// Token: 0x040064C2 RID: 25794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isReady;
 
-	// Token: 0x04006481 RID: 25729
+	// Token: 0x040064C3 RID: 25795
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string> objectiveOptionalFormatter = new CachedStringFormatter<string>((string _s) => "(" + _s + ") ");
 }

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Globalization;
-using System.IO;
-using UnityEngine;
+using Unity.Profiling;
 using UnityEngine.Scripting;
 
-// Token: 0x020004BA RID: 1210
+// Token: 0x020004C0 RID: 1216
 [Preserve]
-public class EntityLootContainer : EntityItem
+public class EntityLootContainer : EntityContainerAbs
 {
-	// Token: 0x1700044B RID: 1099
-	// (get) Token: 0x06002672 RID: 9842 RVA: 0x000EB92A File Offset: 0x000E9B2A
+	// Token: 0x17000441 RID: 1089
+	// (get) Token: 0x06002670 RID: 9840 RVA: 0x000EBB8A File Offset: 0x000E9D8A
 	public override string LocalizedEntityName
 	{
 		get
@@ -22,164 +20,27 @@ public class EntityLootContainer : EntityItem
 		}
 	}
 
-	// Token: 0x06002673 RID: 9843 RVA: 0x000EB950 File Offset: 0x000E9B50
+	// Token: 0x06002671 RID: 9841 RVA: 0x000EBBAD File Offset: 0x000E9DAD
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public override void Start()
+	public override void Awake()
 	{
-		base.Start();
-		foreach (Collider collider in base.transform.GetComponentsInChildren<Collider>())
-		{
-			collider.gameObject.tag = "E_BP_Body";
-			collider.enabled = true;
-			collider.gameObject.layer = 13;
-			collider.gameObject.AddMissingComponent<RootTransformRefEntity>().RootTransform = base.transform;
-		}
-		this.SetDead();
+		this.pmEntityType = new ProfilerMarker("EntityLootContainer");
+		base.Awake();
 	}
 
-	// Token: 0x06002674 RID: 9844 RVA: 0x000EB9BF File Offset: 0x000E9BBF
-	public void SetContent(ItemStack[] _inventory)
+	// Token: 0x06002672 RID: 9842 RVA: 0x000EBBC5 File Offset: 0x000E9DC5
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
-		this.SetContent(_inventory, 0);
-	}
-
-	// Token: 0x06002675 RID: 9845 RVA: 0x000EB9CC File Offset: 0x000E9BCC
-	public void SetContent(ItemStack[] _inventory, int _slotCountOverride)
-	{
-		int num = 0;
-		if (_slotCountOverride > 0)
-		{
-			num = _slotCountOverride;
-		}
-		else
-		{
-			LootContainer lootContainer = LootContainer.GetLootContainer(this.GetLootList(), true);
-			if (lootContainer != null)
-			{
-				Vector2i size = lootContainer.size;
-				num = size.x * size.y;
-			}
-			num = Math.Max(num, (_inventory != null) ? _inventory.Length : 0);
-		}
-		if (num <= 0)
-		{
-			return;
-		}
-		ItemStack[] array = ItemStack.CreateArray(num);
-		int num2 = 0;
-		while (_inventory != null && num2 < _inventory.Length && num2 < array.Length)
-		{
-			array[num2] = _inventory[num2].Clone();
-			num2++;
-		}
-		this.bag.SetSlots(array);
-		this.bag.Touched = true;
-	}
-
-	// Token: 0x06002676 RID: 9846 RVA: 0x000EBA68 File Offset: 0x000E9C68
-	public override void CopyPropertiesFromEntityClass()
-	{
-		base.CopyPropertiesFromEntityClass();
-		EntityClass entityClass = EntityClass.list[this.entityClass];
-		if (entityClass.Properties.Values.ContainsKey(EntityClass.PropTimeStayAfterDeath))
-		{
-			this.timeStayAfterDeath = (int)(StringParsers.ParseFloat(entityClass.Properties.Values[EntityClass.PropTimeStayAfterDeath], 0, -1, NumberStyles.Any) * 20f);
-			return;
-		}
-		this.timeStayAfterDeath = 100;
-	}
-
-	// Token: 0x06002677 RID: 9847 RVA: 0x000EBADC File Offset: 0x000E9CDC
-	public override void OnUpdateEntity()
-	{
-		base.OnUpdateEntity();
-		try
-		{
-			if (!(SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? LockManager.Instance.IsLockedServer(this, 0) : LockManager.Instance.IsLockedByLocalPlayer(this, 0)))
-			{
-				if (this.bag.Touched && this.bag.IsEmpty())
-				{
-					this.removeBackpack();
-				}
-				else if (this.deathUpdateTime >= this.timeStayAfterDeath - 1)
-				{
-					this.removeBackpack();
-				}
-				else
-				{
-					this.deathUpdateTime++;
-				}
-			}
-		}
-		finally
-		{
-		}
-	}
-
-	// Token: 0x06002678 RID: 9848 RVA: 0x000DA264 File Offset: 0x000D8464
-	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
-	{
-		if (base.CommandIs(_commandName, "search"))
-		{
-			return this.bag != null;
-		}
-		return base.AllowActivationCommand(_commandName, _playerFocusing);
-	}
-
-	// Token: 0x06002679 RID: 9849 RVA: 0x000EBB74 File Offset: 0x000E9D74
-	[PublicizedFrom(EAccessModifier.Private)]
-	public void removeBackpack()
-	{
-		this.deathUpdateTime = this.timeStayAfterDeath;
-		this.bRemoved = true;
-		this.MarkToUnload();
-	}
-
-	// Token: 0x0600267A RID: 9850 RVA: 0x000EBB8F File Offset: 0x000E9D8F
-	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale = 1f)
-	{
-		if (_strength >= 99999)
-		{
-			this.removeBackpack();
-		}
-		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
-	}
-
-	// Token: 0x0600267B RID: 9851 RVA: 0x000EBBAA File Offset: 0x000E9DAA
-	public override bool IsMarkedForUnload()
-	{
-		return base.IsMarkedForUnload() && this.bRemoved;
-	}
-
-	// Token: 0x0600267C RID: 9852 RVA: 0x000027FC File Offset: 0x000009FC
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public override void createMesh()
-	{
-	}
-
-	// Token: 0x0600267D RID: 9853 RVA: 0x000EBBBC File Offset: 0x000E9DBC
-	public override string GetLootList()
-	{
-		if (!(this.OverrideLootList != ""))
-		{
-			return this.lootList;
-		}
-		return this.OverrideLootList;
-	}
-
-	// Token: 0x0600267E RID: 9854 RVA: 0x000EBBDD File Offset: 0x000E9DDD
-	public override void Write(BinaryWriter _bw, bool _bNetworkWrite)
-	{
-		base.Write(_bw, _bNetworkWrite);
+		base.Write(_bw, _eStreamMode);
 		_bw.Write(this.OverrideLootList);
 		_bw.Write(this.OverrideName);
-		this.bag.Write(_bw);
+		this.bag.Write(_bw, _eStreamMode);
 	}
 
-	// Token: 0x0600267F RID: 9855 RVA: 0x000EBC0C File Offset: 0x000E9E0C
-	public override void Read(byte _version, BinaryReader _br)
+	// Token: 0x06002673 RID: 9843 RVA: 0x000EBBF4 File Offset: 0x000E9DF4
+	public override void Read(byte _version, PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
-		base.Read(_version, _br);
+		base.Read(_version, _br, _eStreamMode);
 		if (_version < 35)
 		{
 			int num = (int)_br.ReadUInt16();
@@ -213,7 +74,7 @@ public class EntityLootContainer : EntityItem
 				}
 				array = array2;
 			}
-			this.bag.SetSlots(array);
+			this.bag.SetSlots(array, true);
 			return;
 		}
 		if (_version >= 30)
@@ -223,11 +84,21 @@ public class EntityLootContainer : EntityItem
 		}
 		if (_version >= 35)
 		{
-			this.bag.ReadInto(_br);
+			this.bag.ReadInto(_br, _eStreamMode);
 		}
 	}
 
-	// Token: 0x06002680 RID: 9856 RVA: 0x000EBD2C File Offset: 0x000E9F2C
+	// Token: 0x06002674 RID: 9844 RVA: 0x000EBD17 File Offset: 0x000E9F17
+	public override string GetLootList()
+	{
+		if (!(this.OverrideLootList != ""))
+		{
+			return this.lootList;
+		}
+		return this.OverrideLootList;
+	}
+
+	// Token: 0x06002675 RID: 9845 RVA: 0x000EBD38 File Offset: 0x000E9F38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -237,39 +108,65 @@ public class EntityLootContainer : EntityItem
 		}
 	}
 
-	// Token: 0x06002681 RID: 9857 RVA: 0x000EBD86 File Offset: 0x000E9F86
-	public override string ToString()
+	// Token: 0x06002676 RID: 9846 RVA: 0x000EBD94 File Offset: 0x000E9F94
+	public void SetContent(ItemStack[] _inventory, int _slotCountOverride = 0)
 	{
-		return string.Format("[type={0}, name={1}]", base.GetType().Name, (this.itemClass != null) ? this.itemClass.GetItemName() : "?");
+		int num = 0;
+		if (_slotCountOverride > 0)
+		{
+			num = _slotCountOverride;
+		}
+		else
+		{
+			LootContainer lootContainer = LootContainer.GetLootContainer(this.GetLootList(), true);
+			if (lootContainer != null)
+			{
+				Vector2i size = lootContainer.size;
+				num = size.x * size.y;
+			}
+			num = Math.Max(num, (_inventory != null) ? _inventory.Length : 0);
+		}
+		if (num <= 0)
+		{
+			return;
+		}
+		ItemStack[] array = ItemStack.CreateArray(num);
+		int num2 = 0;
+		while (_inventory != null && num2 < _inventory.Length && num2 < array.Length)
+		{
+			array[num2] = _inventory[num2].Clone();
+			num2++;
+		}
+		this.bag.SetSlots(array, true);
+		this.bag.ItemGrid.Touch();
 	}
 
-	// Token: 0x06002682 RID: 9858 RVA: 0x000DA61C File Offset: 0x000D881C
-	public override void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
+	// Token: 0x06002677 RID: 9847 RVA: 0x000EBE32 File Offset: 0x000EA032
+	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale = 1f)
 	{
-		if (this.bag.IsEmpty())
+		if (_strength >= 99999)
 		{
-			this.KillLootContainer();
+			base.removeBackpack("damaged");
 		}
+		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
+	}
+
+	// Token: 0x06002678 RID: 9848 RVA: 0x000EBE54 File Offset: 0x000EA054
+	public override string ToString()
+	{
+		return string.Concat(new string[]
+		{
+			"[type=",
+			base.GetType().Name,
+			", name=",
+			(this.itemClass != null) ? this.itemClass.GetItemName() : "?",
+			"]"
+		});
 	}
 
 	// Token: 0x04001C91 RID: 7313
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int deathUpdateTime;
-
-	// Token: 0x04001C92 RID: 7314
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int timeStayAfterDeath;
-
-	// Token: 0x04001C93 RID: 7315
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool bRemoved;
-
-	// Token: 0x04001C94 RID: 7316
 	public string OverrideLootList = "";
 
-	// Token: 0x04001C95 RID: 7317
+	// Token: 0x04001C92 RID: 7314
 	public string OverrideName = "";
 }

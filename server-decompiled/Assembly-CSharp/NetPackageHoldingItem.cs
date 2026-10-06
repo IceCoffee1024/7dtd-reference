@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007FC RID: 2044
+// Token: 0x020007FF RID: 2047
 [Preserve]
 public class NetPackageHoldingItem : NetPackage
 {
-	// Token: 0x06003C45 RID: 15429 RVA: 0x00181F68 File Offset: 0x00180168
+	// Token: 0x06003C41 RID: 15425 RVA: 0x00182470 File Offset: 0x00180670
 	public NetPackageHoldingItem Setup(EntityAlive _entity)
 	{
 		this.entityId = _entity.entityId;
@@ -14,7 +14,7 @@ public class NetPackageHoldingItem : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C46 RID: 15430 RVA: 0x00181F9A File Offset: 0x0018019A
+	// Token: 0x06003C42 RID: 15426 RVA: 0x001824A2 File Offset: 0x001806A2
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -23,7 +23,7 @@ public class NetPackageHoldingItem : NetPackage
 		this.holdingItemIndex = _reader.ReadByte();
 	}
 
-	// Token: 0x06003C47 RID: 15431 RVA: 0x00181FCC File Offset: 0x001801CC
+	// Token: 0x06003C43 RID: 15427 RVA: 0x001824D4 File Offset: 0x001806D4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -32,7 +32,7 @@ public class NetPackageHoldingItem : NetPackage
 		_writer.Write(this.holdingItemIndex);
 	}
 
-	// Token: 0x06003C48 RID: 15432 RVA: 0x00181FFC File Offset: 0x001801FC
+	// Token: 0x06003C44 RID: 15428 RVA: 0x00182504 File Offset: 0x00180704
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -54,21 +54,15 @@ public class NetPackageHoldingItem : NetPackage
 		}
 	}
 
-	// Token: 0x06003C49 RID: 15433 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x0400310C RID: 12556
+	// Token: 0x04003105 RID: 12549
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400310D RID: 12557
+	// Token: 0x04003106 RID: 12550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack holdingItemStack;
 
-	// Token: 0x0400310E RID: 12558
+	// Token: 0x04003107 RID: 12551
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte holdingItemIndex;
 }

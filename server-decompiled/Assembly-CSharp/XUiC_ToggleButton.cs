@@ -2,30 +2,30 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EAA RID: 3754
+// Token: 0x02000EB9 RID: 3769
 [Preserve]
 public class XUiC_ToggleButton : XUiController
 {
-	// Token: 0x140000BE RID: 190
-	// (add) Token: 0x06007514 RID: 29972 RVA: 0x002C15C4 File Offset: 0x002BF7C4
-	// (remove) Token: 0x06007515 RID: 29973 RVA: 0x002C15FC File Offset: 0x002BF7FC
+	// Token: 0x140000BD RID: 189
+	// (add) Token: 0x0600750C RID: 29964 RVA: 0x002C497C File Offset: 0x002C2B7C
+	// (remove) Token: 0x0600750D RID: 29965 RVA: 0x002C49B4 File Offset: 0x002C2BB4
 	public event XUiEvent_ToggleButtonValueChanged OnValueChanged;
 
-	// Token: 0x17000DCA RID: 3530
-	// (get) Token: 0x06007516 RID: 29974 RVA: 0x002C1631 File Offset: 0x002BF831
-	// (set) Token: 0x06007517 RID: 29975 RVA: 0x002C1639 File Offset: 0x002BF839
+	// Token: 0x17000DE5 RID: 3557
+	// (get) Token: 0x0600750E RID: 29966 RVA: 0x002C49E9 File Offset: 0x002C2BE9
+	// (set) Token: 0x0600750F RID: 29967 RVA: 0x002C49F1 File Offset: 0x002C2BF1
 	[XuiXmlAttribute("enabled_font_color", false)]
 	public Color EnabledLabelColor { get; set; }
 
-	// Token: 0x17000DCB RID: 3531
-	// (get) Token: 0x06007518 RID: 29976 RVA: 0x002C1642 File Offset: 0x002BF842
-	// (set) Token: 0x06007519 RID: 29977 RVA: 0x002C164A File Offset: 0x002BF84A
+	// Token: 0x17000DE6 RID: 3558
+	// (get) Token: 0x06007510 RID: 29968 RVA: 0x002C49FA File Offset: 0x002C2BFA
+	// (set) Token: 0x06007511 RID: 29969 RVA: 0x002C4A02 File Offset: 0x002C2C02
 	[XuiXmlAttribute("disabled_font_color", false)]
 	public Color DisabledLabelColor { get; set; }
 
-	// Token: 0x17000DCC RID: 3532
-	// (get) Token: 0x0600751A RID: 29978 RVA: 0x002C1653 File Offset: 0x002BF853
-	// (set) Token: 0x0600751B RID: 29979 RVA: 0x002C1670 File Offset: 0x002BF870
+	// Token: 0x17000DE7 RID: 3559
+	// (get) Token: 0x06007512 RID: 29970 RVA: 0x002C4A0B File Offset: 0x002C2C0B
+	// (set) Token: 0x06007513 RID: 29971 RVA: 0x002C4A28 File Offset: 0x002C2C28
 	public string Label
 	{
 		get
@@ -42,9 +42,9 @@ public class XUiC_ToggleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DCD RID: 3533
-	// (get) Token: 0x0600751C RID: 29980 RVA: 0x002C1686 File Offset: 0x002BF886
-	// (set) Token: 0x0600751D RID: 29981 RVA: 0x002C16A3 File Offset: 0x002BF8A3
+	// Token: 0x17000DE8 RID: 3560
+	// (get) Token: 0x06007514 RID: 29972 RVA: 0x002C4A3E File Offset: 0x002C2C3E
+	// (set) Token: 0x06007515 RID: 29973 RVA: 0x002C4A5B File Offset: 0x002C2C5B
 	public string Tooltip
 	{
 		get
@@ -61,9 +61,9 @@ public class XUiC_ToggleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DCE RID: 3534
-	// (get) Token: 0x0600751E RID: 29982 RVA: 0x002C16B9 File Offset: 0x002BF8B9
-	// (set) Token: 0x0600751F RID: 29983 RVA: 0x002C16C1 File Offset: 0x002BF8C1
+	// Token: 0x17000DE9 RID: 3561
+	// (get) Token: 0x06007516 RID: 29974 RVA: 0x002C4A71 File Offset: 0x002C2C71
+	// (set) Token: 0x06007517 RID: 29975 RVA: 0x002C4A79 File Offset: 0x002C2C79
 	[XuiXmlAttribute("toggle_value", false)]
 	[XuiXmlBinding("value")]
 	public bool Value
@@ -83,9 +83,9 @@ public class XUiC_ToggleButton : XUiController
 		}
 	}
 
-	// Token: 0x17000DCF RID: 3535
-	// (get) Token: 0x06007520 RID: 29984 RVA: 0x002C16DB File Offset: 0x002BF8DB
-	// (set) Token: 0x06007521 RID: 29985 RVA: 0x002C16E4 File Offset: 0x002BF8E4
+	// Token: 0x17000DEA RID: 3562
+	// (get) Token: 0x06007518 RID: 29976 RVA: 0x002C4A93 File Offset: 0x002C2C93
+	// (set) Token: 0x06007519 RID: 29977 RVA: 0x002C4A9C File Offset: 0x002C2C9C
 	public bool Enabled
 	{
 		get
@@ -111,7 +111,7 @@ public class XUiC_ToggleButton : XUiController
 		}
 	}
 
-	// Token: 0x06007522 RID: 29986 RVA: 0x002C1757 File Offset: 0x002BF957
+	// Token: 0x0600751A RID: 29978 RVA: 0x002C4B0F File Offset: 0x002C2D0F
 	public override void Init()
 	{
 		base.Init();
@@ -122,7 +122,7 @@ public class XUiC_ToggleButton : XUiController
 		}
 	}
 
-	// Token: 0x06007523 RID: 29987 RVA: 0x002C1794 File Offset: 0x002BF994
+	// Token: 0x0600751B RID: 29979 RVA: 0x002C4B4C File Offset: 0x002C2D4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Btn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -140,31 +140,31 @@ public class XUiC_ToggleButton : XUiController
 		onValueChanged(this, this.value);
 	}
 
-	// Token: 0x06007524 RID: 29988 RVA: 0x0028DC1B File Offset: 0x0028BE1B
+	// Token: 0x0600751C RID: 29980 RVA: 0x00291183 File Offset: 0x0028F383
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x040056DF RID: 22239
+	// Token: 0x04005716 RID: 22294
 	[XuiBindComponent("btnLabel", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label label;
 
-	// Token: 0x040056E0 RID: 22240
+	// Token: 0x04005717 RID: 22295
 	[XuiBindComponent("clickable", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Button button;
 
-	// Token: 0x040056E1 RID: 22241
+	// Token: 0x04005718 RID: 22296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool value;
 
-	// Token: 0x040056E2 RID: 22242
+	// Token: 0x04005719 RID: 22297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isEnabled = true;
 
-	// Token: 0x040056E3 RID: 22243
+	// Token: 0x0400571A RID: 22298
 	public string Tag;
 }

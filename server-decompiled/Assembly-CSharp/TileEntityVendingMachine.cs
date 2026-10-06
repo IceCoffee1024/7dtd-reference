@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using Platform;
 using UnityEngine;
-using UnityEngine.Scripting;
 
-// Token: 0x02000C7C RID: 3196
+// Token: 0x02000C8B RID: 3211
 public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 {
-	// Token: 0x17000A09 RID: 2569
-	// (get) Token: 0x060061E7 RID: 25063 RVA: 0x002695B0 File Offset: 0x002677B0
-	// (set) Token: 0x060061E8 RID: 25064 RVA: 0x002695B8 File Offset: 0x002677B8
+	// Token: 0x17000A1F RID: 2591
+	// (get) Token: 0x060061E0 RID: 25056 RVA: 0x0026CA58 File Offset: 0x0026AC58
+	// (set) Token: 0x060061E1 RID: 25057 RVA: 0x0026CA60 File Offset: 0x0026AC60
 	public TraderData TraderData { get; set; }
 
-	// Token: 0x060061E9 RID: 25065 RVA: 0x002695C4 File Offset: 0x002677C4
+	// Token: 0x060061E2 RID: 25058 RVA: 0x0026CA6C File Offset: 0x0026AC6C
 	public TileEntityVendingMachine(Chunk _chunk)
 		: base(_chunk)
 	{
@@ -26,7 +25,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		this.TraderData = new TraderData();
 	}
 
-	// Token: 0x060061EA RID: 25066 RVA: 0x0026963C File Offset: 0x0026783C
+	// Token: 0x060061E3 RID: 25059 RVA: 0x0026CAE4 File Offset: 0x0026ACE4
 	public override TileEntity Clone()
 	{
 		return new TileEntityVendingMachine(null)
@@ -43,7 +42,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		};
 	}
 
-	// Token: 0x060061EB RID: 25067 RVA: 0x002696C8 File Offset: 0x002678C8
+	// Token: 0x060061E4 RID: 25060 RVA: 0x0026CB70 File Offset: 0x0026AD70
 	public TileEntityVendingMachine.RentResult CanRent()
 	{
 		if (this.ownerID != null && !this.ownerID.Equals(PlatformManager.InternalLocalUserIdentifier))
@@ -61,7 +60,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return TileEntityVendingMachine.RentResult.Allowed;
 	}
 
-	// Token: 0x060061EC RID: 25068 RVA: 0x00269734 File Offset: 0x00267934
+	// Token: 0x060061E5 RID: 25061 RVA: 0x0026CBDC File Offset: 0x0026ADDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkAlreadyRentingVM()
 	{
@@ -70,63 +69,63 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return !(rentedVMPosition == base.ToWorldPos()) && !(rentedVMPosition == Vector3i.zero) && primaryPlayer.RentalEndDay > GameUtils.WorldTimeToDays(GameManager.Instance.World.worldTime);
 	}
 
-	// Token: 0x060061ED RID: 25069 RVA: 0x00269791 File Offset: 0x00267991
+	// Token: 0x060061E6 RID: 25062 RVA: 0x0026CC39 File Offset: 0x0026AE39
 	public bool IsLocked()
 	{
 		return this.isLocked;
 	}
 
-	// Token: 0x060061EE RID: 25070 RVA: 0x00269799 File Offset: 0x00267999
+	// Token: 0x060061E7 RID: 25063 RVA: 0x0026CC41 File Offset: 0x0026AE41
 	public void SetLocked(bool _isLocked)
 	{
 		this.isLocked = _isLocked;
 		this.setModified();
 	}
 
-	// Token: 0x060061EF RID: 25071 RVA: 0x002697A8 File Offset: 0x002679A8
+	// Token: 0x060061E8 RID: 25064 RVA: 0x0026CC50 File Offset: 0x0026AE50
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
 		this.setModified();
 	}
 
-	// Token: 0x060061F0 RID: 25072 RVA: 0x002697B7 File Offset: 0x002679B7
+	// Token: 0x060061E9 RID: 25065 RVA: 0x0026CC5F File Offset: 0x0026AE5F
 	public bool IsUserAllowed(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return (_userIdentifier != null && _userIdentifier.Equals(this.ownerID)) || this.allowedUserIds.Contains(_userIdentifier);
 	}
 
-	// Token: 0x060061F1 RID: 25073 RVA: 0x002697DB File Offset: 0x002679DB
+	// Token: 0x060061EA RID: 25066 RVA: 0x0026CC83 File Offset: 0x0026AE83
 	public bool LocalPlayerIsOwner()
 	{
 		return this.IsOwner(PlatformManager.InternalLocalUserIdentifier);
 	}
 
-	// Token: 0x060061F2 RID: 25074 RVA: 0x002697E8 File Offset: 0x002679E8
+	// Token: 0x060061EB RID: 25067 RVA: 0x0026CC90 File Offset: 0x0026AE90
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x060061F3 RID: 25075 RVA: 0x002697FB File Offset: 0x002679FB
+	// Token: 0x060061EC RID: 25068 RVA: 0x0026CCA3 File Offset: 0x0026AEA3
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x060061F4 RID: 25076 RVA: 0x00269803 File Offset: 0x00267A03
+	// Token: 0x060061ED RID: 25069 RVA: 0x0026CCAB File Offset: 0x0026AEAB
 	public bool HasPassword()
 	{
 		return !string.IsNullOrEmpty(this.passwordHash);
 	}
 
-	// Token: 0x060061F5 RID: 25077 RVA: 0x00269813 File Offset: 0x00267A13
+	// Token: 0x060061EE RID: 25070 RVA: 0x0026CCBB File Offset: 0x0026AEBB
 	public string GetPasswordHash()
 	{
 		return this.passwordHash;
 	}
 
-	// Token: 0x060061F6 RID: 25078 RVA: 0x0026981B File Offset: 0x00267A1B
+	// Token: 0x060061EF RID: 25071 RVA: 0x0026CCC3 File Offset: 0x0026AEC3
 	public bool SetPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
 	{
 		if (this.IsOwner(_userIdentifier) && _passwordHash != this.passwordHash)
@@ -139,7 +138,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return false;
 	}
 
-	// Token: 0x060061F7 RID: 25079 RVA: 0x0026984F File Offset: 0x00267A4F
+	// Token: 0x060061F0 RID: 25072 RVA: 0x0026CCF7 File Offset: 0x0026AEF7
 	public bool CheckPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
 	{
 		if (this.IsOwner(_userIdentifier) || !this.HasPassword())
@@ -155,8 +154,8 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return false;
 	}
 
-	// Token: 0x060061F8 RID: 25080 RVA: 0x00269888 File Offset: 0x00267A88
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x060061F1 RID: 25073 RVA: 0x0026CD30 File Offset: 0x0026AF30
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
 		int num = _br.ReadInt32();
@@ -209,8 +208,8 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		this.nextAutoBuy = (this.TraderData.TraderInfo.Rentable ? _br.ReadUInt64() : 0UL);
 	}
 
-	// Token: 0x060061F9 RID: 25081 RVA: 0x00269A38 File Offset: 0x00267C38
-	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x060061F2 RID: 25074 RVA: 0x0026CEE0 File Offset: 0x0026B0E0
+	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
 		_bw.Write(3);
@@ -230,7 +229,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x060061FA RID: 25082 RVA: 0x00269AEC File Offset: 0x00267CEC
+	// Token: 0x060061F3 RID: 25075 RVA: 0x0026CF94 File Offset: 0x0026B194
 	public override void UpgradeDowngradeFrom(TileEntity _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -245,41 +244,27 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x060061FB RID: 25083 RVA: 0x00269B4A File Offset: 0x00267D4A
+	// Token: 0x060061F4 RID: 25076 RVA: 0x0026CFF2 File Offset: 0x0026B1F2
 	public List<PlatformUserIdentifierAbs> GetUsers()
 	{
 		return this.allowedUserIds;
 	}
 
-	// Token: 0x060061FC RID: 25084 RVA: 0x000601DD File Offset: 0x0005E3DD
+	// Token: 0x060061F5 RID: 25077 RVA: 0x000601CD File Offset: 0x0005E3CD
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.VendingMachine;
 	}
 
-	// Token: 0x060061FD RID: 25085 RVA: 0x00048AAD File Offset: 0x00046CAD
-	public override bool CanLockLocally(ILockContext _context, ushort _channel)
+	// Token: 0x060061F6 RID: 25078 RVA: 0x0026CFFA File Offset: 0x0026B1FA
+	public override void OnLockResponseServer(int _lockingPlayerID, PooledBinaryWriter _bwServerContext, ushort _channel)
 	{
-		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
+		GameManager.Instance.traderManager.TraderInventoryRequested(this.TraderData, _lockingPlayerID);
+		this.TraderData.Write(_bwServerContext);
 	}
 
-	// Token: 0x060061FE RID: 25086 RVA: 0x00269B54 File Offset: 0x00267D54
-	public override void OnLockedServer(bool _success, int _lockingPlayerID, ILockContext _context, ushort _channel)
-	{
-		if (!_success)
-		{
-			return;
-		}
-		TileEntityVendingMachine.VendingMachineLockContext vendingMachineLockContext = _context as TileEntityVendingMachine.VendingMachineLockContext;
-		if (vendingMachineLockContext != null)
-		{
-			GameManager.Instance.traderManager.TraderInventoryRequested(this.TraderData, _lockingPlayerID);
-			vendingMachineLockContext.TraderData = this.TraderData.Clone();
-		}
-	}
-
-	// Token: 0x060061FF RID: 25087 RVA: 0x00269B98 File Offset: 0x00267D98
-	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
+	// Token: 0x060061F7 RID: 25079 RVA: 0x0026D020 File Offset: 0x0026B220
+	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		if (!_success)
@@ -287,37 +272,34 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 			GameManager.ShowTooltip(uiforPrimaryPlayer.entityPlayer, Localization.Get("ttNoInteractPerson", false, null), string.Empty, "ui_denied", null, false, false, 0f);
 			uiforPrimaryPlayer.entityPlayer.OverrideFOV = -1f;
 			uiforPrimaryPlayer.xui.Dialog.KeepZoomOnClose = false;
-			return;
+			return false;
 		}
-		TileEntityVendingMachine.VendingMachineLockContext vendingMachineLockContext = _context as TileEntityVendingMachine.VendingMachineLockContext;
-		if (vendingMachineLockContext != null && vendingMachineLockContext.TraderData != null)
+		if (this.TraderData == null)
 		{
-			if (this.TraderData == null)
-			{
-				this.TraderData = new TraderData();
-			}
-			this.TraderData.CopyFrom(vendingMachineLockContext.TraderData);
+			this.TraderData = new TraderData();
 		}
+		this.TraderData.Read(_brServerContext);
 		uiforPrimaryPlayer.xui.Trader.Trader = this;
 		uiforPrimaryPlayer.windowManager.CloseAllOpenModalWindows(null, false);
 		uiforPrimaryPlayer.windowManager.Open("trader", true);
+		return true;
 	}
 
-	// Token: 0x06006200 RID: 25088 RVA: 0x00269C61 File Offset: 0x00267E61
+	// Token: 0x060061F8 RID: 25080 RVA: 0x0026D0D4 File Offset: 0x0026B2D4
 	public override void OnUnlockedServer(int _unlockingPlayerID, ushort _channel)
 	{
 		this.TraderData.SetModified(this);
 	}
 
-	// Token: 0x06006201 RID: 25089 RVA: 0x00269C6F File Offset: 0x00267E6F
+	// Token: 0x060061F9 RID: 25081 RVA: 0x0026D0E2 File Offset: 0x0026B2E2
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void ClearOwner()
 	{
 		this.ownerID = null;
 	}
 
-	// Token: 0x17000A0A RID: 2570
-	// (get) Token: 0x06006202 RID: 25090 RVA: 0x00269C78 File Offset: 0x00267E78
+	// Token: 0x17000A20 RID: 2592
+	// (get) Token: 0x060061FA RID: 25082 RVA: 0x0026D0EB File Offset: 0x0026B2EB
 	public bool IsRentable
 	{
 		get
@@ -326,8 +308,8 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x17000A0B RID: 2571
-	// (get) Token: 0x06006203 RID: 25091 RVA: 0x00269C8A File Offset: 0x00267E8A
+	// Token: 0x17000A21 RID: 2593
+	// (get) Token: 0x060061FB RID: 25083 RVA: 0x0026D0FD File Offset: 0x0026B2FD
 	public float RentTimeRemaining
 	{
 		get
@@ -336,8 +318,8 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x17000A0C RID: 2572
-	// (get) Token: 0x06006204 RID: 25092 RVA: 0x00269CA8 File Offset: 0x00267EA8
+	// Token: 0x17000A22 RID: 2594
+	// (get) Token: 0x060061FC RID: 25084 RVA: 0x0026D11B File Offset: 0x0026B31B
 	public int RentalEndDay
 	{
 		get
@@ -346,7 +328,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x06006205 RID: 25093 RVA: 0x00269CB0 File Offset: 0x00267EB0
+	// Token: 0x060061FD RID: 25085 RVA: 0x0026D124 File Offset: 0x0026B324
 	public bool Rent()
 	{
 		if ((this.ownerID != null && !this.ownerID.Equals(PlatformManager.InternalLocalUserIdentifier)) || !this.TraderData.TraderInfo.Rentable)
@@ -377,7 +359,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return false;
 	}
 
-	// Token: 0x06006206 RID: 25094 RVA: 0x00269DCC File Offset: 0x00267FCC
+	// Token: 0x060061FE RID: 25086 RVA: 0x0026D240 File Offset: 0x0026B440
 	public void ClearVendingMachine()
 	{
 		this.TraderData.AvailableMoney = 0;
@@ -389,7 +371,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		this.setModified();
 	}
 
-	// Token: 0x06006207 RID: 25095 RVA: 0x00269E20 File Offset: 0x00268020
+	// Token: 0x060061FF RID: 25087 RVA: 0x0026D294 File Offset: 0x0026B494
 	public bool TryAutoBuy(bool isInitial = true)
 	{
 		if (this.nextAutoBuy == 0UL)
@@ -454,7 +436,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		return !isInitial;
 	}
 
-	// Token: 0x06006208 RID: 25096 RVA: 0x0026A0E0 File Offset: 0x002682E0
+	// Token: 0x06006200 RID: 25088 RVA: 0x0026D554 File Offset: 0x0026B754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAutoBuyTime(bool isInitial)
 	{
@@ -467,7 +449,7 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		this.nextAutoBuy += (ulong)num;
 	}
 
-	// Token: 0x06006209 RID: 25097 RVA: 0x0026A120 File Offset: 0x00268320
+	// Token: 0x06006201 RID: 25089 RVA: 0x0026D594 File Offset: 0x0026B794
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -477,95 +459,60 @@ public class TileEntityVendingMachine : TileEntity, ILockable, ITrader
 		}
 	}
 
-	// Token: 0x04004C5B RID: 19547
+	// Token: 0x04004C92 RID: 19602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ver = 3;
 
-	// Token: 0x04004C5D RID: 19549
+	// Token: 0x04004C94 RID: 19604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLocked;
 
-	// Token: 0x04004C5E RID: 19550
+	// Token: 0x04004C95 RID: 19605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x04004C5F RID: 19551
+	// Token: 0x04004C96 RID: 19606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PlatformUserIdentifierAbs> allowedUserIds;
 
-	// Token: 0x04004C60 RID: 19552
+	// Token: 0x04004C97 RID: 19607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string passwordHash;
 
-	// Token: 0x04004C61 RID: 19553
+	// Token: 0x04004C98 RID: 19608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong rentalEndTime;
 
-	// Token: 0x04004C62 RID: 19554
+	// Token: 0x04004C99 RID: 19609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong nextAutoBuy;
 
-	// Token: 0x04004C63 RID: 19555
+	// Token: 0x04004C9A RID: 19610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int rentalEndDay;
 
-	// Token: 0x04004C64 RID: 19556
+	// Token: 0x04004C9B RID: 19611
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float autoBuyThresholdStep = 0.33333334f;
 
-	// Token: 0x04004C65 RID: 19557
+	// Token: 0x04004C9C RID: 19612
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float autoBuyThreshold = 0.33333334f;
 
-	// Token: 0x04004C66 RID: 19558
+	// Token: 0x04004C9D RID: 19613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int minimumAutoBuyCount = 5;
 
-	// Token: 0x02000C7D RID: 3197
+	// Token: 0x02000C8C RID: 3212
 	public enum RentResult
 	{
-		// Token: 0x04004C68 RID: 19560
+		// Token: 0x04004C9F RID: 19615
 		Allowed,
-		// Token: 0x04004C69 RID: 19561
+		// Token: 0x04004CA0 RID: 19616
 		AlreadyRented,
-		// Token: 0x04004C6A RID: 19562
+		// Token: 0x04004CA1 RID: 19617
 		AlreadyRentingVM,
-		// Token: 0x04004C6B RID: 19563
+		// Token: 0x04004CA2 RID: 19618
 		NotEnoughMoney
-	}
-
-	// Token: 0x02000C7E RID: 3198
-	[Preserve]
-	public class VendingMachineLockContext : ILockContext
-	{
-		// Token: 0x0600620A RID: 25098 RVA: 0x0000640C File Offset: 0x0000460C
-		public VendingMachineLockContext()
-		{
-		}
-
-		// Token: 0x0600620B RID: 25099 RVA: 0x0026A179 File Offset: 0x00268379
-		public VendingMachineLockContext(TraderData _traderData)
-		{
-			this.TraderData = _traderData.Clone();
-		}
-
-		// Token: 0x0600620C RID: 25100 RVA: 0x0026A18D File Offset: 0x0026838D
-		public void Read(PooledBinaryReader _br)
-		{
-			if (this.TraderData == null)
-			{
-				this.TraderData = new TraderData();
-			}
-			this.TraderData.Read(_br);
-		}
-
-		// Token: 0x0600620D RID: 25101 RVA: 0x0026A1AE File Offset: 0x002683AE
-		public void Write(PooledBinaryWriter _bw)
-		{
-			this.TraderData.Write(_bw);
-		}
-
-		// Token: 0x04004C6C RID: 19564
-		public TraderData TraderData;
 	}
 }

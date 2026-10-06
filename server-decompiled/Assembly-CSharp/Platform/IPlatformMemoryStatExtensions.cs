@@ -2,17 +2,17 @@
 
 namespace Platform
 {
-	// Token: 0x02001B80 RID: 7040
+	// Token: 0x02001BB2 RID: 7090
 	public static class IPlatformMemoryStatExtensions
 	{
-		// Token: 0x0600D297 RID: 53911 RVA: 0x004C6B44 File Offset: 0x004C4D44
+		// Token: 0x0600D40F RID: 54287 RVA: 0x004CB62C File Offset: 0x004C982C
 		public static IPlatformMemoryStat<T> AddColumnSetHandler<T>(this IPlatformMemoryStat<T> stat, PlatformMemoryColumnChangedHandler<T> handler)
 		{
 			stat.ColumnSetAfter += handler;
 			return stat;
 		}
 
-		// Token: 0x0600D298 RID: 53912 RVA: 0x004C6B50 File Offset: 0x004C4D50
+		// Token: 0x0600D410 RID: 54288 RVA: 0x004CB638 File Offset: 0x004C9838
 		public static IPlatformMemoryStat<T> WithUpdatePeak<T>(this IPlatformMemoryStat<T> stat) where T : IComparable<T>
 		{
 			return stat.AddColumnSetHandler<T>(delegate(MemoryStatColumn column, T value)
@@ -29,7 +29,7 @@ namespace Platform
 			});
 		}
 
-		// Token: 0x0600D299 RID: 53913 RVA: 0x004C6B84 File Offset: 0x004C4D84
+		// Token: 0x0600D411 RID: 54289 RVA: 0x004CB66C File Offset: 0x004C986C
 		public static IPlatformMemoryStat<T> WithUpdateMin<T>(this IPlatformMemoryStat<T> stat) where T : IComparable<T>
 		{
 			return stat.AddColumnSetHandler<T>(delegate(MemoryStatColumn column, T value)
@@ -46,7 +46,7 @@ namespace Platform
 			});
 		}
 
-		// Token: 0x0600D29A RID: 53914 RVA: 0x004C6BB5 File Offset: 0x004C4DB5
+		// Token: 0x0600D412 RID: 54290 RVA: 0x004CB69D File Offset: 0x004C989D
 		public static bool TryGetCurrentAndLast<T>(this IPlatformMemoryStat<T> stat, MemoryStatColumn column, out T current, out T last)
 		{
 			if (!stat.TryGet(column, out current))
@@ -57,7 +57,7 @@ namespace Platform
 			return stat.TryGetLast(column, out last);
 		}
 
-		// Token: 0x0600D29B RID: 53915 RVA: 0x004C6BD4 File Offset: 0x004C4DD4
+		// Token: 0x0600D413 RID: 54291 RVA: 0x004CB6BC File Offset: 0x004C98BC
 		public static bool HasColumnChanged<T>(this IPlatformMemoryStat<T> stat, MemoryStatColumn column, PlatformMemoryStatHasChangedSignificantly<T> checkCurrentVsLast)
 		{
 			T t;
@@ -65,19 +65,19 @@ namespace Platform
 			return stat.TryGetCurrentAndLast<T>(column, out t, out t2) && checkCurrentVsLast(t, t2);
 		}
 
-		// Token: 0x0600D29C RID: 53916 RVA: 0x004C6BF8 File Offset: 0x004C4DF8
+		// Token: 0x0600D414 RID: 54292 RVA: 0x004CB6E0 File Offset: 0x004C98E0
 		public static bool HasColumnIncreased<T>(this IPlatformMemoryStat<T> stat, MemoryStatColumn column) where T : IComparable<T>
 		{
 			return stat.HasColumnChanged<T>(column, (T current, T last) => current.CompareTo(last) > 0);
 		}
 
-		// Token: 0x0600D29D RID: 53917 RVA: 0x004C6C20 File Offset: 0x004C4E20
+		// Token: 0x0600D415 RID: 54293 RVA: 0x004CB708 File Offset: 0x004C9908
 		public static bool HasColumnDecreased<T>(this IPlatformMemoryStat<T> stat, MemoryStatColumn column) where T : IComparable<T>
 		{
 			return stat.HasColumnChanged<T>(column, (T current, T last) => current.CompareTo(last) < 0);
 		}
 
-		// Token: 0x0600D29E RID: 53918 RVA: 0x004C6C48 File Offset: 0x004C4E48
+		// Token: 0x0600D416 RID: 54294 RVA: 0x004CB730 File Offset: 0x004C9930
 		public static bool HasBytesChangedSignificantly(this IPlatformMemoryStat<long> stat, MemoryStatColumn column)
 		{
 			return stat.HasColumnChanged<long>(column, delegate(long current, long last)

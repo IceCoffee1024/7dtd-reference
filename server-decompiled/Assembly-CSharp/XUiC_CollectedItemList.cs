@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF4 RID: 3828
+// Token: 0x02000F03 RID: 3843
 [Preserve]
 public class XUiC_CollectedItemList : XUiController
 {
-	// Token: 0x0600780B RID: 30731 RVA: 0x002D2CF0 File Offset: 0x002D0EF0
+	// Token: 0x06007806 RID: 30726 RVA: 0x002D6064 File Offset: 0x002D4264
 	public override void Init()
 	{
 		base.Init();
@@ -18,20 +18,20 @@ public class XUiC_CollectedItemList : XUiController
 		this.xui.CollectedItemList = this;
 	}
 
-	// Token: 0x0600780C RID: 30732 RVA: 0x002D2D45 File Offset: 0x002D0F45
+	// Token: 0x06007807 RID: 30727 RVA: 0x002D60B9 File Offset: 0x002D42B9
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.CollectedItemList = null;
 	}
 
-	// Token: 0x0600780D RID: 30733 RVA: 0x002D2D59 File Offset: 0x002D0F59
+	// Token: 0x06007808 RID: 30728 RVA: 0x002D60CD File Offset: 0x002D42CD
 	public void AddRemoveItemQueueEntry(ItemStack stack)
 	{
 		this.removeItemQueue.Add(stack);
 	}
 
-	// Token: 0x0600780E RID: 30734 RVA: 0x002D2D68 File Offset: 0x002D0F68
+	// Token: 0x06007809 RID: 30729 RVA: 0x002D60DC File Offset: 0x002D42DC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -62,14 +62,14 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x0600780F RID: 30735 RVA: 0x002D2E60 File Offset: 0x002D1060
+	// Token: 0x0600780A RID: 30730 RVA: 0x002D61D4 File Offset: 0x002D43D4
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.PrefabItems.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06007810 RID: 30736 RVA: 0x002D2E7C File Offset: 0x002D107C
+	// Token: 0x0600780B RID: 30731 RVA: 0x002D61F0 File Offset: 0x002D43F0
 	public void AddIconNotification(string iconNotifier, int count = 1, bool _bAddOnlyIfNotExisting = false)
 	{
 		if (iconNotifier == string.Empty)
@@ -149,7 +149,7 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x06007811 RID: 30737 RVA: 0x002D317C File Offset: 0x002D137C
+	// Token: 0x0600780C RID: 30732 RVA: 0x002D64F0 File Offset: 0x002D46F0
 	public void AddCraftingSkillNotification(ProgressionValue craftingSkill, bool _bAddOnlyIfNotExisting = false)
 	{
 		if (craftingSkill == null)
@@ -225,7 +225,7 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x06007812 RID: 30738 RVA: 0x002D346C File Offset: 0x002D166C
+	// Token: 0x0600780D RID: 30733 RVA: 0x002D67E0 File Offset: 0x002D49E0
 	public void AddItemStack(ItemStack _is, bool _bAddOnlyIfNotExisting = false)
 	{
 		if (_is == null)
@@ -351,7 +351,7 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x06007813 RID: 30739 RVA: 0x002D39D8 File Offset: 0x002D1BD8
+	// Token: 0x0600780E RID: 30734 RVA: 0x002D6D5C File Offset: 0x002D4F5C
 	public void RemoveItemStack(ItemStack _is)
 	{
 		if (_is == null || _is.IsEmpty())
@@ -425,7 +425,7 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x06007814 RID: 30740 RVA: 0x002D3E00 File Offset: 0x002D2000
+	// Token: 0x0600780F RID: 30735 RVA: 0x002D7194 File Offset: 0x002D5394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeLastEntry(int index = 0)
 	{
@@ -453,7 +453,7 @@ public class XUiC_CollectedItemList : XUiController
 		this.updateEntries();
 	}
 
-	// Token: 0x06007815 RID: 30741 RVA: 0x002D3EFC File Offset: 0x002D20FC
+	// Token: 0x06007810 RID: 30736 RVA: 0x002D7290 File Offset: 0x002D5490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateEntries()
 	{
@@ -479,7 +479,7 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x06007816 RID: 30742 RVA: 0x002D3FB2 File Offset: 0x002D21B2
+	// Token: 0x06007811 RID: 30737 RVA: 0x002D7346 File Offset: 0x002D5546
 	public void SetYOffset(int _yOffset)
 	{
 		if (_yOffset != this.yOffset)
@@ -489,59 +489,59 @@ public class XUiC_CollectedItemList : XUiController
 		}
 	}
 
-	// Token: 0x040058C4 RID: 22724
+	// Token: 0x040058FC RID: 22780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer localPlayer;
 
-	// Token: 0x040058C5 RID: 22725
+	// Token: 0x040058FD RID: 22781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float height;
 
-	// Token: 0x040058C6 RID: 22726
+	// Token: 0x040058FE RID: 22782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int yOffset;
 
-	// Token: 0x040058C7 RID: 22727
+	// Token: 0x040058FF RID: 22783
 	public Transform PrefabItems;
 
-	// Token: 0x040058C8 RID: 22728
+	// Token: 0x04005900 RID: 22784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cItemMax = 12;
 
-	// Token: 0x040058C9 RID: 22729
+	// Token: 0x04005901 RID: 22785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_CollectedItemList.Data> items = new List<XUiC_CollectedItemList.Data>();
 
-	// Token: 0x040058CA RID: 22730
+	// Token: 0x04005902 RID: 22786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemStack> removeItemQueue = new List<ItemStack>();
 
-	// Token: 0x02000EF5 RID: 3829
+	// Token: 0x02000F04 RID: 3844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Data
 	{
-		// Token: 0x040058CB RID: 22731
+		// Token: 0x04005903 RID: 22787
 		public GameObject Item;
 
-		// Token: 0x040058CC RID: 22732
+		// Token: 0x04005904 RID: 22788
 		public float TimeAdded;
 
-		// Token: 0x040058CD RID: 22733
+		// Token: 0x04005905 RID: 22789
 		public ItemStack ItemStack;
 
-		// Token: 0x040058CE RID: 22734
+		// Token: 0x04005906 RID: 22790
 		public ProgressionValue CraftingSkill;
 
-		// Token: 0x040058CF RID: 22735
+		// Token: 0x04005907 RID: 22791
 		public string uiAtlasIcon;
 
-		// Token: 0x040058D0 RID: 22736
+		// Token: 0x04005908 RID: 22792
 		public int count;
 
-		// Token: 0x040058D1 RID: 22737
+		// Token: 0x04005909 RID: 22793
 		public bool isNegative;
 
-		// Token: 0x040058D2 RID: 22738
+		// Token: 0x0400590A RID: 22794
 		public bool isMissingNotifier;
 	}
 }

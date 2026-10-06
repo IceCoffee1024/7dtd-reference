@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Globalization;
 
-// Token: 0x0200117F RID: 4479
+// Token: 0x02001197 RID: 4503
 public readonly struct XUiSideSizes
 {
-	// Token: 0x1700113C RID: 4412
-	// (get) Token: 0x06008FA0 RID: 36768 RVA: 0x0035F846 File Offset: 0x0035DA46
+	// Token: 0x17001180 RID: 4480
+	// (get) Token: 0x0600902C RID: 36908 RVA: 0x00364012 File Offset: 0x00362212
 	public int SumLeftRight
 	{
 		get
@@ -14,8 +14,8 @@ public readonly struct XUiSideSizes
 		}
 	}
 
-	// Token: 0x1700113D RID: 4413
-	// (get) Token: 0x06008FA1 RID: 36769 RVA: 0x0035F855 File Offset: 0x0035DA55
+	// Token: 0x17001181 RID: 4481
+	// (get) Token: 0x0600902D RID: 36909 RVA: 0x00364021 File Offset: 0x00362221
 	public int SumTopBottom
 	{
 		get
@@ -24,7 +24,7 @@ public readonly struct XUiSideSizes
 		}
 	}
 
-	// Token: 0x06008FA2 RID: 36770 RVA: 0x0035F864 File Offset: 0x0035DA64
+	// Token: 0x0600902E RID: 36910 RVA: 0x00364030 File Offset: 0x00362230
 	public XUiSideSizes(int _left, int _right, int _top, int _bottom)
 	{
 		this.Left = _left;
@@ -33,31 +33,31 @@ public readonly struct XUiSideSizes
 		this.Bottom = _bottom;
 	}
 
-	// Token: 0x06008FA3 RID: 36771 RVA: 0x0035F883 File Offset: 0x0035DA83
+	// Token: 0x0600902F RID: 36911 RVA: 0x0036404F File Offset: 0x0036224F
 	public XUiSideSizes SetLeft(int _value)
 	{
 		return new XUiSideSizes(_value, this.Right, this.Top, this.Bottom);
 	}
 
-	// Token: 0x06008FA4 RID: 36772 RVA: 0x0035F89D File Offset: 0x0035DA9D
+	// Token: 0x06009030 RID: 36912 RVA: 0x00364069 File Offset: 0x00362269
 	public XUiSideSizes SetRight(int _value)
 	{
 		return new XUiSideSizes(this.Left, _value, this.Top, this.Bottom);
 	}
 
-	// Token: 0x06008FA5 RID: 36773 RVA: 0x0035F8B7 File Offset: 0x0035DAB7
+	// Token: 0x06009031 RID: 36913 RVA: 0x00364083 File Offset: 0x00362283
 	public XUiSideSizes SetTop(int _value)
 	{
 		return new XUiSideSizes(this.Left, this.Right, _value, this.Bottom);
 	}
 
-	// Token: 0x06008FA6 RID: 36774 RVA: 0x0035F8D1 File Offset: 0x0035DAD1
+	// Token: 0x06009032 RID: 36914 RVA: 0x0036409D File Offset: 0x0036229D
 	public XUiSideSizes SetBottom(int _value)
 	{
 		return new XUiSideSizes(this.Left, this.Right, this.Top, _value);
 	}
 
-	// Token: 0x06008FA7 RID: 36775 RVA: 0x0035F8EC File Offset: 0x0035DAEC
+	// Token: 0x06009033 RID: 36915 RVA: 0x003640B8 File Offset: 0x003622B8
 	public static bool TryParse(string _value, out XUiSideSizes _result, string _valueName)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_value, ',', 3, 0, -1);
@@ -114,15 +114,15 @@ public readonly struct XUiSideSizes
 		return true;
 	}
 
-	// Token: 0x0400691F RID: 26911
+	// Token: 0x04006985 RID: 27013
 	public readonly int Left;
 
-	// Token: 0x04006920 RID: 26912
+	// Token: 0x04006986 RID: 27014
 	public readonly int Right;
 
-	// Token: 0x04006921 RID: 26913
+	// Token: 0x04006987 RID: 27015
 	public readonly int Top;
 
-	// Token: 0x04006922 RID: 26914
+	// Token: 0x04006988 RID: 27016
 	public readonly int Bottom;
 }

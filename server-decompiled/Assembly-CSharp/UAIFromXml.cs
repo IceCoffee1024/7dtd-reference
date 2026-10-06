@@ -6,11 +6,11 @@ using System.Xml.Linq;
 using UAI;
 using UnityEngine.Scripting;
 
-// Token: 0x02000C9B RID: 3227
+// Token: 0x02000CA9 RID: 3241
 [Preserve]
 public class UAIFromXml
 {
-	// Token: 0x06006304 RID: 25348 RVA: 0x0026E28D File Offset: 0x0026C48D
+	// Token: 0x060062F7 RID: 25335 RVA: 0x002716D1 File Offset: 0x0026F8D1
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -30,7 +30,7 @@ public class UAIFromXml
 		yield break;
 	}
 
-	// Token: 0x06006305 RID: 25349 RVA: 0x0026E29C File Offset: 0x0026C49C
+	// Token: 0x060062F8 RID: 25336 RVA: 0x002716E0 File Offset: 0x0026F8E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAIPackagesNode(XElement _element)
 	{
@@ -40,13 +40,13 @@ public class UAIFromXml
 		}
 	}
 
-	// Token: 0x06006306 RID: 25350 RVA: 0x0026E2F0 File Offset: 0x0026C4F0
+	// Token: 0x060062F9 RID: 25337 RVA: 0x00271734 File Offset: 0x0026F934
 	public static void Cleanup()
 	{
 		UAIBase.Cleanup();
 	}
 
-	// Token: 0x06006307 RID: 25351 RVA: 0x0026E2F8 File Offset: 0x0026C4F8
+	// Token: 0x060062FA RID: 25338 RVA: 0x0027173C File Offset: 0x0026F93C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAIPackageNode(XElement _element)
 	{
@@ -71,7 +71,7 @@ public class UAIFromXml
 		}
 	}
 
-	// Token: 0x06006308 RID: 25352 RVA: 0x0026E3D0 File Offset: 0x0026C5D0
+	// Token: 0x060062FB RID: 25339 RVA: 0x00271814 File Offset: 0x0026FA14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseActionNode(UAIPackage _package, XElement _element)
 	{
@@ -100,7 +100,7 @@ public class UAIFromXml
 		_package.AddAction(uaiaction);
 	}
 
-	// Token: 0x06006309 RID: 25353 RVA: 0x0026E4C4 File Offset: 0x0026C6C4
+	// Token: 0x060062FC RID: 25340 RVA: 0x00271908 File Offset: 0x0026FB08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseTaskNode(UAIAction _action, XElement _element)
 	{
@@ -123,7 +123,7 @@ public class UAIFromXml
 		}
 	}
 
-	// Token: 0x0600630A RID: 25354 RVA: 0x0026E590 File Offset: 0x0026C790
+	// Token: 0x060062FD RID: 25341 RVA: 0x002719D4 File Offset: 0x0026FBD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseConsiderationNode(UAIAction _action, XElement _element)
 	{

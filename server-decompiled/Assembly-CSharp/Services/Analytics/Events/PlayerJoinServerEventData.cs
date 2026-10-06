@@ -1,15 +1,16 @@
 ﻿using System;
+using System.ComponentModel;
 using BhvrAnalyticsServices.Attributes;
 using Newtonsoft.Json;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x0200168C RID: 5772
+	// Token: 0x020016B4 RID: 5812
 	[EventTitle("Player Join Server")]
 	public class PlayerJoinServerEventData : BaseEventData
 	{
-		// Token: 0x170015E8 RID: 5608
-		// (get) Token: 0x0600B4FB RID: 46331 RVA: 0x00437A10 File Offset: 0x00435C10
+		// Token: 0x1700165A RID: 5722
+		// (get) Token: 0x0600B5F0 RID: 46576 RVA: 0x0043BA1A File Offset: 0x00439C1A
 		public override string EventType
 		{
 			get
@@ -18,101 +19,110 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x170015E9 RID: 5609
-		// (get) Token: 0x0600B4FC RID: 46332 RVA: 0x00437A17 File Offset: 0x00435C17
-		// (set) Token: 0x0600B4FD RID: 46333 RVA: 0x00437A1F File Offset: 0x00435C1F
+		// Token: 0x1700165B RID: 5723
+		// (get) Token: 0x0600B5F1 RID: 46577 RVA: 0x0043BA21 File Offset: 0x00439C21
+		// (set) Token: 0x0600B5F2 RID: 46578 RVA: 0x0043BA29 File Offset: 0x00439C29
 		[JsonProperty(PropertyName = "server_id")]
+		[Description("Id of the connected server")]
 		public string ServerId { get; set; }
 
-		// Token: 0x170015EA RID: 5610
-		// (get) Token: 0x0600B4FE RID: 46334 RVA: 0x00437A28 File Offset: 0x00435C28
-		// (set) Token: 0x0600B4FF RID: 46335 RVA: 0x00437A30 File Offset: 0x00435C30
+		// Token: 0x1700165C RID: 5724
+		// (get) Token: 0x0600B5F3 RID: 46579 RVA: 0x0043BA32 File Offset: 0x00439C32
+		// (set) Token: 0x0600B5F4 RID: 46580 RVA: 0x0043BA3A File Offset: 0x00439C3A
 		[JsonProperty(PropertyName = "save_id")]
+		[Description("Unique Id of the world save")]
 		public string SaveId { get; set; }
 
-		// Token: 0x170015EB RID: 5611
-		// (get) Token: 0x0600B500 RID: 46336 RVA: 0x00437A39 File Offset: 0x00435C39
-		// (set) Token: 0x0600B501 RID: 46337 RVA: 0x00437A41 File Offset: 0x00435C41
+		// Token: 0x1700165D RID: 5725
+		// (get) Token: 0x0600B5F5 RID: 46581 RVA: 0x0043BA43 File Offset: 0x00439C43
+		// (set) Token: 0x0600B5F6 RID: 46582 RVA: 0x0043BA4B File Offset: 0x00439C4B
 		[JsonProperty(PropertyName = "server_join_ts")]
 		[DateTimeFormat]
+		[Description("Whenever the player joins the server")]
 		public string ServerJoinTimestamp { get; set; }
 
-		// Token: 0x170015EC RID: 5612
-		// (get) Token: 0x0600B502 RID: 46338 RVA: 0x00437A4A File Offset: 0x00435C4A
-		// (set) Token: 0x0600B503 RID: 46339 RVA: 0x00437A52 File Offset: 0x00435C52
+		// Token: 0x1700165E RID: 5726
+		// (get) Token: 0x0600B5F7 RID: 46583 RVA: 0x0043BA54 File Offset: 0x00439C54
+		// (set) Token: 0x0600B5F8 RID: 46584 RVA: 0x0043BA5C File Offset: 0x00439C5C
 		[JsonProperty(PropertyName = "online_players")]
+		[Description("Number of players on the server (inclusive)")]
 		public int? OnlinePlayers { get; set; }
 
-		// Token: 0x170015ED RID: 5613
-		// (get) Token: 0x0600B504 RID: 46340 RVA: 0x00437A5B File Offset: 0x00435C5B
-		// (set) Token: 0x0600B505 RID: 46341 RVA: 0x00437A63 File Offset: 0x00435C63
+		// Token: 0x1700165F RID: 5727
+		// (get) Token: 0x0600B5F9 RID: 46585 RVA: 0x0043BA65 File Offset: 0x00439C65
+		// (set) Token: 0x0600B5FA RID: 46586 RVA: 0x0043BA6D File Offset: 0x00439C6D
 		[JsonProperty(PropertyName = "server_join_source")]
+		[Description("How the player joined the server")]
 		public string ServerJoinSource { get; set; }
 
-		// Token: 0x170015EE RID: 5614
-		// (get) Token: 0x0600B506 RID: 46342 RVA: 0x00437A6C File Offset: 0x00435C6C
-		// (set) Token: 0x0600B507 RID: 46343 RVA: 0x00437A74 File Offset: 0x00435C74
+		// Token: 0x17001660 RID: 5728
+		// (get) Token: 0x0600B5FB RID: 46587 RVA: 0x0043BA76 File Offset: 0x00439C76
+		// (set) Token: 0x0600B5FC RID: 46588 RVA: 0x0043BA7E File Offset: 0x00439C7E
 		[JsonProperty(PropertyName = "local_mods")]
+		[Description("List of active mods with name, display name and description. Limited to the first 100")]
 		public object LocalMods { get; set; }
 
-		// Token: 0x170015EF RID: 5615
-		// (get) Token: 0x0600B508 RID: 46344 RVA: 0x00437A7D File Offset: 0x00435C7D
-		// (set) Token: 0x0600B509 RID: 46345 RVA: 0x00437A85 File Offset: 0x00435C85
+		// Token: 0x17001661 RID: 5729
+		// (get) Token: 0x0600B5FD RID: 46589 RVA: 0x0043BA87 File Offset: 0x00439C87
+		// (set) Token: 0x0600B5FE RID: 46590 RVA: 0x0043BA8F File Offset: 0x00439C8F
 		[JsonProperty(PropertyName = "has_modified_xml_files")]
+		[Description("Are the hashes different than the stock file hashes?")]
 		public bool? HasModifiedXML { get; set; }
 
-		// Token: 0x170015F0 RID: 5616
-		// (get) Token: 0x0600B50A RID: 46346 RVA: 0x00437A8E File Offset: 0x00435C8E
-		// (set) Token: 0x0600B50B RID: 46347 RVA: 0x00437A96 File Offset: 0x00435C96
+		// Token: 0x17001662 RID: 5730
+		// (get) Token: 0x0600B5FF RID: 46591 RVA: 0x0043BA98 File Offset: 0x00439C98
+		// (set) Token: 0x0600B600 RID: 46592 RVA: 0x0043BAA0 File Offset: 0x00439CA0
 		[JsonProperty(PropertyName = "elapsed_player_time")]
+		[Description("Cumulative seconds that the player has previously played on the server")]
 		public uint? ElapsedPlayerTime { get; set; }
 
-		// Token: 0x170015F1 RID: 5617
-		// (get) Token: 0x0600B50C RID: 46348 RVA: 0x00437A9F File Offset: 0x00435C9F
-		// (set) Token: 0x0600B50D RID: 46349 RVA: 0x00437AA7 File Offset: 0x00435CA7
-		[JsonProperty(PropertyName = "elapsed_world_save_time")]
-		public ulong? ElapsedWorldSaveTime { get; set; }
-
-		// Token: 0x170015F2 RID: 5618
-		// (get) Token: 0x0600B50E RID: 46350 RVA: 0x00437AB0 File Offset: 0x00435CB0
-		// (set) Token: 0x0600B50F RID: 46351 RVA: 0x00437AB8 File Offset: 0x00435CB8
+		// Token: 0x17001663 RID: 5731
+		// (get) Token: 0x0600B601 RID: 46593 RVA: 0x0043BAA9 File Offset: 0x00439CA9
+		// (set) Token: 0x0600B602 RID: 46594 RVA: 0x0043BAB1 File Offset: 0x00439CB1
 		[JsonProperty(PropertyName = "in_game_days")]
+		[Description("Seconds with at least one player online on this specific save")]
 		public int? InGameDays { get; set; }
 
-		// Token: 0x170015F3 RID: 5619
-		// (get) Token: 0x0600B510 RID: 46352 RVA: 0x00437AC1 File Offset: 0x00435CC1
-		// (set) Token: 0x0600B511 RID: 46353 RVA: 0x00437AC9 File Offset: 0x00435CC9
+		// Token: 0x17001664 RID: 5732
+		// (get) Token: 0x0600B603 RID: 46595 RVA: 0x0043BABA File Offset: 0x00439CBA
+		// (set) Token: 0x0600B604 RID: 46596 RVA: 0x0043BAC2 File Offset: 0x00439CC2
 		[JsonProperty(PropertyName = "character_level")]
+		[Description("Current level of the character")]
 		public int? CharacterLevel { get; set; }
 
-		// Token: 0x170015F4 RID: 5620
-		// (get) Token: 0x0600B512 RID: 46354 RVA: 0x00437AD2 File Offset: 0x00435CD2
-		// (set) Token: 0x0600B513 RID: 46355 RVA: 0x00437ADA File Offset: 0x00435CDA
+		// Token: 0x17001665 RID: 5733
+		// (get) Token: 0x0600B605 RID: 46597 RVA: 0x0043BACB File Offset: 0x00439CCB
+		// (set) Token: 0x0600B606 RID: 46598 RVA: 0x0043BAD3 File Offset: 0x00439CD3
 		[JsonProperty(PropertyName = "total_deaths")]
+		[Description("Total number of deaths this player suffered")]
 		public int? TotalDeaths { get; set; }
 
-		// Token: 0x170015F5 RID: 5621
-		// (get) Token: 0x0600B514 RID: 46356 RVA: 0x00437AE3 File Offset: 0x00435CE3
-		// (set) Token: 0x0600B515 RID: 46357 RVA: 0x00437AEB File Offset: 0x00435CEB
+		// Token: 0x17001666 RID: 5734
+		// (get) Token: 0x0600B607 RID: 46599 RVA: 0x0043BADC File Offset: 0x00439CDC
+		// (set) Token: 0x0600B608 RID: 46600 RVA: 0x0043BAE4 File Offset: 0x00439CE4
 		[JsonProperty(PropertyName = "personal_game_stage_modified")]
+		[Description("Current gamestage of the player taking into account biomes and quest modifiers")]
 		public float? PersonalGameStageModified { get; set; }
 
-		// Token: 0x170015F6 RID: 5622
-		// (get) Token: 0x0600B516 RID: 46358 RVA: 0x00437AF4 File Offset: 0x00435CF4
-		// (set) Token: 0x0600B517 RID: 46359 RVA: 0x00437AFC File Offset: 0x00435CFC
+		// Token: 0x17001667 RID: 5735
+		// (get) Token: 0x0600B609 RID: 46601 RVA: 0x0043BAED File Offset: 0x00439CED
+		// (set) Token: 0x0600B60A RID: 46602 RVA: 0x0043BAF5 File Offset: 0x00439CF5
 		[JsonProperty(PropertyName = "personal_game_stage_unmodified")]
+		[Description("Current gamestage of the player")]
 		public float? PersonalGameStageUnmodified { get; set; }
 
-		// Token: 0x170015F7 RID: 5623
-		// (get) Token: 0x0600B518 RID: 46360 RVA: 0x00437B05 File Offset: 0x00435D05
-		// (set) Token: 0x0600B519 RID: 46361 RVA: 0x00437B0D File Offset: 0x00435D0D
+		// Token: 0x17001668 RID: 5736
+		// (get) Token: 0x0600B60B RID: 46603 RVA: 0x0043BAFE File Offset: 0x00439CFE
+		// (set) Token: 0x0600B60C RID: 46604 RVA: 0x0043BB06 File Offset: 0x00439D06
 		[JsonProperty(PropertyName = "game_stages_json")]
+		[Description("Breakdown of the variables used in the gamestage modified calculation")]
 		public object GameStagesJson { get; set; }
 
-		// Token: 0x170015F8 RID: 5624
-		// (get) Token: 0x0600B51A RID: 46362 RVA: 0x00437B16 File Offset: 0x00435D16
-		// (set) Token: 0x0600B51B RID: 46363 RVA: 0x00437B1E File Offset: 0x00435D1E
+		// Token: 0x17001669 RID: 5737
+		// (get) Token: 0x0600B60D RID: 46605 RVA: 0x0043BB0F File Offset: 0x00439D0F
+		// (set) Token: 0x0600B60E RID: 46606 RVA: 0x0043BB17 File Offset: 0x00439D17
 		[JsonProperty(PropertyName = "total_mods")]
+		[Description("Total number of active mods")]
 		public int? TotalMods { get; set; }
 	}
 }

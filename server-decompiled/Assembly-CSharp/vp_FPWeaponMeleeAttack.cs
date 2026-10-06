@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001602 RID: 5634
+// Token: 0x02001621 RID: 5665
 public class vp_FPWeaponMeleeAttack : vp_Component
 {
-	// Token: 0x1700148E RID: 5262
-	// (get) Token: 0x0600B0B2 RID: 45234 RVA: 0x0041F188 File Offset: 0x0041D388
+	// Token: 0x170014D1 RID: 5329
+	// (get) Token: 0x0600B144 RID: 45380 RVA: 0x00422E64 File Offset: 0x00421064
 	public vp_FPPlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,7 +20,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		}
 	}
 
-	// Token: 0x0600B0B3 RID: 45235 RVA: 0x0041F1C0 File Offset: 0x0041D3C0
+	// Token: 0x0600B145 RID: 45381 RVA: 0x00422E9C File Offset: 0x0042109C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -30,7 +30,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		this.m_Weapon = (vp_FPWeapon)base.Transform.GetComponent(typeof(vp_FPWeapon));
 	}
 
-	// Token: 0x0600B0B4 RID: 45236 RVA: 0x0041F233 File Offset: 0x0041D433
+	// Token: 0x0600B146 RID: 45382 RVA: 0x00422F0F File Offset: 0x0042110F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -38,7 +38,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		this.UpdateAttack();
 	}
 
-	// Token: 0x0600B0B5 RID: 45237 RVA: 0x0041F244 File Offset: 0x0041D444
+	// Token: 0x0600B147 RID: 45383 RVA: 0x00422F20 File Offset: 0x00421120
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateAttack()
 	{
@@ -101,7 +101,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		}, this.SwingDelayTimer);
 	}
 
-	// Token: 0x0600B0B6 RID: 45238 RVA: 0x0041F300 File Offset: 0x0041D500
+	// Token: 0x0600B148 RID: 45384 RVA: 0x00422FDC File Offset: 0x004211DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PickAttack()
 	{
@@ -115,13 +115,13 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		base.SetState(this.States[this.m_AttackCurrent].Name, true, false, false);
 	}
 
-	// Token: 0x0600B0B7 RID: 45239 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600B149 RID: 45385 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Attack()
 	{
 	}
 
-	// Token: 0x0600B0B8 RID: 45240 RVA: 0x0041F378 File Offset: 0x0041D578
+	// Token: 0x0600B14A RID: 45386 RVA: 0x00423054 File Offset: 0x00421254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnImpactFX(RaycastHit hit)
 	{
@@ -145,7 +145,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		}
 	}
 
-	// Token: 0x0600B0B9 RID: 45241 RVA: 0x0041F46C File Offset: 0x0041D66C
+	// Token: 0x0600B14B RID: 45387 RVA: 0x00423148 File Offset: 0x00421348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyDamage(RaycastHit hit)
 	{
@@ -157,7 +157,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		}
 	}
 
-	// Token: 0x0600B0BA RID: 45242 RVA: 0x0041F4F4 File Offset: 0x0041D6F4
+	// Token: 0x0600B14C RID: 45388 RVA: 0x004231D0 File Offset: 0x004213D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyRecoil()
 	{
@@ -167,7 +167,7 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		this.Reset();
 	}
 
-	// Token: 0x0600B0BB RID: 45243 RVA: 0x0041F540 File Offset: 0x0041D740
+	// Token: 0x0600B14D RID: 45389 RVA: 0x0042321C File Offset: 0x0042141C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Reset()
 	{
@@ -186,133 +186,133 @@ public class vp_FPWeaponMeleeAttack : vp_Component
 		}, this.ResetTimer);
 	}
 
-	// Token: 0x04008452 RID: 33874
+	// Token: 0x040084A8 RID: 33960
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPWeapon m_Weapon;
 
-	// Token: 0x04008453 RID: 33875
+	// Token: 0x040084A9 RID: 33961
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPController m_Controller;
 
-	// Token: 0x04008454 RID: 33876
+	// Token: 0x040084AA RID: 33962
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_Camera;
 
-	// Token: 0x04008455 RID: 33877
+	// Token: 0x040084AB RID: 33963
 	public string WeaponStatePull = "Pull";
 
-	// Token: 0x04008456 RID: 33878
+	// Token: 0x040084AC RID: 33964
 	public string WeaponStateSwing = "Swing";
 
-	// Token: 0x04008457 RID: 33879
+	// Token: 0x040084AD RID: 33965
 	public float SwingDelay = 0.5f;
 
-	// Token: 0x04008458 RID: 33880
+	// Token: 0x040084AE RID: 33966
 	public float SwingDuration = 0.5f;
 
-	// Token: 0x04008459 RID: 33881
+	// Token: 0x040084AF RID: 33967
 	public float SwingRate = 1f;
 
-	// Token: 0x0400845A RID: 33882
+	// Token: 0x040084B0 RID: 33968
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_NextAllowedSwingTime;
 
-	// Token: 0x0400845B RID: 33883
+	// Token: 0x040084B1 RID: 33969
 	public int SwingSoftForceFrames = 50;
 
-	// Token: 0x0400845C RID: 33884
+	// Token: 0x040084B2 RID: 33970
 	public Vector3 SwingPositionSoftForce = new Vector3(-0.5f, -0.1f, 0.3f);
 
-	// Token: 0x0400845D RID: 33885
+	// Token: 0x040084B3 RID: 33971
 	public Vector3 SwingRotationSoftForce = new Vector3(50f, -25f, 0f);
 
-	// Token: 0x0400845E RID: 33886
+	// Token: 0x040084B4 RID: 33972
 	public float ImpactTime = 0.11f;
 
-	// Token: 0x0400845F RID: 33887
+	// Token: 0x040084B5 RID: 33973
 	public Vector3 ImpactPositionSpringRecoil = new Vector3(0.01f, 0.03f, -0.05f);
 
-	// Token: 0x04008460 RID: 33888
+	// Token: 0x040084B6 RID: 33974
 	public Vector3 ImpactPositionSpring2Recoil = Vector3.zero;
 
-	// Token: 0x04008461 RID: 33889
+	// Token: 0x040084B7 RID: 33975
 	public Vector3 ImpactRotationSpringRecoil = Vector3.zero;
 
-	// Token: 0x04008462 RID: 33890
+	// Token: 0x040084B8 RID: 33976
 	public Vector3 ImpactRotationSpring2Recoil = new Vector3(0f, 0f, 10f);
 
-	// Token: 0x04008463 RID: 33891
+	// Token: 0x040084B9 RID: 33977
 	public string DamageMethodName = "Damage";
 
-	// Token: 0x04008464 RID: 33892
+	// Token: 0x040084BA RID: 33978
 	public float Damage = 5f;
 
-	// Token: 0x04008465 RID: 33893
+	// Token: 0x040084BB RID: 33979
 	public float DamageRadius = 0.3f;
 
-	// Token: 0x04008466 RID: 33894
+	// Token: 0x040084BC RID: 33980
 	public float DamageRange = 2f;
 
-	// Token: 0x04008467 RID: 33895
+	// Token: 0x040084BD RID: 33981
 	public float DamageForce = 1000f;
 
-	// Token: 0x04008468 RID: 33896
+	// Token: 0x040084BE RID: 33982
 	public bool AttackPickRandomState = true;
 
-	// Token: 0x04008469 RID: 33897
+	// Token: 0x040084BF RID: 33983
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_AttackCurrent;
 
-	// Token: 0x0400846A RID: 33898
+	// Token: 0x040084C0 RID: 33984
 	public float SparkFactor = 0.1f;
 
-	// Token: 0x0400846B RID: 33899
+	// Token: 0x040084C1 RID: 33985
 	public GameObject m_DustPrefab;
 
-	// Token: 0x0400846C RID: 33900
+	// Token: 0x040084C2 RID: 33986
 	public GameObject m_SparkPrefab;
 
-	// Token: 0x0400846D RID: 33901
+	// Token: 0x040084C3 RID: 33987
 	public GameObject m_DebrisPrefab;
 
-	// Token: 0x0400846E RID: 33902
+	// Token: 0x040084C4 RID: 33988
 	public List<global::UnityEngine.Object> SoundSwing = new List<global::UnityEngine.Object>();
 
-	// Token: 0x0400846F RID: 33903
+	// Token: 0x040084C5 RID: 33989
 	public List<global::UnityEngine.Object> SoundImpact = new List<global::UnityEngine.Object>();
 
-	// Token: 0x04008470 RID: 33904
+	// Token: 0x040084C6 RID: 33990
 	public Vector2 SoundSwingPitch = new Vector2(0.5f, 1.5f);
 
-	// Token: 0x04008471 RID: 33905
+	// Token: 0x040084C7 RID: 33991
 	public Vector2 SoundImpactPitch = new Vector2(1f, 1.5f);
 
-	// Token: 0x04008472 RID: 33906
+	// Token: 0x040084C8 RID: 33992
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle SwingDelayTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008473 RID: 33907
+	// Token: 0x040084C9 RID: 33993
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle ImpactTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008474 RID: 33908
+	// Token: 0x040084CA RID: 33994
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle SwingDurationTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008475 RID: 33909
+	// Token: 0x040084CB RID: 33995
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle ResetTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008476 RID: 33910
+	// Token: 0x040084CC RID: 33996
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009F3 RID: 2547
+// Token: 0x020009FD RID: 2557
 [Preserve]
 public class RewardQuest : BaseReward
 {
-	// Token: 0x06004C0D RID: 19469 RVA: 0x001D7C9E File Offset: 0x001D5E9E
+	// Token: 0x06004BDC RID: 19420 RVA: 0x001D8F4E File Offset: 0x001D714E
 	public override void SetupReward()
 	{
 		base.Description = Localization.Get("RewardQuest_keyword", false, null);
@@ -13,7 +13,7 @@ public class RewardQuest : BaseReward
 		base.Icon = "ui_game_symbol_quest";
 	}
 
-	// Token: 0x06004C0E RID: 19470 RVA: 0x001D7CD4 File Offset: 0x001D5ED4
+	// Token: 0x06004BDD RID: 19421 RVA: 0x001D8F84 File Offset: 0x001D7184
 	public override void GiveReward(EntityPlayer player)
 	{
 		Quest quest = QuestClass.CreateQuest(base.ID);
@@ -21,10 +21,10 @@ public class RewardQuest : BaseReward
 		{
 			quest.PreviousQuest = QuestClass.GetQuest(base.OwnerQuest.ID).Name;
 		}
-		player.QuestJournal.AddQuest(quest, true);
+		player.QuestJournal.AddQuest(quest, Quest.QuestSource.QuestSystem, true);
 	}
 
-	// Token: 0x06004C0F RID: 19471 RVA: 0x001D7D20 File Offset: 0x001D5F20
+	// Token: 0x06004BDE RID: 19422 RVA: 0x001D8FD0 File Offset: 0x001D71D0
 	public override BaseReward Clone()
 	{
 		RewardQuest rewardQuest = new RewardQuest();
@@ -33,7 +33,7 @@ public class RewardQuest : BaseReward
 		return rewardQuest;
 	}
 
-	// Token: 0x06004C10 RID: 19472 RVA: 0x001D7D48 File Offset: 0x001D5F48
+	// Token: 0x06004BDF RID: 19423 RVA: 0x001D8FF8 File Offset: 0x001D71F8
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -47,12 +47,12 @@ public class RewardQuest : BaseReward
 		}
 	}
 
-	// Token: 0x04003BCA RID: 15306
+	// Token: 0x04003BD7 RID: 15319
 	public static string PropQuest = "quest";
 
-	// Token: 0x04003BCB RID: 15307
+	// Token: 0x04003BD8 RID: 15320
 	public static string PropChainQuest = "chainquest";
 
-	// Token: 0x04003BCC RID: 15308
+	// Token: 0x04003BD9 RID: 15321
 	public bool IsChainQuest = true;
 }

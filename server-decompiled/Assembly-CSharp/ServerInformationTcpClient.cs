@@ -4,16 +4,16 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-// Token: 0x0200089F RID: 2207
+// Token: 0x020008A2 RID: 2210
 public static class ServerInformationTcpClient
 {
-	// Token: 0x0600402B RID: 16427 RVA: 0x0019123A File Offset: 0x0018F43A
+	// Token: 0x06003FB9 RID: 16313 RVA: 0x0019102A File Offset: 0x0018F22A
 	public static void RequestRules(GameServerInfo _gsi, bool _ignoreTimeouts, ServerInformationTcpClient.RulesRequestDone _callback)
 	{
 		ThreadManager.StartCoroutine(ServerInformationTcpClient.RequestRulesTcpCo(_gsi, _ignoreTimeouts, _callback));
 	}
 
-	// Token: 0x0600402C RID: 16428 RVA: 0x0019124A File Offset: 0x0018F44A
+	// Token: 0x06003FBA RID: 16314 RVA: 0x0019103A File Offset: 0x0018F23A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator RequestRulesTcpCo(GameServerInfo _gsi, bool _ignoreTimeoutsAndRefusedConnections, ServerInformationTcpClient.RulesRequestDone _callback)
 	{
@@ -185,33 +185,33 @@ public static class ServerInformationTcpClient
 		yield break;
 	}
 
-	// Token: 0x020008A0 RID: 2208
+	// Token: 0x020008A3 RID: 2211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EGameServerInfoReadState
 	{
-		// Token: 0x040033B9 RID: 13241
+		// Token: 0x040033A4 RID: 13220
 		Size1,
-		// Token: 0x040033BA RID: 13242
+		// Token: 0x040033A5 RID: 13221
 		Size2,
-		// Token: 0x040033BB RID: 13243
+		// Token: 0x040033A6 RID: 13222
 		Size3,
-		// Token: 0x040033BC RID: 13244
+		// Token: 0x040033A7 RID: 13223
 		Size4,
-		// Token: 0x040033BD RID: 13245
+		// Token: 0x040033A8 RID: 13224
 		Size5,
-		// Token: 0x040033BE RID: 13246
+		// Token: 0x040033A9 RID: 13225
 		Break1,
-		// Token: 0x040033BF RID: 13247
+		// Token: 0x040033AA RID: 13226
 		Break2,
-		// Token: 0x040033C0 RID: 13248
+		// Token: 0x040033AB RID: 13227
 		Data,
-		// Token: 0x040033C1 RID: 13249
+		// Token: 0x040033AC RID: 13228
 		Done,
-		// Token: 0x040033C2 RID: 13250
+		// Token: 0x040033AD RID: 13229
 		Error
 	}
 
-	// Token: 0x020008A1 RID: 2209
-	// (Invoke) Token: 0x0600402E RID: 16430
+	// Token: 0x020008A4 RID: 2212
+	// (Invoke) Token: 0x06003FBC RID: 16316
 	public delegate void RulesRequestDone(bool _success, string _message, GameServerInfo _gsi);
 }

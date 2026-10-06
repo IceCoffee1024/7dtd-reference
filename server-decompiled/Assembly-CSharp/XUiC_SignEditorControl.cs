@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001031 RID: 4145
+// Token: 0x02001040 RID: 4160
 [Preserve]
 public class XUiC_SignEditorControl : XUiController
 {
-	// Token: 0x17000F4A RID: 3914
-	// (get) Token: 0x06008348 RID: 33608 RVA: 0x0031F6E6 File Offset: 0x0031D8E6
-	// (set) Token: 0x06008349 RID: 33609 RVA: 0x0031F6EE File Offset: 0x0031D8EE
+	// Token: 0x17000F71 RID: 3953
+	// (get) Token: 0x06008357 RID: 33623 RVA: 0x0032279E File Offset: 0x0032099E
+	// (set) Token: 0x06008358 RID: 33624 RVA: 0x003227A6 File Offset: 0x003209A6
 	public object defaultValue
 	{
 		get
@@ -21,7 +21,7 @@ public class XUiC_SignEditorControl : XUiController
 		}
 	}
 
-	// Token: 0x0600834A RID: 33610 RVA: 0x0031F704 File Offset: 0x0031D904
+	// Token: 0x06008359 RID: 33625 RVA: 0x003227BC File Offset: 0x003209BC
 	public override void Init()
 	{
 		base.Init();
@@ -39,7 +39,7 @@ public class XUiC_SignEditorControl : XUiController
 		}
 	}
 
-	// Token: 0x0600834B RID: 33611 RVA: 0x0031F798 File Offset: 0x0031D998
+	// Token: 0x0600835A RID: 33626 RVA: 0x00322850 File Offset: 0x00320A50
 	public virtual void SetDefault()
 	{
 		if (this.defaultValue == null)
@@ -82,16 +82,16 @@ public class XUiC_SignEditorControl : XUiController
 		xuiC_TextInput.TriggerOnChangeHandler(false);
 	}
 
-	// Token: 0x04006167 RID: 24935
+	// Token: 0x04006192 RID: 24978
 	public XUiV_Label label;
 
-	// Token: 0x04006168 RID: 24936
+	// Token: 0x04006193 RID: 24979
 	public XUiController control;
 
-	// Token: 0x04006169 RID: 24937
+	// Token: 0x04006194 RID: 24980
 	public XUiController controlB;
 
-	// Token: 0x0400616A RID: 24938
+	// Token: 0x04006195 RID: 24981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _defaultValue;
 }

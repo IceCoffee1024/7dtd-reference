@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C25 RID: 3109
+// Token: 0x02000C37 RID: 3127
 public class DChunkSquareMesh
 {
-	// Token: 0x06005ECE RID: 24270 RVA: 0x0024F768 File Offset: 0x0024D968
+	// Token: 0x06005EE7 RID: 24295 RVA: 0x00252A64 File Offset: 0x00250C64
 	public DChunkSquareMesh(DistantChunkMap DCMap, int LODLevel)
 	{
 		DistantChunkMapInfo distantChunkMapInfo = DCMap.ChunkMapInfoArray[LODLevel];
 		this.Init(distantChunkMapInfo.BaseMesh.Vertices.Length, LODLevel, distantChunkMapInfo.ChunkResolution, distantChunkMapInfo.ColliderResolution, DCMap.NbResLevel, distantChunkMapInfo.BaseMesh.Triangles.Length);
 	}
 
-	// Token: 0x06005ECF RID: 24271 RVA: 0x0024F7C8 File Offset: 0x0024D9C8
+	// Token: 0x06005EE8 RID: 24296 RVA: 0x00252AC4 File Offset: 0x00250CC4
 	public void Init(int NbVertices, int ResLevel, int Resolution, int ColliderResolution, int MaxNbResLevel, int NbTriangles)
 	{
 		this.Normals = new Vector3[NbVertices];
@@ -25,36 +25,36 @@ public class DChunkSquareMesh
 		this.ColVerticesHeight = new float[ColliderResolution * ColliderResolution];
 	}
 
-	// Token: 0x040049B5 RID: 18869
+	// Token: 0x040049F4 RID: 18932
 	public Vector3[] Normals;
 
-	// Token: 0x040049B6 RID: 18870
+	// Token: 0x040049F5 RID: 18933
 	public Vector4[] Tangents;
 
-	// Token: 0x040049B7 RID: 18871
+	// Token: 0x040049F6 RID: 18934
 	public Vector3[] EdgeCorNormals;
 
-	// Token: 0x040049B8 RID: 18872
+	// Token: 0x040049F7 RID: 18935
 	public Color[] Colors;
 
-	// Token: 0x040049B9 RID: 18873
+	// Token: 0x040049F8 RID: 18936
 	public int[] TextureId;
 
-	// Token: 0x040049BA RID: 18874
+	// Token: 0x040049F9 RID: 18937
 	public Bounds ChunkBound;
 
-	// Token: 0x040049BB RID: 18875
+	// Token: 0x040049FA RID: 18938
 	public int WaterPlaneBlockId;
 
-	// Token: 0x040049BC RID: 18876
+	// Token: 0x040049FB RID: 18939
 	public Vector3[] ColVertices;
 
-	// Token: 0x040049BD RID: 18877
+	// Token: 0x040049FC RID: 18940
 	public float[] ColVerticesHeight;
 
-	// Token: 0x040049BE RID: 18878
+	// Token: 0x040049FD RID: 18941
 	public VoxelMeshTerrain VoxelMesh = new VoxelMeshTerrain(0, 500);
 
-	// Token: 0x040049BF RID: 18879
+	// Token: 0x040049FE RID: 18942
 	public bool[] IsWater;
 }

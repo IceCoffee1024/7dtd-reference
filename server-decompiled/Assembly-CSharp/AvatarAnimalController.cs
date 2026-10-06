@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000BC RID: 188
+// Token: 0x020000BE RID: 190
 [Preserve]
 public class AvatarAnimalController : AvatarController
 {
-	// Token: 0x060003AC RID: 940 RVA: 0x0001B0CC File Offset: 0x000192CC
+	// Token: 0x060003B2 RID: 946 RVA: 0x0001B1C4 File Offset: 0x000193C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -18,7 +18,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003AD RID: 941 RVA: 0x0001B118 File Offset: 0x00019318
+	// Token: 0x060003B3 RID: 947 RVA: 0x0001B210 File Offset: 0x00019410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void assignBodyParts()
 	{
@@ -35,7 +35,7 @@ public class AvatarAnimalController : AvatarController
 		this.limbScale = (this.head.position - transform.position).magnitude * 1.32f / this.head.lossyScale.x;
 	}
 
-	// Token: 0x060003AE RID: 942 RVA: 0x0001B1F0 File Offset: 0x000193F0
+	// Token: 0x060003B4 RID: 948 RVA: 0x0001B2E8 File Offset: 0x000194E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Transform SpawnLimbGore(Transform limbT, bool isLeft, string path, bool restoreState)
 	{
@@ -96,7 +96,7 @@ public class AvatarAnimalController : AvatarController
 		return transform;
 	}
 
-	// Token: 0x060003AF RID: 943 RVA: 0x0001B408 File Offset: 0x00019608
+	// Token: 0x060003B5 RID: 949 RVA: 0x0001B500 File Offset: 0x00019700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform SpawnLimbGore(Transform parent, string path, bool restoreState)
 	{
@@ -126,7 +126,7 @@ public class AvatarAnimalController : AvatarController
 		return null;
 	}
 
-	// Token: 0x060003B0 RID: 944 RVA: 0x0001B4BC File Offset: 0x000196BC
+	// Token: 0x060003B6 RID: 950 RVA: 0x0001B5B4 File Offset: 0x000197B4
 	public override void RemoveLimb(BodyDamage _bodyDamage, bool restoreState)
 	{
 		EnumBodyPartHit bodyPartHit = _bodyDamage.bodyPartHit;
@@ -192,7 +192,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003B1 RID: 945 RVA: 0x0001B694 File Offset: 0x00019894
+	// Token: 0x060003B7 RID: 951 RVA: 0x0001B78C File Offset: 0x0001998C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MakeDismemberedPart(uint bodyDamageFlag, EnumDamageTypes damageType, Transform partT, bool isLeft, bool restoreState)
 	{
@@ -207,7 +207,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003B2 RID: 946 RVA: 0x0001B6C8 File Offset: 0x000198C8
+	// Token: 0x060003B8 RID: 952 RVA: 0x0001B7C0 File Offset: 0x000199C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcDismemberedPart(Transform t, Transform partT, DismemberedPartData part)
 	{
@@ -226,7 +226,7 @@ public class AvatarAnimalController : AvatarController
 		DismembermentManager.SpawnParticleEffect(new ParticleEffect("blood_impact", t.position + Origin.position, Quaternion.identity, 1f, Color.white), -1);
 	}
 
-	// Token: 0x060003B3 RID: 947 RVA: 0x0001B75C File Offset: 0x0001995C
+	// Token: 0x060003B9 RID: 953 RVA: 0x0001B854 File Offset: 0x00019A54
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		if (!this.bipedT)
@@ -251,20 +251,20 @@ public class AvatarAnimalController : AvatarController
 		this._setBool(AvatarController.isAliveHash, this.entity.IsAlive(), true);
 	}
 
-	// Token: 0x060003B4 RID: 948 RVA: 0x0001B83E File Offset: 0x00019A3E
+	// Token: 0x060003BA RID: 954 RVA: 0x0001B936 File Offset: 0x00019B36
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform FindTransform(string _name)
 	{
 		return this.bipedT.FindInChildren(_name);
 	}
 
-	// Token: 0x060003B5 RID: 949 RVA: 0x0001B84C File Offset: 0x00019A4C
+	// Token: 0x060003BB RID: 955 RVA: 0x0001B944 File Offset: 0x00019B44
 	public override Transform GetRightHandTransform()
 	{
 		return this.rightHandT;
 	}
 
-	// Token: 0x060003B6 RID: 950 RVA: 0x0001B854 File Offset: 0x00019A54
+	// Token: 0x060003BC RID: 956 RVA: 0x0001B94C File Offset: 0x00019B4C
 	public override AvatarController.ActionState GetActionState()
 	{
 		if (this.attackPlayingTime > 0f)
@@ -287,13 +287,13 @@ public class AvatarAnimalController : AvatarController
 		return AvatarController.ActionState.None;
 	}
 
-	// Token: 0x060003B7 RID: 951 RVA: 0x0001B8A8 File Offset: 0x00019AA8
+	// Token: 0x060003BD RID: 957 RVA: 0x0001B9A0 File Offset: 0x00019BA0
 	public override bool IsActionActive()
 	{
 		return this.GetActionState() > AvatarController.ActionState.None;
 	}
 
-	// Token: 0x060003B8 RID: 952 RVA: 0x0001B8B3 File Offset: 0x00019AB3
+	// Token: 0x060003BE RID: 958 RVA: 0x0001B9AB File Offset: 0x00019BAB
 	public override void StartAction(int _animType)
 	{
 		if (_animType < 3000)
@@ -307,13 +307,13 @@ public class AvatarAnimalController : AvatarController
 		this.actionTimeActive = 0.2f;
 	}
 
-	// Token: 0x060003B9 RID: 953 RVA: 0x0001B8F3 File Offset: 0x00019AF3
+	// Token: 0x060003BF RID: 959 RVA: 0x0001B9EB File Offset: 0x00019BEB
 	public override bool IsAnimationAttackPlaying()
 	{
 		return this.attackPlayingTime > 0f || (!this.anim.IsInTransition(0) && this.baseStateInfo.tagHash == AvatarController.attackHash);
 	}
 
-	// Token: 0x060003BA RID: 954 RVA: 0x0001B926 File Offset: 0x00019B26
+	// Token: 0x060003C0 RID: 960 RVA: 0x0001BA1E File Offset: 0x00019C1E
 	public override void StartAnimationAttack()
 	{
 		if (!this.entity.isEntityRemote)
@@ -324,25 +324,25 @@ public class AvatarAnimalController : AvatarController
 		this._setTrigger(AvatarController.attackTriggerHash, true);
 	}
 
-	// Token: 0x060003BB RID: 955 RVA: 0x0001B957 File Offset: 0x00019B57
+	// Token: 0x060003C1 RID: 961 RVA: 0x0001BA4F File Offset: 0x00019C4F
 	public override bool IsAnimationSpecialAttackPlaying()
 	{
 		return this.IsAnimationAttackPlaying();
 	}
 
-	// Token: 0x060003BC RID: 956 RVA: 0x0001B957 File Offset: 0x00019B57
+	// Token: 0x060003C2 RID: 962 RVA: 0x0001BA4F File Offset: 0x00019C4F
 	public override bool IsAnimationSpecialAttack2Playing()
 	{
 		return this.IsAnimationAttackPlaying();
 	}
 
-	// Token: 0x060003BD RID: 957 RVA: 0x0001B957 File Offset: 0x00019B57
+	// Token: 0x060003C3 RID: 963 RVA: 0x0001BA4F File Offset: 0x00019C4F
 	public override bool IsAnimationRagingPlaying()
 	{
 		return this.IsAnimationAttackPlaying();
 	}
 
-	// Token: 0x060003BE RID: 958 RVA: 0x0001B95F File Offset: 0x00019B5F
+	// Token: 0x060003C4 RID: 964 RVA: 0x0001BA57 File Offset: 0x00019C57
 	public override void SetAlive()
 	{
 		this._setBool(AvatarController.isAliveHash, true, true);
@@ -350,7 +350,7 @@ public class AvatarAnimalController : AvatarController
 		this._setTrigger(AvatarController.triggerAliveHash, true);
 	}
 
-	// Token: 0x060003BF RID: 959 RVA: 0x0001B988 File Offset: 0x00019B88
+	// Token: 0x060003C5 RID: 965 RVA: 0x0001BA80 File Offset: 0x00019C80
 	public override void SetVisible(bool _b)
 	{
 		if (this.m_bVisible != _b || !this.visInit)
@@ -369,7 +369,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003C0 RID: 960 RVA: 0x0001B9E4 File Offset: 0x00019BE4
+	// Token: 0x060003C6 RID: 966 RVA: 0x0001BADC File Offset: 0x00019CDC
 	public override void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float _random, float _duration)
 	{
 		if (!base.CheckHit(_duration))
@@ -388,7 +388,7 @@ public class AvatarAnimalController : AvatarController
 		this._setTrigger(AvatarController.painTriggerHash, true);
 	}
 
-	// Token: 0x060003C1 RID: 961 RVA: 0x0001BA84 File Offset: 0x00019C84
+	// Token: 0x060003C7 RID: 967 RVA: 0x0001BB7C File Offset: 0x00019D7C
 	public override bool IsAnimationHitRunning()
 	{
 		if (this.hitLayerIndex < 0)
@@ -399,7 +399,7 @@ public class AvatarAnimalController : AvatarController
 		return (currentAnimatorStateInfo.tagHash == AvatarController.hitHash && currentAnimatorStateInfo.normalizedTime < 0.55f) || this.anim.IsInTransition(this.hitLayerIndex);
 	}
 
-	// Token: 0x060003C2 RID: 962 RVA: 0x0001BAE0 File Offset: 0x00019CE0
+	// Token: 0x060003C8 RID: 968 RVA: 0x0001BBD8 File Offset: 0x00019DD8
 	public override void StartAnimationJump(AnimJumpMode jumpMode)
 	{
 		this.idleTime = 0f;
@@ -418,7 +418,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003C3 RID: 963 RVA: 0x0001BB43 File Offset: 0x00019D43
+	// Token: 0x060003C9 RID: 969 RVA: 0x0001BC3B File Offset: 0x00019E3B
 	public override void StartEating()
 	{
 		if (!this.isEating)
@@ -428,7 +428,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003C4 RID: 964 RVA: 0x0001BB60 File Offset: 0x00019D60
+	// Token: 0x060003CA RID: 970 RVA: 0x0001BC58 File Offset: 0x00019E58
 	public override void StopEating()
 	{
 		if (this.isEating)
@@ -438,13 +438,13 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003C5 RID: 965 RVA: 0x0001BB7D File Offset: 0x00019D7D
+	// Token: 0x060003CB RID: 971 RVA: 0x0001BC75 File Offset: 0x00019E75
 	public override void SetSwim(bool _enable)
 	{
 		this._setBool(AvatarController.isSwimHash, _enable, true);
 	}
 
-	// Token: 0x060003C6 RID: 966 RVA: 0x0001BB8C File Offset: 0x00019D8C
+	// Token: 0x060003CC RID: 972 RVA: 0x0001BC84 File Offset: 0x00019E84
 	public override void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float _random)
 	{
 		this.isInDeathAnim = true;
@@ -457,7 +457,7 @@ public class AvatarAnimalController : AvatarController
 		this._setTrigger(AvatarController.deathTriggerHash, true);
 	}
 
-	// Token: 0x060003C7 RID: 967 RVA: 0x0001BC01 File Offset: 0x00019E01
+	// Token: 0x060003CD RID: 973 RVA: 0x0001BCF9 File Offset: 0x00019EF9
 	public override Transform GetActiveModelRoot()
 	{
 		if (!this.modelT)
@@ -467,7 +467,7 @@ public class AvatarAnimalController : AvatarController
 		return this.modelT;
 	}
 
-	// Token: 0x060003C8 RID: 968 RVA: 0x0001BC20 File Offset: 0x00019E20
+	// Token: 0x060003CE RID: 974 RVA: 0x0001BD18 File Offset: 0x00019F18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -483,7 +483,7 @@ public class AvatarAnimalController : AvatarController
 		}
 	}
 
-	// Token: 0x060003C9 RID: 969 RVA: 0x0001BC80 File Offset: 0x00019E80
+	// Token: 0x060003CF RID: 975 RVA: 0x0001BD78 File Offset: 0x00019F78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void LateUpdate()
 	{
@@ -543,124 +543,124 @@ public class AvatarAnimalController : AvatarController
 		this.idleTime += Time.deltaTime;
 	}
 
-	// Token: 0x060003CA RID: 970 RVA: 0x0001BE8D File Offset: 0x0001A08D
+	// Token: 0x060003D0 RID: 976 RVA: 0x0001BF85 File Offset: 0x0001A185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLayerStateInfo()
 	{
 		this.baseStateInfo = this.anim.GetCurrentAnimatorStateInfo(0);
 	}
 
-	// Token: 0x0400044B RID: 1099
+	// Token: 0x0400044E RID: 1102
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool visInit;
 
-	// Token: 0x0400044C RID: 1100
+	// Token: 0x0400044F RID: 1103
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_bVisible;
 
-	// Token: 0x0400044D RID: 1101
+	// Token: 0x04000450 RID: 1104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform modelT;
 
-	// Token: 0x0400044E RID: 1102
+	// Token: 0x04000451 RID: 1105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform bipedT;
 
-	// Token: 0x0400044F RID: 1103
+	// Token: 0x04000452 RID: 1106
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform rightHandT;
 
-	// Token: 0x04000450 RID: 1104
+	// Token: 0x04000453 RID: 1107
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform head;
 
-	// Token: 0x04000451 RID: 1105
+	// Token: 0x04000454 RID: 1108
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform leftUpperArm;
 
-	// Token: 0x04000452 RID: 1106
+	// Token: 0x04000455 RID: 1109
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform rightUpperArm;
 
-	// Token: 0x04000453 RID: 1107
+	// Token: 0x04000456 RID: 1110
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform leftUpperLeg;
 
-	// Token: 0x04000454 RID: 1108
+	// Token: 0x04000457 RID: 1111
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform rightUpperLeg;
 
-	// Token: 0x04000455 RID: 1109
+	// Token: 0x04000458 RID: 1112
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float limbScale;
 
-	// Token: 0x04000456 RID: 1110
+	// Token: 0x04000459 RID: 1113
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimatorStateInfo baseStateInfo;
 
-	// Token: 0x04000457 RID: 1111
+	// Token: 0x0400045A RID: 1114
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float idleTime;
 
-	// Token: 0x04000458 RID: 1112
+	// Token: 0x0400045B RID: 1115
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float actionTimeActive;
 
-	// Token: 0x04000459 RID: 1113
+	// Token: 0x0400045C RID: 1116
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float attackPlayingTime;
 
-	// Token: 0x0400045A RID: 1114
+	// Token: 0x0400045D RID: 1117
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool headDismembered;
 
-	// Token: 0x0400045B RID: 1115
+	// Token: 0x0400045E RID: 1118
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftUpperArmDismembered;
 
-	// Token: 0x0400045C RID: 1116
+	// Token: 0x0400045F RID: 1119
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightUpperArmDismembered;
 
-	// Token: 0x0400045D RID: 1117
+	// Token: 0x04000460 RID: 1120
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftUpperLegDismembered;
 
-	// Token: 0x0400045E RID: 1118
+	// Token: 0x04000461 RID: 1121
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightUpperLegDismembered;
 
-	// Token: 0x0400045F RID: 1119
+	// Token: 0x04000462 RID: 1122
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isInDeathAnim;
 
-	// Token: 0x04000460 RID: 1120
+	// Token: 0x04000463 RID: 1123
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int missingMotorLimbs;
 
-	// Token: 0x04000461 RID: 1121
+	// Token: 0x04000464 RID: 1124
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isEating;

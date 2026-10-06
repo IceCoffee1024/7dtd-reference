@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200083E RID: 2110
+// Token: 0x0200083F RID: 2111
 [Preserve]
 public class NetPackageQuestTreasurePoint : NetPackage
 {
-	// Token: 0x06003DE0 RID: 15840 RVA: 0x0018830C File Offset: 0x0018650C
+	// Token: 0x06003D92 RID: 15762 RVA: 0x00187E44 File Offset: 0x00186044
 	public NetPackageQuestTreasurePoint Setup(int _playerId, float _distance, int _offset, int _questCode, int posX = 0, int posY = -1, int posZ = 0, bool _useNearby = false)
 	{
 		this.playerId = _playerId;
@@ -20,7 +20,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE1 RID: 15841 RVA: 0x00188364 File Offset: 0x00186564
+	// Token: 0x06003D93 RID: 15763 RVA: 0x00187E9C File Offset: 0x0018609C
 	public NetPackageQuestTreasurePoint Setup(int _playerId, int _questCode, int _blocksPerReduction, Vector3i _position, Vector3 _treasureOffset)
 	{
 		this.playerId = _playerId;
@@ -34,7 +34,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE2 RID: 15842 RVA: 0x001883B0 File Offset: 0x001865B0
+	// Token: 0x06003D94 RID: 15764 RVA: 0x00187EE8 File Offset: 0x001860E8
 	public NetPackageQuestTreasurePoint Setup(int _questCode, float _distance, int _offset, float _treasureRadius, Vector3 _startPosition, int _playerId, bool _useNearby, int _blocksPerReduction)
 	{
 		this.playerId = _playerId;
@@ -50,7 +50,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE3 RID: 15843 RVA: 0x00188412 File Offset: 0x00186612
+	// Token: 0x06003D95 RID: 15765 RVA: 0x00187F4A File Offset: 0x0018614A
 	public NetPackageQuestTreasurePoint Setup(int _questCode, Vector3i _updatedPosition)
 	{
 		this.questCode = _questCode;
@@ -59,7 +59,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE4 RID: 15844 RVA: 0x0018842A File Offset: 0x0018662A
+	// Token: 0x06003D96 RID: 15766 RVA: 0x00187F62 File Offset: 0x00186162
 	public NetPackageQuestTreasurePoint Setup(int _questCode, int _blocksPerReduction)
 	{
 		this.questCode = _questCode;
@@ -68,7 +68,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE5 RID: 15845 RVA: 0x00188444 File Offset: 0x00186644
+	// Token: 0x06003D97 RID: 15767 RVA: 0x00187F7C File Offset: 0x0018617C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.ActionType = (NetPackageQuestTreasurePoint.QuestPointActions)_br.ReadByte();
@@ -89,7 +89,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		this.useNearby = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003DE6 RID: 15846 RVA: 0x001884EC File Offset: 0x001866EC
+	// Token: 0x06003D98 RID: 15768 RVA: 0x00188024 File Offset: 0x00186224
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -111,7 +111,7 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		_bw.Write(this.useNearby);
 	}
 
-	// Token: 0x06003DE7 RID: 15847 RVA: 0x0018859C File Offset: 0x0018679C
+	// Token: 0x06003D99 RID: 15769 RVA: 0x001880D4 File Offset: 0x001862D4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -168,63 +168,57 @@ public class NetPackageQuestTreasurePoint : NetPackage
 		}
 	}
 
-	// Token: 0x06003DE8 RID: 15848 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x0400322B RID: 12843
+	// Token: 0x04003212 RID: 12818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerId;
 
-	// Token: 0x0400322C RID: 12844
+	// Token: 0x04003213 RID: 12819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float distance;
 
-	// Token: 0x0400322D RID: 12845
+	// Token: 0x04003214 RID: 12820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int offset;
 
-	// Token: 0x0400322E RID: 12846
+	// Token: 0x04003215 RID: 12821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float treasureRadius;
 
-	// Token: 0x0400322F RID: 12847
+	// Token: 0x04003216 RID: 12822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int questCode;
 
-	// Token: 0x04003230 RID: 12848
+	// Token: 0x04003217 RID: 12823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i position;
 
-	// Token: 0x04003231 RID: 12849
+	// Token: 0x04003218 RID: 12824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useNearby;
 
-	// Token: 0x04003232 RID: 12850
+	// Token: 0x04003219 RID: 12825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 treasureOffset = Vector3.zero;
 
-	// Token: 0x04003233 RID: 12851
+	// Token: 0x0400321A RID: 12826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blocksPerReduction;
 
-	// Token: 0x04003234 RID: 12852
+	// Token: 0x0400321B RID: 12827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageQuestTreasurePoint.QuestPointActions ActionType;
 
-	// Token: 0x0200083F RID: 2111
+	// Token: 0x02000840 RID: 2112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum QuestPointActions
 	{
-		// Token: 0x04003236 RID: 12854
+		// Token: 0x0400321D RID: 12829
 		GetGotoPoint,
-		// Token: 0x04003237 RID: 12855
+		// Token: 0x0400321E RID: 12830
 		GetTreasurePoint,
-		// Token: 0x04003238 RID: 12856
+		// Token: 0x0400321F RID: 12831
 		UpdateTreasurePoint,
-		// Token: 0x04003239 RID: 12857
+		// Token: 0x04003220 RID: 12832
 		UpdateBlocksPerReduction
 	}
 }

@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F7 RID: 1783
+// Token: 0x020006F9 RID: 1785
 [Preserve]
 public class MinEventActionSetScale : MinEventActionTargetedBase
 {
-	// Token: 0x060036AA RID: 13994 RVA: 0x00168EAC File Offset: 0x001670AC
+	// Token: 0x060036ED RID: 14061 RVA: 0x00169810 File Offset: 0x00167A10
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -18,7 +18,7 @@ public class MinEventActionSetScale : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036AB RID: 13995 RVA: 0x00168EF4 File Offset: 0x001670F4
+	// Token: 0x060036EE RID: 14062 RVA: 0x00169858 File Offset: 0x00167A58
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -30,7 +30,7 @@ public class MinEventActionSetScale : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C22 RID: 11298
+	// Token: 0x04002C1B RID: 11291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float scale = 1f;
 }

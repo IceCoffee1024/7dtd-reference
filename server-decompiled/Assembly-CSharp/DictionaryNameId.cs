@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013E2 RID: 5090
+// Token: 0x02001402 RID: 5122
 public class DictionaryNameId<T>
 {
-	// Token: 0x06009FC3 RID: 40899 RVA: 0x003C1F65 File Offset: 0x003C0165
+	// Token: 0x0600A06E RID: 41070 RVA: 0x003C6B01 File Offset: 0x003C4D01
 	public DictionaryNameId(DictionaryNameIdMapping _mapping)
 	{
 		this.mapping = _mapping;
 	}
 
-	// Token: 0x06009FC4 RID: 40900 RVA: 0x003C1F80 File Offset: 0x003C0180
+	// Token: 0x0600A06F RID: 41071 RVA: 0x003C6B1C File Offset: 0x003C4D1C
 	public void Add(string _name, T _value)
 	{
 		int num = this.mapping.Add(_name);
 		this.idsToValues[num] = _value;
 	}
 
-	// Token: 0x170012DB RID: 4827
-	// (get) Token: 0x06009FC5 RID: 40901 RVA: 0x003C1FA7 File Offset: 0x003C01A7
+	// Token: 0x17001320 RID: 4896
+	// (get) Token: 0x0600A070 RID: 41072 RVA: 0x003C6B43 File Offset: 0x003C4D43
 	public int Count
 	{
 		get
@@ -27,8 +27,8 @@ public class DictionaryNameId<T>
 		}
 	}
 
-	// Token: 0x170012DC RID: 4828
-	// (get) Token: 0x06009FC6 RID: 40902 RVA: 0x003C1FB4 File Offset: 0x003C01B4
+	// Token: 0x17001321 RID: 4897
+	// (get) Token: 0x0600A071 RID: 41073 RVA: 0x003C6B50 File Offset: 0x003C4D50
 	public Dictionary<int, T> Dict
 	{
 		get
@@ -37,14 +37,14 @@ public class DictionaryNameId<T>
 		}
 	}
 
-	// Token: 0x06009FC7 RID: 40903 RVA: 0x003C1FBC File Offset: 0x003C01BC
+	// Token: 0x0600A072 RID: 41074 RVA: 0x003C6B58 File Offset: 0x003C4D58
 	public bool Contains(string _name)
 	{
 		int num = this.mapping.FindId(_name);
 		return num != 0 && this.idsToValues.ContainsKey(num);
 	}
 
-	// Token: 0x06009FC8 RID: 40904 RVA: 0x003C1FE8 File Offset: 0x003C01E8
+	// Token: 0x0600A073 RID: 41075 RVA: 0x003C6B84 File Offset: 0x003C4D84
 	public T Get(int _id)
 	{
 		T t;
@@ -52,7 +52,7 @@ public class DictionaryNameId<T>
 		return t;
 	}
 
-	// Token: 0x06009FC9 RID: 40905 RVA: 0x003C2008 File Offset: 0x003C0208
+	// Token: 0x0600A074 RID: 41076 RVA: 0x003C6BA4 File Offset: 0x003C4DA4
 	public T Get(string _name)
 	{
 		int num = this.mapping.FindId(_name);
@@ -65,11 +65,11 @@ public class DictionaryNameId<T>
 		return t;
 	}
 
-	// Token: 0x040078EE RID: 30958
+	// Token: 0x04007969 RID: 31081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DictionaryNameIdMapping mapping;
 
-	// Token: 0x040078EF RID: 30959
+	// Token: 0x0400796A RID: 31082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, T> idsToValues = new Dictionary<int, T>();
 }

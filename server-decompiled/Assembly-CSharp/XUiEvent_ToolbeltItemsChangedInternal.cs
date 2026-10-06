@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02001135 RID: 4405
-// (Invoke) Token: 0x06008B3B RID: 35643
+// Token: 0x0200114D RID: 4429
+// (Invoke) Token: 0x06008BA6 RID: 35750
 public delegate void XUiEvent_ToolbeltItemsChangedInternal();

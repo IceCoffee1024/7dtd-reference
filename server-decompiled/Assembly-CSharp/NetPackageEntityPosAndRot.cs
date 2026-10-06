@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E1 RID: 2017
+// Token: 0x020007E4 RID: 2020
 [Preserve]
 public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 {
-	// Token: 0x17000632 RID: 1586
-	// (get) Token: 0x06003BA4 RID: 15268 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000657 RID: 1623
+	// (get) Token: 0x06003BB5 RID: 15285 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BA5 RID: 15269 RVA: 0x0017F890 File Offset: 0x0017DA90
+	// Token: 0x06003BB6 RID: 15286 RVA: 0x0017FDD0 File Offset: 0x0017DFD0
 	public NetPackageEntityPosAndRot Setup(Entity _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -28,7 +28,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BA6 RID: 15270 RVA: 0x0017F8E8 File Offset: 0x0017DAE8
+	// Token: 0x06003BB7 RID: 15287 RVA: 0x0017FE28 File Offset: 0x0017E028
 	public override void read(PooledBinaryReader _br)
 	{
 		base.read(_br);
@@ -45,7 +45,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		this.onGround = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003BA7 RID: 15271 RVA: 0x0017F97C File Offset: 0x0017DB7C
+	// Token: 0x06003BB8 RID: 15288 RVA: 0x0017FEBC File Offset: 0x0017E0BC
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -69,7 +69,7 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		_bw.Write(this.onGround);
 	}
 
-	// Token: 0x06003BA8 RID: 15272 RVA: 0x0017FA68 File Offset: 0x0017DC68
+	// Token: 0x06003BB9 RID: 15289 RVA: 0x0017FFA8 File Offset: 0x0017E1A8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -102,29 +102,23 @@ public class NetPackageEntityPosAndRot : NetPackageEntityTargeted
 		entity.onGround = this.onGround;
 	}
 
-	// Token: 0x06003BA9 RID: 15273 RVA: 0x0004AC4A File Offset: 0x00048E4A
-	public override int GetLength()
-	{
-		return 25;
-	}
-
-	// Token: 0x04003098 RID: 12440
+	// Token: 0x04003091 RID: 12433
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 pos;
 
-	// Token: 0x04003099 RID: 12441
+	// Token: 0x04003092 RID: 12434
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 rot;
 
-	// Token: 0x0400309A RID: 12442
+	// Token: 0x04003093 RID: 12435
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool onGround;
 
-	// Token: 0x0400309B RID: 12443
+	// Token: 0x04003094 RID: 12436
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Quaternion qrot;
 
-	// Token: 0x0400309C RID: 12444
+	// Token: 0x04003095 RID: 12437
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bUseQRotation;
 }

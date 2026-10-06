@@ -2,10 +2,10 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-// Token: 0x020012FA RID: 4858
+// Token: 0x0200131A RID: 4890
 public class VersionInformation : IComparable<VersionInformation>
 {
-	// Token: 0x060099D3 RID: 39379 RVA: 0x003A3C24 File Offset: 0x003A1E24
+	// Token: 0x06009A7F RID: 39551 RVA: 0x003A87D4 File Offset: 0x003A69D4
 	public VersionInformation(VersionInformation.EGameReleaseType _releaseType, int _major, int _minor, int _build)
 	{
 		this.ReleaseType = _releaseType;
@@ -63,7 +63,7 @@ public class VersionInformation : IComparable<VersionInformation>
 		this.IsValid = this.Major > 0;
 	}
 
-	// Token: 0x060099D4 RID: 39380 RVA: 0x003A3F50 File Offset: 0x003A2150
+	// Token: 0x06009A80 RID: 39552 RVA: 0x003A8B00 File Offset: 0x003A6D00
 	public int CompareTo(VersionInformation _other)
 	{
 		int num = this.ReleaseType.CompareTo(_other.ReleaseType);
@@ -84,19 +84,19 @@ public class VersionInformation : IComparable<VersionInformation>
 		return this.Build.CompareTo(_other.Build);
 	}
 
-	// Token: 0x060099D5 RID: 39381 RVA: 0x003A3FC7 File Offset: 0x003A21C7
+	// Token: 0x06009A81 RID: 39553 RVA: 0x003A8B77 File Offset: 0x003A6D77
 	public bool EqualsMinor(VersionInformation _other)
 	{
 		return this.ReleaseType == _other.ReleaseType && this.Major == _other.Major && this.Minor == _other.Minor;
 	}
 
-	// Token: 0x060099D6 RID: 39382 RVA: 0x003A3FF5 File Offset: 0x003A21F5
+	// Token: 0x06009A82 RID: 39554 RVA: 0x003A8BA5 File Offset: 0x003A6DA5
 	public bool EqualsMajor(VersionInformation _other)
 	{
 		return this.ReleaseType == _other.ReleaseType && this.Major == _other.Major;
 	}
 
-	// Token: 0x060099D7 RID: 39383 RVA: 0x003A4018 File Offset: 0x003A2218
+	// Token: 0x06009A83 RID: 39555 RVA: 0x003A8BC8 File Offset: 0x003A6DC8
 	public VersionInformation.EVersionComparisonResult CompareToRunningBuild()
 	{
 		VersionInformation cVersionInformation = Constants.cVersionInformation;
@@ -119,7 +119,7 @@ public class VersionInformation : IComparable<VersionInformation>
 		return VersionInformation.EVersionComparisonResult.SameBuild;
 	}
 
-	// Token: 0x060099D8 RID: 39384 RVA: 0x003A407C File Offset: 0x003A227C
+	// Token: 0x06009A84 RID: 39556 RVA: 0x003A8C2C File Offset: 0x003A6E2C
 	public static bool TryParseSerializedString(string _serializedVersionInformation, out VersionInformation _result)
 	{
 		_result = null;
@@ -152,7 +152,7 @@ public class VersionInformation : IComparable<VersionInformation>
 		return true;
 	}
 
-	// Token: 0x060099D9 RID: 39385 RVA: 0x003A40E4 File Offset: 0x003A22E4
+	// Token: 0x06009A85 RID: 39557 RVA: 0x003A8C94 File Offset: 0x003A6E94
 	public static bool TryParseLegacyString(string _legacyVersionString, out VersionInformation _verInfo)
 	{
 		Match match = VersionInformation.legacyVersionStringMatcher.Match(_legacyVersionString);
@@ -187,7 +187,7 @@ public class VersionInformation : IComparable<VersionInformation>
 		return true;
 	}
 
-	// Token: 0x060099DA RID: 39386 RVA: 0x003A417F File Offset: 0x003A237F
+	// Token: 0x06009A86 RID: 39558 RVA: 0x003A8D2F File Offset: 0x003A6F2F
 	public void Write(BinaryWriter _writer)
 	{
 		_writer.Write((byte)this.ReleaseType);
@@ -196,7 +196,7 @@ public class VersionInformation : IComparable<VersionInformation>
 		_writer.Write(this.Build);
 	}
 
-	// Token: 0x060099DB RID: 39387 RVA: 0x003A41B4 File Offset: 0x003A23B4
+	// Token: 0x06009A87 RID: 39559 RVA: 0x003A8D64 File Offset: 0x003A6F64
 	public static VersionInformation Read(BinaryReader _reader)
 	{
 		VersionInformation.EGameReleaseType egameReleaseType = (VersionInformation.EGameReleaseType)_reader.ReadByte();
@@ -206,64 +206,64 @@ public class VersionInformation : IComparable<VersionInformation>
 		return new VersionInformation(egameReleaseType, num, num2, num3);
 	}
 
-	// Token: 0x040073EE RID: 29678
+	// Token: 0x04007469 RID: 29801
 	public readonly VersionInformation.EGameReleaseType ReleaseType;
 
-	// Token: 0x040073EF RID: 29679
+	// Token: 0x0400746A RID: 29802
 	public readonly int Major;
 
-	// Token: 0x040073F0 RID: 29680
+	// Token: 0x0400746B RID: 29803
 	public readonly int Minor;
 
-	// Token: 0x040073F1 RID: 29681
+	// Token: 0x0400746C RID: 29804
 	public readonly int Build;
 
-	// Token: 0x040073F2 RID: 29682
+	// Token: 0x0400746D RID: 29805
 	public readonly bool IsValid;
 
-	// Token: 0x040073F3 RID: 29683
+	// Token: 0x0400746E RID: 29806
 	public readonly int NumericalRepresentation;
 
-	// Token: 0x040073F4 RID: 29684
+	// Token: 0x0400746F RID: 29807
 	public readonly string ShortString;
 
-	// Token: 0x040073F5 RID: 29685
+	// Token: 0x04007470 RID: 29808
 	public readonly string LongStringNoBuild;
 
-	// Token: 0x040073F6 RID: 29686
+	// Token: 0x04007471 RID: 29809
 	public readonly string LongString;
 
-	// Token: 0x040073F7 RID: 29687
+	// Token: 0x04007472 RID: 29810
 	public readonly string SerializableString;
 
-	// Token: 0x040073F8 RID: 29688
+	// Token: 0x04007473 RID: 29811
 	public readonly Version Version;
 
-	// Token: 0x040073F9 RID: 29689
+	// Token: 0x04007474 RID: 29812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex legacyVersionStringMatcher = new Regex("^\\s*Alpha\\s*(\\d+)(?:\\.(\\d+))?\\s*(?:\\(b(\\d+)\\))?\\s*$");
 
-	// Token: 0x020012FB RID: 4859
+	// Token: 0x0200131B RID: 4891
 	public enum EGameReleaseType
 	{
-		// Token: 0x040073FB RID: 29691
+		// Token: 0x04007476 RID: 29814
 		Alpha,
-		// Token: 0x040073FC RID: 29692
+		// Token: 0x04007477 RID: 29815
 		V
 	}
 
-	// Token: 0x020012FC RID: 4860
+	// Token: 0x0200131C RID: 4892
 	public enum EVersionComparisonResult
 	{
-		// Token: 0x040073FE RID: 29694
+		// Token: 0x04007479 RID: 29817
 		SameBuild,
-		// Token: 0x040073FF RID: 29695
+		// Token: 0x0400747A RID: 29818
 		SameMinor,
-		// Token: 0x04007400 RID: 29696
+		// Token: 0x0400747B RID: 29819
 		NewerMinor,
-		// Token: 0x04007401 RID: 29697
+		// Token: 0x0400747C RID: 29820
 		OlderMinor,
-		// Token: 0x04007402 RID: 29698
+		// Token: 0x0400747D RID: 29821
 		DifferentMajor
 	}
 }

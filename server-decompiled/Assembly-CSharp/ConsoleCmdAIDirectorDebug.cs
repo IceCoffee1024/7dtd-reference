@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E1 RID: 481
+// Token: 0x020001E2 RID: 482
 [Preserve]
 public class ConsoleCmdAIDirectorDebug : ConsoleCmdAbstract
 {
-	// Token: 0x06000EE0 RID: 3808 RVA: 0x00060FF8 File Offset: 0x0005F1F8
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x00060FE8 File Offset: 0x0005F1E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "aiddebug" };
 	}
 
-	// Token: 0x17000138 RID: 312
-	// (get) Token: 0x06000EE1 RID: 3809 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000130 RID: 304
+	// (get) Token: 0x06000ED4 RID: 3796 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdAIDirectorDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000139 RID: 313
-	// (get) Token: 0x06000EE2 RID: 3810 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000131 RID: 305
+	// (get) Token: 0x06000ED5 RID: 3797 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,7 +34,7 @@ public class ConsoleCmdAIDirectorDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000EE3 RID: 3811 RVA: 0x00061008 File Offset: 0x0005F208
+	// Token: 0x06000ED6 RID: 3798 RVA: 0x00060FF8 File Offset: 0x0005F1F8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		AIDirectorConstants.DebugOutput = !AIDirectorConstants.DebugOutput;
@@ -46,7 +46,7 @@ public class ConsoleCmdAIDirectorDebug : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("AIDirector debug output is OFF.");
 	}
 
-	// Token: 0x06000EE4 RID: 3812 RVA: 0x0006103D File Offset: 0x0005F23D
+	// Token: 0x06000ED7 RID: 3799 RVA: 0x0006102D File Offset: 0x0005F22D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02001494 RID: 5268
+// Token: 0x020014B4 RID: 5300
 public class RingBuffer<T>
 {
-	// Token: 0x0600A552 RID: 42322 RVA: 0x003D85FE File Offset: 0x003D67FE
+	// Token: 0x0600A600 RID: 42496 RVA: 0x003DD28A File Offset: 0x003DB48A
 	public RingBuffer(int _count)
 	{
 		this.data = new T[_count];
 	}
 
-	// Token: 0x0600A553 RID: 42323 RVA: 0x003D8614 File Offset: 0x003D6814
+	// Token: 0x0600A601 RID: 42497 RVA: 0x003DD2A0 File Offset: 0x003DB4A0
 	public void Add(T _el)
 	{
 		T[] array = this.data;
@@ -27,8 +27,8 @@ public class RingBuffer<T>
 		}
 	}
 
-	// Token: 0x1700136B RID: 4971
-	// (get) Token: 0x0600A554 RID: 42324 RVA: 0x003D8681 File Offset: 0x003D6881
+	// Token: 0x170013B0 RID: 5040
+	// (get) Token: 0x0600A602 RID: 42498 RVA: 0x003DD30D File Offset: 0x003DB50D
 	public int Count
 	{
 		get
@@ -37,14 +37,14 @@ public class RingBuffer<T>
 		}
 	}
 
-	// Token: 0x0600A555 RID: 42325 RVA: 0x003D8689 File Offset: 0x003D6889
+	// Token: 0x0600A603 RID: 42499 RVA: 0x003DD315 File Offset: 0x003DB515
 	public void Clear()
 	{
 		this.count = 0;
 		this.idx = 0;
 	}
 
-	// Token: 0x0600A556 RID: 42326 RVA: 0x003D8699 File Offset: 0x003D6899
+	// Token: 0x0600A604 RID: 42500 RVA: 0x003DD325 File Offset: 0x003DB525
 	public void SetToLast()
 	{
 		this.readIdx = this.idx - 1;
@@ -54,13 +54,13 @@ public class RingBuffer<T>
 		}
 	}
 
-	// Token: 0x0600A557 RID: 42327 RVA: 0x003D86C2 File Offset: 0x003D68C2
+	// Token: 0x0600A605 RID: 42501 RVA: 0x003DD34E File Offset: 0x003DB54E
 	public T Peek()
 	{
 		return this.data[this.readIdx];
 	}
 
-	// Token: 0x0600A558 RID: 42328 RVA: 0x003D86D8 File Offset: 0x003D68D8
+	// Token: 0x0600A606 RID: 42502 RVA: 0x003DD364 File Offset: 0x003DB564
 	public T GetPrev()
 	{
 		T[] array = this.data;
@@ -74,7 +74,7 @@ public class RingBuffer<T>
 		return t;
 	}
 
-	// Token: 0x0600A559 RID: 42329 RVA: 0x003D871C File Offset: 0x003D691C
+	// Token: 0x0600A607 RID: 42503 RVA: 0x003DD3A8 File Offset: 0x003DB5A8
 	public T GetNext()
 	{
 		T[] array = this.data;
@@ -88,19 +88,19 @@ public class RingBuffer<T>
 		return t;
 	}
 
-	// Token: 0x04007B27 RID: 31527
+	// Token: 0x04007BA2 RID: 31650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[] data;
 
-	// Token: 0x04007B28 RID: 31528
+	// Token: 0x04007BA3 RID: 31651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int idx;
 
-	// Token: 0x04007B29 RID: 31529
+	// Token: 0x04007BA4 RID: 31652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count;
 
-	// Token: 0x04007B2A RID: 31530
+	// Token: 0x04007BA5 RID: 31653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int readIdx;
 }

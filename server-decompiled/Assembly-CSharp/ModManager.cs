@@ -5,11 +5,11 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 
-// Token: 0x02000747 RID: 1863
+// Token: 0x02000749 RID: 1865
 public static class ModManager
 {
-	// Token: 0x1700057D RID: 1405
-	// (get) Token: 0x06003797 RID: 14231 RVA: 0x0016E3E4 File Offset: 0x0016C5E4
+	// Token: 0x170005A3 RID: 1443
+	// (get) Token: 0x060037DA RID: 14298 RVA: 0x0016ED48 File Offset: 0x0016CF48
 	public static string ModsBasePath
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -19,13 +19,13 @@ public static class ModManager
 		}
 	}
 
-	// Token: 0x06003798 RID: 14232 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060037DB RID: 14299 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void initModManager()
 	{
 	}
 
-	// Token: 0x06003799 RID: 14233 RVA: 0x0016E3F8 File Offset: 0x0016C5F8
+	// Token: 0x060037DC RID: 14300 RVA: 0x0016ED5C File Offset: 0x0016CF5C
 	public static void LoadMods()
 	{
 		ModManager.initModManager();
@@ -51,7 +51,7 @@ public static class ModManager
 		Log.Out("[MODS] Loading done");
 	}
 
-	// Token: 0x0600379A RID: 14234 RVA: 0x0016E508 File Offset: 0x0016C708
+	// Token: 0x060037DD RID: 14301 RVA: 0x0016EE6C File Offset: 0x0016D06C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool loadModsFromFolder(string _folder)
 	{
@@ -89,13 +89,13 @@ public static class ModManager
 		return true;
 	}
 
-	// Token: 0x0600379B RID: 14235 RVA: 0x0016E5D4 File Offset: 0x0016C7D4
+	// Token: 0x060037DE RID: 14302 RVA: 0x0016EF38 File Offset: 0x0016D138
 	public static bool ModLoaded(string _modName)
 	{
 		return ModManager.loadedMods.dict.ContainsKey(_modName);
 	}
 
-	// Token: 0x0600379C RID: 14236 RVA: 0x0016E5E6 File Offset: 0x0016C7E6
+	// Token: 0x060037DF RID: 14303 RVA: 0x0016EF4A File Offset: 0x0016D14A
 	public static Mod GetMod(string _modName, bool _onlyLoaded = false)
 	{
 		if (!ModManager.ModLoaded(_modName))
@@ -105,13 +105,13 @@ public static class ModManager
 		return ModManager.loadedMods.dict[_modName];
 	}
 
-	// Token: 0x0600379D RID: 14237 RVA: 0x0016E602 File Offset: 0x0016C802
+	// Token: 0x060037E0 RID: 14304 RVA: 0x0016EF66 File Offset: 0x0016D166
 	public static List<Mod> GetLoadedMods()
 	{
 		return ModManager.loadedMods.list;
 	}
 
-	// Token: 0x0600379E RID: 14238 RVA: 0x0016E610 File Offset: 0x0016C810
+	// Token: 0x060037E1 RID: 14305 RVA: 0x0016EF74 File Offset: 0x0016D174
 	public static List<Mod> GetFailedMods(Mod.EModLoadState? _failureReason = null)
 	{
 		if (_failureReason == null)
@@ -129,7 +129,7 @@ public static class ModManager
 		return list;
 	}
 
-	// Token: 0x0600379F RID: 14239 RVA: 0x0016E688 File Offset: 0x0016C888
+	// Token: 0x060037E2 RID: 14306 RVA: 0x0016EFEC File Offset: 0x0016D1EC
 	public static List<Assembly> GetLoadedAssemblies()
 	{
 		List<Assembly> list = new List<Assembly>();
@@ -141,7 +141,7 @@ public static class ModManager
 		return list;
 	}
 
-	// Token: 0x060037A0 RID: 14240 RVA: 0x0016E6D0 File Offset: 0x0016C8D0
+	// Token: 0x060037E3 RID: 14307 RVA: 0x0016F034 File Offset: 0x0016D234
 	public static Mod GetModForAssembly(Assembly _asm)
 	{
 		for (int i = 0; i < ModManager.loadedMods.Count; i++)
@@ -155,7 +155,7 @@ public static class ModManager
 		return null;
 	}
 
-	// Token: 0x060037A1 RID: 14241 RVA: 0x0016E710 File Offset: 0x0016C910
+	// Token: 0x060037E4 RID: 14308 RVA: 0x0016F074 File Offset: 0x0016D274
 	public static bool AnyConfigModActive()
 	{
 		for (int i = 0; i < ModManager.loadedMods.Count; i++)
@@ -168,7 +168,7 @@ public static class ModManager
 		return false;
 	}
 
-	// Token: 0x060037A2 RID: 14242 RVA: 0x0016E74C File Offset: 0x0016C94C
+	// Token: 0x060037E5 RID: 14309 RVA: 0x0016F0B0 File Offset: 0x0016D2B0
 	public static bool TryPatchModPathString(string _pathString, out string _modPath)
 	{
 		_modPath = null;
@@ -202,7 +202,7 @@ public static class ModManager
 		return false;
 	}
 
-	// Token: 0x060037A3 RID: 14243 RVA: 0x0016E810 File Offset: 0x0016CA10
+	// Token: 0x060037E6 RID: 14310 RVA: 0x0016F174 File Offset: 0x0016D374
 	public static string PatchModPathString(string _pathString)
 	{
 		string text;
@@ -210,7 +210,7 @@ public static class ModManager
 		return text;
 	}
 
-	// Token: 0x060037A4 RID: 14244 RVA: 0x0016E827 File Offset: 0x0016CA27
+	// Token: 0x060037E7 RID: 14311 RVA: 0x0016F18B File Offset: 0x0016D38B
 	public static IEnumerator LoadPatchStuff(bool _isLoadingInGame)
 	{
 		yield return ModManager.LoadUiAtlases(_isLoadingInGame);
@@ -218,7 +218,7 @@ public static class ModManager
 		yield break;
 	}
 
-	// Token: 0x060037A5 RID: 14245 RVA: 0x0016E836 File Offset: 0x0016CA36
+	// Token: 0x060037E8 RID: 14312 RVA: 0x0016F19A File Offset: 0x0016D39A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadUiAtlases(bool _isLoadingInGame)
 	{
@@ -281,7 +281,7 @@ public static class ModManager
 		yield break;
 	}
 
-	// Token: 0x060037A6 RID: 14246 RVA: 0x0016E845 File Offset: 0x0016CA45
+	// Token: 0x060037E9 RID: 14313 RVA: 0x0016F1A9 File Offset: 0x0016D3A9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator LoadLocalizations(bool _isLoadingInGame)
 	{
@@ -310,20 +310,20 @@ public static class ModManager
 		yield break;
 	}
 
-	// Token: 0x060037A7 RID: 14247 RVA: 0x0016E854 File Offset: 0x0016CA54
+	// Token: 0x060037EA RID: 14314 RVA: 0x0016F1B8 File Offset: 0x0016D3B8
 	public static void ModAtlasesDefaults(GameObject _parentGo, Shader _defaultShader)
 	{
 		ModManager.atlasesParentGo = _parentGo;
 		ModManager.defaultShader = _defaultShader;
 	}
 
-	// Token: 0x060037A8 RID: 14248 RVA: 0x0016E862 File Offset: 0x0016CA62
+	// Token: 0x060037EB RID: 14315 RVA: 0x0016F1C6 File Offset: 0x0016D3C6
 	public static void RegisterAtlasManager(MultiSourceAtlasManager _atlasManager, bool _createdByMod, Shader _shader, Action<INGUIAtlas, bool> _onNewAtlasLoaded = null)
 	{
 		ModManager.atlasManagers.Add(_atlasManager.name, new ModManager.AtlasManagerEntry(_atlasManager, _createdByMod, _shader, _onNewAtlasLoaded));
 	}
 
-	// Token: 0x060037A9 RID: 14249 RVA: 0x0016E880 File Offset: 0x0016CA80
+	// Token: 0x060037EC RID: 14316 RVA: 0x0016F1E4 File Offset: 0x0016D3E4
 	public static MultiSourceAtlasManager GetAtlasManager(string _name)
 	{
 		ModManager.AtlasManagerEntry atlasManagerEntry;
@@ -334,7 +334,7 @@ public static class ModManager
 		return atlasManagerEntry.Manager;
 	}
 
-	// Token: 0x060037AA RID: 14250 RVA: 0x0016E8A4 File Offset: 0x0016CAA4
+	// Token: 0x060037ED RID: 14317 RVA: 0x0016F208 File Offset: 0x0016D408
 	public static void GameEnded()
 	{
 		foreach (KeyValuePair<string, ModManager.AtlasManagerEntry> keyValuePair in ModManager.atlasManagers)
@@ -346,35 +346,35 @@ public static class ModManager
 		ThreadManager.RunCoroutineSync(ModManager.LoadLocalizations(false));
 	}
 
-	// Token: 0x04002D9D RID: 11677
+	// Token: 0x04002D96 RID: 11670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string ModsBasePathLegacy = ((Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXServer) ? (Application.dataPath + "/../../Mods") : (Application.dataPath + "/../Mods"));
 
-	// Token: 0x04002D9E RID: 11678
+	// Token: 0x04002D97 RID: 11671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly DictionaryList<string, Mod> loadedMods = new DictionaryList<string, Mod>();
 
-	// Token: 0x04002D9F RID: 11679
+	// Token: 0x04002D98 RID: 11672
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Mod> failedMods = new List<Mod>();
 
-	// Token: 0x04002DA0 RID: 11680
+	// Token: 0x04002D99 RID: 11673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, ModManager.AtlasManagerEntry> atlasManagers = new CaseInsensitiveStringDictionary<ModManager.AtlasManagerEntry>();
 
-	// Token: 0x04002DA1 RID: 11681
+	// Token: 0x04002D9A RID: 11674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject atlasesParentGo;
 
-	// Token: 0x04002DA2 RID: 11682
+	// Token: 0x04002D9B RID: 11675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Shader defaultShader;
 
-	// Token: 0x02000748 RID: 1864
+	// Token: 0x0200074A RID: 1866
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class AtlasManagerEntry
 	{
-		// Token: 0x060037AC RID: 14252 RVA: 0x0016E979 File Offset: 0x0016CB79
+		// Token: 0x060037EF RID: 14319 RVA: 0x0016F2DD File Offset: 0x0016D4DD
 		public AtlasManagerEntry(MultiSourceAtlasManager _manager, bool _createdByMod, Shader _shader, Action<INGUIAtlas, bool> _onNewAtlasLoaded)
 		{
 			this.Manager = _manager;
@@ -383,16 +383,16 @@ public static class ModManager
 			this.OnNewAtlasLoaded = _onNewAtlasLoaded;
 		}
 
-		// Token: 0x04002DA3 RID: 11683
+		// Token: 0x04002D9C RID: 11676
 		public readonly MultiSourceAtlasManager Manager;
 
-		// Token: 0x04002DA4 RID: 11684
+		// Token: 0x04002D9D RID: 11677
 		public readonly bool CreatedByMod;
 
-		// Token: 0x04002DA5 RID: 11685
+		// Token: 0x04002D9E RID: 11678
 		public readonly Shader Shader;
 
-		// Token: 0x04002DA6 RID: 11686
+		// Token: 0x04002D9F RID: 11679
 		public readonly Action<INGUIAtlas, bool> OnNewAtlasLoaded;
 	}
 }

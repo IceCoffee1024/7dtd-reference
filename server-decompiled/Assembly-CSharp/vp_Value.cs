@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x02001570 RID: 5488
+// Token: 0x02001592 RID: 5522
 [Preserve]
 public class vp_Value<V> : vp_Event
 {
-	// Token: 0x0600ABD7 RID: 43991 RVA: 0x004000C4 File Offset: 0x003FE2C4
+	// Token: 0x0600AC8A RID: 44170 RVA: 0x00404F18 File Offset: 0x00403118
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static T Empty<T>()
@@ -15,15 +15,15 @@ public class vp_Value<V> : vp_Event
 		return default(T);
 	}
 
-	// Token: 0x0600ABD8 RID: 43992 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AC8B RID: 44171 RVA: 0x000027FC File Offset: 0x000009FC
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void Empty<T>(T value)
 	{
 	}
 
-	// Token: 0x170013E7 RID: 5095
-	// (get) Token: 0x0600ABD9 RID: 43993 RVA: 0x004000DA File Offset: 0x003FE2DA
+	// Token: 0x1700142C RID: 5164
+	// (get) Token: 0x0600AC8C RID: 44172 RVA: 0x00404F2E File Offset: 0x0040312E
 	[Preserve]
 	public FieldInfo[] Fields
 	{
@@ -34,7 +34,7 @@ public class vp_Value<V> : vp_Event
 		}
 	}
 
-	// Token: 0x0600ABDA RID: 43994 RVA: 0x003FC7B9 File Offset: 0x003FA9B9
+	// Token: 0x0600AC8D RID: 44173 RVA: 0x0040160D File Offset: 0x003FF80D
 	[Preserve]
 	public vp_Value(string name)
 		: base(name)
@@ -42,7 +42,7 @@ public class vp_Value<V> : vp_Event
 		this.InitFields();
 	}
 
-	// Token: 0x0600ABDB RID: 43995 RVA: 0x004000E4 File Offset: 0x003FE2E4
+	// Token: 0x0600AC8E RID: 44174 RVA: 0x00404F38 File Offset: 0x00403138
 	public void DoNotCallAOTCompileFix()
 	{
 		vp_Value<V>.Empty<V>();
@@ -50,7 +50,7 @@ public class vp_Value<V> : vp_Event
 		throw new InvalidOperationException("This method is used for AOT code generation only. Do not call it at runtime.");
 	}
 
-	// Token: 0x0600ABDC RID: 43996 RVA: 0x00400110 File Offset: 0x003FE310
+	// Token: 0x0600AC8F RID: 44175 RVA: 0x00404F64 File Offset: 0x00403164
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
@@ -86,7 +86,7 @@ public class vp_Value<V> : vp_Event
 		}
 	}
 
-	// Token: 0x0600ABDD RID: 43997 RVA: 0x0040025A File Offset: 0x003FE45A
+	// Token: 0x0600AC90 RID: 44176 RVA: 0x004050AE File Offset: 0x004032AE
 	[Preserve]
 	public override void Register(object t, string m, int v)
 	{
@@ -98,7 +98,7 @@ public class vp_Value<V> : vp_Event
 		base.Refresh();
 	}
 
-	// Token: 0x0600ABDE RID: 43998 RVA: 0x00400284 File Offset: 0x003FE484
+	// Token: 0x0600AC91 RID: 44177 RVA: 0x004050D8 File Offset: 0x004032D8
 	[Preserve]
 	public override void Unregister(object t)
 	{
@@ -113,21 +113,21 @@ public class vp_Value<V> : vp_Event
 		base.Refresh();
 	}
 
-	// Token: 0x04007F25 RID: 32549
+	// Token: 0x04007FA8 RID: 32680
 	[Preserve]
 	public vp_Value<V>.Getter<V> Get;
 
-	// Token: 0x04007F26 RID: 32550
+	// Token: 0x04007FA9 RID: 32681
 	[Preserve]
 	public vp_Value<V>.Setter<V> Set;
 
-	// Token: 0x02001571 RID: 5489
-	// (Invoke) Token: 0x0600ABE0 RID: 44000
+	// Token: 0x02001593 RID: 5523
+	// (Invoke) Token: 0x0600AC93 RID: 44179
 	[Preserve]
 	public delegate T Getter<T>();
 
-	// Token: 0x02001572 RID: 5490
-	// (Invoke) Token: 0x0600ABE4 RID: 44004
+	// Token: 0x02001594 RID: 5524
+	// (Invoke) Token: 0x0600AC97 RID: 44183
 	[Preserve]
 	public delegate void Setter<T>(T o);
 }

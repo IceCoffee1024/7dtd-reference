@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200105F RID: 4191
+// Token: 0x02001070 RID: 4208
 [Preserve]
 public class XUiC_SkillList : XUiController
 {
-	// Token: 0x17000F87 RID: 3975
-	// (get) Token: 0x0600852D RID: 34093 RVA: 0x0032B4EB File Offset: 0x003296EB
-	// (set) Token: 0x0600852E RID: 34094 RVA: 0x0032B4F4 File Offset: 0x003296F4
+	// Token: 0x17000FBD RID: 4029
+	// (get) Token: 0x06008573 RID: 34163 RVA: 0x0032F0F7 File Offset: 0x0032D2F7
+	// (set) Token: 0x06008574 RID: 34164 RVA: 0x0032F100 File Offset: 0x0032D300
 	public XUiC_SkillEntry SelectedEntry
 	{
 		get
@@ -30,19 +30,19 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x17000F88 RID: 3976
-	// (get) Token: 0x0600852F RID: 34095 RVA: 0x0032B546 File Offset: 0x00329746
-	// (set) Token: 0x06008530 RID: 34096 RVA: 0x0032B54E File Offset: 0x0032974E
+	// Token: 0x17000FBE RID: 4030
+	// (get) Token: 0x06008575 RID: 34165 RVA: 0x0032F152 File Offset: 0x0032D352
+	// (set) Token: 0x06008576 RID: 34166 RVA: 0x0032F15A File Offset: 0x0032D35A
 	public XUiC_CategoryList CategoryList { get; set; }
 
-	// Token: 0x17000F89 RID: 3977
-	// (get) Token: 0x06008531 RID: 34097 RVA: 0x0032B557 File Offset: 0x00329757
-	// (set) Token: 0x06008532 RID: 34098 RVA: 0x0032B55F File Offset: 0x0032975F
+	// Token: 0x17000FBF RID: 4031
+	// (get) Token: 0x06008577 RID: 34167 RVA: 0x0032F163 File Offset: 0x0032D363
+	// (set) Token: 0x06008578 RID: 34168 RVA: 0x0032F16B File Offset: 0x0032D36B
 	public XUiC_SkillListWindow SkillListWindow { get; set; }
 
-	// Token: 0x17000F8A RID: 3978
-	// (get) Token: 0x06008533 RID: 34099 RVA: 0x0032B568 File Offset: 0x00329768
-	// (set) Token: 0x06008534 RID: 34100 RVA: 0x0032B570 File Offset: 0x00329770
+	// Token: 0x17000FC0 RID: 4032
+	// (get) Token: 0x06008579 RID: 34169 RVA: 0x0032F174 File Offset: 0x0032D374
+	// (set) Token: 0x0600857A RID: 34170 RVA: 0x0032F17C File Offset: 0x0032D37C
 	public string Category
 	{
 		get
@@ -62,8 +62,8 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x17000F8B RID: 3979
-	// (get) Token: 0x06008535 RID: 34101 RVA: 0x0032B5AF File Offset: 0x003297AF
+	// Token: 0x17000FC1 RID: 4033
+	// (get) Token: 0x0600857B RID: 34171 RVA: 0x0032F1BB File Offset: 0x0032D3BB
 	public ProgressionClass.DisplayTypes DisplayType
 	{
 		get
@@ -76,8 +76,8 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x17000F8C RID: 3980
-	// (get) Token: 0x06008536 RID: 34102 RVA: 0x0032B5C6 File Offset: 0x003297C6
+	// Token: 0x17000FC2 RID: 4034
+	// (get) Token: 0x0600857C RID: 34172 RVA: 0x0032F1D2 File Offset: 0x0032D3D2
 	public int PageCount
 	{
 		get
@@ -90,7 +90,7 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x06008537 RID: 34103 RVA: 0x0032B5E0 File Offset: 0x003297E0
+	// Token: 0x0600857D RID: 34173 RVA: 0x0032F1EC File Offset: 0x0032D3EC
 	public override void Init()
 	{
 		base.Init();
@@ -116,7 +116,7 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x06008538 RID: 34104 RVA: 0x0032B6D0 File Offset: 0x003298D0
+	// Token: 0x0600857E RID: 34174 RVA: 0x0032F2DC File Offset: 0x0032D4DC
 	public void SetSelectedByUnlockData(RecipeUnlockData unlockData)
 	{
 		switch (unlockData.UnlockType)
@@ -149,14 +149,14 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x06008539 RID: 34105 RVA: 0x0032B7A9 File Offset: 0x003299A9
+	// Token: 0x0600857F RID: 34175 RVA: 0x0032F3B5 File Offset: 0x0032D5B5
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public int GetActiveCount()
 	{
 		return this.currentSkills.Count;
 	}
 
-	// Token: 0x0600853A RID: 34106 RVA: 0x0032B7B8 File Offset: 0x003299B8
+	// Token: 0x06008580 RID: 34176 RVA: 0x0032F3C4 File Offset: 0x0032D5C4
 	public void SetFilterText(string _text)
 	{
 		if (this.txtInput != null)
@@ -168,21 +168,21 @@ public class XUiC_SkillList : XUiController
 		}
 	}
 
-	// Token: 0x0600853B RID: 34107 RVA: 0x0032B80E File Offset: 0x00329A0E
+	// Token: 0x06008581 RID: 34177 RVA: 0x0032F41A File Offset: 0x0032D61A
 	public void SelectFirstEntry()
 	{
 		this.SelectedEntry = this.skillEntries[0];
 		this.SelectedEntry.SelectCursorElement(true, false);
 	}
 
-	// Token: 0x0600853C RID: 34108 RVA: 0x0032B82C File Offset: 0x00329A2C
+	// Token: 0x06008582 RID: 34178 RVA: 0x0032F438 File Offset: 0x0032D638
 	public void SetSelected(XUiC_SkillEntry _entry)
 	{
 		this.SelectedEntry = _entry;
 		this.selectName = "";
 	}
 
-	// Token: 0x0600853D RID: 34109 RVA: 0x0032B840 File Offset: 0x00329A40
+	// Token: 0x06008583 RID: 34179 RVA: 0x0032F44C File Offset: 0x0032D64C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_SkillEntry_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -194,7 +194,7 @@ public class XUiC_SkillList : XUiController
 		this.SetSelected(xuiC_SkillEntry);
 	}
 
-	// Token: 0x0600853E RID: 34110 RVA: 0x0032B877 File Offset: 0x00329A77
+	// Token: 0x06008584 RID: 34180 RVA: 0x0032F483 File Offset: 0x0032D683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtInput_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -202,7 +202,7 @@ public class XUiC_SkillList : XUiController
 		this.RefreshSkillList();
 	}
 
-	// Token: 0x0600853F RID: 34111 RVA: 0x0032B88B File Offset: 0x00329A8B
+	// Token: 0x06008585 RID: 34181 RVA: 0x0032F497 File Offset: 0x0032D697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PagingControl_OnPageChanged()
 	{
@@ -210,7 +210,7 @@ public class XUiC_SkillList : XUiController
 		this.listSkills((xuiC_Paging != null) ? xuiC_Paging.GetPage() : 0);
 	}
 
-	// Token: 0x06008540 RID: 34112 RVA: 0x0032B8A5 File Offset: 0x00329AA5
+	// Token: 0x06008586 RID: 34182 RVA: 0x0032F4B1 File Offset: 0x0032D6B1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -222,7 +222,7 @@ public class XUiC_SkillList : XUiController
 		this.HandlePageUp(this, new EventArgs());
 	}
 
-	// Token: 0x06008541 RID: 34113 RVA: 0x0032B8C8 File Offset: 0x00329AC8
+	// Token: 0x06008587 RID: 34183 RVA: 0x0032F4D4 File Offset: 0x0032D6D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePageDown(XUiController _sender, EventArgs _e)
 	{
@@ -234,7 +234,7 @@ public class XUiC_SkillList : XUiController
 		xuiC_Paging.PageDown();
 	}
 
-	// Token: 0x06008542 RID: 34114 RVA: 0x0032B8DB File Offset: 0x00329ADB
+	// Token: 0x06008588 RID: 34184 RVA: 0x0032F4E7 File Offset: 0x0032D6E7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePageUp(XUiController _sender, EventArgs _e)
 	{
@@ -246,7 +246,7 @@ public class XUiC_SkillList : XUiController
 		xuiC_Paging.PageUp();
 	}
 
-	// Token: 0x06008543 RID: 34115 RVA: 0x0032B8EE File Offset: 0x00329AEE
+	// Token: 0x06008589 RID: 34185 RVA: 0x0032F4FA File Offset: 0x0032D6FA
 	public void RefreshSkillList()
 	{
 		XUiC_Paging xuiC_Paging = this.pagingControl;
@@ -258,7 +258,7 @@ public class XUiC_SkillList : XUiController
 		this.PagingControl_OnPageChanged();
 	}
 
-	// Token: 0x06008544 RID: 34116 RVA: 0x0032B910 File Offset: 0x00329B10
+	// Token: 0x0600858A RID: 34186 RVA: 0x0032F51C File Offset: 0x0032D71C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateFilteredList()
 	{
@@ -344,7 +344,7 @@ public class XUiC_SkillList : XUiController
 		xuiC_Paging3.SetPage(0);
 	}
 
-	// Token: 0x06008545 RID: 34117 RVA: 0x0032BBE8 File Offset: 0x00329DE8
+	// Token: 0x0600858B RID: 34187 RVA: 0x0032F7F4 File Offset: 0x0032D9F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void listSkills(int page)
 	{
@@ -430,7 +430,7 @@ public class XUiC_SkillList : XUiController
 		this.SkillListWindow.RefreshBindings();
 	}
 
-	// Token: 0x06008546 RID: 34118 RVA: 0x0032BF74 File Offset: 0x0032A174
+	// Token: 0x0600858C RID: 34188 RVA: 0x0032FB80 File Offset: 0x0032DD80
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -440,14 +440,14 @@ public class XUiC_SkillList : XUiController
 		this.PagingControl_OnPageChanged();
 	}
 
-	// Token: 0x06008547 RID: 34119 RVA: 0x0032BFC3 File Offset: 0x0032A1C3
+	// Token: 0x0600858D RID: 34189 RVA: 0x0032FBCF File Offset: 0x0032DDCF
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.selectName = "";
 	}
 
-	// Token: 0x06008548 RID: 34120 RVA: 0x0032BFD8 File Offset: 0x0032A1D8
+	// Token: 0x0600858E RID: 34190 RVA: 0x0032FBE4 File Offset: 0x0032DDE4
 	public XUiC_SkillEntry GetEntryForSkill(ProgressionValue _skill)
 	{
 		foreach (XUiC_SkillEntry xuiC_SkillEntry in this.skillEntries)
@@ -460,43 +460,43 @@ public class XUiC_SkillList : XUiController
 		return null;
 	}
 
-	// Token: 0x040062E0 RID: 25312
+	// Token: 0x04006325 RID: 25381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ProgressionValue> skills = new List<ProgressionValue>();
 
-	// Token: 0x040062E1 RID: 25313
+	// Token: 0x04006326 RID: 25382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ProgressionValue> currentSkills = new List<ProgressionValue>();
 
-	// Token: 0x040062E2 RID: 25314
+	// Token: 0x04006327 RID: 25383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillEntry[] skillEntries;
 
-	// Token: 0x040062E3 RID: 25315
+	// Token: 0x04006328 RID: 25384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pagingControl;
 
-	// Token: 0x040062E4 RID: 25316
+	// Token: 0x04006329 RID: 25385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterText = "";
 
-	// Token: 0x040062E5 RID: 25317
+	// Token: 0x0400632A RID: 25386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string selectName;
 
-	// Token: 0x040062E6 RID: 25318
+	// Token: 0x0400632B RID: 25387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillEntry selectedEntry;
 
-	// Token: 0x040062E9 RID: 25321
+	// Token: 0x0400632E RID: 25390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x040062EA RID: 25322
+	// Token: 0x0400632F RID: 25391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionClass attributeClass;
 
-	// Token: 0x040062EB RID: 25323
+	// Token: 0x04006330 RID: 25392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string category = "";
 }

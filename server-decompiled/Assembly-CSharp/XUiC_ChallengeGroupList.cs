@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Challenges;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EDC RID: 3804
+// Token: 0x02000EEB RID: 3819
 [Preserve]
 public class XUiC_ChallengeGroupList : XUiController
 {
-	// Token: 0x17000E09 RID: 3593
-	// (get) Token: 0x0600775A RID: 30554 RVA: 0x002CD429 File Offset: 0x002CB629
-	// (set) Token: 0x0600775B RID: 30555 RVA: 0x002CD431 File Offset: 0x002CB631
+	// Token: 0x17000E26 RID: 3622
+	// (get) Token: 0x06007755 RID: 30549 RVA: 0x002D0801 File Offset: 0x002CEA01
+	// (set) Token: 0x06007756 RID: 30550 RVA: 0x002D0809 File Offset: 0x002CEA09
 	public XUiC_ChallengeGroupEntry SelectedGroup
 	{
 		get
@@ -26,7 +26,7 @@ public class XUiC_ChallengeGroupList : XUiController
 		}
 	}
 
-	// Token: 0x0600775C RID: 30556 RVA: 0x002CD450 File Offset: 0x002CB650
+	// Token: 0x06007757 RID: 30551 RVA: 0x002D0828 File Offset: 0x002CEA28
 	public override void Init()
 	{
 		base.Init();
@@ -42,7 +42,7 @@ public class XUiC_ChallengeGroupList : XUiController
 		}
 	}
 
-	// Token: 0x0600775D RID: 30557 RVA: 0x002CD4C2 File Offset: 0x002CB6C2
+	// Token: 0x06007758 RID: 30552 RVA: 0x002D089A File Offset: 0x002CEA9A
 	public override void Update(float _dt)
 	{
 		if (this.CategoryList.CurrentCategory != null && this.IsDirty)
@@ -54,7 +54,7 @@ public class XUiC_ChallengeGroupList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600775E RID: 30558 RVA: 0x002CD4F4 File Offset: 0x002CB6F4
+	// Token: 0x06007759 RID: 30553 RVA: 0x002D08CC File Offset: 0x002CEACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateChallengeEntries()
 	{
@@ -90,7 +90,7 @@ public class XUiC_ChallengeGroupList : XUiController
 		}
 	}
 
-	// Token: 0x0600775F RID: 30559 RVA: 0x002CD5D8 File Offset: 0x002CB7D8
+	// Token: 0x0600775A RID: 30554 RVA: 0x002D09B0 File Offset: 0x002CEBB0
 	public void SetChallengeGroupEntryList(List<ChallengeGroupEntry> newChallengeGroupList, bool newCategoryChange)
 	{
 		this.challengeGroupList = newChallengeGroupList;
@@ -111,7 +111,7 @@ public class XUiC_ChallengeGroupList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007760 RID: 30560 RVA: 0x002CD66C File Offset: 0x002CB86C
+	// Token: 0x0600775B RID: 30555 RVA: 0x002D0A44 File Offset: 0x002CEC44
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "display_key")
@@ -122,39 +122,39 @@ public class XUiC_ChallengeGroupList : XUiController
 		return base.ParseAttribute(name, value);
 	}
 
-	// Token: 0x06007761 RID: 30561 RVA: 0x002CD68C File Offset: 0x002CB88C
+	// Token: 0x0600775C RID: 30556 RVA: 0x002D0A64 File Offset: 0x002CEC64
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.player = this.xui.playerUI.entityPlayer;
 	}
 
-	// Token: 0x04005817 RID: 22551
+	// Token: 0x0400584F RID: 22607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04005818 RID: 22552
+	// Token: 0x04005850 RID: 22608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ChallengeGroupEntry> entryList = new List<XUiC_ChallengeGroupEntry>();
 
-	// Token: 0x04005819 RID: 22553
+	// Token: 0x04005851 RID: 22609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ChallengeGroupEntry selectedGroup;
 
-	// Token: 0x0400581A RID: 22554
+	// Token: 0x04005852 RID: 22610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool categoryChange;
 
-	// Token: 0x0400581B RID: 22555
+	// Token: 0x04005853 RID: 22611
 	public string DisplayKey = "";
 
-	// Token: 0x0400581C RID: 22556
+	// Token: 0x04005854 RID: 22612
 	public XUiC_CategoryList CategoryList;
 
-	// Token: 0x0400581D RID: 22557
+	// Token: 0x04005855 RID: 22613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ChallengeGroupEntry> challengeGroupList;
 
-	// Token: 0x0400581E RID: 22558
+	// Token: 0x04005856 RID: 22614
 	public XUiC_ChallengeEntryListWindow ChallengeEntryListWindow;
 }

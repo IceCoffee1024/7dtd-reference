@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200137C RID: 4988
+// Token: 0x0200139C RID: 5020
 public class WireNode : MonoBehaviour, IWireNode
 {
-	// Token: 0x06009D65 RID: 40293 RVA: 0x003B71C4 File Offset: 0x003B53C4
+	// Token: 0x06009E10 RID: 40464 RVA: 0x003BBD40 File Offset: 0x003B9F40
 	public void Init()
 	{
 		if (WireNode.rootShockPrefab == null)
@@ -45,7 +45,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		this.meshRenderer.material = this.personalMaterial;
 	}
 
-	// Token: 0x06009D66 RID: 40294 RVA: 0x003B7368 File Offset: 0x003B5568
+	// Token: 0x06009E11 RID: 40465 RVA: 0x003BBEE4 File Offset: 0x003BA0E4
 	public void OnDestroy()
 	{
 		if (this.personalMaterial != null)
@@ -59,20 +59,20 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D67 RID: 40295 RVA: 0x003B73C1 File Offset: 0x003B55C1
+	// Token: 0x06009E12 RID: 40466 RVA: 0x003BBF3D File Offset: 0x003BA13D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.Init();
 	}
 
-	// Token: 0x06009D68 RID: 40296 RVA: 0x003B73C9 File Offset: 0x003B55C9
+	// Token: 0x06009E13 RID: 40467 RVA: 0x003BBF45 File Offset: 0x003BA145
 	public void ToggleMeshCollider(bool _bOn)
 	{
 		this.meshCollider.enabled = _bOn;
 	}
 
-	// Token: 0x06009D69 RID: 40297 RVA: 0x003B73D7 File Offset: 0x003B55D7
+	// Token: 0x06009E14 RID: 40468 RVA: 0x003BBF53 File Offset: 0x003BA153
 	public void SetPulseSpeed(float speed)
 	{
 		if (this.personalMaterial == null)
@@ -82,7 +82,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		this.personalMaterial.SetFloat("_PulseSpeed", speed);
 	}
 
-	// Token: 0x06009D6A RID: 40298 RVA: 0x003B73F9 File Offset: 0x003B55F9
+	// Token: 0x06009E15 RID: 40469 RVA: 0x003BBF75 File Offset: 0x003BA175
 	public void TogglePulse(bool isOn)
 	{
 		if (this.personalMaterial == null)
@@ -92,13 +92,13 @@ public class WireNode : MonoBehaviour, IWireNode
 		this.personalMaterial.SetColor("_PulseColor", isOn ? this.pulseColor : Color.black);
 	}
 
-	// Token: 0x06009D6B RID: 40299 RVA: 0x003B742A File Offset: 0x003B562A
+	// Token: 0x06009E16 RID: 40470 RVA: 0x003BBFA6 File Offset: 0x003BA1A6
 	public void SetPulseColor(Color color)
 	{
 		this.pulseColor = color;
 	}
 
-	// Token: 0x06009D6C RID: 40300 RVA: 0x003B7434 File Offset: 0x003B5634
+	// Token: 0x06009E17 RID: 40471 RVA: 0x003BBFB0 File Offset: 0x003BA1B0
 	public void PlayShockAtPosition(Vector3 shockPosition)
 	{
 		if (shockPosition.x < this.min.x - 1f)
@@ -154,7 +154,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		this.shockSpots.Add(shockSpot);
 	}
 
-	// Token: 0x06009D6D RID: 40301 RVA: 0x003B75BC File Offset: 0x003B57BC
+	// Token: 0x06009E18 RID: 40472 RVA: 0x003BC138 File Offset: 0x003BA338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdatePlayerIntersection()
 	{
@@ -178,7 +178,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D6E RID: 40302 RVA: 0x003B7628 File Offset: 0x003B5828
+	// Token: 0x06009E19 RID: 40473 RVA: 0x003BC1A4 File Offset: 0x003BA3A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RayCastHeightAt(ref Vector3 position)
 	{
@@ -189,7 +189,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D6F RID: 40303 RVA: 0x003B76A4 File Offset: 0x003B58A4
+	// Token: 0x06009E1A RID: 40474 RVA: 0x003BC220 File Offset: 0x003BA420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateForces()
 	{
@@ -237,7 +237,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D70 RID: 40304 RVA: 0x003B7A30 File Offset: 0x003B5C30
+	// Token: 0x06009E1B RID: 40475 RVA: 0x003BC5AC File Offset: 0x003BA7AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreatePoints()
 	{
@@ -282,7 +282,7 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D71 RID: 40305 RVA: 0x003B7B98 File Offset: 0x003B5D98
+	// Token: 0x06009E1C RID: 40476 RVA: 0x003BC714 File Offset: 0x003BA914
 	public void BuildMesh()
 	{
 		if (GameManager.IsDedicatedServer)
@@ -508,12 +508,12 @@ public class WireNode : MonoBehaviour, IWireNode
 		this.meshFilter.mesh = this.mesh;
 	}
 
-	// Token: 0x06009D72 RID: 40306 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E1D RID: 40477 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Update()
 	{
 	}
 
-	// Token: 0x06009D73 RID: 40307 RVA: 0x003B88E4 File Offset: 0x003B6AE4
+	// Token: 0x06009E1E RID: 40478 RVA: 0x003BD460 File Offset: 0x003BB660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MyUpdate()
 	{
@@ -532,402 +532,402 @@ public class WireNode : MonoBehaviour, IWireNode
 		}
 	}
 
-	// Token: 0x06009D74 RID: 40308 RVA: 0x003B893F File Offset: 0x003B6B3F
+	// Token: 0x06009E1F RID: 40479 RVA: 0x003BD4BB File Offset: 0x003BB6BB
 	public void FixedUpdate()
 	{
 		this.MyUpdate();
 	}
 
-	// Token: 0x06009D75 RID: 40309 RVA: 0x003B893F File Offset: 0x003B6B3F
+	// Token: 0x06009E20 RID: 40480 RVA: 0x003BD4BB File Offset: 0x003BB6BB
 	public void LateUpdate()
 	{
 		this.MyUpdate();
 	}
 
-	// Token: 0x06009D76 RID: 40310 RVA: 0x003B8947 File Offset: 0x003B6B47
+	// Token: 0x06009E21 RID: 40481 RVA: 0x003BD4C3 File Offset: 0x003BB6C3
 	public Vector3 GetStartPosition()
 	{
 		return this.SourcePosition;
 	}
 
-	// Token: 0x06009D77 RID: 40311 RVA: 0x003B894F File Offset: 0x003B6B4F
+	// Token: 0x06009E22 RID: 40482 RVA: 0x003BD4CB File Offset: 0x003BB6CB
 	public Vector3 GetStartPositionOffset()
 	{
 		return this.sourceOffset;
 	}
 
-	// Token: 0x06009D78 RID: 40312 RVA: 0x003B8957 File Offset: 0x003B6B57
+	// Token: 0x06009E23 RID: 40483 RVA: 0x003BD4D3 File Offset: 0x003BB6D3
 	public void SetStartPosition(Vector3 pos)
 	{
 		this.SourcePosition = pos;
 	}
 
-	// Token: 0x06009D79 RID: 40313 RVA: 0x003B8960 File Offset: 0x003B6B60
+	// Token: 0x06009E24 RID: 40484 RVA: 0x003BD4DC File Offset: 0x003BB6DC
 	public void SetStartPositionOffset(Vector3 pos)
 	{
 		this.sourceOffset = pos;
 	}
 
-	// Token: 0x06009D7A RID: 40314 RVA: 0x003B8969 File Offset: 0x003B6B69
+	// Token: 0x06009E25 RID: 40485 RVA: 0x003BD4E5 File Offset: 0x003BB6E5
 	public Vector3 GetEndPosition()
 	{
 		return this.LocalPosition;
 	}
 
-	// Token: 0x06009D7B RID: 40315 RVA: 0x003B8971 File Offset: 0x003B6B71
+	// Token: 0x06009E26 RID: 40486 RVA: 0x003BD4ED File Offset: 0x003BB6ED
 	public Vector3 GetEndPositionOffset()
 	{
 		return this.localOffset;
 	}
 
-	// Token: 0x06009D7C RID: 40316 RVA: 0x003B8979 File Offset: 0x003B6B79
+	// Token: 0x06009E27 RID: 40487 RVA: 0x003BD4F5 File Offset: 0x003BB6F5
 	public void SetEndPosition(Vector3 pos)
 	{
 		this.LocalPosition = pos;
 	}
 
-	// Token: 0x06009D7D RID: 40317 RVA: 0x003B8982 File Offset: 0x003B6B82
+	// Token: 0x06009E28 RID: 40488 RVA: 0x003BD4FE File Offset: 0x003BB6FE
 	public void SetEndPositionOffset(Vector3 pos)
 	{
 		this.localOffset = pos;
 	}
 
-	// Token: 0x06009D7E RID: 40318 RVA: 0x003AA411 File Offset: 0x003A8611
+	// Token: 0x06009E29 RID: 40489 RVA: 0x003AEF8D File Offset: 0x003AD18D
 	public GameObject GetGameObject()
 	{
 		return base.gameObject;
 	}
 
-	// Token: 0x06009D7F RID: 40319 RVA: 0x003B898B File Offset: 0x003B6B8B
+	// Token: 0x06009E2A RID: 40490 RVA: 0x003BD507 File Offset: 0x003BB707
 	public Bounds GetBounds()
 	{
 		return this.mesh.bounds;
 	}
 
-	// Token: 0x06009D80 RID: 40320 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E2B RID: 40491 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetWireDip(float _dist)
 	{
 	}
 
-	// Token: 0x06009D81 RID: 40321 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06009E2C RID: 40492 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public float GetWireDip()
 	{
 		return 0f;
 	}
 
-	// Token: 0x06009D82 RID: 40322 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E2D RID: 40493 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetWireRadius(float _radius)
 	{
 	}
 
-	// Token: 0x06009D83 RID: 40323 RVA: 0x003B8998 File Offset: 0x003B6B98
+	// Token: 0x06009E2E RID: 40494 RVA: 0x003BD514 File Offset: 0x003BB714
 	public void Reset()
 	{
 		this.pulseColor = new Color32(0, 97, byte.MaxValue, byte.MaxValue);
 	}
 
-	// Token: 0x06009D84 RID: 40324 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E2F RID: 40495 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetWireCanHide(bool _canHide)
 	{
 	}
 
-	// Token: 0x06009D85 RID: 40325 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009E30 RID: 40496 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetVisible(bool _visible)
 	{
 	}
 
-	// Token: 0x0400774F RID: 30543
+	// Token: 0x040077CA RID: 30666
 	public const int cLayerMaskRayCast = 65537;
 
-	// Token: 0x04007750 RID: 30544
+	// Token: 0x040077CB RID: 30667
 	public Vector2[] shocks;
 
-	// Token: 0x04007751 RID: 30545
+	// Token: 0x040077CC RID: 30668
 	public Material material;
 
-	// Token: 0x04007752 RID: 30546
+	// Token: 0x040077CD RID: 30669
 	public GameObject Source;
 
-	// Token: 0x04007753 RID: 30547
+	// Token: 0x040077CE RID: 30670
 	public GameObject parentGO;
 
-	// Token: 0x04007754 RID: 30548
+	// Token: 0x040077CF RID: 30671
 	public Color pulseColor = new Color32(0, 97, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x04007755 RID: 30549
+	// Token: 0x040077D0 RID: 30672
 	public Color wireColor = Color.black;
 
-	// Token: 0x04007756 RID: 30550
+	// Token: 0x040077D1 RID: 30673
 	public float size;
 
-	// Token: 0x04007757 RID: 30551
+	// Token: 0x040077D2 RID: 30674
 	public float weightMod;
 
-	// Token: 0x04007758 RID: 30552
+	// Token: 0x040077D3 RID: 30675
 	public float springMod;
 
-	// Token: 0x04007759 RID: 30553
+	// Token: 0x040077D4 RID: 30676
 	public float minSegmentLength = 0.25f;
 
-	// Token: 0x0400775A RID: 30554
+	// Token: 0x040077D5 RID: 30677
 	public float snagThreshold = 0.5f;
 
-	// Token: 0x0400775B RID: 30555
+	// Token: 0x040077D6 RID: 30678
 	public float tensionMultiplier = 2f;
 
-	// Token: 0x0400775C RID: 30556
+	// Token: 0x040077D7 RID: 30679
 	public float playerHeight = 1.8f;
 
-	// Token: 0x0400775D RID: 30557
+	// Token: 0x040077D8 RID: 30680
 	public Vector3 SourcePosition = Vector3.zero;
 
-	// Token: 0x0400775E RID: 30558
+	// Token: 0x040077D9 RID: 30681
 	public Vector3 LocalPosition = Vector3.one;
 
-	// Token: 0x0400775F RID: 30559
+	// Token: 0x040077DA RID: 30682
 	public Vector3 localOffset = Vector3.zero;
 
-	// Token: 0x04007760 RID: 30560
+	// Token: 0x040077DB RID: 30683
 	public Vector3 sourceOffset = Vector3.zero;
 
-	// Token: 0x04007761 RID: 30561
+	// Token: 0x040077DC RID: 30684
 	public Vector3 cameraOffset;
 
-	// Token: 0x04007762 RID: 30562
+	// Token: 0x040077DD RID: 30685
 	public bool attatchSoureToCamera;
 
-	// Token: 0x04007763 RID: 30563
+	// Token: 0x040077DE RID: 30686
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float playerShockTimer;
 
-	// Token: 0x04007764 RID: 30564
+	// Token: 0x040077DF RID: 30687
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentTotalForces = 1000f;
 
-	// Token: 0x04007765 RID: 30565
+	// Token: 0x040077E0 RID: 30688
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 prevSourcePos;
 
-	// Token: 0x04007766 RID: 30566
+	// Token: 0x040077E1 RID: 30689
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentSegmentLength;
 
-	// Token: 0x04007767 RID: 30567
+	// Token: 0x040077E2 RID: 30690
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject rootShockPrefab;
 
-	// Token: 0x04007768 RID: 30568
+	// Token: 0x040077E3 RID: 30691
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float[] shockTimers = new float[8];
 
-	// Token: 0x04007769 RID: 30569
+	// Token: 0x040077E4 RID: 30692
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int[] shockIndices = new int[8];
 
-	// Token: 0x0400776A RID: 30570
+	// Token: 0x040077E5 RID: 30693
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int[] currentShockingVertex = new int[8];
 
-	// Token: 0x0400776B RID: 30571
+	// Token: 0x040077E6 RID: 30694
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<WireNode.ShockSpot> shockSpots;
 
-	// Token: 0x0400776C RID: 30572
+	// Token: 0x040077E7 RID: 30695
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 min = Vector3.one * float.PositiveInfinity;
 
-	// Token: 0x0400776D RID: 30573
+	// Token: 0x040077E8 RID: 30696
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 max = -Vector3.one * float.PositiveInfinity;
 
-	// Token: 0x0400776E RID: 30574
+	// Token: 0x040077E9 RID: 30697
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 prevSourcePosition = Vector3.zero;
 
-	// Token: 0x0400776F RID: 30575
+	// Token: 0x040077EA RID: 30698
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 prevLocalPosition = Vector3.zero;
 
-	// Token: 0x04007770 RID: 30576
+	// Token: 0x040077EB RID: 30699
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject prevParentGO;
 
-	// Token: 0x04007771 RID: 30577
+	// Token: 0x040077EC RID: 30700
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float prevSize = 0.01f;
 
-	// Token: 0x04007772 RID: 30578
+	// Token: 0x040077ED RID: 30701
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material personalMaterial;
 
-	// Token: 0x04007773 RID: 30579
+	// Token: 0x040077EE RID: 30702
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int numNodes = 15;
 
-	// Token: 0x04007774 RID: 30580
+	// Token: 0x040077EF RID: 30703
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color prevWireColor = Color.black;
 
-	// Token: 0x04007775 RID: 30581
+	// Token: 0x040077F0 RID: 30704
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float prevWeightMod = 1f;
 
-	// Token: 0x04007776 RID: 30582
+	// Token: 0x040077F1 RID: 30705
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float prevSpringMod = 1f;
 
-	// Token: 0x04007777 RID: 30583
+	// Token: 0x040077F2 RID: 30706
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform parent;
 
-	// Token: 0x04007778 RID: 30584
+	// Token: 0x040077F3 RID: 30707
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform prevParent;
 
-	// Token: 0x04007779 RID: 30585
+	// Token: 0x040077F4 RID: 30708
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Mesh mesh;
 
-	// Token: 0x0400777A RID: 30586
+	// Token: 0x040077F5 RID: 30709
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshFilter meshFilter;
 
-	// Token: 0x0400777B RID: 30587
+	// Token: 0x040077F6 RID: 30710
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshRenderer meshRenderer;
 
-	// Token: 0x0400777C RID: 30588
+	// Token: 0x040077F7 RID: 30711
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshCollider meshCollider;
 
-	// Token: 0x0400777D RID: 30589
+	// Token: 0x040077F8 RID: 30712
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> points;
 
-	// Token: 0x0400777E RID: 30590
+	// Token: 0x040077F9 RID: 30713
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> forces;
 
-	// Token: 0x0400777F RID: 30591
+	// Token: 0x040077FA RID: 30714
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> verts;
 
-	// Token: 0x04007780 RID: 30592
+	// Token: 0x040077FB RID: 30715
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector2> uvs;
 
-	// Token: 0x04007781 RID: 30593
+	// Token: 0x040077FC RID: 30716
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector2> uvs2;
 
-	// Token: 0x04007782 RID: 30594
+	// Token: 0x040077FD RID: 30717
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> normals;
 
-	// Token: 0x04007783 RID: 30595
+	// Token: 0x040077FE RID: 30718
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<bool> shockNodes;
 
-	// Token: 0x04007784 RID: 30596
+	// Token: 0x040077FF RID: 30719
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int[] indices;
 
-	// Token: 0x04007785 RID: 30597
+	// Token: 0x04007800 RID: 30720
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool usingLocalPosition = true;
 
-	// Token: 0x04007786 RID: 30598
+	// Token: 0x04007801 RID: 30721
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool usingSourcePosition = true;
 
-	// Token: 0x04007787 RID: 30599
+	// Token: 0x04007802 RID: 30722
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float checkPlayerConnectTime;
 
-	// Token: 0x04007788 RID: 30600
+	// Token: 0x04007803 RID: 30723
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int attachedNode = -1;
 
-	// Token: 0x04007789 RID: 30601
+	// Token: 0x04007804 RID: 30724
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int prevAttachedNode = -1;
 
-	// Token: 0x0400778A RID: 30602
+	// Token: 0x04007805 RID: 30725
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float slopeSpeed = 1f;
 
-	// Token: 0x0400778B RID: 30603
+	// Token: 0x04007806 RID: 30726
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 currLocalPosition;
 
-	// Token: 0x0400778C RID: 30604
+	// Token: 0x04007807 RID: 30727
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 currSourcePosition;
 
-	// Token: 0x0400778D RID: 30605
+	// Token: 0x04007808 RID: 30728
 	public float drag = 0.89f;
 
-	// Token: 0x0400778E RID: 30606
+	// Token: 0x04007809 RID: 30729
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 cachedSourcePosition;
 
-	// Token: 0x0200137D RID: 4989
+	// Token: 0x0200139D RID: 5021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct ShockSpot
 	{
-		// Token: 0x0400778F RID: 30607
+		// Token: 0x0400780A RID: 30730
 		public float timer;
 
-		// Token: 0x04007790 RID: 30608
+		// Token: 0x0400780B RID: 30731
 		public int shockDataIndex;
 
-		// Token: 0x04007791 RID: 30609
+		// Token: 0x0400780C RID: 30732
 		public int vertex;
 
-		// Token: 0x04007792 RID: 30610
+		// Token: 0x0400780D RID: 30733
 		public GameObject shockPrefab;
 	}
 }

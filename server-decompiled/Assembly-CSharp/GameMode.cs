@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using Platform;
 
-// Token: 0x020011CA RID: 4554
+// Token: 0x020011E2 RID: 4578
 public abstract class GameMode
 {
-	// Token: 0x060091B1 RID: 37297
+	// Token: 0x0600923F RID: 37439
 	public abstract GameMode.ModeGamePref[] GetSupportedGamePrefsInfo();
 
-	// Token: 0x060091B2 RID: 37298 RVA: 0x0036E984 File Offset: 0x0036CB84
+	// Token: 0x06009240 RID: 37440 RVA: 0x003731CC File Offset: 0x003713CC
 	public Dictionary<EnumGamePrefs, GameMode.ModeGamePref> GetGamePrefs()
 	{
 		if (this.gamePrefs == null)
@@ -28,22 +28,22 @@ public abstract class GameMode
 		return this.gamePrefs;
 	}
 
-	// Token: 0x060091B3 RID: 37299
+	// Token: 0x06009241 RID: 37441
 	public abstract void ResetGamePrefs();
 
-	// Token: 0x060091B4 RID: 37300
+	// Token: 0x06009242 RID: 37442
 	public abstract string GetDescription();
 
-	// Token: 0x060091B5 RID: 37301
+	// Token: 0x06009243 RID: 37443
 	public abstract int GetID();
 
-	// Token: 0x060091B6 RID: 37302
+	// Token: 0x06009244 RID: 37444
 	public abstract void Init();
 
-	// Token: 0x060091B7 RID: 37303
+	// Token: 0x06009245 RID: 37445
 	public abstract string GetName();
 
-	// Token: 0x060091B8 RID: 37304 RVA: 0x0036EA05 File Offset: 0x0036CC05
+	// Token: 0x06009246 RID: 37446 RVA: 0x0037324D File Offset: 0x0037144D
 	public string GetTypeName()
 	{
 		if (this.cachedTypeName == null)
@@ -53,22 +53,22 @@ public abstract class GameMode
 		return this.cachedTypeName;
 	}
 
-	// Token: 0x060091B9 RID: 37305
+	// Token: 0x06009247 RID: 37447
 	public abstract int GetRoundCount();
 
-	// Token: 0x060091BA RID: 37306
+	// Token: 0x06009248 RID: 37448
 	public abstract void StartRound(int _idx);
 
-	// Token: 0x060091BB RID: 37307
+	// Token: 0x06009249 RID: 37449
 	public abstract void EndRound(int _idx);
 
-	// Token: 0x060091BC RID: 37308 RVA: 0x0004E53C File Offset: 0x0004C73C
+	// Token: 0x0600924A RID: 37450 RVA: 0x0004E540 File Offset: 0x0004C740
 	public virtual string GetAdditionalGameInfo(World _world)
 	{
 		return string.Empty;
 	}
 
-	// Token: 0x060091BD RID: 37309 RVA: 0x0036EA28 File Offset: 0x0036CC28
+	// Token: 0x0600924B RID: 37451 RVA: 0x00373270 File Offset: 0x00371470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void InitGameModeDict()
 	{
@@ -87,7 +87,7 @@ public abstract class GameMode
 		}
 	}
 
-	// Token: 0x060091BE RID: 37310 RVA: 0x0036EA9F File Offset: 0x0036CC9F
+	// Token: 0x0600924C RID: 37452 RVA: 0x003732E7 File Offset: 0x003714E7
 	public static GameMode GetGameModeForId(int _id)
 	{
 		GameMode.InitGameModeDict();
@@ -98,7 +98,7 @@ public abstract class GameMode
 		return null;
 	}
 
-	// Token: 0x060091BF RID: 37311 RVA: 0x0036EAC0 File Offset: 0x0036CCC0
+	// Token: 0x0600924D RID: 37453 RVA: 0x00373308 File Offset: 0x00371508
 	public static GameMode GetGameModeForName(string _name)
 	{
 		GameMode.InitGameModeDict();
@@ -112,7 +112,7 @@ public abstract class GameMode
 		return null;
 	}
 
-	// Token: 0x060091C0 RID: 37312 RVA: 0x0036EB34 File Offset: 0x0036CD34
+	// Token: 0x0600924E RID: 37454 RVA: 0x0037337C File Offset: 0x0037157C
 	public override string ToString()
 	{
 		if (this.localizedName == null)
@@ -122,38 +122,38 @@ public abstract class GameMode
 		return this.localizedName;
 	}
 
-	// Token: 0x060091C1 RID: 37313 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600924F RID: 37455 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GameMode()
 	{
 	}
 
-	// Token: 0x04006BE7 RID: 27623
+	// Token: 0x04006C51 RID: 27729
 	public static GameMode[] AvailGameModes = new GameMode[]
 	{
 		new GameModeSurvival()
 	};
 
-	// Token: 0x04006BE8 RID: 27624
+	// Token: 0x04006C52 RID: 27730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<EnumGamePrefs, GameMode.ModeGamePref> gamePrefs;
 
-	// Token: 0x04006BE9 RID: 27625
+	// Token: 0x04006C53 RID: 27731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedTypeName;
 
-	// Token: 0x04006BEA RID: 27626
+	// Token: 0x04006C54 RID: 27732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName;
 
-	// Token: 0x04006BEB RID: 27627
+	// Token: 0x04006C55 RID: 27733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, GameMode> gameModes;
 
-	// Token: 0x020011CB RID: 4555
+	// Token: 0x020011E3 RID: 4579
 	public struct ModeGamePref
 	{
-		// Token: 0x060091C3 RID: 37315 RVA: 0x0036EB6C File Offset: 0x0036CD6C
+		// Token: 0x06009251 RID: 37457 RVA: 0x003733B4 File Offset: 0x003715B4
 		public ModeGamePref(EnumGamePrefs _gamePref, GamePrefs.EnumType _valueType, object _defaultValue, Dictionary<DeviceFlag, object> _deviceDefaults = null)
 		{
 			this.GamePref = _gamePref;
@@ -166,13 +166,13 @@ public abstract class GameMode
 			this.DefaultValue = _defaultValue;
 		}
 
-		// Token: 0x04006BEC RID: 27628
+		// Token: 0x04006C56 RID: 27734
 		public EnumGamePrefs GamePref;
 
-		// Token: 0x04006BED RID: 27629
+		// Token: 0x04006C57 RID: 27735
 		public GamePrefs.EnumType ValueType;
 
-		// Token: 0x04006BEE RID: 27630
+		// Token: 0x04006C58 RID: 27736
 		public object DefaultValue;
 	}
 }

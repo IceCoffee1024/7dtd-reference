@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000664 RID: 1636
+// Token: 0x02000666 RID: 1638
 public sealed class RequirementGroup
 {
-	// Token: 0x060034CD RID: 13517 RVA: 0x0015E9CE File Offset: 0x0015CBCE
+	// Token: 0x06003510 RID: 13584 RVA: 0x0015F332 File Offset: 0x0015D532
 	public RequirementGroup(RequirementGroup.Op _op, List<IRequirement> _reqs, List<RequirementGroup> _groups)
 	{
 		this.op = _op;
@@ -12,7 +12,7 @@ public sealed class RequirementGroup
 		this.groups = _groups;
 	}
 
-	// Token: 0x060034CE RID: 13518 RVA: 0x0015E9EC File Offset: 0x0015CBEC
+	// Token: 0x06003511 RID: 13585 RVA: 0x0015F350 File Offset: 0x0015D550
 	public bool IsValid(MinEventParams _params)
 	{
 		RequirementGroup.Op op = this.op;
@@ -35,7 +35,7 @@ public sealed class RequirementGroup
 		return flag;
 	}
 
-	// Token: 0x060034CF RID: 13519 RVA: 0x0015EA28 File Offset: 0x0015CC28
+	// Token: 0x06003512 RID: 13586 RVA: 0x0015F38C File Offset: 0x0015D58C
 	public void GetInfoStrings(ref List<string> list)
 	{
 		if (this.reqs != null)
@@ -62,7 +62,7 @@ public sealed class RequirementGroup
 		}
 	}
 
-	// Token: 0x060034D0 RID: 13520 RVA: 0x0015EABC File Offset: 0x0015CCBC
+	// Token: 0x06003513 RID: 13587 RVA: 0x0015F420 File Offset: 0x0015D620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool EvalAnd(MinEventParams _params)
 	{
@@ -93,7 +93,7 @@ public sealed class RequirementGroup
 		return true;
 	}
 
-	// Token: 0x060034D1 RID: 13521 RVA: 0x0015EB60 File Offset: 0x0015CD60
+	// Token: 0x06003514 RID: 13588 RVA: 0x0015F4C4 File Offset: 0x0015D6C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool EvalOr(MinEventParams _params)
 	{
@@ -123,24 +123,24 @@ public sealed class RequirementGroup
 		return !flag;
 	}
 
-	// Token: 0x04002B0F RID: 11023
+	// Token: 0x04002B08 RID: 11016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RequirementGroup.Op op;
 
-	// Token: 0x04002B10 RID: 11024
+	// Token: 0x04002B09 RID: 11017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<IRequirement> reqs;
 
-	// Token: 0x04002B11 RID: 11025
+	// Token: 0x04002B0A RID: 11018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<RequirementGroup> groups;
 
-	// Token: 0x02000665 RID: 1637
+	// Token: 0x02000667 RID: 1639
 	public enum Op
 	{
-		// Token: 0x04002B13 RID: 11027
+		// Token: 0x04002B0C RID: 11020
 		And,
-		// Token: 0x04002B14 RID: 11028
+		// Token: 0x04002B0D RID: 11021
 		Or
 	}
 }

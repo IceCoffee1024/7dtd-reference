@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECF RID: 3791
+// Token: 0x02000EDE RID: 3806
 [Preserve]
 public class XUiC_CamPositionAdd : XUiController
 {
-	// Token: 0x060076BF RID: 30399 RVA: 0x002C99F8 File Offset: 0x002C7BF8
+	// Token: 0x060076BA RID: 30394 RVA: 0x002CCDD0 File Offset: 0x002CAFD0
 	public override void Init()
 	{
 		base.Init();
@@ -37,14 +37,14 @@ public class XUiC_CamPositionAdd : XUiController
 		base.OnVisiblity += this.OnVisibilityChanged;
 	}
 
-	// Token: 0x060076C0 RID: 30400 RVA: 0x002C9B17 File Offset: 0x002C7D17
+	// Token: 0x060076BB RID: 30395 RVA: 0x002CCEEF File Offset: 0x002CB0EF
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		base.OnVisiblity -= this.OnVisibilityChanged;
 	}
 
-	// Token: 0x060076C1 RID: 30401 RVA: 0x002C9B31 File Offset: 0x002C7D31
+	// Token: 0x060076BC RID: 30396 RVA: 0x002CCF09 File Offset: 0x002CB109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Name_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -52,7 +52,7 @@ public class XUiC_CamPositionAdd : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060076C2 RID: 30402 RVA: 0x002C9B40 File Offset: 0x002C7D40
+	// Token: 0x060076BD RID: 30397 RVA: 0x002CCF18 File Offset: 0x002CB118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Comment_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -60,14 +60,14 @@ public class XUiC_CamPositionAdd : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060076C3 RID: 30403 RVA: 0x002C9B4F File Offset: 0x002C7D4F
+	// Token: 0x060076BE RID: 30398 RVA: 0x002CCF27 File Offset: 0x002CB127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Inputs_OnSubmitHandler(XUiController _sender, string _text)
 	{
 		this.add();
 	}
 
-	// Token: 0x060076C4 RID: 30404 RVA: 0x002C9B57 File Offset: 0x002C7D57
+	// Token: 0x060076BF RID: 30399 RVA: 0x002CCF2F File Offset: 0x002CB12F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clear()
 	{
@@ -81,7 +81,7 @@ public class XUiC_CamPositionAdd : XUiController
 		}
 	}
 
-	// Token: 0x060076C5 RID: 30405 RVA: 0x002C9B89 File Offset: 0x002C7D89
+	// Token: 0x060076C0 RID: 30400 RVA: 0x002CCF61 File Offset: 0x002CB161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void add()
 	{
@@ -94,14 +94,14 @@ public class XUiC_CamPositionAdd : XUiController
 		this.clear();
 	}
 
-	// Token: 0x060076C6 RID: 30406 RVA: 0x002C9BBD File Offset: 0x002C7DBD
+	// Token: 0x060076C1 RID: 30401 RVA: 0x002CCF95 File Offset: 0x002CB195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validateInput()
 	{
 		return this.name.Trim().Length > 0;
 	}
 
-	// Token: 0x060076C7 RID: 30407 RVA: 0x002C9BD4 File Offset: 0x002C7DD4
+	// Token: 0x060076C2 RID: 30402 RVA: 0x002CCFAC File Offset: 0x002CB1AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -113,7 +113,7 @@ public class XUiC_CamPositionAdd : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x060076C8 RID: 30408 RVA: 0x002C9C08 File Offset: 0x002C7E08
+	// Token: 0x060076C3 RID: 30403 RVA: 0x002CCFE0 File Offset: 0x002CB1E0
 	public void OnVisibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
 	{
 		GUIWindow modalWindow = this.xui.playerUI.windowManager.GetModalWindow();
@@ -139,21 +139,21 @@ public class XUiC_CamPositionAdd : XUiController
 		xuiC_TextInput.SelectOrVirtualKeyboard(false);
 	}
 
-	// Token: 0x060076C9 RID: 30409 RVA: 0x002C9C7A File Offset: 0x002C7E7A
+	// Token: 0x060076C4 RID: 30404 RVA: 0x002CD052 File Offset: 0x002CB252
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.modalWindowGroupEscCloseableBefore = null;
 	}
 
-	// Token: 0x060076CA RID: 30410 RVA: 0x002C9C8E File Offset: 0x002C7E8E
+	// Token: 0x060076C5 RID: 30405 RVA: 0x002CD066 File Offset: 0x002CB266
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.UpdateInput();
 	}
 
-	// Token: 0x060076CB RID: 30411 RVA: 0x002C9CA0 File Offset: 0x002C7EA0
+	// Token: 0x060076C6 RID: 30406 RVA: 0x002CD078 File Offset: 0x002CB278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -167,27 +167,27 @@ public class XUiC_CamPositionAdd : XUiController
 		}
 	}
 
-	// Token: 0x040057CC RID: 22476
+	// Token: 0x04005804 RID: 22532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CamPositionsList parentListWindow;
 
-	// Token: 0x040057CD RID: 22477
+	// Token: 0x04005805 RID: 22533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtName;
 
-	// Token: 0x040057CE RID: 22478
+	// Token: 0x04005806 RID: 22534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtComment;
 
-	// Token: 0x040057CF RID: 22479
+	// Token: 0x04005807 RID: 22535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool? modalWindowGroupEscCloseableBefore;
 
-	// Token: 0x040057D0 RID: 22480
+	// Token: 0x04005808 RID: 22536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = string.Empty;
 
-	// Token: 0x040057D1 RID: 22481
+	// Token: 0x04005809 RID: 22537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string comment = string.Empty;
 }

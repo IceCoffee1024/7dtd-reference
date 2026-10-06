@@ -3,10 +3,10 @@ using DynamicMusic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-// Token: 0x020000B1 RID: 177
+// Token: 0x020000B3 RID: 179
 public class AudioMixerManager : MonoBehaviour
 {
-	// Token: 0x0600036C RID: 876 RVA: 0x00018D68 File Offset: 0x00016F68
+	// Token: 0x06000372 RID: 882 RVA: 0x00018E60 File Offset: 0x00017060
 	public void Update()
 	{
 		if (GameManager.Instance == null)
@@ -51,7 +51,7 @@ public class AudioMixerManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036D RID: 877 RVA: 0x00018E68 File Offset: 0x00017068
+	// Token: 0x06000373 RID: 883 RVA: 0x00018F60 File Offset: 0x00017160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void transitionTo(AudioMixerManager.SnapshotController _snapshot)
 	{
@@ -62,35 +62,35 @@ public class AudioMixerManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003CE RID: 974
+	// Token: 0x040003D1 RID: 977
 	public AudioMixerManager.SnapshotController underwaterSnapshot;
 
-	// Token: 0x040003CF RID: 975
+	// Token: 0x040003D2 RID: 978
 	public AudioMixerManager.SnapshotController stunnedSnapshot;
 
-	// Token: 0x040003D0 RID: 976
+	// Token: 0x040003D3 RID: 979
 	public AudioMixerManager.SnapshotController deafenedSnapshot;
 
-	// Token: 0x040003D1 RID: 977
+	// Token: 0x040003D4 RID: 980
 	public AudioMixerManager.SnapshotController defaultSnapshot;
 
-	// Token: 0x040003D2 RID: 978
+	// Token: 0x040003D5 RID: 981
 	public bool bCameraWasUnderWater;
 
-	// Token: 0x040003D3 RID: 979
+	// Token: 0x040003D6 RID: 982
 	public bool wasStunned;
 
-	// Token: 0x040003D4 RID: 980
+	// Token: 0x040003D7 RID: 983
 	public bool wasDeafened;
 
-	// Token: 0x020000B2 RID: 178
+	// Token: 0x020000B4 RID: 180
 	[Serializable]
 	public class SnapshotController
 	{
-		// Token: 0x040003D5 RID: 981
+		// Token: 0x040003D8 RID: 984
 		public AudioMixerSnapshot snapshot;
 
-		// Token: 0x040003D6 RID: 982
+		// Token: 0x040003D9 RID: 985
 		public float transitionToTime = 1f;
 	}
 }

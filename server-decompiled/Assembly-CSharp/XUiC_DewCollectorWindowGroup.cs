@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F21 RID: 3873
+// Token: 0x02000F30 RID: 3888
 [Preserve]
 public class XUiC_DewCollectorWindowGroup : XUiController
 {
-	// Token: 0x0600798B RID: 31115 RVA: 0x002DCF14 File Offset: 0x002DB114
+	// Token: 0x06007986 RID: 31110 RVA: 0x002E02B0 File Offset: 0x002DE4B0
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		this.nonPagingHeaderWindow = base.GetChildByType<XUiC_WindowNonPagingHeader>();
 	}
 
-	// Token: 0x0600798C RID: 31116 RVA: 0x002DD01C File Offset: 0x002DB21C
+	// Token: 0x06007987 RID: 31111 RVA: 0x002E03B8 File Offset: 0x002DE5B8
 	public void SetTileEntity(TileEntityCollector _te)
 	{
 		this.te = _te;
@@ -51,7 +51,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		this.lootingHeader = Localization.Get(blockCollector.LootLabelKey, false, null);
 	}
 
-	// Token: 0x0600798D RID: 31117 RVA: 0x002DD140 File Offset: 0x002DB340
+	// Token: 0x06007988 RID: 31112 RVA: 0x002E04DC File Offset: 0x002DE6DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OpenContainer()
 	{
@@ -66,7 +66,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		this.dewCatcherWindow.ViewComponent.IsVisible = true;
 	}
 
-	// Token: 0x0600798E RID: 31118 RVA: 0x002DD1B4 File Offset: 0x002DB3B4
+	// Token: 0x06007989 RID: 31113 RVA: 0x002E0550 File Offset: 0x002DE750
 	public override void OnOpen()
 	{
 		EntityPlayerLocal entityPlayer = this.xui.playerUI.entityPlayer;
@@ -86,7 +86,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x0600798F RID: 31119 RVA: 0x002DD278 File Offset: 0x002DB478
+	// Token: 0x0600798A RID: 31114 RVA: 0x002E0614 File Offset: 0x002DE814
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -108,7 +108,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007990 RID: 31120 RVA: 0x002DD34C File Offset: 0x002DB54C
+	// Token: 0x0600798B RID: 31115 RVA: 0x002E06E8 File Offset: 0x002DE8E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doEvent(string activationEvent)
 	{
@@ -129,7 +129,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007991 RID: 31121 RVA: 0x002DD401 File Offset: 0x002DB601
+	// Token: 0x0600798C RID: 31116 RVA: 0x002E079D File Offset: 0x002DE99D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_DewCollectorWindowGroup GetInstance(XUi _xuiInstance = null)
 	{
@@ -140,7 +140,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		return (XUiC_DewCollectorWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_DewCollectorWindowGroup.ID);
 	}
 
-	// Token: 0x06007992 RID: 31122 RVA: 0x002DD422 File Offset: 0x002DB622
+	// Token: 0x0600798D RID: 31117 RVA: 0x002E07BE File Offset: 0x002DE9BE
 	public static Vector3i GetTeBlockPos(XUi _xuiInstance = null)
 	{
 		TileEntityCollector tileEntityCollector = XUiC_DewCollectorWindowGroup.GetInstance(_xuiInstance).te;
@@ -151,7 +151,7 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		return tileEntityCollector.ToWorldPos();
 	}
 
-	// Token: 0x06007993 RID: 31123 RVA: 0x002DD440 File Offset: 0x002DB640
+	// Token: 0x0600798E RID: 31118 RVA: 0x002E07DC File Offset: 0x002DE9DC
 	public static void CloseIfOpenAtPos(Vector3i _blockPos, XUi _xuiInstance = null)
 	{
 		GUIWindowManager windowManager = XUiC_DewCollectorWindowGroup.GetInstance(_xuiInstance).xui.playerUI.windowManager;
@@ -161,70 +161,70 @@ public class XUiC_DewCollectorWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x040059D8 RID: 23000
+	// Token: 0x04005A10 RID: 23056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DewCollectorWindow dewCatcherWindow;
 
-	// Token: 0x040059D9 RID: 23001
+	// Token: 0x04005A11 RID: 23057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DewCollectorModGrid dewCollectorModGrid;
 
-	// Token: 0x040059DA RID: 23002
+	// Token: 0x04005A12 RID: 23058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label headerName;
 
-	// Token: 0x040059DB RID: 23003
+	// Token: 0x04005A13 RID: 23059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x040059DC RID: 23004
+	// Token: 0x04005A14 RID: 23060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DewCollectorStack[] collectorStacks;
 
-	// Token: 0x040059DD RID: 23005
+	// Token: 0x04005A15 RID: 23061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCollector te;
 
-	// Token: 0x040059DE RID: 23006
+	// Token: 0x04005A16 RID: 23062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController fuelWindow;
 
-	// Token: 0x040059DF RID: 23007
+	// Token: 0x04005A17 RID: 23063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label fuelWindowTitle;
 
-	// Token: 0x040059E0 RID: 23008
+	// Token: 0x04005A18 RID: 23064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite fuelWindowSprite;
 
-	// Token: 0x040059E1 RID: 23009
+	// Token: 0x04005A19 RID: 23065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CollectorFuelGrid collectorFuelGrid;
 
-	// Token: 0x040059E2 RID: 23010
+	// Token: 0x04005A1A RID: 23066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController catalystWindow;
 
-	// Token: 0x040059E3 RID: 23011
+	// Token: 0x04005A1B RID: 23067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label catalystWindowTitle;
 
-	// Token: 0x040059E4 RID: 23012
+	// Token: 0x04005A1C RID: 23068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite catalystWindowSprite;
 
-	// Token: 0x040059E5 RID: 23013
+	// Token: 0x04005A1D RID: 23069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CollectorFuelGrid collectorCatalyst;
 
-	// Token: 0x040059E6 RID: 23014
+	// Token: 0x04005A1E RID: 23070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lootingHeader;
 
-	// Token: 0x040059E7 RID: 23015
+	// Token: 0x04005A1F RID: 23071
 	public static string ID = "dewcollector";
 
-	// Token: 0x040059E8 RID: 23016
+	// Token: 0x04005A20 RID: 23072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float totalOpenTime;
 }

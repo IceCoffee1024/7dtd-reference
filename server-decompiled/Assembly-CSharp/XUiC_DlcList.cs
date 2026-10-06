@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E00 RID: 3584
+// Token: 0x02000E0F RID: 3599
 [Preserve]
 public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 {
-	// Token: 0x17000C2B RID: 3115
-	// (get) Token: 0x06006DCD RID: 28109 RVA: 0x002AA51A File Offset: 0x002A871A
+	// Token: 0x17000C46 RID: 3142
+	// (get) Token: 0x06006DC5 RID: 28101 RVA: 0x002AD8AA File Offset: 0x002ABAAA
 	[XuiXmlBinding("dlc_count")]
 	public int DlcCount
 	{
@@ -19,8 +19,8 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 		}
 	}
 
-	// Token: 0x17000C2C RID: 3116
-	// (get) Token: 0x06006DCE RID: 28110 RVA: 0x002AA527 File Offset: 0x002A8727
+	// Token: 0x17000C47 RID: 3143
+	// (get) Token: 0x06006DC6 RID: 28102 RVA: 0x002AD8B7 File Offset: 0x002ABAB7
 	[XuiXmlBinding("paging_active")]
 	public bool PagingRequired
 	{
@@ -31,7 +31,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 		}
 	}
 
-	// Token: 0x06006DCF RID: 28111 RVA: 0x002AA53C File Offset: 0x002A873C
+	// Token: 0x06006DC7 RID: 28103 RVA: 0x002AD8CC File Offset: 0x002ABACC
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -45,16 +45,17 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06006DD0 RID: 28112 RVA: 0x002AA5CC File Offset: 0x002A87CC
+	// Token: 0x06006DC8 RID: 28104 RVA: 0x002AD95C File Offset: 0x002ABB5C
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x0400539C RID: 21404
+	// Token: 0x040053D3 RID: 21459
 	public static readonly List<XUiC_DlcList.DlcEntry> DlcEntries = new List<XUiC_DlcList.DlcEntry>
 	{
+		new XUiC_DlcList.DlcEntry("armorOktoberfestSet", "Data/DlcInfo/banner_octoberfest_outfit", EntitlementSetEnum.OktoberfestCosmetic),
 		new XUiC_DlcList.DlcEntry("armorWorkingStiffSet", "Data/DlcInfo/banner_workingstiff_outfit", EntitlementSetEnum.WorkingStiffCosmetic),
 		new XUiC_DlcList.DlcEntry("armorBigBeakSet", "Data/DlcInfo/banner_bigbeak_outfit", EntitlementSetEnum.HenpocalypseCosmetic),
 		new XUiC_DlcList.DlcEntry("armorBeachwearSet", "Data/DlcInfo/banner_beachwear_outfit", EntitlementSetEnum.BeachCosmetic),
@@ -68,11 +69,11 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 		new XUiC_DlcList.DlcEntry("armorDesertSet", "Data/DlcInfo/banner_desert_outfit", EntitlementSetEnum.DesertCosmetic)
 	};
 
-	// Token: 0x02000E01 RID: 3585
+	// Token: 0x02000E10 RID: 3600
 	[Preserve]
 	public class DlcEntry : XUiListEntry<XUiC_DlcList.DlcEntry>
 	{
-		// Token: 0x06006DD3 RID: 28115 RVA: 0x002AA6F1 File Offset: 0x002A88F1
+		// Token: 0x06006DCB RID: 28107 RVA: 0x002ADA98 File Offset: 0x002ABC98
 		public DlcEntry(string _nameKey, string _imageResourceUri, EntitlementSetEnum _dlcSet)
 		{
 			this.Name = Localization.Get(_nameKey, false, null);
@@ -80,7 +81,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			this.DlcSet = _dlcSet;
 		}
 
-		// Token: 0x06006DD4 RID: 28116 RVA: 0x002AA715 File Offset: 0x002A8915
+		// Token: 0x06006DCC RID: 28108 RVA: 0x002ADABC File Offset: 0x002ABCBC
 		public override int CompareTo(XUiC_DlcList.DlcEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -90,22 +91,22 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			return string.Compare(this.Name, _otherEntry.Name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x0400539D RID: 21405
+		// Token: 0x040053D4 RID: 21460
 		public readonly string Name;
 
-		// Token: 0x0400539E RID: 21406
+		// Token: 0x040053D5 RID: 21461
 		public readonly string ImageResourceUri;
 
-		// Token: 0x0400539F RID: 21407
+		// Token: 0x040053D6 RID: 21462
 		public readonly EntitlementSetEnum DlcSet;
 	}
 
-	// Token: 0x02000E02 RID: 3586
+	// Token: 0x02000E11 RID: 3601
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class DlcListEntryController : XUiC_List<XUiC_DlcList.DlcEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006DD5 RID: 28117 RVA: 0x002AA730 File Offset: 0x002A8930
+		// Token: 0x06006DCD RID: 28109 RVA: 0x002ADAD8 File Offset: 0x002ABCD8
 		public override void Init()
 		{
 			base.Init();
@@ -122,7 +123,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			}
 		}
 
-		// Token: 0x06006DD6 RID: 28118 RVA: 0x002AA7CA File Offset: 0x002A89CA
+		// Token: 0x06006DCE RID: 28110 RVA: 0x002ADB72 File Offset: 0x002ABD72
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnHovered(bool _isOver)
 		{
@@ -139,7 +140,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			this.textureScaler.PlayReverse();
 		}
 
-		// Token: 0x06006DD7 RID: 28119 RVA: 0x002AA7FC File Offset: 0x002A89FC
+		// Token: 0x06006DCF RID: 28111 RVA: 0x002ADBA4 File Offset: 0x002ABDA4
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -148,7 +149,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			return ((entryData != null) ? entryData.Name : null) ?? "";
 		}
 
-		// Token: 0x06006DD8 RID: 28120 RVA: 0x002AA819 File Offset: 0x002A8A19
+		// Token: 0x06006DD0 RID: 28112 RVA: 0x002ADBC1 File Offset: 0x002ABDC1
 		[XuiXmlBinding("texture_uri")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingTextureUri()
@@ -157,7 +158,7 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			return ((entryData != null) ? entryData.ImageResourceUri : null) ?? "";
 		}
 
-		// Token: 0x06006DD9 RID: 28121 RVA: 0x002AA836 File Offset: 0x002A8A36
+		// Token: 0x06006DD1 RID: 28113 RVA: 0x002ADBDE File Offset: 0x002ABDDE
 		[XuiXmlBinding("owned")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingOwned()
@@ -165,15 +166,15 @@ public class XUiC_DlcList : XUiC_List<XUiC_DlcList.DlcEntry>
 			return this.entryData != null && EntitlementManager.Instance.HasEntitlement(this.entryData.DlcSet);
 		}
 
-		// Token: 0x040053A0 RID: 21408
+		// Token: 0x040053D7 RID: 21463
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float HoverDuration = 0.25f;
 
-		// Token: 0x040053A1 RID: 21409
+		// Token: 0x040053D8 RID: 21464
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float HoverScale = 1.15f;
 
-		// Token: 0x040053A2 RID: 21410
+		// Token: 0x040053D9 RID: 21465
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TweenScale textureScaler;
 	}

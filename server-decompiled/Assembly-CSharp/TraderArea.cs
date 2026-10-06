@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x02000BD2 RID: 3026
+// Token: 0x02000BE4 RID: 3044
 public class TraderArea : IDesignatedArea
 {
-	// Token: 0x17000989 RID: 2441
-	// (get) Token: 0x06005B27 RID: 23335 RVA: 0x002306B5 File Offset: 0x0022E8B5
-	// (set) Token: 0x06005B28 RID: 23336 RVA: 0x002306BD File Offset: 0x0022E8BD
+	// Token: 0x170009AB RID: 2475
+	// (get) Token: 0x06005B40 RID: 23360 RVA: 0x002339B1 File Offset: 0x00231BB1
+	// (set) Token: 0x06005B41 RID: 23361 RVA: 0x002339B9 File Offset: 0x00231BB9
 	public BoundsInt AreaBounds
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700098A RID: 2442
-	// (get) Token: 0x06005B29 RID: 23337 RVA: 0x002306C6 File Offset: 0x0022E8C6
+	// Token: 0x170009AC RID: 2476
+	// (get) Token: 0x06005B42 RID: 23362 RVA: 0x002339C2 File Offset: 0x00231BC2
 	public bool IsInitialized
 	{
 		get
@@ -25,7 +25,7 @@ public class TraderArea : IDesignatedArea
 		}
 	}
 
-	// Token: 0x06005B2A RID: 23338 RVA: 0x002306D4 File Offset: 0x0022E8D4
+	// Token: 0x06005B43 RID: 23363 RVA: 0x002339D0 File Offset: 0x00231BD0
 	public TraderArea(Vector3i _pos, Vector3i _size, Vector3i _protectPadding, PrefabTeleportVolumeList _teleportVolumes)
 	{
 		this.Position = _pos;
@@ -38,7 +38,7 @@ public class TraderArea : IDesignatedArea
 		this.TeleportVolumes.CopyFrom(_teleportVolumes);
 	}
 
-	// Token: 0x06005B2B RID: 23339 RVA: 0x00230788 File Offset: 0x0022E988
+	// Token: 0x06005B44 RID: 23364 RVA: 0x00233A84 File Offset: 0x00231C84
 	public Vector3i GetProtectPadding()
 	{
 		Vector3i vector3i = this.ProtectSize - this.PrefabSize;
@@ -47,13 +47,13 @@ public class TraderArea : IDesignatedArea
 		return vector3i;
 	}
 
-	// Token: 0x06005B2C RID: 23340 RVA: 0x002307C0 File Offset: 0x0022E9C0
+	// Token: 0x06005B45 RID: 23365 RVA: 0x00233ABC File Offset: 0x00231CBC
 	public bool IsWithinProtectArea(Vector3 _pos)
 	{
 		return (float)this.AreaBounds.xMin <= _pos.x && _pos.x <= (float)this.AreaBounds.xMax && (float)this.AreaBounds.yMin <= _pos.y && _pos.y <= (float)this.AreaBounds.yMax && (float)this.AreaBounds.zMin <= _pos.z && _pos.z <= (float)this.AreaBounds.zMax;
 	}
 
-	// Token: 0x06005B2D RID: 23341 RVA: 0x0023085C File Offset: 0x0022EA5C
+	// Token: 0x06005B46 RID: 23366 RVA: 0x00233B58 File Offset: 0x00231D58
 	public bool IsWithinTeleportArea(Vector3 _pos, out PrefabTeleportVolume tpVolume)
 	{
 		if (World.SandboxUseTraderArea != TraderAreaStates.Default)
@@ -75,7 +75,7 @@ public class TraderArea : IDesignatedArea
 		return false;
 	}
 
-	// Token: 0x06005B2E RID: 23342 RVA: 0x00230940 File Offset: 0x0022EB40
+	// Token: 0x06005B47 RID: 23367 RVA: 0x00233C3C File Offset: 0x00231E3C
 	public bool SetClosed(World _world, bool _bClosed, EntityTrader _trader, bool playSound = false)
 	{
 		this.owningTrader = _trader;
@@ -161,7 +161,7 @@ public class TraderArea : IDesignatedArea
 		return true;
 	}
 
-	// Token: 0x06005B2F RID: 23343 RVA: 0x00230B90 File Offset: 0x0022ED90
+	// Token: 0x06005B48 RID: 23368 RVA: 0x00233E8C File Offset: 0x0023208C
 	public void HandleWarning(World _world, EntityTrader _trader)
 	{
 		int num = World.toChunkXZ(this.Position.x - 1);
@@ -197,13 +197,13 @@ public class TraderArea : IDesignatedArea
 		}
 	}
 
-	// Token: 0x06005B30 RID: 23344 RVA: 0x00230CB1 File Offset: 0x0022EEB1
+	// Token: 0x06005B49 RID: 23369 RVA: 0x00233FAD File Offset: 0x002321AD
 	public int GetReadWriteSize()
 	{
 		return 21 + (1 + this.TeleportVolumes.Count * 6);
 	}
 
-	// Token: 0x06005B31 RID: 23345 RVA: 0x00230CC8 File Offset: 0x0022EEC8
+	// Token: 0x06005B4A RID: 23370 RVA: 0x00233FC4 File Offset: 0x002321C4
 	public static TraderArea Read(PooledBinaryReader _reader)
 	{
 		Vector3i vector3i;
@@ -237,7 +237,7 @@ public class TraderArea : IDesignatedArea
 		return new TraderArea(vector3i, vector3i2, vector3i3, prefabTeleportVolumeList);
 	}
 
-	// Token: 0x06005B32 RID: 23346 RVA: 0x00230DDC File Offset: 0x0022EFDC
+	// Token: 0x06005B4B RID: 23371 RVA: 0x002340D8 File Offset: 0x002322D8
 	public void Write(PooledBinaryWriter _writer)
 	{
 		_writer.Write(this.Position.x);
@@ -263,7 +263,7 @@ public class TraderArea : IDesignatedArea
 		}
 	}
 
-	// Token: 0x06005B33 RID: 23347 RVA: 0x00230F24 File Offset: 0x0022F124
+	// Token: 0x06005B4C RID: 23372 RVA: 0x00234220 File Offset: 0x00232420
 	public EntityTrader GetTrader()
 	{
 		if (this.owningTrader != null)
@@ -285,29 +285,29 @@ public class TraderArea : IDesignatedArea
 		return null;
 	}
 
-	// Token: 0x040046C7 RID: 18119
+	// Token: 0x04004706 RID: 18182
 	public Vector3i Position;
 
-	// Token: 0x040046C8 RID: 18120
+	// Token: 0x04004707 RID: 18183
 	public Vector3i PrefabSize;
 
-	// Token: 0x040046C9 RID: 18121
+	// Token: 0x04004708 RID: 18184
 	public Vector3i ProtectPosition;
 
-	// Token: 0x040046CA RID: 18122
+	// Token: 0x04004709 RID: 18185
 	public Vector3i ProtectSize;
 
-	// Token: 0x040046CC RID: 18124
+	// Token: 0x0400470B RID: 18187
 	public bool IsClosed = true;
 
-	// Token: 0x040046CD RID: 18125
+	// Token: 0x0400470C RID: 18188
 	public readonly PrefabTeleportVolumeList TeleportVolumes = new PrefabTeleportVolumeList(null);
 
-	// Token: 0x040046CE RID: 18126
+	// Token: 0x0400470D RID: 18189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPadXZ = 2;
 
-	// Token: 0x040046CF RID: 18127
+	// Token: 0x0400470E RID: 18190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityTrader owningTrader;
 }

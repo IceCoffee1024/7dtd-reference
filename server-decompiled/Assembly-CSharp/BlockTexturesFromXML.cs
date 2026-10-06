@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000CFA RID: 3322
+// Token: 0x02000D08 RID: 3336
 public class BlockTexturesFromXML
 {
-	// Token: 0x06006599 RID: 26009 RVA: 0x0027BD40 File Offset: 0x00279F40
+	// Token: 0x0600658B RID: 25995 RVA: 0x0027F0E4 File Offset: 0x0027D2E4
 	public static IEnumerator CreateBlockTextures(XmlFile _xmlFile)
 	{
 		BlockTextureData.InitStatic();

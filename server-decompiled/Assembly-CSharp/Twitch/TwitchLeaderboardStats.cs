@@ -5,22 +5,22 @@ using UniLinq;
 
 namespace Twitch
 {
-	// Token: 0x02001842 RID: 6210
+	// Token: 0x0200186E RID: 6254
 	public class TwitchLeaderboardStats
 	{
-		// Token: 0x1400010C RID: 268
-		// (add) Token: 0x0600BF76 RID: 49014 RVA: 0x0046A63C File Offset: 0x0046883C
-		// (remove) Token: 0x0600BF77 RID: 49015 RVA: 0x0046A674 File Offset: 0x00468874
+		// Token: 0x1400010B RID: 267
+		// (add) Token: 0x0600C0CE RID: 49358 RVA: 0x0046EB78 File Offset: 0x0046CD78
+		// (remove) Token: 0x0600C0CF RID: 49359 RVA: 0x0046EBB0 File Offset: 0x0046CDB0
 		public event OnLeaderboardStatsChanged StatsChanged;
 
-		// Token: 0x1400010D RID: 269
-		// (add) Token: 0x0600BF78 RID: 49016 RVA: 0x0046A6AC File Offset: 0x004688AC
-		// (remove) Token: 0x0600BF79 RID: 49017 RVA: 0x0046A6E4 File Offset: 0x004688E4
+		// Token: 0x1400010C RID: 268
+		// (add) Token: 0x0600C0D0 RID: 49360 RVA: 0x0046EBE8 File Offset: 0x0046CDE8
+		// (remove) Token: 0x0600C0D1 RID: 49361 RVA: 0x0046EC20 File Offset: 0x0046CE20
 		public event OnLeaderboardStatsChanged LeaderboardChanged;
 
-		// Token: 0x1700177F RID: 6015
-		// (get) Token: 0x0600BF7A RID: 49018 RVA: 0x0046A719 File Offset: 0x00468919
-		// (set) Token: 0x0600BF7B RID: 49019 RVA: 0x0046A721 File Offset: 0x00468921
+		// Token: 0x17001821 RID: 6177
+		// (get) Token: 0x0600C0D2 RID: 49362 RVA: 0x0046EC55 File Offset: 0x0046CE55
+		// (set) Token: 0x0600C0D3 RID: 49363 RVA: 0x0046EC5D File Offset: 0x0046CE5D
 		public int GoodRewardTime
 		{
 			get
@@ -37,14 +37,14 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF7C RID: 49020 RVA: 0x0046A743 File Offset: 0x00468943
+		// Token: 0x0600C0D4 RID: 49364 RVA: 0x0046EC7F File Offset: 0x0046CE7F
 		public void SetupLocalization()
 		{
 			this.chatOutput_GoodReward = Localization.Get("TwitchChat_GoodReward", false, null);
 			this.ingameOutput_GoodReward = Localization.Get("TwitchInGame_GoodReward", false, null);
 		}
 
-		// Token: 0x0600BF7D RID: 49021 RVA: 0x0046A769 File Offset: 0x00468969
+		// Token: 0x0600C0D5 RID: 49365 RVA: 0x0046ECA5 File Offset: 0x0046CEA5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HandleStatsChanged()
 		{
@@ -54,7 +54,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF7E RID: 49022 RVA: 0x0046A77E File Offset: 0x0046897E
+		// Token: 0x0600C0D6 RID: 49366 RVA: 0x0046ECBA File Offset: 0x0046CEBA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HandleLeaderboardChanged()
 		{
@@ -64,7 +64,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF7F RID: 49023 RVA: 0x0046A794 File Offset: 0x00468994
+		// Token: 0x0600C0D7 RID: 49367 RVA: 0x0046ECD0 File Offset: 0x0046CED0
 		public void UpdateStats(float deltaTime)
 		{
 			if (this.CurrentGoodDirty)
@@ -131,7 +131,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF80 RID: 49024 RVA: 0x0046A9F1 File Offset: 0x00468BF1
+		// Token: 0x0600C0D8 RID: 49368 RVA: 0x0046EF2D File Offset: 0x0046D12D
 		public void CheckTopKiller(TwitchLeaderboardStats.StatEntry newData)
 		{
 			if (this.TopKillerViewer == null || this.TopKillerViewer.Kills < newData.Kills)
@@ -146,7 +146,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF81 RID: 49025 RVA: 0x0046AA2C File Offset: 0x00468C2C
+		// Token: 0x0600C0D9 RID: 49369 RVA: 0x0046EF68 File Offset: 0x0046D168
 		public void CheckTopGood(TwitchLeaderboardStats.StatEntry newData)
 		{
 			if (this.TopGoodViewer == null || this.TopGoodViewer.GoodActions < newData.GoodActions)
@@ -162,7 +162,7 @@ namespace Twitch
 			this.CurrentGoodDirty = true;
 		}
 
-		// Token: 0x0600BF82 RID: 49026 RVA: 0x0046AA80 File Offset: 0x00468C80
+		// Token: 0x0600C0DA RID: 49370 RVA: 0x0046EFBC File Offset: 0x0046D1BC
 		public void CheckTopBad(TwitchLeaderboardStats.StatEntry newData)
 		{
 			if (this.TopBadViewer == null || this.TopBadViewer.BadActions < newData.BadActions)
@@ -178,7 +178,7 @@ namespace Twitch
 			this.CurrentGoodDirty = true;
 		}
 
-		// Token: 0x0600BF83 RID: 49027 RVA: 0x0046AAD4 File Offset: 0x00468CD4
+		// Token: 0x0600C0DB RID: 49371 RVA: 0x0046F010 File Offset: 0x0046D210
 		public void CheckMostBitsSpent(TwitchLeaderboardStats.StatEntry newData)
 		{
 			if (this.MostBitsSpentViewer == null || this.MostBitsSpentViewer.BitsUsed < newData.BitsUsed)
@@ -193,7 +193,7 @@ namespace Twitch
 			this.HandleLeaderboardChanged();
 		}
 
-		// Token: 0x0600BF84 RID: 49028 RVA: 0x0046AB20 File Offset: 0x00468D20
+		// Token: 0x0600C0DC RID: 49372 RVA: 0x0046F05C File Offset: 0x0046D25C
 		public TwitchLeaderboardStats.StatEntry AddKill(string name, string userColor)
 		{
 			if (!this.StatEntries.ContainsKey(name))
@@ -207,7 +207,7 @@ namespace Twitch
 			return statEntry;
 		}
 
-		// Token: 0x0600BF85 RID: 49029 RVA: 0x0046AB74 File Offset: 0x00468D74
+		// Token: 0x0600C0DD RID: 49373 RVA: 0x0046F0B0 File Offset: 0x0046D2B0
 		public TwitchLeaderboardStats.StatEntry AddGoodActionUsed(string name, string userColor, bool isBits)
 		{
 			if (!this.StatEntries.ContainsKey(name))
@@ -224,7 +224,7 @@ namespace Twitch
 			return statEntry;
 		}
 
-		// Token: 0x0600BF86 RID: 49030 RVA: 0x0046ABEC File Offset: 0x00468DEC
+		// Token: 0x0600C0DE RID: 49374 RVA: 0x0046F128 File Offset: 0x0046D328
 		public TwitchLeaderboardStats.StatEntry AddBadActionUsed(string name, string userColor, bool isBits)
 		{
 			if (!this.StatEntries.ContainsKey(name))
@@ -241,7 +241,7 @@ namespace Twitch
 			return statEntry;
 		}
 
-		// Token: 0x0600BF87 RID: 49031 RVA: 0x0046AC64 File Offset: 0x00468E64
+		// Token: 0x0600C0DF RID: 49375 RVA: 0x0046F1A0 File Offset: 0x0046D3A0
 		public TwitchLeaderboardStats.StatEntry AddBitsUsed(string name, string userColor, int amount)
 		{
 			if (!this.StatEntries.ContainsKey(name))
@@ -255,7 +255,7 @@ namespace Twitch
 			return statEntry;
 		}
 
-		// Token: 0x0600BF88 RID: 49032 RVA: 0x0046ACB8 File Offset: 0x00468EB8
+		// Token: 0x0600C0E0 RID: 49376 RVA: 0x0046F1F4 File Offset: 0x0046D3F4
 		public void ClearAllCurrentGood()
 		{
 			foreach (TwitchLeaderboardStats.StatEntry statEntry in this.StatEntries.Values)
@@ -268,93 +268,93 @@ namespace Twitch
 			this.HandleLeaderboardChanged();
 		}
 
-		// Token: 0x04008FF7 RID: 36855
+		// Token: 0x040090BD RID: 37053
 		public int LargestPimpPot;
 
-		// Token: 0x04008FF8 RID: 36856
+		// Token: 0x040090BE RID: 37054
 		public int LargestBitPot;
 
-		// Token: 0x04008FF9 RID: 36857
+		// Token: 0x040090BF RID: 37055
 		public int TotalGood;
 
-		// Token: 0x04008FFA RID: 36858
+		// Token: 0x040090C0 RID: 37056
 		public int TotalBad;
 
-		// Token: 0x04008FFB RID: 36859
+		// Token: 0x040090C1 RID: 37057
 		public int TotalActions;
 
-		// Token: 0x04008FFC RID: 36860
+		// Token: 0x040090C2 RID: 37058
 		public int TotalBits;
 
-		// Token: 0x04008FFD RID: 36861
+		// Token: 0x040090C3 RID: 37059
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_GoodReward;
 
-		// Token: 0x04008FFE RID: 36862
+		// Token: 0x040090C4 RID: 37060
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string ingameOutput_GoodReward;
 
-		// Token: 0x04009001 RID: 36865
+		// Token: 0x040090C7 RID: 37063
 		public TwitchLeaderboardStats.StatEntry TopKillerViewer;
 
-		// Token: 0x04009002 RID: 36866
+		// Token: 0x040090C8 RID: 37064
 		public TwitchLeaderboardStats.StatEntry TopGoodViewer;
 
-		// Token: 0x04009003 RID: 36867
+		// Token: 0x040090C9 RID: 37065
 		public TwitchLeaderboardStats.StatEntry TopBadViewer;
 
-		// Token: 0x04009004 RID: 36868
+		// Token: 0x040090CA RID: 37066
 		public TwitchLeaderboardStats.StatEntry MostBitsSpentViewer;
 
-		// Token: 0x04009005 RID: 36869
+		// Token: 0x040090CB RID: 37067
 		public TwitchLeaderboardStats.StatEntry CurrentGoodViewer;
 
-		// Token: 0x04009006 RID: 36870
+		// Token: 0x040090CC RID: 37068
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CurrentGoodDirty;
 
-		// Token: 0x04009007 RID: 36871
+		// Token: 0x040090CD RID: 37069
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastTime = 1f;
 
-		// Token: 0x04009008 RID: 36872
+		// Token: 0x040090CE RID: 37070
 		public float nextGoodTime = -1f;
 
-		// Token: 0x04009009 RID: 36873
+		// Token: 0x040090CF RID: 37071
 		public int GoodRewardAmount = 1000;
 
-		// Token: 0x0400900A RID: 36874
+		// Token: 0x040090D0 RID: 37072
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int goodRewardTime = 15;
 
-		// Token: 0x0400900B RID: 36875
+		// Token: 0x040090D1 RID: 37073
 		public Dictionary<string, TwitchLeaderboardStats.StatEntry> StatEntries = new Dictionary<string, TwitchLeaderboardStats.StatEntry>();
 
-		// Token: 0x02001843 RID: 6211
+		// Token: 0x0200186F RID: 6255
 		public class StatEntry
 		{
-			// Token: 0x0400900C RID: 36876
+			// Token: 0x040090D2 RID: 37074
 			public string Name;
 
-			// Token: 0x0400900D RID: 36877
+			// Token: 0x040090D3 RID: 37075
 			public string UserColor;
 
-			// Token: 0x0400900E RID: 36878
+			// Token: 0x040090D4 RID: 37076
 			public int Kills;
 
-			// Token: 0x0400900F RID: 36879
+			// Token: 0x040090D5 RID: 37077
 			public int GoodActions;
 
-			// Token: 0x04009010 RID: 36880
+			// Token: 0x040090D6 RID: 37078
 			public int BadActions;
 
-			// Token: 0x04009011 RID: 36881
+			// Token: 0x040090D7 RID: 37079
 			public int BitsUsed;
 
-			// Token: 0x04009012 RID: 36882
+			// Token: 0x040090D8 RID: 37080
 			public int CurrentGoodActions;
 
-			// Token: 0x04009013 RID: 36883
+			// Token: 0x040090D9 RID: 37081
 			public int CurrentActions;
 		}
 	}

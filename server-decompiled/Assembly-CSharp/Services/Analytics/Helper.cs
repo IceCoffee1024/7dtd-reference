@@ -8,14 +8,14 @@ using Platform;
 using Platform.EOS;
 using SandboxOptions;
 using Services.Analytics.Events;
-using UnityEngine.Networking;
+using Steamworks;
 
 namespace Services.Analytics
 {
-	// Token: 0x0200167F RID: 5759
+	// Token: 0x0200169E RID: 5790
 	public static class Helper
 	{
-		// Token: 0x0600B475 RID: 46197 RVA: 0x00436F04 File Offset: 0x00435104
+		// Token: 0x0600B507 RID: 46343 RVA: 0x0043AC1C File Offset: 0x00438E1C
 		public static string GetServerId()
 		{
 			GameServerInfo currentGameServerInfoServerOrClient = SingletonMonoBehaviour<ConnectionManager>.Instance.CurrentGameServerInfoServerOrClient;
@@ -27,7 +27,26 @@ namespace Services.Analytics
 			return null;
 		}
 
-		// Token: 0x0600B476 RID: 46198 RVA: 0x00436F38 File Offset: 0x00435138
+		// Token: 0x0600B508 RID: 46344 RVA: 0x0043AC4D File Offset: 0x00438E4D
+		public static string GetSaveId()
+		{
+			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
+			{
+				return GamePrefs.GetString(EnumGamePrefs.GameGuidClient);
+			}
+			if (!(GameManager.Instance != null))
+			{
+				return null;
+			}
+			World world = GameManager.Instance.World;
+			if (world == null)
+			{
+				return null;
+			}
+			return world.Guid;
+		}
+
+		// Token: 0x0600B509 RID: 46345 RVA: 0x0043AC8C File Offset: 0x00438E8C
 		public static int? GetServerPlayerCount()
 		{
 			World world = GameManager.Instance.World;
@@ -46,7 +65,30 @@ namespace Services.Analytics
 			return new int?(world.Players.dict.Values.Count);
 		}
 
-		// Token: 0x0600B477 RID: 46199 RVA: 0x00436FBB File Offset: 0x004351BB
+		// Token: 0x0600B50A RID: 46346 RVA: 0x0043AD10 File Offset: 0x00438F10
+		public static bool IsDevConfig()
+		{
+			if (!GameManager.IsDedicatedServer && PlatformManager.NativePlatform.PlatformIdentifier == EPlatformIdentifier.Steam)
+			{
+				try
+				{
+					string text;
+					if (SteamApps.GetCurrentBetaName(out text, 128) && text.StartsWith("testing_", StringComparison.Ordinal))
+					{
+						return true;
+					}
+					return false;
+				}
+				catch (Exception ex)
+				{
+					Log.Out(string.Format("[Analytics] Failed to find current Steam Branch\n{0}\n{1}", ex, ex.Message));
+				}
+				return false;
+			}
+			return false;
+		}
+
+		// Token: 0x0600B50B RID: 46347 RVA: 0x0043AD84 File Offset: 0x00438F84
 		public static string GetSaveID()
 		{
 			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -61,39 +103,29 @@ namespace Services.Analytics
 			return world.Guid;
 		}
 
-		// Token: 0x0600B478 RID: 46200 RVA: 0x00436FE9 File Offset: 0x004351E9
+		// Token: 0x0600B50C RID: 46348 RVA: 0x0043ADB2 File Offset: 0x00438FB2
 		public static IList<Mod> GetTruncatedLoadedMods(int modCountLimit)
 		{
 			return ModManager.GetLoadedMods().GetRange(0, Math.Min(ModManager.GetLoadedMods().Count, modCountLimit));
 		}
 
-		// Token: 0x0600B479 RID: 46201 RVA: 0x00437008 File Offset: 0x00435208
+		// Token: 0x0600B50D RID: 46349 RVA: 0x0043ADD0 File Offset: 0x00438FD0
 		public static Dictionary<string, string> GetSandboxSettingsDelta(SandboxOptionPreset preset)
 		{
 			return preset.PresetValues.ToDictionary<KeyValuePair<global::SandboxOptions.SandboxOptions, int>, string, string>((KeyValuePair<global::SandboxOptions.SandboxOptions, int> kvp) => SandboxOptionManager.Current.SandboxOptionsDict[kvp.Key].OptionName, (KeyValuePair<global::SandboxOptions.SandboxOptions, int> kvp) => SandboxOptionManager.Current.SandboxOptionsDict[kvp.Key].GetValueTextFromIndex(kvp.Value, "english"));
 		}
 
-		// Token: 0x0600B47A RID: 46202 RVA: 0x0043705E File Offset: 0x0043525E
+		// Token: 0x0600B50E RID: 46350 RVA: 0x0043AE26 File Offset: 0x00439026
+		public static bool IsEditingOrPlaytesting()
+		{
+			return GameManager.Instance.IsEditMode() || GameUtils.IsPlaytesting();
+		}
+
+		// Token: 0x0600B50F RID: 46351 RVA: 0x0043AE3B File Offset: 0x0043903B
 		public static IEnumerator LoginEventAnalyticCoroutine(bool isNewLogin)
 		{
-			string ipAddress = "Unknown";
-			using (UnityWebRequest webRequest = UnityWebRequest.Get("https://api.ipify.org"))
-			{
-				webRequest.timeout = 10;
-				yield return webRequest.SendWebRequest();
-				if (webRequest.result == UnityWebRequest.Result.Success)
-				{
-					ipAddress = webRequest.downloadHandler.text;
-				}
-				else
-				{
-					Log.Out("[Kraken] Error: Failed to retrieve IP address: " + webRequest.error);
-				}
-			}
-			UnityWebRequest webRequest = null;
 			LoginEventData loginEventData = new LoginEventData();
 			loginEventData.SessionStartTimeStamp = DateTime.UtcNow.ToString("O");
-			loginEventData.IP = ipAddress;
 			loginEventData.CrossplayEnabled = GamePrefs.GetBool(EnumGamePrefs.OptionsCrossplay);
 			LoginEventData loginEventData2 = loginEventData;
 			EUserAccountState userAccountState = EosHelpers.UserAccountState;
@@ -124,21 +156,24 @@ namespace Services.Analytics
 				analyticsService.LogEvent(new HardwareInfoEventData());
 				if (PlatformManager.NativePlatform.Api.ClientApiStatus != EApiStatus.Ok)
 				{
-					PlatformManager.NativePlatform.Api.ClientApiInitialized += Helper.<LoginEventAnalyticCoroutine>g__OnClientApiInitialized|6_0;
+					PlatformManager.NativePlatform.Api.ClientApiInitialized += Helper.<LoginEventAnalyticCoroutine>g__OnClientApiInitialized|10_0;
 				}
 				else
 				{
-					Helper.LogDlcEntitlementsAnalytic();
+					GameManager.Instance.StartCoroutine(Helper.LogDlcEntitlementsAnalytic());
 				}
 			}
 			yield break;
-			yield break;
 		}
 
-		// Token: 0x0600B47B RID: 46203 RVA: 0x00437070 File Offset: 0x00435270
+		// Token: 0x0600B510 RID: 46352 RVA: 0x0043AE4A File Offset: 0x0043904A
 		[PublicizedFrom(EAccessModifier.Private)]
-		public static void LogDlcEntitlementsAnalytic()
+		public static IEnumerator LogDlcEntitlementsAnalytic()
 		{
+			while (EntitlementManager.Instance.IsFetchingEntitlements())
+			{
+				yield return null;
+			}
 			List<DlcOwnershipEventData.EntitlementData> list = (from entitlement in EnumUtils.Values<EntitlementSetEnum>()
 				where entitlement > EntitlementSetEnum.None
 				where EntitlementManager.Instance.HasEntitlement(entitlement)
@@ -168,18 +203,23 @@ namespace Services.Analytics
 			}
 			dlcOwnershipEventData.IsFamilyShare = flag;
 			analyticsService.LogEvent(dlcOwnershipEventData);
+			yield break;
 		}
 
-		// Token: 0x0600B47C RID: 46204 RVA: 0x0043714E File Offset: 0x0043534E
+		// Token: 0x0600B511 RID: 46353 RVA: 0x0043AE52 File Offset: 0x00439052
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static void <LoginEventAnalyticCoroutine>g__OnClientApiInitialized|6_0()
+		public static void <LoginEventAnalyticCoroutine>g__OnClientApiInitialized|10_0()
 		{
-			PlatformManager.NativePlatform.Api.ClientApiInitialized -= Helper.<LoginEventAnalyticCoroutine>g__OnClientApiInitialized|6_0;
-			Helper.LogDlcEntitlementsAnalytic();
+			PlatformManager.NativePlatform.Api.ClientApiInitialized -= Helper.<LoginEventAnalyticCoroutine>g__OnClientApiInitialized|10_0;
+			GameManager.Instance.StartCoroutine(Helper.LogDlcEntitlementsAnalytic());
 		}
 
-		// Token: 0x0400875A RID: 34650
+		// Token: 0x040087B0 RID: 34736
 		public const int ModCountLimit = 100;
+
+		// Token: 0x040087B1 RID: 34737
+		[PublicizedFrom(EAccessModifier.Private)]
+		public const string TestingPrefix = "testing_";
 	}
 }

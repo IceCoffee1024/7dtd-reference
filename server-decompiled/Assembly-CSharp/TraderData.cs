@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
-// Token: 0x020008AA RID: 2218
+// Token: 0x020008AF RID: 2223
 public class TraderData
 {
-	// Token: 0x0600405B RID: 16475 RVA: 0x0019206C File Offset: 0x0019026C
+	// Token: 0x06003FF1 RID: 16369 RVA: 0x00192170 File Offset: 0x00190370
 	public TraderData Clone()
 	{
 		TraderData traderData = new TraderData();
@@ -13,7 +12,7 @@ public class TraderData
 		return traderData;
 	}
 
-	// Token: 0x0600405C RID: 16476 RVA: 0x0019207C File Offset: 0x0019027C
+	// Token: 0x06003FF2 RID: 16370 RVA: 0x00192180 File Offset: 0x00190380
 	public void CopyFrom(TraderData other)
 	{
 		if (other == null)
@@ -35,7 +34,7 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x0600405D RID: 16477 RVA: 0x00192126 File Offset: 0x00190326
+	// Token: 0x06003FF3 RID: 16371 RVA: 0x0019222A File Offset: 0x0019042A
 	public void SetModified(ITrader _trader)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -45,8 +44,8 @@ public class TraderData
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageTraderData>().Setup(_trader), false);
 	}
 
-	// Token: 0x170006B3 RID: 1715
-	// (get) Token: 0x0600405E RID: 16478 RVA: 0x0019214B File Offset: 0x0019034B
+	// Token: 0x170006D2 RID: 1746
+	// (get) Token: 0x06003FF4 RID: 16372 RVA: 0x0019224F File Offset: 0x0019044F
 	public TraderInfo TraderInfo
 	{
 		get
@@ -59,8 +58,8 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x170006B4 RID: 1716
-	// (get) Token: 0x0600405F RID: 16479 RVA: 0x00192164 File Offset: 0x00190364
+	// Token: 0x170006D3 RID: 1747
+	// (get) Token: 0x06003FF5 RID: 16373 RVA: 0x00192268 File Offset: 0x00190468
 	public float FullTime
 	{
 		get
@@ -69,8 +68,8 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x170006B5 RID: 1717
-	// (get) Token: 0x06004060 RID: 16480 RVA: 0x0019217D File Offset: 0x0019037D
+	// Token: 0x170006D4 RID: 1748
+	// (get) Token: 0x06003FF6 RID: 16374 RVA: 0x00192281 File Offset: 0x00190481
 	public float CurrentTime
 	{
 		get
@@ -83,8 +82,8 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x170006B6 RID: 1718
-	// (get) Token: 0x06004061 RID: 16481 RVA: 0x001921B2 File Offset: 0x001903B2
+	// Token: 0x170006D5 RID: 1749
+	// (get) Token: 0x06003FF7 RID: 16375 RVA: 0x001922B6 File Offset: 0x001904B6
 	public ulong NextResetTime
 	{
 		get
@@ -97,7 +96,7 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x06004062 RID: 16482 RVA: 0x001921D4 File Offset: 0x001903D4
+	// Token: 0x06003FF8 RID: 16376 RVA: 0x001922D8 File Offset: 0x001904D8
 	public void PrimaryInventoryAdd(TraderData.Entry _entry)
 	{
 		if (_entry.Item.count <= 0 || _entry.Item.itemValue.type == 0)
@@ -112,7 +111,7 @@ public class TraderData
 		this.PrimaryInventory.Add(_entry);
 	}
 
-	// Token: 0x06004063 RID: 16483 RVA: 0x0019224C File Offset: 0x0019044C
+	// Token: 0x06003FF9 RID: 16377 RVA: 0x00192350 File Offset: 0x00190550
 	public void AddToPrimaryInventory(ItemStack stack, bool addedByPlayer)
 	{
 		for (int i = 0; i < this.PrimaryInventory.Count; i++)
@@ -138,7 +137,7 @@ public class TraderData
 		}
 	}
 
-	// Token: 0x06004064 RID: 16484 RVA: 0x00192348 File Offset: 0x00190548
+	// Token: 0x06003FFA RID: 16378 RVA: 0x0019244C File Offset: 0x0019064C
 	public int GetPrimaryItemCount(ItemValue itemValue)
 	{
 		int num = 0;
@@ -152,8 +151,8 @@ public class TraderData
 		return num;
 	}
 
-	// Token: 0x06004065 RID: 16485 RVA: 0x001923AC File Offset: 0x001905AC
-	public void Read(BinaryReader _br)
+	// Token: 0x06003FFB RID: 16379 RVA: 0x001924B0 File Offset: 0x001906B0
+	public void Read(PooledBinaryReader _br)
 	{
 		this.TraderID = _br.ReadInt32();
 		this.lastInventoryUpdate = _br.ReadUInt64();
@@ -161,8 +160,8 @@ public class TraderData
 		this.ReadInventoryData(b, _br);
 	}
 
-	// Token: 0x06004066 RID: 16486 RVA: 0x001923E0 File Offset: 0x001905E0
-	public void ReadInventoryData(byte _readVersion, BinaryReader _br)
+	// Token: 0x06003FFC RID: 16380 RVA: 0x001924E4 File Offset: 0x001906E4
+	public void ReadInventoryData(byte _readVersion, PooledBinaryReader _br)
 	{
 		this.PrimaryInventory.Clear();
 		this.TierItemGroups.Clear();
@@ -203,8 +202,8 @@ public class TraderData
 		this.AvailableMoney = _br.ReadInt32();
 	}
 
-	// Token: 0x06004067 RID: 16487 RVA: 0x0019250B File Offset: 0x0019070B
-	public void Write(BinaryWriter _bw)
+	// Token: 0x06003FFD RID: 16381 RVA: 0x0019260F File Offset: 0x0019080F
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.TraderID);
 		_bw.Write(this.lastInventoryUpdate);
@@ -212,8 +211,8 @@ public class TraderData
 		this.WriteInventoryData(_bw);
 	}
 
-	// Token: 0x06004068 RID: 16488 RVA: 0x00192538 File Offset: 0x00190738
-	public void WriteInventoryData(BinaryWriter _bw)
+	// Token: 0x06003FFE RID: 16382 RVA: 0x0019263C File Offset: 0x0019083C
+	public void WriteInventoryData(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.PrimaryInventory.Count);
 		for (int i = 0; i < this.PrimaryInventory.Count; i++)
@@ -228,33 +227,33 @@ public class TraderData
 		_bw.Write(this.AvailableMoney);
 	}
 
-	// Token: 0x040033F2 RID: 13298
+	// Token: 0x040033E6 RID: 13286
 	public List<TraderData.Entry> PrimaryInventory = new List<TraderData.Entry>();
 
-	// Token: 0x040033F3 RID: 13299
+	// Token: 0x040033E7 RID: 13287
 	public List<ItemStack[]> TierItemGroups = new List<ItemStack[]>();
 
-	// Token: 0x040033F4 RID: 13300
+	// Token: 0x040033E8 RID: 13288
 	public ulong lastInventoryUpdate;
 
-	// Token: 0x040033F5 RID: 13301
+	// Token: 0x040033E9 RID: 13289
 	public int TraderID = -1;
 
-	// Token: 0x040033F6 RID: 13302
+	// Token: 0x040033EA RID: 13290
 	public int AvailableMoney;
 
-	// Token: 0x040033F7 RID: 13303
+	// Token: 0x040033EB RID: 13291
 	public static byte FileVersion = 2;
 
-	// Token: 0x020008AB RID: 2219
+	// Token: 0x020008B0 RID: 2224
 	public class Entry
 	{
-		// Token: 0x0600406B RID: 16491 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x06004001 RID: 16385 RVA: 0x0000640C File Offset: 0x0000460C
 		public Entry()
 		{
 		}
 
-		// Token: 0x0600406C RID: 16492 RVA: 0x001925F1 File Offset: 0x001907F1
+		// Token: 0x06004002 RID: 16386 RVA: 0x001926F5 File Offset: 0x001908F5
 		public Entry(ItemStack _item, sbyte _markup = 0, bool _addedByPlayer = false)
 		{
 			this.Item = _item;
@@ -262,13 +261,13 @@ public class TraderData
 			this.AddedByPlayer = _addedByPlayer;
 		}
 
-		// Token: 0x0600406D RID: 16493 RVA: 0x0019260E File Offset: 0x0019080E
+		// Token: 0x06004003 RID: 16387 RVA: 0x00192712 File Offset: 0x00190912
 		public TraderData.Entry Clone()
 		{
 			return new TraderData.Entry(this.Item.Clone(), this.Markup, this.AddedByPlayer);
 		}
 
-		// Token: 0x0600406E RID: 16494 RVA: 0x0019262C File Offset: 0x0019082C
+		// Token: 0x06004004 RID: 16388 RVA: 0x00192730 File Offset: 0x00190930
 		public void IncreaseMarkup()
 		{
 			if (this.Markup < 100)
@@ -277,7 +276,7 @@ public class TraderData
 			}
 		}
 
-		// Token: 0x0600406F RID: 16495 RVA: 0x00192647 File Offset: 0x00190847
+		// Token: 0x06004005 RID: 16389 RVA: 0x0019274B File Offset: 0x0019094B
 		public void DecreaseMarkup()
 		{
 			if (this.Markup > -4)
@@ -286,29 +285,29 @@ public class TraderData
 			}
 		}
 
-		// Token: 0x06004070 RID: 16496 RVA: 0x00192662 File Offset: 0x00190862
-		public void Read(BinaryReader _br)
+		// Token: 0x06004006 RID: 16390 RVA: 0x00192766 File Offset: 0x00190966
+		public void Read(PooledBinaryReader _br)
 		{
 			this.Item = new ItemStack().Read(_br);
 			this.Markup = _br.ReadSByte();
 			this.AddedByPlayer = _br.ReadBoolean();
 		}
 
-		// Token: 0x06004071 RID: 16497 RVA: 0x0019268D File Offset: 0x0019088D
-		public void Write(BinaryWriter _bw)
+		// Token: 0x06004007 RID: 16391 RVA: 0x00192791 File Offset: 0x00190991
+		public void Write(PooledBinaryWriter _bw)
 		{
 			this.Item.Write(_bw);
 			_bw.Write(this.Markup);
 			_bw.Write(this.AddedByPlayer);
 		}
 
-		// Token: 0x040033F8 RID: 13304
+		// Token: 0x040033EC RID: 13292
 		public ItemStack Item;
 
-		// Token: 0x040033F9 RID: 13305
+		// Token: 0x040033ED RID: 13293
 		public sbyte Markup;
 
-		// Token: 0x040033FA RID: 13306
+		// Token: 0x040033EE RID: 13294
 		public bool AddedByPlayer;
 	}
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000A19 RID: 2585
+// Token: 0x02000A23 RID: 2595
 public static class SaveDataTypeExtensions
 {
-	// Token: 0x06004DB6 RID: 19894 RVA: 0x000CE0CF File Offset: 0x000CC2CF
+	// Token: 0x06004D85 RID: 19845 RVA: 0x000CE183 File Offset: 0x000CC383
 	public static bool IsRoot(this SaveDataType saveDataType)
 	{
 		return saveDataType == SaveDataType.User;
 	}
 
-	// Token: 0x06004DB7 RID: 19895 RVA: 0x001DBDD3 File Offset: 0x001D9FD3
+	// Token: 0x06004D86 RID: 19846 RVA: 0x001DD083 File Offset: 0x001DB283
 	public static int GetSlotPathDepth(this SaveDataType saveDataType)
 	{
 		switch (saveDataType)
@@ -28,7 +28,7 @@ public static class SaveDataTypeExtensions
 		}
 	}
 
-	// Token: 0x06004DB8 RID: 19896 RVA: 0x001DBE10 File Offset: 0x001DA010
+	// Token: 0x06004D87 RID: 19847 RVA: 0x001DD0C0 File Offset: 0x001DB2C0
 	public static string GetPathRaw(this SaveDataType saveDataType)
 	{
 		string text;
@@ -52,7 +52,7 @@ public static class SaveDataTypeExtensions
 		return text;
 	}
 
-	// Token: 0x06004DB9 RID: 19897 RVA: 0x001DBE78 File Offset: 0x001DA078
+	// Token: 0x06004D88 RID: 19848 RVA: 0x001DD128 File Offset: 0x001DB328
 	public static SaveDataManagedPath GetPath(this SaveDataType saveDataType)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -76,19 +76,19 @@ public static class SaveDataTypeExtensions
 		return saveDataManagedPath;
 	}
 
-	// Token: 0x04003C32 RID: 15410
+	// Token: 0x04003C3F RID: 15423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SaveDataManagedPath s_rootPathUser = new SaveDataManagedPath(SaveDataType.User.GetPathRaw());
 
-	// Token: 0x04003C33 RID: 15411
+	// Token: 0x04003C40 RID: 15424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SaveDataManagedPath s_rootPathSaves = new SaveDataManagedPath(SaveDataType.Saves.GetPathRaw());
 
-	// Token: 0x04003C34 RID: 15412
+	// Token: 0x04003C41 RID: 15425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SaveDataManagedPath s_rootPathSavesLocal = new SaveDataManagedPath(SaveDataType.SavesLocal.GetPathRaw());
 
-	// Token: 0x04003C35 RID: 15413
+	// Token: 0x04003C42 RID: 15426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SaveDataManagedPath s_rootPathGeneratedWorlds = new SaveDataManagedPath(SaveDataType.GeneratedWorlds.GetPathRaw());
 }

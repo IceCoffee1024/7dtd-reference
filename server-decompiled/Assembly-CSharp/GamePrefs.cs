@@ -6,10 +6,10 @@ using SandboxOptions;
 using SDF;
 using UnityEngine;
 
-// Token: 0x020011ED RID: 4589
+// Token: 0x02001205 RID: 4613
 public class GamePrefs
 {
-	// Token: 0x0600927F RID: 37503 RVA: 0x00372F2C File Offset: 0x0037112C
+	// Token: 0x0600930D RID: 37645 RVA: 0x00377774 File Offset: 0x00375974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void initPropertyDecl()
 	{
@@ -330,13 +330,13 @@ public class GamePrefs
 		};
 	}
 
-	// Token: 0x140000F9 RID: 249
-	// (add) Token: 0x06009280 RID: 37504 RVA: 0x0037535C File Offset: 0x0037355C
-	// (remove) Token: 0x06009281 RID: 37505 RVA: 0x00375390 File Offset: 0x00373590
+	// Token: 0x140000F8 RID: 248
+	// (add) Token: 0x0600930E RID: 37646 RVA: 0x00379BA4 File Offset: 0x00377DA4
+	// (remove) Token: 0x0600930F RID: 37647 RVA: 0x00379BD8 File Offset: 0x00377DD8
 	public static event Action<EnumGamePrefs> OnGamePrefChanged;
 
-	// Token: 0x1700117B RID: 4475
-	// (get) Token: 0x06009282 RID: 37506 RVA: 0x003753C3 File Offset: 0x003735C3
+	// Token: 0x170011BF RID: 4543
+	// (get) Token: 0x06009310 RID: 37648 RVA: 0x00379C0B File Offset: 0x00377E0B
 	public static GamePrefs Instance
 	{
 		get
@@ -349,7 +349,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x06009283 RID: 37507 RVA: 0x003753DC File Offset: 0x003735DC
+	// Token: 0x06009311 RID: 37649 RVA: 0x00379C24 File Offset: 0x00377E24
 	public static void InitPropertyDeclarations()
 	{
 		if (GamePrefs.s_propertyList != null)
@@ -359,7 +359,7 @@ public class GamePrefs
 		GamePrefs.initPropertyDecl();
 	}
 
-	// Token: 0x06009284 RID: 37508 RVA: 0x003753F5 File Offset: 0x003735F5
+	// Token: 0x06009312 RID: 37650 RVA: 0x00379C3D File Offset: 0x00377E3D
 	public static void InitPrefs()
 	{
 		if (GamePrefs.m_Instance != null)
@@ -370,13 +370,13 @@ public class GamePrefs
 		GamePrefs.m_Instance.Load();
 	}
 
-	// Token: 0x06009285 RID: 37509 RVA: 0x0037541D File Offset: 0x0037361D
+	// Token: 0x06009313 RID: 37651 RVA: 0x00379C65 File Offset: 0x00377E65
 	public static GamePrefs.PropertyDecl[] GetPropertyList()
 	{
 		return GamePrefs.s_propertyList;
 	}
 
-	// Token: 0x06009286 RID: 37510 RVA: 0x00375424 File Offset: 0x00373624
+	// Token: 0x06009314 RID: 37652 RVA: 0x00379C6C File Offset: 0x00377E6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Load()
 	{
@@ -418,7 +418,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x06009287 RID: 37511 RVA: 0x00375558 File Offset: 0x00373758
+	// Token: 0x06009315 RID: 37653 RVA: 0x00379DA0 File Offset: 0x00377FA0
 	public void Load(string sdfFileName)
 	{
 		try
@@ -517,7 +517,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x06009288 RID: 37512 RVA: 0x0037573C File Offset: 0x0037393C
+	// Token: 0x06009316 RID: 37654 RVA: 0x00379F84 File Offset: 0x00378184
 	public void Save(string sdfFileName)
 	{
 		List<EnumGamePrefs> list = new List<EnumGamePrefs>();
@@ -528,7 +528,7 @@ public class GamePrefs
 		this.Save(sdfFileName, list);
 	}
 
-	// Token: 0x06009289 RID: 37513 RVA: 0x00375780 File Offset: 0x00373980
+	// Token: 0x06009317 RID: 37655 RVA: 0x00379FC8 File Offset: 0x003781C8
 	public void Save(string sdfFileName, List<EnumGamePrefs> prefsToSave)
 	{
 		try
@@ -567,7 +567,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x0600928A RID: 37514 RVA: 0x003758D0 File Offset: 0x00373AD0
+	// Token: 0x06009318 RID: 37656 RVA: 0x0037A118 File Offset: 0x00378318
 	public void Save()
 	{
 		foreach (GamePrefs.PropertyDecl propertyDecl in GamePrefs.s_propertyList)
@@ -599,7 +599,7 @@ public class GamePrefs
 		Log.Out("Persistent GamePrefs saved");
 	}
 
-	// Token: 0x0600928B RID: 37515 RVA: 0x003759E8 File Offset: 0x00373BE8
+	// Token: 0x06009319 RID: 37657 RVA: 0x0037A230 File Offset: 0x00378430
 	public static object Parse(EnumGamePrefs _enum, string _val)
 	{
 		int num = GamePrefs.find(_enum);
@@ -631,7 +631,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x0600928C RID: 37516 RVA: 0x00375A6C File Offset: 0x00373C6C
+	// Token: 0x0600931A RID: 37658 RVA: 0x0037A2B4 File Offset: 0x003784B4
 	public static string GetString(EnumGamePrefs _eProperty)
 	{
 		string text;
@@ -648,7 +648,7 @@ public class GamePrefs
 		return text;
 	}
 
-	// Token: 0x0600928D RID: 37517 RVA: 0x00375ABC File Offset: 0x00373CBC
+	// Token: 0x0600931B RID: 37659 RVA: 0x0037A304 File Offset: 0x00378504
 	public static float GetFloat(EnumGamePrefs _eProperty)
 	{
 		float num;
@@ -694,7 +694,7 @@ public class GamePrefs
 		return num;
 	}
 
-	// Token: 0x0600928E RID: 37518 RVA: 0x00375B68 File Offset: 0x00373D68
+	// Token: 0x0600931C RID: 37660 RVA: 0x0037A3B0 File Offset: 0x003785B0
 	public static int GetInt(EnumGamePrefs _eProperty)
 	{
 		int num;
@@ -740,7 +740,7 @@ public class GamePrefs
 		return num;
 	}
 
-	// Token: 0x0600928F RID: 37519 RVA: 0x00375C04 File Offset: 0x00373E04
+	// Token: 0x0600931D RID: 37661 RVA: 0x0037A44C File Offset: 0x0037864C
 	public static bool GetBool(EnumGamePrefs _eProperty)
 	{
 		bool flag;
@@ -786,7 +786,7 @@ public class GamePrefs
 		return flag;
 	}
 
-	// Token: 0x06009290 RID: 37520 RVA: 0x00375CA0 File Offset: 0x00373EA0
+	// Token: 0x0600931E RID: 37662 RVA: 0x0037A4E8 File Offset: 0x003786E8
 	public static void SetupSandboxReferences()
 	{
 		GamePrefs.sandboxReferences = new BaseSandboxOption[316];
@@ -801,7 +801,7 @@ public class GamePrefs
 		}
 	}
 
-	// Token: 0x06009291 RID: 37521 RVA: 0x00375D08 File Offset: 0x00373F08
+	// Token: 0x0600931F RID: 37663 RVA: 0x0037A550 File Offset: 0x00378750
 	public static object GetObject(EnumGamePrefs _eProperty)
 	{
 		int num = (int)_eProperty;
@@ -813,7 +813,7 @@ public class GamePrefs
 		return GamePrefs.Instance.propertyValues[(int)_eProperty];
 	}
 
-	// Token: 0x06009292 RID: 37522 RVA: 0x00375D4C File Offset: 0x00373F4C
+	// Token: 0x06009320 RID: 37664 RVA: 0x0037A594 File Offset: 0x00378794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int find(EnumGamePrefs _eProperty)
 	{
@@ -827,13 +827,13 @@ public class GamePrefs
 		return -1;
 	}
 
-	// Token: 0x06009293 RID: 37523 RVA: 0x00375D81 File Offset: 0x00373F81
+	// Token: 0x06009321 RID: 37665 RVA: 0x0037A5C9 File Offset: 0x003787C9
 	public static bool Exists(EnumGamePrefs _eProperty)
 	{
 		return GamePrefs.find(_eProperty) != -1;
 	}
 
-	// Token: 0x06009294 RID: 37524 RVA: 0x00375D90 File Offset: 0x00373F90
+	// Token: 0x06009322 RID: 37666 RVA: 0x0037A5D8 File Offset: 0x003787D8
 	public static void SetPersistent(EnumGamePrefs _eProperty, bool _bPersistent)
 	{
 		int num = GamePrefs.find(_eProperty);
@@ -850,7 +850,7 @@ public class GamePrefs
 		GamePrefs.s_propertyList[num].bPersistent = DeviceFlag.None;
 	}
 
-	// Token: 0x06009295 RID: 37525 RVA: 0x00375DEC File Offset: 0x00373FEC
+	// Token: 0x06009323 RID: 37667 RVA: 0x0037A634 File Offset: 0x00378834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetObjectInternal(EnumGamePrefs _eProperty, object _value)
 	{
@@ -872,37 +872,37 @@ public class GamePrefs
 		GamePrefs.notifyListeners(_eProperty);
 	}
 
-	// Token: 0x06009296 RID: 37526 RVA: 0x00375E4B File Offset: 0x0037404B
+	// Token: 0x06009324 RID: 37668 RVA: 0x0037A693 File Offset: 0x00378893
 	public static void SetObject(EnumGamePrefs _eProperty, object _value)
 	{
 		GamePrefs.Instance.SetObjectInternal(_eProperty, _value);
 	}
 
-	// Token: 0x06009297 RID: 37527 RVA: 0x00375E59 File Offset: 0x00374059
+	// Token: 0x06009325 RID: 37669 RVA: 0x0037A6A1 File Offset: 0x003788A1
 	public static void Set(EnumGamePrefs _eProperty, int _value)
 	{
 		GamePrefs.SetObject(_eProperty, _value);
 	}
 
-	// Token: 0x06009298 RID: 37528 RVA: 0x00375E67 File Offset: 0x00374067
+	// Token: 0x06009326 RID: 37670 RVA: 0x0037A6AF File Offset: 0x003788AF
 	public static void Set(EnumGamePrefs _eProperty, float _value)
 	{
 		GamePrefs.SetObject(_eProperty, _value);
 	}
 
-	// Token: 0x06009299 RID: 37529 RVA: 0x00375E75 File Offset: 0x00374075
+	// Token: 0x06009327 RID: 37671 RVA: 0x0037A6BD File Offset: 0x003788BD
 	public static void Set(EnumGamePrefs _eProperty, string _value)
 	{
 		GamePrefs.SetObject(_eProperty, _value);
 	}
 
-	// Token: 0x0600929A RID: 37530 RVA: 0x00375E7E File Offset: 0x0037407E
+	// Token: 0x06009328 RID: 37672 RVA: 0x0037A6C6 File Offset: 0x003788C6
 	public static void Set(EnumGamePrefs _eProperty, bool _value)
 	{
 		GamePrefs.SetObject(_eProperty, _value);
 	}
 
-	// Token: 0x0600929B RID: 37531 RVA: 0x00375E8C File Offset: 0x0037408C
+	// Token: 0x06009329 RID: 37673 RVA: 0x0037A6D4 File Offset: 0x003788D4
 	public static object[] GetSettingsCopy()
 	{
 		object[] array = new object[GamePrefs.Instance.propertyValues.Length];
@@ -910,13 +910,13 @@ public class GamePrefs
 		return array;
 	}
 
-	// Token: 0x0600929C RID: 37532 RVA: 0x00375EBF File Offset: 0x003740BF
+	// Token: 0x0600932A RID: 37674 RVA: 0x0037A707 File Offset: 0x00378907
 	public static void ApplySettingsCopy(object[] _settings)
 	{
 		Array.Copy(_settings, GamePrefs.Instance.propertyValues, _settings.Length);
 	}
 
-	// Token: 0x0600929D RID: 37533 RVA: 0x00375ED4 File Offset: 0x003740D4
+	// Token: 0x0600932B RID: 37675 RVA: 0x0037A71C File Offset: 0x0037891C
 	public static bool IsDefault(EnumGamePrefs _eProperty)
 	{
 		int num = (int)_eProperty;
@@ -928,7 +928,7 @@ public class GamePrefs
 		return GamePrefs.Instance.propertyValues[num] != null && GamePrefs.Instance.propertyValues[num].Equals(GamePrefs.GetDefault(_eProperty));
 	}
 
-	// Token: 0x0600929E RID: 37534 RVA: 0x00375F34 File Offset: 0x00374134
+	// Token: 0x0600932C RID: 37676 RVA: 0x0037A77C File Offset: 0x0037897C
 	public static object GetDefault(EnumGamePrefs _eProperty)
 	{
 		foreach (GamePrefs.PropertyDecl propertyDecl in GamePrefs.s_propertyList)
@@ -941,7 +941,7 @@ public class GamePrefs
 		return null;
 	}
 
-	// Token: 0x0600929F RID: 37535 RVA: 0x00375F70 File Offset: 0x00374170
+	// Token: 0x0600932D RID: 37677 RVA: 0x0037A7B8 File Offset: 0x003789B8
 	public static GamePrefs.EnumType? GetPrefType(EnumGamePrefs _eProperty)
 	{
 		foreach (GamePrefs.PropertyDecl propertyDecl in GamePrefs.s_propertyList)
@@ -954,7 +954,7 @@ public class GamePrefs
 		return null;
 	}
 
-	// Token: 0x060092A0 RID: 37536 RVA: 0x00375FB8 File Offset: 0x003741B8
+	// Token: 0x0600932E RID: 37678 RVA: 0x0037A800 File Offset: 0x00378A00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PrintNonStockWarning(GamePrefs.PropertyDecl prop, object curVal, object allowedMin, object allowedMax = null)
 	{
@@ -972,7 +972,7 @@ public class GamePrefs
 		Log.Out(string.Format("Setting for '{0}' does not match the default (server will go to the modded category): current = {1}, default = {2}", prop.name.ToStringCached<EnumGamePrefs>(), curVal.ToString(), allowedMin.ToString()));
 	}
 
-	// Token: 0x060092A1 RID: 37537 RVA: 0x00376030 File Offset: 0x00374230
+	// Token: 0x0600932F RID: 37679 RVA: 0x0037A878 File Offset: 0x00378A78
 	public static bool HasStockSettings()
 	{
 		bool flag = true;
@@ -1057,19 +1057,19 @@ public class GamePrefs
 		return flag;
 	}
 
-	// Token: 0x060092A2 RID: 37538 RVA: 0x0037620C File Offset: 0x0037440C
+	// Token: 0x06009330 RID: 37680 RVA: 0x0037AA54 File Offset: 0x00378C54
 	public static void AddChangeListener(IGamePrefsChangedListener _listener)
 	{
 		GamePrefs.listeners.Add(_listener);
 	}
 
-	// Token: 0x060092A3 RID: 37539 RVA: 0x00376219 File Offset: 0x00374419
+	// Token: 0x06009331 RID: 37681 RVA: 0x0037AA61 File Offset: 0x00378C61
 	public static void RemoveChangeListener(IGamePrefsChangedListener _listener)
 	{
 		GamePrefs.listeners.Remove(_listener);
 	}
 
-	// Token: 0x060092A4 RID: 37540 RVA: 0x00376228 File Offset: 0x00374428
+	// Token: 0x06009332 RID: 37682 RVA: 0x0037AA70 File Offset: 0x00378C70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void notifyListeners(EnumGamePrefs _enum)
 	{
@@ -1085,46 +1085,46 @@ public class GamePrefs
 		onGamePrefChanged(_enum);
 	}
 
-	// Token: 0x04006D85 RID: 28037
+	// Token: 0x04006DEF RID: 28143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GamePrefs.PropertyDecl[] s_propertyList;
 
-	// Token: 0x04006D86 RID: 28038
+	// Token: 0x04006DF0 RID: 28144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object[] propertyValues = new object[316];
 
-	// Token: 0x04006D87 RID: 28039
+	// Token: 0x04006DF1 RID: 28145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseSandboxOption[] sandboxReferences;
 
-	// Token: 0x04006D88 RID: 28040
+	// Token: 0x04006DF2 RID: 28146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GamePrefs m_Instance;
 
-	// Token: 0x04006D89 RID: 28041
+	// Token: 0x04006DF3 RID: 28147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<IGamePrefsChangedListener> listeners = new List<IGamePrefsChangedListener>();
 
-	// Token: 0x020011EE RID: 4590
+	// Token: 0x02001206 RID: 4614
 	public enum EnumType
 	{
-		// Token: 0x04006D8C RID: 28044
+		// Token: 0x04006DF6 RID: 28150
 		Int,
-		// Token: 0x04006D8D RID: 28045
+		// Token: 0x04006DF7 RID: 28151
 		Float,
-		// Token: 0x04006D8E RID: 28046
+		// Token: 0x04006DF8 RID: 28152
 		String,
-		// Token: 0x04006D8F RID: 28047
+		// Token: 0x04006DF9 RID: 28153
 		Bool,
-		// Token: 0x04006D90 RID: 28048
+		// Token: 0x04006DFA RID: 28154
 		Binary
 	}
 
-	// Token: 0x020011EF RID: 4591
+	// Token: 0x02001207 RID: 4615
 	public struct PropertyDecl
 	{
-		// Token: 0x1700117C RID: 4476
-		// (get) Token: 0x060092A7 RID: 37543 RVA: 0x0037628F File Offset: 0x0037448F
+		// Token: 0x170011C0 RID: 4544
+		// (get) Token: 0x06009335 RID: 37685 RVA: 0x0037AAD7 File Offset: 0x00378CD7
 		public bool IsPersistent
 		{
 			get
@@ -1133,7 +1133,7 @@ public class GamePrefs
 			}
 		}
 
-		// Token: 0x060092A8 RID: 37544 RVA: 0x003762A8 File Offset: 0x003744A8
+		// Token: 0x06009336 RID: 37686 RVA: 0x0037AAF0 File Offset: 0x00378CF0
 		public PropertyDecl(EnumGamePrefs _name, DeviceFlag _bPersistent, GamePrefs.EnumType _type, object _defaultValue, object _minStockValue, object _maxStockValue, Dictionary<DeviceFlag, object> _deviceDefaults = null)
 		{
 			this.name = _name;
@@ -1149,22 +1149,22 @@ public class GamePrefs
 			this.defaultValue = _defaultValue;
 		}
 
-		// Token: 0x04006D91 RID: 28049
+		// Token: 0x04006DFB RID: 28155
 		public EnumGamePrefs name;
 
-		// Token: 0x04006D92 RID: 28050
+		// Token: 0x04006DFC RID: 28156
 		public GamePrefs.EnumType type;
 
-		// Token: 0x04006D93 RID: 28051
+		// Token: 0x04006DFD RID: 28157
 		public object defaultValue;
 
-		// Token: 0x04006D94 RID: 28052
+		// Token: 0x04006DFE RID: 28158
 		public DeviceFlag bPersistent;
 
-		// Token: 0x04006D95 RID: 28053
+		// Token: 0x04006DFF RID: 28159
 		public object minStockValue;
 
-		// Token: 0x04006D96 RID: 28054
+		// Token: 0x04006E00 RID: 28160
 		public object maxStockValue;
 	}
 }

@@ -1,640 +1,640 @@
 ﻿using System;
 
-// Token: 0x020011E3 RID: 4579
+// Token: 0x020011FB RID: 4603
 public enum EnumGamePrefs
 {
-	// Token: 0x04006C26 RID: 27686
-	CreateLevelName,
-	// Token: 0x04006C27 RID: 27687
-	CreateLevelDim,
-	// Token: 0x04006C28 RID: 27688
-	OptionsAmbientVolumeLevel,
-	// Token: 0x04006C29 RID: 27689
-	OptionsMusicVolumeLevel,
-	// Token: 0x04006C2A RID: 27690
-	OptionsMenuMusicVolumeLevel,
-	// Token: 0x04006C2B RID: 27691
-	OptionsOverallAudioVolumeLevel,
-	// Token: 0x04006C2C RID: 27692
-	OptionsGfxAASharpness,
-	// Token: 0x04006C2D RID: 27693
-	OptionsGfxWaterQuality,
-	// Token: 0x04006C2E RID: 27694
-	OptionsGfxViewDistance,
-	// Token: 0x04006C2F RID: 27695
-	OptionsGfxShadowDistance,
-	// Token: 0x04006C30 RID: 27696
-	UNUSED_OptionsPlayerModel,
-	// Token: 0x04006C31 RID: 27697
-	OptionsPlayerModelTexture,
-	// Token: 0x04006C32 RID: 27698
-	OptionsGfxAA,
-	// Token: 0x04006C33 RID: 27699
-	OptionsLookSensitivity,
-	// Token: 0x04006C34 RID: 27700
-	OptionsZoomSensitivity,
-	// Token: 0x04006C35 RID: 27701
-	OptionsInvertMouse,
-	// Token: 0x04006C36 RID: 27702
-	OptionsGfxFOV,
-	// Token: 0x04006C37 RID: 27703
-	UNUSED_OptionsFieldOfViewNew,
-	// Token: 0x04006C38 RID: 27704
-	ServerPort,
-	// Token: 0x04006C39 RID: 27705
-	ServerIP,
-	// Token: 0x04006C3A RID: 27706
-	ServerPassword,
-	// Token: 0x04006C3B RID: 27707
-	ServerName,
-	// Token: 0x04006C3C RID: 27708
-	ServerDescription,
-	// Token: 0x04006C3D RID: 27709
-	ServerWebsiteURL,
-	// Token: 0x04006C3E RID: 27710
-	ServerPasswordCache,
-	// Token: 0x04006C3F RID: 27711
-	ServerIsPublic,
-	// Token: 0x04006C40 RID: 27712
-	ServerMaxPlayerCount,
-	// Token: 0x04006C41 RID: 27713
-	ServerAllowCrossplay,
-	// Token: 0x04006C42 RID: 27714
-	ServerEACPeerToPeer,
-	// Token: 0x04006C43 RID: 27715
-	GameMode,
-	// Token: 0x04006C44 RID: 27716
-	GameDifficulty,
-	// Token: 0x04006C45 RID: 27717
-	GameName,
-	// Token: 0x04006C46 RID: 27718
-	GameNameClient,
-	// Token: 0x04006C47 RID: 27719
-	GameWorld,
-	// Token: 0x04006C48 RID: 27720
-	GameVersion,
-	// Token: 0x04006C49 RID: 27721
-	ConnectToServerIP,
-	// Token: 0x04006C4A RID: 27722
-	ConnectToServerPort,
-	// Token: 0x04006C4B RID: 27723
-	PlayerName,
-	// Token: 0x04006C4C RID: 27724
-	UNUSED_PlayerId,
-	// Token: 0x04006C4D RID: 27725
-	PlayerPassword,
-	// Token: 0x04006C4E RID: 27726
-	PlayerAutologin,
-	// Token: 0x04006C4F RID: 27727
-	PlayerToken,
-	// Token: 0x04006C50 RID: 27728
-	PlayerSafeZoneHours,
-	// Token: 0x04006C51 RID: 27729
-	PlayerSafeZoneLevel,
-	// Token: 0x04006C52 RID: 27730
-	DebugMenuShowTasks,
-	// Token: 0x04006C53 RID: 27731
-	DebugMenuEnabled,
-	// Token: 0x04006C54 RID: 27732
-	DebugStopEnemiesMoving,
-	// Token: 0x04006C55 RID: 27733
-	CreativeMenuEnabled,
-	// Token: 0x04006C56 RID: 27734
-	FavoriteServersList,
-	// Token: 0x04006C57 RID: 27735
-	UNUSED_ControlPanelPort,
-	// Token: 0x04006C58 RID: 27736
-	UNUSED_ControlPanelPassword,
-	// Token: 0x04006C59 RID: 27737
-	DynamicSpawner,
-	// Token: 0x04006C5A RID: 27738
-	PlayerKillingMode,
-	// Token: 0x04006C5B RID: 27739
-	MatchLength,
-	// Token: 0x04006C5C RID: 27740
-	FragLimit,
-	// Token: 0x04006C5D RID: 27741
-	RebuildMap,
-	// Token: 0x04006C5E RID: 27742
-	JoiningOptions,
-	// Token: 0x04006C5F RID: 27743
-	ZombiePlayers,
-	// Token: 0x04006C60 RID: 27744
-	BuildCreate,
-	// Token: 0x04006C61 RID: 27745
-	DayCount,
-	// Token: 0x04006C62 RID: 27746
-	DayNightLength,
-	// Token: 0x04006C63 RID: 27747
-	DayLightLength,
-	// Token: 0x04006C64 RID: 27748
-	BloodMoonFrequency,
-	// Token: 0x04006C65 RID: 27749
-	BloodMoonRange,
-	// Token: 0x04006C66 RID: 27750
-	BloodMoonWarning,
-	// Token: 0x04006C67 RID: 27751
-	ShowFriendPlayerOnMap,
-	// Token: 0x04006C68 RID: 27752
-	AdminFileName,
-	// Token: 0x04006C69 RID: 27753
-	UNUSED_ControlPanelEnabled,
-	// Token: 0x04006C6A RID: 27754
-	TelnetEnabled,
-	// Token: 0x04006C6B RID: 27755
-	TelnetPort,
-	// Token: 0x04006C6C RID: 27756
-	ZombieFeralSense,
-	// Token: 0x04006C6D RID: 27757
-	UNUSED_OptionsSSAO,
-	// Token: 0x04006C6E RID: 27758
-	ZombieMove,
-	// Token: 0x04006C6F RID: 27759
-	ZombieMoveNight,
-	// Token: 0x04006C70 RID: 27760
-	ZombieFeralMove,
-	// Token: 0x04006C71 RID: 27761
-	ZombieBMMove,
-	// Token: 0x04006C72 RID: 27762
-	OptionsGfxLODDistance,
-	// Token: 0x04006C73 RID: 27763
-	DropOnDeath,
-	// Token: 0x04006C74 RID: 27764
-	DropOnQuit,
-	// Token: 0x04006C75 RID: 27765
-	DeathPenalty,
-	// Token: 0x04006C76 RID: 27766
-	LootTimer,
-	// Token: 0x04006C77 RID: 27767
-	BloodMoonEnemyCount,
-	// Token: 0x04006C78 RID: 27768
-	EnemySpawnMode,
-	// Token: 0x04006C79 RID: 27769
-	EnemyDifficulty,
-	// Token: 0x04006C7A RID: 27770
-	BlockDamagePlayer,
-	// Token: 0x04006C7B RID: 27771
-	BlockDamageAI,
-	// Token: 0x04006C7C RID: 27772
-	BlockDamageAIBM,
-	// Token: 0x04006C7D RID: 27773
-	LootAbundance,
-	// Token: 0x04006C7E RID: 27774
-	LootRespawnDays,
-	// Token: 0x04006C7F RID: 27775
-	TelnetPassword,
-	// Token: 0x04006C80 RID: 27776
-	LandClaimCount,
-	// Token: 0x04006C81 RID: 27777
-	LandClaimSize,
-	// Token: 0x04006C82 RID: 27778
-	LandClaimDeadZone,
-	// Token: 0x04006C83 RID: 27779
-	LandClaimExpiryTime,
-	// Token: 0x04006C84 RID: 27780
-	LandClaimDecayMode,
-	// Token: 0x04006C85 RID: 27781
-	LandClaimOnlineDurabilityModifier,
-	// Token: 0x04006C86 RID: 27782
-	LandClaimOfflineDurabilityModifier,
-	// Token: 0x04006C87 RID: 27783
-	LandClaimOfflineDelay,
-	// Token: 0x04006C88 RID: 27784
-	AirDropFrequency,
-	// Token: 0x04006C89 RID: 27785
-	MaxSpawnedZombies,
-	// Token: 0x04006C8A RID: 27786
-	PartySharedKillRange,
-	// Token: 0x04006C8B RID: 27787
-	UNUSED_SaveGameFolder,
-	// Token: 0x04006C8C RID: 27788
-	OptionsMicVolumeLevel,
-	// Token: 0x04006C8D RID: 27789
-	OptionsVoiceVolumeLevel,
-	// Token: 0x04006C8E RID: 27790
-	OptionsVoiceChatEnabled,
-	// Token: 0x04006C8F RID: 27791
-	OptionsGfxTexQuality,
 	// Token: 0x04006C90 RID: 27792
-	AutopilotMode,
+	CreateLevelName,
 	// Token: 0x04006C91 RID: 27793
-	SelectionOperationMode,
+	CreateLevelDim,
 	// Token: 0x04006C92 RID: 27794
-	SelectionContextMode,
+	OptionsAmbientVolumeLevel,
 	// Token: 0x04006C93 RID: 27795
-	EACEnabled,
+	OptionsMusicVolumeLevel,
 	// Token: 0x04006C94 RID: 27796
-	PersistentPlayerProfiles,
+	OptionsMenuMusicVolumeLevel,
 	// Token: 0x04006C95 RID: 27797
-	XPMultiplier,
+	OptionsOverallAudioVolumeLevel,
 	// Token: 0x04006C96 RID: 27798
-	OptionsAudioOcclusion,
+	OptionsGfxAASharpness,
 	// Token: 0x04006C97 RID: 27799
-	LastGameResetRevision,
+	OptionsGfxWaterQuality,
 	// Token: 0x04006C98 RID: 27800
-	OptionsGfxResolution,
+	OptionsGfxViewDistance,
 	// Token: 0x04006C99 RID: 27801
-	OptionsGfxVsync,
+	OptionsGfxShadowDistance,
 	// Token: 0x04006C9A RID: 27802
-	OptionsGfxReflectQuality,
+	UNUSED_OptionsPlayerModel,
 	// Token: 0x04006C9B RID: 27803
-	OptionsGfxResetRevision,
+	OptionsPlayerModelTexture,
 	// Token: 0x04006C9C RID: 27804
-	OptionsGfxSignQuality,
+	OptionsGfxAA,
 	// Token: 0x04006C9D RID: 27805
-	UNUSED_OptionsReflectionCullList,
+	OptionsLookSensitivity,
 	// Token: 0x04006C9E RID: 27806
-	UNUSED_OptionsReflectionFarClip,
+	OptionsZoomSensitivity,
 	// Token: 0x04006C9F RID: 27807
-	UNUSED_OptionsReflectionShadowDistance,
+	OptionsInvertMouse,
 	// Token: 0x04006CA0 RID: 27808
-	UNUSED_OptionsReflectionBounces,
+	OptionsGfxFOV,
 	// Token: 0x04006CA1 RID: 27809
-	UNUSED_OptionsReflectionTimeSlicingMode,
+	UNUSED_OptionsFieldOfViewNew,
 	// Token: 0x04006CA2 RID: 27810
-	UNUSED_OptionsReflectionRefreshMode,
+	ServerPort,
 	// Token: 0x04006CA3 RID: 27811
-	OptionsGfxObjQuality,
+	ServerIP,
 	// Token: 0x04006CA4 RID: 27812
-	OptionsGfxGrassDistance,
+	ServerPassword,
 	// Token: 0x04006CA5 RID: 27813
-	UNUSED_OptionsMotionBlur,
+	ServerName,
 	// Token: 0x04006CA6 RID: 27814
-	UNUSED_OptionsObjectBlur,
+	ServerDescription,
 	// Token: 0x04006CA7 RID: 27815
-	MaxSpawnedAnimals,
+	ServerWebsiteURL,
 	// Token: 0x04006CA8 RID: 27816
-	UNUSED_OptionsBloom,
+	ServerPasswordCache,
 	// Token: 0x04006CA9 RID: 27817
-	UNUSED_OptionsSunShafts,
+	ServerIsPublic,
 	// Token: 0x04006CAA RID: 27818
-	UNUSED_OptionsDOF,
+	ServerMaxPlayerCount,
 	// Token: 0x04006CAB RID: 27819
-	OptionsGfxReflectShadows,
+	ServerAllowCrossplay,
 	// Token: 0x04006CAC RID: 27820
-	OptionsAllowController,
+	ServerEACPeerToPeer,
 	// Token: 0x04006CAD RID: 27821
-	OptionsGfxQualityPreset,
+	GameMode,
 	// Token: 0x04006CAE RID: 27822
-	OptionsScreenBoundsValue,
+	GameDifficulty,
 	// Token: 0x04006CAF RID: 27823
-	OptionsInterfaceSensitivity,
+	GameName,
 	// Token: 0x04006CB0 RID: 27824
-	OptionsControllerVibration,
+	GameNameClient,
 	// Token: 0x04006CB1 RID: 27825
-	NoGraphicsMode,
+	GameWorld,
 	// Token: 0x04006CB2 RID: 27826
-	OptionsHudSize,
+	GameVersion,
 	// Token: 0x04006CB3 RID: 27827
-	OptionsHudOpacity,
+	ConnectToServerIP,
 	// Token: 0x04006CB4 RID: 27828
-	OptionsShowCrosshair,
+	ConnectToServerPort,
 	// Token: 0x04006CB5 RID: 27829
-	OptionsShowCompass,
+	PlayerName,
 	// Token: 0x04006CB6 RID: 27830
-	ServerDisabledNetworkProtocols,
+	UNUSED_PlayerId,
 	// Token: 0x04006CB7 RID: 27831
-	OptionsBackgroundGlobalOpacity,
+	PlayerPassword,
 	// Token: 0x04006CB8 RID: 27832
-	OptionsForegroundGlobalOpacity,
+	PlayerAutologin,
 	// Token: 0x04006CB9 RID: 27833
-	UNUSED_OptionsGamma,
+	PlayerToken,
 	// Token: 0x04006CBA RID: 27834
-	OptionsStabSpawnBlocksOnGround,
+	PlayerSafeZoneHours,
 	// Token: 0x04006CBB RID: 27835
-	OptionsTempCelsius,
+	PlayerSafeZoneLevel,
 	// Token: 0x04006CBC RID: 27836
-	AirDropMarker,
+	DebugMenuShowTasks,
 	// Token: 0x04006CBD RID: 27837
-	OptionsGfxWaterPtlLimiter,
+	DebugMenuEnabled,
 	// Token: 0x04006CBE RID: 27838
-	UNUSED_OptionsGfxUMATexQuality,
+	DebugStopEnemiesMoving,
 	// Token: 0x04006CBF RID: 27839
-	HideCommandExecutionLog,
+	CreativeMenuEnabled,
 	// Token: 0x04006CC0 RID: 27840
-	MaxUncoveredMapChunksPerPlayer,
+	FavoriteServersList,
 	// Token: 0x04006CC1 RID: 27841
-	ServerReservedSlots,
+	UNUSED_ControlPanelPort,
 	// Token: 0x04006CC2 RID: 27842
-	ServerReservedSlotsPermission,
+	UNUSED_ControlPanelPassword,
 	// Token: 0x04006CC3 RID: 27843
-	ServerAdminSlots,
+	DynamicSpawner,
 	// Token: 0x04006CC4 RID: 27844
-	ServerAdminSlotsPermission,
+	PlayerKillingMode,
 	// Token: 0x04006CC5 RID: 27845
-	GameGuidClient,
+	MatchLength,
 	// Token: 0x04006CC6 RID: 27846
-	BedrollDeadZoneSize,
+	FragLimit,
 	// Token: 0x04006CC7 RID: 27847
-	LastLoadedPrefab,
+	RebuildMap,
 	// Token: 0x04006CC8 RID: 27848
-	UNUSED_LastLoadedPrefabSize,
+	JoiningOptions,
 	// Token: 0x04006CC9 RID: 27849
-	OptionsJournalPopup,
+	ZombiePlayers,
 	// Token: 0x04006CCA RID: 27850
-	OptionsFilterProfanity,
+	BuildCreate,
 	// Token: 0x04006CCB RID: 27851
-	TelnetFailedLoginLimit,
+	DayCount,
 	// Token: 0x04006CCC RID: 27852
-	TelnetFailedLoginsBlocktime,
+	DayNightLength,
 	// Token: 0x04006CCD RID: 27853
-	TerminalWindowEnabled,
+	DayLightLength,
 	// Token: 0x04006CCE RID: 27854
-	ServerEnabled,
+	BloodMoonFrequency,
 	// Token: 0x04006CCF RID: 27855
-	ServerVisibility,
+	BloodMoonRange,
 	// Token: 0x04006CD0 RID: 27856
-	ServerLoginConfirmationText,
+	BloodMoonWarning,
 	// Token: 0x04006CD1 RID: 27857
-	WorldGenSeed,
+	ShowFriendPlayerOnMap,
 	// Token: 0x04006CD2 RID: 27858
-	WorldGenSize,
+	AdminFileName,
 	// Token: 0x04006CD3 RID: 27859
-	OptionsGfxTreeDistance,
+	UNUSED_ControlPanelEnabled,
 	// Token: 0x04006CD4 RID: 27860
-	OptionsPOICulling,
+	TelnetEnabled,
 	// Token: 0x04006CD5 RID: 27861
-	OptionsDynamicMusicEnabled,
+	TelnetPort,
 	// Token: 0x04006CD6 RID: 27862
-	OptionsDynamicMusicDailyTime,
+	ZombieFeralSense,
 	// Token: 0x04006CD7 RID: 27863
-	OptionsPlayChanceFrequency,
+	UNUSED_OptionsSSAO,
 	// Token: 0x04006CD8 RID: 27864
-	OptionsPlayChanceProbability,
+	ZombieMove,
 	// Token: 0x04006CD9 RID: 27865
-	UNUSED_UserDataFolder,
+	ZombieMoveNight,
 	// Token: 0x04006CDA RID: 27866
-	OptionsGfxStreamMipmaps,
+	ZombieFeralMove,
 	// Token: 0x04006CDB RID: 27867
-	UNUSED_OptionsStreamingMipmapsBudget,
+	ZombieBMMove,
 	// Token: 0x04006CDC RID: 27868
-	OptionsGfxBloom,
+	OptionsGfxLODDistance,
 	// Token: 0x04006CDD RID: 27869
-	OptionsGfxDOF,
+	DropOnDeath,
 	// Token: 0x04006CDE RID: 27870
-	OptionsGfxMotionBlur,
+	DropOnQuit,
 	// Token: 0x04006CDF RID: 27871
-	OptionsGfxSSAO,
+	DeathPenalty,
 	// Token: 0x04006CE0 RID: 27872
-	OptionsGfxSSReflections,
+	LootTimer,
 	// Token: 0x04006CE1 RID: 27873
-	OptionsGfxSunShafts,
+	BloodMoonEnemyCount,
 	// Token: 0x04006CE2 RID: 27874
-	OptionsDisableChunkLODs,
+	EnemySpawnMode,
 	// Token: 0x04006CE3 RID: 27875
-	ServerMaxWorldTransferSpeedKiBs,
+	EnemyDifficulty,
 	// Token: 0x04006CE4 RID: 27876
-	ServerMaxAllowedViewDistance,
+	BlockDamagePlayer,
 	// Token: 0x04006CE5 RID: 27877
-	OptionsGfxOcclusion,
+	BlockDamageAI,
 	// Token: 0x04006CE6 RID: 27878
-	BedrollExpiryTime,
+	BlockDamageAIBM,
 	// Token: 0x04006CE7 RID: 27879
-	OptionsGfxTexFilter,
+	LootAbundance,
 	// Token: 0x04006CE8 RID: 27880
-	OptionsGfxTerrainQuality,
+	LootRespawnDays,
 	// Token: 0x04006CE9 RID: 27881
-	OptionsGfxBrightness,
+	TelnetPassword,
 	// Token: 0x04006CEA RID: 27882
-	LastLoadingTipRead,
+	LandClaimCount,
 	// Token: 0x04006CEB RID: 27883
-	OptionsGfxDynamicMode,
+	LandClaimSize,
 	// Token: 0x04006CEC RID: 27884
-	OptionsGfxDynamicMinFPS,
+	LandClaimDeadZone,
 	// Token: 0x04006CED RID: 27885
-	OptionsGfxDynamicScale,
+	LandClaimExpiryTime,
 	// Token: 0x04006CEE RID: 27886
-	OptionsUiFpsScaling,
+	LandClaimDecayMode,
 	// Token: 0x04006CEF RID: 27887
-	OptionsControlsResetRevision,
+	LandClaimOnlineDurabilityModifier,
 	// Token: 0x04006CF0 RID: 27888
-	OptionsWeaponAiming,
+	LandClaimOfflineDurabilityModifier,
 	// Token: 0x04006CF1 RID: 27889
-	DynamicMeshEnabled,
+	LandClaimOfflineDelay,
 	// Token: 0x04006CF2 RID: 27890
-	DynamicMeshDistance,
+	AirDropFrequency,
 	// Token: 0x04006CF3 RID: 27891
-	DynamicMeshLandClaimOnly,
+	MaxSpawnedZombies,
 	// Token: 0x04006CF4 RID: 27892
-	DynamicMeshLandClaimBuffer,
+	PartySharedKillRange,
 	// Token: 0x04006CF5 RID: 27893
-	DynamicMeshUseImposters,
+	UNUSED_SaveGameFolder,
 	// Token: 0x04006CF6 RID: 27894
-	DynamicMeshMaxRegionCache,
+	OptionsMicVolumeLevel,
 	// Token: 0x04006CF7 RID: 27895
-	DynamicMeshMaxItemCache,
+	OptionsVoiceVolumeLevel,
 	// Token: 0x04006CF8 RID: 27896
-	TwitchBloodMoonAllowed,
+	OptionsVoiceChatEnabled,
 	// Token: 0x04006CF9 RID: 27897
-	TwitchServerPermission,
+	OptionsGfxTexQuality,
 	// Token: 0x04006CFA RID: 27898
-	OptionsVehicleLookSensitivity,
+	AutopilotMode,
 	// Token: 0x04006CFB RID: 27899
-	OptionsSelectionBoxAlphaMultiplier,
+	SelectionOperationMode,
 	// Token: 0x04006CFC RID: 27900
-	PlaytestBiome,
+	SelectionContextMode,
 	// Token: 0x04006CFD RID: 27901
-	Language,
+	EACEnabled,
 	// Token: 0x04006CFE RID: 27902
-	LanguageBrowser,
+	PersistentPlayerProfiles,
 	// Token: 0x04006CFF RID: 27903
-	Region,
+	XPMultiplier,
 	// Token: 0x04006D00 RID: 27904
-	ServerHistoryCache,
+	OptionsAudioOcclusion,
 	// Token: 0x04006D01 RID: 27905
-	OptionsVoiceInputDevice,
+	LastGameResetRevision,
 	// Token: 0x04006D02 RID: 27906
-	OptionsVoiceOutputDevice,
+	OptionsGfxResolution,
 	// Token: 0x04006D03 RID: 27907
-	MaxChunkAge,
+	OptionsGfxVsync,
 	// Token: 0x04006D04 RID: 27908
-	SaveDataLimit,
+	OptionsGfxReflectQuality,
 	// Token: 0x04006D05 RID: 27909
-	OptionsSubtitlesEnabled,
+	OptionsGfxResetRevision,
 	// Token: 0x04006D06 RID: 27910
-	OptionsIntroMovieEnabled,
+	OptionsGfxSignQuality,
 	// Token: 0x04006D07 RID: 27911
-	AllowSpawnNearBackpack,
+	UNUSED_OptionsReflectionCullList,
 	// Token: 0x04006D08 RID: 27912
-	OptionsZoomAccel,
+	UNUSED_OptionsReflectionFarClip,
 	// Token: 0x04006D09 RID: 27913
-	UNUSED_NewGameSetDefaults,
+	UNUSED_OptionsReflectionShadowDistance,
 	// Token: 0x04006D0A RID: 27914
-	UNUSED_OptionsGfxGameplayResolutionWidth,
+	UNUSED_OptionsReflectionBounces,
 	// Token: 0x04006D0B RID: 27915
-	UNUSED_OptionsGfxGameplayResolutionHeight,
+	UNUSED_OptionsReflectionTimeSlicingMode,
 	// Token: 0x04006D0C RID: 27916
-	OptionsMumblePositionalAudioSupport,
+	UNUSED_OptionsReflectionRefreshMode,
 	// Token: 0x04006D0D RID: 27917
-	WebDashboardEnabled,
+	OptionsGfxObjQuality,
 	// Token: 0x04006D0E RID: 27918
-	WebDashboardPort,
+	OptionsGfxGrassDistance,
 	// Token: 0x04006D0F RID: 27919
-	WebDashboardUrl,
+	UNUSED_OptionsMotionBlur,
 	// Token: 0x04006D10 RID: 27920
-	EnableMapRendering,
+	UNUSED_OptionsObjectBlur,
 	// Token: 0x04006D11 RID: 27921
-	OptionsAutoPartyWithFriends,
+	MaxSpawnedAnimals,
 	// Token: 0x04006D12 RID: 27922
-	OptionsQuestsAutoShare,
+	UNUSED_OptionsBloom,
 	// Token: 0x04006D13 RID: 27923
-	OptionsQuestsAutoAccept,
+	UNUSED_OptionsSunShafts,
 	// Token: 0x04006D14 RID: 27924
-	OptionsControllerTriggerEffects,
+	UNUSED_OptionsDOF,
 	// Token: 0x04006D15 RID: 27925
-	MaxQueuedMeshLayers,
+	OptionsGfxReflectShadows,
 	// Token: 0x04006D16 RID: 27926
-	OptionsControllerSensitivityX,
+	OptionsAllowController,
 	// Token: 0x04006D17 RID: 27927
-	OptionsControllerSensitivityY,
+	OptionsGfxQualityPreset,
 	// Token: 0x04006D18 RID: 27928
-	OptionsControllerLookInvert,
+	OptionsScreenBoundsValue,
 	// Token: 0x04006D19 RID: 27929
-	OptionsControllerJoystickLayout,
+	OptionsInterfaceSensitivity,
 	// Token: 0x04006D1A RID: 27930
-	OptionsControllerLookAcceleration,
+	OptionsControllerVibration,
 	// Token: 0x04006D1B RID: 27931
-	OptionsControllerZoomSensitivity,
+	NoGraphicsMode,
 	// Token: 0x04006D1C RID: 27932
-	OptionsControllerLookAxisDeadzone,
+	OptionsHudSize,
 	// Token: 0x04006D1D RID: 27933
-	OptionsControllerMoveAxisDeadzone,
+	OptionsHudOpacity,
 	// Token: 0x04006D1E RID: 27934
-	OptionsControllerCursorSnap,
+	OptionsShowCrosshair,
 	// Token: 0x04006D1F RID: 27935
-	OptionsControllerCursorHoverSensitivity,
+	OptionsShowCompass,
 	// Token: 0x04006D20 RID: 27936
-	OptionsControllerVehicleSensitivity,
+	ServerDisabledNetworkProtocols,
 	// Token: 0x04006D21 RID: 27937
-	OptionsControllerWeaponAiming,
+	OptionsBackgroundGlobalOpacity,
 	// Token: 0x04006D22 RID: 27938
-	OptionsControllerAimAssists,
+	OptionsForegroundGlobalOpacity,
 	// Token: 0x04006D23 RID: 27939
-	OptionsChatCommunication,
+	UNUSED_OptionsGamma,
 	// Token: 0x04006D24 RID: 27940
-	OptionsControlsSprintLock,
+	OptionsStabSpawnBlocksOnGround,
 	// Token: 0x04006D25 RID: 27941
-	OptionsDisableXmlEvents,
+	OptionsTempCelsius,
 	// Token: 0x04006D26 RID: 27942
-	DebugPanelsEnabled,
+	AirDropMarker,
 	// Token: 0x04006D27 RID: 27943
-	OptionsControllerVibrationStrength,
+	OptionsGfxWaterPtlLimiter,
 	// Token: 0x04006D28 RID: 27944
-	EulaVersionAccepted,
+	UNUSED_OptionsGfxUMATexQuality,
 	// Token: 0x04006D29 RID: 27945
-	EulaLatestVersion,
+	HideCommandExecutionLog,
 	// Token: 0x04006D2A RID: 27946
-	OptionsGfxMotionBlurEnabled,
+	MaxUncoveredMapChunksPerPlayer,
 	// Token: 0x04006D2B RID: 27947
-	IgnoreEOSSanctions,
+	ServerReservedSlots,
 	// Token: 0x04006D2C RID: 27948
-	SkipSpawnButton,
+	ServerReservedSlotsPermission,
 	// Token: 0x04006D2D RID: 27949
-	OptionsUiCompassUseEnglishCardinalDirections,
+	ServerAdminSlots,
 	// Token: 0x04006D2E RID: 27950
-	OptionsGfxShadowQuality,
+	ServerAdminSlotsPermission,
 	// Token: 0x04006D2F RID: 27951
-	QuestProgressionDailyLimit,
+	GameGuidClient,
 	// Token: 0x04006D30 RID: 27952
-	OptionsControllerIconStyle,
+	BedrollDeadZoneSize,
 	// Token: 0x04006D31 RID: 27953
-	OptionsShowConsoleButton,
+	LastLoadedPrefab,
 	// Token: 0x04006D32 RID: 27954
-	SaveDataLimitType,
+	UNUSED_LastLoadedPrefabSize,
 	// Token: 0x04006D33 RID: 27955
-	OptionsCrossplay,
+	OptionsJournalPopup,
 	// Token: 0x04006D34 RID: 27956
-	AllowSpawnNearFriend,
+	OptionsFilterProfanity,
 	// Token: 0x04006D35 RID: 27957
-	BiomeProgression,
+	TelnetFailedLoginLimit,
 	// Token: 0x04006D36 RID: 27958
-	ServerMatchmakingGroup,
+	TelnetFailedLoginsBlocktime,
 	// Token: 0x04006D37 RID: 27959
-	OptionsGfxUpscalerMode,
+	TerminalWindowEnabled,
 	// Token: 0x04006D38 RID: 27960
-	OptionsGfxFSRPreset,
+	ServerEnabled,
 	// Token: 0x04006D39 RID: 27961
-	StormFreq,
+	ServerVisibility,
 	// Token: 0x04006D3A RID: 27962
-	OptionsGfxFOV3P,
+	ServerLoginConfirmationText,
 	// Token: 0x04006D3B RID: 27963
-	OptionsGfxDefaultFirstPersonCamera,
+	WorldGenSeed,
 	// Token: 0x04006D3C RID: 27964
-	OptionsGfx3PCameraMode,
+	WorldGenSize,
 	// Token: 0x04006D3D RID: 27965
-	OptionsPoiVolumesSkipDeleteConfirmation,
+	OptionsGfxTreeDistance,
 	// Token: 0x04006D3E RID: 27966
-	CameraRestrictionMode,
+	OptionsPOICulling,
 	// Token: 0x04006D3F RID: 27967
-	OptionsGfxCameraDistance3P,
+	OptionsDynamicMusicEnabled,
 	// Token: 0x04006D40 RID: 27968
-	AISmellMode,
+	OptionsDynamicMusicDailyTime,
 	// Token: 0x04006D41 RID: 27969
-	OptionsControlsDefaultQuickAction,
+	OptionsPlayChanceFrequency,
 	// Token: 0x04006D42 RID: 27970
-	OptionsBindingsResetRevision,
+	OptionsPlayChanceProbability,
 	// Token: 0x04006D43 RID: 27971
-	JarRefund,
+	UNUSED_UserDataFolder,
 	// Token: 0x04006D44 RID: 27972
-	OptionsCrosshairEnabled,
+	OptionsGfxStreamMipmaps,
 	// Token: 0x04006D45 RID: 27973
-	OptionsCrosshairScale,
+	UNUSED_OptionsStreamingMipmapsBudget,
 	// Token: 0x04006D46 RID: 27974
-	OptionsCrosshairColor,
+	OptionsGfxBloom,
 	// Token: 0x04006D47 RID: 27975
-	OptionsCrosshairOpacity,
+	OptionsGfxDOF,
 	// Token: 0x04006D48 RID: 27976
-	OptionsCrosshairADS,
+	OptionsGfxMotionBlur,
 	// Token: 0x04006D49 RID: 27977
-	OptionsCrosshairDot3P,
+	OptionsGfxSSAO,
 	// Token: 0x04006D4A RID: 27978
-	OptionsCrosshairThickness,
+	OptionsGfxSSReflections,
 	// Token: 0x04006D4B RID: 27979
-	OptionsCrosshairRangedEnabled,
+	OptionsGfxSunShafts,
 	// Token: 0x04006D4C RID: 27980
-	GameSaveStorageType,
+	OptionsDisableChunkLODs,
 	// Token: 0x04006D4D RID: 27981
-	SandboxPreset,
+	ServerMaxWorldTransferSpeedKiBs,
 	// Token: 0x04006D4E RID: 27982
-	SandboxCode,
+	ServerMaxAllowedViewDistance,
 	// Token: 0x04006D4F RID: 27983
-	UserWorldStorageType,
+	OptionsGfxOcclusion,
 	// Token: 0x04006D50 RID: 27984
-	DiscordFirstTimeInfoShown,
+	BedrollExpiryTime,
 	// Token: 0x04006D51 RID: 27985
-	DiscordDisabled,
+	OptionsGfxTexFilter,
 	// Token: 0x04006D52 RID: 27986
-	DiscordLastAccountType,
+	OptionsGfxTerrainQuality,
 	// Token: 0x04006D53 RID: 27987
-	DiscordAccessToken,
+	OptionsGfxBrightness,
 	// Token: 0x04006D54 RID: 27988
-	DiscordRefreshToken,
+	LastLoadingTipRead,
 	// Token: 0x04006D55 RID: 27989
-	DiscordSelectedOutputDevice,
+	OptionsGfxDynamicMode,
 	// Token: 0x04006D56 RID: 27990
-	DiscordSelectedInputDevice,
+	OptionsGfxDynamicMinFPS,
 	// Token: 0x04006D57 RID: 27991
-	DiscordOutputVolume,
+	OptionsGfxDynamicScale,
 	// Token: 0x04006D58 RID: 27992
-	DiscordInputVolume,
+	OptionsUiFpsScaling,
 	// Token: 0x04006D59 RID: 27993
-	DiscordVoiceModePtt,
+	OptionsControlsResetRevision,
 	// Token: 0x04006D5A RID: 27994
-	DiscordVoiceVadModeAuto,
+	OptionsWeaponAiming,
 	// Token: 0x04006D5B RID: 27995
-	DiscordVoiceVadThreshold,
+	DynamicMeshEnabled,
 	// Token: 0x04006D5C RID: 27996
-	DiscordDmPrivacyMode,
+	DynamicMeshDistance,
 	// Token: 0x04006D5D RID: 27997
-	DiscordAutoJoinVoiceMode,
+	DynamicMeshLandClaimOnly,
 	// Token: 0x04006D5E RID: 27998
-	ResetUnprotectedChunks,
+	DynamicMeshLandClaimBuffer,
 	// Token: 0x04006D5F RID: 27999
-	GameWorldLocationType,
+	DynamicMeshUseImposters,
 	// Token: 0x04006D60 RID: 28000
-	OptionsGfxLimitFpsInGame,
+	DynamicMeshMaxRegionCache,
 	// Token: 0x04006D61 RID: 28001
-	DiscordMuteDmNotifications,
+	DynamicMeshMaxItemCache,
 	// Token: 0x04006D62 RID: 28002
+	TwitchBloodMoonAllowed,
+	// Token: 0x04006D63 RID: 28003
+	TwitchServerPermission,
+	// Token: 0x04006D64 RID: 28004
+	OptionsVehicleLookSensitivity,
+	// Token: 0x04006D65 RID: 28005
+	OptionsSelectionBoxAlphaMultiplier,
+	// Token: 0x04006D66 RID: 28006
+	PlaytestBiome,
+	// Token: 0x04006D67 RID: 28007
+	Language,
+	// Token: 0x04006D68 RID: 28008
+	LanguageBrowser,
+	// Token: 0x04006D69 RID: 28009
+	Region,
+	// Token: 0x04006D6A RID: 28010
+	ServerHistoryCache,
+	// Token: 0x04006D6B RID: 28011
+	OptionsVoiceInputDevice,
+	// Token: 0x04006D6C RID: 28012
+	OptionsVoiceOutputDevice,
+	// Token: 0x04006D6D RID: 28013
+	MaxChunkAge,
+	// Token: 0x04006D6E RID: 28014
+	SaveDataLimit,
+	// Token: 0x04006D6F RID: 28015
+	OptionsSubtitlesEnabled,
+	// Token: 0x04006D70 RID: 28016
+	OptionsIntroMovieEnabled,
+	// Token: 0x04006D71 RID: 28017
+	AllowSpawnNearBackpack,
+	// Token: 0x04006D72 RID: 28018
+	OptionsZoomAccel,
+	// Token: 0x04006D73 RID: 28019
+	UNUSED_NewGameSetDefaults,
+	// Token: 0x04006D74 RID: 28020
+	UNUSED_OptionsGfxGameplayResolutionWidth,
+	// Token: 0x04006D75 RID: 28021
+	UNUSED_OptionsGfxGameplayResolutionHeight,
+	// Token: 0x04006D76 RID: 28022
+	OptionsMumblePositionalAudioSupport,
+	// Token: 0x04006D77 RID: 28023
+	WebDashboardEnabled,
+	// Token: 0x04006D78 RID: 28024
+	WebDashboardPort,
+	// Token: 0x04006D79 RID: 28025
+	WebDashboardUrl,
+	// Token: 0x04006D7A RID: 28026
+	EnableMapRendering,
+	// Token: 0x04006D7B RID: 28027
+	OptionsAutoPartyWithFriends,
+	// Token: 0x04006D7C RID: 28028
+	OptionsQuestsAutoShare,
+	// Token: 0x04006D7D RID: 28029
+	OptionsQuestsAutoAccept,
+	// Token: 0x04006D7E RID: 28030
+	OptionsControllerTriggerEffects,
+	// Token: 0x04006D7F RID: 28031
+	MaxQueuedMeshLayers,
+	// Token: 0x04006D80 RID: 28032
+	OptionsControllerSensitivityX,
+	// Token: 0x04006D81 RID: 28033
+	OptionsControllerSensitivityY,
+	// Token: 0x04006D82 RID: 28034
+	OptionsControllerLookInvert,
+	// Token: 0x04006D83 RID: 28035
+	OptionsControllerJoystickLayout,
+	// Token: 0x04006D84 RID: 28036
+	OptionsControllerLookAcceleration,
+	// Token: 0x04006D85 RID: 28037
+	OptionsControllerZoomSensitivity,
+	// Token: 0x04006D86 RID: 28038
+	OptionsControllerLookAxisDeadzone,
+	// Token: 0x04006D87 RID: 28039
+	OptionsControllerMoveAxisDeadzone,
+	// Token: 0x04006D88 RID: 28040
+	OptionsControllerCursorSnap,
+	// Token: 0x04006D89 RID: 28041
+	OptionsControllerCursorHoverSensitivity,
+	// Token: 0x04006D8A RID: 28042
+	OptionsControllerVehicleSensitivity,
+	// Token: 0x04006D8B RID: 28043
+	OptionsControllerWeaponAiming,
+	// Token: 0x04006D8C RID: 28044
+	OptionsControllerAimAssists,
+	// Token: 0x04006D8D RID: 28045
+	OptionsChatCommunication,
+	// Token: 0x04006D8E RID: 28046
+	OptionsControlsSprintLock,
+	// Token: 0x04006D8F RID: 28047
+	OptionsDisableXmlEvents,
+	// Token: 0x04006D90 RID: 28048
+	DebugPanelsEnabled,
+	// Token: 0x04006D91 RID: 28049
+	OptionsControllerVibrationStrength,
+	// Token: 0x04006D92 RID: 28050
+	EulaVersionAccepted,
+	// Token: 0x04006D93 RID: 28051
+	EulaLatestVersion,
+	// Token: 0x04006D94 RID: 28052
+	OptionsGfxMotionBlurEnabled,
+	// Token: 0x04006D95 RID: 28053
+	IgnoreEOSSanctions,
+	// Token: 0x04006D96 RID: 28054
+	SkipSpawnButton,
+	// Token: 0x04006D97 RID: 28055
+	OptionsUiCompassUseEnglishCardinalDirections,
+	// Token: 0x04006D98 RID: 28056
+	OptionsGfxShadowQuality,
+	// Token: 0x04006D99 RID: 28057
+	QuestProgressionDailyLimit,
+	// Token: 0x04006D9A RID: 28058
+	OptionsControllerIconStyle,
+	// Token: 0x04006D9B RID: 28059
+	OptionsShowConsoleButton,
+	// Token: 0x04006D9C RID: 28060
+	SaveDataLimitType,
+	// Token: 0x04006D9D RID: 28061
+	OptionsCrossplay,
+	// Token: 0x04006D9E RID: 28062
+	AllowSpawnNearFriend,
+	// Token: 0x04006D9F RID: 28063
+	BiomeProgression,
+	// Token: 0x04006DA0 RID: 28064
+	ServerMatchmakingGroup,
+	// Token: 0x04006DA1 RID: 28065
+	OptionsGfxUpscalerMode,
+	// Token: 0x04006DA2 RID: 28066
+	OptionsGfxFSRPreset,
+	// Token: 0x04006DA3 RID: 28067
+	StormFreq,
+	// Token: 0x04006DA4 RID: 28068
+	OptionsGfxFOV3P,
+	// Token: 0x04006DA5 RID: 28069
+	OptionsGfxDefaultFirstPersonCamera,
+	// Token: 0x04006DA6 RID: 28070
+	OptionsGfx3PCameraMode,
+	// Token: 0x04006DA7 RID: 28071
+	OptionsPoiVolumesSkipDeleteConfirmation,
+	// Token: 0x04006DA8 RID: 28072
+	CameraRestrictionMode,
+	// Token: 0x04006DA9 RID: 28073
+	OptionsGfxCameraDistance3P,
+	// Token: 0x04006DAA RID: 28074
+	AISmellMode,
+	// Token: 0x04006DAB RID: 28075
+	OptionsControlsDefaultQuickAction,
+	// Token: 0x04006DAC RID: 28076
+	OptionsBindingsResetRevision,
+	// Token: 0x04006DAD RID: 28077
+	JarRefund,
+	// Token: 0x04006DAE RID: 28078
+	OptionsCrosshairEnabled,
+	// Token: 0x04006DAF RID: 28079
+	OptionsCrosshairScale,
+	// Token: 0x04006DB0 RID: 28080
+	OptionsCrosshairColor,
+	// Token: 0x04006DB1 RID: 28081
+	OptionsCrosshairOpacity,
+	// Token: 0x04006DB2 RID: 28082
+	OptionsCrosshairADS,
+	// Token: 0x04006DB3 RID: 28083
+	OptionsCrosshairDot3P,
+	// Token: 0x04006DB4 RID: 28084
+	OptionsCrosshairThickness,
+	// Token: 0x04006DB5 RID: 28085
+	OptionsCrosshairRangedEnabled,
+	// Token: 0x04006DB6 RID: 28086
+	GameSaveStorageType,
+	// Token: 0x04006DB7 RID: 28087
+	SandboxPreset,
+	// Token: 0x04006DB8 RID: 28088
+	SandboxCode,
+	// Token: 0x04006DB9 RID: 28089
+	UserWorldStorageType,
+	// Token: 0x04006DBA RID: 28090
+	DiscordFirstTimeInfoShown,
+	// Token: 0x04006DBB RID: 28091
+	DiscordDisabled,
+	// Token: 0x04006DBC RID: 28092
+	DiscordLastAccountType,
+	// Token: 0x04006DBD RID: 28093
+	DiscordAccessToken,
+	// Token: 0x04006DBE RID: 28094
+	DiscordRefreshToken,
+	// Token: 0x04006DBF RID: 28095
+	DiscordSelectedOutputDevice,
+	// Token: 0x04006DC0 RID: 28096
+	DiscordSelectedInputDevice,
+	// Token: 0x04006DC1 RID: 28097
+	DiscordOutputVolume,
+	// Token: 0x04006DC2 RID: 28098
+	DiscordInputVolume,
+	// Token: 0x04006DC3 RID: 28099
+	DiscordVoiceModePtt,
+	// Token: 0x04006DC4 RID: 28100
+	DiscordVoiceVadModeAuto,
+	// Token: 0x04006DC5 RID: 28101
+	DiscordVoiceVadThreshold,
+	// Token: 0x04006DC6 RID: 28102
+	DiscordDmPrivacyMode,
+	// Token: 0x04006DC7 RID: 28103
+	DiscordAutoJoinVoiceMode,
+	// Token: 0x04006DC8 RID: 28104
+	ResetUnprotectedChunks,
+	// Token: 0x04006DC9 RID: 28105
+	GameWorldLocationType,
+	// Token: 0x04006DCA RID: 28106
+	OptionsGfxLimitFpsInGame,
+	// Token: 0x04006DCB RID: 28107
+	DiscordMuteDmNotifications,
+	// Token: 0x04006DCC RID: 28108
 	Last
 }

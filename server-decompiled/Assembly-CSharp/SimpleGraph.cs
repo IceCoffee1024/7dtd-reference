@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014A2 RID: 5282
+// Token: 0x020014C2 RID: 5314
 public class SimpleGraph
 {
-	// Token: 0x0600A5AD RID: 42413 RVA: 0x003DA180 File Offset: 0x003D8380
+	// Token: 0x0600A65B RID: 42587 RVA: 0x003DEE0C File Offset: 0x003DD00C
 	public void Init(int _texW, int _texH, float _maxValue, float[] _lines = null)
 	{
 		this.maxValue = _maxValue;
@@ -24,13 +24,13 @@ public class SimpleGraph
 		}
 	}
 
-	// Token: 0x0600A5AE RID: 42414 RVA: 0x003DA20D File Offset: 0x003D840D
+	// Token: 0x0600A65C RID: 42588 RVA: 0x003DEE99 File Offset: 0x003DD099
 	public void Cleanup()
 	{
 		global::UnityEngine.Object.Destroy(this.texture);
 	}
 
-	// Token: 0x0600A5AF RID: 42415 RVA: 0x003DA21C File Offset: 0x003D841C
+	// Token: 0x0600A65D RID: 42589 RVA: 0x003DEEA8 File Offset: 0x003DD0A8
 	public void Update(float _value, Color _color)
 	{
 		int height = this.texture.height;
@@ -62,18 +62,18 @@ public class SimpleGraph
 		this.curGraphXPos %= this.texture.width - 1;
 	}
 
-	// Token: 0x04007B76 RID: 31606
+	// Token: 0x04007BF1 RID: 31729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxValue = 1f;
 
-	// Token: 0x04007B77 RID: 31607
+	// Token: 0x04007BF2 RID: 31730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] lines = new float[] { 1f, 0.5f, 0.33333334f, 0.25f, 0.2f, 0.16666667f, 0f };
 
-	// Token: 0x04007B78 RID: 31608
+	// Token: 0x04007BF3 RID: 31731
 	public Texture2D texture;
 
-	// Token: 0x04007B79 RID: 31609
+	// Token: 0x04007BF4 RID: 31732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curGraphXPos;
 }

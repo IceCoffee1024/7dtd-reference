@@ -1,28 +1,28 @@
 ﻿using System;
 
-// Token: 0x02000E3C RID: 3644
+// Token: 0x02000E4B RID: 3659
 public struct SandboxPresetGroupData : IEquatable<SandboxPresetGroupData>
 {
-	// Token: 0x0600700E RID: 28686 RVA: 0x002B2F04 File Offset: 0x002B1104
+	// Token: 0x06007006 RID: 28678 RVA: 0x002B62B4 File Offset: 0x002B44B4
 	public SandboxPresetGroupData(string _internalName, string _formattedName)
 	{
 		this.InternalName = _internalName;
 		this.formattedName = _formattedName;
 	}
 
-	// Token: 0x0600700F RID: 28687 RVA: 0x002B2F14 File Offset: 0x002B1114
+	// Token: 0x06007007 RID: 28679 RVA: 0x002B62C4 File Offset: 0x002B44C4
 	public override string ToString()
 	{
 		return this.formattedName;
 	}
 
-	// Token: 0x06007010 RID: 28688 RVA: 0x002B2F1C File Offset: 0x002B111C
+	// Token: 0x06007008 RID: 28680 RVA: 0x002B62CC File Offset: 0x002B44CC
 	public bool Equals(SandboxPresetGroupData _other)
 	{
 		return this.InternalName == _other.InternalName;
 	}
 
-	// Token: 0x06007011 RID: 28689 RVA: 0x002B2F30 File Offset: 0x002B1130
+	// Token: 0x06007009 RID: 28681 RVA: 0x002B62E0 File Offset: 0x002B44E0
 	public override bool Equals(object _obj)
 	{
 		if (_obj is SandboxPresetGroupData)
@@ -33,16 +33,16 @@ public struct SandboxPresetGroupData : IEquatable<SandboxPresetGroupData>
 		return false;
 	}
 
-	// Token: 0x06007012 RID: 28690 RVA: 0x002B2F55 File Offset: 0x002B1155
+	// Token: 0x0600700A RID: 28682 RVA: 0x002B6305 File Offset: 0x002B4505
 	public override int GetHashCode()
 	{
 		return ((this.InternalName != null) ? this.InternalName.GetHashCode() : 0) * 397;
 	}
 
-	// Token: 0x040054B2 RID: 21682
+	// Token: 0x040054E9 RID: 21737
 	public readonly string InternalName;
 
-	// Token: 0x040054B3 RID: 21683
+	// Token: 0x040054EA RID: 21738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string formattedName;
 }

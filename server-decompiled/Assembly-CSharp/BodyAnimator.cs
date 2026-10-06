@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000D7 RID: 215
+// Token: 0x020000D9 RID: 217
 public class BodyAnimator
 {
 	// Token: 0x17000057 RID: 87
-	// (get) Token: 0x06000579 RID: 1401 RVA: 0x00027434 File Offset: 0x00025634
-	// (set) Token: 0x0600057A RID: 1402 RVA: 0x00027450 File Offset: 0x00025650
+	// (get) Token: 0x0600057F RID: 1407 RVA: 0x0002752C File Offset: 0x0002572C
+	// (set) Token: 0x06000580 RID: 1408 RVA: 0x00027548 File Offset: 0x00025748
 	public Animator Animator
 	{
 		get
@@ -27,7 +27,7 @@ public class BodyAnimator
 	}
 
 	// Token: 0x17000058 RID: 88
-	// (set) Token: 0x0600057B RID: 1403 RVA: 0x0002746C File Offset: 0x0002566C
+	// (set) Token: 0x06000581 RID: 1409 RVA: 0x00027564 File Offset: 0x00025764
 	public BodyAnimator.EnumState State
 	{
 		set
@@ -46,7 +46,7 @@ public class BodyAnimator
 	}
 
 	// Token: 0x17000059 RID: 89
-	// (get) Token: 0x0600057C RID: 1404 RVA: 0x000274CA File Offset: 0x000256CA
+	// (get) Token: 0x06000582 RID: 1410 RVA: 0x000275C2 File Offset: 0x000257C2
 	public BodyAnimator.BodyParts Parts
 	{
 		get
@@ -56,8 +56,8 @@ public class BodyAnimator
 	}
 
 	// Token: 0x1700005A RID: 90
-	// (get) Token: 0x0600057D RID: 1405 RVA: 0x000274D2 File Offset: 0x000256D2
-	// (set) Token: 0x0600057E RID: 1406 RVA: 0x000274DC File Offset: 0x000256DC
+	// (get) Token: 0x06000583 RID: 1411 RVA: 0x000275CA File Offset: 0x000257CA
+	// (set) Token: 0x06000584 RID: 1412 RVA: 0x000275D4 File Offset: 0x000257D4
 	public bool RagdollActive
 	{
 		get
@@ -78,7 +78,7 @@ public class BodyAnimator
 		}
 	}
 
-	// Token: 0x0600057F RID: 1407 RVA: 0x00027538 File Offset: 0x00025738
+	// Token: 0x06000585 RID: 1413 RVA: 0x00027630 File Offset: 0x00025830
 	public virtual void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 		if (this.avatarController != null)
@@ -92,7 +92,7 @@ public class BodyAnimator
 		}
 	}
 
-	// Token: 0x06000580 RID: 1408 RVA: 0x000275C8 File Offset: 0x000257C8
+	// Token: 0x06000586 RID: 1414 RVA: 0x000276C0 File Offset: 0x000258C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void initBodyAnimator(EntityAlive _entity, BodyAnimator.BodyParts _bodyParts, BodyAnimator.EnumState _defaultState)
 	{
@@ -109,7 +109,7 @@ public class BodyAnimator
 		}
 	}
 
-	// Token: 0x06000581 RID: 1409 RVA: 0x0002765C File Offset: 0x0002585C
+	// Token: 0x06000587 RID: 1415 RVA: 0x00027754 File Offset: 0x00025954
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void cacheLayerStateInfo()
 	{
@@ -119,14 +119,14 @@ public class BodyAnimator
 		}
 	}
 
-	// Token: 0x06000582 RID: 1410 RVA: 0x0002768F File Offset: 0x0002588F
+	// Token: 0x06000588 RID: 1416 RVA: 0x00027787 File Offset: 0x00025987
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual AnimatorStateInfo getCachedLayerStateInfo(int _layer)
 	{
 		return this.currentBaseState;
 	}
 
-	// Token: 0x06000583 RID: 1411 RVA: 0x00027698 File Offset: 0x00025898
+	// Token: 0x06000589 RID: 1417 RVA: 0x00027790 File Offset: 0x00025990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateVisibility()
 	{
@@ -154,94 +154,94 @@ public class BodyAnimator
 		}
 	}
 
-	// Token: 0x06000584 RID: 1412 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600058A RID: 1418 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void assignLayerWeights()
 	{
 	}
 
-	// Token: 0x06000585 RID: 1413 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600058B RID: 1419 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetDrunk(float _numBeers)
 	{
 	}
 
-	// Token: 0x06000586 RID: 1414 RVA: 0x00027711 File Offset: 0x00025911
+	// Token: 0x0600058C RID: 1420 RVA: 0x00027809 File Offset: 0x00025A09
 	public virtual void Update()
 	{
 		this.assignLayerWeights();
 		this.updateVisibility();
 	}
 
-	// Token: 0x06000587 RID: 1415 RVA: 0x0002771F File Offset: 0x0002591F
+	// Token: 0x0600058D RID: 1421 RVA: 0x00027817 File Offset: 0x00025A17
 	public virtual void LateUpdate()
 	{
 		this.cacheLayerStateInfo();
 	}
 
-	// Token: 0x040005B1 RID: 1457
-	public EntityAlive Entity;
-
-	// Token: 0x040005B2 RID: 1458
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Animator animator;
-
-	// Token: 0x040005B3 RID: 1459
-	[PublicizedFrom(EAccessModifier.Private)]
-	public AnimatorStateInfo currentBaseState;
-
 	// Token: 0x040005B4 RID: 1460
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public AvatarController avatarController;
+	public EntityAlive Entity;
 
 	// Token: 0x040005B5 RID: 1461
 	[PublicizedFrom(EAccessModifier.Private)]
-	public BodyAnimator.BodyParts bodyParts;
+	public Animator animator;
 
 	// Token: 0x040005B6 RID: 1462
 	[PublicizedFrom(EAccessModifier.Private)]
-	public BodyAnimator.EnumState state;
+	public AnimatorStateInfo currentBaseState;
 
 	// Token: 0x040005B7 RID: 1463
-	[PublicizedFrom(EAccessModifier.Private)]
-	public AnimatorCullingMode defaultCullingMode;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public AvatarController avatarController;
 
 	// Token: 0x040005B8 RID: 1464
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool isRagdoll;
+	public BodyAnimator.BodyParts bodyParts;
 
 	// Token: 0x040005B9 RID: 1465
 	[PublicizedFrom(EAccessModifier.Private)]
-	public SkinnedMeshRenderer[] skinnedMeshes;
+	public BodyAnimator.EnumState state;
 
 	// Token: 0x040005BA RID: 1466
 	[PublicizedFrom(EAccessModifier.Private)]
+	public AnimatorCullingMode defaultCullingMode;
+
+	// Token: 0x040005BB RID: 1467
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool isRagdoll;
+
+	// Token: 0x040005BC RID: 1468
+	[PublicizedFrom(EAccessModifier.Private)]
+	public SkinnedMeshRenderer[] skinnedMeshes;
+
+	// Token: 0x040005BD RID: 1469
+	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshRenderer[] meshes;
 
-	// Token: 0x020000D8 RID: 216
+	// Token: 0x020000DA RID: 218
 	public enum EnumState
 	{
-		// Token: 0x040005BC RID: 1468
+		// Token: 0x040005BF RID: 1471
 		Visible,
-		// Token: 0x040005BD RID: 1469
+		// Token: 0x040005C0 RID: 1472
 		OnlyColliders,
-		// Token: 0x040005BE RID: 1470
+		// Token: 0x040005C1 RID: 1473
 		Disabled
 	}
 
-	// Token: 0x020000D9 RID: 217
+	// Token: 0x020000DB RID: 219
 	public class BodyParts
 	{
-		// Token: 0x06000589 RID: 1417 RVA: 0x00027727 File Offset: 0x00025927
+		// Token: 0x0600058F RID: 1423 RVA: 0x0002781F File Offset: 0x00025A1F
 		public BodyParts(Transform _bodyTransform, Transform _rightHand)
 		{
 			this.BodyObj = _bodyTransform.gameObject;
 			this.RightHandT = _rightHand;
 		}
 
-		// Token: 0x040005BF RID: 1471
+		// Token: 0x040005C2 RID: 1474
 		public GameObject BodyObj;
 
-		// Token: 0x040005C0 RID: 1472
+		// Token: 0x040005C3 RID: 1475
 		public Transform RightHandT;
 	}
 }

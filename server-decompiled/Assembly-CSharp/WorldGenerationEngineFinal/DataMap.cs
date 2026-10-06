@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016F4 RID: 5876
+	// Token: 0x02001720 RID: 5920
 	public class DataMap<T> where T : struct
 	{
-		// Token: 0x0600B758 RID: 46936 RVA: 0x0043FE74 File Offset: 0x0043E074
+		// Token: 0x0600B8AF RID: 47279 RVA: 0x00444394 File Offset: 0x00442594
 		public DataMap(int tileWidth, T defaultValue)
 		{
 			this.width = tileWidth;
@@ -19,21 +19,21 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B759 RID: 46937 RVA: 0x0043FEC1 File Offset: 0x0043E0C1
+		// Token: 0x0600B8B0 RID: 47280 RVA: 0x004443E1 File Offset: 0x004425E1
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public T Get(int x, int y)
 		{
 			return this.data[x + y * this.width];
 		}
 
-		// Token: 0x0600B75A RID: 46938 RVA: 0x0043FED8 File Offset: 0x0043E0D8
+		// Token: 0x0600B8B1 RID: 47281 RVA: 0x004443F8 File Offset: 0x004425F8
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void Set(int x, int y, T _value)
 		{
 			this.data[x + y * this.width] = _value;
 		}
 
-		// Token: 0x0600B75B RID: 46939 RVA: 0x0043FEF0 File Offset: 0x0043E0F0
+		// Token: 0x0600B8B2 RID: 47282 RVA: 0x00444410 File Offset: 0x00442610
 		public void Replace(T _old, T _new)
 		{
 			EqualityComparer<T> @default = EqualityComparer<T>.Default;
@@ -47,10 +47,10 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0400890B RID: 35083
+		// Token: 0x040089D0 RID: 35280
 		public int width;
 
-		// Token: 0x0400890C RID: 35084
+		// Token: 0x040089D1 RID: 35281
 		[PublicizedFrom(EAccessModifier.Private)]
 		public T[] data;
 	}

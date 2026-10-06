@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000415 RID: 1045
+// Token: 0x02000417 RID: 1047
 public abstract class AIDirectorHordeComponent : AIDirectorComponent
 {
-	// Token: 0x06002055 RID: 8277 RVA: 0x000C3418 File Offset: 0x000C1618
+	// Token: 0x06002044 RID: 8260 RVA: 0x000C34CC File Offset: 0x000C16CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public uint FindTargets(out Vector3 startPos, out Vector3 pitStop, out Vector3 endPos, List<AIDirectorPlayerState> outTargets)
 	{
@@ -152,7 +152,7 @@ public abstract class AIDirectorHordeComponent : AIDirectorComponent
 		return 0U;
 	}
 
-	// Token: 0x06002056 RID: 8278 RVA: 0x000C391C File Offset: 0x000C1B1C
+	// Token: 0x06002045 RID: 8261 RVA: 0x000C39D0 File Offset: 0x000C1BD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool FindOnGroundPos(ref Vector3 pos)
 	{
@@ -209,7 +209,7 @@ public abstract class AIDirectorHordeComponent : AIDirectorComponent
 		return true;
 	}
 
-	// Token: 0x06002057 RID: 8279 RVA: 0x000C3A60 File Offset: 0x000C1C60
+	// Token: 0x06002046 RID: 8262 RVA: 0x000C3B14 File Offset: 0x000C1D14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool FindScoutStartPos(Vector3 endPos, out Vector3 startPos)
 	{
@@ -282,25 +282,25 @@ public abstract class AIDirectorHordeComponent : AIDirectorComponent
 		return false;
 	}
 
-	// Token: 0x06002058 RID: 8280 RVA: 0x000C3C80 File Offset: 0x000C1E80
+	// Token: 0x06002047 RID: 8263 RVA: 0x000C3D34 File Offset: 0x000C1F34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AIDirectorHordeComponent()
 	{
 	}
 
-	// Token: 0x0400161F RID: 5663
+	// Token: 0x04001616 RID: 5654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPitstopSideMin = 40f;
 
-	// Token: 0x04001620 RID: 5664
+	// Token: 0x04001617 RID: 5655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPitstopSideRange = 20f;
 
-	// Token: 0x04001621 RID: 5665
+	// Token: 0x04001618 RID: 5656
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPlayerClosestDist = 30f;
 
-	// Token: 0x04001622 RID: 5666
+	// Token: 0x04001619 RID: 5657
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSinglePlayerSkipPer = 0.3f;
 }

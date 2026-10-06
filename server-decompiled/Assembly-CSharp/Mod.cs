@@ -13,31 +13,31 @@ using Platform;
 using Services.Analytics;
 using UnityEngine;
 
-// Token: 0x02000727 RID: 1831
+// Token: 0x02000729 RID: 1833
 [JsonObject(MemberSerialization.OptIn)]
 public class Mod
 {
-	// Token: 0x1700056F RID: 1391
-	// (get) Token: 0x0600374F RID: 14159 RVA: 0x0016D695 File Offset: 0x0016B895
-	// (set) Token: 0x06003750 RID: 14160 RVA: 0x0016D69D File Offset: 0x0016B89D
+	// Token: 0x17000595 RID: 1429
+	// (get) Token: 0x06003792 RID: 14226 RVA: 0x0016DFF9 File Offset: 0x0016C1F9
+	// (set) Token: 0x06003793 RID: 14227 RVA: 0x0016E001 File Offset: 0x0016C201
 	public Mod.EModLoadState LoadState
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000570 RID: 1392
-	// (get) Token: 0x06003751 RID: 14161 RVA: 0x0016D6A6 File Offset: 0x0016B8A6
-	// (set) Token: 0x06003752 RID: 14162 RVA: 0x0016D6AE File Offset: 0x0016B8AE
+	// Token: 0x17000596 RID: 1430
+	// (get) Token: 0x06003794 RID: 14228 RVA: 0x0016E00A File Offset: 0x0016C20A
+	// (set) Token: 0x06003795 RID: 14229 RVA: 0x0016E012 File Offset: 0x0016C212
 	public string Path
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000571 RID: 1393
-	// (get) Token: 0x06003753 RID: 14163 RVA: 0x0016D6B7 File Offset: 0x0016B8B7
-	// (set) Token: 0x06003754 RID: 14164 RVA: 0x0016D6BF File Offset: 0x0016B8BF
+	// Token: 0x17000597 RID: 1431
+	// (get) Token: 0x06003796 RID: 14230 RVA: 0x0016E01B File Offset: 0x0016C21B
+	// (set) Token: 0x06003797 RID: 14231 RVA: 0x0016E023 File Offset: 0x0016C223
 	public string FolderName
 	{
 		[UsedImplicitly]
@@ -46,9 +46,9 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000572 RID: 1394
-	// (get) Token: 0x06003755 RID: 14165 RVA: 0x0016D6C8 File Offset: 0x0016B8C8
-	// (set) Token: 0x06003756 RID: 14166 RVA: 0x0016D6D0 File Offset: 0x0016B8D0
+	// Token: 0x17000598 RID: 1432
+	// (get) Token: 0x06003798 RID: 14232 RVA: 0x0016E02C File Offset: 0x0016C22C
+	// (set) Token: 0x06003799 RID: 14233 RVA: 0x0016E034 File Offset: 0x0016C234
 	[JsonProperty]
 	[JsonConverter(typeof(TruncateStringSerializerConverter))]
 	public string Name
@@ -57,9 +57,9 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000573 RID: 1395
-	// (get) Token: 0x06003757 RID: 14167 RVA: 0x0016D6D9 File Offset: 0x0016B8D9
-	// (set) Token: 0x06003758 RID: 14168 RVA: 0x0016D6E1 File Offset: 0x0016B8E1
+	// Token: 0x17000599 RID: 1433
+	// (get) Token: 0x0600379A RID: 14234 RVA: 0x0016E03D File Offset: 0x0016C23D
+	// (set) Token: 0x0600379B RID: 14235 RVA: 0x0016E045 File Offset: 0x0016C245
 	[JsonProperty]
 	[JsonConverter(typeof(TruncateStringSerializerConverter))]
 	public string DisplayName
@@ -70,9 +70,9 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000574 RID: 1396
-	// (get) Token: 0x06003759 RID: 14169 RVA: 0x0016D6EA File Offset: 0x0016B8EA
-	// (set) Token: 0x0600375A RID: 14170 RVA: 0x0016D6F2 File Offset: 0x0016B8F2
+	// Token: 0x1700059A RID: 1434
+	// (get) Token: 0x0600379C RID: 14236 RVA: 0x0016E04E File Offset: 0x0016C24E
+	// (set) Token: 0x0600379D RID: 14237 RVA: 0x0016E056 File Offset: 0x0016C256
 	[DefaultValue("")]
 	[JsonProperty(NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
 	[JsonConverter(typeof(TruncateStringSerializerConverter))]
@@ -84,9 +84,9 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000575 RID: 1397
-	// (get) Token: 0x0600375B RID: 14171 RVA: 0x0016D6FB File Offset: 0x0016B8FB
-	// (set) Token: 0x0600375C RID: 14172 RVA: 0x0016D703 File Offset: 0x0016B903
+	// Token: 0x1700059B RID: 1435
+	// (get) Token: 0x0600379E RID: 14238 RVA: 0x0016E05F File Offset: 0x0016C25F
+	// (set) Token: 0x0600379F RID: 14239 RVA: 0x0016E067 File Offset: 0x0016C267
 	public string Author
 	{
 		[UsedImplicitly]
@@ -95,27 +95,27 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000576 RID: 1398
-	// (get) Token: 0x0600375D RID: 14173 RVA: 0x0016D70C File Offset: 0x0016B90C
-	// (set) Token: 0x0600375E RID: 14174 RVA: 0x0016D714 File Offset: 0x0016B914
+	// Token: 0x1700059C RID: 1436
+	// (get) Token: 0x060037A0 RID: 14240 RVA: 0x0016E070 File Offset: 0x0016C270
+	// (set) Token: 0x060037A1 RID: 14241 RVA: 0x0016E078 File Offset: 0x0016C278
 	public Version Version
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000577 RID: 1399
-	// (get) Token: 0x0600375F RID: 14175 RVA: 0x0016D71D File Offset: 0x0016B91D
-	// (set) Token: 0x06003760 RID: 14176 RVA: 0x0016D725 File Offset: 0x0016B925
+	// Token: 0x1700059D RID: 1437
+	// (get) Token: 0x060037A2 RID: 14242 RVA: 0x0016E081 File Offset: 0x0016C281
+	// (set) Token: 0x060037A3 RID: 14243 RVA: 0x0016E089 File Offset: 0x0016C289
 	public string VersionString
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000578 RID: 1400
-	// (get) Token: 0x06003761 RID: 14177 RVA: 0x0016D72E File Offset: 0x0016B92E
-	// (set) Token: 0x06003762 RID: 14178 RVA: 0x0016D736 File Offset: 0x0016B936
+	// Token: 0x1700059E RID: 1438
+	// (get) Token: 0x060037A4 RID: 14244 RVA: 0x0016E092 File Offset: 0x0016C292
+	// (set) Token: 0x060037A5 RID: 14245 RVA: 0x0016E09A File Offset: 0x0016C29A
 	public string Website
 	{
 		[UsedImplicitly]
@@ -124,41 +124,41 @@ public class Mod
 		set;
 	}
 
-	// Token: 0x17000579 RID: 1401
-	// (get) Token: 0x06003763 RID: 14179 RVA: 0x0016D73F File Offset: 0x0016B93F
-	// (set) Token: 0x06003764 RID: 14180 RVA: 0x0016D747 File Offset: 0x0016B947
+	// Token: 0x1700059F RID: 1439
+	// (get) Token: 0x060037A6 RID: 14246 RVA: 0x0016E0A3 File Offset: 0x0016C2A3
+	// (set) Token: 0x060037A7 RID: 14247 RVA: 0x0016E0AB File Offset: 0x0016C2AB
 	public bool SkipLoadingWithAntiCheat
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700057A RID: 1402
-	// (get) Token: 0x06003765 RID: 14181 RVA: 0x0016D750 File Offset: 0x0016B950
-	// (set) Token: 0x06003766 RID: 14182 RVA: 0x0016D758 File Offset: 0x0016B958
+	// Token: 0x170005A0 RID: 1440
+	// (get) Token: 0x060037A8 RID: 14248 RVA: 0x0016E0B4 File Offset: 0x0016C2B4
+	// (set) Token: 0x060037A9 RID: 14249 RVA: 0x0016E0BC File Offset: 0x0016C2BC
 	public bool AntiCheatCompatible
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700057B RID: 1403
-	// (get) Token: 0x06003767 RID: 14183 RVA: 0x0016D761 File Offset: 0x0016B961
-	// (set) Token: 0x06003768 RID: 14184 RVA: 0x0016D769 File Offset: 0x0016B969
+	// Token: 0x170005A1 RID: 1441
+	// (get) Token: 0x060037AA RID: 14250 RVA: 0x0016E0C5 File Offset: 0x0016C2C5
+	// (set) Token: 0x060037AB RID: 14251 RVA: 0x0016E0CD File Offset: 0x0016C2CD
 	public bool GameConfigMod
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06003769 RID: 14185 RVA: 0x0016D772 File Offset: 0x0016B972
+	// Token: 0x060037AC RID: 14252 RVA: 0x0016E0D6 File Offset: 0x0016C2D6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mod()
 	{
 		this.AllAssemblies = new ReadOnlyCollection<Assembly>(this.allAssemblies);
 	}
 
-	// Token: 0x0600376A RID: 14186 RVA: 0x0016D798 File Offset: 0x0016B998
+	// Token: 0x060037AD RID: 14253 RVA: 0x0016E0FC File Offset: 0x0016C2FC
 	public bool LoadMod()
 	{
 		this.LoadState = Mod.EModLoadState.Failed;
@@ -187,7 +187,7 @@ public class Mod
 		return this.LoadState == Mod.EModLoadState.Success;
 	}
 
-	// Token: 0x0600376B RID: 14187 RVA: 0x0016D84C File Offset: 0x0016BA4C
+	// Token: 0x060037AE RID: 14254 RVA: 0x0016E1B0 File Offset: 0x0016C3B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mod.EModLoadState LoadAssemblies()
 	{
@@ -234,7 +234,7 @@ public class Mod
 		return Mod.EModLoadState.Success;
 	}
 
-	// Token: 0x0600376C RID: 14188 RVA: 0x0016D93C File Offset: 0x0016BB3C
+	// Token: 0x060037AF RID: 14255 RVA: 0x0016E2A0 File Offset: 0x0016C4A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Assembly loadAssembly(string _path)
 	{
@@ -249,7 +249,7 @@ public class Mod
 		return Assembly.LoadFrom(_path);
 	}
 
-	// Token: 0x0600376D RID: 14189 RVA: 0x0016D978 File Offset: 0x0016BB78
+	// Token: 0x060037B0 RID: 14256 RVA: 0x0016E2DC File Offset: 0x0016C4DC
 	public bool InitModCode()
 	{
 		if (this.allAssemblies.Count > 0)
@@ -302,13 +302,13 @@ public class Mod
 		return true;
 	}
 
-	// Token: 0x0600376E RID: 14190 RVA: 0x0016DB50 File Offset: 0x0016BD50
+	// Token: 0x060037B1 RID: 14257 RVA: 0x0016E4B4 File Offset: 0x0016C6B4
 	public bool ContainsAssembly(Assembly _assembly)
 	{
 		return this.allAssemblies.Contains(_assembly);
 	}
 
-	// Token: 0x0600376F RID: 14191 RVA: 0x0016DB60 File Offset: 0x0016BD60
+	// Token: 0x060037B2 RID: 14258 RVA: 0x0016E4C4 File Offset: 0x0016C6C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DetectContents()
 	{
@@ -329,7 +329,7 @@ public class Mod
 		}
 	}
 
-	// Token: 0x06003770 RID: 14192 RVA: 0x0016DBD4 File Offset: 0x0016BDD4
+	// Token: 0x060037B3 RID: 14259 RVA: 0x0016E538 File Offset: 0x0016C738
 	public static Mod LoadDefinitionFromFolder(string _path)
 	{
 		string text = _path + "/ModInfo.xml";
@@ -355,7 +355,7 @@ public class Mod
 		return mod;
 	}
 
-	// Token: 0x06003771 RID: 14193 RVA: 0x0016DC8C File Offset: 0x0016BE8C
+	// Token: 0x060037B4 RID: 14260 RVA: 0x0016E5F0 File Offset: 0x0016C7F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mod parseModInfoV2(string _modPath, string _folderName, XElement _xmlRoot)
 	{
@@ -422,7 +422,7 @@ public class Mod
 		};
 	}
 
-	// Token: 0x06003772 RID: 14194 RVA: 0x0016DE1C File Offset: 0x0016C01C
+	// Token: 0x060037B5 RID: 14261 RVA: 0x0016E780 File Offset: 0x0016C980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getElementAttributeValue(string _folderName, XElement _xmlParent, string _elementName, bool _logNonExisting = true)
 	{
@@ -444,7 +444,7 @@ public class Mod
 		return xattribute.Value;
 	}
 
-	// Token: 0x06003773 RID: 14195 RVA: 0x0016DECB File Offset: 0x0016C0CB
+	// Token: 0x060037B6 RID: 14262 RVA: 0x0016E82F File Offset: 0x0016CA2F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Mod parseModInfoV1(string _modPath, string _folderName, string _modInfoFilename, XmlFile _xml)
 	{
@@ -452,39 +452,39 @@ public class Mod
 		return null;
 	}
 
-	// Token: 0x06003774 RID: 14196 RVA: 0x0016DEE3 File Offset: 0x0016C0E3
+	// Token: 0x060037B7 RID: 14263 RVA: 0x0016E847 File Offset: 0x0016CA47
 	public override string ToString()
 	{
 		return this.DisplayName;
 	}
 
-	// Token: 0x04002D51 RID: 11601
+	// Token: 0x04002D4A RID: 11594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Assembly> allAssemblies = new List<Assembly>();
 
-	// Token: 0x04002D52 RID: 11602
+	// Token: 0x04002D4B RID: 11595
 	public readonly ReadOnlyCollection<Assembly> AllAssemblies;
 
-	// Token: 0x04002D54 RID: 11604
+	// Token: 0x04002D4D RID: 11597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex nameValidationRegex = new Regex("^[0-9a-zA-Z_\\-]+$", RegexOptions.Compiled);
 
-	// Token: 0x02000728 RID: 1832
+	// Token: 0x0200072A RID: 1834
 	public enum EModLoadState
 	{
-		// Token: 0x04002D56 RID: 11606
+		// Token: 0x04002D4F RID: 11599
 		LoadNotRequested,
-		// Token: 0x04002D57 RID: 11607
+		// Token: 0x04002D50 RID: 11600
 		Success,
-		// Token: 0x04002D58 RID: 11608
+		// Token: 0x04002D51 RID: 11601
 		NotAntiCheatCompatible,
-		// Token: 0x04002D59 RID: 11609
+		// Token: 0x04002D52 RID: 11602
 		SkippedDueToAntiCheat,
-		// Token: 0x04002D5A RID: 11610
+		// Token: 0x04002D53 RID: 11603
 		DuplicateModName,
-		// Token: 0x04002D5B RID: 11611
+		// Token: 0x04002D54 RID: 11604
 		FailedLoadingAssembly,
-		// Token: 0x04002D5C RID: 11612
+		// Token: 0x04002D55 RID: 11605
 		Failed
 	}
 }

@@ -4,20 +4,20 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D5 RID: 1749
+// Token: 0x020006D7 RID: 1751
 [Preserve]
 public class MinEventActionModifyCVar : MinEventActionTargetedBase
 {
-	// Token: 0x17000560 RID: 1376
-	// (get) Token: 0x0600362B RID: 13867 RVA: 0x00165E5E File Offset: 0x0016405E
-	// (set) Token: 0x0600362C RID: 13868 RVA: 0x00165E66 File Offset: 0x00164066
+	// Token: 0x17000586 RID: 1414
+	// (get) Token: 0x0600366E RID: 13934 RVA: 0x001667CE File Offset: 0x001649CE
+	// (set) Token: 0x0600366F RID: 13935 RVA: 0x001667D6 File Offset: 0x001649D6
 	public string cvarName
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600362D RID: 13869 RVA: 0x00165E70 File Offset: 0x00164070
+	// Token: 0x06003670 RID: 13936 RVA: 0x001667E0 File Offset: 0x001649E0
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.rollType == MinEventActionModifyCVar.RandomRollTypes.tierList)
@@ -60,7 +60,7 @@ public class MinEventActionModifyCVar : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600362E RID: 13870 RVA: 0x00166020 File Offset: 0x00164220
+	// Token: 0x06003671 RID: 13937 RVA: 0x00166990 File Offset: 0x00164B90
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -125,7 +125,7 @@ public class MinEventActionModifyCVar : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x0600362F RID: 13871 RVA: 0x0016625F File Offset: 0x0016445F
+	// Token: 0x06003672 RID: 13938 RVA: 0x00166BCF File Offset: 0x00164DCF
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		if (this.cvarName != null && this.cvarName.StartsWith("_"))
@@ -136,7 +136,7 @@ public class MinEventActionModifyCVar : MinEventActionTargetedBase
 		return base.CanExecute(_eventType, _params);
 	}
 
-	// Token: 0x06003630 RID: 13872 RVA: 0x0016629E File Offset: 0x0016449E
+	// Token: 0x06003673 RID: 13939 RVA: 0x00166C0E File Offset: 0x00164E0E
 	public float GetValueForDisplay()
 	{
 		if (this.operation == CVarOperation.add)
@@ -150,65 +150,65 @@ public class MinEventActionModifyCVar : MinEventActionTargetedBase
 		return 0f;
 	}
 
-	// Token: 0x04002BB7 RID: 11191
+	// Token: 0x04002BB0 RID: 11184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinEventActionModifyCVar.SeedType seedType;
 
-	// Token: 0x04002BB9 RID: 11193
+	// Token: 0x04002BB2 RID: 11186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CVarOperation operation;
 
-	// Token: 0x04002BBA RID: 11194
+	// Token: 0x04002BB3 RID: 11187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float value;
 
-	// Token: 0x04002BBB RID: 11195
+	// Token: 0x04002BB4 RID: 11188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] valueList;
 
-	// Token: 0x04002BBC RID: 11196
+	// Token: 0x04002BB5 RID: 11189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float minValue;
 
-	// Token: 0x04002BBD RID: 11197
+	// Token: 0x04002BB6 RID: 11190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxValue;
 
-	// Token: 0x04002BBE RID: 11198
+	// Token: 0x04002BB7 RID: 11191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002BBF RID: 11199
+	// Token: 0x04002BB8 RID: 11192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName = string.Empty;
 
-	// Token: 0x04002BC0 RID: 11200
+	// Token: 0x04002BB9 RID: 11193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinEventActionModifyCVar.RandomRollTypes rollType;
 
-	// Token: 0x020006D6 RID: 1750
+	// Token: 0x020006D8 RID: 1752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum SeedType
 	{
-		// Token: 0x04002BC2 RID: 11202
+		// Token: 0x04002BBB RID: 11195
 		Item,
-		// Token: 0x04002BC3 RID: 11203
+		// Token: 0x04002BBC RID: 11196
 		Player,
-		// Token: 0x04002BC4 RID: 11204
+		// Token: 0x04002BBD RID: 11197
 		Random
 	}
 
-	// Token: 0x020006D7 RID: 1751
+	// Token: 0x020006D9 RID: 1753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum RandomRollTypes : byte
 	{
-		// Token: 0x04002BC6 RID: 11206
+		// Token: 0x04002BBF RID: 11199
 		none,
-		// Token: 0x04002BC7 RID: 11207
+		// Token: 0x04002BC0 RID: 11200
 		randomInt,
-		// Token: 0x04002BC8 RID: 11208
+		// Token: 0x04002BC1 RID: 11201
 		randomFloat,
-		// Token: 0x04002BC9 RID: 11209
+		// Token: 0x04002BC2 RID: 11202
 		tierList
 	}
 }

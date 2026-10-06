@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 
-// Token: 0x020002D7 RID: 727
+// Token: 0x020002DA RID: 730
 public class CraftCompleteData
 {
-	// Token: 0x060014F1 RID: 5361 RVA: 0x0007E873 File Offset: 0x0007CA73
+	// Token: 0x060014EE RID: 5358 RVA: 0x0007EB27 File Offset: 0x0007CD27
 	public CraftCompleteData()
 	{
 	}
 
-	// Token: 0x060014F2 RID: 5362 RVA: 0x0007E894 File Offset: 0x0007CA94
+	// Token: 0x060014EF RID: 5359 RVA: 0x0007EB48 File Offset: 0x0007CD48
 	public CraftCompleteData(int crafterEntityID, ItemStack craftedItemStack, string recipeName, string itemScrapped, int craftExpGain, ushort recipeUsedCount)
 	{
 		this.CrafterEntityID = crafterEntityID;
@@ -20,8 +19,8 @@ public class CraftCompleteData
 		this.CraftExpGain = craftExpGain;
 	}
 
-	// Token: 0x060014F3 RID: 5363 RVA: 0x0007E8EC File Offset: 0x0007CAEC
-	public void Write(BinaryWriter _bw)
+	// Token: 0x060014F0 RID: 5360 RVA: 0x0007EBA0 File Offset: 0x0007CDA0
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(1);
 		_bw.Write(this.CrafterEntityID);
@@ -32,8 +31,8 @@ public class CraftCompleteData
 		_bw.Write(this.ItemScrapped);
 	}
 
-	// Token: 0x060014F4 RID: 5364 RVA: 0x0007E948 File Offset: 0x0007CB48
-	public void Read(BinaryReader _br)
+	// Token: 0x060014F1 RID: 5361 RVA: 0x0007EBFC File Offset: 0x0007CDFC
+	public void Read(PooledBinaryReader _br)
 	{
 		_br.ReadUInt16();
 		this.CrafterEntityID = _br.ReadInt32();
@@ -44,8 +43,8 @@ public class CraftCompleteData
 		this.ItemScrapped = _br.ReadString();
 	}
 
-	// Token: 0x060014F5 RID: 5365 RVA: 0x0007E9AC File Offset: 0x0007CBAC
-	public void ReadLegacy(BinaryReader _br)
+	// Token: 0x060014F2 RID: 5362 RVA: 0x0007EC60 File Offset: 0x0007CE60
+	public void ReadLegacy(PooledBinaryReader _br)
 	{
 		this.CrafterEntityID = _br.ReadInt32();
 		this.CraftedItemStack = new ItemStack().Read(_br);
@@ -55,25 +54,25 @@ public class CraftCompleteData
 		this.ItemScrapped = _br.ReadString();
 	}
 
-	// Token: 0x04000DF8 RID: 3576
+	// Token: 0x04000DF1 RID: 3569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 1;
 
-	// Token: 0x04000DF9 RID: 3577
+	// Token: 0x04000DF2 RID: 3570
 	public int CrafterEntityID;
 
-	// Token: 0x04000DFA RID: 3578
+	// Token: 0x04000DF3 RID: 3571
 	public ItemStack CraftedItemStack;
 
-	// Token: 0x04000DFB RID: 3579
+	// Token: 0x04000DF4 RID: 3572
 	public string RecipeName = "";
 
-	// Token: 0x04000DFC RID: 3580
+	// Token: 0x04000DF5 RID: 3573
 	public string ItemScrapped = "";
 
-	// Token: 0x04000DFD RID: 3581
+	// Token: 0x04000DF6 RID: 3574
 	public ushort RecipeUsedCount;
 
-	// Token: 0x04000DFE RID: 3582
+	// Token: 0x04000DF7 RID: 3575
 	public int CraftExpGain;
 }

@@ -2,42 +2,42 @@
 
 namespace Platform
 {
-	// Token: 0x02001B58 RID: 7000
+	// Token: 0x02001B8A RID: 7050
 	public interface IApplicationStateController
 	{
-		// Token: 0x1400011C RID: 284
-		// (add) Token: 0x0600D1BF RID: 53695
-		// (remove) Token: 0x0600D1C0 RID: 53696
+		// Token: 0x1400011B RID: 283
+		// (add) Token: 0x0600D336 RID: 54070
+		// (remove) Token: 0x0600D337 RID: 54071
 		event IApplicationStateController.ApplicationStateChanged OnApplicationStateChanged;
 
-		// Token: 0x1400011D RID: 285
-		// (add) Token: 0x0600D1C1 RID: 53697
-		// (remove) Token: 0x0600D1C2 RID: 53698
+		// Token: 0x1400011C RID: 284
+		// (add) Token: 0x0600D338 RID: 54072
+		// (remove) Token: 0x0600D339 RID: 54073
 		event IApplicationStateController.NetworkStateChanged OnNetworkStateChanged;
 
-		// Token: 0x170019D5 RID: 6613
-		// (get) Token: 0x0600D1C3 RID: 53699
+		// Token: 0x17001A7B RID: 6779
+		// (get) Token: 0x0600D33A RID: 54074
 		bool NetworkConnectionState { get; }
 
-		// Token: 0x170019D6 RID: 6614
-		// (get) Token: 0x0600D1C4 RID: 53700
+		// Token: 0x17001A7C RID: 6780
+		// (get) Token: 0x0600D33B RID: 54075
 		ApplicationState CurrentApplicationState { get; }
 
-		// Token: 0x0600D1C5 RID: 53701
+		// Token: 0x0600D33C RID: 54076
 		void Init(IPlatform owner);
 
-		// Token: 0x0600D1C6 RID: 53702
+		// Token: 0x0600D33D RID: 54077
 		void Destroy();
 
-		// Token: 0x0600D1C7 RID: 53703
+		// Token: 0x0600D33E RID: 54078
 		void Update();
 
-		// Token: 0x02001B59 RID: 7001
-		// (Invoke) Token: 0x0600D1C9 RID: 53705
+		// Token: 0x02001B8B RID: 7051
+		// (Invoke) Token: 0x0600D340 RID: 54080
 		public delegate void ApplicationStateChanged(ApplicationState newState);
 
-		// Token: 0x02001B5A RID: 7002
-		// (Invoke) Token: 0x0600D1CD RID: 53709
+		// Token: 0x02001B8C RID: 7052
+		// (Invoke) Token: 0x0600D344 RID: 54084
 		public delegate void NetworkStateChanged(bool connectionState);
 	}
 }

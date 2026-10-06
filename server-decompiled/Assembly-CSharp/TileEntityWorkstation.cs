@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
-// Token: 0x02000C81 RID: 3201
+// Token: 0x02000C8F RID: 3215
 public class TileEntityWorkstation : TileEntity
 {
 	// Token: 0x14000088 RID: 136
-	// (add) Token: 0x06006216 RID: 25110 RVA: 0x0026A1BC File Offset: 0x002683BC
-	// (remove) Token: 0x06006217 RID: 25111 RVA: 0x0026A1F4 File Offset: 0x002683F4
+	// (add) Token: 0x0600620A RID: 25098 RVA: 0x0026D5F0 File Offset: 0x0026B7F0
+	// (remove) Token: 0x0600620B RID: 25099 RVA: 0x0026D628 File Offset: 0x0026B828
 	public event XUiEvent_InputStackChanged InputChanged;
 
 	// Token: 0x14000089 RID: 137
-	// (add) Token: 0x06006218 RID: 25112 RVA: 0x0026A22C File Offset: 0x0026842C
-	// (remove) Token: 0x06006219 RID: 25113 RVA: 0x0026A264 File Offset: 0x00268464
+	// (add) Token: 0x0600620C RID: 25100 RVA: 0x0026D660 File Offset: 0x0026B860
+	// (remove) Token: 0x0600620D RID: 25101 RVA: 0x0026D698 File Offset: 0x0026B898
 	public event XUiEvent_FuelStackChanged FuelChanged;
 
-	// Token: 0x17000A0D RID: 2573
-	// (get) Token: 0x0600621A RID: 25114 RVA: 0x0026A299 File Offset: 0x00268499
+	// Token: 0x17000A23 RID: 2595
+	// (get) Token: 0x0600620E RID: 25102 RVA: 0x0026D6CD File Offset: 0x0026B8CD
 	public string[] MaterialNames
 	{
 		get
@@ -26,7 +25,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600621B RID: 25115 RVA: 0x0026A2A4 File Offset: 0x002684A4
+	// Token: 0x0600620F RID: 25103 RVA: 0x0026D6D8 File Offset: 0x0026B8D8
 	public bool AcceptsMaterial(MaterialBlock material)
 	{
 		foreach (string text in this.materialNames)
@@ -39,9 +38,9 @@ public class TileEntityWorkstation : TileEntity
 		return false;
 	}
 
-	// Token: 0x17000A0E RID: 2574
-	// (get) Token: 0x0600621C RID: 25116 RVA: 0x0026A2E3 File Offset: 0x002684E3
-	// (set) Token: 0x0600621D RID: 25117 RVA: 0x0026A2EB File Offset: 0x002684EB
+	// Token: 0x17000A24 RID: 2596
+	// (get) Token: 0x06006210 RID: 25104 RVA: 0x0026D717 File Offset: 0x0026B917
+	// (set) Token: 0x06006211 RID: 25105 RVA: 0x0026D71F File Offset: 0x0026B91F
 	public ItemStack[] Tools
 	{
 		get
@@ -60,7 +59,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600621E RID: 25118 RVA: 0x0026A318 File Offset: 0x00268518
+	// Token: 0x06006212 RID: 25106 RVA: 0x0026D74C File Offset: 0x0026B94C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsToolsSame(ItemStack[] _tools)
 	{
@@ -78,9 +77,9 @@ public class TileEntityWorkstation : TileEntity
 		return true;
 	}
 
-	// Token: 0x17000A0F RID: 2575
-	// (get) Token: 0x0600621F RID: 25119 RVA: 0x0026A35A File Offset: 0x0026855A
-	// (set) Token: 0x06006220 RID: 25120 RVA: 0x0026A362 File Offset: 0x00268562
+	// Token: 0x17000A25 RID: 2597
+	// (get) Token: 0x06006213 RID: 25107 RVA: 0x0026D78E File Offset: 0x0026B98E
+	// (set) Token: 0x06006214 RID: 25108 RVA: 0x0026D796 File Offset: 0x0026B996
 	public ItemStack[] Fuel
 	{
 		get
@@ -94,9 +93,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A10 RID: 2576
-	// (get) Token: 0x06006221 RID: 25121 RVA: 0x0026A376 File Offset: 0x00268576
-	// (set) Token: 0x06006222 RID: 25122 RVA: 0x0026A37E File Offset: 0x0026857E
+	// Token: 0x17000A26 RID: 2598
+	// (get) Token: 0x06006215 RID: 25109 RVA: 0x0026D7AA File Offset: 0x0026B9AA
+	// (set) Token: 0x06006216 RID: 25110 RVA: 0x0026D7B2 File Offset: 0x0026B9B2
 	public ItemStack[] Input
 	{
 		get
@@ -110,9 +109,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A11 RID: 2577
-	// (get) Token: 0x06006223 RID: 25123 RVA: 0x0026A392 File Offset: 0x00268592
-	// (set) Token: 0x06006224 RID: 25124 RVA: 0x0026A39A File Offset: 0x0026859A
+	// Token: 0x17000A27 RID: 2599
+	// (get) Token: 0x06006217 RID: 25111 RVA: 0x0026D7C6 File Offset: 0x0026B9C6
+	// (set) Token: 0x06006218 RID: 25112 RVA: 0x0026D7CE File Offset: 0x0026B9CE
 	public ItemStack[] Output
 	{
 		get
@@ -126,9 +125,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A12 RID: 2578
-	// (get) Token: 0x06006225 RID: 25125 RVA: 0x0026A3AE File Offset: 0x002685AE
-	// (set) Token: 0x06006226 RID: 25126 RVA: 0x0026A3B6 File Offset: 0x002685B6
+	// Token: 0x17000A28 RID: 2600
+	// (get) Token: 0x06006219 RID: 25113 RVA: 0x0026D7E2 File Offset: 0x0026B9E2
+	// (set) Token: 0x0600621A RID: 25114 RVA: 0x0026D7EA File Offset: 0x0026B9EA
 	public RecipeQueueItem[] Queue
 	{
 		get
@@ -142,9 +141,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A13 RID: 2579
-	// (get) Token: 0x06006227 RID: 25127 RVA: 0x0026A3C5 File Offset: 0x002685C5
-	// (set) Token: 0x06006228 RID: 25128 RVA: 0x0026A3CD File Offset: 0x002685CD
+	// Token: 0x17000A29 RID: 2601
+	// (get) Token: 0x0600621B RID: 25115 RVA: 0x0026D7F9 File Offset: 0x0026B9F9
+	// (set) Token: 0x0600621C RID: 25116 RVA: 0x0026D801 File Offset: 0x0026BA01
 	public bool IsBurning
 	{
 		get
@@ -158,8 +157,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A14 RID: 2580
-	// (get) Token: 0x06006229 RID: 25129 RVA: 0x0026A3DC File Offset: 0x002685DC
+	// Token: 0x17000A2A RID: 2602
+	// (get) Token: 0x0600621D RID: 25117 RVA: 0x0026D810 File Offset: 0x0026BA10
 	public bool IsCrafting
 	{
 		get
@@ -168,9 +167,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A15 RID: 2581
-	// (get) Token: 0x0600622A RID: 25130 RVA: 0x0026A3FA File Offset: 0x002685FA
-	// (set) Token: 0x0600622B RID: 25131 RVA: 0x0026A402 File Offset: 0x00268602
+	// Token: 0x17000A2B RID: 2603
+	// (get) Token: 0x0600621E RID: 25118 RVA: 0x0026D82E File Offset: 0x0026BA2E
+	// (set) Token: 0x0600621F RID: 25119 RVA: 0x0026D836 File Offset: 0x0026BA36
 	public bool IsPlayerPlaced
 	{
 		get
@@ -184,8 +183,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A16 RID: 2582
-	// (get) Token: 0x0600622C RID: 25132 RVA: 0x0026A411 File Offset: 0x00268611
+	// Token: 0x17000A2C RID: 2604
+	// (get) Token: 0x06006220 RID: 25120 RVA: 0x0026D845 File Offset: 0x0026BA45
 	public bool IsBesideWater
 	{
 		get
@@ -194,8 +193,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A17 RID: 2583
-	// (get) Token: 0x0600622D RID: 25133 RVA: 0x0026A419 File Offset: 0x00268619
+	// Token: 0x17000A2D RID: 2605
+	// (get) Token: 0x06006221 RID: 25121 RVA: 0x0026D84D File Offset: 0x0026BA4D
 	public float BurnTimeLeft
 	{
 		get
@@ -204,8 +203,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A18 RID: 2584
-	// (get) Token: 0x0600622E RID: 25134 RVA: 0x0026A421 File Offset: 0x00268621
+	// Token: 0x17000A2E RID: 2606
+	// (get) Token: 0x06006222 RID: 25122 RVA: 0x0026D855 File Offset: 0x0026BA55
 	public float BurnTotalTimeLeft
 	{
 		get
@@ -214,8 +213,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x17000A19 RID: 2585
-	// (get) Token: 0x0600622F RID: 25135 RVA: 0x00046EDA File Offset: 0x000450DA
+	// Token: 0x17000A2F RID: 2607
+	// (get) Token: 0x06006223 RID: 25123 RVA: 0x000470B6 File Offset: 0x000452B6
 	public int InputSlotCount
 	{
 		get
@@ -224,7 +223,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006230 RID: 25136 RVA: 0x0026A430 File Offset: 0x00268630
+	// Token: 0x06006224 RID: 25124 RVA: 0x0026D864 File Offset: 0x0026BA64
 	public TileEntityWorkstation(Chunk _chunk)
 		: base(_chunk)
 	{
@@ -239,13 +238,13 @@ public class TileEntityWorkstation : TileEntity
 		this.currentMeltTimesLeft = new float[this.input.Length];
 	}
 
-	// Token: 0x06006231 RID: 25137 RVA: 0x0026A4B7 File Offset: 0x002686B7
+	// Token: 0x06006225 RID: 25125 RVA: 0x0026D8EB File Offset: 0x0026BAEB
 	public void ResetTickTime()
 	{
 		this.lastTickTime = GameTimer.Instance.ticks;
 	}
 
-	// Token: 0x06006232 RID: 25138 RVA: 0x0026A4CC File Offset: 0x002686CC
+	// Token: 0x06006226 RID: 25126 RVA: 0x0026D900 File Offset: 0x0026BB00
 	public override void OnSetLocalChunkPosition()
 	{
 		if (base.localChunkPos == Vector3i.zero)
@@ -307,7 +306,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006233 RID: 25139 RVA: 0x0026A6F0 File Offset: 0x002688F0
+	// Token: 0x06006227 RID: 25127 RVA: 0x0026DB24 File Offset: 0x0026BD24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLightState(World world, BlockValue blockValue)
 	{
@@ -325,19 +324,19 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006234 RID: 25140 RVA: 0x0026A3C5 File Offset: 0x002685C5
+	// Token: 0x06006228 RID: 25128 RVA: 0x0026D7F9 File Offset: 0x0026B9F9
 	public bool CanOperate(ulong _worldTimeInTicks)
 	{
 		return this.isBurning;
 	}
 
-	// Token: 0x06006235 RID: 25141 RVA: 0x0026A75E File Offset: 0x0026895E
+	// Token: 0x06006229 RID: 25129 RVA: 0x0026DB92 File Offset: 0x0026BD92
 	public override bool IsActive(World world)
 	{
 		return this.IsBurning;
 	}
 
-	// Token: 0x06006236 RID: 25142 RVA: 0x0026A768 File Offset: 0x00268968
+	// Token: 0x0600622A RID: 25130 RVA: 0x0026DB9C File Offset: 0x0026BD9C
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -371,13 +370,13 @@ public class TileEntityWorkstation : TileEntity
 		this.UpdateVisible();
 	}
 
-	// Token: 0x06006237 RID: 25143 RVA: 0x0026A8B5 File Offset: 0x00268AB5
+	// Token: 0x0600622B RID: 25131 RVA: 0x0026DCE9 File Offset: 0x0026BEE9
 	public void SetVisibleChanged()
 	{
 		this.visibleChanged = true;
 	}
 
-	// Token: 0x06006238 RID: 25144 RVA: 0x0026A8C0 File Offset: 0x00268AC0
+	// Token: 0x0600622C RID: 25132 RVA: 0x0026DCF4 File Offset: 0x0026BEF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateVisible()
 	{
@@ -404,7 +403,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006239 RID: 25145 RVA: 0x0026A95A File Offset: 0x00268B5A
+	// Token: 0x0600622D RID: 25133 RVA: 0x0026DD8E File Offset: 0x0026BF8E
 	public float GetTimerForSlot(int inputSlot)
 	{
 		if (inputSlot >= this.currentMeltTimesLeft.Length)
@@ -414,7 +413,7 @@ public class TileEntityWorkstation : TileEntity
 		return this.currentMeltTimesLeft[inputSlot];
 	}
 
-	// Token: 0x0600623A RID: 25146 RVA: 0x0026A978 File Offset: 0x00268B78
+	// Token: 0x0600622E RID: 25134 RVA: 0x0026DDAC File Offset: 0x0026BFAC
 	public void ClearSlotTimersForInputs()
 	{
 		for (int i = 0; i < this.currentMeltTimesLeft.Length; i++)
@@ -423,7 +422,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600623B RID: 25147 RVA: 0x0026A9A8 File Offset: 0x00268BA8
+	// Token: 0x0600622F RID: 25135 RVA: 0x0026DDDC File Offset: 0x0026BFDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMaterialInput(float timePassed)
 	{
@@ -530,7 +529,9 @@ public class TileEntityWorkstation : TileEntity
 													break;
 												}
 												this.input[num4].count += forId.GetWeight();
-												this.input[i].count--;
+												ItemStack itemStack = this.input[i];
+												int count = itemStack.count;
+												itemStack.count = count - 1;
 												float num5 = (float)forId.GetWeight() * ((forId.MeltTimePerUnit > 0f) ? forId.MeltTimePerUnit : 1f);
 												if (this.isModuleUsed[0])
 												{
@@ -585,7 +586,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600623C RID: 25148 RVA: 0x0026AF08 File Offset: 0x00269108
+	// Token: 0x06006230 RID: 25136 RVA: 0x0026E340 File Offset: 0x0026C540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cycleRecipeQueue()
 	{
@@ -637,7 +638,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600623D RID: 25149 RVA: 0x0026B0A0 File Offset: 0x002692A0
+	// Token: 0x06006231 RID: 25137 RVA: 0x0026E4D8 File Offset: 0x0026C6D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRecipeQueue(float _timePassed)
 	{
@@ -691,7 +692,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600623E RID: 25150 RVA: 0x0026B29C File Offset: 0x0026949C
+	// Token: 0x06006232 RID: 25138 RVA: 0x0026E6D4 File Offset: 0x0026C8D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HandleFuel(World _world, float _timePassed)
 	{
@@ -711,7 +712,9 @@ public class TileEntityWorkstation : TileEntity
 		{
 			if (this.fuel[0].count > 0)
 			{
-				this.fuel[0].count--;
+				ItemStack itemStack = this.fuel[0];
+				int count = itemStack.count;
+				itemStack.count = count - 1;
 				this.currentBurnTimeLeft += this.GetFuelTime(this.fuel[0]);
 				flag = true;
 				if (this.FuelChanged != null)
@@ -733,7 +736,7 @@ public class TileEntityWorkstation : TileEntity
 		return flag;
 	}
 
-	// Token: 0x0600623F RID: 25151 RVA: 0x0026B3BC File Offset: 0x002695BC
+	// Token: 0x06006233 RID: 25139 RVA: 0x0026E7F8 File Offset: 0x0026C9F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float getFuelTime(ItemStack _itemStack)
 	{
@@ -765,7 +768,7 @@ public class TileEntityWorkstation : TileEntity
 		return num;
 	}
 
-	// Token: 0x06006240 RID: 25152 RVA: 0x0026B438 File Offset: 0x00269638
+	// Token: 0x06006234 RID: 25140 RVA: 0x0026E874 File Offset: 0x0026CA74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cycleFuelStacks()
 	{
@@ -794,14 +797,14 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006241 RID: 25153 RVA: 0x0026B4D4 File Offset: 0x002696D4
+	// Token: 0x06006235 RID: 25141 RVA: 0x0026E910 File Offset: 0x0026CB10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setModified()
 	{
 		base.setModified();
 	}
 
-	// Token: 0x06006242 RID: 25154 RVA: 0x0026B4DC File Offset: 0x002696DC
+	// Token: 0x06006236 RID: 25142 RVA: 0x0026E918 File Offset: 0x0026CB18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float getTotalFuelSeconds()
 	{
@@ -816,7 +819,7 @@ public class TileEntityWorkstation : TileEntity
 		return num;
 	}
 
-	// Token: 0x06006243 RID: 25155 RVA: 0x0026B538 File Offset: 0x00269738
+	// Token: 0x06006237 RID: 25143 RVA: 0x0026E974 File Offset: 0x0026CB74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetFuelTime(ItemStack _fuel)
 	{
@@ -827,8 +830,8 @@ public class TileEntityWorkstation : TileEntity
 		return (float)ItemClass.GetFuelValue(_fuel.itemValue);
 	}
 
-	// Token: 0x17000A1A RID: 2586
-	// (get) Token: 0x06006244 RID: 25156 RVA: 0x0026B55C File Offset: 0x0026975C
+	// Token: 0x17000A30 RID: 2608
+	// (get) Token: 0x06006238 RID: 25144 RVA: 0x0026E998 File Offset: 0x0026CB98
 	public bool IsEmpty
 	{
 		get
@@ -837,7 +840,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006245 RID: 25157 RVA: 0x0026B5B0 File Offset: 0x002697B0
+	// Token: 0x06006239 RID: 25145 RVA: 0x0026E9EC File Offset: 0x0026CBEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isEmpty(ItemStack[] items)
 	{
@@ -851,7 +854,7 @@ public class TileEntityWorkstation : TileEntity
 		return true;
 	}
 
-	// Token: 0x06006246 RID: 25158 RVA: 0x0026B5DC File Offset: 0x002697DC
+	// Token: 0x0600623A RID: 25146 RVA: 0x0026EA18 File Offset: 0x0026CC18
 	public bool InputIsEmpty()
 	{
 		int num = this.input.Length - this.materialNames.Length;
@@ -875,7 +878,7 @@ public class TileEntityWorkstation : TileEntity
 		return true;
 	}
 
-	// Token: 0x06006247 RID: 25159 RVA: 0x0026B650 File Offset: 0x00269850
+	// Token: 0x0600623B RID: 25147 RVA: 0x0026EA8C File Offset: 0x0026CC8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasRecipeInQueue()
 	{
@@ -890,7 +893,7 @@ public class TileEntityWorkstation : TileEntity
 		return false;
 	}
 
-	// Token: 0x06006248 RID: 25160 RVA: 0x0026B690 File Offset: 0x00269890
+	// Token: 0x0600623C RID: 25148 RVA: 0x0026EACC File Offset: 0x0026CCCC
 	public bool OutputEmpty()
 	{
 		for (int i = 0; i < this.output.Length; i++)
@@ -903,7 +906,7 @@ public class TileEntityWorkstation : TileEntity
 		return true;
 	}
 
-	// Token: 0x06006249 RID: 25161 RVA: 0x0026B6C4 File Offset: 0x002698C4
+	// Token: 0x0600623D RID: 25149 RVA: 0x0026EB00 File Offset: 0x0026CD00
 	public void ResetCraftingQueue()
 	{
 		for (int i = 0; i < this.queue.Length; i++)
@@ -920,12 +923,12 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600624A RID: 25162 RVA: 0x0026B72C File Offset: 0x0026992C
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x0600623E RID: 25150 RVA: 0x0026EB68 File Offset: 0x0026CD68
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
 		int num = (int)_br.ReadByte();
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			this.lastTickTime = _br.ReadUInt64();
 			this.readItemStackArray(_br, ref this.fuel);
@@ -957,7 +960,7 @@ public class TileEntityWorkstation : TileEntity
 			this.isPlayerPlaced = _br.ReadBoolean();
 			this.readItemStackArray(_br, ref this.lastInput);
 		}
-		else if (_eStreamMode == TileEntity.StreamModeRead.FromClient)
+		else if (_eStreamMode == StreamModeRead.FromClient)
 		{
 			this.readItemStackArray(_br, ref this.fuel);
 			this.readItemStackArray(_br, ref this.input);
@@ -977,7 +980,7 @@ public class TileEntityWorkstation : TileEntity
 			this.lastTickTime = GameTimer.Instance.ticks - num5;
 			this.readItemStackArray(_br, ref this.lastInput);
 		}
-		else if (_eStreamMode == TileEntity.StreamModeRead.FromServer)
+		else if (_eStreamMode == StreamModeRead.FromServer)
 		{
 			this.readItemStackArray(_br, ref this.fuel);
 			this.readItemStackArray(_br, ref this.input);
@@ -1017,7 +1020,7 @@ public class TileEntityWorkstation : TileEntity
 		this.SetDataFromNet();
 	}
 
-	// Token: 0x0600624B RID: 25163 RVA: 0x0026BA0C File Offset: 0x00269C0C
+	// Token: 0x0600623F RID: 25151 RVA: 0x0026EE48 File Offset: 0x0026D048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDataFromNet()
 	{
@@ -1033,12 +1036,12 @@ public class TileEntityWorkstation : TileEntity
 		this.UpdateVisible();
 	}
 
-	// Token: 0x0600624C RID: 25164 RVA: 0x0026BA44 File Offset: 0x00269C44
-	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06006240 RID: 25152 RVA: 0x0026EE80 File Offset: 0x0026D080
+	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
 		_bw.Write(50);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(this.lastTickTime);
 			this.writeItemStackArray(_bw, this.fuel);
@@ -1059,7 +1062,7 @@ public class TileEntityWorkstation : TileEntity
 			this.writeItemStackArray(_bw, this.lastInput);
 			return;
 		}
-		if (_eStreamMode == TileEntity.StreamModeWrite.ToServer)
+		if (_eStreamMode == StreamModeWrite.ToServer)
 		{
 			this.writeItemStackArray(_bw, this.fuel);
 			this.writeItemStackArray(_bw, this.input);
@@ -1080,7 +1083,7 @@ public class TileEntityWorkstation : TileEntity
 			this.writeItemStackArray(_bw, this.lastInput);
 			return;
 		}
-		if (_eStreamMode == TileEntity.StreamModeWrite.ToClient)
+		if (_eStreamMode == StreamModeWrite.ToClient)
 		{
 			this.writeItemStackArray(_bw, this.fuel);
 			this.writeItemStackArray(_bw, this.input);
@@ -1102,9 +1105,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600624D RID: 25165 RVA: 0x0026BCA0 File Offset: 0x00269EA0
+	// Token: 0x06006241 RID: 25153 RVA: 0x0026F0DC File Offset: 0x0026D2DC
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void readItemStackArray(BinaryReader _br, ref ItemStack[] stack, ref ItemStack[] lastStack)
+	public void readItemStackArray(PooledBinaryReader _br, ref ItemStack[] stack, ref ItemStack[] lastStack)
 	{
 		int num = (int)_br.ReadByte();
 		if (stack == null || stack.Length != num)
@@ -1127,9 +1130,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600624E RID: 25166 RVA: 0x0026BD0C File Offset: 0x00269F0C
+	// Token: 0x06006242 RID: 25154 RVA: 0x0026F148 File Offset: 0x0026D348
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void readItemStackArray(BinaryReader _br, ref ItemStack[] stack)
+	public void readItemStackArray(PooledBinaryReader _br, ref ItemStack[] stack)
 	{
 		int num = (int)_br.ReadByte();
 		if (stack == null || stack.Length != num)
@@ -1151,9 +1154,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x0600624F RID: 25167 RVA: 0x0026BD70 File Offset: 0x00269F70
+	// Token: 0x06006243 RID: 25155 RVA: 0x0026F1AC File Offset: 0x0026D3AC
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void writeItemStackArray(BinaryWriter bw, ItemStack[] stack)
+	public void writeItemStackArray(PooledBinaryWriter bw, ItemStack[] stack)
 	{
 		byte b = ((stack != null) ? ((byte)stack.Length) : 0);
 		bw.Write(b);
@@ -1167,9 +1170,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006250 RID: 25168 RVA: 0x0026BDAC File Offset: 0x00269FAC
+	// Token: 0x06006244 RID: 25156 RVA: 0x0026F1E8 File Offset: 0x0026D3E8
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void readCraftCompleteData(BinaryReader _br, int version)
+	public void readCraftCompleteData(PooledBinaryReader _br, int version)
 	{
 		if (version <= 45)
 		{
@@ -1196,8 +1199,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006251 RID: 25169 RVA: 0x0026BE18 File Offset: 0x0026A018
-	public void writeCraftCompleteData(BinaryWriter _bw, int version)
+	// Token: 0x06006245 RID: 25157 RVA: 0x0026F254 File Offset: 0x0026D454
+	public void writeCraftCompleteData(PooledBinaryWriter _bw, int version)
 	{
 		short num = ((this.CraftCompleteList != null) ? ((short)this.CraftCompleteList.Count) : 0);
 		_bw.Write(num);
@@ -1210,9 +1213,9 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006252 RID: 25170 RVA: 0x0026BE74 File Offset: 0x0026A074
+	// Token: 0x06006246 RID: 25158 RVA: 0x0026F2B0 File Offset: 0x0026D4B0
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void readRecipeStackArray(BinaryReader _br, int version, ref RecipeQueueItem[] queueStack)
+	public void readRecipeStackArray(PooledBinaryReader _br, int version, ref RecipeQueueItem[] queueStack)
 	{
 		int num = (int)_br.ReadByte();
 		if (queueStack == null || queueStack.Length != num)
@@ -1252,8 +1255,8 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006253 RID: 25171 RVA: 0x0026BF04 File Offset: 0x0026A104
-	public void writeRecipeStackArray(BinaryWriter _bw, int version)
+	// Token: 0x06006247 RID: 25159 RVA: 0x0026F340 File Offset: 0x0026D540
+	public void writeRecipeStackArray(PooledBinaryWriter _bw, int version)
 	{
 		byte b = ((this.queue != null) ? ((byte)this.queue.Length) : 0);
 		_bw.Write(b);
@@ -1279,7 +1282,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006254 RID: 25172 RVA: 0x0026BF98 File Offset: 0x0026A198
+	// Token: 0x06006248 RID: 25160 RVA: 0x0026F3D4 File Offset: 0x0026D5D4
 	public void AddCraftComplete(int crafterEntityID, ItemValue itemCrafted, string recipeName, string itemScrapped, int craftExpGain, int craftedCount)
 	{
 		if (this.CraftCompleteList == null)
@@ -1299,7 +1302,7 @@ public class TileEntityWorkstation : TileEntity
 		this.setModified();
 	}
 
-	// Token: 0x06006255 RID: 25173 RVA: 0x0026C058 File Offset: 0x0026A258
+	// Token: 0x06006249 RID: 25161 RVA: 0x0026F494 File Offset: 0x0026D694
 	public void CheckForCraftComplete(EntityPlayerLocal player)
 	{
 		if (this.CraftCompleteList == null)
@@ -1323,7 +1326,7 @@ public class TileEntityWorkstation : TileEntity
 		}
 	}
 
-	// Token: 0x06006256 RID: 25174 RVA: 0x0026C0EC File Offset: 0x0026A2EC
+	// Token: 0x0600624A RID: 25162 RVA: 0x0026F528 File Offset: 0x0026D728
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -1398,32 +1401,26 @@ public class TileEntityWorkstation : TileEntity
 		GameManager.Instance.DropContentInLootContainerServer(-1, "DroppedLootContainer", vector, list.ToArray(), true, null);
 	}
 
-	// Token: 0x06006257 RID: 25175 RVA: 0x00180278 File Offset: 0x0017E478
+	// Token: 0x0600624B RID: 25163 RVA: 0x0026F794 File Offset: 0x0026D994
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Workstation;
 	}
 
-	// Token: 0x06006258 RID: 25176 RVA: 0x00048AAD File Offset: 0x00046CAD
-	public override bool CanLockLocally(ILockContext _context, ushort _channel)
-	{
-		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
-	}
-
-	// Token: 0x06006259 RID: 25177 RVA: 0x0026C358 File Offset: 0x0026A558
-	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
+	// Token: 0x0600624C RID: 25164 RVA: 0x0026F798 File Offset: 0x0026D998
+	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		if (!_success)
 		{
 			GameManager.ShowTooltip(uiforPrimaryPlayer.entityPlayer, Localization.Get("ttNoInteractItem", false, null), string.Empty, "ui_denied", null, false, false, 0f);
-			return;
+			return false;
 		}
 		string blockName = GameManager.Instance.World.GetBlock(base.ToWorldPos()).Block.GetBlockName();
 		WorkstationData workstationData = CraftingManager.GetWorkstationData(blockName);
 		if (workstationData == null)
 		{
-			return;
+			return false;
 		}
 		string text = ((workstationData.WorkstationWindow != "") ? workstationData.WorkstationWindow : string.Format("workstation_{0}", blockName));
 		if (blockName == "forge" && XUiM_Recipes.DisableSmelter)
@@ -1435,121 +1432,122 @@ public class TileEntityWorkstation : TileEntity
 		{
 			((XUiC_WorkstationWindowGroup)((XUiWindowGroup)guiwindow).Controller).SetTileEntity(this);
 			uiforPrimaryPlayer.windowManager.Open(text, true);
-			return;
+			return true;
 		}
 		Log.Warning("Window '{0}' not found in XUI!", new object[] { text });
+		return false;
 	}
 
-	// Token: 0x04004C6D RID: 19565
+	// Token: 0x04004CA3 RID: 19619
 	public const int ChangedFuel = 1;
 
-	// Token: 0x04004C6E RID: 19566
+	// Token: 0x04004CA4 RID: 19620
 	public const int ChangedInput = 2;
 
-	// Token: 0x04004C6F RID: 19567
+	// Token: 0x04004CA5 RID: 19621
 	public const int OutputItemAdded = 4;
 
-	// Token: 0x04004C70 RID: 19568
+	// Token: 0x04004CA6 RID: 19622
 	public new const int Version = 50;
 
-	// Token: 0x04004C73 RID: 19571
+	// Token: 0x04004CA9 RID: 19625
 	public const int cInputSlotCount = 3;
 
-	// Token: 0x04004C74 RID: 19572
+	// Token: 0x04004CAA RID: 19626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMinInternalMatCount = 10;
 
-	// Token: 0x04004C75 RID: 19573
+	// Token: 0x04004CAB RID: 19627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] fuel;
 
-	// Token: 0x04004C76 RID: 19574
+	// Token: 0x04004CAC RID: 19628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] input;
 
-	// Token: 0x04004C77 RID: 19575
+	// Token: 0x04004CAD RID: 19629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] tools;
 
-	// Token: 0x04004C78 RID: 19576
+	// Token: 0x04004CAE RID: 19630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] toolsNet;
 
-	// Token: 0x04004C79 RID: 19577
+	// Token: 0x04004CAF RID: 19631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] output;
 
-	// Token: 0x04004C7A RID: 19578
+	// Token: 0x04004CB0 RID: 19632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RecipeQueueItem[] queue;
 
-	// Token: 0x04004C7B RID: 19579
+	// Token: 0x04004CB1 RID: 19633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong lastTickTime;
 
-	// Token: 0x04004C7C RID: 19580
+	// Token: 0x04004CB2 RID: 19634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentBurnTimeLeft;
 
-	// Token: 0x04004C7D RID: 19581
+	// Token: 0x04004CB3 RID: 19635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] currentMeltTimesLeft;
 
-	// Token: 0x04004C7E RID: 19582
+	// Token: 0x04004CB4 RID: 19636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] lastInput;
 
-	// Token: 0x04004C7F RID: 19583
+	// Token: 0x04004CB5 RID: 19637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBurning;
 
-	// Token: 0x04004C80 RID: 19584
+	// Token: 0x04004CB6 RID: 19638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBesideWater;
 
-	// Token: 0x04004C81 RID: 19585
+	// Token: 0x04004CB7 RID: 19639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPlayerPlaced;
 
-	// Token: 0x04004C82 RID: 19586
+	// Token: 0x04004CB8 RID: 19640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool visibleChanged;
 
-	// Token: 0x04004C83 RID: 19587
+	// Token: 0x04004CB9 RID: 19641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool visibleCrafting;
 
-	// Token: 0x04004C84 RID: 19588
+	// Token: 0x04004CBA RID: 19642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool visibleWorking;
 
-	// Token: 0x04004C85 RID: 19589
+	// Token: 0x04004CBB RID: 19643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] materialNames;
 
-	// Token: 0x04004C86 RID: 19590
+	// Token: 0x04004CBC RID: 19644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<CraftCompleteData> CraftCompleteList;
 
-	// Token: 0x04004C87 RID: 19591
+	// Token: 0x04004CBD RID: 19645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool[] isModuleUsed;
 
-	// Token: 0x02000C82 RID: 3202
+	// Token: 0x02000C90 RID: 3216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum Module
 	{
-		// Token: 0x04004C89 RID: 19593
+		// Token: 0x04004CBF RID: 19647
 		Tools,
-		// Token: 0x04004C8A RID: 19594
+		// Token: 0x04004CC0 RID: 19648
 		Input,
-		// Token: 0x04004C8B RID: 19595
+		// Token: 0x04004CC1 RID: 19649
 		Output,
-		// Token: 0x04004C8C RID: 19596
+		// Token: 0x04004CC2 RID: 19650
 		Fuel,
-		// Token: 0x04004C8D RID: 19597
+		// Token: 0x04004CC3 RID: 19651
 		Material_Input,
-		// Token: 0x04004C8E RID: 19598
+		// Token: 0x04004CC4 RID: 19652
 		Count
 	}
 }

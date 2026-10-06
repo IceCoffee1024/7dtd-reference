@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B3 RID: 691
+// Token: 0x020002B6 RID: 694
 [Preserve]
 public class ConsoleCmdTraderArea : ConsoleCmdAbstract
 {
-	// Token: 0x060013EF RID: 5103 RVA: 0x0007984E File Offset: 0x00077A4E
+	// Token: 0x060013EC RID: 5100 RVA: 0x00079B02 File Offset: 0x00077D02
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "traderarea" };
 	}
 
-	// Token: 0x060013F0 RID: 5104 RVA: 0x0007985E File Offset: 0x00077A5E
+	// Token: 0x060013ED RID: 5101 RVA: 0x00079B12 File Offset: 0x00077D12
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "...";
 	}
 
-	// Token: 0x060013F1 RID: 5105 RVA: 0x00079868 File Offset: 0x00077A68
+	// Token: 0x060013EE RID: 5102 RVA: 0x00079B1C File Offset: 0x00077D1C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0)

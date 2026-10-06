@@ -5,12 +5,12 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020014B0 RID: 5296
+// Token: 0x020014D2 RID: 5330
 [XuiXmlAttributeConvertersClass]
 [Preserve]
 public static class StringParsers
 {
-	// Token: 0x0600A628 RID: 42536 RVA: 0x003DCA9C File Offset: 0x003DAC9C
+	// Token: 0x0600A6DB RID: 42715 RVA: 0x003E18F0 File Offset: 0x003DFAF0
 	public static sbyte ParseSInt8(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -27,7 +27,7 @@ public static class StringParsers
 		return (sbyte)num;
 	}
 
-	// Token: 0x0600A629 RID: 42537 RVA: 0x003DCAE4 File Offset: 0x003DACE4
+	// Token: 0x0600A6DC RID: 42716 RVA: 0x003E1938 File Offset: 0x003DFB38
 	public static byte ParseUInt8(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -44,7 +44,7 @@ public static class StringParsers
 		return (byte)num2;
 	}
 
-	// Token: 0x0600A62A RID: 42538 RVA: 0x003DCB28 File Offset: 0x003DAD28
+	// Token: 0x0600A6DD RID: 42717 RVA: 0x003E197C File Offset: 0x003DFB7C
 	public static bool TryParseSInt8(string _input, out sbyte _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -64,7 +64,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A62B RID: 42539 RVA: 0x003DCB64 File Offset: 0x003DAD64
+	// Token: 0x0600A6DE RID: 42718 RVA: 0x003E19B8 File Offset: 0x003DFBB8
 	public static bool TryParseUInt8(string _input, out byte _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -84,21 +84,21 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A62C RID: 42540 RVA: 0x003DCB9D File Offset: 0x003DAD9D
+	// Token: 0x0600A6DF RID: 42719 RVA: 0x003E19F1 File Offset: 0x003DFBF1
 	[XuiXmlAttributeConverter]
 	public static bool TryParseSInt8(string _input, out sbyte _result)
 	{
 		return StringParsers.TryParseSInt8(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A62D RID: 42541 RVA: 0x003DCBA9 File Offset: 0x003DADA9
+	// Token: 0x0600A6E0 RID: 42720 RVA: 0x003E19FD File Offset: 0x003DFBFD
 	[XuiXmlAttributeConverter]
 	public static bool TryParseUInt8(string _input, out byte _result)
 	{
 		return StringParsers.TryParseUInt8(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A62E RID: 42542 RVA: 0x003DCBB8 File Offset: 0x003DADB8
+	// Token: 0x0600A6E1 RID: 42721 RVA: 0x003E1A0C File Offset: 0x003DFC0C
 	public static short ParseSInt16(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -115,7 +115,7 @@ public static class StringParsers
 		return (short)num;
 	}
 
-	// Token: 0x0600A62F RID: 42543 RVA: 0x003DCC04 File Offset: 0x003DAE04
+	// Token: 0x0600A6E2 RID: 42722 RVA: 0x003E1A58 File Offset: 0x003DFC58
 	public static ushort ParseUInt16(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -132,7 +132,7 @@ public static class StringParsers
 		return (ushort)num2;
 	}
 
-	// Token: 0x0600A630 RID: 42544 RVA: 0x003DCC48 File Offset: 0x003DAE48
+	// Token: 0x0600A6E3 RID: 42723 RVA: 0x003E1A9C File Offset: 0x003DFC9C
 	public static bool TryParseSInt16(string _input, out short _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -152,7 +152,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A631 RID: 42545 RVA: 0x003DCC8C File Offset: 0x003DAE8C
+	// Token: 0x0600A6E4 RID: 42724 RVA: 0x003E1AE0 File Offset: 0x003DFCE0
 	public static bool TryParseUInt16(string _input, out ushort _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -172,21 +172,21 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A632 RID: 42546 RVA: 0x003DCCC5 File Offset: 0x003DAEC5
+	// Token: 0x0600A6E5 RID: 42725 RVA: 0x003E1B19 File Offset: 0x003DFD19
 	[XuiXmlAttributeConverter]
 	public static bool TryParseSInt16(string _input, out short _result)
 	{
 		return StringParsers.TryParseSInt16(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A633 RID: 42547 RVA: 0x003DCCD1 File Offset: 0x003DAED1
+	// Token: 0x0600A6E6 RID: 42726 RVA: 0x003E1B25 File Offset: 0x003DFD25
 	[XuiXmlAttributeConverter]
 	public static bool TryParseUInt16(string _input, out ushort _result)
 	{
 		return StringParsers.TryParseUInt16(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A634 RID: 42548 RVA: 0x003DCCE0 File Offset: 0x003DAEE0
+	// Token: 0x0600A6E7 RID: 42727 RVA: 0x003E1B34 File Offset: 0x003DFD34
 	public static int ParseSInt32(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -203,7 +203,7 @@ public static class StringParsers
 		return (int)num;
 	}
 
-	// Token: 0x0600A635 RID: 42549 RVA: 0x003DCD2C File Offset: 0x003DAF2C
+	// Token: 0x0600A6E8 RID: 42728 RVA: 0x003E1B80 File Offset: 0x003DFD80
 	public static uint ParseUInt32(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -220,7 +220,7 @@ public static class StringParsers
 		return (uint)num2;
 	}
 
-	// Token: 0x0600A636 RID: 42550 RVA: 0x003DCD6C File Offset: 0x003DAF6C
+	// Token: 0x0600A6E9 RID: 42729 RVA: 0x003E1BC0 File Offset: 0x003DFDC0
 	public static bool TryParseSInt32(string _input, out int _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -240,7 +240,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A637 RID: 42551 RVA: 0x003DCDB0 File Offset: 0x003DAFB0
+	// Token: 0x0600A6EA RID: 42730 RVA: 0x003E1C04 File Offset: 0x003DFE04
 	public static bool TryParseUInt32(string _input, out uint _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -260,21 +260,21 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A638 RID: 42552 RVA: 0x003DCDE5 File Offset: 0x003DAFE5
+	// Token: 0x0600A6EB RID: 42731 RVA: 0x003E1C39 File Offset: 0x003DFE39
 	[XuiXmlAttributeConverter]
 	public static bool TryParseSInt32(string _input, out int _result)
 	{
 		return StringParsers.TryParseSInt32(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A639 RID: 42553 RVA: 0x003DCDF1 File Offset: 0x003DAFF1
+	// Token: 0x0600A6EC RID: 42732 RVA: 0x003E1C45 File Offset: 0x003DFE45
 	[XuiXmlAttributeConverter]
 	public static bool TryParseUInt32(string _input, out uint _result)
 	{
 		return StringParsers.TryParseUInt32(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A63A RID: 42554 RVA: 0x003DCE00 File Offset: 0x003DB000
+	// Token: 0x0600A6ED RID: 42733 RVA: 0x003E1C54 File Offset: 0x003DFE54
 	public static long ParseSInt64(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -287,7 +287,7 @@ public static class StringParsers
 		return num;
 	}
 
-	// Token: 0x0600A63B RID: 42555 RVA: 0x003DCE24 File Offset: 0x003DB024
+	// Token: 0x0600A6EE RID: 42734 RVA: 0x003E1C78 File Offset: 0x003DFE78
 	public static ulong ParseUInt64(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -300,7 +300,7 @@ public static class StringParsers
 		return num2;
 	}
 
-	// Token: 0x0600A63C RID: 42556 RVA: 0x003DCE48 File Offset: 0x003DB048
+	// Token: 0x0600A6EF RID: 42735 RVA: 0x003E1C9C File Offset: 0x003DFE9C
 	public static bool TryParseSInt64(string _input, out long _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -315,7 +315,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A63D RID: 42557 RVA: 0x003DCE74 File Offset: 0x003DB074
+	// Token: 0x0600A6F0 RID: 42736 RVA: 0x003E1CC8 File Offset: 0x003DFEC8
 	public static bool TryParseUInt64(string _input, out ulong _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Integer)
 	{
 		long num;
@@ -330,21 +330,21 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A63E RID: 42558 RVA: 0x003DCE9F File Offset: 0x003DB09F
+	// Token: 0x0600A6F1 RID: 42737 RVA: 0x003E1CF3 File Offset: 0x003DFEF3
 	[XuiXmlAttributeConverter]
 	public static bool TryParseSInt64(string _input, out long _result)
 	{
 		return StringParsers.TryParseSInt64(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A63F RID: 42559 RVA: 0x003DCEAB File Offset: 0x003DB0AB
+	// Token: 0x0600A6F2 RID: 42738 RVA: 0x003E1CFF File Offset: 0x003DFEFF
 	[XuiXmlAttributeConverter]
 	public static bool TryParseUInt64(string _input, out ulong _result)
 	{
 		return StringParsers.TryParseUInt64(_input, out _result, 0, -1, NumberStyles.Integer);
 	}
 
-	// Token: 0x0600A640 RID: 42560 RVA: 0x003DCEB8 File Offset: 0x003DB0B8
+	// Token: 0x0600A6F3 RID: 42739 RVA: 0x003E1D0C File Offset: 0x003DFF0C
 	public static float ParseFloat(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Any)
 	{
 		double num = StringParsers.ParseDouble(_input, _startIndex, _endIndex, _style);
@@ -355,7 +355,7 @@ public static class StringParsers
 		return (float)num;
 	}
 
-	// Token: 0x0600A641 RID: 42561 RVA: 0x003DCEF8 File Offset: 0x003DB0F8
+	// Token: 0x0600A6F4 RID: 42740 RVA: 0x003E1D4C File Offset: 0x003DFF4C
 	public static bool TryParseFloat(string _input, out float _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Any)
 	{
 		double num;
@@ -374,14 +374,14 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A642 RID: 42562 RVA: 0x003DCF4B File Offset: 0x003DB14B
+	// Token: 0x0600A6F5 RID: 42741 RVA: 0x003E1D9F File Offset: 0x003DFF9F
 	[XuiXmlAttributeConverter]
 	public static bool TryParseFloat(string _input, out float _result)
 	{
 		return StringParsers.TryParseFloat(_input, out _result, 0, -1, NumberStyles.Any);
 	}
 
-	// Token: 0x0600A643 RID: 42563 RVA: 0x003DCF5C File Offset: 0x003DB15C
+	// Token: 0x0600A6F6 RID: 42742 RVA: 0x003E1DB0 File Offset: 0x003DFFB0
 	public static double ParseDouble(string _input, int _startIndex = 0, int _endIndex = -1, NumberStyles _style = NumberStyles.Any)
 	{
 		double num;
@@ -393,7 +393,7 @@ public static class StringParsers
 		return num;
 	}
 
-	// Token: 0x0600A644 RID: 42564 RVA: 0x003DCF7C File Offset: 0x003DB17C
+	// Token: 0x0600A6F7 RID: 42743 RVA: 0x003E1DD0 File Offset: 0x003DFFD0
 	public static bool TryParseDouble(string _input, out double _result, int _startIndex, int _endIndex = -1, NumberStyles _style = NumberStyles.Any)
 	{
 		Exception ex;
@@ -405,27 +405,27 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A645 RID: 42565 RVA: 0x003DCFA7 File Offset: 0x003DB1A7
+	// Token: 0x0600A6F8 RID: 42744 RVA: 0x003E1DFB File Offset: 0x003DFFFB
 	[XuiXmlAttributeConverter]
 	public static bool TryParseDouble(string _input, out double _result)
 	{
 		return StringParsers.TryParseDouble(_input, out _result, 0, -1, NumberStyles.Any);
 	}
 
-	// Token: 0x0600A646 RID: 42566 RVA: 0x003DCFB7 File Offset: 0x003DB1B7
+	// Token: 0x0600A6F9 RID: 42745 RVA: 0x003E1E0B File Offset: 0x003E000B
 	public static DateTime ParseDateTime(string _s)
 	{
 		return DateTime.Parse(_s, Utils.StandardCulture);
 	}
 
-	// Token: 0x0600A647 RID: 42567 RVA: 0x003DCFC4 File Offset: 0x003DB1C4
+	// Token: 0x0600A6FA RID: 42746 RVA: 0x003E1E18 File Offset: 0x003E0018
 	[XuiXmlAttributeConverter]
 	public static bool TryParseDateTime(string _s, out DateTime _result)
 	{
 		return DateTime.TryParse(_s, Utils.StandardCulture, DateTimeStyles.None, out _result);
 	}
 
-	// Token: 0x0600A648 RID: 42568 RVA: 0x003DCFD4 File Offset: 0x003DB1D4
+	// Token: 0x0600A6FB RID: 42747 RVA: 0x003E1E28 File Offset: 0x003E0028
 	public static bool ParseBool(string _input, int _startIndex = 0, int _endIndex = -1, bool _ignoreCase = true)
 	{
 		bool flag;
@@ -437,7 +437,7 @@ public static class StringParsers
 		return flag;
 	}
 
-	// Token: 0x0600A649 RID: 42569 RVA: 0x003DCFF4 File Offset: 0x003DB1F4
+	// Token: 0x0600A6FC RID: 42748 RVA: 0x003E1E48 File Offset: 0x003E0048
 	public static bool TryParseBool(string _input, out bool _result, int _startIndex, int _endIndex = -1, bool _ignoreCase = true)
 	{
 		Exception ex;
@@ -449,14 +449,14 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A64A RID: 42570 RVA: 0x003DD017 File Offset: 0x003DB217
+	// Token: 0x0600A6FD RID: 42749 RVA: 0x003E1E6B File Offset: 0x003E006B
 	[XuiXmlAttributeConverter]
 	public static bool TryParseBool(string _input, out bool _result)
 	{
 		return StringParsers.TryParseBool(_input, out _result, 0, -1, true);
 	}
 
-	// Token: 0x0600A64B RID: 42571 RVA: 0x003DD024 File Offset: 0x003DB224
+	// Token: 0x0600A6FE RID: 42750 RVA: 0x003E1E78 File Offset: 0x003E0078
 	public static bool TryParseRange(string _input, out FloatRange _result, float? _defaultMax = null, char separators = ',')
 	{
 		_result = default(FloatRange);
@@ -484,7 +484,7 @@ public static class StringParsers
 		}
 	}
 
-	// Token: 0x0600A64C RID: 42572 RVA: 0x003DD0BC File Offset: 0x003DB2BC
+	// Token: 0x0600A6FF RID: 42751 RVA: 0x003E1F10 File Offset: 0x003E0110
 	public static bool TryParseRange(string _input, out IntRange _result, int? _defaultMax = null, char separators = ',')
 	{
 		_result = default(IntRange);
@@ -512,7 +512,7 @@ public static class StringParsers
 		}
 	}
 
-	// Token: 0x0600A64D RID: 42573 RVA: 0x003DD14C File Offset: 0x003DB34C
+	// Token: 0x0600A700 RID: 42752 RVA: 0x003E1FA0 File Offset: 0x003E01A0
 	public static Vector2 ParseVector2(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -523,7 +523,7 @@ public static class StringParsers
 		return new Vector2(StringParsers.ParseFloat(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A64E RID: 42574 RVA: 0x003DD1A4 File Offset: 0x003DB3A4
+	// Token: 0x0600A701 RID: 42753 RVA: 0x003E1FF8 File Offset: 0x003E01F8
 	[XuiXmlAttributeConverter]
 	public static bool TryParseVector2(string _input, out Vector2 _output)
 	{
@@ -562,7 +562,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A64F RID: 42575 RVA: 0x003DD264 File Offset: 0x003DB464
+	// Token: 0x0600A702 RID: 42754 RVA: 0x003E20B8 File Offset: 0x003E02B8
 	public static Vector2 ParseVector2(string _input, float _defaultValue)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -573,7 +573,7 @@ public static class StringParsers
 		return new Vector2(StringParsers.ParseFloat(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A650 RID: 42576 RVA: 0x003DD2C8 File Offset: 0x003DB4C8
+	// Token: 0x0600A703 RID: 42755 RVA: 0x003E211C File Offset: 0x003E031C
 	public static Vector3 ParseVector3(string _input, int _startIndex = 0, int _endIndex = -1)
 	{
 		if (_startIndex == 0 && _endIndex < 0 && _input.Length > 0 && _input[0] == '(' && _input[_input.Length - 1] == ')')
@@ -597,7 +597,7 @@ public static class StringParsers
 		return new Vector3(StringParsers.ParseFloat(_input, _startIndex, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, separatorPositions.Sep2 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep2 + 1, _endIndex, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A651 RID: 42577 RVA: 0x003DD3A8 File Offset: 0x003DB5A8
+	// Token: 0x0600A704 RID: 42756 RVA: 0x003E21FC File Offset: 0x003E03FC
 	[XuiXmlAttributeConverter]
 	public static bool TryParseVector3(string _input, out Vector3 _output)
 	{
@@ -641,7 +641,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A652 RID: 42578 RVA: 0x003DD48C File Offset: 0x003DB68C
+	// Token: 0x0600A705 RID: 42757 RVA: 0x003E22E0 File Offset: 0x003E04E0
 	public static Vector3 ParseVector3(string _input, float _defaultValue)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -656,7 +656,7 @@ public static class StringParsers
 		return new Vector3(StringParsers.ParseFloat(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, separatorPositions.Sep2 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep2 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A653 RID: 42579 RVA: 0x003DD544 File Offset: 0x003DB744
+	// Token: 0x0600A706 RID: 42758 RVA: 0x003E2398 File Offset: 0x003E0598
 	public static Vector4 ParseVector4(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 3, 0, -1);
@@ -667,7 +667,7 @@ public static class StringParsers
 		return new Vector4(StringParsers.ParseFloat(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, separatorPositions.Sep2 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep2 + 1, separatorPositions.Sep3 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep3 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A654 RID: 42580 RVA: 0x003DD5D0 File Offset: 0x003DB7D0
+	// Token: 0x0600A707 RID: 42759 RVA: 0x003E2424 File Offset: 0x003E0624
 	[XuiXmlAttributeConverter]
 	public static bool TryParseVector4(string _input, out Vector4 _output)
 	{
@@ -716,7 +716,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A655 RID: 42581 RVA: 0x003DD6D8 File Offset: 0x003DB8D8
+	// Token: 0x0600A708 RID: 42760 RVA: 0x003E252C File Offset: 0x003E072C
 	public static BlockFaceFlag ParseWaterFlowMask(string _input)
 	{
 		if (_input.EqualsCaseInsensitive("permitted"))
@@ -741,7 +741,7 @@ public static class StringParsers
 		return BlockFaceFlag.All;
 	}
 
-	// Token: 0x0600A656 RID: 42582 RVA: 0x003DD738 File Offset: 0x003DB938
+	// Token: 0x0600A709 RID: 42761 RVA: 0x003E258C File Offset: 0x003E078C
 	public static BlockFaceFlag ParseCoverFaceMask(string _input)
 	{
 		BlockFaceFlag blockFaceFlag = BlockFaceFlag.None;
@@ -767,7 +767,7 @@ public static class StringParsers
 		return blockFaceFlag;
 	}
 
-	// Token: 0x0600A657 RID: 42583 RVA: 0x003DD798 File Offset: 0x003DB998
+	// Token: 0x0600A70A RID: 42762 RVA: 0x003E25EC File Offset: 0x003E07EC
 	public static Plane ParsePlane(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 3, 0, -1);
@@ -780,7 +780,7 @@ public static class StringParsers
 		return new Plane(vector, num);
 	}
 
-	// Token: 0x0600A658 RID: 42584 RVA: 0x003DD830 File Offset: 0x003DBA30
+	// Token: 0x0600A70B RID: 42763 RVA: 0x003E2684 File Offset: 0x003E0884
 	public static Quaternion ParseQuaternion(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 3, 0, -1);
@@ -791,7 +791,7 @@ public static class StringParsers
 		return new Quaternion(StringParsers.ParseFloat(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep1 + 1, separatorPositions.Sep2 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep2 + 1, separatorPositions.Sep3 - 1, NumberStyles.Any), StringParsers.ParseFloat(_input, separatorPositions.Sep3 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A659 RID: 42585 RVA: 0x003DD8BC File Offset: 0x003DBABC
+	// Token: 0x0600A70C RID: 42764 RVA: 0x003E2710 File Offset: 0x003E0910
 	public static Color ParseColor(string _input)
 	{
 		Color color;
@@ -802,7 +802,7 @@ public static class StringParsers
 		return color;
 	}
 
-	// Token: 0x0600A65A RID: 42586 RVA: 0x003DD8DC File Offset: 0x003DBADC
+	// Token: 0x0600A70D RID: 42765 RVA: 0x003E2730 File Offset: 0x003E0930
 	public static bool TryParseColor(string _input, out Color _output)
 	{
 		_output = default(Color);
@@ -847,7 +847,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A65B RID: 42587 RVA: 0x003DD9DC File Offset: 0x003DBBDC
+	// Token: 0x0600A70E RID: 42766 RVA: 0x003E2830 File Offset: 0x003E0A30
 	public static Color ParseHexColor(string _input)
 	{
 		if (_input == null)
@@ -873,7 +873,7 @@ public static class StringParsers
 		return new Color32(b, b2, b3, byte.MaxValue);
 	}
 
-	// Token: 0x0600A65C RID: 42588 RVA: 0x003DDA68 File Offset: 0x003DBC68
+	// Token: 0x0600A70F RID: 42767 RVA: 0x003E28BC File Offset: 0x003E0ABC
 	public static bool TryParseColor32(string _input, out Color32 _output)
 	{
 		_output = default(Color32);
@@ -913,7 +913,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A65D RID: 42589 RVA: 0x003DDB7C File Offset: 0x003DBD7C
+	// Token: 0x0600A710 RID: 42768 RVA: 0x003E29D0 File Offset: 0x003E0BD0
 	public static Color ParseColor32(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 3, 0, -1);
@@ -932,7 +932,7 @@ public static class StringParsers
 		return new Color(num / 255f, (float)num2 / 255f, (float)num3 / 255f, (float)num4 / 255f);
 	}
 
-	// Token: 0x0600A65E RID: 42590 RVA: 0x003DDC28 File Offset: 0x003DBE28
+	// Token: 0x0600A711 RID: 42769 RVA: 0x003E2A7C File Offset: 0x003E0C7C
 	public static Bounds ParseBounds(string _input)
 	{
 		int num = _input.IndexOf('(');
@@ -960,7 +960,7 @@ public static class StringParsers
 		return new Bounds(vector, vector2);
 	}
 
-	// Token: 0x0600A65F RID: 42591 RVA: 0x003DDCEC File Offset: 0x003DBEEC
+	// Token: 0x0600A712 RID: 42770 RVA: 0x003E2B40 File Offset: 0x003E0D40
 	public static Vector2d ParseVector2d(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -971,7 +971,7 @@ public static class StringParsers
 		return new Vector2d(StringParsers.ParseDouble(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseDouble(_input, separatorPositions.Sep1 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A660 RID: 42592 RVA: 0x003DDD44 File Offset: 0x003DBF44
+	// Token: 0x0600A713 RID: 42771 RVA: 0x003E2B98 File Offset: 0x003E0D98
 	public static Vector3d ParseVector3d(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 2, 0, -1);
@@ -982,7 +982,7 @@ public static class StringParsers
 		return new Vector3d(StringParsers.ParseDouble(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Any), StringParsers.ParseDouble(_input, separatorPositions.Sep1 + 1, separatorPositions.Sep2 - 1, NumberStyles.Any), StringParsers.ParseDouble(_input, separatorPositions.Sep2 + 1, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x0600A661 RID: 42593 RVA: 0x003DDDB4 File Offset: 0x003DBFB4
+	// Token: 0x0600A714 RID: 42772 RVA: 0x003E2C08 File Offset: 0x003E0E08
 	public static Vector2i ParseVector2i(string _input, char _customSep = ',')
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, _customSep, 1, 0, -1);
@@ -993,7 +993,7 @@ public static class StringParsers
 		return new Vector2i(StringParsers.ParseSInt32(_input, 0, separatorPositions.Sep1 - 1, NumberStyles.Integer), StringParsers.ParseSInt32(_input, separatorPositions.Sep1 + 1, -1, NumberStyles.Integer));
 	}
 
-	// Token: 0x0600A662 RID: 42594 RVA: 0x003DDE00 File Offset: 0x003DC000
+	// Token: 0x0600A715 RID: 42773 RVA: 0x003E2C54 File Offset: 0x003E0E54
 	[XuiXmlAttributeConverter]
 	public static bool TryParseVector2i(string _input, out Vector2i _output)
 	{
@@ -1032,7 +1032,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A663 RID: 42595 RVA: 0x003DDEB8 File Offset: 0x003DC0B8
+	// Token: 0x0600A716 RID: 42774 RVA: 0x003E2D0C File Offset: 0x003E0F0C
 	public static Vector3i ParseVector3i(string _input, int _startIndex = 0, int _endIndex = -1, bool _errorOnFailure = false)
 	{
 		if (_endIndex < 0)
@@ -1055,7 +1055,7 @@ public static class StringParsers
 		return Vector3i.zero;
 	}
 
-	// Token: 0x0600A664 RID: 42596 RVA: 0x003DDF6C File Offset: 0x003DC16C
+	// Token: 0x0600A717 RID: 42775 RVA: 0x003E2DC0 File Offset: 0x003E0FC0
 	[XuiXmlAttributeConverter]
 	public static bool TryParseVector3i(string _input, out Vector3i _output)
 	{
@@ -1099,7 +1099,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A665 RID: 42597 RVA: 0x003DE044 File Offset: 0x003DC244
+	// Token: 0x0600A718 RID: 42776 RVA: 0x003E2E98 File Offset: 0x003E1098
 	public static List<T> ParseList<T>(string _input, char _separator, Func<string, int, int, T> _parserFunc)
 	{
 		List<T> list = new List<T>();
@@ -1116,7 +1116,7 @@ public static class StringParsers
 		return list;
 	}
 
-	// Token: 0x0600A666 RID: 42598 RVA: 0x003DE0AC File Offset: 0x003DC2AC
+	// Token: 0x0600A719 RID: 42777 RVA: 0x003E2F00 File Offset: 0x003E1100
 	public static void ParseMinMaxCount(string _input, out int _minCount, out int _maxCount)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -1138,7 +1138,7 @@ public static class StringParsers
 		}
 	}
 
-	// Token: 0x0600A667 RID: 42599 RVA: 0x003DE14C File Offset: 0x003DC34C
+	// Token: 0x0600A71A RID: 42778 RVA: 0x003E2FA0 File Offset: 0x003E11A0
 	public static void ParseMinMaxCount(string _input, out float _minCount, out float _maxCount)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -1160,7 +1160,7 @@ public static class StringParsers
 		}
 	}
 
-	// Token: 0x0600A668 RID: 42600 RVA: 0x003DE1F4 File Offset: 0x003DC3F4
+	// Token: 0x0600A71B RID: 42779 RVA: 0x003E3048 File Offset: 0x003E1248
 	public static Vector2 ParseMinMaxCount(string _input)
 	{
 		StringParsers.SeparatorPositions separatorPositions = StringParsers.GetSeparatorPositions(_input, ',', 1, 0, -1);
@@ -1177,7 +1177,7 @@ public static class StringParsers
 		return new Vector2(num, num2);
 	}
 
-	// Token: 0x0600A669 RID: 42601 RVA: 0x003DE265 File Offset: 0x003DC465
+	// Token: 0x0600A71C RID: 42780 RVA: 0x003E30B9 File Offset: 0x003E12B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool findOther(ref int _pos, string _input, char _other)
@@ -1190,7 +1190,7 @@ public static class StringParsers
 		return false;
 	}
 
-	// Token: 0x0600A66A RID: 42602 RVA: 0x003DE27C File Offset: 0x003DC47C
+	// Token: 0x0600A71D RID: 42781 RVA: 0x003E30D0 File Offset: 0x003E12D0
 	public static StringParsers.SeparatorPositions GetSeparatorPositions(string _input, char _separator, int _expected, int _startIndex = 0, int _endIndex = -1)
 	{
 		StringParsers.SeparatorPositions separatorPositions = new StringParsers.SeparatorPositions(0);
@@ -1258,7 +1258,7 @@ public static class StringParsers
 		return separatorPositions;
 	}
 
-	// Token: 0x0600A66B RID: 42603 RVA: 0x003DE3FC File Offset: 0x003DC5FC
+	// Token: 0x0600A71E RID: 42782 RVA: 0x003E3250 File Offset: 0x003E1450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool internalParseDouble(string _input, NumberStyles _numberStyle, bool _tryParse, out double _result, out Exception _exception, int _startIndex, int _endIndex)
 	{
@@ -1575,7 +1575,7 @@ public static class StringParsers
 		return true;
 	}
 
-	// Token: 0x0600A66C RID: 42604 RVA: 0x003DE9D0 File Offset: 0x003DCBD0
+	// Token: 0x0600A71F RID: 42783 RVA: 0x003E3824 File Offset: 0x003E1A24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool internalParseBool(string _input, bool _tryParse, out bool _result, out Exception _exception, bool _ignoreCase, int _startIndex, int _endIndex)
 	{
@@ -1659,7 +1659,7 @@ public static class StringParsers
 		return false;
 	}
 
-	// Token: 0x0600A66D RID: 42605 RVA: 0x003DEB64 File Offset: 0x003DCD64
+	// Token: 0x0600A720 RID: 42784 RVA: 0x003E39B8 File Offset: 0x003E1BB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool internalParseInt64(string _input, NumberStyles _numberStyle, bool _tryParse, out long _resultSigned, out ulong _resultUnsigned, out Exception _exc, bool _signedResult, int _startIndex, int _endIndex)
 	{
@@ -1834,7 +1834,7 @@ public static class StringParsers
 		return flag2;
 	}
 
-	// Token: 0x0600A66E RID: 42606 RVA: 0x003DEE28 File Offset: 0x003DD028
+	// Token: 0x0600A721 RID: 42785 RVA: 0x003E3C7C File Offset: 0x003E1E7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool internalParseInt64Advanced(string _input, NumberStyles _numberStyle, bool _tryParse, out long _resultSigned, out ulong _resultUnsigned, out Exception _exc, bool _signedResult, int _startIndex, int _endIndex)
 	{
@@ -2312,42 +2312,42 @@ public static class StringParsers
 		return flag15;
 	}
 
-	// Token: 0x04007BA3 RID: 31651
+	// Token: 0x04007C26 RID: 31782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char NEGATIVE_SIGN = '-';
 
-	// Token: 0x04007BA4 RID: 31652
+	// Token: 0x04007C27 RID: 31783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char POSITIVE_SIGN = '+';
 
-	// Token: 0x04007BA5 RID: 31653
+	// Token: 0x04007C28 RID: 31784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char CURRENCY_SYMBOL = '¤';
 
-	// Token: 0x04007BA6 RID: 31654
+	// Token: 0x04007C29 RID: 31785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char DECIMAL_SEP = '.';
 
-	// Token: 0x04007BA7 RID: 31655
+	// Token: 0x04007C2A RID: 31786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char THOUSANDS_SEP = ',';
 
-	// Token: 0x04007BA8 RID: 31656
+	// Token: 0x04007C2B RID: 31787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string NAN_SYMBOL = "NaN";
 
-	// Token: 0x04007BA9 RID: 31657
+	// Token: 0x04007C2C RID: 31788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string POSITIVE_INFINITY_SYMBOL = "Infinity";
 
-	// Token: 0x04007BAA RID: 31658
+	// Token: 0x04007C2D RID: 31789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string NEGATIVE_INFINITY_SYMBOL = "-Infinity";
 
-	// Token: 0x020014B1 RID: 5297
+	// Token: 0x020014D3 RID: 5331
 	public struct SeparatorPositions
 	{
-		// Token: 0x0600A670 RID: 42608 RVA: 0x003DF67C File Offset: 0x003DD87C
+		// Token: 0x0600A723 RID: 42787 RVA: 0x003E44D0 File Offset: 0x003E26D0
 		public SeparatorPositions(int _tmp)
 		{
 			this.TotalFound = 0;
@@ -2357,39 +2357,39 @@ public static class StringParsers
 			this.Sep4 = -1;
 		}
 
-		// Token: 0x04007BAB RID: 31659
+		// Token: 0x04007C2E RID: 31790
 		public int TotalFound;
 
-		// Token: 0x04007BAC RID: 31660
+		// Token: 0x04007C2F RID: 31791
 		public int Sep1;
 
-		// Token: 0x04007BAD RID: 31661
+		// Token: 0x04007C30 RID: 31792
 		public int Sep2;
 
-		// Token: 0x04007BAE RID: 31662
+		// Token: 0x04007C31 RID: 31793
 		public int Sep3;
 
-		// Token: 0x04007BAF RID: 31663
+		// Token: 0x04007C32 RID: 31794
 		public int Sep4;
 	}
 
-	// Token: 0x020014B2 RID: 5298
+	// Token: 0x020014D4 RID: 5332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EFloatParseState
 	{
-		// Token: 0x04007BB1 RID: 31665
+		// Token: 0x04007C34 RID: 31796
 		SignOrIntegralDigit,
-		// Token: 0x04007BB2 RID: 31666
+		// Token: 0x04007C35 RID: 31797
 		IntegralDigit,
-		// Token: 0x04007BB3 RID: 31667
+		// Token: 0x04007C36 RID: 31798
 		DecimalDigit,
-		// Token: 0x04007BB4 RID: 31668
+		// Token: 0x04007C37 RID: 31799
 		ExponentialTest,
-		// Token: 0x04007BB5 RID: 31669
+		// Token: 0x04007C38 RID: 31800
 		ExponentialSignOrDigit,
-		// Token: 0x04007BB6 RID: 31670
+		// Token: 0x04007C39 RID: 31801
 		ExponentialDigit,
-		// Token: 0x04007BB7 RID: 31671
+		// Token: 0x04007C3A RID: 31802
 		TrailingWs
 	}
 }

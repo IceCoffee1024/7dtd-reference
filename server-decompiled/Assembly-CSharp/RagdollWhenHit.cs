@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000EB RID: 235
+// Token: 0x020000ED RID: 237
 [RequireComponent(typeof(Collider))]
 public class RagdollWhenHit : RootTransformRefEntity
 {
 	// Token: 0x17000064 RID: 100
-	// (get) Token: 0x06000608 RID: 1544 RVA: 0x0002B633 File Offset: 0x00029833
+	// (get) Token: 0x0600060E RID: 1550 RVA: 0x0002B72B File Offset: 0x0002992B
 	public Entity theEntity
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,7 +20,7 @@ public class RagdollWhenHit : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000609 RID: 1545 RVA: 0x0002B668 File Offset: 0x00029868
+	// Token: 0x0600060F RID: 1551 RVA: 0x0002B760 File Offset: 0x00029960
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -49,14 +49,14 @@ public class RagdollWhenHit : RootTransformRefEntity
 		this._offset = component3.center;
 	}
 
-	// Token: 0x0600060A RID: 1546 RVA: 0x0002B71B File Offset: 0x0002991B
+	// Token: 0x06000610 RID: 1552 RVA: 0x0002B813 File Offset: 0x00029A13
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		this._pos = base.transform.position;
 	}
 
-	// Token: 0x0600060B RID: 1547 RVA: 0x0002B730 File Offset: 0x00029930
+	// Token: 0x06000611 RID: 1553 RVA: 0x0002B828 File Offset: 0x00029A28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -84,42 +84,42 @@ public class RagdollWhenHit : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x040006BA RID: 1722
+	// Token: 0x040006BD RID: 1725
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Entity _entity;
 
-	// Token: 0x040006BB RID: 1723
+	// Token: 0x040006BE RID: 1726
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SphereCollider _sphere;
 
-	// Token: 0x040006BC RID: 1724
+	// Token: 0x040006BF RID: 1727
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BoxCollider _box;
 
-	// Token: 0x040006BD RID: 1725
+	// Token: 0x040006C0 RID: 1728
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CapsuleCollider _capsule;
 
-	// Token: 0x040006BE RID: 1726
+	// Token: 0x040006C1 RID: 1729
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool _hasFrame;
 
-	// Token: 0x040006BF RID: 1727
+	// Token: 0x040006C2 RID: 1730
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 _pos;
 
-	// Token: 0x040006C0 RID: 1728
+	// Token: 0x040006C3 RID: 1731
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 _offset;
 
-	// Token: 0x040006C1 RID: 1729
+	// Token: 0x040006C4 RID: 1732
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float _radius;

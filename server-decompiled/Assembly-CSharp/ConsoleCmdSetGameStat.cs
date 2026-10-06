@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000285 RID: 645
+// Token: 0x02000288 RID: 648
 [Preserve]
 public class ConsoleCmdSetGameStat : ConsoleCmdAbstract
 {
-	// Token: 0x060012EA RID: 4842 RVA: 0x0007529F File Offset: 0x0007349F
+	// Token: 0x060012E7 RID: 4839 RVA: 0x00075553 File Offset: 0x00073753
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "setgamestat", "sgs" };
 	}
 
-	// Token: 0x170001FC RID: 508
-	// (get) Token: 0x060012EB RID: 4843 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001F4 RID: 500
+	// (get) Token: 0x060012E8 RID: 4840 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,7 +23,7 @@ public class ConsoleCmdSetGameStat : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012EC RID: 4844 RVA: 0x000752B8 File Offset: 0x000734B8
+	// Token: 0x060012E9 RID: 4841 RVA: 0x0007556C File Offset: 0x0007376C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2)
@@ -55,7 +55,7 @@ public class ConsoleCmdSetGameStat : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(enumGameStats.ToStringCached<EnumGameStats>() + " set to " + ((obj != null) ? obj.ToString() : null));
 	}
 
-	// Token: 0x060012ED RID: 4845 RVA: 0x00075388 File Offset: 0x00073588
+	// Token: 0x060012EA RID: 4842 RVA: 0x0007563C File Offset: 0x0007383C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

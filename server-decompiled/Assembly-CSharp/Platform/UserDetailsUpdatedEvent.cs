@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001BBA RID: 7098
-	// (Invoke) Token: 0x0600D386 RID: 54150
+	// Token: 0x02001BEC RID: 7148
+	// (Invoke) Token: 0x0600D4FE RID: 54526
 	public delegate void UserDetailsUpdatedEvent(PlatformUserIdentifierAbs id, PlatformUserDetails details);
 }

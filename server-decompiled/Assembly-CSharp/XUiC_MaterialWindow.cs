@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9B RID: 3995
+// Token: 0x02000FAA RID: 4010
 [Preserve]
 public class XUiC_MaterialWindow : XUiController
 {
-	// Token: 0x17000EBC RID: 3772
-	// (get) Token: 0x06007E22 RID: 32290 RVA: 0x002FC87F File Offset: 0x002FAA7F
-	// (set) Token: 0x06007E23 RID: 32291 RVA: 0x002FC887 File Offset: 0x002FAA87
+	// Token: 0x17000EE3 RID: 3811
+	// (get) Token: 0x06007E32 RID: 32306 RVA: 0x002FF8D6 File Offset: 0x002FDAD6
+	// (set) Token: 0x06007E33 RID: 32307 RVA: 0x002FF8DE File Offset: 0x002FDADE
 	public int Page
 	{
 		get
@@ -31,7 +31,7 @@ public class XUiC_MaterialWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007E24 RID: 32292 RVA: 0x002FC8C0 File Offset: 0x002FAAC0
+	// Token: 0x06007E34 RID: 32308 RVA: 0x002FF918 File Offset: 0x002FDB18
 	public override void Init()
 	{
 		base.Init();
@@ -66,7 +66,7 @@ public class XUiC_MaterialWindow : XUiController
 		this.lblTotal = Localization.Get("lblTotalItems", false, null);
 	}
 
-	// Token: 0x06007E25 RID: 32293 RVA: 0x002FCA0A File Offset: 0x002FAC0A
+	// Token: 0x06007E35 RID: 32309 RVA: 0x002FFA62 File Offset: 0x002FDC62
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -75,7 +75,7 @@ public class XUiC_MaterialWindow : XUiController
 		this.materialGrid.SetMaterials(this.currentItems, this.CurrentPaintId);
 	}
 
-	// Token: 0x06007E26 RID: 32294 RVA: 0x002FCA3B File Offset: 0x002FAC3B
+	// Token: 0x06007E36 RID: 32310 RVA: 0x002FFA93 File Offset: 0x002FDC93
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -101,7 +101,7 @@ public class XUiC_MaterialWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007E27 RID: 32295 RVA: 0x002FCA68 File Offset: 0x002FAC68
+	// Token: 0x06007E37 RID: 32311 RVA: 0x002FFAC0 File Offset: 0x002FDCC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetMaterialData(string _name)
 	{
@@ -115,7 +115,7 @@ public class XUiC_MaterialWindow : XUiController
 		this.FilterByName(_name);
 	}
 
-	// Token: 0x06007E28 RID: 32296 RVA: 0x002FCAA0 File Offset: 0x002FACA0
+	// Token: 0x06007E38 RID: 32312 RVA: 0x002FFAF8 File Offset: 0x002FDCF8
 	public void FilterByName(string _name)
 	{
 		bool flag = GameStats.GetBool(EnumGameStats.IsCreativeMenuEnabled) && GamePrefs.GetBool(EnumGamePrefs.CreativeMenuEnabled);
@@ -147,8 +147,8 @@ public class XUiC_MaterialWindow : XUiController
 		this.resultCount.Text = string.Format(this.lblTotal, this.currentItems.Count.ToString());
 	}
 
-	// Token: 0x17000EBD RID: 3773
-	// (get) Token: 0x06007E29 RID: 32297 RVA: 0x002FCB84 File Offset: 0x002FAD84
+	// Token: 0x17000EE4 RID: 3812
+	// (get) Token: 0x06007E39 RID: 32313 RVA: 0x002FFBDC File Offset: 0x002FDDDC
 	public int CurrentPaintId
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -162,7 +162,7 @@ public class XUiC_MaterialWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007E2A RID: 32298 RVA: 0x002FCC10 File Offset: 0x002FAE10
+	// Token: 0x06007E3A RID: 32314 RVA: 0x002FFC6C File Offset: 0x002FDE6C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -173,24 +173,27 @@ public class XUiC_MaterialWindow : XUiController
 		int holdingItemIdx = this.xui.playerUI.entityPlayer.inventory.holdingItemIdx;
 		XUiC_Toolbelt childByType = ((XUiWindowGroup)this.xui.playerUI.windowManager.GetWindow("toolbelt")).Controller.GetChildByType<XUiC_Toolbelt>();
 		this.xui.DragAndDropWindow.InMenu = true;
-		if (childByType != null)
+		XUiC_ItemStack xuiC_ItemStack;
+		if (childByType != null && childByType.TryGetSlotControl(holdingItemIdx, out xuiC_ItemStack))
 		{
-			childByType.GetSlotControl(holdingItemIdx).AssembleLock = true;
+			xuiC_ItemStack.AssembleLock = true;
 		}
 		this.windowGroup.Controller.GetChildByType<XUiC_WindowNonPagingHeader>().SetHeader(Localization.Get("xuiMaterials", false, null).ToUpper());
 	}
 
-	// Token: 0x06007E2B RID: 32299 RVA: 0x002FCCE0 File Offset: 0x002FAEE0
+	// Token: 0x06007E3B RID: 32315 RVA: 0x002FFD44 File Offset: 0x002FDF44
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.ToolTipWindow.ToolTip = "";
 		int holdingItemIdx = this.xui.playerUI.entityPlayer.inventory.holdingItemIdx;
-		XUiController childByType = ((XUiWindowGroup)this.xui.playerUI.windowManager.GetWindow("toolbelt")).Controller.GetChildByType<XUiC_Toolbelt>();
 		this.xui.DragAndDropWindow.InMenu = false;
-		if (childByType != null)
+		XUiWindowGroup xuiWindowGroup = (XUiWindowGroup)this.xui.playerUI.windowManager.GetWindow("toolbelt");
+		XUiC_Toolbelt xuiC_Toolbelt = ((xuiWindowGroup != null) ? xuiWindowGroup.Controller.GetChildByType<XUiC_Toolbelt>() : null);
+		XUiC_ItemStack xuiC_ItemStack;
+		if (xuiC_Toolbelt != null && xuiC_Toolbelt.TryGetSlotControl(holdingItemIdx, out xuiC_ItemStack))
 		{
-			(childByType as XUiC_Toolbelt).GetSlotControl(holdingItemIdx).AssembleLock = false;
+			xuiC_ItemStack.AssembleLock = false;
 		}
 		if (this.xui.playerUI.windowManager.IsWindowOpen("windowpaging"))
 		{
@@ -198,7 +201,7 @@ public class XUiC_MaterialWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007E2C RID: 32300 RVA: 0x002FCDAC File Offset: 0x002FAFAC
+	// Token: 0x06007E3C RID: 32316 RVA: 0x002FFE14 File Offset: 0x002FE014
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -216,43 +219,43 @@ public class XUiC_MaterialWindow : XUiController
 		}
 	}
 
-	// Token: 0x04005D7A RID: 23930
+	// Token: 0x04005DA3 RID: 23971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label resultCount;
 
-	// Token: 0x04005D7B RID: 23931
+	// Token: 0x04005DA4 RID: 23972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_MaterialStackGrid materialGrid;
 
-	// Token: 0x04005D7C RID: 23932
+	// Token: 0x04005DA5 RID: 23973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x04005D7D RID: 23933
+	// Token: 0x04005DA6 RID: 23974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04005D7E RID: 23934
+	// Token: 0x04005DA7 RID: 23975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04005D7F RID: 23935
+	// Token: 0x04005DA8 RID: 23976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x04005D80 RID: 23936
+	// Token: 0x04005DA9 RID: 23977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPaintEyeDropper;
 
-	// Token: 0x04005D81 RID: 23937
+	// Token: 0x04005DAA RID: 23978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblCopyBlock;
 
-	// Token: 0x04005D82 RID: 23938
+	// Token: 0x04005DAB RID: 23979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotal;
 
-	// Token: 0x04005D83 RID: 23939
+	// Token: 0x04005DAC RID: 23980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<BlockTextureData> currentItems = new List<BlockTextureData>();
 }

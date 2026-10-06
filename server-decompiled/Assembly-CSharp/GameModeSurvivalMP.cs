@@ -1,27 +1,27 @@
 ﻿using System;
 
-// Token: 0x020011D1 RID: 4561
+// Token: 0x020011E9 RID: 4585
 public class GameModeSurvivalMP : GameModeAbstract
 {
-	// Token: 0x060091F1 RID: 37361 RVA: 0x0036FBBD File Offset: 0x0036DDBD
+	// Token: 0x0600927F RID: 37503 RVA: 0x00374405 File Offset: 0x00372605
 	public override string GetName()
 	{
 		return "gmSurvivalMP";
 	}
 
-	// Token: 0x060091F2 RID: 37362 RVA: 0x0036FBC4 File Offset: 0x0036DDC4
+	// Token: 0x06009280 RID: 37504 RVA: 0x0037440C File Offset: 0x0037260C
 	public override string GetDescription()
 	{
 		return "gmSurvivalMPDesc";
 	}
 
-	// Token: 0x060091F3 RID: 37363 RVA: 0x000601DD File Offset: 0x0005E3DD
+	// Token: 0x06009281 RID: 37505 RVA: 0x000601CD File Offset: 0x0005E3CD
 	public override int GetID()
 	{
 		return 7;
 	}
 
-	// Token: 0x060091F4 RID: 37364 RVA: 0x0036FBCC File Offset: 0x0036DDCC
+	// Token: 0x06009282 RID: 37506 RVA: 0x00374414 File Offset: 0x00372614
 	public override GameMode.ModeGamePref[] GetSupportedGamePrefsInfo()
 	{
 		return new GameMode.ModeGamePref[]
@@ -66,7 +66,7 @@ public class GameModeSurvivalMP : GameModeAbstract
 		};
 	}
 
-	// Token: 0x060091F5 RID: 37365 RVA: 0x0036FF50 File Offset: 0x0036E150
+	// Token: 0x06009283 RID: 37507 RVA: 0x00374798 File Offset: 0x00372998
 	public override void Init()
 	{
 		base.Init();
@@ -83,23 +83,23 @@ public class GameModeSurvivalMP : GameModeAbstract
 		GameStats.Set(EnumGameStats.IsFlyingEnabled, GamePrefs.GetBool(EnumGamePrefs.BuildCreate));
 	}
 
-	// Token: 0x060091F6 RID: 37366 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06009284 RID: 37508 RVA: 0x00020119 File Offset: 0x0001E319
 	public override int GetRoundCount()
 	{
 		return 1;
 	}
 
-	// Token: 0x060091F7 RID: 37367 RVA: 0x0036F01C File Offset: 0x0036D21C
+	// Token: 0x06009285 RID: 37509 RVA: 0x00373864 File Offset: 0x00371A64
 	public override void StartRound(int _idx)
 	{
 		GameStats.Set(EnumGameStats.GameState, 1);
 	}
 
-	// Token: 0x060091F8 RID: 37368 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009286 RID: 37510 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void EndRound(int _idx)
 	{
 	}
 
-	// Token: 0x04006BF4 RID: 27636
+	// Token: 0x04006C5E RID: 27742
 	public static readonly string TypeName = typeof(GameModeSurvivalMP).Name;
 }

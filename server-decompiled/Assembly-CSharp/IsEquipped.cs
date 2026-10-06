@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200067D RID: 1661
+// Token: 0x0200067F RID: 1663
 [Preserve]
 public class IsEquipped : TargetedCompareRequirementBase
 {
-	// Token: 0x06003501 RID: 13569 RVA: 0x0015F8A8 File Offset: 0x0015DAA8
+	// Token: 0x06003544 RID: 13636 RVA: 0x0016020C File Offset: 0x0015E40C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (base.IsValid(_params))
@@ -15,13 +15,16 @@ public class IsEquipped : TargetedCompareRequirementBase
 			{
 				if (itemValue.IsMod)
 				{
-					foreach (ItemValue itemValue2 in this.target.equipment.GetItems())
+					int slotCount = this.target.equipment.GetSlotCount();
+					for (int i = 0; i < slotCount; i++)
 					{
-						if (itemValue2 != null && itemValue2.HasModSlots)
+						ItemValue slotItem = this.target.equipment.GetSlotItem(i);
+						if (!slotItem.IsEmpty() && slotItem.HasModSlots)
 						{
-							foreach (ItemValue itemValue3 in itemValue2.Modifications)
+							for (int j = 0; j < slotItem.ModificationCount; j++)
 							{
-								if (itemValue3 != null && itemValue3 == _params.ItemValue)
+								ItemValue modification = slotItem.GetModification(j);
+								if (modification != null && modification == _params.ItemValue)
 								{
 									return true;
 								}
@@ -31,10 +34,10 @@ public class IsEquipped : TargetedCompareRequirementBase
 				}
 				else
 				{
-					ItemValue[] array = this.target.equipment.GetItems();
-					for (int i = 0; i < array.Length; i++)
+					int slotCount2 = this.target.equipment.GetSlotCount();
+					for (int k = 0; k < slotCount2; k++)
 					{
-						if (array[i] == itemValue)
+						if (this.target.equipment.GetSlotItem(k) == itemValue)
 						{
 							return true;
 						}

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02001249 RID: 4681
+// Token: 0x02001261 RID: 4705
 public interface ILaunchPref
 {
-	// Token: 0x170011B5 RID: 4533
-	// (get) Token: 0x0600950A RID: 38154
+	// Token: 0x170011F9 RID: 4601
+	// (get) Token: 0x06009598 RID: 38296
 	string Name { get; }
 
-	// Token: 0x0600950B RID: 38155
+	// Token: 0x06009599 RID: 38297
 	bool TrySet(string stringRepresentation);
 }

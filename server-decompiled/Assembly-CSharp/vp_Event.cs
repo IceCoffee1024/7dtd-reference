@@ -4,12 +4,12 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001545 RID: 5445
+// Token: 0x02001567 RID: 5479
 [Preserve]
 public abstract class vp_Event
 {
-	// Token: 0x170013E1 RID: 5089
-	// (get) Token: 0x0600AB09 RID: 43785 RVA: 0x003FCA17 File Offset: 0x003FAC17
+	// Token: 0x17001426 RID: 5158
+	// (get) Token: 0x0600ABBC RID: 43964 RVA: 0x0040186B File Offset: 0x003FFA6B
 	public string EventName
 	{
 		get
@@ -18,8 +18,8 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x170013E2 RID: 5090
-	// (get) Token: 0x0600AB0A RID: 43786 RVA: 0x003FCA1F File Offset: 0x003FAC1F
+	// Token: 0x17001427 RID: 5159
+	// (get) Token: 0x0600ABBD RID: 43965 RVA: 0x00401873 File Offset: 0x003FFA73
 	[Preserve]
 	public Type ArgumentType
 	{
@@ -29,8 +29,8 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x170013E3 RID: 5091
-	// (get) Token: 0x0600AB0B RID: 43787 RVA: 0x003FCA27 File Offset: 0x003FAC27
+	// Token: 0x17001428 RID: 5160
+	// (get) Token: 0x0600ABBE RID: 43966 RVA: 0x0040187B File Offset: 0x003FFA7B
 	[Preserve]
 	public Type ReturnType
 	{
@@ -40,20 +40,20 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x0600AB0C RID: 43788
+	// Token: 0x0600ABBF RID: 43967
 	[Preserve]
 	public abstract void Register(object target, string method, int variant);
 
-	// Token: 0x0600AB0D RID: 43789
+	// Token: 0x0600ABC0 RID: 43968
 	[Preserve]
 	public abstract void Unregister(object target);
 
-	// Token: 0x0600AB0E RID: 43790
+	// Token: 0x0600ABC1 RID: 43969
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void InitFields();
 
-	// Token: 0x0600AB0F RID: 43791 RVA: 0x003FCA2F File Offset: 0x003FAC2F
+	// Token: 0x0600ABC2 RID: 43970 RVA: 0x00401883 File Offset: 0x003FFA83
 	[Preserve]
 	public vp_Event(string name = "")
 	{
@@ -62,7 +62,7 @@ public abstract class vp_Event
 		this.m_Name = name;
 	}
 
-	// Token: 0x0600AB10 RID: 43792 RVA: 0x003FCA58 File Offset: 0x003FAC58
+	// Token: 0x0600ABC3 RID: 43971 RVA: 0x004018AC File Offset: 0x003FFAAC
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void StoreInvokerFieldNames()
@@ -74,7 +74,7 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x0600AB11 RID: 43793 RVA: 0x003FCAA0 File Offset: 0x003FACA0
+	// Token: 0x0600ABC4 RID: 43972 RVA: 0x004018F4 File Offset: 0x003FFAF4
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Type MakeGenericType(Type type)
@@ -86,7 +86,7 @@ public abstract class vp_Event
 		return type.MakeGenericType(new Type[] { this.m_ArgumentType, this.m_ReturnType, this.m_ArgumentType, this.m_ReturnType });
 	}
 
-	// Token: 0x0600AB12 RID: 43794 RVA: 0x003FCB14 File Offset: 0x003FAD14
+	// Token: 0x0600ABC5 RID: 43973 RVA: 0x00401968 File Offset: 0x003FFB68
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetFieldToExternalMethod(object target, FieldInfo field, string method, Type type)
@@ -109,7 +109,7 @@ public abstract class vp_Event
 		field.SetValue(this, @delegate);
 	}
 
-	// Token: 0x0600AB13 RID: 43795 RVA: 0x003FCB8C File Offset: 0x003FAD8C
+	// Token: 0x0600ABC6 RID: 43974 RVA: 0x004019E0 File Offset: 0x003FFBE0
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void AddExternalMethodToField(object target, FieldInfo field, string method, Type type)
@@ -132,7 +132,7 @@ public abstract class vp_Event
 		field.SetValue(this, @delegate);
 	}
 
-	// Token: 0x0600AB14 RID: 43796 RVA: 0x003FCC18 File Offset: 0x003FAE18
+	// Token: 0x0600ABC7 RID: 43975 RVA: 0x00401A6C File Offset: 0x003FFC6C
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetFieldToLocalMethod(FieldInfo field, MethodInfo method, Type type)
@@ -157,7 +157,7 @@ public abstract class vp_Event
 		field.SetValue(this, @delegate);
 	}
 
-	// Token: 0x0600AB15 RID: 43797 RVA: 0x003FCC8C File Offset: 0x003FAE8C
+	// Token: 0x0600ABC8 RID: 43976 RVA: 0x00401AE0 File Offset: 0x003FFCE0
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void RemoveExternalMethodFromField(object target, FieldInfo field)
@@ -190,7 +190,7 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x0600AB16 RID: 43798 RVA: 0x003FCD54 File Offset: 0x003FAF54
+	// Token: 0x0600ABC9 RID: 43977 RVA: 0x00401BA8 File Offset: 0x003FFDA8
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public MethodInfo GetStaticGenericMethod(Type e, string name, Type parameterType, Type returnType)
@@ -217,8 +217,8 @@ public abstract class vp_Event
 		return null;
 	}
 
-	// Token: 0x170013E4 RID: 5092
-	// (get) Token: 0x0600AB17 RID: 43799 RVA: 0x003FCE62 File Offset: 0x003FB062
+	// Token: 0x17001429 RID: 5161
+	// (get) Token: 0x0600ABCA RID: 43978 RVA: 0x00401CB6 File Offset: 0x003FFEB6
 	[Preserve]
 	public Type GetArgumentType
 	{
@@ -233,8 +233,8 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x170013E5 RID: 5093
-	// (get) Token: 0x0600AB18 RID: 43800 RVA: 0x003FCE8C File Offset: 0x003FB08C
+	// Token: 0x1700142A RID: 5162
+	// (get) Token: 0x0600ABCB RID: 43979 RVA: 0x00401CE0 File Offset: 0x003FFEE0
 	[Preserve]
 	public Type GetGenericReturnType
 	{
@@ -253,7 +253,7 @@ public abstract class vp_Event
 		}
 	}
 
-	// Token: 0x0600AB19 RID: 43801 RVA: 0x003FCEDC File Offset: 0x003FB0DC
+	// Token: 0x0600ABCC RID: 43980 RVA: 0x00401D30 File Offset: 0x003FFF30
 	[Preserve]
 	public Type GetParameterType(int index)
 	{
@@ -283,7 +283,7 @@ public abstract class vp_Event
 		return this.m_ArgumentType;
 	}
 
-	// Token: 0x0600AB1A RID: 43802 RVA: 0x003FCFA8 File Offset: 0x003FB1A8
+	// Token: 0x0600ABCD RID: 43981 RVA: 0x00401DFC File Offset: 0x003FFFFC
 	[Preserve]
 	public Type GetReturnType(int index)
 	{
@@ -315,47 +315,47 @@ public abstract class vp_Event
 		return returnType;
 	}
 
-	// Token: 0x0600AB1B RID: 43803 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600ABCE RID: 43982 RVA: 0x000027FC File Offset: 0x000009FC
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Refresh()
 	{
 	}
 
-	// Token: 0x04007EFE RID: 32510
+	// Token: 0x04007F81 RID: 32641
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string m_Name;
 
-	// Token: 0x04007EFF RID: 32511
+	// Token: 0x04007F82 RID: 32642
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Type m_ArgumentType;
 
-	// Token: 0x04007F00 RID: 32512
+	// Token: 0x04007F83 RID: 32643
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Type m_ReturnType;
 
-	// Token: 0x04007F01 RID: 32513
+	// Token: 0x04007F84 RID: 32644
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public FieldInfo[] m_Fields;
 
-	// Token: 0x04007F02 RID: 32514
+	// Token: 0x04007F85 RID: 32645
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Type[] m_DelegateTypes;
 
-	// Token: 0x04007F03 RID: 32515
+	// Token: 0x04007F86 RID: 32646
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public MethodInfo[] m_DefaultMethods;
 
-	// Token: 0x04007F04 RID: 32516
+	// Token: 0x04007F87 RID: 32647
 	[Preserve]
 	public string[] InvokerFieldNames;
 
-	// Token: 0x04007F05 RID: 32517
+	// Token: 0x04007F88 RID: 32648
 	[Preserve]
 	public Dictionary<string, int> Prefixes;
 }

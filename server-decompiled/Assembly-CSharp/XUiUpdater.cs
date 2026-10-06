@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001181 RID: 4481
+// Token: 0x02001199 RID: 4505
 [PublicizedFrom(EAccessModifier.Internal)]
 public static class XUiUpdater
 {
-	// Token: 0x06008FAA RID: 36778 RVA: 0x0035FAE1 File Offset: 0x0035DCE1
+	// Token: 0x06009036 RID: 36918 RVA: 0x003642AD File Offset: 0x003624AD
 	public static void Add(XUi _ui)
 	{
 		if (!XUiUpdater.uiToUpdate.Contains(_ui))
@@ -15,13 +15,13 @@ public static class XUiUpdater
 		}
 	}
 
-	// Token: 0x06008FAB RID: 36779 RVA: 0x0035FAFB File Offset: 0x0035DCFB
+	// Token: 0x06009037 RID: 36919 RVA: 0x003642C7 File Offset: 0x003624C7
 	public static void Remove(XUi _ui)
 	{
 		XUiUpdater.uiToUpdate.Remove(_ui);
 	}
 
-	// Token: 0x06008FAC RID: 36780 RVA: 0x0035FB0C File Offset: 0x0035DD0C
+	// Token: 0x06009038 RID: 36920 RVA: 0x003642D8 File Offset: 0x003624D8
 	public static void Update()
 	{
 		for (int i = 0; i < XUiUpdater.uiToUpdate.Count; i++)
@@ -33,7 +33,7 @@ public static class XUiUpdater
 		}
 	}
 
-	// Token: 0x04006923 RID: 26915
+	// Token: 0x04006989 RID: 27017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<XUi> uiToUpdate = new List<XUi>();
 }

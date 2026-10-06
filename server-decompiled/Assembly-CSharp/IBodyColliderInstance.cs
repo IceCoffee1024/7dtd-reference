@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020008FE RID: 2302
+// Token: 0x02000903 RID: 2307
 public interface IBodyColliderInstance
 {
-	// Token: 0x170006FF RID: 1791
-	// (get) Token: 0x060042B7 RID: 17079
+	// Token: 0x1700071E RID: 1822
+	// (get) Token: 0x06004249 RID: 16969
 	Transform Transform { get; }
 
-	// Token: 0x17000700 RID: 1792
-	// (set) Token: 0x060042B8 RID: 17080
+	// Token: 0x1700071F RID: 1823
+	// (set) Token: 0x0600424A RID: 16970
 	EnumColliderMode ColliderMode { set; }
 
-	// Token: 0x17000701 RID: 1793
-	// (get) Token: 0x060042B9 RID: 17081
+	// Token: 0x17000720 RID: 1824
+	// (get) Token: 0x0600424B RID: 16971
 	PhysicsBodyColliderConfiguration Config { get; }
 }

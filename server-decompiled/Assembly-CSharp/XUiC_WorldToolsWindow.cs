@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010D8 RID: 4312
+// Token: 0x020010E9 RID: 4329
 [Preserve]
 public class XUiC_WorldToolsWindow : XUiController
 {
-	// Token: 0x06008960 RID: 35168 RVA: 0x00346298 File Offset: 0x00344498
+	// Token: 0x060089AE RID: 35246 RVA: 0x0034A048 File Offset: 0x00348248
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class XUiC_WorldToolsWindow : XUiController
 		this.cbxBoxPrefabPreviewLimit.OnValueChanged += this.CbxBoxPrefabPreviewLimit_OnValueChanged;
 	}
 
-	// Token: 0x06008961 RID: 35169 RVA: 0x00346380 File Offset: 0x00344580
+	// Token: 0x060089AF RID: 35247 RVA: 0x0034A130 File Offset: 0x00348330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnLevelStartPoint_Controller_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -38,28 +38,28 @@ public class XUiC_WorldToolsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008962 RID: 35170 RVA: 0x00346403 File Offset: 0x00344603
+	// Token: 0x060089B0 RID: 35248 RVA: 0x0034A1B3 File Offset: 0x003483B3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxBoxSelectionCaptions_OnValueChanged(XUiController _sender, bool _oldValue, bool _newValue)
 	{
 		SelectionBoxManager.Instance.CategoryDynamicPrefab.SetCaptionVisibility(_newValue);
 	}
 
-	// Token: 0x06008963 RID: 35171 RVA: 0x00346415 File Offset: 0x00344615
+	// Token: 0x060089B1 RID: 35249 RVA: 0x0034A1C5 File Offset: 0x003483C5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxBoxSideTransparency_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 		SelectionBoxManager.Instance.AlphaMultiplier = (float)_newValue;
 	}
 
-	// Token: 0x06008964 RID: 35172 RVA: 0x00346423 File Offset: 0x00344623
+	// Token: 0x060089B2 RID: 35250 RVA: 0x0034A1D3 File Offset: 0x003483D3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxBoxPrefabPreviewLimit_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
 	{
 		DynamicPrefabDecorator.PrefabPreviewLimit = (int)_newValue;
 	}
 
-	// Token: 0x06008965 RID: 35173 RVA: 0x0034642C File Offset: 0x0034462C
+	// Token: 0x060089B3 RID: 35251 RVA: 0x0034A1DC File Offset: 0x003483DC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -70,22 +70,22 @@ public class XUiC_WorldToolsWindow : XUiController
 		}
 	}
 
-	// Token: 0x04006620 RID: 26144
+	// Token: 0x04006662 RID: 26210
 	public static string ID = "";
 
-	// Token: 0x04006621 RID: 26145
+	// Token: 0x04006663 RID: 26211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnLevelStartPoint;
 
-	// Token: 0x04006622 RID: 26146
+	// Token: 0x04006664 RID: 26212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxBoxSideTransparency;
 
-	// Token: 0x04006623 RID: 26147
+	// Token: 0x04006665 RID: 26213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxBool cbxBoxSelectionCaptions;
 
-	// Token: 0x04006624 RID: 26148
+	// Token: 0x04006666 RID: 26214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxBoxPrefabPreviewLimit;
 }

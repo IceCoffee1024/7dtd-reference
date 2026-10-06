@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200060B RID: 1547
+// Token: 0x0200060D RID: 1549
 [Preserve]
 public class Blinking : LightState
 {
-	// Token: 0x17000524 RID: 1316
-	// (get) Token: 0x06003267 RID: 12903 RVA: 0x00148A54 File Offset: 0x00146C54
+	// Token: 0x1700054A RID: 1354
+	// (get) Token: 0x060032AA RID: 12970 RVA: 0x001493F8 File Offset: 0x001475F8
 	public override float LODThreshold
 	{
 		get
@@ -17,8 +17,8 @@ public class Blinking : LightState
 		}
 	}
 
-	// Token: 0x17000525 RID: 1317
-	// (get) Token: 0x06003268 RID: 12904 RVA: 0x00148A5B File Offset: 0x00146C5B
+	// Token: 0x1700054B RID: 1355
+	// (get) Token: 0x060032AB RID: 12971 RVA: 0x001493FF File Offset: 0x001475FF
 	public override bool CanBeOn
 	{
 		get
@@ -27,8 +27,8 @@ public class Blinking : LightState
 		}
 	}
 
-	// Token: 0x17000526 RID: 1318
-	// (get) Token: 0x06003269 RID: 12905 RVA: 0x00148A63 File Offset: 0x00146C63
+	// Token: 0x1700054C RID: 1356
+	// (get) Token: 0x060032AC RID: 12972 RVA: 0x00149407 File Offset: 0x00147607
 	public override float Emissive
 	{
 		get
@@ -41,7 +41,7 @@ public class Blinking : LightState
 		}
 	}
 
-	// Token: 0x0600326A RID: 12906 RVA: 0x00148A78 File Offset: 0x00146C78
+	// Token: 0x060032AD RID: 12973 RVA: 0x0014941C File Offset: 0x0014761C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator blink()
 	{
@@ -53,21 +53,21 @@ public class Blinking : LightState
 		yield break;
 	}
 
-	// Token: 0x0600326B RID: 12907 RVA: 0x00148A87 File Offset: 0x00146C87
+	// Token: 0x060032AE RID: 12974 RVA: 0x0014942B File Offset: 0x0014762B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		base.StartCoroutine(this.blink());
 	}
 
-	// Token: 0x0600326C RID: 12908 RVA: 0x00148A96 File Offset: 0x00146C96
+	// Token: 0x060032AF RID: 12975 RVA: 0x0014943A File Offset: 0x0014763A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		base.StopAllCoroutines();
 	}
 
-	// Token: 0x04002807 RID: 10247
+	// Token: 0x04002800 RID: 10240
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool switchedOn = true;

@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C70 RID: 3184
+// Token: 0x02000C7F RID: 3199
 public class TileEntityLight : TileEntity
 {
-	// Token: 0x0600612A RID: 24874 RVA: 0x0026644C File Offset: 0x0026464C
+	// Token: 0x06006127 RID: 24871 RVA: 0x002698EC File Offset: 0x00267AEC
 	public TileEntityLight(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x0600612B RID: 24875 RVA: 0x002664A9 File Offset: 0x002646A9
+	// Token: 0x06006128 RID: 24872 RVA: 0x00269949 File Offset: 0x00267B49
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Light;
 	}
 
-	// Token: 0x0600612C RID: 24876 RVA: 0x002664B0 File Offset: 0x002646B0
+	// Token: 0x06006129 RID: 24873 RVA: 0x00269950 File Offset: 0x00267B50
 	public override TileEntity Clone()
 	{
 		return new TileEntityLight(this.chunk)
@@ -34,7 +34,7 @@ public class TileEntityLight : TileEntity
 		};
 	}
 
-	// Token: 0x0600612D RID: 24877 RVA: 0x00266540 File Offset: 0x00264740
+	// Token: 0x0600612A RID: 24874 RVA: 0x002699E0 File Offset: 0x00267BE0
 	public override void CopyFrom(TileEntity _other)
 	{
 		TileEntityLight tileEntityLight = (TileEntityLight)_other;
@@ -50,12 +50,12 @@ public class TileEntityLight : TileEntity
 		this.Delay = tileEntityLight.Delay;
 	}
 
-	// Token: 0x0600612E RID: 24878 RVA: 0x002665CC File Offset: 0x002647CC
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x0600612B RID: 24875 RVA: 0x00269A6C File Offset: 0x00267C6C
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
 		int num;
-		if (_eStreamMode != TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode != StreamModeRead.Persistency)
 		{
 			num = 18;
 		}
@@ -90,11 +90,11 @@ public class TileEntityLight : TileEntity
 		}
 	}
 
-	// Token: 0x0600612F RID: 24879 RVA: 0x00266680 File Offset: 0x00264880
-	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x0600612C RID: 24876 RVA: 0x00269B20 File Offset: 0x00267D20
+	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
@@ -109,34 +109,34 @@ public class TileEntityLight : TileEntity
 		_bw.Write(this.Delay);
 	}
 
-	// Token: 0x04004C12 RID: 19474
+	// Token: 0x04004C49 RID: 19529
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C13 RID: 19475
+	// Token: 0x04004C4A RID: 19530
 	public LightType LightType = LightType.Point;
 
-	// Token: 0x04004C14 RID: 19476
+	// Token: 0x04004C4B RID: 19531
 	public LightShadows LightShadows;
 
-	// Token: 0x04004C15 RID: 19477
+	// Token: 0x04004C4C RID: 19532
 	public float LightIntensity = 1f;
 
-	// Token: 0x04004C16 RID: 19478
+	// Token: 0x04004C4D RID: 19533
 	public float LightRange = 10f;
 
-	// Token: 0x04004C17 RID: 19479
+	// Token: 0x04004C4E RID: 19534
 	public float LightAngle = 45f;
 
-	// Token: 0x04004C18 RID: 19480
+	// Token: 0x04004C4F RID: 19535
 	public Color LightColor = Color.white;
 
-	// Token: 0x04004C19 RID: 19481
+	// Token: 0x04004C50 RID: 19536
 	public LightStateType LightState;
 
-	// Token: 0x04004C1A RID: 19482
+	// Token: 0x04004C51 RID: 19537
 	public float Rate = 1f;
 
-	// Token: 0x04004C1B RID: 19483
+	// Token: 0x04004C52 RID: 19538
 	public float Delay = 1f;
 }

@@ -4,10 +4,10 @@ using System.Linq;
 
 namespace DynamicMusic.Legacy.ObjectModel
 {
-	// Token: 0x02001A9D RID: 6813
+	// Token: 0x02001AC9 RID: 6857
 	public class Layer : Dictionary<int, InstrumentID>
 	{
-		// Token: 0x0600CDAA RID: 52650 RVA: 0x004AC6CD File Offset: 0x004AA8CD
+		// Token: 0x0600CF02 RID: 52994 RVA: 0x004B0B99 File Offset: 0x004AED99
 		public Layer()
 		{
 			if (Layer.Random == null)
@@ -16,7 +16,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			}
 		}
 
-		// Token: 0x0600CDAB RID: 52651 RVA: 0x004AC6EB File Offset: 0x004AA8EB
+		// Token: 0x0600CF03 RID: 52995 RVA: 0x004B0BB7 File Offset: 0x004AEDB7
 		public InstrumentID GetInstrumentID()
 		{
 			if (this.idQ == null || this.idQ.Count < 3)
@@ -27,7 +27,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			return this.idQ.Dequeue();
 		}
 
-		// Token: 0x0600CDAC RID: 52652 RVA: 0x004AC728 File Offset: 0x004AA928
+		// Token: 0x0600CF04 RID: 52996 RVA: 0x004B0BF4 File Offset: 0x004AEDF4
 		public void PopulateQueue()
 		{
 			if (this.idQ == null)
@@ -39,7 +39,7 @@ namespace DynamicMusic.Legacy.ObjectModel
 			this.RefillQueue();
 		}
 
-		// Token: 0x0600CDAD RID: 52653 RVA: 0x004AC789 File Offset: 0x004AA989
+		// Token: 0x0600CF05 RID: 52997 RVA: 0x004B0C55 File Offset: 0x004AEE55
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RefillQueue()
 		{
@@ -53,11 +53,11 @@ namespace DynamicMusic.Legacy.ObjectModel
 			}).ToArray<InstrumentID>(), new Action<InstrumentID>(this.idQ.Enqueue));
 		}
 
-		// Token: 0x04009BD5 RID: 39893
+		// Token: 0x04009C9B RID: 40091
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<InstrumentID> idQ;
 
-		// Token: 0x04009BD6 RID: 39894
+		// Token: 0x04009C9C RID: 40092
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static GameRandom Random;
 	}

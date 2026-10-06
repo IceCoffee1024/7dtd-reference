@@ -2,7 +2,7 @@
 
 namespace Twitch
 {
-	// Token: 0x02001845 RID: 6213
-	// (Invoke) Token: 0x0600BF90 RID: 49040
+	// Token: 0x02001871 RID: 6257
+	// (Invoke) Token: 0x0600C0E8 RID: 49384
 	public delegate void OnTwitchConnectionStateChange(TwitchManager.InitStates oldState, TwitchManager.InitStates newState);
 }

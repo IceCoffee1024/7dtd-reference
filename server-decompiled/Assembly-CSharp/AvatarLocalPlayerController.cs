@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000CE RID: 206
+// Token: 0x020000D0 RID: 208
 [Preserve]
 public class AvatarLocalPlayerController : AvatarCharacterController
 {
 	// Token: 0x17000050 RID: 80
-	// (get) Token: 0x060004CD RID: 1229 RVA: 0x0002147C File Offset: 0x0001F67C
+	// (get) Token: 0x060004D3 RID: 1235 RVA: 0x00021574 File Offset: 0x0001F774
 	public BodyAnimator FPSArms
 	{
 		get
@@ -16,7 +16,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004CE RID: 1230 RVA: 0x00021484 File Offset: 0x0001F684
+	// Token: 0x060004D4 RID: 1236 RVA: 0x0002157C File Offset: 0x0001F77C
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		base.SwitchModelAndView(_modelName, _bFPV, _bMale);
@@ -72,7 +72,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004CF RID: 1231 RVA: 0x00021631 File Offset: 0x0001F831
+	// Token: 0x060004D5 RID: 1237 RVA: 0x00021729 File Offset: 0x0001F929
 	public void TPVResetAnimPose()
 	{
 		if (this.anim)
@@ -82,7 +82,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D0 RID: 1232 RVA: 0x00021654 File Offset: 0x0001F854
+	// Token: 0x060004D6 RID: 1238 RVA: 0x0002174C File Offset: 0x0001F94C
 	public override void SetInRightHand(Transform _transform)
 	{
 		base.SetInRightHand(_transform);
@@ -97,7 +97,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D1 RID: 1233 RVA: 0x000216AD File Offset: 0x0001F8AD
+	// Token: 0x060004D7 RID: 1239 RVA: 0x000217A5 File Offset: 0x0001F9A5
 	public override Transform GetActiveModelRoot()
 	{
 		if (base.PrimaryBody == null || base.PrimaryBody.Parts == null)
@@ -107,7 +107,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return base.PrimaryBody.Parts.BodyObj.transform;
 	}
 
-	// Token: 0x060004D2 RID: 1234 RVA: 0x000216DC File Offset: 0x0001F8DC
+	// Token: 0x060004D8 RID: 1240 RVA: 0x000217D4 File Offset: 0x0001F9D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void avatarVisibilityChanged(BodyAnimator _body, bool _bVisible)
 	{
@@ -127,7 +127,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D3 RID: 1235 RVA: 0x0002172C File Offset: 0x0001F92C
+	// Token: 0x060004D9 RID: 1241 RVA: 0x00021824 File Offset: 0x0001FA24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -143,7 +143,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D4 RID: 1236 RVA: 0x0002177C File Offset: 0x0001F97C
+	// Token: 0x060004DA RID: 1242 RVA: 0x00021874 File Offset: 0x0001FA74
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override BodyAnimator createCharacterBody(Transform _bodyTransform)
 	{
@@ -151,7 +151,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return new UMACharacterBodyAnimator(base.Entity, animationStates, _bodyTransform, BodyAnimator.EnumState.Disabled);
 	}
 
-	// Token: 0x060004D5 RID: 1237 RVA: 0x000217B5 File Offset: 0x0001F9B5
+	// Token: 0x060004DB RID: 1243 RVA: 0x000218AD File Offset: 0x0001FAAD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void initBodyAnimator(BodyAnimator _body, bool _bFPV, bool _bMale)
 	{
@@ -162,7 +162,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D6 RID: 1238 RVA: 0x000217DC File Offset: 0x0001F9DC
+	// Token: 0x060004DC RID: 1244 RVA: 0x000218D4 File Offset: 0x0001FAD4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual BodyAnimator createFPSArms(Transform _fpsArmsTransform)
 	{
@@ -170,7 +170,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return new FirstPersonAnimator(base.Entity, animationStates, _fpsArmsTransform, BodyAnimator.EnumState.Disabled);
 	}
 
-	// Token: 0x060004D7 RID: 1239 RVA: 0x00021815 File Offset: 0x0001FA15
+	// Token: 0x060004DD RID: 1245 RVA: 0x0002190D File Offset: 0x0001FB0D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setTrigger(int _pid, bool _netsync = true)
 	{
@@ -181,7 +181,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D8 RID: 1240 RVA: 0x00021839 File Offset: 0x0001FA39
+	// Token: 0x060004DE RID: 1246 RVA: 0x00021931 File Offset: 0x0001FB31
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _resetTrigger(int _pid, bool _netsync = true)
 	{
@@ -192,7 +192,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D9 RID: 1241 RVA: 0x0002185D File Offset: 0x0001FA5D
+	// Token: 0x060004DF RID: 1247 RVA: 0x00021955 File Offset: 0x0001FB55
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setFloat(int _pid, float _value, bool _netsync = true)
 	{
@@ -203,7 +203,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004DA RID: 1242 RVA: 0x00021883 File Offset: 0x0001FA83
+	// Token: 0x060004E0 RID: 1248 RVA: 0x0002197B File Offset: 0x0001FB7B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setBool(int _pid, bool _value, bool _netsync = true)
 	{
@@ -214,7 +214,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004DB RID: 1243 RVA: 0x000218A9 File Offset: 0x0001FAA9
+	// Token: 0x060004E1 RID: 1249 RVA: 0x000219A1 File Offset: 0x0001FBA1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _pid, int _value, bool _netsync = true)
 	{
@@ -225,22 +225,22 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x04000568 RID: 1384
+	// Token: 0x0400056B RID: 1387
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BodyAnimator fpsArms;
 
-	// Token: 0x04000569 RID: 1385
+	// Token: 0x0400056C RID: 1388
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isMale;
 
-	// Token: 0x0400056A RID: 1386
+	// Token: 0x0400056D RID: 1389
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isFPV;
 
-	// Token: 0x0400056B RID: 1387
+	// Token: 0x0400056E RID: 1390
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int tpvDisableInFrames;

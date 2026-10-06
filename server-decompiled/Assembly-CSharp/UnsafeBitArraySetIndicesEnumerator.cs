@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 
-// Token: 0x02000CC2 RID: 3266
+// Token: 0x02000CD0 RID: 3280
 public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator, IDisposable
 {
-	// Token: 0x06006457 RID: 25687 RVA: 0x00274324 File Offset: 0x00272524
+	// Token: 0x0600644A RID: 25674 RVA: 0x00277728 File Offset: 0x00275928
 	public unsafe UnsafeBitArraySetIndicesEnumerator(UnsafeBitArray bitArray)
 	{
 		this.bitArray = bitArray;
@@ -19,8 +19,8 @@ public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator
 		this.foundBits = 0;
 	}
 
-	// Token: 0x17000A78 RID: 2680
-	// (get) Token: 0x06006458 RID: 25688 RVA: 0x00274384 File Offset: 0x00272584
+	// Token: 0x17000A8E RID: 2702
+	// (get) Token: 0x0600644B RID: 25675 RVA: 0x00277788 File Offset: 0x00275988
 	public int Current
 	{
 		get
@@ -29,8 +29,8 @@ public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator
 		}
 	}
 
-	// Token: 0x17000A79 RID: 2681
-	// (get) Token: 0x06006459 RID: 25689 RVA: 0x0027438C File Offset: 0x0027258C
+	// Token: 0x17000A8F RID: 2703
+	// (get) Token: 0x0600644C RID: 25676 RVA: 0x00277790 File Offset: 0x00275990
 	public object System.Collections.IEnumerator.Current
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -40,7 +40,7 @@ public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator
 		}
 	}
 
-	// Token: 0x0600645A RID: 25690 RVA: 0x0027439C File Offset: 0x0027259C
+	// Token: 0x0600644D RID: 25677 RVA: 0x002777A0 File Offset: 0x002759A0
 	public unsafe bool MoveNext()
 	{
 		while (this.foundBits < this.numSetBits && this.sliceIndex < this.numSlices)
@@ -99,7 +99,7 @@ public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator
 		return false;
 	}
 
-	// Token: 0x0600645B RID: 25691 RVA: 0x00274561 File Offset: 0x00272761
+	// Token: 0x0600644E RID: 25678 RVA: 0x00277965 File Offset: 0x00275B65
 	public unsafe void Reset()
 	{
 		this.sliceIndex = 0;
@@ -109,40 +109,40 @@ public struct UnsafeBitArraySetIndicesEnumerator : IEnumerator<int>, IEnumerator
 		this.foundBits = 0;
 	}
 
-	// Token: 0x0600645C RID: 25692 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600644F RID: 25679 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Dispose()
 	{
 	}
 
-	// Token: 0x04004E15 RID: 19989
+	// Token: 0x04004E4B RID: 20043
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnsafeBitArray bitArray;
 
-	// Token: 0x04004E16 RID: 19990
+	// Token: 0x04004E4C RID: 20044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong currentSlice;
 
-	// Token: 0x04004E17 RID: 19991
+	// Token: 0x04004E4D RID: 20045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sliceIndex;
 
-	// Token: 0x04004E18 RID: 19992
+	// Token: 0x04004E4E RID: 20046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numSlices;
 
-	// Token: 0x04004E19 RID: 19993
+	// Token: 0x04004E4F RID: 20047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int leadingZeroCount;
 
-	// Token: 0x04004E1A RID: 19994
+	// Token: 0x04004E50 RID: 20048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentIndex;
 
-	// Token: 0x04004E1B RID: 19995
+	// Token: 0x04004E51 RID: 20049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numSetBits;
 
-	// Token: 0x04004E1C RID: 19996
+	// Token: 0x04004E52 RID: 20050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int foundBits;
 }

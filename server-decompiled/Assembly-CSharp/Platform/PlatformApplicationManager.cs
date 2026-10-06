@@ -5,20 +5,20 @@ using System.Linq;
 
 namespace Platform
 {
-	// Token: 0x02001BC9 RID: 7113
+	// Token: 0x02001BFB RID: 7163
 	public static class PlatformApplicationManager
 	{
-		// Token: 0x17001A34 RID: 6708
-		// (get) Token: 0x0600D3C4 RID: 54212 RVA: 0x004C7E71 File Offset: 0x004C6071
-		// (set) Token: 0x0600D3C5 RID: 54213 RVA: 0x004C7E78 File Offset: 0x004C6078
+		// Token: 0x17001ADA RID: 6874
+		// (get) Token: 0x0600D53C RID: 54588 RVA: 0x004CC959 File Offset: 0x004CAB59
+		// (set) Token: 0x0600D53D RID: 54589 RVA: 0x004CC960 File Offset: 0x004CAB60
 		public static IPlatformApplication Application
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001A35 RID: 6709
-		// (get) Token: 0x0600D3C6 RID: 54214 RVA: 0x004C7E80 File Offset: 0x004C6080
+		// Token: 0x17001ADB RID: 6875
+		// (get) Token: 0x0600D53E RID: 54590 RVA: 0x004CC968 File Offset: 0x004CAB68
 		public static bool IsRestartRequired
 		{
 			get
@@ -27,27 +27,27 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D3C7 RID: 54215 RVA: 0x004C7E87 File Offset: 0x004C6087
+		// Token: 0x0600D53F RID: 54591 RVA: 0x004CC96F File Offset: 0x004CAB6F
 		public static bool Init()
 		{
 			PlatformApplicationManager.Application = IPlatformApplication.Create();
 			return true;
 		}
 
-		// Token: 0x0600D3C8 RID: 54216 RVA: 0x004C7E94 File Offset: 0x004C6094
+		// Token: 0x0600D540 RID: 54592 RVA: 0x004CC97C File Offset: 0x004CAB7C
 		public static void SetRestartRequired()
 		{
 			PlatformApplicationManager.isRestartRequired = PlatformApplicationManager.RestartIsSupported;
 			Log.Out(string.Format("[PlatformApplication] restart required = {0}", PlatformApplicationManager.isRestartRequired));
 		}
 
-		// Token: 0x0600D3C9 RID: 54217 RVA: 0x004C7EB9 File Offset: 0x004C60B9
+		// Token: 0x0600D541 RID: 54593 RVA: 0x004CC9A1 File Offset: 0x004CABA1
 		public static bool CheckRestartCoroutineReady()
 		{
 			return PlatformApplicationManager.isRestartRequired && !PlatformApplicationManager.isRestarting && !InviteManager.Instance.IsConnectingToInvite();
 		}
 
-		// Token: 0x0600D3CA RID: 54218 RVA: 0x004C7ED8 File Offset: 0x004C60D8
+		// Token: 0x0600D542 RID: 54594 RVA: 0x004CC9C0 File Offset: 0x004CABC0
 		public static IEnumerator CheckRestartCoroutine(bool loadSaveGame = false)
 		{
 			if (!PlatformApplicationManager.CheckRestartCoroutineReady())
@@ -75,7 +75,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D3CB RID: 54219 RVA: 0x004C7EE8 File Offset: 0x004C60E8
+		// Token: 0x0600D543 RID: 54595 RVA: 0x004CC9D0 File Offset: 0x004CABD0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string[] RemoveFirstRunArguments(string[] argv)
 		{
@@ -85,7 +85,7 @@ namespace Platform
 				select arg).ToArray<string>();
 		}
 
-		// Token: 0x0600D3CC RID: 54220 RVA: 0x004C7F44 File Offset: 0x004C6144
+		// Token: 0x0600D544 RID: 54596 RVA: 0x004CCA2C File Offset: 0x004CAC2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void RestartProcess(bool loadSaveGame)
 		{
@@ -115,21 +115,21 @@ namespace Platform
 			PlatformApplicationManager.Application.RestartProcess(list.ToArray());
 		}
 
-		// Token: 0x0400A12B RID: 41259
+		// Token: 0x0400A200 RID: 41472
 		public static bool RestartIsSupported = PlatformOptimizations.RestartProcessSupported;
 
-		// Token: 0x0400A12D RID: 41261
+		// Token: 0x0400A202 RID: 41474
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool isRestartRequired;
 
-		// Token: 0x0400A12E RID: 41262
+		// Token: 0x0400A203 RID: 41475
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool isRestarting;
 
-		// Token: 0x02001BCA RID: 7114
+		// Token: 0x02001BFC RID: 7164
 		public static class LoadSaveGame
 		{
-			// Token: 0x0600D3CE RID: 54222 RVA: 0x004C804C File Offset: 0x004C624C
+			// Token: 0x0600D546 RID: 54598 RVA: 0x004CCB34 File Offset: 0x004CAD34
 			public static EPlatformLoadSaveGameState GetState()
 			{
 				if (!LaunchPrefs.LoadSaveGame.Value)
@@ -188,7 +188,7 @@ namespace Platform
 				return PlatformApplicationManager.LoadSaveGame.loadSaveGameState = EPlatformLoadSaveGameState.ContinueGameOpen;
 			}
 
-			// Token: 0x0600D3CF RID: 54223 RVA: 0x004C8194 File Offset: 0x004C6394
+			// Token: 0x0600D547 RID: 54599 RVA: 0x004CCC7C File Offset: 0x004CAE7C
 			public static void AdvanceStateFrom(EPlatformLoadSaveGameState previousState)
 			{
 				if (PlatformApplicationManager.LoadSaveGame.loadSaveGameState != previousState)
@@ -228,7 +228,7 @@ namespace Platform
 				Log.Out(string.Format("[LoadSaveGame] Advanced to state {0} (was {1})", PlatformApplicationManager.LoadSaveGame.loadSaveGameState, previousState));
 			}
 
-			// Token: 0x0600D3D0 RID: 54224 RVA: 0x004C824F File Offset: 0x004C644F
+			// Token: 0x0600D548 RID: 54600 RVA: 0x004CCD37 File Offset: 0x004CAF37
 			public static void SetFailed()
 			{
 				if (PlatformApplicationManager.LoadSaveGame.loadSaveGameState == EPlatformLoadSaveGameState.Done)
@@ -239,16 +239,16 @@ namespace Platform
 				PlatformApplicationManager.LoadSaveGame.loadSaveGameState = EPlatformLoadSaveGameState.Done;
 			}
 
-			// Token: 0x0400A12F RID: 41263
+			// Token: 0x0400A204 RID: 41476
 			public static string GameWorld;
 
-			// Token: 0x0400A130 RID: 41264
+			// Token: 0x0400A205 RID: 41477
 			public static string GameName;
 
-			// Token: 0x0400A131 RID: 41265
+			// Token: 0x0400A206 RID: 41478
 			public static UserDataStorageType SaveStorageType;
 
-			// Token: 0x0400A132 RID: 41266
+			// Token: 0x0400A207 RID: 41479
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static EPlatformLoadSaveGameState loadSaveGameState;
 		}

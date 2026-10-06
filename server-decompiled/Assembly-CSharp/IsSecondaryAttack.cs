@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A3 RID: 1699
+// Token: 0x020006A5 RID: 1701
 [Preserve]
 public class IsSecondaryAttack : TargetedCompareRequirementBase
 {
-	// Token: 0x0600357A RID: 13690 RVA: 0x001613F8 File Offset: 0x0015F5F8
+	// Token: 0x060035BD RID: 13757 RVA: 0x00161D6C File Offset: 0x0015FF6C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -18,8 +18,8 @@ public class IsSecondaryAttack : TargetedCompareRequirementBase
 		}
 		if (this.invert)
 		{
-			return !this.target.inventory.holdingItemItemValue.ItemClass.Actions[1].IsActionRunning(this.target.inventory.GetItemActionDataInSlot(this.target.inventory.holdingItemIdx, 1));
+			return !this.target.inventory.holdingItemItemValue.ItemClass.Actions[1].IsActionRunning(this.target.inventory.holdingItemData.actionData[1]);
 		}
-		return this.target.inventory.holdingItemItemValue.ItemClass.Actions[1].IsActionRunning(this.target.inventory.GetItemActionDataInSlot(this.target.inventory.holdingItemIdx, 1));
+		return this.target.inventory.holdingItemItemValue.ItemClass.Actions[1].IsActionRunning(this.target.inventory.holdingItemData.actionData[1]);
 	}
 }

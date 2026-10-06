@@ -1,10 +1,10 @@
 ﻿using System;
 using Unity.Profiling;
 
-// Token: 0x0200151A RID: 5402
+// Token: 0x0200153C RID: 5436
 public static class ProfilerCaptureUtils
 {
-	// Token: 0x0600A9E3 RID: 43491 RVA: 0x003F6B30 File Offset: 0x003F4D30
+	// Token: 0x0600AA96 RID: 43670 RVA: 0x003FB984 File Offset: 0x003F9B84
 	public static ProfilingMetricCapture CreateMemoryProfiler()
 	{
 		ProfilingMetricCapture profilingMetricCapture = new ProfilingMetricCapture();

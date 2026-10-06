@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200193B RID: 6459
+	// Token: 0x02001967 RID: 6503
 	[Preserve]
 	public class RequirementIsIndoors : BaseRequirement
 	{
-		// Token: 0x0600C733 RID: 50995 RVA: 0x00491760 File Offset: 0x0048F960
+		// Token: 0x0600C88B RID: 51339 RVA: 0x00495C4C File Offset: 0x00493E4C
 		public override bool CanPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceRequirements
 			return entityAlive.Stats.AmountEnclosed <= 0f;
 		}
 
-		// Token: 0x0600C734 RID: 50996 RVA: 0x004917A9 File Offset: 0x0048F9A9
+		// Token: 0x0600C88C RID: 51340 RVA: 0x00495C95 File Offset: 0x00493E95
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

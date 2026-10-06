@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E2 RID: 2018
+// Token: 0x020007E5 RID: 2021
 [Preserve]
 public class NetPackageEntityPrimeDetonator : NetPackage
 {
-	// Token: 0x17000633 RID: 1587
-	// (get) Token: 0x06003BAB RID: 15275 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000658 RID: 1624
+	// (get) Token: 0x06003BBB RID: 15291 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,27 +15,27 @@ public class NetPackageEntityPrimeDetonator : NetPackage
 		}
 	}
 
-	// Token: 0x06003BAC RID: 15276 RVA: 0x0017FB0C File Offset: 0x0017DD0C
+	// Token: 0x06003BBC RID: 15292 RVA: 0x0018004C File Offset: 0x0017E24C
 	public NetPackageEntityPrimeDetonator Setup(EntityZombieCop entity)
 	{
 		this.id = entity.entityId;
 		return this;
 	}
 
-	// Token: 0x06003BAD RID: 15277 RVA: 0x0017FB1B File Offset: 0x0017DD1B
+	// Token: 0x06003BBD RID: 15293 RVA: 0x0018005B File Offset: 0x0017E25B
 	public override void read(PooledBinaryReader _br)
 	{
 		this.id = _br.ReadInt32();
 	}
 
-	// Token: 0x06003BAE RID: 15278 RVA: 0x0017FB29 File Offset: 0x0017DD29
+	// Token: 0x06003BBE RID: 15294 RVA: 0x00180069 File Offset: 0x0017E269
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.id);
 	}
 
-	// Token: 0x06003BAF RID: 15279 RVA: 0x0017FB40 File Offset: 0x0017DD40
+	// Token: 0x06003BBF RID: 15295 RVA: 0x00180080 File Offset: 0x0017E280
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -51,13 +51,7 @@ public class NetPackageEntityPrimeDetonator : NetPackage
 		entityZombieCop.PrimeDetonator();
 	}
 
-	// Token: 0x06003BB0 RID: 15280 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x0400309D RID: 12445
+	// Token: 0x04003096 RID: 12438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 }

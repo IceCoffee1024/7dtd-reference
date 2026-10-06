@@ -2,10 +2,10 @@
 
 namespace SharpEXR.ColorSpace
 {
-	// Token: 0x020016DE RID: 5854
+	// Token: 0x0200170A RID: 5898
 	public struct tMat3x3
 	{
-		// Token: 0x0600B715 RID: 46869 RVA: 0x0043E72E File Offset: 0x0043C92E
+		// Token: 0x0600B86C RID: 47212 RVA: 0x00442C4E File Offset: 0x00440E4E
 		public void SetCol(int colIdx, tVec3 vec)
 		{
 			this[0, colIdx] = vec.X;
@@ -13,7 +13,7 @@ namespace SharpEXR.ColorSpace
 			this[2, colIdx] = vec.Z;
 		}
 
-		// Token: 0x0600B716 RID: 46870 RVA: 0x0043E75C File Offset: 0x0043C95C
+		// Token: 0x0600B86D RID: 47213 RVA: 0x00442C7C File Offset: 0x00440E7C
 		public bool Invert(out tMat3x3 result)
 		{
 			result = default(tMat3x3);
@@ -38,13 +38,13 @@ namespace SharpEXR.ColorSpace
 			return true;
 		}
 
-		// Token: 0x0600B717 RID: 46871 RVA: 0x0043E954 File Offset: 0x0043CB54
+		// Token: 0x0600B86E RID: 47214 RVA: 0x00442E74 File Offset: 0x00441074
 		public static tVec3 operator *(tMat3x3 mat, tVec3 vec)
 		{
 			return new tVec3(mat[0, 0] * vec.X + mat[0, 1] * vec.Y + mat[0, 2] * vec.Z, mat[1, 0] * vec.X + mat[1, 1] * vec.Y + mat[1, 2] * vec.Z, mat[2, 0] * vec.X + mat[2, 1] * vec.Y + mat[2, 2] * vec.Z);
 		}
 
-		// Token: 0x17001654 RID: 5716
+		// Token: 0x170016F6 RID: 5878
 		public float this[int row, int col]
 		{
 			get
@@ -142,31 +142,31 @@ namespace SharpEXR.ColorSpace
 			}
 		}
 
-		// Token: 0x040088BB RID: 35003
+		// Token: 0x04008980 RID: 35200
 		public float M00;
 
-		// Token: 0x040088BC RID: 35004
+		// Token: 0x04008981 RID: 35201
 		public float M01;
 
-		// Token: 0x040088BD RID: 35005
+		// Token: 0x04008982 RID: 35202
 		public float M02;
 
-		// Token: 0x040088BE RID: 35006
+		// Token: 0x04008983 RID: 35203
 		public float M10;
 
-		// Token: 0x040088BF RID: 35007
+		// Token: 0x04008984 RID: 35204
 		public float M11;
 
-		// Token: 0x040088C0 RID: 35008
+		// Token: 0x04008985 RID: 35205
 		public float M12;
 
-		// Token: 0x040088C1 RID: 35009
+		// Token: 0x04008986 RID: 35206
 		public float M20;
 
-		// Token: 0x040088C2 RID: 35010
+		// Token: 0x04008987 RID: 35207
 		public float M21;
 
-		// Token: 0x040088C3 RID: 35011
+		// Token: 0x04008988 RID: 35208
 		public float M22;
 	}
 }

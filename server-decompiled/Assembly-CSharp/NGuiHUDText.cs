@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001298 RID: 4760
+// Token: 0x020012B0 RID: 4784
 public class NGuiHUDText : MonoBehaviour
 {
-	// Token: 0x0600971A RID: 38682 RVA: 0x0038C42C File Offset: 0x0038A62C
+	// Token: 0x060097A7 RID: 38823 RVA: 0x00390C74 File Offset: 0x0038EE74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int Comparison(NGuiHUDText.Entry a, NGuiHUDText.Entry b)
 	{
@@ -20,8 +20,8 @@ public class NGuiHUDText : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x170011F5 RID: 4597
-	// (get) Token: 0x0600971B RID: 38683 RVA: 0x0038C44F File Offset: 0x0038A64F
+	// Token: 0x17001239 RID: 4665
+	// (get) Token: 0x060097A8 RID: 38824 RVA: 0x00390C97 File Offset: 0x0038EE97
 	public bool isVisible
 	{
 		get
@@ -30,9 +30,9 @@ public class NGuiHUDText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170011F6 RID: 4598
-	// (get) Token: 0x0600971C RID: 38684 RVA: 0x0038C45F File Offset: 0x0038A65F
-	// (set) Token: 0x0600971D RID: 38685 RVA: 0x0038C467 File Offset: 0x0038A667
+	// Token: 0x1700123A RID: 4666
+	// (get) Token: 0x060097A9 RID: 38825 RVA: 0x00390CA7 File Offset: 0x0038EEA7
+	// (set) Token: 0x060097AA RID: 38826 RVA: 0x00390CAF File Offset: 0x0038EEAF
 	public INGUIFont ambigiousFont
 	{
 		get
@@ -45,7 +45,7 @@ public class NGuiHUDText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600971E RID: 38686 RVA: 0x0038C470 File Offset: 0x0038A670
+	// Token: 0x060097AB RID: 38827 RVA: 0x00390CB8 File Offset: 0x0038EEB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiHUDText.Entry Create()
 	{
@@ -84,7 +84,7 @@ public class NGuiHUDText : MonoBehaviour
 		return entry2;
 	}
 
-	// Token: 0x0600971F RID: 38687 RVA: 0x0038C679 File Offset: 0x0038A879
+	// Token: 0x060097AC RID: 38828 RVA: 0x00390EC1 File Offset: 0x0038F0C1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Delete(NGuiHUDText.Entry ent)
 	{
@@ -93,7 +93,7 @@ public class NGuiHUDText : MonoBehaviour
 		NGUITools.SetActive(ent.label.gameObject, false);
 	}
 
-	// Token: 0x06009720 RID: 38688 RVA: 0x0038C6A8 File Offset: 0x0038A8A8
+	// Token: 0x060097AD RID: 38829 RVA: 0x00390EF0 File Offset: 0x0038F0F0
 	public void Add(object obj, Color c, float stayDuration)
 	{
 		if (!base.enabled)
@@ -157,7 +157,7 @@ public class NGuiHUDText : MonoBehaviour
 		this.mList.Sort(new Comparison<NGuiHUDText.Entry>(NGuiHUDText.Comparison));
 	}
 
-	// Token: 0x06009721 RID: 38689 RVA: 0x0038C89C File Offset: 0x0038AA9C
+	// Token: 0x060097AE RID: 38830 RVA: 0x003910E4 File Offset: 0x0038F2E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnEnable()
 	{
@@ -179,7 +179,7 @@ public class NGuiHUDText : MonoBehaviour
 		this.fontStyle = this.font.dynamicFontStyle;
 	}
 
-	// Token: 0x06009722 RID: 38690 RVA: 0x0038C908 File Offset: 0x0038AB08
+	// Token: 0x060097AF RID: 38831 RVA: 0x00391150 File Offset: 0x0038F350
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnValidate()
 	{
@@ -191,7 +191,7 @@ public class NGuiHUDText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009723 RID: 38691 RVA: 0x0038C940 File Offset: 0x0038AB40
+	// Token: 0x060097B0 RID: 38832 RVA: 0x00391188 File Offset: 0x0038F388
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDisable()
 	{
@@ -210,7 +210,7 @@ public class NGuiHUDText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009724 RID: 38692 RVA: 0x0038C998 File Offset: 0x0038AB98
+	// Token: 0x060097B1 RID: 38833 RVA: 0x003911E0 File Offset: 0x0038F3E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -296,7 +296,7 @@ public class NGuiHUDText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009725 RID: 38693 RVA: 0x0038CDEC File Offset: 0x0038AFEC
+	// Token: 0x060097B2 RID: 38834 RVA: 0x00391634 File Offset: 0x0038F834
 	public void SetEntry(int _index, string _input, bool _isSprite, INGUIAtlas _spriteAtlas = null)
 	{
 		if (this.mList.Count <= _index)
@@ -316,103 +316,103 @@ public class NGuiHUDText : MonoBehaviour
 		this.mList[_index].sprite.spriteName = _input;
 	}
 
-	// Token: 0x06009726 RID: 38694 RVA: 0x0038CEBF File Offset: 0x0038B0BF
+	// Token: 0x060097B3 RID: 38835 RVA: 0x00391707 File Offset: 0x0038F907
 	public void SetEntrySize(int _index, int _size)
 	{
 		this.mList[_index].label.fontSize = _size;
 		this.mList[_index].sprite.height = _size;
 	}
 
-	// Token: 0x06009727 RID: 38695 RVA: 0x0038CEEF File Offset: 0x0038B0EF
+	// Token: 0x060097B4 RID: 38836 RVA: 0x00391737 File Offset: 0x0038F937
 	public void SetEntryOffset(int _index, Vector3 _offset)
 	{
 		this.mList[_index].intialOffset = _offset;
 	}
 
-	// Token: 0x06009728 RID: 38696 RVA: 0x0038CF03 File Offset: 0x0038B103
+	// Token: 0x060097B5 RID: 38837 RVA: 0x0039174B File Offset: 0x0038F94B
 	public void SetEntryColor(int _index, Color _c)
 	{
 		this.mList[_index].label.color = _c;
 		this.mList[_index].sprite.color = _c;
 	}
 
-	// Token: 0x04007110 RID: 28944
+	// Token: 0x0400717A RID: 29050
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string uiFontName = "ReferenceFont";
 
-	// Token: 0x04007111 RID: 28945
+	// Token: 0x0400717B RID: 29051
 	[HideInInspector]
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public INGUIFont font;
 
-	// Token: 0x04007112 RID: 28946
+	// Token: 0x0400717C RID: 29052
 	public int fontSize = 20;
 
-	// Token: 0x04007113 RID: 28947
+	// Token: 0x0400717D RID: 29053
 	public FontStyle fontStyle;
 
-	// Token: 0x04007114 RID: 28948
+	// Token: 0x0400717E RID: 29054
 	public bool applyGradient;
 
-	// Token: 0x04007115 RID: 28949
+	// Token: 0x0400717F RID: 29055
 	public Color gradientTop = Color.white;
 
-	// Token: 0x04007116 RID: 28950
+	// Token: 0x04007180 RID: 29056
 	public Color gradienBottom = new Color(0.7f, 0.7f, 0.7f);
 
-	// Token: 0x04007117 RID: 28951
+	// Token: 0x04007181 RID: 29057
 	public UILabel.Effect effect;
 
-	// Token: 0x04007118 RID: 28952
+	// Token: 0x04007182 RID: 29058
 	public Color effectColor = Color.black;
 
-	// Token: 0x04007119 RID: 28953
+	// Token: 0x04007183 RID: 29059
 	public bool verticalStack;
 
-	// Token: 0x0400711A RID: 28954
+	// Token: 0x04007184 RID: 29060
 	public AnimationCurve offsetCurve = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(0f, 0f),
 		new Keyframe(3f, 40f)
 	});
 
-	// Token: 0x0400711B RID: 28955
+	// Token: 0x04007185 RID: 29061
 	public AnimationCurve alphaCurve = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(1f, 1f),
 		new Keyframe(3f, 0f)
 	});
 
-	// Token: 0x0400711C RID: 28956
+	// Token: 0x04007186 RID: 29062
 	public AnimationCurve scaleCurve = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(0f, 0f),
 		new Keyframe(0.25f, 1f)
 	});
 
-	// Token: 0x0400711D RID: 28957
+	// Token: 0x04007187 RID: 29063
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<NGuiHUDText.Entry> mList = new List<NGuiHUDText.Entry>();
 
-	// Token: 0x0400711E RID: 28958
+	// Token: 0x04007188 RID: 29064
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<NGuiHUDText.Entry> mUnused = new List<NGuiHUDText.Entry>();
 
-	// Token: 0x0400711F RID: 28959
+	// Token: 0x04007189 RID: 29065
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int counter;
 
-	// Token: 0x02001299 RID: 4761
+	// Token: 0x020012B1 RID: 4785
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class Entry
 	{
-		// Token: 0x170011F7 RID: 4599
-		// (get) Token: 0x0600972A RID: 38698 RVA: 0x0038D04C File Offset: 0x0038B24C
+		// Token: 0x1700123B RID: 4667
+		// (get) Token: 0x060097B7 RID: 38839 RVA: 0x00391894 File Offset: 0x0038FA94
 		public float movementStart
 		{
 			get
@@ -421,28 +421,28 @@ public class NGuiHUDText : MonoBehaviour
 			}
 		}
 
-		// Token: 0x04007120 RID: 28960
+		// Token: 0x0400718A RID: 29066
 		public float time;
 
-		// Token: 0x04007121 RID: 28961
+		// Token: 0x0400718B RID: 29067
 		public float stay;
 
-		// Token: 0x04007122 RID: 28962
+		// Token: 0x0400718C RID: 29068
 		public Vector3 intialOffset;
 
-		// Token: 0x04007123 RID: 28963
+		// Token: 0x0400718D RID: 29069
 		public float curveOffset;
 
-		// Token: 0x04007124 RID: 28964
+		// Token: 0x0400718E RID: 29070
 		public float val;
 
-		// Token: 0x04007125 RID: 28965
+		// Token: 0x0400718F RID: 29071
 		public UILabel label;
 
-		// Token: 0x04007126 RID: 28966
+		// Token: 0x04007190 RID: 29072
 		public UISprite sprite;
 
-		// Token: 0x04007127 RID: 28967
+		// Token: 0x04007191 RID: 29073
 		public bool isLabel;
 	}
 }

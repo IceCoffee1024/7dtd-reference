@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200140E RID: 5134
+// Token: 0x0200142E RID: 5166
 public class GameTimer
 {
-	// Token: 0x170012EF RID: 4847
-	// (get) Token: 0x0600A159 RID: 41305 RVA: 0x003C846B File Offset: 0x003C666B
+	// Token: 0x17001334 RID: 4916
+	// (get) Token: 0x0600A204 RID: 41476 RVA: 0x003CD007 File Offset: 0x003CB207
 	public static GameTimer Instance
 	{
 		get
@@ -18,7 +18,7 @@ public class GameTimer
 		}
 	}
 
-	// Token: 0x0600A15A RID: 41306 RVA: 0x003C8488 File Offset: 0x003C6688
+	// Token: 0x0600A205 RID: 41477 RVA: 0x003CD024 File Offset: 0x003CB224
 	public GameTimer(float _t)
 	{
 		this.ticksPerSecond = _t;
@@ -26,7 +26,7 @@ public class GameTimer
 		this.Reset(0UL);
 	}
 
-	// Token: 0x0600A15B RID: 41307 RVA: 0x003C84AA File Offset: 0x003C66AA
+	// Token: 0x0600A206 RID: 41478 RVA: 0x003CD046 File Offset: 0x003CB246
 	public void Reset(ulong _ticks = 0UL)
 	{
 		this.elapsedPartialTicks = 0f;
@@ -37,7 +37,7 @@ public class GameTimer
 		this.ms.ResetAndRestart();
 	}
 
-	// Token: 0x0600A15C RID: 41308 RVA: 0x003C84E8 File Offset: 0x003C66E8
+	// Token: 0x0600A207 RID: 41479 RVA: 0x003CD084 File Offset: 0x003CB284
 	public void updateTimer(bool _bServerIsStopped)
 	{
 		if (_bServerIsStopped)
@@ -56,35 +56,35 @@ public class GameTimer
 		this.ticksSincePlayfieldLoaded += (ulong)((long)this.elapsedTicks);
 	}
 
-	// Token: 0x04007970 RID: 31088
+	// Token: 0x040079EB RID: 31211
 	public ulong ticks;
 
-	// Token: 0x04007971 RID: 31089
+	// Token: 0x040079EC RID: 31212
 	public ulong ticksSincePlayfieldLoaded;
 
-	// Token: 0x04007972 RID: 31090
+	// Token: 0x040079ED RID: 31213
 	public int elapsedTicks;
 
-	// Token: 0x04007973 RID: 31091
+	// Token: 0x040079EE RID: 31214
 	public float elapsedPartialTicks;
 
-	// Token: 0x04007974 RID: 31092
+	// Token: 0x040079EF RID: 31215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double elapsedTicksD;
 
-	// Token: 0x04007975 RID: 31093
+	// Token: 0x040079F0 RID: 31216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ticksPerSecond;
 
-	// Token: 0x04007976 RID: 31094
+	// Token: 0x040079F1 RID: 31217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long lastMillis;
 
-	// Token: 0x04007977 RID: 31095
+	// Token: 0x040079F2 RID: 31218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameTimer m_Instance;
 
-	// Token: 0x04007978 RID: 31096
+	// Token: 0x040079F3 RID: 31219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MicroStopwatch ms;
 }

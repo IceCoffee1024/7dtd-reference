@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000653 RID: 1619
+// Token: 0x02000655 RID: 1621
 public class BuffManager
 {
-	// Token: 0x06003465 RID: 13413 RVA: 0x0015C24C File Offset: 0x0015A44C
+	// Token: 0x060034A8 RID: 13480 RVA: 0x0015CBBC File Offset: 0x0015ADBC
 	public static void Cleanup()
 	{
 		if (BuffManager.Buffs != null)
@@ -13,13 +13,13 @@ public class BuffManager
 		}
 	}
 
-	// Token: 0x06003466 RID: 13414 RVA: 0x0015C265 File Offset: 0x0015A465
+	// Token: 0x060034A9 RID: 13481 RVA: 0x0015CBD5 File Offset: 0x0015ADD5
 	public static void AddBuff(BuffClass _buffClass)
 	{
 		BuffManager.Buffs[_buffClass.Name] = _buffClass;
 	}
 
-	// Token: 0x06003467 RID: 13415 RVA: 0x0015C278 File Offset: 0x0015A478
+	// Token: 0x060034AA RID: 13482 RVA: 0x0015CBE8 File Offset: 0x0015ADE8
 	public static BuffClass GetBuff(string _name)
 	{
 		BuffClass buffClass;
@@ -27,6 +27,6 @@ public class BuffManager
 		return buffClass;
 	}
 
-	// Token: 0x040029C9 RID: 10697
+	// Token: 0x040029C2 RID: 10690
 	public static CaseInsensitiveStringDictionary<BuffClass> Buffs;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200062C RID: 1580
+// Token: 0x0200062E RID: 1582
 public class MapObject
 {
-	// Token: 0x06003326 RID: 13094 RVA: 0x0014C70C File Offset: 0x0014A90C
+	// Token: 0x06003369 RID: 13161 RVA: 0x0014D07C File Offset: 0x0014B27C
 	public MapObject(EnumMapObjectType _type, Vector3 _position, long _key, Entity _entity, bool _bSelectable)
 	{
 		this.type = _type;
@@ -14,7 +14,7 @@ public class MapObject
 		this.entity = _entity;
 	}
 
-	// Token: 0x06003327 RID: 13095 RVA: 0x0014C73C File Offset: 0x0014A93C
+	// Token: 0x0600336A RID: 13162 RVA: 0x0014D0AC File Offset: 0x0014B2AC
 	public MapObject(MapObject _other)
 	{
 		this.type = _other.type;
@@ -24,7 +24,7 @@ public class MapObject
 		this.entity = _other.entity;
 	}
 
-	// Token: 0x06003328 RID: 13096 RVA: 0x0014C78B File Offset: 0x0014A98B
+	// Token: 0x0600336B RID: 13163 RVA: 0x0014D0FB File Offset: 0x0014B2FB
 	public virtual Vector3 GetPosition()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -34,7 +34,7 @@ public class MapObject
 		return this.position;
 	}
 
-	// Token: 0x06003329 RID: 13097 RVA: 0x0014C7B5 File Offset: 0x0014A9B5
+	// Token: 0x0600336C RID: 13164 RVA: 0x0014D125 File Offset: 0x0014B325
 	public virtual void SetPosition(Vector3 _pos)
 	{
 		if (this.type == EnumMapObjectType.Entity)
@@ -44,7 +44,7 @@ public class MapObject
 		this.position = _pos;
 	}
 
-	// Token: 0x0600332A RID: 13098 RVA: 0x0014C7D4 File Offset: 0x0014A9D4
+	// Token: 0x0600336D RID: 13165 RVA: 0x0014D144 File Offset: 0x0014B344
 	public virtual Vector3 GetRotation()
 	{
 		if (this.type != EnumMapObjectType.Entity || !(this.entity != null))
@@ -58,55 +58,55 @@ public class MapObject
 		return this.entity.rotation;
 	}
 
-	// Token: 0x0600332B RID: 13099 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600336E RID: 13166 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool IsTracked()
 	{
 		return true;
 	}
 
-	// Token: 0x0600332C RID: 13100 RVA: 0x0014C82C File Offset: 0x0014AA2C
+	// Token: 0x0600336F RID: 13167 RVA: 0x0014D19C File Offset: 0x0014B39C
 	public virtual bool IsMapIconEnabled()
 	{
 		return this.type != EnumMapObjectType.Entity || !(this.entity != null) || this.entity.IsDrawMapIcon();
 	}
 
-	// Token: 0x0600332D RID: 13101 RVA: 0x0014C851 File Offset: 0x0014AA51
+	// Token: 0x06003370 RID: 13168 RVA: 0x0014D1C1 File Offset: 0x0014B3C1
 	public virtual float GetMaxCompassDistance()
 	{
 		return 1024f;
 	}
 
-	// Token: 0x0600332E RID: 13102 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
+	// Token: 0x06003371 RID: 13169 RVA: 0x0003D3B2 File Offset: 0x0003B5B2
 	public virtual float GetMinCompassDistance()
 	{
 		return 0f;
 	}
 
-	// Token: 0x0600332F RID: 13103 RVA: 0x0014C858 File Offset: 0x0014AA58
+	// Token: 0x06003372 RID: 13170 RVA: 0x0014D1C8 File Offset: 0x0014B3C8
 	public virtual float GetMaxCompassIconScale()
 	{
 		return 1.25f;
 	}
 
-	// Token: 0x06003330 RID: 13104 RVA: 0x0014C85F File Offset: 0x0014AA5F
+	// Token: 0x06003373 RID: 13171 RVA: 0x0014D1CF File Offset: 0x0014B3CF
 	public virtual float GetMinCompassIconScale()
 	{
 		return 0.5f;
 	}
 
-	// Token: 0x06003331 RID: 13105 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003374 RID: 13172 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsCompassIconClamped()
 	{
 		return false;
 	}
 
-	// Token: 0x06003332 RID: 13106 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003375 RID: 13173 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool NearbyCompassBlink()
 	{
 		return false;
 	}
 
-	// Token: 0x06003333 RID: 13107 RVA: 0x0014C866 File Offset: 0x0014AA66
+	// Token: 0x06003376 RID: 13174 RVA: 0x0014D1D6 File Offset: 0x0014B3D6
 	public virtual Vector3 GetMapIconScale()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -116,7 +116,7 @@ public class MapObject
 		return Vector3.one;
 	}
 
-	// Token: 0x06003334 RID: 13108 RVA: 0x0014C88F File Offset: 0x0014AA8F
+	// Token: 0x06003377 RID: 13175 RVA: 0x0014D1FF File Offset: 0x0014B3FF
 	public virtual string GetMapIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -126,7 +126,7 @@ public class MapObject
 		return "";
 	}
 
-	// Token: 0x06003335 RID: 13109 RVA: 0x0014C8B8 File Offset: 0x0014AAB8
+	// Token: 0x06003378 RID: 13176 RVA: 0x0014D228 File Offset: 0x0014B428
 	public virtual string GetCompassIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -136,7 +136,7 @@ public class MapObject
 		return null;
 	}
 
-	// Token: 0x06003336 RID: 13110 RVA: 0x0014C8DD File Offset: 0x0014AADD
+	// Token: 0x06003379 RID: 13177 RVA: 0x0014D24D File Offset: 0x0014B44D
 	public virtual string GetCompassUpIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -146,7 +146,7 @@ public class MapObject
 		return "";
 	}
 
-	// Token: 0x06003337 RID: 13111 RVA: 0x0014C906 File Offset: 0x0014AB06
+	// Token: 0x0600337A RID: 13178 RVA: 0x0014D276 File Offset: 0x0014B476
 	public virtual string GetCompassDownIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -156,19 +156,19 @@ public class MapObject
 		return "";
 	}
 
-	// Token: 0x06003338 RID: 13112 RVA: 0x0014C92F File Offset: 0x0014AB2F
+	// Token: 0x0600337B RID: 13179 RVA: 0x0014D29F File Offset: 0x0014B49F
 	public virtual bool UseUpDownCompassIcons()
 	{
 		return this.type == EnumMapObjectType.Entity && this.entity != null && this.entity.GetCompassDownIcon() != null;
 	}
 
-	// Token: 0x06003339 RID: 13113 RVA: 0x0014C957 File Offset: 0x0014AB57
+	// Token: 0x0600337C RID: 13180 RVA: 0x0014D2C7 File Offset: 0x0014B4C7
 	public virtual bool IsMapIconBlinking()
 	{
 		return this.type == EnumMapObjectType.Entity && this.entity != null && this.entity.IsMapIconBlinking();
 	}
 
-	// Token: 0x0600333A RID: 13114 RVA: 0x0014C97C File Offset: 0x0014AB7C
+	// Token: 0x0600337D RID: 13181 RVA: 0x0014D2EC File Offset: 0x0014B4EC
 	public virtual Color GetMapIconColor()
 	{
 		if (this.type != EnumMapObjectType.Entity || !(this.entity != null))
@@ -184,13 +184,13 @@ public class MapObject
 		return this.entity.GetMapIconColor();
 	}
 
-	// Token: 0x0600333B RID: 13115 RVA: 0x0014CA22 File Offset: 0x0014AC22
+	// Token: 0x0600337E RID: 13182 RVA: 0x0014D392 File Offset: 0x0014B592
 	public virtual bool CanMapIconBeSelected()
 	{
 		return this.type == EnumMapObjectType.Entity && this.entity != null && this.entity.CanMapIconBeSelected();
 	}
 
-	// Token: 0x0600333C RID: 13116 RVA: 0x0014CA48 File Offset: 0x0014AC48
+	// Token: 0x0600337F RID: 13183 RVA: 0x0014D3B8 File Offset: 0x0014B5B8
 	public virtual bool IsOnCompass()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -204,7 +204,7 @@ public class MapObject
 		return false;
 	}
 
-	// Token: 0x0600333D RID: 13117 RVA: 0x0014CAB8 File Offset: 0x0014ACB8
+	// Token: 0x06003380 RID: 13184 RVA: 0x0014D428 File Offset: 0x0014B628
 	public virtual int GetLayerForMapIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -214,7 +214,7 @@ public class MapObject
 		return 2;
 	}
 
-	// Token: 0x0600333E RID: 13118 RVA: 0x0014CAE0 File Offset: 0x0014ACE0
+	// Token: 0x06003381 RID: 13185 RVA: 0x0014D450 File Offset: 0x0014B650
 	public virtual string GetName()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity is EntityAlive)
@@ -233,44 +233,44 @@ public class MapObject
 		return null;
 	}
 
-	// Token: 0x0600333F RID: 13119 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003382 RID: 13186 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool IsShowName()
 	{
 		return true;
 	}
 
-	// Token: 0x06003340 RID: 13120 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003383 RID: 13187 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsCenterOnLeftBottomCorner()
 	{
 		return false;
 	}
 
-	// Token: 0x06003341 RID: 13121 RVA: 0x0014CB6C File Offset: 0x0014AD6C
+	// Token: 0x06003384 RID: 13188 RVA: 0x0014D4DC File Offset: 0x0014B6DC
 	public virtual float GetCompassIconScale(float _distance)
 	{
 		float num = 1f - _distance / this.GetMaxCompassDistance();
 		return Mathf.Lerp(this.GetMinCompassIconScale(), this.GetMaxCompassIconScale(), num);
 	}
 
-	// Token: 0x06003342 RID: 13122 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003385 RID: 13189 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void RefreshData()
 	{
 	}
 
-	// Token: 0x040028F6 RID: 10486
+	// Token: 0x040028EF RID: 10479
 	public EnumMapObjectType type;
 
-	// Token: 0x040028F7 RID: 10487
+	// Token: 0x040028F0 RID: 10480
 	public long key;
 
-	// Token: 0x040028F8 RID: 10488
+	// Token: 0x040028F1 RID: 10481
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 position;
 
-	// Token: 0x040028F9 RID: 10489
+	// Token: 0x040028F2 RID: 10482
 	public bool bSelectable;
 
-	// Token: 0x040028FA RID: 10490
+	// Token: 0x040028F3 RID: 10483
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Entity entity;
 }

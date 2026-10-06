@@ -1,26 +1,26 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D58 RID: 3416
+// Token: 0x02000D69 RID: 3433
 [Preserve]
 public class ItemActionEntryEquip : BaseItemActionEntry
 {
-	// Token: 0x06006804 RID: 26628 RVA: 0x002900FC File Offset: 0x0028E2FC
+	// Token: 0x0600680B RID: 26635 RVA: 0x00293680 File Offset: 0x00291880
 	public ItemActionEntryEquip(XUiController _controller)
 		: base(_controller, "lblContextActionEquip", "ui_game_symbol_knife", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x06006805 RID: 26629 RVA: 0x0029011C File Offset: 0x0028E31C
+	// Token: 0x0600680C RID: 26636 RVA: 0x002936A0 File Offset: 0x002918A0
 	public override void RefreshEnabled()
 	{
 		XUi xui = base.ItemController.xui;
 		EntityPlayerLocal entityPlayer = xui.playerUI.entityPlayer;
 		Inventory toolbelt = xui.PlayerInventory.Toolbelt;
-		base.Enabled = !entityPlayer.AttachedToEntity && toolbelt.GetItem(toolbelt.DUMMY_SLOT_IDX).IsEmpty();
+		base.Enabled = !entityPlayer.AttachedToEntity && !toolbelt.IsHandBusy();
 	}
 
-	// Token: 0x06006806 RID: 26630 RVA: 0x00290174 File Offset: 0x0028E374
+	// Token: 0x0600680D RID: 26637 RVA: 0x002936F0 File Offset: 0x002918F0
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -28,7 +28,7 @@ public class ItemActionEntryEquip : BaseItemActionEntry
 		Inventory toolbelt = playerInventory.Toolbelt;
 		int focusedItemIdx = playerInventory.Toolbelt.GetFocusedItemIdx();
 		ItemStack itemStack = playerInventory.Toolbelt.GetItem(focusedItemIdx).Clone();
-		ItemStack itemStack2 = ((XUiC_ItemStack)base.ItemController).ItemStack.Clone();
+		ItemStack itemStack2 = ((IItemStackController)base.ItemController).ItemStack.Clone();
 		if (xui.AssembleItem.CurrentItemStackController != null)
 		{
 			XUiC_ItemStack currentItemStackController = xui.AssembleItem.CurrentItemStackController;
@@ -42,15 +42,14 @@ public class ItemActionEntryEquip : BaseItemActionEntry
 			return;
 		}
 		toolbelt.SetItem(focusedItemIdx, new ItemStack(new ItemValue(ItemClass.GetItem("UselessThing", false).GetItemId(), false), 1));
-		toolbelt.ClearPreferredItemInSlot(focusedItemIdx);
-		toolbelt.OnUpdate();
-		((XUiC_ItemStack)base.ItemController).ItemStack = ItemStack.Empty;
+		toolbelt.Hand.OnUpdate();
+		((IItemStackController)base.ItemController).ItemStack = ItemStack.Empty;
 		if (!xui.PlayerInventory.AddItem(itemStack))
 		{
-			((XUiC_ItemStack)base.ItemController).ItemStack = itemStack;
+			((IItemStackController)base.ItemController).ItemStack = itemStack;
 		}
 		toolbelt.SetItem(focusedItemIdx, itemStack2);
-		toolbelt.OnUpdate();
+		toolbelt.Hand.OnUpdate();
 		toolbelt.SetHoldingItemIdx(focusedItemIdx);
 	}
 }

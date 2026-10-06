@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x0200056B RID: 1387
+// Token: 0x02000576 RID: 1398
 public interface IInventory
 {
-	// Token: 0x06002D13 RID: 11539
+	// Token: 0x06002D44 RID: 11588
 	bool AddItem(ItemStack _itemStack);
 
-	// Token: 0x06002D14 RID: 11540
+	// Token: 0x06002D45 RID: 11589
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	ValueTuple<bool, bool> TryStackItem(int _startIndex, ItemStack _itemStack);
 
-	// Token: 0x06002D15 RID: 11541
+	// Token: 0x06002D46 RID: 11590
 	bool HasItem(ItemValue _item);
 }

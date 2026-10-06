@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015A0 RID: 5536
+// Token: 0x020015C2 RID: 5570
 public class vp_FPSDemoManager : vp_DemoManager
 {
-	// Token: 0x17001406 RID: 5126
-	// (get) Token: 0x0600AD3E RID: 44350 RVA: 0x00409830 File Offset: 0x00407A30
+	// Token: 0x1700144B RID: 5195
+	// (get) Token: 0x0600ADF1 RID: 44529 RVA: 0x0040E684 File Offset: 0x0040C884
 	public vp_Shooter CurrentShooter
 	{
 		get
@@ -18,9 +18,9 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x17001407 RID: 5127
-	// (get) Token: 0x0600AD3F RID: 44351 RVA: 0x00409890 File Offset: 0x00407A90
-	// (set) Token: 0x0600AD40 RID: 44352 RVA: 0x004098CC File Offset: 0x00407ACC
+	// Token: 0x1700144C RID: 5196
+	// (get) Token: 0x0600ADF2 RID: 44530 RVA: 0x0040E6E4 File Offset: 0x0040C8E4
+	// (set) Token: 0x0600ADF3 RID: 44531 RVA: 0x0040E720 File Offset: 0x0040C920
 	public bool DrawCrosshair
 	{
 		get
@@ -38,7 +38,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD41 RID: 44353 RVA: 0x00409904 File Offset: 0x00407B04
+	// Token: 0x0600ADF4 RID: 44532 RVA: 0x0040E758 File Offset: 0x0040C958
 	public vp_FPSDemoManager(GameObject player)
 	{
 		this.Player = player;
@@ -54,14 +54,14 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD42 RID: 44354 RVA: 0x004099CC File Offset: 0x00407BCC
+	// Token: 0x0600ADF5 RID: 44533 RVA: 0x0040E820 File Offset: 0x0040CA20
 	public void Teleport(Vector3 pos, Vector2 startAngle)
 	{
 		this.Controller.SetPosition(pos);
 		this.Camera.SetRotation(startAngle);
 	}
 
-	// Token: 0x0600AD43 RID: 44355 RVA: 0x004099E8 File Offset: 0x00407BE8
+	// Token: 0x0600ADF6 RID: 44534 RVA: 0x0040E83C File Offset: 0x0040CA3C
 	public void SmoothLookAt(Vector3 lookPoint)
 	{
 		this.m_CurrentLookPoint = Vector3.SmoothDamp(this.m_CurrentLookPoint, lookPoint, ref this.m_LookVelocity, this.LookDamping);
@@ -69,7 +69,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		this.Camera.Angle = new Vector2(this.Camera.transform.eulerAngles.x, this.Camera.transform.eulerAngles.y);
 	}
 
-	// Token: 0x0600AD44 RID: 44356 RVA: 0x00409A64 File Offset: 0x00407C64
+	// Token: 0x0600ADF7 RID: 44535 RVA: 0x0040E8B8 File Offset: 0x0040CAB8
 	public void SnapLookAt(Vector3 lookPoint)
 	{
 		this.m_CurrentLookPoint = lookPoint;
@@ -77,7 +77,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		this.Camera.Angle = new Vector2(this.Camera.transform.eulerAngles.x, this.Camera.transform.eulerAngles.y);
 	}
 
-	// Token: 0x0600AD45 RID: 44357 RVA: 0x00409AC8 File Offset: 0x00407CC8
+	// Token: 0x0600ADF8 RID: 44536 RVA: 0x0040E91C File Offset: 0x0040CB1C
 	public void FreezePlayer(Vector3 pos, Vector2 startAngle, bool freezeCamera)
 	{
 		this.m_UnFreezePosition = this.Controller.transform.position;
@@ -91,13 +91,13 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD46 RID: 44358 RVA: 0x00409B3A File Offset: 0x00407D3A
+	// Token: 0x0600ADF9 RID: 44537 RVA: 0x0040E98E File Offset: 0x0040CB8E
 	public void FreezePlayer(Vector3 pos, Vector2 startAngle)
 	{
 		this.FreezePlayer(pos, startAngle, false);
 	}
 
-	// Token: 0x0600AD47 RID: 44359 RVA: 0x00409B48 File Offset: 0x00407D48
+	// Token: 0x0600ADFA RID: 44538 RVA: 0x0040E99C File Offset: 0x0040CB9C
 	public void UnFreezePlayer()
 	{
 		this.Controller.transform.position = this.m_UnFreezePosition;
@@ -108,7 +108,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		this.Input.Refresh();
 	}
 
-	// Token: 0x0600AD48 RID: 44360 RVA: 0x00409BBC File Offset: 0x00407DBC
+	// Token: 0x0600ADFB RID: 44539 RVA: 0x0040EA10 File Offset: 0x0040CC10
 	public void LockControls()
 	{
 		this.Input.AllowGameplayInput = false;
@@ -119,7 +119,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD49 RID: 44361 RVA: 0x00409C18 File Offset: 0x00407E18
+	// Token: 0x0600ADFC RID: 44540 RVA: 0x0040EA6C File Offset: 0x0040CC6C
 	public void SetWeaponPreset(TextAsset weaponPreset, TextAsset shooterPreset = null, bool smoothFade = true)
 	{
 		if (this.WeaponHandler.CurrentWeapon == null)
@@ -141,7 +141,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		this.CurrentShooter.Refresh();
 	}
 
-	// Token: 0x0600AD4A RID: 44362 RVA: 0x00409CCC File Offset: 0x00407ECC
+	// Token: 0x0600ADFD RID: 44541 RVA: 0x0040EB20 File Offset: 0x0040CD20
 	public void RefreshDefaultState()
 	{
 		if (this.Controller != null)
@@ -166,7 +166,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD4B RID: 44363 RVA: 0x00409D60 File Offset: 0x00407F60
+	// Token: 0x0600ADFE RID: 44542 RVA: 0x0040EBB4 File Offset: 0x0040CDB4
 	public void ResetState()
 	{
 		if (this.Controller != null)
@@ -191,7 +191,7 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD4C RID: 44364 RVA: 0x00409DF4 File Offset: 0x00407FF4
+	// Token: 0x0600ADFF RID: 44543 RVA: 0x0040EC48 File Offset: 0x0040CE48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Reset()
 	{
@@ -221,56 +221,56 @@ public class vp_FPSDemoManager : vp_DemoManager
 		}
 	}
 
-	// Token: 0x0600AD4D RID: 44365 RVA: 0x00409ECF File Offset: 0x004080CF
+	// Token: 0x0600AE00 RID: 44544 RVA: 0x0040ED23 File Offset: 0x0040CF23
 	public void ForceCameraShake(float speed, Vector3 amplitude)
 	{
 		this.Camera.ShakeSpeed = speed;
 		this.Camera.ShakeAmplitude = amplitude;
 	}
 
-	// Token: 0x0600AD4E RID: 44366 RVA: 0x00409EE9 File Offset: 0x004080E9
+	// Token: 0x0600AE01 RID: 44545 RVA: 0x0040ED3D File Offset: 0x0040CF3D
 	public void ForceCameraShake()
 	{
 		this.ForceCameraShake(0.0727273f, new Vector3(-10f, 10f, 0f));
 	}
 
-	// Token: 0x040080CB RID: 32971
+	// Token: 0x0400814E RID: 33102
 	public GameObject Player;
 
-	// Token: 0x040080CC RID: 32972
+	// Token: 0x0400814F RID: 33103
 	public vp_FPController Controller;
 
-	// Token: 0x040080CD RID: 32973
+	// Token: 0x04008150 RID: 33104
 	public vp_FPCamera Camera;
 
-	// Token: 0x040080CE RID: 32974
+	// Token: 0x04008151 RID: 33105
 	public vp_WeaponHandler WeaponHandler;
 
-	// Token: 0x040080CF RID: 32975
+	// Token: 0x04008152 RID: 33106
 	public vp_FPInput Input;
 
-	// Token: 0x040080D0 RID: 32976
+	// Token: 0x04008153 RID: 33107
 	public vp_FPEarthquake Earthquake;
 
-	// Token: 0x040080D1 RID: 32977
+	// Token: 0x04008154 RID: 33108
 	public vp_FPPlayerEventHandler PlayerEventHandler;
 
-	// Token: 0x040080D2 RID: 32978
+	// Token: 0x04008155 RID: 33109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_UnFreezePosition = Vector3.zero;
 
-	// Token: 0x040080D3 RID: 32979
+	// Token: 0x04008156 RID: 33110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_CurrentLookPoint = Vector3.zero;
 
-	// Token: 0x040080D4 RID: 32980
+	// Token: 0x04008157 RID: 33111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_LookVelocity = Vector3.zero;
 
-	// Token: 0x040080D5 RID: 32981
+	// Token: 0x04008158 RID: 33112
 	public float LookDamping = 0.3f;
 
-	// Token: 0x040080D6 RID: 32982
+	// Token: 0x04008159 RID: 33113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_Shooter m_CurrentShooter;
 }

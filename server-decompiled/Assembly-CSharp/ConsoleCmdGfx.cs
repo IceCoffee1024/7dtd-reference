@@ -9,12 +9,12 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Scripting;
 
-// Token: 0x02000222 RID: 546
+// Token: 0x02000223 RID: 547
 [Preserve]
 public class ConsoleCmdGfx : ConsoleCmdAbstract
 {
-	// Token: 0x17000195 RID: 405
-	// (get) Token: 0x0600108B RID: 4235 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700018D RID: 397
+	// (get) Token: 0x0600107E RID: 4222 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000196 RID: 406
-	// (get) Token: 0x0600108C RID: 4236 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700018E RID: 398
+	// (get) Token: 0x0600107F RID: 4223 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -33,8 +33,8 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000197 RID: 407
-	// (get) Token: 0x0600108D RID: 4237 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x1700018F RID: 399
+	// (get) Token: 0x06001080 RID: 4224 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -43,28 +43,28 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600108E RID: 4238 RVA: 0x00067E31 File Offset: 0x00066031
+	// Token: 0x06001081 RID: 4225 RVA: 0x00067E21 File Offset: 0x00066021
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "gfx" };
 	}
 
-	// Token: 0x0600108F RID: 4239 RVA: 0x00067E41 File Offset: 0x00066041
+	// Token: 0x06001082 RID: 4226 RVA: 0x00067E31 File Offset: 0x00066031
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Graphics commands";
 	}
 
-	// Token: 0x06001090 RID: 4240 RVA: 0x00067E48 File Offset: 0x00066048
+	// Token: 0x06001083 RID: 4227 RVA: 0x00067E38 File Offset: 0x00066038
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Graphics commands:\naf <value> - anisotropic filtering off, on or force on (0, 1, 2)\ndr <scale> <min> <max> - set dynamic res scale (0 auto, .1 to 1 force, -1 for off) and min/max FPS\ndt <value> - toggle distant terrain or set value (0 or 1)\ndti <value> - set distant terrain instancing (0 or 1)\ndtmaxlod <value> - set distant terrain max LOD (0 to 5)\ndtpix <value> - set distant terrain pixel error (1 to 200)\nkey name <value> - set shader keyword (0 or 1)\npp name <value> - set postprocessing name (enable, ambientOcclusion (ao), auto exposure (ae), bloom, colorGrading (cg), etc.) to value (0 or 1)\nres <width> <height> - set screen resolution\nresetrev - clear graphics preset revision\nskin <value> - set skin bone count (1, 2, 4, 5+ (all))\nst name <value> - set streaming name (budget (0 disables), discard, forceload, reduction) to value\ntex - show texture info\ntexbias <value> - set bias on all textures\ntexlimit <value> - set limit (0-x)\nviewdist <value> - Set view distance in chunks";
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x00067E50 File Offset: 0x00066050
+	// Token: 0x06001084 RID: 4228 RVA: 0x00067E40 File Offset: 0x00066040
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -642,7 +642,7 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown command " + text);
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x00068BB5 File Offset: 0x00066DB5
+	// Token: 0x06001085 RID: 4229 RVA: 0x00068BA5 File Offset: 0x00066DA5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool FindDistantTerrain()
 	{
@@ -658,7 +658,7 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x06001093 RID: 4243 RVA: 0x00068BF0 File Offset: 0x00066DF0
+	// Token: 0x06001086 RID: 4230 RVA: 0x00068BE0 File Offset: 0x00066DE0
 	public void SetPostProcessing(string command, float value, float value2)
 	{
 		Camera main = Camera.main;
@@ -1040,7 +1040,7 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001094 RID: 4244 RVA: 0x0006922C File Offset: 0x0006742C
+	// Token: 0x06001087 RID: 4231 RVA: 0x0006921C File Offset: 0x0006741C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogTextureReport(string filename)
 	{
@@ -1136,13 +1136,13 @@ public class ConsoleCmdGfx : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CBB RID: 3259
+	// Token: 0x04000CB4 RID: 3252
 	public static float debugFloat;
 
-	// Token: 0x04000CBC RID: 3260
+	// Token: 0x04000CB5 RID: 3253
 	public static float debugFloat2;
 
-	// Token: 0x04000CBD RID: 3261
+	// Token: 0x04000CB6 RID: 3254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject distantTerrainObj;
 }

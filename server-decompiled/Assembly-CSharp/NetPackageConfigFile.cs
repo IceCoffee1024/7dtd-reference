@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007BE RID: 1982
+// Token: 0x020007C1 RID: 1985
 [Preserve]
 public class NetPackageConfigFile : NetPackage
 {
-	// Token: 0x1700061A RID: 1562
-	// (get) Token: 0x06003AD7 RID: 15063 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700063F RID: 1599
+	// (get) Token: 0x06003B03 RID: 15107 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Compress
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageConfigFile : NetPackage
 		}
 	}
 
-	// Token: 0x06003AD8 RID: 15064 RVA: 0x0017CE96 File Offset: 0x0017B096
+	// Token: 0x06003B04 RID: 15108 RVA: 0x0017D4D2 File Offset: 0x0017B6D2
 	public NetPackageConfigFile Setup(string _name, byte[] _data)
 	{
 		this.name = _name;
@@ -23,7 +23,7 @@ public class NetPackageConfigFile : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AD9 RID: 15065 RVA: 0x0017CEA8 File Offset: 0x0017B0A8
+	// Token: 0x06003B05 RID: 15109 RVA: 0x0017D4E4 File Offset: 0x0017B6E4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.name = _reader.ReadString();
@@ -31,7 +31,7 @@ public class NetPackageConfigFile : NetPackage
 		this.data = ((num >= 0) ? _reader.ReadBytes(num) : null);
 	}
 
-	// Token: 0x06003ADA RID: 15066 RVA: 0x0017CEDC File Offset: 0x0017B0DC
+	// Token: 0x06003B06 RID: 15110 RVA: 0x0017D518 File Offset: 0x0017B718
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -45,22 +45,14 @@ public class NetPackageConfigFile : NetPackage
 		_writer.Write(-1);
 	}
 
-	// Token: 0x06003ADB RID: 15067 RVA: 0x0017CF1B File Offset: 0x0017B11B
+	// Token: 0x06003B07 RID: 15111 RVA: 0x0017D557 File Offset: 0x0017B757
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		WorldStaticData.ReceivedConfigFile(this.name, this.data);
 	}
 
-	// Token: 0x06003ADC RID: 15068 RVA: 0x0017CF2E File Offset: 0x0017B12E
-	public override int GetLength()
-	{
-		int num = this.name.Length * 2;
-		byte[] array = this.data;
-		return num + ((array != null) ? array.Length : 0);
-	}
-
-	// Token: 0x1700061B RID: 1563
-	// (get) Token: 0x06003ADD RID: 15069 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000640 RID: 1600
+	// (get) Token: 0x06003B08 RID: 15112 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -69,11 +61,11 @@ public class NetPackageConfigFile : NetPackage
 		}
 	}
 
-	// Token: 0x04003008 RID: 12296
+	// Token: 0x04003002 RID: 12290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x04003009 RID: 12297
+	// Token: 0x04003003 RID: 12291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

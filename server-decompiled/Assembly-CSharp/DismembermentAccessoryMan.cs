@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000DC RID: 220
+// Token: 0x020000DE RID: 222
 public class DismembermentAccessoryMan : MonoBehaviour
 {
-	// Token: 0x06000595 RID: 1429 RVA: 0x00027BDC File Offset: 0x00025DDC
+	// Token: 0x0600059B RID: 1435 RVA: 0x00027CD4 File Offset: 0x00025ED4
 	public void HidePart(EnumBodyPartHit bodyPart)
 	{
 		if (bodyPart <= EnumBodyPartHit.RightUpperLeg)
@@ -157,42 +157,42 @@ public class DismembermentAccessoryMan : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040005C9 RID: 1481
+	// Token: 0x040005CC RID: 1484
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> LeftLowerArm = new List<GameObject>();
 
-	// Token: 0x040005CA RID: 1482
+	// Token: 0x040005CD RID: 1485
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> LeftUpperArm = new List<GameObject>();
 
-	// Token: 0x040005CB RID: 1483
+	// Token: 0x040005CE RID: 1486
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> LeftLowerLeg = new List<GameObject>();
 
-	// Token: 0x040005CC RID: 1484
+	// Token: 0x040005CF RID: 1487
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> LeftUpperLeg = new List<GameObject>();
 
-	// Token: 0x040005CD RID: 1485
+	// Token: 0x040005D0 RID: 1488
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> RightLowerArm = new List<GameObject>();
 
-	// Token: 0x040005CE RID: 1486
+	// Token: 0x040005D1 RID: 1489
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> RightUpperArm = new List<GameObject>();
 
-	// Token: 0x040005CF RID: 1487
+	// Token: 0x040005D2 RID: 1490
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> RightLowerLeg = new List<GameObject>();
 
-	// Token: 0x040005D0 RID: 1488
+	// Token: 0x040005D3 RID: 1491
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameObject> RightUpperLeg = new List<GameObject>();

@@ -4,11 +4,11 @@ using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020012B1 RID: 4785
+// Token: 0x020012C9 RID: 4809
 public class PlayerDataFile
 {
-	// Token: 0x060097BC RID: 38844 RVA: 0x003927BC File Offset: 0x003909BC
-	public void ToPlayer(EntityPlayer _player)
+	// Token: 0x06009849 RID: 38985 RVA: 0x00397024 File Offset: 0x00395224
+	public void ToPlayer(EntityPlayer _player, StreamModeRead _eStreamMode)
 	{
 		if (this.id != -1)
 		{
@@ -20,22 +20,28 @@ public class PlayerDataFile
 		}
 		_player.position = this.ecd.pos;
 		_player.rotation = this.ecd.rot;
-		_player.inventory.SetSlots(this.inventory, true);
-		_player.inventory.SetFocusedItemIdx(this.selectedInventorySlot);
-		_player.inventory.SetHoldingItemIdx(this.selectedInventorySlot);
-		_player.bag = this.bag;
-		if (!_player.isEntityRemote)
+		StreamUtils.FromBlob(this.bagData, delegate(PooledBinaryReader pbr)
 		{
-			ItemStack item = _player.inventory.GetItem(_player.inventory.DUMMY_SLOT_IDX);
-			if (!item.IsEmpty())
+			_player.bag.ReadInto(pbr, _eStreamMode);
+		});
+		StreamUtils.FromBlob(this.equipmentData, delegate(PooledBinaryReader pbr)
+		{
+			_player.equipment.ReadInto(pbr, _eStreamMode);
+		});
+		List<ItemStack> overflow = null;
+		StreamUtils.FromBlob(this.inventoryData, delegate(PooledBinaryReader pbr)
+		{
+			overflow = _player.inventory.ReadInto(pbr, _eStreamMode);
+		});
+		int num = 0;
+		while (overflow != null && num < overflow.Count)
+		{
+			if (!_player.bag.AddItem(overflow[num]) && _player.inventory.ItemGrid.AddItem(overflow[num], -1) < 0)
 			{
-				if (!_player.bag.AddItem(item) && !_player.inventory.AddItem(item))
-				{
-					GameManager.Instance.ItemDropServer(item, _player.GetDropPosition(), Vector3.zero, _player.entityId, 60f, false);
-					Manager.BroadcastPlay("itemdropped");
-				}
-				_player.inventory.SetItem(_player.inventory.DUMMY_SLOT_IDX, ItemStack.Empty);
+				GameManager.Instance.ItemDropServer(overflow[num], _player.GetDropPosition(), Vector3.zero, _player.entityId, 60f, false);
+				Manager.BroadcastPlay("itemdropped");
 			}
+			num++;
 		}
 		if (this.spawnPoints.Count > 0)
 		{
@@ -49,11 +55,6 @@ public class PlayerDataFile
 		_player.KilledZombies = this.zombieKills;
 		_player.Died = this.deaths;
 		_player.Score = this.score;
-		_player.equipment.Apply(this.equipment, true);
-		if (_player == GameManager.Instance.World.GetPrimaryPlayer())
-		{
-			_player.TurnOffLightFlares();
-		}
 		_player.navMarkerHidden = this.markerHidden;
 		_player.markerPosition = this.markerPosition;
 		_player.CrouchingLocked = this.bCrouchedLocked;
@@ -76,34 +77,22 @@ public class PlayerDataFile
 			}
 			entityPlayerLocal.DragAndDropItem = this.dragAndDropItem;
 		}
-		if (this.progressionData.Length > 0L)
+		StreamUtils.FromBlob(this.progressionData, delegate(PooledBinaryReader pbr)
 		{
-			using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
-			{
-				pooledBinaryReader.SetBaseStream(this.progressionData);
-				_player.Progression = Progression.Read(pooledBinaryReader, _player);
-			}
-		}
-		if (this.buffData.Length > 0L)
+			_player.Progression = Progression.Read(pbr, _player);
+		});
+		if (this.buffData.Length > 0L && _player.Buffs == null)
 		{
-			if (_player.Buffs == null)
-			{
-				_player.Buffs = new EntityBuffs(_player);
-			}
-			using (PooledBinaryReader pooledBinaryReader2 = MemoryPools.poolBinaryReader.AllocSync(false))
-			{
-				pooledBinaryReader2.SetBaseStream(this.buffData);
-				_player.Buffs.Read(pooledBinaryReader2);
-			}
+			_player.Buffs = new EntityBuffs(_player);
 		}
-		if (this.stealthData.Length > 0L)
+		StreamUtils.FromBlob(this.buffData, delegate(PooledBinaryReader pbr)
 		{
-			using (PooledBinaryReader pooledBinaryReader3 = MemoryPools.poolBinaryReader.AllocSync(false))
-			{
-				pooledBinaryReader3.SetBaseStream(this.stealthData);
-				_player.Stealth = PlayerStealth.Read(_player, pooledBinaryReader3);
-			}
-		}
+			_player.Buffs.Read(pbr);
+		});
+		StreamUtils.FromBlob(this.stealthData, delegate(PooledBinaryReader pbr)
+		{
+			_player.Stealth = PlayerStealth.Read(_player, pbr);
+		});
 		if (this.ownedEntities.Count > 0)
 		{
 			for (int k = 0; k < this.ownedEntities.Count; k++)
@@ -146,14 +135,28 @@ public class PlayerDataFile
 		_player.favoriteShapes = this.favoriteShapes;
 	}
 
-	// Token: 0x060097BD RID: 38845 RVA: 0x00392D64 File Offset: 0x00390F64
-	public void FromPlayer(EntityPlayer _player)
+	// Token: 0x0600984A RID: 38986 RVA: 0x0039761C File Offset: 0x0039581C
+	public void SetInventoryFrom(EntityPlayer _player, StreamModeWrite _eStreamMode)
 	{
-		this.ecd = new EntityCreationData(_player, true);
-		this.inventory = ((_player.AttachedToEntity != null && _player.saveInventory != null) ? ItemStack.Clone(_player.saveInventory.GetSlots()) : ItemStack.Clone(_player.inventory.GetSlots()));
-		this.bag = _player.bag.Clone();
-		this.equipment = _player.equipment.Clone();
-		this.selectedInventorySlot = _player.inventory.holdingItemIdx;
+		this.inventoryData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+		{
+			_player.inventory.Write(pbw, _eStreamMode);
+		});
+		this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+		{
+			_player.bag.Write(pbw, _eStreamMode);
+		});
+		this.equipmentData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+		{
+			_player.equipment.Write(pbw, _eStreamMode);
+		});
+	}
+
+	// Token: 0x0600984B RID: 38987 RVA: 0x00397684 File Offset: 0x00395884
+	public void FromPlayer(EntityPlayer _player, StreamModeWrite _eStreamMode = StreamModeWrite.Persistency)
+	{
+		this.ecd = new EntityCreationData(_player, StreamModeWrite.ToClient);
+		this.SetInventoryFrom(_player, _eStreamMode);
 		this.spawnPoints = new List<Vector3i>(new Vector3i[0]);
 		this.selectedSpawnPointKey = _player.selectedSpawnPointKey;
 		this.lastSpawnPosition = _player.lastSpawnPosition;
@@ -180,21 +183,18 @@ public class PlayerDataFile
 		{
 			this.craftingData = uiforPlayer.xui.GetCraftingData();
 		}
-		using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
+		this.progressionData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
 		{
-			pooledBinaryWriter.SetBaseStream(this.progressionData);
-			_player.Progression.Write(pooledBinaryWriter, false);
-		}
-		using (PooledBinaryWriter pooledBinaryWriter2 = MemoryPools.poolBinaryWriter.AllocSync(false))
+			_player.Progression.Write(pbw, false);
+		});
+		this.buffData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
 		{
-			pooledBinaryWriter2.SetBaseStream(this.buffData);
-			_player.Buffs.Write(pooledBinaryWriter2, false);
-		}
-		using (PooledBinaryWriter pooledBinaryWriter3 = MemoryPools.poolBinaryWriter.AllocSync(false))
+			_player.Buffs.Write(pbw, false);
+		});
+		this.stealthData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
 		{
-			pooledBinaryWriter3.SetBaseStream(this.stealthData);
-			_player.Stealth.Write(pooledBinaryWriter3);
-		}
+			_player.Stealth.Write(pbw);
+		});
 		this.ownedEntities = new List<OwnedEntityData>(_player.ownedEntities);
 		this.totalItemsCrafted = _player.totalItemsCrafted;
 		this.distanceWalked = _player.distanceWalked;
@@ -221,7 +221,7 @@ public class PlayerDataFile
 		this.bLoaded = true;
 	}
 
-	// Token: 0x060097BE RID: 38846 RVA: 0x00393128 File Offset: 0x00391328
+	// Token: 0x0600984C RID: 38988 RVA: 0x00397A38 File Offset: 0x00395C38
 	public void ToggleWaypointHiddenStatus(NavObject nav)
 	{
 		Waypoint waypointForNavObject = this.waypoints.GetWaypointForNavObject(nav);
@@ -231,7 +231,7 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060097BF RID: 38847 RVA: 0x00393154 File Offset: 0x00391354
+	// Token: 0x0600984D RID: 38989 RVA: 0x00397A64 File Offset: 0x00395C64
 	public void Load(string _dir, string _playerName)
 	{
 		try
@@ -254,7 +254,7 @@ public class PlayerDataFile
 						if (pooledBinaryReader.ReadChar() == 't' && pooledBinaryReader.ReadChar() == 't' && pooledBinaryReader.ReadChar() == 'p' && pooledBinaryReader.ReadChar() == '\0')
 						{
 							uint num = (uint)pooledBinaryReader.ReadByte();
-							this.Read(pooledBinaryReader, num);
+							this.Read(pooledBinaryReader, num, StreamModeRead.Persistency);
 							this.bLoaded = true;
 						}
 					}
@@ -285,7 +285,7 @@ public class PlayerDataFile
 							if (pooledBinaryReader2.ReadChar() == 't' && pooledBinaryReader2.ReadChar() == 't' && pooledBinaryReader2.ReadChar() == 'p' && pooledBinaryReader2.ReadChar() == '\0')
 							{
 								uint num2 = (uint)pooledBinaryReader2.ReadByte();
-								this.Read(pooledBinaryReader2, num2);
+								this.Read(pooledBinaryReader2, num2, StreamModeRead.Persistency);
 								this.bLoaded = true;
 							}
 						}
@@ -299,37 +299,66 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060097C0 RID: 38848 RVA: 0x003933F4 File Offset: 0x003915F4
-	public void ReadNetwork(PooledBinaryReader _br)
+	// Token: 0x0600984E RID: 38990 RVA: 0x00397D08 File Offset: 0x00395F08
+	public void ReadNetwork(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
-		this.Read(_br, uint.MaxValue);
+		this.Read(_br, uint.MaxValue, _eStreamMode);
 		this.metadata = PlayerMetaInfo.FromStream(_br);
 	}
 
-	// Token: 0x060097C1 RID: 38849 RVA: 0x0039340C File Offset: 0x0039160C
+	// Token: 0x0600984F RID: 38991 RVA: 0x00397D20 File Offset: 0x00395F20
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Read(PooledBinaryReader _br, uint _version)
+	public void Read(PooledBinaryReader _br, uint _version, StreamModeRead _eStreamMode)
 	{
 		if (_version > 37U)
 		{
 			this.ecd = new EntityCreationData();
-			this.ecd.read(_br, false);
-			if (_version < 10U)
+			this.ecd.read(_br, _eStreamMode);
+			if (_version >= 62U)
 			{
-				this.inventory = GameUtils.ReadItemStackOld(_br);
+				this.inventoryData = StreamUtils.ReadBlob(_br);
 			}
 			else
 			{
-				this.inventory = GameUtils.ReadItemStack(_br);
+				ItemStackGrid itemGrid = ItemStackGrid.Create(new Vector2i(0, 0), XUiC_ItemStack.StackLocationTypes.ToolBelt, false, false, null);
+				if (_version >= 61U)
+				{
+					StreamUtils.FromBlob(StreamUtils.ReadBlob(_br), delegate(PooledBinaryReader pbr)
+					{
+						itemGrid.ReadInto(pbr, StreamModeRead.Persistency);
+					});
+				}
+				else if (_version >= 60U)
+				{
+					itemGrid.ReadInto(_br, _eStreamMode);
+				}
+				else
+				{
+					ItemStack[] array = ((_version >= 10U) ? GameUtils.ReadItemStack(_br) : GameUtils.ReadItemStackOld(_br));
+					itemGrid.Resize(new Vector2i(array.Length, 1));
+					itemGrid.SetItems(array, false);
+				}
+				Inventory inventory = new Inventory(itemGrid, (int)_br.ReadByte());
+				this.inventoryData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+				{
+					inventory.Write(pbw, StreamModeWrite.Persistency);
+				});
 			}
-			this.selectedInventorySlot = (int)_br.ReadByte();
-			if (_version >= 58U)
+			if (_version >= 61U)
 			{
-				this.bag = Bag.Read(_br);
+				this.bagData = StreamUtils.ReadBlob(_br);
+			}
+			else if (_version >= 58U)
+			{
+				Bag legacyBag2 = Bag.Read(_br, XUiC_ItemStack.StackLocationTypes.Backpack, _eStreamMode, null);
+				this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+				{
+					legacyBag2.Write(pbw, StreamModeWrite.Persistency);
+				});
 			}
 			else
 			{
-				ItemStack[] array = GameUtils.ReadItemStack(_br);
+				ItemStack[] array2 = GameUtils.ReadItemStack(_br);
 				PackedBoolArray packedBoolArray = null;
 				if (_version >= 57U)
 				{
@@ -368,16 +397,25 @@ public class PlayerDataFile
 						packedBoolArray[j] = true;
 					}
 				}
-				this.bag = new Bag(array.Length);
-				this.bag.SetSlots(array);
-				this.bag.LockedSlots = packedBoolArray;
+				if (packedBoolArray == null)
+				{
+					packedBoolArray = new PackedBoolArray(array2.Length);
+				}
+				packedBoolArray.Length = array2.Length;
+				Bag legacyBag = new Bag(new Vector2i(array2.Length, 1), XUiC_ItemStack.StackLocationTypes.Backpack, null);
+				legacyBag.ItemGrid.SetItems(array2, false);
+				legacyBag.ItemGrid.SetSlotLocks(packedBoolArray);
+				this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+				{
+					legacyBag.Write(pbw, StreamModeWrite.Persistency);
+				});
 			}
 			if (_version >= 52U)
 			{
-				ItemStack[] array2 = GameUtils.ReadItemStack(_br);
-				if (array2 != null && array2.Length != 0)
+				ItemStack[] array3 = GameUtils.ReadItemStack(_br);
+				if (array3 != null && array3.Length != 0)
 				{
-					this.dragAndDropItem = array2[0];
+					this.dragAndDropItem = array3[0];
 				}
 			}
 			this.alreadyCraftedList = new HashSet<string>();
@@ -407,7 +445,18 @@ public class PlayerDataFile
 			this.zombieKills = _br.ReadInt32();
 			this.deaths = _br.ReadInt32();
 			this.score = _br.ReadInt32();
-			this.equipment = Equipment.Read(_br);
+			if (_version >= 61U)
+			{
+				this.equipmentData = StreamUtils.ReadBlob(_br);
+			}
+			else
+			{
+				Equipment legacyEquipment = Equipment.Read(_br, _eStreamMode);
+				this.equipmentData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+				{
+					legacyEquipment.Write(pbw, StreamModeWrite.Persistency);
+				});
+			}
 			this.unlockedRecipeList = new List<string>();
 			num3 = (int)_br.ReadUInt16();
 			for (int m = 0; m < num3; m++)
@@ -422,7 +471,7 @@ public class PlayerDataFile
 			}
 			if (_version < 54U)
 			{
-				Equipment.Read(_br);
+				Equipment.Read(_br, _eStreamMode);
 			}
 			this.bCrouchedLocked = _br.ReadBoolean();
 			if (_version >= 59U)
@@ -476,12 +525,9 @@ public class PlayerDataFile
 					_br.ReadInt32();
 				}
 			}
-			num4 = _br.ReadInt32();
-			this.progressionData = ((num4 > 0) ? new MemoryStream(_br.ReadBytes(num4)) : new MemoryStream());
-			num4 = _br.ReadInt32();
-			this.buffData = ((num4 > 0) ? new MemoryStream(_br.ReadBytes(num4)) : new MemoryStream());
-			num4 = _br.ReadInt32();
-			this.stealthData = ((num4 > 0) ? new MemoryStream(_br.ReadBytes(num4)) : new MemoryStream());
+			this.progressionData = StreamUtils.ReadBlob(_br);
+			this.buffData = StreamUtils.ReadBlob(_br);
+			this.stealthData = StreamUtils.ReadBlob(_br);
 			this.favoriteCreativeStacks.Clear();
 			num4 = (int)_br.ReadUInt16();
 			for (int num6 = 0; num6 < num4; num6++)
@@ -528,7 +574,7 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060097C2 RID: 38850 RVA: 0x003939AC File Offset: 0x00391BAC
+	// Token: 0x06009850 RID: 38992 RVA: 0x003983D8 File Offset: 0x003965D8
 	public void Save(string _dir, string _playerId)
 	{
 		try
@@ -562,8 +608,8 @@ public class PlayerDataFile
 					pooledBinaryWriter.Write('t');
 					pooledBinaryWriter.Write('p');
 					pooledBinaryWriter.Write(0);
-					pooledBinaryWriter.Write(59);
-					this.Write(pooledBinaryWriter);
+					pooledBinaryWriter.Write(62);
+					this.Write(pooledBinaryWriter, StreamModeWrite.Persistency);
 					this.bModifiedSinceLastSave = false;
 				}
 			}
@@ -580,21 +626,20 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060097C3 RID: 38851 RVA: 0x00393B60 File Offset: 0x00391D60
-	public void WriteNetwork(PooledBinaryWriter _bw)
+	// Token: 0x06009851 RID: 38993 RVA: 0x0039858C File Offset: 0x0039678C
+	public void WriteNetwork(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
-		this.Write(_bw);
+		this.Write(_bw, _eStreamMode);
 		this.metadata.Write(_bw);
 	}
 
-	// Token: 0x060097C4 RID: 38852 RVA: 0x00393B78 File Offset: 0x00391D78
+	// Token: 0x06009852 RID: 38994 RVA: 0x003985A4 File Offset: 0x003967A4
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Write(PooledBinaryWriter _bw)
+	public void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
-		this.ecd.write(_bw, false);
-		GameUtils.WriteItemStack(_bw, this.inventory);
-		_bw.Write((byte)this.selectedInventorySlot);
-		this.bag.Write(_bw);
+		this.ecd.write(_bw, _eStreamMode);
+		StreamUtils.WriteBlob(_bw, this.inventoryData);
+		StreamUtils.WriteBlob(_bw, this.bagData);
 		GameUtils.WriteItemStack(_bw, new List<ItemStack> { this.dragAndDropItem });
 		_bw.Write((ushort)this.alreadyCraftedList.Count);
 		foreach (string text in this.alreadyCraftedList)
@@ -615,7 +660,7 @@ public class PlayerDataFile
 		_bw.Write(this.zombieKills);
 		_bw.Write(this.deaths);
 		_bw.Write(this.score);
-		this.equipment.Write(_bw);
+		StreamUtils.WriteBlob(_bw, this.equipmentData);
 		_bw.Write((ushort)this.unlockedRecipeList.Count);
 		foreach (string text2 in this.unlockedRecipeList)
 		{
@@ -645,15 +690,9 @@ public class PlayerDataFile
 		this.challengeJournal.Write(_bw);
 		StreamUtils.Write(_bw, this.rentedVMPosition);
 		_bw.Write(this.rentalEndDay);
-		this.progressionData.Position = 0L;
-		_bw.Write((int)this.progressionData.Length);
-		StreamUtils.StreamCopy(this.progressionData, _bw.BaseStream, null, true);
-		this.buffData.Position = 0L;
-		_bw.Write((int)this.buffData.Length);
-		StreamUtils.StreamCopy(this.buffData, _bw.BaseStream, null, true);
-		this.stealthData.Position = 0L;
-		_bw.Write((int)this.stealthData.Length);
-		StreamUtils.StreamCopy(this.stealthData, _bw.BaseStream, null, true);
+		StreamUtils.WriteBlob(_bw, this.progressionData);
+		StreamUtils.WriteBlob(_bw, this.buffData);
+		StreamUtils.WriteBlob(_bw, this.stealthData);
 		_bw.Write((ushort)this.favoriteCreativeStacks.Count);
 		for (int i = 0; i < this.favoriteCreativeStacks.Count; i++)
 		{
@@ -672,7 +711,7 @@ public class PlayerDataFile
 		_bw.Write(this.totalTimePlayed);
 	}
 
-	// Token: 0x060097C5 RID: 38853 RVA: 0x00393FD8 File Offset: 0x003921D8
+	// Token: 0x06009853 RID: 38995 RVA: 0x00398984 File Offset: 0x00396B84
 	public static bool Exists(string _dir, string _playerName)
 	{
 		return SdFile.Exists(string.Concat(new string[]
@@ -685,149 +724,146 @@ public class PlayerDataFile
 		}));
 	}
 
-	// Token: 0x040071C1 RID: 29121
+	// Token: 0x0400722B RID: 29227
 	public static string EXT = "ttp";
 
-	// Token: 0x040071C2 RID: 29122
+	// Token: 0x0400722C RID: 29228
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int cFileVersion = 59;
+	public const int cFileVersion = 62;
 
-	// Token: 0x040071C3 RID: 29123
+	// Token: 0x0400722D RID: 29229
 	public bool bLoaded;
 
-	// Token: 0x040071C4 RID: 29124
+	// Token: 0x0400722E RID: 29230
 	public bool bModifiedSinceLastSave;
 
-	// Token: 0x040071C5 RID: 29125
+	// Token: 0x0400722F RID: 29231
 	public EntityCreationData ecd = new EntityCreationData();
 
-	// Token: 0x040071C6 RID: 29126
-	public ItemStack[] inventory = new ItemStack[0];
+	// Token: 0x04007230 RID: 29232
+	public MemoryStream inventoryData = new MemoryStream(0);
 
-	// Token: 0x040071C7 RID: 29127
-	public Bag bag = new Bag(0);
+	// Token: 0x04007231 RID: 29233
+	public MemoryStream bagData = new MemoryStream(0);
 
-	// Token: 0x040071C8 RID: 29128
+	// Token: 0x04007232 RID: 29234
+	public MemoryStream equipmentData = new MemoryStream(0);
+
+	// Token: 0x04007233 RID: 29235
 	public ItemStack dragAndDropItem = new ItemStack();
 
-	// Token: 0x040071C9 RID: 29129
-	public Equipment equipment = new Equipment();
-
-	// Token: 0x040071CA RID: 29130
-	public int selectedInventorySlot;
-
-	// Token: 0x040071CB RID: 29131
+	// Token: 0x04007234 RID: 29236
 	public List<Vector3i> spawnPoints = new List<Vector3i>();
 
-	// Token: 0x040071CC RID: 29132
+	// Token: 0x04007235 RID: 29237
 	public long selectedSpawnPointKey;
 
-	// Token: 0x040071CD RID: 29133
+	// Token: 0x04007236 RID: 29238
 	public HashSet<string> alreadyCraftedList = new HashSet<string>();
 
-	// Token: 0x040071CE RID: 29134
+	// Token: 0x04007237 RID: 29239
 	public List<string> unlockedRecipeList = new List<string>();
 
-	// Token: 0x040071CF RID: 29135
+	// Token: 0x04007238 RID: 29240
 	public List<string> favoriteRecipeList = new List<string>();
 
-	// Token: 0x040071D0 RID: 29136
+	// Token: 0x04007239 RID: 29241
 	public SpawnPosition lastSpawnPosition = SpawnPosition.Undef;
 
-	// Token: 0x040071D1 RID: 29137
+	// Token: 0x0400723A RID: 29242
 	public List<OwnedEntityData> ownedEntities = new List<OwnedEntityData>();
 
-	// Token: 0x040071D2 RID: 29138
+	// Token: 0x0400723B RID: 29243
 	public int playerKills;
 
-	// Token: 0x040071D3 RID: 29139
+	// Token: 0x0400723C RID: 29244
 	public int zombieKills;
 
-	// Token: 0x040071D4 RID: 29140
+	// Token: 0x0400723D RID: 29245
 	public int deaths;
 
-	// Token: 0x040071D5 RID: 29141
+	// Token: 0x0400723E RID: 29246
 	public int score;
 
-	// Token: 0x040071D6 RID: 29142
+	// Token: 0x0400723F RID: 29247
 	public int id = -1;
 
-	// Token: 0x040071D7 RID: 29143
+	// Token: 0x04007240 RID: 29248
 	public Vector3i markerPosition;
 
-	// Token: 0x040071D8 RID: 29144
+	// Token: 0x04007241 RID: 29249
 	public bool markerHidden;
 
-	// Token: 0x040071D9 RID: 29145
+	// Token: 0x04007242 RID: 29250
 	public bool bCrouchedLocked;
 
-	// Token: 0x040071DA RID: 29146
+	// Token: 0x04007243 RID: 29251
 	public CraftingData craftingData = new CraftingData();
 
-	// Token: 0x040071DB RID: 29147
+	// Token: 0x04007244 RID: 29252
 	public int deathUpdateTime;
 
-	// Token: 0x040071DC RID: 29148
+	// Token: 0x04007245 RID: 29253
 	public bool bDead;
 
-	// Token: 0x040071DD RID: 29149
+	// Token: 0x04007246 RID: 29254
 	public float distanceWalked;
 
-	// Token: 0x040071DE RID: 29150
+	// Token: 0x04007247 RID: 29255
 	public uint totalItemsCrafted;
 
-	// Token: 0x040071DF RID: 29151
+	// Token: 0x04007248 RID: 29256
 	public float longestLife;
 
-	// Token: 0x040071E0 RID: 29152
+	// Token: 0x04007249 RID: 29257
 	public float currentLife;
 
-	// Token: 0x040071E1 RID: 29153
+	// Token: 0x0400724A RID: 29258
 	public float totalTimePlayed;
 
-	// Token: 0x040071E2 RID: 29154
+	// Token: 0x0400724B RID: 29259
 	public ulong gameStageBornAtWorldTime = ulong.MaxValue;
 
-	// Token: 0x040071E3 RID: 29155
+	// Token: 0x0400724C RID: 29260
 	public MemoryStream progressionData = new MemoryStream(0);
 
-	// Token: 0x040071E4 RID: 29156
+	// Token: 0x0400724D RID: 29261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream buffData = new MemoryStream(0);
 
-	// Token: 0x040071E5 RID: 29157
+	// Token: 0x0400724E RID: 29262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream stealthData = new MemoryStream(0);
 
-	// Token: 0x040071E6 RID: 29158
+	// Token: 0x0400724F RID: 29263
 	public WaypointCollection waypoints = new WaypointCollection();
 
-	// Token: 0x040071E7 RID: 29159
+	// Token: 0x04007250 RID: 29264
 	public QuestJournal questJournal = new QuestJournal();
 
-	// Token: 0x040071E8 RID: 29160
+	// Token: 0x04007251 RID: 29265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bModdedSaveGame;
 
-	// Token: 0x040071E9 RID: 29161
+	// Token: 0x04007252 RID: 29266
 	public ChallengeJournal challengeJournal = new ChallengeJournal();
 
-	// Token: 0x040071EA RID: 29162
+	// Token: 0x04007253 RID: 29267
 	public Vector3i rentedVMPosition = Vector3i.zero;
 
-	// Token: 0x040071EB RID: 29163
+	// Token: 0x04007254 RID: 29268
 	public ulong rentalEndTime;
 
-	// Token: 0x040071EC RID: 29164
+	// Token: 0x04007255 RID: 29269
 	public int rentalEndDay;
 
-	// Token: 0x040071ED RID: 29165
+	// Token: 0x04007256 RID: 29270
 	public List<ushort> favoriteCreativeStacks = new List<ushort>();
 
-	// Token: 0x040071EE RID: 29166
+	// Token: 0x04007257 RID: 29271
 	public List<string> favoriteShapes = new List<string>();
 
-	// Token: 0x040071EF RID: 29167
+	// Token: 0x04007258 RID: 29272
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerMetaInfo metadata;
 }

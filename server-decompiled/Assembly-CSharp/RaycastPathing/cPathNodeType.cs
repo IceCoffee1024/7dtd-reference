@@ -2,18 +2,18 @@
 
 namespace RaycastPathing
 {
-	// Token: 0x020018C7 RID: 6343
+	// Token: 0x020018F3 RID: 6387
 	public enum cPathNodeType
 	{
-		// Token: 0x04009421 RID: 37921
+		// Token: 0x040094E7 RID: 38119
 		Unassigned,
-		// Token: 0x04009422 RID: 37922
+		// Token: 0x040094E8 RID: 38120
 		Air,
-		// Token: 0x04009423 RID: 37923
+		// Token: 0x040094E9 RID: 38121
 		Solid,
-		// Token: 0x04009424 RID: 37924
+		// Token: 0x040094EA RID: 38122
 		Door,
-		// Token: 0x04009425 RID: 37925
+		// Token: 0x040094EB RID: 38123
 		Half
 	}
 }

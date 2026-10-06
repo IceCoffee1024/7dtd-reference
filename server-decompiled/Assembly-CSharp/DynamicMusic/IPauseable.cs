@@ -2,13 +2,13 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A7E RID: 6782
+	// Token: 0x02001AAA RID: 6826
 	public interface IPauseable
 	{
-		// Token: 0x0600CCEE RID: 52462
+		// Token: 0x0600CE46 RID: 52806
 		void OnPause();
 
-		// Token: 0x0600CCEF RID: 52463
+		// Token: 0x0600CE47 RID: 52807
 		void OnUnPause();
 	}
 }

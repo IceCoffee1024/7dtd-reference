@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections;
 
-// Token: 0x020013D6 RID: 5078
+// Token: 0x020013F6 RID: 5110
 public class EnumerableDebugWrapper : DebugWrapper, IEnumerable
 {
-	// Token: 0x06009F89 RID: 40841 RVA: 0x003C144E File Offset: 0x003BF64E
+	// Token: 0x0600A034 RID: 41012 RVA: 0x003C5FEA File Offset: 0x003C41EA
 	public EnumerableDebugWrapper(IEnumerable enumerable)
 		: this(null, enumerable)
 	{
 	}
 
-	// Token: 0x06009F8A RID: 40842 RVA: 0x003C1458 File Offset: 0x003BF658
+	// Token: 0x0600A035 RID: 41013 RVA: 0x003C5FF4 File Offset: 0x003C41F4
 	public EnumerableDebugWrapper(DebugWrapper parent, IEnumerable enumerable)
 		: base(parent)
 	{
 		this.m_enumerable = enumerable;
 	}
 
-	// Token: 0x06009F8B RID: 40843 RVA: 0x003C1468 File Offset: 0x003BF668
+	// Token: 0x0600A036 RID: 41014 RVA: 0x003C6004 File Offset: 0x003C4204
 	public IEnumerator GetEnumerator()
 	{
 		return base.DebugEnumerator(this.m_enumerable.GetEnumerator());
 	}
 
-	// Token: 0x040078D7 RID: 30935
+	// Token: 0x04007952 RID: 31058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IEnumerable m_enumerable;
 }

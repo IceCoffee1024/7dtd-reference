@@ -4,11 +4,11 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200035A RID: 858
+// Token: 0x0200035D RID: 861
 public class ChunkPreviewManager
 {
-	// Token: 0x170002F2 RID: 754
-	// (get) Token: 0x060018D1 RID: 6353 RVA: 0x0008BFF0 File Offset: 0x0008A1F0
+	// Token: 0x170002EA RID: 746
+	// (get) Token: 0x060018CC RID: 6348 RVA: 0x0008C270 File Offset: 0x0008A470
 	public Prefab Prefab
 	{
 		get
@@ -17,8 +17,8 @@ public class ChunkPreviewManager
 		}
 	}
 
-	// Token: 0x170002F3 RID: 755
-	// (get) Token: 0x060018D2 RID: 6354 RVA: 0x0008BFFD File Offset: 0x0008A1FD
+	// Token: 0x170002EB RID: 747
+	// (get) Token: 0x060018CD RID: 6349 RVA: 0x0008C27D File Offset: 0x0008A47D
 	public Vector3i WorldPosition
 	{
 		get
@@ -27,7 +27,7 @@ public class ChunkPreviewManager
 		}
 	}
 
-	// Token: 0x060018D3 RID: 6355 RVA: 0x0008C00C File Offset: 0x0008A20C
+	// Token: 0x060018CE RID: 6350 RVA: 0x0008C28C File Offset: 0x0008A48C
 	public ChunkPreviewManager()
 	{
 		ChunkPreviewManager.Instance = this;
@@ -44,13 +44,13 @@ public class ChunkPreviewManager
 		GameManager.Instance.StartCoroutine(this.LoadPreviewMesh());
 	}
 
-	// Token: 0x060018D4 RID: 6356 RVA: 0x0008C0BC File Offset: 0x0008A2BC
+	// Token: 0x060018CF RID: 6351 RVA: 0x0008C33C File Offset: 0x0008A53C
 	public void AddChunkPreviewLoadData(DynamicMeshVoxelLoad loadData)
 	{
 		this.ChunkPreviewMeshData.Enqueue(loadData);
 	}
 
-	// Token: 0x060018D5 RID: 6357 RVA: 0x0008C0CA File Offset: 0x0008A2CA
+	// Token: 0x060018D0 RID: 6352 RVA: 0x0008C34A File Offset: 0x0008A54A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator LoadPreviewMesh()
 	{
@@ -82,7 +82,7 @@ public class ChunkPreviewManager
 		yield break;
 	}
 
-	// Token: 0x060018D6 RID: 6358 RVA: 0x0008C0DC File Offset: 0x0008A2DC
+	// Token: 0x060018D1 RID: 6353 RVA: 0x0008C35C File Offset: 0x0008A55C
 	public void ClearAll()
 	{
 		foreach (DynamicMeshItem dynamicMeshItem in this.Items)
@@ -92,7 +92,7 @@ public class ChunkPreviewManager
 		this.Items.Clear();
 	}
 
-	// Token: 0x060018D7 RID: 6359 RVA: 0x0008C138 File Offset: 0x0008A338
+	// Token: 0x060018D2 RID: 6354 RVA: 0x0008C3B8 File Offset: 0x0008A5B8
 	public void AddPreviewChunk(DynamicMeshVoxelLoad loadData)
 	{
 		DynamicMeshItem item = loadData.Item;
@@ -108,13 +108,13 @@ public class ChunkPreviewManager
 		this.CheckItems();
 	}
 
-	// Token: 0x060018D8 RID: 6360 RVA: 0x0008C18D File Offset: 0x0008A38D
+	// Token: 0x060018D3 RID: 6355 RVA: 0x0008C40D File Offset: 0x0008A60D
 	public bool IsPositionInArea(Vector3 pos)
 	{
 		return this.IsPositionInArea(new Vector3i(pos));
 	}
 
-	// Token: 0x060018D9 RID: 6361 RVA: 0x0008C19C File Offset: 0x0008A39C
+	// Token: 0x060018D4 RID: 6356 RVA: 0x0008C41C File Offset: 0x0008A61C
 	public void ActivationChanged(PrefabInstance pi)
 	{
 		if (pi == null)
@@ -126,13 +126,13 @@ public class ChunkPreviewManager
 		this.SetPrefab(pi.prefab, pi, pi.boundingBoxPosition);
 	}
 
-	// Token: 0x060018DA RID: 6362 RVA: 0x0008C1EC File Offset: 0x0008A3EC
+	// Token: 0x060018D5 RID: 6357 RVA: 0x0008C46C File Offset: 0x0008A66C
 	public bool IsActivePrefab(PrefabInstance pi)
 	{
 		return pi.prefab == this.PreviewData.PrefabData && this.IsPositionInArea(pi.boundingBoxPosition);
 	}
 
-	// Token: 0x060018DB RID: 6363 RVA: 0x0008C214 File Offset: 0x0008A414
+	// Token: 0x060018D6 RID: 6358 RVA: 0x0008C494 File Offset: 0x0008A694
 	public bool IsPositionInArea(Vector3i fullposition)
 	{
 		if (this.WorldPosition.y < -256)
@@ -149,7 +149,7 @@ public class ChunkPreviewManager
 		return chunkPositionFromWorldPosition.x >= x && chunkPositionFromWorldPosition.x <= x2 && chunkPositionFromWorldPosition.z >= z && chunkPositionFromWorldPosition.z <= z2;
 	}
 
-	// Token: 0x060018DC RID: 6364 RVA: 0x0008C2B8 File Offset: 0x0008A4B8
+	// Token: 0x060018D7 RID: 6359 RVA: 0x0008C538 File Offset: 0x0008A738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckItems()
 	{
@@ -164,7 +164,7 @@ public class ChunkPreviewManager
 		}
 	}
 
-	// Token: 0x060018DD RID: 6365 RVA: 0x0008C30C File Offset: 0x0008A50C
+	// Token: 0x060018D8 RID: 6360 RVA: 0x0008C58C File Offset: 0x0008A78C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetChunkGoVisiblity(long chunkKey, bool isVisible)
 	{
@@ -186,7 +186,7 @@ public class ChunkPreviewManager
 		}
 	}
 
-	// Token: 0x060018DE RID: 6366 RVA: 0x0008C3CC File Offset: 0x0008A5CC
+	// Token: 0x060018D9 RID: 6361 RVA: 0x0008C64C File Offset: 0x0008A84C
 	public void CleanUp()
 	{
 		DynamicMeshPrefabPreviewThread threadData = this.ThreadData;
@@ -197,7 +197,7 @@ public class ChunkPreviewManager
 		threadData.StopThread();
 	}
 
-	// Token: 0x060018DF RID: 6367 RVA: 0x0008C3E0 File Offset: 0x0008A5E0
+	// Token: 0x060018DA RID: 6362 RVA: 0x0008C660 File Offset: 0x0008A860
 	public void SetWorldPosition(Vector3i worldPosition)
 	{
 		this.PreviewData.WorldPosition = worldPosition;
@@ -216,26 +216,26 @@ public class ChunkPreviewManager
 		this.CheckItems();
 	}
 
-	// Token: 0x060018E0 RID: 6368 RVA: 0x0008C47C File Offset: 0x0008A67C
+	// Token: 0x060018DB RID: 6363 RVA: 0x0008C6FC File Offset: 0x0008A8FC
 	public void StartChunkPreview(Vector3i chunkPos)
 	{
 		DynamicMeshItem dynamicMeshItem = this.Get(chunkPos);
 		this.ThreadData.AddChunk(dynamicMeshItem);
 	}
 
-	// Token: 0x060018E1 RID: 6369 RVA: 0x0008C49D File Offset: 0x0008A69D
+	// Token: 0x060018DC RID: 6364 RVA: 0x0008C71D File Offset: 0x0008A91D
 	public void SetPrefab(PrefabInstance prefab)
 	{
 		this.SetPrefab(prefab.prefab, prefab, this.WorldPosition);
 	}
 
-	// Token: 0x060018E2 RID: 6370 RVA: 0x0008C4B2 File Offset: 0x0008A6B2
+	// Token: 0x060018DD RID: 6365 RVA: 0x0008C732 File Offset: 0x0008A932
 	public void SetPrefab(Prefab prefab)
 	{
 		this.SetPrefab(prefab, null, this.WorldPosition);
 	}
 
-	// Token: 0x060018E3 RID: 6371 RVA: 0x0008C4C4 File Offset: 0x0008A6C4
+	// Token: 0x060018DE RID: 6366 RVA: 0x0008C744 File Offset: 0x0008A944
 	public void SetPrefab(Prefab prefab, PrefabInstance instance, Vector3i worldPosition)
 	{
 		PrefabInstance prefabInstance = this.PreviewData.PrefabInstance;
@@ -260,7 +260,7 @@ public class ChunkPreviewManager
 		this.SetWorldPosition(worldPosition);
 	}
 
-	// Token: 0x060018E4 RID: 6372 RVA: 0x0008C54C File Offset: 0x0008A74C
+	// Token: 0x060018DF RID: 6367 RVA: 0x0008C7CC File Offset: 0x0008A9CC
 	public DynamicMeshItem Get(Vector3i worldPos)
 	{
 		worldPos = DynamicMeshUnity.GetChunkPositionFromWorldPosition(worldPos);
@@ -276,7 +276,7 @@ public class ChunkPreviewManager
 		return dynamicMeshItem2;
 	}
 
-	// Token: 0x060018E5 RID: 6373 RVA: 0x0008C5E0 File Offset: 0x0008A7E0
+	// Token: 0x060018E0 RID: 6368 RVA: 0x0008C860 File Offset: 0x0008AA60
 	public void Update()
 	{
 		if (this.NextUpdate > DateTime.Now)
@@ -290,31 +290,31 @@ public class ChunkPreviewManager
 		}
 	}
 
-	// Token: 0x04000FD1 RID: 4049
+	// Token: 0x04000FCA RID: 4042
 	public static ChunkPreviewManager Instance;
 
-	// Token: 0x04000FD2 RID: 4050
+	// Token: 0x04000FCB RID: 4043
 	public List<DynamicMeshItem> Items = new List<DynamicMeshItem>();
 
-	// Token: 0x04000FD3 RID: 4051
+	// Token: 0x04000FCC RID: 4044
 	public ChunkPreviewData PreviewData;
 
-	// Token: 0x04000FD4 RID: 4052
+	// Token: 0x04000FCD RID: 4045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMeshPrefabPreviewThread ThreadData;
 
-	// Token: 0x04000FD5 RID: 4053
+	// Token: 0x04000FCE RID: 4046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject PreviewChunksContainer;
 
-	// Token: 0x04000FD6 RID: 4054
+	// Token: 0x04000FCF RID: 4047
 	public ConcurrentQueue<DynamicMeshVoxelLoad> ChunkPreviewMeshData = new ConcurrentQueue<DynamicMeshVoxelLoad>();
 
-	// Token: 0x04000FD7 RID: 4055
+	// Token: 0x04000FD0 RID: 4048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool StopRequested;
 
-	// Token: 0x04000FD8 RID: 4056
+	// Token: 0x04000FD1 RID: 4049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime NextUpdate = DateTime.Now;
 }

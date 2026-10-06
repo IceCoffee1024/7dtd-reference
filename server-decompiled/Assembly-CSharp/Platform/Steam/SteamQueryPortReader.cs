@@ -6,16 +6,16 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C91 RID: 7313
+	// Token: 0x02001CC3 RID: 7363
 	public class SteamQueryPortReader
 	{
-		// Token: 0x14000136 RID: 310
-		// (add) Token: 0x0600D8D1 RID: 55505 RVA: 0x004DD954 File Offset: 0x004DBB54
-		// (remove) Token: 0x0600D8D2 RID: 55506 RVA: 0x004DD98C File Offset: 0x004DBB8C
+		// Token: 0x14000135 RID: 309
+		// (add) Token: 0x0600DA4B RID: 55883 RVA: 0x004E249C File Offset: 0x004E069C
+		// (remove) Token: 0x0600DA4C RID: 55884 RVA: 0x004E24D4 File Offset: 0x004E06D4
 		[method: PublicizedFrom(EAccessModifier.Private)]
 		public event GameServerDetailsCallback GameServerDetailsEvent;
 
-		// Token: 0x0600D8D3 RID: 55507 RVA: 0x004DD9C4 File Offset: 0x004DBBC4
+		// Token: 0x0600DA4D RID: 55885 RVA: 0x004E250C File Offset: 0x004E070C
 		public void Init(IPlatform _owner)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -29,7 +29,7 @@ namespace Platform.Steam
 			this.matchmakingRulesResponse = new ISteamMatchmakingRulesResponse(new ISteamMatchmakingRulesResponse.RulesResponded(this.RulesResponded), new ISteamMatchmakingRulesResponse.RulesFailedToRespond(this.RulesFailedToRespond), new ISteamMatchmakingRulesResponse.RulesRefreshComplete(this.RulesRefreshComplete));
 		}
 
-		// Token: 0x0600D8D4 RID: 55508 RVA: 0x004DDA11 File Offset: 0x004DBC11
+		// Token: 0x0600DA4E RID: 55886 RVA: 0x004E2559 File Offset: 0x004E0759
 		public void Disconnect()
 		{
 			if (this.rulesRequestHandle != HServerQuery.Invalid)
@@ -40,13 +40,13 @@ namespace Platform.Steam
 			this.GameServerDetailsEvent = null;
 		}
 
-		// Token: 0x0600D8D5 RID: 55509 RVA: 0x004DDA42 File Offset: 0x004DBC42
+		// Token: 0x0600DA4F RID: 55887 RVA: 0x004E258A File Offset: 0x004E078A
 		public void RegisterGameServerCallbacks(GameServerDetailsCallback _details)
 		{
 			this.GameServerDetailsEvent = _details;
 		}
 
-		// Token: 0x0600D8D6 RID: 55510 RVA: 0x004DDA4B File Offset: 0x004DBC4B
+		// Token: 0x0600DA50 RID: 55888 RVA: 0x004E2593 File Offset: 0x004E0793
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RunGameServerDetailsEvent(GameServerInfo _info, bool _success)
 		{
@@ -58,7 +58,7 @@ namespace Platform.Steam
 			gameServerDetailsEvent(_info, _success);
 		}
 
-		// Token: 0x0600D8D7 RID: 55511 RVA: 0x004DDA60 File Offset: 0x004DBC60
+		// Token: 0x0600DA51 RID: 55889 RVA: 0x004E25A8 File Offset: 0x004E07A8
 		public void GetGameServerInfo(GameServerInfo _gameInfo)
 		{
 			if (_gameInfo.IsLobby)
@@ -109,7 +109,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D8D8 RID: 55512 RVA: 0x004DDB70 File Offset: 0x004DBD70
+		// Token: 0x0600DA52 RID: 55890 RVA: 0x004E26B8 File Offset: 0x004E08B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StartNextRulesRequest()
 		{
@@ -123,7 +123,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D8D9 RID: 55513 RVA: 0x004DDBF0 File Offset: 0x004DBDF0
+		// Token: 0x0600DA53 RID: 55891 RVA: 0x004E2738 File Offset: 0x004E0938
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RulesFailedToRespond()
 		{
@@ -131,7 +131,7 @@ namespace Platform.Steam
 			this.StartNextRulesRequest();
 		}
 
-		// Token: 0x0600D8DA RID: 55514 RVA: 0x004DDC0C File Offset: 0x004DBE0C
+		// Token: 0x0600DA54 RID: 55892 RVA: 0x004E2754 File Offset: 0x004E0954
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RulesRefreshComplete()
 		{
@@ -151,7 +151,7 @@ namespace Platform.Steam
 			this.StartNextRulesRequest();
 		}
 
-		// Token: 0x0600D8DB RID: 55515 RVA: 0x004DDCC8 File Offset: 0x004DBEC8
+		// Token: 0x0600DA55 RID: 55893 RVA: 0x004E2810 File Offset: 0x004E0A10
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RulesResponded(string _rule, string _value)
 		{
@@ -174,39 +174,39 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0400A487 RID: 42119
+		// Token: 0x0400A55C RID: 42332
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISteamMatchmakingRulesResponse matchmakingRulesResponse;
 
-		// Token: 0x0400A488 RID: 42120
+		// Token: 0x0400A55D RID: 42333
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Queue<SteamQueryPortReader.RulesRequest> rulesRequests = new Queue<SteamQueryPortReader.RulesRequest>();
 
-		// Token: 0x0400A489 RID: 42121
+		// Token: 0x0400A55E RID: 42334
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SteamQueryPortReader.RulesRequest currentRulesRequest;
 
-		// Token: 0x0400A48A RID: 42122
+		// Token: 0x0400A55F RID: 42335
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HServerQuery rulesRequestHandle = HServerQuery.Invalid;
 
-		// Token: 0x02001C92 RID: 7314
+		// Token: 0x02001CC4 RID: 7364
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class RulesRequest
 		{
-			// Token: 0x0400A48B RID: 42123
+			// Token: 0x0400A560 RID: 42336
 			public uint Ip;
 
-			// Token: 0x0400A48C RID: 42124
+			// Token: 0x0400A561 RID: 42337
 			public ushort Port;
 
-			// Token: 0x0400A48D RID: 42125
+			// Token: 0x0400A562 RID: 42338
 			public GameServerInfo GameInfo;
 
-			// Token: 0x0400A48E RID: 42126
+			// Token: 0x0400A563 RID: 42339
 			public GameServerInfo GameInfoClone;
 
-			// Token: 0x0400A48F RID: 42127
+			// Token: 0x0400A564 RID: 42340
 			public bool DataErrors;
 		}
 	}

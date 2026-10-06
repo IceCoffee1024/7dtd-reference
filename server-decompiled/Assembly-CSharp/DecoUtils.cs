@@ -2,16 +2,16 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000C1D RID: 3101
+// Token: 0x02000C2F RID: 3119
 public static class DecoUtils
 {
-	// Token: 0x06005EA9 RID: 24233 RVA: 0x0024EBB0 File Offset: 0x0024CDB0
+	// Token: 0x06005EC2 RID: 24258 RVA: 0x00251EAC File Offset: 0x002500AC
 	public static bool IsBigDeco(BlockValue blockValue, Block block)
 	{
 		return block.SmallDecorationRadius > 0 || block.BigDecorationRadius > 0 || block.isOversized;
 	}
 
-	// Token: 0x06005EAA RID: 24234 RVA: 0x0024EBCC File Offset: 0x0024CDCC
+	// Token: 0x06005EC3 RID: 24259 RVA: 0x00251EC8 File Offset: 0x002500C8
 	public static int GetDecoRadius(BlockValue blockValue, Block block)
 	{
 		int num = Math.Max(block.SmallDecorationRadius, block.BigDecorationRadius);
@@ -23,13 +23,13 @@ public static class DecoUtils
 		return num;
 	}
 
-	// Token: 0x06005EAB RID: 24235 RVA: 0x0024EC26 File Offset: 0x0024CE26
+	// Token: 0x06005EC4 RID: 24260 RVA: 0x00251F22 File Offset: 0x00250122
 	public static bool CanPlaceDeco(Chunk cX0Z0, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, Vector3i blockPos, BlockValue blockValue, DecoUtils.DecoAllowedTest additionalTest = null)
 	{
 		return DecoUtils.CanPlaceDeco(cX0Z0, blockPos, blockValue, additionalTest) && DecoUtils.CanPlaceDeco(cX1Z0, blockPos, blockValue, additionalTest) && DecoUtils.CanPlaceDeco(cX0Z1, blockPos, blockValue, additionalTest) && DecoUtils.CanPlaceDeco(cX1Z1, blockPos, blockValue, additionalTest);
 	}
 
-	// Token: 0x06005EAC RID: 24236 RVA: 0x0024EC60 File Offset: 0x0024CE60
+	// Token: 0x06005EC5 RID: 24261 RVA: 0x00251F5C File Offset: 0x0025015C
 	public static bool CanPlaceDeco(Chunk chunk, Vector3i blockPos, BlockValue blockValue, DecoUtils.DecoAllowedTest additionalTest = null)
 	{
 		DecoUtils.<>c__DisplayClass4_0 CS$<>8__locals1;
@@ -62,7 +62,7 @@ public static class DecoUtils
 		return decoAllowedAt.AllowSmallDeco() && (CS$<>8__locals1.additionalTest == null || CS$<>8__locals1.additionalTest(decoAllowedAt));
 	}
 
-	// Token: 0x06005EAD RID: 24237 RVA: 0x0024EDA0 File Offset: 0x0024CFA0
+	// Token: 0x06005EC6 RID: 24262 RVA: 0x0025209C File Offset: 0x0025029C
 	public static bool HasDecoAllowed(BlockValue blockValue)
 	{
 		if (blockValue.isair)
@@ -73,7 +73,7 @@ public static class DecoUtils
 		return (!block.isMultiBlock || !blockValue.ischild) && (block.SmallDecorationRadius > 0 || block.BigDecorationRadius > 0 || block.isOversized);
 	}
 
-	// Token: 0x06005EAE RID: 24238 RVA: 0x0024EDED File Offset: 0x0024CFED
+	// Token: 0x06005EC7 RID: 24263 RVA: 0x002520E9 File Offset: 0x002502E9
 	public static void ApplyDecoAllowed(Chunk cX0Z0, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, Vector3i blockPos, BlockValue blockValue)
 	{
 		DecoUtils.ApplyDecoAllowed(cX0Z0, blockPos, blockValue);
@@ -82,7 +82,7 @@ public static class DecoUtils
 		DecoUtils.ApplyDecoAllowed(cX1Z1, blockPos, blockValue);
 	}
 
-	// Token: 0x06005EAF RID: 24239 RVA: 0x0024EE18 File Offset: 0x0024D018
+	// Token: 0x06005EC8 RID: 24264 RVA: 0x00252114 File Offset: 0x00250314
 	public static void ApplyDecoAllowed(Chunk chunk, Vector3i blockPos, BlockValue blockValue)
 	{
 		if (!DecoUtils.HasDecoAllowed(blockValue))
@@ -98,7 +98,7 @@ public static class DecoUtils
 		DecoUtils.ApplyDecoAllowedForBlockOversized(chunk, num, num2, num3, num4, blockPos, blockValue, block);
 	}
 
-	// Token: 0x06005EB0 RID: 24240 RVA: 0x0024EE78 File Offset: 0x0024D078
+	// Token: 0x06005EC9 RID: 24265 RVA: 0x00252174 File Offset: 0x00250374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool CanPlaceBigDecoForBlockDecorationRadius(Chunk chunk, int cxMin, int czMin, int cxMax, int czMax, Vector3i blockPos, BlockValue blockValue, Block block, DecoUtils.DecoAllowedTest additionalTest)
 	{
@@ -133,7 +133,7 @@ public static class DecoUtils
 		return true;
 	}
 
-	// Token: 0x06005EB1 RID: 24241 RVA: 0x0024EF58 File Offset: 0x0024D158
+	// Token: 0x06005ECA RID: 24266 RVA: 0x00252254 File Offset: 0x00250454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyDecoAllowedForBlockDecorationRadius(Chunk chunk, int cxMin, int czMin, int cxMax, int czMax, Vector3i blockPos, BlockValue blockValue, Block block)
 	{
@@ -171,7 +171,7 @@ public static class DecoUtils
 		}
 	}
 
-	// Token: 0x06005EB2 RID: 24242 RVA: 0x0024F04C File Offset: 0x0024D24C
+	// Token: 0x06005ECB RID: 24267 RVA: 0x00252348 File Offset: 0x00250548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool CanPlaceBigDecoForBlockOversized(Chunk chunk, int cxMin, int czMin, int cxMax, int czMax, Vector3i blockPos, BlockValue blockValue, Block block, DecoUtils.DecoAllowedTest additionalTest)
 	{
@@ -188,7 +188,7 @@ public static class DecoUtils
 		return true;
 	}
 
-	// Token: 0x06005EB3 RID: 24243 RVA: 0x0024F104 File Offset: 0x0024D304
+	// Token: 0x06005ECC RID: 24268 RVA: 0x00252400 File Offset: 0x00250600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyDecoAllowedForBlockOversized(Chunk chunk, int cxMin, int czMin, int cxMax, int czMax, Vector3i blockPos, BlockValue blockValue, Block block)
 	{
@@ -200,7 +200,7 @@ public static class DecoUtils
 		}
 	}
 
-	// Token: 0x06005EB4 RID: 24244 RVA: 0x0024F1A0 File Offset: 0x0024D3A0
+	// Token: 0x06005ECD RID: 24269 RVA: 0x0025249C File Offset: 0x0025069C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <CanPlaceDeco>g__CanPlaceBigDecoForBlockPos|4_0(ref DecoUtils.<>c__DisplayClass4_0 A_0)
@@ -213,7 +213,7 @@ public static class DecoUtils
 		return decoAllowedAt.AllowBigDeco() && (A_0.additionalTest == null || A_0.additionalTest(decoAllowedAt));
 	}
 
-	// Token: 0x02000C1E RID: 3102
-	// (Invoke) Token: 0x06005EB6 RID: 24246
+	// Token: 0x02000C30 RID: 3120
+	// (Invoke) Token: 0x06005ECF RID: 24271
 	public delegate bool DecoAllowedTest(EnumDecoAllowed decoAllowed);
 }

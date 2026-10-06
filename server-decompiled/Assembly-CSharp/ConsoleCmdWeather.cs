@@ -4,32 +4,32 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BF RID: 703
+// Token: 0x020002C2 RID: 706
 [Preserve]
 public class ConsoleCmdWeather : ConsoleCmdAbstract
 {
-	// Token: 0x0600144A RID: 5194 RVA: 0x0007ACD6 File Offset: 0x00078ED6
+	// Token: 0x06001447 RID: 5191 RVA: 0x0007AF8A File Offset: 0x0007918A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "weather" };
 	}
 
-	// Token: 0x0600144B RID: 5195 RVA: 0x0007ACE6 File Offset: 0x00078EE6
+	// Token: 0x06001448 RID: 5192 RVA: 0x0007AF9A File Offset: 0x0007919A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Control weather settings";
 	}
 
-	// Token: 0x0600144C RID: 5196 RVA: 0x0007ACED File Offset: 0x00078EED
+	// Token: 0x06001449 RID: 5193 RVA: 0x0007AFA1 File Offset: 0x000791A1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Clouds [0 to 1 (-1 defaults)]\nFog [density (-1 defaults)] [start] [end]\nFogColor [red (-1 defaults)] [green] [blue]\nRain [0 to 1 (-1 defaults)]\nSnowFall [0 to 1 (-1 defaults)]\nTemp [-99 to 101 (< -99 defaults)]\nWind [0 to 200 (-1 defaults)]\nSimRand [0 to 1 (-1 defaults)]\nStorm <duration hours> <biome name>\nDefaults or d\n";
 	}
 
-	// Token: 0x0600144D RID: 5197 RVA: 0x0007ACF4 File Offset: 0x00078EF4
+	// Token: 0x0600144A RID: 5194 RVA: 0x0007AFA8 File Offset: 0x000791A8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B55 RID: 6997
+	// Token: 0x02001B87 RID: 7047
 	public interface IAntiCheatEncryption : IEncryptionModule
 	{
-		// Token: 0x0600D1B3 RID: 53683
+		// Token: 0x0600D32A RID: 54058
 		bool EncryptionAvailable();
 	}
 }

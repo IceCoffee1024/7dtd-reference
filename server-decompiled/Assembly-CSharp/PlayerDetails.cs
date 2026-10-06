@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020011FA RID: 4602
+// Token: 0x02001212 RID: 4626
 [Serializable]
 public class PlayerDetails
 {
-	// Token: 0x04006DDA RID: 28122
+	// Token: 0x04006E44 RID: 28228
 	public string displayName;
 
-	// Token: 0x04006DDB RID: 28123
+	// Token: 0x04006E45 RID: 28229
 	[HideInInspector]
 	public string userEmail;
 
-	// Token: 0x04006DDC RID: 28124
+	// Token: 0x04006E46 RID: 28230
 	public string userId;
 }

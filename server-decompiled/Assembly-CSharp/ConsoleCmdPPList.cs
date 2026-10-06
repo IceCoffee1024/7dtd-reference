@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000265 RID: 613
+// Token: 0x02000268 RID: 616
 [Preserve]
 public class ConsoleCmdPPList : ConsoleCmdAbstract
 {
-	// Token: 0x170001E0 RID: 480
-	// (get) Token: 0x06001233 RID: 4659 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001D8 RID: 472
+	// (get) Token: 0x06001230 RID: 4656 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,14 +16,14 @@ public class ConsoleCmdPPList : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001234 RID: 4660 RVA: 0x00071C48 File Offset: 0x0006FE48
+	// Token: 0x06001231 RID: 4657 RVA: 0x00071EFC File Offset: 0x000700FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "pplist" };
 	}
 
-	// Token: 0x06001235 RID: 4661 RVA: 0x00071C58 File Offset: 0x0006FE58
+	// Token: 0x06001232 RID: 4658 RVA: 0x00071F0C File Offset: 0x0007010C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		PersistentPlayerList persistentPlayers = GameManager.Instance.persistentPlayers;
@@ -37,7 +37,7 @@ public class ConsoleCmdPPList : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001236 RID: 4662 RVA: 0x00071D10 File Offset: 0x0006FF10
+	// Token: 0x06001233 RID: 4659 RVA: 0x00071FC4 File Offset: 0x000701C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

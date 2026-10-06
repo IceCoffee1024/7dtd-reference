@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000EE RID: 238
+// Token: 0x020000F0 RID: 240
 public class HazardDamageController : MonoBehaviour
 {
-	// Token: 0x0600061B RID: 1563 RVA: 0x0002B8D4 File Offset: 0x00029AD4
+	// Token: 0x06000621 RID: 1569 RVA: 0x0002B9CC File Offset: 0x00029BCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -28,7 +28,7 @@ public class HazardDamageController : MonoBehaviour
 		this.CollidersThisFrame.Clear();
 	}
 
-	// Token: 0x0600061C RID: 1564 RVA: 0x0002B954 File Offset: 0x00029B54
+	// Token: 0x06000622 RID: 1570 RVA: 0x0002BA4C File Offset: 0x00029C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -46,7 +46,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061D RID: 1565 RVA: 0x0002B954 File Offset: 0x00029B54
+	// Token: 0x06000623 RID: 1571 RVA: 0x0002BA4C File Offset: 0x00029C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerStay(Collider other)
 	{
@@ -64,7 +64,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061E RID: 1566 RVA: 0x0002B954 File Offset: 0x00029B54
+	// Token: 0x06000624 RID: 1572 RVA: 0x0002BA4C File Offset: 0x00029C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -82,7 +82,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061F RID: 1567 RVA: 0x0002B98C File Offset: 0x00029B8C
+	// Token: 0x06000625 RID: 1573 RVA: 0x0002BA84 File Offset: 0x00029C84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void touched(Collider collider)
 	{
@@ -119,14 +119,14 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040006C8 RID: 1736
+	// Token: 0x040006CB RID: 1739
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Collider> CollidersThisFrame;
 
-	// Token: 0x040006C9 RID: 1737
+	// Token: 0x040006CC RID: 1740
 	public bool IsActive;
 
-	// Token: 0x040006CA RID: 1738
+	// Token: 0x040006CD RID: 1741
 	public List<string> buffActions;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x0200122A RID: 4650
+// Token: 0x02001242 RID: 4674
 public class GUIBlinker
 {
-	// Token: 0x06009481 RID: 38017 RVA: 0x00381F51 File Offset: 0x00380151
+	// Token: 0x0600950F RID: 38159 RVA: 0x00386799 File Offset: 0x00384999
 	public GUIBlinker(float _ms)
 	{
 		this.ms = _ms;
 	}
 
-	// Token: 0x06009482 RID: 38018 RVA: 0x00381F67 File Offset: 0x00380167
+	// Token: 0x06009510 RID: 38160 RVA: 0x003867AF File Offset: 0x003849AF
 	public bool Draw(float _curTime)
 	{
 		if (_curTime - this.lastBlinkTime > this.ms)
@@ -20,15 +20,15 @@ public class GUIBlinker
 		return this.bResult;
 	}
 
-	// Token: 0x04006F3F RID: 28479
+	// Token: 0x04006FA9 RID: 28585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ms;
 
-	// Token: 0x04006F40 RID: 28480
+	// Token: 0x04006FAA RID: 28586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastBlinkTime;
 
-	// Token: 0x04006F41 RID: 28481
+	// Token: 0x04006FAB RID: 28587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bResult = true;
 }

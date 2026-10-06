@@ -5,12 +5,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200108E RID: 4238
+// Token: 0x0200109F RID: 4255
 [Preserve]
 public class XUiC_TraderWindow : XUiController
 {
-	// Token: 0x17000FB3 RID: 4019
-	// (get) Token: 0x060086AF RID: 34479 RVA: 0x0033555E File Offset: 0x0033375E
+	// Token: 0x17000FE8 RID: 4072
+	// (get) Token: 0x060086FE RID: 34558 RVA: 0x00339376 File Offset: 0x00337576
 	public TileEntityVendingMachine CurrentVending
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,8 +20,8 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB4 RID: 4020
-	// (get) Token: 0x060086B0 RID: 34480 RVA: 0x00335575 File Offset: 0x00333775
+	// Token: 0x17000FE9 RID: 4073
+	// (get) Token: 0x060086FF RID: 34559 RVA: 0x0033938D File Offset: 0x0033758D
 	public EntityTrader CurrentTraderEntity
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -31,8 +31,8 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB5 RID: 4021
-	// (get) Token: 0x060086B1 RID: 34481 RVA: 0x0033558C File Offset: 0x0033378C
+	// Token: 0x17000FEA RID: 4074
+	// (get) Token: 0x06008700 RID: 34560 RVA: 0x003393A4 File Offset: 0x003375A4
 	public bool IsVending
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -42,8 +42,8 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB6 RID: 4022
-	// (get) Token: 0x060086B2 RID: 34482 RVA: 0x00335597 File Offset: 0x00333797
+	// Token: 0x17000FEB RID: 4075
+	// (get) Token: 0x06008701 RID: 34561 RVA: 0x003393AF File Offset: 0x003375AF
 	public bool IsOwner
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -53,8 +53,8 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB7 RID: 4023
-	// (get) Token: 0x060086B3 RID: 34483 RVA: 0x003355B0 File Offset: 0x003337B0
+	// Token: 0x17000FEC RID: 4076
+	// (get) Token: 0x06008702 RID: 34562 RVA: 0x003393C8 File Offset: 0x003375C8
 	public bool IsPlayerOwned
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -76,8 +76,8 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB8 RID: 4024
-	// (get) Token: 0x060086B4 RID: 34484 RVA: 0x00335604 File Offset: 0x00333804
+	// Token: 0x17000FED RID: 4077
+	// (get) Token: 0x06008703 RID: 34563 RVA: 0x0033941C File Offset: 0x0033761C
 	public bool IsRentable
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -99,9 +99,9 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FB9 RID: 4025
-	// (get) Token: 0x060086B5 RID: 34485 RVA: 0x00335656 File Offset: 0x00333856
-	// (set) Token: 0x060086B6 RID: 34486 RVA: 0x0033565E File Offset: 0x0033385E
+	// Token: 0x17000FEE RID: 4078
+	// (get) Token: 0x06008704 RID: 34564 RVA: 0x0033946E File Offset: 0x0033766E
+	// (set) Token: 0x06008705 RID: 34565 RVA: 0x00339476 File Offset: 0x00337676
 	public int Page
 	{
 		get
@@ -124,7 +124,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086B7 RID: 34487 RVA: 0x00335698 File Offset: 0x00333898
+	// Token: 0x06008706 RID: 34566 RVA: 0x003394B0 File Offset: 0x003376B0
 	public override void Init()
 	{
 		base.Init();
@@ -186,7 +186,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086B8 RID: 34488 RVA: 0x003358DE File Offset: 0x00333ADE
+	// Token: 0x06008707 RID: 34567 RVA: 0x003396F6 File Offset: 0x003378F6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowAll_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -195,7 +195,7 @@ public class XUiC_TraderWindow : XUiController
 		this.RefreshTraderItems();
 	}
 
-	// Token: 0x060086B9 RID: 34489 RVA: 0x00335908 File Offset: 0x00333B08
+	// Token: 0x06008708 RID: 34568 RVA: 0x00339720 File Offset: 0x00337920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Rent_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -227,7 +227,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086BA RID: 34490 RVA: 0x003359D8 File Offset: 0x00333BD8
+	// Token: 0x06008709 RID: 34569 RVA: 0x003397F0 File Offset: 0x003379F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Collect_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -243,7 +243,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086BB RID: 34491 RVA: 0x00335A74 File Offset: 0x00333C74
+	// Token: 0x0600870A RID: 34570 RVA: 0x0033988C File Offset: 0x00337A8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TakeAll_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -277,7 +277,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086BC RID: 34492 RVA: 0x00335BFC File Offset: 0x00333DFC
+	// Token: 0x0600870B RID: 34571 RVA: 0x00339A14 File Offset: 0x00337C14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleCategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -296,7 +296,7 @@ public class XUiC_TraderWindow : XUiController
 		this.SetCategory(text);
 	}
 
-	// Token: 0x060086BD RID: 34493 RVA: 0x00335C48 File Offset: 0x00333E48
+	// Token: 0x0600870C RID: 34572 RVA: 0x00339A60 File Offset: 0x00337C60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshHeader()
 	{
@@ -331,7 +331,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086BE RID: 34494 RVA: 0x00335D4C File Offset: 0x00333F4C
+	// Token: 0x0600870D RID: 34573 RVA: 0x00339B64 File Offset: 0x00337D64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -344,7 +344,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086BF RID: 34495 RVA: 0x00335DB6 File Offset: 0x00333FB6
+	// Token: 0x0600870E RID: 34574 RVA: 0x00339BCE File Offset: 0x00337DCE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -370,7 +370,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086C0 RID: 34496 RVA: 0x00335DE4 File Offset: 0x00333FE4
+	// Token: 0x0600870F RID: 34575 RVA: 0x00339BFC File Offset: 0x00337DFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetItemStackData(string _name)
 	{
@@ -393,7 +393,7 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086C1 RID: 34497 RVA: 0x00335E90 File Offset: 0x00334090
+	// Token: 0x06008710 RID: 34576 RVA: 0x00339CA8 File Offset: 0x00337EA8
 	public void FilterByName(string _name)
 	{
 		this.currentIndexList.Clear();
@@ -482,7 +482,7 @@ public class XUiC_TraderWindow : XUiController
 		xuiC_Paging.SetLastPageByElementsAndPageLength(this.currentInventory.Count, this.length);
 	}
 
-	// Token: 0x060086C2 RID: 34498 RVA: 0x003361C1 File Offset: 0x003343C1
+	// Token: 0x06008711 RID: 34577 RVA: 0x00339FD9 File Offset: 0x003381D9
 	public void SetCategory(string _category)
 	{
 		if (this.txtInput != null)
@@ -493,13 +493,13 @@ public class XUiC_TraderWindow : XUiController
 		this.RefreshTraderItems();
 	}
 
-	// Token: 0x060086C3 RID: 34499 RVA: 0x003361E8 File Offset: 0x003343E8
+	// Token: 0x06008712 RID: 34578 RVA: 0x0033A000 File Offset: 0x00338200
 	public string GetCategory()
 	{
 		return this.category;
 	}
 
-	// Token: 0x060086C4 RID: 34500 RVA: 0x003361F0 File Offset: 0x003343F0
+	// Token: 0x06008713 RID: 34579 RVA: 0x0033A008 File Offset: 0x00338208
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -528,7 +528,7 @@ public class XUiC_TraderWindow : XUiController
 		this.Refresh();
 	}
 
-	// Token: 0x060086C5 RID: 34501 RVA: 0x003362D8 File Offset: 0x003344D8
+	// Token: 0x06008714 RID: 34580 RVA: 0x0033A0F0 File Offset: 0x003382F0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -564,7 +564,7 @@ public class XUiC_TraderWindow : XUiController
 		this.xui.Trader.Trader = null;
 	}
 
-	// Token: 0x060086C6 RID: 34502 RVA: 0x003363BC File Offset: 0x003345BC
+	// Token: 0x06008715 RID: 34581 RVA: 0x0033A1D4 File Offset: 0x003383D4
 	public void RefreshTraderItems()
 	{
 		this.buyInventory.Clear();
@@ -585,7 +585,7 @@ public class XUiC_TraderWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060086C7 RID: 34503 RVA: 0x00336454 File Offset: 0x00334654
+	// Token: 0x06008716 RID: 34582 RVA: 0x0033A26C File Offset: 0x0033846C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] GetStashSlots()
 	{
@@ -601,7 +601,7 @@ public class XUiC_TraderWindow : XUiController
 		return null;
 	}
 
-	// Token: 0x060086C8 RID: 34504 RVA: 0x00336538 File Offset: 0x00334738
+	// Token: 0x06008717 RID: 34583 RVA: 0x0033A350 File Offset: 0x00338550
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -800,7 +800,7 @@ public class XUiC_TraderWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060086C9 RID: 34505 RVA: 0x003369FC File Offset: 0x00334BFC
+	// Token: 0x06008718 RID: 34584 RVA: 0x0033A814 File Offset: 0x00338A14
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -826,124 +826,124 @@ public class XUiC_TraderWindow : XUiController
 		}
 	}
 
-	// Token: 0x060086CA RID: 34506 RVA: 0x00336B5A File Offset: 0x00334D5A
+	// Token: 0x06008719 RID: 34585 RVA: 0x0033A972 File Offset: 0x00338B72
 	public void Refresh()
 	{
 		this.RefreshHeader();
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0400641C RID: 25628
+	// Token: 0x0400645E RID: 25694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServiceInfoWindow serviceInfoWindow;
 
-	// Token: 0x0400641D RID: 25629
+	// Token: 0x0400645F RID: 25695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TraderItemList itemListGrid;
 
-	// Token: 0x0400641E RID: 25630
+	// Token: 0x04006460 RID: 25696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x0400641F RID: 25631
+	// Token: 0x04006461 RID: 25697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04006420 RID: 25632
+	// Token: 0x04006462 RID: 25698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04006421 RID: 25633
+	// Token: 0x04006463 RID: 25699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<TraderData.Entry> buyInventory = new List<TraderData.Entry>();
 
-	// Token: 0x04006422 RID: 25634
+	// Token: 0x04006464 RID: 25700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> currentIndexList = new List<int>();
 
-	// Token: 0x04006423 RID: 25635
+	// Token: 0x04006465 RID: 25701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemStack> currentInventory = new List<ItemStack>();
 
-	// Token: 0x04006424 RID: 25636
+	// Token: 0x04006466 RID: 25702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x04006425 RID: 25637
+	// Token: 0x04006467 RID: 25703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowicon;
 
-	// Token: 0x04006426 RID: 25638
+	// Token: 0x04006468 RID: 25704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button rentButton;
 
-	// Token: 0x04006427 RID: 25639
+	// Token: 0x04006469 RID: 25705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button showAllButton;
 
-	// Token: 0x04006428 RID: 25640
+	// Token: 0x0400646A RID: 25706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x04006429 RID: 25641
+	// Token: 0x0400646B RID: 25707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PlayerName playerName;
 
-	// Token: 0x0400642A RID: 25642
+	// Token: 0x0400646C RID: 25708
 	public bool CompletedTransaction;
 
-	// Token: 0x0400642B RID: 25643
+	// Token: 0x0400646D RID: 25709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblGeneralStock;
 
-	// Token: 0x0400642C RID: 25644
+	// Token: 0x0400646E RID: 25710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblSecretStash;
 
-	// Token: 0x0400642D RID: 25645
+	// Token: 0x0400646F RID: 25711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string category = "";
 
-	// Token: 0x0400642E RID: 25646
+	// Token: 0x04006470 RID: 25712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSecretStash;
 
-	// Token: 0x0400642F RID: 25647
+	// Token: 0x04006471 RID: 25713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasSecretStash;
 
-	// Token: 0x04006430 RID: 25648
+	// Token: 0x04006472 RID: 25714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showAll;
 
-	// Token: 0x04006431 RID: 25649
+	// Token: 0x04006473 RID: 25715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int traderStage = -1;
 
-	// Token: 0x04006432 RID: 25650
+	// Token: 0x04006474 RID: 25716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> rentTimeLeftFormatter = new CachedStringFormatter<int>((int _i) => string.Format("{0}: {1} {2}", Localization.Get("xuiExpires", false, null), Localization.Get("xuiDay", false, null), _i));
 
-	// Token: 0x04006433 RID: 25651
+	// Token: 0x04006475 RID: 25717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> timeLeftFormatter = new CachedStringFormatter<int>((int _i) => string.Format("{0} {1}", Localization.Get("xuiDay", false, null), _i));
 
-	// Token: 0x04006434 RID: 25652
+	// Token: 0x04006476 RID: 25718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt availableMoneyFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04006435 RID: 25653
+	// Token: 0x04006477 RID: 25719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 
-	// Token: 0x0200108F RID: 4239
+	// Token: 0x020010A0 RID: 4256
 	public enum TraderActionTypes
 	{
-		// Token: 0x04006437 RID: 25655
+		// Token: 0x04006479 RID: 25721
 		Buy,
-		// Token: 0x04006438 RID: 25656
+		// Token: 0x0400647A RID: 25722
 		Sell,
-		// Token: 0x04006439 RID: 25657
+		// Token: 0x0400647B RID: 25723
 		BuyBack
 	}
 }

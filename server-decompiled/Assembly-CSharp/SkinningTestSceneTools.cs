@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001535 RID: 5429
+// Token: 0x02001557 RID: 5463
 public class SkinningTestSceneTools : MonoBehaviour
 {
-	// Token: 0x0600AA67 RID: 43623 RVA: 0x003F8C17 File Offset: 0x003F6E17
+	// Token: 0x0600AB1A RID: 43802 RVA: 0x003FDA6B File Offset: 0x003FBC6B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -15,7 +15,7 @@ public class SkinningTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA68 RID: 43624 RVA: 0x003F8C44 File Offset: 0x003F6E44
+	// Token: 0x0600AB1B RID: 43803 RVA: 0x003FDA98 File Offset: 0x003FBC98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -53,52 +53,52 @@ public class SkinningTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007EAB RID: 32427
+	// Token: 0x04007F2E RID: 32558
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator anim;
 
-	// Token: 0x04007EAC RID: 32428
+	// Token: 0x04007F2F RID: 32559
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int layerIndex;
 
-	// Token: 0x04007EAD RID: 32429
+	// Token: 0x04007F30 RID: 32560
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int maxLayers;
 
-	// Token: 0x04007EAE RID: 32430
+	// Token: 0x04007F31 RID: 32561
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float turnRate = 600f;
 
-	// Token: 0x04007EAF RID: 32431
+	// Token: 0x04007F32 RID: 32562
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int totalModels;
 
-	// Token: 0x04007EB0 RID: 32432
+	// Token: 0x04007F33 RID: 32563
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int totalBodyParts;
 
-	// Token: 0x04007EB1 RID: 32433
+	// Token: 0x04007F34 RID: 32564
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int randomMaterial;
 
-	// Token: 0x04007EB2 RID: 32434
+	// Token: 0x04007F35 RID: 32565
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetLayerWeight;
 
-	// Token: 0x04007EB3 RID: 32435
+	// Token: 0x04007F36 RID: 32566
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float endLayerWeight;
 
-	// Token: 0x04007EB4 RID: 32436
+	// Token: 0x04007F37 RID: 32567
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentModel;

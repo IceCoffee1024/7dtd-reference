@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001903 RID: 6403
+	// Token: 0x0200192F RID: 6447
 	[Preserve]
 	public class ChallengeObjectiveGatherIngredient : ChallengeBaseTrackedItemObjective
 	{
-		// Token: 0x1700186D RID: 6253
-		// (get) Token: 0x0600C5AA RID: 50602 RVA: 0x0008121D File Offset: 0x0007F41D
+		// Token: 0x1700190F RID: 6415
+		// (get) Token: 0x0600C702 RID: 50946 RVA: 0x000814D1 File Offset: 0x0007F6D1
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -17,8 +17,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700186E RID: 6254
-		// (get) Token: 0x0600C5AB RID: 50603 RVA: 0x0048B71D File Offset: 0x0048991D
+		// Token: 0x17001910 RID: 6416
+		// (get) Token: 0x0600C703 RID: 50947 RVA: 0x0048FC0D File Offset: 0x0048DE0D
 		public override string DescriptionText
 		{
 			get
@@ -27,8 +27,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700186F RID: 6255
-		// (get) Token: 0x0600C5AC RID: 50604 RVA: 0x0048C02C File Offset: 0x0048A22C
+		// Token: 0x17001911 RID: 6417
+		// (get) Token: 0x0600C704 RID: 50948 RVA: 0x0049051C File Offset: 0x0048E71C
 		public override string StatusText
 		{
 			get
@@ -42,14 +42,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5AD RID: 50605 RVA: 0x0048C087 File Offset: 0x0048A287
+		// Token: 0x0600C705 RID: 50949 RVA: 0x00490577 File Offset: 0x0048E777
 		public override void Init()
 		{
 			this.expectedItem = this.itemRecipe.ingredients[this.IngredientIndex].itemValue;
 			this.expectedItemClass = this.expectedItem.ItemClass;
 		}
 
-		// Token: 0x0600C5AE RID: 50606 RVA: 0x0048C0BC File Offset: 0x0048A2BC
+		// Token: 0x0600C706 RID: 50950 RVA: 0x004905AC File Offset: 0x0048E7AC
 		public override void HandleAddHooks()
 		{
 			EntityPlayerLocal player = this.Owner.Owner.Player;
@@ -69,7 +69,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5AF RID: 50607 RVA: 0x0048C1AB File Offset: 0x0048A3AB
+		// Token: 0x0600C707 RID: 50951 RVA: 0x0049069B File Offset: 0x0048E89B
 		public override bool CheckObjectiveComplete(bool handleComplete = true)
 		{
 			if (this.CheckForNeededItem())
@@ -86,7 +86,7 @@ namespace Challenges
 			return base.CheckObjectiveComplete(handleComplete);
 		}
 
-		// Token: 0x0600C5B0 RID: 50608 RVA: 0x0048C1E8 File Offset: 0x0048A3E8
+		// Token: 0x0600C708 RID: 50952 RVA: 0x004906D8 File Offset: 0x0048E8D8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ItemsChangedInternal()
 		{
@@ -105,7 +105,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5B1 RID: 50609 RVA: 0x0048B969 File Offset: 0x00489B69
+		// Token: 0x0600C709 RID: 50953 RVA: 0x0048FE59 File Offset: 0x0048E059
 		public override void UpdateStatus()
 		{
 			base.UpdateStatus();
@@ -123,7 +123,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5B2 RID: 50610 RVA: 0x0048C228 File Offset: 0x0048A428
+		// Token: 0x0600C70A RID: 50954 RVA: 0x00490718 File Offset: 0x0048E918
 		public override void HandleRemoveHooks()
 		{
 			EntityPlayerLocal player = this.Owner.Owner.Player;
@@ -143,7 +143,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5B3 RID: 50611 RVA: 0x0048C2CC File Offset: 0x0048A4CC
+		// Token: 0x0600C70B RID: 50955 RVA: 0x004907BC File Offset: 0x0048E9BC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleUpdatingCurrent()
 		{
@@ -189,7 +189,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5B4 RID: 50612 RVA: 0x0048C49C File Offset: 0x0048A69C
+		// Token: 0x0600C70C RID: 50956 RVA: 0x0049098C File Offset: 0x0048EB8C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckForNeededItem()
 		{
@@ -216,7 +216,7 @@ namespace Challenges
 			return num >= this.IngredientCount * Math.Max(0, this.NeededCount - (this.currentNeededCount + num2));
 		}
 
-		// Token: 0x0600C5B5 RID: 50613 RVA: 0x0048C5D0 File Offset: 0x0048A7D0
+		// Token: 0x0600C70D RID: 50957 RVA: 0x00490AC0 File Offset: 0x0048ECC0
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveGatherIngredient
@@ -229,22 +229,22 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009542 RID: 38210
+		// Token: 0x04009608 RID: 38408
 		public Recipe itemRecipe;
 
-		// Token: 0x04009543 RID: 38211
+		// Token: 0x04009609 RID: 38409
 		public int IngredientIndex = -1;
 
-		// Token: 0x04009544 RID: 38212
+		// Token: 0x0400960A RID: 38410
 		public int IngredientCount = -1;
 
-		// Token: 0x04009545 RID: 38213
+		// Token: 0x0400960B RID: 38411
 		public int NeededCount;
 
-		// Token: 0x04009546 RID: 38214
+		// Token: 0x0400960C RID: 38412
 		public int currentNeededCount;
 
-		// Token: 0x04009547 RID: 38215
+		// Token: 0x0400960D RID: 38413
 		public BaseRequirementObjectiveGroup Parent;
 	}
 }

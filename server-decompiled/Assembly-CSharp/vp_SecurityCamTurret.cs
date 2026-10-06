@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015AA RID: 5546
+// Token: 0x020015CC RID: 5580
 public class vp_SecurityCamTurret : vp_SimpleAITurret
 {
-	// Token: 0x0600AD84 RID: 44420 RVA: 0x0040AE04 File Offset: 0x00409004
+	// Token: 0x0600AE37 RID: 44599 RVA: 0x0040FC58 File Offset: 0x0040DE58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -18,7 +18,7 @@ public class vp_SecurityCamTurret : vp_SimpleAITurret
 		this.SwivelRotation = this.Swivel.transform.eulerAngles;
 	}
 
-	// Token: 0x0600AD85 RID: 44421 RVA: 0x0040AE94 File Offset: 0x00409094
+	// Token: 0x0600AE38 RID: 44600 RVA: 0x0040FCE8 File Offset: 0x0040DEE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -39,29 +39,29 @@ public class vp_SecurityCamTurret : vp_SimpleAITurret
 		this.Swivel.transform.eulerAngles = this.SwivelRotation;
 	}
 
-	// Token: 0x04008101 RID: 33025
+	// Token: 0x04008184 RID: 33156
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_AngleBob m_AngleBob;
 
-	// Token: 0x04008102 RID: 33026
+	// Token: 0x04008185 RID: 33157
 	public GameObject Swivel;
 
-	// Token: 0x04008103 RID: 33027
+	// Token: 0x04008186 RID: 33158
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 SwivelRotation = Vector3.zero;
 
-	// Token: 0x04008104 RID: 33028
+	// Token: 0x04008187 RID: 33159
 	public float SwivelAmp = 100f;
 
-	// Token: 0x04008105 RID: 33029
+	// Token: 0x04008188 RID: 33160
 	public float SwivelRate = 0.5f;
 
-	// Token: 0x04008106 RID: 33030
+	// Token: 0x04008189 RID: 33161
 	public float SwivelOffset;
 
-	// Token: 0x04008107 RID: 33031
+	// Token: 0x0400818A RID: 33162
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle vp_ResumeSwivelTimer = new vp_Timer.Handle();

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF7}</ProjectGuid>
+    <ProjectGuid>{DD4E94CE-C473-4FA8-A607-54649C4C87DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>UnityEngine.CoreModule</RootNamespace>
     <AssemblyName>UnityEngine.CoreModule</AssemblyName>

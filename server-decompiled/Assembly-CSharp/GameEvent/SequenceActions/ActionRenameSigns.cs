@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019F0 RID: 6640
+	// Token: 0x02001A1C RID: 6684
 	[Preserve]
 	public class ActionRenameSigns : ActionBaseContainersAction
 	{
-		// Token: 0x0600CA7E RID: 51838 RVA: 0x004A36FC File Offset: 0x004A18FC
+		// Token: 0x0600CBD6 RID: 52182 RVA: 0x004A7BA8 File Offset: 0x004A5DA8
 		public override bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			isEmpty = true;
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600CA7F RID: 51839 RVA: 0x004A3734 File Offset: 0x004A1934
+		// Token: 0x0600CBD7 RID: 52183 RVA: 0x004A7BE0 File Offset: 0x004A5DE0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600CA80 RID: 51840 RVA: 0x004A3784 File Offset: 0x004A1984
+		// Token: 0x0600CBD8 RID: 52184 RVA: 0x004A7C30 File Offset: 0x004A5E30
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000781 RID: 1921
+// Token: 0x02000783 RID: 1923
 [Preserve]
 public class ServerStateAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005C0 RID: 1472
-	// (get) Token: 0x0600394B RID: 14667 RVA: 0x00105CC1 File Offset: 0x00103EC1
+	// Token: 0x170005E5 RID: 1509
+	// (get) Token: 0x0600398D RID: 14733 RVA: 0x001065F1 File Offset: 0x001047F1
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class ServerStateAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005C1 RID: 1473
-	// (get) Token: 0x0600394C RID: 14668 RVA: 0x00177952 File Offset: 0x00175B52
+	// Token: 0x170005E6 RID: 1510
+	// (get) Token: 0x0600398E RID: 14734 RVA: 0x0017810A File Offset: 0x0017630A
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class ServerStateAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005C2 RID: 1474
-	// (get) Token: 0x0600394D RID: 14669 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+	// Token: 0x170005E7 RID: 1511
+	// (get) Token: 0x0600398F RID: 14735 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,7 +36,7 @@ public class ServerStateAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x0600394E RID: 14670 RVA: 0x0017795C File Offset: 0x00175B5C
+	// Token: 0x06003990 RID: 14736 RVA: 0x00178114 File Offset: 0x00176314
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		IMasterServerAnnouncer serverListAnnouncer = PlatformManager.MultiPlatform.ServerListAnnouncer;

@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001771 RID: 6001
+	// Token: 0x0200179D RID: 6045
 	public static class WorldGenerationFromXml
 	{
-		// Token: 0x0600BA33 RID: 47667 RVA: 0x00454EF8 File Offset: 0x004530F8
+		// Token: 0x0600BB8A RID: 48010 RVA: 0x00459418 File Offset: 0x00457618
 		public static void Cleanup()
 		{
 			WorldBuilderStatic.Properties.Clear();
@@ -22,7 +22,7 @@ namespace WorldGenerationEngineFinal
 			DistrictPlannerStatic.Districts.Clear();
 		}
 
-		// Token: 0x0600BA34 RID: 47668 RVA: 0x00454F4B File Offset: 0x0045314B
+		// Token: 0x0600BB8B RID: 48011 RVA: 0x0045946B File Offset: 0x0045766B
 		public static void Reload(XmlFile _xmlFile)
 		{
 			Debug.LogError("Reloading world generation data!");
@@ -30,7 +30,7 @@ namespace WorldGenerationEngineFinal
 			ThreadManager.RunCoroutineSync(WorldGenerationFromXml.Load(_xmlFile));
 		}
 
-		// Token: 0x0600BA35 RID: 47669 RVA: 0x00454F67 File Offset: 0x00453167
+		// Token: 0x0600BB8C RID: 48012 RVA: 0x00459487 File Offset: 0x00457687
 		public static IEnumerator Load(XmlFile file)
 		{
 			WorldGenerationFromXml.Cleanup();

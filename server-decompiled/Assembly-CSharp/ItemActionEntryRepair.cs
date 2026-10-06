@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using XMLData.Item;
 
-// Token: 0x02000D5E RID: 3422
+// Token: 0x02000D6F RID: 3439
 [Preserve]
 public class ItemActionEntryRepair : BaseItemActionEntry
 {
-	// Token: 0x06006814 RID: 26644 RVA: 0x00290D38 File Offset: 0x0028EF38
+	// Token: 0x0600681B RID: 26651 RVA: 0x002942B4 File Offset: 0x002924B4
 	public ItemActionEntryRepair(XUiController _controller)
 		: base(_controller, "lblContextActionRepair", "ui_game_symbol_wrench", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -16,7 +16,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		_controller.xui.PlayerInventory.OnToolbeltItemsChanged += this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x06006815 RID: 26645 RVA: 0x00290D99 File Offset: 0x0028EF99
+	// Token: 0x0600681C RID: 26652 RVA: 0x00294315 File Offset: 0x00292515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
@@ -29,7 +29,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		parentItem.MarkDirty();
 	}
 
-	// Token: 0x06006816 RID: 26646 RVA: 0x00290D99 File Offset: 0x0028EF99
+	// Token: 0x0600681D RID: 26653 RVA: 0x00294315 File Offset: 0x00292515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
@@ -42,7 +42,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		parentItem.MarkDirty();
 	}
 
-	// Token: 0x06006817 RID: 26647 RVA: 0x00290DB4 File Offset: 0x0028EFB4
+	// Token: 0x0600681E RID: 26654 RVA: 0x00294330 File Offset: 0x00292530
 	public override void OnDisabledActivate()
 	{
 		switch (this.state)
@@ -65,16 +65,22 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 			}
 			else
 			{
-				XUiC_ItemStack xuiC_ItemStack = base.ItemController as XUiC_ItemStack;
-				if (xuiC_ItemStack != null)
+				IItemStackController itemStackController = base.ItemController as IItemStackController;
+				if (itemStackController != null)
 				{
-					if (xuiC_ItemStack.ItemStack.IsEmpty() || xuiC_ItemStack.StackLock)
+					if (!itemStackController.ItemStack.IsEmpty())
 					{
-						return;
+						XUiC_ItemStack xuiC_ItemStack = base.ItemController as XUiC_ItemStack;
+						if (xuiC_ItemStack == null || !xuiC_ItemStack.StackLock)
+						{
+							itemClass = itemStackController.ItemStack.itemValue.ItemClass;
+							goto IL_00F0;
+						}
 					}
-					itemClass = xuiC_ItemStack.ItemStack.itemValue.ItemClass;
+					return;
 				}
 			}
+			IL_00F0:
 			if (itemClass != null)
 			{
 				ItemData.DataItemArrayRepairTools repairTools = itemClass.RepairTools;
@@ -104,7 +110,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006818 RID: 26648 RVA: 0x00290F90 File Offset: 0x0028F190
+	// Token: 0x0600681F RID: 26655 RVA: 0x00294520 File Offset: 0x00292720
 	public override void RefreshEnabled()
 	{
 		base.RefreshEnabled();
@@ -124,17 +130,23 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 		else
 		{
-			XUiC_ItemStack xuiC_ItemStack = base.ItemController as XUiC_ItemStack;
-			if (xuiC_ItemStack != null)
+			IItemStackController itemStackController = base.ItemController as IItemStackController;
+			if (itemStackController != null)
 			{
-				if (xuiC_ItemStack.ItemStack.IsEmpty() || xuiC_ItemStack.StackLock)
+				if (!itemStackController.ItemStack.IsEmpty())
 				{
-					return;
+					XUiC_ItemStack xuiC_ItemStack = base.ItemController as XUiC_ItemStack;
+					if (xuiC_ItemStack == null || !xuiC_ItemStack.StackLock)
+					{
+						itemClass = itemStackController.ItemStack.itemValue.ItemClass;
+						itemStack = itemStackController.ItemStack;
+						goto IL_00A7;
+					}
 				}
-				itemClass = xuiC_ItemStack.ItemStack.itemValue.ItemClass;
-				itemStack = xuiC_ItemStack.ItemStack;
+				return;
 			}
 		}
+		IL_00A7:
 		base.Enabled = this.state == ItemActionEntryRepair.StateTypes.Normal;
 		if (!base.Enabled)
 		{
@@ -179,7 +191,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006819 RID: 26649 RVA: 0x0029115C File Offset: 0x0028F35C
+	// Token: 0x06006820 RID: 26656 RVA: 0x002946FC File Offset: 0x002928FC
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -239,16 +251,16 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		}
 		else
 		{
-			XUiC_ItemStack xuiC_ItemStack2 = base.ItemController as XUiC_ItemStack;
-			if (xuiC_ItemStack2 != null)
+			IItemStackController itemStackController = base.ItemController as IItemStackController;
+			if (itemStackController != null)
 			{
-				xuiC_ItemStack2.ItemStack = ItemStack.Empty;
+				itemStackController.ItemStack = ItemStack.Empty;
 			}
 		}
 		playerInventory.RemoveItems(recipe.ingredients, 1, null);
 	}
 
-	// Token: 0x0600681A RID: 26650 RVA: 0x002913E4 File Offset: 0x0028F5E4
+	// Token: 0x06006821 RID: 26657 RVA: 0x00294984 File Offset: 0x00292B84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ItemActionEntryRepair_TimeIntervalElapsedEvent(float _timeLeft, XUiC_ItemStack _uiItemStack)
 	{
@@ -263,7 +275,7 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		_uiItemStack.UnlockStack();
 	}
 
-	// Token: 0x0600681B RID: 26651 RVA: 0x00291450 File Offset: 0x0028F650
+	// Token: 0x06006822 RID: 26658 RVA: 0x002949F0 File Offset: 0x00292BF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void warnQueueFull()
 	{
@@ -276,30 +288,30 @@ public class ItemActionEntryRepair : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x0600681C RID: 26652 RVA: 0x002914B4 File Offset: 0x0028F6B4
+	// Token: 0x06006823 RID: 26659 RVA: 0x00294A54 File Offset: 0x00292C54
 	public override void DisableEvents()
 	{
 		base.ItemController.xui.PlayerInventory.OnBackpackItemsChanged -= this.PlayerInventory_OnBackpackItemsChanged;
 		base.ItemController.xui.PlayerInventory.OnToolbeltItemsChanged -= this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x04004FF6 RID: 20470
+	// Token: 0x04005035 RID: 20533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntryRepair.StateTypes state;
 
-	// Token: 0x02000D5F RID: 3423
+	// Token: 0x02000D70 RID: 3440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04004FF8 RID: 20472
+		// Token: 0x04005037 RID: 20535
 		Normal,
-		// Token: 0x04004FF9 RID: 20473
+		// Token: 0x04005038 RID: 20536
 		RecipeLocked,
-		// Token: 0x04004FFA RID: 20474
+		// Token: 0x04005039 RID: 20537
 		NotEnoughMaterials,
-		// Token: 0x04004FFB RID: 20475
+		// Token: 0x0400503A RID: 20538
 		NoLongerRepairable,
-		// Token: 0x04004FFC RID: 20476
+		// Token: 0x0400503B RID: 20539
 		DurabilityWouldBeReduced
 	}
 }

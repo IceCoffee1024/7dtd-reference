@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000290 RID: 656
+// Token: 0x02000293 RID: 659
 [Preserve]
 public class ConsoleCmdShowHits : ConsoleCmdAbstract
 {
-	// Token: 0x1700020C RID: 524
-	// (get) Token: 0x0600132E RID: 4910 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000204 RID: 516
+	// (get) Token: 0x0600132B RID: 4907 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdShowHits : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700020D RID: 525
-	// (get) Token: 0x0600132F RID: 4911 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000205 RID: 517
+	// (get) Token: 0x0600132C RID: 4908 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -27,28 +27,28 @@ public class ConsoleCmdShowHits : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001330 RID: 4912 RVA: 0x00075FDC File Offset: 0x000741DC
+	// Token: 0x0600132D RID: 4909 RVA: 0x00076290 File Offset: 0x00074490
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showhits" };
 	}
 
-	// Token: 0x06001331 RID: 4913 RVA: 0x00075FEC File Offset: 0x000741EC
+	// Token: 0x0600132E RID: 4910 RVA: 0x000762A0 File Offset: 0x000744A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Show hit entity info";
 	}
 
-	// Token: 0x06001332 RID: 4914 RVA: 0x00075FF3 File Offset: 0x000741F3
+	// Token: 0x0600132F RID: 4911 RVA: 0x000762A7 File Offset: 0x000744A7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Commands:\ndamage - toggle damage numbers\nhits <time> <size> - toggle hits";
 	}
 
-	// Token: 0x06001333 RID: 4915 RVA: 0x00075FFC File Offset: 0x000741FC
+	// Token: 0x06001330 RID: 4912 RVA: 0x000762B0 File Offset: 0x000744B0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

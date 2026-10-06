@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using UnityEngine;
 
-// Token: 0x020002D3 RID: 723
+// Token: 0x020002D6 RID: 726
 public class WinFormConnection : Form, IConsoleConnection
 {
-	// Token: 0x060014D9 RID: 5337 RVA: 0x0007E0C0 File Offset: 0x0007C2C0
+	// Token: 0x060014D6 RID: 5334 RVA: 0x0007E374 File Offset: 0x0007C574
 	public WinFormConnection(WinFormInstance _owner)
 	{
 		this.initialize();
@@ -16,7 +16,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		ModEvents.GameAwake.RegisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SGameAwakeData>(this.OnGameAwake));
 	}
 
-	// Token: 0x060014DA RID: 5338 RVA: 0x0007E152 File Offset: 0x0007C352
+	// Token: 0x060014D7 RID: 5335 RVA: 0x0007E406 File Offset: 0x0007C606
 	public void CloseTerminal()
 	{
 		if (base.InvokeRequired)
@@ -29,7 +29,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		global::System.Windows.Forms.Application.Exit();
 	}
 
-	// Token: 0x060014DB RID: 5339 RVA: 0x0007E184 File Offset: 0x0007C384
+	// Token: 0x060014D8 RID: 5336 RVA: 0x0007E438 File Offset: 0x0007C638
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnClosing(CancelEventArgs _e)
 	{
@@ -55,7 +55,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}, null);
 	}
 
-	// Token: 0x060014DC RID: 5340 RVA: 0x0007E202 File Offset: 0x0007C402
+	// Token: 0x060014D9 RID: 5337 RVA: 0x0007E4B6 File Offset: 0x0007C6B6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnClosed(EventArgs _e)
 	{
@@ -64,7 +64,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		ModEvents.GameAwake.UnregisterHandler(new ModEvents.ModEventHandlerDelegate<ModEvents.SGameAwakeData>(this.OnGameAwake));
 	}
 
-	// Token: 0x060014DD RID: 5341 RVA: 0x0007E238 File Offset: 0x0007C438
+	// Token: 0x060014DA RID: 5338 RVA: 0x0007E4EC File Offset: 0x0007C6EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initialize()
 	{
@@ -108,7 +108,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		base.PerformLayout();
 	}
 
-	// Token: 0x060014DE RID: 5342 RVA: 0x0007E3C0 File Offset: 0x0007C5C0
+	// Token: 0x060014DB RID: 5339 RVA: 0x0007E674 File Offset: 0x0007C874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGameAwake(ref ModEvents.SGameAwakeData _data)
 	{
@@ -119,7 +119,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}
 	}
 
-	// Token: 0x060014DF RID: 5343 RVA: 0x0007E444 File Offset: 0x0007C644
+	// Token: 0x060014DC RID: 5340 RVA: 0x0007E6F8 File Offset: 0x0007C8F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGameStartDone(ref ModEvents.SGameStartDoneData _data)
 	{
@@ -129,7 +129,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		this.commandInputBox.Focus();
 	}
 
-	// Token: 0x060014E0 RID: 5344 RVA: 0x0007E497 File Offset: 0x0007C697
+	// Token: 0x060014DD RID: 5341 RVA: 0x0007E74B File Offset: 0x0007C94B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CommandInputBoxOnKeyDown(object _sender, KeyEventArgs _keyEventArgs)
 	{
@@ -139,7 +139,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}
 	}
 
-	// Token: 0x060014E1 RID: 5345 RVA: 0x0007E4AC File Offset: 0x0007C6AC
+	// Token: 0x060014DE RID: 5342 RVA: 0x0007E760 File Offset: 0x0007C960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void execCommand()
 	{
@@ -150,7 +150,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}
 	}
 
-	// Token: 0x060014E2 RID: 5346 RVA: 0x0007E4FC File Offset: 0x0007C6FC
+	// Token: 0x060014DF RID: 5343 RVA: 0x0007E7B0 File Offset: 0x0007C9B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddLine(string _text, global::System.Drawing.Color _color)
 	{
@@ -182,13 +182,13 @@ public class WinFormConnection : Form, IConsoleConnection
 		this.consoleOutputBox.ScrollToCaret();
 	}
 
-	// Token: 0x060014E3 RID: 5347 RVA: 0x0007E62D File Offset: 0x0007C82D
+	// Token: 0x060014E0 RID: 5344 RVA: 0x0007E8E1 File Offset: 0x0007CAE1
 	public void SendLine(string _line)
 	{
 		this.AddLine(_line, WinFormConnection.logColorCommandReply);
 	}
 
-	// Token: 0x060014E4 RID: 5348 RVA: 0x0007E63C File Offset: 0x0007C83C
+	// Token: 0x060014E1 RID: 5345 RVA: 0x0007E8F0 File Offset: 0x0007CAF0
 	public void SendLines(List<string> _output)
 	{
 		foreach (string text in _output)
@@ -197,7 +197,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}
 	}
 
-	// Token: 0x060014E5 RID: 5349 RVA: 0x0007E68C File Offset: 0x0007C88C
+	// Token: 0x060014E2 RID: 5346 RVA: 0x0007E940 File Offset: 0x0007CB40
 	public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 	{
 		if (this.IsLogLevelEnabled(_type))
@@ -218,7 +218,7 @@ public class WinFormConnection : Form, IConsoleConnection
 		}
 	}
 
-	// Token: 0x060014E6 RID: 5350 RVA: 0x0007E6DC File Offset: 0x0007C8DC
+	// Token: 0x060014E3 RID: 5347 RVA: 0x0007E990 File Offset: 0x0007CB90
 	public void EnableLogLevel(LogType _type, bool _enable)
 	{
 		if (_enable)
@@ -229,24 +229,24 @@ public class WinFormConnection : Form, IConsoleConnection
 		this.enabledLogLevels.Remove(_type);
 	}
 
-	// Token: 0x060014E7 RID: 5351 RVA: 0x0007E6FC File Offset: 0x0007C8FC
+	// Token: 0x060014E4 RID: 5348 RVA: 0x0007E9B0 File Offset: 0x0007CBB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsLogLevelEnabled(LogType _type)
 	{
 		return this.enabledLogLevels.Contains(_type);
 	}
 
-	// Token: 0x060014E8 RID: 5352 RVA: 0x0007E70A File Offset: 0x0007C90A
+	// Token: 0x060014E5 RID: 5349 RVA: 0x0007E9BE File Offset: 0x0007CBBE
 	public string GetDescription()
 	{
 		return "Terminal Window";
 	}
 
-	// Token: 0x04000DD8 RID: 3544
+	// Token: 0x04000DD1 RID: 3537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string iconPath = GameIO.GetGameDir("Data") + "/7dtd_icon.ico";
 
-	// Token: 0x04000DD9 RID: 3545
+	// Token: 0x04000DD2 RID: 3538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<LogType> enabledLogLevels = new HashSet<LogType>
 	{
@@ -257,43 +257,43 @@ public class WinFormConnection : Form, IConsoleConnection
 		LogType.Assert
 	};
 
-	// Token: 0x04000DDA RID: 3546
+	// Token: 0x04000DD3 RID: 3539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RichTextBox consoleOutputBox;
 
-	// Token: 0x04000DDB RID: 3547
+	// Token: 0x04000DD4 RID: 3540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextBox commandInputBox;
 
-	// Token: 0x04000DDC RID: 3548
+	// Token: 0x04000DD5 RID: 3541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool forceClose;
 
-	// Token: 0x04000DDD RID: 3549
+	// Token: 0x04000DD6 RID: 3542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shutdownRequested;
 
-	// Token: 0x04000DDE RID: 3550
+	// Token: 0x04000DD7 RID: 3543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int lineLimit = 500;
 
-	// Token: 0x04000DDF RID: 3551
+	// Token: 0x04000DD8 RID: 3544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly global::System.Drawing.Color logColorCommandReply = global::System.Drawing.Color.LightCyan;
 
-	// Token: 0x04000DE0 RID: 3552
+	// Token: 0x04000DD9 RID: 3545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly global::System.Drawing.Color logColorNormal = global::System.Drawing.Color.LimeGreen;
 
-	// Token: 0x04000DE1 RID: 3553
+	// Token: 0x04000DDA RID: 3546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly global::System.Drawing.Color logColorWarning = global::System.Drawing.Color.Yellow;
 
-	// Token: 0x04000DE2 RID: 3554
+	// Token: 0x04000DDB RID: 3547
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly global::System.Drawing.Color logColorError = global::System.Drawing.Color.Red;
 
-	// Token: 0x04000DE3 RID: 3555
+	// Token: 0x04000DDC RID: 3548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<string, global::System.Drawing.Color> addLineDelegate;
 }

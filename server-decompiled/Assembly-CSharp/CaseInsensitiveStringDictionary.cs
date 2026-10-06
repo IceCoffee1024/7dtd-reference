@@ -1,42 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013BA RID: 5050
+// Token: 0x020013DA RID: 5082
 public class CaseInsensitiveStringDictionary<TValue> : Dictionary<string, TValue>
 {
-	// Token: 0x06009EF0 RID: 40688 RVA: 0x003BEDAF File Offset: 0x003BCFAF
+	// Token: 0x06009F9B RID: 40859 RVA: 0x003C394B File Offset: 0x003C1B4B
 	public CaseInsensitiveStringDictionary()
 		: base(StringComparer.OrdinalIgnoreCase)
 	{
 	}
 
-	// Token: 0x06009EF1 RID: 40689 RVA: 0x003BEDBC File Offset: 0x003BCFBC
+	// Token: 0x06009F9C RID: 40860 RVA: 0x003C3958 File Offset: 0x003C1B58
 	public CaseInsensitiveStringDictionary(int _capacity)
 		: base(_capacity, StringComparer.OrdinalIgnoreCase)
 	{
 	}
 
-	// Token: 0x06009EF2 RID: 40690 RVA: 0x003BEDCA File Offset: 0x003BCFCA
+	// Token: 0x06009F9D RID: 40861 RVA: 0x003C3966 File Offset: 0x003C1B66
 	public CaseInsensitiveStringDictionary(IDictionary<string, TValue> _dictionary)
 		: base(_dictionary, StringComparer.OrdinalIgnoreCase)
 	{
 	}
 
-	// Token: 0x06009EF3 RID: 40691 RVA: 0x003BEDD8 File Offset: 0x003BCFD8
+	// Token: 0x06009F9E RID: 40862 RVA: 0x003C3974 File Offset: 0x003C1B74
 	[Obsolete("CaseInsensitiveStringDictionary constructors with explicit comparer are deprecated in favor of the variants without, as these automatically set the appropriate comparer for the enum key type.", true)]
 	public CaseInsensitiveStringDictionary(IEqualityComparer<string> _comparer)
 		: base(_comparer)
 	{
 	}
 
-	// Token: 0x06009EF4 RID: 40692 RVA: 0x003BEDE1 File Offset: 0x003BCFE1
+	// Token: 0x06009F9F RID: 40863 RVA: 0x003C397D File Offset: 0x003C1B7D
 	[Obsolete("CaseInsensitiveStringDictionary constructors with explicit comparer are deprecated in favor of the variants without, as these automatically set the appropriate comparer for the enum key type.", true)]
 	public CaseInsensitiveStringDictionary(int _capacity, IEqualityComparer<string> _comparer)
 		: base(_capacity, _comparer)
 	{
 	}
 
-	// Token: 0x06009EF5 RID: 40693 RVA: 0x003BEDEB File Offset: 0x003BCFEB
+	// Token: 0x06009FA0 RID: 40864 RVA: 0x003C3987 File Offset: 0x003C1B87
 	[Obsolete("CaseInsensitiveStringDictionary constructors with explicit comparer are deprecated in favor of the variants without, as these automatically set the appropriate comparer for the enum key type.", true)]
 	public CaseInsensitiveStringDictionary(IDictionary<string, TValue> _dictionary, IEqualityComparer<string> _comparer)
 		: base(_dictionary, _comparer)

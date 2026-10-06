@@ -2,11 +2,11 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A70 RID: 6768
+	// Token: 0x02001A9C RID: 6812
 	public interface ICountable
 	{
-		// Token: 0x1700191C RID: 6428
-		// (get) Token: 0x0600CCE0 RID: 52448
+		// Token: 0x170019BE RID: 6590
+		// (get) Token: 0x0600CE38 RID: 52792
 		int Count { get; }
 	}
 }

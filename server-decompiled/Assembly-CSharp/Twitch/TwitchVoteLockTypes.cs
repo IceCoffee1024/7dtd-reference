@@ -2,14 +2,14 @@
 
 namespace Twitch
 {
-	// Token: 0x0200186C RID: 6252
+	// Token: 0x02001898 RID: 6296
 	public enum TwitchVoteLockTypes
 	{
-		// Token: 0x040091FC RID: 37372
+		// Token: 0x040092C2 RID: 37570
 		None,
-		// Token: 0x040091FD RID: 37373
+		// Token: 0x040092C3 RID: 37571
 		VoteLocked,
-		// Token: 0x040091FE RID: 37374
+		// Token: 0x040092C4 RID: 37572
 		ActionsLocked
 	}
 }

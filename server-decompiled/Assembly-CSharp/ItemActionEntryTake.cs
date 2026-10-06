@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D67 RID: 3431
+// Token: 0x02000D78 RID: 3448
 [Preserve]
 public class ItemActionEntryTake : BaseItemActionEntry
 {
-	// Token: 0x06006835 RID: 26677 RVA: 0x002927B1 File Offset: 0x002909B1
+	// Token: 0x0600683C RID: 26684 RVA: 0x00295D61 File Offset: 0x00293F61
 	public ItemActionEntryTake(XUiController _controller)
 		: base(_controller, "lblContextActionTake", "ui_game_symbol_hand", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x06006836 RID: 26678 RVA: 0x002927D0 File Offset: 0x002909D0
+	// Token: 0x0600683D RID: 26685 RVA: 0x00295D80 File Offset: 0x00293F80
 	public override void RefreshEnabled()
 	{
 		ItemStack itemStack = this.getItemStack();
@@ -24,14 +24,14 @@ public class ItemActionEntryTake : BaseItemActionEntry
 		base.Enabled = num >= 1;
 	}
 
-	// Token: 0x06006837 RID: 26679 RVA: 0x00292828 File Offset: 0x00290A28
+	// Token: 0x0600683E RID: 26686 RVA: 0x00295DD8 File Offset: 0x00293FD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack getItemStack()
 	{
 		XUiController itemController = base.ItemController;
-		XUiC_ItemStack xuiC_ItemStack = itemController as XUiC_ItemStack;
+		IItemStackController itemStackController = itemController as IItemStackController;
 		ItemStack itemStack;
-		if (xuiC_ItemStack == null)
+		if (itemStackController == null)
 		{
 			XUiC_EquipmentStack xuiC_EquipmentStack = itemController as XUiC_EquipmentStack;
 			if (xuiC_EquipmentStack == null)
@@ -53,19 +53,19 @@ public class ItemActionEntryTake : BaseItemActionEntry
 		}
 		else
 		{
-			itemStack = xuiC_ItemStack.ItemStack;
+			itemStack = itemStackController.ItemStack;
 		}
 		return itemStack;
 	}
 
-	// Token: 0x06006838 RID: 26680 RVA: 0x00292880 File Offset: 0x00290A80
+	// Token: 0x0600683F RID: 26687 RVA: 0x00295E30 File Offset: 0x00294030
 	public override void OnActivated()
 	{
 		XUiController itemController = base.ItemController;
-		XUiC_ItemStack xuiC_ItemStack = itemController as XUiC_ItemStack;
-		if (xuiC_ItemStack != null)
+		IItemStackController itemStackController = itemController as IItemStackController;
+		if (itemStackController != null)
 		{
-			xuiC_ItemStack.HandleMoveToPreferredLocation();
+			itemStackController.HandleMoveToPreferredLocation();
 			return;
 		}
 		XUiC_EquipmentStack xuiC_EquipmentStack = itemController as XUiC_EquipmentStack;

@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Text;
 
-// Token: 0x02001527 RID: 5415
+// Token: 0x02001549 RID: 5449
 public class CallbackMetric : IMetric
 {
-	// Token: 0x170013C5 RID: 5061
-	// (get) Token: 0x0600AA14 RID: 43540 RVA: 0x003F7224 File Offset: 0x003F5424
-	// (set) Token: 0x0600AA15 RID: 43541 RVA: 0x003F722C File Offset: 0x003F542C
+	// Token: 0x1700140A RID: 5130
+	// (get) Token: 0x0600AAC7 RID: 43719 RVA: 0x003FC078 File Offset: 0x003FA278
+	// (set) Token: 0x0600AAC8 RID: 43720 RVA: 0x003FC080 File Offset: 0x003FA280
 	public string Header { get; set; }
 
-	// Token: 0x0600AA16 RID: 43542 RVA: 0x003F7235 File Offset: 0x003F5435
+	// Token: 0x0600AAC9 RID: 43721 RVA: 0x003FC089 File Offset: 0x003FA289
 	public void AppendLastValue(StringBuilder builder)
 	{
 		builder.Append(this.callback());
 	}
 
-	// Token: 0x0600AA17 RID: 43543 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AACA RID: 43722 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x04007E4C RID: 32332
+	// Token: 0x04007ECF RID: 32463
 	public CallbackMetric.GetLastValue callback;
 
-	// Token: 0x02001528 RID: 5416
-	// (Invoke) Token: 0x0600AA1A RID: 43546
+	// Token: 0x0200154A RID: 5450
+	// (Invoke) Token: 0x0600AACD RID: 43725
 	public delegate string GetLastValue();
 }

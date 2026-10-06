@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace GUI_2
 {
-	// Token: 0x020016BE RID: 5822
+	// Token: 0x020016EA RID: 5866
 	public static class UIUtils
 	{
-		// Token: 0x1700162E RID: 5678
-		// (get) Token: 0x0600B5F9 RID: 46585 RVA: 0x0043A1A9 File Offset: 0x004383A9
+		// Token: 0x170016D0 RID: 5840
+		// (get) Token: 0x0600B750 RID: 46928 RVA: 0x0043E6C9 File Offset: 0x0043C8C9
 		public static INGUIAtlas IconAtlas
 		{
 			get
@@ -19,7 +19,7 @@ namespace GUI_2
 			}
 		}
 
-		// Token: 0x0600B5FA RID: 46586 RVA: 0x0043A1B0 File Offset: 0x004383B0
+		// Token: 0x0600B751 RID: 46929 RVA: 0x0043E6D0 File Offset: 0x0043C8D0
 		public static string GetSpriteName(UIUtils.ButtonIcon _icon)
 		{
 			if (PlayerInputManager.InputStyleFromSelectedIconStyle() != PlayerInputManager.InputStyle.PS4)
@@ -29,7 +29,7 @@ namespace GUI_2
 			return UIUtils.buttonIconMapPS[_icon];
 		}
 
-		// Token: 0x0600B5FB RID: 46587 RVA: 0x0043A1D4 File Offset: 0x004383D4
+		// Token: 0x0600B752 RID: 46930 RVA: 0x0043E6F4 File Offset: 0x0043C8F4
 		public static UIUtils.ButtonIcon GetButtonIconForAction(PlayerAction _action)
 		{
 			if (_action == null)
@@ -54,17 +54,17 @@ namespace GUI_2
 			return UIUtils.ButtonIcon.None;
 		}
 
-		// Token: 0x0600B5FC RID: 46588 RVA: 0x0043A265 File Offset: 0x00438465
+		// Token: 0x0600B753 RID: 46931 RVA: 0x0043E785 File Offset: 0x0043C985
 		public static void LoadAtlas()
 		{
 			UIUtils.symbolAtlas = Resources.Load<UIAtlas>("GUI/Prefabs/SymbolAtlas");
 		}
 
-		// Token: 0x04008822 RID: 34850
+		// Token: 0x040088E7 RID: 35047
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static INGUIAtlas symbolAtlas;
 
-		// Token: 0x04008823 RID: 34851
+		// Token: 0x040088E8 RID: 35048
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<UIUtils.ButtonIcon, string> buttonIconMapPS = new EnumDictionary<UIUtils.ButtonIcon, string>
 		{
@@ -202,7 +202,7 @@ namespace GUI_2
 			}
 		};
 
-		// Token: 0x04008824 RID: 34852
+		// Token: 0x040088E9 RID: 35049
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<UIUtils.ButtonIcon, string> buttonIconMapXB = new EnumDictionary<UIUtils.ButtonIcon, string>
 		{
@@ -340,7 +340,7 @@ namespace GUI_2
 			}
 		};
 
-		// Token: 0x04008825 RID: 34853
+		// Token: 0x040088EA RID: 35050
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<InputControlType, UIUtils.ButtonIcon> iconControlMap = new EnumDictionary<InputControlType, UIUtils.ButtonIcon>
 		{
@@ -486,80 +486,80 @@ namespace GUI_2
 			}
 		};
 
-		// Token: 0x04008826 RID: 34854
+		// Token: 0x040088EB RID: 35051
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly HashSet<PlayerAction> loggedMissingBindingSources = new HashSet<PlayerAction>();
 
-		// Token: 0x020016BF RID: 5823
+		// Token: 0x020016EB RID: 5867
 		public enum ButtonIcon
 		{
-			// Token: 0x04008828 RID: 34856
+			// Token: 0x040088ED RID: 35053
 			FaceButtonSouth,
-			// Token: 0x04008829 RID: 34857
+			// Token: 0x040088EE RID: 35054
 			FaceButtonNorth,
-			// Token: 0x0400882A RID: 34858
+			// Token: 0x040088EF RID: 35055
 			FaceButtonEast,
-			// Token: 0x0400882B RID: 34859
+			// Token: 0x040088F0 RID: 35056
 			FaceButtonWest,
-			// Token: 0x0400882C RID: 34860
+			// Token: 0x040088F1 RID: 35057
 			ConfirmButton,
-			// Token: 0x0400882D RID: 34861
+			// Token: 0x040088F2 RID: 35058
 			CancelButton,
-			// Token: 0x0400882E RID: 34862
+			// Token: 0x040088F3 RID: 35059
 			LeftBumper,
-			// Token: 0x0400882F RID: 34863
+			// Token: 0x040088F4 RID: 35060
 			RightBumper,
-			// Token: 0x04008830 RID: 34864
+			// Token: 0x040088F5 RID: 35061
 			LeftTrigger,
-			// Token: 0x04008831 RID: 34865
+			// Token: 0x040088F6 RID: 35062
 			RightTrigger,
-			// Token: 0x04008832 RID: 34866
+			// Token: 0x040088F7 RID: 35063
 			LeftStick,
-			// Token: 0x04008833 RID: 34867
+			// Token: 0x040088F8 RID: 35064
 			LeftStickUpDown,
-			// Token: 0x04008834 RID: 34868
+			// Token: 0x040088F9 RID: 35065
 			LeftStickLeftRight,
-			// Token: 0x04008835 RID: 34869
+			// Token: 0x040088FA RID: 35066
 			LeftStickButton,
-			// Token: 0x04008836 RID: 34870
+			// Token: 0x040088FB RID: 35067
 			LeftStickLeft,
-			// Token: 0x04008837 RID: 34871
+			// Token: 0x040088FC RID: 35068
 			LeftStickRight,
-			// Token: 0x04008838 RID: 34872
+			// Token: 0x040088FD RID: 35069
 			LeftStickUp,
-			// Token: 0x04008839 RID: 34873
+			// Token: 0x040088FE RID: 35070
 			LeftStickDown,
-			// Token: 0x0400883A RID: 34874
+			// Token: 0x040088FF RID: 35071
 			RightStick,
-			// Token: 0x0400883B RID: 34875
+			// Token: 0x04008900 RID: 35072
 			RightStickUpDown,
-			// Token: 0x0400883C RID: 34876
+			// Token: 0x04008901 RID: 35073
 			RightStickLeftRight,
-			// Token: 0x0400883D RID: 34877
+			// Token: 0x04008902 RID: 35074
 			RightStickButton,
-			// Token: 0x0400883E RID: 34878
+			// Token: 0x04008903 RID: 35075
 			RightStickLeft,
-			// Token: 0x0400883F RID: 34879
+			// Token: 0x04008904 RID: 35076
 			RightStickRight,
-			// Token: 0x04008840 RID: 34880
+			// Token: 0x04008905 RID: 35077
 			RightStickUp,
-			// Token: 0x04008841 RID: 34881
+			// Token: 0x04008906 RID: 35078
 			RightStickDown,
-			// Token: 0x04008842 RID: 34882
+			// Token: 0x04008907 RID: 35079
 			DPadLeft,
-			// Token: 0x04008843 RID: 34883
+			// Token: 0x04008908 RID: 35080
 			DPadRight,
-			// Token: 0x04008844 RID: 34884
+			// Token: 0x04008909 RID: 35081
 			DPadUp,
-			// Token: 0x04008845 RID: 34885
+			// Token: 0x0400890A RID: 35082
 			DPadDown,
-			// Token: 0x04008846 RID: 34886
+			// Token: 0x0400890B RID: 35083
 			StartButton,
-			// Token: 0x04008847 RID: 34887
+			// Token: 0x0400890C RID: 35084
 			BackButton,
-			// Token: 0x04008848 RID: 34888
+			// Token: 0x0400890D RID: 35085
 			None,
-			// Token: 0x04008849 RID: 34889
+			// Token: 0x0400890E RID: 35086
 			Count
 		}
 	}

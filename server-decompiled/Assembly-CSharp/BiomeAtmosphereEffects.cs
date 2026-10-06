@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000AFA RID: 2810
+// Token: 0x02000B0C RID: 2828
 public class BiomeAtmosphereEffects
 {
-	// Token: 0x060053B1 RID: 21425 RVA: 0x0020071C File Offset: 0x001FE91C
+	// Token: 0x060053CA RID: 21450 RVA: 0x0020397C File Offset: 0x00201B7C
 	public void Init(World _world)
 	{
 		this.world = _world;
@@ -18,14 +18,14 @@ public class BiomeAtmosphereEffects
 		this.ForceDefault = false;
 	}
 
-	// Token: 0x060053B2 RID: 21426 RVA: 0x002007CC File Offset: 0x001FE9CC
+	// Token: 0x060053CB RID: 21451 RVA: 0x00203A2C File Offset: 0x00201C2C
 	public void Reload()
 	{
 		this.Init(this.world);
 		this.Update();
 	}
 
-	// Token: 0x060053B3 RID: 21427 RVA: 0x002007E0 File Offset: 0x001FE9E0
+	// Token: 0x060053CC RID: 21452 RVA: 0x00203A40 File Offset: 0x00201C40
 	public virtual void Update()
 	{
 		EntityPlayerLocal primaryPlayer = this.world.GetPrimaryPlayer();
@@ -75,49 +75,49 @@ public class BiomeAtmosphereEffects
 		}
 	}
 
-	// Token: 0x060053B4 RID: 21428 RVA: 0x0020090B File Offset: 0x001FEB0B
+	// Token: 0x060053CD RID: 21453 RVA: 0x00203B6B File Offset: 0x00201D6B
 	public virtual Color GetSkyColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.Sky);
 	}
 
-	// Token: 0x060053B5 RID: 21429 RVA: 0x0020091B File Offset: 0x001FEB1B
+	// Token: 0x060053CE RID: 21454 RVA: 0x00203B7B File Offset: 0x00201D7B
 	public virtual Color GetAmbientColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.Ambient);
 	}
 
-	// Token: 0x060053B6 RID: 21430 RVA: 0x0020092B File Offset: 0x001FEB2B
+	// Token: 0x060053CF RID: 21455 RVA: 0x00203B8B File Offset: 0x00201D8B
 	public virtual Color GetSunColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.Sun);
 	}
 
-	// Token: 0x060053B7 RID: 21431 RVA: 0x0020093B File Offset: 0x001FEB3B
+	// Token: 0x060053D0 RID: 21456 RVA: 0x00203B9B File Offset: 0x00201D9B
 	public virtual Color GetMoonColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.Moon);
 	}
 
-	// Token: 0x060053B8 RID: 21432 RVA: 0x0020094B File Offset: 0x001FEB4B
+	// Token: 0x060053D1 RID: 21457 RVA: 0x00203BAB File Offset: 0x00201DAB
 	public virtual Color GetFogColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.Fog);
 	}
 
-	// Token: 0x060053B9 RID: 21433 RVA: 0x0020095B File Offset: 0x001FEB5B
+	// Token: 0x060053D2 RID: 21458 RVA: 0x00203BBB File Offset: 0x00201DBB
 	public virtual Color GetFogFadeColorSpectrum(float _v)
 	{
 		return this.getColorFromSpectrum(this.currentBiomeIntensity, _v, AtmosphereEffect.ESpecIdx.FogFade);
 	}
 
-	// Token: 0x060053BA RID: 21434 RVA: 0x000BD617 File Offset: 0x000BB817
+	// Token: 0x060053D3 RID: 21459 RVA: 0x000BD7EF File Offset: 0x000BB9EF
 	public virtual Color GetCloudsColor(float _v)
 	{
 		return Color.white;
 	}
 
-	// Token: 0x060053BB RID: 21435 RVA: 0x0020096C File Offset: 0x001FEB6C
+	// Token: 0x060053D4 RID: 21460 RVA: 0x00203BCC File Offset: 0x00201DCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color getColorFromSpectrum(BiomeIntensity _bi, float _v, AtmosphereEffect.ESpecIdx _spectrumIdx)
 	{
@@ -129,25 +129,25 @@ public class BiomeAtmosphereEffects
 		return (this.worldColorSpectrums[(int)_bi.biomeId0].spectrums[(int)_spectrumIdx].GetValue(_v) * intensity + this.worldColorSpectrums[(int)_bi.biomeId1].spectrums[(int)_spectrumIdx].GetValue(_v) * intensity2 + this.worldColorSpectrums[(int)_bi.biomeId2].spectrums[(int)_spectrumIdx].GetValue(_v) * intensity3 + this.worldColorSpectrums[(int)_bi.biomeId3].spectrums[(int)_spectrumIdx].GetValue(_v) * num) / (intensity + intensity2 + intensity3 + num);
 	}
 
-	// Token: 0x04004176 RID: 16758
+	// Token: 0x040041B3 RID: 16819
 	public BiomeDefinition[] nearBiomes = new BiomeDefinition[4];
 
-	// Token: 0x04004177 RID: 16759
+	// Token: 0x040041B4 RID: 16820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeIntensity currentBiomeIntensity = BiomeIntensity.Default;
 
-	// Token: 0x04004178 RID: 16760
+	// Token: 0x040041B5 RID: 16821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04004179 RID: 16761
+	// Token: 0x040041B6 RID: 16822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AtmosphereEffect[] worldColorSpectrums;
 
-	// Token: 0x0400417A RID: 16762
+	// Token: 0x040041B7 RID: 16823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i playerPosition;
 
-	// Token: 0x0400417B RID: 16763
+	// Token: 0x040041B8 RID: 16824
 	public bool ForceDefault;
 }

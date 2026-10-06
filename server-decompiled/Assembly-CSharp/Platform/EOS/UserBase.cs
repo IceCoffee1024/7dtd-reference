@@ -7,11 +7,11 @@ using Epic.OnlineServices.Connect;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D25 RID: 7461
+	// Token: 0x02001D57 RID: 7511
 	public abstract class UserBase : IUserClient
 	{
-		// Token: 0x17001B8E RID: 7054
-		// (get) Token: 0x0600DD03 RID: 56579 RVA: 0x004F1668 File Offset: 0x004EF868
+		// Token: 0x17001C34 RID: 7220
+		// (get) Token: 0x0600DE7E RID: 56958 RVA: 0x004F62B0 File Offset: 0x004F44B0
 		public ConnectInterface ConnectInterface
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,25 +21,25 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD04 RID: 56580 RVA: 0x004F167F File Offset: 0x004EF87F
+		// Token: 0x0600DE7F RID: 56959 RVA: 0x004F62C7 File Offset: 0x004F44C7
 		public virtual void Init(IPlatform _owner)
 		{
 			this.Owner = _owner;
 			this.Owner.Api.ClientApiInitialized += this.apiInitialized;
 		}
 
-		// Token: 0x17001B8F RID: 7055
-		// (get) Token: 0x0600DD05 RID: 56581 RVA: 0x004F16A4 File Offset: 0x004EF8A4
-		// (set) Token: 0x0600DD06 RID: 56582 RVA: 0x004F16AC File Offset: 0x004EF8AC
+		// Token: 0x17001C35 RID: 7221
+		// (get) Token: 0x0600DE80 RID: 56960 RVA: 0x004F62EC File Offset: 0x004F44EC
+		// (set) Token: 0x0600DE81 RID: 56961 RVA: 0x004F62F4 File Offset: 0x004F44F4
 		public EUserStatus UserStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		} = EUserStatus.NotAttempted;
 
-		// Token: 0x14000142 RID: 322
-		// (add) Token: 0x0600DD07 RID: 56583 RVA: 0x004F16B8 File Offset: 0x004EF8B8
-		// (remove) Token: 0x0600DD08 RID: 56584 RVA: 0x004F1718 File Offset: 0x004EF918
+		// Token: 0x14000141 RID: 321
+		// (add) Token: 0x0600DE82 RID: 56962 RVA: 0x004F6300 File Offset: 0x004F4500
+		// (remove) Token: 0x0600DE83 RID: 56963 RVA: 0x004F6360 File Offset: 0x004F4560
 		public event Action<IPlatform> UserLoggedIn
 		{
 			add
@@ -62,9 +62,9 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x14000143 RID: 323
-		// (add) Token: 0x0600DD09 RID: 56585 RVA: 0x000027FC File Offset: 0x000009FC
-		// (remove) Token: 0x0600DD0A RID: 56586 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x14000142 RID: 322
+		// (add) Token: 0x0600DE84 RID: 56964 RVA: 0x000027FC File Offset: 0x000009FC
+		// (remove) Token: 0x0600DE85 RID: 56965 RVA: 0x000027FC File Offset: 0x000009FC
 		public event UserBlocksChangedCallback UserBlocksChanged
 		{
 			add
@@ -75,8 +75,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B90 RID: 7056
-		// (get) Token: 0x0600DD0B RID: 56587 RVA: 0x004F1764 File Offset: 0x004EF964
+		// Token: 0x17001C36 RID: 7222
+		// (get) Token: 0x0600DE86 RID: 56966 RVA: 0x004F63AC File Offset: 0x004F45AC
 		public PlatformUserIdentifierAbs PlatformUserId
 		{
 			get
@@ -85,74 +85,74 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD0C RID: 56588 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DE87 RID: 56967 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Login(LoginUserCallback _delegate)
 		{
 		}
 
-		// Token: 0x0600DD0D RID: 56589 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DE88 RID: 56968 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void PlayOffline(LoginUserCallback _delegate)
 		{
 		}
 
-		// Token: 0x0600DD0E RID: 56590 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DE89 RID: 56969 RVA: 0x000027FC File Offset: 0x000009FC
 		public void StartAdvertisePlaying(GameServerInfo _serverInfo)
 		{
 		}
 
-		// Token: 0x0600DD0F RID: 56591 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DE8A RID: 56970 RVA: 0x000027FC File Offset: 0x000009FC
 		public void StopAdvertisePlaying()
 		{
 		}
 
-		// Token: 0x0600DD10 RID: 56592 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DE8B RID: 56971 RVA: 0x0008806C File Offset: 0x0008626C
 		public void GetLoginTicket(Action<bool, byte[], string> _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DD11 RID: 56593 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DE8C RID: 56972 RVA: 0x0008806C File Offset: 0x0008626C
 		public string GetFriendName(PlatformUserIdentifierAbs _playerId)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DD12 RID: 56594 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DE8D RID: 56973 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsFriend(PlatformUserIdentifierAbs _playerId)
 		{
 			return false;
 		}
 
-		// Token: 0x17001B91 RID: 7057
-		// (get) Token: 0x0600DD13 RID: 56595
+		// Token: 0x17001C37 RID: 7223
+		// (get) Token: 0x0600DE8E RID: 56974
 		public abstract EUserPerms Permissions { get; }
 
-		// Token: 0x0600DD14 RID: 56596 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x0600DE8F RID: 56975 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public virtual string GetPermissionDenyReason(EUserPerms _perms)
 		{
 			return null;
 		}
 
-		// Token: 0x0600DD15 RID: 56597 RVA: 0x004F176C File Offset: 0x004EF96C
+		// Token: 0x0600DE90 RID: 56976 RVA: 0x004F63B4 File Offset: 0x004F45B4
 		public virtual IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			yield break;
 		}
 
-		// Token: 0x0600DD16 RID: 56598 RVA: 0x004E0D84 File Offset: 0x004DEF84
+		// Token: 0x0600DE91 RID: 56977 RVA: 0x004E58CC File Offset: 0x004E3ACC
 		public IEnumerator ResolveUserBlocks(IReadOnlyList<IPlatformUserBlockedResults> _results)
 		{
 			return Enumerable.Empty<object>().GetEnumerator();
 		}
 
-		// Token: 0x0600DD17 RID: 56599 RVA: 0x004F1774 File Offset: 0x004EF974
+		// Token: 0x0600DE92 RID: 56978 RVA: 0x004F63BC File Offset: 0x004F45BC
 		public virtual void Destroy()
 		{
 			EosHelpers.AssertMainThread("Usr.Destroy");
 			this.removeNotifications();
 		}
 
-		// Token: 0x0600DD18 RID: 56600 RVA: 0x004F1786 File Offset: 0x004EF986
+		// Token: 0x0600DE93 RID: 56979 RVA: 0x004F63CE File Offset: 0x004F45CE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiInitialized()
 		{
@@ -160,7 +160,7 @@ namespace Platform.EOS
 			this.addNotifications();
 		}
 
-		// Token: 0x0600DD19 RID: 56601 RVA: 0x004F1798 File Offset: 0x004EF998
+		// Token: 0x0600DE94 RID: 56980 RVA: 0x004F63E0 File Offset: 0x004F45E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void addNotifications()
 		{
@@ -177,7 +177,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD1A RID: 56602 RVA: 0x004F1814 File Offset: 0x004EFA14
+		// Token: 0x0600DE95 RID: 56981 RVA: 0x004F645C File Offset: 0x004F465C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void removeNotifications()
 		{
@@ -197,7 +197,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD1B RID: 56603 RVA: 0x004F1888 File Offset: 0x004EFA88
+		// Token: 0x0600DE96 RID: 56982 RVA: 0x004F64D0 File Offset: 0x004F46D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnAuthExpiration(ref AuthExpirationCallbackInfo _data)
 		{
@@ -205,11 +205,11 @@ namespace Platform.EOS
 			this.startLogin(null, true);
 		}
 
-		// Token: 0x0600DD1C RID: 56604
+		// Token: 0x0600DE97 RID: 56983
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void startLogin(LoginUserCallback _delegate, bool _refreshing = false);
 
-		// Token: 0x0600DD1D RID: 56605 RVA: 0x004F189C File Offset: 0x004EFA9C
+		// Token: 0x0600DE98 RID: 56984 RVA: 0x004F64E4 File Offset: 0x004F46E4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void connectLogin(byte[] _byteTicket, string _stringTicket, ExternalCredentialType _externalType, LoginUserCallback _callback, bool _refreshing, string _displayName = null)
 		{
@@ -333,11 +333,11 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD1E RID: 56606
+		// Token: 0x0600DE99 RID: 56985
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void connectCreateUser(ContinuanceToken _continuanceToken, LoginUserCallback _callback);
 
-		// Token: 0x0600DD1F RID: 56607 RVA: 0x004F19A4 File Offset: 0x004EFBA4
+		// Token: 0x0600DE9A RID: 56986 RVA: 0x004F65EC File Offset: 0x004F47EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void eosLoggedIn(ProductUserId _puid, LoginUserCallback _callback)
 		{
@@ -348,7 +348,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD20 RID: 56608 RVA: 0x004F19C0 File Offset: 0x004EFBC0
+		// Token: 0x0600DE9B RID: 56987 RVA: 0x004F6608 File Offset: 0x004F4808
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void eosLoginDone(LoginUserCallback _callback)
 		{
@@ -364,25 +364,25 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DD21 RID: 56609 RVA: 0x004F19F2 File Offset: 0x004EFBF2
+		// Token: 0x0600DE9C RID: 56988 RVA: 0x004F663A File Offset: 0x004F483A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public UserBase()
 		{
 		}
 
-		// Token: 0x0400A70C RID: 42764
+		// Token: 0x0400A7E3 RID: 42979
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IPlatform Owner;
 
-		// Token: 0x0400A70D RID: 42765
+		// Token: 0x0400A7E4 RID: 42980
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong notifyAuthExpirationHandle;
 
-		// Token: 0x0400A70F RID: 42767
+		// Token: 0x0400A7E6 RID: 42982
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Action<IPlatform> userLoggedIn;
 
-		// Token: 0x0400A710 RID: 42768
+		// Token: 0x0400A7E7 RID: 42983
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public UserIdentifierEos PlatformUserIdEos;
 	}

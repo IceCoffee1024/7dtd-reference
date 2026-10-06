@@ -2,18 +2,18 @@
 
 namespace Platform
 {
-	// Token: 0x02001BAB RID: 7083
+	// Token: 0x02001BDD RID: 7133
 	public enum EUserStatus
 	{
-		// Token: 0x0400A0F9 RID: 41209
+		// Token: 0x0400A1CE RID: 41422
 		LoggedIn,
-		// Token: 0x0400A0FA RID: 41210
+		// Token: 0x0400A1CF RID: 41423
 		OfflineMode,
-		// Token: 0x0400A0FB RID: 41211
+		// Token: 0x0400A1D0 RID: 41424
 		TemporaryError,
-		// Token: 0x0400A0FC RID: 41212
+		// Token: 0x0400A1D1 RID: 41425
 		PermanentError,
-		// Token: 0x0400A0FD RID: 41213
+		// Token: 0x0400A1D2 RID: 41426
 		NotAttempted
 	}
 }

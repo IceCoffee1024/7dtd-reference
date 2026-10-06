@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200198C RID: 6540
+	// Token: 0x020019B8 RID: 6584
 	[Preserve]
 	public class ActionModifyCVar : ActionBaseClientAction
 	{
-		// Token: 0x0600C8A2 RID: 51362 RVA: 0x0049AED4 File Offset: 0x004990D4
+		// Token: 0x0600C9FA RID: 51706 RVA: 0x0049F398 File Offset: 0x0049D598
 		public override void OnClientPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -40,7 +40,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8A3 RID: 51363 RVA: 0x0049B027 File Offset: 0x00499227
+		// Token: 0x0600C9FB RID: 51707 RVA: 0x0049F4EB File Offset: 0x0049D6EB
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -49,7 +49,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionModifyCVar.OperationTypes>(ActionModifyCVar.PropOperation, ref this.operationType);
 		}
 
-		// Token: 0x0600C8A4 RID: 51364 RVA: 0x0049B063 File Offset: 0x00499263
+		// Token: 0x0600C9FC RID: 51708 RVA: 0x0049F527 File Offset: 0x0049D727
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -61,45 +61,45 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097DB RID: 38875
+		// Token: 0x040098A1 RID: 39073
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040097DC RID: 38876
+		// Token: 0x040098A2 RID: 39074
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string cvar = "";
 
-		// Token: 0x040097DD RID: 38877
+		// Token: 0x040098A3 RID: 39075
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionModifyCVar.OperationTypes operationType;
 
-		// Token: 0x040097DE RID: 38878
+		// Token: 0x040098A4 RID: 39076
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 
-		// Token: 0x040097DF RID: 38879
+		// Token: 0x040098A5 RID: 39077
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropCvar = "cvar";
 
-		// Token: 0x040097E0 RID: 38880
+		// Token: 0x040098A6 RID: 39078
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x0200198D RID: 6541
+		// Token: 0x020019B9 RID: 6585
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OperationTypes
 		{
-			// Token: 0x040097E2 RID: 38882
+			// Token: 0x040098A8 RID: 39080
 			Set,
-			// Token: 0x040097E3 RID: 38883
+			// Token: 0x040098A9 RID: 39081
 			Add,
-			// Token: 0x040097E4 RID: 38884
+			// Token: 0x040098AA RID: 39082
 			Subtract,
-			// Token: 0x040097E5 RID: 38885
+			// Token: 0x040098AB RID: 39083
 			Multiply,
-			// Token: 0x040097E6 RID: 38886
+			// Token: 0x040098AC RID: 39084
 			PercentAdd,
-			// Token: 0x040097E7 RID: 38887
+			// Token: 0x040098AD RID: 39085
 			PercentSubtract
 		}
 	}

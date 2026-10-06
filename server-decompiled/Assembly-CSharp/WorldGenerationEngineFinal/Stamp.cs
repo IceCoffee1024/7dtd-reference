@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001725 RID: 5925
+	// Token: 0x02001751 RID: 5969
 	public class Stamp
 	{
-		// Token: 0x17001668 RID: 5736
-		// (get) Token: 0x0600B858 RID: 47192 RVA: 0x00446578 File Offset: 0x00444778
+		// Token: 0x1700170A RID: 5898
+		// (get) Token: 0x0600B9AF RID: 47535 RVA: 0x0044AA98 File Offset: 0x00448C98
 		public int imageHeight
 		{
 			get
@@ -17,8 +17,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001669 RID: 5737
-		// (get) Token: 0x0600B859 RID: 47193 RVA: 0x00446585 File Offset: 0x00444785
+		// Token: 0x1700170B RID: 5899
+		// (get) Token: 0x0600B9B0 RID: 47536 RVA: 0x0044AAA5 File Offset: 0x00448CA5
 		public int imageWidth
 		{
 			get
@@ -27,7 +27,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B85A RID: 47194 RVA: 0x00446594 File Offset: 0x00444794
+		// Token: 0x0600B9B1 RID: 47537 RVA: 0x0044AAB4 File Offset: 0x00448CB4
 		public Stamp(WorldBuilder _worldBuilder, RawStamp _stamp, TranslationData _transData, Color32 _customColor = default(Color32), float _alphaCutoff = 0.1f, bool _isWater = false, string stampName = "")
 		{
 			this.worldBuilder = _worldBuilder;
@@ -66,7 +66,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B85B RID: 47195 RVA: 0x004467F0 File Offset: 0x004449F0
+		// Token: 0x0600B9B2 RID: 47538 RVA: 0x0044AD10 File Offset: 0x00448F10
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color[] rotateColorArray(Color[] src, float angle, int width, int height)
 		{
@@ -110,14 +110,14 @@ namespace WorldGenerationEngineFinal
 			return array;
 		}
 
-		// Token: 0x0600B85C RID: 47196 RVA: 0x0044694C File Offset: 0x00444B4C
+		// Token: 0x0600B9B3 RID: 47539 RVA: 0x0044AE6C File Offset: 0x0044906C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color QuadLerpColor(Color selfVal, Color rightVal, Color upRightVal, Color upVal, float horizontalPerc, float verticalPerc)
 		{
 			return Color.Lerp(Color.Lerp(selfVal, rightVal, horizontalPerc), Color.Lerp(upVal, upRightVal, horizontalPerc), verticalPerc);
 		}
 
-		// Token: 0x0600B85D RID: 47197 RVA: 0x00446968 File Offset: 0x00444B68
+		// Token: 0x0600B9B4 RID: 47540 RVA: 0x0044AE88 File Offset: 0x00449088
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2i getRotatedPoint(int x, int y, int cx, int cy, int angle)
 		{
@@ -126,41 +126,41 @@ namespace WorldGenerationEngineFinal
 			return new Vector2i(Mathf.RoundToInt((float)((double)(x - cx) * num - (double)(y - cy) * num2 + (double)cx)), Mathf.RoundToInt((float)((double)(x - cx) * num2 + (double)(y - cy) * num + (double)cy)));
 		}
 
-		// Token: 0x040089BA RID: 35258
+		// Token: 0x04008A7F RID: 35455
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x040089BB RID: 35259
+		// Token: 0x04008A80 RID: 35456
 		public TranslationData transform;
 
-		// Token: 0x040089BC RID: 35260
+		// Token: 0x04008A81 RID: 35457
 		public float alpha;
 
-		// Token: 0x040089BD RID: 35261
+		// Token: 0x04008A82 RID: 35458
 		public bool additive;
 
-		// Token: 0x040089BE RID: 35262
+		// Token: 0x04008A83 RID: 35459
 		public float scale;
 
-		// Token: 0x040089BF RID: 35263
+		// Token: 0x04008A84 RID: 35460
 		public Color32 customColor;
 
-		// Token: 0x040089C0 RID: 35264
+		// Token: 0x04008A85 RID: 35461
 		public float alphaCutoff;
 
-		// Token: 0x040089C1 RID: 35265
+		// Token: 0x04008A86 RID: 35462
 		public Rect Area;
 
-		// Token: 0x040089C2 RID: 35266
+		// Token: 0x04008A87 RID: 35463
 		public bool isWater;
 
-		// Token: 0x040089C3 RID: 35267
+		// Token: 0x04008A88 RID: 35464
 		public string Name = "";
 
-		// Token: 0x040089C4 RID: 35268
+		// Token: 0x04008A89 RID: 35465
 		public RawStamp stamp;
 
-		// Token: 0x040089C5 RID: 35269
+		// Token: 0x04008A8A RID: 35466
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cOneByoneScale = 1.4f;
 	}

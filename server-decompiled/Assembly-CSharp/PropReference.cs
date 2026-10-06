@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000193 RID: 403
+// Token: 0x02000194 RID: 404
 public class PropReference : MonoBehaviour
 {
-	// Token: 0x170000F8 RID: 248
-	// (get) Token: 0x06000C3E RID: 3134 RVA: 0x0004C777 File Offset: 0x0004A977
-	// (set) Token: 0x06000C3F RID: 3135 RVA: 0x0004C78A File Offset: 0x0004A98A
+	// Token: 0x170000F0 RID: 240
+	// (get) Token: 0x06000C35 RID: 3125 RVA: 0x0004C77B File Offset: 0x0004A97B
+	// (set) Token: 0x06000C36 RID: 3126 RVA: 0x0004C78E File Offset: 0x0004A98E
 	public Vector2i ChunkPos
 	{
 		get
@@ -20,9 +20,9 @@ public class PropReference : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000F9 RID: 249
-	// (get) Token: 0x06000C40 RID: 3136 RVA: 0x0004C7A4 File Offset: 0x0004A9A4
-	// (set) Token: 0x06000C41 RID: 3137 RVA: 0x0004C7DF File Offset: 0x0004A9DF
+	// Token: 0x170000F1 RID: 241
+	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0004C7A8 File Offset: 0x0004A9A8
+	// (set) Token: 0x06000C38 RID: 3128 RVA: 0x0004C7E3 File Offset: 0x0004A9E3
 	public PropRef PropRef
 	{
 		get
@@ -41,18 +41,18 @@ public class PropReference : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C42 RID: 3138 RVA: 0x0004C810 File Offset: 0x0004AA10
+	// Token: 0x06000C39 RID: 3129 RVA: 0x0004C814 File Offset: 0x0004AA14
 	public override string ToString()
 	{
 		return this.PropRef.ToString();
 	}
 
-	// Token: 0x04000B11 RID: 2833
+	// Token: 0x04000B0A RID: 2826
 	public int ChunkX;
 
-	// Token: 0x04000B12 RID: 2834
+	// Token: 0x04000B0B RID: 2827
 	public int ChunkZ;
 
-	// Token: 0x04000B13 RID: 2835
+	// Token: 0x04000B0C RID: 2828
 	public int PropId;
 }

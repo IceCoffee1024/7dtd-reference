@@ -3,19 +3,19 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001856 RID: 6230
+	// Token: 0x02001882 RID: 6274
 	[Preserve]
 	public class BaseTwitchOperationRequirement : BaseTwitchRequirement
 	{
-		// Token: 0x0600C084 RID: 49284 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C1DC RID: 49628 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x1700179C RID: 6044
-		// (get) Token: 0x0600C085 RID: 49285 RVA: 0x00474553 File Offset: 0x00472753
-		// (set) Token: 0x0600C086 RID: 49286 RVA: 0x0047455E File Offset: 0x0047275E
+		// Token: 0x1700183E RID: 6206
+		// (get) Token: 0x0600C1DD RID: 49629 RVA: 0x00478A8F File Offset: 0x00476C8F
+		// (set) Token: 0x0600C1DE RID: 49630 RVA: 0x00478A9A File Offset: 0x00476C9A
 		public bool StringCompareCaseSensitive
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -30,7 +30,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C087 RID: 49287 RVA: 0x00474570 File Offset: 0x00472770
+		// Token: 0x0600C1DF RID: 49631 RVA: 0x00478AAC File Offset: 0x00476CAC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool compare(float valueA, float valueB)
 		{
@@ -65,7 +65,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C088 RID: 49288 RVA: 0x00474600 File Offset: 0x00472800
+		// Token: 0x0600C1E0 RID: 49632 RVA: 0x00478B3C File Offset: 0x00476D3C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool compare(string valueA, string valueB)
 		{
@@ -101,7 +101,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C089 RID: 49289 RVA: 0x0047469C File Offset: 0x0047289C
+		// Token: 0x0600C1E1 RID: 49633 RVA: 0x00478BD8 File Offset: 0x00476DD8
 		public override bool CanPerform(Entity target)
 		{
 			object obj = this.LeftSide(target);
@@ -113,80 +113,80 @@ namespace Twitch
 			return this.compare(Convert.ToSingle(obj), Convert.ToSingle(obj2));
 		}
 
-		// Token: 0x0600C08A RID: 49290 RVA: 0x004746E6 File Offset: 0x004728E6
+		// Token: 0x0600C1E2 RID: 49634 RVA: 0x00478C22 File Offset: 0x00476E22
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual object LeftSide(Entity target)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600C08B RID: 49291 RVA: 0x004746E6 File Offset: 0x004728E6
+		// Token: 0x0600C1E3 RID: 49635 RVA: 0x00478C22 File Offset: 0x00476E22
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual object RightSide(Entity target)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600C08C RID: 49292 RVA: 0x004746EE File Offset: 0x004728EE
+		// Token: 0x0600C1E4 RID: 49636 RVA: 0x00478C2A File Offset: 0x00476E2A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<BaseTwitchOperationRequirement.OperationTypes>(BaseTwitchOperationRequirement.PropOperation, ref this.operation);
 		}
 
-		// Token: 0x04009119 RID: 37145
+		// Token: 0x040091DF RID: 37343
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseTwitchOperationRequirement.OperationTypes operation = BaseTwitchOperationRequirement.OperationTypes.Equals;
 
-		// Token: 0x0400911A RID: 37146
+		// Token: 0x040091E0 RID: 37344
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x0400911B RID: 37147
+		// Token: 0x040091E1 RID: 37345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringComparison stringComparison;
 
-		// Token: 0x02001857 RID: 6231
+		// Token: 0x02001883 RID: 6275
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OperationTypes
 		{
-			// Token: 0x0400911D RID: 37149
+			// Token: 0x040091E3 RID: 37347
 			None,
-			// Token: 0x0400911E RID: 37150
+			// Token: 0x040091E4 RID: 37348
 			Equals,
-			// Token: 0x0400911F RID: 37151
+			// Token: 0x040091E5 RID: 37349
 			EQ,
-			// Token: 0x04009120 RID: 37152
+			// Token: 0x040091E6 RID: 37350
 			E,
-			// Token: 0x04009121 RID: 37153
+			// Token: 0x040091E7 RID: 37351
 			NotEquals,
-			// Token: 0x04009122 RID: 37154
+			// Token: 0x040091E8 RID: 37352
 			NEQ,
-			// Token: 0x04009123 RID: 37155
+			// Token: 0x040091E9 RID: 37353
 			NE,
-			// Token: 0x04009124 RID: 37156
+			// Token: 0x040091EA RID: 37354
 			Less,
-			// Token: 0x04009125 RID: 37157
+			// Token: 0x040091EB RID: 37355
 			LessThan,
-			// Token: 0x04009126 RID: 37158
+			// Token: 0x040091EC RID: 37356
 			LT,
-			// Token: 0x04009127 RID: 37159
+			// Token: 0x040091ED RID: 37357
 			Greater,
-			// Token: 0x04009128 RID: 37160
+			// Token: 0x040091EE RID: 37358
 			GreaterThan,
-			// Token: 0x04009129 RID: 37161
+			// Token: 0x040091EF RID: 37359
 			GT,
-			// Token: 0x0400912A RID: 37162
+			// Token: 0x040091F0 RID: 37360
 			LessOrEqual,
-			// Token: 0x0400912B RID: 37163
+			// Token: 0x040091F1 RID: 37361
 			LessThanOrEqualTo,
-			// Token: 0x0400912C RID: 37164
+			// Token: 0x040091F2 RID: 37362
 			LTE,
-			// Token: 0x0400912D RID: 37165
+			// Token: 0x040091F3 RID: 37363
 			GreaterOrEqual,
-			// Token: 0x0400912E RID: 37166
+			// Token: 0x040091F4 RID: 37364
 			GreaterThanOrEqualTo,
-			// Token: 0x0400912F RID: 37167
+			// Token: 0x040091F5 RID: 37365
 			GTE
 		}
 	}

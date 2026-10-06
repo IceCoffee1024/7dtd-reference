@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020010D9 RID: 4313
+// Token: 0x020010EA RID: 4330
 public class UIDisplayInfoManager
 {
-	// Token: 0x17000FEF RID: 4079
-	// (get) Token: 0x06008968 RID: 35176 RVA: 0x00346473 File Offset: 0x00344673
+	// Token: 0x17001024 RID: 4132
+	// (get) Token: 0x060089B6 RID: 35254 RVA: 0x0034A223 File Offset: 0x00348423
 	public static UIDisplayInfoManager Current
 	{
 		get
@@ -18,14 +18,14 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x06008969 RID: 35177 RVA: 0x0034648B File Offset: 0x0034468B
+	// Token: 0x060089B7 RID: 35255 RVA: 0x0034A23B File Offset: 0x0034843B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIDisplayInfoManager()
 	{
 	}
 
-	// Token: 0x17000FF0 RID: 4080
-	// (get) Token: 0x0600896A RID: 35178 RVA: 0x003464CA File Offset: 0x003446CA
+	// Token: 0x17001025 RID: 4133
+	// (get) Token: 0x060089B8 RID: 35256 RVA: 0x0034A27A File Offset: 0x0034847A
 	public static bool HasInstance
 	{
 		get
@@ -34,7 +34,7 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x0600896B RID: 35179 RVA: 0x003464D4 File Offset: 0x003446D4
+	// Token: 0x060089B9 RID: 35257 RVA: 0x0034A284 File Offset: 0x00348484
 	public static void Reset()
 	{
 		if (UIDisplayInfoManager.HasInstance)
@@ -43,19 +43,19 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x0600896C RID: 35180 RVA: 0x003464E7 File Offset: 0x003446E7
+	// Token: 0x060089BA RID: 35258 RVA: 0x0034A297 File Offset: 0x00348497
 	public bool ContainsItemDisplayStats(string tag)
 	{
 		return this.ItemDisplayStats.ContainsKey(tag);
 	}
 
-	// Token: 0x0600896D RID: 35181 RVA: 0x003464F5 File Offset: 0x003446F5
+	// Token: 0x060089BB RID: 35259 RVA: 0x0034A2A5 File Offset: 0x003484A5
 	public bool ContainsCraftingCategoryList(string tag)
 	{
 		return this.CraftingCategoryDisplayLists.ContainsKey(tag);
 	}
 
-	// Token: 0x0600896E RID: 35182 RVA: 0x00346503 File Offset: 0x00344703
+	// Token: 0x060089BC RID: 35260 RVA: 0x0034A2B3 File Offset: 0x003484B3
 	public ItemDisplayEntry GetDisplayStatsForTag(string tag)
 	{
 		if (this.ItemDisplayStats.ContainsKey(tag))
@@ -65,7 +65,7 @@ public class UIDisplayInfoManager
 		return null;
 	}
 
-	// Token: 0x0600896F RID: 35183 RVA: 0x00346521 File Offset: 0x00344721
+	// Token: 0x060089BD RID: 35261 RVA: 0x0034A2D1 File Offset: 0x003484D1
 	public void AddItemDisplayStats(string tag, string group)
 	{
 		if (!this.ItemDisplayStats.ContainsKey(tag))
@@ -77,7 +77,7 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x06008970 RID: 35184 RVA: 0x0034654C File Offset: 0x0034474C
+	// Token: 0x060089BE RID: 35262 RVA: 0x0034A2FC File Offset: 0x003484FC
 	public void AddItemDisplayInfo(string tag, DisplayInfoEntry displayInfo)
 	{
 		this.ItemDisplayStats[tag].DisplayStats.Add(displayInfo);
@@ -87,7 +87,7 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x06008971 RID: 35185 RVA: 0x003465A6 File Offset: 0x003447A6
+	// Token: 0x060089BF RID: 35263 RVA: 0x0034A356 File Offset: 0x00348556
 	public void Cleanup()
 	{
 		this.ItemDisplayStats.Clear();
@@ -95,7 +95,7 @@ public class UIDisplayInfoManager
 		this.CraftingCategoryDisplayLists.Clear();
 	}
 
-	// Token: 0x06008972 RID: 35186 RVA: 0x003465C9 File Offset: 0x003447C9
+	// Token: 0x060089C0 RID: 35264 RVA: 0x0034A379 File Offset: 0x00348579
 	public string GetLocalizedName(PassiveEffects statType)
 	{
 		if (this.StatLocalizationDictionary.ContainsKey(statType))
@@ -105,7 +105,7 @@ public class UIDisplayInfoManager
 		return "";
 	}
 
-	// Token: 0x06008973 RID: 35187 RVA: 0x003465EC File Offset: 0x003447EC
+	// Token: 0x060089C1 RID: 35265 RVA: 0x0034A39C File Offset: 0x0034859C
 	public void AddCharacterDisplayInfo(DisplayInfoEntry displayInfo)
 	{
 		this.CharacterDisplayStats.Add(displayInfo);
@@ -115,13 +115,13 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x06008974 RID: 35188 RVA: 0x0034663B File Offset: 0x0034483B
+	// Token: 0x060089C2 RID: 35266 RVA: 0x0034A3EB File Offset: 0x003485EB
 	public List<DisplayInfoEntry> GetCharacterDisplayInfo()
 	{
 		return this.CharacterDisplayStats;
 	}
 
-	// Token: 0x06008975 RID: 35189 RVA: 0x00346643 File Offset: 0x00344843
+	// Token: 0x060089C3 RID: 35267 RVA: 0x0034A3F3 File Offset: 0x003485F3
 	public void AddCraftingCategoryDisplayItem(string categoryListName, CraftingCategoryDisplayEntry entry)
 	{
 		if (!this.CraftingCategoryDisplayLists.ContainsKey(categoryListName))
@@ -131,7 +131,7 @@ public class UIDisplayInfoManager
 		this.CraftingCategoryDisplayLists[categoryListName].Add(entry);
 	}
 
-	// Token: 0x06008976 RID: 35190 RVA: 0x00346676 File Offset: 0x00344876
+	// Token: 0x060089C4 RID: 35268 RVA: 0x0034A426 File Offset: 0x00348626
 	public List<CraftingCategoryDisplayEntry> GetCraftingCategoryDisplayList(string categoryListName)
 	{
 		if (this.CraftingCategoryDisplayLists.ContainsKey(categoryListName))
@@ -141,7 +141,7 @@ public class UIDisplayInfoManager
 		return null;
 	}
 
-	// Token: 0x06008977 RID: 35191 RVA: 0x00346694 File Offset: 0x00344894
+	// Token: 0x060089C5 RID: 35269 RVA: 0x0034A444 File Offset: 0x00348644
 	public void AddTraderCategoryDIsplayItem(CraftingCategoryDisplayEntry entry)
 	{
 		if (!this.TraderCategoryDisplayDict.ContainsKey(entry.Name))
@@ -150,7 +150,7 @@ public class UIDisplayInfoManager
 		}
 	}
 
-	// Token: 0x06008978 RID: 35192 RVA: 0x003466BB File Offset: 0x003448BB
+	// Token: 0x060089C6 RID: 35270 RVA: 0x0034A46B File Offset: 0x0034866B
 	public CraftingCategoryDisplayEntry GetTraderCategoryDisplay(string name)
 	{
 		if (this.TraderCategoryDisplayDict.ContainsKey(name))
@@ -160,27 +160,27 @@ public class UIDisplayInfoManager
 		return null;
 	}
 
-	// Token: 0x04006625 RID: 26149
+	// Token: 0x04006667 RID: 26215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static UIDisplayInfoManager instance;
 
-	// Token: 0x04006626 RID: 26150
+	// Token: 0x04006668 RID: 26216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, ItemDisplayEntry> ItemDisplayStats = new Dictionary<string, ItemDisplayEntry>();
 
-	// Token: 0x04006627 RID: 26151
+	// Token: 0x04006669 RID: 26217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DisplayInfoEntry> CharacterDisplayStats = new List<DisplayInfoEntry>();
 
-	// Token: 0x04006628 RID: 26152
+	// Token: 0x0400666A RID: 26218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, List<CraftingCategoryDisplayEntry>> CraftingCategoryDisplayLists = new Dictionary<string, List<CraftingCategoryDisplayEntry>>();
 
-	// Token: 0x04006629 RID: 26153
+	// Token: 0x0400666B RID: 26219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, CraftingCategoryDisplayEntry> TraderCategoryDisplayDict = new Dictionary<string, CraftingCategoryDisplayEntry>();
 
-	// Token: 0x0400662A RID: 26154
+	// Token: 0x0400666C RID: 26220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<PassiveEffects, string> StatLocalizationDictionary = new EnumDictionary<PassiveEffects, string>();
 }

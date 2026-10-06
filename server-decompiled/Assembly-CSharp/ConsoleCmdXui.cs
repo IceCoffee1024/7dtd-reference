@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002C3 RID: 707
+// Token: 0x020002C6 RID: 710
 [Preserve]
 public class ConsoleCmdXui : ConsoleCmdAbstract
 {
-	// Token: 0x06001467 RID: 5223 RVA: 0x0007BE2D File Offset: 0x0007A02D
+	// Token: 0x06001464 RID: 5220 RVA: 0x0007C0E1 File Offset: 0x0007A2E1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "xui" };
 	}
 
-	// Token: 0x1700023F RID: 575
-	// (get) Token: 0x06001468 RID: 5224 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000237 RID: 567
+	// (get) Token: 0x06001465 RID: 5221 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000240 RID: 576
-	// (get) Token: 0x06001469 RID: 5225 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000238 RID: 568
+	// (get) Token: 0x06001466 RID: 5222 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -34,21 +34,21 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600146A RID: 5226 RVA: 0x0007BE3D File Offset: 0x0007A03D
+	// Token: 0x06001467 RID: 5223 RVA: 0x0007C0F1 File Offset: 0x0007A2F1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Execute XUi operations";
 	}
 
-	// Token: 0x0600146B RID: 5227 RVA: 0x0007BE44 File Offset: 0x0007A044
+	// Token: 0x06001468 RID: 5224 RVA: 0x0007C0F8 File Offset: 0x0007A2F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n   xui open <window group name> [instance] [closeOthers]\n   xui close <window group name> [instance]\n   xui reload [window group name] [instance]\n   xui list <\"instances\" / \"windows\"> [instance]\n";
 	}
 
-	// Token: 0x0600146C RID: 5228 RVA: 0x0007BE4C File Offset: 0x0007A04C
+	// Token: 0x06001469 RID: 5225 RVA: 0x0007C100 File Offset: 0x0007A300
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -84,7 +84,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x0600146D RID: 5229 RVA: 0x0007BF1C File Offset: 0x0007A11C
+	// Token: 0x0600146A RID: 5226 RVA: 0x0007C1D0 File Offset: 0x0007A3D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteOpen(List<string> _params)
 	{
@@ -115,7 +115,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("XUi window group \"" + _params[1] + "\" does not exist.");
 	}
 
-	// Token: 0x0600146E RID: 5230 RVA: 0x0007BFF4 File Offset: 0x0007A1F4
+	// Token: 0x0600146B RID: 5227 RVA: 0x0007C2A8 File Offset: 0x0007A4A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteClose(List<string> _params)
 	{
@@ -141,7 +141,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("XUi window group \"" + _params[1] + "\" does not exist.");
 	}
 
-	// Token: 0x0600146F RID: 5231 RVA: 0x0007C0B0 File Offset: 0x0007A2B0
+	// Token: 0x0600146C RID: 5228 RVA: 0x0007C364 File Offset: 0x0007A564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteReload(List<string> _params)
 	{
@@ -176,7 +176,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("XUi window group \"" + text + "\" not found or failed to load.");
 	}
 
-	// Token: 0x06001470 RID: 5232 RVA: 0x0007C18C File Offset: 0x0007A38C
+	// Token: 0x0600146D RID: 5229 RVA: 0x0007C440 File Offset: 0x0007A640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList(List<string> _params)
 	{
@@ -225,7 +225,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001471 RID: 5233 RVA: 0x0007C318 File Offset: 0x0007A518
+	// Token: 0x0600146E RID: 5230 RVA: 0x0007C5CC File Offset: 0x0007A7CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteLimits()
 	{
@@ -246,7 +246,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("XUi window group \"" + xuiWindow + "\" opened.");
 	}
 
-	// Token: 0x06001472 RID: 5234 RVA: 0x0007C3BC File Offset: 0x0007A5BC
+	// Token: 0x0600146F RID: 5231 RVA: 0x0007C670 File Offset: 0x0007A870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUi getXuiInstance(List<string> _params, int _index, out int _xuiInstanceId)
 	{
@@ -268,7 +268,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		return array[_xuiInstanceId];
 	}
 
-	// Token: 0x06001473 RID: 5235 RVA: 0x0007C440 File Offset: 0x0007A640
+	// Token: 0x06001470 RID: 5232 RVA: 0x0007C6F4 File Offset: 0x0007A8F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string getXuiWindow(XUi _xuiInstance, string _name)
 	{
@@ -282,7 +282,7 @@ public class ConsoleCmdXui : ConsoleCmdAbstract
 		return null;
 	}
 
-	// Token: 0x06001474 RID: 5236 RVA: 0x0007C48F File Offset: 0x0007A68F
+	// Token: 0x06001471 RID: 5233 RVA: 0x0007C743 File Offset: 0x0007A943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUi[] xuiInstances()
 	{

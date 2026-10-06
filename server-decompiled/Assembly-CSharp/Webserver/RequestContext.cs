@@ -4,11 +4,11 @@ using SpaceWizards.HttpListener;
 
 namespace Webserver
 {
-	// Token: 0x02001ABF RID: 6847
+	// Token: 0x02001AEB RID: 6891
 	public class RequestContext
 	{
-		// Token: 0x17001972 RID: 6514
-		// (get) Token: 0x0600CE65 RID: 52837 RVA: 0x004B258C File Offset: 0x004B078C
+		// Token: 0x17001A14 RID: 6676
+		// (get) Token: 0x0600CFBD RID: 53181 RVA: 0x004B6A58 File Offset: 0x004B4C58
 		public NameValueCollection QueryParameters
 		{
 			get
@@ -22,7 +22,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CE66 RID: 52838 RVA: 0x004B25B8 File Offset: 0x004B07B8
+		// Token: 0x0600CFBE RID: 53182 RVA: 0x004B6A84 File Offset: 0x004B4C84
 		public RequestContext(string _requestPath, HttpListenerRequest _request, HttpListenerResponse _response, WebConnection _connection, int _permissionLevel)
 		{
 			this.RequestPath = _requestPath;
@@ -78,26 +78,26 @@ namespace Webserver
 			this.Method = erequestMethod;
 		}
 
-		// Token: 0x04009C56 RID: 40022
+		// Token: 0x04009D1C RID: 40220
 		public string RequestPath;
 
-		// Token: 0x04009C57 RID: 40023
+		// Token: 0x04009D1D RID: 40221
 		public readonly ERequestMethod Method;
 
-		// Token: 0x04009C58 RID: 40024
+		// Token: 0x04009D1E RID: 40222
 		public readonly HttpListenerRequest Request;
 
-		// Token: 0x04009C59 RID: 40025
+		// Token: 0x04009D1F RID: 40223
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NameValueCollection queryParameters;
 
-		// Token: 0x04009C5A RID: 40026
+		// Token: 0x04009D20 RID: 40224
 		public readonly HttpListenerResponse Response;
 
-		// Token: 0x04009C5B RID: 40027
+		// Token: 0x04009D21 RID: 40225
 		public readonly WebConnection Connection;
 
-		// Token: 0x04009C5C RID: 40028
+		// Token: 0x04009D22 RID: 40226
 		public readonly int PermissionLevel;
 	}
 }

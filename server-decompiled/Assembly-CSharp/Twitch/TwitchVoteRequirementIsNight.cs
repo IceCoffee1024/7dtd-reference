@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x02001877 RID: 6263
+	// Token: 0x020018A3 RID: 6307
 	public class TwitchVoteRequirementIsNight : BaseTwitchVoteRequirement
 	{
-		// Token: 0x0600C158 RID: 49496 RVA: 0x00479227 File Offset: 0x00477427
+		// Token: 0x0600C2B0 RID: 49840 RVA: 0x0047D763 File Offset: 0x0047B963
 		public override bool CanPerform(EntityPlayer player)
 		{
 			if (!this.Invert)

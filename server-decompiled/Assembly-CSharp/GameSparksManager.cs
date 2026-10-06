@@ -6,11 +6,11 @@ using Twitch;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020011F5 RID: 4597
+// Token: 0x0200120D RID: 4621
 public class GameSparksManager : MonoBehaviour
 {
-	// Token: 0x17001183 RID: 4483
-	// (get) Token: 0x060092E4 RID: 37604 RVA: 0x00377356 File Offset: 0x00375556
+	// Token: 0x170011C7 RID: 4551
+	// (get) Token: 0x06009372 RID: 37746 RVA: 0x0037BB9E File Offset: 0x00379D9E
 	public int sessionUpdateIntervalSec
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,15 +20,15 @@ public class GameSparksManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060092E5 RID: 37605 RVA: 0x00377368 File Offset: 0x00375568
+	// Token: 0x06009373 RID: 37747 RVA: 0x0037BBB0 File Offset: 0x00379DB0
 	public static GameSparksManager Instance()
 	{
 		GameSparksManager.instance != null;
 		return GameSparksManager.instance;
 	}
 
-	// Token: 0x17001184 RID: 4484
-	// (get) Token: 0x060092E6 RID: 37606 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170011C8 RID: 4552
+	// (get) Token: 0x06009374 RID: 37748 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool DebugEnabled
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,8 +38,8 @@ public class GameSparksManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001185 RID: 4485
-	// (get) Token: 0x060092E7 RID: 37607 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x170011C9 RID: 4553
+	// (get) Token: 0x06009375 RID: 37749 RVA: 0x0003223F File Offset: 0x0003043F
 	public string DeviceId
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -49,14 +49,14 @@ public class GameSparksManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060092E8 RID: 37608 RVA: 0x00147A47 File Offset: 0x00145C47
+	// Token: 0x06009376 RID: 37750 RVA: 0x001483DF File Offset: 0x001465DF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060092E9 RID: 37609 RVA: 0x0037737B File Offset: 0x0037557B
+	// Token: 0x06009377 RID: 37751 RVA: 0x0037BBC3 File Offset: 0x00379DC3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator Start()
 	{
@@ -65,7 +65,7 @@ public class GameSparksManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060092EA RID: 37610 RVA: 0x0037738C File Offset: 0x0037558C
+	// Token: 0x06009378 RID: 37752 RVA: 0x0037BBD4 File Offset: 0x00379DD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AuthError(string _error)
 	{
@@ -87,26 +87,26 @@ public class GameSparksManager : MonoBehaviour
 		Log.Error("[GSM] AuthError" + _error);
 	}
 
-	// Token: 0x060092EB RID: 37611 RVA: 0x003773F1 File Offset: 0x003755F1
+	// Token: 0x06009379 RID: 37753 RVA: 0x0037BC39 File Offset: 0x00379E39
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerAuthenticated(PlayerDetails _playerDetails)
 	{
 		this.ProgramStarted();
 	}
 
-	// Token: 0x060092EC RID: 37612 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600937A RID: 37754 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DeviceAuth(GameSparksManager.OnPlayerAuthenticated _onPlayerAuthSuccess, GameSparksManager.OnError _onAuthError)
 	{
 	}
 
-	// Token: 0x060092ED RID: 37613 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600937B RID: 37755 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrepareAndSendRequest(GSRequestData _data, string _eventKey)
 	{
 	}
 
-	// Token: 0x060092EE RID: 37614 RVA: 0x003773FC File Offset: 0x003755FC
+	// Token: 0x0600937C RID: 37756 RVA: 0x0037BC44 File Offset: 0x00379E44
 	public void ProgramStarted()
 	{
 		string text = "PROGRAM_START";
@@ -220,7 +220,7 @@ public class GameSparksManager : MonoBehaviour
 		this.PrepareAndSendRequest(gsrequestData, text);
 	}
 
-	// Token: 0x060092EF RID: 37615 RVA: 0x0037795C File Offset: 0x00375B5C
+	// Token: 0x0600937D RID: 37757 RVA: 0x0037C1A4 File Offset: 0x0037A3A4
 	public void PrepareNewSession()
 	{
 		GameSparksCollector.GetSessionUpdateDataAndReset();
@@ -228,7 +228,7 @@ public class GameSparksManager : MonoBehaviour
 		PlatformManager.NativePlatform.Input.ResetInputStyleUsage();
 	}
 
-	// Token: 0x060092F0 RID: 37616 RVA: 0x0037797C File Offset: 0x00375B7C
+	// Token: 0x0600937E RID: 37758 RVA: 0x0037C1C4 File Offset: 0x0037A3C4
 	public void SessionStarted(string _world, string _gameMode, bool _isServer)
 	{
 		GameServerInfo gameServerInfo = (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo : SingletonMonoBehaviour<ConnectionManager>.Instance.LastGameServerInfo);
@@ -311,7 +311,7 @@ public class GameSparksManager : MonoBehaviour
 		this.nextDediSessionEndTransmitTime = Time.unscaledTime + 28800f;
 	}
 
-	// Token: 0x060092F1 RID: 37617 RVA: 0x00377CC0 File Offset: 0x00375EC0
+	// Token: 0x0600937F RID: 37759 RVA: 0x0037C508 File Offset: 0x0037A708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SessionUpdate()
 	{
@@ -341,7 +341,7 @@ public class GameSparksManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060092F2 RID: 37618 RVA: 0x00377CD0 File Offset: 0x00375ED0
+	// Token: 0x06009380 RID: 37760 RVA: 0x0037C518 File Offset: 0x0037A718
 	public void SessionEnded()
 	{
 		if (this.sessionUpdateCoroutine != null)
@@ -371,12 +371,12 @@ public class GameSparksManager : MonoBehaviour
 		this.PrepareAndSendRequest(sessionUpdateDataAndReset, text);
 	}
 
-	// Token: 0x04006DCB RID: 28107
+	// Token: 0x04006E35 RID: 28213
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int dediSessionEndIntervalSec = 28800;
 
-	// Token: 0x04006DCC RID: 28108
+	// Token: 0x04006E36 RID: 28214
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<GameInfoString> IgnoredGameInfoStrings = new List<GameInfoString>
@@ -389,7 +389,7 @@ public class GameSparksManager : MonoBehaviour
 		GameInfoString.ServerWebsiteURL
 	};
 
-	// Token: 0x04006DCD RID: 28109
+	// Token: 0x04006E37 RID: 28215
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<GameInfoInt> IgnoredGameInfoInts = new List<GameInfoInt>
@@ -400,43 +400,43 @@ public class GameSparksManager : MonoBehaviour
 		GameInfoInt.CurrentServerTime
 	};
 
-	// Token: 0x04006DCE RID: 28110
+	// Token: 0x04006E38 RID: 28216
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<GameInfoBool> IgnoredGameInfoBools = new List<GameInfoBool> { GameInfoBool.Architecture64 };
 
-	// Token: 0x04006DCF RID: 28111
+	// Token: 0x04006E39 RID: 28217
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool authenticated;
 
-	// Token: 0x04006DD0 RID: 28112
+	// Token: 0x04006E3A RID: 28218
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameSparksManager instance;
 
-	// Token: 0x04006DD1 RID: 28113
+	// Token: 0x04006E3B RID: 28219
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Coroutine sessionUpdateCoroutine;
 
-	// Token: 0x04006DD2 RID: 28114
+	// Token: 0x04006E3C RID: 28220
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool endCoroutine;
 
-	// Token: 0x04006DD3 RID: 28115
+	// Token: 0x04006E3D RID: 28221
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float nextDediSessionEndTransmitTime = -1f;
 
-	// Token: 0x020011F6 RID: 4598
-	// (Invoke) Token: 0x060092F6 RID: 37622
+	// Token: 0x0200120E RID: 4622
+	// (Invoke) Token: 0x06009384 RID: 37764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate void OnError(string _error);
 
-	// Token: 0x020011F7 RID: 4599
-	// (Invoke) Token: 0x060092FA RID: 37626
+	// Token: 0x0200120F RID: 4623
+	// (Invoke) Token: 0x06009388 RID: 37768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate void OnPlayerAuthenticated(PlayerDetails _playerDetails);
 }

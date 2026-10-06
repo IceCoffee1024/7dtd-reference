@@ -6,12 +6,12 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E08 RID: 3592
+// Token: 0x02000E17 RID: 3607
 [Preserve]
 public class XUiC_EulaWindow : XUiController
 {
-	// Token: 0x17000C2D RID: 3117
-	// (get) Token: 0x06006E03 RID: 28163 RVA: 0x002AAE3C File Offset: 0x002A903C
+	// Token: 0x17000C48 RID: 3144
+	// (get) Token: 0x06006DFB RID: 28155 RVA: 0x002AE1E4 File Offset: 0x002AC3E4
 	[XuiXmlBinding("pages")]
 	public Dictionary<string, string> PagesDict
 	{
@@ -22,8 +22,8 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C2E RID: 3118
-	// (get) Token: 0x06006E04 RID: 28164 RVA: 0x002AAE44 File Offset: 0x002A9044
+	// Token: 0x17000C49 RID: 3145
+	// (get) Token: 0x06006DFC RID: 28156 RVA: 0x002AE1EC File Offset: 0x002AC3EC
 	[XuiXmlBinding("pagecount")]
 	public int PageCount
 	{
@@ -34,8 +34,8 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C2F RID: 3119
-	// (get) Token: 0x06006E05 RID: 28165 RVA: 0x002AAE51 File Offset: 0x002A9051
+	// Token: 0x17000C4A RID: 3146
+	// (get) Token: 0x06006DFD RID: 28157 RVA: 0x002AE1F9 File Offset: 0x002AC3F9
 	[XuiXmlBinding("viewmode")]
 	public bool ViewMode
 	{
@@ -46,9 +46,9 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C30 RID: 3120
-	// (get) Token: 0x06006E06 RID: 28166 RVA: 0x002AAE58 File Offset: 0x002A9058
-	// (set) Token: 0x06006E07 RID: 28167 RVA: 0x002AAE60 File Offset: 0x002A9060
+	// Token: 0x17000C4B RID: 3147
+	// (get) Token: 0x06006DFE RID: 28158 RVA: 0x002AE200 File Offset: 0x002AC400
+	// (set) Token: 0x06006DFF RID: 28159 RVA: 0x002AE208 File Offset: 0x002AC408
 	[XuiXmlBinding("allowaccept")]
 	public bool AllowAccept
 	{
@@ -69,9 +69,9 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C31 RID: 3121
-	// (get) Token: 0x06006E08 RID: 28168 RVA: 0x002AAE7A File Offset: 0x002A907A
-	// (set) Token: 0x06006E09 RID: 28169 RVA: 0x002AAE82 File Offset: 0x002A9082
+	// Token: 0x17000C4C RID: 3148
+	// (get) Token: 0x06006E00 RID: 28160 RVA: 0x002AE222 File Offset: 0x002AC422
+	// (set) Token: 0x06006E01 RID: 28161 RVA: 0x002AE22A File Offset: 0x002AC42A
 	[XuiXmlBinding("uivisible")]
 	public bool UIVisible
 	{
@@ -90,7 +90,7 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006E0A RID: 28170 RVA: 0x002AAE9C File Offset: 0x002A909C
+	// Token: 0x06006E02 RID: 28162 RVA: 0x002AE244 File Offset: 0x002AC444
 	public override void Init()
 	{
 		base.Init();
@@ -104,14 +104,14 @@ public class XUiC_EulaWindow : XUiController
 		Log.Error("Could not load default EULA text asset");
 	}
 
-	// Token: 0x06006E0B RID: 28171 RVA: 0x002AAEF9 File Offset: 0x002A90F9
+	// Token: 0x06006E03 RID: 28163 RVA: 0x002AE2A1 File Offset: 0x002AC4A1
 	public static void Open(XUi _xui, bool _viewMode = false)
 	{
 		XUiC_EulaWindow.viewMode = _viewMode;
 		_xui.playerUI.windowManager.Open(XUiC_EulaWindow.id, true, true);
 	}
 
-	// Token: 0x06006E0C RID: 28172 RVA: 0x002AAF18 File Offset: 0x002A9118
+	// Token: 0x06006E04 RID: 28164 RVA: 0x002AE2C0 File Offset: 0x002AC4C0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -125,7 +125,7 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006E0D RID: 28173 RVA: 0x002AAF65 File Offset: 0x002A9165
+	// Token: 0x06006E05 RID: 28165 RVA: 0x002AE30D File Offset: 0x002AC50D
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -133,7 +133,7 @@ public class XUiC_EulaWindow : XUiController
 		this.scrollView.ResetPosition();
 	}
 
-	// Token: 0x06006E0E RID: 28174 RVA: 0x002AAF88 File Offset: 0x002A9188
+	// Token: 0x06006E06 RID: 28166 RVA: 0x002AE330 File Offset: 0x002AC530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void close()
 	{
@@ -146,7 +146,7 @@ public class XUiC_EulaWindow : XUiController
 		XUiC_MainMenu.Open(this.xui);
 	}
 
-	// Token: 0x06006E0F RID: 28175 RVA: 0x002AAFE0 File Offset: 0x002A91E0
+	// Token: 0x06006E07 RID: 28167 RVA: 0x002AE388 File Offset: 0x002AC588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadDefaultXML(byte[] _data)
 	{
@@ -174,7 +174,7 @@ public class XUiC_EulaWindow : XUiController
 		Log.Out("Loaded default EULA");
 	}
 
-	// Token: 0x06006E10 RID: 28176 RVA: 0x002AB08C File Offset: 0x002A928C
+	// Token: 0x06006E08 RID: 28168 RVA: 0x002AE434 File Offset: 0x002AC634
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -203,7 +203,7 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006E11 RID: 28177 RVA: 0x002AB174 File Offset: 0x002A9374
+	// Token: 0x06006E09 RID: 28169 RVA: 0x002AE51C File Offset: 0x002AC71C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void displayEulaOrClose()
 	{
@@ -220,7 +220,7 @@ public class XUiC_EulaWindow : XUiController
 		ThreadManager.StartCoroutine(this.updateScrolling());
 	}
 
-	// Token: 0x06006E12 RID: 28178 RVA: 0x002AB1EA File Offset: 0x002A93EA
+	// Token: 0x06006E0A RID: 28170 RVA: 0x002AE592 File Offset: 0x002AC792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator updateScrolling()
 	{
@@ -238,7 +238,7 @@ public class XUiC_EulaWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06006E13 RID: 28179 RVA: 0x002AB1FC File Offset: 0x002A93FC
+	// Token: 0x06006E0B RID: 28171 RVA: 0x002AE5A4 File Offset: 0x002AC7A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void formatPages(string _content)
 	{
@@ -275,7 +275,7 @@ public class XUiC_EulaWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006E14 RID: 28180 RVA: 0x002AB307 File Offset: 0x002A9507
+	// Token: 0x06006E0C RID: 28172 RVA: 0x002AE6AF File Offset: 0x002AC8AF
 	[XuiBindEvent("OnPress", "btnAccept")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnAccept_OnPressed(XUiController _sender, int _mouseButton)
@@ -289,7 +289,7 @@ public class XUiC_EulaWindow : XUiController
 		this.close();
 	}
 
-	// Token: 0x06006E15 RID: 28181 RVA: 0x002AB340 File Offset: 0x002A9540
+	// Token: 0x06006E0D RID: 28173 RVA: 0x002AE6E8 File Offset: 0x002AC8E8
 	[XuiBindEvent("OnPress", "btnDecline")]
 	[XuiBindEvent("OnPress", "btnDone")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -298,76 +298,76 @@ public class XUiC_EulaWindow : XUiController
 		this.close();
 	}
 
-	// Token: 0x040053AE RID: 21422
+	// Token: 0x040053E5 RID: 21477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int AlphanumericPageCharacterLimit = 2000;
 
-	// Token: 0x040053AF RID: 21423
+	// Token: 0x040053E6 RID: 21478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ScriptPageCharacterLimit = 1000;
 
-	// Token: 0x040053B0 RID: 21424
+	// Token: 0x040053E7 RID: 21479
 	public static string RetrievedEula;
 
-	// Token: 0x040053B1 RID: 21425
+	// Token: 0x040053E8 RID: 21480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string id;
 
-	// Token: 0x040053B2 RID: 21426
+	// Token: 0x040053E9 RID: 21481
 	[XuiBindComponent("btnAccept", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnAccept;
 
-	// Token: 0x040053B3 RID: 21427
+	// Token: 0x040053EA RID: 21482
 	[XuiBindComponent("btnDecline", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDecline;
 
-	// Token: 0x040053B4 RID: 21428
+	// Token: 0x040053EB RID: 21483
 	[XuiBindComponent("btnDone", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDone;
 
-	// Token: 0x040053B5 RID: 21429
+	// Token: 0x040053EC RID: 21484
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_ScrollView scrollView;
 
-	// Token: 0x040053B6 RID: 21430
+	// Token: 0x040053ED RID: 21485
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_ScrollBar scrollBar;
 
-	// Token: 0x040053B7 RID: 21431
+	// Token: 0x040053EE RID: 21486
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Table textTable;
 
-	// Token: 0x040053B8 RID: 21432
+	// Token: 0x040053EF RID: 21487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultEula;
 
-	// Token: 0x040053B9 RID: 21433
+	// Token: 0x040053F0 RID: 21488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int defaultEulaVersion = -1;
 
-	// Token: 0x040053BA RID: 21434
+	// Token: 0x040053F1 RID: 21489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, string> pagesDict = new Dictionary<string, string>();
 
-	// Token: 0x040053BB RID: 21435
+	// Token: 0x040053F2 RID: 21490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pageFormatted;
 
-	// Token: 0x040053BC RID: 21436
+	// Token: 0x040053F3 RID: 21491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool viewMode;
 
-	// Token: 0x040053BD RID: 21437
+	// Token: 0x040053F4 RID: 21492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool allowAccept;
 
-	// Token: 0x040053BE RID: 21438
+	// Token: 0x040053F5 RID: 21493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool uiVisible;
 }

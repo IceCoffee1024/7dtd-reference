@@ -2,26 +2,26 @@
 
 namespace Platform
 {
-	// Token: 0x02001B4C RID: 6988
+	// Token: 0x02001B7E RID: 7038
 	public enum EPlatformIdentifier : byte
 	{
-		// Token: 0x0400A03E RID: 41022
+		// Token: 0x0400A113 RID: 41235
 		None,
-		// Token: 0x0400A03F RID: 41023
+		// Token: 0x0400A114 RID: 41236
 		Local,
-		// Token: 0x0400A040 RID: 41024
+		// Token: 0x0400A115 RID: 41237
 		EOS,
-		// Token: 0x0400A041 RID: 41025
+		// Token: 0x0400A116 RID: 41238
 		Steam,
-		// Token: 0x0400A042 RID: 41026
+		// Token: 0x0400A117 RID: 41239
 		XBL,
-		// Token: 0x0400A043 RID: 41027
+		// Token: 0x0400A118 RID: 41240
 		PSN,
-		// Token: 0x0400A044 RID: 41028
+		// Token: 0x0400A119 RID: 41241
 		EGS,
-		// Token: 0x0400A045 RID: 41029
+		// Token: 0x0400A11A RID: 41242
 		LAN,
-		// Token: 0x0400A046 RID: 41030
+		// Token: 0x0400A11B RID: 41243
 		Count
 	}
 }

@@ -7,10 +7,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x02001222 RID: 4642
+// Token: 0x0200123A RID: 4666
 public class GUIWindowManager : MonoBehaviour
 {
-	// Token: 0x06009436 RID: 37942 RVA: 0x00380314 File Offset: 0x0037E514
+	// Token: 0x060094C4 RID: 38084 RVA: 0x00384B5C File Offset: 0x00382D5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -18,7 +18,7 @@ public class GUIWindowManager : MonoBehaviour
 		this.playerUI = base.GetComponent<LocalPlayerUI>();
 	}
 
-	// Token: 0x06009437 RID: 37943 RVA: 0x00380330 File Offset: 0x0037E530
+	// Token: 0x060094C5 RID: 38085 RVA: 0x00384B78 File Offset: 0x00382D78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -70,7 +70,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009438 RID: 37944 RVA: 0x003804CC File Offset: 0x0037E6CC
+	// Token: 0x060094C6 RID: 38086 RVA: 0x00384D14 File Offset: 0x00382F14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -134,13 +134,13 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009439 RID: 37945 RVA: 0x00380744 File Offset: 0x0037E944
+	// Token: 0x060094C7 RID: 38087 RVA: 0x00384F8C File Offset: 0x0038318C
 	public bool IsInputActive()
 	{
 		return (UIInput.selection != null && UIInput.selection.gameObject.activeInHierarchy) || (this.topmostWindow != null && this.topmostWindow.isInputActive) || this.IsUGUIInputActive() || GUIWindowConsole.IsOpen();
 	}
 
-	// Token: 0x0600943A RID: 37946 RVA: 0x00380794 File Offset: 0x0037E994
+	// Token: 0x060094C8 RID: 38088 RVA: 0x00384FDC File Offset: 0x003831DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsUGUIInputActive()
 	{
@@ -163,13 +163,13 @@ public class GUIWindowManager : MonoBehaviour
 		return currentSelectedGameObject.TryGetComponent<TMP_InputField>(out tmp_InputField) && tmp_InputField.isFocused;
 	}
 
-	// Token: 0x0600943B RID: 37947 RVA: 0x003807E7 File Offset: 0x0037E9E7
+	// Token: 0x060094C9 RID: 38089 RVA: 0x0038502F File Offset: 0x0038322F
 	public bool IsKeyShortcutsAllowed()
 	{
 		return !this.IsInputLocked && (PlatformManager.NativePlatform.Input.CurrentInputStyle != PlayerInputManager.InputStyle.Keyboard || !this.IsInputActive());
 	}
 
-	// Token: 0x0600943C RID: 37948 RVA: 0x00380810 File Offset: 0x0037EA10
+	// Token: 0x060094CA RID: 38090 RVA: 0x00385058 File Offset: 0x00383258
 	public void Add(GUIWindow _window)
 	{
 		this.nameToWindowMap.Add(_window.Id, _window);
@@ -185,7 +185,7 @@ public class GUIWindowManager : MonoBehaviour
 		_window.playerUI = this.playerUI;
 	}
 
-	// Token: 0x0600943D RID: 37949 RVA: 0x00380876 File Offset: 0x0037EA76
+	// Token: 0x060094CB RID: 38091 RVA: 0x003850BE File Offset: 0x003832BE
 	public void Remove(GUIWindow _w)
 	{
 		if (_w.isShowing)
@@ -196,7 +196,7 @@ public class GUIWindowManager : MonoBehaviour
 		this.nameToWindowMap.Remove(_w.Id);
 	}
 
-	// Token: 0x0600943E RID: 37950 RVA: 0x003808A0 File Offset: 0x0037EAA0
+	// Token: 0x060094CC RID: 38092 RVA: 0x003850E8 File Offset: 0x003832E8
 	public GUIWindow GetWindow(string _windowName)
 	{
 		GUIWindow guiwindow;
@@ -208,19 +208,19 @@ public class GUIWindowManager : MonoBehaviour
 		return guiwindow;
 	}
 
-	// Token: 0x0600943F RID: 37951 RVA: 0x003808D4 File Offset: 0x0037EAD4
+	// Token: 0x060094CD RID: 38093 RVA: 0x0038511C File Offset: 0x0038331C
 	public bool TryGetWindow(string _windowName, out GUIWindow _window)
 	{
 		return this.nameToWindowMap.TryGetValue(_windowName, out _window);
 	}
 
-	// Token: 0x06009440 RID: 37952 RVA: 0x003808E3 File Offset: 0x0037EAE3
+	// Token: 0x060094CE RID: 38094 RVA: 0x0038512B File Offset: 0x0038332B
 	public T GetWindow<T>(string _windowName) where T : GUIWindow
 	{
 		return (T)((object)this.nameToWindowMap[_windowName]);
 	}
 
-	// Token: 0x06009441 RID: 37953 RVA: 0x003808F8 File Offset: 0x0037EAF8
+	// Token: 0x060094CF RID: 38095 RVA: 0x00385140 File Offset: 0x00383340
 	public void SwitchVisible(string _windowName, bool _modal = true)
 	{
 		GUIWindow guiwindow;
@@ -230,7 +230,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009442 RID: 37954 RVA: 0x0038091D File Offset: 0x0037EB1D
+	// Token: 0x060094D0 RID: 38096 RVA: 0x00385165 File Offset: 0x00383365
 	public void SwitchVisible(GUIWindow _guiWindow, bool _modal = true)
 	{
 		if ((!_modal || _guiWindow.isModal) && _guiWindow.isShowing)
@@ -241,7 +241,7 @@ public class GUIWindowManager : MonoBehaviour
 		this.Open(_guiWindow, _modal);
 	}
 
-	// Token: 0x06009443 RID: 37955 RVA: 0x00380944 File Offset: 0x0037EB44
+	// Token: 0x060094D1 RID: 38097 RVA: 0x0038518C File Offset: 0x0038338C
 	public bool CloseAllOpenModalWindows(string _exceptWindowName)
 	{
 		GUIWindow guiwindow;
@@ -249,7 +249,7 @@ public class GUIWindowManager : MonoBehaviour
 		return this.CloseAllOpenModalWindows(guiwindow, false);
 	}
 
-	// Token: 0x06009444 RID: 37956 RVA: 0x00380968 File Offset: 0x0037EB68
+	// Token: 0x060094D2 RID: 38098 RVA: 0x003851B0 File Offset: 0x003833B0
 	public bool CloseAllOpenModalWindows(GUIWindow _exceptWindow = null, bool _fromEsc = false)
 	{
 		bool flag = false;
@@ -274,7 +274,7 @@ public class GUIWindowManager : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x06009445 RID: 37957 RVA: 0x00380A18 File Offset: 0x0037EC18
+	// Token: 0x060094D3 RID: 38099 RVA: 0x00385260 File Offset: 0x00383460
 	public void Open(string _windowName, bool _bModal)
 	{
 		GUIWindow guiwindow;
@@ -287,7 +287,7 @@ public class GUIWindowManager : MonoBehaviour
 		this.openInternal(guiwindow, _bModal, false);
 	}
 
-	// Token: 0x06009446 RID: 37958 RVA: 0x00380A68 File Offset: 0x0037EC68
+	// Token: 0x060094D4 RID: 38100 RVA: 0x003852B0 File Offset: 0x003834B0
 	public void Open(string _windowName, bool _bModal, bool _bIsNotEscClosable)
 	{
 		GUIWindow guiwindow;
@@ -300,19 +300,19 @@ public class GUIWindowManager : MonoBehaviour
 		this.openInternal(guiwindow, _bModal, _bIsNotEscClosable);
 	}
 
-	// Token: 0x06009447 RID: 37959 RVA: 0x00380AB7 File Offset: 0x0037ECB7
+	// Token: 0x060094D5 RID: 38101 RVA: 0x003852FF File Offset: 0x003834FF
 	public void Open(GUIWindow _w, bool _bModal)
 	{
 		this.openInternal(_w, _bModal, false);
 	}
 
-	// Token: 0x06009448 RID: 37960 RVA: 0x00380AC2 File Offset: 0x0037ECC2
+	// Token: 0x060094D6 RID: 38102 RVA: 0x0038530A File Offset: 0x0038350A
 	public void Open(GUIWindow _w, bool _bModal, bool _bIsNotEscClosable)
 	{
 		this.openInternal(_w, _bModal, _bIsNotEscClosable);
 	}
 
-	// Token: 0x06009449 RID: 37961 RVA: 0x00380AD0 File Offset: 0x0037ECD0
+	// Token: 0x060094D7 RID: 38103 RVA: 0x00385318 File Offset: 0x00383518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openInternal(GUIWindow _w, bool _bModal, bool _bIsNotEscClosable)
 	{
@@ -379,38 +379,38 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600944A RID: 37962 RVA: 0x00380BF4 File Offset: 0x0037EDF4
+	// Token: 0x060094D8 RID: 38104 RVA: 0x0038543C File Offset: 0x0038363C
 	public bool IsWindowOpen(string _wdwID)
 	{
 		GUIWindow guiwindow;
 		return this.nameToWindowMap.TryGetValue(_wdwID, out guiwindow) && this.IsWindowOpen(guiwindow);
 	}
 
-	// Token: 0x0600944B RID: 37963 RVA: 0x00380C1A File Offset: 0x0037EE1A
+	// Token: 0x060094D9 RID: 38105 RVA: 0x00385462 File Offset: 0x00383662
 	public bool IsWindowOpen(GUIWindow _window)
 	{
 		return _window != null && (_window.isShowing || this.windowsToOpen.Contains(_window));
 	}
 
-	// Token: 0x0600944C RID: 37964 RVA: 0x00380C37 File Offset: 0x0037EE37
+	// Token: 0x060094DA RID: 38106 RVA: 0x0038547F File Offset: 0x0038367F
 	public bool IsModalWindowOpen()
 	{
 		return this.modalWindow != null;
 	}
 
-	// Token: 0x0600944D RID: 37965 RVA: 0x00380C42 File Offset: 0x0037EE42
+	// Token: 0x060094DB RID: 38107 RVA: 0x0038548A File Offset: 0x0038368A
 	public GUIWindow GetModalWindow()
 	{
 		return this.modalWindow;
 	}
 
-	// Token: 0x0600944E RID: 37966 RVA: 0x00380C4A File Offset: 0x0037EE4A
+	// Token: 0x060094DC RID: 38108 RVA: 0x00385492 File Offset: 0x00383692
 	public bool IsCursorWindowOpen()
 	{
 		return this.cursorWindowOpen;
 	}
 
-	// Token: 0x0600944F RID: 37967 RVA: 0x00380C54 File Offset: 0x0037EE54
+	// Token: 0x060094DD RID: 38109 RVA: 0x0038549C File Offset: 0x0038369C
 	public void Close(string _windowName)
 	{
 		GUIWindow guiwindow;
@@ -420,7 +420,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009450 RID: 37968 RVA: 0x00380C7C File Offset: 0x0037EE7C
+	// Token: 0x060094DE RID: 38110 RVA: 0x003854C4 File Offset: 0x003836C4
 	public void Close(GUIWindow _w, bool _fromEsc = false)
 	{
 		if (_w == null)
@@ -447,7 +447,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009451 RID: 37969 RVA: 0x00380CF6 File Offset: 0x0037EEF6
+	// Token: 0x060094DF RID: 38111 RVA: 0x0038553E File Offset: 0x0038373E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DisableWindowActionSet(GUIWindow _w)
 	{
@@ -458,7 +458,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009452 RID: 37970 RVA: 0x00380D2B File Offset: 0x0037EF2B
+	// Token: 0x060094E0 RID: 38112 RVA: 0x00385573 File Offset: 0x00383773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EnableWindowActionSet(GUIWindow _w)
 	{
@@ -469,7 +469,7 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009453 RID: 37971 RVA: 0x00380D60 File Offset: 0x0037EF60
+	// Token: 0x060094E1 RID: 38113 RVA: 0x003855A8 File Offset: 0x003837A8
 	public void ResetActionSets()
 	{
 		ActionSetManager actionSetManager = this.playerUI.ActionSetManager;
@@ -495,44 +495,44 @@ public class GUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009454 RID: 37972 RVA: 0x00380E34 File Offset: 0x0037F034
+	// Token: 0x060094E2 RID: 38114 RVA: 0x0038567C File Offset: 0x0038387C
 	public void RemoveGlobalAction(NGuiAction _action)
 	{
 		this.globalActions.Remove(_action);
 	}
 
-	// Token: 0x06009455 RID: 37973 RVA: 0x00380E43 File Offset: 0x0037F043
+	// Token: 0x060094E3 RID: 38115 RVA: 0x0038568B File Offset: 0x0038388B
 	public void AddGlobalAction(NGuiAction _action)
 	{
 		this.globalActions.Add(_action);
 	}
 
-	// Token: 0x06009456 RID: 37974 RVA: 0x00380E51 File Offset: 0x0037F051
+	// Token: 0x060094E4 RID: 38116 RVA: 0x00385699 File Offset: 0x00383899
 	public bool IsHUDEnabled()
 	{
 		return this.bHUDEnabled == GUIWindowManager.HudEnabledStates.Enabled;
 	}
 
-	// Token: 0x06009457 RID: 37975 RVA: 0x00380E5C File Offset: 0x0037F05C
+	// Token: 0x060094E5 RID: 38117 RVA: 0x003856A4 File Offset: 0x003838A4
 	public bool IsHUDPartialHidden()
 	{
 		return this.bHUDEnabled == GUIWindowManager.HudEnabledStates.PartialHide;
 	}
 
-	// Token: 0x06009458 RID: 37976 RVA: 0x00380E67 File Offset: 0x0037F067
+	// Token: 0x060094E6 RID: 38118 RVA: 0x003856AF File Offset: 0x003838AF
 	public bool IsFullHUDDisabled()
 	{
 		return this.bHUDEnabled == GUIWindowManager.HudEnabledStates.FullHide;
 	}
 
-	// Token: 0x06009459 RID: 37977 RVA: 0x00380E72 File Offset: 0x0037F072
+	// Token: 0x060094E7 RID: 38119 RVA: 0x003856BA File Offset: 0x003838BA
 	public void ToggleHUDEnabled()
 	{
 		this.bHUDEnabled = this.bHUDEnabled.CycleEnum(false, true);
 		this.SetHUDEnabled(this.bHUDEnabled);
 	}
 
-	// Token: 0x0600945A RID: 37978 RVA: 0x00380E93 File Offset: 0x0037F093
+	// Token: 0x060094E8 RID: 38120 RVA: 0x003856DB File Offset: 0x003838DB
 	public void TempHUDDisable()
 	{
 		this.bTempEnabled = this.bHUDEnabled;
@@ -540,14 +540,14 @@ public class GUIWindowManager : MonoBehaviour
 		this.SetHUDEnabled(this.bHUDEnabled);
 	}
 
-	// Token: 0x0600945B RID: 37979 RVA: 0x00380EB4 File Offset: 0x0037F0B4
+	// Token: 0x060094E9 RID: 38121 RVA: 0x003856FC File Offset: 0x003838FC
 	public void ReEnableHUD()
 	{
 		this.bHUDEnabled = this.bTempEnabled;
 		this.SetHUDEnabled(this.bHUDEnabled);
 	}
 
-	// Token: 0x0600945C RID: 37980 RVA: 0x00380ED0 File Offset: 0x0037F0D0
+	// Token: 0x060094EA RID: 38122 RVA: 0x00385718 File Offset: 0x00383918
 	public void SetHUDEnabled(GUIWindowManager.HudEnabledStates _hudState)
 	{
 		this.bHUDEnabled = _hudState;
@@ -565,90 +565,90 @@ public class GUIWindowManager : MonoBehaviour
 		this.playerUI.xui.transform.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04006F13 RID: 28435
+	// Token: 0x04006F7D RID: 28541
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<GUIWindow> windowsToOpen = new List<GUIWindow>();
 
-	// Token: 0x04006F14 RID: 28436
+	// Token: 0x04006F7E RID: 28542
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<GUIWindow> windowsToRemove = new List<GUIWindow>();
 
-	// Token: 0x04006F15 RID: 28437
+	// Token: 0x04006F7F RID: 28543
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<GUIWindow> openWindows = new List<GUIWindow>();
 
-	// Token: 0x04006F16 RID: 28438
+	// Token: 0x04006F80 RID: 28544
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Dictionary<string, GUIWindow> nameToWindowMap = new CaseInsensitiveStringDictionary<GUIWindow>();
 
-	// Token: 0x04006F17 RID: 28439
+	// Token: 0x04006F81 RID: 28545
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindow topmostWindow;
 
-	// Token: 0x04006F18 RID: 28440
+	// Token: 0x04006F82 RID: 28546
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindow modalWindow;
 
-	// Token: 0x04006F19 RID: 28441
+	// Token: 0x04006F83 RID: 28547
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool cursorWindowOpen;
 
-	// Token: 0x04006F1A RID: 28442
+	// Token: 0x04006F84 RID: 28548
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NGuiAction> globalActions = new List<NGuiAction>();
 
-	// Token: 0x04006F1B RID: 28443
+	// Token: 0x04006F85 RID: 28549
 	public bool IsInputLocked;
 
-	// Token: 0x04006F1C RID: 28444
+	// Token: 0x04006F86 RID: 28550
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x04006F1D RID: 28445
+	// Token: 0x04006F87 RID: 28551
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x04006F1E RID: 28446
+	// Token: 0x04006F88 RID: 28552
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NGuiAction> lastActionClicked = new List<NGuiAction>();
 
-	// Token: 0x04006F1F RID: 28447
+	// Token: 0x04006F89 RID: 28553
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NGuiAction> actionsToClear = new List<NGuiAction>();
 
-	// Token: 0x04006F20 RID: 28448
+	// Token: 0x04006F8A RID: 28554
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NGuiAction> actionsForGlobalHotkeys = new List<NGuiAction>();
 
-	// Token: 0x04006F21 RID: 28449
+	// Token: 0x04006F8B RID: 28555
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager.HudEnabledStates bHUDEnabled;
 
-	// Token: 0x04006F22 RID: 28450
+	// Token: 0x04006F8C RID: 28556
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager.HudEnabledStates bTempEnabled;
 
-	// Token: 0x02001223 RID: 4643
+	// Token: 0x0200123B RID: 4667
 	public enum HudEnabledStates
 	{
-		// Token: 0x04006F24 RID: 28452
+		// Token: 0x04006F8E RID: 28558
 		Enabled,
-		// Token: 0x04006F25 RID: 28453
+		// Token: 0x04006F8F RID: 28559
 		PartialHide,
-		// Token: 0x04006F26 RID: 28454
+		// Token: 0x04006F90 RID: 28560
 		FullHide
 	}
 }

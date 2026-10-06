@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000600 RID: 1536
+// Token: 0x02000602 RID: 1538
 [Preserve]
 public class ItemClassTorch : ItemClass
 {
-	// Token: 0x06003222 RID: 12834 RVA: 0x00145AF8 File Offset: 0x00143CF8
+	// Token: 0x06003265 RID: 12901 RVA: 0x00146484 File Offset: 0x00144684
 	public override void StartHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		base.StartHolding(_data, _modelTransform);
@@ -21,7 +21,7 @@ public class ItemClassTorch : ItemClass
 		}
 	}
 
-	// Token: 0x06003223 RID: 12835 RVA: 0x00145B38 File Offset: 0x00143D38
+	// Token: 0x06003266 RID: 12902 RVA: 0x001464C4 File Offset: 0x001446C4
 	public override void StopHolding(ItemInventoryData _data, Transform _modelTransform)
 	{
 		base.StopHolding(_data, _modelTransform);
@@ -36,7 +36,7 @@ public class ItemClassTorch : ItemClass
 		}
 	}
 
-	// Token: 0x06003224 RID: 12836 RVA: 0x00145B76 File Offset: 0x00143D76
+	// Token: 0x06003267 RID: 12903 RVA: 0x00146502 File Offset: 0x00144702
 	public override BlockValue OnConvertToBlockValue(ItemValue _itemValue, BlockValue _blueprintBlockValue)
 	{
 		_blueprintBlockValue.meta = (byte)((int)_itemValue.UseTimes & 15);
@@ -44,13 +44,13 @@ public class ItemClassTorch : ItemClass
 		return _blueprintBlockValue;
 	}
 
-	// Token: 0x06003225 RID: 12837 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003268 RID: 12904 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override RenderCubeType GetFocusType(ItemInventoryData _data)
 	{
 		return RenderCubeType.None;
 	}
 
-	// Token: 0x06003226 RID: 12838 RVA: 0x00145BA0 File Offset: 0x00143DA0
+	// Token: 0x06003269 RID: 12905 RVA: 0x0014652C File Offset: 0x0014472C
 	public override void OnHoldingUpdate(ItemInventoryData _data)
 	{
 		base.OnHoldingUpdate(_data);

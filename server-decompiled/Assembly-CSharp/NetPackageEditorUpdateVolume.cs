@@ -2,11 +2,11 @@
 using PrefabVolumes;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CF RID: 1999
+// Token: 0x020007D2 RID: 2002
 [Preserve]
 public class NetPackageEditorUpdateVolume : NetPackage
 {
-	// Token: 0x06003B3E RID: 15166 RVA: 0x0017E73C File Offset: 0x0017C93C
+	// Token: 0x06003B5C RID: 15196 RVA: 0x0017ECCF File Offset: 0x0017CECF
 	public NetPackageEditorUpdateVolume Setup(NetPackageEditorUpdateVolume.EChangeType _changeType, int _prefabInstanceId, int _volumeId, PrefabVolumeAbs _volume)
 	{
 		this.changeType = _changeType;
@@ -16,7 +16,7 @@ public class NetPackageEditorUpdateVolume : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B3F RID: 15167 RVA: 0x0017E764 File Offset: 0x0017C964
+	// Token: 0x06003B5D RID: 15197 RVA: 0x0017ECF4 File Offset: 0x0017CEF4
 	public override void read(PooledBinaryReader _br)
 	{
 		this.changeType = (NetPackageEditorUpdateVolume.EChangeType)_br.ReadByte();
@@ -27,7 +27,7 @@ public class NetPackageEditorUpdateVolume : NetPackage
 		this.volume.Read(_br);
 	}
 
-	// Token: 0x06003B40 RID: 15168 RVA: 0x0017E7B4 File Offset: 0x0017C9B4
+	// Token: 0x06003B5E RID: 15198 RVA: 0x0017ED44 File Offset: 0x0017CF44
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -38,7 +38,7 @@ public class NetPackageEditorUpdateVolume : NetPackage
 		this.volume.Write(_bw);
 	}
 
-	// Token: 0x06003B41 RID: 15169 RVA: 0x0017E80C File Offset: 0x0017CA0C
+	// Token: 0x06003B5F RID: 15199 RVA: 0x0017ED9C File Offset: 0x0017CF9C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -67,34 +67,28 @@ public class NetPackageEditorUpdateVolume : NetPackage
 		}
 	}
 
-	// Token: 0x06003B42 RID: 15170 RVA: 0x0017E883 File Offset: 0x0017CA83
-	public override int GetLength()
-	{
-		return 14 + this.volume.SerializedSize;
-	}
-
-	// Token: 0x0400305E RID: 12382
+	// Token: 0x04003058 RID: 12376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEditorUpdateVolume.EChangeType changeType;
 
-	// Token: 0x0400305F RID: 12383
+	// Token: 0x04003059 RID: 12377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceId;
 
-	// Token: 0x04003060 RID: 12384
+	// Token: 0x0400305A RID: 12378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int volumeId;
 
-	// Token: 0x04003061 RID: 12385
+	// Token: 0x0400305B RID: 12379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabVolumeAbs volume;
 
-	// Token: 0x020007D0 RID: 2000
+	// Token: 0x020007D3 RID: 2003
 	public enum EChangeType
 	{
-		// Token: 0x04003063 RID: 12387
+		// Token: 0x0400305D RID: 12381
 		Added,
-		// Token: 0x04003064 RID: 12388
+		// Token: 0x0400305E RID: 12382
 		Changed
 	}
 }

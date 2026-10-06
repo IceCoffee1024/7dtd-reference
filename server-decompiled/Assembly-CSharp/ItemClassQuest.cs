@@ -1,41 +1,41 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020005FE RID: 1534
+// Token: 0x02000600 RID: 1536
 [Preserve]
 public class ItemClassQuest : ItemClass
 {
-	// Token: 0x0600320C RID: 12812 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600324F RID: 12879 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanDrop(ItemValue _iv = null)
 	{
 		return false;
 	}
 
-	// Token: 0x0600320D RID: 12813 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003250 RID: 12880 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanStack()
 	{
 		return false;
 	}
 
-	// Token: 0x0600320E RID: 12814 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003251 RID: 12881 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool KeepOnDeath()
 	{
 		return true;
 	}
 
-	// Token: 0x0600320F RID: 12815 RVA: 0x00145347 File Offset: 0x00143547
+	// Token: 0x06003252 RID: 12882 RVA: 0x00145D1F File Offset: 0x00143F1F
 	public new static void Cleanup()
 	{
 		ItemClassQuest.questItemList = null;
 	}
 
-	// Token: 0x06003210 RID: 12816 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003253 RID: 12883 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanPlaceInContainer()
 	{
 		return false;
 	}
 
-	// Token: 0x06003211 RID: 12817 RVA: 0x0014534F File Offset: 0x0014354F
+	// Token: 0x06003254 RID: 12884 RVA: 0x00145D27 File Offset: 0x00143F27
 	public static ItemClassQuest GetItemQuestById(ushort _questTypeID)
 	{
 		if (ItemClassQuest.questItemList == null)
@@ -49,6 +49,6 @@ public class ItemClassQuest : ItemClass
 		return ItemClassQuest.questItemList[(int)_questTypeID];
 	}
 
-	// Token: 0x0400279C RID: 10140
+	// Token: 0x04002793 RID: 10131
 	public static ItemClassQuest[] questItemList = new ItemClassQuest[100];
 }

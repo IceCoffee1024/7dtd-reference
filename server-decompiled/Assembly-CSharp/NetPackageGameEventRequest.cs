@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F6 RID: 2038
+// Token: 0x020007F9 RID: 2041
 [Preserve]
 public class NetPackageGameEventRequest : NetPackage
 {
-	// Token: 0x06003C1F RID: 15391 RVA: 0x00181274 File Offset: 0x0017F474
+	// Token: 0x06003C1F RID: 15391 RVA: 0x00181788 File Offset: 0x0017F988
 	public NetPackageGameEventRequest Setup(string _event, int _entityId, bool _isTwitchEvent, ActionTarget _target, List<Tuple<string, string>> _variables, string _extraData = "", string _tag = "", bool _crateShare = false, bool _allowRefunds = true, string _sequenceLink = "")
 	{
 		this.eventName = _event;
@@ -22,7 +22,7 @@ public class NetPackageGameEventRequest : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C20 RID: 15392 RVA: 0x001812D8 File Offset: 0x0017F4D8
+	// Token: 0x06003C20 RID: 15392 RVA: 0x001817EC File Offset: 0x0017F9EC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.variables.Clear();
@@ -44,7 +44,7 @@ public class NetPackageGameEventRequest : NetPackage
 		this.target = ActionTarget.Read(_br);
 	}
 
-	// Token: 0x06003C21 RID: 15393 RVA: 0x00181390 File Offset: 0x0017F590
+	// Token: 0x06003C21 RID: 15393 RVA: 0x001818A4 File Offset: 0x0017FAA4
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -76,7 +76,7 @@ public class NetPackageGameEventRequest : NetPackage
 		this.target.Write(_bw);
 	}
 
-	// Token: 0x06003C22 RID: 15394 RVA: 0x00181470 File Offset: 0x0017F670
+	// Token: 0x06003C22 RID: 15394 RVA: 0x00181984 File Offset: 0x0017FB84
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -118,8 +118,8 @@ public class NetPackageGameEventRequest : NetPackage
 		}
 	}
 
-	// Token: 0x1700063E RID: 1598
-	// (get) Token: 0x06003C23 RID: 15395 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000663 RID: 1635
+	// (get) Token: 0x06003C23 RID: 15395 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -128,49 +128,43 @@ public class NetPackageGameEventRequest : NetPackage
 		}
 	}
 
-	// Token: 0x06003C24 RID: 15396 RVA: 0x00105CC1 File Offset: 0x00103EC1
-	public override int GetLength()
-	{
-		return 30;
-	}
-
-	// Token: 0x040030E1 RID: 12513
+	// Token: 0x040030DA RID: 12506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string eventName;
 
-	// Token: 0x040030E2 RID: 12514
+	// Token: 0x040030DB RID: 12507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string extraData;
 
-	// Token: 0x040030E3 RID: 12515
+	// Token: 0x040030DC RID: 12508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tag;
 
-	// Token: 0x040030E4 RID: 12516
+	// Token: 0x040030DD RID: 12509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityID = -1;
 
-	// Token: 0x040030E5 RID: 12517
+	// Token: 0x040030DE RID: 12510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTwitchEvent;
 
-	// Token: 0x040030E6 RID: 12518
+	// Token: 0x040030DF RID: 12511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool crateShare;
 
-	// Token: 0x040030E7 RID: 12519
+	// Token: 0x040030E0 RID: 12512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool allowRefunds = true;
 
-	// Token: 0x040030E8 RID: 12520
+	// Token: 0x040030E1 RID: 12513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ActionTarget target = ActionTarget.None;
 
-	// Token: 0x040030E9 RID: 12521
+	// Token: 0x040030E2 RID: 12514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sequenceLink = "";
 
-	// Token: 0x040030EA RID: 12522
+	// Token: 0x040030E3 RID: 12515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Tuple<string, string>> variables = new List<Tuple<string, string>>();
 }

@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001043 RID: 4163
+// Token: 0x02001052 RID: 4178
 [Preserve]
 public class XUiC_SkewWarpSettings : XUiC_SignWarpSettings
 {
-	// Token: 0x17000F60 RID: 3936
-	// (get) Token: 0x0600842C RID: 33836 RVA: 0x00324D90 File Offset: 0x00322F90
+	// Token: 0x17000F8D RID: 3981
+	// (get) Token: 0x06008455 RID: 33877 RVA: 0x00328778 File Offset: 0x00326978
 	public override SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,7 +17,7 @@ public class XUiC_SkewWarpSettings : XUiC_SignWarpSettings
 		}
 	}
 
-	// Token: 0x0600842D RID: 33837 RVA: 0x00324D98 File Offset: 0x00322F98
+	// Token: 0x06008456 RID: 33878 RVA: 0x00328780 File Offset: 0x00326980
 	public override void Init()
 	{
 		base.Init();
@@ -42,7 +42,7 @@ public class XUiC_SkewWarpSettings : XUiC_SignWarpSettings
 		base.SetDefaultValue("cbxRotation", skewWarp.rotation);
 	}
 
-	// Token: 0x0600842E RID: 33838 RVA: 0x00324EA4 File Offset: 0x003230A4
+	// Token: 0x06008457 RID: 33879 RVA: 0x0032888C File Offset: 0x00326A8C
 	public override void SetWarp(SignData.SignWarp warp)
 	{
 		this.currentWarp = warp as SignData.SkewWarp;
@@ -58,7 +58,7 @@ public class XUiC_SkewWarpSettings : XUiC_SignWarpSettings
 		this.cbxRotation.Value = (double)this.currentWarp.rotation;
 	}
 
-	// Token: 0x0600842F RID: 33839 RVA: 0x00324F54 File Offset: 0x00323154
+	// Token: 0x06008458 RID: 33880 RVA: 0x0032893C File Offset: 0x00326B3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -81,19 +81,19 @@ public class XUiC_SkewWarpSettings : XUiC_SignWarpSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x04006208 RID: 25096
+	// Token: 0x04006243 RID: 25155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SkewWarp currentWarp;
 
-	// Token: 0x04006209 RID: 25097
+	// Token: 0x04006244 RID: 25156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSkewX;
 
-	// Token: 0x0400620A RID: 25098
+	// Token: 0x04006245 RID: 25157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSkewY;
 
-	// Token: 0x0400620B RID: 25099
+	// Token: 0x04006246 RID: 25158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRotation;
 }

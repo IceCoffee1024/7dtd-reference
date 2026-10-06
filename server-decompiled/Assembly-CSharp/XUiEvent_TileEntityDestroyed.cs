@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000C63 RID: 3171
-// (Invoke) Token: 0x0600607B RID: 24699
+// Token: 0x02000C74 RID: 3188
+// (Invoke) Token: 0x06006079 RID: 24697
 public delegate void XUiEvent_TileEntityDestroyed(ITileEntity te);

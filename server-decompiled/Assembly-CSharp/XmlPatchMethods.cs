@@ -7,12 +7,12 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02001508 RID: 5384
+// Token: 0x0200152A RID: 5418
 [Preserve]
 [XmlPatchMethodsClass]
 public static class XmlPatchMethods
 {
-	// Token: 0x0600A962 RID: 43362 RVA: 0x003EF0EC File Offset: 0x003ED2EC
+	// Token: 0x0600AA15 RID: 43541 RVA: 0x003F3F40 File Offset: 0x003F2140
 	[XmlPatchMethod("append")]
 	public static int AppendByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -81,7 +81,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A963 RID: 43363 RVA: 0x003EF308 File Offset: 0x003ED508
+	// Token: 0x0600AA16 RID: 43542 RVA: 0x003F415C File Offset: 0x003F235C
 	[XmlPatchMethod("prepend")]
 	public static int PrependByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -149,7 +149,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A964 RID: 43364 RVA: 0x003EF524 File Offset: 0x003ED724
+	// Token: 0x0600AA17 RID: 43543 RVA: 0x003F4378 File Offset: 0x003F2578
 	[XmlPatchMethod("insertAfter")]
 	public static int InsertAfterByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -178,7 +178,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A965 RID: 43365 RVA: 0x003EF5F8 File Offset: 0x003ED7F8
+	// Token: 0x0600AA18 RID: 43544 RVA: 0x003F444C File Offset: 0x003F264C
 	[XmlPatchMethod("insertBefore")]
 	public static int InsertBeforeByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -207,7 +207,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A966 RID: 43366 RVA: 0x003EF6C8 File Offset: 0x003ED8C8
+	// Token: 0x0600AA19 RID: 43545 RVA: 0x003F451C File Offset: 0x003F271C
 	[XmlPatchMethod("remove")]
 	public static int RemoveByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -240,7 +240,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A967 RID: 43367 RVA: 0x003EF804 File Offset: 0x003EDA04
+	// Token: 0x0600AA1A RID: 43546 RVA: 0x003F4658 File Offset: 0x003F2858
 	[XmlPatchMethod("set")]
 	public static int SetByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -304,7 +304,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A968 RID: 43368 RVA: 0x003EFA18 File Offset: 0x003EDC18
+	// Token: 0x0600AA1B RID: 43547 RVA: 0x003F486C File Offset: 0x003F2A6C
 	[XmlPatchMethod("setattribute")]
 	public static int SetAttributeByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod)
 	{
@@ -342,7 +342,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A969 RID: 43369 RVA: 0x003EFB70 File Offset: 0x003EDD70
+	// Token: 0x0600AA1C RID: 43548 RVA: 0x003F49C4 File Offset: 0x003F2BC4
 	[XmlPatchMethod("removeattribute")]
 	public static int RemoveAttributeByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -373,7 +373,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A96A RID: 43370 RVA: 0x003EFC54 File Offset: 0x003EDE54
+	// Token: 0x0600AA1D RID: 43549 RVA: 0x003F4AA8 File Offset: 0x003F2CA8
 	[XmlPatchMethod("csv")]
 	public static int CsvOperationsByXPath(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -551,7 +551,7 @@ public static class XmlPatchMethods
 		return _targetFile.ClearXpathResults();
 	}
 
-	// Token: 0x0600A96B RID: 43371 RVA: 0x003F01A8 File Offset: 0x003EE3A8
+	// Token: 0x0600AA1E RID: 43550 RVA: 0x003F4FFC File Offset: 0x003F31FC
 	[XmlPatchMethod("conditional", false)]
 	public static int Conditional(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -571,7 +571,7 @@ public static class XmlPatchMethods
 		return 1;
 	}
 
-	// Token: 0x0600A96C RID: 43372 RVA: 0x003F0220 File Offset: 0x003EE420
+	// Token: 0x0600AA1F RID: 43551 RVA: 0x003F5074 File Offset: 0x003F3274
 	[XmlPatchMethod("include", false)]
 	public static int Include(XmlFile _targetFile, string _xpath, XElement _patchSourceElement, XmlFile _patchFile, Mod _patchingMod = null)
 	{
@@ -604,27 +604,27 @@ public static class XmlPatchMethods
 		return 0;
 	}
 
-	// Token: 0x02001509 RID: 5385
+	// Token: 0x0200152B RID: 5419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ECsvOperation
 	{
-		// Token: 0x04007D35 RID: 32053
+		// Token: 0x04007DB8 RID: 32184
 		Add,
-		// Token: 0x04007D36 RID: 32054
+		// Token: 0x04007DB9 RID: 32185
 		Remove
 	}
 
-	// Token: 0x0200150A RID: 5386
+	// Token: 0x0200152C RID: 5420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EWildcardPositions
 	{
-		// Token: 0x04007D38 RID: 32056
+		// Token: 0x04007DBB RID: 32187
 		None,
-		// Token: 0x04007D39 RID: 32057
+		// Token: 0x04007DBC RID: 32188
 		Start,
-		// Token: 0x04007D3A RID: 32058
+		// Token: 0x04007DBD RID: 32189
 		End,
-		// Token: 0x04007D3B RID: 32059
+		// Token: 0x04007DBE RID: 32190
 		Both
 	}
 }

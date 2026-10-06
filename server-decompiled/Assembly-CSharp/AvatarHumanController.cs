@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000CD RID: 205
+// Token: 0x020000CF RID: 207
 [Preserve]
 public abstract class AvatarHumanController : AvatarController
 {
-	// Token: 0x060004C3 RID: 1219 RVA: 0x000211DB File Offset: 0x0001F3DB
+	// Token: 0x060004C9 RID: 1225 RVA: 0x000212D3 File Offset: 0x0001F4D3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -15,7 +15,7 @@ public abstract class AvatarHumanController : AvatarController
 		this.assignStates();
 	}
 
-	// Token: 0x060004C4 RID: 1220 RVA: 0x000211FC File Offset: 0x0001F3FC
+	// Token: 0x060004CA RID: 1226 RVA: 0x000212F4 File Offset: 0x0001F4F4
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		if (!this.bipedT)
@@ -34,14 +34,14 @@ public abstract class AvatarHumanController : AvatarController
 		this._setBool(AvatarController.isDeadHash, this.entity.IsDead(), true);
 	}
 
-	// Token: 0x060004C5 RID: 1221 RVA: 0x000212B4 File Offset: 0x0001F4B4
+	// Token: 0x060004CB RID: 1227 RVA: 0x000213AC File Offset: 0x0001F5AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Transform FindTransform(string _name)
 	{
 		return this.bipedT.FindInChildren(_name);
 	}
 
-	// Token: 0x060004C6 RID: 1222 RVA: 0x000212C4 File Offset: 0x0001F4C4
+	// Token: 0x060004CC RID: 1228 RVA: 0x000213BC File Offset: 0x0001F5BC
 	public override void SetVisible(bool _b)
 	{
 		if (this.isVisible != _b || !this.isVisibleInit)
@@ -60,19 +60,19 @@ public abstract class AvatarHumanController : AvatarController
 		}
 	}
 
-	// Token: 0x060004C7 RID: 1223 RVA: 0x0002131E File Offset: 0x0001F51E
+	// Token: 0x060004CD RID: 1229 RVA: 0x00021416 File Offset: 0x0001F616
 	public override Transform GetActiveModelRoot()
 	{
 		return this.modelT;
 	}
 
-	// Token: 0x060004C8 RID: 1224 RVA: 0x00021326 File Offset: 0x0001F526
+	// Token: 0x060004CE RID: 1230 RVA: 0x0002141E File Offset: 0x0001F61E
 	public override Transform GetRightHandTransform()
 	{
 		return this.rightHandT;
 	}
 
-	// Token: 0x060004C9 RID: 1225 RVA: 0x00021330 File Offset: 0x0001F530
+	// Token: 0x060004CF RID: 1231 RVA: 0x00021428 File Offset: 0x0001F628
 	public override void TriggerSleeperPose(int pose, bool returningToSleep = false)
 	{
 		if (returningToSleep)
@@ -115,7 +115,7 @@ public abstract class AvatarHumanController : AvatarController
 		}
 	}
 
-	// Token: 0x060004CA RID: 1226 RVA: 0x00021418 File Offset: 0x0001F618
+	// Token: 0x060004D0 RID: 1232 RVA: 0x00021510 File Offset: 0x0001F710
 	public override void TurnIntoCrawler()
 	{
 		this.isCrawler = true;
@@ -126,7 +126,7 @@ public abstract class AvatarHumanController : AvatarController
 		this._setTrigger(AvatarController.toCrawlerTriggerHash, true);
 	}
 
-	// Token: 0x060004CB RID: 1227 RVA: 0x00021455 File Offset: 0x0001F655
+	// Token: 0x060004D1 RID: 1233 RVA: 0x0002154D File Offset: 0x0001F74D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _propertyHash, int _value, bool _netsync = true)
 	{
@@ -137,98 +137,98 @@ public abstract class AvatarHumanController : AvatarController
 		base._setInt(_propertyHash, _value, _netsync);
 	}
 
-	// Token: 0x060004CC RID: 1228 RVA: 0x0001BEA1 File Offset: 0x0001A0A1
+	// Token: 0x060004D2 RID: 1234 RVA: 0x0001BF99 File Offset: 0x0001A199
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AvatarHumanController()
 	{
 	}
 
-	// Token: 0x04000556 RID: 1366
+	// Token: 0x04000559 RID: 1369
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int cOverrideLayerIndex = 1;
 
-	// Token: 0x04000557 RID: 1367
+	// Token: 0x0400055A RID: 1370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int cFullBodyLayerIndex = 2;
 
-	// Token: 0x04000558 RID: 1368
+	// Token: 0x0400055B RID: 1371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public const int cHitLayerIndex = 3;
 
-	// Token: 0x04000559 RID: 1369
+	// Token: 0x0400055C RID: 1372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AvatarRootMotion rootMotion;
 
-	// Token: 0x0400055A RID: 1370
+	// Token: 0x0400055D RID: 1373
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform modelT;
 
-	// Token: 0x0400055B RID: 1371
+	// Token: 0x0400055E RID: 1374
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform bipedT;
 
-	// Token: 0x0400055C RID: 1372
+	// Token: 0x0400055F RID: 1375
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform rightHandT;
 
-	// Token: 0x0400055D RID: 1373
+	// Token: 0x04000560 RID: 1376
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimatorStateInfo baseStateInfo;
 
-	// Token: 0x0400055E RID: 1374
+	// Token: 0x04000561 RID: 1377
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimatorStateInfo overrideStateInfo;
 
-	// Token: 0x0400055F RID: 1375
+	// Token: 0x04000562 RID: 1378
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimatorStateInfo fullBodyStateInfo;
 
-	// Token: 0x04000560 RID: 1376
+	// Token: 0x04000563 RID: 1379
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimatorStateInfo hitStateInfo;
 
-	// Token: 0x04000561 RID: 1377
+	// Token: 0x04000564 RID: 1380
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isVisibleInit;
 
-	// Token: 0x04000562 RID: 1378
+	// Token: 0x04000565 RID: 1381
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isVisible;
 
-	// Token: 0x04000563 RID: 1379
+	// Token: 0x04000566 RID: 1382
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int jumpState;
 
-	// Token: 0x04000564 RID: 1380
+	// Token: 0x04000567 RID: 1383
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isJumpStarted;
 
-	// Token: 0x04000565 RID: 1381
+	// Token: 0x04000568 RID: 1384
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isCrawler;
 
-	// Token: 0x04000566 RID: 1382
+	// Token: 0x04000569 RID: 1385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float crawlerTime;
 
-	// Token: 0x04000567 RID: 1383
+	// Token: 0x0400056A RID: 1386
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isSuppressPain;

@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EAB RID: 3755
+// Token: 0x02000EBA RID: 3770
 [Preserve]
 public class XUiC_VideoPlayer : XUiController
 {
-	// Token: 0x06007526 RID: 29990 RVA: 0x002C17DB File Offset: 0x002BF9DB
+	// Token: 0x0600751E RID: 29982 RVA: 0x002C4B93 File Offset: 0x002C2D93
 	public override void Init()
 	{
 		base.Init();
@@ -15,7 +15,7 @@ public class XUiC_VideoPlayer : XUiController
 		this.skipPrompt.IsVisible = false;
 	}
 
-	// Token: 0x06007527 RID: 29991 RVA: 0x002C17FF File Offset: 0x002BF9FF
+	// Token: 0x0600751F RID: 29983 RVA: 0x002C4BB7 File Offset: 0x002C2DB7
 	public static void PlayVideo(XUi _xui, VideoData _videoData, bool _skippable, XUiC_VideoPlayer.DelegateOnVideoFinished _videoFinishedCallback = null)
 	{
 		XUiC_VideoPlayer instance = XUiC_VideoPlayer.GetInstance(_xui);
@@ -23,13 +23,13 @@ public class XUiC_VideoPlayer : XUiController
 		instance.PlayVideo(_videoData, _skippable, _videoFinishedCallback);
 	}
 
-	// Token: 0x06007528 RID: 29992 RVA: 0x002C1825 File Offset: 0x002BFA25
+	// Token: 0x06007520 RID: 29984 RVA: 0x002C4BDD File Offset: 0x002C2DDD
 	public static void EndVideo(XUiC_VideoPlayer _videoPlayer)
 	{
 		_videoPlayer.FinishAndClose(true);
 	}
 
-	// Token: 0x06007529 RID: 29993 RVA: 0x002C182E File Offset: 0x002BFA2E
+	// Token: 0x06007521 RID: 29985 RVA: 0x002C4BE6 File Offset: 0x002C2DE6
 	public static XUiC_VideoPlayer GetInstance(XUi _xui)
 	{
 		XUiWindowGroup xuiWindowGroup = (XUiWindowGroup)_xui.playerUI.windowManager.GetWindow(XUiC_VideoPlayer.ID);
@@ -45,7 +45,7 @@ public class XUiC_VideoPlayer : XUiController
 		return controller.GetChildByType<XUiC_VideoPlayer>();
 	}
 
-	// Token: 0x0600752A RID: 29994 RVA: 0x002C1860 File Offset: 0x002BFA60
+	// Token: 0x06007522 RID: 29986 RVA: 0x002C4C18 File Offset: 0x002C2E18
 	public void PlayVideo(VideoData _videoData, bool _skippable, XUiC_VideoPlayer.DelegateOnVideoFinished _videoFinishedCallback = null)
 	{
 		this.currentVideo = _videoData;
@@ -64,7 +64,7 @@ public class XUiC_VideoPlayer : XUiController
 		XUiC_VideoPlayer.IsVideoPlaying = true;
 	}
 
-	// Token: 0x0600752B RID: 29995 RVA: 0x002C1920 File Offset: 0x002BFB20
+	// Token: 0x06007523 RID: 29987 RVA: 0x002C4CD8 File Offset: 0x002C2ED8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -100,7 +100,7 @@ public class XUiC_VideoPlayer : XUiController
 		}
 	}
 
-	// Token: 0x0600752C RID: 29996 RVA: 0x002C1ABC File Offset: 0x002BFCBC
+	// Token: 0x06007524 RID: 29988 RVA: 0x002C4E74 File Offset: 0x002C3074
 	[XuiBindEvent("VideoError", "videoView")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoErrorReceived(XUiV_Video _source)
@@ -108,7 +108,7 @@ public class XUiC_VideoPlayer : XUiController
 		this.FinishAndClose(true);
 	}
 
-	// Token: 0x0600752D RID: 29997 RVA: 0x002C1AC5 File Offset: 0x002BFCC5
+	// Token: 0x06007525 RID: 29989 RVA: 0x002C4E7D File Offset: 0x002C307D
 	[XuiBindEvent("VideoFinished", "videoView")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoFinished(XUiV_Video _source)
@@ -116,7 +116,7 @@ public class XUiC_VideoPlayer : XUiController
 		this.FinishAndClose(false);
 	}
 
-	// Token: 0x0600752E RID: 29998 RVA: 0x002C1ACE File Offset: 0x002BFCCE
+	// Token: 0x06007526 RID: 29990 RVA: 0x002C4E86 File Offset: 0x002C3086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FinishAndClose(bool _skipped)
 	{
@@ -125,7 +125,7 @@ public class XUiC_VideoPlayer : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x0600752F RID: 29999 RVA: 0x002C1AFE File Offset: 0x002BFCFE
+	// Token: 0x06007527 RID: 29991 RVA: 0x002C4EB6 File Offset: 0x002C30B6
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -138,65 +138,65 @@ public class XUiC_VideoPlayer : XUiController
 		delegateOnVideoFinished(this.wasVideoSkipped);
 	}
 
-	// Token: 0x040056E6 RID: 22246
+	// Token: 0x0400571D RID: 22301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SkipVisibleDuration = 3f;
 
-	// Token: 0x040056E7 RID: 22247
+	// Token: 0x0400571E RID: 22302
 	public static string ID = "";
 
-	// Token: 0x040056E8 RID: 22248
+	// Token: 0x0400571F RID: 22303
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiV_Video videoView;
 
-	// Token: 0x040056E9 RID: 22249
+	// Token: 0x04005720 RID: 22304
 	[XuiBindComponent("videoBackground", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiV_Sprite backgroundSprite;
 
-	// Token: 0x040056EA RID: 22250
+	// Token: 0x04005721 RID: 22305
 	[XuiBindComponent("skipPrompt", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiView skipPrompt;
 
-	// Token: 0x040056EB RID: 22251
+	// Token: 0x04005722 RID: 22306
 	[XuiBindComponent("lblSkip", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiV_Label skipLabel;
 
-	// Token: 0x040056EC RID: 22252
+	// Token: 0x04005723 RID: 22307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_VideoPlayer.DelegateOnVideoFinished onVideoFinished;
 
-	// Token: 0x040056ED RID: 22253
+	// Token: 0x04005724 RID: 22308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public VideoData currentVideo;
 
-	// Token: 0x040056EE RID: 22254
+	// Token: 0x04005725 RID: 22309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double previousTimestamp;
 
-	// Token: 0x040056EF RID: 22255
+	// Token: 0x04005726 RID: 22310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool skippable;
 
-	// Token: 0x040056F0 RID: 22256
+	// Token: 0x04005727 RID: 22311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float skipVisibleTime;
 
-	// Token: 0x040056F1 RID: 22257
+	// Token: 0x04005728 RID: 22312
 	public static bool IsVideoPlaying;
 
-	// Token: 0x040056F2 RID: 22258
+	// Token: 0x04005729 RID: 22313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasVideoSkipped;
 
-	// Token: 0x040056F3 RID: 22259
+	// Token: 0x0400572A RID: 22314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool subtitlesEnabled;
 
-	// Token: 0x02000EAC RID: 3756
-	// (Invoke) Token: 0x06007533 RID: 30003
+	// Token: 0x02000EBB RID: 3771
+	// (Invoke) Token: 0x0600752B RID: 29995
 	public delegate void DelegateOnVideoFinished(bool _skipped);
 }

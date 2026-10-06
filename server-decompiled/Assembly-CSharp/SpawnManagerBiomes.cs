@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000AF0 RID: 2800
+// Token: 0x02000B02 RID: 2818
 public class SpawnManagerBiomes : SpawnManagerAbstract
 {
-	// Token: 0x06005376 RID: 21366 RVA: 0x001FDE1D File Offset: 0x001FC01D
+	// Token: 0x0600538F RID: 21391 RVA: 0x0020107D File Offset: 0x001FF27D
 	public SpawnManagerBiomes(World _world)
 		: base(_world)
 	{
 		_world.EntityUnloadedDelegates += this.OnEntityUnloaded;
 	}
 
-	// Token: 0x06005377 RID: 21367 RVA: 0x001FDE4E File Offset: 0x001FC04E
+	// Token: 0x06005390 RID: 21392 RVA: 0x002010AE File Offset: 0x001FF2AE
 	public void Cleanup()
 	{
 		this.world.EntityUnloadedDelegates -= this.OnEntityUnloaded;
 		this.world = null;
 	}
 
-	// Token: 0x06005378 RID: 21368 RVA: 0x001FDE70 File Offset: 0x001FC070
+	// Token: 0x06005391 RID: 21393 RVA: 0x002010D0 File Offset: 0x001FF2D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEntityUnloaded(Entity entity, EnumRemoveEntityReason _reason)
 	{
@@ -59,7 +59,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		}
 	}
 
-	// Token: 0x06005379 RID: 21369 RVA: 0x001FDF00 File Offset: 0x001FC100
+	// Token: 0x06005392 RID: 21394 RVA: 0x00201160 File Offset: 0x001FF360
 	public override void Update(string _spawnerName, bool _bSpawnEnemyEntities, object _userData)
 	{
 		if (!GameUtils.IsPlaytesting())
@@ -68,7 +68,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		}
 	}
 
-	// Token: 0x0600537A RID: 21370 RVA: 0x001FDF18 File Offset: 0x001FC118
+	// Token: 0x06005393 RID: 21395 RVA: 0x00201178 File Offset: 0x001FF378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnUpdate(string _spawnerName, bool _isSpawnEnemy, ChunkAreaBiomeSpawnData _spawnData)
 	{
@@ -218,7 +218,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		});
 	}
 
-	// Token: 0x0600537B RID: 21371 RVA: 0x001FE402 File Offset: 0x001FC602
+	// Token: 0x06005394 RID: 21396 RVA: 0x00201662 File Offset: 0x001FF862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEntitySpawned(Entity _entity, long _masterChunkKey, int _biomeIdHash)
 	{
@@ -226,7 +226,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		this.world.DebugAddSpawnedEntity(_entity);
 	}
 
-	// Token: 0x0600537C RID: 21372 RVA: 0x001FE419 File Offset: 0x001FC619
+	// Token: 0x06005395 RID: 21397 RVA: 0x00201679 File Offset: 0x001FF879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogSpawn(string format, params object[] args)
 	{
@@ -234,7 +234,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x0600537D RID: 21373 RVA: 0x001FE439 File Offset: 0x001FC639
+	// Token: 0x06005396 RID: 21398 RVA: 0x00201699 File Offset: 0x001FF899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogSpawn(Entity _entity, string format, params object[] args)
 	{
@@ -242,7 +242,7 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x0600537E RID: 21374 RVA: 0x001FE470 File Offset: 0x001FC670
+	// Token: 0x06005397 RID: 21399 RVA: 0x002016D0 File Offset: 0x001FF8D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogSpawn(EntityCreationData _ecd, string format, params object[] args)
 	{
@@ -256,31 +256,31 @@ public class SpawnManagerBiomes : SpawnManagerAbstract
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x04004139 RID: 16697
+	// Token: 0x04004176 RID: 16758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cAnimalMinDistance = 48;
 
-	// Token: 0x0400413A RID: 16698
+	// Token: 0x04004177 RID: 16759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cAnimalMaxDistance = 70;
 
-	// Token: 0x0400413B RID: 16699
+	// Token: 0x04004178 RID: 16760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cEnemyMinDistance = 28;
 
-	// Token: 0x0400413C RID: 16700
+	// Token: 0x04004179 RID: 16761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cEnemyMaxDistance = 54;
 
-	// Token: 0x0400413D RID: 16701
+	// Token: 0x0400417A RID: 16762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> spawnNearList = new List<Entity>();
 
-	// Token: 0x0400413E RID: 16702
+	// Token: 0x0400417B RID: 16763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x0400413F RID: 16703
+	// Token: 0x0400417C RID: 16764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> spawnPIs = new List<PrefabInstance>();
 }

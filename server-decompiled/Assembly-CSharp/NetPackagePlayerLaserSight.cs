@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200082A RID: 2090
+// Token: 0x0200082B RID: 2091
 [Preserve]
 public class NetPackagePlayerLaserSight : NetPackage
 {
-	// Token: 0x06003D63 RID: 15715 RVA: 0x00185EEF File Offset: 0x001840EF
+	// Token: 0x06003D25 RID: 15653 RVA: 0x00185A33 File Offset: 0x00183C33
 	public NetPackagePlayerLaserSight Setup(int _entityId, bool _laserSightActive, Vector3 _laserSightPosition)
 	{
 		this.entityId = _entityId;
@@ -15,7 +15,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D64 RID: 15716 RVA: 0x00185F07 File Offset: 0x00184107
+	// Token: 0x06003D26 RID: 15654 RVA: 0x00185A4B File Offset: 0x00183C4B
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -26,7 +26,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D65 RID: 15717 RVA: 0x00185F35 File Offset: 0x00184135
+	// Token: 0x06003D27 RID: 15655 RVA: 0x00185A79 File Offset: 0x00183C79
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -38,7 +38,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D66 RID: 15718 RVA: 0x00185F6C File Offset: 0x0018416C
+	// Token: 0x06003D28 RID: 15656 RVA: 0x00185AB0 File Offset: 0x00183CB0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -61,19 +61,13 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D67 RID: 15719 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x040031C7 RID: 12743
+	// Token: 0x040031AE RID: 12718
 	public int entityId;
 
-	// Token: 0x040031C8 RID: 12744
+	// Token: 0x040031AF RID: 12719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool laserSightActive;
 
-	// Token: 0x040031C9 RID: 12745
+	// Token: 0x040031B0 RID: 12720
 	public Vector3 laserSightPosition;
 }

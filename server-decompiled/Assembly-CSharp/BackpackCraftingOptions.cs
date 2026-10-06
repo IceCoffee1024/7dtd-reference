@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02001140 RID: 4416
+// Token: 0x02001158 RID: 4440
 public enum BackpackCraftingOptions
 {
-	// Token: 0x04006746 RID: 26438
+	// Token: 0x0400679B RID: 26523
 	Disabled,
-	// Token: 0x04006747 RID: 26439
+	// Token: 0x0400679C RID: 26524
 	Enabled,
-	// Token: 0x04006748 RID: 26440
+	// Token: 0x0400679D RID: 26525
 	BasicsOnly,
-	// Token: 0x04006749 RID: 26441
+	// Token: 0x0400679E RID: 26526
 	WorkbenchOnly
 }

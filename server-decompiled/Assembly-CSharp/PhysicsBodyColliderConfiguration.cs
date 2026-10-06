@@ -4,15 +4,15 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x020008FD RID: 2301
+// Token: 0x02000902 RID: 2306
 public class PhysicsBodyColliderConfiguration
 {
-	// Token: 0x060042B1 RID: 17073 RVA: 0x001A08A4 File Offset: 0x0019EAA4
+	// Token: 0x06004243 RID: 16963 RVA: 0x001A09A8 File Offset: 0x0019EBA8
 	public PhysicsBodyColliderConfiguration()
 	{
 	}
 
-	// Token: 0x060042B2 RID: 17074 RVA: 0x001A0908 File Offset: 0x0019EB08
+	// Token: 0x06004244 RID: 16964 RVA: 0x001A0A0C File Offset: 0x0019EC0C
 	public PhysicsBodyColliderConfiguration(PhysicsBodyColliderConfiguration otherConfig)
 	{
 		this.Tag = otherConfig.Tag;
@@ -27,7 +27,7 @@ public class PhysicsBodyColliderConfiguration
 		this.EnabledFlags = otherConfig.EnabledFlags;
 	}
 
-	// Token: 0x060042B3 RID: 17075 RVA: 0x001A09E4 File Offset: 0x0019EBE4
+	// Token: 0x06004245 RID: 16965 RVA: 0x001A0AE8 File Offset: 0x0019ECE8
 	public void Write(XmlElement _elem)
 	{
 		XmlElement xmlElement = _elem.AddXmlElement("collider");
@@ -63,7 +63,7 @@ public class PhysicsBodyColliderConfiguration
 		xmlElement.AddXmlKeyValueProperty("flags", text);
 	}
 
-	// Token: 0x060042B4 RID: 17076 RVA: 0x001A0B20 File Offset: 0x0019ED20
+	// Token: 0x06004246 RID: 16966 RVA: 0x001A0C24 File Offset: 0x0019EE24
 	public static PhysicsBodyColliderConfiguration Read(XElement _e)
 	{
 		PhysicsBodyColliderConfiguration physicsBodyColliderConfiguration = new PhysicsBodyColliderConfiguration();
@@ -112,7 +112,7 @@ public class PhysicsBodyColliderConfiguration
 		return physicsBodyColliderConfiguration;
 	}
 
-	// Token: 0x060042B5 RID: 17077 RVA: 0x001A0D10 File Offset: 0x0019EF10
+	// Token: 0x06004247 RID: 16967 RVA: 0x001A0E14 File Offset: 0x0019F014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string vecToString(Vector3 vec)
 	{
@@ -126,7 +126,7 @@ public class PhysicsBodyColliderConfiguration
 		});
 	}
 
-	// Token: 0x060042B6 RID: 17078 RVA: 0x001A0D64 File Offset: 0x0019EF64
+	// Token: 0x06004248 RID: 16968 RVA: 0x001A0E68 File Offset: 0x0019F068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 vecFromString(string str)
 	{
@@ -142,33 +142,33 @@ public class PhysicsBodyColliderConfiguration
 		return new Vector3(StringParsers.ParseFloat(array[0], 0, -1, NumberStyles.Any), StringParsers.ParseFloat(array[0], 0, -1, NumberStyles.Any), StringParsers.ParseFloat(array[0], 0, -1, NumberStyles.Any));
 	}
 
-	// Token: 0x040035F4 RID: 13812
+	// Token: 0x040035E8 RID: 13800
 	public string Tag = "";
 
-	// Token: 0x040035F5 RID: 13813
+	// Token: 0x040035E9 RID: 13801
 	public int CollisionLayer;
 
-	// Token: 0x040035F6 RID: 13814
+	// Token: 0x040035EA RID: 13802
 	public int RagdollLayer;
 
-	// Token: 0x040035F7 RID: 13815
+	// Token: 0x040035EB RID: 13803
 	public Vector3 CollisionScale = Vector3.one;
 
-	// Token: 0x040035F8 RID: 13816
+	// Token: 0x040035EC RID: 13804
 	public Vector3 RagdollScale = Vector3.one;
 
-	// Token: 0x040035F9 RID: 13817
+	// Token: 0x040035ED RID: 13805
 	public Vector3 CollisionOffset = Vector3.zero;
 
-	// Token: 0x040035FA RID: 13818
+	// Token: 0x040035EE RID: 13806
 	public Vector3 RagdollOffset = Vector3.zero;
 
-	// Token: 0x040035FB RID: 13819
+	// Token: 0x040035EF RID: 13807
 	public string Path = "";
 
-	// Token: 0x040035FC RID: 13820
+	// Token: 0x040035F0 RID: 13808
 	public EnumColliderType Type = EnumColliderType.Detail;
 
-	// Token: 0x040035FD RID: 13821
+	// Token: 0x040035F1 RID: 13809
 	public EnumColliderEnabledFlags EnabledFlags = EnumColliderEnabledFlags.All;
 }

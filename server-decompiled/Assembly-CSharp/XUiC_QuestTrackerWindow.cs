@@ -3,13 +3,13 @@ using Challenges;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FF6 RID: 4086
+// Token: 0x02001005 RID: 4101
 [Preserve]
 public class XUiC_QuestTrackerWindow : XUiController
 {
-	// Token: 0x17000F0C RID: 3852
-	// (get) Token: 0x060080F5 RID: 33013 RVA: 0x0030D898 File Offset: 0x0030BA98
-	// (set) Token: 0x060080F6 RID: 33014 RVA: 0x0030D8A0 File Offset: 0x0030BAA0
+	// Token: 0x17000F33 RID: 3891
+	// (get) Token: 0x06008104 RID: 33028 RVA: 0x00310880 File Offset: 0x0030EA80
+	// (set) Token: 0x06008105 RID: 33029 RVA: 0x00310888 File Offset: 0x0030EA88
 	public Quest CurrentQuest
 	{
 		get
@@ -33,9 +33,9 @@ public class XUiC_QuestTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000F0D RID: 3853
-	// (get) Token: 0x060080F7 RID: 33015 RVA: 0x0030D906 File Offset: 0x0030BB06
-	// (set) Token: 0x060080F8 RID: 33016 RVA: 0x0030D910 File Offset: 0x0030BB10
+	// Token: 0x17000F34 RID: 3892
+	// (get) Token: 0x06008106 RID: 33030 RVA: 0x003108EE File Offset: 0x0030EAEE
+	// (set) Token: 0x06008107 RID: 33031 RVA: 0x003108F8 File Offset: 0x0030EAF8
 	public Challenge CurrentChallenge
 	{
 		get
@@ -60,14 +60,14 @@ public class XUiC_QuestTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x060080F9 RID: 33017 RVA: 0x0008B2BB File Offset: 0x000894BB
+	// Token: 0x06008108 RID: 33032 RVA: 0x0008B53B File Offset: 0x0008973B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CurrentChallenge_OnChallengeStateChanged(Challenge challenge)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060080FA RID: 33018 RVA: 0x0030D988 File Offset: 0x0030BB88
+	// Token: 0x06008109 RID: 33033 RVA: 0x00310970 File Offset: 0x0030EB70
 	public override void Init()
 	{
 		base.Init();
@@ -76,7 +76,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x060080FB RID: 33019 RVA: 0x0029BDE6 File Offset: 0x00299FE6
+	// Token: 0x0600810A RID: 33034 RVA: 0x0029F176 File Offset: 0x0029D376
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
@@ -84,7 +84,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060080FC RID: 33020 RVA: 0x0030D9B4 File Offset: 0x0030BBB4
+	// Token: 0x0600810B RID: 33035 RVA: 0x0031099C File Offset: 0x0030EB9C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -120,7 +120,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		base.ViewComponent.IsVisible = false;
 	}
 
-	// Token: 0x060080FD RID: 33021 RVA: 0x0030DAD4 File Offset: 0x0030BCD4
+	// Token: 0x0600810C RID: 33036 RVA: 0x00310ABC File Offset: 0x0030ECBC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -139,7 +139,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x060080FE RID: 33022 RVA: 0x0030DBAC File Offset: 0x0030BDAC
+	// Token: 0x0600810D RID: 33037 RVA: 0x00310B94 File Offset: 0x0030ED94
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -151,7 +151,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x060080FF RID: 33023 RVA: 0x0030DC1F File Offset: 0x0030BE1F
+	// Token: 0x0600810E RID: 33038 RVA: 0x00310C07 File Offset: 0x0030EE07
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestTracker_OnTrackedQuestChanged()
 	{
@@ -159,7 +159,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008100 RID: 33024 RVA: 0x0030DC3E File Offset: 0x0030BE3E
+	// Token: 0x0600810F RID: 33039 RVA: 0x00310C26 File Offset: 0x0030EE26
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestTracker_OnTrackedChallengeChanged()
 	{
@@ -167,7 +167,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008101 RID: 33025 RVA: 0x0030DC5D File Offset: 0x0030BE5D
+	// Token: 0x06008110 RID: 33040 RVA: 0x00310C45 File Offset: 0x0030EE45
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestJournal_QuestChanged(Quest q)
 	{
@@ -177,7 +177,7 @@ public class XUiC_QuestTrackerWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008102 RID: 33026 RVA: 0x0030DC70 File Offset: 0x0030BE70
+	// Token: 0x06008111 RID: 33041 RVA: 0x00310C58 File Offset: 0x0030EE58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -343,34 +343,34 @@ public class XUiC_QuestTrackerWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x04005F95 RID: 24469
+	// Token: 0x04005FBE RID: 24510
 	public static string ID = "";
 
-	// Token: 0x04005F96 RID: 24470
+	// Token: 0x04005FBF RID: 24511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTrackerObjectiveList objectiveList;
 
-	// Token: 0x04005F97 RID: 24471
+	// Token: 0x04005FC0 RID: 24512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04005F98 RID: 24472
+	// Token: 0x04005FC1 RID: 24513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005F99 RID: 24473
+	// Token: 0x04005FC2 RID: 24514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChallengeClass challengeClass;
 
-	// Token: 0x04005F9A RID: 24474
+	// Token: 0x04005FC3 RID: 24515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest currentQuest;
 
-	// Token: 0x04005F9B RID: 24475
+	// Token: 0x04005FC4 RID: 24516
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Challenge currentChallenge;
 
-	// Token: 0x04005F9C RID: 24476
+	// Token: 0x04005FC5 RID: 24517
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt trackerheightFormatter = new CachedStringFormatterInt();
 }

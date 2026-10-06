@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009F6 RID: 2550
+// Token: 0x02000A00 RID: 2560
 [Preserve]
 public class RewardSkill : BaseReward
 {
-	// Token: 0x06004C1E RID: 19486 RVA: 0x001D7F44 File Offset: 0x001D6144
+	// Token: 0x06004BED RID: 19437 RVA: 0x001D91F4 File Offset: 0x001D73F4
 	public override void SetupReward()
 	{
 		string text = Localization.Get("RewardSkill_keyword", false, null);
@@ -14,7 +14,7 @@ public class RewardSkill : BaseReward
 		base.Icon = base.OwnerQuest.OwnerJournal.OwnerPlayer.Progression.GetProgressionValue(base.ID).ProgressionClass.Icon;
 	}
 
-	// Token: 0x06004C1F RID: 19487 RVA: 0x001D7FB4 File Offset: 0x001D61B4
+	// Token: 0x06004BEE RID: 19438 RVA: 0x001D9264 File Offset: 0x001D7464
 	public override void GiveReward(EntityPlayer player)
 	{
 		ProgressionValue progressionValue = player.Progression.GetProgressionValue(base.ID);
@@ -41,7 +41,7 @@ public class RewardSkill : BaseReward
 		}
 	}
 
-	// Token: 0x06004C20 RID: 19488 RVA: 0x001D8070 File Offset: 0x001D6270
+	// Token: 0x06004BEF RID: 19439 RVA: 0x001D9320 File Offset: 0x001D7520
 	public override BaseReward Clone()
 	{
 		RewardSkill rewardSkill = new RewardSkill();

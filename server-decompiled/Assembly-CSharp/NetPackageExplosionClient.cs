@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F4 RID: 2036
+// Token: 0x020007F7 RID: 2039
 [Preserve]
 public class NetPackageExplosionClient : NetPackage
 {
-	// Token: 0x06003C11 RID: 15377 RVA: 0x00180EA0 File Offset: 0x0017F0A0
+	// Token: 0x06003C13 RID: 15379 RVA: 0x001813C8 File Offset: 0x0017F5C8
 	public NetPackageExplosionClient Setup(Vector3 _center, Quaternion _rotation, int _expType, int _blastPower, float _blastRadius, float _blockDamage, int _entityId, List<BlockChangeInfo> _explosionChanges)
 	{
 		this.center = _center;
@@ -22,7 +22,7 @@ public class NetPackageExplosionClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C12 RID: 15378 RVA: 0x00180F00 File Offset: 0x0017F100
+	// Token: 0x06003C14 RID: 15380 RVA: 0x00181428 File Offset: 0x0017F628
 	public override void read(PooledBinaryReader _br)
 	{
 		this.center = StreamUtils.ReadVector3(_br);
@@ -42,7 +42,7 @@ public class NetPackageExplosionClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003C13 RID: 15379 RVA: 0x00180F98 File Offset: 0x0017F198
+	// Token: 0x06003C15 RID: 15381 RVA: 0x001814C0 File Offset: 0x0017F6C0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -60,7 +60,7 @@ public class NetPackageExplosionClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003C14 RID: 15380 RVA: 0x00181040 File Offset: 0x0017F240
+	// Token: 0x06003C16 RID: 15382 RVA: 0x00181568 File Offset: 0x0017F768
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -70,8 +70,8 @@ public class NetPackageExplosionClient : NetPackage
 		_world.GetGameManager().ExplosionClient(this.center, this.rotation, this.expType, this.blastPower, (float)this.blastRadius, (float)this.blockDamage, this.entityId, this.explosionChanges);
 	}
 
-	// Token: 0x1700063C RID: 1596
-	// (get) Token: 0x06003C15 RID: 15381 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000661 RID: 1633
+	// (get) Token: 0x06003C17 RID: 15383 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -80,41 +80,35 @@ public class NetPackageExplosionClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003C16 RID: 15382 RVA: 0x0018108F File Offset: 0x0017F28F
-	public override int GetLength()
-	{
-		return 24 + this.explosionChanges.Count * 30;
-	}
-
-	// Token: 0x040030D1 RID: 12497
+	// Token: 0x040030CA RID: 12490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 center;
 
-	// Token: 0x040030D2 RID: 12498
+	// Token: 0x040030CB RID: 12491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion rotation;
 
-	// Token: 0x040030D3 RID: 12499
+	// Token: 0x040030CC RID: 12492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockChangeInfo> explosionChanges = new List<BlockChangeInfo>();
 
-	// Token: 0x040030D4 RID: 12500
+	// Token: 0x040030CD RID: 12493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int expType;
 
-	// Token: 0x040030D5 RID: 12501
+	// Token: 0x040030CE RID: 12494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blastPower;
 
-	// Token: 0x040030D6 RID: 12502
+	// Token: 0x040030CF RID: 12495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blastRadius;
 
-	// Token: 0x040030D7 RID: 12503
+	// Token: 0x040030D0 RID: 12496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blockDamage;
 
-	// Token: 0x040030D8 RID: 12504
+	// Token: 0x040030D1 RID: 12497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 }

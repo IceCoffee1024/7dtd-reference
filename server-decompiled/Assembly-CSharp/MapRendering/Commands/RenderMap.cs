@@ -4,25 +4,25 @@ using UnityEngine.Scripting;
 
 namespace MapRendering.Commands
 {
-	// Token: 0x02001AB6 RID: 6838
+	// Token: 0x02001AE2 RID: 6882
 	[Preserve]
 	public class RenderMap : ConsoleCmdAbstract
 	{
-		// Token: 0x0600CE40 RID: 52800 RVA: 0x004AF4A6 File Offset: 0x004AD6A6
+		// Token: 0x0600CF98 RID: 53144 RVA: 0x004B3972 File Offset: 0x004B1B72
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getDescription()
 		{
 			return "render the current map to a file";
 		}
 
-		// Token: 0x0600CE41 RID: 52801 RVA: 0x004AF4AD File Offset: 0x004AD6AD
+		// Token: 0x0600CF99 RID: 53145 RVA: 0x004B3979 File Offset: 0x004B1B79
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string[] getCommands()
 		{
 			return new string[] { "rendermap" };
 		}
 
-		// Token: 0x0600CE42 RID: 52802 RVA: 0x004AF4BD File Offset: 0x004AD6BD
+		// Token: 0x0600CF9A RID: 53146 RVA: 0x004B3989 File Offset: 0x004B1B89
 		public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 		{
 			if (!MapRenderer.HasInstance)

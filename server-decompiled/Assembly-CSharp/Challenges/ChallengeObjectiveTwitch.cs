@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001912 RID: 6418
+	// Token: 0x0200193E RID: 6462
 	[Preserve]
 	public class ChallengeObjectiveTwitch : BaseChallengeObjective
 	{
-		// Token: 0x1700188F RID: 6287
-		// (get) Token: 0x0600C63E RID: 50750 RVA: 0x0048E3D2 File Offset: 0x0048C5D2
+		// Token: 0x17001931 RID: 6449
+		// (get) Token: 0x0600C796 RID: 51094 RVA: 0x004928BE File Offset: 0x00490ABE
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001890 RID: 6288
-		// (get) Token: 0x0600C63F RID: 50751 RVA: 0x0048E3D8 File Offset: 0x0048C5D8
+		// Token: 0x17001932 RID: 6450
+		// (get) Token: 0x0600C797 RID: 51095 RVA: 0x004928C4 File Offset: 0x00490AC4
 		public override string DescriptionText
 		{
 			get
@@ -52,8 +52,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001891 RID: 6289
-		// (get) Token: 0x0600C640 RID: 50752 RVA: 0x0048E4A6 File Offset: 0x0048C6A6
+		// Token: 0x17001933 RID: 6451
+		// (get) Token: 0x0600C798 RID: 51096 RVA: 0x00492992 File Offset: 0x00490B92
 		public override ChallengeClass.UINavTypes NavType
 		{
 			get
@@ -66,19 +66,19 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C641 RID: 50753 RVA: 0x0048E4B4 File Offset: 0x0048C6B4
+		// Token: 0x0600C799 RID: 51097 RVA: 0x004929A0 File Offset: 0x00490BA0
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.TwitchEventReceive += this.Current_TwitchEventReceive;
 		}
 
-		// Token: 0x0600C642 RID: 50754 RVA: 0x0048E4CC File Offset: 0x0048C6CC
+		// Token: 0x0600C79A RID: 51098 RVA: 0x004929B8 File Offset: 0x00490BB8
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.TwitchEventReceive -= this.Current_TwitchEventReceive;
 		}
 
-		// Token: 0x0600C643 RID: 50755 RVA: 0x0048E4E4 File Offset: 0x0048C6E4
+		// Token: 0x0600C79B RID: 51099 RVA: 0x004929D0 File Offset: 0x00490BD0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_TwitchEventReceive(TwitchObjectiveTypes action, string param)
 		{
@@ -98,7 +98,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C644 RID: 50756 RVA: 0x0048E558 File Offset: 0x0048C758
+		// Token: 0x0600C79C RID: 51100 RVA: 0x00492A44 File Offset: 0x00490C44
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -112,7 +112,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C645 RID: 50757 RVA: 0x0048E5D1 File Offset: 0x0048C7D1
+		// Token: 0x0600C79D RID: 51101 RVA: 0x00492ABD File Offset: 0x00490CBD
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveTwitch
@@ -122,10 +122,10 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009580 RID: 38272
+		// Token: 0x04009646 RID: 38470
 		public TwitchObjectiveTypes TwitchObjectiveType;
 
-		// Token: 0x04009581 RID: 38273
+		// Token: 0x04009647 RID: 38471
 		public string Param = "";
 	}
 }

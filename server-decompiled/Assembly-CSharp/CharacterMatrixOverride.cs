@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001331 RID: 4913
+// Token: 0x02001351 RID: 4945
 public class CharacterMatrixOverride : MonoBehaviour
 {
-	// Token: 0x06009B1D RID: 39709 RVA: 0x003A8F40 File Offset: 0x003A7140
+	// Token: 0x06009BC9 RID: 39881 RVA: 0x003ADABC File Offset: 0x003ABCBC
 	public void Init(EntityPlayerLocal epl)
 	{
 		this.referenceCamera = epl.playerCamera;
 	}
 
-	// Token: 0x06009B1E RID: 39710 RVA: 0x003A8F50 File Offset: 0x003A7150
+	// Token: 0x06009BCA RID: 39882 RVA: 0x003ADACC File Offset: 0x003ABCCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -20,7 +20,7 @@ public class CharacterMatrixOverride : MonoBehaviour
 		Camera.onPostRender = (Camera.CameraCallback)Delegate.Combine(Camera.onPostRender, new Camera.CameraCallback(this.OnPostRenderCallback));
 	}
 
-	// Token: 0x06009B1F RID: 39711 RVA: 0x003A8FC0 File Offset: 0x003A71C0
+	// Token: 0x06009BCB RID: 39883 RVA: 0x003ADB3C File Offset: 0x003ABD3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -29,7 +29,7 @@ public class CharacterMatrixOverride : MonoBehaviour
 		Camera.onPostRender = (Camera.CameraCallback)Delegate.Remove(Camera.onPostRender, new Camera.CameraCallback(this.OnPostRenderCallback));
 	}
 
-	// Token: 0x06009B20 RID: 39712 RVA: 0x003A902D File Offset: 0x003A722D
+	// Token: 0x06009BCC RID: 39884 RVA: 0x003ADBA9 File Offset: 0x003ABDA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCullCallback(Camera camera)
 	{
@@ -39,7 +39,7 @@ public class CharacterMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B21 RID: 39713 RVA: 0x003A904C File Offset: 0x003A724C
+	// Token: 0x06009BCD RID: 39885 RVA: 0x003ADBC8 File Offset: 0x003ABDC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRendererList()
 	{
@@ -58,7 +58,7 @@ public class CharacterMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B22 RID: 39714 RVA: 0x003A90E8 File Offset: 0x003A72E8
+	// Token: 0x06009BCE RID: 39886 RVA: 0x003ADC64 File Offset: 0x003ABE64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRenderCallback(Camera camera)
 	{
@@ -85,7 +85,7 @@ public class CharacterMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B23 RID: 39715 RVA: 0x003A91C8 File Offset: 0x003A73C8
+	// Token: 0x06009BCF RID: 39887 RVA: 0x003ADD44 File Offset: 0x003ABF44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPostRenderCallback(Camera camera)
 	{
@@ -103,32 +103,32 @@ public class CharacterMatrixOverride : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040074F7 RID: 29943
+	// Token: 0x04007572 RID: 30066
 	public bool Active;
 
-	// Token: 0x040074F8 RID: 29944
+	// Token: 0x04007573 RID: 30067
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera referenceCamera;
 
-	// Token: 0x040074F9 RID: 29945
+	// Token: 0x04007574 RID: 30068
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Renderer> overriddenRenderers = new List<Renderer>();
 
-	// Token: 0x040074FA RID: 29946
+	// Token: 0x04007575 RID: 30069
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<Renderer, CharacterMatrixOverride.RendererSettings> rendererSettingsMap = new Dictionary<Renderer, CharacterMatrixOverride.RendererSettings>();
 
-	// Token: 0x02001332 RID: 4914
+	// Token: 0x02001352 RID: 4946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class RendererSettings
 	{
-		// Token: 0x040074FB RID: 29947
+		// Token: 0x04007576 RID: 30070
 		public MaterialPropertyBlock originalProperties;
 
-		// Token: 0x040074FC RID: 29948
+		// Token: 0x04007577 RID: 30071
 		public MaterialPropertyBlock overriddenProperties;
 	}
 }

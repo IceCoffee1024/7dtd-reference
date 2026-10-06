@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000BBC RID: 3004
+// Token: 0x02000BCE RID: 3022
 public static class TerrainAlignmentUtils
 {
-	// Token: 0x06005AD9 RID: 23257 RVA: 0x0022E728 File Offset: 0x0022C928
+	// Token: 0x06005AF2 RID: 23282 RVA: 0x00231A24 File Offset: 0x0022FC24
 	public static bool AlignToTerrain(Block block, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd, TerrainAlignmentMode alignmentMode)
 	{
 		BlockShape shape = _blockValue.Block.shape;
@@ -128,11 +128,11 @@ public static class TerrainAlignmentUtils
 		return false;
 	}
 
-	// Token: 0x0400467C RID: 18044
+	// Token: 0x040046BB RID: 18107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3> alignHighest = new List<Vector3>();
 
-	// Token: 0x0400467D RID: 18045
+	// Token: 0x040046BC RID: 18108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3> alignHighest4 = new List<Vector3>();
 }

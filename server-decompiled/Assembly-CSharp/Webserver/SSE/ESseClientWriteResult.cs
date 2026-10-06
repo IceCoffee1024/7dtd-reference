@@ -2,14 +2,14 @@
 
 namespace Webserver.SSE
 {
-	// Token: 0x02001AFC RID: 6908
+	// Token: 0x02001B28 RID: 6952
 	public enum ESseClientWriteResult
 	{
-		// Token: 0x04009DCC RID: 40396
+		// Token: 0x04009E92 RID: 40594
 		Ok,
-		// Token: 0x04009DCD RID: 40397
+		// Token: 0x04009E93 RID: 40595
 		Closed,
-		// Token: 0x04009DCE RID: 40398
+		// Token: 0x04009E94 RID: 40596
 		Error
 	}
 }

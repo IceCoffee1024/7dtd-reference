@@ -1,30 +1,30 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000589 RID: 1417
+// Token: 0x0200058B RID: 1419
 public class QualityInfo
 {
-	// Token: 0x06002E70 RID: 11888 RVA: 0x0012711D File Offset: 0x0012531D
+	// Token: 0x06002ECA RID: 11978 RVA: 0x00128235 File Offset: 0x00126435
 	public static void Cleanup()
 	{
 		QualityInfo.qualityColors = new Color[7];
 		QualityInfo.hexColors = new string[7];
 	}
 
-	// Token: 0x06002E71 RID: 11889 RVA: 0x00127135 File Offset: 0x00125335
+	// Token: 0x06002ECB RID: 11979 RVA: 0x0012824D File Offset: 0x0012644D
 	public static void Add(int _key, string _hexColor)
 	{
 		QualityInfo.qualityColors[_key] = QualityInfo.HexToRGB(_hexColor);
 		QualityInfo.hexColors[_key] = _hexColor;
 	}
 
-	// Token: 0x06002E72 RID: 11890 RVA: 0x00127150 File Offset: 0x00125350
+	// Token: 0x06002ECC RID: 11980 RVA: 0x00128268 File Offset: 0x00126468
 	public static Color GetQualityColor(int _quality)
 	{
 		return QualityInfo.GetTierColor(_quality);
 	}
 
-	// Token: 0x06002E73 RID: 11891 RVA: 0x00127158 File Offset: 0x00125358
+	// Token: 0x06002ECD RID: 11981 RVA: 0x00128270 File Offset: 0x00126470
 	public static Color GetTierColor(int _tier)
 	{
 		if (_tier > QualityInfo.qualityColors.Length - 1)
@@ -34,7 +34,7 @@ public class QualityInfo
 		return QualityInfo.qualityColors[_tier];
 	}
 
-	// Token: 0x06002E74 RID: 11892 RVA: 0x0012717C File Offset: 0x0012537C
+	// Token: 0x06002ECE RID: 11982 RVA: 0x00128294 File Offset: 0x00126494
 	public static string GetQualityColorHex(int _quality)
 	{
 		if (_quality > QualityInfo.qualityColors.Length - 1)
@@ -44,7 +44,7 @@ public class QualityInfo
 		return QualityInfo.hexColors[_quality];
 	}
 
-	// Token: 0x06002E75 RID: 11893 RVA: 0x0012719C File Offset: 0x0012539C
+	// Token: 0x06002ECF RID: 11983 RVA: 0x001282B4 File Offset: 0x001264B4
 	public static string GetQualityLevelName(int _quality, bool _useQualityColor = false)
 	{
 		if (_quality == 0)
@@ -84,7 +84,7 @@ public class QualityInfo
 		return text;
 	}
 
-	// Token: 0x06002E76 RID: 11894 RVA: 0x00127268 File Offset: 0x00125468
+	// Token: 0x06002ED0 RID: 11984 RVA: 0x00128380 File Offset: 0x00126580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int HexToInt(char hexChar)
 	{
@@ -126,7 +126,7 @@ public class QualityInfo
 		return -1;
 	}
 
-	// Token: 0x06002E77 RID: 11895 RVA: 0x00127304 File Offset: 0x00125504
+	// Token: 0x06002ED1 RID: 11985 RVA: 0x0012841C File Offset: 0x0012661C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color HexToRGB(string color)
 	{
@@ -143,11 +143,11 @@ public class QualityInfo
 		};
 	}
 
-	// Token: 0x040023FE RID: 9214
+	// Token: 0x040023FC RID: 9212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color[] qualityColors = new Color[7];
 
-	// Token: 0x040023FF RID: 9215
+	// Token: 0x040023FD RID: 9213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] hexColors = new string[7];
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000EEE RID: 3822
+// Token: 0x02000EFD RID: 3837
 public enum EChatDirection
 {
-	// Token: 0x0400589E RID: 22686
+	// Token: 0x040058D6 RID: 22742
 	None,
-	// Token: 0x0400589F RID: 22687
+	// Token: 0x040058D7 RID: 22743
 	Inbound,
-	// Token: 0x040058A0 RID: 22688
+	// Token: 0x040058D8 RID: 22744
 	Outbound
 }

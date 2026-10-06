@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200043B RID: 1083
+// Token: 0x0200043D RID: 1085
 public class EAIDroneItemModStunWeapon : EAIDroneItemTask
 {
-	// Token: 0x06002138 RID: 8504 RVA: 0x000C8190 File Offset: 0x000C6390
+	// Token: 0x06002127 RID: 8487 RVA: 0x000C8244 File Offset: 0x000C6444
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 	}
 
-	// Token: 0x06002139 RID: 8505 RVA: 0x000C8199 File Offset: 0x000C6399
+	// Token: 0x06002128 RID: 8488 RVA: 0x000C824D File Offset: 0x000C644D
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
 	}
 
-	// Token: 0x0600213A RID: 8506 RVA: 0x000C84CC File Offset: 0x000C66CC
+	// Token: 0x06002129 RID: 8489 RVA: 0x000C8580 File Offset: 0x000C6780
 	public override bool CanExecute()
 	{
 		if (!base.CanExecute())
@@ -72,7 +72,7 @@ public class EAIDroneItemModStunWeapon : EAIDroneItemTask
 		return false;
 	}
 
-	// Token: 0x0600213B RID: 8507 RVA: 0x000C8604 File Offset: 0x000C6804
+	// Token: 0x0600212A RID: 8490 RVA: 0x000C86B8 File Offset: 0x000C68B8
 	public override bool Continue()
 	{
 		if (!this.drone)
@@ -132,34 +132,34 @@ public class EAIDroneItemModStunWeapon : EAIDroneItemTask
 		return true;
 	}
 
-	// Token: 0x0600213C RID: 8508 RVA: 0x000C8489 File Offset: 0x000C6689
+	// Token: 0x0600212B RID: 8491 RVA: 0x000C853D File Offset: 0x000C673D
 	public override void Update()
 	{
 		base.Update();
 	}
 
-	// Token: 0x0600213D RID: 8509 RVA: 0x000C8491 File Offset: 0x000C6691
+	// Token: 0x0600212C RID: 8492 RVA: 0x000C8545 File Offset: 0x000C6745
 	public override void Reset()
 	{
 		base.Reset();
 		this.OnAttackExit();
 	}
 
-	// Token: 0x0600213E RID: 8510 RVA: 0x000C849F File Offset: 0x000C669F
+	// Token: 0x0600212D RID: 8493 RVA: 0x000C8553 File Offset: 0x000C6753
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackEnter()
 	{
 		base.OnAttackEnter();
 	}
 
-	// Token: 0x0600213F RID: 8511 RVA: 0x000C84A7 File Offset: 0x000C66A7
+	// Token: 0x0600212E RID: 8494 RVA: 0x000C855B File Offset: 0x000C675B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackAction()
 	{
 		base.OnAttackAction();
 	}
 
-	// Token: 0x06002140 RID: 8512 RVA: 0x000C84AF File Offset: 0x000C66AF
+	// Token: 0x0600212F RID: 8495 RVA: 0x000C8563 File Offset: 0x000C6763
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnAttackExit()
 	{

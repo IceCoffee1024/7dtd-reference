@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000C37 RID: 3127
+// Token: 0x02000C49 RID: 3145
 public class ThreadContainer
 {
-	// Token: 0x06005F3F RID: 24383 RVA: 0x0025AB54 File Offset: 0x00258D54
+	// Token: 0x06005F58 RID: 24408 RVA: 0x0025DE50 File Offset: 0x0025C050
 	public ThreadContainer(DistantTerrain _TerExt, DistantChunk _DChunk, DistantChunkBasicMesh _BMesh, bool _WasReset)
 	{
 		this.Init(_TerExt, _DChunk, _BMesh, _WasReset);
 	}
 
-	// Token: 0x06005F40 RID: 24384 RVA: 0x0025AB6E File Offset: 0x00258D6E
+	// Token: 0x06005F59 RID: 24409 RVA: 0x0025DE6A File Offset: 0x0025C06A
 	public ThreadContainer()
 	{
 		this.TerExt = null;
@@ -18,7 +18,7 @@ public class ThreadContainer
 		this.WasReset = false;
 	}
 
-	// Token: 0x06005F41 RID: 24385 RVA: 0x0025AB99 File Offset: 0x00258D99
+	// Token: 0x06005F5A RID: 24410 RVA: 0x0025DE95 File Offset: 0x0025C095
 	public void Init(DistantTerrain _TerExt, DistantChunk _DChunk, DistantChunkBasicMesh _BMesh, bool _WasReset)
 	{
 		this.TerExt = _TerExt;
@@ -27,19 +27,19 @@ public class ThreadContainer
 		this.WasReset = _WasReset;
 	}
 
-	// Token: 0x06005F42 RID: 24386 RVA: 0x0025ABB8 File Offset: 0x00258DB8
+	// Token: 0x06005F5B RID: 24411 RVA: 0x0025DEB4 File Offset: 0x0025C0B4
 	public void ThreadExtraWork()
 	{
 		this.TerExt.ThreadExtraWork(this.DChunk, this.BMesh, this.WasReset);
 	}
 
-	// Token: 0x06005F43 RID: 24387 RVA: 0x0025ABD7 File Offset: 0x00258DD7
+	// Token: 0x06005F5C RID: 24412 RVA: 0x0025DED3 File Offset: 0x0025C0D3
 	public void MainExtraWork()
 	{
 		this.TerExt.MainExtraWork(this.DChunk, this.BMesh);
 	}
 
-	// Token: 0x06005F44 RID: 24388 RVA: 0x0025ABF0 File Offset: 0x00258DF0
+	// Token: 0x06005F5D RID: 24413 RVA: 0x0025DEEC File Offset: 0x0025C0EC
 	public void Clear(bool IsClearItem)
 	{
 		if (IsClearItem)
@@ -51,19 +51,19 @@ public class ThreadContainer
 		}
 	}
 
-	// Token: 0x04004AB1 RID: 19121
+	// Token: 0x04004AF0 RID: 19184
 	public int DEBUG_TCId = -1;
 
-	// Token: 0x04004AB2 RID: 19122
+	// Token: 0x04004AF1 RID: 19185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DistantTerrain TerExt;
 
-	// Token: 0x04004AB3 RID: 19123
+	// Token: 0x04004AF2 RID: 19186
 	public DistantChunk DChunk;
 
-	// Token: 0x04004AB4 RID: 19124
+	// Token: 0x04004AF3 RID: 19187
 	public DistantChunkBasicMesh BMesh;
 
-	// Token: 0x04004AB5 RID: 19125
+	// Token: 0x04004AF4 RID: 19188
 	public bool WasReset;
 }

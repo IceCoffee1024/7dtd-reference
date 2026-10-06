@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200104E RID: 4174
+// Token: 0x0200105F RID: 4191
 [Preserve]
 public class XUiC_SignStackGrid : XUiController
 {
-	// Token: 0x17000F6B RID: 3947
-	// (get) Token: 0x06008491 RID: 33937 RVA: 0x00326EC5 File Offset: 0x003250C5
-	// (set) Token: 0x06008492 RID: 33938 RVA: 0x00326ECD File Offset: 0x003250CD
+	// Token: 0x17000FA1 RID: 4001
+	// (get) Token: 0x060084D7 RID: 34007 RVA: 0x0032AAD0 File Offset: 0x00328CD0
+	// (set) Token: 0x060084D8 RID: 34008 RVA: 0x0032AAD8 File Offset: 0x00328CD8
 	public int Length
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F6C RID: 3948
-	// (get) Token: 0x06008493 RID: 33939 RVA: 0x00326ED6 File Offset: 0x003250D6
-	// (set) Token: 0x06008494 RID: 33940 RVA: 0x00326EDE File Offset: 0x003250DE
+	// Token: 0x17000FA2 RID: 4002
+	// (get) Token: 0x060084D9 RID: 34009 RVA: 0x0032AAE1 File Offset: 0x00328CE1
+	// (set) Token: 0x060084DA RID: 34010 RVA: 0x0032AAE9 File Offset: 0x00328CE9
 	public int Page
 	{
 		get
@@ -31,7 +31,7 @@ public class XUiC_SignStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06008495 RID: 33941 RVA: 0x00326EEE File Offset: 0x003250EE
+	// Token: 0x060084DB RID: 34011 RVA: 0x0032AAF9 File Offset: 0x00328CF9
 	public override void Init()
 	{
 		base.Init();
@@ -40,7 +40,7 @@ public class XUiC_SignStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06008496 RID: 33942 RVA: 0x00326F18 File Offset: 0x00325118
+	// Token: 0x060084DC RID: 34012 RVA: 0x0032AB24 File Offset: 0x00328D24
 	public void SetSignIds(List<GlobalSignId> signIdList, GlobalSignId newSelectedId)
 	{
 		this.xui.GetChildByType<XUiC_SignGalleryWindow>();
@@ -75,7 +75,7 @@ public class XUiC_SignStackGrid : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06008497 RID: 33943 RVA: 0x002FC752 File Offset: 0x002FA952
+	// Token: 0x060084DD RID: 34013 RVA: 0x002FF7A6 File Offset: 0x002FD9A6
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -84,7 +84,7 @@ public class XUiC_SignStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06008498 RID: 33944 RVA: 0x002E9CB4 File Offset: 0x002E7EB4
+	// Token: 0x060084DE RID: 34014 RVA: 0x002ECFC5 File Offset: 0x002EB1C5
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -93,7 +93,7 @@ public class XUiC_SignStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06008499 RID: 33945 RVA: 0x00326FCF File Offset: 0x003251CF
+	// Token: 0x060084DF RID: 34015 RVA: 0x0032ABDB File Offset: 0x00328DDB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -104,27 +104,27 @@ public class XUiC_SignStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x04006249 RID: 25161
+	// Token: 0x0400628E RID: 25230
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int curPageIdx;
 
-	// Token: 0x0400624A RID: 25162
+	// Token: 0x0400628F RID: 25231
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int numPages;
 
-	// Token: 0x0400624B RID: 25163
+	// Token: 0x04006290 RID: 25232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x0400624C RID: 25164
+	// Token: 0x04006291 RID: 25233
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_SignStack[] signStackControllers;
 
-	// Token: 0x0400624D RID: 25165
+	// Token: 0x04006292 RID: 25234
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId selectedId;
 
-	// Token: 0x0400624E RID: 25166
+	// Token: 0x04006293 RID: 25235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GlobalSignId> currentList;
 }

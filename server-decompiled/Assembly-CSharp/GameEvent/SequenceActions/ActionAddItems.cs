@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200195D RID: 6493
+	// Token: 0x02001989 RID: 6537
 	[Preserve]
 	public class ActionAddItems : ActionBaseClientAction
 	{
-		// Token: 0x0600C7D9 RID: 51161 RVA: 0x00494BFC File Offset: 0x00492DFC
+		// Token: 0x0600C931 RID: 51505 RVA: 0x004990E8 File Offset: 0x004972E8
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7DA RID: 51162 RVA: 0x00494CE4 File Offset: 0x00492EE4
+		// Token: 0x0600C932 RID: 51506 RVA: 0x004991D0 File Offset: 0x004973D0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -58,7 +58,7 @@ namespace GameEvent.SequenceActions
 			this.AddItemCounts = null;
 		}
 
-		// Token: 0x0600C7DB RID: 51163 RVA: 0x00494D8D File Offset: 0x00492F8D
+		// Token: 0x0600C933 RID: 51507 RVA: 0x00499279 File Offset: 0x00497479
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -70,16 +70,16 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040096A0 RID: 38560
+		// Token: 0x04009766 RID: 38758
 		public string[] AddItems;
 
-		// Token: 0x040096A1 RID: 38561
+		// Token: 0x04009767 RID: 38759
 		public string[] AddItemCounts;
 
-		// Token: 0x040096A2 RID: 38562
+		// Token: 0x04009768 RID: 38760
 		public static string PropAddItems = "added_items";
 
-		// Token: 0x040096A3 RID: 38563
+		// Token: 0x04009769 RID: 38761
 		public static string PropAddItemCounts = "added_item_counts";
 	}
 }

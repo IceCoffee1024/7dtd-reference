@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x0200177C RID: 6012
+	// Token: 0x020017A8 RID: 6056
 	[Preserve]
 	public class UAIConsiderationTargetVisible : UAIConsiderationBase
 	{
-		// Token: 0x0600BA5A RID: 47706 RVA: 0x004564F8 File Offset: 0x004546F8
+		// Token: 0x0600BBB1 RID: 48049 RVA: 0x0045AA18 File Offset: 0x00458C18
 		public override float GetScore(Context _context, object target)
 		{
 			EntityAlive entityAlive = UAIUtils.ConvertToEntityAlive(target);

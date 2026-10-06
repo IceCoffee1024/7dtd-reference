@@ -3,16 +3,16 @@ using System.Net;
 
 namespace Platform
 {
-	// Token: 0x02001BC7 RID: 7111
+	// Token: 0x02001BF9 RID: 7161
 	public static class NetworkUtils
 	{
-		// Token: 0x0600D3B4 RID: 54196 RVA: 0x004C7A36 File Offset: 0x004C5C36
+		// Token: 0x0600D52C RID: 54572 RVA: 0x004CC51E File Offset: 0x004CA71E
 		public static uint ToInt(string _addr)
 		{
 			return (uint)IPAddress.HostToNetworkOrder(BitConverter.ToInt32(IPAddress.Parse(_addr).GetAddressBytes(), 0));
 		}
 
-		// Token: 0x0600D3B5 RID: 54197 RVA: 0x004C7A50 File Offset: 0x004C5C50
+		// Token: 0x0600D52D RID: 54573 RVA: 0x004CC538 File Offset: 0x004CA738
 		public static string ToAddr(uint _address)
 		{
 			string[] array = new IPAddress((long)((ulong)_address)).ToString().Split('.', StringSplitOptions.None);
@@ -28,7 +28,7 @@ namespace Platform
 			});
 		}
 
-		// Token: 0x0600D3B6 RID: 54198 RVA: 0x004C7AB0 File Offset: 0x004C5CB0
+		// Token: 0x0600D52E RID: 54574 RVA: 0x004CC598 File Offset: 0x004CA798
 		public static string BuildGameTags(GameServerInfo _game)
 		{
 			string text;
@@ -62,13 +62,13 @@ namespace Platform
 			return text;
 		}
 
-		// Token: 0x0600D3B7 RID: 54199 RVA: 0x004C7BA4 File Offset: 0x004C5DA4
+		// Token: 0x0600D52F RID: 54575 RVA: 0x004CC68C File Offset: 0x004CA88C
 		public static bool ParseGameTags(string _tags, GameServerInfo _gameInfo)
 		{
 			return _tags.IndexOf(';') < 0 && NetworkUtils.ParseGameTags2(_tags, _gameInfo);
 		}
 
-		// Token: 0x0600D3B8 RID: 54200 RVA: 0x004C7BBC File Offset: 0x004C5DBC
+		// Token: 0x0600D530 RID: 54576 RVA: 0x004CC6A4 File Offset: 0x004CA8A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool ParseGameTags2(string _tags, GameServerInfo _gameInfo)
 		{

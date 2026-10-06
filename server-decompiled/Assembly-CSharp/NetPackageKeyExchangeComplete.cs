@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A9 RID: 1961
+// Token: 0x020007AC RID: 1964
 [Preserve]
 public class NetPackageKeyExchangeComplete : NetPackage
 {
-	// Token: 0x17000606 RID: 1542
-	// (get) Token: 0x06003A52 RID: 14930 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700062B RID: 1579
+	// (get) Token: 0x06003A90 RID: 14992 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -15,39 +15,33 @@ public class NetPackageKeyExchangeComplete : NetPackage
 		}
 	}
 
-	// Token: 0x06003A53 RID: 14931 RVA: 0x0017BA67 File Offset: 0x00179C67
+	// Token: 0x06003A91 RID: 14993 RVA: 0x0017C105 File Offset: 0x0017A305
 	public NetPackageKeyExchangeComplete Setup(bool _wasSuccessful)
 	{
 		this.wasSuccessful = _wasSuccessful;
 		return this;
 	}
 
-	// Token: 0x06003A54 RID: 14932 RVA: 0x0017BA71 File Offset: 0x00179C71
+	// Token: 0x06003A92 RID: 14994 RVA: 0x0017C10F File Offset: 0x0017A30F
 	public override void read(PooledBinaryReader _br)
 	{
 		this.wasSuccessful = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003A55 RID: 14933 RVA: 0x0017BA7F File Offset: 0x00179C7F
+	// Token: 0x06003A93 RID: 14995 RVA: 0x0017C11D File Offset: 0x0017A31D
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.wasSuccessful);
 	}
 
-	// Token: 0x06003A56 RID: 14934 RVA: 0x0017BA94 File Offset: 0x00179C94
+	// Token: 0x06003A94 RID: 14996 RVA: 0x0017C132 File Offset: 0x0017A332
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.AntiCheatEncryptionAuthServer.CompleteKeyExchange(base.Sender, this.wasSuccessful);
 	}
 
-	// Token: 0x06003A57 RID: 14935 RVA: 0x00020021 File Offset: 0x0001E221
-	public override int GetLength()
-	{
-		return 1;
-	}
-
-	// Token: 0x04002FCC RID: 12236
+	// Token: 0x04002FC6 RID: 12230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasSuccessful;
 }

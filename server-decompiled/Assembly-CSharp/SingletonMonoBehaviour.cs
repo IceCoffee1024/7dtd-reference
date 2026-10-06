@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014A4 RID: 5284
+// Token: 0x020014C4 RID: 5316
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
 {
-	// Token: 0x0600A5C2 RID: 42434 RVA: 0x003DA838 File Offset: 0x003D8A38
+	// Token: 0x0600A670 RID: 42608 RVA: 0x003DF4C4 File Offset: 0x003DD6C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -29,7 +29,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBe
 		SingletonMonoBehaviour<T>.Instance.singletonAwake();
 	}
 
-	// Token: 0x0600A5C3 RID: 42435 RVA: 0x003DA8BB File Offset: 0x003D8ABB
+	// Token: 0x0600A671 RID: 42609 RVA: 0x003DF547 File Offset: 0x003DD747
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDestroy()
 	{
@@ -39,27 +39,27 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBe
 		}
 	}
 
-	// Token: 0x0600A5C4 RID: 42436 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A672 RID: 42610 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void singletonAwake()
 	{
 	}
 
-	// Token: 0x0600A5C5 RID: 42437 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A673 RID: 42611 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void singletonCreated()
 	{
 	}
 
-	// Token: 0x0600A5C6 RID: 42438 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A674 RID: 42612 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void singletonDestroy()
 	{
 	}
 
-	// Token: 0x04007B86 RID: 31622
+	// Token: 0x04007C01 RID: 31745
 	public static T Instance;
 
-	// Token: 0x04007B87 RID: 31623
+	// Token: 0x04007C02 RID: 31746
 	public bool IsPersistant;
 }

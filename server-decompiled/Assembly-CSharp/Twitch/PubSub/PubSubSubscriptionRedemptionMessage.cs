@@ -3,70 +3,70 @@ using Newtonsoft.Json;
 
 namespace Twitch.PubSub
 {
-	// Token: 0x02001887 RID: 6279
+	// Token: 0x020018B3 RID: 6323
 	public class PubSubSubscriptionRedemptionMessage : BasePubSubMessage
 	{
-		// Token: 0x170017C9 RID: 6089
-		// (get) Token: 0x0600C1A3 RID: 49571 RVA: 0x0047949D File Offset: 0x0047769D
-		// (set) Token: 0x0600C1A4 RID: 49572 RVA: 0x004794A5 File Offset: 0x004776A5
+		// Token: 0x1700186B RID: 6251
+		// (get) Token: 0x0600C2FB RID: 49915 RVA: 0x0047D9D9 File Offset: 0x0047BBD9
+		// (set) Token: 0x0600C2FC RID: 49916 RVA: 0x0047D9E1 File Offset: 0x0047BBE1
 		public int benefit_end_month { get; set; }
 
-		// Token: 0x170017CA RID: 6090
-		// (get) Token: 0x0600C1A5 RID: 49573 RVA: 0x004794AE File Offset: 0x004776AE
-		// (set) Token: 0x0600C1A6 RID: 49574 RVA: 0x004794B6 File Offset: 0x004776B6
+		// Token: 0x1700186C RID: 6252
+		// (get) Token: 0x0600C2FD RID: 49917 RVA: 0x0047D9EA File Offset: 0x0047BBEA
+		// (set) Token: 0x0600C2FE RID: 49918 RVA: 0x0047D9F2 File Offset: 0x0047BBF2
 		public string user_name { get; set; }
 
-		// Token: 0x170017CB RID: 6091
-		// (get) Token: 0x0600C1A7 RID: 49575 RVA: 0x004794BF File Offset: 0x004776BF
-		// (set) Token: 0x0600C1A8 RID: 49576 RVA: 0x004794C7 File Offset: 0x004776C7
+		// Token: 0x1700186D RID: 6253
+		// (get) Token: 0x0600C2FF RID: 49919 RVA: 0x0047D9FB File Offset: 0x0047BBFB
+		// (set) Token: 0x0600C300 RID: 49920 RVA: 0x0047DA03 File Offset: 0x0047BC03
 		public string channel_name { get; set; }
 
-		// Token: 0x170017CC RID: 6092
-		// (get) Token: 0x0600C1A9 RID: 49577 RVA: 0x004794D0 File Offset: 0x004776D0
-		// (set) Token: 0x0600C1AA RID: 49578 RVA: 0x004794D8 File Offset: 0x004776D8
+		// Token: 0x1700186E RID: 6254
+		// (get) Token: 0x0600C301 RID: 49921 RVA: 0x0047DA0C File Offset: 0x0047BC0C
+		// (set) Token: 0x0600C302 RID: 49922 RVA: 0x0047DA14 File Offset: 0x0047BC14
 		public string user_id { get; set; }
 
-		// Token: 0x170017CD RID: 6093
-		// (get) Token: 0x0600C1AB RID: 49579 RVA: 0x004794E1 File Offset: 0x004776E1
-		// (set) Token: 0x0600C1AC RID: 49580 RVA: 0x004794E9 File Offset: 0x004776E9
+		// Token: 0x1700186F RID: 6255
+		// (get) Token: 0x0600C303 RID: 49923 RVA: 0x0047DA1D File Offset: 0x0047BC1D
+		// (set) Token: 0x0600C304 RID: 49924 RVA: 0x0047DA25 File Offset: 0x0047BC25
 		public string channel_id { get; set; }
 
-		// Token: 0x170017CE RID: 6094
-		// (get) Token: 0x0600C1AD RID: 49581 RVA: 0x004794F2 File Offset: 0x004776F2
-		// (set) Token: 0x0600C1AE RID: 49582 RVA: 0x004794FA File Offset: 0x004776FA
+		// Token: 0x17001870 RID: 6256
+		// (get) Token: 0x0600C305 RID: 49925 RVA: 0x0047DA2E File Offset: 0x0047BC2E
+		// (set) Token: 0x0600C306 RID: 49926 RVA: 0x0047DA36 File Offset: 0x0047BC36
 		public string sub_plan { get; set; }
 
-		// Token: 0x170017CF RID: 6095
-		// (get) Token: 0x0600C1AF RID: 49583 RVA: 0x00479503 File Offset: 0x00477703
-		// (set) Token: 0x0600C1B0 RID: 49584 RVA: 0x0047950B File Offset: 0x0047770B
+		// Token: 0x17001871 RID: 6257
+		// (get) Token: 0x0600C307 RID: 49927 RVA: 0x0047DA3F File Offset: 0x0047BC3F
+		// (set) Token: 0x0600C308 RID: 49928 RVA: 0x0047DA47 File Offset: 0x0047BC47
 		public string sub_plan_name { get; set; }
 
-		// Token: 0x170017D0 RID: 6096
-		// (get) Token: 0x0600C1B1 RID: 49585 RVA: 0x00479514 File Offset: 0x00477714
-		// (set) Token: 0x0600C1B2 RID: 49586 RVA: 0x0047951C File Offset: 0x0047771C
+		// Token: 0x17001872 RID: 6258
+		// (get) Token: 0x0600C309 RID: 49929 RVA: 0x0047DA50 File Offset: 0x0047BC50
+		// (set) Token: 0x0600C30A RID: 49930 RVA: 0x0047DA58 File Offset: 0x0047BC58
 		public int months { get; set; }
 
-		// Token: 0x170017D1 RID: 6097
-		// (get) Token: 0x0600C1B3 RID: 49587 RVA: 0x00479525 File Offset: 0x00477725
-		// (set) Token: 0x0600C1B4 RID: 49588 RVA: 0x0047952D File Offset: 0x0047772D
+		// Token: 0x17001873 RID: 6259
+		// (get) Token: 0x0600C30B RID: 49931 RVA: 0x0047DA61 File Offset: 0x0047BC61
+		// (set) Token: 0x0600C30C RID: 49932 RVA: 0x0047DA69 File Offset: 0x0047BC69
 		public int cumulative_months { get; set; }
 
-		// Token: 0x170017D2 RID: 6098
-		// (get) Token: 0x0600C1B5 RID: 49589 RVA: 0x00479536 File Offset: 0x00477736
-		// (set) Token: 0x0600C1B6 RID: 49590 RVA: 0x0047953E File Offset: 0x0047773E
+		// Token: 0x17001874 RID: 6260
+		// (get) Token: 0x0600C30D RID: 49933 RVA: 0x0047DA72 File Offset: 0x0047BC72
+		// (set) Token: 0x0600C30E RID: 49934 RVA: 0x0047DA7A File Offset: 0x0047BC7A
 		public string context { get; set; }
 
-		// Token: 0x170017D3 RID: 6099
-		// (get) Token: 0x0600C1B7 RID: 49591 RVA: 0x00479547 File Offset: 0x00477747
-		// (set) Token: 0x0600C1B8 RID: 49592 RVA: 0x0047954F File Offset: 0x0047774F
+		// Token: 0x17001875 RID: 6261
+		// (get) Token: 0x0600C30F RID: 49935 RVA: 0x0047DA83 File Offset: 0x0047BC83
+		// (set) Token: 0x0600C310 RID: 49936 RVA: 0x0047DA8B File Offset: 0x0047BC8B
 		public bool is_gift { get; set; }
 
-		// Token: 0x170017D4 RID: 6100
-		// (get) Token: 0x0600C1B9 RID: 49593 RVA: 0x00479558 File Offset: 0x00477758
-		// (set) Token: 0x0600C1BA RID: 49594 RVA: 0x00479560 File Offset: 0x00477760
+		// Token: 0x17001876 RID: 6262
+		// (get) Token: 0x0600C311 RID: 49937 RVA: 0x0047DA94 File Offset: 0x0047BC94
+		// (set) Token: 0x0600C312 RID: 49938 RVA: 0x0047DA9C File Offset: 0x0047BC9C
 		public int multi_month_duration { get; set; }
 
-		// Token: 0x0600C1BB RID: 49595 RVA: 0x00479569 File Offset: 0x00477769
+		// Token: 0x0600C313 RID: 49939 RVA: 0x0047DAA5 File Offset: 0x0047BCA5
 		public static PubSubSubscriptionRedemptionMessage Deserialize(string message)
 		{
 			return JsonConvert.DeserializeObject<PubSubSubscriptionRedemptionMessage>(message);

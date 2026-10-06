@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001BAC RID: 7084
+	// Token: 0x02001BDE RID: 7134
 	public enum EMatchmakingGroup
 	{
-		// Token: 0x0400A0FF RID: 41215
+		// Token: 0x0400A1D4 RID: 41428
 		Dev,
-		// Token: 0x0400A100 RID: 41216
+		// Token: 0x0400A1D5 RID: 41429
 		CertQA,
-		// Token: 0x0400A101 RID: 41217
+		// Token: 0x0400A1D6 RID: 41430
 		Retail
 	}
 }

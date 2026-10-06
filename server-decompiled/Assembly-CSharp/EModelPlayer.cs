@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000517 RID: 1303
+// Token: 0x0200051D RID: 1309
 [Preserve]
 public class EModelPlayer : EModelBase
 {
-	// Token: 0x06002ADD RID: 10973 RVA: 0x0010F32C File Offset: 0x0010D52C
+	// Token: 0x06002AD2 RID: 10962 RVA: 0x0010FBF0 File Offset: 0x0010DDF0
 	public override void SetSkinTexture(string _textureName)
 	{
 		base.SetSkinTexture(_textureName);

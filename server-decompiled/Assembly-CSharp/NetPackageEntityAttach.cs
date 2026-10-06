@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000861 RID: 2145
+// Token: 0x02000864 RID: 2148
 [Preserve]
 public class NetPackageEntityAttach : NetPackage
 {
-	// Token: 0x06003EB2 RID: 16050 RVA: 0x0018B563 File Offset: 0x00189763
+	// Token: 0x06003E50 RID: 15952 RVA: 0x0018B3ED File Offset: 0x001895ED
 	public NetPackageEntityAttach Setup(NetPackageEntityAttach.AttachType _attachType, int _riderId, int _vehicleId, int _slot)
 	{
 		this.attachType = _attachType;
@@ -15,7 +15,7 @@ public class NetPackageEntityAttach : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003EB3 RID: 16051 RVA: 0x0018B583 File Offset: 0x00189783
+	// Token: 0x06003E51 RID: 15953 RVA: 0x0018B40D File Offset: 0x0018960D
 	public override void read(PooledBinaryReader _br)
 	{
 		this.attachType = (NetPackageEntityAttach.AttachType)_br.ReadByte();
@@ -24,7 +24,7 @@ public class NetPackageEntityAttach : NetPackage
 		this.slot = (int)_br.ReadInt16();
 	}
 
-	// Token: 0x06003EB4 RID: 16052 RVA: 0x0018B5B5 File Offset: 0x001897B5
+	// Token: 0x06003E52 RID: 15954 RVA: 0x0018B43F File Offset: 0x0018963F
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -34,7 +34,7 @@ public class NetPackageEntityAttach : NetPackage
 		_bw.Write((short)this.slot);
 	}
 
-	// Token: 0x06003EB5 RID: 16053 RVA: 0x0018B5F0 File Offset: 0x001897F0
+	// Token: 0x06003E53 RID: 15955 RVA: 0x0018B47C File Offset: 0x0018967C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -86,38 +86,32 @@ public class NetPackageEntityAttach : NetPackage
 		}
 	}
 
-	// Token: 0x06003EB6 RID: 16054 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x040032AE RID: 12974
+	// Token: 0x04003299 RID: 12953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int riderId;
 
-	// Token: 0x040032AF RID: 12975
+	// Token: 0x0400329A RID: 12954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int vehicleId;
 
-	// Token: 0x040032B0 RID: 12976
+	// Token: 0x0400329B RID: 12955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int slot;
 
-	// Token: 0x040032B1 RID: 12977
+	// Token: 0x0400329C RID: 12956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEntityAttach.AttachType attachType;
 
-	// Token: 0x02000862 RID: 2146
+	// Token: 0x02000865 RID: 2149
 	public enum AttachType : byte
 	{
-		// Token: 0x040032B3 RID: 12979
+		// Token: 0x0400329E RID: 12958
 		AttachServer,
-		// Token: 0x040032B4 RID: 12980
+		// Token: 0x0400329F RID: 12959
 		AttachClient,
-		// Token: 0x040032B5 RID: 12981
+		// Token: 0x040032A0 RID: 12960
 		DetachServer,
-		// Token: 0x040032B6 RID: 12982
+		// Token: 0x040032A1 RID: 12961
 		DetachClient
 	}
 }

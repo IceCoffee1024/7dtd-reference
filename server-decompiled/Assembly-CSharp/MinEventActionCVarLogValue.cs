@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D8 RID: 1752
+// Token: 0x020006DA RID: 1754
 [Preserve]
 public class MinEventActionCVarLogValue : MinEventActionTargetedBase
 {
-	// Token: 0x06003632 RID: 13874 RVA: 0x001662DC File Offset: 0x001644DC
+	// Token: 0x06003675 RID: 13941 RVA: 0x00166C4C File Offset: 0x00164E4C
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -19,7 +19,7 @@ public class MinEventActionCVarLogValue : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003633 RID: 13875 RVA: 0x0016633C File Offset: 0x0016453C
+	// Token: 0x06003676 RID: 13942 RVA: 0x00166CAC File Offset: 0x00164EAC
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -31,7 +31,7 @@ public class MinEventActionCVarLogValue : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BCA RID: 11210
+	// Token: 0x04002BC3 RID: 11203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cvarName;
 }

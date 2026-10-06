@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E8 RID: 2024
+// Token: 0x020007EB RID: 2027
 [Preserve]
 public class NetPackageEntitySpawn : NetPackageEntityTargeted
 {
-	// Token: 0x17000637 RID: 1591
-	// (get) Token: 0x06003BD4 RID: 15316 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700065C RID: 1628
+	// (get) Token: 0x06003BDE RID: 15326 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BD5 RID: 15317 RVA: 0x00180379 File Offset: 0x0017E579
+	// Token: 0x06003BDF RID: 15327 RVA: 0x001808B1 File Offset: 0x0017EAB1
 	public NetPackageEntitySpawn Setup(EntityCreationData _es)
 	{
 		base.Setup(_es.id);
@@ -24,22 +24,22 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BD6 RID: 15318 RVA: 0x0018038F File Offset: 0x0017E58F
+	// Token: 0x06003BE0 RID: 15328 RVA: 0x001808C7 File Offset: 0x0017EAC7
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.es = new EntityCreationData();
-		this.es.read(_reader, true);
+		this.es.read(_reader, StreamModeRead.FromServer);
 	}
 
-	// Token: 0x06003BD7 RID: 15319 RVA: 0x001803B0 File Offset: 0x0017E5B0
+	// Token: 0x06003BE1 RID: 15329 RVA: 0x001808E8 File Offset: 0x0017EAE8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
-		this.es.write(_writer, true);
+		this.es.write(_writer, StreamModeWrite.ToClient);
 	}
 
-	// Token: 0x06003BD8 RID: 15320 RVA: 0x001803C8 File Offset: 0x0017E5C8
+	// Token: 0x06003BE2 RID: 15330 RVA: 0x00180900 File Offset: 0x0017EB00
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -64,12 +64,6 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		});
 	}
 
-	// Token: 0x06003BD9 RID: 15321 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x040030B4 RID: 12468
+	// Token: 0x040030AD RID: 12461
 	public EntityCreationData es;
 }

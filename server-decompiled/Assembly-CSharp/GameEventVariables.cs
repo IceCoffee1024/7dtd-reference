@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000539 RID: 1337
+// Token: 0x0200053F RID: 1343
 public class GameEventVariables
 {
-	// Token: 0x06002C10 RID: 11280 RVA: 0x001162C4 File Offset: 0x001144C4
+	// Token: 0x06002C06 RID: 11270 RVA: 0x00117094 File Offset: 0x00115294
 	public void ModifyEventVariable(string name, GameEventVariables.OperationTypes operation, int value, int minValue = -2147483648, int maxValue = 2147483647)
 	{
 		if (this.EventVariables == null)
@@ -34,7 +34,7 @@ public class GameEventVariables
 		}
 	}
 
-	// Token: 0x06002C11 RID: 11281 RVA: 0x00116388 File Offset: 0x00114588
+	// Token: 0x06002C07 RID: 11271 RVA: 0x00117158 File Offset: 0x00115358
 	public void ModifyEventVariable(string name, GameEventVariables.OperationTypes operation, float value, float minValue = -3.4028235E+38f, float maxValue = 3.4028235E+38f)
 	{
 		if (this.EventVariables == null)
@@ -64,7 +64,7 @@ public class GameEventVariables
 		}
 	}
 
-	// Token: 0x06002C12 RID: 11282 RVA: 0x00116450 File Offset: 0x00114650
+	// Token: 0x06002C08 RID: 11272 RVA: 0x00117220 File Offset: 0x00115420
 	public void SetEventVariable(string name, bool value)
 	{
 		if (this.EventVariables == null)
@@ -74,7 +74,7 @@ public class GameEventVariables
 		this.EventVariables[name] = value;
 	}
 
-	// Token: 0x06002C13 RID: 11283 RVA: 0x00116477 File Offset: 0x00114677
+	// Token: 0x06002C09 RID: 11273 RVA: 0x00117247 File Offset: 0x00115447
 	public void SetEventVariable(string name, string value)
 	{
 		if (this.EventVariables == null)
@@ -84,7 +84,7 @@ public class GameEventVariables
 		this.EventVariables[name] = value;
 	}
 
-	// Token: 0x06002C14 RID: 11284 RVA: 0x00116499 File Offset: 0x00114699
+	// Token: 0x06002C0A RID: 11274 RVA: 0x00117269 File Offset: 0x00115469
 	public void ParseVarInt(string varName, ref int optionalValue)
 	{
 		if (this.EventVariables == null || !this.EventVariables.ContainsKey(varName))
@@ -94,7 +94,7 @@ public class GameEventVariables
 		optionalValue = (int)this.EventVariables[varName];
 	}
 
-	// Token: 0x06002C15 RID: 11285 RVA: 0x001164C5 File Offset: 0x001146C5
+	// Token: 0x06002C0B RID: 11275 RVA: 0x00117295 File Offset: 0x00115495
 	public void ParseVarString(string varName, ref string optionalValue)
 	{
 		if (this.EventVariables == null || !this.EventVariables.ContainsKey(varName))
@@ -104,7 +104,7 @@ public class GameEventVariables
 		optionalValue = (string)this.EventVariables[varName];
 	}
 
-	// Token: 0x06002C16 RID: 11286 RVA: 0x001164F1 File Offset: 0x001146F1
+	// Token: 0x06002C0C RID: 11276 RVA: 0x001172C1 File Offset: 0x001154C1
 	public void ParseVarFloat(string varName, ref float optionalValue)
 	{
 		if (this.EventVariables == null || !this.EventVariables.ContainsKey(varName))
@@ -114,7 +114,7 @@ public class GameEventVariables
 		optionalValue = (float)this.EventVariables[varName];
 	}
 
-	// Token: 0x06002C17 RID: 11287 RVA: 0x001164C5 File Offset: 0x001146C5
+	// Token: 0x06002C0D RID: 11277 RVA: 0x00117295 File Offset: 0x00115495
 	public void ParseString(string varName, ref string optionalValue)
 	{
 		if (this.EventVariables == null || !this.EventVariables.ContainsKey(varName))
@@ -124,7 +124,7 @@ public class GameEventVariables
 		optionalValue = (string)this.EventVariables[varName];
 	}
 
-	// Token: 0x06002C18 RID: 11288 RVA: 0x0011651D File Offset: 0x0011471D
+	// Token: 0x06002C0E RID: 11278 RVA: 0x001172ED File Offset: 0x001154ED
 	public void ParseBool(string varName, ref bool optionalValue)
 	{
 		if (this.EventVariables == null || !this.EventVariables.ContainsKey(varName))
@@ -134,22 +134,22 @@ public class GameEventVariables
 		optionalValue = (bool)this.EventVariables[varName];
 	}
 
-	// Token: 0x040021B7 RID: 8631
+	// Token: 0x040021BF RID: 8639
 	public Dictionary<string, object> EventVariables = new Dictionary<string, object>();
 
-	// Token: 0x040021B8 RID: 8632
+	// Token: 0x040021C0 RID: 8640
 	public GameEventVariables.OperationTypes operationType;
 
-	// Token: 0x0200053A RID: 1338
+	// Token: 0x02000540 RID: 1344
 	public enum OperationTypes
 	{
-		// Token: 0x040021BA RID: 8634
+		// Token: 0x040021C2 RID: 8642
 		Set,
-		// Token: 0x040021BB RID: 8635
+		// Token: 0x040021C3 RID: 8643
 		Add,
-		// Token: 0x040021BC RID: 8636
+		// Token: 0x040021C4 RID: 8644
 		Subtract,
-		// Token: 0x040021BD RID: 8637
+		// Token: 0x040021C5 RID: 8645
 		Multiply
 	}
 }

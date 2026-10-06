@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000707 RID: 1799
+// Token: 0x02000709 RID: 1801
 [Preserve]
 public class MinEventActionSetItemInSlot : MinEventActionTargetedBase
 {
-	// Token: 0x060036DE RID: 14046 RVA: 0x0016A218 File Offset: 0x00168418
+	// Token: 0x06003721 RID: 14113 RVA: 0x0016AB7C File Offset: 0x00168D7C
 	public override void Execute(MinEventParams _params)
 	{
 		ItemValue item = ItemClass.GetItem(this.itemName, false);
@@ -15,12 +15,12 @@ public class MinEventActionSetItemInSlot : MinEventActionTargetedBase
 		{
 			for (int i = 0; i < this.targets.Count; i++)
 			{
-				this.targets[i].equipment.SetSlotItem((int)this.slot, item, true);
+				this.targets[i].equipment.SetSlotItem((int)this.slot, item);
 			}
 		}
 	}
 
-	// Token: 0x060036DF RID: 14047 RVA: 0x0016A284 File Offset: 0x00168484
+	// Token: 0x06003722 RID: 14114 RVA: 0x0016ABE8 File Offset: 0x00168DE8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -41,11 +41,11 @@ public class MinEventActionSetItemInSlot : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C4A RID: 11338
+	// Token: 0x04002C43 RID: 11331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string itemName = "";
 
-	// Token: 0x04002C4B RID: 11339
+	// Token: 0x04002C44 RID: 11332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EquipmentSlots slot = EquipmentSlots.BiomeBadge;
 }

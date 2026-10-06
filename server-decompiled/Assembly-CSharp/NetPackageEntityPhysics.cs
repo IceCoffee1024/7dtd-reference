@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E0 RID: 2016
+// Token: 0x020007E3 RID: 2019
 [Preserve]
 public class NetPackageEntityPhysics : NetPackage
 {
-	// Token: 0x06003B9D RID: 15261 RVA: 0x0017F4C0 File Offset: 0x0017D6C0
+	// Token: 0x06003BAF RID: 15279 RVA: 0x0017FA04 File Offset: 0x0017DC04
 	public NetPackageEntityPhysics Setup(Entity _entity)
 	{
 		this.EntityId = _entity.entityId;
@@ -31,7 +31,7 @@ public class NetPackageEntityPhysics : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B9E RID: 15262 RVA: 0x0017F53C File Offset: 0x0017D73C
+	// Token: 0x06003BB0 RID: 15280 RVA: 0x0017FA80 File Offset: 0x0017DC80
 	public NetPackageEntityPhysics Setup(NetPackageEntityPhysics _p)
 	{
 		this.EntityId = _p.EntityId;
@@ -43,7 +43,7 @@ public class NetPackageEntityPhysics : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B9F RID: 15263 RVA: 0x0017F594 File Offset: 0x0017D794
+	// Token: 0x06003BB1 RID: 15281 RVA: 0x0017FAD8 File Offset: 0x0017DCD8
 	public override void read(PooledBinaryReader _br)
 	{
 		this.Flags = _br.ReadUInt16();
@@ -63,7 +63,7 @@ public class NetPackageEntityPhysics : NetPackage
 		this.AngularVelocity.z = _br.ReadSingle();
 	}
 
-	// Token: 0x06003BA0 RID: 15264 RVA: 0x0017F698 File Offset: 0x0017D898
+	// Token: 0x06003BB2 RID: 15282 RVA: 0x0017FBDC File Offset: 0x0017DDDC
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -84,7 +84,7 @@ public class NetPackageEntityPhysics : NetPackage
 		_bw.Write(this.AngularVelocity.z);
 	}
 
-	// Token: 0x06003BA1 RID: 15265 RVA: 0x0017F7A4 File Offset: 0x0017D9A4
+	// Token: 0x06003BB3 RID: 15283 RVA: 0x0017FCE8 File Offset: 0x0017DEE8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -121,45 +121,39 @@ public class NetPackageEntityPhysics : NetPackage
 		}
 	}
 
-	// Token: 0x06003BA2 RID: 15266 RVA: 0x0017F88C File Offset: 0x0017DA8C
-	public override int GetLength()
-	{
-		return 58;
-	}
-
-	// Token: 0x0400308F RID: 12431
+	// Token: 0x04003088 RID: 12424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagIsMaster = 1;
 
-	// Token: 0x04003090 RID: 12432
+	// Token: 0x04003089 RID: 12425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagIsCollided = 2;
 
-	// Token: 0x04003091 RID: 12433
+	// Token: 0x0400308A RID: 12426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFlagOnGround = 4;
 
-	// Token: 0x04003092 RID: 12434
+	// Token: 0x0400308B RID: 12427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int EntityId;
 
-	// Token: 0x04003093 RID: 12435
+	// Token: 0x0400308C RID: 12428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 Pos;
 
-	// Token: 0x04003094 RID: 12436
+	// Token: 0x0400308D RID: 12429
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion QRot;
 
-	// Token: 0x04003095 RID: 12437
+	// Token: 0x0400308E RID: 12430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 Velocity;
 
-	// Token: 0x04003096 RID: 12438
+	// Token: 0x0400308F RID: 12431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 AngularVelocity;
 
-	// Token: 0x04003097 RID: 12439
+	// Token: 0x04003090 RID: 12432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort Flags;
 }

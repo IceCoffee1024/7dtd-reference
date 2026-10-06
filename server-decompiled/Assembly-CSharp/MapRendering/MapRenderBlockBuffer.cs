@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace MapRendering
 {
-	// Token: 0x02001AAD RID: 6829
+	// Token: 0x02001AD9 RID: 6873
 	public class MapRenderBlockBuffer
 	{
-		// Token: 0x0600CE04 RID: 52740 RVA: 0x004ADBA4 File Offset: 0x004ABDA4
+		// Token: 0x0600CF5C RID: 53084 RVA: 0x004B2070 File Offset: 0x004B0270
 		public MapRenderBlockBuffer(int _level, MapTileCache _cache)
 		{
 			this.zoomLevel = _level;
@@ -27,8 +27,8 @@ namespace MapRendering
 			rawTextureData.CopyTo(this.emptyImageData);
 		}
 
-		// Token: 0x17001967 RID: 6503
-		// (get) Token: 0x0600CE05 RID: 52741 RVA: 0x004ADCB5 File Offset: 0x004ABEB5
+		// Token: 0x17001A09 RID: 6665
+		// (get) Token: 0x0600CF5D RID: 53085 RVA: 0x004B2181 File Offset: 0x004B0381
 		public TextureFormat FormatSelf
 		{
 			get
@@ -37,7 +37,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE06 RID: 52742 RVA: 0x004ADCC2 File Offset: 0x004ABEC2
+		// Token: 0x0600CF5E RID: 53086 RVA: 0x004B218E File Offset: 0x004B038E
 		public void ResetBlock()
 		{
 			this.currentBlockMapFolder = string.Empty;
@@ -45,7 +45,7 @@ namespace MapRendering
 			this.cache.ResetTile(this.zoomLevel);
 		}
 
-		// Token: 0x0600CE07 RID: 52743 RVA: 0x004ADCF8 File Offset: 0x004ABEF8
+		// Token: 0x0600CF5F RID: 53087 RVA: 0x004B21C4 File Offset: 0x004B03C4
 		public void SaveBlock()
 		{
 			try
@@ -58,7 +58,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE08 RID: 52744 RVA: 0x004ADD30 File Offset: 0x004ABF30
+		// Token: 0x0600CF60 RID: 53088 RVA: 0x004B21FC File Offset: 0x004B03FC
 		public bool LoadBlock(Vector2i _block)
 		{
 			Texture2D texture2D = this.blockMap;
@@ -87,7 +87,7 @@ namespace MapRendering
 			return false;
 		}
 
-		// Token: 0x0600CE09 RID: 52745 RVA: 0x004ADDF4 File Offset: 0x004ABFF4
+		// Token: 0x0600CF61 RID: 53089 RVA: 0x004B22C0 File Offset: 0x004B04C0
 		public void SetPart(Vector2i _offset, int _partSize, Color32[] _pixels)
 		{
 			if (_offset.x + _partSize > Constants.MapBlockSize || _offset.y + _partSize > Constants.MapBlockSize)
@@ -106,7 +106,7 @@ namespace MapRendering
 			this.blockMap.SetPixels32(_offset.x, _offset.y, _partSize, _partSize, _pixels);
 		}
 
-		// Token: 0x0600CE0A RID: 52746 RVA: 0x004ADE94 File Offset: 0x004AC094
+		// Token: 0x0600CF62 RID: 53090 RVA: 0x004B2360 File Offset: 0x004B0560
 		public Color32[] GetHalfScaled()
 		{
 			this.zoomBuffer.Reinitialize(Constants.MapBlockSize, Constants.MapBlockSize);
@@ -124,7 +124,7 @@ namespace MapRendering
 			return this.zoomBuffer.GetPixels32();
 		}
 
-		// Token: 0x0600CE0B RID: 52747 RVA: 0x004ADF2C File Offset: 0x004AC12C
+		// Token: 0x0600CF63 RID: 53091 RVA: 0x004B23F8 File Offset: 0x004B05F8
 		public void SetPartNative(Vector2i _offset, int _partSize, NativeArray<int> _pixels)
 		{
 			if (_offset.x + _partSize > Constants.MapBlockSize || _offset.y + _partSize > Constants.MapBlockSize)
@@ -152,7 +152,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE0C RID: 52748 RVA: 0x004AE014 File Offset: 0x004AC214
+		// Token: 0x0600CF64 RID: 53092 RVA: 0x004B24E0 File Offset: 0x004B06E0
 		public NativeArray<int> GetHalfScaledNative()
 		{
 			if (this.zoomBuffer.format != this.blockMap.format || this.zoomBuffer.height != Constants.MapBlockSize / 2 || this.zoomBuffer.width != Constants.MapBlockSize / 2)
@@ -163,7 +163,7 @@ namespace MapRendering
 			return this.zoomBuffer.GetRawTextureData<int>();
 		}
 
-		// Token: 0x0600CE0D RID: 52749 RVA: 0x004AE0A4 File Offset: 0x004AC2A4
+		// Token: 0x0600CF65 RID: 53093 RVA: 0x004B2570 File Offset: 0x004B0770
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ScaleNative(Texture2D _sourceTex, Texture2D _targetTex)
 		{
@@ -186,7 +186,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CE0E RID: 52750 RVA: 0x004AE13C File Offset: 0x004AC33C
+		// Token: 0x0600CF66 RID: 53094 RVA: 0x004B2608 File Offset: 0x004B0808
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void loadTextureFromFile(string _fileName)
 		{
@@ -206,7 +206,7 @@ namespace MapRendering
 			this.blockMap.LoadRawTextureData<int>(this.emptyImageData);
 		}
 
-		// Token: 0x0600CE0F RID: 52751 RVA: 0x004AE210 File Offset: 0x004AC410
+		// Token: 0x0600CF67 RID: 53095 RVA: 0x004B26DC File Offset: 0x004B08DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void saveTextureToFile()
 		{
@@ -214,35 +214,35 @@ namespace MapRendering
 			this.cache.SaveTile(this.zoomLevel, array);
 		}
 
-		// Token: 0x04009C11 RID: 39953
+		// Token: 0x04009CD7 RID: 40151
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Texture2D blockMap = new Texture2D(Constants.MapBlockSize, Constants.MapBlockSize, Constants.DefaultTextureFormat, false);
 
-		// Token: 0x04009C12 RID: 39954
+		// Token: 0x04009CD8 RID: 40152
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MapTileCache cache;
 
-		// Token: 0x04009C13 RID: 39955
+		// Token: 0x04009CD9 RID: 40153
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly NativeArray<int> emptyImageData;
 
-		// Token: 0x04009C14 RID: 39956
+		// Token: 0x04009CDA RID: 40154
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Texture2D zoomBuffer = new Texture2D(Constants.MapBlockSize / 2, Constants.MapBlockSize / 2, Constants.DefaultTextureFormat, false);
 
-		// Token: 0x04009C15 RID: 39957
+		// Token: 0x04009CDB RID: 40155
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int zoomLevel;
 
-		// Token: 0x04009C16 RID: 39958
+		// Token: 0x04009CDC RID: 40156
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string folderBase;
 
-		// Token: 0x04009C17 RID: 39959
+		// Token: 0x04009CDD RID: 40157
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2i currentBlockMapPos = new Vector2i(int.MinValue, int.MinValue);
 
-		// Token: 0x04009C18 RID: 39960
+		// Token: 0x04009CDE RID: 40158
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string currentBlockMapFolder = string.Empty;
 	}

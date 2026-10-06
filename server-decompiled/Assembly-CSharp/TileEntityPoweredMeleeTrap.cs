@@ -1,17 +1,17 @@
 ﻿using System;
 
-// Token: 0x02000C74 RID: 3188
+// Token: 0x02000C83 RID: 3203
 public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 {
-	// Token: 0x06006175 RID: 24949 RVA: 0x002678FB File Offset: 0x00265AFB
+	// Token: 0x06006171 RID: 24945 RVA: 0x0026AD9B File Offset: 0x00268F9B
 	public TileEntityPoweredMeleeTrap(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x170009EF RID: 2543
-	// (get) Token: 0x06006176 RID: 24950 RVA: 0x0026790B File Offset: 0x00265B0B
-	// (set) Token: 0x06006177 RID: 24951 RVA: 0x00267922 File Offset: 0x00265B22
+	// Token: 0x17000A05 RID: 2565
+	// (get) Token: 0x06006172 RID: 24946 RVA: 0x0026ADAB File Offset: 0x00268FAB
+	// (set) Token: 0x06006173 RID: 24947 RVA: 0x0026ADC2 File Offset: 0x00268FC2
 	public int OwnerEntityID
 	{
 		get
@@ -29,25 +29,25 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006178 RID: 24952 RVA: 0x0005F529 File Offset: 0x0005D729
+	// Token: 0x06006174 RID: 24948 RVA: 0x0026ADCB File Offset: 0x00268FCB
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.PowerMeleeTrap;
 	}
 
-	// Token: 0x06006179 RID: 24953 RVA: 0x0026792B File Offset: 0x00265B2B
+	// Token: 0x06006175 RID: 24949 RVA: 0x0026ADCF File Offset: 0x00268FCF
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x0600617A RID: 24954 RVA: 0x0026793E File Offset: 0x00265B3E
+	// Token: 0x06006176 RID: 24950 RVA: 0x0026ADE2 File Offset: 0x00268FE2
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x0600617B RID: 24955 RVA: 0x00267946 File Offset: 0x00265B46
+	// Token: 0x06006177 RID: 24951 RVA: 0x0026ADEA File Offset: 0x00268FEA
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
@@ -55,12 +55,12 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		this.setModified();
 	}
 
-	// Token: 0x0600617C RID: 24956 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006178 RID: 24952 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnSetLocalChunkPosition()
 	{
 	}
 
-	// Token: 0x0600617D RID: 24957 RVA: 0x0026795C File Offset: 0x00265B5C
+	// Token: 0x06006179 RID: 24953 RVA: 0x0026AE00 File Offset: 0x00269000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOwnerEntityID()
 	{
@@ -73,11 +73,11 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x0600617E RID: 24958 RVA: 0x0026799C File Offset: 0x00265B9C
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x0600617A RID: 24954 RVA: 0x0026AE40 File Offset: 0x00269040
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			if (base.UseLocalVersioning())
 			{
@@ -92,26 +92,26 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		this.SetOwnerEntityID();
 	}
 
-	// Token: 0x0600617F RID: 24959 RVA: 0x002679D5 File Offset: 0x00265BD5
-	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x0600617B RID: 24955 RVA: 0x0026AE79 File Offset: 0x00269079
+	public override void write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
 		this.ownerID.ToStream(_bw, false);
 	}
 
-	// Token: 0x04004C31 RID: 19505
+	// Token: 0x04004C68 RID: 19560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004C32 RID: 19506
+	// Token: 0x04004C69 RID: 19561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x04004C33 RID: 19507
+	// Token: 0x04004C6A RID: 19562
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ownerEntityID = -1;
 }

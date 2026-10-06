@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A6 RID: 6566
+	// Token: 0x020019D2 RID: 6610
 	[Preserve]
 	public class ActionRemoveVehicles : ActionRemoveEntities
 	{
-		// Token: 0x0600C917 RID: 51479 RVA: 0x0049CC74 File Offset: 0x0049AE74
+		// Token: 0x0600CA6F RID: 51823 RVA: 0x004A1138 File Offset: 0x0049F338
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRemoveData(GameEventManager gm, Entity ent)
 		{
@@ -39,20 +39,20 @@ namespace GameEvent.SequenceActions
 					if (returnVehicleTypes == ActionRemoveVehicles.ReturnVehicleTypes.Parts)
 					{
 						ItemStack[] items = entityVehicle.GetVehicle().GetItems();
-						for (int j = 0; j < items[0].itemValue.CosmeticMods.Length; j++)
+						for (int j = 0; j < items[0].itemValue.CosmeticModCount; j++)
 						{
-							ItemValue itemValue = items[0].itemValue.CosmeticMods[j];
-							if (itemValue != null && !itemValue.IsEmpty())
+							ItemValue cosmeticMod = items[0].itemValue.GetCosmeticMod(j);
+							if (cosmeticMod != null && !cosmeticMod.IsEmpty())
 							{
-								list.Add(new ItemStack(itemValue.Clone(), 1));
+								list.Add(new ItemStack(cosmeticMod.Clone(), 1));
 							}
 						}
-						for (int k = 0; k < items[0].itemValue.Modifications.Length; k++)
+						for (int k = 0; k < items[0].itemValue.ModificationCount; k++)
 						{
-							ItemValue itemValue2 = items[0].itemValue.Modifications[k];
-							if (itemValue2 != null && !itemValue2.IsEmpty())
+							ItemValue modification = items[0].itemValue.GetModification(k);
+							if (modification != null && !modification.IsEmpty())
 							{
-								list.Add(new ItemStack(itemValue2.Clone(), 1));
+								list.Add(new ItemStack(modification.Clone(), 1));
 							}
 						}
 						if (entityVehicle.GetVehicle().RecipeName != null)
@@ -87,20 +87,20 @@ namespace GameEvent.SequenceActions
 				}
 				if (this.returnItems)
 				{
-					ItemStack[] array = entityVehicle.inventory.GetSlots();
-					for (int m = 0; m < array.Length; m++)
+					for (int m = 0; m < entityVehicle.inventory.Length; m++)
 					{
-						if (!array[m].IsEmpty())
+						ItemStack item = entityVehicle.inventory.GetItem(m);
+						if (!item.IsEmpty())
 						{
-							list.Add(array[m]);
+							list.Add(item.Clone());
 						}
 					}
-					array = entityVehicle.bag.GetSlots();
-					for (int n = 0; n < array.Length; n++)
+					for (int n = 0; n < entityVehicle.bag.SlotCount; n++)
 					{
-						if (!array[n].IsEmpty())
+						ItemStack itemStack2 = entityVehicle.bag.ItemGrid[n];
+						if (!itemStack2.IsEmpty())
 						{
-							list.Add(array[n]);
+							list.Add(itemStack2.Clone());
 						}
 					}
 				}
@@ -109,7 +109,7 @@ namespace GameEvent.SequenceActions
 					EntityLootContainer entityLootContainer = EntityFactory.CreateEntity("DroppedLootContainerTwitch".GetHashCode(), ent.position, Vector3.zero) as EntityLootContainer;
 					if (entityLootContainer != null)
 					{
-						entityLootContainer.SetContent(ItemStack.Clone(list));
+						entityLootContainer.SetContent(ItemStack.Clone(list), 0);
 					}
 					GameManager.Instance.World.SpawnEntityInWorld(entityLootContainer);
 					return;
@@ -137,20 +137,20 @@ namespace GameEvent.SequenceActions
 				if (this.returnItems)
 				{
 					List<ItemStack> list2 = new List<ItemStack>();
-					ItemStack[] array2 = entityTurret.inventory.GetSlots();
-					for (int num2 = 0; num2 < array2.Length; num2++)
+					for (int num2 = 0; num2 < entityTurret.inventory.Length; num2++)
 					{
-						if (!array2[num2].IsEmpty())
+						ItemStack item2 = entityTurret.inventory.GetItem(num2);
+						if (!item2.IsEmpty())
 						{
-							list2.Add(array2[num2]);
+							list2.Add(item2.Clone());
 						}
 					}
-					array2 = entityTurret.bag.GetSlots();
-					for (int num3 = 0; num3 < array2.Length; num3++)
+					for (int num3 = 0; num3 < entityTurret.bag.SlotCount; num3++)
 					{
-						if (!array2[num3].IsEmpty())
+						ItemStack itemStack3 = entityTurret.bag.ItemGrid[num3];
+						if (!itemStack3.IsEmpty())
 						{
-							list2.Add(array2[num3]);
+							list2.Add(itemStack3.Clone());
 						}
 					}
 					if (this.includeVehicle == ActionRemoveVehicles.ReturnVehicleTypes.Vehicle)
@@ -162,7 +162,7 @@ namespace GameEvent.SequenceActions
 						EntityLootContainer entityLootContainer2 = EntityFactory.CreateEntity("DroppedLootContainerTwitch".GetHashCode(), ent.position, Vector3.zero) as EntityLootContainer;
 						if (entityLootContainer2 != null)
 						{
-							entityLootContainer2.SetContent(ItemStack.Clone(list2));
+							entityLootContainer2.SetContent(ItemStack.Clone(list2), 0);
 						}
 						GameManager.Instance.World.SpawnEntityInWorld(entityLootContainer2);
 					}
@@ -170,7 +170,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C918 RID: 51480 RVA: 0x0049D112 File Offset: 0x0049B312
+		// Token: 0x0600CA70 RID: 51824 RVA: 0x004A1601 File Offset: 0x0049F801
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -179,7 +179,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionRemoveVehicles.ReturnVehicleTypes>(ActionRemoveVehicles.PropIncludeVehicle, ref this.includeVehicle);
 		}
 
-		// Token: 0x0600C919 RID: 51481 RVA: 0x0049D14E File Offset: 0x0049B34E
+		// Token: 0x0600CA71 RID: 51825 RVA: 0x004A163D File Offset: 0x0049F83D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -192,36 +192,36 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009852 RID: 38994
+		// Token: 0x04009918 RID: 39192
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool returnItems = true;
 
-		// Token: 0x04009853 RID: 38995
+		// Token: 0x04009919 RID: 39193
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool returnFuel;
 
-		// Token: 0x04009854 RID: 38996
+		// Token: 0x0400991A RID: 39194
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionRemoveVehicles.ReturnVehicleTypes includeVehicle;
 
-		// Token: 0x04009855 RID: 38997
+		// Token: 0x0400991B RID: 39195
 		public static string PropReturnItems = "return_items";
 
-		// Token: 0x04009856 RID: 38998
+		// Token: 0x0400991C RID: 39196
 		public static string PropReturnFuel = "return_fuel";
 
-		// Token: 0x04009857 RID: 38999
+		// Token: 0x0400991D RID: 39197
 		public static string PropIncludeVehicle = "return_vehicle_type";
 
-		// Token: 0x020019A7 RID: 6567
+		// Token: 0x020019D3 RID: 6611
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ReturnVehicleTypes
 		{
-			// Token: 0x04009859 RID: 39001
+			// Token: 0x0400991F RID: 39199
 			None,
-			// Token: 0x0400985A RID: 39002
+			// Token: 0x04009920 RID: 39200
 			Vehicle,
-			// Token: 0x0400985B RID: 39003
+			// Token: 0x04009921 RID: 39201
 			Parts
 		}
 	}

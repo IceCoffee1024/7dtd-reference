@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001B1C RID: 6940
+	// Token: 0x02001B48 RID: 6984
 	public class Manager : IDisposable
 	{
-		// Token: 0x17001997 RID: 6551
-		// (get) Token: 0x0600D03C RID: 53308 RVA: 0x004BCA9A File Offset: 0x004BAC9A
+		// Token: 0x17001A39 RID: 6713
+		// (get) Token: 0x0600D194 RID: 53652 RVA: 0x004C0F66 File Offset: 0x004BF166
 		public static Manager Instance
 		{
 			get
@@ -22,7 +22,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D03D RID: 53309 RVA: 0x004BCAB2 File Offset: 0x004BACB2
+		// Token: 0x0600D195 RID: 53653 RVA: 0x004C0F7E File Offset: 0x004BF17E
 		public Manager()
 		{
 			this.PositionalSoundsPlaying = new GameObject("PositionalSoundsPlaying");
@@ -30,7 +30,7 @@ namespace Audio
 			Origin.Add(this.PositionalSoundsPlayingT, 0);
 		}
 
-		// Token: 0x0600D03E RID: 53310 RVA: 0x004BCAE8 File Offset: 0x004BACE8
+		// Token: 0x0600D196 RID: 53654 RVA: 0x004C0FB4 File Offset: 0x004BF1B4
 		public static void Init()
 		{
 			Manager.audioData = new Dictionary<string, XmlData>(StringComparer.OrdinalIgnoreCase);
@@ -47,7 +47,7 @@ namespace Audio
 			Manager.random = GameRandomManager.Instance.CreateGameRandom();
 		}
 
-		// Token: 0x0600D03F RID: 53311 RVA: 0x004BCB7C File Offset: 0x004BAD7C
+		// Token: 0x0600D197 RID: 53655 RVA: 0x004C1048 File Offset: 0x004BF248
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EntityPlayerLocal LocalPlayer()
 		{
@@ -58,7 +58,7 @@ namespace Audio
 			return Manager.localPlayer;
 		}
 
-		// Token: 0x0600D040 RID: 53312 RVA: 0x004BCBA4 File Offset: 0x004BADA4
+		// Token: 0x0600D198 RID: 53656 RVA: 0x004C1070 File Offset: 0x004BF270
 		public static void OriginChanged(Vector3 offset)
 		{
 			Manager.updateCurrentListener();
@@ -92,7 +92,7 @@ namespace Audio
 			Manager.DopplerCheckForMove();
 		}
 
-		// Token: 0x0600D041 RID: 53313 RVA: 0x004BCCAC File Offset: 0x004BAEAC
+		// Token: 0x0600D199 RID: 53657 RVA: 0x004C1178 File Offset: 0x004BF378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DopplerCheckForMove()
 		{
@@ -123,7 +123,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D042 RID: 53314 RVA: 0x004BCD58 File Offset: 0x004BAF58
+		// Token: 0x0600D19A RID: 53658 RVA: 0x004C1224 File Offset: 0x004BF424
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DopplerRestore()
 		{
@@ -142,7 +142,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D043 RID: 53315 RVA: 0x004BCDB9 File Offset: 0x004BAFB9
+		// Token: 0x0600D19B RID: 53659 RVA: 0x004C1285 File Offset: 0x004BF485
 		public static void AddSoundToIgnoreDistanceCheckList(string soundGroupName)
 		{
 			if (Manager.ignoreDistanceCheckSounds == null)
@@ -155,7 +155,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D044 RID: 53316 RVA: 0x004BCDE5 File Offset: 0x004BAFE5
+		// Token: 0x0600D19C RID: 53660 RVA: 0x004C12B1 File Offset: 0x004BF4B1
 		public static bool IgnoresDistanceCheck(string soundGroupName)
 		{
 			Manager.StripOffDirectories(ref soundGroupName);
@@ -166,13 +166,13 @@ namespace Audio
 			return Manager.ignoreDistanceCheckSounds.ContainsKey(soundGroupName);
 		}
 
-		// Token: 0x0600D045 RID: 53317 RVA: 0x004BCE0A File Offset: 0x004BB00A
+		// Token: 0x0600D19D RID: 53661 RVA: 0x004C12D6 File Offset: 0x004BF4D6
 		public static void Reset()
 		{
 			Manager.Init();
 		}
 
-		// Token: 0x0600D046 RID: 53318 RVA: 0x004BCE11 File Offset: 0x004BB011
+		// Token: 0x0600D19E RID: 53662 RVA: 0x004C12DD File Offset: 0x004BF4DD
 		public static void CleanUp()
 		{
 			if (Manager.Instance.PositionalSoundsPlaying != null)
@@ -183,7 +183,7 @@ namespace Audio
 			Manager.instance = null;
 		}
 
-		// Token: 0x0600D047 RID: 53319 RVA: 0x004BCE4C File Offset: 0x004BB04C
+		// Token: 0x0600D19F RID: 53663 RVA: 0x004C1318 File Offset: 0x004BF518
 		public static void AddAudioData(XmlData _data)
 		{
 			Manager.StripOffDirectories(ref _data.soundGroupName);
@@ -213,7 +213,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D048 RID: 53320 RVA: 0x004BCF4C File Offset: 0x004BB14C
+		// Token: 0x0600D1A0 RID: 53664 RVA: 0x004C1418 File Offset: 0x004BF618
 		public static void AddSubtitleData(List<SubtitleData> subtitleDatas, List<SubtitleSpeakerColor> speakerColors)
 		{
 			Manager.subtitleCache = new Dictionary<string, SubtitleData>();
@@ -229,7 +229,7 @@ namespace Audio
 			Log.Out(string.Format("Added {0} subtitle data entries and {1} speaker colors", Manager.subtitleCache.Count, Manager.subtitleSpeakerColorCache.Count));
 		}
 
-		// Token: 0x0600D049 RID: 53321 RVA: 0x004BD034 File Offset: 0x004BB234
+		// Token: 0x0600D1A1 RID: 53665 RVA: 0x004C1500 File Offset: 0x004BF700
 		public static void PauseGameplayAudio()
 		{
 			List<AudioSource> list = Manager.playingAudioSources;
@@ -249,7 +249,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D04A RID: 53322 RVA: 0x004BD0B4 File Offset: 0x004BB2B4
+		// Token: 0x0600D1A2 RID: 53666 RVA: 0x004C1580 File Offset: 0x004BF780
 		public static void UnPauseGameplayAudio()
 		{
 			List<AudioSource> list = Manager.playingAudioSources;
@@ -269,7 +269,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D04B RID: 53323 RVA: 0x004BD134 File Offset: 0x004BB334
+		// Token: 0x0600D1A3 RID: 53667 RVA: 0x004C1600 File Offset: 0x004BF800
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioSource LoadAudio(bool _forcedLooping, float _listenerDistance, string _clipName, string _audioSourceName)
 		{
@@ -346,7 +346,7 @@ namespace Audio
 			return audioSource;
 		}
 
-		// Token: 0x0600D04C RID: 53324 RVA: 0x004BD2D8 File Offset: 0x004BB4D8
+		// Token: 0x0600D1A4 RID: 53668 RVA: 0x004C17A4 File Offset: 0x004BF9A4
 		public static void BroadcastPlay(string soundGroupName)
 		{
 			if (soundGroupName == null)
@@ -369,7 +369,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D04D RID: 53325 RVA: 0x004BD360 File Offset: 0x004BB560
+		// Token: 0x0600D1A5 RID: 53669 RVA: 0x004C182C File Offset: 0x004BFA2C
 		public static void BroadcastPlay(Entity entity, string soundGroupName, bool signalOnly = false, float volumeScale = 1f)
 		{
 			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient && signalOnly)
@@ -401,13 +401,13 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D04E RID: 53326 RVA: 0x004BD401 File Offset: 0x004BB601
+		// Token: 0x0600D1A6 RID: 53670 RVA: 0x004C18CD File Offset: 0x004BFACD
 		public static void BroadcastPlayByLocalPlayer(Vector3 position, string soundGroupName)
 		{
 			Manager.BroadcastPlay(Manager.LocalPlayer(), position, soundGroupName);
 		}
 
-		// Token: 0x0600D04F RID: 53327 RVA: 0x004BD410 File Offset: 0x004BB610
+		// Token: 0x0600D1A7 RID: 53671 RVA: 0x004C18DC File Offset: 0x004BFADC
 		public static void BroadcastPlay(Entity entity, Vector3 position, string soundGroupName)
 		{
 			if (soundGroupName == null)
@@ -430,7 +430,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D050 RID: 53328 RVA: 0x004BD4AC File Offset: 0x004BB6AC
+		// Token: 0x0600D1A8 RID: 53672 RVA: 0x004C1978 File Offset: 0x004BFB78
 		public static void BroadcastPlay(Vector3 position, string soundGroupName, float _occlusion = 0f)
 		{
 			if (soundGroupName == null)
@@ -453,7 +453,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D051 RID: 53329 RVA: 0x004BD51C File Offset: 0x004BB71C
+		// Token: 0x0600D1A9 RID: 53673 RVA: 0x004C19E8 File Offset: 0x004BFBE8
 		public static void BroadcastStop(int entityId, string soundGroupName)
 		{
 			if (soundGroupName == null)
@@ -476,7 +476,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D052 RID: 53330 RVA: 0x004BD580 File Offset: 0x004BB780
+		// Token: 0x0600D1AA RID: 53674 RVA: 0x004C1A4C File Offset: 0x004BFC4C
 		public static void BroadcastStop(Vector3 position, string soundGroupName)
 		{
 			if (soundGroupName == null)
@@ -499,7 +499,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D053 RID: 53331 RVA: 0x004BD5E4 File Offset: 0x004BB7E4
+		// Token: 0x0600D1AB RID: 53675 RVA: 0x004C1AB0 File Offset: 0x004BFCB0
 		public static Handle Play(Vector3 position, string soundGroupName, int entityId = -1, bool wantHandle = false, float _volumeScale = 1f)
 		{
 			Entity entity = null;
@@ -668,7 +668,7 @@ namespace Audio
 			return null;
 		}
 
-		// Token: 0x0600D054 RID: 53332 RVA: 0x004BDB40 File Offset: 0x004BBD40
+		// Token: 0x0600D1AC RID: 53676 RVA: 0x004C200C File Offset: 0x004C020C
 		public static Handle Play(Entity _entity, string soundGroupName, float volumeScale = 1f, bool wantHandle = false)
 		{
 			Manager.ConvertName(ref soundGroupName, _entity);
@@ -978,7 +978,7 @@ namespace Audio
 			return handle;
 		}
 
-		// Token: 0x0600D055 RID: 53333 RVA: 0x004BE3EC File Offset: 0x004BC5EC
+		// Token: 0x0600D1AD RID: 53677 RVA: 0x004C28B8 File Offset: 0x004C0AB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void SetPitch(AudioSource _src, XmlData _data, float _shift)
 		{
@@ -991,7 +991,7 @@ namespace Audio
 			_src.pitch = num;
 		}
 
-		// Token: 0x0600D056 RID: 53334 RVA: 0x004BE42C File Offset: 0x004BC62C
+		// Token: 0x0600D1AE RID: 53678 RVA: 0x004C28F8 File Offset: 0x004C0AF8
 		public static void StopAllLocal()
 		{
 			if (Manager.playingAudioSources != null)
@@ -1006,7 +1006,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D057 RID: 53335 RVA: 0x004BE478 File Offset: 0x004BC678
+		// Token: 0x0600D1AF RID: 53679 RVA: 0x004C2944 File Offset: 0x004C0B44
 		public static void AddPlayingAudioSource(AudioSource _src)
 		{
 			List<AudioSource> list = Manager.playingAudioSources;
@@ -1016,7 +1016,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D058 RID: 53336 RVA: 0x004BE4BC File Offset: 0x004BC6BC
+		// Token: 0x0600D1B0 RID: 53680 RVA: 0x004C2988 File Offset: 0x004C0B88
 		public static void AddPlayAndCleanupAudioSource(string soundGroupName, AudioSource _src)
 		{
 			DictionaryList<string, List<AudioSource>> dictionaryList = Manager.playAndCleanupSources;
@@ -1035,7 +1035,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D059 RID: 53337 RVA: 0x004BE528 File Offset: 0x004BC728
+		// Token: 0x0600D1B1 RID: 53681 RVA: 0x004C29F4 File Offset: 0x004C0BF4
 		public static void RemovePlayingAudioSource(AudioSource _src)
 		{
 			List<AudioSource> list = Manager.playingAudioSources;
@@ -1045,7 +1045,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D05A RID: 53338 RVA: 0x004BE570 File Offset: 0x004BC770
+		// Token: 0x0600D1B2 RID: 53682 RVA: 0x004C2A3C File Offset: 0x004C0C3C
 		public static void RemovePlayAndCleanupAudioSource(string soundGroupName, AudioSource _src)
 		{
 			DictionaryList<string, List<AudioSource>> dictionaryList = Manager.playAndCleanupSources;
@@ -1067,7 +1067,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D05B RID: 53339 RVA: 0x004BE5E4 File Offset: 0x004BC7E4
+		// Token: 0x0600D1B3 RID: 53683 RVA: 0x004C2AB0 File Offset: 0x004C0CB0
 		public static void FadeOut(int entityId, string soundGroupName)
 		{
 			if (!Manager.CheckGlobalPlayRequirements(soundGroupName))
@@ -1100,7 +1100,7 @@ namespace Audio
 			dictionary.Add(soundGroupName, nearAndFarGO);
 		}
 
-		// Token: 0x0600D05C RID: 53340 RVA: 0x004BE654 File Offset: 0x004BC854
+		// Token: 0x0600D1B4 RID: 53684 RVA: 0x004C2B20 File Offset: 0x004C0D20
 		public static void Stop(int entityId, string soundGroupName)
 		{
 			if (!Manager.CheckGlobalPlayRequirements(soundGroupName))
@@ -1144,7 +1144,7 @@ namespace Audio
 			Manager.StopPlayAndCleanupSource(soundGroupName);
 		}
 
-		// Token: 0x0600D05D RID: 53341 RVA: 0x004BE758 File Offset: 0x004BC958
+		// Token: 0x0600D1B5 RID: 53685 RVA: 0x004C2C24 File Offset: 0x004C0E24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void StopGroupLoop(Dictionary<string, Manager.NearAndFarGO> soundGroup, string soundGroupName)
 		{
@@ -1175,7 +1175,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D05E RID: 53342 RVA: 0x004BE7EC File Offset: 0x004BC9EC
+		// Token: 0x0600D1B6 RID: 53686 RVA: 0x004C2CB8 File Offset: 0x004C0EB8
 		public static void Stop(Vector3 position, string soundGroupName)
 		{
 			if (!Manager.CheckGlobalPlayRequirements(soundGroupName))
@@ -1216,7 +1216,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D05F RID: 53343 RVA: 0x004BE8C8 File Offset: 0x004BCAC8
+		// Token: 0x0600D1B7 RID: 53687 RVA: 0x004C2D94 File Offset: 0x004C0F94
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void StopPlayAndCleanupSource(string soundGroupName)
 		{
@@ -1240,7 +1240,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D060 RID: 53344 RVA: 0x004BE950 File Offset: 0x004BCB50
+		// Token: 0x0600D1B8 RID: 53688 RVA: 0x004C2E1C File Offset: 0x004C101C
 		public static void PlayInsidePlayerHead(string soundGroupNameBegin, int entityID)
 		{
 			string text = soundGroupNameBegin + "_lp";
@@ -1326,7 +1326,7 @@ namespace Audio
 			new PlayAndCleanup(loopingPair, text);
 		}
 
-		// Token: 0x0600D061 RID: 53345 RVA: 0x004BEB30 File Offset: 0x004BCD30
+		// Token: 0x0600D1B9 RID: 53689 RVA: 0x004C2FFC File Offset: 0x004C11FC
 		public static void PlayInsidePlayerHead(string soundGroupName, int entityID = -1, float delay = 0f, bool isLooping = false, bool isUnique = false)
 		{
 			if (!Manager.CheckGlobalPlayRequirements(soundGroupName))
@@ -1410,7 +1410,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D062 RID: 53346 RVA: 0x004BED2C File Offset: 0x004BCF2C
+		// Token: 0x0600D1BA RID: 53690 RVA: 0x004C31F8 File Offset: 0x004C13F8
 		public static void StopLoopInsidePlayerHead(string soundGroupName, int entityID = -1, bool stopImmediately = false)
 		{
 			if (!Manager.CheckGlobalPlayRequirements(soundGroupName))
@@ -1435,7 +1435,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D063 RID: 53347 RVA: 0x004BEDB4 File Offset: 0x004BCFB4
+		// Token: 0x0600D1BB RID: 53691 RVA: 0x004C3280 File Offset: 0x004C1480
 		public static void ConvertName(ref string soundGroupName, Entity _entity = null)
 		{
 			if (soundGroupName == null)
@@ -1463,7 +1463,7 @@ namespace Audio
 			Manager.StripOffDirectories(ref soundGroupName);
 		}
 
-		// Token: 0x0600D064 RID: 53348 RVA: 0x004BEE40 File Offset: 0x004BD040
+		// Token: 0x0600D1BC RID: 53692 RVA: 0x004C330C File Offset: 0x004C150C
 		public static float CalculateOcclusion(Vector3 positionOfSound, Vector3 positionOfEars)
 		{
 			if (!Manager.occlusionsOn)
@@ -1491,7 +1491,7 @@ namespace Audio
 			return 1f;
 		}
 
-		// Token: 0x0600D065 RID: 53349 RVA: 0x004BEF48 File Offset: 0x004BD148
+		// Token: 0x0600D1BD RID: 53693 RVA: 0x004C3414 File Offset: 0x004C1614
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool CheckGlobalPlayRequirements(string soundGroupName)
 		{
@@ -1507,7 +1507,7 @@ namespace Audio
 			return world != null && world.GetPrimaryPlayer() && soundGroupName != null;
 		}
 
-		// Token: 0x0600D066 RID: 53350 RVA: 0x004BEF90 File Offset: 0x004BD190
+		// Token: 0x0600D1BE RID: 53694 RVA: 0x004C345C File Offset: 0x004C165C
 		public static void PlaySequence(Entity entity, string soundGroupName)
 		{
 			Manager.ConvertName(ref soundGroupName, entity);
@@ -1688,7 +1688,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D067 RID: 53351 RVA: 0x004BF550 File Offset: 0x004BD750
+		// Token: 0x0600D1BF RID: 53695 RVA: 0x004C3A1C File Offset: 0x004C1C1C
 		public static bool IsASequence(Entity entity, string soundGroupName)
 		{
 			if (soundGroupName == null)
@@ -1700,7 +1700,7 @@ namespace Audio
 			return Manager.audioData.TryGetValue(soundGroupName, out xmlData) && xmlData.sequence;
 		}
 
-		// Token: 0x0600D068 RID: 53352 RVA: 0x004BF584 File Offset: 0x004BD784
+		// Token: 0x0600D1C0 RID: 53696 RVA: 0x004C3A50 File Offset: 0x004C1C50
 		public static void RestartSequence(Entity entity, string soundGroupName)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -1805,7 +1805,7 @@ namespace Audio
 			Manager.PlaySequence(entity, soundGroupName);
 		}
 
-		// Token: 0x0600D069 RID: 53353 RVA: 0x004BF810 File Offset: 0x004BDA10
+		// Token: 0x0600D1C1 RID: 53697 RVA: 0x004C3CDC File Offset: 0x004C1EDC
 		public static void StopAllSequencesOnEntity(Entity entity)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -1913,7 +1913,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D06A RID: 53354 RVA: 0x004BFB74 File Offset: 0x004BDD74
+		// Token: 0x0600D1C2 RID: 53698 RVA: 0x004C4040 File Offset: 0x004C2240
 		public static void StopSequence(Entity entity, string soundGroupName)
 		{
 			if (GameManager.IsDedicatedServer || soundGroupName == null)
@@ -2019,7 +2019,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D06B RID: 53355 RVA: 0x004BFE78 File Offset: 0x004BE078
+		// Token: 0x0600D1C3 RID: 53699 RVA: 0x004C4344 File Offset: 0x004C2544
 		public static void DestroySoundsForEntity(int entityId)
 		{
 			Manager.Channels channels;
@@ -2097,7 +2097,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D06C RID: 53356 RVA: 0x004C0168 File Offset: 0x004BE368
+		// Token: 0x0600D1C4 RID: 53700 RVA: 0x004C4634 File Offset: 0x004C2834
 		public static void SignalAI(Entity _entity, Vector3 _position, string _soundName, float volumeScale)
 		{
 			if (!(_entity is EntityPlayer))
@@ -2114,14 +2114,14 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D06D RID: 53357 RVA: 0x004C01B5 File Offset: 0x004BE3B5
+		// Token: 0x0600D1C5 RID: 53701 RVA: 0x004C4681 File Offset: 0x004C2881
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void StripOffDirectories(ref string _name)
 		{
 			_name = Path.GetFileName(_name).ToLower();
 		}
 
-		// Token: 0x0600D06E RID: 53358 RVA: 0x004C01C5 File Offset: 0x004BE3C5
+		// Token: 0x0600D1C6 RID: 53702 RVA: 0x004C4691 File Offset: 0x004C2891
 		public static void CameraChanged()
 		{
 			if (Manager.mainCamera)
@@ -2130,12 +2130,12 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D06F RID: 53359 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D1C7 RID: 53703 RVA: 0x000027FC File Offset: 0x000009FC
 		public static void FrameUpdate()
 		{
 		}
 
-		// Token: 0x0600D070 RID: 53360 RVA: 0x004C01D8 File Offset: 0x004BE3D8
+		// Token: 0x0600D1C8 RID: 53704 RVA: 0x004C46A4 File Offset: 0x004C28A4
 		public static void PlayButtonClick()
 		{
 			if (GameManager.Instance != null && GameManager.Instance.World != null)
@@ -2144,7 +2144,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D071 RID: 53361 RVA: 0x004C0208 File Offset: 0x004BE408
+		// Token: 0x0600D1C9 RID: 53705 RVA: 0x004C46D4 File Offset: 0x004C28D4
 		public static void PlayXUiSound(AudioClip _sound, float _volume)
 		{
 			if (GameManager.Instance.UIAudioSource == null)
@@ -2162,7 +2162,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D072 RID: 53362 RVA: 0x004C02C1 File Offset: 0x004BE4C1
+		// Token: 0x0600D1CA RID: 53706 RVA: 0x004C478D File Offset: 0x004C298D
 		public static void PlaySource(AudioSource src)
 		{
 			if (src)
@@ -2171,7 +2171,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D073 RID: 53363 RVA: 0x004C02D1 File Offset: 0x004BE4D1
+		// Token: 0x0600D1CB RID: 53707 RVA: 0x004C479D File Offset: 0x004C299D
 		public static void StopSource(AudioSource src)
 		{
 			if (src)
@@ -2180,7 +2180,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D074 RID: 53364 RVA: 0x004C02E4 File Offset: 0x004BE4E4
+		// Token: 0x0600D1CC RID: 53708 RVA: 0x004C47B0 File Offset: 0x004C29B0
 		public void StopDistantLoopingPositionalSounds(Vector3 localPlayerPosition)
 		{
 			foreach (AudioSource audioSource in this.PositionalSoundsPlaying.GetComponentsInChildren<AudioSource>())
@@ -2192,7 +2192,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D075 RID: 53365 RVA: 0x004C0340 File Offset: 0x004BE540
+		// Token: 0x0600D1CD RID: 53709 RVA: 0x004C480C File Offset: 0x004C2A0C
 		public void RestartNearbyLoopingPositionalSounds(Vector3 localPlayerPosition)
 		{
 			foreach (AudioSource audioSource in this.PositionalSoundsPlaying.GetComponentsInChildren<AudioSource>())
@@ -2204,7 +2204,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D076 RID: 53366 RVA: 0x004C03A2 File Offset: 0x004BE5A2
+		// Token: 0x0600D1CE RID: 53710 RVA: 0x004C486E File Offset: 0x004C2A6E
 		public void Dispose()
 		{
 			if (Manager.ServerAudio != null)
@@ -2214,7 +2214,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D077 RID: 53367 RVA: 0x004C03BB File Offset: 0x004BE5BB
+		// Token: 0x0600D1CF RID: 53711 RVA: 0x004C4887 File Offset: 0x004C2A87
 		public void AttachLocalPlayer(EntityPlayerLocal localPlayer, World world)
 		{
 			if (Manager.ServerAudio != null)
@@ -2223,7 +2223,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D078 RID: 53368 RVA: 0x004C03CF File Offset: 0x004BE5CF
+		// Token: 0x0600D1D0 RID: 53712 RVA: 0x004C489B File Offset: 0x004C2A9B
 		public void EntityAddedToWorld(Entity entity, World world)
 		{
 			if (Manager.ServerAudio != null)
@@ -2232,7 +2232,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D079 RID: 53369 RVA: 0x004C03E4 File Offset: 0x004BE5E4
+		// Token: 0x0600D1D1 RID: 53713 RVA: 0x004C48B0 File Offset: 0x004C2AB0
 		public void EntityRemovedFromWorld(Entity entity, World world)
 		{
 			if (entity == null)
@@ -2245,7 +2245,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D07A RID: 53370 RVA: 0x004C0403 File Offset: 0x004BE603
+		// Token: 0x0600D1D2 RID: 53714 RVA: 0x004C48CF File Offset: 0x004C2ACF
 		public static void CreateServer()
 		{
 			if (Manager.ServerAudio == null && SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -2254,7 +2254,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600D07B RID: 53371 RVA: 0x004C0424 File Offset: 0x004BE624
+		// Token: 0x0600D1D3 RID: 53715 RVA: 0x004C48F0 File Offset: 0x004C2AF0
 		public static string GetFormattedSubtitleSpeaker(string subtitleId)
 		{
 			string text = "";
@@ -2271,7 +2271,7 @@ namespace Audio
 			return text;
 		}
 
-		// Token: 0x0600D07C RID: 53372 RVA: 0x004C0484 File Offset: 0x004BE684
+		// Token: 0x0600D1D4 RID: 53716 RVA: 0x004C4950 File Offset: 0x004C2B50
 		public static string GetFormattedSubtitle(string subtitleId)
 		{
 			string text = "";
@@ -2283,7 +2283,7 @@ namespace Audio
 			return text;
 		}
 
-		// Token: 0x0600D07D RID: 53373 RVA: 0x004C04B0 File Offset: 0x004BE6B0
+		// Token: 0x0600D1D5 RID: 53717 RVA: 0x004C497C File Offset: 0x004C2B7C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static SubtitleData GetSubtitleData(string subtitleId)
 		{
@@ -2296,7 +2296,7 @@ namespace Audio
 			return null;
 		}
 
-		// Token: 0x0600D07E RID: 53374 RVA: 0x004C04E0 File Offset: 0x004BE6E0
+		// Token: 0x0600D1D6 RID: 53718 RVA: 0x004C49AC File Offset: 0x004C2BAC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetSubtitleSpeakerColor(string speaker)
 		{
@@ -2309,242 +2309,242 @@ namespace Audio
 			return "#FFFFFF";
 		}
 
-		// Token: 0x0600D07F RID: 53375 RVA: 0x004C0513 File Offset: 0x004BE713
+		// Token: 0x0600D1D7 RID: 53719 RVA: 0x004C49DF File Offset: 0x004C2BDF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void updateCurrentListener()
 		{
 			Manager.currentListenerPosition = Manager.mainCamera.transform.position;
 		}
 
-		// Token: 0x04009EA7 RID: 40615
+		// Token: 0x04009F6D RID: 40813
 		public static Dictionary<string, AudioClip> audioClipAssetCache = new Dictionary<string, AudioClip>();
 
-		// Token: 0x04009EA8 RID: 40616
+		// Token: 0x04009F6E RID: 40814
 		public static Dictionary<string, GameObject> audioSrcObjAssetCache = new Dictionary<string, GameObject>();
 
-		// Token: 0x04009EA9 RID: 40617
+		// Token: 0x04009F6F RID: 40815
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<string, bool> ignoreDistanceCheckSounds = new Dictionary<string, bool>();
 
-		// Token: 0x04009EAA RID: 40618
+		// Token: 0x04009F70 RID: 40816
 		public static Dictionary<string, SubtitleData> subtitleCache = new Dictionary<string, SubtitleData>();
 
-		// Token: 0x04009EAB RID: 40619
+		// Token: 0x04009F71 RID: 40817
 		public static Dictionary<string, string> subtitleSpeakerColorCache = new Dictionary<string, string>();
 
-		// Token: 0x04009EAC RID: 40620
+		// Token: 0x04009F72 RID: 40818
 		public static GameRandom random;
 
-		// Token: 0x04009EAD RID: 40621
+		// Token: 0x04009F73 RID: 40819
 		public static bool occlusionsOn;
 
-		// Token: 0x04009EAE RID: 40622
+		// Token: 0x04009F74 RID: 40820
 		public const float OccludedVolumeMultiplier = 0.5f;
 
-		// Token: 0x04009EAF RID: 40623
+		// Token: 0x04009F75 RID: 40821
 		public static Server ServerAudio;
 
-		// Token: 0x04009EB0 RID: 40624
+		// Token: 0x04009F76 RID: 40822
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool bCameraWasUnderwater;
 
-		// Token: 0x04009EB1 RID: 40625
+		// Token: 0x04009F77 RID: 40823
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int underwaterSoundID = -1;
 
-		// Token: 0x04009EB2 RID: 40626
+		// Token: 0x04009F78 RID: 40824
 		public static Vector3 currentListenerPosition;
 
-		// Token: 0x04009EB3 RID: 40627
+		// Token: 0x04009F79 RID: 40825
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float fadeOutUpdateTime;
 
-		// Token: 0x04009EB4 RID: 40628
+		// Token: 0x04009F7A RID: 40826
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameObject PositionalSoundsPlaying;
 
-		// Token: 0x04009EB5 RID: 40629
+		// Token: 0x04009F7B RID: 40827
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Transform PositionalSoundsPlayingT;
 
-		// Token: 0x04009EB6 RID: 40630
+		// Token: 0x04009F7C RID: 40828
 		public bool bUseAltSounds;
 
-		// Token: 0x04009EB7 RID: 40631
+		// Token: 0x04009F7D RID: 40829
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Manager instance;
 
-		// Token: 0x04009EB8 RID: 40632
+		// Token: 0x04009F7E RID: 40830
 		public static Dictionary<string, XmlData> audioData;
 
-		// Token: 0x04009EB9 RID: 40633
+		// Token: 0x04009F7F RID: 40831
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<int, Dictionary<string, Manager.NearAndFarGO>> loopingOnEntity;
 
-		// Token: 0x04009EBA RID: 40634
+		// Token: 0x04009F80 RID: 40832
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<int, Dictionary<string, Manager.NearAndFarGO>> fadingOutOnEntity;
 
-		// Token: 0x04009EBB RID: 40635
+		// Token: 0x04009F81 RID: 40833
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<Vector3, Dictionary<string, Manager.NearAndFarGO>> loopingOnPosition;
 
-		// Token: 0x04009EBC RID: 40636
+		// Token: 0x04009F82 RID: 40834
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<int, Dictionary<string, Manager.SequenceGOs>> sequenceOnEntity;
 
-		// Token: 0x04009EBD RID: 40637
+		// Token: 0x04009F83 RID: 40835
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<int, Dictionary<string, Manager.SequenceStopper>> stoppedEntitySequences;
 
-		// Token: 0x04009EBE RID: 40638
+		// Token: 0x04009F84 RID: 40836
 		public static DictionaryList<string, List<AudioSource>> playAndCleanupSources;
 
-		// Token: 0x04009EBF RID: 40639
+		// Token: 0x04009F85 RID: 40837
 		public static List<AudioSource> playingAudioSources;
 
-		// Token: 0x04009EC0 RID: 40640
+		// Token: 0x04009F86 RID: 40838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<int, Manager.Channels> playingOnEntity;
 
-		// Token: 0x04009EC1 RID: 40641
+		// Token: 0x04009F87 RID: 40839
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int dopplerDelay;
 
-		// Token: 0x04009EC2 RID: 40642
+		// Token: 0x04009F88 RID: 40840
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<Manager.DopplerItem> playingAudioSourceDopplers;
 
-		// Token: 0x04009EC3 RID: 40643
+		// Token: 0x04009F89 RID: 40841
 		public static Dictionary<string, Manager.AudioSourceData> audioSourceDatas;
 
-		// Token: 0x04009EC4 RID: 40644
+		// Token: 0x04009F8A RID: 40842
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EntityPlayerLocal localPlayer;
 
-		// Token: 0x04009EC5 RID: 40645
+		// Token: 0x04009F8B RID: 40843
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDopplerDist = 20f;
 
-		// Token: 0x04009EC6 RID: 40646
+		// Token: 0x04009F8C RID: 40844
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cPlayerPitchShift = 0.05f;
 
-		// Token: 0x04009EC7 RID: 40647
+		// Token: 0x04009F8D RID: 40845
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioSource uniqueSrc;
 
-		// Token: 0x04009EC8 RID: 40648
+		// Token: 0x04009F8E RID: 40846
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static char[] convertChars = new char[] { '*', '#' };
 
-		// Token: 0x04009EC9 RID: 40649
+		// Token: 0x04009F8F RID: 40847
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int raycastMask = 65537;
 
-		// Token: 0x04009ECA RID: 40650
+		// Token: 0x04009F90 RID: 40848
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<int> listIntRemove = new List<int>();
 
-		// Token: 0x04009ECB RID: 40651
+		// Token: 0x04009F91 RID: 40849
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<string> listStringRemove = new List<string>();
 
-		// Token: 0x04009ECC RID: 40652
+		// Token: 0x04009F92 RID: 40850
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<string> removeSequenceStopper = new List<string>();
 
-		// Token: 0x04009ECD RID: 40653
+		// Token: 0x04009F93 RID: 40851
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Camera mainCamera;
 
-		// Token: 0x04009ECE RID: 40654
+		// Token: 0x04009F94 RID: 40852
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 cameraPos;
 
-		// Token: 0x02001B1D RID: 6941
+		// Token: 0x02001B49 RID: 6985
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct SequenceGOs
 		{
-			// Token: 0x04009ECF RID: 40655
+			// Token: 0x04009F95 RID: 40853
 			public GameObject nearStart;
 
-			// Token: 0x04009ED0 RID: 40656
+			// Token: 0x04009F96 RID: 40854
 			public GameObject nearLoop;
 
-			// Token: 0x04009ED1 RID: 40657
+			// Token: 0x04009F97 RID: 40855
 			public GameObject nearEnd;
 
-			// Token: 0x04009ED2 RID: 40658
+			// Token: 0x04009F98 RID: 40856
 			public GameObject farStart;
 
-			// Token: 0x04009ED3 RID: 40659
+			// Token: 0x04009F99 RID: 40857
 			public GameObject farLoop;
 
-			// Token: 0x04009ED4 RID: 40660
+			// Token: 0x04009F9A RID: 40858
 			public GameObject farEnd;
 
-			// Token: 0x04009ED5 RID: 40661
+			// Token: 0x04009F9B RID: 40859
 			public float longestClipLength;
 		}
 
-		// Token: 0x02001B1E RID: 6942
+		// Token: 0x02001B4A RID: 6986
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct NearAndFarGO
 		{
-			// Token: 0x04009ED6 RID: 40662
+			// Token: 0x04009F9C RID: 40860
 			public GameObject near;
 
-			// Token: 0x04009ED7 RID: 40663
+			// Token: 0x04009F9D RID: 40861
 			public GameObject far;
 		}
 
-		// Token: 0x02001B1F RID: 6943
+		// Token: 0x02001B4B RID: 6987
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct Channels
 		{
-			// Token: 0x04009ED8 RID: 40664
+			// Token: 0x04009F9E RID: 40862
 			public int currentMouthPriority;
 
-			// Token: 0x04009ED9 RID: 40665
+			// Token: 0x04009F9F RID: 40863
 			public List<AudioSource> mouth;
 
-			// Token: 0x04009EDA RID: 40666
+			// Token: 0x04009FA0 RID: 40864
 			public DictionaryList<string, List<AudioSource>> environment;
 		}
 
-		// Token: 0x02001B20 RID: 6944
+		// Token: 0x02001B4C RID: 6988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct DopplerItem
 		{
-			// Token: 0x04009EDB RID: 40667
+			// Token: 0x04009FA1 RID: 40865
 			public AudioSource src;
 
-			// Token: 0x04009EDC RID: 40668
+			// Token: 0x04009FA2 RID: 40866
 			public float doppler;
 		}
 
-		// Token: 0x02001B21 RID: 6945
+		// Token: 0x02001B4D RID: 6989
 		public struct AudioSourceData
 		{
-			// Token: 0x04009EDD RID: 40669
+			// Token: 0x04009FA3 RID: 40867
 			public float maxVolume;
 		}
 
-		// Token: 0x02001B22 RID: 6946
+		// Token: 0x02001B4E RID: 6990
 		public class SequenceStopper
 		{
-			// Token: 0x0600D081 RID: 53377 RVA: 0x004C05A4 File Offset: 0x004BE7A4
+			// Token: 0x0600D1D9 RID: 53721 RVA: 0x004C4A70 File Offset: 0x004C2C70
 			public SequenceStopper(List<GameObject> audioSourceObjs, float _stopTime)
 			{
 				this.sequenceObjs = audioSourceObjs;
 				this.stopTime = _stopTime;
 			}
 
-			// Token: 0x04009EDE RID: 40670
+			// Token: 0x04009FA4 RID: 40868
 			public List<GameObject> sequenceObjs;
 
-			// Token: 0x04009EDF RID: 40671
+			// Token: 0x04009FA5 RID: 40869
 			public float stopTime;
 		}
 	}

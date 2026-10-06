@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000997 RID: 2455
+// Token: 0x0200099D RID: 2461
 [Preserve]
 public class ObjectiveFetchFromTreasure : BaseObjective
 {
-	// Token: 0x1700079E RID: 1950
-	// (get) Token: 0x06004817 RID: 18455 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007BE RID: 1982
+	// (get) Token: 0x060047C6 RID: 18374 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -17,7 +18,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004818 RID: 18456 RVA: 0x001C307C File Offset: 0x001C127C
+	// Token: 0x060047C7 RID: 18375 RVA: 0x001C3828 File Offset: 0x001C1A28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveFetchItems()
 	{
@@ -40,7 +41,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004819 RID: 18457 RVA: 0x001C310F File Offset: 0x001C130F
+	// Token: 0x060047C8 RID: 18376 RVA: 0x001C38BB File Offset: 0x001C1ABB
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveFetchContainer_keyword", false, null);
@@ -50,7 +51,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x0600481A RID: 18458 RVA: 0x001C3134 File Offset: 0x001C1334
+	// Token: 0x060047C9 RID: 18377 RVA: 0x001C38E0 File Offset: 0x001C1AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupExpectedItem()
 	{
@@ -68,34 +69,34 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		this.itemCount = 1;
 	}
 
-	// Token: 0x0600481B RID: 18459 RVA: 0x001C31C7 File Offset: 0x001C13C7
+	// Token: 0x060047CA RID: 18378 RVA: 0x001C3973 File Offset: 0x001C1B73
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = "";
 	}
 
-	// Token: 0x0600481C RID: 18460 RVA: 0x001C31F0 File Offset: 0x001C13F0
+	// Token: 0x060047CB RID: 18379 RVA: 0x001C399C File Offset: 0x001C1B9C
 	public override void HandleCompleted()
 	{
 		base.HandleCompleted();
 		this.RemoveFetchItems();
 	}
 
-	// Token: 0x0600481D RID: 18461 RVA: 0x001C31FE File Offset: 0x001C13FE
+	// Token: 0x060047CC RID: 18380 RVA: 0x001C39AA File Offset: 0x001C1BAA
 	public override void HandlePhaseCompleted()
 	{
 		base.HandlePhaseCompleted();
 	}
 
-	// Token: 0x0600481E RID: 18462 RVA: 0x001C3206 File Offset: 0x001C1406
+	// Token: 0x060047CD RID: 18381 RVA: 0x001C39B2 File Offset: 0x001C1BB2
 	public override void HandleFailed()
 	{
 		base.HandleFailed();
 		this.RemoveFetchItems();
 	}
 
-	// Token: 0x0600481F RID: 18463 RVA: 0x001C3214 File Offset: 0x001C1414
+	// Token: 0x060047CE RID: 18382 RVA: 0x001C39C0 File Offset: 0x001C1BC0
 	public override void AddHooks()
 	{
 		LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer);
@@ -108,7 +109,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004820 RID: 18464 RVA: 0x001C32CC File Offset: 0x001C14CC
+	// Token: 0x060047CF RID: 18383 RVA: 0x001C3A78 File Offset: 0x001C1C78
 	public override void RemoveObjectives()
 	{
 		QuestEventManager.Current.ContainerOpened -= this.Current_ContainerOpened;
@@ -116,7 +117,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		QuestEventManager.Current.BlockChange -= this.Current_BlockChange;
 	}
 
-	// Token: 0x06004821 RID: 18465 RVA: 0x001C331C File Offset: 0x001C151C
+	// Token: 0x060047D0 RID: 18384 RVA: 0x001C3AC8 File Offset: 0x001C1CC8
 	public override void RemoveHooks()
 	{
 		base.OwnerQuest.RemoveMapObject();
@@ -128,7 +129,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004822 RID: 18466 RVA: 0x001C3388 File Offset: 0x001C1588
+	// Token: 0x060047D1 RID: 18385 RVA: 0x001C3B34 File Offset: 0x001C1D34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Backpack_OnBackpackItemsChangedInternal()
 	{
@@ -140,7 +141,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004823 RID: 18467 RVA: 0x001C33C8 File Offset: 0x001C15C8
+	// Token: 0x060047D2 RID: 18386 RVA: 0x001C3B74 File Offset: 0x001C1D74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Toolbelt_OnToolbeltItemsChangedInternal()
 	{
@@ -152,9 +153,9 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004824 RID: 18468 RVA: 0x001C3408 File Offset: 0x001C1608
+	// Token: 0x060047D3 RID: 18387 RVA: 0x001C3BB4 File Offset: 0x001C1DB4
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Current_ContainerOpened(Vector3i containerLocation, ITileEntityLootable lootTE)
+	public void Current_ContainerOpened(Vector3i containerLocation, TEFeatureStorage lootTE, bool firstTimeTouched)
 	{
 		Vector3 zero = Vector3.zero;
 		base.OwnerQuest.GetPositionData(out zero, Quest.PositionDataTypes.TreasurePoint);
@@ -173,9 +174,9 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004825 RID: 18469 RVA: 0x001C34A8 File Offset: 0x001C16A8
+	// Token: 0x060047D4 RID: 18388 RVA: 0x001C3C54 File Offset: 0x001C1E54
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void Current_ContainerClosed(Vector3i containerLocation, ITileEntityLootable lootTE)
+	public void Current_ContainerClosed(Vector3i containerLocation, TEFeatureStorage lootTE)
 	{
 		if (GameManager.Instance.World.GetBlock(containerLocation).Block.GetBlockName() == this.containerName && lootTE != null)
 		{
@@ -193,7 +194,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004826 RID: 18470 RVA: 0x001C356C File Offset: 0x001C176C
+	// Token: 0x060047D5 RID: 18389 RVA: 0x001C3D18 File Offset: 0x001C1F18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockChange(Block blockOld, Block blockNew, Vector3i blockPos)
 	{
@@ -219,7 +220,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004827 RID: 18471 RVA: 0x001C3608 File Offset: 0x001C1808
+	// Token: 0x060047D6 RID: 18390 RVA: 0x001C3DB4 File Offset: 0x001C1FB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetItemCount()
 	{
@@ -228,7 +229,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		return playerInventory.Backpack.GetItemCount(this.expectedItem, -1, base.OwnerQuest.QuestCode, true) + playerInventory.Toolbelt.GetItemCount(this.expectedItem, false, -1, base.OwnerQuest.QuestCode, true);
 	}
 
-	// Token: 0x06004828 RID: 18472 RVA: 0x001C368C File Offset: 0x001C188C
+	// Token: 0x060047D7 RID: 18391 RVA: 0x001C3E38 File Offset: 0x001C2038
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -253,7 +254,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x06004829 RID: 18473 RVA: 0x001C3720 File Offset: 0x001C1920
+	// Token: 0x060047D8 RID: 18392 RVA: 0x001C3ECC File Offset: 0x001C20CC
 	public override BaseObjective Clone()
 	{
 		ObjectiveFetchFromTreasure objectiveFetchFromTreasure = new ObjectiveFetchFromTreasure();
@@ -261,7 +262,7 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		return objectiveFetchFromTreasure;
 	}
 
-	// Token: 0x0600482A RID: 18474 RVA: 0x001C373B File Offset: 0x001C193B
+	// Token: 0x060047D9 RID: 18393 RVA: 0x001C3EE7 File Offset: 0x001C20E7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -273,13 +274,13 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		objectiveFetchFromTreasure.altContainerName = this.altContainerName;
 	}
 
-	// Token: 0x0600482B RID: 18475 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060047DA RID: 18394 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool SetLocation(Vector3 pos, Vector3 size)
 	{
 		return true;
 	}
 
-	// Token: 0x0600482C RID: 18476 RVA: 0x001C377C File Offset: 0x001C197C
+	// Token: 0x060047DB RID: 18395 RVA: 0x001C3F28 File Offset: 0x001C2128
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -301,50 +302,60 @@ public class ObjectiveFetchFromTreasure : BaseObjective
 		}
 	}
 
-	// Token: 0x04003994 RID: 14740
+	// Token: 0x060047DC RID: 18396 RVA: 0x001C3FDC File Offset: 0x001C21DC
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("expected_item_id", this.expectedItem.ItemClass.Name);
+		parameters.Add("count", this.itemCount);
+		parameters.Add("container_name", this.containerName);
+		parameters.Add("container_position", this.containerPos.ToString());
+	}
+
+	// Token: 0x04003990 RID: 14736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x04003995 RID: 14741
+	// Token: 0x04003991 RID: 14737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04003996 RID: 14742
+	// Token: 0x04003992 RID: 14738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int itemCount;
 
-	// Token: 0x04003997 RID: 14743
+	// Token: 0x04003993 RID: 14739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentCount;
 
-	// Token: 0x04003998 RID: 14744
+	// Token: 0x04003994 RID: 14740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string containerName = "";
 
-	// Token: 0x04003999 RID: 14745
+	// Token: 0x04003995 RID: 14741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string altContainerName = "";
 
-	// Token: 0x0400399A RID: 14746
+	// Token: 0x04003996 RID: 14742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasOpened;
 
-	// Token: 0x0400399B RID: 14747
+	// Token: 0x04003997 RID: 14743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i containerPos = Vector3i.zero;
 
-	// Token: 0x0400399C RID: 14748
+	// Token: 0x04003998 RID: 14744
 	public static string questItemClassID = "questItem";
 
-	// Token: 0x0400399D RID: 14749
+	// Token: 0x04003999 RID: 14745
 	public static string PropQuestItemID = "quest_item_ID";
 
-	// Token: 0x0400399E RID: 14750
+	// Token: 0x0400399A RID: 14746
 	public static string PropItemCount = "item_count";
 
-	// Token: 0x0400399F RID: 14751
+	// Token: 0x0400399B RID: 14747
 	public static string PropBlock = "block";
 
-	// Token: 0x040039A0 RID: 14752
+	// Token: 0x0400399C RID: 14748
 	public static string PropAltBlock = "alt_block";
 }

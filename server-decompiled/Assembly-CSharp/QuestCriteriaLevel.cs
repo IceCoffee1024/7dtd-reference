@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000976 RID: 2422
+// Token: 0x0200097C RID: 2428
 public class QuestCriteriaLevel : BaseQuestCriteria
 {
-	// Token: 0x060046D3 RID: 18131 RVA: 0x001BEEEC File Offset: 0x001BD0EC
+	// Token: 0x06004674 RID: 18036 RVA: 0x001BF3F4 File Offset: 0x001BD5F4
 	public override bool CheckForPlayer(EntityPlayer player)
 	{
 		int num = 0;

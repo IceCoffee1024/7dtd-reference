@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020008A7 RID: 2215
+// Token: 0x020008AC RID: 2220
 public interface ITrader
 {
-	// Token: 0x170006B1 RID: 1713
-	// (get) Token: 0x06004054 RID: 16468
-	// (set) Token: 0x06004055 RID: 16469
+	// Token: 0x170006D0 RID: 1744
+	// (get) Token: 0x06003FEA RID: 16362
+	// (set) Token: 0x06003FEB RID: 16363
 	TraderData TraderData { get; set; }
 }

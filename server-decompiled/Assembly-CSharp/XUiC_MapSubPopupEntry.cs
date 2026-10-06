@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8E RID: 3982
+// Token: 0x02000F9D RID: 3997
 [Preserve]
 public class XUiC_MapSubPopupEntry : XUiController
 {
-	// Token: 0x06007DBE RID: 32190 RVA: 0x002FA520 File Offset: 0x002F8720
+	// Token: 0x06007DCE RID: 32206 RVA: 0x002FD5C4 File Offset: 0x002FB7C4
 	public override void Init()
 	{
 		base.Init();
@@ -14,20 +14,20 @@ public class XUiC_MapSubPopupEntry : XUiController
 		base.OnVisiblity += this.XUiC_MapSubPopupEntry_OnVisiblity;
 	}
 
-	// Token: 0x06007DBF RID: 32191 RVA: 0x002FA54C File Offset: 0x002F874C
+	// Token: 0x06007DCF RID: 32207 RVA: 0x002FD5F0 File Offset: 0x002FB7F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_MapSubPopupEntry_OnVisiblity(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
 	{
 		this.select(false);
 	}
 
-	// Token: 0x06007DC0 RID: 32192 RVA: 0x002FA555 File Offset: 0x002F8755
+	// Token: 0x06007DD0 RID: 32208 RVA: 0x002FD5F9 File Offset: 0x002FB7F9
 	public void SetIndex(int _idx)
 	{
 		this.index = _idx;
 	}
 
-	// Token: 0x06007DC1 RID: 32193 RVA: 0x002FA560 File Offset: 0x002F8760
+	// Token: 0x06007DD1 RID: 32209 RVA: 0x002FD604 File Offset: 0x002FB804
 	public void SetSpriteName(string _s)
 	{
 		this.spriteName = _s;
@@ -41,14 +41,14 @@ public class XUiC_MapSubPopupEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007DC2 RID: 32194 RVA: 0x002FA5C4 File Offset: 0x002F87C4
+	// Token: 0x06007DD2 RID: 32210 RVA: 0x002FD668 File Offset: 0x002FB868
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
 		this.select(_isOver);
 	}
 
-	// Token: 0x06007DC3 RID: 32195 RVA: 0x002FA5D0 File Offset: 0x002F87D0
+	// Token: 0x06007DD3 RID: 32211 RVA: 0x002FD674 File Offset: 0x002FB874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onPressed(XUiController _sender, int _mouseButton)
 	{
@@ -61,7 +61,7 @@ public class XUiC_MapSubPopupEntry : XUiController
 		childByType.Show(vector2i);
 	}
 
-	// Token: 0x06007DC4 RID: 32196 RVA: 0x002FA668 File Offset: 0x002F8868
+	// Token: 0x06007DD4 RID: 32212 RVA: 0x002FD70C File Offset: 0x002FB90C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void select(bool _bSelect)
 	{
@@ -73,17 +73,17 @@ public class XUiC_MapSubPopupEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007DC5 RID: 32197 RVA: 0x002FA54C File Offset: 0x002F874C
+	// Token: 0x06007DD5 RID: 32213 RVA: 0x002FD5F0 File Offset: 0x002FB7F0
 	public void Reset()
 	{
 		this.select(false);
 	}
 
-	// Token: 0x04005D33 RID: 23859
+	// Token: 0x04005D5C RID: 23900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int index;
 
-	// Token: 0x04005D34 RID: 23860
+	// Token: 0x04005D5D RID: 23901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string spriteName;
 }

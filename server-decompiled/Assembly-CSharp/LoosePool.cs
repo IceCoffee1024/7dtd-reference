@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020003B2 RID: 946
+// Token: 0x020003B5 RID: 949
 public class LoosePool<T> where T : new()
 {
-	// Token: 0x06001C5C RID: 7260 RVA: 0x000A8090 File Offset: 0x000A6290
+	// Token: 0x06001C55 RID: 7253 RVA: 0x000A82D0 File Offset: 0x000A64D0
 	public LoosePool()
 	{
 		this.pools = new List<T[]>[this.poolElements.Length];
@@ -15,7 +15,7 @@ public class LoosePool<T> where T : new()
 		this.poolSize = new int[this.poolElements.Length];
 	}
 
-	// Token: 0x06001C5D RID: 7261 RVA: 0x000A8120 File Offset: 0x000A6320
+	// Token: 0x06001C56 RID: 7254 RVA: 0x000A8360 File Offset: 0x000A6560
 	public T[] Alloc(int _minSize = 0)
 	{
 		List<T[]>[] array = this.pools;
@@ -43,7 +43,7 @@ public class LoosePool<T> where T : new()
 		return array4;
 	}
 
-	// Token: 0x06001C5E RID: 7262 RVA: 0x000A81C0 File Offset: 0x000A63C0
+	// Token: 0x06001C57 RID: 7255 RVA: 0x000A8400 File Offset: 0x000A6600
 	public void Free(T[] _array)
 	{
 		if (_array == null)
@@ -79,7 +79,7 @@ public class LoosePool<T> where T : new()
 		}
 	}
 
-	// Token: 0x06001C5F RID: 7263 RVA: 0x000A82A4 File Offset: 0x000A64A4
+	// Token: 0x06001C58 RID: 7256 RVA: 0x000A84E4 File Offset: 0x000A66E4
 	public void FreeAll()
 	{
 		List<T[]>[] array = this.pools;
@@ -93,7 +93,7 @@ public class LoosePool<T> where T : new()
 		}
 	}
 
-	// Token: 0x06001C60 RID: 7264 RVA: 0x000A8308 File Offset: 0x000A6508
+	// Token: 0x06001C59 RID: 7257 RVA: 0x000A8548 File Offset: 0x000A6748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeToIdx(int _size, bool allowHigher)
 	{
@@ -119,7 +119,7 @@ public class LoosePool<T> where T : new()
 		return num;
 	}
 
-	// Token: 0x06001C61 RID: 7265 RVA: 0x000A8368 File Offset: 0x000A6568
+	// Token: 0x06001C5A RID: 7258 RVA: 0x000A85A8 File Offset: 0x000A67A8
 	public int GetCount()
 	{
 		int num = 0;
@@ -133,7 +133,7 @@ public class LoosePool<T> where T : new()
 		return num;
 	}
 
-	// Token: 0x06001C62 RID: 7266 RVA: 0x000A83A8 File Offset: 0x000A65A8
+	// Token: 0x06001C5B RID: 7259 RVA: 0x000A85E8 File Offset: 0x000A67E8
 	public int GetTotalItems()
 	{
 		int num = 0;
@@ -144,7 +144,7 @@ public class LoosePool<T> where T : new()
 		return num;
 	}
 
-	// Token: 0x06001C63 RID: 7267 RVA: 0x000A83D8 File Offset: 0x000A65D8
+	// Token: 0x06001C5C RID: 7260 RVA: 0x000A8618 File Offset: 0x000A6818
 	public string GetSize(out int totalBytes)
 	{
 		string text = "";
@@ -162,7 +162,7 @@ public class LoosePool<T> where T : new()
 		return text + "MBytes: " + (totalBytes / 1024 / 1024).ToString();
 	}
 
-	// Token: 0x04001259 RID: 4697
+	// Token: 0x04001252 RID: 4690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] poolElements = new int[]
 	{
@@ -171,7 +171,7 @@ public class LoosePool<T> where T : new()
 		67108864, 134217728
 	};
 
-	// Token: 0x0400125A RID: 4698
+	// Token: 0x04001253 RID: 4691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] maxSize = new int[]
 	{
@@ -180,17 +180,17 @@ public class LoosePool<T> where T : new()
 		2, 2
 	};
 
-	// Token: 0x0400125B RID: 4699
+	// Token: 0x04001254 RID: 4692
 	public bool EnforceMaxSize;
 
-	// Token: 0x0400125C RID: 4700
+	// Token: 0x04001255 RID: 4693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T[]>[] pools;
 
-	// Token: 0x0400125D RID: 4701
+	// Token: 0x04001256 RID: 4694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] poolSize;
 
-	// Token: 0x0400125E RID: 4702
+	// Token: 0x04001257 RID: 4695
 	public bool AllowHigherPool = true;
 }

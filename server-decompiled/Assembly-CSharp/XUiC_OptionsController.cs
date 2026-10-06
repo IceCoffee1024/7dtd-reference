@@ -4,12 +4,12 @@ using InControl;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DA2 RID: 3490
+// Token: 0x02000DB1 RID: 3505
 [UnityEngine.Scripting.Preserve]
 public class XUiC_OptionsController : XUiC_OptionsControlsBase
 {
-	// Token: 0x17000B7D RID: 2941
-	// (get) Token: 0x06006A7B RID: 27259 RVA: 0x0029AE22 File Offset: 0x00299022
+	// Token: 0x17000B98 RID: 2968
+	// (get) Token: 0x06006A73 RID: 27251 RVA: 0x0029E1B2 File Offset: 0x0029C3B2
 	[XuiXmlBinding("isds4")]
 	public bool ShowDs4
 	{
@@ -20,8 +20,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B7E RID: 2942
-	// (get) Token: 0x06006A7C RID: 27260 RVA: 0x0029AE44 File Offset: 0x00299044
+	// Token: 0x17000B99 RID: 2969
+	// (get) Token: 0x06006A74 RID: 27252 RVA: 0x0029E1D4 File Offset: 0x0029C3D4
 	[XuiXmlBinding("isxb1")]
 	public bool ShowXb1
 	{
@@ -32,8 +32,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B7F RID: 2943
-	// (get) Token: 0x06006A7D RID: 27261 RVA: 0x0029AE69 File Offset: 0x00299069
+	// Token: 0x17000B9A RID: 2970
+	// (get) Token: 0x06006A75 RID: 27253 RVA: 0x0029E1F9 File Offset: 0x0029C3F9
 	[XuiXmlBinding("controller_art")]
 	public string ControllerArtSprite
 	{
@@ -48,8 +48,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B80 RID: 2944
-	// (get) Token: 0x06006A7E RID: 27262 RVA: 0x0029AE7E File Offset: 0x0029907E
+	// Token: 0x17000B9B RID: 2971
+	// (get) Token: 0x06006A76 RID: 27254 RVA: 0x0029E20E File Offset: 0x0029C40E
 	[XuiXmlBinding("controller_lines")]
 	public string ControllerLinesSprite
 	{
@@ -64,7 +64,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x06006A7F RID: 27263 RVA: 0x0029AE93 File Offset: 0x00299093
+	// Token: 0x06006A77 RID: 27255 RVA: 0x0029E223 File Offset: 0x0029C423
 	[XuiBindEvent("OnValueChanged", "comboShowDS4")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboShowDs4_OnOnValueChanged(XUiController _sender, bool _oldValue, bool _newValue)
@@ -73,7 +73,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.updateControllerMappingLabels();
 	}
 
-	// Token: 0x06006A80 RID: 27264 RVA: 0x0029AE93 File Offset: 0x00299093
+	// Token: 0x06006A78 RID: 27256 RVA: 0x0029E223 File Offset: 0x0029C423
 	[XuiBindEvent("OnValueChanged", "comboShowBindingsFor")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboShowMenuBindings_OnOnValueChanged(XUiController _sender, string _s, string _newValue1)
@@ -82,7 +82,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.updateControllerMappingLabels();
 	}
 
-	// Token: 0x06006A81 RID: 27265 RVA: 0x0029AEA4 File Offset: 0x002990A4
+	// Token: 0x06006A79 RID: 27257 RVA: 0x0029E234 File Offset: 0x0029C434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initControllerLayout()
 	{
@@ -113,7 +113,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.updateControllerMappingLabels();
 	}
 
-	// Token: 0x06006A82 RID: 27266 RVA: 0x0029B06C File Offset: 0x0029926C
+	// Token: 0x06006A7A RID: 27258 RVA: 0x0029E3FC File Offset: 0x0029C5FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addControllerLabelMappingsForButton(XUiController _layoutParent, string _uiName, string[] _controlTypeNames = null)
 	{
@@ -126,7 +126,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.labelsForControllers.Add(new XUiC_OptionsController.ControllerLabelMapping(_controlTypeNames, childViews));
 	}
 
-	// Token: 0x06006A83 RID: 27267 RVA: 0x0029B0AC File Offset: 0x002992AC
+	// Token: 0x06006A7B RID: 27259 RVA: 0x0029E43C File Offset: 0x0029C63C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void assignControllerLabelMappingsForButton(XUiController _layoutParent, string _uiName, out XUiC_OptionsController.ControllerLabelMapping _assignTo, string[] _controlTypeNames = null)
 	{
@@ -139,7 +139,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		_assignTo = new XUiC_OptionsController.ControllerLabelMapping(_controlTypeNames, childViews);
 	}
 
-	// Token: 0x06006A84 RID: 27268 RVA: 0x0029B0E4 File Offset: 0x002992E4
+	// Token: 0x06006A7C RID: 27260 RVA: 0x0029E474 File Offset: 0x0029C674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateControllerMappingLabels()
 	{
@@ -243,8 +243,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B81 RID: 2945
-	// (get) Token: 0x06006A85 RID: 27269 RVA: 0x0027125B File Offset: 0x0026F45B
+	// Token: 0x17000B9C RID: 2972
+	// (get) Token: 0x06006A7D RID: 27261 RVA: 0x0027465F File Offset: 0x0027285F
 	[XuiXmlBinding("cursor_sensitivity_min")]
 	public float CursorSensitivityMin
 	{
@@ -254,8 +254,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B82 RID: 2946
-	// (get) Token: 0x06006A86 RID: 27270 RVA: 0x00040F84 File Offset: 0x0003F184
+	// Token: 0x17000B9D RID: 2973
+	// (get) Token: 0x06006A7E RID: 27262 RVA: 0x00041064 File Offset: 0x0003F264
 	[XuiXmlBinding("cursor_sensitivity_max")]
 	public float CursorSensitivityMax
 	{
@@ -265,8 +265,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B83 RID: 2947
-	// (get) Token: 0x06006A87 RID: 27271 RVA: 0x0029B42C File Offset: 0x0029962C
+	// Token: 0x17000B9E RID: 2974
+	// (get) Token: 0x06006A7F RID: 27263 RVA: 0x0029E7BC File Offset: 0x0029C9BC
 	[XuiXmlBinding("controller_sensitivity_min")]
 	public float ControllerSensitivityMin
 	{
@@ -276,8 +276,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B84 RID: 2948
-	// (get) Token: 0x06006A88 RID: 27272 RVA: 0x00040F84 File Offset: 0x0003F184
+	// Token: 0x17000B9F RID: 2975
+	// (get) Token: 0x06006A80 RID: 27264 RVA: 0x00041064 File Offset: 0x0003F264
 	[XuiXmlBinding("controller_sensitivity_max")]
 	public float ControllerSensitivityMax
 	{
@@ -287,8 +287,8 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x17000B85 RID: 2949
-	// (get) Token: 0x06006A89 RID: 27273 RVA: 0x0029B433 File Offset: 0x00299633
+	// Token: 0x17000BA0 RID: 2976
+	// (get) Token: 0x06006A81 RID: 27265 RVA: 0x0029E7C3 File Offset: 0x0029C9C3
 	[XuiXmlBinding("controller_modifier_sensitivity_max")]
 	public float ControllerModifierSensitivityMax
 	{
@@ -298,7 +298,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x06006A8A RID: 27274 RVA: 0x0029B43A File Offset: 0x0029963A
+	// Token: 0x06006A82 RID: 27266 RVA: 0x0029E7CA File Offset: 0x0029C9CA
 	public override void Init()
 	{
 		base.Init();
@@ -306,7 +306,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.initControllerLayout();
 	}
 
-	// Token: 0x06006A8B RID: 27275 RVA: 0x0029B458 File Offset: 0x00299658
+	// Token: 0x06006A83 RID: 27267 RVA: 0x0029E7E8 File Offset: 0x0029C9E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void doResetToDefaultsInternal()
 	{
@@ -314,7 +314,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.updateControllerMappingLabels();
 	}
 
-	// Token: 0x06006A8C RID: 27276 RVA: 0x0029B468 File Offset: 0x00299668
+	// Token: 0x06006A84 RID: 27268 RVA: 0x0029E7F8 File Offset: 0x0029C9F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createControlsEntries()
 	{
@@ -365,7 +365,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x06006A8D RID: 27277 RVA: 0x0029B6BC File Offset: 0x002998BC
+	// Token: 0x06006A85 RID: 27269 RVA: 0x0029EA4C File Offset: 0x0029CC4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -375,7 +375,7 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		this.xui.CalloutWindow.ForceInputStyleChange(base.CurrentInputStyle, base.CurrentInputStyle);
 	}
 
-	// Token: 0x06006A8E RID: 27278 RVA: 0x0029B6F8 File Offset: 0x002998F8
+	// Token: 0x06006A86 RID: 27270 RVA: 0x0029EA88 File Offset: 0x0029CC88
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -391,52 +391,52 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 		}
 	}
 
-	// Token: 0x0400514B RID: 20811
+	// Token: 0x04005182 RID: 20866
 	[XuiBindComponent("ShowDS4", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxBool comboShowDS4;
 
-	// Token: 0x0400514C RID: 20812
+	// Token: 0x04005183 RID: 20867
 	[XuiBindComponent("ShowBindingsFor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboShowBindingsFor;
 
-	// Token: 0x0400514D RID: 20813
+	// Token: 0x04005184 RID: 20868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerActionsBase actionSetInGame;
 
-	// Token: 0x0400514E RID: 20814
+	// Token: 0x04005185 RID: 20869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerActionsBase actionSetVehicles;
 
-	// Token: 0x0400514F RID: 20815
+	// Token: 0x04005186 RID: 20870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerActionsBase actionSetMenu;
 
-	// Token: 0x04005150 RID: 20816
+	// Token: 0x04005187 RID: 20871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerActionsBase actionSetPermanent;
 
-	// Token: 0x04005151 RID: 20817
+	// Token: 0x04005188 RID: 20872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_OptionsController.ControllerLabelMapping> labelsForControllers = new List<XUiC_OptionsController.ControllerLabelMapping>();
 
-	// Token: 0x04005152 RID: 20818
+	// Token: 0x04005189 RID: 20873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsController.ControllerLabelMapping leftStickLabel;
 
-	// Token: 0x04005153 RID: 20819
+	// Token: 0x0400518A RID: 20874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsController.ControllerLabelMapping rightStickLabel;
 
-	// Token: 0x04005154 RID: 20820
+	// Token: 0x0400518B RID: 20875
 	public static string ID = "";
 
-	// Token: 0x02000DA3 RID: 3491
+	// Token: 0x02000DB2 RID: 3506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct ControllerLabelMapping
 	{
-		// Token: 0x06006A91 RID: 27281 RVA: 0x0029B76C File Offset: 0x0029996C
+		// Token: 0x06006A89 RID: 27273 RVA: 0x0029EAFC File Offset: 0x0029CCFC
 		public ControllerLabelMapping(string[] _controlTypeNames, XUiV_Label[] _labels)
 		{
 			this.ControlTypes = new InputControlType[_controlTypeNames.Length];
@@ -447,17 +447,17 @@ public class XUiC_OptionsController : XUiC_OptionsControlsBase
 			this.Labels = _labels;
 		}
 
-		// Token: 0x06006A92 RID: 27282 RVA: 0x0029B7AD File Offset: 0x002999AD
+		// Token: 0x06006A8A RID: 27274 RVA: 0x0029EB3D File Offset: 0x0029CD3D
 		public ControllerLabelMapping(string _controlTypeName, XUiV_Label[] _labels)
 		{
 			this.ControlTypes = new InputControlType[] { EnumUtils.Parse<InputControlType>(_controlTypeName, true) };
 			this.Labels = _labels;
 		}
 
-		// Token: 0x04005155 RID: 20821
+		// Token: 0x0400518C RID: 20876
 		public readonly InputControlType[] ControlTypes;
 
-		// Token: 0x04005156 RID: 20822
+		// Token: 0x0400518D RID: 20877
 		public readonly XUiV_Label[] Labels;
 	}
 }

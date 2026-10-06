@@ -1,23 +1,23 @@
 ﻿using System;
 using Platform;
 
-// Token: 0x0200077F RID: 1919
+// Token: 0x02000781 RID: 1921
 public abstract class AuthorizerAbs : IAuthorizer
 {
-	// Token: 0x170005B8 RID: 1464
-	// (get) Token: 0x0600393A RID: 14650
+	// Token: 0x170005DD RID: 1501
+	// (get) Token: 0x0600397C RID: 14716
 	public abstract int Order { get; }
 
-	// Token: 0x170005B9 RID: 1465
-	// (get) Token: 0x0600393B RID: 14651
+	// Token: 0x170005DE RID: 1502
+	// (get) Token: 0x0600397D RID: 14717
 	public abstract string AuthorizerName { get; }
 
-	// Token: 0x170005BA RID: 1466
-	// (get) Token: 0x0600393C RID: 14652
+	// Token: 0x170005DF RID: 1503
+	// (get) Token: 0x0600397E RID: 14718
 	public abstract string StateLocalizationKey { get; }
 
-	// Token: 0x170005BB RID: 1467
-	// (get) Token: 0x0600393D RID: 14653 RVA: 0x0008121D File Offset: 0x0007F41D
+	// Token: 0x170005E0 RID: 1504
+	// (get) Token: 0x0600397F RID: 14719 RVA: 0x000814D1 File Offset: 0x0007F6D1
 	public virtual EPlatformIdentifier PlatformRestriction
 	{
 		get
@@ -26,8 +26,8 @@ public abstract class AuthorizerAbs : IAuthorizer
 		}
 	}
 
-	// Token: 0x170005BC RID: 1468
-	// (get) Token: 0x0600393E RID: 14654 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170005E1 RID: 1505
+	// (get) Token: 0x06003980 RID: 14720 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool AuthorizerActive
 	{
 		get
@@ -36,42 +36,42 @@ public abstract class AuthorizerAbs : IAuthorizer
 		}
 	}
 
-	// Token: 0x0600393F RID: 14655 RVA: 0x001778EF File Offset: 0x00175AEF
+	// Token: 0x06003981 RID: 14721 RVA: 0x001780A7 File Offset: 0x001762A7
 	public virtual void Init(IAuthorizationResponses _authResponsesHandler)
 	{
 		this.authResponsesHandler = _authResponsesHandler;
 	}
 
-	// Token: 0x06003940 RID: 14656 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003982 RID: 14722 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Cleanup()
 	{
 	}
 
-	// Token: 0x06003941 RID: 14657 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003983 RID: 14723 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ServerStart()
 	{
 	}
 
-	// Token: 0x06003942 RID: 14658 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003984 RID: 14724 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ServerStop()
 	{
 	}
 
-	// Token: 0x06003943 RID: 14659
+	// Token: 0x06003985 RID: 14725
 	public abstract ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo);
 
-	// Token: 0x06003944 RID: 14660 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003986 RID: 14726 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Disconnect(ClientInfo _clientInfo)
 	{
 	}
 
-	// Token: 0x06003945 RID: 14661 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06003987 RID: 14727 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AuthorizerAbs()
 	{
 	}
 
-	// Token: 0x04002F5D RID: 12125
+	// Token: 0x04002F57 RID: 12119
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IAuthorizationResponses authResponsesHandler;
 }

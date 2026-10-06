@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000497 RID: 1175
+// Token: 0x0200049E RID: 1182
 [Preserve]
 public class EntityDriveable : EntityVehicle
 {
-	// Token: 0x06002450 RID: 9296 RVA: 0x000DE8AD File Offset: 0x000DCAAD
+	// Token: 0x06002455 RID: 9301 RVA: 0x000DEC5F File Offset: 0x000DCE5F
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);

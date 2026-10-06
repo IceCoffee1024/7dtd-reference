@@ -2,23 +2,23 @@
 
 namespace Platform
 {
-	// Token: 0x02001BA6 RID: 7078
+	// Token: 0x02001BD8 RID: 7128
 	public struct CensoredTextRequest
 	{
-		// Token: 0x17001A1A RID: 6682
-		// (get) Token: 0x0600D33E RID: 54078 RVA: 0x004C7799 File Offset: 0x004C5999
+		// Token: 0x17001AC0 RID: 6848
+		// (get) Token: 0x0600D4B6 RID: 54454 RVA: 0x004CC281 File Offset: 0x004CA481
 		public readonly string Input { get; }
 
-		// Token: 0x17001A1B RID: 6683
-		// (get) Token: 0x0600D33F RID: 54079 RVA: 0x004C77A1 File Offset: 0x004C59A1
-		// (set) Token: 0x0600D340 RID: 54080 RVA: 0x004C77A9 File Offset: 0x004C59A9
+		// Token: 0x17001AC1 RID: 6849
+		// (get) Token: 0x0600D4B7 RID: 54455 RVA: 0x004CC289 File Offset: 0x004CA489
+		// (set) Token: 0x0600D4B8 RID: 54456 RVA: 0x004CC291 File Offset: 0x004CA491
 		public int CensoredLength { readonly get; set; }
 
-		// Token: 0x17001A1C RID: 6684
-		// (get) Token: 0x0600D341 RID: 54081 RVA: 0x004C77B2 File Offset: 0x004C59B2
+		// Token: 0x17001AC2 RID: 6850
+		// (get) Token: 0x0600D4B9 RID: 54457 RVA: 0x004CC29A File Offset: 0x004CA49A
 		public readonly Action<CensoredTextResult> Callback { get; }
 
-		// Token: 0x0600D342 RID: 54082 RVA: 0x004C77BA File Offset: 0x004C59BA
+		// Token: 0x0600D4BA RID: 54458 RVA: 0x004CC2A2 File Offset: 0x004CA4A2
 		public CensoredTextRequest(string _input, Action<CensoredTextResult> _callback)
 		{
 			this.Input = _input;

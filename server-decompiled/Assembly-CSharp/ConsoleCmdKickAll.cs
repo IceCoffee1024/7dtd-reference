@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000230 RID: 560
+// Token: 0x02000232 RID: 562
 [Preserve]
 public class ConsoleCmdKickAll : ConsoleCmdAbstract
 {
-	// Token: 0x170001A4 RID: 420
-	// (get) Token: 0x060010E9 RID: 4329 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700019C RID: 412
+	// (get) Token: 0x060010E1 RID: 4321 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -18,21 +18,21 @@ public class ConsoleCmdKickAll : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010EA RID: 4330 RVA: 0x0006B94E File Offset: 0x00069B4E
+	// Token: 0x060010E2 RID: 4322 RVA: 0x0006BB12 File Offset: 0x00069D12
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "kickall" };
 	}
 
-	// Token: 0x060010EB RID: 4331 RVA: 0x0006B95E File Offset: 0x00069B5E
+	// Token: 0x060010E3 RID: 4323 RVA: 0x0006BB22 File Offset: 0x00069D22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Kicks all users with optional reason. \"kickall reason\"";
 	}
 
-	// Token: 0x060010EC RID: 4332 RVA: 0x0006B968 File Offset: 0x00069B68
+	// Token: 0x060010E4 RID: 4324 RVA: 0x0006BB2C File Offset: 0x00069D2C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		string text = string.Empty;

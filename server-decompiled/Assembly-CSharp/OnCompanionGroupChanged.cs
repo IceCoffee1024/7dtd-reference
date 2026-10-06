@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020008A5 RID: 2213
-// (Invoke) Token: 0x0600404B RID: 16459
+// Token: 0x020008AA RID: 2218
+// (Invoke) Token: 0x06003FE1 RID: 16353
 public delegate void OnCompanionGroupChanged();

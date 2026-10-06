@@ -4,22 +4,22 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Video;
 
-// Token: 0x02001166 RID: 4454
+// Token: 0x0200117E RID: 4478
 public class XUiV_Video : XUiV_TextureBased
 {
-	// Token: 0x140000ED RID: 237
-	// (add) Token: 0x06008E60 RID: 36448 RVA: 0x003599E4 File Offset: 0x00357BE4
-	// (remove) Token: 0x06008E61 RID: 36449 RVA: 0x00359A1C File Offset: 0x00357C1C
+	// Token: 0x140000EC RID: 236
+	// (add) Token: 0x06008EEB RID: 36587 RVA: 0x0035E1A0 File Offset: 0x0035C3A0
+	// (remove) Token: 0x06008EEC RID: 36588 RVA: 0x0035E1D8 File Offset: 0x0035C3D8
 	public event XUiV_Video.VideoErrorDelegate VideoError;
 
-	// Token: 0x140000EE RID: 238
-	// (add) Token: 0x06008E62 RID: 36450 RVA: 0x00359A54 File Offset: 0x00357C54
-	// (remove) Token: 0x06008E63 RID: 36451 RVA: 0x00359A8C File Offset: 0x00357C8C
+	// Token: 0x140000ED RID: 237
+	// (add) Token: 0x06008EED RID: 36589 RVA: 0x0035E210 File Offset: 0x0035C410
+	// (remove) Token: 0x06008EEE RID: 36590 RVA: 0x0035E248 File Offset: 0x0035C448
 	public event XUiV_Video.VideoFinishedDelegate VideoFinished;
 
-	// Token: 0x170010FE RID: 4350
-	// (get) Token: 0x06008E64 RID: 36452 RVA: 0x00359AC1 File Offset: 0x00357CC1
-	// (set) Token: 0x06008E65 RID: 36453 RVA: 0x00359AC9 File Offset: 0x00357CC9
+	// Token: 0x17001142 RID: 4418
+	// (get) Token: 0x06008EEF RID: 36591 RVA: 0x0035E27D File Offset: 0x0035C47D
+	// (set) Token: 0x06008EF0 RID: 36592 RVA: 0x0035E285 File Offset: 0x0035C485
 	[XuiXmlAttribute("loop", false)]
 	public bool Loop
 	{
@@ -38,9 +38,9 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x170010FF RID: 4351
-	// (get) Token: 0x06008E66 RID: 36454 RVA: 0x00359AE2 File Offset: 0x00357CE2
-	// (set) Token: 0x06008E67 RID: 36455 RVA: 0x00359AEA File Offset: 0x00357CEA
+	// Token: 0x17001143 RID: 4419
+	// (get) Token: 0x06008EF1 RID: 36593 RVA: 0x0035E29E File Offset: 0x0035C49E
+	// (set) Token: 0x06008EF2 RID: 36594 RVA: 0x0035E2A6 File Offset: 0x0035C4A6
 	[XuiXmlAttribute("uri", false)]
 	public string VideoUri
 	{
@@ -60,9 +60,9 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001100 RID: 4352
-	// (get) Token: 0x06008E68 RID: 36456 RVA: 0x00359B0F File Offset: 0x00357D0F
-	// (set) Token: 0x06008E69 RID: 36457 RVA: 0x00359B17 File Offset: 0x00357D17
+	// Token: 0x17001144 RID: 4420
+	// (get) Token: 0x06008EF3 RID: 36595 RVA: 0x0035E2CB File Offset: 0x0035C4CB
+	// (set) Token: 0x06008EF4 RID: 36596 RVA: 0x0035E2D3 File Offset: 0x0035C4D3
 	[XuiXmlAttribute("videoaspect", false)]
 	public VideoAspectRatio VideoAspect
 	{
@@ -81,9 +81,9 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001101 RID: 4353
-	// (get) Token: 0x06008E6A RID: 36458 RVA: 0x00359B30 File Offset: 0x00357D30
-	// (set) Token: 0x06008E6B RID: 36459 RVA: 0x00359B3D File Offset: 0x00357D3D
+	// Token: 0x17001145 RID: 4421
+	// (get) Token: 0x06008EF5 RID: 36597 RVA: 0x0035E2EC File Offset: 0x0035C4EC
+	// (set) Token: 0x06008EF6 RID: 36598 RVA: 0x0035E2F9 File Offset: 0x0035C4F9
 	public bool Playing
 	{
 		get
@@ -105,9 +105,9 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001102 RID: 4354
-	// (get) Token: 0x06008E6C RID: 36460 RVA: 0x00359B68 File Offset: 0x00357D68
-	// (set) Token: 0x06008E6D RID: 36461 RVA: 0x00359B70 File Offset: 0x00357D70
+	// Token: 0x17001146 RID: 4422
+	// (get) Token: 0x06008EF7 RID: 36599 RVA: 0x0035E324 File Offset: 0x0035C524
+	// (set) Token: 0x06008EF8 RID: 36600 RVA: 0x0035E32C File Offset: 0x0035C52C
 	public EnumGamePrefs VolumeSetting
 	{
 		get
@@ -125,9 +125,9 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x17001103 RID: 4355
-	// (get) Token: 0x06008E6E RID: 36462 RVA: 0x00359B89 File Offset: 0x00357D89
-	// (set) Token: 0x06008E6F RID: 36463 RVA: 0x00359B96 File Offset: 0x00357D96
+	// Token: 0x17001147 RID: 4423
+	// (get) Token: 0x06008EF9 RID: 36601 RVA: 0x0035E345 File Offset: 0x0035C545
+	// (set) Token: 0x06008EFA RID: 36602 RVA: 0x0035E352 File Offset: 0x0035C552
 	public double CurrentTime
 	{
 		get
@@ -140,13 +140,13 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x06008E70 RID: 36464 RVA: 0x00359BA4 File Offset: 0x00357DA4
+	// Token: 0x06008EFB RID: 36603 RVA: 0x0035E360 File Offset: 0x0035C560
 	public XUiV_Video(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008E71 RID: 36465 RVA: 0x00359BBC File Offset: 0x00357DBC
+	// Token: 0x06008EFC RID: 36604 RVA: 0x0035E378 File Offset: 0x0035C578
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -154,7 +154,7 @@ public class XUiV_Video : XUiV_TextureBased
 		_go.AddComponent<VideoPlayer>();
 	}
 
-	// Token: 0x06008E72 RID: 36466 RVA: 0x00359BCC File Offset: 0x00357DCC
+	// Token: 0x06008EFD RID: 36605 RVA: 0x0035E388 File Offset: 0x0035C588
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -162,7 +162,7 @@ public class XUiV_Video : XUiV_TextureBased
 		this.videoPlayer = this.uiTransform.gameObject.GetComponent<VideoPlayer>();
 	}
 
-	// Token: 0x06008E73 RID: 36467 RVA: 0x00359BEC File Offset: 0x00357DEC
+	// Token: 0x06008EFE RID: 36606 RVA: 0x0035E3A8 File Offset: 0x0035C5A8
 	public override void InitView()
 	{
 		base.InitView();
@@ -174,7 +174,7 @@ public class XUiV_Video : XUiV_TextureBased
 		GamePrefs.OnGamePrefChanged += this.OnGamePrefChanged;
 	}
 
-	// Token: 0x06008E74 RID: 36468 RVA: 0x00359C6D File Offset: 0x00357E6D
+	// Token: 0x06008EFF RID: 36607 RVA: 0x0035E429 File Offset: 0x0035C629
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -182,14 +182,14 @@ public class XUiV_Video : XUiV_TextureBased
 		this.destroyRenderTexture();
 	}
 
-	// Token: 0x06008E75 RID: 36469 RVA: 0x00359C8C File Offset: 0x00357E8C
+	// Token: 0x06008F00 RID: 36608 RVA: 0x0035E448 File Offset: 0x0035C648
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		ThreadManager.StartCoroutine(this.startVideoEndOfFrame());
 	}
 
-	// Token: 0x06008E76 RID: 36470 RVA: 0x00359CA0 File Offset: 0x00357EA0
+	// Token: 0x06008F01 RID: 36609 RVA: 0x0035E45C File Offset: 0x0035C65C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startVideoEndOfFrame()
 	{
@@ -198,14 +198,14 @@ public class XUiV_Video : XUiV_TextureBased
 		yield break;
 	}
 
-	// Token: 0x06008E77 RID: 36471 RVA: 0x00359CAF File Offset: 0x00357EAF
+	// Token: 0x06008F02 RID: 36610 RVA: 0x0035E46B File Offset: 0x0035C66B
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.destroyRenderTexture();
 	}
 
-	// Token: 0x06008E78 RID: 36472 RVA: 0x00359CBD File Offset: 0x00357EBD
+	// Token: 0x06008F03 RID: 36611 RVA: 0x0035E479 File Offset: 0x0035C679
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -216,7 +216,7 @@ public class XUiV_Video : XUiV_TextureBased
 		this.updateVolumeLevel();
 	}
 
-	// Token: 0x06008E79 RID: 36473 RVA: 0x00359CD0 File Offset: 0x00357ED0
+	// Token: 0x06008F04 RID: 36612 RVA: 0x0035E48C File Offset: 0x0035C68C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startVideo()
 	{
@@ -294,7 +294,7 @@ public class XUiV_Video : XUiV_TextureBased
 		this.videoPlayer.Prepare();
 	}
 
-	// Token: 0x06008E7A RID: 36474 RVA: 0x00359E77 File Offset: 0x00358077
+	// Token: 0x06008F05 RID: 36613 RVA: 0x0035E633 File Offset: 0x0035C833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopVideo()
 	{
@@ -306,14 +306,14 @@ public class XUiV_Video : XUiV_TextureBased
 		this.videoPlayer.url = null;
 	}
 
-	// Token: 0x06008E7B RID: 36475 RVA: 0x00359E9E File Offset: 0x0035809E
+	// Token: 0x06008F06 RID: 36614 RVA: 0x0035E65A File Offset: 0x0035C85A
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.updateRenderTexture();
 	}
 
-	// Token: 0x06008E7C RID: 36476 RVA: 0x00359EB0 File Offset: 0x003580B0
+	// Token: 0x06008F07 RID: 36615 RVA: 0x0035E66C File Offset: 0x0035C86C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -327,7 +327,7 @@ public class XUiV_Video : XUiV_TextureBased
 		}
 	}
 
-	// Token: 0x06008E7D RID: 36477 RVA: 0x00359F05 File Offset: 0x00358105
+	// Token: 0x06008F08 RID: 36616 RVA: 0x0035E6C1 File Offset: 0x0035C8C1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator videoUriChangedCo()
 	{
@@ -343,7 +343,7 @@ public class XUiV_Video : XUiV_TextureBased
 		yield break;
 	}
 
-	// Token: 0x06008E7E RID: 36478 RVA: 0x00359F14 File Offset: 0x00358114
+	// Token: 0x06008F09 RID: 36617 RVA: 0x0035E6D0 File Offset: 0x0035C8D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateVolumeLevel()
 	{
@@ -355,7 +355,7 @@ public class XUiV_Video : XUiV_TextureBased
 		this.videoPlayer.SetDirectAudioVolume(0, @float);
 	}
 
-	// Token: 0x06008E7F RID: 36479 RVA: 0x00359F58 File Offset: 0x00358158
+	// Token: 0x06008F0A RID: 36618 RVA: 0x0035E714 File Offset: 0x0035C914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateRenderTexture()
 	{
@@ -378,7 +378,7 @@ public class XUiV_Video : XUiV_TextureBased
 		this.Texture = (this.videoPlayer.targetTexture = this.rt);
 	}
 
-	// Token: 0x06008E80 RID: 36480 RVA: 0x0035A040 File Offset: 0x00358240
+	// Token: 0x06008F0B RID: 36619 RVA: 0x0035E7FC File Offset: 0x0035C9FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void destroyRenderTexture()
 	{
@@ -392,14 +392,14 @@ public class XUiV_Video : XUiV_TextureBased
 		this.rt = null;
 	}
 
-	// Token: 0x06008E81 RID: 36481 RVA: 0x0035A08E File Offset: 0x0035828E
+	// Token: 0x06008F0C RID: 36620 RVA: 0x0035E84A File Offset: 0x0035CA4A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoPrepared(VideoPlayer _source)
 	{
 		ThreadManager.StartCoroutine(this.playCo());
 	}
 
-	// Token: 0x06008E82 RID: 36482 RVA: 0x0035A09C File Offset: 0x0035829C
+	// Token: 0x06008F0D RID: 36621 RVA: 0x0035E858 File Offset: 0x0035CA58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator playCo()
 	{
@@ -415,7 +415,7 @@ public class XUiV_Video : XUiV_TextureBased
 		yield break;
 	}
 
-	// Token: 0x06008E83 RID: 36483 RVA: 0x0035A0AB File Offset: 0x003582AB
+	// Token: 0x06008F0E RID: 36622 RVA: 0x0035E867 File Offset: 0x0035CA67
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoErrorReceived(VideoPlayer _source, string _message)
 	{
@@ -428,7 +428,7 @@ public class XUiV_Video : XUiV_TextureBased
 		videoError(this);
 	}
 
-	// Token: 0x06008E84 RID: 36484 RVA: 0x0035A0CE File Offset: 0x003582CE
+	// Token: 0x06008F0F RID: 36623 RVA: 0x0035E88A File Offset: 0x0035CA8A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoFinished(VideoPlayer _source)
 	{
@@ -440,43 +440,43 @@ public class XUiV_Video : XUiV_TextureBased
 		videoFinished(this);
 	}
 
-	// Token: 0x04006865 RID: 26725
+	// Token: 0x040068CB RID: 26827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public VideoPlayer videoPlayer;
 
-	// Token: 0x04006866 RID: 26726
+	// Token: 0x040068CC RID: 26828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture rt;
 
-	// Token: 0x04006867 RID: 26727
+	// Token: 0x040068CD RID: 26829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const uint FrameDelay = 2U;
 
-	// Token: 0x04006868 RID: 26728
+	// Token: 0x040068CE RID: 26830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool loop;
 
-	// Token: 0x04006869 RID: 26729
+	// Token: 0x040068CF RID: 26831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string videoUri;
 
-	// Token: 0x0400686A RID: 26730
+	// Token: 0x040068D0 RID: 26832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool videoUriChanged;
 
-	// Token: 0x0400686B RID: 26731
+	// Token: 0x040068D1 RID: 26833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public VideoAspectRatio videoAspect = VideoAspectRatio.FitInside;
 
-	// Token: 0x0400686C RID: 26732
+	// Token: 0x040068D2 RID: 26834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumGamePrefs volumeSetting = EnumGamePrefs.OptionsMenuMusicVolumeLevel;
 
-	// Token: 0x02001167 RID: 4455
-	// (Invoke) Token: 0x06008E86 RID: 36486
+	// Token: 0x0200117F RID: 4479
+	// (Invoke) Token: 0x06008F11 RID: 36625
 	public delegate void VideoErrorDelegate(XUiV_Video _sender);
 
-	// Token: 0x02001168 RID: 4456
-	// (Invoke) Token: 0x06008E8A RID: 36490
+	// Token: 0x02001180 RID: 4480
+	// (Invoke) Token: 0x06008F15 RID: 36629
 	public delegate void VideoFinishedDelegate(XUiV_Video _sender);
 }

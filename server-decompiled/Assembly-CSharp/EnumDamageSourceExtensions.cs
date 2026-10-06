@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200053F RID: 1343
+// Token: 0x02000545 RID: 1349
 public static class EnumDamageSourceExtensions
 {
-	// Token: 0x06002C2C RID: 11308 RVA: 0x000CE0CF File Offset: 0x000CC2CF
+	// Token: 0x06002C22 RID: 11298 RVA: 0x000CE183 File Offset: 0x000CC383
 	public static bool AffectedByArmor(this EnumDamageSource s)
 	{
 		return s == EnumDamageSource.External;

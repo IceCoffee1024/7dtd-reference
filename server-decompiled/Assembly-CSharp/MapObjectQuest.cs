@@ -1,59 +1,59 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000635 RID: 1589
+// Token: 0x02000637 RID: 1591
 public class MapObjectQuest : MapObject
 {
-	// Token: 0x06003391 RID: 13201 RVA: 0x0014D245 File Offset: 0x0014B445
+	// Token: 0x060033D4 RID: 13268 RVA: 0x0014DBB5 File Offset: 0x0014BDB5
 	public MapObjectQuest(Vector3 _position, string newIcon = "ui_game_symbol_quest")
 		: base(EnumMapObjectType.Quest, _position, (long)(++MapObjectQuest.newID), null, false)
 	{
 		this.icon = newIcon;
 	}
 
-	// Token: 0x06003392 RID: 13202 RVA: 0x0014D267 File Offset: 0x0014B467
+	// Token: 0x060033D5 RID: 13269 RVA: 0x0014DBD7 File Offset: 0x0014BDD7
 	public override string GetMapIcon()
 	{
 		return this.icon;
 	}
 
-	// Token: 0x06003393 RID: 13203 RVA: 0x0014D267 File Offset: 0x0014B467
+	// Token: 0x060033D6 RID: 13270 RVA: 0x0014DBD7 File Offset: 0x0014BDD7
 	public override string GetCompassIcon()
 	{
 		return this.icon;
 	}
 
-	// Token: 0x06003394 RID: 13204 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060033D7 RID: 13271 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsOnCompass()
 	{
 		return true;
 	}
 
-	// Token: 0x06003395 RID: 13205 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060033D8 RID: 13272 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsCompassIconClamped()
 	{
 		return true;
 	}
 
-	// Token: 0x06003396 RID: 13206 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060033D9 RID: 13273 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool NearbyCompassBlink()
 	{
 		return true;
 	}
 
-	// Token: 0x06003397 RID: 13207 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060033DA RID: 13274 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLayerForMapIcon()
 	{
 		return 0;
 	}
 
-	// Token: 0x06003398 RID: 13208 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060033DB RID: 13275 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsMapIconEnabled()
 	{
 		return true;
 	}
 
-	// Token: 0x06003399 RID: 13209 RVA: 0x0014D26F File Offset: 0x0014B46F
+	// Token: 0x060033DC RID: 13276 RVA: 0x0014DBDF File Offset: 0x0014BDDF
 	public override Color GetMapIconColor()
 	{
 		if (this.IsSelected)
@@ -63,14 +63,14 @@ public class MapObjectQuest : MapObject
 		return Color.white;
 	}
 
-	// Token: 0x04002907 RID: 10503
+	// Token: 0x04002900 RID: 10496
 	public bool IsSelected;
 
-	// Token: 0x04002908 RID: 10504
+	// Token: 0x04002901 RID: 10497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string icon;
 
-	// Token: 0x04002909 RID: 10505
+	// Token: 0x04002902 RID: 10498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int newID;
 }

@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020009AF RID: 2479
+// Token: 0x020009B5 RID: 2485
 [Preserve]
 public class ObjectiveSpendSkillPoints : BaseObjective
 {
-	// Token: 0x170007C1 RID: 1985
-	// (get) Token: 0x0600491A RID: 18714 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007E1 RID: 2017
+	// (get) Token: 0x060048D5 RID: 18645 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,33 +16,33 @@ public class ObjectiveSpendSkillPoints : BaseObjective
 		}
 	}
 
-	// Token: 0x0600491B RID: 18715 RVA: 0x001C8DCA File Offset: 0x001C6FCA
+	// Token: 0x060048D6 RID: 18646 RVA: 0x001C97C7 File Offset: 0x001C79C7
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveSpendSkillPoints_keyword", false, null);
 		this.pointCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x0600491C RID: 18716 RVA: 0x001C8DF0 File Offset: 0x001C6FF0
+	// Token: 0x060048D7 RID: 18647 RVA: 0x001C97EC File Offset: 0x001C79EC
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, (this.ID != null) ? this.ID : "Any");
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.pointCount);
 	}
 
-	// Token: 0x0600491D RID: 18717 RVA: 0x001C8E49 File Offset: 0x001C7049
+	// Token: 0x060048D8 RID: 18648 RVA: 0x001C9845 File Offset: 0x001C7A45
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.SkillPointSpent += this.Current_SkillPointSpent;
 	}
 
-	// Token: 0x0600491E RID: 18718 RVA: 0x001C8E61 File Offset: 0x001C7061
+	// Token: 0x060048D9 RID: 18649 RVA: 0x001C985D File Offset: 0x001C7A5D
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.SkillPointSpent -= this.Current_SkillPointSpent;
 	}
 
-	// Token: 0x0600491F RID: 18719 RVA: 0x001C8E7C File Offset: 0x001C707C
+	// Token: 0x060048DA RID: 18650 RVA: 0x001C9878 File Offset: 0x001C7A78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_SkillPointSpent(string skillName)
 	{
@@ -57,7 +58,7 @@ public class ObjectiveSpendSkillPoints : BaseObjective
 		this.Refresh();
 	}
 
-	// Token: 0x06004920 RID: 18720 RVA: 0x001C8ECC File Offset: 0x001C70CC
+	// Token: 0x060048DB RID: 18651 RVA: 0x001C98C8 File Offset: 0x001C7AC8
 	public override void Refresh()
 	{
 		if ((int)base.CurrentValue > this.pointCount)
@@ -71,12 +72,12 @@ public class ObjectiveSpendSkillPoints : BaseObjective
 		}
 	}
 
-	// Token: 0x06004921 RID: 18721 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060048DC RID: 18652 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveObjectives()
 	{
 	}
 
-	// Token: 0x06004922 RID: 18722 RVA: 0x001C8F24 File Offset: 0x001C7124
+	// Token: 0x060048DD RID: 18653 RVA: 0x001C9920 File Offset: 0x001C7B20
 	public override BaseObjective Clone()
 	{
 		ObjectiveSpendSkillPoints objectiveSpendSkillPoints = new ObjectiveSpendSkillPoints();
@@ -84,7 +85,14 @@ public class ObjectiveSpendSkillPoints : BaseObjective
 		return objectiveSpendSkillPoints;
 	}
 
-	// Token: 0x04003A23 RID: 14883
+	// Token: 0x060048DE RID: 18654 RVA: 0x001C993B File Offset: 0x001C7B3B
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("count", this.pointCount);
+	}
+
+	// Token: 0x04003A20 RID: 14880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pointCount;
 }

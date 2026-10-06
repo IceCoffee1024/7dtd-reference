@@ -11,12 +11,12 @@ using UnityEngine.Scripting;
 
 namespace SandboxOptions
 {
-	// Token: 0x0200189A RID: 6298
+	// Token: 0x020018C6 RID: 6342
 	[Preserve]
 	public class SandboxOptionManager
 	{
-		// Token: 0x170017E1 RID: 6113
-		// (get) Token: 0x0600C240 RID: 49728 RVA: 0x0047AD0C File Offset: 0x00478F0C
+		// Token: 0x17001883 RID: 6275
+		// (get) Token: 0x0600C398 RID: 50072 RVA: 0x0047F248 File Offset: 0x0047D448
 		public static SandboxOptionManager Current
 		{
 			get
@@ -29,8 +29,8 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x170017E2 RID: 6114
-		// (get) Token: 0x0600C241 RID: 49729 RVA: 0x0047AD24 File Offset: 0x00478F24
+		// Token: 0x17001884 RID: 6276
+		// (get) Token: 0x0600C399 RID: 50073 RVA: 0x0047F260 File Offset: 0x0047D460
 		public static bool HasInstance
 		{
 			get
@@ -39,25 +39,25 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C242 RID: 49730 RVA: 0x0047AD30 File Offset: 0x00478F30
+		// Token: 0x0600C39A RID: 50074 RVA: 0x0047F26C File Offset: 0x0047D46C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SandboxOptionManager()
 		{
 		}
 
-		// Token: 0x0600C243 RID: 49731 RVA: 0x0047AD85 File Offset: 0x00478F85
+		// Token: 0x0600C39B RID: 50075 RVA: 0x0047F2C1 File Offset: 0x0047D4C1
 		public void Cleanup()
 		{
 			SandboxOptionManager.instance = null;
 		}
 
-		// Token: 0x170017E3 RID: 6115
-		// (get) Token: 0x0600C244 RID: 49732 RVA: 0x0047AD8D File Offset: 0x00478F8D
-		// (set) Token: 0x0600C245 RID: 49733 RVA: 0x0047AD95 File Offset: 0x00478F95
+		// Token: 0x17001885 RID: 6277
+		// (get) Token: 0x0600C39C RID: 50076 RVA: 0x0047F2C9 File Offset: 0x0047D4C9
+		// (set) Token: 0x0600C39D RID: 50077 RVA: 0x0047F2D1 File Offset: 0x0047D4D1
 		public byte CurrentFileVersion { get; set; }
 
-		// Token: 0x170017E4 RID: 6116
-		// (get) Token: 0x0600C246 RID: 49734 RVA: 0x0047AD9E File Offset: 0x00478F9E
+		// Token: 0x17001886 RID: 6278
+		// (get) Token: 0x0600C39E RID: 50078 RVA: 0x0047F2DA File Offset: 0x0047D4DA
 		public bool IsInit
 		{
 			get
@@ -66,7 +66,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C247 RID: 49735 RVA: 0x0047ADA6 File Offset: 0x00478FA6
+		// Token: 0x0600C39F RID: 50079 RVA: 0x0047F2E2 File Offset: 0x0047D4E2
 		public void Init()
 		{
 			SandboxOptionManager.originalGravity = Physics.gravity;
@@ -80,7 +80,7 @@ namespace SandboxOptions
 			Log.Warning("SandboxOptionManager Init called when it's already init");
 		}
 
-		// Token: 0x0600C248 RID: 49736 RVA: 0x0047ADD8 File Offset: 0x00478FD8
+		// Token: 0x0600C3A0 RID: 50080 RVA: 0x0047F314 File Offset: 0x0047D514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupOptions()
 		{
@@ -760,7 +760,7 @@ namespace SandboxOptions
 			this.InitValueSets();
 		}
 
-		// Token: 0x0600C249 RID: 49737 RVA: 0x0047DB80 File Offset: 0x0047BD80
+		// Token: 0x0600C3A1 RID: 50081 RVA: 0x004820BC File Offset: 0x004802BC
 		public void InitValueSets()
 		{
 			foreach (SandboxOptionValueSet sandboxOptionValueSet in this.ValueSets.Values)
@@ -769,7 +769,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C24A RID: 49738 RVA: 0x0047DBD8 File Offset: 0x0047BDD8
+		// Token: 0x0600C3A2 RID: 50082 RVA: 0x00482114 File Offset: 0x00480314
 		public List<string> GetAllPresetGroups()
 		{
 			List<string> list = new List<string>();
@@ -784,7 +784,7 @@ namespace SandboxOptions
 			return list;
 		}
 
-		// Token: 0x0600C24B RID: 49739 RVA: 0x0047DC24 File Offset: 0x0047BE24
+		// Token: 0x0600C3A3 RID: 50083 RVA: 0x00482160 File Offset: 0x00480360
 		public bool GetPresetsForGroup(string presetGroupName)
 		{
 			for (int i = 0; i < this.SandboxPresets.Count; i++)
@@ -797,7 +797,7 @@ namespace SandboxOptions
 			return false;
 		}
 
-		// Token: 0x0600C24C RID: 49740 RVA: 0x0047DC63 File Offset: 0x0047BE63
+		// Token: 0x0600C3A4 RID: 50084 RVA: 0x0048219F File Offset: 0x0048039F
 		public static BaseSandboxOption.OptionTypes GetOptionType(SandboxOptions optionType)
 		{
 			if (SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -807,7 +807,7 @@ namespace SandboxOptions
 			return BaseSandboxOption.OptionTypes.Invalid;
 		}
 
-		// Token: 0x0600C24D RID: 49741 RVA: 0x0047DC90 File Offset: 0x0047BE90
+		// Token: 0x0600C3A5 RID: 50085 RVA: 0x004821CC File Offset: 0x004803CC
 		public static bool GetBool(SandboxOptions optionType)
 		{
 			if (!SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -821,7 +821,7 @@ namespace SandboxOptions
 			return SandboxOptionManager.Current.SandboxOptionsDict[optionType].GetBoolValue();
 		}
 
-		// Token: 0x0600C24E RID: 49742 RVA: 0x0047DCF0 File Offset: 0x0047BEF0
+		// Token: 0x0600C3A6 RID: 50086 RVA: 0x0048222C File Offset: 0x0048042C
 		public static float GetFloat(SandboxOptions optionType)
 		{
 			if (!SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -835,7 +835,7 @@ namespace SandboxOptions
 			return SandboxOptionManager.Current.SandboxOptionsDict[optionType].GetFloatValue();
 		}
 
-		// Token: 0x0600C24F RID: 49743 RVA: 0x0047DD54 File Offset: 0x0047BF54
+		// Token: 0x0600C3A7 RID: 50087 RVA: 0x00482290 File Offset: 0x00480490
 		public static int GetInt(SandboxOptions optionType)
 		{
 			if (!SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -849,7 +849,7 @@ namespace SandboxOptions
 			return SandboxOptionManager.Current.SandboxOptionsDict[optionType].GetIntValue();
 		}
 
-		// Token: 0x0600C250 RID: 49744 RVA: 0x0047DDB4 File Offset: 0x0047BFB4
+		// Token: 0x0600C3A8 RID: 50088 RVA: 0x004822F0 File Offset: 0x004804F0
 		public static int GetIndex(SandboxOptions optionType)
 		{
 			if (SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -859,7 +859,7 @@ namespace SandboxOptions
 			return 0;
 		}
 
-		// Token: 0x0600C251 RID: 49745 RVA: 0x0047DDE0 File Offset: 0x0047BFE0
+		// Token: 0x0600C3A9 RID: 50089 RVA: 0x0048231C File Offset: 0x0048051C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddSandboxOption(BaseSandboxOption option)
 		{
@@ -871,7 +871,7 @@ namespace SandboxOptions
 			this.SandboxOptionsDict.Add(option.Option, option);
 		}
 
-		// Token: 0x0600C252 RID: 49746 RVA: 0x0047DE49 File Offset: 0x0047C049
+		// Token: 0x0600C3AA RID: 50090 RVA: 0x00482385 File Offset: 0x00480585
 		public static BaseSandboxOption GetOption(SandboxOptions optionType)
 		{
 			if (SandboxOptionManager.Current.SandboxOptionsDict.ContainsKey(optionType))
@@ -881,7 +881,7 @@ namespace SandboxOptions
 			return null;
 		}
 
-		// Token: 0x0600C253 RID: 49747 RVA: 0x0047DE6F File Offset: 0x0047C06F
+		// Token: 0x0600C3AB RID: 50091 RVA: 0x004823AB File Offset: 0x004805AB
 		public bool SetOption(SandboxOptions optionType, string value)
 		{
 			BaseSandboxOption baseSandboxOption = this.SandboxOptionsDict[optionType];
@@ -889,7 +889,7 @@ namespace SandboxOptions
 			return baseSandboxOption.IsChanged();
 		}
 
-		// Token: 0x0600C254 RID: 49748 RVA: 0x0047DE8C File Offset: 0x0047C08C
+		// Token: 0x0600C3AC RID: 50092 RVA: 0x004823C8 File Offset: 0x004805C8
 		public void SetOption(SandboxOptions optionType, int value)
 		{
 			SandboxOptionInt sandboxOptionInt = this.SandboxOptionsDict[optionType] as SandboxOptionInt;
@@ -932,7 +932,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C255 RID: 49749 RVA: 0x0047E030 File Offset: 0x0047C230
+		// Token: 0x0600C3AD RID: 50093 RVA: 0x0048256C File Offset: 0x0048076C
 		public void SetOption(SandboxOptions optionType, float value)
 		{
 			SandboxOptionFloat sandboxOptionFloat = this.SandboxOptionsDict[optionType] as SandboxOptionFloat;
@@ -954,7 +954,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C256 RID: 49750 RVA: 0x0047E0FC File Offset: 0x0047C2FC
+		// Token: 0x0600C3AE RID: 50094 RVA: 0x00482638 File Offset: 0x00480838
 		public void SetOption(SandboxOptions optionType, bool value)
 		{
 			SandboxOptionBoolean sandboxOptionBoolean = this.SandboxOptionsDict[optionType] as SandboxOptionBoolean;
@@ -976,13 +976,13 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C257 RID: 49751 RVA: 0x0047E1C6 File Offset: 0x0047C3C6
+		// Token: 0x0600C3AF RID: 50095 RVA: 0x00482702 File Offset: 0x00480902
 		public void SetOptionToDefault(SandboxOptions optionType)
 		{
 			this.SandboxOptionsDict[optionType].SetToDefault();
 		}
 
-		// Token: 0x0600C258 RID: 49752 RVA: 0x0047E1DC File Offset: 0x0047C3DC
+		// Token: 0x0600C3B0 RID: 50096 RVA: 0x00482718 File Offset: 0x00480918
 		public void OutputToConsole()
 		{
 			for (int i = 0; i < 165; i++)
@@ -995,7 +995,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C259 RID: 49753 RVA: 0x0047E240 File Offset: 0x0047C440
+		// Token: 0x0600C3B1 RID: 50097 RVA: 0x0048277C File Offset: 0x0048097C
 		public void ResetAllToDefault()
 		{
 			foreach (BaseSandboxOption baseSandboxOption in this.SandboxOptionsDict.Values)
@@ -1004,14 +1004,14 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C25A RID: 49754 RVA: 0x0047E298 File Offset: 0x0047C498
+		// Token: 0x0600C3B2 RID: 50098 RVA: 0x004827D4 File Offset: 0x004809D4
 		public void SetWorldAndGame(string world, string game)
 		{
 			this.WorldName = world;
 			this.GameName = game;
 		}
 
-		// Token: 0x0600C25B RID: 49755 RVA: 0x0047E2A8 File Offset: 0x0047C4A8
+		// Token: 0x0600C3B3 RID: 50099 RVA: 0x004827E4 File Offset: 0x004809E4
 		public SandboxOptionPreset GetPreset(string presetName)
 		{
 			for (int i = 0; i < this.SandboxPresets.Count; i++)
@@ -1025,7 +1025,7 @@ namespace SandboxOptions
 			return null;
 		}
 
-		// Token: 0x0600C25C RID: 49756 RVA: 0x0047E2EC File Offset: 0x0047C4EC
+		// Token: 0x0600C3B4 RID: 50100 RVA: 0x00482828 File Offset: 0x00480A28
 		public SandboxOptionPreset GetPresetByCode(string sandboxCode)
 		{
 			if (string.IsNullOrEmpty(sandboxCode))
@@ -1043,7 +1043,7 @@ namespace SandboxOptions
 			return null;
 		}
 
-		// Token: 0x0600C25D RID: 49757 RVA: 0x0047E338 File Offset: 0x0047C538
+		// Token: 0x0600C3B5 RID: 50101 RVA: 0x00482874 File Offset: 0x00480A74
 		public SandboxOptionPreset GetDefaultPreset()
 		{
 			for (int i = this.SandboxPresets.Count - 1; i >= 0; i--)
@@ -1057,7 +1057,7 @@ namespace SandboxOptions
 			return null;
 		}
 
-		// Token: 0x0600C25E RID: 49758 RVA: 0x0047E378 File Offset: 0x0047C578
+		// Token: 0x0600C3B6 RID: 50102 RVA: 0x004828B4 File Offset: 0x00480AB4
 		public void DeletePreset(string presetName)
 		{
 			for (int i = 0; i < this.SandboxPresets.Count; i++)
@@ -1077,7 +1077,7 @@ namespace SandboxOptions
 			SaveDataUtils.SaveDataManager.CommitAsync();
 		}
 
-		// Token: 0x0600C25F RID: 49759 RVA: 0x0047E400 File Offset: 0x0047C600
+		// Token: 0x0600C3B7 RID: 50103 RVA: 0x0048293C File Offset: 0x00480B3C
 		public void SaveCurrentToPreset(SandboxOptionPreset preset)
 		{
 			preset.PresetValues.Clear();
@@ -1095,7 +1095,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C260 RID: 49760 RVA: 0x0047E4A0 File Offset: 0x0047C6A0
+		// Token: 0x0600C3B8 RID: 50104 RVA: 0x004829DC File Offset: 0x00480BDC
 		public SandboxOptionPreset SaveCurrentToNewPreset(string presetName, string groupName, bool isUserPreset = false)
 		{
 			SandboxOptionPreset sandboxOptionPreset = new SandboxOptionPreset();
@@ -1107,7 +1107,7 @@ namespace SandboxOptions
 			return sandboxOptionPreset;
 		}
 
-		// Token: 0x0600C261 RID: 49761 RVA: 0x0047E4DC File Offset: 0x0047C6DC
+		// Token: 0x0600C3B9 RID: 50105 RVA: 0x00482A18 File Offset: 0x00480C18
 		public void SavePresetToFile(SandboxOptionPreset preset)
 		{
 			string text = GameIO.GetUserGameDataDir() + "/Presets/";
@@ -1162,7 +1162,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C262 RID: 49762 RVA: 0x0047E75C File Offset: 0x0047C95C
+		// Token: 0x0600C3BA RID: 50106 RVA: 0x00482C98 File Offset: 0x00480E98
 		public void SavePresetToDict(SandboxOptionPreset preset)
 		{
 			for (int i = 0; i < this.SandboxPresets.Count; i++)
@@ -1176,7 +1176,7 @@ namespace SandboxOptions
 			this.SandboxPresets.Add(preset);
 		}
 
-		// Token: 0x0600C263 RID: 49763 RVA: 0x0047E7B7 File Offset: 0x0047C9B7
+		// Token: 0x0600C3BB RID: 50107 RVA: 0x00482CF3 File Offset: 0x00480EF3
 		public void SavePreset(SandboxOptionPreset preset, bool addToDictionary, bool saveToFile)
 		{
 			if (saveToFile)
@@ -1189,7 +1189,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C264 RID: 49764 RVA: 0x0047E7D0 File Offset: 0x0047C9D0
+		// Token: 0x0600C3BC RID: 50108 RVA: 0x00482D0C File Offset: 0x00480F0C
 		public SandboxOptionPreset SaveCurrentSettings(string presetName, bool addToDictionary, bool saveToFile, bool isUserPreset = false)
 		{
 			SandboxOptionPreset sandboxOptionPreset = this.SaveCurrentToNewPreset(presetName, "User", isUserPreset);
@@ -1197,7 +1197,7 @@ namespace SandboxOptions
 			return sandboxOptionPreset;
 		}
 
-		// Token: 0x0600C265 RID: 49765 RVA: 0x0047E7F8 File Offset: 0x0047C9F8
+		// Token: 0x0600C3BD RID: 50109 RVA: 0x00482D34 File Offset: 0x00480F34
 		public void LoadPresets()
 		{
 			this.SandboxPresets.Clear();
@@ -1225,7 +1225,7 @@ namespace SandboxOptions
 			this.SandboxPresets.Add(SandboxOptionManager.CustomPreset);
 		}
 
-		// Token: 0x0600C266 RID: 49766 RVA: 0x0047E8B4 File Offset: 0x0047CAB4
+		// Token: 0x0600C3BE RID: 50110 RVA: 0x00482DF0 File Offset: 0x00480FF0
 		public SandboxOptionPreset LoadPreset(XmlFile _xmlFile)
 		{
 			SandboxOptionPreset sandboxOptionPreset = null;
@@ -1272,7 +1272,7 @@ namespace SandboxOptions
 			return sandboxOptionPreset;
 		}
 
-		// Token: 0x0600C267 RID: 49767 RVA: 0x0047EA08 File Offset: 0x0047CC08
+		// Token: 0x0600C3BF RID: 50111 RVA: 0x00482F44 File Offset: 0x00481144
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LoadInternalPresets()
 		{
@@ -1290,7 +1290,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C268 RID: 49768 RVA: 0x0047EA9C File Offset: 0x0047CC9C
+		// Token: 0x0600C3C0 RID: 50112 RVA: 0x00482FD8 File Offset: 0x004811D8
 		public void LoadPresetFromXml(XElement childElement, string presetGroupOverride = null, bool isModded = false)
 		{
 			if (childElement.HasAttribute("name") && childElement.HasAttribute("code") && (childElement.HasAttribute("description") || childElement.HasAttribute("description_key")))
@@ -1342,7 +1342,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C269 RID: 49769 RVA: 0x0047EC8C File Offset: 0x0047CE8C
+		// Token: 0x0600C3C1 RID: 50113 RVA: 0x004831C8 File Offset: 0x004813C8
 		public void SetValuesFromPreset(SandboxOptionPreset preset)
 		{
 			foreach (SandboxOptions sandboxOptions in preset.PresetValues.Keys)
@@ -1351,7 +1351,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C26A RID: 49770 RVA: 0x0047ECFC File Offset: 0x0047CEFC
+		// Token: 0x0600C3C2 RID: 50114 RVA: 0x00483238 File Offset: 0x00481438
 		public void UpdateWorldOptionsWithSandboxOptions()
 		{
 			if (SandboxOptionManager.GetBool(SandboxOptions.SillyBigHeads))
@@ -1364,7 +1364,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C26B RID: 49771 RVA: 0x0047ED3C File Offset: 0x0047CF3C
+		// Token: 0x0600C3C3 RID: 50115 RVA: 0x00483278 File Offset: 0x00481478
 		public void UpdateInGameValuesWithSandboxOptions(bool forceLoad = false)
 		{
 			GameManager gameManager = GameManager.Instance;
@@ -1606,7 +1606,7 @@ namespace SandboxOptions
 			this.UpdateWorldOptionsWithSandboxOptions();
 		}
 
-		// Token: 0x0600C26C RID: 49772 RVA: 0x0047F7EC File Offset: 0x0047D9EC
+		// Token: 0x0600C3C4 RID: 50116 RVA: 0x00483D28 File Offset: 0x00481F28
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupBloodMoonWarningTimes()
 		{
@@ -1626,7 +1626,7 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C26D RID: 49773 RVA: 0x0047F82C File Offset: 0x0047DA2C
+		// Token: 0x0600C3C5 RID: 50117 RVA: 0x00483D68 File Offset: 0x00481F68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupAirDropTimeRanges()
 		{
@@ -1699,7 +1699,7 @@ namespace SandboxOptions
 			AIDirectorAirDropComponent.MaxDayCount = num4;
 		}
 
-		// Token: 0x0600C26E RID: 49774 RVA: 0x0047F968 File Offset: 0x0047DB68
+		// Token: 0x0600C3C6 RID: 50118 RVA: 0x00483EA4 File Offset: 0x004820A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetupLostItemsOnDeathValues()
 		{
@@ -1751,7 +1751,7 @@ namespace SandboxOptions
 			GameStats.Set(EnumGameStats.DropOnQuit, SandboxOptionManager.GetInt(SandboxOptions.DropOnQuit));
 		}
 
-		// Token: 0x0600C26F RID: 49775 RVA: 0x0047FA74 File Offset: 0x0047DC74
+		// Token: 0x0600C3C7 RID: 50119 RVA: 0x00483FB0 File Offset: 0x004821B0
 		public bool TryGetPresetDescription(string presetName, out string description)
 		{
 			SandboxOptionPreset preset = this.GetPreset(presetName);
@@ -1764,14 +1764,14 @@ namespace SandboxOptions
 			return true;
 		}
 
-		// Token: 0x0600C270 RID: 49776 RVA: 0x0047FAA0 File Offset: 0x0047DCA0
+		// Token: 0x0600C3C8 RID: 50120 RVA: 0x00483FDC File Offset: 0x004821DC
 		public bool GetChangedPresetOptions(string presetName, [TupleElementNames(new string[] { "name", "value", "isDefault" })] out List<ValueTuple<string, string, bool>> valuesList)
 		{
 			SandboxOptionPreset preset = this.GetPreset(presetName);
 			return this.GetChangedPresetOptions(preset, out valuesList);
 		}
 
-		// Token: 0x0600C271 RID: 49777 RVA: 0x0047FAC0 File Offset: 0x0047DCC0
+		// Token: 0x0600C3C9 RID: 50121 RVA: 0x00483FFC File Offset: 0x004821FC
 		public bool GetChangedPresetOptions(SandboxOptionPreset preset, [TupleElementNames(new string[] { "name", "value", "isDefault" })] out List<ValueTuple<string, string, bool>> valuesList)
 		{
 			valuesList = null;
@@ -1828,7 +1828,7 @@ namespace SandboxOptions
 			return true;
 		}
 
-		// Token: 0x0600C272 RID: 49778 RVA: 0x0047FC60 File Offset: 0x0047DE60
+		// Token: 0x0600C3CA RID: 50122 RVA: 0x0048419C File Offset: 0x0048239C
 		public bool StoreOptionsInPresetFromCode(SandboxOptionPreset p, string code)
 		{
 			if ((code == "" || code[0] != SandboxOptionManager.currentVersion) && p.IsUserPreset)
@@ -1856,7 +1856,7 @@ namespace SandboxOptions
 			return true;
 		}
 
-		// Token: 0x0600C273 RID: 49779 RVA: 0x0047FD2C File Offset: 0x0047DF2C
+		// Token: 0x0600C3CB RID: 50123 RVA: 0x00484268 File Offset: 0x00482468
 		public bool LoadOptionsFromCode(string code)
 		{
 			this.ResetAllToDefault();
@@ -1881,7 +1881,7 @@ namespace SandboxOptions
 			return true;
 		}
 
-		// Token: 0x0600C274 RID: 49780 RVA: 0x0047FDCC File Offset: 0x0047DFCC
+		// Token: 0x0600C3CC RID: 50124 RVA: 0x00484308 File Offset: 0x00482508
 		public bool LoadOptionsFromCode(string code, SandboxOptionPreset preset)
 		{
 			if (code == "" || code[0] != SandboxOptionManager.currentVersion || preset == null)
@@ -1906,7 +1906,7 @@ namespace SandboxOptions
 			return true;
 		}
 
-		// Token: 0x0600C275 RID: 49781 RVA: 0x0047FE87 File Offset: 0x0047E087
+		// Token: 0x0600C3CD RID: 50125 RVA: 0x004843C3 File Offset: 0x004825C3
 		public static char IndexToAlpha(int index)
 		{
 			if (index < 0 || index > 26)
@@ -1916,7 +1916,7 @@ namespace SandboxOptions
 			return (char)(65 + index % 26);
 		}
 
-		// Token: 0x0600C276 RID: 49782 RVA: 0x0047FEB8 File Offset: 0x0047E0B8
+		// Token: 0x0600C3CE RID: 50126 RVA: 0x004843F4 File Offset: 0x004825F4
 		public static string IndexToAlpha2(int index)
 		{
 			if (index < 0 || index >= 676)
@@ -1928,7 +1928,7 @@ namespace SandboxOptions
 			return string.Format("{0}{1}", c, c2);
 		}
 
-		// Token: 0x0600C277 RID: 49783 RVA: 0x0047FF14 File Offset: 0x0047E114
+		// Token: 0x0600C3CF RID: 50127 RVA: 0x00484450 File Offset: 0x00482650
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int AlphaToIndex(char value)
 		{
@@ -1940,7 +1940,7 @@ namespace SandboxOptions
 			return (int)(value - 'A');
 		}
 
-		// Token: 0x0600C278 RID: 49784 RVA: 0x0047FF38 File Offset: 0x0047E138
+		// Token: 0x0600C3D0 RID: 50128 RVA: 0x00484474 File Offset: 0x00482674
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int Alpha2ToIndex(string value)
 		{
@@ -1956,7 +1956,7 @@ namespace SandboxOptions
 			return (int)((value[0] - 'A') * '\u001a' + (value[1] - 'A'));
 		}
 
-		// Token: 0x0600C279 RID: 49785 RVA: 0x0047FFB8 File Offset: 0x0047E1B8
+		// Token: 0x0600C3D1 RID: 50129 RVA: 0x004844F4 File Offset: 0x004826F4
 		public void RemoveOverrides()
 		{
 			for (int i = this.SandboxPresets.Count - 1; i >= 0; i--)
@@ -1972,19 +1972,19 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C27A RID: 49786 RVA: 0x00480009 File Offset: 0x0047E209
+		// Token: 0x0600C3D2 RID: 50130 RVA: 0x00484545 File Offset: 0x00482745
 		public bool IsEnabled(SandboxOptions option)
 		{
 			return this.SandboxOptionsDict[option].IsEnabled;
 		}
 
-		// Token: 0x0600C27B RID: 49787 RVA: 0x00480021 File Offset: 0x0047E221
+		// Token: 0x0600C3D3 RID: 50131 RVA: 0x0048455D File Offset: 0x0048275D
 		public bool IsOverriden(SandboxOptions option)
 		{
 			return SandboxOptionManager.overrideList != null && SandboxOptionManager.overrideList.Contains(option);
 		}
 
-		// Token: 0x0600C27C RID: 49788 RVA: 0x00480037 File Offset: 0x0047E237
+		// Token: 0x0600C3D4 RID: 50132 RVA: 0x00484573 File Offset: 0x00482773
 		public void AddOverride(SandboxOptions option)
 		{
 			if (SandboxOptionManager.overrideList == null)
@@ -1997,44 +1997,44 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x04009385 RID: 37765
+		// Token: 0x0400944B RID: 37963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static SandboxOptionManager instance = null;
 
-		// Token: 0x04009386 RID: 37766
+		// Token: 0x0400944C RID: 37964
 		public const byte FileVersion = 1;
 
-		// Token: 0x04009387 RID: 37767
+		// Token: 0x0400944D RID: 37965
 		public const string CustomPresetName = "Custom";
 
-		// Token: 0x04009388 RID: 37768
+		// Token: 0x0400944E RID: 37966
 		public const string CustomGroupName = "Custom";
 
-		// Token: 0x04009389 RID: 37769
+		// Token: 0x0400944F RID: 37967
 		public const string UserGroupName = "User";
 
-		// Token: 0x0400938A RID: 37770
+		// Token: 0x04009450 RID: 37968
 		public const string ModdedGroupName = "Modded";
 
-		// Token: 0x0400938B RID: 37771
+		// Token: 0x04009451 RID: 37969
 		public const string IconCustomPresets = "Data/Sandbox/icons/user_custom";
 
-		// Token: 0x0400938D RID: 37773
+		// Token: 0x04009453 RID: 37971
 		public List<SandboxOptionCategory> SandboxOptionCategories = new List<SandboxOptionCategory>();
 
-		// Token: 0x0400938E RID: 37774
+		// Token: 0x04009454 RID: 37972
 		public Dictionary<SandboxOptions, BaseSandboxOption> SandboxOptionsDict = new Dictionary<SandboxOptions, BaseSandboxOption>();
 
-		// Token: 0x0400938F RID: 37775
+		// Token: 0x04009455 RID: 37973
 		public Dictionary<string, SandboxOptionValueSet> ValueSets = new Dictionary<string, SandboxOptionValueSet>();
 
-		// Token: 0x04009390 RID: 37776
+		// Token: 0x04009456 RID: 37974
 		public DictionaryList<string, List<BaseSandboxOption>> OptionsByCategory = new DictionaryList<string, List<BaseSandboxOption>>();
 
-		// Token: 0x04009391 RID: 37777
+		// Token: 0x04009457 RID: 37975
 		public List<SandboxOptionPreset> SandboxPresets = new List<SandboxOptionPreset>();
 
-		// Token: 0x04009392 RID: 37778
+		// Token: 0x04009458 RID: 37976
 		public static readonly SandboxOptionPreset CustomPreset = new SandboxOptionPreset
 		{
 			Name = "Custom",
@@ -2044,27 +2044,27 @@ namespace SandboxOptions
 			Icon = "Data/Sandbox/icons/user_custom"
 		};
 
-		// Token: 0x04009393 RID: 37779
+		// Token: 0x04009459 RID: 37977
 		public string WorldName;
 
-		// Token: 0x04009394 RID: 37780
+		// Token: 0x0400945A RID: 37978
 		public string GameName;
 
-		// Token: 0x04009395 RID: 37781
+		// Token: 0x0400945B RID: 37979
 		public string CurrentPresetName = "";
 
-		// Token: 0x04009396 RID: 37782
+		// Token: 0x0400945C RID: 37980
 		public static readonly char currentVersion = 'A';
 
-		// Token: 0x04009397 RID: 37783
+		// Token: 0x0400945D RID: 37981
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 originalGravity = Vector3.zero;
 
-		// Token: 0x04009398 RID: 37784
+		// Token: 0x0400945E RID: 37982
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<SandboxOptions> overrideList;
 
-		// Token: 0x04009399 RID: 37785
+		// Token: 0x0400945F RID: 37983
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool initRun;
 	}

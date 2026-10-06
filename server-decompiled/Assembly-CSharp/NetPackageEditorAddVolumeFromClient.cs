@@ -2,11 +2,11 @@
 using PrefabVolumes;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CB RID: 1995
+// Token: 0x020007CE RID: 1998
 [Preserve]
 public class NetPackageEditorAddVolumeFromClient : NetPackage
 {
-	// Token: 0x06003B2F RID: 15151 RVA: 0x0017E36F File Offset: 0x0017C56F
+	// Token: 0x06003B4F RID: 15183 RVA: 0x0017E928 File Offset: 0x0017CB28
 	public NetPackageEditorAddVolumeFromClient Setup(PrefabVolumeAbs.EVolumeType _volumeType, Vector3i _startPos, Vector3i _size)
 	{
 		this.addType = NetPackageEditorAddVolumeFromClient.EAddType.New;
@@ -16,7 +16,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B30 RID: 15152 RVA: 0x0017E38E File Offset: 0x0017C58E
+	// Token: 0x06003B50 RID: 15184 RVA: 0x0017E947 File Offset: 0x0017CB47
 	public NetPackageEditorAddVolumeFromClient Setup(PrefabVolumeAbs.EVolumeType _volumeType, int _prefabInstanceId, int _existingIndex, Vector3i _offset)
 	{
 		this.addType = NetPackageEditorAddVolumeFromClient.EAddType.Clone;
@@ -27,8 +27,8 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x17000626 RID: 1574
-	// (get) Token: 0x06003B31 RID: 15153 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700064B RID: 1611
+	// (get) Token: 0x06003B51 RID: 15185 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -37,7 +37,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003B32 RID: 15154 RVA: 0x0017E3B8 File Offset: 0x0017C5B8
+	// Token: 0x06003B52 RID: 15186 RVA: 0x0017E970 File Offset: 0x0017CB70
 	public override void read(PooledBinaryReader _br)
 	{
 		this.addType = (NetPackageEditorAddVolumeFromClient.EAddType)_br.ReadByte();
@@ -48,7 +48,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		this.existingIndex = (int)_br.ReadInt16();
 	}
 
-	// Token: 0x06003B33 RID: 15155 RVA: 0x0017E410 File Offset: 0x0017C610
+	// Token: 0x06003B53 RID: 15187 RVA: 0x0017E9C8 File Offset: 0x0017CBC8
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -60,7 +60,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		_bw.Write((short)this.existingIndex);
 	}
 
-	// Token: 0x06003B34 RID: 15156 RVA: 0x0017E470 File Offset: 0x0017C670
+	// Token: 0x06003B54 RID: 15188 RVA: 0x0017EA28 File Offset: 0x0017CC28
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.addType == NetPackageEditorAddVolumeFromClient.EAddType.New)
@@ -71,42 +71,36 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		PrefabVolumeManager.Instance.CloneVolumeServer(this.volumeType, this.prefabInstanceId, this.existingIndex, this.startPos);
 	}
 
-	// Token: 0x06003B35 RID: 15157 RVA: 0x0017E4C4 File Offset: 0x0017C6C4
-	public override int GetLength()
-	{
-		return 29;
-	}
-
-	// Token: 0x04003048 RID: 12360
+	// Token: 0x04003042 RID: 12354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEditorAddVolumeFromClient.EAddType addType;
 
-	// Token: 0x04003049 RID: 12361
+	// Token: 0x04003043 RID: 12355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabVolumeAbs.EVolumeType volumeType;
 
-	// Token: 0x0400304A RID: 12362
+	// Token: 0x04003044 RID: 12356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i startPos;
 
-	// Token: 0x0400304B RID: 12363
+	// Token: 0x04003045 RID: 12357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i size;
 
-	// Token: 0x0400304C RID: 12364
+	// Token: 0x04003046 RID: 12358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceId;
 
-	// Token: 0x0400304D RID: 12365
+	// Token: 0x04003047 RID: 12359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int existingIndex;
 
-	// Token: 0x020007CC RID: 1996
+	// Token: 0x020007CF RID: 1999
 	public enum EAddType
 	{
-		// Token: 0x0400304F RID: 12367
+		// Token: 0x04003049 RID: 12361
 		New,
-		// Token: 0x04003050 RID: 12368
+		// Token: 0x0400304A RID: 12362
 		Clone
 	}
 }

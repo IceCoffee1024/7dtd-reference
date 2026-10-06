@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A6 RID: 1958
+// Token: 0x020007A9 RID: 1961
 [Preserve]
 public class NetPackageEncryptionRequest : NetPackage
 {
-	// Token: 0x17000603 RID: 1539
-	// (get) Token: 0x06003A3E RID: 14910 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000628 RID: 1576
+	// (get) Token: 0x06003A7F RID: 14975 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -15,26 +15,20 @@ public class NetPackageEncryptionRequest : NetPackage
 		}
 	}
 
-	// Token: 0x06003A3F RID: 14911 RVA: 0x0012A165 File Offset: 0x00128365
+	// Token: 0x06003A80 RID: 14976 RVA: 0x0012AC85 File Offset: 0x00128E85
 	public NetPackageEncryptionRequest Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003A40 RID: 14912 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003A81 RID: 14977 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _reader)
 	{
 	}
 
-	// Token: 0x06003A41 RID: 14913 RVA: 0x0017B776 File Offset: 0x00179976
+	// Token: 0x06003A82 RID: 14978 RVA: 0x0017BF2E File Offset: 0x0017A12E
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.AntiCheatEncryptionAuthClient.StartKeyExchange();
-	}
-
-	// Token: 0x06003A42 RID: 14914 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
 	}
 }

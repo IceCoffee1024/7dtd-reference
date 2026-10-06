@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000846 RID: 2118
+// Token: 0x02000847 RID: 2119
 public enum eSetBlockResponse
 {
-	// Token: 0x0400325E RID: 12894
+	// Token: 0x04003245 RID: 12869
 	Success,
-	// Token: 0x0400325F RID: 12895
+	// Token: 0x04003246 RID: 12870
 	PowerBlockLimitExceeded,
-	// Token: 0x04003260 RID: 12896
+	// Token: 0x04003247 RID: 12871
 	StorageBlockLimitExceeded
 }

@@ -4,10 +4,10 @@ using InControl;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02000556 RID: 1366
+// Token: 0x0200055C RID: 1372
 public static class InputUtils
 {
-	// Token: 0x06002CA1 RID: 11425 RVA: 0x0011A8FC File Offset: 0x00118AFC
+	// Token: 0x06002C97 RID: 11415 RVA: 0x0011B6CC File Offset: 0x001198CC
 	public static void EnableAllPlayerActions(bool _enable)
 	{
 		if (ActionSetManager.DebugLevel != ActionSetManager.EDebugLevel.Off)
@@ -60,8 +60,8 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x170004BA RID: 1210
-	// (get) Token: 0x06002CA2 RID: 11426 RVA: 0x0011AA90 File Offset: 0x00118C90
+	// Token: 0x170004B0 RID: 1200
+	// (get) Token: 0x06002C98 RID: 11416 RVA: 0x0011B860 File Offset: 0x00119A60
 	public static bool IsMac
 	{
 		get
@@ -75,8 +75,8 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x170004BB RID: 1211
-	// (get) Token: 0x06002CA3 RID: 11427 RVA: 0x0011AACD File Offset: 0x00118CCD
+	// Token: 0x170004B1 RID: 1201
+	// (get) Token: 0x06002C99 RID: 11417 RVA: 0x0011B89D File Offset: 0x00119A9D
 	public static bool ControlKeyPressed
 	{
 		get
@@ -89,8 +89,8 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x170004BC RID: 1212
-	// (get) Token: 0x06002CA4 RID: 11428 RVA: 0x0011AB07 File Offset: 0x00118D07
+	// Token: 0x170004B2 RID: 1202
+	// (get) Token: 0x06002C9A RID: 11418 RVA: 0x0011B8D7 File Offset: 0x00119AD7
 	public static bool ShiftKeyPressed
 	{
 		get
@@ -99,8 +99,8 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x170004BD RID: 1213
-	// (get) Token: 0x06002CA5 RID: 11429 RVA: 0x0011AB21 File Offset: 0x00118D21
+	// Token: 0x170004B3 RID: 1203
+	// (get) Token: 0x06002C9B RID: 11419 RVA: 0x0011B8F1 File Offset: 0x00119AF1
 	public static bool AltKeyPressed
 	{
 		get
@@ -109,11 +109,11 @@ public static class InputUtils
 		}
 	}
 
-	// Token: 0x0400224B RID: 8779
+	// Token: 0x04002253 RID: 8787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<PlayerActionSet, bool> previousState = new Dictionary<PlayerActionSet, bool>();
 
-	// Token: 0x0400224C RID: 8780
+	// Token: 0x04002254 RID: 8788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool? isMac;
 }

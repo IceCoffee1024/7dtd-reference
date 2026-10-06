@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000674 RID: 1652
+// Token: 0x02000676 RID: 1654
 [Preserve]
 public class StatComparePercCurrentToModMax : StatCompareAbs
 {
-	// Token: 0x060034EE RID: 13550 RVA: 0x0015F584 File Offset: 0x0015D784
+	// Token: 0x06003531 RID: 13617 RVA: 0x0015FEE8 File Offset: 0x0015E0E8
 	public override bool Compare(MinEventParams _params)
 	{
 		StatCompareAbs.StatTypes stat = this.stat;

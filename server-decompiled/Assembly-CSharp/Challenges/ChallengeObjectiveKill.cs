@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001907 RID: 6407
+	// Token: 0x02001933 RID: 6451
 	[Preserve]
 	public class ChallengeObjectiveKill : BaseChallengeObjective
 	{
-		// Token: 0x17001876 RID: 6262
-		// (get) Token: 0x0600C5DB RID: 50651 RVA: 0x000811D6 File Offset: 0x0007F3D6
+		// Token: 0x17001918 RID: 6424
+		// (get) Token: 0x0600C733 RID: 50995 RVA: 0x0008148A File Offset: 0x0007F68A
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001877 RID: 6263
-		// (get) Token: 0x0600C5DC RID: 50652 RVA: 0x0048D0A4 File Offset: 0x0048B2A4
+		// Token: 0x17001919 RID: 6425
+		// (get) Token: 0x0600C734 RID: 50996 RVA: 0x00491594 File Offset: 0x0048F794
 		public override string DescriptionText
 		{
 			get
@@ -32,7 +32,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5DD RID: 50653 RVA: 0x0048D124 File Offset: 0x0048B324
+		// Token: 0x0600C735 RID: 50997 RVA: 0x00491614 File Offset: 0x0048F814
 		public override void Init()
 		{
 			if (this.entityIDs != null)
@@ -50,7 +50,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5DE RID: 50654 RVA: 0x0048D184 File Offset: 0x0048B384
+		// Token: 0x0600C736 RID: 50998 RVA: 0x00491674 File Offset: 0x0048F874
 		public override void HandleAddHooks()
 		{
 			if (!EntityFactory.EnemySpawnMode && this.isEnemy)
@@ -72,13 +72,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5DF RID: 50655 RVA: 0x0048D213 File Offset: 0x0048B413
+		// Token: 0x0600C737 RID: 50999 RVA: 0x00491703 File Offset: 0x0048F903
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.EntityKill -= this.Current_EntityKill;
 		}
 
-		// Token: 0x0600C5E0 RID: 50656 RVA: 0x0048D22C File Offset: 0x0048B42C
+		// Token: 0x0600C738 RID: 51000 RVA: 0x0049171C File Offset: 0x0048F91C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_EntityKill(EntityAlive killedBy, EntityAlive killedEntity)
 		{
@@ -111,7 +111,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5E1 RID: 50657 RVA: 0x0048D2B5 File Offset: 0x0048B4B5
+		// Token: 0x0600C739 RID: 51001 RVA: 0x004917A5 File Offset: 0x0048F9A5
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -119,7 +119,7 @@ namespace Challenges
 			e.ParseAttribute("is_enemy", ref this.isEnemy);
 		}
 
-		// Token: 0x0600C5E2 RID: 50658 RVA: 0x0048D2EC File Offset: 0x0048B4EC
+		// Token: 0x0600C73A RID: 51002 RVA: 0x004917DC File Offset: 0x0048F9DC
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveKill
@@ -131,15 +131,15 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400955A RID: 38234
+		// Token: 0x04009620 RID: 38432
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string entityIDs = "";
 
-		// Token: 0x0400955B RID: 38235
+		// Token: 0x04009621 RID: 38433
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] entityNames;
 
-		// Token: 0x0400955C RID: 38236
+		// Token: 0x04009622 RID: 38434
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isEnemy = true;
 	}

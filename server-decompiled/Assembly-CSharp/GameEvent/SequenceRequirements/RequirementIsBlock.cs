@@ -4,23 +4,23 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001939 RID: 6457
+	// Token: 0x02001965 RID: 6501
 	[Preserve]
 	public class RequirementIsBlock : BaseRequirement
 	{
-		// Token: 0x0600C729 RID: 50985 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C881 RID: 51329 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C72A RID: 50986 RVA: 0x004915EF File Offset: 0x0048F7EF
+		// Token: 0x0600C882 RID: 51330 RVA: 0x00495ADB File Offset: 0x00493CDB
 		public override bool CanPerform(Entity target)
 		{
 			return this.CheckBlock();
 		}
 
-		// Token: 0x0600C72B RID: 50987 RVA: 0x004915FC File Offset: 0x0048F7FC
+		// Token: 0x0600C883 RID: 51331 RVA: 0x00495AE8 File Offset: 0x00493CE8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool CheckBlock()
 		{
@@ -37,7 +37,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C72C RID: 50988 RVA: 0x004916A2 File Offset: 0x0048F8A2
+		// Token: 0x0600C884 RID: 51332 RVA: 0x00495B8E File Offset: 0x00493D8E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -47,7 +47,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C72D RID: 50989 RVA: 0x004916D3 File Offset: 0x0048F8D3
+		// Token: 0x0600C885 RID: 51333 RVA: 0x00495BBF File Offset: 0x00493DBF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -58,11 +58,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040095F7 RID: 38391
+		// Token: 0x040096BD RID: 38589
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string BlockName = "";
 
-		// Token: 0x040095F8 RID: 38392
+		// Token: 0x040096BE RID: 38590
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBlockName = "block_name";
 	}

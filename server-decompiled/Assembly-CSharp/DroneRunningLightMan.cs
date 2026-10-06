@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020003E5 RID: 997
+// Token: 0x020003E8 RID: 1000
 [Preserve]
 public class DroneRunningLightMan
 {
-	// Token: 0x06001E41 RID: 7745 RVA: 0x000B7DC1 File Offset: 0x000B5FC1
+	// Token: 0x06001E39 RID: 7737 RVA: 0x000B7FCD File Offset: 0x000B61CD
 	public DroneRunningLightMan()
 	{
 		DroneRunningLightMan.instance = this;
 		this.runningLights = new List<DroneRunningLight>();
 	}
 
-	// Token: 0x06001E42 RID: 7746 RVA: 0x000B7DDA File Offset: 0x000B5FDA
+	// Token: 0x06001E3A RID: 7738 RVA: 0x000B7FE6 File Offset: 0x000B61E6
 	public void AddLight(DroneRunningLight _light)
 	{
 		this.runningLights.Add(_light);
 	}
 
-	// Token: 0x06001E43 RID: 7747 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001E3B RID: 7739 RVA: 0x000027FC File Offset: 0x000009FC
 	public void QueueLight(DroneRunningLight _light)
 	{
 	}
 
-	// Token: 0x04001433 RID: 5171
+	// Token: 0x0400142C RID: 5164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DroneRunningLight> runningLights;
 
-	// Token: 0x04001434 RID: 5172
+	// Token: 0x0400142D RID: 5165
 	public static DroneRunningLightMan instance;
 }

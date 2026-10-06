@@ -7,17 +7,17 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Scripting;
 
-// Token: 0x0200050F RID: 1295
+// Token: 0x02000515 RID: 1301
 [Preserve]
 public abstract class EModelBase : MonoBehaviour
 {
-	// Token: 0x1700049D RID: 1181
-	// (get) Token: 0x06002A7B RID: 10875 RVA: 0x0010BCC6 File Offset: 0x00109EC6
-	// (set) Token: 0x06002A7C RID: 10876 RVA: 0x0010BCCE File Offset: 0x00109ECE
+	// Token: 0x17000492 RID: 1170
+	// (get) Token: 0x06002A70 RID: 10864 RVA: 0x0010C5FE File Offset: 0x0010A7FE
+	// (set) Token: 0x06002A71 RID: 10865 RVA: 0x0010C606 File Offset: 0x0010A806
 	public bool IsFPV { get; set; }
 
-	// Token: 0x1700049E RID: 1182
-	// (get) Token: 0x06002A7D RID: 10877 RVA: 0x0010BCD7 File Offset: 0x00109ED7
+	// Token: 0x17000493 RID: 1171
+	// (get) Token: 0x06002A72 RID: 10866 RVA: 0x0010C60F File Offset: 0x0010A80F
 	public virtual Transform NeckTransform
 	{
 		get
@@ -26,7 +26,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A7E RID: 10878 RVA: 0x0010BCE0 File Offset: 0x00109EE0
+	// Token: 0x06002A73 RID: 10867 RVA: 0x0010C618 File Offset: 0x0010A818
 	public virtual void Init(World _world, Entity _entity, EModelInstanceAssets _eModelAssets)
 	{
 		EntityClass entityClass = EntityClass.list[_entity.entityClass];
@@ -62,7 +62,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.InitCommon();
 	}
 
-	// Token: 0x06002A7F RID: 10879 RVA: 0x0010BDF8 File Offset: 0x00109FF8
+	// Token: 0x06002A74 RID: 10868 RVA: 0x0010C730 File Offset: 0x0010A930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitCommon()
 	{
@@ -80,7 +80,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.JiggleInit();
 	}
 
-	// Token: 0x06002A80 RID: 10880 RVA: 0x0010BE60 File Offset: 0x0010A060
+	// Token: 0x06002A75 RID: 10869 RVA: 0x0010C798 File Offset: 0x0010A998
 	public void InitRigidBodies()
 	{
 		if (!this.bipedRootTransform)
@@ -275,12 +275,12 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A81 RID: 10881 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A76 RID: 10870 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void PostInit()
 	{
 	}
 
-	// Token: 0x06002A82 RID: 10882 RVA: 0x0010C1B8 File Offset: 0x0010A3B8
+	// Token: 0x06002A77 RID: 10871 RVA: 0x0010CAF0 File Offset: 0x0010ACF0
 	public static Transform FindModel(Transform _t)
 	{
 		Transform transform = _t.Find("Graphics/Model");
@@ -291,25 +291,25 @@ public abstract class EModelBase : MonoBehaviour
 		return _t;
 	}
 
-	// Token: 0x06002A83 RID: 10883 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A78 RID: 10872 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnUnload()
 	{
 	}
 
-	// Token: 0x06002A84 RID: 10884 RVA: 0x0010C1DC File Offset: 0x0010A3DC
+	// Token: 0x06002A79 RID: 10873 RVA: 0x0010CB14 File Offset: 0x0010AD14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		this.assets.Release();
 	}
 
-	// Token: 0x06002A85 RID: 10885 RVA: 0x0010C1E9 File Offset: 0x0010A3E9
+	// Token: 0x06002A7A RID: 10874 RVA: 0x0010CB21 File Offset: 0x0010AD21
 	public void OriginChanged(Vector3 _deltaPos)
 	{
 		this.ragdollPosePelvisPos += _deltaPos;
 	}
 
-	// Token: 0x06002A86 RID: 10886 RVA: 0x0010C200 File Offset: 0x0010A400
+	// Token: 0x06002A7B RID: 10875 RVA: 0x0010CB38 File Offset: 0x0010AD38
 	public virtual Vector3 GetHeadPosition()
 	{
 		if (this.headTransform == null)
@@ -319,7 +319,7 @@ public abstract class EModelBase : MonoBehaviour
 		return this.headTransform.position + Origin.position;
 	}
 
-	// Token: 0x06002A87 RID: 10887 RVA: 0x0010C256 File Offset: 0x0010A456
+	// Token: 0x06002A7C RID: 10876 RVA: 0x0010CB8E File Offset: 0x0010AD8E
 	public virtual Vector3 GetNavObjectPosition()
 	{
 		if (this.NavObjectTransform == null)
@@ -329,7 +329,7 @@ public abstract class EModelBase : MonoBehaviour
 		return this.NavObjectTransform.position + Origin.position;
 	}
 
-	// Token: 0x06002A88 RID: 10888 RVA: 0x0010C284 File Offset: 0x0010A484
+	// Token: 0x06002A7D RID: 10877 RVA: 0x0010CBBC File Offset: 0x0010ADBC
 	public virtual Vector3 GetHipPosition()
 	{
 		if (this.bipedPelvisTransform == null)
@@ -339,7 +339,7 @@ public abstract class EModelBase : MonoBehaviour
 		return this.bipedPelvisTransform.position + Origin.position;
 	}
 
-	// Token: 0x06002A89 RID: 10889 RVA: 0x0010C2E0 File Offset: 0x0010A4E0
+	// Token: 0x06002A7E RID: 10878 RVA: 0x0010CC18 File Offset: 0x0010AE18
 	public virtual Quaternion GetFlatHipRotation()
 	{
 		Vector3 vector;
@@ -355,7 +355,7 @@ public abstract class EModelBase : MonoBehaviour
 		return Quaternion.Euler(vector);
 	}
 
-	// Token: 0x06002A8A RID: 10890 RVA: 0x0010C334 File Offset: 0x0010A534
+	// Token: 0x06002A7F RID: 10879 RVA: 0x0010CC6C File Offset: 0x0010AE6C
 	public virtual Vector3 GetChestPosition()
 	{
 		if (this.bipedPelvisTransform == null || this.headTransform == null)
@@ -365,7 +365,7 @@ public abstract class EModelBase : MonoBehaviour
 		return Vector3.Lerp(this.bipedPelvisTransform.position, this.headTransform.position, 0.6f) + Origin.position;
 	}
 
-	// Token: 0x06002A8B RID: 10891 RVA: 0x0010C3A0 File Offset: 0x0010A5A0
+	// Token: 0x06002A80 RID: 10880 RVA: 0x0010CCD8 File Offset: 0x0010AED8
 	public virtual Vector3 GetBellyPosition()
 	{
 		if (this.bipedPelvisTransform == null || this.headTransform == null)
@@ -375,7 +375,7 @@ public abstract class EModelBase : MonoBehaviour
 		return Vector3.Lerp(this.bipedPelvisTransform.position, this.headTransform.position, 0.2f) + Origin.position;
 	}
 
-	// Token: 0x06002A8C RID: 10892 RVA: 0x0010C40C File Offset: 0x0010A60C
+	// Token: 0x06002A81 RID: 10881 RVA: 0x0010CD44 File Offset: 0x0010AF44
 	public IKController AddIKController()
 	{
 		IKController ikcontroller = null;
@@ -395,7 +395,7 @@ public abstract class EModelBase : MonoBehaviour
 		return ikcontroller;
 	}
 
-	// Token: 0x06002A8D RID: 10893 RVA: 0x0010C458 File Offset: 0x0010A658
+	// Token: 0x06002A82 RID: 10882 RVA: 0x0010CD90 File Offset: 0x0010AF90
 	public void RemoveIKController()
 	{
 		Transform transform = this.GetModelTransform();
@@ -410,7 +410,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A8E RID: 10894 RVA: 0x0010C490 File Offset: 0x0010A690
+	// Token: 0x06002A83 RID: 10883 RVA: 0x0010CDC8 File Offset: 0x0010AFC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CrouchUpdate(EntityAlive _ea)
 	{
@@ -422,7 +422,7 @@ public abstract class EModelBase : MonoBehaviour
 		parent.localRotation *= quaternion;
 	}
 
-	// Token: 0x06002A8F RID: 10895 RVA: 0x0010C4EC File Offset: 0x0010A6EC
+	// Token: 0x06002A84 RID: 10884 RVA: 0x0010CE24 File Offset: 0x0010B024
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void LookAtInit()
 	{
@@ -431,13 +431,13 @@ public abstract class EModelBase : MonoBehaviour
 		this.lookAtEnabled = this.lookAtMaxAngle > 0f;
 	}
 
-	// Token: 0x06002A90 RID: 10896 RVA: 0x0010C52E File Offset: 0x0010A72E
+	// Token: 0x06002A85 RID: 10885 RVA: 0x0010CE66 File Offset: 0x0010B066
 	public void ClearLookAt()
 	{
 		this.lookAtBlendPerTarget = 0f;
 	}
 
-	// Token: 0x06002A91 RID: 10897 RVA: 0x0010C53B File Offset: 0x0010A73B
+	// Token: 0x06002A86 RID: 10886 RVA: 0x0010CE73 File Offset: 0x0010B073
 	public void SetLookAt(Vector3 _pos)
 	{
 		this.lookAtPos = _pos;
@@ -445,7 +445,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.lookAtIsPos = true;
 	}
 
-	// Token: 0x06002A92 RID: 10898 RVA: 0x0010C557 File Offset: 0x0010A757
+	// Token: 0x06002A87 RID: 10887 RVA: 0x0010CE8F File Offset: 0x0010B08F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetLookAt()
 	{
@@ -453,7 +453,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.lookAtBlendPerTarget = 0f;
 	}
 
-	// Token: 0x06002A93 RID: 10899 RVA: 0x0010C570 File Offset: 0x0010A770
+	// Token: 0x06002A88 RID: 10888 RVA: 0x0010CEA8 File Offset: 0x0010B0A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LookAtUpdate(EntityAlive e)
 	{
@@ -514,13 +514,13 @@ public abstract class EModelBase : MonoBehaviour
 		transform.rotation = Quaternion.Slerp(rotation2, this.lookAtRot, num);
 	}
 
-	// Token: 0x06002A94 RID: 10900 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A89 RID: 10889 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
 	}
 
-	// Token: 0x06002A95 RID: 10901 RVA: 0x0010C7BE File Offset: 0x0010A9BE
+	// Token: 0x06002A8A RID: 10890 RVA: 0x0010D0F6 File Offset: 0x0010B2F6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -531,7 +531,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A96 RID: 10902 RVA: 0x0010C7E0 File Offset: 0x0010A9E0
+	// Token: 0x06002A8B RID: 10891 RVA: 0x0010D118 File Offset: 0x0010B318
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void LateUpdate()
 	{
@@ -553,7 +553,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A97 RID: 10903 RVA: 0x0010C831 File Offset: 0x0010AA31
+	// Token: 0x06002A8C RID: 10892 RVA: 0x0010D169 File Offset: 0x0010B369
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Transform GetModelTransform()
 	{
@@ -564,13 +564,13 @@ public abstract class EModelBase : MonoBehaviour
 		return this.modelTransform;
 	}
 
-	// Token: 0x06002A98 RID: 10904 RVA: 0x0010C84D File Offset: 0x0010AA4D
+	// Token: 0x06002A8D RID: 10893 RVA: 0x0010D185 File Offset: 0x0010B385
 	public Transform GetModelTransformParent()
 	{
 		return this.modelTransformParent;
 	}
 
-	// Token: 0x06002A99 RID: 10905 RVA: 0x0010C858 File Offset: 0x0010AA58
+	// Token: 0x06002A8E RID: 10894 RVA: 0x0010D190 File Offset: 0x0010B390
 	public virtual Transform GetHitTransform(DamageSource _damageSource)
 	{
 		string hitTransformName = _damageSource.getHitTransformName();
@@ -581,7 +581,7 @@ public abstract class EModelBase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06002A9A RID: 10906 RVA: 0x0010C88C File Offset: 0x0010AA8C
+	// Token: 0x06002A8F RID: 10895 RVA: 0x0010D1C4 File Offset: 0x0010B3C4
 	public virtual Transform GetHitTransform(BodyPrimaryHit _primary)
 	{
 		if (this.physicsBody != null)
@@ -627,7 +627,7 @@ public abstract class EModelBase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06002A9B RID: 10907 RVA: 0x0010C936 File Offset: 0x0010AB36
+	// Token: 0x06002A90 RID: 10896 RVA: 0x0010D26E File Offset: 0x0010B46E
 	public virtual Transform GetHeadTransform()
 	{
 		if (!this.headTransform)
@@ -637,19 +637,19 @@ public abstract class EModelBase : MonoBehaviour
 		return this.headTransform;
 	}
 
-	// Token: 0x06002A9C RID: 10908 RVA: 0x0010C952 File Offset: 0x0010AB52
+	// Token: 0x06002A91 RID: 10897 RVA: 0x0010D28A File Offset: 0x0010B48A
 	public virtual Transform GetPelvisTransform()
 	{
 		return this.bipedPelvisTransform;
 	}
 
-	// Token: 0x06002A9D RID: 10909 RVA: 0x0010C95A File Offset: 0x0010AB5A
+	// Token: 0x06002A92 RID: 10898 RVA: 0x0010D292 File Offset: 0x0010B492
 	public virtual Transform GetThirdPersonCameraTransform()
 	{
 		return base.transform;
 	}
 
-	// Token: 0x06002A9E RID: 10910 RVA: 0x0010C964 File Offset: 0x0010AB64
+	// Token: 0x06002A93 RID: 10899 RVA: 0x0010D29C File Offset: 0x0010B49C
 	public virtual void OnDeath(DamageResponse _dmResponse, ChunkCluster _cc)
 	{
 		EntityAlive entityAlive = this.entity as EntityAlive;
@@ -688,20 +688,20 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A9F RID: 10911 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A94 RID: 10900 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void restoreTPose(PhysicsBodyInstance physicsBody)
 	{
 	}
 
-	// Token: 0x06002AA0 RID: 10912 RVA: 0x0010CA82 File Offset: 0x0010AC82
+	// Token: 0x06002A95 RID: 10901 RVA: 0x0010D3BA File Offset: 0x0010B5BA
 	public virtual bool HasRagdoll()
 	{
 		return this.bHasRagdoll && this.physicsBody != null;
 	}
 
-	// Token: 0x1700049F RID: 1183
-	// (get) Token: 0x06002AA1 RID: 10913 RVA: 0x0010CA97 File Offset: 0x0010AC97
+	// Token: 0x17000494 RID: 1172
+	// (get) Token: 0x06002A96 RID: 10902 RVA: 0x0010D3CF File Offset: 0x0010B5CF
 	public bool IsRagdollActive
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -711,8 +711,8 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170004A0 RID: 1184
-	// (get) Token: 0x06002AA2 RID: 10914 RVA: 0x0010CAA2 File Offset: 0x0010ACA2
+	// Token: 0x17000495 RID: 1173
+	// (get) Token: 0x06002A97 RID: 10903 RVA: 0x0010D3DA File Offset: 0x0010B5DA
 	public bool IsRagdollMovement
 	{
 		get
@@ -721,8 +721,8 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170004A1 RID: 1185
-	// (get) Token: 0x06002AA3 RID: 10915 RVA: 0x0010CABA File Offset: 0x0010ACBA
+	// Token: 0x17000496 RID: 1174
+	// (get) Token: 0x06002A98 RID: 10904 RVA: 0x0010D3F2 File Offset: 0x0010B5F2
 	public bool IsRagdollOn
 	{
 		get
@@ -731,8 +731,8 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170004A2 RID: 1186
-	// (get) Token: 0x06002AA4 RID: 10916 RVA: 0x0010CAD0 File Offset: 0x0010ACD0
+	// Token: 0x17000497 RID: 1175
+	// (get) Token: 0x06002A99 RID: 10905 RVA: 0x0010D408 File Offset: 0x0010B608
 	public bool IsRagdollDead
 	{
 		get
@@ -741,7 +741,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AA5 RID: 10917 RVA: 0x0010CADC File Offset: 0x0010ACDC
+	// Token: 0x06002A9A RID: 10906 RVA: 0x0010D414 File Offset: 0x0010B614
 	public void DoRagdoll(EModelBase.RagdollMode _mode, float stunTime, EnumBodyPartHit bodyPart, Vector3 forceVec, Vector3 forceWorldPos, bool isRemote)
 	{
 		if (this.entity.IsFlyMode.Value || this.entity.AttachedToEntity)
@@ -813,7 +813,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AA6 RID: 10918 RVA: 0x0010CCCC File Offset: 0x0010AECC
+	// Token: 0x06002A9B RID: 10907 RVA: 0x0010D604 File Offset: 0x0010B804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClampForceForMass(ref Vector3 _force)
 	{
@@ -825,7 +825,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AA7 RID: 10919 RVA: 0x0010CD28 File Offset: 0x0010AF28
+	// Token: 0x06002A9C RID: 10908 RVA: 0x0010D660 File Offset: 0x0010B860
 	public void DoRagdoll(in DamageResponse dr, EModelBase.RagdollMode _mode = EModelBase.RagdollMode.Default, float stunTime = 999999f)
 	{
 		EntityAlive entityAlive = this.entity as EntityAlive;
@@ -880,7 +880,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.DoRagdoll(_mode, stunTime, dr.HitBodyPart, Vector3.zero, Vector3.zero, false);
 	}
 
-	// Token: 0x06002AA8 RID: 10920 RVA: 0x0010CE9D File Offset: 0x0010B09D
+	// Token: 0x06002A9D RID: 10909 RVA: 0x0010D7D5 File Offset: 0x0010B9D5
 	public void SetRagdollState(int newState)
 	{
 		if (this.ragdollState == EModelBase.ERagdollState.On && newState == 2)
@@ -889,7 +889,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AA9 RID: 10921 RVA: 0x0010CEB7 File Offset: 0x0010B0B7
+	// Token: 0x06002A9E RID: 10910 RVA: 0x0010D7EF File Offset: 0x0010B9EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnWithRagdoll()
 	{
@@ -899,7 +899,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AAA RID: 10922 RVA: 0x0010CEC8 File Offset: 0x0010B0C8
+	// Token: 0x06002A9F RID: 10911 RVA: 0x0010D800 File Offset: 0x0010BA00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool StartRagdoll(float stunTime)
 	{
@@ -976,7 +976,7 @@ public abstract class EModelBase : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06002AAB RID: 10923 RVA: 0x0010D0B0 File Offset: 0x0010B2B0
+	// Token: 0x06002AA0 RID: 10912 RVA: 0x0010D9E8 File Offset: 0x0010BBE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRagdollDead()
 	{
@@ -992,7 +992,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AAC RID: 10924 RVA: 0x0010D10C File Offset: 0x0010B30C
+	// Token: 0x06002AA1 RID: 10913 RVA: 0x0010DA44 File Offset: 0x0010BC44
 	public void DisableRagdoll(bool isSetAlive)
 	{
 		if (this.ragdollState == EModelBase.ERagdollState.Off)
@@ -1057,7 +1057,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.SetRagdollOff();
 	}
 
-	// Token: 0x06002AAD RID: 10925 RVA: 0x0010D2E8 File Offset: 0x0010B4E8
+	// Token: 0x06002AA2 RID: 10914 RVA: 0x0010DC20 File Offset: 0x0010BE20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CaptureRagdollBones()
 	{
@@ -1090,7 +1090,7 @@ public abstract class EModelBase : MonoBehaviour
 		EModelBase.ragdollTempRBs.Clear();
 	}
 
-	// Token: 0x06002AAE RID: 10926 RVA: 0x0010D3C4 File Offset: 0x0010B5C4
+	// Token: 0x06002AA3 RID: 10915 RVA: 0x0010DCFC File Offset: 0x0010BEFC
 	public void CaptureRagdollPositions(List<Vector3> positionList)
 	{
 		this.CaptureRagdollBones();
@@ -1101,7 +1101,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AAF RID: 10927 RVA: 0x0010D410 File Offset: 0x0010B610
+	// Token: 0x06002AA4 RID: 10916 RVA: 0x0010DD48 File Offset: 0x0010BF48
 	public void ApplyRagdollVelocities(List<Vector3> velocities)
 	{
 		if (velocities.Count == this.ragdollPoses.Count)
@@ -1117,7 +1117,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB0 RID: 10928 RVA: 0x0010D470 File Offset: 0x0010B670
+	// Token: 0x06002AA5 RID: 10917 RVA: 0x0010DDA8 File Offset: 0x0010BFA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRagdollVelocity(Vector3 _vel)
 	{
@@ -1127,7 +1127,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB1 RID: 10929 RVA: 0x0010D4AC File Offset: 0x0010B6AC
+	// Token: 0x06002AA6 RID: 10918 RVA: 0x0010DDE4 File Offset: 0x0010BFE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CopyRagdollRot()
 	{
@@ -1147,7 +1147,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB2 RID: 10930 RVA: 0x0010D534 File Offset: 0x0010B734
+	// Token: 0x06002AA7 RID: 10919 RVA: 0x0010DE6C File Offset: 0x0010C06C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RestoreRagdollStartRot()
 	{
@@ -1157,7 +1157,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB3 RID: 10931 RVA: 0x0010D580 File Offset: 0x0010B780
+	// Token: 0x06002AA8 RID: 10920 RVA: 0x0010DEB8 File Offset: 0x0010C0B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CaptureRagdollZeroBones()
 	{
@@ -1185,7 +1185,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB4 RID: 10932 RVA: 0x0010D618 File Offset: 0x0010B818
+	// Token: 0x06002AA9 RID: 10921 RVA: 0x0010DF50 File Offset: 0x0010C150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BlendRagdollZeroBones()
 	{
@@ -1201,7 +1201,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB5 RID: 10933 RVA: 0x0010D684 File Offset: 0x0010B884
+	// Token: 0x06002AAA RID: 10922 RVA: 0x0010DFBC File Offset: 0x0010C1BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BlendRagdoll()
 	{
@@ -1259,7 +1259,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB6 RID: 10934 RVA: 0x0010D8D0 File Offset: 0x0010BAD0
+	// Token: 0x06002AAB RID: 10923 RVA: 0x0010E208 File Offset: 0x0010C408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FrameUpdateRagdoll()
 	{
@@ -1383,7 +1383,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AB7 RID: 10935 RVA: 0x0010DC64 File Offset: 0x0010BE64
+	// Token: 0x06002AAC RID: 10924 RVA: 0x0010E59C File Offset: 0x0010C79C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRagdollOff()
 	{
@@ -1400,13 +1400,13 @@ public abstract class EModelBase : MonoBehaviour
 		this.CheckAnimFreeze();
 	}
 
-	// Token: 0x06002AB8 RID: 10936 RVA: 0x0010DCCE File Offset: 0x0010BECE
+	// Token: 0x06002AAD RID: 10925 RVA: 0x0010E606 File Offset: 0x0010C806
 	public string GetRagdollDebugInfo()
 	{
 		return string.Format("{0:0.#}/{1:0.#} {2}", this.ragdollTime.ToCultureInvariantString(), this.ragdollDuration.ToCultureInvariantString(), this.ragdollState.ToStringCached<EModelBase.ERagdollState>());
 	}
 
-	// Token: 0x06002AB9 RID: 10937 RVA: 0x0010DCFC File Offset: 0x0010BEFC
+	// Token: 0x06002AAE RID: 10926 RVA: 0x0010E634 File Offset: 0x0010C834
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void ClothSimInit()
 	{
@@ -1425,7 +1425,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABA RID: 10938 RVA: 0x0010DD5C File Offset: 0x0010BF5C
+	// Token: 0x06002AAF RID: 10927 RVA: 0x0010E694 File Offset: 0x0010C894
 	public void ClothSimOn(bool _on, bool _force = false)
 	{
 		if (this.clothSim == null || (this.isClothSimOn == _on && !_force))
@@ -1445,7 +1445,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABB RID: 10939 RVA: 0x0010DDD0 File Offset: 0x0010BFD0
+	// Token: 0x06002AB0 RID: 10928 RVA: 0x0010E708 File Offset: 0x0010C908
 	public void ClearClothMotion()
 	{
 		for (int i = this.clothSim.Length - 1; i >= 0; i--)
@@ -1454,7 +1454,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABC RID: 10940 RVA: 0x0010DE00 File Offset: 0x0010C000
+	// Token: 0x06002AB1 RID: 10929 RVA: 0x0010E738 File Offset: 0x0010C938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void JiggleInit()
 	{
@@ -1469,7 +1469,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABD RID: 10941 RVA: 0x0010DE58 File Offset: 0x0010C058
+	// Token: 0x06002AB2 RID: 10930 RVA: 0x0010E790 File Offset: 0x0010C990
 	public void JiggleOn(bool _on)
 	{
 		if (this.jiggles == null || this.isJiggleOn == _on)
@@ -1483,7 +1483,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABE RID: 10942 RVA: 0x0010DEA8 File Offset: 0x0010C0A8
+	// Token: 0x06002AB3 RID: 10931 RVA: 0x0010E7E0 File Offset: 0x0010C9E0
 	public void LogJiggles()
 	{
 		if (this.jiggles == null || this.jiggles.Length == 0)
@@ -1498,7 +1498,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ABF RID: 10943 RVA: 0x0010DF38 File Offset: 0x0010C138
+	// Token: 0x06002AB4 RID: 10932 RVA: 0x0010E870 File Offset: 0x0010CA70
 	public virtual void SwitchModelAndView(bool _bFPV, bool _bMale)
 	{
 		if (this.GetModelTransform() != null)
@@ -1604,16 +1604,9 @@ public abstract class EModelBase : MonoBehaviour
 			}
 		}
 		EntityAlive entityAlive = this.entity as EntityAlive;
-		if (entityAlive && entityAlive.inventory != null)
+		if (entityAlive != null)
 		{
-			if (this.entity.isEntityRemote)
-			{
-				entityAlive.inventory.ForceHoldingItemUpdate();
-			}
-			else if (this.entity is EntityPlayerLocal && (this.entity as EntityPlayerLocal).PlayerUI != null && !(this.entity as EntityPlayerLocal).PlayerUI.windowManager.IsWindowOpen("character"))
-			{
-				entityAlive.inventory.ForceHoldingItemUpdate();
-			}
+			entityAlive.OnAvatarRebuilt();
 		}
 		if (this.GetRightHandTransform() != null)
 		{
@@ -1655,7 +1648,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.CheckAnimFreeze();
 	}
 
-	// Token: 0x06002AC0 RID: 10944 RVA: 0x0010E498 File Offset: 0x0010C698
+	// Token: 0x06002AB5 RID: 10933 RVA: 0x0010ED5C File Offset: 0x0010CF5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetColliderLayers(Transform modelT, int layer)
 	{
@@ -1675,7 +1668,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AC1 RID: 10945 RVA: 0x0010E50C File Offset: 0x0010C70C
+	// Token: 0x06002AB6 RID: 10934 RVA: 0x0010EDD0 File Offset: 0x0010CFD0
 	public virtual void SetInRightHand(Transform _transform)
 	{
 		if (this.avatarController != null)
@@ -1684,7 +1677,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AC2 RID: 10946 RVA: 0x0010E528 File Offset: 0x0010C728
+	// Token: 0x06002AB7 RID: 10935 RVA: 0x0010EDEC File Offset: 0x0010CFEC
 	public virtual void SetAlive()
 	{
 		this.DisableRagdoll(true);
@@ -1704,7 +1697,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AC3 RID: 10947 RVA: 0x0010E598 File Offset: 0x0010C798
+	// Token: 0x06002AB8 RID: 10936 RVA: 0x0010EE5C File Offset: 0x0010D05C
 	public virtual void SetDead()
 	{
 		Transform transform = this.GetModelTransform();
@@ -1722,16 +1715,16 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170004A3 RID: 1187
-	// (get) Token: 0x06002AC4 RID: 10948 RVA: 0x0010E5F8 File Offset: 0x0010C7F8
-	// (set) Token: 0x06002AC5 RID: 10949 RVA: 0x0010E600 File Offset: 0x0010C800
+	// Token: 0x17000498 RID: 1176
+	// (get) Token: 0x06002AB9 RID: 10937 RVA: 0x0010EEBC File Offset: 0x0010D0BC
+	// (set) Token: 0x06002ABA RID: 10938 RVA: 0x0010EEC4 File Offset: 0x0010D0C4
 	public bool visible
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06002AC6 RID: 10950 RVA: 0x0010E60C File Offset: 0x0010C80C
+	// Token: 0x06002ABB RID: 10939 RVA: 0x0010EED0 File Offset: 0x0010D0D0
 	public virtual void SetVisible(bool _bVisible, bool _isKeepColliders = false)
 	{
 		this.visible = _bVisible;
@@ -1754,7 +1747,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AC7 RID: 10951 RVA: 0x0010E684 File Offset: 0x0010C884
+	// Token: 0x06002ABC RID: 10940 RVA: 0x0010EF48 File Offset: 0x0010D148
 	public void SetFade(float _fade)
 	{
 		if (this.matPropBlock == null)
@@ -1781,7 +1774,7 @@ public abstract class EModelBase : MonoBehaviour
 		EModelBase.rendererList.Clear();
 	}
 
-	// Token: 0x06002AC8 RID: 10952 RVA: 0x0010E75A File Offset: 0x0010C95A
+	// Token: 0x06002ABD RID: 10941 RVA: 0x0010F01E File Offset: 0x0010D21E
 	public virtual Transform GetRightHandTransform()
 	{
 		if (this.avatarController != null)
@@ -1791,12 +1784,12 @@ public abstract class EModelBase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06002AC9 RID: 10953 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002ABE RID: 10942 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetSkinTexture(string _textureName)
 	{
 	}
 
-	// Token: 0x06002ACA RID: 10954 RVA: 0x0010E778 File Offset: 0x0010C978
+	// Token: 0x06002ABF RID: 10943 RVA: 0x0010F03C File Offset: 0x0010D23C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createModel(World _world, EntityClass _ec)
 	{
@@ -1943,7 +1936,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ACB RID: 10955 RVA: 0x0010EBB4 File Offset: 0x0010CDB4
+	// Token: 0x06002AC0 RID: 10944 RVA: 0x0010F478 File Offset: 0x0010D678
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createAvatarController(EntityClass _ec)
 	{
@@ -1960,7 +1953,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002ACC RID: 10956 RVA: 0x0010EC34 File Offset: 0x0010CE34
+	// Token: 0x06002AC1 RID: 10945 RVA: 0x0010F4F8 File Offset: 0x0010D6F8
 	public virtual void Detach()
 	{
 		for (int i = 0; i < this.modelTransformParent.childCount; i++)
@@ -1972,7 +1965,7 @@ public abstract class EModelBase : MonoBehaviour
 		this.avatarController = null;
 	}
 
-	// Token: 0x06002ACD RID: 10957 RVA: 0x0010EC88 File Offset: 0x0010CE88
+	// Token: 0x06002AC2 RID: 10946 RVA: 0x0010F54C File Offset: 0x0010D74C
 	[Conditional("DEBUG_RAGDOLL")]
 	public void LogRagdoll(string _format = "", params object[] _args)
 	{
@@ -1987,7 +1980,7 @@ public abstract class EModelBase : MonoBehaviour
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x06002ACE RID: 10958 RVA: 0x0010ECF0 File Offset: 0x0010CEF0
+	// Token: 0x06002AC3 RID: 10947 RVA: 0x0010F5B4 File Offset: 0x0010D7B4
 	[Conditional("DEBUG_RAGDOLLDO")]
 	public void LogRagdollDo(string _format = "", params object[] _args)
 	{
@@ -2003,7 +1996,7 @@ public abstract class EModelBase : MonoBehaviour
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x06002ACF RID: 10959 RVA: 0x0010ED64 File Offset: 0x0010CF64
+	// Token: 0x06002AC4 RID: 10948 RVA: 0x0010F628 File Offset: 0x0010D828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckAnimFreeze()
 	{
@@ -2021,7 +2014,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AD0 RID: 10960 RVA: 0x0010EDBC File Offset: 0x0010CFBC
+	// Token: 0x06002AC5 RID: 10949 RVA: 0x0010F680 File Offset: 0x0010D880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateHeadState()
 	{
@@ -2081,7 +2074,7 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AD1 RID: 10961 RVA: 0x0010EF44 File Offset: 0x0010D144
+	// Token: 0x06002AC6 RID: 10950 RVA: 0x0010F808 File Offset: 0x0010DA08
 	public void ForceHeadState(EModelBase.HeadStates headState)
 	{
 		if (this.headTransform == null)
@@ -2105,412 +2098,412 @@ public abstract class EModelBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002AD2 RID: 10962 RVA: 0x0010EFA3 File Offset: 0x0010D1A3
+	// Token: 0x06002AC7 RID: 10951 RVA: 0x0010F867 File Offset: 0x0010DA67
 	public void SetHeadScale(float standard)
 	{
 		this.HeadStandardSize = standard;
 		this.HeadBigSize = Mathf.Min(4.5f, standard * 3f);
 	}
 
-	// Token: 0x06002AD3 RID: 10963 RVA: 0x0010EFC4 File Offset: 0x0010D1C4
+	// Token: 0x06002AC8 RID: 10952 RVA: 0x0010F888 File Offset: 0x0010DA88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EModelBase()
 	{
 	}
 
-	// Token: 0x04002064 RID: 8292
+	// Token: 0x0400206C RID: 8300
 	public const string ExtFirstPerson = "_FP";
 
-	// Token: 0x04002065 RID: 8293
+	// Token: 0x0400206D RID: 8301
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cEmissiveColor = "_EmissiveColor";
 
-	// Token: 0x04002066 RID: 8294
+	// Token: 0x0400206E RID: 8302
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EModelInstanceAssets assets;
 
-	// Token: 0x04002067 RID: 8295
+	// Token: 0x0400206F RID: 8303
 	public AvatarController avatarController;
 
-	// Token: 0x04002068 RID: 8296
+	// Token: 0x04002070 RID: 8304
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform modelTransformParent;
 
-	// Token: 0x04002069 RID: 8297
+	// Token: 0x04002071 RID: 8305
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform modelTransform;
 
-	// Token: 0x0400206A RID: 8298
+	// Token: 0x04002072 RID: 8306
 	public Transform meshTransform;
 
-	// Token: 0x0400206B RID: 8299
+	// Token: 0x04002073 RID: 8307
 	public Transform bipedRootTransform;
 
-	// Token: 0x0400206C RID: 8300
+	// Token: 0x04002074 RID: 8308
 	public Transform bipedPelvisTransform;
 
-	// Token: 0x0400206D RID: 8301
+	// Token: 0x04002075 RID: 8309
 	public Rigidbody pelvisRB;
 
-	// Token: 0x0400206E RID: 8302
+	// Token: 0x04002076 RID: 8310
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform headTransform;
 
-	// Token: 0x0400206F RID: 8303
+	// Token: 0x04002077 RID: 8311
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform neckTransform;
 
-	// Token: 0x04002070 RID: 8304
+	// Token: 0x04002078 RID: 8312
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform neckParentTransform;
 
-	// Token: 0x04002071 RID: 8305
+	// Token: 0x04002079 RID: 8313
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CharacterGazeController gazeController;
 
-	// Token: 0x04002072 RID: 8306
+	// Token: 0x0400207A RID: 8314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public PhysicsBodyInstance physicsBody;
 
-	// Token: 0x04002073 RID: 8307
+	// Token: 0x0400207B RID: 8315
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string modelName;
 
-	// Token: 0x04002074 RID: 8308
+	// Token: 0x0400207C RID: 8316
 	public Material AltMaterial;
 
-	// Token: 0x04002075 RID: 8309
+	// Token: 0x0400207D RID: 8317
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float ragdollChance;
 
-	// Token: 0x04002076 RID: 8310
+	// Token: 0x0400207E RID: 8318
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bHasRagdoll;
 
-	// Token: 0x04002077 RID: 8311
+	// Token: 0x0400207F RID: 8319
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Cloth[] clothSim;
 
-	// Token: 0x04002078 RID: 8312
+	// Token: 0x04002080 RID: 8320
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isClothSimOn = true;
 
-	// Token: 0x04002079 RID: 8313
+	// Token: 0x04002081 RID: 8321
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Jiggle[] jiggles;
 
-	// Token: 0x0400207A RID: 8314
+	// Token: 0x04002082 RID: 8322
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isJiggleOn = true;
 
-	// Token: 0x0400207C RID: 8316
+	// Token: 0x04002084 RID: 8324
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Entity entity;
 
-	// Token: 0x0400207D RID: 8317
+	// Token: 0x04002085 RID: 8325
 	public EModelBase.HeadStates HeadState;
 
-	// Token: 0x0400207E RID: 8318
+	// Token: 0x04002086 RID: 8326
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float headScaleSpeed = 2f;
 
-	// Token: 0x0400207F RID: 8319
+	// Token: 0x04002087 RID: 8327
 	public float HeadStandardSize = 1f;
 
-	// Token: 0x04002080 RID: 8320
-	public float HeadBigSize = 3f;
-
-	// Token: 0x04002081 RID: 8321
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Transform NavObjectTransform;
-
-	// Token: 0x04002082 RID: 8322
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public const float ragdollAlignmentForce = 25f;
-
-	// Token: 0x04002083 RID: 8323
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public const float ragdollAlingmentDistance = 0.2f;
-
-	// Token: 0x04002084 RID: 8324
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public const float ragdollBlendPositionSpeed = 10f;
-
-	// Token: 0x04002085 RID: 8325
-	public static float serverPosSpringForce = 50f;
-
-	// Token: 0x04002086 RID: 8326
-	public static float serverPosSpringDamping = 0.1f;
-
-	// Token: 0x04002087 RID: 8327
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static List<Renderer> rendererList = new List<Renderer>();
-
 	// Token: 0x04002088 RID: 8328
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public static List<SkinnedMeshRenderer> skinnedRendererList = new List<SkinnedMeshRenderer>();
+	public float HeadBigSize = 3f;
 
 	// Token: 0x04002089 RID: 8329
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cLookAtSlerpPer = 0.16f;
+	public Transform NavObjectTransform;
 
 	// Token: 0x0400208A RID: 8330
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public const float cLookAtAnimBlend = 0.5f;
+	public const float ragdollAlignmentForce = 25f;
 
 	// Token: 0x0400208B RID: 8331
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool lookAtEnabled;
+	public const float ragdollAlingmentDistance = 0.2f;
 
 	// Token: 0x0400208C RID: 8332
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public float lookAtMaxAngle;
+	public const float ragdollBlendPositionSpeed = 10f;
 
 	// Token: 0x0400208D RID: 8333
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool lookAtIsPos;
+	public static float serverPosSpringForce = 50f;
 
 	// Token: 0x0400208E RID: 8334
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 lookAtPos;
+	public static float serverPosSpringDamping = 0.1f;
 
 	// Token: 0x0400208F RID: 8335
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Quaternion lookAtRot;
+	public static List<Renderer> rendererList = new List<Renderer>();
 
 	// Token: 0x04002090 RID: 8336
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lookAtBlendPer;
+	public static List<SkinnedMeshRenderer> skinnedRendererList = new List<SkinnedMeshRenderer>();
 
 	// Token: 0x04002091 RID: 8337
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lookAtBlendPerTarget;
+	public const float cLookAtSlerpPer = 0.16f;
 
 	// Token: 0x04002092 RID: 8338
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lookAtFullChangeTime;
+	public const float cLookAtAnimBlend = 0.5f;
 
 	// Token: 0x04002093 RID: 8339
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public float lookAtFullBlendPer = 1f;
+	public bool lookAtEnabled;
 
 	// Token: 0x04002094 RID: 8340
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cRadgollBlendOutGroundTime = 0.25f;
+	public float lookAtMaxAngle;
 
 	// Token: 0x04002095 RID: 8341
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cRadgollBlendOutTime = 0.7f;
+	public bool lookAtIsPos;
 
 	// Token: 0x04002096 RID: 8342
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cRagdollMinDisableVel = 0.5f;
+	public Vector3 lookAtPos;
 
 	// Token: 0x04002097 RID: 8343
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cRagdollDeadMaxDepentrationVel = 2f;
+	public Quaternion lookAtRot;
 
 	// Token: 0x04002098 RID: 8344
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cRagdollDeadMaxAngularVel = 1f;
+	public float lookAtBlendPer;
 
 	// Token: 0x04002099 RID: 8345
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const int cRadgollPlayerAnimLayer = 5;
+	public float lookAtBlendPerTarget;
 
 	// Token: 0x0400209A RID: 8346
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EModelBase.ERagdollState ragdollState;
+	public float lookAtFullChangeTime;
 
 	// Token: 0x0400209B RID: 8347
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ragdollTime;
+	public float lookAtFullBlendPer = 1f;
 
 	// Token: 0x0400209C RID: 8348
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ragdollDuration;
+	public const float cRadgollBlendOutGroundTime = 0.25f;
 
 	// Token: 0x0400209D RID: 8349
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Animator ragdollAnimator;
+	public const float cRadgollBlendOutTime = 0.7f;
 
 	// Token: 0x0400209E RID: 8350
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ragdollRotY;
+	public const float cRagdollMinDisableVel = 0.5f;
 
 	// Token: 0x0400209F RID: 8351
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool ragdollIsBlending;
+	public const float cRagdollDeadMaxDepentrationVel = 2f;
 
 	// Token: 0x040020A0 RID: 8352
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ragdollAdjustPosDelay;
+	public const float cRagdollDeadMaxAngularVel = 1f;
 
 	// Token: 0x040020A1 RID: 8353
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool ragdollIsPlayer;
+	public const int cRadgollPlayerAnimLayer = 5;
 
 	// Token: 0x040020A2 RID: 8354
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool ragdollIsAnimal;
+	public EModelBase.ERagdollState ragdollState;
 
 	// Token: 0x040020A3 RID: 8355
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool ragdollIsFacingUp;
+	public float ragdollTime;
 
 	// Token: 0x040020A4 RID: 8356
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public readonly List<EModelBase.RagdollPose> ragdollPoses = new List<EModelBase.RagdollPose>();
+	public float ragdollDuration;
 
 	// Token: 0x040020A5 RID: 8357
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 ragdollPosePelvisPos;
+	public Animator ragdollAnimator;
 
 	// Token: 0x040020A6 RID: 8358
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 ragdollPosePelvisLocalPos;
+	public float ragdollRotY;
 
 	// Token: 0x040020A7 RID: 8359
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public static readonly List<Rigidbody> ragdollTempRBs = new List<Rigidbody>();
+	public bool ragdollIsBlending;
 
 	// Token: 0x040020A8 RID: 8360
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float ragdollZeroTime;
+	public float ragdollAdjustPosDelay;
 
 	// Token: 0x040020A9 RID: 8361
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public List<Transform> ragdollZeroBones;
+	public bool ragdollIsPlayer;
 
 	// Token: 0x040020AA RID: 8362
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public static readonly string[] commonBips = new string[] { "Bip001", "Bip01" };
+	public bool ragdollIsAnimal;
+
+	// Token: 0x040020AB RID: 8363
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool ragdollIsFacingUp;
 
 	// Token: 0x040020AC RID: 8364
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public MaterialPropertyBlock matPropBlock;
+	public readonly List<EModelBase.RagdollPose> ragdollPoses = new List<EModelBase.RagdollPose>();
 
 	// Token: 0x040020AD RID: 8365
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public Vector3 ragdollPosePelvisPos;
+
+	// Token: 0x040020AE RID: 8366
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 ragdollPosePelvisLocalPos;
+
+	// Token: 0x040020AF RID: 8367
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static readonly List<Rigidbody> ragdollTempRBs = new List<Rigidbody>();
+
+	// Token: 0x040020B0 RID: 8368
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float ragdollZeroTime;
+
+	// Token: 0x040020B1 RID: 8369
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public List<Transform> ragdollZeroBones;
+
+	// Token: 0x040020B2 RID: 8370
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static readonly string[] commonBips = new string[] { "Bip001", "Bip01" };
+
+	// Token: 0x040020B4 RID: 8372
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public MaterialPropertyBlock matPropBlock;
+
+	// Token: 0x040020B5 RID: 8373
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public static int fadeId = Shader.PropertyToID("_Fade");
 
-	// Token: 0x02000510 RID: 1296
+	// Token: 0x02000516 RID: 1302
 	public enum HeadStates
 	{
-		// Token: 0x040020AF RID: 8367
+		// Token: 0x040020B7 RID: 8375
 		Standard,
-		// Token: 0x040020B0 RID: 8368
+		// Token: 0x040020B8 RID: 8376
 		Growing,
-		// Token: 0x040020B1 RID: 8369
+		// Token: 0x040020B9 RID: 8377
 		BigHead,
-		// Token: 0x040020B2 RID: 8370
+		// Token: 0x040020BA RID: 8378
 		Shrinking
 	}
 
-	// Token: 0x02000511 RID: 1297
+	// Token: 0x02000517 RID: 1303
 	public enum RagdollMode
 	{
-		// Token: 0x040020B4 RID: 8372
+		// Token: 0x040020BC RID: 8380
 		Default,
-		// Token: 0x040020B5 RID: 8373
+		// Token: 0x040020BD RID: 8381
 		FullForce
 	}
 
-	// Token: 0x02000512 RID: 1298
+	// Token: 0x02000518 RID: 1304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ERagdollState
 	{
-		// Token: 0x040020B7 RID: 8375
+		// Token: 0x040020BF RID: 8383
 		Off,
-		// Token: 0x040020B8 RID: 8376
+		// Token: 0x040020C0 RID: 8384
 		On,
-		// Token: 0x040020B9 RID: 8377
+		// Token: 0x040020C1 RID: 8385
 		BlendOutGround,
-		// Token: 0x040020BA RID: 8378
+		// Token: 0x040020C2 RID: 8386
 		BlendOutStand,
-		// Token: 0x040020BB RID: 8379
+		// Token: 0x040020C3 RID: 8387
 		Stand,
-		// Token: 0x040020BC RID: 8380
+		// Token: 0x040020C4 RID: 8388
 		StandCollide,
-		// Token: 0x040020BD RID: 8381
+		// Token: 0x040020C5 RID: 8389
 		SpawnWait,
-		// Token: 0x040020BE RID: 8382
+		// Token: 0x040020C6 RID: 8390
 		Dead
 	}
 
-	// Token: 0x02000513 RID: 1299
+	// Token: 0x02000519 RID: 1305
 	public struct RagdollPose
 	{
-		// Token: 0x040020BF RID: 8383
+		// Token: 0x040020C7 RID: 8391
 		public Transform t;
 
-		// Token: 0x040020C0 RID: 8384
+		// Token: 0x040020C8 RID: 8392
 		public Rigidbody rb;
 
-		// Token: 0x040020C1 RID: 8385
+		// Token: 0x040020C9 RID: 8393
 		public Quaternion startRot;
 
-		// Token: 0x040020C2 RID: 8386
+		// Token: 0x040020CA RID: 8394
 		public Quaternion rot;
 	}
 }

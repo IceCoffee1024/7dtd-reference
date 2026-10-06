@@ -2,20 +2,20 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4F RID: 6735
+	// Token: 0x02001A7B RID: 6779
 	public class LayerParams
 	{
-		// Token: 0x0600CC2D RID: 52269 RVA: 0x004A8C72 File Offset: 0x004A6E72
+		// Token: 0x0600CD85 RID: 52613 RVA: 0x004AD13E File Offset: 0x004AB33E
 		public LayerParams(float _volume, float _mix)
 		{
 			this.Volume = _volume;
 			this.Mix = _mix;
 		}
 
-		// Token: 0x04009B23 RID: 39715
+		// Token: 0x04009BE9 RID: 39913
 		public float Volume;
 
-		// Token: 0x04009B24 RID: 39716
+		// Token: 0x04009BEA RID: 39914
 		public float Mix;
 	}
 }

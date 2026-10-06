@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.LAN
 {
-	// Token: 0x02001CCD RID: 7373
+	// Token: 0x02001CFF RID: 7423
 	[Preserve]
 	[PlatformFactory(EPlatformIdentifier.LAN)]
 	public class Factory : AbsPlatform
 	{
-		// Token: 0x0600DAF1 RID: 56049 RVA: 0x004E3EDD File Offset: 0x004E20DD
+		// Token: 0x0600DC6C RID: 56428 RVA: 0x004E8A25 File Offset: 0x004E6C25
 		public override void CreateInstances()
 		{
 			if (!base.AsServerOnly)

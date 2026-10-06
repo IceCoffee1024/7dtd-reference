@@ -2,10 +2,10 @@
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02000BE5 RID: 3045
+// Token: 0x02000BF7 RID: 3063
 public class VoxelMeshLayer : IMemoryPoolableObject
 {
-	// Token: 0x06005BCD RID: 23501 RVA: 0x0023A094 File Offset: 0x00238294
+	// Token: 0x06005BE6 RID: 23526 RVA: 0x0023D390 File Offset: 0x0023B590
 	public VoxelMeshLayer()
 	{
 		this.idx = 0;
@@ -17,7 +17,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		Interlocked.Increment(ref VoxelMeshLayer.InstanceCount);
 	}
 
-	// Token: 0x06005BCE RID: 23502 RVA: 0x0023A0F8 File Offset: 0x002382F8
+	// Token: 0x06005BE7 RID: 23527 RVA: 0x0023D3F4 File Offset: 0x0023B5F4
 	public void Reset()
 	{
 		for (int i = 0; i < this.meshes.Length; i++)
@@ -31,7 +31,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		this.pendingCopyOperations = 0;
 	}
 
-	// Token: 0x06005BCF RID: 23503 RVA: 0x0023A13E File Offset: 0x0023833E
+	// Token: 0x06005BE8 RID: 23528 RVA: 0x0023D43A File Offset: 0x0023B63A
 	public void Cleanup()
 	{
 		if (this.cleanedUp)
@@ -42,13 +42,13 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		this.cleanedUp = true;
 	}
 
-	// Token: 0x06005BD0 RID: 23504 RVA: 0x0023A15B File Offset: 0x0023835B
+	// Token: 0x06005BE9 RID: 23529 RVA: 0x0023D457 File Offset: 0x0023B657
 	public static void StaticCleanup()
 	{
 		VoxelMeshLayer.InstanceCount = 0;
 	}
 
-	// Token: 0x06005BD1 RID: 23505 RVA: 0x0023A164 File Offset: 0x00238364
+	// Token: 0x06005BEA RID: 23530 RVA: 0x0023D460 File Offset: 0x0023B660
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~VoxelMeshLayer()
 	{
@@ -58,7 +58,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06005BD2 RID: 23506 RVA: 0x0023A1B0 File Offset: 0x002383B0
+	// Token: 0x06005BEB RID: 23531 RVA: 0x0023D4AC File Offset: 0x0023B6AC
 	public void SizeToChunkDefaults()
 	{
 		for (int i = 0; i < this.meshes.Length; i++)
@@ -67,7 +67,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06005BD3 RID: 23507 RVA: 0x0023A1E0 File Offset: 0x002383E0
+	// Token: 0x06005BEC RID: 23532 RVA: 0x0023D4DC File Offset: 0x0023B6DC
 	public bool HasContent()
 	{
 		for (int i = 0; i < this.meshes.Length; i++)
@@ -80,7 +80,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		return false;
 	}
 
-	// Token: 0x06005BD4 RID: 23508 RVA: 0x0023A218 File Offset: 0x00238418
+	// Token: 0x06005BED RID: 23533 RVA: 0x0023D514 File Offset: 0x0023B714
 	public int GetTris()
 	{
 		int num = 0;
@@ -91,19 +91,19 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		return num;
 	}
 
-	// Token: 0x06005BD5 RID: 23509 RVA: 0x0023A24B File Offset: 0x0023844B
+	// Token: 0x06005BEE RID: 23534 RVA: 0x0023D547 File Offset: 0x0023B747
 	public int GetTrisInMesh(int _idx)
 	{
 		return this.meshes[_idx].Triangles;
 	}
 
-	// Token: 0x06005BD6 RID: 23510 RVA: 0x0023A25A File Offset: 0x0023845A
+	// Token: 0x06005BEF RID: 23535 RVA: 0x0023D556 File Offset: 0x0023B756
 	public int GetSizeOfMesh(int _idx)
 	{
 		return this.meshes[_idx].Size;
 	}
 
-	// Token: 0x06005BD7 RID: 23511 RVA: 0x0023A269 File Offset: 0x00238469
+	// Token: 0x06005BF0 RID: 23536 RVA: 0x0023D565 File Offset: 0x0023B765
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public int CopyToMesh(int _meshIdx, MeshFilter _mf, MeshRenderer _mr, int _lodLevel)
 	{
@@ -114,7 +114,7 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		});
 	}
 
-	// Token: 0x06005BD8 RID: 23512 RVA: 0x0023A296 File Offset: 0x00238496
+	// Token: 0x06005BF1 RID: 23537 RVA: 0x0023D592 File Offset: 0x0023B792
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void StartCopyMeshes()
 	{
@@ -125,14 +125,14 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		this.pendingCopyOperations++;
 	}
 
-	// Token: 0x06005BD9 RID: 23513 RVA: 0x0023A2B8 File Offset: 0x002384B8
+	// Token: 0x06005BF2 RID: 23538 RVA: 0x0023D5B4 File Offset: 0x0023B7B4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void EndCopyMeshes()
 	{
 		this.TryFree();
 	}
 
-	// Token: 0x06005BDA RID: 23514 RVA: 0x0023A2C1 File Offset: 0x002384C1
+	// Token: 0x06005BF3 RID: 23539 RVA: 0x0023D5BD File Offset: 0x0023B7BD
 	public bool TryFree()
 	{
 		this.pendingCopyOperations--;
@@ -144,19 +144,19 @@ public class VoxelMeshLayer : IMemoryPoolableObject
 		return true;
 	}
 
-	// Token: 0x04004768 RID: 18280
+	// Token: 0x040047A7 RID: 18343
 	public int idx;
 
-	// Token: 0x04004769 RID: 18281
+	// Token: 0x040047A8 RID: 18344
 	public VoxelMesh[] meshes;
 
-	// Token: 0x0400476A RID: 18282
+	// Token: 0x040047A9 RID: 18345
 	public static int InstanceCount;
 
-	// Token: 0x0400476B RID: 18283
+	// Token: 0x040047AA RID: 18346
 	public int pendingCopyOperations;
 
-	// Token: 0x0400476C RID: 18284
+	// Token: 0x040047AB RID: 18347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cleanedUp;
 }

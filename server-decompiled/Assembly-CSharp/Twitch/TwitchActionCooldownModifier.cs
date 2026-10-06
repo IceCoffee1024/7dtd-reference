@@ -2,19 +2,19 @@
 
 namespace Twitch
 {
-	// Token: 0x020017FC RID: 6140
+	// Token: 0x02001828 RID: 6184
 	public class TwitchActionCooldownModifier
 	{
-		// Token: 0x04008EFB RID: 36603
+		// Token: 0x04008FC1 RID: 36801
 		public string CategoryName;
 
-		// Token: 0x04008EFC RID: 36604
+		// Token: 0x04008FC2 RID: 36802
 		public string ActionName;
 
-		// Token: 0x04008EFD RID: 36605
+		// Token: 0x04008FC3 RID: 36803
 		public PassiveEffect.ValueModifierTypes Modifier;
 
-		// Token: 0x04008EFE RID: 36606
+		// Token: 0x04008FC4 RID: 36804
 		public float Value;
 	}
 }

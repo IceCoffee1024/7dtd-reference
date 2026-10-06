@@ -2,10 +2,10 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A85 RID: 6789
+	// Token: 0x02001AB1 RID: 6833
 	public interface ISelector<T>
 	{
-		// Token: 0x0600CD01 RID: 52481
+		// Token: 0x0600CE59 RID: 52825
 		T Select();
 	}
 }

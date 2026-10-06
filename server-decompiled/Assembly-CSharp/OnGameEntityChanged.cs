@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000529 RID: 1321
-// (Invoke) Token: 0x06002B78 RID: 11128
+// Token: 0x0200052F RID: 1327
+// (Invoke) Token: 0x06002B6E RID: 11118
 public delegate void OnGameEntityChanged(int entityID);

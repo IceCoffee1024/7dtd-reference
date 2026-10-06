@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C43 RID: 3139
+// Token: 0x02000C55 RID: 3157
 public sealed class HeightMap : IDisposable
 {
-	// Token: 0x06005F90 RID: 24464 RVA: 0x0025C7BC File Offset: 0x0025A9BC
+	// Token: 0x06005FA9 RID: 24489 RVA: 0x0025FAB8 File Offset: 0x0025DCB8
 	public HeightMap(int _w, int _h, float _maxHeight, IBackedArray<ushort> _data, int _targetSize = 0)
 	{
 		this.w = _w;
@@ -15,7 +15,7 @@ public sealed class HeightMap : IDisposable
 		this.data = BackedArrays.CreateSingleView<ushort>(_data, BackedArrayHandleMode.ReadOnly, 16 * _w);
 	}
 
-	// Token: 0x06005F91 RID: 24465 RVA: 0x0025C81D File Offset: 0x0025AA1D
+	// Token: 0x06005FAA RID: 24490 RVA: 0x0025FB19 File Offset: 0x0025DD19
 	public void Dispose()
 	{
 		IBackedArrayView<ushort> backedArrayView = this.data;
@@ -26,7 +26,7 @@ public sealed class HeightMap : IDisposable
 		this.data = null;
 	}
 
-	// Token: 0x06005F92 RID: 24466 RVA: 0x0025C838 File Offset: 0x0025AA38
+	// Token: 0x06005FAB RID: 24491 RVA: 0x0025FB34 File Offset: 0x0025DD34
 	public float GetAt(int _x, int _z)
 	{
 		ushort num;
@@ -41,7 +41,7 @@ public sealed class HeightMap : IDisposable
 		return (float)num * (this.maxHeight / 65535f);
 	}
 
-	// Token: 0x06005F93 RID: 24467 RVA: 0x0025C894 File Offset: 0x0025AA94
+	// Token: 0x06005FAC RID: 24492 RVA: 0x0025FB90 File Offset: 0x0025DD90
 	public ushort getInterpolatedHeight(int xf, int zf)
 	{
 		object obj = ((xf >= 0) ? (xf >> this.scaleShift) : (xf - this.scalePixs + 1 >> this.scaleShift));
@@ -59,7 +59,7 @@ public sealed class HeightMap : IDisposable
 		return (ushort)((1f - num9) * ((1f - num10) * (float)num3 + num10 * (float)num6) + num9 * ((1f - num10) * (float)num4 + num10 * (float)num5));
 	}
 
-	// Token: 0x06005F94 RID: 24468 RVA: 0x0025C9E8 File Offset: 0x0025ABE8
+	// Token: 0x06005FAD RID: 24493 RVA: 0x0025FCE4 File Offset: 0x0025DEE4
 	public float GetAt(int _offs)
 	{
 		ushort num;
@@ -76,7 +76,7 @@ public sealed class HeightMap : IDisposable
 		return (float)num * this.maxHeight / 65535f;
 	}
 
-	// Token: 0x06005F95 RID: 24469 RVA: 0x0025CA36 File Offset: 0x0025AC36
+	// Token: 0x06005FAE RID: 24494 RVA: 0x0025FD32 File Offset: 0x0025DF32
 	public int CalcOffset(int _x, int _z)
 	{
 		_x >>= this.scaleShift;
@@ -84,51 +84,51 @@ public sealed class HeightMap : IDisposable
 		return _x + _z * this.w;
 	}
 
-	// Token: 0x06005F96 RID: 24470 RVA: 0x0025CA5C File Offset: 0x0025AC5C
+	// Token: 0x06005FAF RID: 24495 RVA: 0x0025FD58 File Offset: 0x0025DF58
 	public int GetWidth()
 	{
 		return this.w;
 	}
 
-	// Token: 0x06005F97 RID: 24471 RVA: 0x0025CA64 File Offset: 0x0025AC64
+	// Token: 0x06005FB0 RID: 24496 RVA: 0x0025FD60 File Offset: 0x0025DF60
 	public int GetHeight()
 	{
 		return this.h;
 	}
 
-	// Token: 0x06005F98 RID: 24472 RVA: 0x0025CA6C File Offset: 0x0025AC6C
+	// Token: 0x06005FB1 RID: 24497 RVA: 0x0025FD68 File Offset: 0x0025DF68
 	public int GetScaleSteps()
 	{
 		return this.scalePixs;
 	}
 
-	// Token: 0x06005F99 RID: 24473 RVA: 0x0025CA74 File Offset: 0x0025AC74
+	// Token: 0x06005FB2 RID: 24498 RVA: 0x0025FD70 File Offset: 0x0025DF70
 	public int GetScaleShift()
 	{
 		return this.scaleShift;
 	}
 
-	// Token: 0x04004AF1 RID: 19185
+	// Token: 0x04004B30 RID: 19248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int w;
 
-	// Token: 0x04004AF2 RID: 19186
+	// Token: 0x04004B31 RID: 19249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int h;
 
-	// Token: 0x04004AF3 RID: 19187
+	// Token: 0x04004B32 RID: 19250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int scaleShift;
 
-	// Token: 0x04004AF4 RID: 19188
+	// Token: 0x04004B33 RID: 19251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int scalePixs;
 
-	// Token: 0x04004AF5 RID: 19189
+	// Token: 0x04004B34 RID: 19252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly float maxHeight;
 
-	// Token: 0x04004AF6 RID: 19190
+	// Token: 0x04004B35 RID: 19253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IBackedArrayView<ushort> data;
 }

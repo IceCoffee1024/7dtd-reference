@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015F7 RID: 5623
+// Token: 0x02001616 RID: 5654
 public class vp_FPInput : vp_Component
 {
-	// Token: 0x1700146E RID: 5230
-	// (get) Token: 0x0600B000 RID: 45056 RVA: 0x0041A704 File Offset: 0x00418904
+	// Token: 0x170014B1 RID: 5297
+	// (get) Token: 0x0600B092 RID: 45202 RVA: 0x0041E3E0 File Offset: 0x0041C5E0
 	public Vector2 MousePos
 	{
 		get
@@ -15,9 +15,9 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x1700146F RID: 5231
-	// (get) Token: 0x0600B001 RID: 45057 RVA: 0x0041A70C File Offset: 0x0041890C
-	// (set) Token: 0x0600B002 RID: 45058 RVA: 0x0041A714 File Offset: 0x00418914
+	// Token: 0x170014B2 RID: 5298
+	// (get) Token: 0x0600B093 RID: 45203 RVA: 0x0041E3E8 File Offset: 0x0041C5E8
+	// (set) Token: 0x0600B094 RID: 45204 RVA: 0x0041E3F0 File Offset: 0x0041C5F0
 	public bool AllowGameplayInput
 	{
 		get
@@ -30,8 +30,8 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x17001470 RID: 5232
-	// (get) Token: 0x0600B003 RID: 45059 RVA: 0x0041A71D File Offset: 0x0041891D
+	// Token: 0x170014B3 RID: 5299
+	// (get) Token: 0x0600B095 RID: 45205 RVA: 0x0041E3F9 File Offset: 0x0041C5F9
 	public vp_FPPlayerEventHandler FPPlayer
 	{
 		get
@@ -44,7 +44,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B004 RID: 45060 RVA: 0x0041A749 File Offset: 0x00418949
+	// Token: 0x0600B096 RID: 45206 RVA: 0x0041E425 File Offset: 0x0041C625
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -54,7 +54,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B005 RID: 45061 RVA: 0x0041A765 File Offset: 0x00418965
+	// Token: 0x0600B097 RID: 45207 RVA: 0x0041E441 File Offset: 0x0041C641
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -64,7 +64,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B006 RID: 45062 RVA: 0x0041A784 File Offset: 0x00418984
+	// Token: 0x0600B098 RID: 45208 RVA: 0x0041E460 File Offset: 0x0041C660
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -89,7 +89,7 @@ public class vp_FPInput : vp_Component
 		this.InputCamera();
 	}
 
-	// Token: 0x0600B007 RID: 45063 RVA: 0x0041A7F4 File Offset: 0x004189F4
+	// Token: 0x0600B099 RID: 45209 RVA: 0x0041E4D0 File Offset: 0x0041C6D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputInteract()
 	{
@@ -101,14 +101,14 @@ public class vp_FPInput : vp_Component
 		this.FPPlayer.Interact.TryStop(true);
 	}
 
-	// Token: 0x0600B008 RID: 45064 RVA: 0x0041A827 File Offset: 0x00418A27
+	// Token: 0x0600B09A RID: 45210 RVA: 0x0041E503 File Offset: 0x0041C703
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputMove()
 	{
 		this.FPPlayer.InputMoveVector.Set(new Vector2(vp_Input.GetAxisRaw("Horizontal"), vp_Input.GetAxisRaw("Vertical")));
 	}
 
-	// Token: 0x0600B009 RID: 45065 RVA: 0x0041A857 File Offset: 0x00418A57
+	// Token: 0x0600B09B RID: 45211 RVA: 0x0041E533 File Offset: 0x0041C733
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputRun()
 	{
@@ -120,7 +120,7 @@ public class vp_FPInput : vp_Component
 		this.FPPlayer.Run.TryStop(true);
 	}
 
-	// Token: 0x0600B00A RID: 45066 RVA: 0x0041A88A File Offset: 0x00418A8A
+	// Token: 0x0600B09C RID: 45212 RVA: 0x0041E566 File Offset: 0x0041C766
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputJump()
 	{
@@ -132,7 +132,7 @@ public class vp_FPInput : vp_Component
 		this.FPPlayer.Jump.Stop(0f);
 	}
 
-	// Token: 0x0600B00B RID: 45067 RVA: 0x0041A8C0 File Offset: 0x00418AC0
+	// Token: 0x0600B09D RID: 45213 RVA: 0x0041E59C File Offset: 0x0041C79C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputCrouch()
 	{
@@ -144,7 +144,7 @@ public class vp_FPInput : vp_Component
 		this.FPPlayer.Crouch.TryStop(true);
 	}
 
-	// Token: 0x0600B00C RID: 45068 RVA: 0x0041A8F4 File Offset: 0x00418AF4
+	// Token: 0x0600B09E RID: 45214 RVA: 0x0041E5D0 File Offset: 0x0041C7D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputCamera()
 	{
@@ -162,7 +162,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B00D RID: 45069 RVA: 0x0041A954 File Offset: 0x00418B54
+	// Token: 0x0600B09F RID: 45215 RVA: 0x0041E630 File Offset: 0x0041C830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputAttack()
 	{
@@ -178,7 +178,7 @@ public class vp_FPInput : vp_Component
 		this.FPPlayer.Attack.TryStop(true);
 	}
 
-	// Token: 0x0600B00E RID: 45070 RVA: 0x0041A98F File Offset: 0x00418B8F
+	// Token: 0x0600B0A0 RID: 45216 RVA: 0x0041E66B File Offset: 0x0041C86B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputReload()
 	{
@@ -188,7 +188,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B00F RID: 45071 RVA: 0x0041A9B0 File Offset: 0x00418BB0
+	// Token: 0x0600B0A1 RID: 45217 RVA: 0x0041E68C File Offset: 0x0041C88C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputSetWeapon()
 	{
@@ -246,7 +246,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B010 RID: 45072 RVA: 0x0041AB2F File Offset: 0x00418D2F
+	// Token: 0x0600B0A2 RID: 45218 RVA: 0x0041E80B File Offset: 0x0041CA0B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdatePause()
 	{
@@ -256,7 +256,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B011 RID: 45073 RVA: 0x0041AB6C File Offset: 0x00418D6C
+	// Token: 0x0600B0A3 RID: 45219 RVA: 0x0041E848 File Offset: 0x0041CA48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateCursorLock()
 	{
@@ -289,7 +289,7 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B012 RID: 45074 RVA: 0x0041AC48 File Offset: 0x00418E48
+	// Token: 0x0600B0A4 RID: 45220 RVA: 0x0041E924 File Offset: 0x0041CB24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector2 GetMouseLook()
 	{
@@ -336,7 +336,7 @@ public class vp_FPInput : vp_Component
 		return this.m_CurrentMouseLook;
 	}
 
-	// Token: 0x0600B013 RID: 45075 RVA: 0x0041AE68 File Offset: 0x00419068
+	// Token: 0x0600B0A5 RID: 45221 RVA: 0x0041EB44 File Offset: 0x0041CD44
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector2 GetMouseLookRaw()
 	{
@@ -349,9 +349,9 @@ public class vp_FPInput : vp_Component
 		return this.m_MouseLookRawMove;
 	}
 
-	// Token: 0x17001471 RID: 5233
-	// (get) Token: 0x0600B014 RID: 45076 RVA: 0x0041AEBA File Offset: 0x004190BA
-	// (set) Token: 0x0600B015 RID: 45077 RVA: 0x0041AEC2 File Offset: 0x004190C2
+	// Token: 0x170014B4 RID: 5300
+	// (get) Token: 0x0600B0A6 RID: 45222 RVA: 0x0041EB96 File Offset: 0x0041CD96
+	// (set) Token: 0x0600B0A7 RID: 45223 RVA: 0x0041EB9E File Offset: 0x0041CD9E
 	public virtual Vector2 OnValue_InputMoveVector
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -366,8 +366,8 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x17001472 RID: 5234
-	// (get) Token: 0x0600B016 RID: 45078 RVA: 0x0041AEE1 File Offset: 0x004190E1
+	// Token: 0x170014B5 RID: 5301
+	// (get) Token: 0x0600B0A8 RID: 45224 RVA: 0x0041EBBD File Offset: 0x0041CDBD
 	public virtual float OnValue_InputClimbVector
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -377,9 +377,9 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x17001473 RID: 5235
-	// (get) Token: 0x0600B017 RID: 45079 RVA: 0x0041A70C File Offset: 0x0041890C
-	// (set) Token: 0x0600B018 RID: 45080 RVA: 0x0041A714 File Offset: 0x00418914
+	// Token: 0x170014B6 RID: 5302
+	// (get) Token: 0x0600B0A9 RID: 45225 RVA: 0x0041E3E8 File Offset: 0x0041C5E8
+	// (set) Token: 0x0600B0AA RID: 45226 RVA: 0x0041E3F0 File Offset: 0x0041C5F0
 	public virtual bool OnValue_InputAllowGameplay
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -394,9 +394,9 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x17001474 RID: 5236
-	// (get) Token: 0x0600B019 RID: 45081 RVA: 0x0041AEED File Offset: 0x004190ED
-	// (set) Token: 0x0600B01A RID: 45082 RVA: 0x0041AEF4 File Offset: 0x004190F4
+	// Token: 0x170014B7 RID: 5303
+	// (get) Token: 0x0600B0AB RID: 45227 RVA: 0x0041EBC9 File Offset: 0x0041CDC9
+	// (set) Token: 0x0600B0AC RID: 45228 RVA: 0x0041EBD0 File Offset: 0x0041CDD0
 	public virtual bool OnValue_Pause
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -411,29 +411,29 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0600B01B RID: 45083 RVA: 0x0041AF06 File Offset: 0x00419106
+	// Token: 0x0600B0AD RID: 45229 RVA: 0x0041EBE2 File Offset: 0x0041CDE2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnMessage_InputGetButton(string button)
 	{
 		return vp_Input.GetButton(button);
 	}
 
-	// Token: 0x0600B01C RID: 45084 RVA: 0x0041AF0E File Offset: 0x0041910E
+	// Token: 0x0600B0AE RID: 45230 RVA: 0x0041EBEA File Offset: 0x0041CDEA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnMessage_InputGetButtonUp(string button)
 	{
 		return vp_Input.GetButtonUp(button);
 	}
 
-	// Token: 0x0600B01D RID: 45085 RVA: 0x0041AF16 File Offset: 0x00419116
+	// Token: 0x0600B0AF RID: 45231 RVA: 0x0041EBF2 File Offset: 0x0041CDF2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnMessage_InputGetButtonDown(string button)
 	{
 		return vp_Input.GetButtonDown(button);
 	}
 
-	// Token: 0x17001475 RID: 5237
-	// (get) Token: 0x0600B01E RID: 45086 RVA: 0x0041AF1E File Offset: 0x0041911E
+	// Token: 0x170014B8 RID: 5304
+	// (get) Token: 0x0600B0B0 RID: 45232 RVA: 0x0041EBFA File Offset: 0x0041CDFA
 	public virtual Vector2 OnValue_InputSmoothLook
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -443,8 +443,8 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x17001476 RID: 5238
-	// (get) Token: 0x0600B01F RID: 45087 RVA: 0x0041AF26 File Offset: 0x00419126
+	// Token: 0x170014B9 RID: 5305
+	// (get) Token: 0x0600B0B1 RID: 45233 RVA: 0x0041EC02 File Offset: 0x0041CE02
 	public virtual Vector2 OnValue_InputRawLook
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -454,74 +454,74 @@ public class vp_FPInput : vp_Component
 		}
 	}
 
-	// Token: 0x0400839E RID: 33694
+	// Token: 0x040083F4 RID: 33780
 	public Vector2 MouseLookSensitivity = new Vector2(5f, 5f);
 
-	// Token: 0x0400839F RID: 33695
+	// Token: 0x040083F5 RID: 33781
 	public int MouseLookSmoothSteps = 10;
 
-	// Token: 0x040083A0 RID: 33696
+	// Token: 0x040083F6 RID: 33782
 	public float MouseLookSmoothWeight = 0.5f;
 
-	// Token: 0x040083A1 RID: 33697
+	// Token: 0x040083F7 RID: 33783
 	public bool MouseLookAcceleration;
 
-	// Token: 0x040083A2 RID: 33698
+	// Token: 0x040083F8 RID: 33784
 	public float MouseLookAccelerationThreshold = 0.4f;
 
-	// Token: 0x040083A3 RID: 33699
+	// Token: 0x040083F9 RID: 33785
 	public bool MouseLookInvert;
 
-	// Token: 0x040083A4 RID: 33700
+	// Token: 0x040083FA RID: 33786
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_MouseLookSmoothMove = Vector2.zero;
 
-	// Token: 0x040083A5 RID: 33701
+	// Token: 0x040083FB RID: 33787
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_MouseLookRawMove = Vector2.zero;
 
-	// Token: 0x040083A6 RID: 33702
+	// Token: 0x040083FC RID: 33788
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Vector2> m_MouseLookSmoothBuffer = new List<Vector2>();
 
-	// Token: 0x040083A7 RID: 33703
+	// Token: 0x040083FD RID: 33789
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_LastMouseLookFrame = -1;
 
-	// Token: 0x040083A8 RID: 33704
+	// Token: 0x040083FE RID: 33790
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_CurrentMouseLook = Vector2.zero;
 
-	// Token: 0x040083A9 RID: 33705
+	// Token: 0x040083FF RID: 33791
 	public Rect[] MouseCursorZones;
 
-	// Token: 0x040083AA RID: 33706
+	// Token: 0x04008400 RID: 33792
 	public bool MouseCursorForced;
 
-	// Token: 0x040083AB RID: 33707
+	// Token: 0x04008401 RID: 33793
 	public bool MouseCursorBlocksMouseLook = true;
 
-	// Token: 0x040083AC RID: 33708
+	// Token: 0x04008402 RID: 33794
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_MousePos = Vector2.zero;
 
-	// Token: 0x040083AD RID: 33709
+	// Token: 0x04008403 RID: 33795
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_MoveVector = Vector2.zero;
 
-	// Token: 0x040083AE RID: 33710
+	// Token: 0x04008404 RID: 33796
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_AllowGameplayInput = true;
 
-	// Token: 0x040083AF RID: 33711
+	// Token: 0x04008405 RID: 33797
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_FPPlayer;

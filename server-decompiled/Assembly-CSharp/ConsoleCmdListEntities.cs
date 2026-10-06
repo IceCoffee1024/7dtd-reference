@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000234 RID: 564
+// Token: 0x02000236 RID: 566
 [Preserve]
 public class ConsoleCmdListEntities : ConsoleCmdAbstract
 {
-	// Token: 0x170001A5 RID: 421
-	// (get) Token: 0x060010FD RID: 4349 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700019D RID: 413
+	// (get) Token: 0x060010F5 RID: 4341 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001A6 RID: 422
-	// (get) Token: 0x060010FE RID: 4350 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700019E RID: 414
+	// (get) Token: 0x060010F6 RID: 4342 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -27,8 +27,8 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001A7 RID: 423
-	// (get) Token: 0x060010FF RID: 4351 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700019F RID: 415
+	// (get) Token: 0x060010F7 RID: 4343 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,14 +37,14 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x0006C2E4 File Offset: 0x0006A4E4
+	// Token: 0x060010F8 RID: 4344 RVA: 0x0006C4A8 File Offset: 0x0006A6A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "listents", "le" };
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x0006C2FC File Offset: 0x0006A4FC
+	// Token: 0x060010F9 RID: 4345 RVA: 0x0006C4C0 File Offset: 0x0006A6C0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num = 0;
@@ -83,7 +83,7 @@ public class ConsoleCmdListEntities : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Total of " + GameManager.Instance.World.Entities.Count.ToString() + " in the game");
 	}
 
-	// Token: 0x06001102 RID: 4354 RVA: 0x0006C4AE File Offset: 0x0006A6AE
+	// Token: 0x060010FA RID: 4346 RVA: 0x0006C672 File Offset: 0x0006A872
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

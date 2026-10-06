@@ -4,16 +4,16 @@ using System.Runtime.CompilerServices;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02000643 RID: 1603
+// Token: 0x02000645 RID: 1605
 public class MeshGenerator : IMeshGenerator
 {
-	// Token: 0x060033FB RID: 13307 RVA: 0x0014D68C File Offset: 0x0014B88C
+	// Token: 0x0600343E RID: 13374 RVA: 0x0014DFFC File Offset: 0x0014C1FC
 	public MeshGenerator(INeighborBlockCache _nBlocks)
 	{
 		this.nBlocks = _nBlocks;
 	}
 
-	// Token: 0x060033FC RID: 13308 RVA: 0x0014D728 File Offset: 0x0014B928
+	// Token: 0x0600343F RID: 13375 RVA: 0x0014E098 File Offset: 0x0014C298
 	public void GenerateMesh(Vector3i _chunkPos, int _layerIdx, VoxelMesh[] _meshes)
 	{
 		Vector3i vector3i = new Vector3i(0, Utils.FastMax(0, _layerIdx * 16), 0);
@@ -30,7 +30,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x060033FD RID: 13309 RVA: 0x0014D7B8 File Offset: 0x0014B9B8
+	// Token: 0x06003440 RID: 13376 RVA: 0x0014E128 File Offset: 0x0014C328
 	public void GenerateMesh(Vector3i _worldStartPos, Vector3i _worldEndPos, VoxelMesh[] _meshes)
 	{
 		this.CreateMesh(Vector3i.zero, Vector3.zero, _worldStartPos, _worldEndPos, _meshes, true, false);
@@ -40,19 +40,19 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x060033FE RID: 13310 RVA: 0x0014D7F0 File Offset: 0x0014B9F0
+	// Token: 0x06003441 RID: 13377 RVA: 0x0014E160 File Offset: 0x0014C360
 	public virtual bool IsLayerEmpty(int _layerIdx)
 	{
 		return this.IsLayerEmpty(_layerIdx, _layerIdx);
 	}
 
-	// Token: 0x060033FF RID: 13311 RVA: 0x0014D7FA File Offset: 0x0014B9FA
+	// Token: 0x06003442 RID: 13378 RVA: 0x0014E16A File Offset: 0x0014C36A
 	public virtual bool IsLayerEmpty(int _startLayerIdx, int _endLayerIdx)
 	{
 		return this.mcLayerIsEmpty(_startLayerIdx, _endLayerIdx);
 	}
 
-	// Token: 0x06003400 RID: 13312 RVA: 0x0014D804 File Offset: 0x0014BA04
+	// Token: 0x06003443 RID: 13379 RVA: 0x0014E174 File Offset: 0x0014C374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool mcLayerIsEmpty(int _startLayerIdx, int _endLayerIdx)
 	{
@@ -78,7 +78,7 @@ public class MeshGenerator : IMeshGenerator
 		return false;
 	}
 
-	// Token: 0x06003401 RID: 13313 RVA: 0x0014D90C File Offset: 0x0014BB0C
+	// Token: 0x06003444 RID: 13380 RVA: 0x0014E27C File Offset: 0x0014C47C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Lighting maxLight(Lighting _lMiddle, Lighting _lL1N1, Lighting _lL1N2, Lighting _lL1C, Lighting _lL2, Lighting _lL2N1, Lighting _lL2N2, Lighting _lL2C)
 	{
@@ -131,7 +131,7 @@ public class MeshGenerator : IMeshGenerator
 		return lighting;
 	}
 
-	// Token: 0x06003402 RID: 13314 RVA: 0x0014D9F0 File Offset: 0x0014BBF0
+	// Token: 0x06003445 RID: 13381 RVA: 0x0014E360 File Offset: 0x0014C560
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void SwizzleCopy(ref Vector3[] to, int index0, int index1, int index2, int index3)
@@ -142,7 +142,7 @@ public class MeshGenerator : IMeshGenerator
 		to[3] = this.verticesCube[index3];
 	}
 
-	// Token: 0x06003403 RID: 13315 RVA: 0x0014DA50 File Offset: 0x0014BC50
+	// Token: 0x06003446 RID: 13382 RVA: 0x0014E3C0 File Offset: 0x0014C5C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidTriNorth(Vector3[] v4Arr, VoxelMesh[] _meshes, int y)
 	{
@@ -185,7 +185,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003404 RID: 13316 RVA: 0x0014DBE4 File Offset: 0x0014BDE4
+	// Token: 0x06003447 RID: 13383 RVA: 0x0014E554 File Offset: 0x0014C754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidTriSouth(Vector3[] v4Arr, VoxelMesh[] _meshes, int y)
 	{
@@ -228,7 +228,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003405 RID: 13317 RVA: 0x0014DD78 File Offset: 0x0014BF78
+	// Token: 0x06003448 RID: 13384 RVA: 0x0014E6E8 File Offset: 0x0014C8E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidTriEast(Vector3[] v4Arr, VoxelMesh[] _meshes, int y)
 	{
@@ -271,7 +271,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003406 RID: 13318 RVA: 0x0014DF0C File Offset: 0x0014C10C
+	// Token: 0x06003449 RID: 13385 RVA: 0x0014E87C File Offset: 0x0014CA7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidTriWest(Vector3[] v4Arr, VoxelMesh[] _meshes, int y)
 	{
@@ -314,7 +314,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003407 RID: 13319 RVA: 0x0014E0A0 File Offset: 0x0014C2A0
+	// Token: 0x0600344A RID: 13386 RVA: 0x0014EA10 File Offset: 0x0014CC10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidFaceNorth(Vector3[] v4Arr, VoxelMesh[] _meshes, int cpyX, int cpyZ)
 	{
@@ -334,7 +334,7 @@ public class MeshGenerator : IMeshGenerator
 		WaterMeshUtils.RenderFace(this.cpyVerts, this.lightingAround, 0L, _meshes, vector, false);
 	}
 
-	// Token: 0x06003408 RID: 13320 RVA: 0x0014E290 File Offset: 0x0014C490
+	// Token: 0x0600344B RID: 13387 RVA: 0x0014EC00 File Offset: 0x0014CE00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidFaceSouth(Vector3[] v4Arr, VoxelMesh[] _meshes, int cpyX, int cpyZ)
 	{
@@ -354,7 +354,7 @@ public class MeshGenerator : IMeshGenerator
 		WaterMeshUtils.RenderFace(this.cpyVerts, this.lightingAround, 0L, _meshes, vector, false);
 	}
 
-	// Token: 0x06003409 RID: 13321 RVA: 0x0014E480 File Offset: 0x0014C680
+	// Token: 0x0600344C RID: 13388 RVA: 0x0014EDF0 File Offset: 0x0014CFF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidFaceEast(Vector3[] v4Arr, VoxelMesh[] _meshes, int cpyX, int cpyZ)
 	{
@@ -374,7 +374,7 @@ public class MeshGenerator : IMeshGenerator
 		WaterMeshUtils.RenderFace(this.cpyVerts, this.lightingAround, 0L, _meshes, vector, false);
 	}
 
-	// Token: 0x0600340A RID: 13322 RVA: 0x0014E670 File Offset: 0x0014C870
+	// Token: 0x0600344D RID: 13389 RVA: 0x0014EFE0 File Offset: 0x0014D1E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderLiquidFaceWest(Vector3[] v4Arr, VoxelMesh[] _meshes, int cpyX, int cpyZ)
 	{
@@ -394,14 +394,14 @@ public class MeshGenerator : IMeshGenerator
 		WaterMeshUtils.RenderFace(this.cpyVerts, this.lightingAround, 0L, _meshes, vector, false);
 	}
 
-	// Token: 0x0600340B RID: 13323 RVA: 0x0014E85E File Offset: 0x0014CA5E
+	// Token: 0x0600344E RID: 13390 RVA: 0x0014F1CE File Offset: 0x0014D3CE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsAir(int type)
 	{
 		return type == 0;
 	}
 
-	// Token: 0x0600340C RID: 13324 RVA: 0x0014E864 File Offset: 0x0014CA64
+	// Token: 0x0600344F RID: 13391 RVA: 0x0014F1D4 File Offset: 0x0014D3D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPlant(int type)
 	{
@@ -409,7 +409,7 @@ public class MeshGenerator : IMeshGenerator
 		return block != null && block.blockMaterial != null && block.blockMaterial.IsPlant;
 	}
 
-	// Token: 0x0600340D RID: 13325 RVA: 0x0014E894 File Offset: 0x0014CA94
+	// Token: 0x06003450 RID: 13392 RVA: 0x0014F204 File Offset: 0x0014D404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsTerrain(int type)
 	{
@@ -417,7 +417,7 @@ public class MeshGenerator : IMeshGenerator
 		return block != null && block.shape != null && block.shape.IsTerrain();
 	}
 
-	// Token: 0x0600340E RID: 13326 RVA: 0x0014E8C4 File Offset: 0x0014CAC4
+	// Token: 0x06003451 RID: 13393 RVA: 0x0014F234 File Offset: 0x0014D434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsSolidCube(int type)
 	{
@@ -425,7 +425,7 @@ public class MeshGenerator : IMeshGenerator
 		return block != null && block.shape != null && block.shape.IsSolidCube;
 	}
 
-	// Token: 0x0600340F RID: 13327 RVA: 0x0014E8F4 File Offset: 0x0014CAF4
+	// Token: 0x06003452 RID: 13394 RVA: 0x0014F264 File Offset: 0x0014D464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawSide(ref MeshGenerator.DrawSideParams p)
 	{
@@ -556,7 +556,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003410 RID: 13328 RVA: 0x0014ED49 File Offset: 0x0014CF49
+	// Token: 0x06003453 RID: 13395 RVA: 0x0014F6B9 File Offset: 0x0014D8B9
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool FacePermitsFlow(BlockValue bv, BlockFace worldspaceFace)
@@ -564,7 +564,7 @@ public class MeshGenerator : IMeshGenerator
 		return (bv.rotatedWaterFlowMask & BlockFaceFlags.FromBlockFace(worldspaceFace)) == BlockFaceFlag.None;
 	}
 
-	// Token: 0x06003411 RID: 13329 RVA: 0x0014ED5C File Offset: 0x0014CF5C
+	// Token: 0x06003454 RID: 13396 RVA: 0x0014F6CC File Offset: 0x0014D8CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool FacePermitsFlow(BlockFaceFlag flags, BlockFace worldspaceFace)
@@ -572,7 +572,7 @@ public class MeshGenerator : IMeshGenerator
 		return (flags & BlockFaceFlags.FromBlockFace(worldspaceFace)) == BlockFaceFlag.None;
 	}
 
-	// Token: 0x06003412 RID: 13330 RVA: 0x0014ED6C File Offset: 0x0014CF6C
+	// Token: 0x06003455 RID: 13397 RVA: 0x0014F6DC File Offset: 0x0014D8DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void CreateMesh(Vector3i _worldPos, Vector3 _drawPosOffset, Vector3i _start, Vector3i _end, VoxelMesh[] _meshes, bool _bCalcAmbientLight, bool _bOnlyDistortVertices)
 	{
@@ -761,47 +761,47 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x06003413 RID: 13331 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003456 RID: 13398 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Test()
 	{
 	}
 
-	// Token: 0x06003414 RID: 13332 RVA: 0x0014F840 File Offset: 0x0014DA40
+	// Token: 0x06003457 RID: 13399 RVA: 0x001501B0 File Offset: 0x0014E3B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsRaisable(int type)
 	{
 		return type != 0 && (this.IsSolidCube(type) || !this.IsPlant(type));
 	}
 
-	// Token: 0x06003415 RID: 13333 RVA: 0x0014F85C File Offset: 0x0014DA5C
+	// Token: 0x06003458 RID: 13400 RVA: 0x001501CC File Offset: 0x0014E3CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsRaisableNeighbor(int _y, int _x, int _z)
 	{
 		return this.neighborIsWater[_y, _x, _z] || this.IsRaisable(this.neighborType[_y, _x, _z]);
 	}
 
-	// Token: 0x06003416 RID: 13334 RVA: 0x0014F884 File Offset: 0x0014DA84
+	// Token: 0x06003459 RID: 13401 RVA: 0x001501F4 File Offset: 0x0014E3F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CanWaterTaper(int type)
 	{
 		return type == 0 || this.IsPlant(type);
 	}
 
-	// Token: 0x06003417 RID: 13335 RVA: 0x0014F892 File Offset: 0x0014DA92
+	// Token: 0x0600345A RID: 13402 RVA: 0x00150202 File Offset: 0x0014E402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsSolid(int type)
 	{
 		return this.IsTerrain(type) || (this.IsSolidCube(type) && type != 0);
 	}
 
-	// Token: 0x06003418 RID: 13336 RVA: 0x0014F8AE File Offset: 0x0014DAAE
+	// Token: 0x0600345B RID: 13403 RVA: 0x0015021E File Offset: 0x0014E41E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsAirNeighbor(int _y, int _x, int _z)
 	{
 		return this.IsAir(this.neighborType[_y, _x, _z]) && !this.neighborIsWater[_y, _x, _z];
 	}
 
-	// Token: 0x06003419 RID: 13337 RVA: 0x0014F8D9 File Offset: 0x0014DAD9
+	// Token: 0x0600345C RID: 13404 RVA: 0x00150249 File Offset: 0x0014E449
 	[Conditional("NEW_WATER_MESH_DEBUG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WatermeshDebugLog(string message)
@@ -809,7 +809,7 @@ public class MeshGenerator : IMeshGenerator
 		global::UnityEngine.Debug.Log("[watermesh] " + message);
 	}
 
-	// Token: 0x0600341A RID: 13338 RVA: 0x0014F8EC File Offset: 0x0014DAEC
+	// Token: 0x0600345D RID: 13405 RVA: 0x0015025C File Offset: 0x0014E45C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RenderTopWater(BlockValue _middleBV, Vector3[] v4Arr, VoxelMesh[] _meshes, Vector3i _blockPos, Vector3i _worldPos, bool isInsideTerrain = false)
 	{
@@ -958,7 +958,7 @@ public class MeshGenerator : IMeshGenerator
 		}
 	}
 
-	// Token: 0x0600341C RID: 13340 RVA: 0x00150274 File Offset: 0x0014E474
+	// Token: 0x0600345F RID: 13407 RVA: 0x00150BE4 File Offset: 0x0014EDE4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__NeighborBlocksFlow|63_0(int x, int z, BlockFace face)
@@ -966,7 +966,7 @@ public class MeshGenerator : IMeshGenerator
 		return !this.IsTerrain(this.neighborType[0, x, z]) && !MeshGenerator.FacePermitsFlow(this.neighborFlags[x, z], face);
 	}
 
-	// Token: 0x0600341D RID: 13341 RVA: 0x001502A4 File Offset: 0x0014E4A4
+	// Token: 0x06003460 RID: 13408 RVA: 0x00150C14 File Offset: 0x0014EE14
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__CheckSolidWall|63_1(int x, int z, bool isTerrain, BlockFace blockFace)
@@ -980,7 +980,7 @@ public class MeshGenerator : IMeshGenerator
 		return this.<RenderTopWater>g__NeighborBlocksFlow|63_0(x + vector3i.x, z + vector3i.z, blockFace2);
 	}
 
-	// Token: 0x0600341E RID: 13342 RVA: 0x001502F8 File Offset: 0x0014E4F8
+	// Token: 0x06003461 RID: 13409 RVA: 0x00150C68 File Offset: 0x0014EE68
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__CheckRaisableSide|63_2(bool centerIsWater, int x, int z, bool otherNeighborIsWater)
@@ -992,7 +992,7 @@ public class MeshGenerator : IMeshGenerator
 		return this.neighborIsWater[0, x, z] || (this.IsRaisable(this.neighborType[0, x, z]) && otherNeighborIsWater);
 	}
 
-	// Token: 0x0600341F RID: 13343 RVA: 0x00150330 File Offset: 0x0014E530
+	// Token: 0x06003462 RID: 13410 RVA: 0x00150CA0 File Offset: 0x0014EEA0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__CheckRaisableCorner|63_3(int x, int z, BlockFace xFace, BlockFace zFace, bool solidWallX, bool solidWallZ)
@@ -1024,7 +1024,7 @@ public class MeshGenerator : IMeshGenerator
 		return false;
 	}
 
-	// Token: 0x06003420 RID: 13344 RVA: 0x00150414 File Offset: 0x0014E614
+	// Token: 0x06003463 RID: 13411 RVA: 0x00150D84 File Offset: 0x0014EF84
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__CheckNeighborHasRaisableCorner|63_4(int x, int z, BlockFace xFace, BlockFace zFace)
@@ -1047,7 +1047,7 @@ public class MeshGenerator : IMeshGenerator
 		return (this.<RenderTopWater>g__CheckSolidWall|63_1(x, z, flag, zFace) || this.<RenderTopWater>g__NeighborBlocksFlow|63_0(x, num4, xFace) || this.<RenderTopWater>g__NeighborBlocksFlow|63_0(num3, num4, blockFace)) && (this.<RenderTopWater>g__CheckSolidWall|63_1(x, z, flag, xFace) || this.<RenderTopWater>g__NeighborBlocksFlow|63_0(num3, z, zFace) || this.<RenderTopWater>g__NeighborBlocksFlow|63_0(num3, num4, blockFace2));
 	}
 
-	// Token: 0x06003421 RID: 13345 RVA: 0x00150524 File Offset: 0x0014E724
+	// Token: 0x06003464 RID: 13412 RVA: 0x00150E94 File Offset: 0x0014F094
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__NeighborIsVisualWater|63_5(int x, int z, int offsetX, int offsetZ)
@@ -1055,7 +1055,7 @@ public class MeshGenerator : IMeshGenerator
 		return this.neighborIsWater[0, x, z] || (this.IsRaisable(this.neighborType[0, x, z]) && (this.neighborIsWater[0, x + offsetX, z + offsetZ] || this.neighborIsWater[0, x - offsetX, z - offsetZ] || this.neighborIsWater[0, 1, 1]));
 	}
 
-	// Token: 0x06003422 RID: 13346 RVA: 0x00150598 File Offset: 0x0014E798
+	// Token: 0x06003465 RID: 13413 RVA: 0x00150F08 File Offset: 0x0014F108
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <RenderTopWater>g__TryPrepareWaterClippingVolume|63_6(BlockValue _waterClippingBV)
@@ -1145,115 +1145,115 @@ public class MeshGenerator : IMeshGenerator
 		return true;
 	}
 
-	// Token: 0x0400291D RID: 10525
+	// Token: 0x04002916 RID: 10518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public INeighborBlockCache nBlocks;
 
-	// Token: 0x0400291E RID: 10526
+	// Token: 0x04002917 RID: 10519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LightingAround lightingAround = new LightingAround(0, 0, 0);
 
-	// Token: 0x0400291F RID: 10527
+	// Token: 0x04002918 RID: 10520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Lighting3DArray lightCube = new Lighting3DArray();
 
-	// Token: 0x04002920 RID: 10528
+	// Token: 0x04002919 RID: 10521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] verticesCube = new Vector3[8];
 
-	// Token: 0x04002921 RID: 10529
+	// Token: 0x0400291A RID: 10522
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int[] heights = new int[9];
 
-	// Token: 0x04002922 RID: 10530
+	// Token: 0x0400291B RID: 10523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWaterDensity = 4;
 
-	// Token: 0x04002923 RID: 10531
+	// Token: 0x0400291C RID: 10524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cWaterSize = 0.25f;
 
-	// Token: 0x04002924 RID: 10532
+	// Token: 0x0400291D RID: 10525
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cWaterFloatHeight = -1.5f;
 
-	// Token: 0x04002925 RID: 10533
+	// Token: 0x0400291E RID: 10526
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] cpyVerts = new Vector3[4];
 
-	// Token: 0x04002926 RID: 10534
+	// Token: 0x0400291F RID: 10527
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker drawSideMarker = new ProfilerMarker("DrawSide");
 
-	// Token: 0x04002927 RID: 10535
+	// Token: 0x04002920 RID: 10528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker sboMarker = new ProfilerMarker("sbo");
 
-	// Token: 0x04002928 RID: 10536
+	// Token: 0x04002921 RID: 10529
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker blockGetMarker = new ProfilerMarker("blockGet");
 
-	// Token: 0x04002929 RID: 10537
+	// Token: 0x04002922 RID: 10530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker stabMarker = new ProfilerMarker("Stab");
 
-	// Token: 0x0400292A RID: 10538
+	// Token: 0x04002923 RID: 10531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker isWaterMarker = new ProfilerMarker("IsWater");
 
-	// Token: 0x0400292B RID: 10539
+	// Token: 0x04002924 RID: 10532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker swizzleCopyMarker = new ProfilerMarker("SwizzleCopy");
 
-	// Token: 0x0400292C RID: 10540
+	// Token: 0x04002925 RID: 10533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker isRenderFaceMarker = new ProfilerMarker("isRenderFace");
 
-	// Token: 0x0400292D RID: 10541
+	// Token: 0x04002926 RID: 10534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker getChunkTexMarker = new ProfilerMarker("GetChunkTex");
 
-	// Token: 0x0400292E RID: 10542
+	// Token: 0x04002927 RID: 10535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker renderFaceMarker = new ProfilerMarker("renderFace");
 
-	// Token: 0x0400292F RID: 10543
+	// Token: 0x04002928 RID: 10536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker waterMarker = new ProfilerMarker("water");
 
-	// Token: 0x04002930 RID: 10544
+	// Token: 0x04002929 RID: 10537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ringHeight1 = 0.9f;
 
-	// Token: 0x04002931 RID: 10545
+	// Token: 0x0400292A RID: 10538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ringHeight1c = 0.796f;
 
-	// Token: 0x04002932 RID: 10546
+	// Token: 0x0400292B RID: 10539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ringHeight2 = 1f;
 
-	// Token: 0x04002933 RID: 10547
+	// Token: 0x0400292C RID: 10540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[,,] neighborType = new int[2, 3, 3];
 
-	// Token: 0x04002934 RID: 10548
+	// Token: 0x0400292D RID: 10541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool[,,] neighborIsWater = new bool[2, 3, 3];
 
-	// Token: 0x04002935 RID: 10549
+	// Token: 0x0400292E RID: 10542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterClippingVolume waterClippingVolume = new WaterClippingVolume();
 
-	// Token: 0x04002936 RID: 10550
+	// Token: 0x0400292F RID: 10543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVertRes = 5;
 
-	// Token: 0x04002937 RID: 10551
+	// Token: 0x04002930 RID: 10544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3[] vertexPositions = new Vector3[25];
 
-	// Token: 0x04002938 RID: 10552
+	// Token: 0x04002931 RID: 10545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] cRingHeights = new float[]
 	{
@@ -1262,53 +1262,53 @@ public class MeshGenerator : IMeshGenerator
 		0f, 0f, 0f, 0f, 0f
 	};
 
-	// Token: 0x04002939 RID: 10553
+	// Token: 0x04002932 RID: 10546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker renderTopWaterNewMarker = new ProfilerMarker("MeshGenerator.RenderTopWaterNew");
 
-	// Token: 0x0400293A RID: 10554
+	// Token: 0x04002933 RID: 10547
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker raisableSidesAndCornersMarker = new ProfilerMarker("MeshGenerator.RaisableSidesAndCorners");
 
-	// Token: 0x0400293B RID: 10555
+	// Token: 0x04002934 RID: 10548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockFaceFlag[,] neighborFlags = new BlockFaceFlag[3, 3];
 
-	// Token: 0x02000644 RID: 1604
+	// Token: 0x02000646 RID: 1606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DrawSideParams
 	{
-		// Token: 0x0400293C RID: 10556
+		// Token: 0x04002935 RID: 10549
 		public BlockFace face;
 
-		// Token: 0x0400293D RID: 10557
+		// Token: 0x04002936 RID: 10550
 		public BlockValue midBV;
 
-		// Token: 0x0400293E RID: 10558
+		// Token: 0x04002937 RID: 10551
 		public INeighborBlockCache nBlocks;
 
-		// Token: 0x0400293F RID: 10559
+		// Token: 0x04002938 RID: 10552
 		public Vector3[] v4Arr;
 
-		// Token: 0x04002940 RID: 10560
+		// Token: 0x04002939 RID: 10553
 		public float biomeTemperature;
 
-		// Token: 0x04002941 RID: 10561
+		// Token: 0x0400293A RID: 10554
 		public bool isWaterTopDrawn;
 
-		// Token: 0x04002942 RID: 10562
+		// Token: 0x0400293B RID: 10555
 		public bool isWaterLayerStarted;
 
-		// Token: 0x04002943 RID: 10563
+		// Token: 0x0400293C RID: 10556
 		public Vector3 drawPos;
 
-		// Token: 0x04002944 RID: 10564
+		// Token: 0x0400293D RID: 10557
 		public VoxelMesh[] _meshes;
 
-		// Token: 0x04002945 RID: 10565
+		// Token: 0x0400293E RID: 10558
 		public Vector3i posI;
 
-		// Token: 0x04002946 RID: 10566
+		// Token: 0x0400293F RID: 10559
 		public Vector3i _worldPos;
 	}
 }

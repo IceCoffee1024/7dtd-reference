@@ -1,43 +1,44 @@
 ﻿using System;
 using System.Globalization;
+using AssetManagement;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005E2 RID: 1506
+// Token: 0x020005E3 RID: 1507
 [Preserve]
 public class ItemActionThrownWeapon : ItemActionThrowAway
 {
-	// Token: 0x1700050D RID: 1293
-	// (get) Token: 0x060030E9 RID: 12521 RVA: 0x0013D7CF File Offset: 0x0013B9CF
-	// (set) Token: 0x060030EA RID: 12522 RVA: 0x0013D7D7 File Offset: 0x0013B9D7
+	// Token: 0x17000534 RID: 1332
+	// (get) Token: 0x06003130 RID: 12592 RVA: 0x0013E295 File Offset: 0x0013C495
+	// (set) Token: 0x06003131 RID: 12593 RVA: 0x0013E29D File Offset: 0x0013C49D
 	public new ExplosionData Explosion { get; set; }
 
-	// Token: 0x1700050E RID: 1294
-	// (get) Token: 0x060030EB RID: 12523 RVA: 0x0013D7E0 File Offset: 0x0013B9E0
-	// (set) Token: 0x060030EC RID: 12524 RVA: 0x0013D7E8 File Offset: 0x0013B9E8
+	// Token: 0x17000535 RID: 1333
+	// (get) Token: 0x06003132 RID: 12594 RVA: 0x0013E2A6 File Offset: 0x0013C4A6
+	// (set) Token: 0x06003133 RID: 12595 RVA: 0x0013E2AE File Offset: 0x0013C4AE
 	public new int Velocity { get; set; }
 
-	// Token: 0x1700050F RID: 1295
-	// (get) Token: 0x060030ED RID: 12525 RVA: 0x0013D7F1 File Offset: 0x0013B9F1
-	// (set) Token: 0x060030EE RID: 12526 RVA: 0x0013D7F9 File Offset: 0x0013B9F9
+	// Token: 0x17000536 RID: 1334
+	// (get) Token: 0x06003134 RID: 12596 RVA: 0x0013E2B7 File Offset: 0x0013C4B7
+	// (set) Token: 0x06003135 RID: 12597 RVA: 0x0013E2BF File Offset: 0x0013C4BF
 	public new float FlyTime { get; set; }
 
-	// Token: 0x17000510 RID: 1296
-	// (get) Token: 0x060030EF RID: 12527 RVA: 0x0013D802 File Offset: 0x0013BA02
-	// (set) Token: 0x060030F0 RID: 12528 RVA: 0x0013D80A File Offset: 0x0013BA0A
+	// Token: 0x17000537 RID: 1335
+	// (get) Token: 0x06003136 RID: 12598 RVA: 0x0013E2C8 File Offset: 0x0013C4C8
+	// (set) Token: 0x06003137 RID: 12599 RVA: 0x0013E2D0 File Offset: 0x0013C4D0
 	public new float LifeTime { get; set; }
 
-	// Token: 0x17000511 RID: 1297
-	// (get) Token: 0x060030F1 RID: 12529 RVA: 0x0013D813 File Offset: 0x0013BA13
-	// (set) Token: 0x060030F2 RID: 12530 RVA: 0x0013D81B File Offset: 0x0013BA1B
+	// Token: 0x17000538 RID: 1336
+	// (get) Token: 0x06003138 RID: 12600 RVA: 0x0013E2D9 File Offset: 0x0013C4D9
+	// (set) Token: 0x06003139 RID: 12601 RVA: 0x0013E2E1 File Offset: 0x0013C4E1
 	public new float CollisionRadius { get; set; }
 
-	// Token: 0x17000512 RID: 1298
-	// (get) Token: 0x060030F3 RID: 12531 RVA: 0x0013D824 File Offset: 0x0013BA24
-	// (set) Token: 0x060030F4 RID: 12532 RVA: 0x0013D82C File Offset: 0x0013BA2C
+	// Token: 0x17000539 RID: 1337
+	// (get) Token: 0x0600313A RID: 12602 RVA: 0x0013E2EA File Offset: 0x0013C4EA
+	// (set) Token: 0x0600313B RID: 12603 RVA: 0x0013E2F2 File Offset: 0x0013C4F2
 	public float Gravity { get; set; }
 
-	// Token: 0x060030F5 RID: 12533 RVA: 0x0013D838 File Offset: 0x0013BA38
+	// Token: 0x0600313C RID: 12604 RVA: 0x0013E2FC File Offset: 0x0013C4FC
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -101,13 +102,13 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		this.hitmaskOverride = Voxel.ToHitMask(_props.GetString("Hitmask_override"));
 	}
 
-	// Token: 0x060030F6 RID: 12534 RVA: 0x0013DA74 File Offset: 0x0013BC74
+	// Token: 0x0600313D RID: 12605 RVA: 0x0013E538 File Offset: 0x0013C738
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return ((ItemActionThrowAway.MyInventoryData)_actionData).m_bActivated;
 	}
 
-	// Token: 0x060030F7 RID: 12535 RVA: 0x0013DA81 File Offset: 0x0013BC81
+	// Token: 0x0600313E RID: 12606 RVA: 0x0013E545 File Offset: 0x0013C745
 	public override void StartHolding(ItemActionData _actionData)
 	{
 		base.StartHolding(_actionData);
@@ -117,7 +118,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		myInventoryData.m_LastThrowTime = 0f;
 	}
 
-	// Token: 0x060030F8 RID: 12536 RVA: 0x0013DAAC File Offset: 0x0013BCAC
+	// Token: 0x0600313F RID: 12607 RVA: 0x0013E570 File Offset: 0x0013C770
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -129,7 +130,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		GameManager.Instance.ItemActionEffectsServer(myInventoryData.invData.holdingEntity.entityId, myInventoryData.invData.slotIdx, myInventoryData.indexInEntityOfAction, 0, Vector3.zero, Vector3.zero, 0);
 	}
 
-	// Token: 0x060030F9 RID: 12537 RVA: 0x0013DB4C File Offset: 0x0013BD4C
+	// Token: 0x06003140 RID: 12608 RVA: 0x0013E610 File Offset: 0x0013C810
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		_actionData.invData.holdingEntity.emodel.avatarController.TriggerEvent("WeaponFire");
@@ -140,7 +141,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		}
 	}
 
-	// Token: 0x060030FA RID: 12538 RVA: 0x0013DBA8 File Offset: 0x0013BDA8
+	// Token: 0x06003141 RID: 12609 RVA: 0x0013E66C File Offset: 0x0013C86C
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -189,7 +190,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		}
 	}
 
-	// Token: 0x060030FB RID: 12539 RVA: 0x0013DD10 File Offset: 0x0013BF10
+	// Token: 0x06003142 RID: 12610 RVA: 0x0013E7D4 File Offset: 0x0013C9D4
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -200,7 +201,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		myInventoryData.m_LastThrowTime = 0f;
 	}
 
-	// Token: 0x060030FC RID: 12540 RVA: 0x0013DD68 File Offset: 0x0013BF68
+	// Token: 0x06003143 RID: 12611 RVA: 0x0013E82C File Offset: 0x0013CA2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void throwAway(ItemActionThrowAway.MyInventoryData _actionData)
 	{
@@ -218,19 +219,21 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		_actionData.invData.holdingEntity.inventory.DecHoldingItem(1);
 	}
 
-	// Token: 0x060030FD RID: 12541 RVA: 0x0013DEA4 File Offset: 0x0013C0A4
+	// Token: 0x06003144 RID: 12612 RVA: 0x0013E968 File Offset: 0x0013CB68
 	public ThrownWeaponMoveScript instantiateProjectile(ItemActionData _actionData)
 	{
 		ItemValue holdingItemItemValue = _actionData.invData.holdingEntity.inventory.holdingItemItemValue;
 		int entityId = _actionData.invData.holdingEntity.entityId;
 		new ItemValue(_actionData.invData.item.Id, false);
-		Transform transform = global::UnityEngine.Object.Instantiate<GameObject>(_actionData.invData.holdingEntity.inventory.models[_actionData.invData.holdingEntity.inventory.holdingItemIdx].gameObject).transform;
+		InstanceHandle<GameObject> instanceHandle = _actionData.invData.CloneModel();
+		Transform transform = instanceHandle.Instance.transform;
 		Utils.ForceMaterialsInstance(transform.gameObject);
 		transform.parent = null;
 		transform.position = _actionData.invData.model.transform.position;
 		transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 		Utils.SetLayerRecursively(transform.gameObject, 0);
 		ThrownWeaponMoveScript thrownWeaponMoveScript = transform.gameObject.AddMissingComponent<ThrownWeaponMoveScript>();
+		thrownWeaponMoveScript.assetHandle = instanceHandle;
 		thrownWeaponMoveScript.itemActionThrownWeapon = this;
 		thrownWeaponMoveScript.itemWeapon = _actionData.invData.item;
 		thrownWeaponMoveScript.itemValueWeapon = _actionData.invData.itemValue;
@@ -245,7 +248,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		return thrownWeaponMoveScript;
 	}
 
-	// Token: 0x060030FE RID: 12542 RVA: 0x0013E064 File Offset: 0x0013C264
+	// Token: 0x06003145 RID: 12613 RVA: 0x0013EB0C File Offset: 0x0013CD0C
 	public float GetDamageEntity(ItemValue _itemValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		this.tmpTag = ((actionIndex == 0) ? ItemActionAttack.PrimaryTag : ItemActionAttack.SecondaryTag);
@@ -257,7 +260,7 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		return EffectManager.GetValue(PassiveEffects.EntityDamage, _itemValue, this.damageEntity, _holdingEntity, null, this.tmpTag, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x060030FF RID: 12543 RVA: 0x0013E0FC File Offset: 0x0013C2FC
+	// Token: 0x06003146 RID: 12614 RVA: 0x0013EBA4 File Offset: 0x0013CDA4
 	public float GetDamageBlock(ItemValue _itemValue, BlockValue _blockValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		this.tmpTag = ((actionIndex == 0) ? ItemActionAttack.PrimaryTag : ItemActionAttack.SecondaryTag);
@@ -271,21 +274,21 @@ public class ItemActionThrownWeapon : ItemActionThrowAway
 		return Utils.FastMin((float)_blockValue.Block.blockMaterial.MaxIncomingDamage, value);
 	}
 
-	// Token: 0x04002608 RID: 9736
+	// Token: 0x04002602 RID: 9730
 	public float damageEntity;
 
-	// Token: 0x04002609 RID: 9737
+	// Token: 0x04002603 RID: 9731
 	public float damageBlock;
 
-	// Token: 0x0400260A RID: 9738
+	// Token: 0x04002604 RID: 9732
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int hitmaskOverride;
 
-	// Token: 0x0400260B RID: 9739
+	// Token: 0x04002605 RID: 9733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> usePassedInTransformTag = FastTags<TagGroup.Global>.Parse("usePassedInTransform");
 
-	// Token: 0x0400260C RID: 9740
+	// Token: 0x04002606 RID: 9734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tmpTag;
 }

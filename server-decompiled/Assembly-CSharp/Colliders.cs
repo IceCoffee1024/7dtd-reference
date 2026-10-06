@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013BD RID: 5053
+// Token: 0x020013DD RID: 5085
 public class Colliders
 {
-	// Token: 0x06009EFD RID: 40701 RVA: 0x003BF050 File Offset: 0x003BD250
+	// Token: 0x06009FA8 RID: 40872 RVA: 0x003C3BEC File Offset: 0x003C1DEC
 	public static bool Trace(Rigidbody body, Vector3 dir, float distance, int layerMask, out RaycastHit hitInfo)
 	{
 		hitInfo = default(RaycastHit);
@@ -30,7 +30,7 @@ public class Colliders
 		return hitInfo.collider != null;
 	}
 
-	// Token: 0x06009EFE RID: 40702 RVA: 0x003BF0DC File Offset: 0x003BD2DC
+	// Token: 0x06009FA9 RID: 40873 RVA: 0x003C3C78 File Offset: 0x003C1E78
 	public static RaycastHit[] TraceAll(Rigidbody body, Vector3 dir, float distance, int layerMask)
 	{
 		if (layerMask == 0)

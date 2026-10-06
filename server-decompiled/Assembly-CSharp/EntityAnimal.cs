@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000483 RID: 1155
+// Token: 0x02000485 RID: 1157
 [Preserve]
 public abstract class EntityAnimal : EntityAlive
 {
-	// Token: 0x060023E4 RID: 9188 RVA: 0x000D9885 File Offset: 0x000D7A85
+	// Token: 0x060023D7 RID: 9175 RVA: 0x000D99A1 File Offset: 0x000D7BA1
 	public void SetDistressed(bool _isDistressed, float _minTime, float _maxTime, int _playerId)
 	{
 		this.isDistressed = _isDistressed;
@@ -16,7 +16,7 @@ public abstract class EntityAnimal : EntityAlive
 		this.timer = 2.5f;
 	}
 
-	// Token: 0x060023E5 RID: 9189 RVA: 0x000D98B0 File Offset: 0x000D7AB0
+	// Token: 0x060023D8 RID: 9176 RVA: 0x000D99CC File Offset: 0x000D7BCC
 	public override void ClearDistressed()
 	{
 		this.isDistressed = false;
@@ -27,7 +27,7 @@ public abstract class EntityAnimal : EntityAlive
 		}
 	}
 
-	// Token: 0x060023E6 RID: 9190 RVA: 0x000D98E8 File Offset: 0x000D7AE8
+	// Token: 0x060023D9 RID: 9177 RVA: 0x000D9A04 File Offset: 0x000D7C04
 	public override void OnUpdateLive()
 	{
 		base.GetEntitySenses().Clear();
@@ -48,39 +48,39 @@ public abstract class EntityAnimal : EntityAlive
 		}
 	}
 
-	// Token: 0x060023E7 RID: 9191 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060023DA RID: 9178 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsDrawMapIcon()
 	{
 		return false;
 	}
 
-	// Token: 0x060023E8 RID: 9192 RVA: 0x000D999F File Offset: 0x000D7B9F
+	// Token: 0x060023DB RID: 9179 RVA: 0x000D9ABB File Offset: 0x000D7CBB
 	public override Color GetMapIconColor()
 	{
 		return new Color(1f, 0.8235294f, 0.34117648f);
 	}
 
-	// Token: 0x060023E9 RID: 9193 RVA: 0x000D99B5 File Offset: 0x000D7BB5
+	// Token: 0x060023DC RID: 9180 RVA: 0x000D9AD1 File Offset: 0x000D7CD1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float getNextStepSoundDistance()
 	{
 		return 0.8f;
 	}
 
-	// Token: 0x060023EA RID: 9194 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060023DD RID: 9181 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x060023EB RID: 9195 RVA: 0x000D99BC File Offset: 0x000D7BBC
+	// Token: 0x060023DE RID: 9182 RVA: 0x000D9AD8 File Offset: 0x000D7CD8
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale)
 	{
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, impulseScale);
 	}
 
-	// Token: 0x060023EC RID: 9196 RVA: 0x000D99CC File Offset: 0x000D7BCC
+	// Token: 0x060023DF RID: 9183 RVA: 0x000D9AE8 File Offset: 0x000D7CE8
 	public override void OnEntityDeath()
 	{
 		if (this.PhysicsTransform)
@@ -95,7 +95,7 @@ public abstract class EntityAnimal : EntityAlive
 		}
 	}
 
-	// Token: 0x060023ED RID: 9197 RVA: 0x000D9A20 File Offset: 0x000D7C20
+	// Token: 0x060023E0 RID: 9184 RVA: 0x000D9B3C File Offset: 0x000D7D3C
 	public override void OnEntityUnload()
 	{
 		base.OnEntityUnload();
@@ -106,13 +106,13 @@ public abstract class EntityAnimal : EntityAlive
 		}
 	}
 
-	// Token: 0x060023EE RID: 9198 RVA: 0x000D9A54 File Offset: 0x000D7C54
+	// Token: 0x060023E1 RID: 9185 RVA: 0x000D9B70 File Offset: 0x000D7D70
 	public override void OnCollectServer(int _playerId)
 	{
 		GameManager.Instance.World.RemoveEntity(this.entityId, EnumRemoveEntityReason.Captured);
 	}
 
-	// Token: 0x060023EF RID: 9199 RVA: 0x000D9A70 File Offset: 0x000D7C70
+	// Token: 0x060023E2 RID: 9186 RVA: 0x000D9B8C File Offset: 0x000D7D8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal getEntityPlayerLocal()
 	{
@@ -124,33 +124,33 @@ public abstract class EntityAnimal : EntityAlive
 		return entityPlayerLocal;
 	}
 
-	// Token: 0x060023F0 RID: 9200 RVA: 0x000D9AA6 File Offset: 0x000D7CA6
+	// Token: 0x060023E3 RID: 9187 RVA: 0x000D9BC2 File Offset: 0x000D7DC2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAnimal()
 	{
 	}
 
-	// Token: 0x04001986 RID: 6534
+	// Token: 0x0400197D RID: 6525
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float minStressTime = 2.5f;
 
-	// Token: 0x04001987 RID: 6535
+	// Token: 0x0400197E RID: 6526
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float maxStressTime = 1f;
 
-	// Token: 0x04001988 RID: 6536
+	// Token: 0x0400197F RID: 6527
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDistressed;
 
-	// Token: 0x04001989 RID: 6537
+	// Token: 0x04001980 RID: 6528
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int playerId = -1;
 
-	// Token: 0x0400198A RID: 6538
+	// Token: 0x04001981 RID: 6529
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timer;

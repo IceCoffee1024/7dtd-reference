@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F51 RID: 3921
+// Token: 0x02000F60 RID: 3936
 [Preserve]
 public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x17000E5A RID: 3674
-	// (get) Token: 0x06007B1D RID: 31517 RVA: 0x002E740B File Offset: 0x002E560B
+	// Token: 0x17000E77 RID: 3703
+	// (get) Token: 0x06007B1A RID: 31514 RVA: 0x002EA77B File Offset: 0x002E897B
 	public bool isOpenAsTrader
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -18,9 +18,9 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x17000E5B RID: 3675
-	// (get) Token: 0x06007B1E RID: 31518 RVA: 0x002E742F File Offset: 0x002E562F
-	// (set) Token: 0x06007B1F RID: 31519 RVA: 0x002E7438 File Offset: 0x002E5638
+	// Token: 0x17000E78 RID: 3704
+	// (get) Token: 0x06007B1B RID: 31515 RVA: 0x002EA79F File Offset: 0x002E899F
+	// (set) Token: 0x06007B1C RID: 31516 RVA: 0x002EA7A8 File Offset: 0x002E89A8
 	public XUiC_SelectableEntry HoverEntry
 	{
 		get
@@ -51,9 +51,9 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x17000E5C RID: 3676
-	// (get) Token: 0x06007B20 RID: 31520 RVA: 0x002E74BD File Offset: 0x002E56BD
-	// (set) Token: 0x06007B21 RID: 31521 RVA: 0x002E74C5 File Offset: 0x002E56C5
+	// Token: 0x17000E79 RID: 3705
+	// (get) Token: 0x06007B1D RID: 31517 RVA: 0x002EA82D File Offset: 0x002E8A2D
+	// (set) Token: 0x06007B1E RID: 31518 RVA: 0x002EA835 File Offset: 0x002E8A35
 	public ItemStack CompareStack
 	{
 		get
@@ -70,8 +70,8 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x17000E5D RID: 3677
-	// (get) Token: 0x06007B22 RID: 31522 RVA: 0x002E74E0 File Offset: 0x002E56E0
+	// Token: 0x17000E7A RID: 3706
+	// (get) Token: 0x06007B1F RID: 31519 RVA: 0x002EA850 File Offset: 0x002E8A50
 	public ItemStack EquippedStack
 	{
 		get
@@ -88,7 +88,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007B23 RID: 31523 RVA: 0x002E7528 File Offset: 0x002E5728
+	// Token: 0x06007B20 RID: 31520 RVA: 0x002EA898 File Offset: 0x002E8A98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack GetHoverControllerItemStack()
 	{
@@ -120,7 +120,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		return null;
 	}
 
-	// Token: 0x06007B24 RID: 31524 RVA: 0x002E75A8 File Offset: 0x002E57A8
+	// Token: 0x06007B21 RID: 31521 RVA: 0x002EA918 File Offset: 0x002E8B18
 	public override void Init()
 	{
 		base.Init();
@@ -140,7 +140,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.descriptionButton.OnPress += this.DescriptionButton_OnPress;
 	}
 
-	// Token: 0x06007B25 RID: 31525 RVA: 0x002E7695 File Offset: 0x002E5895
+	// Token: 0x06007B22 RID: 31522 RVA: 0x002EAA05 File Offset: 0x002E8C05
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DescriptionButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -150,7 +150,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007B26 RID: 31526 RVA: 0x002E76D1 File Offset: 0x002E58D1
+	// Token: 0x06007B23 RID: 31523 RVA: 0x002EAA41 File Offset: 0x002E8C41
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StatButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -160,7 +160,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007B27 RID: 31527 RVA: 0x002E770D File Offset: 0x002E590D
+	// Token: 0x06007B24 RID: 31524 RVA: 0x002EAA7D File Offset: 0x002E8C7D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Counter_OnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
@@ -171,12 +171,12 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007B28 RID: 31528 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007B25 RID: 31525 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Deselect()
 	{
 	}
 
-	// Token: 0x06007B29 RID: 31529 RVA: 0x002E7728 File Offset: 0x002E5928
+	// Token: 0x06007B26 RID: 31526 RVA: 0x002EAA98 File Offset: 0x002E8C98
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -213,7 +213,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x06007B2A RID: 31530 RVA: 0x002E7848 File Offset: 0x002E5A48
+	// Token: 0x06007B27 RID: 31527 RVA: 0x002EABB8 File Offset: 0x002E8DB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -791,7 +791,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007B2B RID: 31531 RVA: 0x002E885C File Offset: 0x002E6A5C
+	// Token: 0x06007B28 RID: 31528 RVA: 0x002EBBCC File Offset: 0x002E9DCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatTitle(int index)
 	{
@@ -808,7 +808,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		return text;
 	}
 
-	// Token: 0x06007B2C RID: 31532 RVA: 0x002E88E4 File Offset: 0x002E6AE4
+	// Token: 0x06007B29 RID: 31529 RVA: 0x002EBC54 File Offset: 0x002E9E54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatValue(int index)
 	{
@@ -828,7 +828,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		return XUiM_ItemStack.GetStatItemValueTextWithCompareInfo(this.itemStack.itemValue, this.CompareStack.itemValue, this.xui.playerUI.entityPlayer, displayInfoEntry, false, true);
 	}
 
-	// Token: 0x06007B2D RID: 31533 RVA: 0x002E89CA File Offset: 0x002E6BCA
+	// Token: 0x06007B2A RID: 31530 RVA: 0x002EBD3A File Offset: 0x002E9F3A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void makeVisible(bool _makeVisible)
 	{
@@ -843,7 +843,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		base.ViewComponent.IsVisible = true;
 	}
 
-	// Token: 0x06007B2E RID: 31534 RVA: 0x002E89EA File Offset: 0x002E6BEA
+	// Token: 0x06007B2B RID: 31531 RVA: 0x002EBD5A File Offset: 0x002E9F5A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearSelectedStacks()
 	{
@@ -854,7 +854,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.selectedTurnInItemStack = null;
 	}
 
-	// Token: 0x06007B2F RID: 31535 RVA: 0x002E8A0F File Offset: 0x002E6C0F
+	// Token: 0x06007B2C RID: 31532 RVA: 0x002EBD7F File Offset: 0x002E9F7F
 	public void SetItemStack(XUiC_ItemStack stack, bool _makeVisible = false)
 	{
 		this.ClearSelectedStacks();
@@ -868,7 +868,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.SetInfo(stack.ItemStack, stack, XUiC_ItemActionList.ItemActionListTypes.Item);
 	}
 
-	// Token: 0x06007B30 RID: 31536 RVA: 0x002E8A4A File Offset: 0x002E6C4A
+	// Token: 0x06007B2D RID: 31533 RVA: 0x002EBDBA File Offset: 0x002E9FBA
 	public void SetItemStack(XUiC_EquipmentStack stack, bool _makeVisible = false)
 	{
 		this.ClearSelectedStacks();
@@ -882,7 +882,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.SetInfo(stack.ItemStack, stack, XUiC_ItemActionList.ItemActionListTypes.Equipment);
 	}
 
-	// Token: 0x06007B31 RID: 31537 RVA: 0x002E8A85 File Offset: 0x002E6C85
+	// Token: 0x06007B2E RID: 31534 RVA: 0x002EBDF5 File Offset: 0x002E9FF5
 	public void SetItemStack(XUiC_BasePartStack stack, bool _makeVisible = false)
 	{
 		this.ClearSelectedStacks();
@@ -896,7 +896,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.SetInfo(stack.ItemStack, stack, XUiC_ItemActionList.ItemActionListTypes.Part);
 	}
 
-	// Token: 0x06007B32 RID: 31538 RVA: 0x002E8AC4 File Offset: 0x002E6CC4
+	// Token: 0x06007B2F RID: 31535 RVA: 0x002EBE34 File Offset: 0x002EA034
 	public void SetItemStack(XUiC_TraderItemEntry stack, bool _makeVisible = false)
 	{
 		this.ClearSelectedStacks();
@@ -910,7 +910,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.SetInfo(stack.Item, stack, XUiC_ItemActionList.ItemActionListTypes.Trader);
 	}
 
-	// Token: 0x06007B33 RID: 31539 RVA: 0x002E8B14 File Offset: 0x002E6D14
+	// Token: 0x06007B30 RID: 31536 RVA: 0x002EBE84 File Offset: 0x002EA084
 	public void SetItemStack(XUiC_QuestTurnInEntry stack, bool _makeVisible = false)
 	{
 		this.ClearSelectedStacks();
@@ -924,7 +924,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.SetInfo(stack.Item, stack, XUiC_ItemActionList.ItemActionListTypes.QuestReward);
 	}
 
-	// Token: 0x06007B34 RID: 31540 RVA: 0x002E8B64 File Offset: 0x002E6D64
+	// Token: 0x06007B31 RID: 31537 RVA: 0x002EBED4 File Offset: 0x002EA0D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowEmptyInfo()
 	{
@@ -937,7 +937,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		this.emptyInfoWindow.ViewComponent.IsVisible = true;
 	}
 
-	// Token: 0x06007B35 RID: 31541 RVA: 0x002E8BCC File Offset: 0x002E6DCC
+	// Token: 0x06007B32 RID: 31538 RVA: 0x002EBF3C File Offset: 0x002EA13C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetInfo(ItemStack stack, XUiController controller, XUiC_ItemActionList.ItemActionListTypes actionListType)
 	{
@@ -1005,17 +1005,24 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 			this.isBuying = false;
 			this.useCustomMarkup = false;
 		}
-		if (flag2 && this.itemStack.itemValue.Modifications != null)
+		if (flag2)
 		{
 			this.partList.SetMainItem(this.itemStack);
-			if (this.itemStack.itemValue.CosmeticMods != null && this.itemStack.itemValue.CosmeticMods.Length != 0 && this.itemStack.itemValue.CosmeticMods[0] != null && !this.itemStack.itemValue.CosmeticMods[0].IsEmpty())
+			ItemValue itemValue = this.itemStack.itemValue;
+			int num3 = this.partList.GetItemStackControllers().Length;
+			int i = 0;
+			ItemValue itemValue2 = ((itemValue.CosmeticModCount > 0) ? itemValue.GetCosmeticMod(0) : null);
+			if (itemValue2 != null && !itemValue2.IsEmpty())
 			{
-				this.partList.SetSlot(this.itemStack.itemValue.CosmeticMods[0], 0);
-				this.partList.SetSlots(this.itemStack.itemValue.Modifications, 1);
+				this.partList.SetPart(itemValue2, i++);
 			}
-			else
+			int num4 = 0;
+			while (i < num3)
 			{
-				this.partList.SetSlots(this.itemStack.itemValue.Modifications, 0);
+				ItemValue itemValue3 = ((num4 < itemValue.ModificationCount) ? itemValue.GetModification(num4) : null);
+				this.partList.SetPart(itemValue3, i);
+				num4++;
+				i++;
 			}
 			this.partList.ViewComponent.IsVisible = true;
 		}
@@ -1026,101 +1033,101 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005B2B RID: 23339
+	// Token: 0x04005B63 RID: 23395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack = ItemStack.Empty;
 
-	// Token: 0x04005B2C RID: 23340
+	// Token: 0x04005B64 RID: 23396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x04005B2D RID: 23341
+	// Token: 0x04005B65 RID: 23397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemStack selectedItemStack;
 
-	// Token: 0x04005B2E RID: 23342
+	// Token: 0x04005B66 RID: 23398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_EquipmentStack selectedEquipmentStack;
 
-	// Token: 0x04005B2F RID: 23343
+	// Token: 0x04005B67 RID: 23399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_BasePartStack selectedPartStack;
 
-	// Token: 0x04005B30 RID: 23344
+	// Token: 0x04005B68 RID: 23400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TraderItemEntry selectedTraderItemStack;
 
-	// Token: 0x04005B31 RID: 23345
+	// Token: 0x04005B69 RID: 23401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestTurnInEntry selectedTurnInItemStack;
 
-	// Token: 0x04005B32 RID: 23346
+	// Token: 0x04005B6A RID: 23402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController itemPreview;
 
-	// Token: 0x04005B33 RID: 23347
+	// Token: 0x04005B6B RID: 23403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList mainActionItemList;
 
-	// Token: 0x04005B34 RID: 23348
+	// Token: 0x04005B6C RID: 23404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList traderActionItemList;
 
-	// Token: 0x04005B35 RID: 23349
+	// Token: 0x04005B6D RID: 23405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PartList partList;
 
-	// Token: 0x04005B36 RID: 23350
+	// Token: 0x04005B6E RID: 23406
 	public XUiC_Counter BuySellCounter;
 
-	// Token: 0x04005B37 RID: 23351
+	// Token: 0x04005B6F RID: 23407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController statButton;
 
-	// Token: 0x04005B38 RID: 23352
+	// Token: 0x04005B70 RID: 23408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController descriptionButton;
 
-	// Token: 0x04005B39 RID: 23353
+	// Token: 0x04005B71 RID: 23409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_InfoWindow emptyInfoWindow;
 
-	// Token: 0x04005B3A RID: 23354
+	// Token: 0x04005B72 RID: 23410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBuying;
 
-	// Token: 0x04005B3B RID: 23355
+	// Token: 0x04005B73 RID: 23411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useCustomMarkup;
 
-	// Token: 0x04005B3C RID: 23356
+	// Token: 0x04005B74 RID: 23412
 	public bool SetMaxCountOnDirty;
 
-	// Token: 0x04005B3D RID: 23357
+	// Token: 0x04005B75 RID: 23413
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemDisplayEntry itemDisplayEntry;
 
-	// Token: 0x04005B3E RID: 23358
+	// Token: 0x04005B76 RID: 23414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SelectableEntry hoverEntry;
 
-	// Token: 0x04005B3F RID: 23359
+	// Token: 0x04005B77 RID: 23415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack compareStack = ItemStack.Empty;
 
-	// Token: 0x04005B40 RID: 23360
+	// Token: 0x04005B78 RID: 23416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showStats = true;
 
-	// Token: 0x04005B41 RID: 23361
+	// Token: 0x04005B79 RID: 23417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool extraStatsShown;
 
-	// Token: 0x04005B42 RID: 23362
+	// Token: 0x04005B7A RID: 23418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt itemcostFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005B43 RID: 23363
+	// Token: 0x04005B7B RID: 23419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> markupFormatter = new CachedStringFormatter<int>(delegate(int _i)
 	{
@@ -1135,35 +1142,35 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		return string.Format(" ({0}%)", _i);
 	});
 
-	// Token: 0x04005B44 RID: 23364
+	// Token: 0x04005B7C RID: 23420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005B45 RID: 23365
+	// Token: 0x04005B7D RID: 23421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005B46 RID: 23366
+	// Token: 0x04005B7E RID: 23422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor removeddurabilitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005B47 RID: 23367
+	// Token: 0x04005B7F RID: 23423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor iconTypeIconTintFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005B48 RID: 23368
+	// Token: 0x04005B80 RID: 23424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat durabilityfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005B49 RID: 23369
+	// Token: 0x04005B81 RID: 23425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat removeddurabilityfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005B4A RID: 23370
+	// Token: 0x04005B82 RID: 23426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt durabilitytextFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005B4B RID: 23371
+	// Token: 0x04005B83 RID: 23427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, string> itemGroupToIcon = new CaseInsensitiveStringDictionary<string>
 	{
@@ -1181,7 +1188,7 @@ public class XUiC_ItemInfoWindow : XUiC_InfoWindow
 		{ "mods", "ui_game_symbol_assemble" }
 	};
 
-	// Token: 0x04005B4C RID: 23372
+	// Token: 0x04005B84 RID: 23428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string defaultItemGroupIcon = "ui_game_symbol_campfire";
 }

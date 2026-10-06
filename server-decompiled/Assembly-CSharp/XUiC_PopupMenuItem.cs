@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D4A RID: 3402
+// Token: 0x02000D5A RID: 3418
 [Preserve]
 public class XUiC_PopupMenuItem : XUiController
 {
-	// Token: 0x17000B00 RID: 2816
-	// (get) Token: 0x060067AC RID: 26540 RVA: 0x0028EB63 File Offset: 0x0028CD63
+	// Token: 0x17000B18 RID: 2840
+	// (get) Token: 0x060067A6 RID: 26534 RVA: 0x002920CB File Offset: 0x002902CB
 	[XuiXmlBinding("menuicon")]
 	public string Icon
 	{
@@ -18,8 +18,8 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x17000B01 RID: 2817
-	// (get) Token: 0x060067AD RID: 26541 RVA: 0x0028EB80 File Offset: 0x0028CD80
+	// Token: 0x17000B19 RID: 2841
+	// (get) Token: 0x060067A7 RID: 26535 RVA: 0x002920E8 File Offset: 0x002902E8
 	[XuiXmlBinding("menutext")]
 	public string Text
 	{
@@ -31,8 +31,8 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x17000B02 RID: 2818
-	// (get) Token: 0x060067AE RID: 26542 RVA: 0x0028EB9D File Offset: 0x0028CD9D
+	// Token: 0x17000B1A RID: 2842
+	// (get) Token: 0x060067A8 RID: 26536 RVA: 0x00292105 File Offset: 0x00290305
 	[XuiXmlBinding("enabled")]
 	public bool EntryEnabled
 	{
@@ -44,8 +44,8 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x17000B03 RID: 2819
-	// (get) Token: 0x060067AF RID: 26543 RVA: 0x0028EBB0 File Offset: 0x0028CDB0
+	// Token: 0x17000B1B RID: 2843
+	// (get) Token: 0x060067A9 RID: 26537 RVA: 0x00292118 File Offset: 0x00290318
 	[XuiXmlBinding("hovered")]
 	public bool EntryHovered
 	{
@@ -56,8 +56,8 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x17000B04 RID: 2820
-	// (get) Token: 0x060067B0 RID: 26544 RVA: 0x0028EBB8 File Offset: 0x0028CDB8
+	// Token: 0x17000B1C RID: 2844
+	// (get) Token: 0x060067AA RID: 26538 RVA: 0x00292120 File Offset: 0x00290320
 	[XuiXmlBinding("type")]
 	public XUiC_PopupMenuItem.EEntryType EntryType
 	{
@@ -73,14 +73,14 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x060067B1 RID: 26545 RVA: 0x0028EBCB File Offset: 0x0028CDCB
+	// Token: 0x060067AB RID: 26539 RVA: 0x00292133 File Offset: 0x00290333
 	public override void Init()
 	{
 		base.Init();
 		this.label.Overflow = UILabel.Overflow.ResizeFreely;
 	}
 
-	// Token: 0x060067B2 RID: 26546 RVA: 0x0028EBDF File Offset: 0x0028CDDF
+	// Token: 0x060067AC RID: 26540 RVA: 0x00292147 File Offset: 0x00290347
 	[XuiBindEvent("OnHoveredStateChanged", "slider")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sliderHoveredChanged(XUiController _sender, bool _isOverMainArea, bool _isOverAnyPart)
@@ -88,7 +88,7 @@ public class XUiC_PopupMenuItem : XUiController
 		this.OnHovered(this, _isOverAnyPart);
 	}
 
-	// Token: 0x060067B3 RID: 26547 RVA: 0x0028EBE9 File Offset: 0x0028CDE9
+	// Token: 0x060067AD RID: 26541 RVA: 0x00292151 File Offset: 0x00290351
 	[XuiBindEvent("OnHover", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnHovered(XUiController _sender, bool _isOver)
@@ -98,7 +98,7 @@ public class XUiC_PopupMenuItem : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060067B4 RID: 26548 RVA: 0x0028EC04 File Offset: 0x0028CE04
+	// Token: 0x060067AE RID: 26542 RVA: 0x0029216C File Offset: 0x0029036C
 	[XuiBindEvent("OnPress", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onPressed(XUiController _sender, int _mouseButton)
@@ -119,7 +119,7 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x060067B5 RID: 26549 RVA: 0x0028EC3E File Offset: 0x0028CE3E
+	// Token: 0x060067AF RID: 26543 RVA: 0x002921A6 File Offset: 0x002903A6
 	[XuiBindEvent("OnValueChanged", "slider")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onValueChanged(XUiController _sender, double _oldValue, double _newValue)
@@ -138,7 +138,7 @@ public class XUiC_PopupMenuItem : XUiController
 		}
 	}
 
-	// Token: 0x060067B6 RID: 26550 RVA: 0x0028EC74 File Offset: 0x0028CE74
+	// Token: 0x060067B0 RID: 26544 RVA: 0x002921DC File Offset: 0x002903DC
 	public int SetEntry(XUiC_PopupMenuItem.Entry _entry)
 	{
 		this.itemEntry = _entry;
@@ -161,57 +161,57 @@ public class XUiC_PopupMenuItem : XUiController
 		return (int)this.label.PrintedSize.x;
 	}
 
-	// Token: 0x04004FC0 RID: 20416
+	// Token: 0x04004FFF RID: 20479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x04004FC1 RID: 20417
+	// Token: 0x04005000 RID: 20480
 	[XuiBindParent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_PopupMenu parentPopup;
 
-	// Token: 0x04004FC2 RID: 20418
+	// Token: 0x04005001 RID: 20481
 	[XuiBindComponent("lblText", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label label;
 
-	// Token: 0x04004FC3 RID: 20419
+	// Token: 0x04005002 RID: 20482
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxFloat slider;
 
-	// Token: 0x04004FC4 RID: 20420
+	// Token: 0x04005003 RID: 20483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PopupMenuItem.Entry itemEntry;
 
-	// Token: 0x02000D4B RID: 3403
+	// Token: 0x02000D5B RID: 3419
 	public enum EEntryType
 	{
-		// Token: 0x04004FC6 RID: 20422
+		// Token: 0x04005005 RID: 20485
 		Button,
-		// Token: 0x04004FC7 RID: 20423
+		// Token: 0x04005006 RID: 20486
 		Slider
 	}
 
-	// Token: 0x02000D4C RID: 3404
+	// Token: 0x02000D5C RID: 3420
 	public class Entry
 	{
-		// Token: 0x17000B05 RID: 2821
-		// (get) Token: 0x060067B8 RID: 26552 RVA: 0x0028ED08 File Offset: 0x0028CF08
-		// (set) Token: 0x060067B9 RID: 26553 RVA: 0x0028ED10 File Offset: 0x0028CF10
+		// Token: 0x17000B1D RID: 2845
+		// (get) Token: 0x060067B2 RID: 26546 RVA: 0x00292270 File Offset: 0x00290470
+		// (set) Token: 0x060067B3 RID: 26547 RVA: 0x00292278 File Offset: 0x00290478
 		public object Tag { get; set; }
 
 		// Token: 0x1400008C RID: 140
-		// (add) Token: 0x060067BA RID: 26554 RVA: 0x0028ED1C File Offset: 0x0028CF1C
-		// (remove) Token: 0x060067BB RID: 26555 RVA: 0x0028ED54 File Offset: 0x0028CF54
+		// (add) Token: 0x060067B4 RID: 26548 RVA: 0x00292284 File Offset: 0x00290484
+		// (remove) Token: 0x060067B5 RID: 26549 RVA: 0x002922BC File Offset: 0x002904BC
 		public event XUiC_PopupMenuItem.Entry.MenuItemClickedDelegate ItemClicked;
 
 		// Token: 0x1400008D RID: 141
-		// (add) Token: 0x060067BC RID: 26556 RVA: 0x0028ED8C File Offset: 0x0028CF8C
-		// (remove) Token: 0x060067BD RID: 26557 RVA: 0x0028EDC4 File Offset: 0x0028CFC4
+		// (add) Token: 0x060067B6 RID: 26550 RVA: 0x002922F4 File Offset: 0x002904F4
+		// (remove) Token: 0x060067B7 RID: 26551 RVA: 0x0029232C File Offset: 0x0029052C
 		public event XUiC_PopupMenuItem.Entry.MenuItemValueChangedDelegate ValueChanged;
 
-		// Token: 0x060067BE RID: 26558 RVA: 0x0028EDF9 File Offset: 0x0028CFF9
+		// Token: 0x060067B8 RID: 26552 RVA: 0x00292361 File Offset: 0x00290561
 		public void HandleItemClicked()
 		{
 			XUiC_PopupMenuItem.Entry.MenuItemClickedDelegate itemClicked = this.ItemClicked;
@@ -222,7 +222,7 @@ public class XUiC_PopupMenuItem : XUiController
 			itemClicked(this);
 		}
 
-		// Token: 0x060067BF RID: 26559 RVA: 0x0028EE0C File Offset: 0x0028D00C
+		// Token: 0x060067B9 RID: 26553 RVA: 0x00292374 File Offset: 0x00290574
 		public void HandleValueChanged(double _newValue)
 		{
 			this.Value = _newValue;
@@ -234,7 +234,7 @@ public class XUiC_PopupMenuItem : XUiController
 			valueChanged(this, this.Value);
 		}
 
-		// Token: 0x060067C0 RID: 26560 RVA: 0x0028EE2C File Offset: 0x0028D02C
+		// Token: 0x060067BA RID: 26554 RVA: 0x00292394 File Offset: 0x00290594
 		public Entry(string _text, string _iconName, bool _isEnabled = true, object _tag = null, XUiC_PopupMenuItem.Entry.MenuItemClickedDelegate _handler = null)
 		{
 			this.Text = _text;
@@ -248,7 +248,7 @@ public class XUiC_PopupMenuItem : XUiController
 			}
 		}
 
-		// Token: 0x060067C1 RID: 26561 RVA: 0x0028EE64 File Offset: 0x0028D064
+		// Token: 0x060067BB RID: 26555 RVA: 0x002923CC File Offset: 0x002905CC
 		public Entry(string _text, string _iconName, double _initialValue, bool _isEnabled = true, object _tag = null, XUiC_PopupMenuItem.Entry.MenuItemValueChangedDelegate _handler = null)
 		{
 			this.Text = _text;
@@ -263,27 +263,27 @@ public class XUiC_PopupMenuItem : XUiController
 			}
 		}
 
-		// Token: 0x04004FC8 RID: 20424
+		// Token: 0x04005007 RID: 20487
 		public readonly string Text;
 
-		// Token: 0x04004FC9 RID: 20425
+		// Token: 0x04005008 RID: 20488
 		public readonly string IconName;
 
-		// Token: 0x04004FCA RID: 20426
+		// Token: 0x04005009 RID: 20489
 		public readonly bool IsEnabled;
 
-		// Token: 0x04004FCB RID: 20427
+		// Token: 0x0400500A RID: 20490
 		public double Value;
 
-		// Token: 0x04004FCD RID: 20429
+		// Token: 0x0400500C RID: 20492
 		public readonly XUiC_PopupMenuItem.EEntryType EntryType;
 
-		// Token: 0x02000D4D RID: 3405
-		// (Invoke) Token: 0x060067C3 RID: 26563
+		// Token: 0x02000D5D RID: 3421
+		// (Invoke) Token: 0x060067BD RID: 26557
 		public delegate void MenuItemClickedDelegate(XUiC_PopupMenuItem.Entry _entry);
 
-		// Token: 0x02000D4E RID: 3406
-		// (Invoke) Token: 0x060067C7 RID: 26567
+		// Token: 0x02000D5E RID: 3422
+		// (Invoke) Token: 0x060067C1 RID: 26561
 		public delegate void MenuItemValueChangedDelegate(XUiC_PopupMenuItem.Entry _entry, double _newValue);
 	}
 }

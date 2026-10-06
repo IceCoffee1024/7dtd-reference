@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000163 RID: 355
+// Token: 0x02000165 RID: 357
 public static class BlockUtilityNavIcon
 {
-	// Token: 0x060009BF RID: 2495 RVA: 0x00042D24 File Offset: 0x00040F24
+	// Token: 0x060009C5 RID: 2501 RVA: 0x00042DFC File Offset: 0x00040FFC
 	public static void UpdateNavIcon(bool _shouldShow, Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;
@@ -64,7 +64,7 @@ public static class BlockUtilityNavIcon
 		}
 	}
 
-	// Token: 0x060009C0 RID: 2496 RVA: 0x00042FA4 File Offset: 0x000411A4
+	// Token: 0x060009C6 RID: 2502 RVA: 0x0004307C File Offset: 0x0004127C
 	public static void RemoveNavObject(Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;
@@ -76,7 +76,7 @@ public static class BlockUtilityNavIcon
 		}
 	}
 
-	// Token: 0x040009E6 RID: 2534
+	// Token: 0x040009E9 RID: 2537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<string> scBlockTypes = new HashSet<string> { "powerSwitch01", "powerSwitch02", "pushButtonSwitch01", "pushButtonSwitch02", "keyRackBoxMetal01", "keyRackWood01" };
 }

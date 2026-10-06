@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000A8D RID: 2701
+// Token: 0x02000A9C RID: 2716
 public enum CanvasRotationMode : byte
 {
-	// Token: 0x04003EC6 RID: 16070
+	// Token: 0x04003EF1 RID: 16113
 	None,
-	// Token: 0x04003EC7 RID: 16071
+	// Token: 0x04003EF2 RID: 16114
 	Rot90,
-	// Token: 0x04003EC8 RID: 16072
+	// Token: 0x04003EF3 RID: 16115
 	Rot180,
-	// Token: 0x04003EC9 RID: 16073
+	// Token: 0x04003EF4 RID: 16116
 	Rot270
 }

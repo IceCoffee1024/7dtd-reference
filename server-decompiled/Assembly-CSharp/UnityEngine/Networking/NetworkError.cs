@@ -2,34 +2,34 @@
 
 namespace UnityEngine.Networking
 {
-	// Token: 0x020018E9 RID: 6377
+	// Token: 0x02001915 RID: 6421
 	public enum NetworkError
 	{
-		// Token: 0x04009493 RID: 38035
+		// Token: 0x04009559 RID: 38233
 		Ok,
-		// Token: 0x04009494 RID: 38036
+		// Token: 0x0400955A RID: 38234
 		WrongHost,
-		// Token: 0x04009495 RID: 38037
+		// Token: 0x0400955B RID: 38235
 		WrongConnection,
-		// Token: 0x04009496 RID: 38038
+		// Token: 0x0400955C RID: 38236
 		WrongChannel,
-		// Token: 0x04009497 RID: 38039
+		// Token: 0x0400955D RID: 38237
 		NoResources,
-		// Token: 0x04009498 RID: 38040
+		// Token: 0x0400955E RID: 38238
 		BadMessage,
-		// Token: 0x04009499 RID: 38041
+		// Token: 0x0400955F RID: 38239
 		Timeout,
-		// Token: 0x0400949A RID: 38042
+		// Token: 0x04009560 RID: 38240
 		MessageToLong,
-		// Token: 0x0400949B RID: 38043
+		// Token: 0x04009561 RID: 38241
 		WrongOperation,
-		// Token: 0x0400949C RID: 38044
+		// Token: 0x04009562 RID: 38242
 		VersionMismatch,
-		// Token: 0x0400949D RID: 38045
+		// Token: 0x04009563 RID: 38243
 		CRCMismatch,
-		// Token: 0x0400949E RID: 38046
+		// Token: 0x04009564 RID: 38244
 		DNSFailure,
-		// Token: 0x0400949F RID: 38047
+		// Token: 0x04009565 RID: 38245
 		UsageError
 	}
 }

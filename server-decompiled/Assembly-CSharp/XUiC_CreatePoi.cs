@@ -4,12 +4,12 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0E RID: 3854
+// Token: 0x02000F1D RID: 3869
 [Preserve]
 public class XUiC_CreatePoi : XUiController
 {
-	// Token: 0x17000E23 RID: 3619
-	// (get) Token: 0x060078E2 RID: 30946 RVA: 0x002D9D50 File Offset: 0x002D7F50
+	// Token: 0x17000E40 RID: 3648
+	// (get) Token: 0x060078DD RID: 30941 RVA: 0x002DD0E4 File Offset: 0x002DB2E4
 	public bool IsCustomSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -31,8 +31,8 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x17000E24 RID: 3620
-	// (get) Token: 0x060078E3 RID: 30947 RVA: 0x002D9D98 File Offset: 0x002D7F98
+	// Token: 0x17000E41 RID: 3649
+	// (get) Token: 0x060078DE RID: 30942 RVA: 0x002DD12C File Offset: 0x002DB32C
 	public Vector3i SelectedSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -46,8 +46,8 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x17000E25 RID: 3621
-	// (get) Token: 0x060078E4 RID: 30948 RVA: 0x002D9DFA File Offset: 0x002D7FFA
+	// Token: 0x17000E42 RID: 3650
+	// (get) Token: 0x060078DF RID: 30943 RVA: 0x002DD18E File Offset: 0x002DB38E
 	public PathAbstractions.EAbstractedLocationType SelectedLocation
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -62,8 +62,8 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x17000E26 RID: 3622
-	// (get) Token: 0x060078E5 RID: 30949 RVA: 0x002D9E0D File Offset: 0x002D800D
+	// Token: 0x17000E43 RID: 3651
+	// (get) Token: 0x060078E0 RID: 30944 RVA: 0x002DD1A1 File Offset: 0x002DB3A1
 	public bool ValidCustomSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -73,8 +73,8 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x17000E27 RID: 3623
-	// (get) Token: 0x060078E6 RID: 30950 RVA: 0x002D9E40 File Offset: 0x002D8040
+	// Token: 0x17000E44 RID: 3652
+	// (get) Token: 0x060078E1 RID: 30945 RVA: 0x002DD1D4 File Offset: 0x002DB3D4
 	public bool ValidSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -84,8 +84,8 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x17000E28 RID: 3624
-	// (get) Token: 0x060078E7 RID: 30951 RVA: 0x002D9E52 File Offset: 0x002D8052
+	// Token: 0x17000E45 RID: 3653
+	// (get) Token: 0x060078E2 RID: 30946 RVA: 0x002DD1E6 File Offset: 0x002DB3E6
 	public bool ValidDepth
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -95,7 +95,7 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x060078E8 RID: 30952 RVA: 0x002D9E6C File Offset: 0x002D806C
+	// Token: 0x060078E3 RID: 30947 RVA: 0x002DD200 File Offset: 0x002DB400
 	public override void Init()
 	{
 		base.Init();
@@ -190,7 +190,7 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x060078E9 RID: 30953 RVA: 0x002DA0B9 File Offset: 0x002D82B9
+	// Token: 0x060078E4 RID: 30948 RVA: 0x002DD44D File Offset: 0x002DB64D
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -203,7 +203,7 @@ public class XUiC_CreatePoi : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078EA RID: 30954 RVA: 0x002DA0F4 File Offset: 0x002D82F4
+	// Token: 0x060078E5 RID: 30949 RVA: 0x002DD488 File Offset: 0x002DB688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sizeTextChanged(string _text, bool _isZ)
 	{
@@ -220,7 +220,7 @@ public class XUiC_CreatePoi : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078EB RID: 30955 RVA: 0x002DA124 File Offset: 0x002D8324
+	// Token: 0x060078E6 RID: 30950 RVA: 0x002DD4B8 File Offset: 0x002DB6B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void depthTextChanged(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -228,7 +228,7 @@ public class XUiC_CreatePoi : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078EC RID: 30956 RVA: 0x002DA13A File Offset: 0x002D833A
+	// Token: 0x060078E7 RID: 30951 RVA: 0x002DD4CE File Offset: 0x002DB6CE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void autoSelectFolder(XUiC_CreatePoi.PoiSizeInfo _newValue)
 	{
@@ -243,7 +243,7 @@ public class XUiC_CreatePoi : XUiController
 		this.folderList.SelectByName(_newValue.DefaultFolder);
 	}
 
-	// Token: 0x060078ED RID: 30957 RVA: 0x002DA168 File Offset: 0x002D8368
+	// Token: 0x060078E8 RID: 30952 RVA: 0x002DD4FC File Offset: 0x002DB6FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void validateName()
 	{
@@ -277,7 +277,7 @@ public class XUiC_CreatePoi : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078EE RID: 30958 RVA: 0x002DA2B4 File Offset: 0x002D84B4
+	// Token: 0x060078E9 RID: 30953 RVA: 0x002DD648 File Offset: 0x002DB848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateMods()
 	{
@@ -309,7 +309,7 @@ public class XUiC_CreatePoi : XUiController
 		}
 	}
 
-	// Token: 0x060078EF RID: 30959 RVA: 0x002DA3BC File Offset: 0x002D85BC
+	// Token: 0x060078EA RID: 30954 RVA: 0x002DD750 File Offset: 0x002DB950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateFolders()
 	{
@@ -330,7 +330,7 @@ public class XUiC_CreatePoi : XUiController
 		xuiC_ComboBoxList2.TriggerValueChangedEvent(null);
 	}
 
-	// Token: 0x060078F0 RID: 30960 RVA: 0x002DA41C File Offset: 0x002D861C
+	// Token: 0x060078EB RID: 30955 RVA: 0x002DD7B0 File Offset: 0x002DB9B0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -342,7 +342,7 @@ public class XUiC_CreatePoi : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x060078F1 RID: 30961 RVA: 0x002DA43B File Offset: 0x002D863B
+	// Token: 0x060078EC RID: 30956 RVA: 0x002DD7CF File Offset: 0x002DB9CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBack_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -350,7 +350,7 @@ public class XUiC_CreatePoi : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_InGameMenuWindow.ID, true);
 	}
 
-	// Token: 0x060078F2 RID: 30962 RVA: 0x002DA474 File Offset: 0x002D8674
+	// Token: 0x060078ED RID: 30957 RVA: 0x002DD808 File Offset: 0x002DBA08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOk_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -391,13 +391,13 @@ public class XUiC_CreatePoi : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_InGameMenuWindow.ID, true);
 	}
 
-	// Token: 0x060078F3 RID: 30963 RVA: 0x002DA69F File Offset: 0x002D889F
+	// Token: 0x060078EE RID: 30958 RVA: 0x002DDA33 File Offset: 0x002DBC33
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x060078F4 RID: 30964 RVA: 0x002DA6AC File Offset: 0x002D88AC
+	// Token: 0x060078EF RID: 30959 RVA: 0x002DDA40 File Offset: 0x002DBC40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -478,75 +478,75 @@ public class XUiC_CreatePoi : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04005970 RID: 22896
+	// Token: 0x040059A8 RID: 22952
 	public static string ID = "";
 
-	// Token: 0x04005971 RID: 22897
+	// Token: 0x040059A9 RID: 22953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtName;
 
-	// Token: 0x04005972 RID: 22898
+	// Token: 0x040059AA RID: 22954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<XUiC_CreatePoi.PoiSizeInfo> cmbSize;
 
-	// Token: 0x04005973 RID: 22899
+	// Token: 0x040059AB RID: 22955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSizeX;
 
-	// Token: 0x04005974 RID: 22900
+	// Token: 0x040059AC RID: 22956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSizeZ;
 
-	// Token: 0x04005975 RID: 22901
+	// Token: 0x040059AD RID: 22957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtDepth;
 
-	// Token: 0x04005976 RID: 22902
+	// Token: 0x040059AE RID: 22958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<PathAbstractions.EAbstractedLocationType> cmbLocation;
 
-	// Token: 0x04005977 RID: 22903
+	// Token: 0x040059AF RID: 22959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<Mod> cmbMod;
 
-	// Token: 0x04005978 RID: 22904
+	// Token: 0x040059B0 RID: 22960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabFolderList folderList;
 
-	// Token: 0x04005979 RID: 22905
+	// Token: 0x040059B1 RID: 22961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x0400597A RID: 22906
+	// Token: 0x040059B2 RID: 22962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int customSizeX;
 
-	// Token: 0x0400597B RID: 22907
+	// Token: 0x040059B3 RID: 22963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int customSizeZ;
 
-	// Token: 0x0400597C RID: 22908
+	// Token: 0x040059B4 RID: 22964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int depth = 1;
 
-	// Token: 0x0400597D RID: 22909
+	// Token: 0x040059B5 RID: 22965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validName;
 
-	// Token: 0x0400597E RID: 22910
+	// Token: 0x040059B6 RID: 22966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameExistsInLocation;
 
-	// Token: 0x0400597F RID: 22911
+	// Token: 0x040059B7 RID: 22967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validFolder;
 
-	// Token: 0x02000F0F RID: 3855
+	// Token: 0x02000F1E RID: 3870
 	[Preserve]
 	public class PoiSizeInfo
 	{
-		// Token: 0x17000E29 RID: 3625
-		// (get) Token: 0x060078FE RID: 30974 RVA: 0x002DA8C0 File Offset: 0x002D8AC0
+		// Token: 0x17000E46 RID: 3654
+		// (get) Token: 0x060078F9 RID: 30969 RVA: 0x002DDC54 File Offset: 0x002DBE54
 		public Vector3i Size
 		{
 			get
@@ -555,7 +555,7 @@ public class XUiC_CreatePoi : XUiController
 			}
 		}
 
-		// Token: 0x060078FF RID: 30975 RVA: 0x002DA8D4 File Offset: 0x002D8AD4
+		// Token: 0x060078FA RID: 30970 RVA: 0x002DDC68 File Offset: 0x002DBE68
 		public PoiSizeInfo(int _x, int _z, string _label, string _defaultFolder, bool _isCustom = false)
 		{
 			this.X = _x;
@@ -565,7 +565,7 @@ public class XUiC_CreatePoi : XUiController
 			this.IsCustom = _isCustom;
 		}
 
-		// Token: 0x06007900 RID: 30976 RVA: 0x002DA904 File Offset: 0x002D8B04
+		// Token: 0x060078FB RID: 30971 RVA: 0x002DDC98 File Offset: 0x002DBE98
 		public PoiSizeInfo(string _input)
 		{
 			if (_input.StartsWith("custom", StringComparison.OrdinalIgnoreCase))
@@ -615,7 +615,7 @@ public class XUiC_CreatePoi : XUiController
 			}
 		}
 
-		// Token: 0x06007901 RID: 30977 RVA: 0x002DAA85 File Offset: 0x002D8C85
+		// Token: 0x060078FC RID: 30972 RVA: 0x002DDE19 File Offset: 0x002DC019
 		public override string ToString()
 		{
 			if (!this.IsCustom)
@@ -625,22 +625,22 @@ public class XUiC_CreatePoi : XUiController
 			return Localization.Get("xuiCustom", false, null);
 		}
 
-		// Token: 0x04005980 RID: 22912
+		// Token: 0x040059B8 RID: 22968
 		public readonly int X;
 
-		// Token: 0x04005981 RID: 22913
+		// Token: 0x040059B9 RID: 22969
 		public readonly int Z;
 
-		// Token: 0x04005982 RID: 22914
+		// Token: 0x040059BA RID: 22970
 		public readonly bool IsCustom;
 
-		// Token: 0x04005983 RID: 22915
+		// Token: 0x040059BB RID: 22971
 		public readonly string Label;
 
-		// Token: 0x04005984 RID: 22916
+		// Token: 0x040059BC RID: 22972
 		public readonly string DefaultFolder;
 
-		// Token: 0x04005985 RID: 22917
+		// Token: 0x040059BD RID: 22973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex infoMatcher = new Regex("^(\\d+)x(\\d+)(?:\\/([^/]*))(?:\\/([^/]*))$", RegexOptions.Compiled | RegexOptions.Singleline);
 	}

@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Threading;
 
-// Token: 0x02000C4F RID: 3151
+// Token: 0x02000C61 RID: 3169
 public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 {
-	// Token: 0x06005FFF RID: 24575 RVA: 0x0025F000 File Offset: 0x0025D200
+	// Token: 0x06006018 RID: 24600 RVA: 0x002622FC File Offset: 0x002604FC
 	public WorldDecoratorBlocksFromBiome(IBiomeProvider _biomeProvider, DynamicPrefabDecorator _prefabDecorator)
 	{
 		this.biomeProvider = _biomeProvider;
 		this.prefabDecorator = _prefabDecorator;
 	}
 
-	// Token: 0x06006000 RID: 24576 RVA: 0x0025F054 File Offset: 0x0025D254
+	// Token: 0x06006019 RID: 24601 RVA: 0x00262350 File Offset: 0x00260550
 	public void DecorateChunkOverlapping(World _world, Chunk _chunk, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, int seed)
 	{
 		GameRandom gameRandom = null;
@@ -105,7 +105,7 @@ public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 		}
 	}
 
-	// Token: 0x06006001 RID: 24577 RVA: 0x0025F2E8 File Offset: 0x0025D4E8
+	// Token: 0x0600601A RID: 24602 RVA: 0x002625E4 File Offset: 0x002607E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void decoratePrefabs(World _world, Chunk _chunk, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, bool _chunkOverlapsSuppressArea, GameRandom _random)
 	{
@@ -252,7 +252,7 @@ public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 		}
 	}
 
-	// Token: 0x06006002 RID: 24578 RVA: 0x0025F6F4 File Offset: 0x0025D8F4
+	// Token: 0x0600601B RID: 24603 RVA: 0x002629F0 File Offset: 0x00260BF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void decorateSingleBlocks(World _world, Chunk _chunk, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, bool _chunkOverlapsSuppressArea, GameRandom _random)
 	{
@@ -273,7 +273,7 @@ public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 		}
 	}
 
-	// Token: 0x06006003 RID: 24579 RVA: 0x0025F75C File Offset: 0x0025D95C
+	// Token: 0x0600601C RID: 24604 RVA: 0x00262A58 File Offset: 0x00260C58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void decorateSingleBlock(World _world, Chunk _chunk, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, GameRandom _random, Vector3i blockPos)
 	{
@@ -315,7 +315,7 @@ public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 		}
 	}
 
-	// Token: 0x06006004 RID: 24580 RVA: 0x0025F8D0 File Offset: 0x0025DAD0
+	// Token: 0x0600601D RID: 24605 RVA: 0x00262BCC File Offset: 0x00260DCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool decorateSingleBlockTryPlaceDeco(World _world, Chunk _chunk, Chunk cX1Z0, Chunk cX0Z1, Chunk cX1Z1, GameRandom _random, Vector3i blockPos, EnumDecoAllowed decoAllowed, BiomeDefinition bd, BiomeBlockDecoration deco, Vector3i chunkWorldPos, float normalY)
 	{
@@ -400,35 +400,35 @@ public class WorldDecoratorBlocksFromBiome : IWorldDecorator
 		return true;
 	}
 
-	// Token: 0x04004B30 RID: 19248
+	// Token: 0x04004B6F RID: 19311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IBiomeProvider biomeProvider;
 
-	// Token: 0x04004B31 RID: 19249
+	// Token: 0x04004B70 RID: 19312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicPrefabDecorator prefabDecorator;
 
-	// Token: 0x04004B32 RID: 19250
+	// Token: 0x04004B71 RID: 19313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ReaderWriterLockSlim rwlock = new ReaderWriterLockSlim();
 
-	// Token: 0x04004B33 RID: 19251
+	// Token: 0x04004B72 RID: 19314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PerlinNoise resourceNoise;
 
-	// Token: 0x04004B34 RID: 19252
+	// Token: 0x04004B73 RID: 19315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly BiomeDefinition[] chunkBiomes = new BiomeDefinition[256];
 
-	// Token: 0x04004B35 RID: 19253
+	// Token: 0x04004B74 RID: 19316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cBiomeIdMax = 256;
 
-	// Token: 0x04004B36 RID: 19254
+	// Token: 0x04004B75 RID: 19317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Vector2i>[] biomePositions = new List<Vector2i>[256];
 
-	// Token: 0x04004B37 RID: 19255
+	// Token: 0x04004B76 RID: 19318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomePositionsHighId = -1;
 }

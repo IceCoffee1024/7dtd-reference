@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000926 RID: 2342
+// Token: 0x0200092B RID: 2347
 public class DecoSuppressArea : IDesignatedArea
 {
-	// Token: 0x1700073E RID: 1854
-	// (get) Token: 0x06004415 RID: 17429 RVA: 0x001A84D8 File Offset: 0x001A66D8
-	// (set) Token: 0x06004416 RID: 17430 RVA: 0x001A84E0 File Offset: 0x001A66E0
+	// Token: 0x1700075D RID: 1885
+	// (get) Token: 0x060043A7 RID: 17319 RVA: 0x001A85DC File Offset: 0x001A67DC
+	// (set) Token: 0x060043A8 RID: 17320 RVA: 0x001A85E4 File Offset: 0x001A67E4
 	public BoundsInt AreaBounds
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004417 RID: 17431 RVA: 0x001A84E9 File Offset: 0x001A66E9
+	// Token: 0x060043A9 RID: 17321 RVA: 0x001A85ED File Offset: 0x001A67ED
 	public DecoSuppressArea(Vector3i _position, Vector3i _size)
 	{
 		this.AreaBounds = new BoundsInt(_position, _size);

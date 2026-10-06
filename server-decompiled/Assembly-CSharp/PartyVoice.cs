@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Platform;
 
-// Token: 0x020008D1 RID: 2257
+// Token: 0x020008D6 RID: 2262
 public class PartyVoice
 {
-	// Token: 0x170006D7 RID: 1751
-	// (get) Token: 0x06004171 RID: 16753 RVA: 0x0019856E File Offset: 0x0019676E
+	// Token: 0x170006F6 RID: 1782
+	// (get) Token: 0x06004107 RID: 16647 RVA: 0x00198682 File Offset: 0x00196882
 	public static PartyVoice Instance
 	{
 		get
@@ -20,7 +20,7 @@ public class PartyVoice
 		}
 	}
 
-	// Token: 0x06004172 RID: 16754 RVA: 0x00198584 File Offset: 0x00196784
+	// Token: 0x06004108 RID: 16648 RVA: 0x00198698 File Offset: 0x00196898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PartyVoice()
 	{
@@ -31,7 +31,7 @@ public class PartyVoice
 		}
 	}
 
-	// Token: 0x06004173 RID: 16755 RVA: 0x001985D4 File Offset: 0x001967D4
+	// Token: 0x06004109 RID: 16649 RVA: 0x001986E8 File Offset: 0x001968E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPlatformPartyVoiceInitialized()
 	{
@@ -52,7 +52,7 @@ public class PartyVoice
 		GamePrefs.OnGamePrefChanged += this.gamePrefChanged;
 	}
 
-	// Token: 0x06004174 RID: 16756 RVA: 0x00198693 File Offset: 0x00196893
+	// Token: 0x0600410A RID: 16650 RVA: 0x001987A7 File Offset: 0x001969A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void localPlayerChangedEvent(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -64,7 +64,7 @@ public class PartyVoice
 		this.gameStarted(_newLocalPlayer);
 	}
 
-	// Token: 0x06004175 RID: 16757 RVA: 0x001986AC File Offset: 0x001968AC
+	// Token: 0x0600410B RID: 16651 RVA: 0x001987C0 File Offset: 0x001969C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameStarted(EntityPlayerLocal _newLocalPlayer)
 	{
@@ -78,7 +78,7 @@ public class PartyVoice
 		this.localPlayer.PartyLeave += this.playerLeftParty;
 	}
 
-	// Token: 0x06004176 RID: 16758 RVA: 0x00198718 File Offset: 0x00196918
+	// Token: 0x0600410C RID: 16652 RVA: 0x0019882C File Offset: 0x00196A2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameEnded()
 	{
@@ -93,7 +93,7 @@ public class PartyVoice
 		this.playerVoiceStates.Clear();
 	}
 
-	// Token: 0x06004177 RID: 16759 RVA: 0x00198798 File Offset: 0x00196998
+	// Token: 0x0600410D RID: 16653 RVA: 0x001988AC File Offset: 0x00196AAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerJoinedParty(Party _affectedParty, EntityPlayer _player)
 	{
@@ -125,7 +125,7 @@ public class PartyVoice
 		}
 	}
 
-	// Token: 0x06004178 RID: 16760 RVA: 0x00198830 File Offset: 0x00196A30
+	// Token: 0x0600410E RID: 16654 RVA: 0x00198944 File Offset: 0x00196B44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerLeftParty(Party _affectedParty, EntityPlayer _player)
 	{
@@ -139,7 +139,7 @@ public class PartyVoice
 		this.playerVoiceStates.Clear();
 	}
 
-	// Token: 0x06004179 RID: 16761 RVA: 0x00198894 File Offset: 0x00196A94
+	// Token: 0x0600410F RID: 16655 RVA: 0x001989A8 File Offset: 0x00196BA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void promoteLeader(Party _affectedParty)
 	{
@@ -153,7 +153,7 @@ public class PartyVoice
 		this.platformPartyVoice.PromoteLeader(playerDataFromEntityID.PrimaryId);
 	}
 
-	// Token: 0x0600417A RID: 16762 RVA: 0x001988E8 File Offset: 0x00196AE8
+	// Token: 0x06004110 RID: 16656 RVA: 0x001989FC File Offset: 0x00196BFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlatformPartyVoice_OnRemotePlayerStateChanged(PlatformUserIdentifierAbs _userIdentifier, IPartyVoice.EVoiceChannelAction _memberChannelAction)
 	{
@@ -171,14 +171,14 @@ public class PartyVoice
 		this.playerVoiceStates.Remove(_userIdentifier);
 	}
 
-	// Token: 0x0600417B RID: 16763 RVA: 0x00198941 File Offset: 0x00196B41
+	// Token: 0x06004111 RID: 16657 RVA: 0x00198A55 File Offset: 0x00196C55
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlatformPartyVoice_OnRemotePlayerVoiceStateChanged(PlatformUserIdentifierAbs _userIdentifier, IPartyVoice.EVoiceMemberState _voiceState)
 	{
 		this.playerVoiceStates[_userIdentifier] = _voiceState;
 	}
 
-	// Token: 0x0600417C RID: 16764 RVA: 0x00198950 File Offset: 0x00196B50
+	// Token: 0x06004112 RID: 16658 RVA: 0x00198A64 File Offset: 0x00196C64
 	public IPartyVoice.EVoiceMemberState GetVoiceMemberState(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		IPartyVoice.EVoiceMemberState evoiceMemberState;
@@ -189,7 +189,7 @@ public class PartyVoice
 		return evoiceMemberState;
 	}
 
-	// Token: 0x0600417D RID: 16765 RVA: 0x00198970 File Offset: 0x00196B70
+	// Token: 0x06004113 RID: 16659 RVA: 0x00198A84 File Offset: 0x00196C84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerBlockStateChanged(IPlatformUserData _ppd, EBlockType _blockType, EUserBlockState _blockState)
 	{
@@ -200,7 +200,7 @@ public class PartyVoice
 		this.platformPartyVoice.BlockUser(_ppd.PrimaryId, _blockState.IsBlocked());
 	}
 
-	// Token: 0x0600417E RID: 16766 RVA: 0x001989A4 File Offset: 0x00196BA4
+	// Token: 0x06004114 RID: 16660 RVA: 0x00198AB8 File Offset: 0x00196CB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -221,7 +221,7 @@ public class PartyVoice
 		this.platformPartyVoice.SetOutputDevice(GamePrefs.GetString(EnumGamePrefs.OptionsVoiceOutputDevice));
 	}
 
-	// Token: 0x0600417F RID: 16767 RVA: 0x00198A08 File Offset: 0x00196C08
+	// Token: 0x06004115 RID: 16661 RVA: 0x00198B1C File Offset: 0x00196D1C
 	public void Update()
 	{
 		if (!this.platformPartyVoiceInitialized)
@@ -240,8 +240,8 @@ public class PartyVoice
 		this.platformPartyVoice.MuteOthers = !VoiceHelpers.PlatformVoiceEnabled;
 	}
 
-	// Token: 0x170006D8 RID: 1752
-	// (get) Token: 0x06004180 RID: 16768 RVA: 0x00198A6C File Offset: 0x00196C6C
+	// Token: 0x170006F7 RID: 1783
+	// (get) Token: 0x06004116 RID: 16662 RVA: 0x00198B80 File Offset: 0x00196D80
 	public bool InVoice
 	{
 		get
@@ -259,8 +259,8 @@ public class PartyVoice
 		}
 	}
 
-	// Token: 0x170006D9 RID: 1753
-	// (get) Token: 0x06004181 RID: 16769 RVA: 0x00198ABD File Offset: 0x00196CBD
+	// Token: 0x170006F8 RID: 1784
+	// (get) Token: 0x06004117 RID: 16663 RVA: 0x00198BD1 File Offset: 0x00196DD1
 	public bool SendingVoice
 	{
 		get
@@ -269,23 +269,23 @@ public class PartyVoice
 		}
 	}
 
-	// Token: 0x04003500 RID: 13568
+	// Token: 0x040034F4 RID: 13556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PartyVoice instance;
 
-	// Token: 0x04003501 RID: 13569
+	// Token: 0x040034F5 RID: 13557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IPartyVoice platformPartyVoice;
 
-	// Token: 0x04003502 RID: 13570
+	// Token: 0x040034F6 RID: 13558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool platformPartyVoiceInitialized;
 
-	// Token: 0x04003503 RID: 13571
+	// Token: 0x040034F7 RID: 13559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x04003504 RID: 13572
+	// Token: 0x040034F8 RID: 13560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PlatformUserIdentifierAbs, IPartyVoice.EVoiceMemberState> playerVoiceStates = new Dictionary<PlatformUserIdentifierAbs, IPartyVoice.EVoiceMemberState>();
 }

@@ -4,10 +4,10 @@ using System.Diagnostics;
 using Twitch;
 using UnityEngine;
 
-// Token: 0x02000543 RID: 1347
+// Token: 0x02000549 RID: 1353
 public class Explosion
 {
-	// Token: 0x06002C4A RID: 11338 RVA: 0x00117434 File Offset: 0x00115634
+	// Token: 0x06002C40 RID: 11328 RVA: 0x00118204 File Offset: 0x00116404
 	public Explosion(World _world, Vector3 _worldPos, Vector3i _blockPos, ExplosionData _explosionData, int _entityId)
 	{
 		this.world = _world;
@@ -19,7 +19,7 @@ public class Explosion
 		this.ChangedBlockPositions = new Dictionary<Vector3i, BlockChangeInfo>();
 	}
 
-	// Token: 0x06002C4B RID: 11339 RVA: 0x00117484 File Offset: 0x00115684
+	// Token: 0x06002C41 RID: 11329 RVA: 0x00118254 File Offset: 0x00116454
 	public void AttackBlocks(int _entityThatCausedExplosion, ItemValue _itemValueExplosionSource)
 	{
 		ChunkCluster chunkCache = this.world.ChunkCache;
@@ -201,7 +201,7 @@ public class Explosion
 		}
 	}
 
-	// Token: 0x06002C4C RID: 11340 RVA: 0x00117AD8 File Offset: 0x00115CD8
+	// Token: 0x06002C42 RID: 11330 RVA: 0x001188A8 File Offset: 0x00116AA8
 	public void AttackEntites(int _entityThatCausedExplosion, ItemValue _itemValueExplosionSource, EnumDamageTypes damageType)
 	{
 		EntityAlive entityAlive = this.world.GetEntity(_entityThatCausedExplosion) as EntityAlive;
@@ -412,7 +412,7 @@ public class Explosion
 		Explosion.hitEntities.Clear();
 	}
 
-	// Token: 0x06002C4D RID: 11341 RVA: 0x00118268 File Offset: 0x00116468
+	// Token: 0x06002C43 RID: 11331 RVA: 0x00119038 File Offset: 0x00117238
 	[Conditional("DEBUG_EXPLOSION_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void log(string format, params object[] args)
@@ -421,77 +421,77 @@ public class Explosion
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x040021E9 RID: 8681
-	public Dictionary<Vector3i, BlockChangeInfo> ChangedBlockPositions;
-
-	// Token: 0x040021EA RID: 8682
-	[PublicizedFrom(EAccessModifier.Private)]
-	public World world;
-
-	// Token: 0x040021EB RID: 8683
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3 worldPos;
-
-	// Token: 0x040021EC RID: 8684
-	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector3i blockPos;
-
-	// Token: 0x040021ED RID: 8685
-	[PublicizedFrom(EAccessModifier.Private)]
-	public int entityId;
-
-	// Token: 0x040021EE RID: 8686
-	[PublicizedFrom(EAccessModifier.Private)]
-	public ExplosionData explosionData;
-
-	// Token: 0x040021EF RID: 8687
-	[PublicizedFrom(EAccessModifier.Private)]
-	public HashSet<Vector3i> damagedBlockPositions;
-
-	// Token: 0x040021F0 RID: 8688
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static FastTags<TagGroup.Global> explosionTag = FastTags<TagGroup.Global>.Parse("explosion");
-
 	// Token: 0x040021F1 RID: 8689
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cDisintegrationEpicenterPercent = 0.67f;
+	public Dictionary<Vector3i, BlockChangeInfo> ChangedBlockPositions;
 
 	// Token: 0x040021F2 RID: 8690
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cMinZombiesForDisintegration = 4f;
+	public World world;
 
 	// Token: 0x040021F3 RID: 8691
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cMinZombiesForDisintegrationPercent = 0.8f;
+	public Vector3 worldPos;
 
 	// Token: 0x040021F4 RID: 8692
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const float cStepDistance = 0.51f;
+	public Vector3i blockPos;
 
 	// Token: 0x040021F5 RID: 8693
 	[PublicizedFrom(EAccessModifier.Private)]
+	public int entityId;
+
+	// Token: 0x040021F6 RID: 8694
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ExplosionData explosionData;
+
+	// Token: 0x040021F7 RID: 8695
+	[PublicizedFrom(EAccessModifier.Private)]
+	public HashSet<Vector3i> damagedBlockPositions;
+
+	// Token: 0x040021F8 RID: 8696
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static FastTags<TagGroup.Global> explosionTag = FastTags<TagGroup.Global>.Parse("explosion");
+
+	// Token: 0x040021F9 RID: 8697
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cDisintegrationEpicenterPercent = 0.67f;
+
+	// Token: 0x040021FA RID: 8698
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cMinZombiesForDisintegration = 4f;
+
+	// Token: 0x040021FB RID: 8699
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cMinZombiesForDisintegrationPercent = 0.8f;
+
+	// Token: 0x040021FC RID: 8700
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cStepDistance = 0.51f;
+
+	// Token: 0x040021FD RID: 8701
+	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, Explosion.DamageRecord> hitEntities = new Dictionary<int, Explosion.DamageRecord>();
 
-	// Token: 0x02000544 RID: 1348
+	// Token: 0x0200054A RID: 1354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DamageRecord
 	{
-		// Token: 0x040021F6 RID: 8694
+		// Token: 0x040021FE RID: 8702
 		public EntityAlive entity;
 
-		// Token: 0x040021F7 RID: 8695
+		// Token: 0x040021FF RID: 8703
 		public float damage;
 
-		// Token: 0x040021F8 RID: 8696
+		// Token: 0x04002200 RID: 8704
 		public Vector3 dir;
 
-		// Token: 0x040021F9 RID: 8697
+		// Token: 0x04002201 RID: 8705
 		public Transform hitTransform;
 
-		// Token: 0x040021FA RID: 8698
+		// Token: 0x04002202 RID: 8706
 		public EnumBodyPartHit mainPart;
 
-		// Token: 0x040021FB RID: 8699
+		// Token: 0x04002203 RID: 8707
 		public EnumBodyPartHit parts;
 	}
 }

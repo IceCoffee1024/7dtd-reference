@@ -3,111 +3,111 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000A65 RID: 2661
+// Token: 0x02000A6F RID: 2671
 public class SelectionBoxManager : MonoBehaviour
 {
-	// Token: 0x170008A9 RID: 2217
-	// (get) Token: 0x06005084 RID: 20612 RVA: 0x001EC53B File Offset: 0x001EA73B
-	// (set) Token: 0x06005085 RID: 20613 RVA: 0x001EC543 File Offset: 0x001EA743
+	// Token: 0x170008C9 RID: 2249
+	// (get) Token: 0x06005058 RID: 20568 RVA: 0x001EDA87 File Offset: 0x001EBC87
+	// (set) Token: 0x06005059 RID: 20569 RVA: 0x001EDA8F File Offset: 0x001EBC8F
 	public SelectionCategory CategoryDynamicPrefab
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AA RID: 2218
-	// (get) Token: 0x06005086 RID: 20614 RVA: 0x001EC54C File Offset: 0x001EA74C
-	// (set) Token: 0x06005087 RID: 20615 RVA: 0x001EC554 File Offset: 0x001EA754
+	// Token: 0x170008CA RID: 2250
+	// (get) Token: 0x0600505A RID: 20570 RVA: 0x001EDA98 File Offset: 0x001EBC98
+	// (set) Token: 0x0600505B RID: 20571 RVA: 0x001EDAA0 File Offset: 0x001EBCA0
 	public SelectionCategory CategoryStartPoint
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AB RID: 2219
-	// (get) Token: 0x06005088 RID: 20616 RVA: 0x001EC55D File Offset: 0x001EA75D
-	// (set) Token: 0x06005089 RID: 20617 RVA: 0x001EC565 File Offset: 0x001EA765
+	// Token: 0x170008CB RID: 2251
+	// (get) Token: 0x0600505C RID: 20572 RVA: 0x001EDAA9 File Offset: 0x001EBCA9
+	// (set) Token: 0x0600505D RID: 20573 RVA: 0x001EDAB1 File Offset: 0x001EBCB1
 	public SelectionCategory CategorySelection
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AC RID: 2220
-	// (get) Token: 0x0600508A RID: 20618 RVA: 0x001EC56E File Offset: 0x001EA76E
-	// (set) Token: 0x0600508B RID: 20619 RVA: 0x001EC576 File Offset: 0x001EA776
+	// Token: 0x170008CC RID: 2252
+	// (get) Token: 0x0600505E RID: 20574 RVA: 0x001EDABA File Offset: 0x001EBCBA
+	// (set) Token: 0x0600505F RID: 20575 RVA: 0x001EDAC2 File Offset: 0x001EBCC2
 	public SelectionCategory CategoryTraderTeleport
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AD RID: 2221
-	// (get) Token: 0x0600508C RID: 20620 RVA: 0x001EC57F File Offset: 0x001EA77F
-	// (set) Token: 0x0600508D RID: 20621 RVA: 0x001EC587 File Offset: 0x001EA787
+	// Token: 0x170008CD RID: 2253
+	// (get) Token: 0x06005060 RID: 20576 RVA: 0x001EDACB File Offset: 0x001EBCCB
+	// (set) Token: 0x06005061 RID: 20577 RVA: 0x001EDAD3 File Offset: 0x001EBCD3
 	public SelectionCategory CategoryInfoVolume
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AE RID: 2222
-	// (get) Token: 0x0600508E RID: 20622 RVA: 0x001EC590 File Offset: 0x001EA790
-	// (set) Token: 0x0600508F RID: 20623 RVA: 0x001EC598 File Offset: 0x001EA798
+	// Token: 0x170008CE RID: 2254
+	// (get) Token: 0x06005062 RID: 20578 RVA: 0x001EDADC File Offset: 0x001EBCDC
+	// (set) Token: 0x06005063 RID: 20579 RVA: 0x001EDAE4 File Offset: 0x001EBCE4
 	public SelectionCategory CategoryWallVolume
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008AF RID: 2223
-	// (get) Token: 0x06005090 RID: 20624 RVA: 0x001EC5A1 File Offset: 0x001EA7A1
-	// (set) Token: 0x06005091 RID: 20625 RVA: 0x001EC5A9 File Offset: 0x001EA7A9
+	// Token: 0x170008CF RID: 2255
+	// (get) Token: 0x06005064 RID: 20580 RVA: 0x001EDAED File Offset: 0x001EBCED
+	// (set) Token: 0x06005065 RID: 20581 RVA: 0x001EDAF5 File Offset: 0x001EBCF5
 	public SelectionCategory CategoryTriggerVolume
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008B0 RID: 2224
-	// (get) Token: 0x06005092 RID: 20626 RVA: 0x001EC5B2 File Offset: 0x001EA7B2
-	// (set) Token: 0x06005093 RID: 20627 RVA: 0x001EC5BA File Offset: 0x001EA7BA
+	// Token: 0x170008D0 RID: 2256
+	// (get) Token: 0x06005066 RID: 20582 RVA: 0x001EDAFE File Offset: 0x001EBCFE
+	// (set) Token: 0x06005067 RID: 20583 RVA: 0x001EDB06 File Offset: 0x001EBD06
 	public SelectionCategory CategorySleeperVolume
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008B1 RID: 2225
-	// (get) Token: 0x06005094 RID: 20628 RVA: 0x001EC5C3 File Offset: 0x001EA7C3
-	// (set) Token: 0x06005095 RID: 20629 RVA: 0x001EC5CB File Offset: 0x001EA7CB
+	// Token: 0x170008D1 RID: 2257
+	// (get) Token: 0x06005068 RID: 20584 RVA: 0x001EDB0F File Offset: 0x001EBD0F
+	// (set) Token: 0x06005069 RID: 20585 RVA: 0x001EDB17 File Offset: 0x001EBD17
 	public SelectionCategory CategoryPOIMarker
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008B2 RID: 2226
-	// (get) Token: 0x06005096 RID: 20630 RVA: 0x001EC5D4 File Offset: 0x001EA7D4
-	// (set) Token: 0x06005097 RID: 20631 RVA: 0x001EC5DC File Offset: 0x001EA7DC
+	// Token: 0x170008D2 RID: 2258
+	// (get) Token: 0x0600506A RID: 20586 RVA: 0x001EDB20 File Offset: 0x001EBD20
+	// (set) Token: 0x0600506B RID: 20587 RVA: 0x001EDB28 File Offset: 0x001EBD28
 	public SelectionCategory CategoryPrefabFacingVolume
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008B3 RID: 2227
-	// (get) Token: 0x06005098 RID: 20632 RVA: 0x001EC5E5 File Offset: 0x001EA7E5
-	// (set) Token: 0x06005099 RID: 20633 RVA: 0x001EC5ED File Offset: 0x001EA7ED
+	// Token: 0x170008D3 RID: 2259
+	// (get) Token: 0x0600506C RID: 20588 RVA: 0x001EDB31 File Offset: 0x001EBD31
+	// (set) Token: 0x0600506D RID: 20589 RVA: 0x001EDB39 File Offset: 0x001EBD39
 	public SelectionBox Selection
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170008B4 RID: 2228
-	// (get) Token: 0x0600509A RID: 20634 RVA: 0x001EC5F6 File Offset: 0x001EA7F6
-	// (set) Token: 0x0600509B RID: 20635 RVA: 0x001EC5FE File Offset: 0x001EA7FE
+	// Token: 0x170008D4 RID: 2260
+	// (get) Token: 0x0600506E RID: 20590 RVA: 0x001EDB42 File Offset: 0x001EBD42
+	// (set) Token: 0x0600506F RID: 20591 RVA: 0x001EDB4A File Offset: 0x001EBD4A
 	public float AlphaMultiplier
 	{
 		get
@@ -122,7 +122,7 @@ public class SelectionBoxManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600509C RID: 20636 RVA: 0x001EC622 File Offset: 0x001EA822
+	// Token: 0x06005070 RID: 20592 RVA: 0x001EDB6E File Offset: 0x001EBD6E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -131,7 +131,7 @@ public class SelectionBoxManager : MonoBehaviour
 		this.alphaMultiplier = GamePrefs.GetFloat(EnumGamePrefs.OptionsSelectionBoxAlphaMultiplier);
 	}
 
-	// Token: 0x0600509D RID: 20637 RVA: 0x001EC648 File Offset: 0x001EA848
+	// Token: 0x06005071 RID: 20593 RVA: 0x001EDB94 File Offset: 0x001EBD94
 	public void SetupCategories()
 	{
 		Color color = new Color(0f, 0f, 1f, 0.5f);
@@ -164,14 +164,14 @@ public class SelectionBoxManager : MonoBehaviour
 		this.CategoryPrefabFacingVolume = this.CreateCategory("PrefabFacing", color11, color12, color11, true, "SB_SleeperVolume", 31);
 	}
 
-	// Token: 0x0600509E RID: 20638 RVA: 0x001EC968 File Offset: 0x001EAB68
+	// Token: 0x06005072 RID: 20594 RVA: 0x001EDEB4 File Offset: 0x001EC0B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		Origin.Remove(base.transform);
 	}
 
-	// Token: 0x0600509F RID: 20639 RVA: 0x001EC978 File Offset: 0x001EAB78
+	// Token: 0x06005073 RID: 20595 RVA: 0x001EDEC4 File Offset: 0x001EC0C4
 	public SelectionCategory GetCategory(string _name)
 	{
 		SelectionCategory selectionCategory;
@@ -179,7 +179,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return selectionCategory;
 	}
 
-	// Token: 0x060050A0 RID: 20640 RVA: 0x001EC995 File Offset: 0x001EAB95
+	// Token: 0x06005074 RID: 20596 RVA: 0x001EDEE1 File Offset: 0x001EC0E1
 	public bool TryGetSelectionBox(string _category, string _name, out SelectionBox _selectionBox)
 	{
 		SelectionCategory category = this.GetCategory(_category);
@@ -187,7 +187,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return _selectionBox != null;
 	}
 
-	// Token: 0x060050A1 RID: 20641 RVA: 0x001EC9B8 File Offset: 0x001EABB8
+	// Token: 0x06005075 RID: 20597 RVA: 0x001EDF04 File Offset: 0x001EC104
 	public SelectionCategory CreateCategory(string _name, Color _colSelected, Color _colUnselected, Color _colFaceSelected, bool _bCollider, string _tag, int _layer = 0)
 	{
 		Transform transform = new GameObject(_name).transform;
@@ -198,7 +198,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return selectionCategory;
 	}
 
-	// Token: 0x060050A2 RID: 20642 RVA: 0x001ECA05 File Offset: 0x001EAC05
+	// Token: 0x06005076 RID: 20598 RVA: 0x001EDF51 File Offset: 0x001EC151
 	public void SetActive(SelectionBox _box, bool _bActive)
 	{
 		if (_box == null)
@@ -212,20 +212,20 @@ public class SelectionBoxManager : MonoBehaviour
 		this.activate(_bActive ? _box : null);
 	}
 
-	// Token: 0x060050A3 RID: 20643 RVA: 0x001ECA38 File Offset: 0x001EAC38
+	// Token: 0x06005077 RID: 20599 RVA: 0x001EDF84 File Offset: 0x001EC184
 	public void Deactivate()
 	{
 		this.activate(null);
 	}
 
-	// Token: 0x060050A4 RID: 20644 RVA: 0x001ECA42 File Offset: 0x001EAC42
+	// Token: 0x06005078 RID: 20600 RVA: 0x001EDF8E File Offset: 0x001EC18E
 	public bool TryGetSelected(out SelectionBox _selectedBox)
 	{
 		_selectedBox = this.Selection;
 		return _selectedBox != null;
 	}
 
-	// Token: 0x060050A5 RID: 20645 RVA: 0x001ECA54 File Offset: 0x001EAC54
+	// Token: 0x06005079 RID: 20601 RVA: 0x001EDFA0 File Offset: 0x001EC1A0
 	public bool Select(WorldRayHitInfo _hitInfo)
 	{
 		if (_hitInfo.tag == null)
@@ -256,7 +256,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060050A6 RID: 20646 RVA: 0x001ECB48 File Offset: 0x001EAD48
+	// Token: 0x0600507A RID: 20602 RVA: 0x001EE094 File Offset: 0x001EC294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activate(SelectionBox _box)
 	{
@@ -289,7 +289,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x060050A7 RID: 20647 RVA: 0x001ECC14 File Offset: 0x001EAE14
+	// Token: 0x0600507B RID: 20603 RVA: 0x001EE160 File Offset: 0x001EC360
 	public void UpdateAllColors()
 	{
 		foreach (KeyValuePair<string, SelectionCategory> keyValuePair in this.categories)
@@ -309,7 +309,7 @@ public class SelectionBoxManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060050A8 RID: 20648 RVA: 0x001ECCE8 File Offset: 0x001EAEE8
+	// Token: 0x0600507C RID: 20604 RVA: 0x001EE234 File Offset: 0x001EC434
 	public void Clear()
 	{
 		foreach (KeyValuePair<string, SelectionCategory> keyValuePair in this.categories)
@@ -321,7 +321,7 @@ public class SelectionBoxManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060050A9 RID: 20649 RVA: 0x001ECD48 File Offset: 0x001EAF48
+	// Token: 0x0600507D RID: 20605 RVA: 0x001EE294 File Offset: 0x001EC494
 	public void OpenPropertiesWindow(GUIWindowManager _windowManager)
 	{
 		if (this.Selection == null)
@@ -338,7 +338,7 @@ public class SelectionBoxManager : MonoBehaviour
 		category.BoxCallbacks.OnSelectionBoxShowProperties(true, _windowManager);
 	}
 
-	// Token: 0x060050AA RID: 20650 RVA: 0x001ECD98 File Offset: 0x001EAF98
+	// Token: 0x0600507E RID: 20606 RVA: 0x001EE2E4 File Offset: 0x001EC4E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i createBlockMoveVector(Vector3 _relPlayerAxis)
 	{
@@ -354,7 +354,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return vector3i;
 	}
 
-	// Token: 0x060050AB RID: 20651 RVA: 0x001ECDF8 File Offset: 0x001EAFF8
+	// Token: 0x0600507F RID: 20607 RVA: 0x001EE344 File Offset: 0x001EC544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void moveSelection(Vector3i _deltaVec)
 	{
@@ -366,7 +366,7 @@ public class SelectionBoxManager : MonoBehaviour
 		this.Selection.Category.BoxCallbacks.OnSelectionBoxMoved(this.Selection, _deltaVec.ToVector3());
 	}
 
-	// Token: 0x060050AC RID: 20652 RVA: 0x001ECE38 File Offset: 0x001EB038
+	// Token: 0x06005080 RID: 20608 RVA: 0x001EE384 File Offset: 0x001EC584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void incSelection(int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
@@ -382,7 +382,7 @@ public class SelectionBoxManager : MonoBehaviour
 		this.Selection.Category.BoxCallbacks.OnSelectionBoxSized(this.Selection, _dTop, _dBottom, _dNorth, _dSouth, _dEast, _dWest);
 	}
 
-	// Token: 0x060050AD RID: 20653 RVA: 0x001ECE9C File Offset: 0x001EB09C
+	// Token: 0x06005081 RID: 20609 RVA: 0x001EE3E8 File Offset: 0x001EC5E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void mirrorSelection(Vector3i _axis)
 	{
@@ -398,7 +398,7 @@ public class SelectionBoxManager : MonoBehaviour
 		this.Selection.Category.BoxCallbacks.OnSelectionBoxMirrored(_axis);
 	}
 
-	// Token: 0x060050AE RID: 20654 RVA: 0x001ECEF4 File Offset: 0x001EB0F4
+	// Token: 0x06005082 RID: 20610 RVA: 0x001EE440 File Offset: 0x001EC640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showThroughWalls(SelectionCategory _category, bool _isThroughWalls, bool _isAll)
 	{
@@ -420,7 +420,7 @@ public class SelectionBoxManager : MonoBehaviour
 		this.Selection.ShowThroughWalls(_isThroughWalls);
 	}
 
-	// Token: 0x060050AF RID: 20655 RVA: 0x001ECF64 File Offset: 0x001EB164
+	// Token: 0x06005083 RID: 20611 RVA: 0x001EE4B0 File Offset: 0x001EC6B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void deleteBox(SelectionBox _selBox)
 	{
@@ -433,7 +433,7 @@ public class SelectionBoxManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060050B0 RID: 20656 RVA: 0x001ECF9C File Offset: 0x001EB19C
+	// Token: 0x06005084 RID: 20612 RVA: 0x001EE4E8 File Offset: 0x001EC6E8
 	public bool ConsumeScrollWheel(float _scrollWheel, PlayerActionsLocal _playerActions)
 	{
 		SelectionBox selection = this.Selection;
@@ -485,7 +485,7 @@ public class SelectionBoxManager : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x060050B1 RID: 20657 RVA: 0x001ED09C File Offset: 0x001EB29C
+	// Token: 0x06005085 RID: 20613 RVA: 0x001EE5E8 File Offset: 0x001EC7E8
 	public void CheckKeys(GameManager _gameManager, PlayerActionsLocal _playerActions, WorldRayHitInfo _hitInfo)
 	{
 		bool altKeyPressed = InputUtils.AltKeyPressed;
@@ -664,7 +664,7 @@ public class SelectionBoxManager : MonoBehaviour
 		checkKeysCallback();
 	}
 
-	// Token: 0x060050B2 RID: 20658 RVA: 0x001ED600 File Offset: 0x001EB800
+	// Token: 0x06005086 RID: 20614 RVA: 0x001EEB4C File Offset: 0x001ECD4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -759,7 +759,7 @@ public class SelectionBoxManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060050B3 RID: 20659 RVA: 0x001EDA00 File Offset: 0x001EBC00
+	// Token: 0x06005087 RID: 20615 RVA: 0x001EEF4C File Offset: 0x001ED14C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetLineDistanceSq(Vector3 _lineStart, Vector3 _lineEnd, Vector3 _point)
 	{
@@ -773,45 +773,45 @@ public class SelectionBoxManager : MonoBehaviour
 		return (_lineStart + vector * num - _point).sqrMagnitude;
 	}
 
-	// Token: 0x04003E04 RID: 15876
+	// Token: 0x04003E12 RID: 15890
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Dictionary<string, SelectionCategory> categories = new Dictionary<string, SelectionCategory>();
 
-	// Token: 0x04003E06 RID: 15878
+	// Token: 0x04003E14 RID: 15892
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float alphaMultiplier = 1f;
 
-	// Token: 0x04003E07 RID: 15879
+	// Token: 0x04003E15 RID: 15893
 	public static SelectionBoxManager Instance;
 
-	// Token: 0x04003E08 RID: 15880
+	// Token: 0x04003E16 RID: 15894
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bMousedPressed;
 
-	// Token: 0x04003E09 RID: 15881
+	// Token: 0x04003E17 RID: 15895
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 highlightedAxisScreenDir;
 
-	// Token: 0x04003E0A RID: 15882
+	// Token: 0x04003E18 RID: 15896
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3i highlightedAxis = Vector3i.zero;
 
-	// Token: 0x04003E0B RID: 15883
+	// Token: 0x04003E19 RID: 15897
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 mouseMoveDir = Vector3.zero;
 
-	// Token: 0x04003E0C RID: 15884
+	// Token: 0x04003E1A RID: 15898
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lastSelOpMode;
 
-	// Token: 0x04003E0D RID: 15885
+	// Token: 0x04003E1B RID: 15899
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bWaitForRelease;

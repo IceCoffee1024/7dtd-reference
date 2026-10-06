@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02001259 RID: 4697
+// Token: 0x02001271 RID: 4721
 public class LiveStats
 {
-	// Token: 0x06009571 RID: 38257 RVA: 0x00386756 File Offset: 0x00384956
+	// Token: 0x060095FE RID: 38398 RVA: 0x0038AF9E File Offset: 0x0038919E
 	public LiveStats(int _maxLiveLevel, int _oversaturationLevel)
 	{
 		this.maxLiveLevel = _maxLiveLevel;
@@ -12,7 +12,7 @@ public class LiveStats
 		this.Reset();
 	}
 
-	// Token: 0x06009572 RID: 38258 RVA: 0x00386774 File Offset: 0x00384974
+	// Token: 0x060095FF RID: 38399 RVA: 0x0038AFBC File Offset: 0x003891BC
 	public void Copy(LiveStats other)
 	{
 		this.liveLevel = other.liveLevel;
@@ -23,7 +23,7 @@ public class LiveStats
 		this.timer = other.timer;
 	}
 
-	// Token: 0x06009573 RID: 38259 RVA: 0x003867C9 File Offset: 0x003849C9
+	// Token: 0x06009600 RID: 38400 RVA: 0x0038B011 File Offset: 0x00389211
 	public void Reset()
 	{
 		this.timer = 0;
@@ -32,7 +32,7 @@ public class LiveStats
 		this.exhaustionLevel = 0f;
 	}
 
-	// Token: 0x06009574 RID: 38260 RVA: 0x003867F4 File Offset: 0x003849F4
+	// Token: 0x06009601 RID: 38401 RVA: 0x0038B03C File Offset: 0x0038923C
 	public void AddStats(int _addLifeValue)
 	{
 		this.liveLevel += _addLifeValue;
@@ -48,7 +48,7 @@ public class LiveStats
 		}
 	}
 
-	// Token: 0x06009575 RID: 38261 RVA: 0x0038686C File Offset: 0x00384A6C
+	// Token: 0x06009602 RID: 38402 RVA: 0x0038B0B4 File Offset: 0x003892B4
 	public void OnUpdate(EntityPlayer _entityPlayer)
 	{
 		while (this.exhaustionLevel > 1f)
@@ -65,7 +65,7 @@ public class LiveStats
 		}
 	}
 
-	// Token: 0x06009576 RID: 38262 RVA: 0x003868D9 File Offset: 0x00384AD9
+	// Token: 0x06009603 RID: 38403 RVA: 0x0038B121 File Offset: 0x00389321
 	public void Read(BinaryReader _br)
 	{
 		this.liveLevel = (int)_br.ReadInt16();
@@ -74,7 +74,7 @@ public class LiveStats
 		this.exhaustionLevel = _br.ReadSingle();
 	}
 
-	// Token: 0x06009577 RID: 38263 RVA: 0x0038690B File Offset: 0x00384B0B
+	// Token: 0x06009604 RID: 38404 RVA: 0x0038B153 File Offset: 0x00389353
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write((ushort)this.liveLevel);
@@ -83,67 +83,67 @@ public class LiveStats
 		_bw.Write(this.exhaustionLevel);
 	}
 
-	// Token: 0x06009578 RID: 38264 RVA: 0x0038693F File Offset: 0x00384B3F
+	// Token: 0x06009605 RID: 38405 RVA: 0x0038B187 File Offset: 0x00389387
 	public int GetLifeLevel()
 	{
 		return this.liveLevel;
 	}
 
-	// Token: 0x06009579 RID: 38265 RVA: 0x00386947 File Offset: 0x00384B47
+	// Token: 0x06009606 RID: 38406 RVA: 0x0038B18F File Offset: 0x0038938F
 	public int GetMaxLifeLevel()
 	{
 		return this.maxLiveLevel;
 	}
 
-	// Token: 0x0600957A RID: 38266 RVA: 0x0038694F File Offset: 0x00384B4F
+	// Token: 0x06009607 RID: 38407 RVA: 0x0038B197 File Offset: 0x00389397
 	public void SetLifeLevel(int _value)
 	{
 		this.liveLevel = _value;
 	}
 
-	// Token: 0x0600957B RID: 38267 RVA: 0x00386958 File Offset: 0x00384B58
+	// Token: 0x06009608 RID: 38408 RVA: 0x0038B1A0 File Offset: 0x003893A0
 	public bool IsFilledUp()
 	{
 		return this.liveLevel >= this.maxLiveLevel;
 	}
 
-	// Token: 0x0600957C RID: 38268 RVA: 0x0038696B File Offset: 0x00384B6B
+	// Token: 0x06009609 RID: 38409 RVA: 0x0038B1B3 File Offset: 0x003893B3
 	public void AddExhaustion(float _v)
 	{
 		this.exhaustionLevel = Math.Min(this.exhaustionLevel + _v, 40f);
 	}
 
-	// Token: 0x0600957D RID: 38269 RVA: 0x00386985 File Offset: 0x00384B85
+	// Token: 0x0600960A RID: 38410 RVA: 0x0038B1CD File Offset: 0x003893CD
 	public float GetSaturationLevel()
 	{
 		return this.saturationLevel;
 	}
 
-	// Token: 0x0600957E RID: 38270 RVA: 0x0038698D File Offset: 0x00384B8D
+	// Token: 0x0600960B RID: 38411 RVA: 0x0038B1D5 File Offset: 0x003893D5
 	public void SetSaturationLevel(float _level)
 	{
 		this.saturationLevel = _level;
 	}
 
-	// Token: 0x0600957F RID: 38271 RVA: 0x00386996 File Offset: 0x00384B96
+	// Token: 0x0600960C RID: 38412 RVA: 0x0038B1DE File Offset: 0x003893DE
 	public float GetExhaustionLevel()
 	{
 		return this.exhaustionLevel;
 	}
 
-	// Token: 0x06009580 RID: 38272 RVA: 0x0038699E File Offset: 0x00384B9E
+	// Token: 0x0600960D RID: 38413 RVA: 0x0038B1E6 File Offset: 0x003893E6
 	public void SetExhaustionLevel(float _level)
 	{
 		this.exhaustionLevel = _level;
 	}
 
-	// Token: 0x06009581 RID: 38273 RVA: 0x003869A7 File Offset: 0x00384BA7
+	// Token: 0x0600960E RID: 38414 RVA: 0x0038B1EF File Offset: 0x003893EF
 	public float GetLifeLevelFraction()
 	{
 		return (float)this.liveLevel / (float)this.maxLiveLevel;
 	}
 
-	// Token: 0x06009582 RID: 38274 RVA: 0x003869B8 File Offset: 0x00384BB8
+	// Token: 0x0600960F RID: 38415 RVA: 0x0038B200 File Offset: 0x00389400
 	public LiveStats Clone()
 	{
 		LiveStats liveStats = new LiveStats(this.maxLiveLevel, this.oversaturationLevel);
@@ -153,27 +153,27 @@ public class LiveStats
 		return liveStats;
 	}
 
-	// Token: 0x04007032 RID: 28722
+	// Token: 0x0400709C RID: 28828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int liveLevel;
 
-	// Token: 0x04007033 RID: 28723
+	// Token: 0x0400709D RID: 28829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxLiveLevel;
 
-	// Token: 0x04007034 RID: 28724
+	// Token: 0x0400709E RID: 28830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int oversaturationLevel;
 
-	// Token: 0x04007035 RID: 28725
+	// Token: 0x0400709F RID: 28831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saturationLevel;
 
-	// Token: 0x04007036 RID: 28726
+	// Token: 0x040070A0 RID: 28832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float exhaustionLevel;
 
-	// Token: 0x04007037 RID: 28727
+	// Token: 0x040070A1 RID: 28833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int timer;
 }

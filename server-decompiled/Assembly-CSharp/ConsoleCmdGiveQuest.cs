@@ -4,19 +4,19 @@ using System.Globalization;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000224 RID: 548
+// Token: 0x02000226 RID: 550
 [Preserve]
 public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 {
-	// Token: 0x0600109C RID: 4252 RVA: 0x000697C9 File Offset: 0x000679C9
+	// Token: 0x06001094 RID: 4244 RVA: 0x0006998D File Offset: 0x00067B8D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "givequest" };
 	}
 
-	// Token: 0x1700019A RID: 410
-	// (get) Token: 0x0600109D RID: 4253 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000192 RID: 402
+	// (get) Token: 0x06001095 RID: 4245 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -25,8 +25,8 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700019B RID: 411
-	// (get) Token: 0x0600109E RID: 4254 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000193 RID: 403
+	// (get) Token: 0x06001096 RID: 4246 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -35,21 +35,21 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600109F RID: 4255 RVA: 0x000697D9 File Offset: 0x000679D9
+	// Token: 0x06001097 RID: 4247 RVA: 0x0006999D File Offset: 0x00067B9D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gives a quest to the player or add to quest tier";
 	}
 
-	// Token: 0x060010A0 RID: 4256 RVA: 0x000697E0 File Offset: 0x000679E0
+	// Token: 0x06001098 RID: 4248 RVA: 0x000699A4 File Offset: 0x00067BA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "givequest commands:\ncomplete - complete all quests\ntieradd <points> - add the points to your quest tier (default is 10)\n<quest name> - gives you the quest";
 	}
 
-	// Token: 0x060010A1 RID: 4257 RVA: 0x000697E8 File Offset: 0x000679E8
+	// Token: 0x06001099 RID: 4249 RVA: 0x000699AC File Offset: 0x00067BAC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -126,6 +126,6 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Quest '{0}' does not exist!", new object[] { _params[0] });
 			return;
 		}
-		questJournal.AddQuest(quest2, true);
+		questJournal.AddQuest(quest2, Quest.QuestSource.Debug, true);
 	}
 }

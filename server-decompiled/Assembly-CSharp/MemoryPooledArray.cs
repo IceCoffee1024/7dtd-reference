@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001441 RID: 5185
+// Token: 0x02001461 RID: 5217
 public class MemoryPooledArray<T> where T : new()
 {
-	// Token: 0x0600A2E2 RID: 41698 RVA: 0x003CE5D0 File Offset: 0x003CC7D0
+	// Token: 0x0600A38E RID: 41870 RVA: 0x003D31E0 File Offset: 0x003D13E0
 	public MemoryPooledArray()
 	{
 		this.pools = new List<T[]>[MemoryPooledArraySizes.poolElements.Length];
@@ -15,7 +15,7 @@ public class MemoryPooledArray<T> where T : new()
 		this.poolSize = new int[MemoryPooledArraySizes.poolElements.Length];
 	}
 
-	// Token: 0x0600A2E3 RID: 41699 RVA: 0x003CE628 File Offset: 0x003CC828
+	// Token: 0x0600A38F RID: 41871 RVA: 0x003D3238 File Offset: 0x003D1438
 	public T[] Alloc(int _minSize = 0)
 	{
 		List<T[]>[] array = this.pools;
@@ -43,13 +43,13 @@ public class MemoryPooledArray<T> where T : new()
 		return array4;
 	}
 
-	// Token: 0x0600A2E4 RID: 41700 RVA: 0x003CE6C4 File Offset: 0x003CC8C4
+	// Token: 0x0600A390 RID: 41872 RVA: 0x003D32D4 File Offset: 0x003D14D4
 	public T[] Grow(T[] _array)
 	{
 		return this.Grow(_array, _array.Length + 1);
 	}
 
-	// Token: 0x0600A2E5 RID: 41701 RVA: 0x003CE6D4 File Offset: 0x003CC8D4
+	// Token: 0x0600A391 RID: 41873 RVA: 0x003D32E4 File Offset: 0x003D14E4
 	public T[] Grow(T[] _array, int _minSize)
 	{
 		T[] array = this.Alloc(_minSize);
@@ -58,7 +58,7 @@ public class MemoryPooledArray<T> where T : new()
 		return array;
 	}
 
-	// Token: 0x0600A2E6 RID: 41702 RVA: 0x003CE6FC File Offset: 0x003CC8FC
+	// Token: 0x0600A392 RID: 41874 RVA: 0x003D330C File Offset: 0x003D150C
 	public void Free(T[] _array)
 	{
 		if (_array == null)
@@ -86,7 +86,7 @@ public class MemoryPooledArray<T> where T : new()
 		}
 	}
 
-	// Token: 0x0600A2E7 RID: 41703 RVA: 0x003CE7A0 File Offset: 0x003CC9A0
+	// Token: 0x0600A393 RID: 41875 RVA: 0x003D33B0 File Offset: 0x003D15B0
 	public void FreeAll()
 	{
 		List<T[]>[] array = this.pools;
@@ -100,7 +100,7 @@ public class MemoryPooledArray<T> where T : new()
 		}
 	}
 
-	// Token: 0x0600A2E8 RID: 41704 RVA: 0x003CE804 File Offset: 0x003CCA04
+	// Token: 0x0600A394 RID: 41876 RVA: 0x003D3414 File Offset: 0x003D1614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeToIdx(int _size)
 	{
@@ -120,7 +120,7 @@ public class MemoryPooledArray<T> where T : new()
 		return num;
 	}
 
-	// Token: 0x0600A2E9 RID: 41705 RVA: 0x003CE850 File Offset: 0x003CCA50
+	// Token: 0x0600A395 RID: 41877 RVA: 0x003D3460 File Offset: 0x003D1660
 	public int GetCount()
 	{
 		int num = 0;
@@ -134,7 +134,7 @@ public class MemoryPooledArray<T> where T : new()
 		return num;
 	}
 
-	// Token: 0x0600A2EA RID: 41706 RVA: 0x003CE88D File Offset: 0x003CCA8D
+	// Token: 0x0600A396 RID: 41878 RVA: 0x003D349D File Offset: 0x003D169D
 	public int GetCount(int _poolIndex)
 	{
 		if (_poolIndex < 0 || _poolIndex >= this.pools.Length)
@@ -149,7 +149,7 @@ public class MemoryPooledArray<T> where T : new()
 		return list.Count;
 	}
 
-	// Token: 0x0600A2EB RID: 41707 RVA: 0x003CE8B4 File Offset: 0x003CCAB4
+	// Token: 0x0600A397 RID: 41879 RVA: 0x003D34C4 File Offset: 0x003D16C4
 	public long GetElementsCount()
 	{
 		int num = 0;
@@ -163,15 +163,15 @@ public class MemoryPooledArray<T> where T : new()
 		return (long)num;
 	}
 
-	// Token: 0x04007A25 RID: 31269
+	// Token: 0x04007AA0 RID: 31392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T[]>[] pools;
 
-	// Token: 0x04007A26 RID: 31270
+	// Token: 0x04007AA1 RID: 31393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] poolSize;
 
-	// Token: 0x04007A27 RID: 31271
+	// Token: 0x04007AA2 RID: 31394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxCapacity;
 }

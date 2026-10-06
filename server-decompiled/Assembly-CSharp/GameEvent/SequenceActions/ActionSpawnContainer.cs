@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C6 RID: 6598
+	// Token: 0x020019F2 RID: 6642
 	[Preserve]
 	public class ActionSpawnContainer : ActionBaseSpawn
 	{
-		// Token: 0x0600C9AE RID: 51630 RVA: 0x0049FDE8 File Offset: 0x0049DFE8
+		// Token: 0x0600CB06 RID: 51974 RVA: 0x004A428C File Offset: 0x004A248C
 		public override void AddPropertiesToSpawnedEntity(Entity entity)
 		{
 			base.AddPropertiesToSpawnedEntity(entity);
@@ -24,7 +24,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9AF RID: 51631 RVA: 0x0049FE5A File Offset: 0x0049E05A
+		// Token: 0x0600CB07 RID: 51975 RVA: 0x004A42FE File Offset: 0x004A24FE
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionSpawnContainer.PropOverrideName, ref this.overrideName);
 		}
 
-		// Token: 0x0600C9B0 RID: 51632 RVA: 0x0049FE88 File Offset: 0x0049E088
+		// Token: 0x0600CB08 RID: 51976 RVA: 0x004A432C File Offset: 0x004A252C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -63,19 +63,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098F5 RID: 39157
+		// Token: 0x040099BB RID: 39355
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string overrideLootList = "";
 
-		// Token: 0x040098F6 RID: 39158
+		// Token: 0x040099BC RID: 39356
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string overrideName = "";
 
-		// Token: 0x040098F7 RID: 39159
+		// Token: 0x040099BD RID: 39357
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOverrideLootList = "override_loot_list";
 
-		// Token: 0x040098F8 RID: 39160
+		// Token: 0x040099BE RID: 39358
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOverrideName = "override_name";
 	}

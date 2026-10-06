@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019FF RID: 6655
+	// Token: 0x02001A2B RID: 6699
 	[Preserve]
 	public class ActionTwitchEndCooldown : ActionBaseClientAction
 	{
-		// Token: 0x0600CAC0 RID: 51904 RVA: 0x004A4B93 File Offset: 0x004A2D93
+		// Token: 0x0600CC18 RID: 52248 RVA: 0x004A905F File Offset: 0x004A725F
 		public override void OnClientPerform(Entity target)
 		{
 			if (TwitchManager.HasInstance)
@@ -17,14 +17,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600CAC1 RID: 51905 RVA: 0x004A4BAD File Offset: 0x004A2DAD
+		// Token: 0x0600CC19 RID: 52249 RVA: 0x004A9079 File Offset: 0x004A7279
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseBool(ActionTwitchEndCooldown.PropPlaySound, ref this.playSound);
 		}
 
-		// Token: 0x0600CAC2 RID: 51906 RVA: 0x004A4BC7 File Offset: 0x004A2DC7
+		// Token: 0x0600CC1A RID: 52250 RVA: 0x004A9093 File Offset: 0x004A7293
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -34,11 +34,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040099FD RID: 39421
+		// Token: 0x04009AC3 RID: 39619
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool playSound = true;
 
-		// Token: 0x040099FE RID: 39422
+		// Token: 0x04009AC4 RID: 39620
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPlaySound = "play_sound";
 	}

@@ -2,46 +2,46 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016C0 RID: 5824
+	// Token: 0x020016EC RID: 5868
 	public class Channel
 	{
-		// Token: 0x1700162F RID: 5679
-		// (get) Token: 0x0600B5FE RID: 46590 RVA: 0x0043A752 File Offset: 0x00438952
-		// (set) Token: 0x0600B5FF RID: 46591 RVA: 0x0043A75A File Offset: 0x0043895A
+		// Token: 0x170016D1 RID: 5841
+		// (get) Token: 0x0600B755 RID: 46933 RVA: 0x0043EC72 File Offset: 0x0043CE72
+		// (set) Token: 0x0600B756 RID: 46934 RVA: 0x0043EC7A File Offset: 0x0043CE7A
 		public string Name { get; set; }
 
-		// Token: 0x17001630 RID: 5680
-		// (get) Token: 0x0600B600 RID: 46592 RVA: 0x0043A763 File Offset: 0x00438963
-		// (set) Token: 0x0600B601 RID: 46593 RVA: 0x0043A76B File Offset: 0x0043896B
+		// Token: 0x170016D2 RID: 5842
+		// (get) Token: 0x0600B757 RID: 46935 RVA: 0x0043EC83 File Offset: 0x0043CE83
+		// (set) Token: 0x0600B758 RID: 46936 RVA: 0x0043EC8B File Offset: 0x0043CE8B
 		public PixelType Type { get; set; }
 
-		// Token: 0x17001631 RID: 5681
-		// (get) Token: 0x0600B602 RID: 46594 RVA: 0x0043A774 File Offset: 0x00438974
-		// (set) Token: 0x0600B603 RID: 46595 RVA: 0x0043A77C File Offset: 0x0043897C
+		// Token: 0x170016D3 RID: 5843
+		// (get) Token: 0x0600B759 RID: 46937 RVA: 0x0043EC94 File Offset: 0x0043CE94
+		// (set) Token: 0x0600B75A RID: 46938 RVA: 0x0043EC9C File Offset: 0x0043CE9C
 		public bool Linear { get; set; }
 
-		// Token: 0x17001632 RID: 5682
-		// (get) Token: 0x0600B604 RID: 46596 RVA: 0x0043A785 File Offset: 0x00438985
-		// (set) Token: 0x0600B605 RID: 46597 RVA: 0x0043A78D File Offset: 0x0043898D
+		// Token: 0x170016D4 RID: 5844
+		// (get) Token: 0x0600B75B RID: 46939 RVA: 0x0043ECA5 File Offset: 0x0043CEA5
+		// (set) Token: 0x0600B75C RID: 46940 RVA: 0x0043ECAD File Offset: 0x0043CEAD
 		public int XSampling { get; set; }
 
-		// Token: 0x17001633 RID: 5683
-		// (get) Token: 0x0600B606 RID: 46598 RVA: 0x0043A796 File Offset: 0x00438996
-		// (set) Token: 0x0600B607 RID: 46599 RVA: 0x0043A79E File Offset: 0x0043899E
+		// Token: 0x170016D5 RID: 5845
+		// (get) Token: 0x0600B75D RID: 46941 RVA: 0x0043ECB6 File Offset: 0x0043CEB6
+		// (set) Token: 0x0600B75E RID: 46942 RVA: 0x0043ECBE File Offset: 0x0043CEBE
 		public int YSampling { get; set; }
 
-		// Token: 0x17001634 RID: 5684
-		// (get) Token: 0x0600B608 RID: 46600 RVA: 0x0043A7A7 File Offset: 0x004389A7
-		// (set) Token: 0x0600B609 RID: 46601 RVA: 0x0043A7AF File Offset: 0x004389AF
+		// Token: 0x170016D6 RID: 5846
+		// (get) Token: 0x0600B75F RID: 46943 RVA: 0x0043ECC7 File Offset: 0x0043CEC7
+		// (set) Token: 0x0600B760 RID: 46944 RVA: 0x0043ECCF File Offset: 0x0043CECF
 		public byte[] Reserved { get; set; }
 
-		// Token: 0x0600B60A RID: 46602 RVA: 0x0043A7B8 File Offset: 0x004389B8
+		// Token: 0x0600B761 RID: 46945 RVA: 0x0043ECD8 File Offset: 0x0043CED8
 		public Channel(string name, PixelType type, bool linear, int xSampling, int ySampling)
 			: this(name, type, linear, 0, 0, 0, xSampling, ySampling)
 		{
 		}
 
-		// Token: 0x0600B60B RID: 46603 RVA: 0x0043A7D5 File Offset: 0x004389D5
+		// Token: 0x0600B762 RID: 46946 RVA: 0x0043ECF5 File Offset: 0x0043CEF5
 		public Channel(string name, PixelType type, bool linear, byte reserved0, byte reserved1, byte reserved2, int xSampling, int ySampling)
 		{
 			this.Name = name;
@@ -50,7 +50,7 @@ namespace SharpEXR
 			this.Reserved = new byte[] { reserved0, reserved1, reserved2 };
 		}
 
-		// Token: 0x0600B60C RID: 46604 RVA: 0x0043A80D File Offset: 0x00438A0D
+		// Token: 0x0600B763 RID: 46947 RVA: 0x0043ED2D File Offset: 0x0043CF2D
 		public override string ToString()
 		{
 			return string.Format("{0} {1} {2}", base.GetType().Name, this.Name, this.Type);

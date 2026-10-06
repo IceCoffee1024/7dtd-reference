@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001736 RID: 5942
+	// Token: 0x02001762 RID: 5986
 	public class TownPlanner
 	{
-		// Token: 0x0600B8EC RID: 47340 RVA: 0x0044B6BC File Offset: 0x004498BC
+		// Token: 0x0600BA43 RID: 47683 RVA: 0x0044FBDC File Offset: 0x0044DDDC
 		public TownPlanner(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B8ED RID: 47341 RVA: 0x0044B7B4 File Offset: 0x004499B4
+		// Token: 0x0600BA44 RID: 47684 RVA: 0x0044FCD4 File Offset: 0x0044DED4
 		public void Plan(DynamicProperties _properties, int worldSeed)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -271,7 +271,7 @@ namespace WorldGenerationEngineFinal
 			this.worldBuilder.SetTaskMessage(this.worldBuilder.messageTownPlanningFinished);
 		}
 
-		// Token: 0x0600B8EE RID: 47342 RVA: 0x0044C138 File Offset: 0x0044A338
+		// Token: 0x0600BA45 RID: 47685 RVA: 0x00450658 File Offset: 0x0044E858
 		public void SpawnPrefabs()
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -282,7 +282,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("TownPlanner SpawnPrefabs in {0}, r={1:x}", (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600B8EF RID: 47343 RVA: 0x0044C1C4 File Offset: 0x0044A3C4
+		// Token: 0x0600BA46 RID: 47686 RVA: 0x004506E4 File Offset: 0x0044E8E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsTooClose(Vector2i position, bool isRoadsideTownship, int distance)
 		{
@@ -304,7 +304,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B8F0 RID: 47344 RVA: 0x0044C2D8 File Offset: 0x0044A4D8
+		// Token: 0x0600BA47 RID: 47687 RVA: 0x004507F8 File Offset: 0x0044E9F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool Grow(TownshipData _data, List<StreetTile> baseTiles, List<StreetTile> finalTiles, bool _cancelIfInvalidNeighbor)
 		{
@@ -356,7 +356,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B8F1 RID: 47345 RVA: 0x0044C44C File Offset: 0x0044A64C
+		// Token: 0x0600BA48 RID: 47688 RVA: 0x0045096C File Offset: 0x0044EB6C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int getTownshipCounts(DynamicProperties _properties, Dictionary<int, TownPlanner.TownshipSpawnInfo> townshipSpawnInfo)
 		{
@@ -384,7 +384,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B8F2 RID: 47346 RVA: 0x0044C554 File Offset: 0x0044A754
+		// Token: 0x0600BA49 RID: 47689 RVA: 0x00450A74 File Offset: 0x0044EC74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BiomeType nextBiomeType(BiomeType _current, TownshipData _townshipData)
 		{
@@ -400,7 +400,7 @@ namespace WorldGenerationEngineFinal
 			return BiomeType.none;
 		}
 
-		// Token: 0x0600B8F3 RID: 47347 RVA: 0x0044C5A4 File Offset: 0x0044A7A4
+		// Token: 0x0600BA4A RID: 47690 RVA: 0x00450AC4 File Offset: 0x0044ECC4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BiomeType getBiomeWithMostAvailableSpace(TownshipData _townshipData)
 		{
@@ -422,7 +422,7 @@ namespace WorldGenerationEngineFinal
 			return (BiomeType)num2;
 		}
 
-		// Token: 0x0600B8F4 RID: 47348 RVA: 0x0044C610 File Offset: 0x0044A810
+		// Token: 0x0600BA4B RID: 47691 RVA: 0x00450B30 File Offset: 0x0044ED30
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<BiomeType, List<Vector2i>> getStreetTilesByBiome()
 		{
@@ -439,7 +439,7 @@ namespace WorldGenerationEngineFinal
 			return dictionary;
 		}
 
-		// Token: 0x0600B8F5 RID: 47349 RVA: 0x0044C654 File Offset: 0x0044A854
+		// Token: 0x0600BA4C RID: 47692 RVA: 0x00450B74 File Offset: 0x0044ED74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getStreetTilesForBiome(BiomeType _biomeType, List<Vector2i> _biomeStreetTiles)
 		{
@@ -453,7 +453,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8F6 RID: 47350 RVA: 0x0044C6B4 File Offset: 0x0044A8B4
+		// Token: 0x0600BA4D RID: 47693 RVA: 0x00450BD4 File Offset: 0x0044EDD4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetStreetLayout(Vector2i startPosition, int townSize, GameRandom rnd, bool isRoadside, List<StreetTile> townTiles)
 		{
@@ -558,7 +558,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B8F7 RID: 47351 RVA: 0x0044C960 File Offset: 0x0044AB60
+		// Token: 0x0600BA4E RID: 47694 RVA: 0x00450E80 File Offset: 0x0044F080
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile StreetLayoutCheckPos(Vector2i _pos)
 		{
@@ -582,23 +582,23 @@ namespace WorldGenerationEngineFinal
 			return null;
 		}
 
-		// Token: 0x04008A2E RID: 35374
+		// Token: 0x04008AF3 RID: 35571
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cTriesPerTownshipSpawnInfo = 80;
 
-		// Token: 0x04008A2F RID: 35375
+		// Token: 0x04008AF4 RID: 35572
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cTriesSmaller = 30;
 
-		// Token: 0x04008A30 RID: 35376
+		// Token: 0x04008AF5 RID: 35573
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008A31 RID: 35377
+		// Token: 0x04008AF6 RID: 35574
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<BiomeType, TownPlanner.BiomeStats> biomeStats = new Dictionary<BiomeType, TownPlanner.BiomeStats>();
 
-		// Token: 0x04008A32 RID: 35378
+		// Token: 0x04008AF7 RID: 35575
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Vector2i[] dir4way = new Vector2i[]
 		{
@@ -608,7 +608,7 @@ namespace WorldGenerationEngineFinal
 			Vector2i.left
 		};
 
-		// Token: 0x04008A33 RID: 35379
+		// Token: 0x04008AF8 RID: 35576
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Vector2i[] dir8way = new Vector2i[]
 		{
@@ -622,21 +622,21 @@ namespace WorldGenerationEngineFinal
 			Vector2i.left + Vector2i.up
 		};
 
-		// Token: 0x02001737 RID: 5943
+		// Token: 0x02001763 RID: 5987
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class BiomeStats
 		{
-			// Token: 0x04008A34 RID: 35380
+			// Token: 0x04008AF9 RID: 35577
 			public int townshipCount;
 
-			// Token: 0x04008A35 RID: 35381
+			// Token: 0x04008AFA RID: 35578
 			public Dictionary<string, int> counts = new Dictionary<string, int>();
 		}
 
-		// Token: 0x02001738 RID: 5944
+		// Token: 0x02001764 RID: 5988
 		public class TownshipSpawnInfo
 		{
-			// Token: 0x0600B8F9 RID: 47353 RVA: 0x0044CA3F File Offset: 0x0044AC3F
+			// Token: 0x0600BA50 RID: 47696 RVA: 0x00450F5F File Offset: 0x0044F15F
 			public TownshipSpawnInfo(int _min, int _max, int _count, int _distance)
 			{
 				this.min = _min;
@@ -645,16 +645,16 @@ namespace WorldGenerationEngineFinal
 				this.distance = _distance;
 			}
 
-			// Token: 0x04008A36 RID: 35382
+			// Token: 0x04008AFB RID: 35579
 			public int min;
 
-			// Token: 0x04008A37 RID: 35383
+			// Token: 0x04008AFC RID: 35580
 			public int max;
 
-			// Token: 0x04008A38 RID: 35384
+			// Token: 0x04008AFD RID: 35581
 			public int count;
 
-			// Token: 0x04008A39 RID: 35385
+			// Token: 0x04008AFE RID: 35582
 			public int distance;
 		}
 	}

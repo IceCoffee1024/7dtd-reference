@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace JBooth.MicroSplat
 {
-	// Token: 0x02001D4A RID: 7498
+	// Token: 0x02001D7C RID: 7548
 	public class MicroSplatProceduralTextureUtil
 	{
-		// Token: 0x0600DDBC RID: 56764 RVA: 0x004F5318 File Offset: 0x004F3518
+		// Token: 0x0600DF37 RID: 57143 RVA: 0x004F9F60 File Offset: 0x004F8160
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float PCFilter(int index, float height, float slope, float cavity, float flow, Vector3 worldPos, Vector2 uv, Color bMask, Color bMask2, out int texIndex, Vector3 pN, MicroSplatProceduralTextureConfig config, Texture2D procTexNoise, MicroSplatProceduralTextureUtil.NoiseUVMode noiseMode)
 		{
@@ -64,7 +64,7 @@ namespace JBooth.MicroSplat
 			return Mathf.Clamp01(num * num2 * num3 * num4 * layer.weight * num5 * num6);
 		}
 
-		// Token: 0x0600DDBD RID: 56765 RVA: 0x004F5724 File Offset: 0x004F3924
+		// Token: 0x0600DF38 RID: 57144 RVA: 0x004FA36C File Offset: 0x004F856C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void PCProcessLayer(ref Vector4 weights, ref MicroSplatProceduralTextureUtil.Int4 indexes, ref float totalWeight, int curIdx, float height, float slope, float cavity, float flow, Vector3 worldPos, Vector2 uv, Color biomeMask, Color biomeMask2, Vector3 pN, MicroSplatProceduralTextureConfig config, Texture2D noiseMap, MicroSplatProceduralTextureUtil.NoiseUVMode noiseMode)
 		{
@@ -109,7 +109,7 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x0600DDBE RID: 56766 RVA: 0x004F5854 File Offset: 0x004F3A54
+		// Token: 0x0600DF39 RID: 57145 RVA: 0x004FA49C File Offset: 0x004F869C
 		public static void Sample(Vector2 uv, Vector3 worldPos, Vector3 worldNormal, Vector3 up, MicroSplatProceduralTextureUtil.NoiseUVMode noiseUVMode, Material mat, MicroSplatProceduralTextureConfig config, out Vector4 weights, out MicroSplatProceduralTextureUtil.Int4 indexes)
 		{
 			weights = new Vector4(0f, 0f, 0f, 0f);
@@ -170,30 +170,30 @@ namespace JBooth.MicroSplat
 			}
 		}
 
-		// Token: 0x02001D4B RID: 7499
+		// Token: 0x02001D7D RID: 7549
 		public enum NoiseUVMode
 		{
-			// Token: 0x0400A7E4 RID: 42980
+			// Token: 0x0400A8BB RID: 43195
 			UV,
-			// Token: 0x0400A7E5 RID: 42981
+			// Token: 0x0400A8BC RID: 43196
 			World,
-			// Token: 0x0400A7E6 RID: 42982
+			// Token: 0x0400A8BD RID: 43197
 			Triplanar
 		}
 
-		// Token: 0x02001D4C RID: 7500
+		// Token: 0x02001D7E RID: 7550
 		public struct Int4
 		{
-			// Token: 0x0400A7E7 RID: 42983
+			// Token: 0x0400A8BE RID: 43198
 			public int x;
 
-			// Token: 0x0400A7E8 RID: 42984
+			// Token: 0x0400A8BF RID: 43199
 			public int y;
 
-			// Token: 0x0400A7E9 RID: 42985
+			// Token: 0x0400A8C0 RID: 43200
 			public int z;
 
-			// Token: 0x0400A7EA RID: 42986
+			// Token: 0x0400A8C1 RID: 43201
 			public int w;
 		}
 	}

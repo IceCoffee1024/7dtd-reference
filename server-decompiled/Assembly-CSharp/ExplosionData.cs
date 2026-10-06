@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-// Token: 0x02000546 RID: 1350
+// Token: 0x0200054C RID: 1356
 public struct ExplosionData
 {
-	// Token: 0x06002C53 RID: 11347 RVA: 0x001183CC File Offset: 0x001165CC
+	// Token: 0x06002C49 RID: 11337 RVA: 0x0011919C File Offset: 0x0011739C
 	public ExplosionData(byte[] _explosionDataAsArr)
 	{
 		this.ParticleIndex = 0;
@@ -28,7 +28,7 @@ public struct ExplosionData
 		}
 	}
 
-	// Token: 0x06002C54 RID: 11348 RVA: 0x00118480 File Offset: 0x00116680
+	// Token: 0x06002C4A RID: 11338 RVA: 0x00119250 File Offset: 0x00117450
 	public ExplosionData(DynamicProperties _properties, MinEffectController _effects = null)
 	{
 		this.ParticleIndex = 0;
@@ -124,7 +124,7 @@ public struct ExplosionData
 		}
 	}
 
-	// Token: 0x06002C55 RID: 11349 RVA: 0x001187A8 File Offset: 0x001169A8
+	// Token: 0x06002C4B RID: 11339 RVA: 0x00119578 File Offset: 0x00117778
 	public byte[] ToByteArray()
 	{
 		MemoryStream memoryStream = new MemoryStream();
@@ -136,8 +136,8 @@ public struct ExplosionData
 		return memoryStream.ToArray();
 	}
 
-	// Token: 0x06002C56 RID: 11350 RVA: 0x001187F8 File Offset: 0x001169F8
-	public void Read(BinaryReader _br)
+	// Token: 0x06002C4C RID: 11340 RVA: 0x001195C8 File Offset: 0x001177C8
+	public void Read(PooledBinaryReader _br)
 	{
 		this.ParticleIndex = (int)_br.ReadInt16();
 		this.Duration = (float)_br.ReadInt16() * 0.1f;
@@ -164,8 +164,8 @@ public struct ExplosionData
 		this.BuffActions = null;
 	}
 
-	// Token: 0x06002C57 RID: 11351 RVA: 0x001188E0 File Offset: 0x00116AE0
-	public void Write(BinaryWriter _bw)
+	// Token: 0x06002C4D RID: 11341 RVA: 0x001196B0 File Offset: 0x001178B0
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write((short)this.ParticleIndex);
 		_bw.Write((short)(this.Duration * 10f));
@@ -190,78 +190,78 @@ public struct ExplosionData
 		_bw.Write(0);
 	}
 
-	// Token: 0x040021FE RID: 8702
+	// Token: 0x04002206 RID: 8710
 	public const string PropExplosion = "Explosion";
 
-	// Token: 0x040021FF RID: 8703
+	// Token: 0x04002207 RID: 8711
 	public const string PropParticleIndex = "ParticleIndex";
 
-	// Token: 0x04002200 RID: 8704
+	// Token: 0x04002208 RID: 8712
 	public const string PropDuration = "Duration";
 
-	// Token: 0x04002201 RID: 8705
+	// Token: 0x04002209 RID: 8713
 	public const string PropRadiusBlocks = "RadiusBlocks";
 
-	// Token: 0x04002202 RID: 8706
+	// Token: 0x0400220A RID: 8714
 	public const string PropRadiusEntities = "RadiusEntities";
 
-	// Token: 0x04002203 RID: 8707
+	// Token: 0x0400220B RID: 8715
 	public const string PropBlockDamage = "BlockDamage";
 
-	// Token: 0x04002204 RID: 8708
+	// Token: 0x0400220C RID: 8716
 	public const string PropEntityDamage = "EntityDamage";
 
-	// Token: 0x04002205 RID: 8709
+	// Token: 0x0400220D RID: 8717
 	public const string PropBlockTags = "BlockTags";
 
-	// Token: 0x04002206 RID: 8710
+	// Token: 0x0400220E RID: 8718
 	public const string PropBlastPower = "BlastPower";
 
-	// Token: 0x04002207 RID: 8711
+	// Token: 0x0400220F RID: 8719
 	public const string PropBuff = "Buff";
 
-	// Token: 0x04002208 RID: 8712
+	// Token: 0x04002210 RID: 8720
 	public const string PropIgnoreHeatMap = "IgnoreHeatMap";
 
-	// Token: 0x04002209 RID: 8713
+	// Token: 0x04002211 RID: 8721
 	public const string PropDamageType = "DamageType";
 
-	// Token: 0x0400220A RID: 8714
+	// Token: 0x04002212 RID: 8722
 	public const int cMaxBlastPower = 100;
 
-	// Token: 0x0400220B RID: 8715
+	// Token: 0x04002213 RID: 8723
 	public int ParticleIndex;
 
-	// Token: 0x0400220C RID: 8716
+	// Token: 0x04002214 RID: 8724
 	public float Duration;
 
-	// Token: 0x0400220D RID: 8717
+	// Token: 0x04002215 RID: 8725
 	public float BlockRadius;
 
-	// Token: 0x0400220E RID: 8718
+	// Token: 0x04002216 RID: 8726
 	public int EntityRadius;
 
-	// Token: 0x0400220F RID: 8719
+	// Token: 0x04002217 RID: 8727
 	public int BlastPower;
 
-	// Token: 0x04002210 RID: 8720
+	// Token: 0x04002218 RID: 8728
 	public float EntityDamage;
 
-	// Token: 0x04002211 RID: 8721
+	// Token: 0x04002219 RID: 8729
 	public float BlockDamage;
 
-	// Token: 0x04002212 RID: 8722
+	// Token: 0x0400221A RID: 8730
 	public string BlockTags;
 
-	// Token: 0x04002213 RID: 8723
+	// Token: 0x0400221B RID: 8731
 	public bool IgnoreHeatMap;
 
-	// Token: 0x04002214 RID: 8724
+	// Token: 0x0400221C RID: 8732
 	public EnumDamageTypes DamageType;
 
-	// Token: 0x04002215 RID: 8725
+	// Token: 0x0400221D RID: 8733
 	public DamageMultiplier damageMultiplier;
 
-	// Token: 0x04002216 RID: 8726
+	// Token: 0x0400221E RID: 8734
 	public List<string> BuffActions;
 }

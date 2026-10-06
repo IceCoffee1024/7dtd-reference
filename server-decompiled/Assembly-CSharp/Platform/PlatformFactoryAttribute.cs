@@ -2,17 +2,17 @@
 
 namespace Platform
 {
-	// Token: 0x02001BD0 RID: 7120
+	// Token: 0x02001C02 RID: 7170
 	[AttributeUsage(AttributeTargets.Class, Inherited = false)]
 	public class PlatformFactoryAttribute : Attribute
 	{
-		// Token: 0x0600D3E9 RID: 54249 RVA: 0x004C8788 File Offset: 0x004C6988
+		// Token: 0x0600D561 RID: 54625 RVA: 0x004CD270 File Offset: 0x004CB470
 		public PlatformFactoryAttribute(EPlatformIdentifier _targetPlatform)
 		{
 			this.TargetPlatform = _targetPlatform;
 		}
 
-		// Token: 0x0400A149 RID: 41289
+		// Token: 0x0400A21E RID: 41502
 		public readonly EPlatformIdentifier TargetPlatform;
 	}
 }

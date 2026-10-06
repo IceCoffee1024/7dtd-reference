@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001B7D RID: 7037
-	// (Invoke) Token: 0x0600D287 RID: 53895
+	// Token: 0x02001BAF RID: 7087
+	// (Invoke) Token: 0x0600D3FF RID: 54271
 	public delegate void PlatformMemoryRenderDelta<in T>(StringBuilder builder, T current, T last);
 }

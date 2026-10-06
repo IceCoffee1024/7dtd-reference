@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace GameEvent.GameEventHelpers
 {
-	// Token: 0x02001951 RID: 6481
+	// Token: 0x0200197D RID: 6525
 	public class HomerunData
 	{
-		// Token: 0x1700189C RID: 6300
-		// (get) Token: 0x0600C79D RID: 51101 RVA: 0x00492C4C File Offset: 0x00490E4C
-		// (set) Token: 0x0600C79E RID: 51102 RVA: 0x00492C54 File Offset: 0x00490E54
+		// Token: 0x1700193E RID: 6462
+		// (get) Token: 0x0600C8F5 RID: 51445 RVA: 0x00497138 File Offset: 0x00495338
+		// (set) Token: 0x0600C8F6 RID: 51446 RVA: 0x00497140 File Offset: 0x00495340
 		public int Score
 		{
 			get
@@ -25,7 +25,7 @@ namespace GameEvent.GameEventHelpers
 			}
 		}
 
-		// Token: 0x0600C79F RID: 51103 RVA: 0x00492C70 File Offset: 0x00490E70
+		// Token: 0x0600C8F7 RID: 51447 RVA: 0x0049715C File Offset: 0x0049535C
 		public HomerunData(EntityPlayer player, float gameTime, string goalEntityNames, List<int> rewardLevels, List<string> rewardEvents, HomerunManager manager, Action completeCallback)
 		{
 			this.Player = player;
@@ -59,7 +59,7 @@ namespace GameEvent.GameEventHelpers
 			this.world = GameManager.Instance.World;
 		}
 
-		// Token: 0x0600C7A0 RID: 51104 RVA: 0x00492DC4 File Offset: 0x00490FC4
+		// Token: 0x0600C8F8 RID: 51448 RVA: 0x004972B0 File Offset: 0x004954B0
 		public void SetupEntityIDs(string entityNames)
 		{
 			string[] array = entityNames.Split(',', StringSplitOptions.None);
@@ -80,7 +80,7 @@ namespace GameEvent.GameEventHelpers
 			}
 		}
 
-		// Token: 0x0600C7A1 RID: 51105 RVA: 0x00492E74 File Offset: 0x00491074
+		// Token: 0x0600C8F9 RID: 51449 RVA: 0x00497360 File Offset: 0x00495560
 		public bool Update(float deltaTime)
 		{
 			for (int i = this.ScoreDisplays.Count - 1; i >= 0; i--)
@@ -195,7 +195,7 @@ namespace GameEvent.GameEventHelpers
 			return false;
 		}
 
-		// Token: 0x0600C7A2 RID: 51106 RVA: 0x004932F4 File Offset: 0x004914F4
+		// Token: 0x0600C8FA RID: 51450 RVA: 0x004977E0 File Offset: 0x004959E0
 		public void Cleanup()
 		{
 			for (int i = this.ScoreDisplays.Count - 1; i >= 0; i--)
@@ -224,7 +224,7 @@ namespace GameEvent.GameEventHelpers
 			this.GoalControllers.Clear();
 		}
 
-		// Token: 0x0600C7A3 RID: 51107 RVA: 0x004933E8 File Offset: 0x004915E8
+		// Token: 0x0600C8FB RID: 51451 RVA: 0x004978D4 File Offset: 0x00495AD4
 		public void AddScoreDisplay(Vector3 position)
 		{
 			Color tierColor = QualityInfo.GetTierColor(this.currentScoreIndex);
@@ -245,7 +245,7 @@ namespace GameEvent.GameEventHelpers
 			});
 		}
 
-		// Token: 0x0600C7A4 RID: 51108 RVA: 0x004934E4 File Offset: 0x004916E4
+		// Token: 0x0600C8FC RID: 51452 RVA: 0x004979D0 File Offset: 0x00495BD0
 		public void RemoveScoreDisplay(Vector3 position)
 		{
 			if (this.Player.isEntityRemote)
@@ -261,7 +261,7 @@ namespace GameEvent.GameEventHelpers
 			}
 		}
 
-		// Token: 0x0600C7A5 RID: 51109 RVA: 0x004935A0 File Offset: 0x004917A0
+		// Token: 0x0600C8FD RID: 51453 RVA: 0x00497A8C File Offset: 0x00495C8C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int GetRewardIndex(int currentIndex, int newScore)
 		{
@@ -274,66 +274,66 @@ namespace GameEvent.GameEventHelpers
 			return currentIndex;
 		}
 
-		// Token: 0x04009646 RID: 38470
+		// Token: 0x0400970C RID: 38668
 		public List<EntityHomerunGoal> GoalControllers = new List<EntityHomerunGoal>();
 
-		// Token: 0x04009647 RID: 38471
+		// Token: 0x0400970D RID: 38669
 		public EntityPlayer Player;
 
-		// Token: 0x04009648 RID: 38472
+		// Token: 0x0400970E RID: 38670
 		public List<EntityPlayer> BuffedPlayers;
 
-		// Token: 0x04009649 RID: 38473
+		// Token: 0x0400970F RID: 38671
 		public HomerunManager Owner;
 
-		// Token: 0x0400964A RID: 38474
+		// Token: 0x04009710 RID: 38672
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<int> rewardLevels;
 
-		// Token: 0x0400964B RID: 38475
+		// Token: 0x04009711 RID: 38673
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<string> rewardEvents;
 
-		// Token: 0x0400964C RID: 38476
+		// Token: 0x04009712 RID: 38674
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<int> entityIDs = new List<int>();
 
-		// Token: 0x0400964D RID: 38477
+		// Token: 0x04009713 RID: 38675
 		public float timeRemaining = 120f;
 
-		// Token: 0x0400964E RID: 38478
+		// Token: 0x04009714 RID: 38676
 		public int ExpectedCount = 3;
 
-		// Token: 0x0400964F RID: 38479
+		// Token: 0x04009715 RID: 38677
 		public Action CompleteCallback;
 
-		// Token: 0x04009650 RID: 38480
+		// Token: 0x04009716 RID: 38678
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentScoreIndex;
 
-		// Token: 0x04009651 RID: 38481
+		// Token: 0x04009717 RID: 38679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int score;
 
-		// Token: 0x04009652 RID: 38482
+		// Token: 0x04009718 RID: 38680
 		public List<HomerunData.ScoreDisplay> ScoreDisplays = new List<HomerunData.ScoreDisplay>();
 
-		// Token: 0x04009653 RID: 38483
+		// Token: 0x04009719 RID: 38681
 		[PublicizedFrom(EAccessModifier.Private)]
 		public World world;
 
-		// Token: 0x04009654 RID: 38484
+		// Token: 0x0400971A RID: 38682
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float createTime = 1f;
 
-		// Token: 0x04009655 RID: 38485
+		// Token: 0x0400971B RID: 38683
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameRandom gr;
 
-		// Token: 0x02001952 RID: 6482
+		// Token: 0x0200197E RID: 6526
 		public class ScoreDisplay
 		{
-			// Token: 0x0600C7A6 RID: 51110 RVA: 0x004935DC File Offset: 0x004917DC
+			// Token: 0x0600C8FE RID: 51454 RVA: 0x00497AC8 File Offset: 0x00495CC8
 			public ScoreDisplay(int score, Vector3 position, Color color)
 			{
 				this.NavObject = NavObjectManager.Instance.RegisterNavObject("twitch_score", position, "", false, -1, null);
@@ -343,7 +343,7 @@ namespace GameEvent.GameEventHelpers
 				this.NavObject.OverrideColor = color;
 			}
 
-			// Token: 0x0600C7A7 RID: 51111 RVA: 0x0049364E File Offset: 0x0049184E
+			// Token: 0x0600C8FF RID: 51455 RVA: 0x00497B3A File Offset: 0x00495D3A
 			public bool Update(float deltaTime)
 			{
 				this.TimeRemaining -= deltaTime;
@@ -355,7 +355,7 @@ namespace GameEvent.GameEventHelpers
 				return true;
 			}
 
-			// Token: 0x0600C7A8 RID: 51112 RVA: 0x00493674 File Offset: 0x00491874
+			// Token: 0x0600C900 RID: 51456 RVA: 0x00497B60 File Offset: 0x00495D60
 			public void Cleanup()
 			{
 				if (this.NavObject != null)
@@ -364,7 +364,7 @@ namespace GameEvent.GameEventHelpers
 				}
 			}
 
-			// Token: 0x0600C7A9 RID: 51113 RVA: 0x00493684 File Offset: 0x00491884
+			// Token: 0x0600C901 RID: 51457 RVA: 0x00497B70 File Offset: 0x00495D70
 			[PublicizedFrom(EAccessModifier.Private)]
 			public void RemoveNavObject()
 			{
@@ -373,16 +373,16 @@ namespace GameEvent.GameEventHelpers
 				this.NavObject = null;
 			}
 
-			// Token: 0x04009656 RID: 38486
+			// Token: 0x0400971C RID: 38684
 			public int Score;
 
-			// Token: 0x04009657 RID: 38487
+			// Token: 0x0400971D RID: 38685
 			public NavObject NavObject;
 
-			// Token: 0x04009658 RID: 38488
+			// Token: 0x0400971E RID: 38686
 			public float TimeRemaining = 3f;
 
-			// Token: 0x04009659 RID: 38489
+			// Token: 0x0400971F RID: 38687
 			public HomerunData Owner;
 		}
 	}

@@ -1,40 +1,40 @@
 ﻿using System;
 
-// Token: 0x02000891 RID: 2193
+// Token: 0x02000894 RID: 2196
 public enum NetworkConnectionError
 {
-	// Token: 0x04003379 RID: 13177
+	// Token: 0x04003364 RID: 13156
 	InternalDirectConnectFailed = -5,
-	// Token: 0x0400337A RID: 13178
+	// Token: 0x04003365 RID: 13157
 	EmptyConnectTarget,
-	// Token: 0x0400337B RID: 13179
+	// Token: 0x04003366 RID: 13158
 	IncorrectParameters,
-	// Token: 0x0400337C RID: 13180
+	// Token: 0x04003367 RID: 13159
 	CreateSocketOrThreadFailure,
-	// Token: 0x0400337D RID: 13181
+	// Token: 0x04003368 RID: 13160
 	AlreadyConnectedToAnotherServer,
-	// Token: 0x0400337E RID: 13182
+	// Token: 0x04003369 RID: 13161
 	NoError,
-	// Token: 0x0400337F RID: 13183
+	// Token: 0x0400336A RID: 13162
 	ConnectionFailed = 15,
-	// Token: 0x04003380 RID: 13184
+	// Token: 0x0400336B RID: 13163
 	AlreadyConnectedToServer,
-	// Token: 0x04003381 RID: 13185
+	// Token: 0x0400336C RID: 13164
 	TooManyConnectedPlayers = 18,
-	// Token: 0x04003382 RID: 13186
+	// Token: 0x0400336D RID: 13165
 	RSAPublicKeyMismatch = 21,
-	// Token: 0x04003383 RID: 13187
+	// Token: 0x0400336E RID: 13166
 	ConnectionBanned,
-	// Token: 0x04003384 RID: 13188
+	// Token: 0x0400336F RID: 13167
 	InvalidPassword,
-	// Token: 0x04003385 RID: 13189
+	// Token: 0x04003370 RID: 13168
 	NATTargetNotConnected = 69,
-	// Token: 0x04003386 RID: 13190
+	// Token: 0x04003371 RID: 13169
 	NATTargetConnectionLost = 71,
-	// Token: 0x04003387 RID: 13191
+	// Token: 0x04003372 RID: 13170
 	NATPunchthroughFailed = 73,
-	// Token: 0x04003388 RID: 13192
+	// Token: 0x04003373 RID: 13171
 	InvalidPort,
-	// Token: 0x04003389 RID: 13193
+	// Token: 0x04003374 RID: 13172
 	RestartRequired
 }

@@ -5,12 +5,12 @@ using System.Runtime.CompilerServices;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000C69 RID: 3177
+// Token: 0x02000C78 RID: 3192
 public class TileEntityCollector : TileEntity, IInventory
 {
-	// Token: 0x170009DC RID: 2524
-	// (get) Token: 0x060060B6 RID: 24758 RVA: 0x002629CB File Offset: 0x00260BCB
-	// (set) Token: 0x060060B7 RID: 24759 RVA: 0x002629F0 File Offset: 0x00260BF0
+	// Token: 0x170009F2 RID: 2546
+	// (get) Token: 0x060060B3 RID: 24755 RVA: 0x00265CD4 File Offset: 0x00263ED4
+	// (set) Token: 0x060060B4 RID: 24756 RVA: 0x00265CF9 File Offset: 0x00263EF9
 	public Vector2i containerSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -27,8 +27,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009DD RID: 2525
-	// (get) Token: 0x060060B8 RID: 24760 RVA: 0x002629FC File Offset: 0x00260BFC
+	// Token: 0x170009F3 RID: 2547
+	// (get) Token: 0x060060B5 RID: 24757 RVA: 0x00265D04 File Offset: 0x00263F04
 	public BlockCollector collector
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060B9 RID: 24761 RVA: 0x00262A1C File Offset: 0x00260C1C
+	// Token: 0x060060B6 RID: 24758 RVA: 0x00265D24 File Offset: 0x00263F24
 	public string[] GetFuelTypes()
 	{
 		List<string> list = new List<string>();
@@ -53,34 +53,34 @@ public class TileEntityCollector : TileEntity, IInventory
 		return list.ToArray();
 	}
 
-	// Token: 0x060060BA RID: 24762 RVA: 0x00262A9C File Offset: 0x00260C9C
+	// Token: 0x060060B7 RID: 24759 RVA: 0x00265DA4 File Offset: 0x00263FA4
 	public string[] GetCatalystTypes()
 	{
 		return this.collector.CatalystTypes;
 	}
 
-	// Token: 0x060060BB RID: 24763 RVA: 0x00262AA9 File Offset: 0x00260CA9
+	// Token: 0x060060B8 RID: 24760 RVA: 0x00265DB1 File Offset: 0x00263FB1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getFuelCost(BlockCollector.OutputType outputType)
 	{
 		return this.collector.GetSandboxModifiedFuelNeeded(outputType.FuelCost);
 	}
 
-	// Token: 0x060060BC RID: 24764 RVA: 0x00262ABC File Offset: 0x00260CBC
+	// Token: 0x060060B9 RID: 24761 RVA: 0x00265DC4 File Offset: 0x00263FC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getAdditionalFuelCost(BlockCollector.OutputType outputType)
 	{
 		return outputType.AdditionalFuelCost;
 	}
 
-	// Token: 0x060060BD RID: 24765 RVA: 0x00262AC4 File Offset: 0x00260CC4
+	// Token: 0x060060BA RID: 24762 RVA: 0x00265DCC File Offset: 0x00263FCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong getCurrentConvertSpeed(BlockCollector.OutputType outputType)
 	{
 		return (ulong)((long)(this.HasModSpeed ? outputType.ModdedConvertSpeedMultiplier : 1));
 	}
 
-	// Token: 0x060060BE RID: 24766 RVA: 0x00262AD8 File Offset: 0x00260CD8
+	// Token: 0x060060BB RID: 24763 RVA: 0x00265DE0 File Offset: 0x00263FE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getCurrentConvertCount(BlockCollector.OutputType outputType)
 	{
@@ -110,7 +110,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return this.collector.GetSandboxModifiedOutput(num);
 	}
 
-	// Token: 0x060060BF RID: 24767 RVA: 0x00262B64 File Offset: 0x00260D64
+	// Token: 0x060060BC RID: 24764 RVA: 0x00265E6C File Offset: 0x0026406C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getCatalystCount()
 	{
@@ -135,20 +135,20 @@ public class TileEntityCollector : TileEntity, IInventory
 		return num;
 	}
 
-	// Token: 0x060060C0 RID: 24768 RVA: 0x00262BDC File Offset: 0x00260DDC
+	// Token: 0x060060BD RID: 24765 RVA: 0x00265EE4 File Offset: 0x002640E4
 	public bool IsSlotDisabled(int _slot)
 	{
 		BlockCollector.OutputType outputType = this.collector.GetOutputType(this.collector.Outputs[_slot]);
 		return this.isDisabled(outputType);
 	}
 
-	// Token: 0x060060C1 RID: 24769 RVA: 0x00262C09 File Offset: 0x00260E09
+	// Token: 0x060060BE RID: 24766 RVA: 0x00265F11 File Offset: 0x00264111
 	public BlockCollector.OutputType GetSlotOutputType(int slot)
 	{
 		return this.collector.GetOutputType(this.collector.Outputs[slot]);
 	}
 
-	// Token: 0x060060C2 RID: 24770 RVA: 0x00262C24 File Offset: 0x00260E24
+	// Token: 0x060060BF RID: 24767 RVA: 0x00265F2C File Offset: 0x0026412C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool anyEnabled()
 	{
@@ -165,14 +165,14 @@ public class TileEntityCollector : TileEntity, IInventory
 		return flag;
 	}
 
-	// Token: 0x060060C3 RID: 24771 RVA: 0x00262C71 File Offset: 0x00260E71
+	// Token: 0x060060C0 RID: 24768 RVA: 0x00265F79 File Offset: 0x00264179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDisabled(BlockCollector.OutputType _outputType)
 	{
 		return this.isBlocked || this.outputTypeIsOutOfFuel(_outputType) || this.isUnderwater || this.outputTypeIsFull(_outputType);
 	}
 
-	// Token: 0x060060C4 RID: 24772 RVA: 0x00262C98 File Offset: 0x00260E98
+	// Token: 0x060060C1 RID: 24769 RVA: 0x00265FA0 File Offset: 0x002641A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool outputTypeIsFull(BlockCollector.OutputType outputType)
 	{
@@ -184,7 +184,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return flag;
 	}
 
-	// Token: 0x060060C5 RID: 24773 RVA: 0x00262CC0 File Offset: 0x00260EC0
+	// Token: 0x060060C2 RID: 24770 RVA: 0x00265FC8 File Offset: 0x002641C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool outputTypeIsOutOfFuel(BlockCollector.OutputType outputType)
 	{
@@ -196,7 +196,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return flag;
 	}
 
-	// Token: 0x060060C6 RID: 24774 RVA: 0x00262CE8 File Offset: 0x00260EE8
+	// Token: 0x060060C3 RID: 24771 RVA: 0x00265FF0 File Offset: 0x002641F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void safeIstackArrayCopy(ItemStack[] inArray, ItemStack[] outArray)
 	{
@@ -216,7 +216,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060C7 RID: 24775 RVA: 0x00262D28 File Offset: 0x00260F28
+	// Token: 0x060060C4 RID: 24772 RVA: 0x00266030 File Offset: 0x00264230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void safeFillArrayCopy(float[] inArray, float[] outArray)
 	{
@@ -236,7 +236,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060C8 RID: 24776 RVA: 0x00262D64 File Offset: 0x00260F64
+	// Token: 0x060060C5 RID: 24773 RVA: 0x0026606C File Offset: 0x0026426C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] safeItemStackArray(int count)
 	{
@@ -248,9 +248,9 @@ public class TileEntityCollector : TileEntity, IInventory
 		return array;
 	}
 
-	// Token: 0x170009DE RID: 2526
-	// (get) Token: 0x060060C9 RID: 24777 RVA: 0x00262D8F File Offset: 0x00260F8F
-	// (set) Token: 0x060060CA RID: 24778 RVA: 0x00262DC2 File Offset: 0x00260FC2
+	// Token: 0x170009F4 RID: 2548
+	// (get) Token: 0x060060C6 RID: 24774 RVA: 0x00266097 File Offset: 0x00264297
+	// (set) Token: 0x060060C7 RID: 24775 RVA: 0x002660CA File Offset: 0x002642CA
 	public ItemStack[] Items
 	{
 		get
@@ -267,8 +267,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009DF RID: 2527
-	// (get) Token: 0x060060CB RID: 24779 RVA: 0x00262DD1 File Offset: 0x00260FD1
+	// Token: 0x170009F5 RID: 2549
+	// (get) Token: 0x060060C8 RID: 24776 RVA: 0x002660D9 File Offset: 0x002642D9
 	public ItemStack[] ModSlots
 	{
 		get
@@ -281,7 +281,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060CC RID: 24780 RVA: 0x00262DEE File Offset: 0x00260FEE
+	// Token: 0x060060C9 RID: 24777 RVA: 0x002660F6 File Offset: 0x002642F6
 	public void SetModSlots(ItemStack[] value, bool fromRead = false)
 	{
 		this.safeIstackArrayCopy(value, this.ModSlots);
@@ -290,9 +290,9 @@ public class TileEntityCollector : TileEntity, IInventory
 		this.HandleModChanged(fromRead);
 	}
 
-	// Token: 0x170009E0 RID: 2528
-	// (get) Token: 0x060060CD RID: 24781 RVA: 0x00262E12 File Offset: 0x00261012
-	// (set) Token: 0x060060CE RID: 24782 RVA: 0x00262E34 File Offset: 0x00261034
+	// Token: 0x170009F6 RID: 2550
+	// (get) Token: 0x060060CA RID: 24778 RVA: 0x0026611A File Offset: 0x0026431A
+	// (set) Token: 0x060060CB RID: 24779 RVA: 0x0026613C File Offset: 0x0026433C
 	public ItemStack[] FuelSlots
 	{
 		get
@@ -310,8 +310,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E1 RID: 2529
-	// (get) Token: 0x060060CF RID: 24783 RVA: 0x00262E4A File Offset: 0x0026104A
+	// Token: 0x170009F7 RID: 2551
+	// (get) Token: 0x060060CC RID: 24780 RVA: 0x00266152 File Offset: 0x00264352
 	public int FuelGridHeight
 	{
 		get
@@ -320,8 +320,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E2 RID: 2530
-	// (get) Token: 0x060060D0 RID: 24784 RVA: 0x00262E57 File Offset: 0x00261057
+	// Token: 0x170009F8 RID: 2552
+	// (get) Token: 0x060060CD RID: 24781 RVA: 0x0026615F File Offset: 0x0026435F
 	public int FuelGridLength
 	{
 		get
@@ -330,8 +330,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E3 RID: 2531
-	// (get) Token: 0x060060D1 RID: 24785 RVA: 0x00262E61 File Offset: 0x00261061
+	// Token: 0x170009F9 RID: 2553
+	// (get) Token: 0x060060CE RID: 24782 RVA: 0x00266169 File Offset: 0x00264369
 	public int CatalystGridHeight
 	{
 		get
@@ -340,8 +340,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E4 RID: 2532
-	// (get) Token: 0x060060D2 RID: 24786 RVA: 0x00262E7B File Offset: 0x0026107B
+	// Token: 0x170009FA RID: 2554
+	// (get) Token: 0x060060CF RID: 24783 RVA: 0x00266183 File Offset: 0x00264383
 	public int OutputWindowHeight
 	{
 		get
@@ -350,8 +350,8 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E5 RID: 2533
-	// (get) Token: 0x060060D3 RID: 24787 RVA: 0x00262E95 File Offset: 0x00261095
+	// Token: 0x170009FB RID: 2555
+	// (get) Token: 0x060060D0 RID: 24784 RVA: 0x0026619D File Offset: 0x0026439D
 	public int CatalystGridLength
 	{
 		get
@@ -360,9 +360,9 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x170009E6 RID: 2534
-	// (get) Token: 0x060060D4 RID: 24788 RVA: 0x00262E9F File Offset: 0x0026109F
-	// (set) Token: 0x060060D5 RID: 24789 RVA: 0x00262EC1 File Offset: 0x002610C1
+	// Token: 0x170009FC RID: 2556
+	// (get) Token: 0x060060D1 RID: 24785 RVA: 0x002661A7 File Offset: 0x002643A7
+	// (set) Token: 0x060060D2 RID: 24786 RVA: 0x002661C9 File Offset: 0x002643C9
 	public ItemStack[] CatalystSlots
 	{
 		get
@@ -380,13 +380,13 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060D6 RID: 24790 RVA: 0x00262ED8 File Offset: 0x002610D8
+	// Token: 0x060060D3 RID: 24787 RVA: 0x002661E0 File Offset: 0x002643E0
 	public TileEntityCollector(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x060060D7 RID: 24791 RVA: 0x00262F50 File Offset: 0x00261150
+	// Token: 0x060060D4 RID: 24788 RVA: 0x00266258 File Offset: 0x00264458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCollector(TileEntityCollector _other)
 		: base(null)
@@ -400,7 +400,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		this.bUserAccessing = _other.bUserAccessing;
 	}
 
-	// Token: 0x060060D8 RID: 24792 RVA: 0x00263020 File Offset: 0x00261220
+	// Token: 0x060060D5 RID: 24789 RVA: 0x00266328 File Offset: 0x00264528
 	public void SetupModMeshes()
 	{
 		BlockEntityData blockEntity = base.GetChunk().GetBlockEntity(base.ToWorldPos());
@@ -442,7 +442,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060D9 RID: 24793 RVA: 0x002631B0 File Offset: 0x002613B0
+	// Token: 0x060060D6 RID: 24790 RVA: 0x002664B8 File Offset: 0x002646B8
 	public override void OnDestroy()
 	{
 		if (this.collector != null)
@@ -452,20 +452,26 @@ public class TileEntityCollector : TileEntity, IInventory
 		base.OnDestroy();
 	}
 
-	// Token: 0x060060DA RID: 24794 RVA: 0x002631DB File Offset: 0x002613DB
+	// Token: 0x060060D7 RID: 24791 RVA: 0x002664E3 File Offset: 0x002646E3
 	public override TileEntity Clone()
 	{
 		return new TileEntityCollector(this);
 	}
 
-	// Token: 0x060060DB RID: 24795 RVA: 0x002631E3 File Offset: 0x002613E3
+	// Token: 0x060060D8 RID: 24792 RVA: 0x002664EC File Offset: 0x002646EC
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
 		this.HandleUpdate(world);
+		Vector3? vector = new Vector3?(base.ToWorldCenterPos());
+		if (vector.Value == Vector3.zero)
+		{
+			vector = null;
+		}
+		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageTileEntity>().Setup(this, StreamModeWrite.ToClient), true, -1, -1, -1, vector, 192, false);
 	}
 
-	// Token: 0x060060DC RID: 24796 RVA: 0x002631F4 File Offset: 0x002613F4
+	// Token: 0x060060D9 RID: 24793 RVA: 0x00266550 File Offset: 0x00264750
 	public void HandleUpdate(World world)
 	{
 		this.HandleModChanged(false);
@@ -502,7 +508,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		this.productionEnabled = num;
 	}
 
-	// Token: 0x060060DD RID: 24797 RVA: 0x00263368 File Offset: 0x00261568
+	// Token: 0x060060DA RID: 24794 RVA: 0x002666C4 File Offset: 0x002648C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getFirstFreeIndex(List<int> _slotIndices)
 	{
@@ -522,7 +528,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return num;
 	}
 
-	// Token: 0x060060DE RID: 24798 RVA: 0x002633D8 File Offset: 0x002615D8
+	// Token: 0x060060DB RID: 24795 RVA: 0x00266734 File Offset: 0x00264934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool handleUpdateForOutputType(World world, BlockCollector.OutputType _outputType, List<int> _slotIndicess)
 	{
@@ -591,7 +597,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return flag;
 	}
 
-	// Token: 0x060060DF RID: 24799 RVA: 0x0026361C File Offset: 0x0026181C
+	// Token: 0x060060DC RID: 24796 RVA: 0x00266978 File Offset: 0x00264B78
 	public TileEntityCollector.FillData GetSlotFillData(int _slot)
 	{
 		TileEntityCollector.FillData fillData = null;
@@ -606,7 +612,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return fillData;
 	}
 
-	// Token: 0x060060E0 RID: 24800 RVA: 0x00263680 File Offset: 0x00261880
+	// Token: 0x060060DD RID: 24797 RVA: 0x002669DC File Offset: 0x00264BDC
 	public bool IsCurrentStack(int _slot)
 	{
 		bool flag = false;
@@ -624,7 +630,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return flag;
 	}
 
-	// Token: 0x060060E1 RID: 24801 RVA: 0x002636E0 File Offset: 0x002618E0
+	// Token: 0x060060DE RID: 24798 RVA: 0x00266A3C File Offset: 0x00264C3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getFuelSlotFuelCount(ItemStack itemStack, BlockCollector.FuelType fuelType)
 	{
@@ -641,7 +647,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return num;
 	}
 
-	// Token: 0x060060E2 RID: 24802 RVA: 0x00263730 File Offset: 0x00261930
+	// Token: 0x060060DF RID: 24799 RVA: 0x00266A8C File Offset: 0x00264C8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getFuelCount(BlockCollector.FuelType fuelType)
 	{
@@ -653,7 +659,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return num;
 	}
 
-	// Token: 0x060060E3 RID: 24803 RVA: 0x00263764 File Offset: 0x00261964
+	// Token: 0x060060E0 RID: 24800 RVA: 0x00266AC0 File Offset: 0x00264CC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fuelCost(BlockCollector.OutputType outputType, int itemsToCreate)
 	{
@@ -665,7 +671,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return (this.getFuelCost(outputType) + this.getAdditionalFuelCost(outputType) * (itemsToCreate - 1) + num - 1) / num;
 	}
 
-	// Token: 0x060060E4 RID: 24804 RVA: 0x0026379C File Offset: 0x0026199C
+	// Token: 0x060060E1 RID: 24801 RVA: 0x00266AF8 File Offset: 0x00264CF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getMaxProductionCount(BlockCollector.OutputType outputType, BlockCollector.FuelType fuelType)
 	{
@@ -682,7 +688,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return num;
 	}
 
-	// Token: 0x060060E5 RID: 24805 RVA: 0x002637DC File Offset: 0x002619DC
+	// Token: 0x060060E2 RID: 24802 RVA: 0x00266B38 File Offset: 0x00264D38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeFuel(int itemCount, BlockCollector.OutputType outputType, BlockCollector.FuelType fuelType)
 	{
@@ -714,14 +720,14 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060E6 RID: 24806 RVA: 0x00263860 File Offset: 0x00261A60
+	// Token: 0x060060E3 RID: 24803 RVA: 0x00266BBC File Offset: 0x00264DBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetTimeValues(BlockCollector.OutputType _outputType)
 	{
 		this.lastWorldTimes[_outputType.Name] = GameManager.Instance.World.worldTime;
 	}
 
-	// Token: 0x060060E7 RID: 24807 RVA: 0x00263884 File Offset: 0x00261A84
+	// Token: 0x060060E4 RID: 24804 RVA: 0x00266BE0 File Offset: 0x00264DE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleModChanged(bool fromRead = false)
 	{
@@ -816,7 +822,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		base.NotifyListeners();
 	}
 
-	// Token: 0x060060E8 RID: 24808 RVA: 0x00263AC4 File Offset: 0x00261CC4
+	// Token: 0x060060E5 RID: 24805 RVA: 0x00266E20 File Offset: 0x00265020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HandleSkyCheck()
 	{
@@ -837,7 +843,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return false;
 	}
 
-	// Token: 0x060060E9 RID: 24809 RVA: 0x00263B34 File Offset: 0x00261D34
+	// Token: 0x060060E6 RID: 24806 RVA: 0x00266E90 File Offset: 0x00265090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack newItem(BlockCollector.OutputType outputType, BlockCollector.FuelType fuelType)
 	{
@@ -851,7 +857,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return itemStack;
 	}
 
-	// Token: 0x060060EA RID: 24810 RVA: 0x00263B94 File Offset: 0x00261D94
+	// Token: 0x060060E7 RID: 24807 RVA: 0x00266EF0 File Offset: 0x002650F0
 	public void SetWorldTime()
 	{
 		ulong worldTime = GameManager.Instance.World.worldTime;
@@ -861,20 +867,53 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060EB RID: 24811 RVA: 0x00263BDC File Offset: 0x00261DDC
+	// Token: 0x060060E8 RID: 24808 RVA: 0x00266F38 File Offset: 0x00265138
 	public Vector2i GetContainerSize()
 	{
 		return this.containerSize;
 	}
 
-	// Token: 0x060060EC RID: 24812 RVA: 0x00263BE4 File Offset: 0x00261DE4
-	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x060060E9 RID: 24809 RVA: 0x00266F40 File Offset: 0x00265140
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void dropOutOfRangeFillData()
+	{
+		List<string> list = null;
+		foreach (KeyValuePair<string, TileEntityCollector.FillData> keyValuePair in this.fillDataLookup)
+		{
+			string text;
+			TileEntityCollector.FillData fillData;
+			keyValuePair.Deconstruct(out text, out fillData);
+			string text2 = text;
+			TileEntityCollector.FillData fillData2 = fillData;
+			if (fillData2 == null || fillData2.slot < 0 || fillData2.slot >= this.Items.Length)
+			{
+				if (list == null)
+				{
+					list = new List<string>();
+				}
+				list.Add(text2);
+			}
+		}
+		if (list == null)
+		{
+			return;
+		}
+		foreach (string text3 in list)
+		{
+			TileEntityCollector.FillData fillData3 = this.fillDataLookup[text3];
+			Log.Warning(string.Format("TileEntityCollector {0}: dropping out of range fill slot {1} for output '{2}'", base.ToWorldPos(), (fillData3 != null) ? fillData3.slot : (-1), text3));
+			this.fillDataLookup.Remove(text3);
+		}
+	}
+
+	// Token: 0x060060EA RID: 24810 RVA: 0x00267054 File Offset: 0x00265254
+	public override void read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
 		BlockCollector.OutputType outputType = this.collector.OrderedSlotOutputs.Keys.ElementAt<BlockCollector.OutputType>(0);
 		IEnumerable<BlockCollector.OutputType> enumerable = this.collector.OrderedSlotOutputs.Keys.Skip<BlockCollector.OutputType>(1);
 		int num;
-		if (_eStreamMode != TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode != StreamModeRead.Persistency)
 		{
 			num = 21;
 		}
@@ -931,11 +970,10 @@ public class TileEntityCollector : TileEntity, IInventory
 			}
 		}
 		float num4 = 0f;
-		short num5 = 0;
 		if (num < 20)
 		{
 			num4 = _br.ReadSingle();
-			num5 = _br.ReadInt16();
+			_br.ReadInt16();
 			_br.ReadSingle();
 		}
 		if (num >= 20)
@@ -954,10 +992,10 @@ public class TileEntityCollector : TileEntity, IInventory
 				else
 				{
 					string text2 = _br.ReadString();
+					int num5 = (int)_br.ReadUInt32();
 					int num6 = (int)_br.ReadUInt32();
 					int num7 = (int)_br.ReadUInt32();
-					int num8 = (int)_br.ReadUInt32();
-					this.fillDataLookup[text2] = new TileEntityCollector.FillData(num6, num7, num8);
+					this.fillDataLookup[text2] = new TileEntityCollector.FillData(num5, num6, num7);
 				}
 				num2--;
 			}
@@ -1051,25 +1089,25 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 		num2 = (int)_br.ReadInt16();
 		ItemStack[] array = this.safeItemStackArray(num2);
-		for (int num9 = 0; num9 < num2; num9++)
+		for (int num8 = 0; num8 < num2; num8++)
 		{
-			array[num9].Read(_br);
+			array[num8].Read(_br);
 		}
 		if (num < 20)
 		{
 			float[] array2 = new float[num2];
-			for (int num10 = 0; num10 < num2; num10++)
+			for (int num9 = 0; num9 < num2; num9++)
 			{
-				array2[num10] = _br.ReadSingle();
+				array2[num9] = _br.ReadSingle();
 			}
 			if (!base.bWaitingForServerResponse)
 			{
 				this.fillDataLookup.Clear();
-				for (int num11 = 0; num11 < num2; num11++)
+				for (int num10 = 0; num10 < num2; num10++)
 				{
-					if (array2[num11] >= 0f)
+					if (array2[num10] >= 0f)
 					{
-						this.fillDataLookup[outputType.Name] = new TileEntityCollector.FillData((int)num5, (int)array2[num11], (int)num4);
+						this.fillDataLookup[outputType.Name] = new TileEntityCollector.FillData(num10, (int)array2[num10], (int)num4);
 						break;
 					}
 				}
@@ -1077,11 +1115,11 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 		if (num >= 11)
 		{
-			int num12 = (int)_br.ReadInt16();
-			ItemStack[] array3 = this.safeItemStackArray(num12);
-			for (int num13 = 0; num13 < num12; num13++)
+			int num11 = (int)_br.ReadInt16();
+			ItemStack[] array3 = this.safeItemStackArray(num11);
+			for (int num12 = 0; num12 < num11; num12++)
 			{
-				array3[num13].Read(_br);
+				array3[num12].Read(_br);
 			}
 			if (!base.bWaitingForServerResponse)
 			{
@@ -1092,14 +1130,15 @@ public class TileEntityCollector : TileEntity, IInventory
 		if (!base.bWaitingForServerResponse)
 		{
 			this.Items = array;
+			this.dropOutOfRangeFillData();
 		}
 		if (num >= 14)
 		{
-			int num14 = (int)_br.ReadInt16();
-			ItemStack[] array4 = this.safeItemStackArray(num14);
-			for (int num15 = 0; num15 < num14; num15++)
+			int num13 = (int)_br.ReadInt16();
+			ItemStack[] array4 = this.safeItemStackArray(num13);
+			for (int num14 = 0; num14 < num13; num14++)
 			{
-				array4[num15].Read(_br);
+				array4[num14].Read(_br);
 			}
 			if (!base.bWaitingForServerResponse)
 			{
@@ -1108,11 +1147,11 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 		if (num >= 19)
 		{
-			int num16 = (int)_br.ReadInt16();
-			ItemStack[] array5 = this.safeItemStackArray(num16);
-			for (int num17 = 0; num17 < num16; num17++)
+			int num15 = (int)_br.ReadInt16();
+			ItemStack[] array5 = this.safeItemStackArray(num15);
+			for (int num16 = 0; num16 < num15; num16++)
 			{
-				array5[num17].Read(_br);
+				array5[num16].Read(_br);
 			}
 			if (!base.bWaitingForServerResponse)
 			{
@@ -1128,11 +1167,11 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060ED RID: 24813 RVA: 0x00264204 File Offset: 0x00262404
-	public override void write(PooledBinaryWriter stream, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x060060EB RID: 24811 RVA: 0x00267674 File Offset: 0x00265874
+	public override void write(PooledBinaryWriter stream, StreamModeWrite _eStreamMode)
 	{
 		base.write(stream, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			stream.Write(21);
 		}
@@ -1194,19 +1233,19 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060EE RID: 24814 RVA: 0x00046EDA File Offset: 0x000450DA
+	// Token: 0x060060EC RID: 24812 RVA: 0x000470B6 File Offset: 0x000452B6
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Collector;
 	}
 
-	// Token: 0x060060EF RID: 24815 RVA: 0x0026450C File Offset: 0x0026270C
+	// Token: 0x060060ED RID: 24813 RVA: 0x0026797C File Offset: 0x00265B7C
 	public ItemStack[] GetItems()
 	{
 		return this.Items;
 	}
 
-	// Token: 0x060060F0 RID: 24816 RVA: 0x00264514 File Offset: 0x00262714
+	// Token: 0x060060EE RID: 24814 RVA: 0x00267984 File Offset: 0x00265B84
 	public override void UpgradeDowngradeFrom(TileEntity _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -1229,7 +1268,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060F1 RID: 24817 RVA: 0x002645E4 File Offset: 0x002627E4
+	// Token: 0x060060EF RID: 24815 RVA: 0x00267A54 File Offset: 0x00265C54
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -1245,7 +1284,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060F2 RID: 24818 RVA: 0x00264644 File Offset: 0x00262844
+	// Token: 0x060060F0 RID: 24816 RVA: 0x00267AB4 File Offset: 0x00265CB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dropItems(List<ItemStack> list)
 	{
@@ -1254,7 +1293,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		GameManager.Instance.DropContentInLootContainerServer(-1, "DroppedLootContainer", vector, list.ToArray(), true, null);
 	}
 
-	// Token: 0x060060F3 RID: 24819 RVA: 0x00264689 File Offset: 0x00262889
+	// Token: 0x060060F1 RID: 24817 RVA: 0x00267AF9 File Offset: 0x00265CF9
 	public void UpdateSlot(int _idx, ItemStack _item)
 	{
 		if (_item == null)
@@ -1268,7 +1307,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		base.NotifyListeners();
 	}
 
-	// Token: 0x060060F4 RID: 24820 RVA: 0x002646B4 File Offset: 0x002628B4
+	// Token: 0x060060F2 RID: 24818 RVA: 0x00267B24 File Offset: 0x00265D24
 	public bool IsWaterEmpty()
 	{
 		for (int i = 0; i < this.Items.Length; i++)
@@ -1281,7 +1320,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return true;
 	}
 
-	// Token: 0x060060F5 RID: 24821 RVA: 0x002646F0 File Offset: 0x002628F0
+	// Token: 0x060060F3 RID: 24819 RVA: 0x00267B60 File Offset: 0x00265D60
 	public bool IsEmpty()
 	{
 		for (int i = 0; i < this.Items.Length; i++)
@@ -1302,7 +1341,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return true;
 	}
 
-	// Token: 0x060060F6 RID: 24822 RVA: 0x00264750 File Offset: 0x00262950
+	// Token: 0x060060F4 RID: 24820 RVA: 0x00267BC0 File Offset: 0x00265DC0
 	public void SetEmpty()
 	{
 		for (int i = 0; i < this.Items.Length; i++)
@@ -1314,7 +1353,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		this.setModified();
 	}
 
-	// Token: 0x060060F7 RID: 24823 RVA: 0x00264794 File Offset: 0x00262994
+	// Token: 0x060060F5 RID: 24821 RVA: 0x00267C04 File Offset: 0x00265E04
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	public ValueTuple<bool, bool> TryStackItem(int startIndex, ItemStack _itemStack)
 	{
@@ -1349,7 +1388,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return new ValueTuple<bool, bool>(flag, false);
 	}
 
-	// Token: 0x060060F8 RID: 24824 RVA: 0x00264868 File Offset: 0x00262A68
+	// Token: 0x060060F6 RID: 24822 RVA: 0x00267CD8 File Offset: 0x00265ED8
 	public bool AddItem(ItemStack _itemStack)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Collector, -1))
@@ -1368,7 +1407,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return false;
 	}
 
-	// Token: 0x060060F9 RID: 24825 RVA: 0x002648C0 File Offset: 0x00262AC0
+	// Token: 0x060060F7 RID: 24823 RVA: 0x00267D30 File Offset: 0x00265F30
 	public bool HasItem(ItemValue _item)
 	{
 		for (int i = 0; i < this.Items.Length; i++)
@@ -1381,7 +1420,7 @@ public class TileEntityCollector : TileEntity, IInventory
 		return false;
 	}
 
-	// Token: 0x060060FA RID: 24826 RVA: 0x00264908 File Offset: 0x00262B08
+	// Token: 0x060060F8 RID: 24824 RVA: 0x00267D78 File Offset: 0x00265F78
 	public void RemoveItem(ItemValue _item)
 	{
 		bool flag = false;
@@ -1399,140 +1438,135 @@ public class TileEntityCollector : TileEntity, IInventory
 		}
 	}
 
-	// Token: 0x060060FB RID: 24827 RVA: 0x00048AAD File Offset: 0x00046CAD
-	public override bool CanLockLocally(ILockContext _context, ushort _channel)
-	{
-		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
-	}
-
-	// Token: 0x060060FC RID: 24828 RVA: 0x00264968 File Offset: 0x00262B68
-	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
+	// Token: 0x060060F9 RID: 24825 RVA: 0x00267DD8 File Offset: 0x00265FD8
+	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		this.UpdateTick(GameManager.Instance.World);
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		if (!_success)
 		{
 			GameManager.ShowTooltip(uiforPrimaryPlayer.entityPlayer, Localization.Get("ttNoInteractItem", false, null), string.Empty, "ui_denied", null, false, false, 0f);
-			return;
+			return false;
 		}
 		((XUiC_DewCollectorWindowGroup)((XUiWindowGroup)uiforPrimaryPlayer.windowManager.GetWindow("dewcollector")).Controller).SetTileEntity(this);
 		uiforPrimaryPlayer.windowManager.Open("dewcollector", true);
+		return true;
 	}
 
-	// Token: 0x060060FD RID: 24829 RVA: 0x002649EE File Offset: 0x00262BEE
+	// Token: 0x060060FA RID: 24826 RVA: 0x00267E60 File Offset: 0x00266060
 	public void UpdateVisible()
 	{
 		this.HandleModChanged(false);
 	}
 
-	// Token: 0x04004BCF RID: 19407
+	// Token: 0x04004C06 RID: 19462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 21;
 
-	// Token: 0x04004BD0 RID: 19408
+	// Token: 0x04004C07 RID: 19463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i containerSizeInternal = new Vector2i(-1, -1);
 
-	// Token: 0x04004BD1 RID: 19409
+	// Token: 0x04004C08 RID: 19464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] modEnableRenderers;
 
-	// Token: 0x04004BD2 RID: 19410
+	// Token: 0x04004C09 RID: 19465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] modDisableRenderers;
 
-	// Token: 0x04004BD3 RID: 19411
+	// Token: 0x04004C0A RID: 19466
 	public bool HasModConvert;
 
-	// Token: 0x04004BD4 RID: 19412
+	// Token: 0x04004C0B RID: 19467
 	public bool HasModCount;
 
-	// Token: 0x04004BD5 RID: 19413
+	// Token: 0x04004C0C RID: 19468
 	public bool HasModSpeed;
 
-	// Token: 0x04004BD6 RID: 19414
+	// Token: 0x04004C0D RID: 19469
 	public bool HasModModify;
 
-	// Token: 0x04004BD7 RID: 19415
+	// Token: 0x04004C0E RID: 19470
 	public bool HasModCost;
 
-	// Token: 0x04004BD8 RID: 19416
+	// Token: 0x04004C0F RID: 19471
 	public bool HasModExpand;
 
-	// Token: 0x04004BD9 RID: 19417
+	// Token: 0x04004C10 RID: 19472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static global::System.Random r = new global::System.Random();
 
-	// Token: 0x04004BDA RID: 19418
+	// Token: 0x04004C11 RID: 19473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CountdownTimer countdownBlockedCheck = new CountdownTimer(5f + (float)TileEntityCollector.r.NextDouble(), true);
 
-	// Token: 0x04004BDB RID: 19419
+	// Token: 0x04004C12 RID: 19474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBlocked;
 
-	// Token: 0x04004BDC RID: 19420
+	// Token: 0x04004C13 RID: 19475
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isUnderwater;
 
-	// Token: 0x04004BDD RID: 19421
+	// Token: 0x04004C14 RID: 19476
 	public int wasDisabled = -1;
 
-	// Token: 0x04004BDE RID: 19422
+	// Token: 0x04004C15 RID: 19477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool visibleChanged;
 
-	// Token: 0x04004BDF RID: 19423
+	// Token: 0x04004C16 RID: 19478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool modsChanged;
 
-	// Token: 0x04004BE0 RID: 19424
+	// Token: 0x04004C17 RID: 19479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int productionEnabled = -1;
 
-	// Token: 0x04004BE1 RID: 19425
+	// Token: 0x04004C18 RID: 19480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, bool> isFull = new Dictionary<string, bool>();
 
-	// Token: 0x04004BE2 RID: 19426
+	// Token: 0x04004C19 RID: 19481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, bool> outOfFuel = new Dictionary<string, bool>();
 
-	// Token: 0x04004BE3 RID: 19427
+	// Token: 0x04004C1A RID: 19482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, ulong> lastWorldTimes = new Dictionary<string, ulong>();
 
-	// Token: 0x04004BE4 RID: 19428
+	// Token: 0x04004C1B RID: 19483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, TileEntityCollector.FillData> fillDataLookup = new Dictionary<string, TileEntityCollector.FillData>();
 
-	// Token: 0x04004BE5 RID: 19429
+	// Token: 0x04004C1C RID: 19484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] itemsInternal;
 
-	// Token: 0x04004BE6 RID: 19430
+	// Token: 0x04004C1D RID: 19485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] modSlotsInternal;
 
-	// Token: 0x04004BE7 RID: 19431
+	// Token: 0x04004C1E RID: 19486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] fuelSlotsInternal;
 
-	// Token: 0x04004BE8 RID: 19432
+	// Token: 0x04004C1F RID: 19487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] catalystSlotsInternal;
 
-	// Token: 0x04004BE9 RID: 19433
+	// Token: 0x04004C20 RID: 19488
 	public ulong worldTimeTouched;
 
-	// Token: 0x04004BEA RID: 19434
+	// Token: 0x04004C21 RID: 19489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool modMeshesSetup;
 
-	// Token: 0x02000C6A RID: 3178
+	// Token: 0x02000C79 RID: 3193
 	public class FillData
 	{
-		// Token: 0x060060FF RID: 24831 RVA: 0x00264A03 File Offset: 0x00262C03
+		// Token: 0x060060FC RID: 24828 RVA: 0x00267E75 File Offset: 0x00266075
 		public FillData(int _slot, int _fillTime, int _fillTimeLeft)
 		{
 			this.slot = _slot;
@@ -1540,13 +1574,13 @@ public class TileEntityCollector : TileEntity, IInventory
 			this.fillTimeLeft = _fillTimeLeft;
 		}
 
-		// Token: 0x04004BEB RID: 19435
+		// Token: 0x04004C22 RID: 19490
 		public int slot;
 
-		// Token: 0x04004BEC RID: 19436
+		// Token: 0x04004C23 RID: 19491
 		public int fillTime;
 
-		// Token: 0x04004BED RID: 19437
+		// Token: 0x04004C24 RID: 19492
 		public int fillTimeLeft;
 	}
 }

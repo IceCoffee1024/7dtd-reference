@@ -7,10 +7,10 @@ using MusicUtils.Enums;
 using Pathfinding;
 using UnityEngine;
 
-// Token: 0x0200129D RID: 4765
+// Token: 0x020012B5 RID: 4789
 public class NGuiWdwDebugPanels : MonoBehaviour
 {
-	// Token: 0x0600973C RID: 38716 RVA: 0x0038D524 File Offset: 0x0038B724
+	// Token: 0x060097C9 RID: 38857 RVA: 0x00391D6C File Offset: 0x0038FF6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -75,7 +75,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		this.Panels.Add(new NGuiWdwDebugPanels.PanelDefinition("Texture", "Te", new Func<int, int, int>(this.showDebugPanel_Texture), text, true));
 	}
 
-	// Token: 0x0600973D RID: 38717 RVA: 0x0038D8CE File Offset: 0x0038BACE
+	// Token: 0x060097CA RID: 38858 RVA: 0x00392116 File Offset: 0x00390316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -83,7 +83,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		this.playerUI.OnEntityPlayerLocalAssigned += this.HandleEntityPlayerLocalAssigned;
 	}
 
-	// Token: 0x0600973E RID: 38718 RVA: 0x0038D8F8 File Offset: 0x0038BAF8
+	// Token: 0x060097CB RID: 38859 RVA: 0x00392140 File Offset: 0x00390340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -99,7 +99,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		GamePrefs.Set(EnumGamePrefs.DebugPanelsEnabled, text);
 	}
 
-	// Token: 0x0600973F RID: 38719 RVA: 0x0038D988 File Offset: 0x0038BB88
+	// Token: 0x060097CC RID: 38860 RVA: 0x003921D0 File Offset: 0x003903D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -111,7 +111,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		this.networkMonitorCh1.Cleanup();
 	}
 
-	// Token: 0x06009740 RID: 38720 RVA: 0x0038D9C3 File Offset: 0x0038BBC3
+	// Token: 0x060097CD RID: 38861 RVA: 0x0039220B File Offset: 0x0039040B
 	public void ToggleDisplay()
 	{
 		if (this.debugData == NGuiWdwDebugPanels.EDebugDataType.Off)
@@ -122,27 +122,27 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		this.debugData = NGuiWdwDebugPanels.EDebugDataType.Off;
 	}
 
-	// Token: 0x06009741 RID: 38721 RVA: 0x0038D9DC File Offset: 0x0038BBDC
+	// Token: 0x060097CE RID: 38862 RVA: 0x00392224 File Offset: 0x00390424
 	public void ShowGeneralData()
 	{
 		this.debugData = NGuiWdwDebugPanels.EDebugDataType.General;
 	}
 
-	// Token: 0x06009742 RID: 38722 RVA: 0x0038D9E5 File Offset: 0x0038BBE5
+	// Token: 0x060097CF RID: 38863 RVA: 0x0039222D File Offset: 0x0039042D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleWorldChanged(World _world)
 	{
 		this.debugData = NGuiWdwDebugPanels.EDebugDataType.Off;
 	}
 
-	// Token: 0x06009743 RID: 38723 RVA: 0x0038D9EE File Offset: 0x0038BBEE
+	// Token: 0x060097D0 RID: 38864 RVA: 0x00392236 File Offset: 0x00390436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleEntityPlayerLocalAssigned(EntityPlayerLocal _entity)
 	{
 		this.playerEntity = _entity;
 	}
 
-	// Token: 0x06009744 RID: 38724 RVA: 0x0038D9F8 File Offset: 0x0038BBF8
+	// Token: 0x060097D1 RID: 38865 RVA: 0x00392240 File Offset: 0x00390440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -185,7 +185,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009745 RID: 38725 RVA: 0x0038DAC9 File Offset: 0x0038BCC9
+	// Token: 0x060097D2 RID: 38866 RVA: 0x00392311 File Offset: 0x00390511
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -201,7 +201,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		this.networkMonitorCh1.Update();
 	}
 
-	// Token: 0x06009746 RID: 38726 RVA: 0x0038DAF4 File Offset: 0x0038BCF4
+	// Token: 0x060097D3 RID: 38867 RVA: 0x0039233C File Offset: 0x0039053C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void debugShowChunkCache()
 	{
@@ -215,7 +215,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		GameManager.Instance.World.m_ChunkManager.DebugOnGUI(num, num2, 8);
 	}
 
-	// Token: 0x06009747 RID: 38727 RVA: 0x0038DB54 File Offset: 0x0038BD54
+	// Token: 0x060097D4 RID: 38868 RVA: 0x0039239C File Offset: 0x0039059C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void debugShowHeatValue()
 	{
@@ -302,7 +302,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009748 RID: 38728 RVA: 0x0038DE58 File Offset: 0x0038C058
+	// Token: 0x060097D5 RID: 38869 RVA: 0x003926A0 File Offset: 0x003908A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_EnablePanels(int x, int y)
 	{
@@ -336,7 +336,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009749 RID: 38729 RVA: 0x0038DF6F File Offset: 0x0038C16F
+	// Token: 0x060097D6 RID: 38870 RVA: 0x003927B7 File Offset: 0x003909B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PanelBoxWithHeader(NGuiWdwDebugPanels.EGuiState _guiState, int _x, ref int _y, int _boxWidth, int _boxHeight, string _boxCaption)
 	{
@@ -348,7 +348,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		_y += 21;
 	}
 
-	// Token: 0x0600974A RID: 38730 RVA: 0x0038DFA9 File Offset: 0x0038C1A9
+	// Token: 0x060097D7 RID: 38871 RVA: 0x003927F1 File Offset: 0x003909F1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HeaderLabel(NGuiWdwDebugPanels.EGuiState _guiState, int _x, int _y, string _text, int _labelWidth = 200, int _labelHeight = 25)
 	{
@@ -360,28 +360,28 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600974B RID: 38731 RVA: 0x0038DFDB File Offset: 0x0038C1DB
+	// Token: 0x060097D8 RID: 38872 RVA: 0x00392823 File Offset: 0x00390A23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LabelWithOutline(int _x, int _y, string _text, int _labelWidth = 200, int _labelHeight = 25, int _xOffset = 5)
 	{
 		Utils.DrawOutline(new Rect((float)(_x + _xOffset), (float)_y, (float)_labelWidth, (float)_labelHeight), _text, NGuiWdwDebugPanels.guiStyleDebug, Color.black, Color.white);
 	}
 
-	// Token: 0x0600974C RID: 38732 RVA: 0x0038E004 File Offset: 0x0038C204
+	// Token: 0x060097D9 RID: 38873 RVA: 0x0039284C File Offset: 0x00390A4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GreenWithOutline(int _x, int _y, string _text, int _labelWidth = 200, int _labelHeight = 25, int _xOffset = 5)
 	{
 		Utils.DrawOutline(new Rect((float)(_x + _xOffset), (float)_y, (float)_labelWidth, (float)_labelHeight), _text, NGuiWdwDebugPanels.guiStyleDebug, Color.black, Color.green);
 	}
 
-	// Token: 0x0600974D RID: 38733 RVA: 0x0038E02D File Offset: 0x0038C22D
+	// Token: 0x060097DA RID: 38874 RVA: 0x00392875 File Offset: 0x00390A75
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BlueWithOutline(int _x, int _y, string _text, int _labelWidth = 200, int _labelHeight = 25, int _xOffset = 5)
 	{
 		Utils.DrawOutline(new Rect((float)(_x + _xOffset), (float)_y, (float)_labelWidth, (float)_labelHeight), _text, NGuiWdwDebugPanels.guiStyleDebug, Color.black, Color.cyan);
 	}
 
-	// Token: 0x0600974E RID: 38734 RVA: 0x0038E056 File Offset: 0x0038C256
+	// Token: 0x060097DB RID: 38875 RVA: 0x0039289E File Offset: 0x00390A9E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FakeTextField(int _x, int _y, int _width, int _height, string _text)
 	{
@@ -389,7 +389,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		GUI.Label(new Rect((float)(_x + 3), (float)(_y + 3), (float)_width, (float)_height), _text);
 	}
 
-	// Token: 0x0600974F RID: 38735 RVA: 0x0038E094 File Offset: 0x0038C294
+	// Token: 0x060097DC RID: 38876 RVA: 0x003928DC File Offset: 0x00390ADC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Player(int x, int y)
 	{
@@ -486,7 +486,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009750 RID: 38736 RVA: 0x0038E4A8 File Offset: 0x0038C6A8
+	// Token: 0x060097DD RID: 38877 RVA: 0x00392CF0 File Offset: 0x00390EF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_PlayerEffectInfo(int x, int y)
 	{
@@ -591,7 +591,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06009751 RID: 38737 RVA: 0x0038E908 File Offset: 0x0038CB08
+	// Token: 0x060097DE RID: 38878 RVA: 0x00393150 File Offset: 0x00391350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_DynamicMusicInfo(int x, int y)
 	{
@@ -612,7 +612,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009752 RID: 38738 RVA: 0x0038E968 File Offset: 0x0038CB68
+	// Token: 0x060097DF RID: 38879 RVA: 0x003931B0 File Offset: 0x003913B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Spawning(int x, int y)
 	{
@@ -628,7 +628,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009753 RID: 38739 RVA: 0x0038EA10 File Offset: 0x0038CC10
+	// Token: 0x060097E0 RID: 38880 RVA: 0x00393258 File Offset: 0x00391458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Chunk(int x, int y)
 	{
@@ -703,7 +703,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009754 RID: 38740 RVA: 0x0038ECA8 File Offset: 0x0038CEA8
+	// Token: 0x060097E1 RID: 38881 RVA: 0x003934F0 File Offset: 0x003916F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Cache(int x, int y)
 	{
@@ -736,7 +736,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009755 RID: 38741 RVA: 0x0038ED9C File Offset: 0x0038CF9C
+	// Token: 0x060097E2 RID: 38882 RVA: 0x003935E4 File Offset: 0x003917E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_General(int x, int y)
 	{
@@ -821,13 +821,13 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009756 RID: 38742 RVA: 0x0038F043 File Offset: 0x0038D243
+	// Token: 0x060097E3 RID: 38883 RVA: 0x0039388B File Offset: 0x00391A8B
 	public int showDebugPanel_FocusedBlock(int x, int y)
 	{
 		return this.showDebugPanel_FocusedBlock(x, y, false);
 	}
 
-	// Token: 0x06009757 RID: 38743 RVA: 0x0038F050 File Offset: 0x0038D250
+	// Token: 0x060097E4 RID: 38884 RVA: 0x00393898 File Offset: 0x00391A98
 	public int showDebugPanel_FocusedBlock(int x, int y, bool forceFocusedBlock = false)
 	{
 		if (this.playerEntity == null || this.playerEntity.inventory.holdingItemData == null || !this.playerEntity.HitInfo.bHitValid)
@@ -936,27 +936,24 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 			y += 16;
 			if (eguiState == NGuiWdwDebugPanels.EGuiState.Draw)
 			{
-				BlockValue blockValue2;
-				if (block.isair)
+				if (block.isair && this.playerEntity.inventory.holdingItemData.IsBlock && !this.playerEntity.inventory.holdingItemData.itemValue.ToBlockValue(false).Block.shape.IsTerrain())
 				{
-					ItemClassBlock.ItemBlockInventoryData itemBlockInventoryData = this.playerEntity.inventory.holdingItemData as ItemClassBlock.ItemBlockInventoryData;
-					if (itemBlockInventoryData != null && !itemBlockInventoryData.itemValue.ToBlockValue(false).Block.shape.IsTerrain())
-					{
-						BlockValue blockValue = itemBlockInventoryData.itemValue.ToBlockValue(false);
-						blockValue.rotation = itemBlockInventoryData.rotation;
-						int num7 = y;
-						string text4 = "Data: ";
-						blockValue2 = blockValue;
-						this.LabelWithOutline(x, num7, text4 + blockValue2.ToString(), 200, 25, 5);
-						goto IL_03AF;
-					}
+					ItemInventoryData holdingItemData = this.playerEntity.inventory.holdingItemData;
+					BlockValue blockValue = holdingItemData.itemValue.ToBlockValue(false);
+					blockValue.rotation = holdingItemData.rotation;
+					int num7 = y;
+					string text4 = "Data: ";
+					BlockValue blockValue2 = blockValue;
+					this.LabelWithOutline(x, num7, text4 + blockValue2.ToString(), 200, 25, 5);
 				}
-				int num8 = y;
-				string text5 = "Data: ";
-				blockValue2 = block;
-				this.LabelWithOutline(x, num8, text5 + blockValue2.ToString(), 200, 25, 5);
+				else
+				{
+					int num8 = y;
+					string text5 = "Data: ";
+					BlockValue blockValue2 = block;
+					this.LabelWithOutline(x, num8, text5 + blockValue2.ToString(), 200, 25, 5);
+				}
 			}
-			IL_03AF:
 			y += 16;
 			if (eguiState == NGuiWdwDebugPanels.EGuiState.Draw)
 			{
@@ -1064,10 +1061,10 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 			{
 				if (block2.HasTileEntity)
 				{
-					ITileEntityLootable tileEntityLootable;
-					if (chunk.GetTileEntity(vector3i2).TryGetSelfOrFeature<ITileEntityLootable>(out tileEntityLootable))
+					TEFeatureStorage tefeatureStorage;
+					if (chunk.GetTileEntity(vector3i2).TryGetSelfOrFeature<TEFeatureStorage>(out tefeatureStorage))
 					{
-						this.LabelWithOutline(x, y, "LootStage: " + this.playerEntity.GetLootStage(tileEntityLootable.LootStageMod, tileEntityLootable.LootStageBonus).ToString(), 200, 25, 5);
+						this.LabelWithOutline(x, y, "LootStage: " + this.playerEntity.GetLootStage(tefeatureStorage.LootStageMod, tefeatureStorage.LootStageBonus).ToString(), 200, 25, 5);
 					}
 					else
 					{
@@ -1149,7 +1146,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009758 RID: 38744 RVA: 0x0038FC10 File Offset: 0x0038DE10
+	// Token: 0x060097E5 RID: 38885 RVA: 0x00394478 File Offset: 0x00392678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Network(int x, int y)
 	{
@@ -1247,7 +1244,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x06009759 RID: 38745 RVA: 0x003900D8 File Offset: 0x0038E2D8
+	// Token: 0x060097E6 RID: 38886 RVA: 0x00394940 File Offset: 0x00392B40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Selection(int x, int y)
 	{
@@ -1298,7 +1295,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x0600975A RID: 38746 RVA: 0x003902B8 File Offset: 0x0038E4B8
+	// Token: 0x060097E7 RID: 38887 RVA: 0x00394B20 File Offset: 0x00392D20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Prefab(int x, int y)
 	{
@@ -1359,7 +1356,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x0600975B RID: 38747 RVA: 0x00390498 File Offset: 0x0038E698
+	// Token: 0x060097E8 RID: 38888 RVA: 0x00394D00 File Offset: 0x00392F00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Stealth(int x, int y)
 	{
@@ -1393,7 +1390,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x0600975C RID: 38748 RVA: 0x003905A8 File Offset: 0x0038E7A8
+	// Token: 0x060097E9 RID: 38889 RVA: 0x00394E10 File Offset: 0x00393010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int showDebugPanel_Texture(int x, int y)
 	{
@@ -1443,7 +1440,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		return y + 10;
 	}
 
-	// Token: 0x0600975D RID: 38749 RVA: 0x00390740 File Offset: 0x0038E940
+	// Token: 0x060097EA RID: 38890 RVA: 0x00394FA8 File Offset: 0x003931A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void panelManager()
 	{
@@ -1475,7 +1472,7 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		GUI.matrix = matrix4x;
 	}
 
-	// Token: 0x0600975E RID: 38750 RVA: 0x00390874 File Offset: 0x0038EA74
+	// Token: 0x060097EB RID: 38891 RVA: 0x003950DC File Offset: 0x003932DC
 	public void SetActivePanels(params string[] panelCaptions)
 	{
 		foreach (NGuiWdwDebugPanels.PanelDefinition panelDefinition in this.Panels)
@@ -1493,164 +1490,164 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400713A RID: 28986
+	// Token: 0x040071A4 RID: 29092
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGuiWdwDebugPanels.EDebugDataType debugData;
 
-	// Token: 0x0400713B RID: 28987
+	// Token: 0x040071A5 RID: 29093
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGuiWdwDebugPanels.EPerformanceDisplayType performanceType;
 
-	// Token: 0x0400713C RID: 28988
+	// Token: 0x040071A6 RID: 29094
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly GUIStyle guiStyleDebug = new GUIStyle();
 
-	// Token: 0x0400713D RID: 28989
+	// Token: 0x040071A7 RID: 29095
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GUIStyle guiStyleToggleBox;
 
-	// Token: 0x0400713E RID: 28990
+	// Token: 0x040071A8 RID: 29096
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GUIStyle guiStyleTooltipLabel;
 
-	// Token: 0x0400713F RID: 28991
+	// Token: 0x040071A9 RID: 29097
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GUIStyle guiStyleLabelRightAligned;
 
-	// Token: 0x04007140 RID: 28992
+	// Token: 0x040071AA RID: 29098
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIFPS guiFPS;
 
-	// Token: 0x04007141 RID: 28993
+	// Token: 0x040071AB RID: 29099
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NetworkMonitor networkMonitorCh0;
 
-	// Token: 0x04007142 RID: 28994
+	// Token: 0x040071AC RID: 29100
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NetworkMonitor networkMonitorCh1;
 
-	// Token: 0x04007143 RID: 28995
+	// Token: 0x040071AD RID: 29101
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal playerEntity;
 
-	// Token: 0x04007144 RID: 28996
+	// Token: 0x040071AE RID: 29102
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x04007145 RID: 28997
+	// Token: 0x040071AF RID: 29103
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2i lastResolution;
 
-	// Token: 0x04007146 RID: 28998
+	// Token: 0x040071B0 RID: 29104
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIStyle boxStyle;
 
-	// Token: 0x04007147 RID: 28999
+	// Token: 0x040071B1 RID: 29105
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int boxAreaHeight;
 
-	// Token: 0x04007148 RID: 29000
+	// Token: 0x040071B2 RID: 29106
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int boxAreaWidth;
 
-	// Token: 0x04007149 RID: 29001
+	// Token: 0x040071B3 RID: 29107
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cLineHeight = 16;
 
-	// Token: 0x0400714A RID: 29002
+	// Token: 0x040071B4 RID: 29108
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cHeaderLabelWidth = 200;
 
-	// Token: 0x0400714B RID: 29003
+	// Token: 0x040071B5 RID: 29109
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cHeaderLabelHeight = 25;
 
-	// Token: 0x0400714C RID: 29004
+	// Token: 0x040071B6 RID: 29110
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 lastPlayerPos;
 
-	// Token: 0x0400714D RID: 29005
+	// Token: 0x040071B7 RID: 29111
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastPlayerTime;
 
-	// Token: 0x0400714E RID: 29006
+	// Token: 0x040071B8 RID: 29112
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float playerSpeed;
 
-	// Token: 0x0400714F RID: 29007
+	// Token: 0x040071B9 RID: 29113
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string filterCVar = "";
 
-	// Token: 0x04007150 RID: 29008
+	// Token: 0x040071BA RID: 29114
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<NGuiWdwDebugPanels.PanelDefinition> Panels = new List<NGuiWdwDebugPanels.PanelDefinition>();
 
-	// Token: 0x0200129E RID: 4766
+	// Token: 0x020012B6 RID: 4790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EDebugDataType
 	{
-		// Token: 0x04007152 RID: 29010
+		// Token: 0x040071BC RID: 29116
 		Off,
-		// Token: 0x04007153 RID: 29011
+		// Token: 0x040071BD RID: 29117
 		General
 	}
 
-	// Token: 0x0200129F RID: 4767
+	// Token: 0x020012B7 RID: 4791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EPerformanceDisplayType
 	{
-		// Token: 0x04007155 RID: 29013
+		// Token: 0x040071BF RID: 29119
 		Off,
-		// Token: 0x04007156 RID: 29014
+		// Token: 0x040071C0 RID: 29120
 		Fps,
-		// Token: 0x04007157 RID: 29015
+		// Token: 0x040071C1 RID: 29121
 		FpsAndHeat,
-		// Token: 0x04007158 RID: 29016
+		// Token: 0x040071C2 RID: 29122
 		FpsAndFpsGraph,
-		// Token: 0x04007159 RID: 29017
+		// Token: 0x040071C3 RID: 29123
 		FpsAndNetGraphs
 	}
 
-	// Token: 0x020012A0 RID: 4768
+	// Token: 0x020012B8 RID: 4792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EGuiState
 	{
-		// Token: 0x0400715B RID: 29019
+		// Token: 0x040071C5 RID: 29125
 		CalcSize,
-		// Token: 0x0400715C RID: 29020
+		// Token: 0x040071C6 RID: 29126
 		Draw,
-		// Token: 0x0400715D RID: 29021
+		// Token: 0x040071C7 RID: 29127
 		Count
 	}
 
-	// Token: 0x020012A1 RID: 4769
+	// Token: 0x020012B9 RID: 4793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class PanelDefinition
 	{
-		// Token: 0x06009763 RID: 38755 RVA: 0x003909B8 File Offset: 0x0038EBB8
+		// Token: 0x060097F0 RID: 38896 RVA: 0x00395220 File Offset: 0x00393420
 		public PanelDefinition(string _name, string _buttonCaption, Func<int, int, int> _guiHandler, string _enabledPanels, bool _enabled = true)
 		{
 			this.Name = _name;
@@ -1660,19 +1657,19 @@ public class NGuiWdwDebugPanels : MonoBehaviour
 			this.Active = _enabledPanels.Contains("," + _buttonCaption + ",");
 		}
 
-		// Token: 0x0400715E RID: 29022
+		// Token: 0x040071C8 RID: 29128
 		public string Name;
 
-		// Token: 0x0400715F RID: 29023
+		// Token: 0x040071C9 RID: 29129
 		public string ButtonCaption;
 
-		// Token: 0x04007160 RID: 29024
+		// Token: 0x040071CA RID: 29130
 		public Func<int, int, int> GuiHandler;
 
-		// Token: 0x04007161 RID: 29025
+		// Token: 0x040071CB RID: 29131
 		public bool Enabled;
 
-		// Token: 0x04007162 RID: 29026
+		// Token: 0x040071CC RID: 29132
 		public bool Active;
 	}
 }

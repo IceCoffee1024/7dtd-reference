@@ -2,39 +2,39 @@
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CF7 RID: 7415
+	// Token: 0x02001D29 RID: 7465
 	public static class NetworkCommonEos
 	{
-		// Token: 0x0400A646 RID: 42566
+		// Token: 0x0400A71B RID: 42779
 		public const int MaxUsedPacketSize = 1120;
 
-		// Token: 0x02001CF8 RID: 7416
+		// Token: 0x02001D2A RID: 7466
 		public enum ESteamNetChannels : byte
 		{
-			// Token: 0x0400A648 RID: 42568
+			// Token: 0x0400A71D RID: 42781
 			NetpackageChannel0,
-			// Token: 0x0400A649 RID: 42569
+			// Token: 0x0400A71E RID: 42782
 			NetpackageChannel1,
-			// Token: 0x0400A64A RID: 42570
+			// Token: 0x0400A71F RID: 42783
 			Authentication = 50,
-			// Token: 0x0400A64B RID: 42571
+			// Token: 0x0400A720 RID: 42784
 			Ping = 60
 		}
 
-		// Token: 0x02001CF9 RID: 7417
+		// Token: 0x02001D2B RID: 7467
 		public readonly struct SendInfo
 		{
-			// Token: 0x0600DC02 RID: 56322 RVA: 0x004EA632 File Offset: 0x004E8832
+			// Token: 0x0600DD7D RID: 56701 RVA: 0x004EF17A File Offset: 0x004ED37A
 			public SendInfo(ClientInfo _clientInfo, ArrayListMP<byte> _data)
 			{
 				this.Recipient = _clientInfo;
 				this.Data = _data;
 			}
 
-			// Token: 0x0400A64C RID: 42572
+			// Token: 0x0400A721 RID: 42785
 			public readonly ClientInfo Recipient;
 
-			// Token: 0x0400A64D RID: 42573
+			// Token: 0x0400A722 RID: 42786
 			public readonly ArrayListMP<byte> Data;
 		}
 	}

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015A8 RID: 5544
+// Token: 0x020015CA RID: 5578
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(AudioSource))]
 public class vp_Shell : MonoBehaviour
 {
-	// Token: 0x0600AD78 RID: 44408 RVA: 0x0040AA04 File Offset: 0x00408C04
+	// Token: 0x0600AE2B RID: 44587 RVA: 0x0040F858 File Offset: 0x0040DA58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -19,7 +19,7 @@ public class vp_Shell : MonoBehaviour
 		base.GetComponent<AudioSource>().dopplerLevel = 0f;
 	}
 
-	// Token: 0x0600AD79 RID: 44409 RVA: 0x0040AA54 File Offset: 0x00408C54
+	// Token: 0x0600AE2C RID: 44588 RVA: 0x0040F8A8 File Offset: 0x0040DAA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -33,7 +33,7 @@ public class vp_Shell : MonoBehaviour
 		base.GetComponent<Collider>().enabled = true;
 	}
 
-	// Token: 0x0600AD7A RID: 44410 RVA: 0x0040AADC File Offset: 0x00408CDC
+	// Token: 0x0600AE2D RID: 44589 RVA: 0x0040F930 File Offset: 0x0040DB30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -58,7 +58,7 @@ public class vp_Shell : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD7B RID: 44411 RVA: 0x0040AB70 File Offset: 0x00408D70
+	// Token: 0x0600AE2E RID: 44590 RVA: 0x0040F9C4 File Offset: 0x0040DBC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCollisionEnter(Collision collision)
 	{
@@ -86,7 +86,7 @@ public class vp_Shell : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD7C RID: 44412 RVA: 0x0040AC6C File Offset: 0x00408E6C
+	// Token: 0x0600AE2F RID: 44591 RVA: 0x0040FAC0 File Offset: 0x0040DCC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DecideRestAngle()
 	{
@@ -103,60 +103,60 @@ public class vp_Shell : MonoBehaviour
 		this.m_RestAngleFunc = new vp_Shell.RestAngleFunc(this.TippedOver);
 	}
 
-	// Token: 0x0600AD7D RID: 44413 RVA: 0x0040AD04 File Offset: 0x00408F04
+	// Token: 0x0600AE30 RID: 44592 RVA: 0x0040FB58 File Offset: 0x0040DD58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpRight()
 	{
 		this.m_Transform.rotation = Quaternion.Lerp(this.m_Transform.rotation, Quaternion.Euler(-90f, this.m_Transform.rotation.y, this.m_Transform.rotation.z), Time.time * (Time.deltaTime * 60f * 0.05f));
 	}
 
-	// Token: 0x0600AD7E RID: 44414 RVA: 0x0040AD70 File Offset: 0x00408F70
+	// Token: 0x0600AE31 RID: 44593 RVA: 0x0040FBC4 File Offset: 0x0040DDC4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TippedOver()
 	{
 		this.m_Transform.localRotation = Quaternion.Lerp(this.m_Transform.localRotation, Quaternion.Euler(0f, this.m_Transform.localEulerAngles.y, this.m_Transform.localEulerAngles.z), Time.time * (Time.deltaTime * 60f * 0.005f));
 	}
 
-	// Token: 0x040080F8 RID: 33016
+	// Token: 0x0400817B RID: 33147
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040080F9 RID: 33017
+	// Token: 0x0400817C RID: 33148
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x040080FA RID: 33018
+	// Token: 0x0400817D RID: 33149
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x040080FB RID: 33019
+	// Token: 0x0400817E RID: 33150
 	public float LifeTime = 10f;
 
-	// Token: 0x040080FC RID: 33020
+	// Token: 0x0400817F RID: 33151
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_RemoveTime;
 
-	// Token: 0x040080FD RID: 33021
+	// Token: 0x04008180 RID: 33152
 	public float m_Persistence = 1f;
 
-	// Token: 0x040080FE RID: 33022
+	// Token: 0x04008181 RID: 33153
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Shell.RestAngleFunc m_RestAngleFunc;
 
-	// Token: 0x040080FF RID: 33023
+	// Token: 0x04008182 RID: 33154
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_RestTime;
 
-	// Token: 0x04008100 RID: 33024
+	// Token: 0x04008183 RID: 33155
 	public List<AudioClip> m_BounceSounds = new List<AudioClip>();
 
-	// Token: 0x020015A9 RID: 5545
-	// (Invoke) Token: 0x0600AD81 RID: 44417
+	// Token: 0x020015CB RID: 5579
+	// (Invoke) Token: 0x0600AE34 RID: 44596
 	public delegate void RestAngleFunc();
 }

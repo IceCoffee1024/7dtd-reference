@@ -2,11 +2,11 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A80 RID: 6784
+	// Token: 0x02001AAC RID: 6828
 	public interface IPlayArbiter
 	{
-		// Token: 0x17001926 RID: 6438
-		// (get) Token: 0x0600CCFB RID: 52475
+		// Token: 0x170019C8 RID: 6600
+		// (get) Token: 0x0600CE53 RID: 52819
 		bool WillAllowPlay { get; }
 	}
 }

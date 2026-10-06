@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000105 RID: 261
+// Token: 0x02000107 RID: 263
 public struct BlockRadiusEffect
 {
-	// Token: 0x0400070E RID: 1806
+	// Token: 0x04000711 RID: 1809
 	public string variable;
 
-	// Token: 0x0400070F RID: 1807
+	// Token: 0x04000712 RID: 1810
 	public float radiusSq;
 }

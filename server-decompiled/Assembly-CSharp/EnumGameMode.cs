@@ -1,22 +1,22 @@
 ﻿using System;
 
-// Token: 0x020011C9 RID: 4553
+// Token: 0x020011E1 RID: 4577
 public enum EnumGameMode
 {
-	// Token: 0x04006BDF RID: 27615
+	// Token: 0x04006C49 RID: 27721
 	Survival = 1,
-	// Token: 0x04006BE0 RID: 27616
+	// Token: 0x04006C4A RID: 27722
 	Creative,
-	// Token: 0x04006BE1 RID: 27617
+	// Token: 0x04006C4B RID: 27723
 	Deathmatch,
-	// Token: 0x04006BE2 RID: 27618
+	// Token: 0x04006C4C RID: 27724
 	Horde,
-	// Token: 0x04006BE3 RID: 27619
+	// Token: 0x04006C4D RID: 27725
 	SurvivalPVP,
-	// Token: 0x04006BE4 RID: 27620
+	// Token: 0x04006C4E RID: 27726
 	SurvivalSP,
-	// Token: 0x04006BE5 RID: 27621
+	// Token: 0x04006C4F RID: 27727
 	SurvivalMP,
-	// Token: 0x04006BE6 RID: 27622
+	// Token: 0x04006C50 RID: 27728
 	EditWorld
 }

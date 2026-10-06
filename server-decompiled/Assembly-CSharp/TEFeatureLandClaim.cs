@@ -3,13 +3,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200017D RID: 381
+// Token: 0x0200017E RID: 382
 [Preserve]
 public class TEFeatureLandClaim : TEFeatureAbs
 {
-	// Token: 0x170000E1 RID: 225
-	// (get) Token: 0x06000B2D RID: 2861 RVA: 0x00047C14 File Offset: 0x00045E14
-	// (set) Token: 0x06000B2E RID: 2862 RVA: 0x00047C1C File Offset: 0x00045E1C
+	// Token: 0x170000E0 RID: 224
+	// (get) Token: 0x06000B36 RID: 2870 RVA: 0x00047DF0 File Offset: 0x00045FF0
+	// (set) Token: 0x06000B37 RID: 2871 RVA: 0x00047DF8 File Offset: 0x00045FF8
 	public bool ShowBounds
 	{
 		get
@@ -23,7 +23,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B2F RID: 2863 RVA: 0x00047C2C File Offset: 0x00045E2C
+	// Token: 0x06000B38 RID: 2872 RVA: 0x00047E08 File Offset: 0x00046008
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -33,7 +33,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		this.inactivePrompt = Localization.Get("inactiveBlockPrompt", false, null);
 	}
 
-	// Token: 0x06000B30 RID: 2864 RVA: 0x00047C88 File Offset: 0x00045E88
+	// Token: 0x06000B39 RID: 2873 RVA: 0x00047E64 File Offset: 0x00046064
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -44,7 +44,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B31 RID: 2865 RVA: 0x00047CAC File Offset: 0x00045EAC
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00047E88 File Offset: 0x00046088
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -64,7 +64,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return string.Format(this.inactivePrompt, _blockValue.Block.GetLocalizedBlockName());
 	}
 
-	// Token: 0x06000B32 RID: 2866 RVA: 0x00047D9C File Offset: 0x00045F9C
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00047F78 File Offset: 0x00046178
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
@@ -73,7 +73,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		_addCallback(new BlockActivationCommand("remove", "x", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000B33 RID: 2867 RVA: 0x00047E10 File Offset: 0x00046010
+	// Token: 0x06000B3C RID: 2876 RVA: 0x00047FEC File Offset: 0x000461EC
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -101,7 +101,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return flag;
 	}
 
-	// Token: 0x06000B34 RID: 2868 RVA: 0x00047ECC File Offset: 0x000460CC
+	// Token: 0x06000B3D RID: 2877 RVA: 0x000480A8 File Offset: 0x000462A8
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -125,7 +125,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		return false;
 	}
 
-	// Token: 0x06000B35 RID: 2869 RVA: 0x00047F80 File Offset: 0x00046180
+	// Token: 0x06000B3E RID: 2878 RVA: 0x0004815C File Offset: 0x0004635C
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
@@ -141,11 +141,11 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B36 RID: 2870 RVA: 0x00047FF4 File Offset: 0x000461F4
-	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x06000B3F RID: 2879 RVA: 0x000481D0 File Offset: 0x000463D0
+	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			if (base.Parent.UseLocalVersioning())
 			{
@@ -159,18 +159,18 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		this.showBounds = _br.ReadBoolean();
 	}
 
-	// Token: 0x06000B37 RID: 2871 RVA: 0x0004802F File Offset: 0x0004622F
-	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06000B40 RID: 2880 RVA: 0x0004820B File Offset: 0x0004640B
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
 		_bw.Write(this.showBounds);
 	}
 
-	// Token: 0x06000B38 RID: 2872 RVA: 0x00048050 File Offset: 0x00046250
+	// Token: 0x06000B41 RID: 2881 RVA: 0x0004822C File Offset: 0x0004642C
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -180,7 +180,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B39 RID: 2873 RVA: 0x000480B0 File Offset: 0x000462B0
+	// Token: 0x06000B42 RID: 2882 RVA: 0x0004828C File Offset: 0x0004648C
 	public override void OnLoad()
 	{
 		base.OnLoad();
@@ -211,21 +211,21 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B3A RID: 2874 RVA: 0x00048188 File Offset: 0x00046388
+	// Token: 0x06000B43 RID: 2883 RVA: 0x00048364 File Offset: 0x00046564
 	public override void OnUnload(World _world)
 	{
 		base.OnUnload(_world);
 		LandClaimBoundsHelper.RemoveBoundsHelper(base.ToWorldPos());
 	}
 
-	// Token: 0x06000B3B RID: 2875 RVA: 0x000481A1 File Offset: 0x000463A1
+	// Token: 0x06000B44 RID: 2884 RVA: 0x0004837D File Offset: 0x0004657D
 	public override void OnRemove(World _world)
 	{
 		base.OnRemove(_world);
 		LandClaimBoundsHelper.RemoveBoundsHelper(base.ToWorldPos());
 	}
 
-	// Token: 0x06000B3C RID: 2876 RVA: 0x000481BC File Offset: 0x000463BC
+	// Token: 0x06000B45 RID: 2885 RVA: 0x00048398 File Offset: 0x00046598
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
@@ -236,7 +236,7 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B3D RID: 2877 RVA: 0x00048224 File Offset: 0x00046424
+	// Token: 0x06000B46 RID: 2886 RVA: 0x00048400 File Offset: 0x00046600
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -253,13 +253,13 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x06000B3E RID: 2878 RVA: 0x00048286 File Offset: 0x00046486
+	// Token: 0x06000B47 RID: 2887 RVA: 0x00048462 File Offset: 0x00046662
 	public bool IsPrimary()
 	{
 		return GameManager.Instance.persistentPlayers.GetLandProtectionBlockOwner(base.ToWorldPos()) != null;
 	}
 
-	// Token: 0x06000B3F RID: 2879 RVA: 0x000482A0 File Offset: 0x000464A0
+	// Token: 0x06000B48 RID: 2888 RVA: 0x0004847C File Offset: 0x0004667C
 	public static void HandleDeactivateLandClaim(Vector3i _blockPos)
 	{
 		World world = GameManager.Instance.World;
@@ -278,30 +278,30 @@ public class TEFeatureLandClaim : TEFeatureAbs
 		}
 	}
 
-	// Token: 0x04000A7F RID: 2687
+	// Token: 0x04000A7E RID: 2686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 18;
 
-	// Token: 0x04000A80 RID: 2688
+	// Token: 0x04000A7F RID: 2687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockable lockFeature;
 
-	// Token: 0x04000A81 RID: 2689
+	// Token: 0x04000A80 RID: 2688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockPickable lockpickFeature;
 
-	// Token: 0x04000A82 RID: 2690
+	// Token: 0x04000A81 RID: 2689
 	public Transform BoundsHelper;
 
-	// Token: 0x04000A83 RID: 2691
+	// Token: 0x04000A82 RID: 2690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showBounds;
 
-	// Token: 0x04000A84 RID: 2692
+	// Token: 0x04000A83 RID: 2691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string activePrompt;
 
-	// Token: 0x04000A85 RID: 2693
+	// Token: 0x04000A84 RID: 2692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string inactivePrompt;
 }

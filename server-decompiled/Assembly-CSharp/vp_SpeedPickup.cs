@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020015EA RID: 5610
+// Token: 0x02001609 RID: 5641
 public class vp_SpeedPickup : vp_Pickup
 {
-	// Token: 0x0600AF12 RID: 44818 RVA: 0x004144A0 File Offset: 0x004126A0
+	// Token: 0x0600AFA4 RID: 44964 RVA: 0x0041817C File Offset: 0x0041637C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -14,7 +14,7 @@ public class vp_SpeedPickup : vp_Pickup
 		}
 	}
 
-	// Token: 0x0600AF13 RID: 44819 RVA: 0x004144C4 File Offset: 0x004126C4
+	// Token: 0x0600AFA5 RID: 44965 RVA: 0x004181A0 File Offset: 0x004163A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryGive(vp_FPPlayerEventHandler player)
 	{
@@ -30,7 +30,7 @@ public class vp_SpeedPickup : vp_Pickup
 		return true;
 	}
 
-	// Token: 0x040082DD RID: 33501
+	// Token: 0x04008333 RID: 33587
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer = new vp_Timer.Handle();

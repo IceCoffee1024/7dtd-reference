@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014E2 RID: 5346
+// Token: 0x02001504 RID: 5380
 public class AudioGamepadRumbleSource
 {
-	// Token: 0x0600A7D9 RID: 42969 RVA: 0x003E6CAD File Offset: 0x003E4EAD
+	// Token: 0x0600A88C RID: 43148 RVA: 0x003EBB01 File Offset: 0x003E9D01
 	public AudioGamepadRumbleSource()
 	{
 		this.samples = new float[64];
 	}
 
-	// Token: 0x0600A7DA RID: 42970 RVA: 0x003E6CC2 File Offset: 0x003E4EC2
+	// Token: 0x0600A88D RID: 43149 RVA: 0x003EBB16 File Offset: 0x003E9D16
 	public void SetAudioSource(AudioSource _audioSource, float _strengthMultiplier, bool _locationBased)
 	{
 		this.audioSrc = _audioSource;
@@ -19,7 +19,7 @@ public class AudioGamepadRumbleSource
 		this.timeAdded = Time.time;
 	}
 
-	// Token: 0x0600A7DB RID: 42971 RVA: 0x003E6CE4 File Offset: 0x003E4EE4
+	// Token: 0x0600A88E RID: 43150 RVA: 0x003EBB38 File Offset: 0x003E9D38
 	public float GetSample(int channel)
 	{
 		this.audioSrc.GetOutputData(this.samples, channel);
@@ -31,28 +31,28 @@ public class AudioGamepadRumbleSource
 		return num / 64f;
 	}
 
-	// Token: 0x0600A7DC RID: 42972 RVA: 0x003E6D2A File Offset: 0x003E4F2A
+	// Token: 0x0600A88F RID: 43151 RVA: 0x003EBB7E File Offset: 0x003E9D7E
 	public void Clear()
 	{
 		this.audioSrc = null;
 	}
 
-	// Token: 0x04007C9B RID: 31899
+	// Token: 0x04007D1E RID: 32030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSampleCount = 64;
 
-	// Token: 0x04007C9C RID: 31900
+	// Token: 0x04007D1F RID: 32031
 	public AudioSource audioSrc;
 
-	// Token: 0x04007C9D RID: 31901
+	// Token: 0x04007D20 RID: 32032
 	public float[] samples;
 
-	// Token: 0x04007C9E RID: 31902
+	// Token: 0x04007D21 RID: 32033
 	public float strengthMultiplier;
 
-	// Token: 0x04007C9F RID: 31903
+	// Token: 0x04007D22 RID: 32034
 	public bool locationBased;
 
-	// Token: 0x04007CA0 RID: 31904
+	// Token: 0x04007D23 RID: 32035
 	public float timeAdded;
 }

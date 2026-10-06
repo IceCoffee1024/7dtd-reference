@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015E9 RID: 5609
+// Token: 0x02001608 RID: 5640
 public class vp_SlomoPickup : vp_Pickup
 {
-	// Token: 0x0600AF0F RID: 44815 RVA: 0x004143D0 File Offset: 0x004125D0
+	// Token: 0x0600AFA1 RID: 44961 RVA: 0x004180AC File Offset: 0x004162AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -33,7 +33,7 @@ public class vp_SlomoPickup : vp_Pickup
 		}
 	}
 
-	// Token: 0x0600AF10 RID: 44816 RVA: 0x00414478 File Offset: 0x00412678
+	// Token: 0x0600AFA2 RID: 44962 RVA: 0x00418154 File Offset: 0x00416354
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryGive(vp_FPPlayerEventHandler player)
 	{
@@ -41,7 +41,7 @@ public class vp_SlomoPickup : vp_Pickup
 		return !this.m_Depleted && Time.timeScale == 1f;
 	}
 
-	// Token: 0x040082DC RID: 33500
+	// Token: 0x04008332 RID: 33586
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;

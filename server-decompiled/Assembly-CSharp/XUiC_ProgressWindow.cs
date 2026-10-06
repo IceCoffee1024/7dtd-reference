@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D4F RID: 3407
+// Token: 0x02000D5F RID: 3423
 [Preserve]
 public class XUiC_ProgressWindow : XUiController
 {
-	// Token: 0x17000B06 RID: 2822
-	// (set) Token: 0x060067CA RID: 26570 RVA: 0x0028EEA4 File Offset: 0x0028D0A4
+	// Token: 0x17000B1E RID: 2846
+	// (set) Token: 0x060067C4 RID: 26564 RVA: 0x0029240C File Offset: 0x0029060C
 	public string ProgressText
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -16,9 +16,9 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000B07 RID: 2823
-	// (get) Token: 0x060067CB RID: 26571 RVA: 0x0028EEB2 File Offset: 0x0028D0B2
-	// (set) Token: 0x060067CC RID: 26572 RVA: 0x0028EEBA File Offset: 0x0028D0BA
+	// Token: 0x17000B1F RID: 2847
+	// (get) Token: 0x060067C5 RID: 26565 RVA: 0x0029241A File Offset: 0x0029061A
+	// (set) Token: 0x060067C6 RID: 26566 RVA: 0x00292422 File Offset: 0x00290622
 	[XuiXmlBinding("use_shadow")]
 	public bool UseShadow
 	{
@@ -39,14 +39,14 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x060067CD RID: 26573 RVA: 0x0028EED4 File Offset: 0x0028D0D4
+	// Token: 0x060067C7 RID: 26567 RVA: 0x0029243C File Offset: 0x0029063C
 	public override void Init()
 	{
 		base.Init();
 		XUiC_ProgressWindow.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x060067CE RID: 26574 RVA: 0x0028EEEC File Offset: 0x0028D0EC
+	// Token: 0x060067C8 RID: 26568 RVA: 0x00292454 File Offset: 0x00290654
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -61,7 +61,7 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x060067CF RID: 26575 RVA: 0x0028EF78 File Offset: 0x0028D178
+	// Token: 0x060067C9 RID: 26569 RVA: 0x002924E0 File Offset: 0x002906E0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -70,7 +70,7 @@ public class XUiC_ProgressWindow : XUiController
 		this.xui.playerUI.CursorController.Locked = true;
 	}
 
-	// Token: 0x060067D0 RID: 26576 RVA: 0x0028EFCC File Offset: 0x0028D1CC
+	// Token: 0x060067CA RID: 26570 RVA: 0x00292534 File Offset: 0x00290734
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -78,14 +78,14 @@ public class XUiC_ProgressWindow : XUiController
 		this.xui.playerUI.CursorController.Locked = false;
 	}
 
-	// Token: 0x060067D1 RID: 26577 RVA: 0x0028EFF4 File Offset: 0x0028D1F4
+	// Token: 0x060067CB RID: 26571 RVA: 0x0029255C File Offset: 0x0029075C
 	public static bool IsWindowOpen()
 	{
 		XUiC_ProgressWindow childByType = LocalPlayerUI.primaryUI.xui.FindWindowGroupByName(XUiC_ProgressWindow.ID).GetChildByType<XUiC_ProgressWindow>();
 		return childByType != null && childByType.IsOpen;
 	}
 
-	// Token: 0x060067D2 RID: 26578 RVA: 0x0028F028 File Offset: 0x0028D228
+	// Token: 0x060067CC RID: 26572 RVA: 0x00292590 File Offset: 0x00290790
 	public static void Open(LocalPlayerUI _playerUi, string _text, Action _escDelegate = null, bool _modal = true, bool _notEscClosable = true, bool _useShadow = false)
 	{
 		if (_playerUi != null && _playerUi.xui != null)
@@ -98,7 +98,7 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x060067D3 RID: 26579 RVA: 0x0028F089 File Offset: 0x0028D289
+	// Token: 0x060067CD RID: 26573 RVA: 0x002925F1 File Offset: 0x002907F1
 	public static void Close(LocalPlayerUI _playerUi)
 	{
 		if (_playerUi != null && _playerUi.xui != null)
@@ -107,7 +107,7 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x060067D4 RID: 26580 RVA: 0x0028F0B4 File Offset: 0x0028D2B4
+	// Token: 0x060067CE RID: 26574 RVA: 0x0029261C File Offset: 0x0029081C
 	public static void SetText(LocalPlayerUI _playerUi, string _text, bool _clearEscDelegate = true)
 	{
 		if (_playerUi != null && _playerUi.xui != null)
@@ -121,24 +121,24 @@ public class XUiC_ProgressWindow : XUiController
 		}
 	}
 
-	// Token: 0x060067D5 RID: 26581 RVA: 0x0028F0FF File Offset: 0x0028D2FF
+	// Token: 0x060067CF RID: 26575 RVA: 0x00292667 File Offset: 0x00290867
 	public static void SetEscDelegate(LocalPlayerUI _playerUi, Action _escapeDelegate)
 	{
 		_playerUi.xui.FindWindowGroupByName(XUiC_ProgressWindow.ID).GetChildByType<XUiC_ProgressWindow>().escapeDelegate = _escapeDelegate;
 	}
 
-	// Token: 0x04004FD0 RID: 20432
+	// Token: 0x0400500F RID: 20495
 	public static string ID = "";
 
-	// Token: 0x04004FD1 RID: 20433
+	// Token: 0x04005010 RID: 20496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useShadow;
 
-	// Token: 0x04004FD2 RID: 20434
+	// Token: 0x04005011 RID: 20497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action escapeDelegate;
 
-	// Token: 0x04004FD3 RID: 20435
+	// Token: 0x04005012 RID: 20498
 	[XuiBindComponent("lblProgress", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblProgress;

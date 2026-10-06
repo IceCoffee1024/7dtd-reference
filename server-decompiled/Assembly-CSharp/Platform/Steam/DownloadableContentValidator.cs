@@ -6,28 +6,28 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C85 RID: 7301
+	// Token: 0x02001CB7 RID: 7351
 	public class DownloadableContentValidator : IEntitlementValidator
 	{
-		// Token: 0x0600D876 RID: 55414 RVA: 0x004DC9D4 File Offset: 0x004DABD4
+		// Token: 0x0600D9EF RID: 55791 RVA: 0x004E1510 File Offset: 0x004DF710
 		public void Init(IPlatform _owner)
 		{
 			this._owner = _owner;
 		}
 
-		// Token: 0x0600D877 RID: 55415 RVA: 0x004DC9DD File Offset: 0x004DABDD
+		// Token: 0x0600D9F0 RID: 55792 RVA: 0x004E1519 File Offset: 0x004DF719
 		public bool IsAvailableOnPlatform(EntitlementSetEnum _dlcSet)
 		{
 			return _dlcSet == EntitlementSetEnum.None || DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet);
 		}
 
-		// Token: 0x0600D878 RID: 55416 RVA: 0x004DC9EF File Offset: 0x004DABEF
+		// Token: 0x0600D9F1 RID: 55793 RVA: 0x004E152B File Offset: 0x004DF72B
 		public bool IsEntitlementPurchasable(EntitlementSetEnum _dlcSet)
 		{
 			return DLCTitleStorageManager.Instance.IsDLCPurchasable(_dlcSet, DLCEnvironmentFlags.Dev | DLCEnvironmentFlags.Cert | DLCEnvironmentFlags.Retail);
 		}
 
-		// Token: 0x0600D879 RID: 55417 RVA: 0x004DCA00 File Offset: 0x004DAC00
+		// Token: 0x0600D9F2 RID: 55794 RVA: 0x004E153C File Offset: 0x004DF73C
 		public string GetEntitlementSetId(EntitlementSetEnum _entitlementSet)
 		{
 			uint num;
@@ -38,7 +38,7 @@ namespace Platform.Steam
 			return num.ToString();
 		}
 
-		// Token: 0x0600D87A RID: 55418 RVA: 0x004DCA28 File Offset: 0x004DAC28
+		// Token: 0x0600D9F3 RID: 55795 RVA: 0x004E1564 File Offset: 0x004DF764
 		public DateTime? GetAcquiredDate(EntitlementSetEnum _entitlementSet)
 		{
 			if (_entitlementSet == EntitlementSetEnum.None)
@@ -62,7 +62,13 @@ namespace Platform.Steam
 			return new DateTime?(DateTimeOffset.FromUnixTimeSeconds((long)((ulong)earliestPurchaseUnixTime)).ToUniversalTime().DateTime);
 		}
 
-		// Token: 0x0600D87B RID: 55419 RVA: 0x004DCAC0 File Offset: 0x004DACC0
+		// Token: 0x0600D9F4 RID: 55796 RVA: 0x00010E62 File Offset: 0x0000F062
+		public bool IsFetchingEntitlements()
+		{
+			return false;
+		}
+
+		// Token: 0x0600D9F5 RID: 55797 RVA: 0x004E15FC File Offset: 0x004DF7FC
 		public bool HasEntitlement(EntitlementSetEnum _dlcSet)
 		{
 			if (_dlcSet == EntitlementSetEnum.None)
@@ -81,7 +87,7 @@ namespace Platform.Steam
 			return SteamApps.BIsDlcInstalled(new AppId_t(DownloadableContentValidator.entitlementMap[_dlcSet]));
 		}
 
-		// Token: 0x0600D87C RID: 55420 RVA: 0x004DCB14 File Offset: 0x004DAD14
+		// Token: 0x0600D9F6 RID: 55798 RVA: 0x004E1650 File Offset: 0x004DF850
 		public bool OpenStore(EntitlementSetEnum _dlcSet, Action<EntitlementSetEnum> _onDlcPurchased)
 		{
 			if (!DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet))
@@ -103,7 +109,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D87D RID: 55421 RVA: 0x004DCB99 File Offset: 0x004DAD99
+		// Token: 0x0600D9F7 RID: 55799 RVA: 0x004E16D5 File Offset: 0x004DF8D5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator CheckDlcPurchases()
 		{
@@ -135,7 +141,7 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0400A462 RID: 42082
+		// Token: 0x0400A537 RID: 42295
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EntitlementSetEnum, uint> entitlementMap = new Dictionary<EntitlementSetEnum, uint>
 		{
@@ -182,18 +188,22 @@ namespace Platform.Steam
 			{
 				EntitlementSetEnum.HenpocalypseCosmetic,
 				4924490U
+			},
+			{
+				EntitlementSetEnum.OktoberfestCosmetic,
+				5239930U
 			}
 		};
 
-		// Token: 0x0400A463 RID: 42083
+		// Token: 0x0400A538 RID: 42296
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform _owner;
 
-		// Token: 0x0400A464 RID: 42084
+		// Token: 0x0400A539 RID: 42297
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<EntitlementSetEnum> pendingDlcChecks = new HashSet<EntitlementSetEnum>();
 
-		// Token: 0x0400A465 RID: 42085
+		// Token: 0x0400A53A RID: 42298
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>> dlcPurchaseCallbacks = new Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>>();
 	}

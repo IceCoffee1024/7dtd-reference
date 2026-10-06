@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A57 RID: 6743
+	// Token: 0x02001A83 RID: 6787
 	public class PlayerTracker : AbstractFilter, IFilter<SectionType>
 	{
-		// Token: 0x17001902 RID: 6402
-		// (get) Token: 0x0600CC60 RID: 52320 RVA: 0x0034EC74 File Offset: 0x0034CE74
+		// Token: 0x170019A4 RID: 6564
+		// (get) Token: 0x0600CDB8 RID: 52664 RVA: 0x0035308C File Offset: 0x0035128C
 		public EntityPlayerLocal player
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -19,8 +19,8 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x17001903 RID: 6403
-		// (get) Token: 0x0600CC61 RID: 52321 RVA: 0x004A9884 File Offset: 0x004A7A84
+		// Token: 0x170019A5 RID: 6565
+		// (get) Token: 0x0600CDB9 RID: 52665 RVA: 0x004ADD50 File Offset: 0x004ABF50
 		public bool isPlayerInTraderArea
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -31,7 +31,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CC62 RID: 52322 RVA: 0x004A98B8 File Offset: 0x004A7AB8
+		// Token: 0x0600CDBA RID: 52666 RVA: 0x004ADD84 File Offset: 0x004ABF84
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsTraderAreaOpen(TraderArea _ta)
 		{
@@ -51,8 +51,8 @@ namespace DynamicMusic
 			return entityTrader.TraderInfo.IsOpen;
 		}
 
-		// Token: 0x17001904 RID: 6404
-		// (get) Token: 0x0600CC63 RID: 52323 RVA: 0x004A9964 File Offset: 0x004A7B64
+		// Token: 0x170019A6 RID: 6566
+		// (get) Token: 0x0600CDBB RID: 52667 RVA: 0x004ADE30 File Offset: 0x004AC030
 		public bool isPlayerHome
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -62,7 +62,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CC64 RID: 52324 RVA: 0x004A99B8 File Offset: 0x004A7BB8
+		// Token: 0x0600CDBC RID: 52668 RVA: 0x004ADE84 File Offset: 0x004AC084
 		public override List<SectionType> Filter(List<SectionType> _sectionTypes)
 		{
 			if (this.player != null && this.player.IsAlive())
@@ -120,14 +120,14 @@ namespace DynamicMusic
 			return _sectionTypes;
 		}
 
-		// Token: 0x0600CC65 RID: 52325 RVA: 0x004A9AF1 File Offset: 0x004A7CF1
+		// Token: 0x0600CDBD RID: 52669 RVA: 0x004ADFBD File Offset: 0x004AC1BD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isPlayerInPOI()
 		{
 			return (this.player.prefab != null || GamePrefs.GetString(EnumGamePrefs.GameWorld).Equals("Playtesting")) && this.player.PlayerStats.LightInsidePer > 0.2f;
 		}
 
-		// Token: 0x0600CC66 RID: 52326 RVA: 0x004A9B2C File Offset: 0x004A7D2C
+		// Token: 0x0600CDBE RID: 52670 RVA: 0x004ADFF8 File Offset: 0x004AC1F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SectionType determineTrader()
 		{
@@ -149,25 +149,25 @@ namespace DynamicMusic
 			return SectionType.None;
 		}
 
-		// Token: 0x0600CC67 RID: 52327 RVA: 0x004A9BB4 File Offset: 0x004A7DB4
+		// Token: 0x0600CDBF RID: 52671 RVA: 0x004AE080 File Offset: 0x004AC280
 		public override string ToString()
 		{
 			return "PlayerTracker:\n" + string.Format("Is Player in a trader station: {0}\n", this.isPlayerInTraderArea) + string.Format("Is Player home: {0}\n", this.isPlayerHome) + string.Format("Player Threat Level: {0}", this.player.ThreatLevel.Category);
 		}
 
-		// Token: 0x04009B40 RID: 39744
+		// Token: 0x04009C06 RID: 39942
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cMaxHomeDistance = 50f;
 
-		// Token: 0x04009B41 RID: 39745
+		// Token: 0x04009C07 RID: 39943
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Entity> traders = new List<Entity>();
 
-		// Token: 0x04009B42 RID: 39746
+		// Token: 0x04009C08 RID: 39944
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 boundingBoxRange = new Vector3(200f, 200f, 200f);
 
-		// Token: 0x04009B43 RID: 39747
+		// Token: 0x04009C09 RID: 39945
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<Entity> npcs = new List<Entity>();
 	}

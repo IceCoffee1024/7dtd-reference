@@ -1,64 +1,64 @@
 ﻿using System;
 using Unity.Mathematics;
 
-// Token: 0x02000CC8 RID: 3272
+// Token: 0x02000CD6 RID: 3286
 public struct WaterVoxelState : IEquatable<WaterVoxelState>
 {
-	// Token: 0x06006478 RID: 25720 RVA: 0x00274C2F File Offset: 0x00272E2F
+	// Token: 0x0600646B RID: 25707 RVA: 0x00278033 File Offset: 0x00276233
 	public WaterVoxelState(byte stateBits)
 	{
 		this.stateBits = stateBits;
 	}
 
-	// Token: 0x06006479 RID: 25721 RVA: 0x00274C38 File Offset: 0x00272E38
+	// Token: 0x0600646C RID: 25708 RVA: 0x0027803C File Offset: 0x0027623C
 	public WaterVoxelState(WaterVoxelState other)
 	{
 		this.stateBits = other.stateBits;
 	}
 
-	// Token: 0x0600647A RID: 25722 RVA: 0x00274C46 File Offset: 0x00272E46
+	// Token: 0x0600646D RID: 25709 RVA: 0x0027804A File Offset: 0x0027624A
 	public bool IsDefault()
 	{
 		return this.stateBits == 0;
 	}
 
-	// Token: 0x0600647B RID: 25723 RVA: 0x00274C51 File Offset: 0x00272E51
+	// Token: 0x0600646E RID: 25710 RVA: 0x00278055 File Offset: 0x00276255
 	public bool IsSolidYPos()
 	{
 		return (this.stateBits & 1) > 0;
 	}
 
-	// Token: 0x0600647C RID: 25724 RVA: 0x00274C5E File Offset: 0x00272E5E
+	// Token: 0x0600646F RID: 25711 RVA: 0x00278062 File Offset: 0x00276262
 	public bool IsSolidYNeg()
 	{
 		return (this.stateBits & 2) > 0;
 	}
 
-	// Token: 0x0600647D RID: 25725 RVA: 0x00274C6B File Offset: 0x00272E6B
+	// Token: 0x06006470 RID: 25712 RVA: 0x0027806F File Offset: 0x0027626F
 	public bool IsSolidXPos()
 	{
 		return (this.stateBits & 32) > 0;
 	}
 
-	// Token: 0x0600647E RID: 25726 RVA: 0x00274C79 File Offset: 0x00272E79
+	// Token: 0x06006471 RID: 25713 RVA: 0x0027807D File Offset: 0x0027627D
 	public bool IsSolidXNeg()
 	{
 		return (this.stateBits & 8) > 0;
 	}
 
-	// Token: 0x0600647F RID: 25727 RVA: 0x00274C86 File Offset: 0x00272E86
+	// Token: 0x06006472 RID: 25714 RVA: 0x0027808A File Offset: 0x0027628A
 	public bool IsSolidZPos()
 	{
 		return (this.stateBits & 4) > 0;
 	}
 
-	// Token: 0x06006480 RID: 25728 RVA: 0x00274C93 File Offset: 0x00272E93
+	// Token: 0x06006473 RID: 25715 RVA: 0x00278097 File Offset: 0x00276297
 	public bool IsSolidZNeg()
 	{
 		return (this.stateBits & 16) > 0;
 	}
 
-	// Token: 0x06006481 RID: 25729 RVA: 0x00274CA4 File Offset: 0x00272EA4
+	// Token: 0x06006474 RID: 25716 RVA: 0x002780A8 File Offset: 0x002762A8
 	public bool IsSolidXZ(int2 side)
 	{
 		if (side.x > 0)
@@ -80,19 +80,19 @@ public struct WaterVoxelState : IEquatable<WaterVoxelState>
 		return this.IsSolid();
 	}
 
-	// Token: 0x06006482 RID: 25730 RVA: 0x00274CF7 File Offset: 0x00272EF7
+	// Token: 0x06006475 RID: 25717 RVA: 0x002780FB File Offset: 0x002762FB
 	public bool IsSolid()
 	{
 		return this.stateBits != 0 && (~this.stateBits & 63) == 0;
 	}
 
-	// Token: 0x06006483 RID: 25731 RVA: 0x00274D10 File Offset: 0x00272F10
+	// Token: 0x06006476 RID: 25718 RVA: 0x00278114 File Offset: 0x00276314
 	public void SetSolid(BlockFaceFlag flags)
 	{
 		this.stateBits = (byte)flags;
 	}
 
-	// Token: 0x06006484 RID: 25732 RVA: 0x00274D1A File Offset: 0x00272F1A
+	// Token: 0x06006477 RID: 25719 RVA: 0x0027811E File Offset: 0x0027631E
 	public void SetSolidMask(BlockFaceFlag mask, bool value)
 	{
 		if (value)
@@ -103,13 +103,13 @@ public struct WaterVoxelState : IEquatable<WaterVoxelState>
 		this.stateBits &= (byte)(~(byte)mask);
 	}
 
-	// Token: 0x06006485 RID: 25733 RVA: 0x00274D41 File Offset: 0x00272F41
+	// Token: 0x06006478 RID: 25720 RVA: 0x00278145 File Offset: 0x00276345
 	public bool Equals(WaterVoxelState other)
 	{
 		return this.stateBits == other.stateBits;
 	}
 
-	// Token: 0x04004E2B RID: 20011
+	// Token: 0x04004E61 RID: 20065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte stateBits;
 }

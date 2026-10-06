@@ -4,10 +4,10 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000BBB RID: 3003
+// Token: 0x02000BCD RID: 3021
 public class SpawnPointManager : ISelectionBoxCallback
 {
-	// Token: 0x06005ACC RID: 23244 RVA: 0x0022E3EB File Offset: 0x0022C5EB
+	// Token: 0x06005AE5 RID: 23269 RVA: 0x002316E7 File Offset: 0x0022F8E7
 	public SpawnPointManager(bool _bAddToSelectionBoxes = true)
 	{
 		this.bAddToSelectionBoxes = _bAddToSelectionBoxes;
@@ -17,7 +17,7 @@ public class SpawnPointManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06005ACD RID: 23245 RVA: 0x0022E418 File Offset: 0x0022C618
+	// Token: 0x06005AE6 RID: 23270 RVA: 0x00231714 File Offset: 0x0022F914
 	public void Cleanup()
 	{
 		if (this.bAddToSelectionBoxes)
@@ -26,13 +26,13 @@ public class SpawnPointManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06005ACE RID: 23246 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06005AE7 RID: 23271 RVA: 0x00020119 File Offset: 0x0001E319
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		return true;
 	}
 
-	// Token: 0x06005ACF RID: 23247 RVA: 0x0022E434 File Offset: 0x0022C634
+	// Token: 0x06005AE8 RID: 23272 RVA: 0x00231730 File Offset: 0x0022F930
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		Vector3i vector3i = Vector3i.Parse(_box.name);
@@ -48,17 +48,17 @@ public class SpawnPointManager : ISelectionBoxCallback
 		}
 	}
 
-	// Token: 0x06005AD0 RID: 23248 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005AE9 RID: 23273 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 	}
 
-	// Token: 0x06005AD1 RID: 23249 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005AEA RID: 23274 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 	}
 
-	// Token: 0x06005AD2 RID: 23250 RVA: 0x0022E4AC File Offset: 0x0022C6AC
+	// Token: 0x06005AEB RID: 23275 RVA: 0x002317A8 File Offset: 0x0022F9A8
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		if (_checkCanDeleteOnly)
@@ -74,29 +74,29 @@ public class SpawnPointManager : ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x06005AD3 RID: 23251 RVA: 0x0014E85E File Offset: 0x0014CA5E
+	// Token: 0x06005AEC RID: 23276 RVA: 0x0014F1CE File Offset: 0x0014D3CE
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanShowProperties;
 	}
 
-	// Token: 0x06005AD4 RID: 23252 RVA: 0x0022E4E8 File Offset: 0x0022C6E8
+	// Token: 0x06005AED RID: 23277 RVA: 0x002317E4 File Offset: 0x0022F9E4
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 		_windowManager.SwitchVisible(XUiC_StartPointEditor.ID, true);
 	}
 
-	// Token: 0x06005AD5 RID: 23253 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005AEE RID: 23278 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x06005AD6 RID: 23254 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005AEF RID: 23279 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x06005AD7 RID: 23255 RVA: 0x0022E4F8 File Offset: 0x0022C6F8
+	// Token: 0x06005AF0 RID: 23280 RVA: 0x002317F4 File Offset: 0x0022F9F4
 	public bool Load(string _path)
 	{
 		if (!SdFile.Exists(_path + "/spawnpoints.xml"))
@@ -123,7 +123,7 @@ public class SpawnPointManager : ISelectionBoxCallback
 		return true;
 	}
 
-	// Token: 0x06005AD8 RID: 23256 RVA: 0x0022E608 File Offset: 0x0022C808
+	// Token: 0x06005AF1 RID: 23281 RVA: 0x00231904 File Offset: 0x0022FB04
 	public bool Save(string _path)
 	{
 		bool flag;
@@ -157,10 +157,10 @@ public class SpawnPointManager : ISelectionBoxCallback
 		return flag;
 	}
 
-	// Token: 0x0400467A RID: 18042
+	// Token: 0x040046B9 RID: 18105
 	public SpawnPointList spawnPointList = new SpawnPointList();
 
-	// Token: 0x0400467B RID: 18043
+	// Token: 0x040046BA RID: 18106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool bAddToSelectionBoxes;
 }

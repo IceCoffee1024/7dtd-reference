@@ -7,11 +7,11 @@ using Services.Analytics;
 using Services.Analytics.Events;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EE1 RID: 3809
+// Token: 0x02000EF0 RID: 3824
 [Preserve]
 public class XUiC_CharacterCosmeticsListWindow : XUiController
 {
-	// Token: 0x0600778D RID: 30605 RVA: 0x002CE320 File Offset: 0x002CC520
+	// Token: 0x06007788 RID: 30600 RVA: 0x002D16F8 File Offset: 0x002CF8F8
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.categoryList.CategoryChanged += this.CategoryList_CategoryChanged;
 	}
 
-	// Token: 0x0600778E RID: 30606 RVA: 0x002CE404 File Offset: 0x002CC604
+	// Token: 0x06007789 RID: 30601 RVA: 0x002D17DC File Offset: 0x002CF9DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplySelected()
 	{
@@ -56,14 +56,14 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600778F RID: 30607 RVA: 0x002CE489 File Offset: 0x002CC689
+	// Token: 0x0600778A RID: 30602 RVA: 0x002D1861 File Offset: 0x002CFA61
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApply_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.ApplySelected();
 	}
 
-	// Token: 0x06007790 RID: 30608 RVA: 0x002CE494 File Offset: 0x002CC694
+	// Token: 0x0600778B RID: 30603 RVA: 0x002D186C File Offset: 0x002CFA6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApplySet_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -109,7 +109,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007791 RID: 30609 RVA: 0x002CE608 File Offset: 0x002CC808
+	// Token: 0x0600778C RID: 30604 RVA: 0x002D19E0 File Offset: 0x002CFBE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -117,7 +117,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007792 RID: 30610 RVA: 0x002CE618 File Offset: 0x002CC818
+	// Token: 0x0600778D RID: 30605 RVA: 0x002D19F0 File Offset: 0x002CFBF0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -141,10 +141,14 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007793 RID: 30611 RVA: 0x002CE73C File Offset: 0x002CC93C
+	// Token: 0x0600778E RID: 30606 RVA: 0x002D1B14 File Offset: 0x002CFD14
 	public override void OnClose()
 	{
 		base.OnClose();
+		if (Helper.IsEditingOrPlaytesting())
+		{
+			return;
+		}
 		ItemClass[] cosmeticSlots = this.xui.PlayerEquipment.Equipment.CosmeticSlots;
 		for (int i = 0; i < cosmeticSlots.Length; i++)
 		{
@@ -198,7 +202,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007794 RID: 30612 RVA: 0x002CE875 File Offset: 0x002CCA75
+	// Token: 0x0600778F RID: 30607 RVA: 0x002D1C55 File Offset: 0x002CFE55
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetCategory(EquipmentSlots equipSlot)
 	{
@@ -206,18 +210,18 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.categoryList.SetCategory(equipSlot.ToString());
 	}
 
-	// Token: 0x06007795 RID: 30613 RVA: 0x002CE896 File Offset: 0x002CCA96
+	// Token: 0x06007790 RID: 30608 RVA: 0x002D1C76 File Offset: 0x002CFE76
 	public void SetEmptyCosmeticForCurrentCategory()
 	{
 		this.cosmeticGrid.SetEmptyCosmetic();
 	}
 
-	// Token: 0x06007796 RID: 30614 RVA: 0x002CE8A4 File Offset: 0x002CCAA4
+	// Token: 0x06007791 RID: 30609 RVA: 0x002D1C84 File Offset: 0x002CFE84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
 		this.selectedSlot = (EquipmentSlots)Enum.Parse(typeof(EquipmentSlots), _categoryEntry.CategoryName, true);
-		if (this.xui.playerUI.entityPlayer.equipment.GetSlotItem((int)this.selectedSlot) == null)
+		if (this.xui.playerUI.entityPlayer.equipment.GetSlotItem((int)this.selectedSlot).IsEmpty())
 		{
 			this.btnApply.Tooltip = Localization.Get("ttCosmeticsDisabledSlot", false, null);
 		}
@@ -230,7 +234,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		((XUiC_CharacterCosmeticWindowGroup)base.WindowGroup.Controller).ResetPreview();
 	}
 
-	// Token: 0x06007797 RID: 30615 RVA: 0x002CE94C File Offset: 0x002CCB4C
+	// Token: 0x06007792 RID: 30610 RVA: 0x002D1D30 File Offset: 0x002CFF30
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -246,7 +250,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007798 RID: 30616 RVA: 0x002CE9A0 File Offset: 0x002CCBA0
+	// Token: 0x06007793 RID: 30611 RVA: 0x002D1D84 File Offset: 0x002CFF84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -298,33 +302,33 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0400583B RID: 22587
+	// Token: 0x04005873 RID: 22643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticList cosmeticGrid;
 
-	// Token: 0x0400583C RID: 22588
+	// Token: 0x04005874 RID: 22644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x0400583D RID: 22589
+	// Token: 0x04005875 RID: 22645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnApply;
 
-	// Token: 0x0400583E RID: 22590
+	// Token: 0x04005876 RID: 22646
 	public EquipmentSlots selectedSlot;
 
-	// Token: 0x0400583F RID: 22591
+	// Token: 0x04005877 RID: 22647
 	public static string defaultSelectedElement;
 
-	// Token: 0x04005840 RID: 22592
+	// Token: 0x04005878 RID: 22648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x04005841 RID: 22593
+	// Token: 0x04005879 RID: 22649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterText = "";
 
-	// Token: 0x04005842 RID: 22594
+	// Token: 0x0400587A RID: 22650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass[] _cachedCosmeticSlots;
 }

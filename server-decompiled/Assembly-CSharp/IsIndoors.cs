@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A6 RID: 1702
+// Token: 0x020006A8 RID: 1704
 [Preserve]
 public class IsIndoors : TargetedCompareRequirementBase
 {
-	// Token: 0x06003582 RID: 13698 RVA: 0x0016164C File Offset: 0x0015F84C
+	// Token: 0x060035C5 RID: 13765 RVA: 0x00161FB4 File Offset: 0x001601B4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -20,7 +20,7 @@ public class IsIndoors : TargetedCompareRequirementBase
 		return this.target.Stats.AmountEnclosed <= 0f;
 	}
 
-	// Token: 0x06003583 RID: 13699 RVA: 0x0016169E File Offset: 0x0015F89E
+	// Token: 0x060035C6 RID: 13766 RVA: 0x00162006 File Offset: 0x00160206
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("{0}indoors", this.invert ? "NOT " : ""));

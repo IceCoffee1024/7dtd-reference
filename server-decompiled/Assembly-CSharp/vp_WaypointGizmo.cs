@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001594 RID: 5524
+// Token: 0x020015B6 RID: 5558
 public class vp_WaypointGizmo : MonoBehaviour
 {
-	// Token: 0x0600ACDF RID: 44255 RVA: 0x00404808 File Offset: 0x00402A08
+	// Token: 0x0600AD92 RID: 44434 RVA: 0x0040965C File Offset: 0x0040785C
 	public void OnDrawGizmos()
 	{
 		Gizmos.matrix = base.transform.localToWorldMatrix;
@@ -14,7 +14,7 @@ public class vp_WaypointGizmo : MonoBehaviour
 		Gizmos.DrawLine(Vector3.zero, Vector3.forward);
 	}
 
-	// Token: 0x0600ACE0 RID: 44256 RVA: 0x0040486C File Offset: 0x00402A6C
+	// Token: 0x0600AD93 RID: 44435 RVA: 0x004096C0 File Offset: 0x004078C0
 	public void OnDrawGizmosSelected()
 	{
 		Gizmos.matrix = base.transform.localToWorldMatrix;
@@ -24,12 +24,12 @@ public class vp_WaypointGizmo : MonoBehaviour
 		Gizmos.DrawLine(Vector3.zero, Vector3.forward);
 	}
 
-	// Token: 0x04007FC4 RID: 32708
+	// Token: 0x04008047 RID: 32839
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_GizmoColor = new Color(1f, 1f, 1f, 0.4f);
 
-	// Token: 0x04007FC5 RID: 32709
+	// Token: 0x04008048 RID: 32840
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_SelectedGizmoColor = new Color32(160, byte.MaxValue, 100, 100);

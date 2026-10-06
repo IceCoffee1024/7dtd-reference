@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000130 RID: 304
+// Token: 0x02000132 RID: 306
 [Preserve]
 public class BlockModelTree : BlockPlantGrowing
 {
-	// Token: 0x0600082D RID: 2093 RVA: 0x0003A620 File Offset: 0x00038820
+	// Token: 0x06000833 RID: 2099 RVA: 0x0003A710 File Offset: 0x00038910
 	public BlockModelTree()
 	{
 		this.fertileLevel = 1;
 	}
 
-	// Token: 0x0600082E RID: 2094 RVA: 0x0003A630 File Offset: 0x00038830
+	// Token: 0x06000834 RID: 2100 RVA: 0x0003A720 File Offset: 0x00038920
 	public override void Init()
 	{
 		base.Init();
@@ -31,13 +31,13 @@ public class BlockModelTree : BlockPlantGrowing
 		this.CanMobsSpawnOn = false;
 	}
 
-	// Token: 0x0600082F RID: 2095 RVA: 0x0003A6A2 File Offset: 0x000388A2
+	// Token: 0x06000835 RID: 2101 RVA: 0x0003A792 File Offset: 0x00038992
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		return !_blockValue.ischild && base.UpdateTick(_world, _blockPos, _blockValue, _bRandomTick, _ticksIfLoaded, _rnd);
 	}
 
-	// Token: 0x06000830 RID: 2096 RVA: 0x0003A6BE File Offset: 0x000388BE
+	// Token: 0x06000836 RID: 2102 RVA: 0x0003A7AE File Offset: 0x000389AE
 	public override void OnNeighborBlockChange(WorldBase _world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 		if (!_myBlockValue.ischild)
@@ -46,7 +46,7 @@ public class BlockModelTree : BlockPlantGrowing
 		}
 	}
 
-	// Token: 0x06000831 RID: 2097 RVA: 0x0003A6D8 File Offset: 0x000388D8
+	// Token: 0x06000837 RID: 2103 RVA: 0x0003A7C8 File Offset: 0x000389C8
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (!_newBlockValue.ischild)
@@ -55,13 +55,13 @@ public class BlockModelTree : BlockPlantGrowing
 		}
 	}
 
-	// Token: 0x06000832 RID: 2098 RVA: 0x0003A6F0 File Offset: 0x000388F0
+	// Token: 0x06000838 RID: 2104 RVA: 0x0003A7E0 File Offset: 0x000389E0
 	public override bool CheckPlantAlive(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		return this.isPlantGrowingRandom || _world.IsRemote() || base.CheckPlantAlive(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000833 RID: 2099 RVA: 0x0003A710 File Offset: 0x00038910
+	// Token: 0x06000839 RID: 2105 RVA: 0x0003A800 File Offset: 0x00038A00
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (!base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck))
@@ -84,14 +84,14 @@ public class BlockModelTree : BlockPlantGrowing
 		return true;
 	}
 
-	// Token: 0x06000834 RID: 2100 RVA: 0x0003A79A File Offset: 0x0003899A
+	// Token: 0x0600083A RID: 2106 RVA: 0x0003A88A File Offset: 0x00038A8A
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
 		this.removeAllTrunks(_world, _chunk, _blockPos, _blockValue, -1, false);
 	}
 
-	// Token: 0x06000835 RID: 2101 RVA: 0x0003A7B4 File Offset: 0x000389B4
+	// Token: 0x0600083B RID: 2107 RVA: 0x0003A8A4 File Offset: 0x00038AA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeAllTrunks(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, int _entityid, bool _bDropItemsAndStartParticle)
 	{
@@ -111,21 +111,21 @@ public class BlockModelTree : BlockPlantGrowing
 		}
 	}
 
-	// Token: 0x06000836 RID: 2102 RVA: 0x0003A80C File Offset: 0x00038A0C
+	// Token: 0x0600083C RID: 2108 RVA: 0x0003A8FC File Offset: 0x00038AFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dropItems(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, int _entityId)
 	{
 		_blockValue.Block.DropItemsOnEvent(_world, _blockValue, EnumDropEvent.Destroy, 1f, World.blockToTransformPos(_blockPos), new Vector3(0.5f, 0f, 0.5f), 0f, _entityId, true);
 	}
 
-	// Token: 0x06000837 RID: 2103 RVA: 0x0003A84F File Offset: 0x00038A4F
+	// Token: 0x0600083D RID: 2109 RVA: 0x0003A93F File Offset: 0x00038B3F
 	public override Block.DestroyedResult OnBlockDestroyedByExplosion(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		this.startToFall(_world, _bvRef, _blockValue, -1);
 		return Block.DestroyedResult.Keep;
 	}
 
-	// Token: 0x06000838 RID: 2104 RVA: 0x0003A864 File Offset: 0x00038A64
+	// Token: 0x0600083E RID: 2110 RVA: 0x0003A954 File Offset: 0x00038B54
 	public override void OnBlockStartsToFall(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (_blockValue.ischild)
@@ -141,27 +141,27 @@ public class BlockModelTree : BlockPlantGrowing
 		this.SpawnDestroyParticleEffect(_world, _blockValue, _blockPos, lightBrightness, base.GetColorForSide(_blockValue, BlockFace.Top), -1);
 	}
 
-	// Token: 0x06000839 RID: 2105 RVA: 0x0003A8B8 File Offset: 0x00038AB8
+	// Token: 0x0600083F RID: 2111 RVA: 0x0003A9A8 File Offset: 0x00038BA8
 	public override void SpawnDestroyParticleEffect(WorldBase _world, BlockValue _blockValue, BlockValueRef _bvRef, float _lightValue, Color _color, int _entityIdThatCaused)
 	{
 		base.SpawnDestroyParticleEffect(_world, _blockValue, _bvRef, _lightValue, _color, _entityIdThatCaused);
 		_world.GetGameManager().PlaySoundAtPositionServer(_bvRef.ToVector3(_world), "trunkbreak", AudioRolloffMode.Logarithmic, 100, -1, 1f);
 	}
 
-	// Token: 0x0600083A RID: 2106 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000840 RID: 2112 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ShowModelOnFall()
 	{
 		return false;
 	}
 
-	// Token: 0x0600083B RID: 2107 RVA: 0x0003A8EA File Offset: 0x00038AEA
+	// Token: 0x06000841 RID: 2113 RVA: 0x0003A9DA File Offset: 0x00038BDA
 	public override BlockValue OnBlockPlaced(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, GameRandom _rnd)
 	{
 		_blockValue.rotation = BiomeBlockDecoration.GetRandomRotation(_rnd.RandomFloat, 7);
 		return _blockValue;
 	}
 
-	// Token: 0x0600083C RID: 2108 RVA: 0x0003A901 File Offset: 0x00038B01
+	// Token: 0x06000842 RID: 2114 RVA: 0x0003A9F1 File Offset: 0x00038BF1
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		if (!this.bFallOver)
@@ -175,7 +175,7 @@ public class BlockModelTree : BlockPlantGrowing
 		return Block.DestroyedResult.Keep;
 	}
 
-	// Token: 0x0600083D RID: 2109 RVA: 0x0003A924 File Offset: 0x00038B24
+	// Token: 0x06000843 RID: 2115 RVA: 0x0003AA14 File Offset: 0x00038C14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool startToFall(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, int _entityId)
 	{
@@ -218,7 +218,7 @@ public class BlockModelTree : BlockPlantGrowing
 		return true;
 	}
 
-	// Token: 0x0600083E RID: 2110 RVA: 0x0003AA84 File Offset: 0x00038C84
+	// Token: 0x06000844 RID: 2116 RVA: 0x0003AB74 File Offset: 0x00038D74
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (!_world.IsRemote() && _blockValue.damage > _blockValue.Block.MaxDamage + 100)
@@ -228,7 +228,7 @@ public class BlockModelTree : BlockPlantGrowing
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x0400094C RID: 2380
+	// Token: 0x0400094F RID: 2383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFallOver;
 }

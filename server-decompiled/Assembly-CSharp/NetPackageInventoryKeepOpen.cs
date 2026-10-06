@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000801 RID: 2049
+// Token: 0x02000802 RID: 2050
 [Preserve]
 public class NetPackageInventoryKeepOpen : NetPackage
 {
-	// Token: 0x17000647 RID: 1607
-	// (get) Token: 0x06003C67 RID: 15463 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700066A RID: 1642
+	// (get) Token: 0x06003C52 RID: 15442 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,26 +15,20 @@ public class NetPackageInventoryKeepOpen : NetPackage
 		}
 	}
 
-	// Token: 0x06003C68 RID: 15464 RVA: 0x0012A165 File Offset: 0x00128365
+	// Token: 0x06003C53 RID: 15443 RVA: 0x0012AC85 File Offset: 0x00128E85
 	public NetPackageInventoryKeepOpen Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003C69 RID: 15465 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003C54 RID: 15444 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x06003C6A RID: 15466 RVA: 0x00182518 File Offset: 0x00180718
+	// Token: 0x06003C55 RID: 15445 RVA: 0x00182748 File Offset: 0x00180948
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		LockManager.Instance.ProcessKeepOpen(base.Sender.entityId);
-	}
-
-	// Token: 0x06003C6B RID: 15467 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
 	}
 }

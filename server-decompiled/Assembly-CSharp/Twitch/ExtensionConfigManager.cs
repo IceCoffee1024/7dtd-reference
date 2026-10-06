@@ -9,10 +9,10 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017D0 RID: 6096
+	// Token: 0x020017FC RID: 6140
 	public class ExtensionConfigManager
 	{
-		// Token: 0x0600BD3F RID: 48447 RVA: 0x00460AB4 File Offset: 0x0045ECB4
+		// Token: 0x0600BE97 RID: 48791 RVA: 0x00464FF0 File Offset: 0x004631F0
 		public void Init()
 		{
 			TwitchManager.Current.CommandsChanged += this.pushConfig;
@@ -23,7 +23,7 @@ namespace Twitch
 			this.pushConfig();
 		}
 
-		// Token: 0x0600BD40 RID: 48448 RVA: 0x00460B33 File Offset: 0x0045ED33
+		// Token: 0x0600BE98 RID: 48792 RVA: 0x0046506F File Offset: 0x0046326F
 		public bool UpdatedConfig()
 		{
 			if (this.hasUpdated)
@@ -34,7 +34,7 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600BD41 RID: 48449 RVA: 0x00460B48 File Offset: 0x0045ED48
+		// Token: 0x0600BE99 RID: 48793 RVA: 0x00465084 File Offset: 0x00463284
 		public void Cleanup()
 		{
 			TwitchManager.Current.CommandsChanged -= this.pushConfig;
@@ -44,13 +44,13 @@ namespace Twitch
 			votingManager2.VoteStarted = (OnGameEventVoteAction)Delegate.Remove(votingManager2.VoteStarted, new OnGameEventVoteAction(this.pushConfig));
 		}
 
-		// Token: 0x0600BD42 RID: 48450 RVA: 0x00460BC1 File Offset: 0x0045EDC1
+		// Token: 0x0600BE9A RID: 48794 RVA: 0x004650FD File Offset: 0x004632FD
 		public void OnPartyChanged()
 		{
 			this.pushConfig();
 		}
 
-		// Token: 0x0600BD43 RID: 48451 RVA: 0x00460BC9 File Offset: 0x0045EDC9
+		// Token: 0x0600BE9B RID: 48795 RVA: 0x00465105 File Offset: 0x00463305
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void pushConfig()
 		{
@@ -62,7 +62,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BD44 RID: 48452 RVA: 0x00460BF6 File Offset: 0x0045EDF6
+		// Token: 0x0600BE9C RID: 48796 RVA: 0x00465132 File Offset: 0x00463332
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator pushConfigAfterTimeout()
 		{
@@ -75,7 +75,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BD45 RID: 48453 RVA: 0x00460C05 File Offset: 0x0045EE05
+		// Token: 0x0600BE9D RID: 48797 RVA: 0x00465141 File Offset: 0x00463341
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator UpdateConfig()
 		{
@@ -117,7 +117,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BD46 RID: 48454 RVA: 0x00460C14 File Offset: 0x0045EE14
+		// Token: 0x0600BE9E RID: 48798 RVA: 0x00465150 File Offset: 0x00463350
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator GetDisplayName()
 		{
@@ -144,7 +144,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BD47 RID: 48455 RVA: 0x00460C24 File Offset: 0x0045EE24
+		// Token: 0x0600BE9F RID: 48799 RVA: 0x00465160 File Offset: 0x00463360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<string> GetActiveCategories(List<string> categories)
 		{
@@ -154,7 +154,7 @@ namespace Twitch
 				select name).ToList<string>();
 		}
 
-		// Token: 0x0600BD48 RID: 48456 RVA: 0x00460C84 File Offset: 0x0045EE84
+		// Token: 0x0600BEA0 RID: 48800 RVA: 0x004651C0 File Offset: 0x004633C0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<string> GetPlayers()
 		{
@@ -168,7 +168,7 @@ namespace Twitch
 			return ExtensionConfigManager.emptyParty;
 		}
 
-		// Token: 0x0600BD49 RID: 48457 RVA: 0x00460D34 File Offset: 0x0045EF34
+		// Token: 0x0600BEA1 RID: 48801 RVA: 0x00465270 File Offset: 0x00463470
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, List<ExtensionConfigManager.CommandModel>> GetCommands()
 		{
@@ -201,169 +201,169 @@ namespace Twitch
 			return dictionary;
 		}
 
-		// Token: 0x0600BD4A RID: 48458 RVA: 0x00460E96 File Offset: 0x0045F096
+		// Token: 0x0600BEA2 RID: 48802 RVA: 0x004653D2 File Offset: 0x004635D2
 		public bool CanUseBitCommands()
 		{
 			return this.broadcasterType == "affiliate" || this.broadcasterType == "partner";
 		}
 
-		// Token: 0x04008D92 RID: 36242
+		// Token: 0x04008E58 RID: 36440
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<string> emptyParty = new List<string>(0);
 
-		// Token: 0x04008D93 RID: 36243
+		// Token: 0x04008E59 RID: 36441
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string displayName = string.Empty;
 
-		// Token: 0x04008D94 RID: 36244
+		// Token: 0x04008E5A RID: 36442
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string broadcasterType = string.Empty;
 
-		// Token: 0x04008D95 RID: 36245
+		// Token: 0x04008E5B RID: 36443
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string jwt = string.Empty;
 
-		// Token: 0x04008D96 RID: 36246
+		// Token: 0x04008E5C RID: 36444
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasUpdated;
 
-		// Token: 0x04008D97 RID: 36247
+		// Token: 0x04008E5D RID: 36445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float pushConfigTimeout = 1f;
 
-		// Token: 0x04008D98 RID: 36248
+		// Token: 0x04008E5E RID: 36446
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastPushTime = float.NegativeInfinity;
 
-		// Token: 0x04008D99 RID: 36249
+		// Token: 0x04008E5F RID: 36447
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool waitingToPush;
 
-		// Token: 0x020017D1 RID: 6097
+		// Token: 0x020017FD RID: 6141
 		public class ConfigModel
 		{
-			// Token: 0x04008D9A RID: 36250
+			// Token: 0x04008E60 RID: 36448
 			public string displayName;
 
-			// Token: 0x04008D9B RID: 36251
+			// Token: 0x04008E61 RID: 36449
 			public List<string> party;
 
-			// Token: 0x04008D9C RID: 36252
+			// Token: 0x04008E62 RID: 36450
 			public List<string> categories;
 
-			// Token: 0x04008D9D RID: 36253
+			// Token: 0x04008E63 RID: 36451
 			public string IdentityGrantHeader = Localization.Get("TwitchInfo_IdentityGrantHeader", false, null);
 
-			// Token: 0x04008D9E RID: 36254
+			// Token: 0x04008E64 RID: 36452
 			public string IdentityGrantSubtext = Localization.Get("TwitchInfo_IdentityGrantSubtext", false, null);
 
-			// Token: 0x04008D9F RID: 36255
+			// Token: 0x04008E65 RID: 36453
 			public string LoadingText = Localization.Get("loadActionLoading", false, null);
 
-			// Token: 0x04008DA0 RID: 36256
+			// Token: 0x04008E66 RID: 36454
 			public string OfflineHeader = Localization.Get("TwitchInfo_OfflineHeader", false, null);
 
-			// Token: 0x04008DA1 RID: 36257
+			// Token: 0x04008E67 RID: 36455
 			public string OfflineSubtext1 = Localization.Get("TwitchInfo_OfflineSubtext1", false, null);
 
-			// Token: 0x04008DA2 RID: 36258
+			// Token: 0x04008E68 RID: 36456
 			public string OfflineSubtext2 = Localization.Get("TwitchInfo_OfflineSubtext2", false, null);
 
-			// Token: 0x04008DA3 RID: 36259
+			// Token: 0x04008E69 RID: 36457
 			public string CommandDescriptionsText = Localization.Get("TwitchInfo_CommandDescriptionsText", false, null);
 
-			// Token: 0x04008DA4 RID: 36260
+			// Token: 0x04008E6A RID: 36458
 			public string ChatPromptHeader = Localization.Get("TwitchInfo_ChatPromptHeader", false, null);
 
-			// Token: 0x04008DA5 RID: 36261
+			// Token: 0x04008E6B RID: 36459
 			public string ChatPromptSubtext = Localization.Get("TwitchInfo_ChatPromptSubtext", false, null);
 
-			// Token: 0x04008DA6 RID: 36262
+			// Token: 0x04008E6C RID: 36460
 			public string ActionsOffText = Localization.Get("TwitchInfo_ActionsOffText", false, null);
 
-			// Token: 0x04008DA7 RID: 36263
+			// Token: 0x04008E6D RID: 36461
 			public string CooldownText = Localization.Get("TwitchInfo_CooldownText", false, null);
 
-			// Token: 0x04008DA8 RID: 36264
+			// Token: 0x04008E6E RID: 36462
 			public string PausedText = Localization.Get("TwitchCooldownStatus_Paused", false, null);
 
-			// Token: 0x04008DA9 RID: 36265
+			// Token: 0x04008E6F RID: 36463
 			public string ActionPresetLabel = Localization.Get("xuiOptionsTwitchActionPreset", false, null);
 
-			// Token: 0x04008DAA RID: 36266
+			// Token: 0x04008E70 RID: 36464
 			public string VotePresetLabel = Localization.Get("xuiOptionsTwitchVotePreset", false, null);
 
-			// Token: 0x04008DAB RID: 36267
+			// Token: 0x04008E71 RID: 36465
 			public string EventPresetLabel = Localization.Get("xuiOptionsTwitchCustomEvents", false, null);
 
-			// Token: 0x04008DAC RID: 36268
+			// Token: 0x04008E72 RID: 36466
 			public string TopKillerLabel = Localization.Get("TwitchInfo_TopKiller", false, null);
 
-			// Token: 0x04008DAD RID: 36269
+			// Token: 0x04008E73 RID: 36467
 			public string TopGoodLabel = Localization.Get("TwitchInfo_TopGood", false, null);
 
-			// Token: 0x04008DAE RID: 36270
+			// Token: 0x04008E74 RID: 36468
 			public string TopBadLabel = Localization.Get("TwitchInfo_TopEvil", false, null);
 
-			// Token: 0x04008DAF RID: 36271
+			// Token: 0x04008E75 RID: 36469
 			public string BestHelperLabel = string.Format(Localization.Get("TwitchInfo_CurrentGood", false, null), TwitchManager.LeaderboardStats.GoodRewardTime);
 
-			// Token: 0x04008DB0 RID: 36272
+			// Token: 0x04008E76 RID: 36470
 			public string TotalGoodActionsLabel = Localization.Get("TwitchInfo_TotalGood", false, null);
 
-			// Token: 0x04008DB1 RID: 36273
+			// Token: 0x04008E77 RID: 36471
 			public string TotalBadActionsLabel = Localization.Get("TwitchInfo_TotalBad", false, null);
 
-			// Token: 0x04008DB2 RID: 36274
+			// Token: 0x04008E78 RID: 36472
 			public string LargestPimpPotLabel = Localization.Get("TwitchInfo_LargestPimpPot", false, null);
 
-			// Token: 0x04008DB3 RID: 36275
+			// Token: 0x04008E79 RID: 36473
 			public string DifficultyLabel = Localization.Get("goDifficultyShort", false, null);
 
-			// Token: 0x04008DB4 RID: 36276
+			// Token: 0x04008E7A RID: 36474
 			public string DayCycleLabel = Localization.Get("goDayLength", false, null);
 
-			// Token: 0x04008DB5 RID: 36277
+			// Token: 0x04008E7B RID: 36475
 			public string ModdedLabel = Localization.Get("goModded", false, null);
 
-			// Token: 0x04008DB6 RID: 36278
+			// Token: 0x04008E7C RID: 36476
 			public string PPRateLabel = Localization.Get("TwitchInfo_PPRate", false, null);
 
-			// Token: 0x04008DB7 RID: 36279
+			// Token: 0x04008E7D RID: 36477
 			public Dictionary<string, List<ExtensionConfigManager.CommandModel>> commands;
 		}
 
-		// Token: 0x020017D2 RID: 6098
+		// Token: 0x020017FE RID: 6142
 		public class CommandModel
 		{
-			// Token: 0x04008DB8 RID: 36280
+			// Token: 0x04008E7E RID: 36478
 			public string name;
 
-			// Token: 0x04008DB9 RID: 36281
+			// Token: 0x04008E7F RID: 36479
 			public string baseCommand;
 
-			// Token: 0x04008DBA RID: 36282
+			// Token: 0x04008E80 RID: 36480
 			public string command;
 
-			// Token: 0x04008DBB RID: 36283
+			// Token: 0x04008E81 RID: 36481
 			public bool isPositive;
 
-			// Token: 0x04008DBC RID: 36284
+			// Token: 0x04008E82 RID: 36482
 			public string spends;
 
-			// Token: 0x04008DBD RID: 36285
+			// Token: 0x04008E83 RID: 36483
 			public int cost;
 
-			// Token: 0x04008DBE RID: 36286
+			// Token: 0x04008E84 RID: 36484
 			public string cooldownType;
 
-			// Token: 0x04008DBF RID: 36287
+			// Token: 0x04008E85 RID: 36485
 			public int cooldownIndex;
 
-			// Token: 0x04008DC0 RID: 36288
+			// Token: 0x04008E86 RID: 36486
 			public byte bitPosition;
 
-			// Token: 0x04008DC1 RID: 36289
+			// Token: 0x04008E87 RID: 36487
 			public bool streamerOnly;
 		}
 	}

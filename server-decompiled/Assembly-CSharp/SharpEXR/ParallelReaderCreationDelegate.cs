@@ -2,7 +2,7 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016C8 RID: 5832
-	// (Invoke) Token: 0x0600B643 RID: 46659
+	// Token: 0x020016F4 RID: 5876
+	// (Invoke) Token: 0x0600B79A RID: 47002
 	public delegate IEXRReader ParallelReaderCreationDelegate();
 }

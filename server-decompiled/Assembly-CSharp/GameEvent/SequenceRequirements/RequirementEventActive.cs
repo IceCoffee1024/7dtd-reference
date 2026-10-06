@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001925 RID: 6437
+	// Token: 0x02001951 RID: 6481
 	[Preserve]
 	public class RequirementEventActive : BaseRequirement
 	{
-		// Token: 0x0600C6C4 RID: 50884 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C81C RID: 51228 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C6C5 RID: 50885 RVA: 0x00490A30 File Offset: 0x0048EC30
+		// Token: 0x0600C81D RID: 51229 RVA: 0x00494F1C File Offset: 0x0049311C
 		public override bool CanPerform(Entity target)
 		{
 			if (!EventsFromXml.Events.ContainsKey(this.EventName))
@@ -27,14 +27,14 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C6C6 RID: 50886 RVA: 0x00490A80 File Offset: 0x0048EC80
+		// Token: 0x0600C81E RID: 51230 RVA: 0x00494F6C File Offset: 0x0049316C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(RequirementEventActive.PropEventName, ref this.EventName);
 		}
 
-		// Token: 0x0600C6C7 RID: 50887 RVA: 0x00490A9A File Offset: 0x0048EC9A
+		// Token: 0x0600C81F RID: 51231 RVA: 0x00494F86 File Offset: 0x00493186
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -45,11 +45,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040095D1 RID: 38353
+		// Token: 0x04009697 RID: 38551
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string EventName = "";
 
-		// Token: 0x040095D2 RID: 38354
+		// Token: 0x04009698 RID: 38552
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEventName = "event_name";
 	}

@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02001124 RID: 4388
+// Token: 0x0200113C RID: 4412
 public class XUiM_AssembleItem : XUiModel
 {
-	// Token: 0x17001012 RID: 4114
-	// (get) Token: 0x06008AB2 RID: 35506 RVA: 0x0034C775 File Offset: 0x0034A975
-	// (set) Token: 0x06008AB3 RID: 35507 RVA: 0x0034C77D File Offset: 0x0034A97D
+	// Token: 0x17001047 RID: 4167
+	// (get) Token: 0x06008B1E RID: 35614 RVA: 0x00350C21 File Offset: 0x0034EE21
+	// (set) Token: 0x06008B1F RID: 35615 RVA: 0x00350C29 File Offset: 0x0034EE29
 	public ItemStack CurrentItem
 	{
 		get
@@ -22,9 +22,9 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17001013 RID: 4115
-	// (get) Token: 0x06008AB4 RID: 35508 RVA: 0x0034C78F File Offset: 0x0034A98F
-	// (set) Token: 0x06008AB5 RID: 35509 RVA: 0x0034C797 File Offset: 0x0034A997
+	// Token: 0x17001048 RID: 4168
+	// (get) Token: 0x06008B20 RID: 35616 RVA: 0x00350C3B File Offset: 0x0034EE3B
+	// (set) Token: 0x06008B21 RID: 35617 RVA: 0x00350C43 File Offset: 0x0034EE43
 	public XUiC_ItemStack CurrentItemStackController
 	{
 		get
@@ -45,9 +45,9 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17001014 RID: 4116
-	// (get) Token: 0x06008AB6 RID: 35510 RVA: 0x0034C7C8 File Offset: 0x0034A9C8
-	// (set) Token: 0x06008AB7 RID: 35511 RVA: 0x0034C7D0 File Offset: 0x0034A9D0
+	// Token: 0x17001049 RID: 4169
+	// (get) Token: 0x06008B22 RID: 35618 RVA: 0x00350C74 File Offset: 0x0034EE74
+	// (set) Token: 0x06008B23 RID: 35619 RVA: 0x00350C7C File Offset: 0x0034EE7C
 	public XUiC_EquipmentStack CurrentEquipmentStackController
 	{
 		get
@@ -60,27 +60,27 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17001015 RID: 4117
-	// (get) Token: 0x06008AB8 RID: 35512 RVA: 0x0034C7D9 File Offset: 0x0034A9D9
-	// (set) Token: 0x06008AB9 RID: 35513 RVA: 0x0034C7E1 File Offset: 0x0034A9E1
+	// Token: 0x1700104A RID: 4170
+	// (get) Token: 0x06008B24 RID: 35620 RVA: 0x00350C85 File Offset: 0x0034EE85
+	// (set) Token: 0x06008B25 RID: 35621 RVA: 0x00350C8D File Offset: 0x0034EE8D
 	public int PartCount
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06008ABA RID: 35514 RVA: 0x0034C7EC File Offset: 0x0034A9EC
+	// Token: 0x06008B26 RID: 35622 RVA: 0x00350C98 File Offset: 0x0034EE98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetPartCount()
 	{
 		this.PartCount = 0;
-		for (int i = 0; i < this.CurrentItem.itemValue.Modifications.Length; i++)
+		for (int i = 0; i < this.CurrentItem.itemValue.ModificationCount; i++)
 		{
-			if (this.CurrentItem.itemValue.Modifications[i] == null)
+			if (this.CurrentItem.itemValue.GetModification(i) == null)
 			{
-				this.CurrentItem.itemValue.Modifications[i] = ItemValue.None;
+				this.CurrentItem.itemValue.SetModification(i, ItemValue.None);
 			}
-			if (!this.CurrentItem.itemValue.Modifications[i].IsEmpty())
+			if (!this.CurrentItem.itemValue.GetModification(i).IsEmpty())
 			{
 				int partCount = this.PartCount;
 				this.PartCount = partCount + 1;
@@ -88,14 +88,14 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x06008ABB RID: 35515 RVA: 0x0034C874 File Offset: 0x0034AA74
+	// Token: 0x06008B27 RID: 35623 RVA: 0x00350D18 File Offset: 0x0034EF18
 	public void RefreshAssembleItem()
 	{
 		this.PartCount = 0;
 		bool flag = false;
-		for (int i = 0; i < this.CurrentItem.itemValue.Modifications.Length; i++)
+		for (int i = 0; i < this.CurrentItem.itemValue.ModificationCount; i++)
 		{
-			if (!this.CurrentItem.itemValue.Modifications[i].IsEmpty())
+			if (!this.CurrentItem.itemValue.GetModification(i).IsEmpty())
 			{
 				int partCount = this.PartCount;
 				this.PartCount = partCount + 1;
@@ -120,7 +120,7 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x06008ABC RID: 35516 RVA: 0x0034C928 File Offset: 0x0034AB28
+	// Token: 0x06008B28 RID: 35624 RVA: 0x00350DC8 File Offset: 0x0034EFC8
 	public bool AddPartToItem(ItemStack _partStack, out ItemStack _resultStack)
 	{
 		if (this.CurrentItem == null || this.CurrentItem.IsEmpty())
@@ -138,11 +138,11 @@ public class XUiM_AssembleItem : XUiModel
 			}
 			if (itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes))
 			{
-				for (int i = 0; i < this.CurrentItem.itemValue.CosmeticMods.Length; i++)
+				for (int i = 0; i < this.CurrentItem.itemValue.CosmeticModCount; i++)
 				{
-					if (this.CurrentItem.itemValue.CosmeticMods[i] != null && this.CurrentItem.itemValue.CosmeticMods[i].ItemClass != null)
+					if (this.CurrentItem.itemValue.GetCosmeticMod(i) != null && this.CurrentItem.itemValue.GetCosmeticMod(i).ItemClass != null)
 					{
-						ItemClassModifier itemClassModifier2 = this.CurrentItem.itemValue.CosmeticMods[i].ItemClass as ItemClassModifier;
+						ItemClassModifier itemClassModifier2 = this.CurrentItem.itemValue.GetCosmeticMod(i).ItemClass as ItemClassModifier;
 						if (itemClassModifier2 != null && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier2.ModifierTags))
 						{
 							_resultStack = _partStack;
@@ -154,11 +154,11 @@ public class XUiM_AssembleItem : XUiModel
 			else
 			{
 				int num = 0;
-				for (int j = 0; j < this.CurrentItem.itemValue.Modifications.Length; j++)
+				for (int j = 0; j < this.CurrentItem.itemValue.ModificationCount; j++)
 				{
-					if (this.CurrentItem.itemValue.Modifications[j] != null && this.CurrentItem.itemValue.Modifications[j].ItemClass != null && !itemClassModifier.HasAnyTags(EntityDrone.StorageModifierTags))
+					if (this.CurrentItem.itemValue.GetModification(j) != null && this.CurrentItem.itemValue.GetModification(j).ItemClass != null && !itemClassModifier.HasAnyTags(EntityDrone.StorageModifierTags))
 					{
-						ItemClassModifier itemClassModifier3 = this.CurrentItem.itemValue.Modifications[j].ItemClass as ItemClassModifier;
+						ItemClassModifier itemClassModifier3 = this.CurrentItem.itemValue.GetModification(j).ItemClass as ItemClassModifier;
 						if (itemClassModifier3 != null && itemClassModifier.ModifierTags.Test_AnySet(itemClassModifier3.ModifierTags))
 						{
 							num++;
@@ -176,14 +176,14 @@ public class XUiM_AssembleItem : XUiModel
 		{
 			if (itemClassModifier.ModifierTags.Test_AnySet(ItemClassModifier.CosmeticModTypes))
 			{
-				if (this.CurrentItem.itemValue.CosmeticMods != null)
+				if (this.CurrentItem.itemValue.CosmeticModCount > 0)
 				{
-					for (int k = 0; k < this.CurrentItem.itemValue.CosmeticMods.Length; k++)
+					for (int k = 0; k < this.CurrentItem.itemValue.CosmeticModCount; k++)
 					{
-						if (this.CurrentItem.itemValue.CosmeticMods[k] == null || this.CurrentItem.itemValue.CosmeticMods[k].IsEmpty())
+						if (this.CurrentItem.itemValue.GetCosmeticMod(k) == null || this.CurrentItem.itemValue.GetCosmeticMod(k).IsEmpty())
 						{
 							float num2 = 1f - this.CurrentItem.itemValue.PercentUsesLeft;
-							this.CurrentItem.itemValue.CosmeticMods[k] = _partStack.itemValue.Clone();
+							this.CurrentItem.itemValue.SetCosmeticMod(k, _partStack.itemValue.Clone());
 							if (this.CurrentItemStackController != null)
 							{
 								XUiC_AssembleWindowGroup.GetWindowGroup(this.CurrentItemStackController.xui).ItemStack = this.CurrentItem;
@@ -204,14 +204,14 @@ public class XUiM_AssembleItem : XUiModel
 					}
 				}
 			}
-			else if (this.CurrentItem.itemValue.Modifications != null)
+			else if (this.CurrentItem.itemValue.ModificationCount > 0)
 			{
-				for (int l = 0; l < this.CurrentItem.itemValue.Modifications.Length; l++)
+				for (int l = 0; l < this.CurrentItem.itemValue.ModificationCount; l++)
 				{
-					if (this.CurrentItem.itemValue.Modifications[l] == null || this.CurrentItem.itemValue.Modifications[l].IsEmpty())
+					if (this.CurrentItem.itemValue.GetModification(l) == null || this.CurrentItem.itemValue.GetModification(l).IsEmpty())
 					{
 						float num3 = 1f - this.CurrentItem.itemValue.PercentUsesLeft;
-						this.CurrentItem.itemValue.Modifications[l] = _partStack.itemValue.Clone();
+						this.CurrentItem.itemValue.SetModification(l, _partStack.itemValue.Clone());
 						if (this.CurrentItemStackController != null)
 						{
 							XUiC_AssembleWindowGroup.GetWindowGroup(this.CurrentItemStackController.xui).ItemStack = this.CurrentItem;
@@ -236,7 +236,7 @@ public class XUiM_AssembleItem : XUiModel
 		return false;
 	}
 
-	// Token: 0x06008ABD RID: 35517 RVA: 0x0034CD7D File Offset: 0x0034AF7D
+	// Token: 0x06008B29 RID: 35625 RVA: 0x0035120B File Offset: 0x0034F40B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateAssembleWindow()
 	{
@@ -247,18 +247,18 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x040066E8 RID: 26344
+	// Token: 0x0400673D RID: 26429
 	public XUiC_AssembleWindow AssembleWindow;
 
-	// Token: 0x040066E9 RID: 26345
+	// Token: 0x0400673E RID: 26430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack currentItem;
 
-	// Token: 0x040066EA RID: 26346
+	// Token: 0x0400673F RID: 26431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemStack currentItemStackController;
 
-	// Token: 0x040066EB RID: 26347
+	// Token: 0x04006740 RID: 26432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_EquipmentStack currentEquipmentStackController;
 }

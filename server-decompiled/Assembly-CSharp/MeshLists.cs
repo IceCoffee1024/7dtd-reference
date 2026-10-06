@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020003B3 RID: 947
+// Token: 0x020003B6 RID: 950
 public class MeshLists
 {
-	// Token: 0x06001C64 RID: 7268 RVA: 0x000A84A2 File Offset: 0x000A66A2
+	// Token: 0x06001C5D RID: 7261 RVA: 0x000A86E2 File Offset: 0x000A68E2
 	public static MeshLists GetList()
 	{
 		if (MeshLists.MeshListCache.Count == 0)
@@ -15,7 +15,7 @@ public class MeshLists
 		return MeshLists.MeshListCache.Pop();
 	}
 
-	// Token: 0x06001C65 RID: 7269 RVA: 0x000A84C0 File Offset: 0x000A66C0
+	// Token: 0x06001C5E RID: 7262 RVA: 0x000A8700 File Offset: 0x000A6900
 	public static void ReturnList(MeshLists list)
 	{
 		list.Reset();
@@ -27,7 +27,7 @@ public class MeshLists
 		}
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x000A8520 File Offset: 0x000A6720
+	// Token: 0x06001C5F RID: 7263 RVA: 0x000A8760 File Offset: 0x000A6960
 	public void Reset()
 	{
 		this.Vertices.Clear();
@@ -46,39 +46,39 @@ public class MeshLists
 		this.Tangents.Clear();
 	}
 
-	// Token: 0x0400125F RID: 4703
+	// Token: 0x04001258 RID: 4696
 	public static Stack<MeshLists> MeshListCache = new Stack<MeshLists>();
 
-	// Token: 0x04001260 RID: 4704
+	// Token: 0x04001259 RID: 4697
 	public static int LastLargest = 0;
 
-	// Token: 0x04001261 RID: 4705
+	// Token: 0x0400125A RID: 4698
 	public List<Vector3> Vertices = new List<Vector3>();
 
-	// Token: 0x04001262 RID: 4706
+	// Token: 0x0400125B RID: 4699
 	public List<Vector2> Uvs = new List<Vector2>();
 
-	// Token: 0x04001263 RID: 4707
+	// Token: 0x0400125C RID: 4700
 	public List<Vector2> Uvs2 = new List<Vector2>();
 
-	// Token: 0x04001264 RID: 4708
+	// Token: 0x0400125D RID: 4701
 	public List<Vector2> Uvs3 = new List<Vector2>();
 
-	// Token: 0x04001265 RID: 4709
+	// Token: 0x0400125E RID: 4702
 	public List<Vector2> Uvs4 = new List<Vector2>();
 
-	// Token: 0x04001266 RID: 4710
+	// Token: 0x0400125F RID: 4703
 	public List<int> Triangles = new List<int>();
 
-	// Token: 0x04001267 RID: 4711
+	// Token: 0x04001260 RID: 4704
 	public List<List<int>> TerrainTriangles = new List<List<int>>();
 
-	// Token: 0x04001268 RID: 4712
+	// Token: 0x04001261 RID: 4705
 	public List<Color> Colours = new List<Color>();
 
-	// Token: 0x04001269 RID: 4713
+	// Token: 0x04001262 RID: 4706
 	public List<Vector3> Normals = new List<Vector3>();
 
-	// Token: 0x0400126A RID: 4714
+	// Token: 0x04001263 RID: 4707
 	public List<Vector4> Tangents = new List<Vector4>();
 }

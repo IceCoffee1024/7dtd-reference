@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200144E RID: 5198
+// Token: 0x0200146E RID: 5230
 public struct SNetPackageInfo
 {
-	// Token: 0x0600A340 RID: 41792 RVA: 0x003D0375 File Offset: 0x003CE575
+	// Token: 0x0600A3EC RID: 41964 RVA: 0x003D4F85 File Offset: 0x003D3185
 	public SNetPackageInfo(int _id, int _size)
 	{
 		this.Tick = GameTimer.Instance.ticks;
@@ -11,12 +11,12 @@ public struct SNetPackageInfo
 		this.Size = _size;
 	}
 
-	// Token: 0x04007A48 RID: 31304
+	// Token: 0x04007AC3 RID: 31427
 	public readonly ulong Tick;
 
-	// Token: 0x04007A49 RID: 31305
+	// Token: 0x04007AC4 RID: 31428
 	public readonly int Id;
 
-	// Token: 0x04007A4A RID: 31306
+	// Token: 0x04007AC5 RID: 31429
 	public readonly int Size;
 }

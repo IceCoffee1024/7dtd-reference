@@ -5,17 +5,17 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005D4 RID: 1492
+// Token: 0x020005D5 RID: 1493
 [Preserve]
 public class ItemActionSpawnVehicle : ItemAction
 {
-	// Token: 0x06003084 RID: 12420 RVA: 0x00139784 File Offset: 0x00137984
+	// Token: 0x060030CB RID: 12491 RVA: 0x0013A25C File Offset: 0x0013845C
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionSpawnVehicle.ItemActionDataSpawnVehicle(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06003085 RID: 12421 RVA: 0x00139790 File Offset: 0x00137990
+	// Token: 0x060030CC RID: 12492 RVA: 0x0013A268 File Offset: 0x00138468
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -38,7 +38,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x06003086 RID: 12422 RVA: 0x00139880 File Offset: 0x00137A80
+	// Token: 0x060030CD RID: 12493 RVA: 0x0013A358 File Offset: 0x00138558
 	public override void StartHolding(ItemActionData _actionData)
 	{
 		ItemActionSpawnVehicle.ItemActionDataSpawnVehicle itemActionDataSpawnVehicle = (ItemActionSpawnVehicle.ItemActionDataSpawnVehicle)_actionData;
@@ -58,7 +58,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		GameManager.Instance.StartCoroutine(this.UpdatePreview(itemActionDataSpawnVehicle));
 	}
 
-	// Token: 0x06003087 RID: 12423 RVA: 0x00139918 File Offset: 0x00137B18
+	// Token: 0x060030CE RID: 12494 RVA: 0x0013A3F0 File Offset: 0x001385F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupPreview(ItemActionSpawnVehicle.ItemActionDataSpawnVehicle data)
 	{
@@ -73,7 +73,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x06003088 RID: 12424 RVA: 0x00139997 File Offset: 0x00137B97
+	// Token: 0x060030CF RID: 12495 RVA: 0x0013A46F File Offset: 0x0013866F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UpdatePreview(ItemActionSpawnVehicle.ItemActionDataSpawnVehicle data)
 	{
@@ -110,7 +110,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		yield break;
 	}
 
-	// Token: 0x06003089 RID: 12425 RVA: 0x001399B0 File Offset: 0x00137BB0
+	// Token: 0x060030D0 RID: 12496 RVA: 0x0013A488 File Offset: 0x00138688
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		ItemActionSpawnVehicle.ItemActionDataSpawnVehicle itemActionDataSpawnVehicle = (ItemActionSpawnVehicle.ItemActionDataSpawnVehicle)_actionData;
@@ -120,7 +120,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x0600308A RID: 12426 RVA: 0x001399F4 File Offset: 0x00137BF4
+	// Token: 0x060030D1 RID: 12497 RVA: 0x0013A4CC File Offset: 0x001386CC
 	public override void StopHolding(ItemActionData _actionData)
 	{
 		base.StopHolding(_actionData);
@@ -131,12 +131,12 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x0600308B RID: 12427 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060030D2 RID: 12498 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 	}
 
-	// Token: 0x0600308C RID: 12428 RVA: 0x00139A40 File Offset: 0x00137C40
+	// Token: 0x060030D3 RID: 12499 RVA: 0x0013A518 File Offset: 0x00138718
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -192,7 +192,7 @@ public class ItemActionSpawnVehicle : ItemAction
 				EntityVehicle entityVehicle = entity as EntityVehicle;
 				if (entityVehicle != null)
 				{
-					entityVehicle.GetVehicle().SetItemValue(holdingItemItemValue);
+					entityVehicle.GetVehicle().SetItemValue(holdingItemItemValue.Clone());
 					entityVehicle.SetOwner(PlatformManager.InternalLocalUserIdentifier);
 				}
 				else
@@ -218,7 +218,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		GameManager.ShowTooltip(entityPlayerLocal, "uiCannotAddVehicle", false, false, 0f);
 	}
 
-	// Token: 0x0600308D RID: 12429 RVA: 0x00139CE0 File Offset: 0x00137EE0
+	// Token: 0x060030D4 RID: 12500 RVA: 0x0013A7C0 File Offset: 0x001389C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CalcSpawnPosition(ItemActionSpawnVehicle.ItemActionDataSpawnVehicle _actionData, ref Vector3 position)
 	{
@@ -254,7 +254,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		return false;
 	}
 
-	// Token: 0x0600308E RID: 12430 RVA: 0x00139EDC File Offset: 0x001380DC
+	// Token: 0x060030D5 RID: 12501 RVA: 0x0013A9BC File Offset: 0x00138BBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckForSpace(Vector3 localPos, Vector3 dirN, float length, Vector3 axis1N, float axis1Length, Vector3 axis2N, float axis2Length)
 	{
@@ -278,14 +278,14 @@ public class ItemActionSpawnVehicle : ItemAction
 		return true;
 	}
 
-	// Token: 0x0600308F RID: 12431 RVA: 0x00139F94 File Offset: 0x00138194
+	// Token: 0x060030D6 RID: 12502 RVA: 0x0013AA74 File Offset: 0x00138C74
 	public void ClearPreview(ItemActionData _data)
 	{
 		ItemActionSpawnVehicle.ItemActionDataSpawnVehicle itemActionDataSpawnVehicle = _data as ItemActionSpawnVehicle.ItemActionDataSpawnVehicle;
 		this.ClearPreview(itemActionDataSpawnVehicle);
 	}
 
-	// Token: 0x06003090 RID: 12432 RVA: 0x00139FAF File Offset: 0x001381AF
+	// Token: 0x060030D7 RID: 12503 RVA: 0x0013AA8F File Offset: 0x00138C8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearPreview(ItemActionSpawnVehicle.ItemActionDataSpawnVehicle _actionData)
 	{
@@ -295,7 +295,7 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x06003091 RID: 12433 RVA: 0x00139FD0 File Offset: 0x001381D0
+	// Token: 0x060030D8 RID: 12504 RVA: 0x0013AAB0 File Offset: 0x00138CB0
 	public override void Cleanup(ItemActionData _data)
 	{
 		base.Cleanup(_data);
@@ -306,42 +306,42 @@ public class ItemActionSpawnVehicle : ItemAction
 		}
 	}
 
-	// Token: 0x040025B4 RID: 9652
+	// Token: 0x040025AE RID: 9646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cColliderMask = 28901376;
 
-	// Token: 0x040025B5 RID: 9653
+	// Token: 0x040025AF RID: 9647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string entityToSpawn;
 
-	// Token: 0x040025B6 RID: 9654
+	// Token: 0x040025B0 RID: 9648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId = -1;
 
-	// Token: 0x040025B7 RID: 9655
+	// Token: 0x040025B1 RID: 9649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 vehicleSize;
 
-	// Token: 0x020005D5 RID: 1493
+	// Token: 0x020005D6 RID: 1494
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class ItemActionDataSpawnVehicle : ItemActionAttackData
 	{
-		// Token: 0x06003092 RID: 12434 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x060030D9 RID: 12505 RVA: 0x0012B224 File Offset: 0x00129424
 		public ItemActionDataSpawnVehicle(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025B8 RID: 9656
+		// Token: 0x040025B2 RID: 9650
 		public Transform VehiclePreviewT;
 
-		// Token: 0x040025B9 RID: 9657
+		// Token: 0x040025B3 RID: 9651
 		public Renderer[] PreviewRenderers;
 
-		// Token: 0x040025BA RID: 9658
+		// Token: 0x040025B4 RID: 9652
 		public bool ValidPosition;
 
-		// Token: 0x040025BB RID: 9659
+		// Token: 0x040025B5 RID: 9653
 		public Vector3 Position;
 	}
 }

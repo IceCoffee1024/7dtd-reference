@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020011E9 RID: 4585
+// Token: 0x02001201 RID: 4609
 public enum AllowSpawnNearFriend
 {
-	// Token: 0x04006D7A RID: 28026
+	// Token: 0x04006DE4 RID: 28132
 	Disabled,
-	// Token: 0x04006D7B RID: 28027
+	// Token: 0x04006DE5 RID: 28133
 	Always,
-	// Token: 0x04006D7C RID: 28028
+	// Token: 0x04006DE6 RID: 28134
 	InForest
 }

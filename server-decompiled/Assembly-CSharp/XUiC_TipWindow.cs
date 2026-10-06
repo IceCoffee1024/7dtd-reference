@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001087 RID: 4231
+// Token: 0x02001097 RID: 4247
 [Preserve]
 public class XUiC_TipWindow : XUiController
 {
-	// Token: 0x17000FA6 RID: 4006
-	// (get) Token: 0x06008667 RID: 34407 RVA: 0x00333750 File Offset: 0x00331950
-	// (set) Token: 0x06008668 RID: 34408 RVA: 0x00333758 File Offset: 0x00331958
+	// Token: 0x17000FDB RID: 4059
+	// (get) Token: 0x060086A9 RID: 34473 RVA: 0x00337088 File Offset: 0x00335288
+	// (set) Token: 0x060086AA RID: 34474 RVA: 0x00337090 File Offset: 0x00335290
 	public string TipText
 	{
 		get
@@ -21,9 +21,9 @@ public class XUiC_TipWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FA7 RID: 4007
-	// (get) Token: 0x06008669 RID: 34409 RVA: 0x00333768 File Offset: 0x00331968
-	// (set) Token: 0x0600866A RID: 34410 RVA: 0x00333770 File Offset: 0x00331970
+	// Token: 0x17000FDC RID: 4060
+	// (get) Token: 0x060086AB RID: 34475 RVA: 0x003370A0 File Offset: 0x003352A0
+	// (set) Token: 0x060086AC RID: 34476 RVA: 0x003370A8 File Offset: 0x003352A8
 	public string TipTitle
 	{
 		get
@@ -37,12 +37,12 @@ public class XUiC_TipWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000FA8 RID: 4008
-	// (get) Token: 0x0600866B RID: 34411 RVA: 0x00333780 File Offset: 0x00331980
-	// (set) Token: 0x0600866C RID: 34412 RVA: 0x00333788 File Offset: 0x00331988
+	// Token: 0x17000FDD RID: 4061
+	// (get) Token: 0x060086AD RID: 34477 RVA: 0x003370B8 File Offset: 0x003352B8
+	// (set) Token: 0x060086AE RID: 34478 RVA: 0x003370C0 File Offset: 0x003352C0
 	public ToolTipEvent CloseEvent { get; set; }
 
-	// Token: 0x0600866D RID: 34413 RVA: 0x00333791 File Offset: 0x00331991
+	// Token: 0x060086AF RID: 34479 RVA: 0x003370C9 File Offset: 0x003352C9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -59,21 +59,21 @@ public class XUiC_TipWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0600866E RID: 34414 RVA: 0x003337CB File Offset: 0x003319CB
+	// Token: 0x060086B0 RID: 34480 RVA: 0x00337103 File Offset: 0x00335303
 	public override void Init()
 	{
 		base.Init();
 		((XUiV_Button)base.GetChildById("clickable").ViewComponent).Controller.OnPress += this.closeButton_OnPress;
 	}
 
-	// Token: 0x0600866F RID: 34415 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
+	// Token: 0x060086B1 RID: 34481 RVA: 0x002AAE45 File Offset: 0x002A9045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closeButton_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06008670 RID: 34416 RVA: 0x0008A73D File Offset: 0x0008893D
+	// Token: 0x060086B2 RID: 34482 RVA: 0x0008A9BD File Offset: 0x00088BBD
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -84,7 +84,7 @@ public class XUiC_TipWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008671 RID: 34417 RVA: 0x00333800 File Offset: 0x00331A00
+	// Token: 0x060086B3 RID: 34483 RVA: 0x00337138 File Offset: 0x00335338
 	public static void ShowTip(string _tip, string _title, EntityPlayerLocal _localPlayer, ToolTipEvent _closeEvent)
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(_localPlayer);
@@ -100,7 +100,7 @@ public class XUiC_TipWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008672 RID: 34418 RVA: 0x003338A3 File Offset: 0x00331AA3
+	// Token: 0x060086B4 RID: 34484 RVA: 0x003371DB File Offset: 0x003353DB
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -111,15 +111,15 @@ public class XUiC_TipWindow : XUiController
 		}
 	}
 
-	// Token: 0x040063DF RID: 25567
+	// Token: 0x0400641F RID: 25631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tipText = "";
 
-	// Token: 0x040063E0 RID: 25568
+	// Token: 0x04006420 RID: 25632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tipTitle = "";
 
-	// Token: 0x040063E1 RID: 25569
+	// Token: 0x04006421 RID: 25633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string nextTip = "";
 }

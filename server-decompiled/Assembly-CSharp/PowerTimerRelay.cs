@@ -1,13 +1,12 @@
 ﻿using System;
-using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000914 RID: 2324
+// Token: 0x02000919 RID: 2329
 public class PowerTimerRelay : PowerTrigger
 {
-	// Token: 0x17000728 RID: 1832
-	// (get) Token: 0x0600436A RID: 17258 RVA: 0x00080550 File Offset: 0x0007E750
+	// Token: 0x17000747 RID: 1863
+	// (get) Token: 0x060042FC RID: 17148 RVA: 0x00080804 File Offset: 0x0007EA04
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -16,9 +15,9 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x17000729 RID: 1833
-	// (get) Token: 0x0600436B RID: 17259 RVA: 0x001A3F63 File Offset: 0x001A2163
-	// (set) Token: 0x0600436C RID: 17260 RVA: 0x001A3F6C File Offset: 0x001A216C
+	// Token: 0x17000748 RID: 1864
+	// (get) Token: 0x060042FD RID: 17149 RVA: 0x001A4067 File Offset: 0x001A2267
+	// (set) Token: 0x060042FE RID: 17150 RVA: 0x001A4070 File Offset: 0x001A2270
 	public byte StartTime
 	{
 		get
@@ -34,9 +33,9 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x1700072A RID: 1834
-	// (get) Token: 0x0600436D RID: 17261 RVA: 0x001A3FAA File Offset: 0x001A21AA
-	// (set) Token: 0x0600436E RID: 17262 RVA: 0x001A3FB4 File Offset: 0x001A21B4
+	// Token: 0x17000749 RID: 1865
+	// (get) Token: 0x060042FF RID: 17151 RVA: 0x001A40AE File Offset: 0x001A22AE
+	// (set) Token: 0x06004300 RID: 17152 RVA: 0x001A40B8 File Offset: 0x001A22B8
 	public byte EndTime
 	{
 		get
@@ -52,16 +51,16 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x0600436F RID: 17263 RVA: 0x001A3FF2 File Offset: 0x001A21F2
+	// Token: 0x06004301 RID: 17153 RVA: 0x001A40F6 File Offset: 0x001A22F6
 	public PowerTimerRelay()
 	{
 		this.StartTime = 0;
 		this.EndTime = 24;
 	}
 
-	// Token: 0x1700072B RID: 1835
-	// (get) Token: 0x06004370 RID: 17264 RVA: 0x001A4011 File Offset: 0x001A2211
-	// (set) Token: 0x06004371 RID: 17265 RVA: 0x001A401C File Offset: 0x001A221C
+	// Token: 0x1700074A RID: 1866
+	// (get) Token: 0x06004302 RID: 17154 RVA: 0x001A4115 File Offset: 0x001A2315
+	// (set) Token: 0x06004303 RID: 17155 RVA: 0x001A4120 File Offset: 0x001A2320
 	public override bool IsTriggered
 	{
 		get
@@ -93,13 +92,13 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004372 RID: 17266 RVA: 0x001A40AD File Offset: 0x001A22AD
+	// Token: 0x06004304 RID: 17156 RVA: 0x001A41B1 File Offset: 0x001A23B1
 	public override bool PowerChildren()
 	{
 		return this.IsTriggered;
 	}
 
-	// Token: 0x06004373 RID: 17267 RVA: 0x001A40B8 File Offset: 0x001A22B8
+	// Token: 0x06004305 RID: 17157 RVA: 0x001A41BC File Offset: 0x001A23BC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CheckForActiveChange()
 	{
@@ -120,7 +119,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004374 RID: 17268 RVA: 0x001A4143 File Offset: 0x001A2343
+	// Token: 0x06004306 RID: 17158 RVA: 0x001A4247 File Offset: 0x001A2447
 	public override void CachedUpdateCall()
 	{
 		if (Time.time > this.updateTime)
@@ -130,7 +129,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004375 RID: 17269 RVA: 0x001A416C File Offset: 0x001A236C
+	// Token: 0x06004307 RID: 17159 RVA: 0x001A4270 File Offset: 0x001A2470
 	public override void HandlePowerReceived(ref ushort power)
 	{
 		ushort num = (ushort)Mathf.Min((int)this.RequiredPower, (int)power);
@@ -155,7 +154,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004376 RID: 17270 RVA: 0x001A41F0 File Offset: 0x001A23F0
+	// Token: 0x06004308 RID: 17160 RVA: 0x001A42F4 File Offset: 0x001A24F4
 	public override void HandlePowerUpdate(bool parentIsOn)
 	{
 		if (this.TileEntity != null)
@@ -170,39 +169,39 @@ public class PowerTimerRelay : PowerTrigger
 		this.hasChangesLocal = true;
 	}
 
-	// Token: 0x06004377 RID: 17271 RVA: 0x001A4265 File Offset: 0x001A2465
-	public override void read(BinaryReader _br, byte _version)
+	// Token: 0x06004309 RID: 17161 RVA: 0x001A4369 File Offset: 0x001A2569
+	public override void read(PooledBinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
 		this.StartTime = _br.ReadByte();
 		this.EndTime = _br.ReadByte();
 	}
 
-	// Token: 0x06004378 RID: 17272 RVA: 0x001A4287 File Offset: 0x001A2487
-	public override void write(BinaryWriter _bw)
+	// Token: 0x0600430A RID: 17162 RVA: 0x001A438B File Offset: 0x001A258B
+	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.StartTime);
 		_bw.Write(this.EndTime);
 	}
 
-	// Token: 0x04003668 RID: 13928
+	// Token: 0x0400365C RID: 13916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte startTime;
 
-	// Token: 0x04003669 RID: 13929
+	// Token: 0x0400365D RID: 13917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte endTime = 12;
 
-	// Token: 0x0400366A RID: 13930
+	// Token: 0x0400365E RID: 13918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong startTimeInTicks;
 
-	// Token: 0x0400366B RID: 13931
+	// Token: 0x0400365F RID: 13919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong endTimeInTicks;
 
-	// Token: 0x0400366C RID: 13932
+	// Token: 0x04003660 RID: 13920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000296 RID: 662
+// Token: 0x02000299 RID: 665
 [Preserve]
 public class ConsoleCmdSignEditorDebug : ConsoleCmdAbstract
 {
-	// Token: 0x0600134D RID: 4941 RVA: 0x0007630A File Offset: 0x0007450A
+	// Token: 0x0600134A RID: 4938 RVA: 0x000765BE File Offset: 0x000747BE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "signeditordebug", "sed" };
 	}
 
-	// Token: 0x0600134E RID: 4942 RVA: 0x00076322 File Offset: 0x00074522
+	// Token: 0x0600134B RID: 4939 RVA: 0x000765D6 File Offset: 0x000747D6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Toggles visibility of the Sign Editor debug panel. ";
 	}
 
-	// Token: 0x0600134F RID: 4943 RVA: 0x00076329 File Offset: 0x00074529
+	// Token: 0x0600134C RID: 4940 RVA: 0x000765DD File Offset: 0x000747DD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "No params: Toggles visibility of the Sign Editor debug panel. ";
 	}
 
-	// Token: 0x17000212 RID: 530
-	// (get) Token: 0x06001350 RID: 4944 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700020A RID: 522
+	// (get) Token: 0x0600134D RID: 4941 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -37,8 +37,8 @@ public class ConsoleCmdSignEditorDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000213 RID: 531
-	// (get) Token: 0x06001351 RID: 4945 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x1700020B RID: 523
+	// (get) Token: 0x0600134E RID: 4942 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -47,7 +47,7 @@ public class ConsoleCmdSignEditorDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001352 RID: 4946 RVA: 0x00076330 File Offset: 0x00074530
+	// Token: 0x0600134F RID: 4943 RVA: 0x000765E4 File Offset: 0x000747E4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		XUiC_SignEditorWindow.ShowDebugPanel = !XUiC_SignEditorWindow.ShowDebugPanel;

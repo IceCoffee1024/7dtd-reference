@@ -5,12 +5,12 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF7 RID: 3575
+// Token: 0x02000E06 RID: 3590
 [Preserve]
 public class XUiC_ContinueGame : XUiC_NewContinueBase
 {
-	// Token: 0x17000C22 RID: 3106
-	// (get) Token: 0x06006D68 RID: 28008 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000C3D RID: 3133
+	// (get) Token: 0x06006D60 RID: 28000 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool PlayIntroMovie
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,8 +20,8 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C23 RID: 3107
-	// (get) Token: 0x06006D69 RID: 28009 RVA: 0x002A7F09 File Offset: 0x002A6109
+	// Token: 0x17000C3E RID: 3134
+	// (get) Token: 0x06006D61 RID: 28001 RVA: 0x002AB299 File Offset: 0x002A9499
 	public override bool AllowChangingCreativeMode
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -31,8 +31,8 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C24 RID: 3108
-	// (get) Token: 0x06006D6A RID: 28010 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000C3F RID: 3135
+	// (get) Token: 0x06006D62 RID: 28002 RVA: 0x00020119 File Offset: 0x0001E319
 	[XuiXmlBinding("iscontinuegame")]
 	public bool IsContinueGame
 	{
@@ -43,8 +43,8 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C25 RID: 3109
-	// (get) Token: 0x06006D6B RID: 28011 RVA: 0x002A7F15 File Offset: 0x002A6115
+	// Token: 0x17000C40 RID: 3136
+	// (get) Token: 0x06006D63 RID: 28003 RVA: 0x002AB2A5 File Offset: 0x002A94A5
 	[XuiXmlBinding("saveselected")]
 	public bool SaveSelected
 	{
@@ -56,8 +56,8 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C26 RID: 3110
-	// (get) Token: 0x06006D6C RID: 28012 RVA: 0x002A7F2C File Offset: 0x002A612C
+	// Token: 0x17000C41 RID: 3137
+	// (get) Token: 0x06006D64 RID: 28004 RVA: 0x002AB2BC File Offset: 0x002A94BC
 	[XuiXmlBinding("saveplayable")]
 	public bool SavePlayable
 	{
@@ -80,14 +80,14 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006D6D RID: 28013 RVA: 0x002A7F74 File Offset: 0x002A6174
+	// Token: 0x06006D65 RID: 28005 RVA: 0x002AB304 File Offset: 0x002A9504
 	public override void Init()
 	{
 		base.Init();
 		XUiC_ContinueGame.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006D6E RID: 28014 RVA: 0x002A7F8C File Offset: 0x002A618C
+	// Token: 0x06006D66 RID: 28006 RVA: 0x002AB31C File Offset: 0x002A951C
 	public override void OnOpen()
 	{
 		this.IsDirty = true;
@@ -130,7 +130,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		GamePrefs.SetObject(EnumGamePrefs.ResetUnprotectedChunks, GamePrefs.GetDefault(EnumGamePrefs.ResetUnprotectedChunks));
 	}
 
-	// Token: 0x06006D6F RID: 28015 RVA: 0x002A80A0 File Offset: 0x002A62A0
+	// Token: 0x06006D67 RID: 28007 RVA: 0x002AB430 File Offset: 0x002A9630
 	[XuiBindEvent("ListEntryDoubleClicked", "savesList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SavesList_OnEntryDoubleClicked(XUiC_List<XUiC_SavegamesList.ListEntry> _list, XUiC_SavegamesList.ListEntry _entry)
@@ -141,7 +141,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006D70 RID: 28016 RVA: 0x002A80CC File Offset: 0x002A62CC
+	// Token: 0x06006D68 RID: 28008 RVA: 0x002AB45C File Offset: 0x002A965C
 	[XuiBindEvent("SelectionChanged", "savesList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SavesList_OnSelectionChanged(XUiC_List<XUiC_SavegamesList.ListEntry> _list, XUiC_SavegamesList.ListEntry _previousEntry, XUiC_SavegamesList.ListEntry _newEntry)
@@ -162,7 +162,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006D71 RID: 28017 RVA: 0x002A817B File Offset: 0x002A637B
+	// Token: 0x06006D69 RID: 28009 RVA: 0x002AB50B File Offset: 0x002A970B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectSaveEntry(string _gameWorld, string _gameName, UserDataStorageType _storageType)
 	{
@@ -173,7 +173,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.savesList.SelectCursorElementForSelectedEntry();
 	}
 
-	// Token: 0x06006D72 RID: 28018 RVA: 0x002A81A4 File Offset: 0x002A63A4
+	// Token: 0x06006D6A RID: 28010 RVA: 0x002AB534 File Offset: 0x002A9734
 	[XuiBindEvent("OnPress", "btnDeleteSave")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDeleteSave_OnPressed(XUiController _sender, int _mouseButton)
@@ -181,7 +181,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.deleteSaveWithConfirmation();
 	}
 
-	// Token: 0x06006D73 RID: 28019 RVA: 0x002A81AC File Offset: 0x002A63AC
+	// Token: 0x06006D6B RID: 28011 RVA: 0x002AB53C File Offset: 0x002A973C
 	[XuiBindEvent("OnHover", "btnDeleteSave")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDeleteSave_OnHover(XUiController _sender, bool _isOver)
@@ -192,7 +192,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006D74 RID: 28020 RVA: 0x002A81C4 File Offset: 0x002A63C4
+	// Token: 0x06006D6C RID: 28012 RVA: 0x002AB554 File Offset: 0x002A9754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void deleteSaveWithConfirmation()
 	{
@@ -202,7 +202,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		XUiC_MessageBoxWindowGroup.ShowConfirmCancel(this.xui, Localization.Get("xuiDeleteSaveGame", false, null), string.Format(Localization.Get("xuiSavegameDeleteConfirmation", false, null), CS$<>8__locals1.saveEntry.SaveName), "", new Action(CS$<>8__locals1.<deleteSaveWithConfirmation>g__Confirm|0), new Action(CS$<>8__locals1.<deleteSaveWithConfirmation>g__Cancel|1), 1.5f, false, false, false);
 	}
 
-	// Token: 0x06006D75 RID: 28021 RVA: 0x002A8248 File Offset: 0x002A6448
+	// Token: 0x06006D6D RID: 28013 RVA: 0x002AB5D8 File Offset: 0x002A97D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnOpenSandboxSettingsRequested()
 	{
@@ -211,7 +211,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		base.OnOpenSandboxSettingsRequested();
 	}
 
-	// Token: 0x06006D76 RID: 28022 RVA: 0x002A8280 File Offset: 0x002A6480
+	// Token: 0x06006D6E RID: 28014 RVA: 0x002AB610 File Offset: 0x002A9810
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDataManagementWindowClosed()
 	{
@@ -236,7 +236,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006D77 RID: 28023 RVA: 0x002A82FC File Offset: 0x002A64FC
+	// Token: 0x06006D6F RID: 28015 RVA: 0x002AB68C File Offset: 0x002A988C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBarSelectionValues()
 	{
@@ -256,7 +256,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.DataManagementBar.SetSelectedByteRegion(XUiC_DataManagementBar.BarRegion.None);
 	}
 
-	// Token: 0x06006D78 RID: 28024 RVA: 0x002A838F File Offset: 0x002A658F
+	// Token: 0x06006D70 RID: 28016 RVA: 0x002AB71F File Offset: 0x002A991F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerator startGameCo()
 	{
@@ -352,7 +352,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		yield break;
 	}
 
-	// Token: 0x06006D79 RID: 28025 RVA: 0x002A839E File Offset: 0x002A659E
+	// Token: 0x06006D71 RID: 28017 RVA: 0x002AB72E File Offset: 0x002A992E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameModeChanged(GameMode _newMode)
 	{
@@ -362,7 +362,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006D7A RID: 28026 RVA: 0x002A83CC File Offset: 0x002A65CC
+	// Token: 0x06006D72 RID: 28018 RVA: 0x002AB75C File Offset: 0x002A995C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void validateStartable()
 	{
@@ -380,7 +380,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		base.ValidStartableState = flag;
 	}
 
-	// Token: 0x06006D7B RID: 28027 RVA: 0x002A8424 File Offset: 0x002A6624
+	// Token: 0x06006D73 RID: 28019 RVA: 0x002AB7B4 File Offset: 0x002A99B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateInput()
 	{
@@ -398,7 +398,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006D7C RID: 28028 RVA: 0x002A849A File Offset: 0x002A669A
+	// Token: 0x06006D74 RID: 28020 RVA: 0x002AB82A File Offset: 0x002A9A2A
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -406,7 +406,7 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		this.updateInput();
 	}
 
-	// Token: 0x06006D7D RID: 28029 RVA: 0x002A84B0 File Offset: 0x002A66B0
+	// Token: 0x06006D75 RID: 28021 RVA: 0x002AB840 File Offset: 0x002A9A40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doLoadSaveGameAutomation()
 	{
@@ -451,15 +451,15 @@ public class XUiC_ContinueGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x04005362 RID: 21346
+	// Token: 0x04005399 RID: 21401
 	public static string ID = "";
 
-	// Token: 0x04005363 RID: 21347
+	// Token: 0x0400539A RID: 21402
 	[XuiBindComponent("saves", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SavegamesList savesList;
 
-	// Token: 0x04005364 RID: 21348
+	// Token: 0x0400539B RID: 21403
 	[XuiBindComponent("btnDeleteSave", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDeleteSave;

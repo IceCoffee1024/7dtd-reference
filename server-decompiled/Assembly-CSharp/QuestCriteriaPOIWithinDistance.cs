@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000975 RID: 2421
+// Token: 0x0200097B RID: 2427
 public class QuestCriteriaPOIWithinDistance : BaseQuestCriteria
 {
-	// Token: 0x060046D1 RID: 18129 RVA: 0x001BEEC4 File Offset: 0x001BD0C4
+	// Token: 0x06004672 RID: 18034 RVA: 0x001BF3CC File Offset: 0x001BD5CC
 	public override bool CheckForQuestGiver(EntityNPC entity)
 	{
 		int num = 0;

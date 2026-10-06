@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001916 RID: 6422
+	// Token: 0x02001942 RID: 6466
 	[Preserve]
 	public class BaseRequirementObjectiveGroup
 	{
-		// Token: 0x17001898 RID: 6296
-		// (get) Token: 0x0600C663 RID: 50787 RVA: 0x0048EC4C File Offset: 0x0048CE4C
+		// Token: 0x1700193A RID: 6458
+		// (get) Token: 0x0600C7BB RID: 51131 RVA: 0x00493138 File Offset: 0x00491338
 		public int Count
 		{
 			get
@@ -22,13 +22,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C664 RID: 50788 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C7BC RID: 51132 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void CreateRequirements()
 		{
 		}
 
-		// Token: 0x17001899 RID: 6297
-		// (get) Token: 0x0600C665 RID: 50789 RVA: 0x0048EC73 File Offset: 0x0048CE73
+		// Token: 0x1700193B RID: 6459
+		// (get) Token: 0x0600C7BD RID: 51133 RVA: 0x0049315F File Offset: 0x0049135F
 		public List<BaseChallengeObjective> CurrentObjectiveList
 		{
 			get
@@ -41,7 +41,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C666 RID: 50790 RVA: 0x0048EC98 File Offset: 0x0048CE98
+		// Token: 0x0600C7BE RID: 51134 RVA: 0x00493184 File Offset: 0x00491384
 		public void HandleAddHooks()
 		{
 			if (this.PhaseList.Count == 0)
@@ -55,7 +55,7 @@ namespace Challenges
 			this.CheckPrerequisites();
 		}
 
-		// Token: 0x0600C667 RID: 50791 RVA: 0x0048ECE8 File Offset: 0x0048CEE8
+		// Token: 0x0600C7BF RID: 51135 RVA: 0x004931D4 File Offset: 0x004913D4
 		public void CheckPrerequisites()
 		{
 			if (this.PhaseList.Count == 0)
@@ -74,7 +74,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C668 RID: 50792 RVA: 0x0048ED48 File Offset: 0x0048CF48
+		// Token: 0x0600C7C0 RID: 51136 RVA: 0x00493234 File Offset: 0x00491434
 		public void HandleRemoveHooks()
 		{
 			for (int i = 0; i < this.PhaseList.Count; i++)
@@ -83,13 +83,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C669 RID: 50793 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600C7C1 RID: 51137 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool HasPrerequisiteCondition()
 		{
 			return false;
 		}
 
-		// Token: 0x0600C66A RID: 50794 RVA: 0x0048ED7C File Offset: 0x0048CF7C
+		// Token: 0x0600C7C2 RID: 51138 RVA: 0x00493268 File Offset: 0x00491468
 		public void ResetObjectives()
 		{
 			if (this.PhaseList != null)
@@ -101,7 +101,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C66B RID: 50795 RVA: 0x0048EDB8 File Offset: 0x0048CFB8
+		// Token: 0x0600C7C3 RID: 51139 RVA: 0x004932A4 File Offset: 0x004914A4
 		public void ClonePhases(BaseRequirementObjectiveGroup group)
 		{
 			if (group.PhaseList != null)
@@ -114,7 +114,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C66C RID: 50796 RVA: 0x0048EE04 File Offset: 0x0048D004
+		// Token: 0x0600C7C4 RID: 51140 RVA: 0x004932F0 File Offset: 0x004914F0
 		public virtual bool HandleCheckStatus()
 		{
 			if (this.PhaseList.Count == 0)
@@ -135,14 +135,14 @@ namespace Challenges
 			return false;
 		}
 
-		// Token: 0x0600C66D RID: 50797 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x0600C7C5 RID: 51141 RVA: 0x00020119 File Offset: 0x0001E319
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool CheckPhaseStatus(int index)
 		{
 			return true;
 		}
 
-		// Token: 0x0600C66E RID: 50798 RVA: 0x0048EE80 File Offset: 0x0048D080
+		// Token: 0x0600C7C6 RID: 51142 RVA: 0x0049336C File Offset: 0x0049156C
 		public virtual void UpdateStatus()
 		{
 			for (int i = 0; i < this.PhaseList.Count; i++)
@@ -154,29 +154,29 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C66F RID: 50799 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x0600C7C7 RID: 51143 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public virtual BaseRequirementObjectiveGroup Clone()
 		{
 			return null;
 		}
 
-		// Token: 0x0600C670 RID: 50800 RVA: 0x0048EEC7 File Offset: 0x0048D0C7
+		// Token: 0x0600C7C8 RID: 51144 RVA: 0x004933B3 File Offset: 0x004915B3
 		public Recipe GetItemRecipe()
 		{
 			return this.PhaseList[this.currentIndex].GetItemRecipe();
 		}
 
-		// Token: 0x0400958E RID: 38286
+		// Token: 0x04009654 RID: 38484
 		public Challenge Owner;
 
-		// Token: 0x0400958F RID: 38287
+		// Token: 0x04009655 RID: 38485
 		public List<RequirementGroupPhase> PhaseList = new List<RequirementGroupPhase>();
 
-		// Token: 0x04009590 RID: 38288
+		// Token: 0x04009656 RID: 38486
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int currentIndex;
 
-		// Token: 0x04009591 RID: 38289
+		// Token: 0x04009657 RID: 38487
 		public bool NeedsPreRequisites;
 	}
 }

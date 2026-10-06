@@ -5,11 +5,11 @@ using Epic.OnlineServices.PlayerDataStorage;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D03 RID: 7427
+	// Token: 0x02001D35 RID: 7477
 	public class RemotePlayerFileStorage : IRemotePlayerFileStorage
 	{
-		// Token: 0x17001B78 RID: 7032
-		// (get) Token: 0x0600DC4F RID: 56399 RVA: 0x004EC2E8 File Offset: 0x004EA4E8
+		// Token: 0x17001C1E RID: 7198
+		// (get) Token: 0x0600DDCA RID: 56778 RVA: 0x004F0F30 File Offset: 0x004EF130
 		public bool IsReady
 		{
 			get
@@ -26,21 +26,21 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC50 RID: 56400 RVA: 0x004EC334 File Offset: 0x004EA534
+		// Token: 0x0600DDCB RID: 56779 RVA: 0x004F0F7C File Offset: 0x004EF17C
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 			this.owner.Api.ClientApiInitialized += this.OnClientApiInitialized;
 		}
 
-		// Token: 0x0600DC51 RID: 56401 RVA: 0x004EC359 File Offset: 0x004EA559
+		// Token: 0x0600DDCC RID: 56780 RVA: 0x004F0FA1 File Offset: 0x004EF1A1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientApiInitialized()
 		{
 			this.playerDataStorage = ((Api)this.owner.Api).PlatformInterface.GetPlayerDataStorageInterface();
 		}
 
-		// Token: 0x0600DC52 RID: 56402 RVA: 0x004EC37C File Offset: 0x004EA57C
+		// Token: 0x0600DDCD RID: 56781 RVA: 0x004F0FC4 File Offset: 0x004EF1C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ProcessNextOperation()
 		{
@@ -66,7 +66,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC53 RID: 56403 RVA: 0x004EC418 File Offset: 0x004EA618
+		// Token: 0x0600DDCE RID: 56782 RVA: 0x004F1060 File Offset: 0x004EF260
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CompleteActiveOperation()
 		{
@@ -78,7 +78,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC54 RID: 56404 RVA: 0x004EC460 File Offset: 0x004EA660
+		// Token: 0x0600DDCF RID: 56783 RVA: 0x004F10A8 File Offset: 0x004EF2A8
 		public void ReadRemoteData(string _filename, bool _overwriteCache, IRemotePlayerFileStorage.FileReadCompleteCallback _callback)
 		{
 			object obj = this.queueLock;
@@ -89,7 +89,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC55 RID: 56405 RVA: 0x004EC4B4 File Offset: 0x004EA6B4
+		// Token: 0x0600DDD0 RID: 56784 RVA: 0x004F10FC File Offset: 0x004EF2FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ProcessReadOperation(string _filename, bool _overwriteCache, IRemotePlayerFileStorage.FileReadCompleteCallback _callback)
 		{
@@ -136,7 +136,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC56 RID: 56406 RVA: 0x004EC5EC File Offset: 0x004EA7EC
+		// Token: 0x0600DDD1 RID: 56785 RVA: 0x004F1234 File Offset: 0x004EF434
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadResult ReadChunkCallback(ref ReadFileDataCallbackInfo _callbackData)
 		{
@@ -144,7 +144,7 @@ namespace Platform.EOS
 			return ReadResult.ContinueReading;
 		}
 
-		// Token: 0x0600DC57 RID: 56407 RVA: 0x004EC60C File Offset: 0x004EA80C
+		// Token: 0x0600DDD2 RID: 56786 RVA: 0x004F1254 File Offset: 0x004EF454
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ReadFileCompleteCallback(ref ReadFileCallbackInfo _callbackData)
 		{
@@ -191,7 +191,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC58 RID: 56408 RVA: 0x004EC7DC File Offset: 0x004EA9DC
+		// Token: 0x0600DDD3 RID: 56787 RVA: 0x004F1424 File Offset: 0x004EF624
 		public void WriteRemoteData(string _filename, byte[] _data, bool _overwriteCache, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback)
 		{
 			object obj = this.queueLock;
@@ -202,7 +202,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC59 RID: 56409 RVA: 0x004EC834 File Offset: 0x004EAA34
+		// Token: 0x0600DDD4 RID: 56788 RVA: 0x004F147C File Offset: 0x004EF67C
 		public void ProcessWriteOperation(string _filename, byte[] _data, bool _overwriteCache, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback)
 		{
 			if (_callback == null)
@@ -255,7 +255,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC5A RID: 56410 RVA: 0x004EC98C File Offset: 0x004EAB8C
+		// Token: 0x0600DDD5 RID: 56789 RVA: 0x004F15D4 File Offset: 0x004EF7D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public WriteResult WriteFileChunkCallback(ref WriteFileDataCallbackInfo _callbackData, out ArraySegment<byte> _outDataBuffer)
 		{
@@ -268,7 +268,7 @@ namespace Platform.EOS
 			return WriteResult.CompleteRequest;
 		}
 
-		// Token: 0x0600DC5B RID: 56411 RVA: 0x004EC9D8 File Offset: 0x004EABD8
+		// Token: 0x0600DDD6 RID: 56790 RVA: 0x004F1620 File Offset: 0x004EF820
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteFileCompleteCallback(ref WriteFileCallbackInfo _callbackData)
 		{
@@ -297,35 +297,35 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A67D RID: 42621
+		// Token: 0x0400A754 RID: 42836
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cReadWriteByteLimit = 524288;
 
-		// Token: 0x0400A67E RID: 42622
+		// Token: 0x0400A755 RID: 42837
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A67F RID: 42623
+		// Token: 0x0400A756 RID: 42838
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerDataStorageInterface playerDataStorage;
 
-		// Token: 0x0400A680 RID: 42624
+		// Token: 0x0400A757 RID: 42839
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<RemotePlayerFileStorage.StorageOperation> operationQueue = new Queue<RemotePlayerFileStorage.StorageOperation>();
 
-		// Token: 0x0400A681 RID: 42625
+		// Token: 0x0400A758 RID: 42840
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object queueLock = new object();
 
-		// Token: 0x0400A682 RID: 42626
+		// Token: 0x0400A759 RID: 42841
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool queueProcessing;
 
-		// Token: 0x02001D04 RID: 7428
+		// Token: 0x02001D36 RID: 7478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct StorageOperation
 		{
-			// Token: 0x0600DC5D RID: 56413 RVA: 0x004ECAB2 File Offset: 0x004EACB2
+			// Token: 0x0600DDD8 RID: 56792 RVA: 0x004F16FA File Offset: 0x004EF8FA
 			public StorageOperation(string _filename, bool _overwriteCache, IRemotePlayerFileStorage.FileReadCompleteCallback _callback)
 			{
 				this.ToRead = true;
@@ -336,7 +336,7 @@ namespace Platform.EOS
 				this.WriteCallback = null;
 			}
 
-			// Token: 0x0600DC5E RID: 56414 RVA: 0x004ECADE File Offset: 0x004EACDE
+			// Token: 0x0600DDD9 RID: 56793 RVA: 0x004F1726 File Offset: 0x004EF926
 			public StorageOperation(string _filename, byte[] _data, bool _overwriteCache, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback)
 			{
 				this.ToRead = false;
@@ -347,30 +347,30 @@ namespace Platform.EOS
 				this.WriteCallback = _callback;
 			}
 
-			// Token: 0x0400A683 RID: 42627
+			// Token: 0x0400A75A RID: 42842
 			public bool ToRead;
 
-			// Token: 0x0400A684 RID: 42628
+			// Token: 0x0400A75B RID: 42843
 			public string Filename;
 
-			// Token: 0x0400A685 RID: 42629
+			// Token: 0x0400A75C RID: 42844
 			public bool OverwriteCache;
 
-			// Token: 0x0400A686 RID: 42630
+			// Token: 0x0400A75D RID: 42845
 			public byte[] Data;
 
-			// Token: 0x0400A687 RID: 42631
+			// Token: 0x0400A75E RID: 42846
 			public IRemotePlayerFileStorage.FileReadCompleteCallback ReadCallback;
 
-			// Token: 0x0400A688 RID: 42632
+			// Token: 0x0400A75F RID: 42847
 			public IRemotePlayerFileStorage.FileWriteCompleteCallback WriteCallback;
 		}
 
-		// Token: 0x02001D05 RID: 7429
+		// Token: 0x02001D37 RID: 7479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class ReadRequestDetails
 		{
-			// Token: 0x0600DC5F RID: 56415 RVA: 0x004ECB0B File Offset: 0x004EAD0B
+			// Token: 0x0600DDDA RID: 56794 RVA: 0x004F1753 File Offset: 0x004EF953
 			public ReadRequestDetails(IRemotePlayerFileStorage.FileReadCompleteCallback _callback, bool _overwriteCache)
 			{
 				this.Callback = _callback;
@@ -378,21 +378,21 @@ namespace Platform.EOS
 				this.Chunks = new List<ArraySegment<byte>>();
 			}
 
-			// Token: 0x0400A689 RID: 42633
+			// Token: 0x0400A760 RID: 42848
 			public readonly IRemotePlayerFileStorage.FileReadCompleteCallback Callback;
 
-			// Token: 0x0400A68A RID: 42634
+			// Token: 0x0400A761 RID: 42849
 			public List<ArraySegment<byte>> Chunks;
 
-			// Token: 0x0400A68B RID: 42635
+			// Token: 0x0400A762 RID: 42850
 			public bool OverwriteCache;
 		}
 
-		// Token: 0x02001D06 RID: 7430
+		// Token: 0x02001D38 RID: 7480
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class WriteRequestDetails
 		{
-			// Token: 0x0600DC60 RID: 56416 RVA: 0x004ECB2C File Offset: 0x004EAD2C
+			// Token: 0x0600DDDB RID: 56795 RVA: 0x004F1774 File Offset: 0x004EF974
 			public WriteRequestDetails(bool _writeToCache, byte[] _data, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback)
 			{
 				this.WriteToCache = _writeToCache;
@@ -400,7 +400,7 @@ namespace Platform.EOS
 				this.Callback = _callback;
 			}
 
-			// Token: 0x0600DC61 RID: 56417 RVA: 0x004ECB4C File Offset: 0x004EAD4C
+			// Token: 0x0600DDDC RID: 56796 RVA: 0x004F1794 File Offset: 0x004EF994
 			public ArraySegment<byte>? GetNextChunk()
 			{
 				if (this.DataPointer >= this.Data.Length)
@@ -414,22 +414,22 @@ namespace Platform.EOS
 				return new ArraySegment<byte>?(arraySegment);
 			}
 
-			// Token: 0x0600DC62 RID: 56418 RVA: 0x004ECBB4 File Offset: 0x004EADB4
+			// Token: 0x0600DDDD RID: 56797 RVA: 0x004F17FC File Offset: 0x004EF9FC
 			public bool HasNextChunk()
 			{
 				return this.DataPointer < this.Data.Length;
 			}
 
-			// Token: 0x0400A68C RID: 42636
+			// Token: 0x0400A763 RID: 42851
 			public bool WriteToCache;
 
-			// Token: 0x0400A68D RID: 42637
+			// Token: 0x0400A764 RID: 42852
 			public byte[] Data;
 
-			// Token: 0x0400A68E RID: 42638
+			// Token: 0x0400A765 RID: 42853
 			public readonly IRemotePlayerFileStorage.FileWriteCompleteCallback Callback;
 
-			// Token: 0x0400A68F RID: 42639
+			// Token: 0x0400A766 RID: 42854
 			[PublicizedFrom(EAccessModifier.Private)]
 			public int DataPointer;
 		}

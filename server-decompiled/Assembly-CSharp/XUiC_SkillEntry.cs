@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001060 RID: 4192
+// Token: 0x02001071 RID: 4209
 [Preserve]
 public class XUiC_SkillEntry : XUiController
 {
-	// Token: 0x17000F8D RID: 3981
-	// (get) Token: 0x0600854A RID: 34122 RVA: 0x0032C03E File Offset: 0x0032A23E
-	// (set) Token: 0x0600854B RID: 34123 RVA: 0x0032C048 File Offset: 0x0032A248
+	// Token: 0x17000FC3 RID: 4035
+	// (get) Token: 0x06008590 RID: 34192 RVA: 0x0032FC4A File Offset: 0x0032DE4A
+	// (set) Token: 0x06008591 RID: 34193 RVA: 0x0032FC54 File Offset: 0x0032DE54
 	public ProgressionValue Skill
 	{
 		get
@@ -25,9 +25,9 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F8E RID: 3982
-	// (get) Token: 0x0600854C RID: 34124 RVA: 0x0032C08D File Offset: 0x0032A28D
-	// (set) Token: 0x0600854D RID: 34125 RVA: 0x0032C095 File Offset: 0x0032A295
+	// Token: 0x17000FC4 RID: 4036
+	// (get) Token: 0x06008592 RID: 34194 RVA: 0x0032FC99 File Offset: 0x0032DE99
+	// (set) Token: 0x06008593 RID: 34195 RVA: 0x0032FCA1 File Offset: 0x0032DEA1
 	public bool IsSelected
 	{
 		get
@@ -44,9 +44,9 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F8F RID: 3983
-	// (get) Token: 0x0600854E RID: 34126 RVA: 0x0032C0AE File Offset: 0x0032A2AE
-	// (set) Token: 0x0600854F RID: 34127 RVA: 0x0032C0B6 File Offset: 0x0032A2B6
+	// Token: 0x17000FC5 RID: 4037
+	// (get) Token: 0x06008594 RID: 34196 RVA: 0x0032FCBA File Offset: 0x0032DEBA
+	// (set) Token: 0x06008595 RID: 34197 RVA: 0x0032FCC2 File Offset: 0x0032DEC2
 	public ProgressionClass.DisplayTypes DisplayType
 	{
 		get
@@ -59,7 +59,7 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008550 RID: 34128 RVA: 0x0032C0C0 File Offset: 0x0032A2C0
+	// Token: 0x06008596 RID: 34198 RVA: 0x0032FCCC File Offset: 0x0032DECC
 	public override void Init()
 	{
 		base.Init();
@@ -82,7 +82,7 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008551 RID: 34129 RVA: 0x0032C170 File Offset: 0x0032A370
+	// Token: 0x06008597 RID: 34199 RVA: 0x0032FD7C File Offset: 0x0032DF7C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -102,7 +102,7 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008552 RID: 34130 RVA: 0x0032C1C8 File Offset: 0x0032A3C8
+	// Token: 0x06008598 RID: 34200 RVA: 0x0032FDD4 File Offset: 0x0032DFD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetGroupLevel()
 	{
@@ -120,7 +120,7 @@ public class XUiC_SkillEntry : XUiController
 		return "";
 	}
 
-	// Token: 0x06008553 RID: 34131 RVA: 0x0032C2A4 File Offset: 0x0032A4A4
+	// Token: 0x06008599 RID: 34201 RVA: 0x0032FEB0 File Offset: 0x0032E0B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetGroupPointCost()
 	{
@@ -164,7 +164,7 @@ public class XUiC_SkillEntry : XUiController
 		return "";
 	}
 
-	// Token: 0x06008554 RID: 34132 RVA: 0x0032C40C File Offset: 0x0032A60C
+	// Token: 0x0600859A RID: 34202 RVA: 0x00330018 File Offset: 0x0032E218
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -352,7 +352,7 @@ public class XUiC_SkillEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008555 RID: 34133 RVA: 0x0032CAF0 File Offset: 0x0032ACF0
+	// Token: 0x0600859B RID: 34203 RVA: 0x003306FC File Offset: 0x0032E8FC
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "enabled_color")
@@ -378,7 +378,7 @@ public class XUiC_SkillEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06008556 RID: 34134 RVA: 0x0032CB60 File Offset: 0x0032AD60
+	// Token: 0x0600859C RID: 34204 RVA: 0x0033076C File Offset: 0x0032E96C
 	public override void Update(float _dt)
 	{
 		if (this.currentSkill != null)
@@ -476,7 +476,7 @@ public class XUiC_SkillEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008557 RID: 34135 RVA: 0x0032CF8F File Offset: 0x0032B18F
+	// Token: 0x0600859D RID: 34205 RVA: 0x00330B9B File Offset: 0x0032ED9B
 	public override void OnCursorSelected(bool _isActualElement)
 	{
 		base.OnCursorSelected(_isActualElement);
@@ -484,61 +484,61 @@ public class XUiC_SkillEntry : XUiController
 		((XUiC_SkillWindowGroup)this.windowGroup.Controller).IsDirty = true;
 	}
 
-	// Token: 0x040062EC RID: 25324
+	// Token: 0x04006331 RID: 25393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionValue currentSkill;
 
-	// Token: 0x040062ED RID: 25325
+	// Token: 0x04006332 RID: 25394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string enabledColor;
 
-	// Token: 0x040062EE RID: 25326
+	// Token: 0x04006333 RID: 25395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor;
 
-	// Token: 0x040062EF RID: 25327
+	// Token: 0x04006334 RID: 25396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rowColor;
 
-	// Token: 0x040062F0 RID: 25328
+	// Token: 0x04006335 RID: 25397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hoverColor;
 
-	// Token: 0x040062F1 RID: 25329
+	// Token: 0x04006336 RID: 25398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label groupName;
 
-	// Token: 0x040062F2 RID: 25330
+	// Token: 0x04006337 RID: 25399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite groupIcon;
 
-	// Token: 0x040062F3 RID: 25331
+	// Token: 0x04006338 RID: 25400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 ogIconPos;
 
-	// Token: 0x040062F4 RID: 25332
+	// Token: 0x04006339 RID: 25401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 ogNamePos;
 
-	// Token: 0x040062F5 RID: 25333
+	// Token: 0x0400633A RID: 25402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i ogIconSize;
 
-	// Token: 0x040062F6 RID: 25334
+	// Token: 0x0400633B RID: 25403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSelected;
 
-	// Token: 0x040062F7 RID: 25335
+	// Token: 0x0400633C RID: 25404
 	public bool IsHovered;
 
-	// Token: 0x040062F8 RID: 25336
+	// Token: 0x0400633D RID: 25405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionClass.DisplayTypes displayType;
 
-	// Token: 0x040062F9 RID: 25337
+	// Token: 0x0400633E RID: 25406
 	public XUiC_SkillList skillList;
 
-	// Token: 0x040062FA RID: 25338
+	// Token: 0x0400633F RID: 25407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int, int> groupLevelFormatter = new CachedStringFormatter<int, int, int>(delegate(int _i3, int _i1, int _i2)
 	{
@@ -553,15 +553,15 @@ public class XUiC_SkillEntry : XUiController
 		return "[11cc11]" + _i1.ToString() + "[-]/" + _i2.ToString();
 	});
 
-	// Token: 0x040062FB RID: 25339
+	// Token: 0x04006340 RID: 25408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> craftingGroupLevelFormatter = new CachedStringFormatter<int, int>((int _i1, int _i2) => _i1.ToString() + "/" + _i2.ToString());
 
-	// Token: 0x040062FC RID: 25340
+	// Token: 0x04006341 RID: 25409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> groupPointCostFormatter = new CachedStringFormatter<int>((int _i) => string.Format("{0} {1}", _i, (_i != 1) ? Localization.Get("xuiSkillPoints", false, null) : Localization.Get("xuiSkillPoint", false, null)));
 
-	// Token: 0x040062FD RID: 25341
+	// Token: 0x04006342 RID: 25410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat skillPercentThisLevelFormatter = new CachedStringFormatterFloat(null);
 }

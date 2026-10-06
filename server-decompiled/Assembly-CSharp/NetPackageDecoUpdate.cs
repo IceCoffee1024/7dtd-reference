@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C7 RID: 1991
+// Token: 0x020007CA RID: 1994
 [Preserve]
 public class NetPackageDecoUpdate : NetPackage
 {
-	// Token: 0x17000622 RID: 1570
-	// (get) Token: 0x06003B12 RID: 15122 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000647 RID: 1607
+	// (get) Token: 0x06003B36 RID: 15158 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageDecoUpdate : NetPackage
 		}
 	}
 
-	// Token: 0x06003B13 RID: 15123 RVA: 0x0017DE3C File Offset: 0x0017C03C
+	// Token: 0x06003B37 RID: 15159 RVA: 0x0017E428 File Offset: 0x0017C628
 	public NetPackageDecoUpdate Setup(List<DecoObject> _decoList, ref int _currentIndex)
 	{
 		this.firstPackage = _currentIndex == 0;
@@ -35,14 +35,14 @@ public class NetPackageDecoUpdate : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B14 RID: 15124 RVA: 0x0017DEC8 File Offset: 0x0017C0C8
+	// Token: 0x06003B38 RID: 15160 RVA: 0x0017E4B4 File Offset: 0x0017C6B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageDecoUpdate()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.ms);
 	}
 
-	// Token: 0x06003B15 RID: 15125 RVA: 0x0017DF00 File Offset: 0x0017C100
+	// Token: 0x06003B39 RID: 15161 RVA: 0x0017E4EC File Offset: 0x0017C6EC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.firstPackage = _br.ReadBoolean();
@@ -50,7 +50,7 @@ public class NetPackageDecoUpdate : NetPackage
 		StreamUtils.StreamCopy(_br.BaseStream, this.ms, num, null, true);
 	}
 
-	// Token: 0x06003B16 RID: 15126 RVA: 0x0017DF34 File Offset: 0x0017C134
+	// Token: 0x06003B3A RID: 15162 RVA: 0x0017E520 File Offset: 0x0017C720
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -59,7 +59,7 @@ public class NetPackageDecoUpdate : NetPackage
 		this.ms.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003B17 RID: 15127 RVA: 0x0017DF6C File Offset: 0x0017C16C
+	// Token: 0x06003B3B RID: 15163 RVA: 0x0017E558 File Offset: 0x0017C758
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
@@ -74,25 +74,19 @@ public class NetPackageDecoUpdate : NetPackage
 		}
 	}
 
-	// Token: 0x06003B18 RID: 15128 RVA: 0x0017DFF8 File Offset: 0x0017C1F8
-	public override int GetLength()
-	{
-		return (int)this.ms.Length;
-	}
-
-	// Token: 0x0400303D RID: 12349
+	// Token: 0x04003037 RID: 12343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream ms = MemoryPools.poolMemoryStream.AllocSync(true);
 
-	// Token: 0x0400303E RID: 12350
+	// Token: 0x04003038 RID: 12344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstPackage = true;
 
-	// Token: 0x0400303F RID: 12351
+	// Token: 0x04003039 RID: 12345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int decoSize = 16;
 
-	// Token: 0x04003040 RID: 12352
+	// Token: 0x0400303A RID: 12346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int decosPerPackage = 32768;
 }

@@ -2,10 +2,10 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016CE RID: 5838
+	// Token: 0x020016FA RID: 5882
 	public struct EXRVersion
 	{
-		// Token: 0x0600B682 RID: 46722 RVA: 0x0043D72C File Offset: 0x0043B92C
+		// Token: 0x0600B7D9 RID: 47065 RVA: 0x00441C4C File Offset: 0x0043FE4C
 		public EXRVersion(int version, bool multiPart, bool longNames, bool nonImageParts, bool isSingleTiled = false)
 		{
 			this.Value = (EXRVersionFlags)(version & 255);
@@ -46,14 +46,14 @@ namespace SharpEXR
 			this.Verify();
 		}
 
-		// Token: 0x0600B683 RID: 46723 RVA: 0x0043D7E4 File Offset: 0x0043B9E4
+		// Token: 0x0600B7DA RID: 47066 RVA: 0x00441D04 File Offset: 0x0043FF04
 		public EXRVersion(int value)
 		{
 			this.Value = (EXRVersionFlags)value;
 			this.Verify();
 		}
 
-		// Token: 0x0600B684 RID: 46724 RVA: 0x0043D7F3 File Offset: 0x0043B9F3
+		// Token: 0x0600B7DB RID: 47067 RVA: 0x00441D13 File Offset: 0x0043FF13
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Verify()
 		{
@@ -63,8 +63,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x1700164D RID: 5709
-		// (get) Token: 0x0600B685 RID: 46725 RVA: 0x0043D818 File Offset: 0x0043BA18
+		// Token: 0x170016EF RID: 5871
+		// (get) Token: 0x0600B7DC RID: 47068 RVA: 0x00441D38 File Offset: 0x0043FF38
 		public int Version
 		{
 			get
@@ -73,8 +73,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x1700164E RID: 5710
-		// (get) Token: 0x0600B686 RID: 46726 RVA: 0x0043D826 File Offset: 0x0043BA26
+		// Token: 0x170016F0 RID: 5872
+		// (get) Token: 0x0600B7DD RID: 47069 RVA: 0x00441D46 File Offset: 0x0043FF46
 		public bool IsSinglePartTiled
 		{
 			get
@@ -83,8 +83,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x1700164F RID: 5711
-		// (get) Token: 0x0600B687 RID: 46727 RVA: 0x0043D842 File Offset: 0x0043BA42
+		// Token: 0x170016F1 RID: 5873
+		// (get) Token: 0x0600B7DE RID: 47070 RVA: 0x00441D62 File Offset: 0x0043FF62
 		public bool HasLongNames
 		{
 			get
@@ -93,8 +93,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x17001650 RID: 5712
-		// (get) Token: 0x0600B688 RID: 46728 RVA: 0x0043D85E File Offset: 0x0043BA5E
+		// Token: 0x170016F2 RID: 5874
+		// (get) Token: 0x0600B7DF RID: 47071 RVA: 0x00441D7E File Offset: 0x0043FF7E
 		public bool HasNonImageParts
 		{
 			get
@@ -103,8 +103,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x17001651 RID: 5713
-		// (get) Token: 0x0600B689 RID: 46729 RVA: 0x0043D87A File Offset: 0x0043BA7A
+		// Token: 0x170016F3 RID: 5875
+		// (get) Token: 0x0600B7E0 RID: 47072 RVA: 0x00441D9A File Offset: 0x0043FF9A
 		public bool IsMultiPart
 		{
 			get
@@ -113,8 +113,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x17001652 RID: 5714
-		// (get) Token: 0x0600B68A RID: 46730 RVA: 0x0043D896 File Offset: 0x0043BA96
+		// Token: 0x170016F4 RID: 5876
+		// (get) Token: 0x0600B7E1 RID: 47073 RVA: 0x00441DB6 File Offset: 0x0043FFB6
 		public int MaxNameLength
 		{
 			get
@@ -127,7 +127,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x04008878 RID: 34936
+		// Token: 0x0400893D RID: 35133
 		public readonly EXRVersionFlags Value;
 	}
 }

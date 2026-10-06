@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB7 RID: 4023
+// Token: 0x02000FC6 RID: 4038
 [Preserve]
 public class XUiC_PowerRangedTrapOptions : XUiController
 {
-	// Token: 0x17000ED6 RID: 3798
-	// (get) Token: 0x06007F1A RID: 32538 RVA: 0x003033E8 File Offset: 0x003015E8
-	// (set) Token: 0x06007F1B RID: 32539 RVA: 0x003033F0 File Offset: 0x003015F0
+	// Token: 0x17000EFD RID: 3837
+	// (get) Token: 0x06007F29 RID: 32553 RVA: 0x003063C0 File Offset: 0x003045C0
+	// (set) Token: 0x06007F2A RID: 32554 RVA: 0x003063C8 File Offset: 0x003045C8
 	public TileEntityPoweredRangedTrap TileEntity
 	{
 		get
@@ -20,16 +20,16 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		}
 	}
 
-	// Token: 0x17000ED7 RID: 3799
-	// (get) Token: 0x06007F1C RID: 32540 RVA: 0x003033F9 File Offset: 0x003015F9
-	// (set) Token: 0x06007F1D RID: 32541 RVA: 0x00303401 File Offset: 0x00301601
+	// Token: 0x17000EFE RID: 3838
+	// (get) Token: 0x06007F2B RID: 32555 RVA: 0x003063D1 File Offset: 0x003045D1
+	// (set) Token: 0x06007F2C RID: 32556 RVA: 0x003063D9 File Offset: 0x003045D9
 	public XUiC_PowerRangedTrapWindowGroup Owner
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x06007F1E RID: 32542 RVA: 0x0030340C File Offset: 0x0030160C
+	// Token: 0x06007F2D RID: 32557 RVA: 0x003063E4 File Offset: 0x003045E4
 	public override void Init()
 	{
 		base.Init();
@@ -57,7 +57,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007F1F RID: 32543 RVA: 0x003034F8 File Offset: 0x003016F8
+	// Token: 0x06007F2E RID: 32558 RVA: 0x003064D0 File Offset: 0x003046D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetSelf_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -71,7 +71,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.TileEntity.TargetType &= -2;
 	}
 
-	// Token: 0x06007F20 RID: 32544 RVA: 0x00303554 File Offset: 0x00301754
+	// Token: 0x06007F2F RID: 32559 RVA: 0x0030652C File Offset: 0x0030472C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetAllies_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -85,7 +85,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.TileEntity.TargetType &= -3;
 	}
 
-	// Token: 0x06007F21 RID: 32545 RVA: 0x003035B0 File Offset: 0x003017B0
+	// Token: 0x06007F30 RID: 32560 RVA: 0x00306588 File Offset: 0x00304788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetStrangers_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -99,7 +99,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.TileEntity.TargetType &= -5;
 	}
 
-	// Token: 0x06007F22 RID: 32546 RVA: 0x0030360C File Offset: 0x0030180C
+	// Token: 0x06007F31 RID: 32561 RVA: 0x003065E4 File Offset: 0x003047E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTargetZombies_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -113,7 +113,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.TileEntity.TargetType &= -9;
 	}
 
-	// Token: 0x06007F23 RID: 32547 RVA: 0x00303667 File Offset: 0x00301867
+	// Token: 0x06007F32 RID: 32562 RVA: 0x0030663F File Offset: 0x0030483F
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -127,7 +127,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007F24 RID: 32548 RVA: 0x00303693 File Offset: 0x00301893
+	// Token: 0x06007F33 RID: 32563 RVA: 0x0030666B File Offset: 0x0030486B
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -136,7 +136,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		this.tileEntity.SetModified();
 	}
 
-	// Token: 0x06007F25 RID: 32549 RVA: 0x003036B8 File Offset: 0x003018B8
+	// Token: 0x06007F34 RID: 32564 RVA: 0x00306690 File Offset: 0x00304890
 	public override void OnClose()
 	{
 		GameManager instance = GameManager.Instance;
@@ -150,7 +150,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x06007F26 RID: 32550 RVA: 0x00303708 File Offset: 0x00301908
+	// Token: 0x06007F35 RID: 32565 RVA: 0x003066E0 File Offset: 0x003048E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupTargeting()
 	{
@@ -183,7 +183,7 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		}
 	}
 
-	// Token: 0x06007F27 RID: 32551 RVA: 0x00303878 File Offset: 0x00301A78
+	// Token: 0x06007F36 RID: 32566 RVA: 0x00306850 File Offset: 0x00304A50
 	public Vector3i GetBlockPos()
 	{
 		if (this.TileEntity != null)
@@ -193,35 +193,35 @@ public class XUiC_PowerRangedTrapOptions : XUiController
 		return Vector3i.zero;
 	}
 
-	// Token: 0x04005E44 RID: 24132
+	// Token: 0x04005E6D RID: 24173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x04005E45 RID: 24133
+	// Token: 0x04005E6E RID: 24174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController pnlTargeting;
 
-	// Token: 0x04005E46 RID: 24134
+	// Token: 0x04005E6F RID: 24175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetSelf;
 
-	// Token: 0x04005E47 RID: 24135
+	// Token: 0x04005E70 RID: 24176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetAllies;
 
-	// Token: 0x04005E48 RID: 24136
+	// Token: 0x04005E71 RID: 24177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetStrangers;
 
-	// Token: 0x04005E49 RID: 24137
+	// Token: 0x04005E72 RID: 24178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnTargetZombies;
 
-	// Token: 0x04005E4A RID: 24138
+	// Token: 0x04005E73 RID: 24179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPoweredRangedTrap tileEntity;
 
-	// Token: 0x04005E4C RID: 24140
+	// Token: 0x04005E75 RID: 24181
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

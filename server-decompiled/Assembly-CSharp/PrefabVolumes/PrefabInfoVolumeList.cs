@@ -4,17 +4,17 @@ using System.Text;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018B2 RID: 6322
+	// Token: 0x020018DE RID: 6366
 	public class PrefabInfoVolumeList : PrefabVolumeListAbs<PrefabInfoVolumeList, PrefabInfoVolume>
 	{
-		// Token: 0x0600C32E RID: 49966 RVA: 0x00482377 File Offset: 0x00480577
+		// Token: 0x0600C486 RID: 50310 RVA: 0x004868BF File Offset: 0x00484ABF
 		public PrefabInfoVolumeList(Prefab _owner)
 			: base(_owner)
 		{
 		}
 
-		// Token: 0x170017FC RID: 6140
-		// (get) Token: 0x0600C32F RID: 49967 RVA: 0x0002F168 File Offset: 0x0002D368
+		// Token: 0x1700189E RID: 6302
+		// (get) Token: 0x0600C487 RID: 50311 RVA: 0x0002F260 File Offset: 0x0002D460
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -23,8 +23,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170017FD RID: 6141
-		// (get) Token: 0x0600C330 RID: 49968 RVA: 0x00482380 File Offset: 0x00480580
+		// Token: 0x1700189F RID: 6303
+		// (get) Token: 0x0600C488 RID: 50312 RVA: 0x004868C8 File Offset: 0x00484AC8
 		public override SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -34,7 +34,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C331 RID: 49969 RVA: 0x0048238C File Offset: 0x0048058C
+		// Token: 0x0600C489 RID: 50313 RVA: 0x004868D4 File Offset: 0x00484AD4
 		public override void ReadFromProperties(DynamicProperties _properties)
 		{
 			this.List.Clear();
@@ -55,7 +55,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C332 RID: 49970 RVA: 0x0048247C File Offset: 0x0048067C
+		// Token: 0x0600C48A RID: 50314 RVA: 0x004869C4 File Offset: 0x00484BC4
 		public override void WriteToProperties(DynamicProperties _properties)
 		{
 			StringBuilder stringBuilder = new StringBuilder();

@@ -6,30 +6,30 @@ using UnityEngine;
 
 namespace XMLEditing
 {
-	// Token: 0x02001666 RID: 5734
+	// Token: 0x02001685 RID: 5765
 	public class BlockNodeMap : IEnumerable<KeyValuePair<string, BlockNode>>, IEnumerable
 	{
-		// Token: 0x0600B412 RID: 46098 RVA: 0x004345DE File Offset: 0x004327DE
+		// Token: 0x0600B4A4 RID: 46244 RVA: 0x004382BA File Offset: 0x004364BA
 		public IEnumerator<KeyValuePair<string, BlockNode>> GetEnumerator()
 		{
 			return this.blockNodes.GetEnumerator();
 		}
 
-		// Token: 0x0600B413 RID: 46099 RVA: 0x004345DE File Offset: 0x004327DE
+		// Token: 0x0600B4A5 RID: 46245 RVA: 0x004382BA File Offset: 0x004364BA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.blockNodes.GetEnumerator();
 		}
 
-		// Token: 0x0600B414 RID: 46100 RVA: 0x004345F0 File Offset: 0x004327F0
+		// Token: 0x0600B4A6 RID: 46246 RVA: 0x004382CC File Offset: 0x004364CC
 		public bool TryGetValue(string targetName, out BlockNode blockNode)
 		{
 			return this.blockNodes.TryGetValue(targetName, out blockNode);
 		}
 
-		// Token: 0x1700159B RID: 5531
-		// (get) Token: 0x0600B415 RID: 46101 RVA: 0x004345FF File Offset: 0x004327FF
+		// Token: 0x170015DE RID: 5598
+		// (get) Token: 0x0600B4A7 RID: 46247 RVA: 0x004382DB File Offset: 0x004364DB
 		public int Count
 		{
 			get
@@ -38,7 +38,7 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x0600B416 RID: 46102 RVA: 0x0043460C File Offset: 0x0043280C
+		// Token: 0x0600B4A8 RID: 46248 RVA: 0x004382E8 File Offset: 0x004364E8
 		public void PopulateFromFile(string blocksFilePath)
 		{
 			XDocument xdocument = XMLUtils.LoadXDocument(blocksFilePath);
@@ -46,14 +46,14 @@ namespace XMLEditing
 			this.Refresh();
 		}
 
-		// Token: 0x0600B417 RID: 46103 RVA: 0x00434632 File Offset: 0x00432832
+		// Token: 0x0600B4A9 RID: 46249 RVA: 0x0043830E File Offset: 0x0043650E
 		public void PopulateFromRoot(XElement root)
 		{
 			this.root = root;
 			this.Refresh();
 		}
 
-		// Token: 0x0600B418 RID: 46104 RVA: 0x00434644 File Offset: 0x00432844
+		// Token: 0x0600B4AA RID: 46250 RVA: 0x00438320 File Offset: 0x00436520
 		public void Refresh()
 		{
 			if (this.root == null)
@@ -137,11 +137,11 @@ namespace XMLEditing
 			}
 		}
 
-		// Token: 0x04008706 RID: 34566
+		// Token: 0x0400875C RID: 34652
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, BlockNode> blockNodes = new Dictionary<string, BlockNode>(StringComparer.OrdinalIgnoreCase);
 
-		// Token: 0x04008707 RID: 34567
+		// Token: 0x0400875D RID: 34653
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XElement root;
 	}

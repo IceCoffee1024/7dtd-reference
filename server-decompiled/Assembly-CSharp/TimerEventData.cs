@@ -1,24 +1,24 @@
 ﻿using System;
 
-// Token: 0x02001086 RID: 4230
+// Token: 0x02001096 RID: 4246
 public class TimerEventData
 {
-	// Token: 0x140000DD RID: 221
-	// (add) Token: 0x0600865D RID: 34397 RVA: 0x003335AC File Offset: 0x003317AC
-	// (remove) Token: 0x0600865E RID: 34398 RVA: 0x003335E4 File Offset: 0x003317E4
+	// Token: 0x140000DC RID: 220
+	// (add) Token: 0x0600869F RID: 34463 RVA: 0x00336EE4 File Offset: 0x003350E4
+	// (remove) Token: 0x060086A0 RID: 34464 RVA: 0x00336F1C File Offset: 0x0033511C
 	public event TimerEventHandler FullTimeFinishEvent;
 
-	// Token: 0x140000DE RID: 222
-	// (add) Token: 0x0600865F RID: 34399 RVA: 0x0033361C File Offset: 0x0033181C
-	// (remove) Token: 0x06008660 RID: 34400 RVA: 0x00333654 File Offset: 0x00331854
+	// Token: 0x140000DD RID: 221
+	// (add) Token: 0x060086A1 RID: 34465 RVA: 0x00336F54 File Offset: 0x00335154
+	// (remove) Token: 0x060086A2 RID: 34466 RVA: 0x00336F8C File Offset: 0x0033518C
 	public event TimerEventHandler CloseEvent;
 
-	// Token: 0x140000DF RID: 223
-	// (add) Token: 0x06008661 RID: 34401 RVA: 0x0033368C File Offset: 0x0033188C
-	// (remove) Token: 0x06008662 RID: 34402 RVA: 0x003336C4 File Offset: 0x003318C4
+	// Token: 0x140000DE RID: 222
+	// (add) Token: 0x060086A3 RID: 34467 RVA: 0x00336FC4 File Offset: 0x003351C4
+	// (remove) Token: 0x060086A4 RID: 34468 RVA: 0x00336FFC File Offset: 0x003351FC
 	public event TimerEventHandler AlternateEvent;
 
-	// Token: 0x06008663 RID: 34403 RVA: 0x003336F9 File Offset: 0x003318F9
+	// Token: 0x060086A5 RID: 34469 RVA: 0x00337031 File Offset: 0x00335231
 	public void HandleFullTimeFinished()
 	{
 		TimerEventHandler fullTimeFinishEvent = this.FullTimeFinishEvent;
@@ -29,7 +29,7 @@ public class TimerEventData
 		fullTimeFinishEvent(this);
 	}
 
-	// Token: 0x06008664 RID: 34404 RVA: 0x0033370C File Offset: 0x0033190C
+	// Token: 0x060086A6 RID: 34470 RVA: 0x00337044 File Offset: 0x00335244
 	public void HandleAlternateEvent()
 	{
 		TimerEventHandler alternateEvent = this.AlternateEvent;
@@ -40,7 +40,7 @@ public class TimerEventData
 		alternateEvent(this);
 	}
 
-	// Token: 0x06008665 RID: 34405 RVA: 0x0033371F File Offset: 0x0033191F
+	// Token: 0x060086A7 RID: 34471 RVA: 0x00337057 File Offset: 0x00335257
 	public void HandleClosed()
 	{
 		TimerEventHandler closeEvent = this.CloseEvent;
@@ -51,18 +51,18 @@ public class TimerEventData
 		closeEvent(this);
 	}
 
-	// Token: 0x040063D7 RID: 25559
+	// Token: 0x04006417 RID: 25623
 	public object Data;
 
-	// Token: 0x040063DB RID: 25563
+	// Token: 0x0400641B RID: 25627
 	public bool CancelWithActivateButton;
 
-	// Token: 0x040063DC RID: 25564
+	// Token: 0x0400641C RID: 25628
 	public bool CloseOnHit;
 
-	// Token: 0x040063DD RID: 25565
+	// Token: 0x0400641D RID: 25629
 	public float AlternateTime = -1f;
 
-	// Token: 0x040063DE RID: 25566
+	// Token: 0x0400641E RID: 25630
 	public float Completion = -1f;
 }

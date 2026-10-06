@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020003D7 RID: 983
+// Token: 0x020003DA RID: 986
 public class SpinningBladeTrapBladeController : MonoBehaviour
 {
-	// Token: 0x06001DC1 RID: 7617 RVA: 0x000B4B20 File Offset: 0x000B2D20
+	// Token: 0x06001DB9 RID: 7609 RVA: 0x000B4D2C File Offset: 0x000B2F2C
 	public void Init(DynamicProperties _properties, Block _block)
 	{
 		this.entityDamage = 20f;
@@ -29,7 +29,7 @@ public class SpinningBladeTrapBladeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC2 RID: 7618 RVA: 0x000B4C07 File Offset: 0x000B2E07
+	// Token: 0x06001DBA RID: 7610 RVA: 0x000B4E13 File Offset: 0x000B3013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -43,7 +43,7 @@ public class SpinningBladeTrapBladeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC3 RID: 7619 RVA: 0x000B4C36 File Offset: 0x000B2E36
+	// Token: 0x06001DBB RID: 7611 RVA: 0x000B4E42 File Offset: 0x000B3042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -57,7 +57,7 @@ public class SpinningBladeTrapBladeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC4 RID: 7620 RVA: 0x000B4C68 File Offset: 0x000B2E68
+	// Token: 0x06001DBC RID: 7612 RVA: 0x000B4E74 File Offset: 0x000B3074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -127,7 +127,7 @@ public class SpinningBladeTrapBladeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DC5 RID: 7621 RVA: 0x000B4F4C File Offset: 0x000B314C
+	// Token: 0x06001DBD RID: 7613 RVA: 0x000B5158 File Offset: 0x000B3358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive GetEntityFromCollider(Collider collider)
 	{
@@ -151,67 +151,67 @@ public class SpinningBladeTrapBladeController : MonoBehaviour
 		return entityAlive;
 	}
 
-	// Token: 0x040013BF RID: 5055
+	// Token: 0x040013B8 RID: 5048
 	public SpinningBladeTrapController controller;
 
-	// Token: 0x040013C0 RID: 5056
+	// Token: 0x040013B9 RID: 5049
 	public Transform[] Blades;
 
-	// Token: 0x040013C1 RID: 5057
+	// Token: 0x040013BA RID: 5050
 	public Transform BladeCenter;
 
-	// Token: 0x040013C2 RID: 5058
+	// Token: 0x040013BB RID: 5051
 	public bool IsOn;
 
-	// Token: 0x040013C3 RID: 5059
+	// Token: 0x040013BC RID: 5052
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string bladeImpactSound = "Electricity/BladeTrap/bladetrap_impact";
 
-	// Token: 0x040013C4 RID: 5060
+	// Token: 0x040013BD RID: 5053
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float entityDamage;
 
-	// Token: 0x040013C5 RID: 5061
+	// Token: 0x040013BE RID: 5054
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float blockDamage;
 
-	// Token: 0x040013C6 RID: 5062
+	// Token: 0x040013BF RID: 5055
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float selfDamage;
 
-	// Token: 0x040013C7 RID: 5063
+	// Token: 0x040013C0 RID: 5056
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float brokenPercentage;
 
-	// Token: 0x040013C8 RID: 5064
+	// Token: 0x040013C1 RID: 5057
 	public TileEntityPoweredMeleeTrap OwnerTE;
 
-	// Token: 0x040013C9 RID: 5065
+	// Token: 0x040013C2 RID: 5058
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<string> buffActions;
 
-	// Token: 0x040013CA RID: 5066
+	// Token: 0x040013C3 RID: 5059
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Collider> CollidersThisFrame;
 
-	// Token: 0x040013CB RID: 5067
+	// Token: 0x040013C4 RID: 5060
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<int, float> entityHitCount;
 
-	// Token: 0x040013CC RID: 5068
+	// Token: 0x040013C5 RID: 5061
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float entityHitTime = 0.05f;
 
-	// Token: 0x040013CD RID: 5069
+	// Token: 0x040013C6 RID: 5062
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Entity> entityHitList = new List<Entity>();

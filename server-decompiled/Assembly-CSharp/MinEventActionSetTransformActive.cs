@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000704 RID: 1796
+// Token: 0x02000706 RID: 1798
 [Preserve]
 public class MinEventActionSetTransformActive : MinEventActionBase
 {
-	// Token: 0x060036D2 RID: 14034 RVA: 0x00169DB4 File Offset: 0x00167FB4
+	// Token: 0x06003715 RID: 14101 RVA: 0x0016A718 File Offset: 0x00168918
 	public override void Execute(MinEventParams _params)
 	{
 		Transform transform;
@@ -36,13 +36,13 @@ public class MinEventActionSetTransformActive : MinEventActionBase
 		LightManager.LightChanged(transform2.position + Origin.position);
 	}
 
-	// Token: 0x060036D3 RID: 14035 RVA: 0x00169E66 File Offset: 0x00168066
+	// Token: 0x06003716 RID: 14102 RVA: 0x0016A7CA File Offset: 0x001689CA
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && _params.ItemValue != null && this.transformPath != null && this.transformPath != "";
 	}
 
-	// Token: 0x060036D4 RID: 14036 RVA: 0x00169EA4 File Offset: 0x001680A4
+	// Token: 0x06003717 RID: 14103 RVA: 0x0016A808 File Offset: 0x00168A08
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -68,15 +68,15 @@ public class MinEventActionSetTransformActive : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002C41 RID: 11329
+	// Token: 0x04002C3A RID: 11322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string transformPath;
 
-	// Token: 0x04002C42 RID: 11330
+	// Token: 0x04002C3B RID: 11323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform = "";
 
-	// Token: 0x04002C43 RID: 11331
+	// Token: 0x04002C3C RID: 11324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isActive;
 }

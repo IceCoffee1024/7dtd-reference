@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B9 RID: 697
+// Token: 0x020002BC RID: 700
 [Preserve]
 public class ConsoleCommandUnlockInventories : ConsoleCmdAbstract
 {
-	// Token: 0x17000232 RID: 562
-	// (get) Token: 0x06001417 RID: 5143 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x1700022A RID: 554
+	// (get) Token: 0x06001414 RID: 5140 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCommandUnlockInventories : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000233 RID: 563
-	// (get) Token: 0x06001418 RID: 5144 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700022B RID: 555
+	// (get) Token: 0x06001415 RID: 5141 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -27,28 +27,28 @@ public class ConsoleCommandUnlockInventories : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001419 RID: 5145 RVA: 0x0007A000 File Offset: 0x00078200
+	// Token: 0x06001416 RID: 5142 RVA: 0x0007A2B4 File Offset: 0x000784B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Force unlock inventories for everyone or a specific player.";
 	}
 
-	// Token: 0x0600141A RID: 5146 RVA: 0x0007A007 File Offset: 0x00078207
+	// Token: 0x06001417 RID: 5143 RVA: 0x0007A2BB File Offset: 0x000784BB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  unlock\n  unlock <player id>\n";
 	}
 
-	// Token: 0x0600141B RID: 5147 RVA: 0x0007A00E File Offset: 0x0007820E
+	// Token: 0x06001418 RID: 5144 RVA: 0x0007A2C2 File Offset: 0x000784C2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "unlock" };
 	}
 
-	// Token: 0x0600141C RID: 5148 RVA: 0x0007A020 File Offset: 0x00078220
+	// Token: 0x06001419 RID: 5145 RVA: 0x0007A2D4 File Offset: 0x000784D4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num = -1;

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001490 RID: 5264
+// Token: 0x020014B0 RID: 5296
 public class ReleaseAssetsOnDestroy : MonoBehaviour
 {
-	// Token: 0x0600A53B RID: 42299 RVA: 0x003D7D16 File Offset: 0x003D5F16
+	// Token: 0x0600A5E9 RID: 42473 RVA: 0x003DC9A2 File Offset: 0x003DABA2
 	public void AddAssetHandle(LoadManager.IAssetHandle handle)
 	{
 		this.assetHandles.Add(handle);
 	}
 
-	// Token: 0x0600A53C RID: 42300 RVA: 0x003D7D24 File Offset: 0x003D5F24
+	// Token: 0x0600A5EA RID: 42474 RVA: 0x003DC9B0 File Offset: 0x003DABB0
 	public void CopyTo(ReleaseAssetsOnDestroy other)
 	{
 		foreach (LoadManager.IAssetHandle assetHandle in other.assetHandles)
@@ -20,7 +20,7 @@ public class ReleaseAssetsOnDestroy : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A53D RID: 42301 RVA: 0x003D7D84 File Offset: 0x003D5F84
+	// Token: 0x0600A5EB RID: 42475 RVA: 0x003DCA10 File Offset: 0x003DAC10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -31,7 +31,7 @@ public class ReleaseAssetsOnDestroy : MonoBehaviour
 		this.assetHandles.Clear();
 	}
 
-	// Token: 0x04007B1B RID: 31515
+	// Token: 0x04007B96 RID: 31638
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<LoadManager.IAssetHandle> assetHandles = new List<LoadManager.IAssetHandle>();

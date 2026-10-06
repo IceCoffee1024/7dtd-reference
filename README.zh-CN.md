@@ -40,6 +40,8 @@ pwsh ./scripts/Update-Reference.ps1
 
 替换根目录前必须先归档当前版本：
 
+如果当前版本已发布，无须重复打包。用 `gh release view <version>` 确认 Release 中存在 ZIP 和校验文件；更新脚本只检查本地归档记录并提示确认，不会查询 GitHub。
+
 ```powershell
 $version = '<version>'
 pwsh ./scripts/Verify-Reference.ps1
@@ -47,6 +49,7 @@ pwsh ./scripts/New-ReferenceRelease.ps1 -Version $version
 gh release create $version `
   "./dist/7dtd-reference-$version.zip" `
   "./dist/7dtd-reference-$version.zip.sha256" `
+  --target main `
   --title "7DTD Reference $version"
 ```
 
@@ -89,3 +92,5 @@ git add server-decompiled runtime metadata.json runtime.manifest.json decompile.
 git commit -m "chore: update reference to <version>"
 git push origin main
 ```
+
+提交并推送新版本后，使用上方归档命令发布新版本，确保标签对应更新后的提交。发布成功后，将 `metadata.json.archive` 回填为 `{ "asset": "7dtd-reference-<version>.zip", "sha256": "<ZIP 的 SHA-256>" }`，再提交并推送元数据。打包脚本不会自动回填；回填后保留已发布的 ZIP，不重新打包或覆盖 Release 资产。

@@ -5,11 +5,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000430 RID: 1072
+// Token: 0x02000432 RID: 1074
 [Preserve]
 public abstract class EAIBase
 {
-	// Token: 0x060020F1 RID: 8433 RVA: 0x000C6FDF File Offset: 0x000C51DF
+	// Token: 0x060020E0 RID: 8416 RVA: 0x000C7093 File Offset: 0x000C5293
 	public virtual void Init(EntityAlive _theEntity)
 	{
 		this.executeDelay = 0.5f;
@@ -17,12 +17,12 @@ public abstract class EAIBase
 		this.theEntity = _theEntity;
 	}
 
-	// Token: 0x060020F2 RID: 8434 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020E1 RID: 8417 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetData(Dictionary<string, string> data)
 	{
 	}
 
-	// Token: 0x060020F3 RID: 8435 RVA: 0x000C7000 File Offset: 0x000C5200
+	// Token: 0x060020E2 RID: 8418 RVA: 0x000C70B4 File Offset: 0x000C52B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void GetData(Dictionary<string, string> data, string name, ref float value)
 	{
@@ -34,7 +34,7 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x060020F4 RID: 8436 RVA: 0x000C7028 File Offset: 0x000C5228
+	// Token: 0x060020E3 RID: 8419 RVA: 0x000C70DC File Offset: 0x000C52DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void GetData(Dictionary<string, string> data, string name, ref int value)
 	{
@@ -46,43 +46,43 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x060020F5 RID: 8437
+	// Token: 0x060020E4 RID: 8420
 	public abstract bool CanExecute();
 
-	// Token: 0x060020F6 RID: 8438 RVA: 0x000C704D File Offset: 0x000C524D
+	// Token: 0x060020E5 RID: 8421 RVA: 0x000C7101 File Offset: 0x000C5301
 	public virtual bool Continue()
 	{
 		return this.CanExecute();
 	}
 
-	// Token: 0x060020F7 RID: 8439 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060020E6 RID: 8422 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool IsContinuous()
 	{
 		return true;
 	}
 
-	// Token: 0x060020F8 RID: 8440 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020E7 RID: 8423 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Start()
 	{
 	}
 
-	// Token: 0x060020F9 RID: 8441 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020E8 RID: 8424 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Reset()
 	{
 	}
 
-	// Token: 0x060020FA RID: 8442 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020E9 RID: 8425 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Update()
 	{
 	}
 
-	// Token: 0x060020FB RID: 8443 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060020EA RID: 8426 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsPathUsageBlocked(PathEntity _path)
 	{
 		return false;
 	}
 
-	// Token: 0x060020FC RID: 8444 RVA: 0x000C7055 File Offset: 0x000C5255
+	// Token: 0x060020EB RID: 8427 RVA: 0x000C7109 File Offset: 0x000C5309
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Vector3 GetTargetPos(EntityAlive theEntity)
 	{
@@ -93,15 +93,15 @@ public abstract class EAIBase
 		return theEntity.InvestigatePosition;
 	}
 
-	// Token: 0x060020FD RID: 8445 RVA: 0x000C7077 File Offset: 0x000C5277
+	// Token: 0x060020EC RID: 8428 RVA: 0x000C712B File Offset: 0x000C532B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool EntityHasTarget(EntityAlive theEntity)
 	{
 		return theEntity.GetAttackTarget() != null || theEntity.HasInvestigatePosition;
 	}
 
-	// Token: 0x170003E6 RID: 998
-	// (get) Token: 0x060020FE RID: 8446 RVA: 0x000C708F File Offset: 0x000C528F
+	// Token: 0x170003DA RID: 986
+	// (get) Token: 0x060020ED RID: 8429 RVA: 0x000C7143 File Offset: 0x000C5343
 	public GameRandom Random
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -112,8 +112,8 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x170003E7 RID: 999
-	// (get) Token: 0x060020FF RID: 8447 RVA: 0x000C709C File Offset: 0x000C529C
+	// Token: 0x170003DB RID: 987
+	// (get) Token: 0x060020EE RID: 8430 RVA: 0x000C7150 File Offset: 0x000C5350
 	public float RandomFloat
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -124,7 +124,7 @@ public abstract class EAIBase
 		}
 	}
 
-	// Token: 0x06002100 RID: 8448 RVA: 0x000C70AE File Offset: 0x000C52AE
+	// Token: 0x060020EF RID: 8431 RVA: 0x000C7162 File Offset: 0x000C5362
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int GetRandom(int maxExclusive)
@@ -132,7 +132,7 @@ public abstract class EAIBase
 		return this.manager.random.RandomRange(maxExclusive);
 	}
 
-	// Token: 0x06002101 RID: 8449 RVA: 0x000C70C1 File Offset: 0x000C52C1
+	// Token: 0x060020F0 RID: 8432 RVA: 0x000C7175 File Offset: 0x000C5375
 	public override string ToString()
 	{
 		if (this.shortedTypeName == null)
@@ -142,7 +142,7 @@ public abstract class EAIBase
 		return this.shortedTypeName;
 	}
 
-	// Token: 0x06002102 RID: 8450 RVA: 0x000C70E3 File Offset: 0x000C52E3
+	// Token: 0x060020F1 RID: 8433 RVA: 0x000C7197 File Offset: 0x000C5397
 	public string GetTypeName()
 	{
 		if (this.cachedTypeName == null)
@@ -152,32 +152,32 @@ public abstract class EAIBase
 		return this.cachedTypeName;
 	}
 
-	// Token: 0x06002103 RID: 8451 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060020F2 RID: 8434 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EAIBase()
 	{
 	}
 
-	// Token: 0x0400169A RID: 5786
+	// Token: 0x04001691 RID: 5777
 	public EAIManager manager;
 
-	// Token: 0x0400169B RID: 5787
+	// Token: 0x04001692 RID: 5778
 	public EntityAlive theEntity;
 
-	// Token: 0x0400169C RID: 5788
+	// Token: 0x04001693 RID: 5779
 	public float executeWaitTime;
 
-	// Token: 0x0400169D RID: 5789
+	// Token: 0x04001694 RID: 5780
 	public float executeDelay;
 
-	// Token: 0x0400169E RID: 5790
+	// Token: 0x04001695 RID: 5781
 	public int MutexBits;
 
-	// Token: 0x0400169F RID: 5791
+	// Token: 0x04001696 RID: 5782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedTypeName;
 
-	// Token: 0x040016A0 RID: 5792
+	// Token: 0x04001697 RID: 5783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string shortedTypeName;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200133A RID: 4922
+// Token: 0x0200135A RID: 4954
 public class FurCombPainter
 {
-	// Token: 0x06009B84 RID: 39812 RVA: 0x003AA7F8 File Offset: 0x003A89F8
+	// Token: 0x06009C30 RID: 39984 RVA: 0x003AF374 File Offset: 0x003AD574
 	public void Paint(Texture2D texture, Vector2 uv, Vector3 tangentDirection, BrushSettings brushSettings, FurCombPainter.PaintMode paintMode)
 	{
 		if (this.texturePaintComputeShader == null)
@@ -88,27 +88,27 @@ public class FurCombPainter
 		renderTexture.Release();
 	}
 
-	// Token: 0x04007536 RID: 30006
+	// Token: 0x040075B1 RID: 30129
 	public ComputeShader texturePaintComputeShader;
 
-	// Token: 0x0200133B RID: 4923
+	// Token: 0x0200135B RID: 4955
 	public enum PaintMode
 	{
-		// Token: 0x04007538 RID: 30008
+		// Token: 0x040075B3 RID: 30131
 		Albedo,
-		// Token: 0x04007539 RID: 30009
+		// Token: 0x040075B4 RID: 30132
 		Direction,
-		// Token: 0x0400753A RID: 30010
+		// Token: 0x040075B5 RID: 30133
 		Matting,
-		// Token: 0x0400753B RID: 30011
+		// Token: 0x040075B6 RID: 30134
 		DirectionAndMatting,
-		// Token: 0x0400753C RID: 30012
+		// Token: 0x040075B7 RID: 30135
 		Length,
-		// Token: 0x0400753D RID: 30013
+		// Token: 0x040075B8 RID: 30136
 		Roughness,
-		// Token: 0x0400753E RID: 30014
+		// Token: 0x040075B9 RID: 30137
 		Metallic,
-		// Token: 0x0400753F RID: 30015
+		// Token: 0x040075BA RID: 30138
 		Occlusion
 	}
 }

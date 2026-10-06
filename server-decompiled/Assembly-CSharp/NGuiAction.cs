@@ -1,28 +1,28 @@
 ﻿using System;
 using InControl;
 
-// Token: 0x02001289 RID: 4745
+// Token: 0x020012A1 RID: 4769
 public class NGuiAction
 {
-	// Token: 0x060096D0 RID: 38608 RVA: 0x0038C16C File Offset: 0x0038A36C
+	// Token: 0x0600975D RID: 38749 RVA: 0x003909B4 File Offset: 0x0038EBB4
 	public NGuiAction()
 	{
 	}
 
-	// Token: 0x060096D1 RID: 38609 RVA: 0x0038C17B File Offset: 0x0038A37B
+	// Token: 0x0600975E RID: 38750 RVA: 0x003909C3 File Offset: 0x0038EBC3
 	public NGuiAction(string _text, PlayerAction _hotkey)
 		: this(_text, null, false)
 	{
 		this.hotkey = _hotkey;
 	}
 
-	// Token: 0x060096D2 RID: 38610 RVA: 0x0038C18D File Offset: 0x0038A38D
+	// Token: 0x0600975F RID: 38751 RVA: 0x003909D5 File Offset: 0x0038EBD5
 	public NGuiAction(string _text, string _icon, bool _isToggle)
 		: this(_text, _icon, null, _isToggle, null)
 	{
 	}
 
-	// Token: 0x060096D3 RID: 38611 RVA: 0x0038C19A File Offset: 0x0038A39A
+	// Token: 0x06009760 RID: 38752 RVA: 0x003909E2 File Offset: 0x0038EBE2
 	public NGuiAction(string _text, string _icon, string _description, bool _isToggle, PlayerAction _hotkey)
 	{
 		this.text = _text;
@@ -33,7 +33,7 @@ public class NGuiAction
 		this.bEnabled = true;
 	}
 
-	// Token: 0x060096D4 RID: 38612 RVA: 0x0038C1D5 File Offset: 0x0038A3D5
+	// Token: 0x06009761 RID: 38753 RVA: 0x00390A1D File Offset: 0x0038EC1D
 	public virtual void OnClick()
 	{
 		if (this.IsEnabled() && this.clickActionDelegate != null)
@@ -43,7 +43,7 @@ public class NGuiAction
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096D5 RID: 38613 RVA: 0x0038C1F8 File Offset: 0x0038A3F8
+	// Token: 0x06009762 RID: 38754 RVA: 0x00390A40 File Offset: 0x0038EC40
 	public virtual void OnRelease()
 	{
 		if (this.IsEnabled() && this.releaseActionDelegate != null)
@@ -53,7 +53,7 @@ public class NGuiAction
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096D6 RID: 38614 RVA: 0x0038C21B File Offset: 0x0038A41B
+	// Token: 0x06009763 RID: 38755 RVA: 0x00390A63 File Offset: 0x0038EC63
 	public virtual void OnDoubleClick()
 	{
 		if (this.IsEnabled() && this.doubleClickActionDelegate != null)
@@ -63,7 +63,7 @@ public class NGuiAction
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096D7 RID: 38615 RVA: 0x0038C23E File Offset: 0x0038A43E
+	// Token: 0x06009764 RID: 38756 RVA: 0x00390A86 File Offset: 0x0038EC86
 	public virtual void OnSelect(bool _bSelected)
 	{
 		if (this.IsEnabled())
@@ -80,82 +80,82 @@ public class NGuiAction
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096D8 RID: 38616 RVA: 0x0038C271 File Offset: 0x0038A471
+	// Token: 0x06009765 RID: 38757 RVA: 0x00390AB9 File Offset: 0x0038ECB9
 	public virtual bool IsActive()
 	{
 		return this.isVisibleDelegate == null || this.isVisibleDelegate();
 	}
 
-	// Token: 0x060096D9 RID: 38617 RVA: 0x0038C288 File Offset: 0x0038A488
+	// Token: 0x06009766 RID: 38758 RVA: 0x00390AD0 File Offset: 0x0038ECD0
 	public virtual string GetIcon()
 	{
 		return this.icon;
 	}
 
-	// Token: 0x060096DA RID: 38618 RVA: 0x0038C290 File Offset: 0x0038A490
+	// Token: 0x06009767 RID: 38759 RVA: 0x00390AD8 File Offset: 0x0038ECD8
 	public virtual string GetText()
 	{
 		return this.text;
 	}
 
-	// Token: 0x060096DB RID: 38619 RVA: 0x0038C298 File Offset: 0x0038A498
+	// Token: 0x06009768 RID: 38760 RVA: 0x00390AE0 File Offset: 0x0038ECE0
 	public void SetText(string _text)
 	{
 		this.text = _text;
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096DC RID: 38620 RVA: 0x0038C2A7 File Offset: 0x0038A4A7
+	// Token: 0x06009769 RID: 38761 RVA: 0x00390AEF File Offset: 0x0038ECEF
 	public virtual string GetTooltip()
 	{
 		return this.tooltip;
 	}
 
-	// Token: 0x060096DD RID: 38621 RVA: 0x0038C2AF File Offset: 0x0038A4AF
+	// Token: 0x0600976A RID: 38762 RVA: 0x00390AF7 File Offset: 0x0038ECF7
 	public NGuiAction SetTooltip(string _tooltip)
 	{
 		this.tooltip = (string.IsNullOrEmpty(_tooltip) ? null : Localization.Get(_tooltip, false, null));
 		return this;
 	}
 
-	// Token: 0x060096DE RID: 38622 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600976B RID: 38763 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual int GetColumnCount()
 	{
 		return 0;
 	}
 
-	// Token: 0x060096DF RID: 38623 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+	// Token: 0x0600976C RID: 38764 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual string GetColumnIcon(int _col)
 	{
 		return null;
 	}
 
-	// Token: 0x060096E0 RID: 38624 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+	// Token: 0x0600976D RID: 38765 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual string GetColumnText(int _col)
 	{
 		return null;
 	}
 
-	// Token: 0x060096E1 RID: 38625 RVA: 0x0038C2CB File Offset: 0x0038A4CB
+	// Token: 0x0600976E RID: 38766 RVA: 0x00390B13 File Offset: 0x0038ED13
 	public virtual string GetDescription()
 	{
 		return this.description;
 	}
 
-	// Token: 0x060096E2 RID: 38626 RVA: 0x0038C2D3 File Offset: 0x0038A4D3
+	// Token: 0x0600976F RID: 38767 RVA: 0x00390B1B File Offset: 0x0038ED1B
 	public virtual NGuiAction SetDescription(string _desc)
 	{
 		this.description = _desc;
 		return this;
 	}
 
-	// Token: 0x060096E3 RID: 38627 RVA: 0x0038C2DD File Offset: 0x0038A4DD
+	// Token: 0x06009770 RID: 38768 RVA: 0x00390B25 File Offset: 0x0038ED25
 	public virtual PlayerAction GetHotkey()
 	{
 		return this.hotkey;
 	}
 
-	// Token: 0x060096E4 RID: 38628 RVA: 0x0038C2E5 File Offset: 0x0038A4E5
+	// Token: 0x06009771 RID: 38769 RVA: 0x00390B2D File Offset: 0x0038ED2D
 	public virtual NGuiAction SetEnabled(bool _bEnabled)
 	{
 		this.bEnabled = _bEnabled;
@@ -163,7 +163,7 @@ public class NGuiAction
 		return this;
 	}
 
-	// Token: 0x060096E5 RID: 38629 RVA: 0x0038C2F5 File Offset: 0x0038A4F5
+	// Token: 0x06009772 RID: 38770 RVA: 0x00390B3D File Offset: 0x0038ED3D
 	public virtual bool IsEnabled()
 	{
 		if (this.isEnabledDelegate != null)
@@ -173,20 +173,20 @@ public class NGuiAction
 		return this.bEnabled;
 	}
 
-	// Token: 0x060096E6 RID: 38630 RVA: 0x0038C311 File Offset: 0x0038A511
+	// Token: 0x06009773 RID: 38771 RVA: 0x00390B59 File Offset: 0x0038ED59
 	public virtual bool IsToggle()
 	{
 		return this.bToggle;
 	}
 
-	// Token: 0x060096E7 RID: 38631 RVA: 0x0038C319 File Offset: 0x0038A519
+	// Token: 0x06009774 RID: 38772 RVA: 0x00390B61 File Offset: 0x0038ED61
 	public virtual void SetChecked(bool _bChecked)
 	{
 		this.bChecked = _bChecked;
 		this.UpdateUI();
 	}
 
-	// Token: 0x060096E8 RID: 38632 RVA: 0x0038C328 File Offset: 0x0038A528
+	// Token: 0x06009775 RID: 38773 RVA: 0x00390B70 File Offset: 0x0038ED70
 	public virtual bool IsChecked()
 	{
 		if (this.isCheckedDelegate != null)
@@ -196,61 +196,61 @@ public class NGuiAction
 		return this.bChecked;
 	}
 
-	// Token: 0x060096E9 RID: 38633 RVA: 0x0038C344 File Offset: 0x0038A544
+	// Token: 0x06009776 RID: 38774 RVA: 0x00390B8C File Offset: 0x0038ED8C
 	public virtual NGuiAction SetIsCheckedDelegate(NGuiAction.IsCheckedDelegate _checkedDelegate)
 	{
 		this.isCheckedDelegate = _checkedDelegate;
 		return this;
 	}
 
-	// Token: 0x060096EA RID: 38634 RVA: 0x0038C34E File Offset: 0x0038A54E
+	// Token: 0x06009777 RID: 38775 RVA: 0x00390B96 File Offset: 0x0038ED96
 	public virtual NGuiAction SetIsVisibleDelegate(NGuiAction.IsVisibleDelegate _isVisibleDelegate)
 	{
 		this.isVisibleDelegate = _isVisibleDelegate;
 		return this;
 	}
 
-	// Token: 0x060096EB RID: 38635 RVA: 0x0038C358 File Offset: 0x0038A558
+	// Token: 0x06009778 RID: 38776 RVA: 0x00390BA0 File Offset: 0x0038EDA0
 	public virtual NGuiAction SetIsEnabledDelegate(NGuiAction.IsEnabledDelegate _isEnabledDelegate)
 	{
 		this.isEnabledDelegate = _isEnabledDelegate;
 		return this;
 	}
 
-	// Token: 0x060096EC RID: 38636 RVA: 0x0038C362 File Offset: 0x0038A562
+	// Token: 0x06009779 RID: 38777 RVA: 0x00390BAA File Offset: 0x0038EDAA
 	public virtual NGuiAction SetClickActionDelegate(NGuiAction.OnClickActionDelegate _actionDelegate)
 	{
 		this.clickActionDelegate = _actionDelegate;
 		return this;
 	}
 
-	// Token: 0x060096ED RID: 38637 RVA: 0x0038C36C File Offset: 0x0038A56C
+	// Token: 0x0600977A RID: 38778 RVA: 0x00390BB4 File Offset: 0x0038EDB4
 	public virtual NGuiAction SetReleaseActionDelegate(NGuiAction.OnReleaseActionDelegate _actionDelegate)
 	{
 		this.releaseActionDelegate = _actionDelegate;
 		return this;
 	}
 
-	// Token: 0x060096EE RID: 38638 RVA: 0x0038C376 File Offset: 0x0038A576
+	// Token: 0x0600977B RID: 38779 RVA: 0x00390BBE File Offset: 0x0038EDBE
 	public virtual NGuiAction SetDoubleClickActionDelegate(NGuiAction.OnDoubleClickActionDelegate _actionDelegate)
 	{
 		this.doubleClickActionDelegate = _actionDelegate;
 		return this;
 	}
 
-	// Token: 0x060096EF RID: 38639 RVA: 0x0038C380 File Offset: 0x0038A580
+	// Token: 0x0600977C RID: 38780 RVA: 0x00390BC8 File Offset: 0x0038EDC8
 	public virtual NGuiAction SetSelectActionDelegate(NGuiAction.OnSelectActionDelegate _selectActionDelegate)
 	{
 		this.selectActionDelegate = _selectActionDelegate;
 		return this;
 	}
 
-	// Token: 0x060096F0 RID: 38640 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600977D RID: 38781 RVA: 0x000027FC File Offset: 0x000009FC
 	public void UpdateUI()
 	{
 	}
 
-	// Token: 0x060096F1 RID: 38641 RVA: 0x0038C38A File Offset: 0x0038A58A
+	// Token: 0x0600977E RID: 38782 RVA: 0x00390BD2 File Offset: 0x0038EDD2
 	public override string ToString()
 	{
 		if (this.text == null)
@@ -260,111 +260,111 @@ public class NGuiAction
 		return this.text;
 	}
 
-	// Token: 0x040070F5 RID: 28917
+	// Token: 0x0400715F RID: 29023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerAction hotkey;
 
-	// Token: 0x040070F6 RID: 28918
+	// Token: 0x04007160 RID: 29024
 	public static NGuiAction Separator = new NGuiAction("Sep", null);
 
-	// Token: 0x040070F7 RID: 28919
+	// Token: 0x04007161 RID: 29025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string text;
 
-	// Token: 0x040070F8 RID: 28920
+	// Token: 0x04007162 RID: 29026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string icon;
 
-	// Token: 0x040070F9 RID: 28921
+	// Token: 0x04007163 RID: 29027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string description;
 
-	// Token: 0x040070FA RID: 28922
+	// Token: 0x04007164 RID: 29028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tooltip;
 
-	// Token: 0x040070FB RID: 28923
+	// Token: 0x04007165 RID: 29029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.OnClickActionDelegate clickActionDelegate;
 
-	// Token: 0x040070FC RID: 28924
+	// Token: 0x04007166 RID: 29030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.OnReleaseActionDelegate releaseActionDelegate;
 
-	// Token: 0x040070FD RID: 28925
+	// Token: 0x04007167 RID: 29031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.OnDoubleClickActionDelegate doubleClickActionDelegate;
 
-	// Token: 0x040070FE RID: 28926
+	// Token: 0x04007168 RID: 29032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.OnSelectActionDelegate selectActionDelegate;
 
-	// Token: 0x040070FF RID: 28927
+	// Token: 0x04007169 RID: 29033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.IsVisibleDelegate isVisibleDelegate;
 
-	// Token: 0x04007100 RID: 28928
+	// Token: 0x0400716A RID: 29034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.IsCheckedDelegate isCheckedDelegate;
 
-	// Token: 0x04007101 RID: 28929
+	// Token: 0x0400716B RID: 29035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiAction.IsEnabledDelegate isEnabledDelegate;
 
-	// Token: 0x04007102 RID: 28930
+	// Token: 0x0400716C RID: 29036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bEnabled;
 
-	// Token: 0x04007103 RID: 28931
+	// Token: 0x0400716D RID: 29037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bToggle;
 
-	// Token: 0x04007104 RID: 28932
+	// Token: 0x0400716E RID: 29038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bChecked;
 
-	// Token: 0x04007105 RID: 28933
+	// Token: 0x0400716F RID: 29039
 	public NGuiAction.EnumKeyMode KeyMode = NGuiAction.EnumKeyMode.FireOnPress;
 
-	// Token: 0x0200128A RID: 4746
+	// Token: 0x020012A2 RID: 4770
 	[Flags]
 	public enum EnumKeyMode
 	{
-		// Token: 0x04007107 RID: 28935
+		// Token: 0x04007171 RID: 29041
 		None = 0,
-		// Token: 0x04007108 RID: 28936
+		// Token: 0x04007172 RID: 29042
 		FireOnPress = 1,
-		// Token: 0x04007109 RID: 28937
+		// Token: 0x04007173 RID: 29043
 		FireOnRelease = 2,
-		// Token: 0x0400710A RID: 28938
+		// Token: 0x04007174 RID: 29044
 		FireOnRepeat = 4
 	}
 
-	// Token: 0x0200128B RID: 4747
-	// (Invoke) Token: 0x060096F4 RID: 38644
+	// Token: 0x020012A3 RID: 4771
+	// (Invoke) Token: 0x06009781 RID: 38785
 	public delegate void OnClickActionDelegate();
 
-	// Token: 0x0200128C RID: 4748
-	// (Invoke) Token: 0x060096F8 RID: 38648
+	// Token: 0x020012A4 RID: 4772
+	// (Invoke) Token: 0x06009785 RID: 38789
 	public delegate void OnReleaseActionDelegate();
 
-	// Token: 0x0200128D RID: 4749
-	// (Invoke) Token: 0x060096FC RID: 38652
+	// Token: 0x020012A5 RID: 4773
+	// (Invoke) Token: 0x06009789 RID: 38793
 	public delegate void OnDoubleClickActionDelegate();
 
-	// Token: 0x0200128E RID: 4750
-	// (Invoke) Token: 0x06009700 RID: 38656
+	// Token: 0x020012A6 RID: 4774
+	// (Invoke) Token: 0x0600978D RID: 38797
 	public delegate void OnSelectActionDelegate(bool _bSelected);
 
-	// Token: 0x0200128F RID: 4751
-	// (Invoke) Token: 0x06009704 RID: 38660
+	// Token: 0x020012A7 RID: 4775
+	// (Invoke) Token: 0x06009791 RID: 38801
 	public delegate bool IsEnabledDelegate();
 
-	// Token: 0x02001290 RID: 4752
-	// (Invoke) Token: 0x06009708 RID: 38664
+	// Token: 0x020012A8 RID: 4776
+	// (Invoke) Token: 0x06009795 RID: 38805
 	public delegate bool IsVisibleDelegate();
 
-	// Token: 0x02001291 RID: 4753
-	// (Invoke) Token: 0x0600970C RID: 38668
+	// Token: 0x020012A9 RID: 4777
+	// (Invoke) Token: 0x06009799 RID: 38809
 	public delegate bool IsCheckedDelegate();
 }

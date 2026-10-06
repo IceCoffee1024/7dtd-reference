@@ -1,30 +1,30 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-// Token: 0x02000C85 RID: 3205
+// Token: 0x02000C93 RID: 3219
 public class ChannelPointsRedemptionEvent
 {
-	// Token: 0x17000A24 RID: 2596
-	// (get) Token: 0x0600627F RID: 25215 RVA: 0x0026CC05 File Offset: 0x0026AE05
-	// (set) Token: 0x06006280 RID: 25216 RVA: 0x0026CC0D File Offset: 0x0026AE0D
+	// Token: 0x17000A3A RID: 2618
+	// (get) Token: 0x06006272 RID: 25202 RVA: 0x00270049 File Offset: 0x0026E249
+	// (set) Token: 0x06006273 RID: 25203 RVA: 0x00270051 File Offset: 0x0026E251
 	[JsonProperty("user_id")]
 	public string UserId { get; set; } = "";
 
-	// Token: 0x17000A25 RID: 2597
-	// (get) Token: 0x06006281 RID: 25217 RVA: 0x0026CC16 File Offset: 0x0026AE16
-	// (set) Token: 0x06006282 RID: 25218 RVA: 0x0026CC1E File Offset: 0x0026AE1E
+	// Token: 0x17000A3B RID: 2619
+	// (get) Token: 0x06006274 RID: 25204 RVA: 0x0027005A File Offset: 0x0026E25A
+	// (set) Token: 0x06006275 RID: 25205 RVA: 0x00270062 File Offset: 0x0026E262
 	[JsonProperty("user_login")]
 	public string UserLogin { get; set; } = "";
 
-	// Token: 0x17000A26 RID: 2598
-	// (get) Token: 0x06006283 RID: 25219 RVA: 0x0026CC27 File Offset: 0x0026AE27
-	// (set) Token: 0x06006284 RID: 25220 RVA: 0x0026CC2F File Offset: 0x0026AE2F
+	// Token: 0x17000A3C RID: 2620
+	// (get) Token: 0x06006276 RID: 25206 RVA: 0x0027006B File Offset: 0x0026E26B
+	// (set) Token: 0x06006277 RID: 25207 RVA: 0x00270073 File Offset: 0x0026E273
 	[JsonProperty("user_name")]
 	public string UserName { get; set; } = "";
 
-	// Token: 0x17000A27 RID: 2599
-	// (get) Token: 0x06006285 RID: 25221 RVA: 0x0026CC38 File Offset: 0x0026AE38
-	// (set) Token: 0x06006286 RID: 25222 RVA: 0x0026CC40 File Offset: 0x0026AE40
+	// Token: 0x17000A3D RID: 2621
+	// (get) Token: 0x06006278 RID: 25208 RVA: 0x0027007C File Offset: 0x0026E27C
+	// (set) Token: 0x06006279 RID: 25209 RVA: 0x00270084 File Offset: 0x0026E284
 	[JsonProperty("reward")]
 	public Reward Reward { get; set; } = new Reward();
 }

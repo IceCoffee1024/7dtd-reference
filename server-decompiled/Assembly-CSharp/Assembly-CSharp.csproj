@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <ProjectGuid>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF5}</ProjectGuid>
+    <ProjectGuid>{DD4E94CE-C473-4FA8-A607-54649C4C87DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Assembly-CSharp</RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -112,6 +112,13 @@
     <Compile Include="ArrayWithOffsetSparse.cs" />
     <Compile Include="AssetBundleManager.cs" />
     <Compile Include="AssetBundles.cs" />
+    <Compile Include="AssetLoaderManager.cs" />
+    <Compile Include="AssetManagement\AssetHandle.cs" />
+    <Compile Include="AssetManagement\AssetManager.cs" />
+    <Compile Include="AssetManagement\AssetManagerLifetimed.cs" />
+    <Compile Include="AssetManagement\IAssetManager.cs" />
+    <Compile Include="AssetManagement\InstanceHandle.cs" />
+    <Compile Include="AssetManagers.cs" />
     <Compile Include="AssetMappings.cs" />
     <Compile Include="Assets\DuckType\Jiggle\Extensions.cs" />
     <Compile Include="Assets\DuckType\Jiggle\Jiggle.cs" />
@@ -578,6 +585,7 @@
     <Compile Include="ConsoleCmdGetSandboxOptions.cs" />
     <Compile Include="ConsoleCmdGetTime.cs" />
     <Compile Include="ConsoleCmdGfx.cs" />
+    <Compile Include="ConsoleCmdGive.cs" />
     <Compile Include="ConsoleCmdGiveQualityItem.cs" />
     <Compile Include="ConsoleCmdGiveQuest.cs" />
     <Compile Include="ConsoleCmdGiveXp.cs" />
@@ -592,6 +600,7 @@
     <Compile Include="ConsoleCmdListDLC.cs" />
     <Compile Include="ConsoleCmdListEntities.cs" />
     <Compile Include="ConsoleCmdListGameObjects.cs" />
+    <Compile Include="ConsoleCmdListItems.cs" />
     <Compile Include="ConsoleCmdListPlayerIds.cs" />
     <Compile Include="ConsoleCmdListPlayers.cs" />
     <Compile Include="ConsoleCmdListThreads.cs" />
@@ -765,6 +774,7 @@
     <Compile Include="DeferredNightVisionEffect.cs" />
     <Compile Include="DelayedLightIgnition.cs" />
     <Compile Include="DelegateGetTerrainHeight.cs" />
+    <Compile Include="DeletedSignStore.cs" />
     <Compile Include="DesignatedAreaStore.cs" />
     <Compile Include="DetectLeaks.cs" />
     <Compile Include="Detonator.cs" />
@@ -1055,6 +1065,7 @@
     <Compile Include="EntityClass.cs" />
     <Compile Include="EntityClassesFromXml.cs" />
     <Compile Include="EntityCollisionRules.cs" />
+    <Compile Include="EntityContainerAbs.cs" />
     <Compile Include="EntityCreationData.cs" />
     <Compile Include="EntityDriveable.cs" />
     <Compile Include="EntityDrone.cs" />
@@ -1115,6 +1126,7 @@
     <Compile Include="EnumArmorDamageModifier.cs" />
     <Compile Include="EnumBodyPartHit.cs" />
     <Compile Include="EnumBodyPartHitExtensions.cs" />
+    <Compile Include="EnumBoxCache.cs" />
     <Compile Include="EnumCameraRestriction.cs" />
     <Compile Include="EnumCameraShake.cs" />
     <Compile Include="EnumChunkProviderId.cs" />
@@ -1168,8 +1180,10 @@
     <Compile Include="EnvironmentAudioManager.cs" />
     <Compile Include="EquipItems.cs" />
     <Compile Include="Equipment.cs" />
+    <Compile Include="EquipmentSlotExtensions.cs" />
     <Compile Include="EquipmentSlotGroups.cs" />
     <Compile Include="EquipmentSlots.cs" />
+    <Compile Include="EquipmentSlotType.cs" />
     <Compile Include="Equipment_CosmeticUnlocked.cs" />
     <Compile Include="EquipRandomItem.cs" />
     <Compile Include="ERoutineState.cs" />
@@ -1498,6 +1512,7 @@
     <Compile Include="GUIWindowUGUI.cs" />
     <Compile Include="GUI_2\UIUtils.cs" />
     <Compile Include="HairColorSwatch.cs" />
+    <Compile Include="Hand.cs" />
     <Compile Include="HasAttachedPrefab.cs" />
     <Compile Include="HasBuff.cs" />
     <Compile Include="HashSetList.cs" />
@@ -1569,16 +1584,17 @@
     <Compile Include="IGameManager.cs" />
     <Compile Include="IGamePrefsChangedListener.cs" />
     <Compile Include="IGameStatsChangedListener.cs" />
+    <Compile Include="IHasWorldAddress.cs" />
     <Compile Include="IInventory.cs" />
-    <Compile Include="IInventoryChangedListener.cs" />
     <Compile Include="IItemDataDragSource.cs" />
+    <Compile Include="IItemStackController.cs" />
+    <Compile Include="IItemStackGridHolder.cs" />
     <Compile Include="IKController.cs" />
     <Compile Include="ILaunchPref.2.cs" />
     <Compile Include="ILaunchPref.cs" />
     <Compile Include="ILaunchPrefExtensions.cs" />
     <Compile Include="ILightProcessor.cs" />
     <Compile Include="ILockable.cs" />
-    <Compile Include="ILockContext.cs" />
     <Compile Include="ILockTarget.cs" />
     <Compile Include="ImageEffectManager.cs" />
     <Compile Include="ImageEffect_TurretView.cs" />
@@ -1615,9 +1631,6 @@
     <Compile Include="InvDatabase.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="InventoryBase.cs" />
-    <Compile Include="InventoryManager.cs" />
-    <Compile Include="InventoryOperation.cs" />
-    <Compile Include="InventoryTransaction.cs" />
     <Compile Include="InvEquipment.cs" />
     <Compile Include="InvGameItem.cs" />
     <Compile Include="InviteManager.cs" />
@@ -1748,6 +1761,7 @@
     <Compile Include="ItemStackExtensions.cs" />
     <Compile Include="ItemStackGrid.cs" />
     <Compile Include="ItemValue.cs" />
+    <Compile Include="ItemValueExtensions.cs" />
     <Compile Include="ItemWorldData.cs" />
     <Compile Include="ITerrainGenerator.cs" />
     <Compile Include="IThreadingSemantics.cs" />
@@ -1755,7 +1769,6 @@
     <Compile Include="ITileEntity.cs" />
     <Compile Include="ITileEntityChangedListener.cs" />
     <Compile Include="ITileEntityFeature.cs" />
-    <Compile Include="ITileEntityLootable.cs" />
     <Compile Include="ITileEntitySignable.cs" />
     <Compile Include="ITrader.cs" />
     <Compile Include="IWireNode.cs" />
@@ -1822,9 +1835,7 @@
     <Compile Include="LocalPlayerFinalCamera.cs" />
     <Compile Include="LocalPlayerManager.cs" />
     <Compile Include="LocalPlayerUI.cs" />
-    <Compile Include="LockEntry.cs" />
     <Compile Include="LockManager.cs" />
-    <Compile Include="LockTargetType.cs" />
     <Compile Include="LongSetGroups.cs" />
     <Compile Include="LookAtTarget.cs" />
     <Compile Include="LoosePool.cs" />
@@ -2131,11 +2142,7 @@
     <Compile Include="NetPackageHordeEvent.cs" />
     <Compile Include="NetPackageIdMapping.cs" />
     <Compile Include="NetPackageInfo.cs" />
-    <Compile Include="NetPackageInventoryDataRequest.cs" />
-    <Compile Include="NetPackageInventoryDataResponse.cs" />
     <Compile Include="NetPackageInventoryKeepOpen.cs" />
-    <Compile Include="NetPackageInventoryTransactionRequest.cs" />
-    <Compile Include="NetPackageInventoryTransactionResponse.cs" />
     <Compile Include="NetPackageItemActionEffects.cs" />
     <Compile Include="NetPackageItemDrop.cs" />
     <Compile Include="NetPackageItemReload.cs" />
@@ -2144,8 +2151,7 @@
     <Compile Include="NetPackageLobbyJoin.cs" />
     <Compile Include="NetPackageLobbyRegisterClient.cs" />
     <Compile Include="NetPackageLocalization.cs" />
-    <Compile Include="NetPackageLockRequest.cs" />
-    <Compile Include="NetPackageLockResponse.cs" />
+    <Compile Include="NetPackageLockTarget.cs" />
     <Compile Include="NetPackageLogger.cs" />
     <Compile Include="NetPackageManager.cs" />
     <Compile Include="NetPackageMapChunks.cs" />
@@ -2205,8 +2211,10 @@
     <Compile Include="NetPackageShowToolbeltMessage.cs" />
     <Compile Include="NetPackageSignDataRequest.cs" />
     <Compile Include="NetPackageSignDataResponse.cs" />
+    <Compile Include="NetPackageSignDelete.cs" />
     <Compile Include="NetPackageSimpleChat.cs" />
     <Compile Include="NetPackageSimpleRPC.cs" />
+    <Compile Include="NetPackageSingleSignData.cs" />
     <Compile Include="NetPackageSleeperPassiveChange.cs" />
     <Compile Include="NetPackageSleeperPose.cs" />
     <Compile Include="NetPackageSleeperWakeup.cs" />
@@ -2705,6 +2713,7 @@
     <Compile Include="PlayerNameAuthorizer.cs" />
     <Compile Include="PlayerProfile.cs" />
     <Compile Include="PlayerReflectionProbe.cs" />
+    <Compile Include="PlayerSignStore.cs" />
     <Compile Include="PlayerSlotsAuthorizer.cs" />
     <Compile Include="PlayerStealth.cs" />
     <Compile Include="PlayIdleAnimations.cs" />
@@ -2829,6 +2838,7 @@
     <Compile Include="QuestEvent_BlockEvent.cs" />
     <Compile Include="QuestEvent_ChallengeAwardCredit.cs" />
     <Compile Include="QuestEvent_ChallengeCompleteEvent.cs" />
+    <Compile Include="QuestEvent_ContainerOpened.cs" />
     <Compile Include="QuestEvent_EntityKillEvent.cs" />
     <Compile Include="QuestEvent_Event.cs" />
     <Compile Include="QuestEvent_Explosion.cs" />
@@ -3050,10 +3060,15 @@
     <Compile Include="Services\Analytics\Events\ChallengeCompletedEventData.cs" />
     <Compile Include="Services\Analytics\Events\CosmeticUsageEventData.cs" />
     <Compile Include="Services\Analytics\Events\DlcOwnershipEventData.cs" />
+    <Compile Include="Services\Analytics\Events\EquipmentUsageEventData.cs" />
     <Compile Include="Services\Analytics\Events\HardwareInfoEventData.cs" />
     <Compile Include="Services\Analytics\Events\HeartbeatEventData.cs" />
     <Compile Include="Services\Analytics\Events\LoginEventData.cs" />
+    <Compile Include="Services\Analytics\Events\PlayerDeathEventData.cs" />
     <Compile Include="Services\Analytics\Events\PlayerJoinServerEventData.cs" />
+    <Compile Include="Services\Analytics\Events\QuestAddedEventData.cs" />
+    <Compile Include="Services\Analytics\Events\QuestProgressionEventData.cs" />
+    <Compile Include="Services\Analytics\Events\QuestRemovedEventData.cs" />
     <Compile Include="Services\Analytics\Events\ServerStartEventData.cs" />
     <Compile Include="Services\Analytics\EventTypes.cs" />
     <Compile Include="Services\Analytics\Helper.cs" />
@@ -3122,6 +3137,7 @@
     <Compile Include="SignPrioritizer.cs" />
     <Compile Include="SignRenderer.cs" />
     <Compile Include="SignShaderIDs.cs" />
+    <Compile Include="SignStoreIO.cs" />
     <Compile Include="SignTextureExporter.cs" />
     <Compile Include="SignTextureManager.cs" />
     <Compile Include="SignTextureStore.cs" />
@@ -3184,6 +3200,8 @@
     <Compile Include="StateHistory.cs" />
     <Compile Include="StepSound.cs" />
     <Compile Include="StockFileHashes.cs" />
+    <Compile Include="StreamModeRead.cs" />
+    <Compile Include="StreamModeWrite.cs" />
     <Compile Include="StreamUtils.cs" />
     <Compile Include="StringParsers.cs" />
     <Compile Include="StringParsersTests.cs" />
@@ -3285,6 +3303,8 @@
     <Compile Include="TList.cs" />
     <Compile Include="ToggleCapsLock.cs" />
     <Compile Include="TokenManager.cs" />
+    <Compile Include="ToolbeltConfig.cs" />
+    <Compile Include="ToolbeltFromXml.cs" />
     <Compile Include="ToolTipEvent.cs" />
     <Compile Include="ToolTipEventHandler.cs" />
     <Compile Include="TooManyPlayerSlotsAuthorizer.cs" />
@@ -3300,7 +3320,6 @@
     <Compile Include="TraderStageTemplateGroup.cs" />
     <Compile Include="Trajectory.cs" />
     <Compile Include="TrajectorySimulation.cs" />
-    <Compile Include="TransactionalInventory.cs" />
     <Compile Include="TransformDebug.cs" />
     <Compile Include="Transvoxel.cs" />
     <Compile Include="TreasureQuestData.cs" />
@@ -3610,7 +3629,6 @@
     <Compile Include="vp_GlobalEventReturn.3.cs" />
     <Compile Include="vp_GlobalEventReturn.4.cs" />
     <Compile Include="vp_GlobalEventReturn.cs" />
-    <Compile Include="vp_Grab.cs" />
     <Compile Include="vp_Grenade.cs" />
     <Compile Include="vp_HealthPickup.cs" />
     <Compile Include="vp_HitscanBullet.cs" />
@@ -3813,6 +3831,7 @@
     <Compile Include="WorkBatch.cs" />
     <Compile Include="WorkstationData.cs" />
     <Compile Include="World.cs" />
+    <Compile Include="WorldAddress.cs" />
     <Compile Include="WorldBase.cs" />
     <Compile Include="WorldBiomeProviderFromHeight.cs" />
     <Compile Include="WorldBiomeProviderFromImage.cs" />
@@ -3927,6 +3946,7 @@
     <Compile Include="XUi.cs" />
     <Compile Include="XuiBindComponentAttribute.cs" />
     <Compile Include="XuiBindEventAttribute.cs" />
+    <Compile Include="XuiBindingBoxWriterDelegate.cs" />
     <Compile Include="XuiBindingDelegate.cs" />
     <Compile Include="XUiBindingHelper.cs" />
     <Compile Include="XuiBindingNcalcFunctionAttribute.cs" />
@@ -4286,6 +4306,7 @@
     <Compile Include="XUiC_SignNewLayerPanel.cs" />
     <Compile Include="XUiC_SignNoiseSettings.cs" />
     <Compile Include="XUiC_SignPolygonSettings.cs" />
+    <Compile Include="XUiC_SignSharingPrompt.cs" />
     <Compile Include="XUiC_SignStack.cs" />
     <Compile Include="XUiC_SignStackGrid.cs" />
     <Compile Include="XUiC_SignTextSettings.cs" />
@@ -4496,15 +4517,15 @@
     <Compile Include="XuiXmlBindingAttribute.cs" />
     <Compile Include="XUi_FallThrough.cs" />
     <Compile Include="ZipFileExtensionsSd.cs" />
-    <Compile Include="__JobReflectionRegistrationOutput__568469241.cs" />
+    <Compile Include="__JobReflectionRegistrationOutput__756963992.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogLibrary\LogLibrary.csproj">
-      <Project>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF6}</Project>
+      <Project>{DD4E94CE-C473-4FA8-A607-54649C4C87DB}</Project>
       <Name>LogLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\UnityEngine.CoreModule\UnityEngine.CoreModule.csproj">
-      <Project>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF7}</Project>
+      <Project>{DD4E94CE-C473-4FA8-A607-54649C4C87DC}</Project>
       <Name>UnityEngine.CoreModule</Name>
     </ProjectReference>
   </ItemGroup>

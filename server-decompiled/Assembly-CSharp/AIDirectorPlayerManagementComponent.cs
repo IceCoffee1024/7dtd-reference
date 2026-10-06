@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000419 RID: 1049
+// Token: 0x0200041B RID: 1051
 [Preserve]
 public class AIDirectorPlayerManagementComponent : AIDirectorComponent
 {
-	// Token: 0x06002067 RID: 8295 RVA: 0x000C3F68 File Offset: 0x000C2168
+	// Token: 0x06002056 RID: 8278 RVA: 0x000C401C File Offset: 0x000C221C
 	public override void Tick(double _dt)
 	{
 		base.Tick(_dt);
 		this.TickPlayerStates(_dt);
 	}
 
-	// Token: 0x06002068 RID: 8296 RVA: 0x000C3F78 File Offset: 0x000C2178
+	// Token: 0x06002057 RID: 8279 RVA: 0x000C402C File Offset: 0x000C222C
 	public void AddPlayer(EntityPlayer _player)
 	{
 		if (!this.trackedPlayers.dict.ContainsKey(_player.entityId))
@@ -25,7 +25,7 @@ public class AIDirectorPlayerManagementComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06002069 RID: 8297 RVA: 0x000C3FC8 File Offset: 0x000C21C8
+	// Token: 0x06002058 RID: 8280 RVA: 0x000C407C File Offset: 0x000C227C
 	public void RemovePlayer(EntityPlayer _player)
 	{
 		AIDirectorPlayerState aidirectorPlayerState;
@@ -37,7 +37,7 @@ public class AIDirectorPlayerManagementComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x0600206A RID: 8298 RVA: 0x000C4014 File Offset: 0x000C2214
+	// Token: 0x06002059 RID: 8281 RVA: 0x000C40C8 File Offset: 0x000C22C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickPlayerStates(double _dt)
 	{
@@ -48,7 +48,7 @@ public class AIDirectorPlayerManagementComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x0600206B RID: 8299 RVA: 0x000C4058 File Offset: 0x000C2258
+	// Token: 0x0600205A RID: 8282 RVA: 0x000C410C File Offset: 0x000C230C
 	public void UpdatePlayerInventory(int entityId, AIDirectorPlayerInventory inventory)
 	{
 		AIDirectorPlayerState aidirectorPlayerState;
@@ -58,23 +58,23 @@ public class AIDirectorPlayerManagementComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x0600206C RID: 8300 RVA: 0x000C4081 File Offset: 0x000C2281
+	// Token: 0x0600205B RID: 8283 RVA: 0x000C4135 File Offset: 0x000C2335
 	public void UpdatePlayerInventory(EntityPlayerLocal player)
 	{
 		this.UpdatePlayerInventory(player.entityId, AIDirectorPlayerInventory.FromEntity(player));
 	}
 
-	// Token: 0x0600206D RID: 8301 RVA: 0x000C4095 File Offset: 0x000C2295
+	// Token: 0x0600205C RID: 8284 RVA: 0x000C4149 File Offset: 0x000C2349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickPlayerState(AIDirectorPlayerState _ps, double _dt)
 	{
 		_ps.Dead = _ps.Player.IsDead();
 	}
 
-	// Token: 0x04001629 RID: 5673
+	// Token: 0x04001620 RID: 5664
 	public DictionaryList<int, AIDirectorPlayerState> trackedPlayers = new DictionaryList<int, AIDirectorPlayerState>();
 
-	// Token: 0x0400162A RID: 5674
+	// Token: 0x04001621 RID: 5665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryPooledObject<AIDirectorPlayerState> playerPool = new MemoryPooledObject<AIDirectorPlayerState>(32);
 }

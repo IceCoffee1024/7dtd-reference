@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x02001123 RID: 4387
+// Token: 0x0200113B RID: 4411
 public class XUiModel
 {
 }

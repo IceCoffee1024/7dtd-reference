@@ -1,46 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200017F RID: 383
+// Token: 0x02000180 RID: 384
 public interface ILockable
 {
-	// Token: 0x06000B59 RID: 2905
+	// Token: 0x06000B62 RID: 2914
 	bool IsLocked();
 
-	// Token: 0x06000B5A RID: 2906
+	// Token: 0x06000B63 RID: 2915
 	void SetLocked(bool _isLocked);
 
-	// Token: 0x06000B5B RID: 2907
+	// Token: 0x06000B64 RID: 2916
 	PlatformUserIdentifierAbs GetOwner();
 
-	// Token: 0x06000B5C RID: 2908
+	// Token: 0x06000B65 RID: 2917
 	void SetOwner(PlatformUserIdentifierAbs _userIdentifier);
 
-	// Token: 0x06000B5D RID: 2909
+	// Token: 0x06000B66 RID: 2918
 	bool IsUserAllowed(PlatformUserIdentifierAbs _userIdentifier);
 
-	// Token: 0x06000B5E RID: 2910
+	// Token: 0x06000B67 RID: 2919
 	List<PlatformUserIdentifierAbs> GetUsers();
 
-	// Token: 0x06000B5F RID: 2911
+	// Token: 0x06000B68 RID: 2920
 	bool LocalPlayerIsOwner();
 
-	// Token: 0x06000B60 RID: 2912
+	// Token: 0x06000B69 RID: 2921
 	bool IsOwner(PlatformUserIdentifierAbs _userIdentifier);
 
-	// Token: 0x06000B61 RID: 2913
+	// Token: 0x06000B6A RID: 2922
 	bool HasPassword();
 
-	// Token: 0x06000B62 RID: 2914
+	// Token: 0x06000B6B RID: 2923
 	bool SetPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier);
 
-	// Token: 0x06000B63 RID: 2915
+	// Token: 0x06000B6C RID: 2924
 	bool CheckPasswordHash(string _password, PlatformUserIdentifierAbs _userIdentifier);
 
-	// Token: 0x06000B64 RID: 2916
+	// Token: 0x06000B6D RID: 2925
 	string GetPasswordHash();
 
-	// Token: 0x06000B65 RID: 2917 RVA: 0x00048904 File Offset: 0x00046B04
+	// Token: 0x06000B6E RID: 2926 RVA: 0x00048AD8 File Offset: 0x00046CD8
 	string GetHashForPassword(string _password)
 	{
 		return _password.GetStableHashCode().ToString("X8");

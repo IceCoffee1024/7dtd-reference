@@ -2,10 +2,10 @@
 using Audio;
 using UnityEngine;
 
-// Token: 0x020000B6 RID: 182
+// Token: 0x020000B8 RID: 184
 public class AudioPlayer : MonoBehaviour
 {
-	// Token: 0x0600037F RID: 895 RVA: 0x00019E0C File Offset: 0x0001800C
+	// Token: 0x06000385 RID: 901 RVA: 0x00019F04 File Offset: 0x00018104
 	public void Play()
 	{
 		if (!this.refEntity)
@@ -52,7 +52,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000380 RID: 896 RVA: 0x00019F15 File Offset: 0x00018115
+	// Token: 0x06000386 RID: 902 RVA: 0x0001A00D File Offset: 0x0001820D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayAtPos(Vector3 _pos)
 	{
@@ -62,7 +62,7 @@ public class AudioPlayer : MonoBehaviour
 		this.queuedForPlaying = false;
 	}
 
-	// Token: 0x06000381 RID: 897 RVA: 0x00019F50 File Offset: 0x00018150
+	// Token: 0x06000387 RID: 903 RVA: 0x0001A048 File Offset: 0x00018248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -81,7 +81,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000382 RID: 898 RVA: 0x00019FBC File Offset: 0x000181BC
+	// Token: 0x06000388 RID: 904 RVA: 0x0001A0B4 File Offset: 0x000182B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopAudio()
 	{
@@ -99,7 +99,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000383 RID: 899 RVA: 0x0001A00E File Offset: 0x0001820E
+	// Token: 0x06000389 RID: 905 RVA: 0x0001A106 File Offset: 0x00018306
 	public void OnEnable()
 	{
 		if (!this.playOnDemand)
@@ -108,56 +108,56 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000384 RID: 900 RVA: 0x0001A01F File Offset: 0x0001821F
+	// Token: 0x0600038A RID: 906 RVA: 0x0001A117 File Offset: 0x00018317
 	public void OnDisable()
 	{
 		this.StopAudio();
 	}
 
-	// Token: 0x06000385 RID: 901 RVA: 0x0001A01F File Offset: 0x0001821F
+	// Token: 0x0600038B RID: 907 RVA: 0x0001A117 File Offset: 0x00018317
 	public void OnDestroy()
 	{
 		this.StopAudio();
 	}
 
-	// Token: 0x04000409 RID: 1033
+	// Token: 0x0400040C RID: 1036
 	public string soundName;
 
-	// Token: 0x0400040A RID: 1034
+	// Token: 0x0400040D RID: 1037
 	public float duration = -1f;
 
-	// Token: 0x0400040B RID: 1035
+	// Token: 0x0400040E RID: 1038
 	public bool playOnDemand;
 
-	// Token: 0x0400040C RID: 1036
-	public float startDelay;
-
-	// Token: 0x0400040D RID: 1037
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Entity attachedEntity;
-
-	// Token: 0x0400040E RID: 1038
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public RootTransformRefEntity refEntity;
-
 	// Token: 0x0400040F RID: 1039
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool queuedForPlaying;
+	public float startDelay;
 
 	// Token: 0x04000410 RID: 1040
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool isPlaying;
+	public Entity attachedEntity;
 
 	// Token: 0x04000411 RID: 1041
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float startTime;
+	public RootTransformRefEntity refEntity;
 
 	// Token: 0x04000412 RID: 1042
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool queuedForPlaying;
+
+	// Token: 0x04000413 RID: 1043
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isPlaying;
+
+	// Token: 0x04000414 RID: 1044
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float startTime;
+
+	// Token: 0x04000415 RID: 1045
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 playPos;

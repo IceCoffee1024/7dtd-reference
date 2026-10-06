@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200111C RID: 4380
+// Token: 0x02001134 RID: 4404
 public class XUiControllerComparerDepth : IComparer<XUiController>
 {
-	// Token: 0x06008AA3 RID: 35491 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06008B0F RID: 35599 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiControllerComparerDepth()
 	{
 	}
 
-	// Token: 0x06008AA4 RID: 35492 RVA: 0x0034C470 File Offset: 0x0034A670
+	// Token: 0x06008B10 RID: 35600 RVA: 0x0035091C File Offset: 0x0034EB1C
 	public int Compare(XUiController _x, XUiController _y)
 	{
 		if (_x == _y)
@@ -28,8 +28,8 @@ public class XUiControllerComparerDepth : IComparer<XUiController>
 		return _x.ViewComponent.Depth.CompareTo(_y.ViewComponent.Depth);
 	}
 
-	// Token: 0x17001010 RID: 4112
-	// (get) Token: 0x06008AA5 RID: 35493 RVA: 0x0034C4AB File Offset: 0x0034A6AB
+	// Token: 0x17001045 RID: 4165
+	// (get) Token: 0x06008B11 RID: 35601 RVA: 0x00350957 File Offset: 0x0034EB57
 	public static XUiControllerComparerDepth Instance
 	{
 		get
@@ -43,7 +43,7 @@ public class XUiControllerComparerDepth : IComparer<XUiController>
 		}
 	}
 
-	// Token: 0x040066E2 RID: 26338
+	// Token: 0x04006737 RID: 26423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiControllerComparerDepth instance;
 }

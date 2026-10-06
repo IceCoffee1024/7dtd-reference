@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001157 RID: 4439
+// Token: 0x0200116F RID: 4463
 public class XUiV_Grid : XUiView_WidgetBased
 {
-	// Token: 0x1700109D RID: 4253
-	// (get) Token: 0x06008D29 RID: 36137 RVA: 0x00356D69 File Offset: 0x00354F69
-	// (set) Token: 0x06008D2A RID: 36138 RVA: 0x00356D71 File Offset: 0x00354F71
+	// Token: 0x170010D2 RID: 4306
+	// (get) Token: 0x06008D94 RID: 36244 RVA: 0x0035B189 File Offset: 0x00359389
+	// (set) Token: 0x06008D95 RID: 36245 RVA: 0x0035B191 File Offset: 0x00359391
 	[XuiXmlAttribute("arrangement", false)]
 	public UIGrid.Arrangement Arrangement { get; set; }
 
-	// Token: 0x140000EC RID: 236
-	// (add) Token: 0x06008D2B RID: 36139 RVA: 0x00356D7C File Offset: 0x00354F7C
-	// (remove) Token: 0x06008D2C RID: 36140 RVA: 0x00356DB4 File Offset: 0x00354FB4
+	// Token: 0x140000EB RID: 235
+	// (add) Token: 0x06008D96 RID: 36246 RVA: 0x0035B19C File Offset: 0x0035939C
+	// (remove) Token: 0x06008D97 RID: 36247 RVA: 0x0035B1D4 File Offset: 0x003593D4
 	public event UIGrid.OnSizeChanged OnSizeChanged;
 
-	// Token: 0x1700109E RID: 4254
-	// (get) Token: 0x06008D2D RID: 36141 RVA: 0x00356DE9 File Offset: 0x00354FE9
-	// (set) Token: 0x06008D2E RID: 36142 RVA: 0x00356DF1 File Offset: 0x00354FF1
+	// Token: 0x170010D3 RID: 4307
+	// (get) Token: 0x06008D98 RID: 36248 RVA: 0x0035B209 File Offset: 0x00359409
+	// (set) Token: 0x06008D99 RID: 36249 RVA: 0x0035B211 File Offset: 0x00359411
 	[XuiXmlAttribute("cols", false)]
 	public int Columns
 	{
@@ -37,9 +37,9 @@ public class XUiV_Grid : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x1700109F RID: 4255
-	// (get) Token: 0x06008D2F RID: 36143 RVA: 0x00356E0A File Offset: 0x0035500A
-	// (set) Token: 0x06008D30 RID: 36144 RVA: 0x00356E12 File Offset: 0x00355012
+	// Token: 0x170010D4 RID: 4308
+	// (get) Token: 0x06008D9A RID: 36250 RVA: 0x0035B22A File Offset: 0x0035942A
+	// (set) Token: 0x06008D9B RID: 36251 RVA: 0x0035B232 File Offset: 0x00359432
 	[XuiXmlAttribute("rows", false)]
 	public int Rows
 	{
@@ -58,9 +58,9 @@ public class XUiV_Grid : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010A0 RID: 4256
-	// (get) Token: 0x06008D31 RID: 36145 RVA: 0x00356E2B File Offset: 0x0035502B
-	// (set) Token: 0x06008D32 RID: 36146 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x170010D5 RID: 4309
+	// (get) Token: 0x06008D9C RID: 36252 RVA: 0x0035B24B File Offset: 0x0035944B
+	// (set) Token: 0x06008D9D RID: 36253 RVA: 0x000027FC File Offset: 0x000009FC
 	public override int RepeatCount
 	{
 		get
@@ -72,26 +72,26 @@ public class XUiV_Grid : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x170010A1 RID: 4257
-	// (get) Token: 0x06008D33 RID: 36147 RVA: 0x00356E3A File Offset: 0x0035503A
-	// (set) Token: 0x06008D34 RID: 36148 RVA: 0x00356E42 File Offset: 0x00355042
+	// Token: 0x170010D6 RID: 4310
+	// (get) Token: 0x06008D9E RID: 36254 RVA: 0x0035B25A File Offset: 0x0035945A
+	// (set) Token: 0x06008D9F RID: 36255 RVA: 0x0035B262 File Offset: 0x00359462
 	[XuiXmlAttribute("cell_width", false)]
 	public int CellWidth { get; set; }
 
-	// Token: 0x170010A2 RID: 4258
-	// (get) Token: 0x06008D35 RID: 36149 RVA: 0x00356E4B File Offset: 0x0035504B
-	// (set) Token: 0x06008D36 RID: 36150 RVA: 0x00356E53 File Offset: 0x00355053
+	// Token: 0x170010D7 RID: 4311
+	// (get) Token: 0x06008DA0 RID: 36256 RVA: 0x0035B26B File Offset: 0x0035946B
+	// (set) Token: 0x06008DA1 RID: 36257 RVA: 0x0035B273 File Offset: 0x00359473
 	[XuiXmlAttribute("cell_height", false)]
 	public int CellHeight { get; set; }
 
-	// Token: 0x170010A3 RID: 4259
-	// (get) Token: 0x06008D37 RID: 36151 RVA: 0x00356E5C File Offset: 0x0035505C
-	// (set) Token: 0x06008D38 RID: 36152 RVA: 0x00356E64 File Offset: 0x00355064
+	// Token: 0x170010D8 RID: 4312
+	// (get) Token: 0x06008DA2 RID: 36258 RVA: 0x0035B27C File Offset: 0x0035947C
+	// (set) Token: 0x06008DA3 RID: 36259 RVA: 0x0035B284 File Offset: 0x00359484
 	[XuiXmlAttribute("hide_inactive", false)]
 	public bool HideInactive { get; set; }
 
-	// Token: 0x170010A4 RID: 4260
-	// (get) Token: 0x06008D39 RID: 36153 RVA: 0x00356E6D File Offset: 0x0035506D
+	// Token: 0x170010D9 RID: 4313
+	// (get) Token: 0x06008DA4 RID: 36260 RVA: 0x0035B28D File Offset: 0x0035948D
 	public override Vector2i InnerSize
 	{
 		get
@@ -100,13 +100,13 @@ public class XUiV_Grid : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008D3A RID: 36154 RVA: 0x00356E80 File Offset: 0x00355080
+	// Token: 0x06008DA5 RID: 36261 RVA: 0x0035B2A0 File Offset: 0x003594A0
 	public XUiV_Grid(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008D3B RID: 36155 RVA: 0x00356E8A File Offset: 0x0035508A
+	// Token: 0x06008DA6 RID: 36262 RVA: 0x0035B2AA File Offset: 0x003594AA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -114,7 +114,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		_go.AddComponent<UIGrid>();
 	}
 
-	// Token: 0x06008D3C RID: 36156 RVA: 0x00356E9A File Offset: 0x0035509A
+	// Token: 0x06008DA7 RID: 36263 RVA: 0x0035B2BA File Offset: 0x003594BA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -123,7 +123,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		this.grid = this.uiTransform.gameObject.GetComponent<UIGrid>();
 	}
 
-	// Token: 0x06008D3D RID: 36157 RVA: 0x00356ED0 File Offset: 0x003550D0
+	// Token: 0x06008DA8 RID: 36264 RVA: 0x0035B2F0 File Offset: 0x003594F0
 	public override void InitView()
 	{
 		base.InitView();
@@ -137,7 +137,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		this.grid.cellHeight = (float)this.CellHeight;
 	}
 
-	// Token: 0x06008D3E RID: 36158 RVA: 0x00356F80 File Offset: 0x00355180
+	// Token: 0x06008DA9 RID: 36265 RVA: 0x0035B3A0 File Offset: 0x003595A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGridSizeChanged(Vector2Int _cells, Vector2 _size)
 	{
@@ -152,20 +152,20 @@ public class XUiV_Grid : XUiView_WidgetBased
 		onSizeChanged(_cells, _size);
 	}
 
-	// Token: 0x06008D3F RID: 36159 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008DAA RID: 36266 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void refreshBoxCollider()
 	{
 	}
 
-	// Token: 0x06008D40 RID: 36160 RVA: 0x00356FEC File Offset: 0x003551EC
+	// Token: 0x06008DAB RID: 36267 RVA: 0x0035B40C File Offset: 0x0035960C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.grid.repositionNow = true;
 	}
 
-	// Token: 0x06008D41 RID: 36161 RVA: 0x00357004 File Offset: 0x00355204
+	// Token: 0x06008DAC RID: 36268 RVA: 0x0035B424 File Offset: 0x00359624
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -175,7 +175,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		base.updateData();
 	}
 
-	// Token: 0x06008D42 RID: 36162 RVA: 0x0035705C File Offset: 0x0035525C
+	// Token: 0x06008DAD RID: 36269 RVA: 0x0035B47C File Offset: 0x0035967C
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
@@ -187,7 +187,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		this.HideInactive = true;
 	}
 
-	// Token: 0x06008D43 RID: 36163 RVA: 0x00357097 File Offset: 0x00355297
+	// Token: 0x06008DAE RID: 36270 RVA: 0x0035B4B7 File Offset: 0x003596B7
 	public override void SetPostParsingDefaults(XUiController _parent)
 	{
 		base.SetPostParsingDefaults(_parent);
@@ -201,7 +201,7 @@ public class XUiV_Grid : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008D44 RID: 36164 RVA: 0x003570D4 File Offset: 0x003552D4
+	// Token: 0x06008DAF RID: 36271 RVA: 0x0035B4F4 File Offset: 0x003596F4
 	public override void SetRepeatContentTemplateParams(Dictionary<string, object> _templateParams, int _curRepeatNum)
 	{
 		base.SetRepeatContentTemplateParams(_templateParams, _curRepeatNum);
@@ -221,15 +221,15 @@ public class XUiV_Grid : XUiView_WidgetBased
 		_templateParams["repeat_row"] = num2;
 	}
 
-	// Token: 0x040067F3 RID: 26611
+	// Token: 0x04006848 RID: 26696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int columns;
 
-	// Token: 0x040067F4 RID: 26612
+	// Token: 0x04006849 RID: 26697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int rows;
 
-	// Token: 0x040067F5 RID: 26613
+	// Token: 0x0400684A RID: 26698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIGrid grid;
 }

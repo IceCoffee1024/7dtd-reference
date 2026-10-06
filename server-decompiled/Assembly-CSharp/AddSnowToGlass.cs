@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001328 RID: 4904
+// Token: 0x02001348 RID: 4936
 public class AddSnowToGlass : MonoBehaviour
 {
-	// Token: 0x06009B0A RID: 39690 RVA: 0x003A83B4 File Offset: 0x003A65B4
+	// Token: 0x06009BB6 RID: 39862 RVA: 0x003ACF30 File Offset: 0x003AB130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -48,9 +48,9 @@ public class AddSnowToGlass : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040074C7 RID: 29895
+	// Token: 0x04007542 RID: 30018
 	public Material glassMaterial;
 
-	// Token: 0x040074C8 RID: 29896
+	// Token: 0x04007543 RID: 30019
 	public Material snowMaterial;
 }

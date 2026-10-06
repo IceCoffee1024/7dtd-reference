@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010D7 RID: 4311
+// Token: 0x020010E8 RID: 4328
 [Preserve]
 public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 {
-	// Token: 0x06008950 RID: 35152 RVA: 0x0034579B File Offset: 0x0034399B
+	// Token: 0x0600899E RID: 35230 RVA: 0x0034954B File Offset: 0x0034774B
 	public void SetTileEntity(TileEntityWorkstation _te)
 	{
 		this.WorkstationData = new XUiM_Workstation(_te);
@@ -15,7 +15,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		base.Workstation = this.workstationBlock.Block.GetBlockName();
 	}
 
-	// Token: 0x06008951 RID: 35153 RVA: 0x003457D8 File Offset: 0x003439D8
+	// Token: 0x0600899F RID: 35231 RVA: 0x00349588 File Offset: 0x00347788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_Destroyed(ITileEntity te)
 	{
@@ -27,7 +27,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		te.Destroyed -= this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06008952 RID: 35154 RVA: 0x0034582A File Offset: 0x00343A2A
+	// Token: 0x060089A0 RID: 35232 RVA: 0x003495DA File Offset: 0x003477DA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_ToolChanged()
 	{
@@ -38,7 +38,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x06008953 RID: 35155 RVA: 0x00345850 File Offset: 0x00343A50
+	// Token: 0x060089A1 RID: 35233 RVA: 0x00349600 File Offset: 0x00347800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_OutputChanged()
 	{
@@ -49,7 +49,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x06008954 RID: 35156 RVA: 0x00345876 File Offset: 0x00343A76
+	// Token: 0x060089A2 RID: 35234 RVA: 0x00349626 File Offset: 0x00347826
 	public void TileEntity_InputChanged()
 	{
 		if (this.inputWindow != null)
@@ -59,7 +59,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x06008955 RID: 35157 RVA: 0x0034589C File Offset: 0x00343A9C
+	// Token: 0x060089A3 RID: 35235 RVA: 0x0034964C File Offset: 0x0034784C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_FuelChanged()
 	{
@@ -70,7 +70,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x06008956 RID: 35158 RVA: 0x003458C4 File Offset: 0x00343AC4
+	// Token: 0x060089A4 RID: 35236 RVA: 0x00349674 File Offset: 0x00347874
 	public override void Init()
 	{
 		base.Init();
@@ -111,7 +111,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x06008957 RID: 35159 RVA: 0x00345988 File Offset: 0x00343B88
+	// Token: 0x060089A5 RID: 35237 RVA: 0x00349738 File Offset: 0x00347938
 	public override bool CraftingRequirementsValid(Recipe _recipe)
 	{
 		bool flag = true;
@@ -134,7 +134,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		return flag;
 	}
 
-	// Token: 0x06008958 RID: 35160 RVA: 0x003459F4 File Offset: 0x00343BF4
+	// Token: 0x060089A6 RID: 35238 RVA: 0x003497A4 File Offset: 0x003479A4
 	public override string CraftingRequirementsInvalidMessage(Recipe _recipe)
 	{
 		if (this.toolWindow != null && !this.toolWindow.HasRequirement(_recipe))
@@ -156,7 +156,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		return "";
 	}
 
-	// Token: 0x06008959 RID: 35161 RVA: 0x00345A84 File Offset: 0x00343C84
+	// Token: 0x060089A7 RID: 35239 RVA: 0x00349834 File Offset: 0x00347A34
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -215,7 +215,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		}
 	}
 
-	// Token: 0x0600895A RID: 35162 RVA: 0x00345CCC File Offset: 0x00343ECC
+	// Token: 0x060089A8 RID: 35240 RVA: 0x00349A7C File Offset: 0x00347C7C
 	public override bool AddItemToQueue(Recipe _recipe)
 	{
 		if (this.fuelWindow != null)
@@ -225,7 +225,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		return base.AddItemToQueue(_recipe);
 	}
 
-	// Token: 0x0600895B RID: 35163 RVA: 0x00345CE8 File Offset: 0x00343EE8
+	// Token: 0x060089A9 RID: 35241 RVA: 0x00349A98 File Offset: 0x00347C98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void syncTEfromUI()
 	{
@@ -271,7 +271,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		tileEntity.ResetTickTime();
 	}
 
-	// Token: 0x0600895C RID: 35164 RVA: 0x00345E48 File Offset: 0x00344048
+	// Token: 0x060089AA RID: 35242 RVA: 0x00349BF8 File Offset: 0x00347DF8
 	public override void OnOpen()
 	{
 		this.WorkstationData.SetUserAccessing(true);
@@ -326,7 +326,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600895D RID: 35165 RVA: 0x003460B0 File Offset: 0x003442B0
+	// Token: 0x060089AB RID: 35243 RVA: 0x00349E60 File Offset: 0x00348060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void syncUIfromTE()
 	{
@@ -357,7 +357,7 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		base.SetAllChildrenDirty();
 	}
 
-	// Token: 0x0600895E RID: 35166 RVA: 0x003461A8 File Offset: 0x003443A8
+	// Token: 0x060089AC RID: 35244 RVA: 0x00349F58 File Offset: 0x00348158
 	public override void OnClose()
 	{
 		this.wasReleased = false;
@@ -377,58 +377,58 @@ public class XUiC_WorkstationWindowGroup : XUiC_CraftingWindowGroup
 		this.xui.CalloutWindow.ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts);
 	}
 
-	// Token: 0x04006612 RID: 26130
+	// Token: 0x04006654 RID: 26196
 	public XUiM_Workstation WorkstationData;
 
-	// Token: 0x04006613 RID: 26131
+	// Token: 0x04006655 RID: 26197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue workstationBlock;
 
-	// Token: 0x04006614 RID: 26132
+	// Token: 0x04006656 RID: 26198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationToolGrid toolWindow;
 
-	// Token: 0x04006615 RID: 26133
+	// Token: 0x04006657 RID: 26199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationInputGrid inputWindow;
 
-	// Token: 0x04006616 RID: 26134
+	// Token: 0x04006658 RID: 26200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationOutputGrid outputWindow;
 
-	// Token: 0x04006617 RID: 26135
+	// Token: 0x04006659 RID: 26201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationFuelGrid fuelWindow;
 
-	// Token: 0x04006618 RID: 26136
+	// Token: 0x0400665A RID: 26202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new XUiC_CraftingQueue craftingQueue;
 
-	// Token: 0x04006619 RID: 26137
+	// Token: 0x0400665B RID: 26203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label burnTimeLeft;
 
-	// Token: 0x0400661A RID: 26138
+	// Token: 0x0400665C RID: 26204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x0400661B RID: 26139
+	// Token: 0x0400665D RID: 26205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasCrafting;
 
-	// Token: 0x0400661C RID: 26140
+	// Token: 0x0400665E RID: 26206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x0400661D RID: 26141
+	// Token: 0x0400665F RID: 26207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 
-	// Token: 0x0400661E RID: 26142
+	// Token: 0x04006660 RID: 26208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float openTEUpdateTime;
 
-	// Token: 0x0400661F RID: 26143
+	// Token: 0x04006661 RID: 26209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float openTEUpdateTimeMax = 0.5f;
 }

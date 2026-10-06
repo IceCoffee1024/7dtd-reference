@@ -4,12 +4,12 @@ using System.Text;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02001066 RID: 4198
+// Token: 0x02001077 RID: 4215
 [Preserve]
 public class XUiC_SkillPerkLevel : XUiController
 {
-	// Token: 0x17000F92 RID: 3986
-	// (set) Token: 0x0600857C RID: 34172 RVA: 0x0032E09E File Offset: 0x0032C29E
+	// Token: 0x17000FC8 RID: 4040
+	// (set) Token: 0x060085C2 RID: 34242 RVA: 0x00331CAA File Offset: 0x0032FEAA
 	public int ListIndex
 	{
 		set
@@ -22,9 +22,9 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x17000F93 RID: 3987
-	// (get) Token: 0x0600857D RID: 34173 RVA: 0x0032E0B7 File Offset: 0x0032C2B7
-	// (set) Token: 0x0600857E RID: 34174 RVA: 0x0032E0BF File Offset: 0x0032C2BF
+	// Token: 0x17000FC9 RID: 4041
+	// (get) Token: 0x060085C3 RID: 34243 RVA: 0x00331CC3 File Offset: 0x0032FEC3
+	// (set) Token: 0x060085C4 RID: 34244 RVA: 0x00331CCB File Offset: 0x0032FECB
 	public int Level
 	{
 		get
@@ -41,8 +41,8 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x17000F94 RID: 3988
-	// (set) Token: 0x0600857F RID: 34175 RVA: 0x0032E0D8 File Offset: 0x0032C2D8
+	// Token: 0x17000FCA RID: 4042
+	// (set) Token: 0x060085C5 RID: 34245 RVA: 0x00331CE4 File Offset: 0x0032FEE4
 	public int MaxEntriesWithoutPaging
 	{
 		set
@@ -55,8 +55,8 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x17000F95 RID: 3989
-	// (set) Token: 0x06008580 RID: 34176 RVA: 0x0032E0F1 File Offset: 0x0032C2F1
+	// Token: 0x17000FCB RID: 4043
+	// (set) Token: 0x060085C6 RID: 34246 RVA: 0x00331CFD File Offset: 0x0032FEFD
 	public int HiddenEntriesWithPaging
 	{
 		set
@@ -69,8 +69,8 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x17000F96 RID: 3990
-	// (get) Token: 0x06008581 RID: 34177 RVA: 0x0032E10A File Offset: 0x0032C30A
+	// Token: 0x17000FCC RID: 4044
+	// (get) Token: 0x060085C7 RID: 34247 RVA: 0x00331D16 File Offset: 0x0032FF16
 	public XUiV_Button BtnBuy
 	{
 		get
@@ -79,8 +79,8 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x17000F97 RID: 3991
-	// (get) Token: 0x06008582 RID: 34178 RVA: 0x0032D5C3 File Offset: 0x0032B7C3
+	// Token: 0x17000FCD RID: 4045
+	// (get) Token: 0x060085C8 RID: 34248 RVA: 0x003311CF File Offset: 0x0032F3CF
 	public ProgressionValue CurrentSkill
 	{
 		get
@@ -93,7 +93,7 @@ public class XUiC_SkillPerkLevel : XUiController
 		}
 	}
 
-	// Token: 0x06008583 RID: 34179 RVA: 0x0032E112 File Offset: 0x0032C312
+	// Token: 0x060085C9 RID: 34249 RVA: 0x00331D1E File Offset: 0x0032FF1E
 	public override void Init()
 	{
 		base.Init();
@@ -101,7 +101,7 @@ public class XUiC_SkillPerkLevel : XUiController
 		this.btnBuy.Controller.OnPress += this.btnBuy_OnPress;
 	}
 
-	// Token: 0x06008584 RID: 34180 RVA: 0x0032E154 File Offset: 0x0032C354
+	// Token: 0x060085CA RID: 34250 RVA: 0x00331D60 File Offset: 0x0032FF60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnBuy_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -143,7 +143,7 @@ public class XUiC_SkillPerkLevel : XUiController
 		entityPlayer.bPlayerStatsChanged = true;
 	}
 
-	// Token: 0x06008585 RID: 34181 RVA: 0x0032E2E4 File Offset: 0x0032C4E4
+	// Token: 0x060085CB RID: 34251 RVA: 0x00331EF0 File Offset: 0x003300F0
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(_name);
@@ -212,7 +212,7 @@ public class XUiC_SkillPerkLevel : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x06008586 RID: 34182 RVA: 0x0032E408 File Offset: 0x0032C608
+	// Token: 0x060085CC RID: 34252 RVA: 0x00332014 File Offset: 0x00330214
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -450,7 +450,7 @@ public class XUiC_SkillPerkLevel : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06008587 RID: 34183 RVA: 0x00328E30 File Offset: 0x00327030
+	// Token: 0x060085CD RID: 34253 RVA: 0x0032CA3C File Offset: 0x0032AC3C
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -461,82 +461,82 @@ public class XUiC_SkillPerkLevel : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04006323 RID: 25379
+	// Token: 0x04006368 RID: 25448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_bought;
 
-	// Token: 0x04006324 RID: 25380
+	// Token: 0x04006369 RID: 25449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_available;
 
-	// Token: 0x04006325 RID: 25381
+	// Token: 0x0400636A RID: 25450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_locked;
 
-	// Token: 0x04006326 RID: 25382
+	// Token: 0x0400636B RID: 25451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_available;
 
-	// Token: 0x04006327 RID: 25383
+	// Token: 0x0400636C RID: 25452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_locked;
 
-	// Token: 0x04006328 RID: 25384
+	// Token: 0x0400636D RID: 25453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_nerfed;
 
-	// Token: 0x04006329 RID: 25385
+	// Token: 0x0400636E RID: 25454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_buffed;
 
-	// Token: 0x0400632A RID: 25386
+	// Token: 0x0400636F RID: 25455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int listIndex;
 
-	// Token: 0x0400632B RID: 25387
+	// Token: 0x04006370 RID: 25456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int level;
 
-	// Token: 0x0400632C RID: 25388
+	// Token: 0x04006371 RID: 25457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxEntriesWithoutPaging = 5;
 
-	// Token: 0x0400632D RID: 25389
+	// Token: 0x04006372 RID: 25458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hiddenEntriesWithPaging = 2;
 
-	// Token: 0x0400632E RID: 25390
+	// Token: 0x04006373 RID: 25459
 	public XUiV_Button btnBuy;
 
-	// Token: 0x0400632F RID: 25391
+	// Token: 0x04006374 RID: 25460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> groupPointCostFormatter = new CachedStringFormatter<int>((int _i) => string.Format("{0}: {1} {2}", Localization.Get("xuiSkillBuy", false, null), _i, (_i != 1) ? Localization.Get("xuiSkillPoints", false, null) : Localization.Get("xuiSkillPoint", false, null)));
 
-	// Token: 0x04006330 RID: 25392
+	// Token: 0x04006375 RID: 25461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeMultiplicationFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}%", _s, (_f < 0f) ? _f.ToCultureInvariantString("0.#") : ("+" + _f.ToCultureInvariantString("0.#"))));
 
-	// Token: 0x04006331 RID: 25393
+	// Token: 0x04006376 RID: 25462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeDivisionFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}%", _s, _f.ToCultureInvariantString("0.#")));
 
-	// Token: 0x04006332 RID: 25394
+	// Token: 0x04006377 RID: 25463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeAdditionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => string.Format("{0}: +{1}", _s, _f.ToCultureInvariantString("0.#") + (_b ? "%" : "")));
 
-	// Token: 0x04006333 RID: 25395
+	// Token: 0x04006378 RID: 25464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeSubtractionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#") + (_b ? "%" : "")));
 
-	// Token: 0x04006334 RID: 25396
+	// Token: 0x04006379 RID: 25465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeSetValueFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#")));
 
-	// Token: 0x04006335 RID: 25397
+	// Token: 0x0400637A RID: 25466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, string> attributeLockedFormatter = new CachedStringFormatter<string, string>((string _s1, string _s2) => string.Format("{0}: {1}", _s1, _s2));
 
-	// Token: 0x04006336 RID: 25398
+	// Token: 0x0400637B RID: 25467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder effectsStringBuilder = new StringBuilder();
 }

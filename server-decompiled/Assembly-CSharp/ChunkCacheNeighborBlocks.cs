@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B12 RID: 2834
+// Token: 0x02000B24 RID: 2852
 public class ChunkCacheNeighborBlocks : INeighborBlockCache
 {
-	// Token: 0x06005583 RID: 21891 RVA: 0x0020AB2C File Offset: 0x00208D2C
+	// Token: 0x0600559C RID: 21916 RVA: 0x0020DD9C File Offset: 0x0020BF9C
 	public ChunkCacheNeighborBlocks(ChunkCacheNeighborChunks _nChunks)
 	{
 		IChunk[] array = new Chunk[9];
@@ -17,7 +17,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		this.nChunks = _nChunks;
 	}
 
-	// Token: 0x06005584 RID: 21892 RVA: 0x0020AB88 File Offset: 0x00208D88
+	// Token: 0x0600559D RID: 21917 RVA: 0x0020DDF8 File Offset: 0x0020BFF8
 	public void Init(int _bX, int _bZ)
 	{
 		IChunk chunk = this.nChunks[0, 0];
@@ -40,7 +40,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		this.chunks[8] = ((_bX < 15) ? ((_bZ < 15) ? chunk : this.nChunks[0, 1]) : ((_bZ < 15) ? this.nChunks[1, 0] : this.nChunks[1, 1]));
 	}
 
-	// Token: 0x06005585 RID: 21893 RVA: 0x0020AD84 File Offset: 0x00208F84
+	// Token: 0x0600559E RID: 21918 RVA: 0x0020DFF4 File Offset: 0x0020C1F4
 	public void Clear()
 	{
 		this.centerBX = int.MaxValue;
@@ -50,19 +50,19 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		Array.Clear(this.chunks, 0, this.chunks.Length);
 	}
 
-	// Token: 0x06005586 RID: 21894 RVA: 0x0020ADD1 File Offset: 0x00208FD1
+	// Token: 0x0600559F RID: 21919 RVA: 0x0020E041 File Offset: 0x0020C241
 	public IChunk GetChunk(int x, int z)
 	{
 		return this.chunks[x + 1 + (z + 1) * 3];
 	}
 
-	// Token: 0x06005587 RID: 21895 RVA: 0x0020ADE3 File Offset: 0x00208FE3
+	// Token: 0x060055A0 RID: 21920 RVA: 0x0020E053 File Offset: 0x0020C253
 	public IChunk GetNeighborChunk(int x, int z)
 	{
 		return this.nChunks[x, z];
 	}
 
-	// Token: 0x06005588 RID: 21896 RVA: 0x0020ADF4 File Offset: 0x00208FF4
+	// Token: 0x060055A1 RID: 21921 RVA: 0x0020E064 File Offset: 0x0020C264
 	public bool IsBlockInCache(int relx, int absy, int relz)
 	{
 		if (absy < 0 || absy > 255)
@@ -73,13 +73,13 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return num <= 8 && this.chunks[num] != null;
 	}
 
-	// Token: 0x06005589 RID: 21897 RVA: 0x0020AE2A File Offset: 0x0020902A
+	// Token: 0x060055A2 RID: 21922 RVA: 0x0020E09A File Offset: 0x0020C29A
 	public Vector3i GetChunkPos(int relx, int absy, int relz)
 	{
 		return new Vector3i((this.centerBX + relx) & 15, absy, (this.centerBZ + relz) & 15);
 	}
 
-	// Token: 0x0600558A RID: 21898 RVA: 0x0020AE48 File Offset: 0x00209048
+	// Token: 0x060055A3 RID: 21923 RVA: 0x0020E0B8 File Offset: 0x0020C2B8
 	public BlockValue Get(int absy)
 	{
 		if (absy < 0)
@@ -97,7 +97,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 			if (!GameManager.bShowLootBlocks)
 			{
 				BlockCompositeTileEntity blockCompositeTileEntity = blockValue.Block as BlockCompositeTileEntity;
-				if (blockCompositeTileEntity != null && blockCompositeTileEntity.CompositeData.HasFeature<ITileEntityLootable>())
+				if (blockCompositeTileEntity != null && blockCompositeTileEntity.CompositeData.HasFeature<TEFeatureStorage>())
 				{
 					blockValue = BlockValue.Air;
 				}
@@ -116,7 +116,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return blockValue2;
 	}
 
-	// Token: 0x0600558B RID: 21899 RVA: 0x0020AF14 File Offset: 0x00209114
+	// Token: 0x060055A4 RID: 21924 RVA: 0x0020E184 File Offset: 0x0020C384
 	public BlockValue Get(int relx, int absy, int relz)
 	{
 		int num = relx + 1 + (relz + 1) * 3;
@@ -135,7 +135,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 			if (!GameManager.bShowLootBlocks)
 			{
 				BlockCompositeTileEntity blockCompositeTileEntity = blockValue.Block as BlockCompositeTileEntity;
-				if (blockCompositeTileEntity != null && blockCompositeTileEntity.CompositeData.HasFeature<ITileEntityLootable>())
+				if (blockCompositeTileEntity != null && blockCompositeTileEntity.CompositeData.HasFeature<TEFeatureStorage>())
 				{
 					blockValue = BlockValue.Air;
 				}
@@ -162,7 +162,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return blockValue2;
 	}
 
-	// Token: 0x0600558C RID: 21900 RVA: 0x0020B024 File Offset: 0x00209224
+	// Token: 0x060055A5 RID: 21925 RVA: 0x0020E294 File Offset: 0x0020C494
 	public byte GetStab(int relx, int absy, int relz)
 	{
 		byte b = 0;
@@ -187,7 +187,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return b;
 	}
 
-	// Token: 0x0600558D RID: 21901 RVA: 0x0020B0D0 File Offset: 0x002092D0
+	// Token: 0x060055A6 RID: 21926 RVA: 0x0020E340 File Offset: 0x0020C540
 	public bool IsWater(int relx, int absy, int relz)
 	{
 		int num = relx + 1 + (relz + 1) * 3;
@@ -217,7 +217,7 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return flag;
 	}
 
-	// Token: 0x0600558E RID: 21902 RVA: 0x0020B188 File Offset: 0x00209388
+	// Token: 0x060055A7 RID: 21927 RVA: 0x0020E3F8 File Offset: 0x0020C5F8
 	public bool IsAir(int relx, int absy, int relz)
 	{
 		int num = relx + 1 + (relz + 1) * 3;
@@ -250,37 +250,37 @@ public class ChunkCacheNeighborBlocks : INeighborBlockCache
 		return flag;
 	}
 
-	// Token: 0x0600558F RID: 21903 RVA: 0x0020B268 File Offset: 0x00209468
+	// Token: 0x060055A8 RID: 21928 RVA: 0x0020E4D8 File Offset: 0x0020C6D8
 	public override string ToString()
 	{
 		return string.Format("BlockCache -- Chunk Pos ({0}, {1}) -- Block Pos ({2}, {3})", new object[] { this.curChunkX, this.curChunkZ, this.centerBX, this.centerBZ });
 	}
 
-	// Token: 0x0400424B RID: 16971
+	// Token: 0x04004288 RID: 17032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunk[] chunks;
 
-	// Token: 0x0400424C RID: 16972
+	// Token: 0x04004289 RID: 17033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCacheNeighborChunks nChunks;
 
-	// Token: 0x0400424D RID: 16973
+	// Token: 0x0400428A RID: 17034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int centerBX;
 
-	// Token: 0x0400424E RID: 16974
+	// Token: 0x0400428B RID: 17035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int centerBZ;
 
-	// Token: 0x0400424F RID: 16975
+	// Token: 0x0400428C RID: 17036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curChunkX;
 
-	// Token: 0x04004250 RID: 16976
+	// Token: 0x0400428D RID: 17037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curChunkZ;
 
-	// Token: 0x04004251 RID: 16977
+	// Token: 0x0400428E RID: 17038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstException;
 }

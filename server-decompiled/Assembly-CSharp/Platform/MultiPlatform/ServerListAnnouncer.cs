@@ -4,21 +4,21 @@ using System.Threading;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001CBF RID: 7359
+	// Token: 0x02001CF1 RID: 7409
 	public class ServerListAnnouncer : IMasterServerAnnouncer
 	{
-		// Token: 0x0600DA83 RID: 55939 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBFD RID: 56317 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600DA84 RID: 55940 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBFE RID: 56318 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x17001B4A RID: 6986
-		// (get) Token: 0x0600DA85 RID: 55941 RVA: 0x004E2F7C File Offset: 0x004E117C
+		// Token: 0x17001BF0 RID: 7152
+		// (get) Token: 0x0600DBFF RID: 56319 RVA: 0x004E7AC4 File Offset: 0x004E5CC4
 		public bool GameServerInitialized
 		{
 			get
@@ -43,7 +43,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600DA86 RID: 55942 RVA: 0x004E2FE8 File Offset: 0x004E11E8
+		// Token: 0x0600DC00 RID: 56320 RVA: 0x004E7B30 File Offset: 0x004E5D30
 		public string GetServerPorts()
 		{
 			string text = "";
@@ -96,7 +96,7 @@ namespace Platform.MultiPlatform
 			return text;
 		}
 
-		// Token: 0x0600DA87 RID: 55943 RVA: 0x004E3100 File Offset: 0x004E1300
+		// Token: 0x0600DC01 RID: 56321 RVA: 0x004E7C48 File Offset: 0x004E5E48
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			if (PlatformManager.NativePlatform.ServerListAnnouncer != null)
@@ -135,7 +135,7 @@ namespace Platform.MultiPlatform
 			this.onServerRegistered = _onServerRegistered;
 		}
 
-		// Token: 0x0600DA88 RID: 55944 RVA: 0x004E3220 File Offset: 0x004E1420
+		// Token: 0x0600DC02 RID: 56322 RVA: 0x004E7D68 File Offset: 0x004E5F68
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serverRegisteredCallback()
 		{
@@ -150,7 +150,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600DA89 RID: 55945 RVA: 0x004E3248 File Offset: 0x004E1448
+		// Token: 0x0600DC03 RID: 56323 RVA: 0x004E7D90 File Offset: 0x004E5F90
 		public void StopServer()
 		{
 			foreach (KeyValuePair<EPlatformIdentifier, IPlatform> keyValuePair in PlatformManager.ServerPlatforms)
@@ -181,11 +181,11 @@ namespace Platform.MultiPlatform
 			serverListAnnouncer3.StopServer();
 		}
 
-		// Token: 0x0400A565 RID: 42341
+		// Token: 0x0400A63A RID: 42554
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int platformsAdvertising;
 
-		// Token: 0x0400A566 RID: 42342
+		// Token: 0x0400A63B RID: 42555
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onServerRegistered;
 	}

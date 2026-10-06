@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200103B RID: 4155
+// Token: 0x0200104A RID: 4170
 [Preserve]
 public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x060083E1 RID: 33761 RVA: 0x00322CD4 File Offset: 0x00320ED4
+	// Token: 0x0600840A RID: 33802 RVA: 0x003266BC File Offset: 0x003248BC
 	public override void Init()
 	{
 		base.Init();
@@ -59,7 +59,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		};
 	}
 
-	// Token: 0x060083E2 RID: 33762 RVA: 0x00322E74 File Offset: 0x00321074
+	// Token: 0x0600840B RID: 33803 RVA: 0x0032685C File Offset: 0x00324A5C
 	public void SetAffectModeVisual(XUiC_SignEditorWindow.AffectMode mode)
 	{
 		bool flag = mode == XUiC_SignEditorWindow.AffectMode.Children;
@@ -68,7 +68,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		this.btnAffectPivot.Button.Selected = flag2;
 	}
 
-	// Token: 0x060083E3 RID: 33763 RVA: 0x00322EB0 File Offset: 0x003210B0
+	// Token: 0x0600840C RID: 33804 RVA: 0x00326898 File Offset: 0x00324A98
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer as SignData.GroupSignLayer;
@@ -86,7 +86,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		this.cbxDilateOffset.Value = (double)this.currentLayer.dilateOffset;
 	}
 
-	// Token: 0x060083E4 RID: 33764 RVA: 0x00322F6C File Offset: 0x0032116C
+	// Token: 0x0600840D RID: 33805 RVA: 0x00326954 File Offset: 0x00324B54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -111,7 +111,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x060083E5 RID: 33765 RVA: 0x00323004 File Offset: 0x00321204
+	// Token: 0x0600840E RID: 33806 RVA: 0x003269EC File Offset: 0x00324BEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBakeColor_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -134,7 +134,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x060083E6 RID: 33766 RVA: 0x00323060 File Offset: 0x00321260
+	// Token: 0x0600840F RID: 33807 RVA: 0x00326A48 File Offset: 0x00324C48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBakeOffsets_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -157,7 +157,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x060083E7 RID: 33767 RVA: 0x003230C0 File Offset: 0x003212C0
+	// Token: 0x06008410 RID: 33808 RVA: 0x00326AA8 File Offset: 0x00324CA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void BakeColorRecursive(SignData.GroupSignLayer group, List<SignDataManager.ColorOperation> colorOps)
 	{
@@ -191,7 +191,7 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		group.renderSettings.color = Color.white;
 	}
 
-	// Token: 0x060083E8 RID: 33768 RVA: 0x003231DC File Offset: 0x003213DC
+	// Token: 0x06008411 RID: 33809 RVA: 0x00326BC4 File Offset: 0x00324DC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void BakeOffsetsRecursive(SignData.GroupSignLayer group, SignDataManager.GroupOffsets offsets)
 	{
@@ -236,42 +236,42 @@ public class XUiC_SignGroupSettings : XUiC_SignLayerSettings
 		group.dilateOffset = 0f;
 	}
 
-	// Token: 0x040061CA RID: 25034
+	// Token: 0x04006205 RID: 25093
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnBakeColor;
 
-	// Token: 0x040061CB RID: 25035
+	// Token: 0x04006206 RID: 25094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnBakeOffsets;
 
-	// Token: 0x040061CC RID: 25036
+	// Token: 0x04006207 RID: 25095
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnAffectChildren;
 
-	// Token: 0x040061CD RID: 25037
+	// Token: 0x04006208 RID: 25096
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnAffectPivot;
 
-	// Token: 0x040061CE RID: 25038
+	// Token: 0x04006209 RID: 25097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxColorMode;
 
-	// Token: 0x040061CF RID: 25039
+	// Token: 0x0400620A RID: 25098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxOffsetTarget;
 
-	// Token: 0x040061D0 RID: 25040
+	// Token: 0x0400620B RID: 25099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSoftnessOffset;
 
-	// Token: 0x040061D1 RID: 25041
+	// Token: 0x0400620C RID: 25100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDilateOffset;
 
-	// Token: 0x040061D2 RID: 25042
+	// Token: 0x0400620D RID: 25101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.GroupSignLayer currentLayer;
 
-	// Token: 0x040061D3 RID: 25043
+	// Token: 0x0400620E RID: 25102
 	public Action<XUiC_SignEditorWindow.AffectMode> OnAffectModePressed;
 }

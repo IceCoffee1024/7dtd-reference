@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Webserver.LiveData
 {
-	// Token: 0x02001B06 RID: 6918
+	// Token: 0x02001B32 RID: 6962
 	public abstract class EntityFilterList<T> where T : Entity
 	{
-		// Token: 0x0600CFF0 RID: 53232 RVA: 0x004BB550 File Offset: 0x004B9750
+		// Token: 0x0600D148 RID: 53576 RVA: 0x004BFA1C File Offset: 0x004BDC1C
 		public void Get(List<T> _list)
 		{
 			_list.Clear();
@@ -29,7 +29,7 @@ namespace Webserver.LiveData
 			}
 		}
 
-		// Token: 0x0600CFF1 RID: 53233 RVA: 0x004BB5C8 File Offset: 0x004B97C8
+		// Token: 0x0600D149 RID: 53577 RVA: 0x004BFA94 File Offset: 0x004BDC94
 		public int GetCount()
 		{
 			int num = 0;
@@ -52,11 +52,11 @@ namespace Webserver.LiveData
 			return num;
 		}
 
-		// Token: 0x0600CFF2 RID: 53234
+		// Token: 0x0600D14A RID: 53578
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract T predicate(Entity _e);
 
-		// Token: 0x0600CFF3 RID: 53235 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600D14B RID: 53579 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EntityFilterList()
 		{

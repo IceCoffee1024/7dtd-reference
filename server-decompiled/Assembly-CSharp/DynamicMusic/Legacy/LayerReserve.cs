@@ -4,16 +4,16 @@ using DynamicMusic.Legacy.ObjectModel;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001A95 RID: 6805
+	// Token: 0x02001AC1 RID: 6849
 	public static class LayerReserve
 	{
-		// Token: 0x0600CD5F RID: 52575 RVA: 0x004AB5B7 File Offset: 0x004A97B7
+		// Token: 0x0600CEB7 RID: 52919 RVA: 0x004AFA83 File Offset: 0x004ADC83
 		public static void Tick()
 		{
 			LayerReserve.Load();
 		}
 
-		// Token: 0x0600CD60 RID: 52576 RVA: 0x004AB5C0 File Offset: 0x004A97C0
+		// Token: 0x0600CEB8 RID: 52920 RVA: 0x004AFA8C File Offset: 0x004ADC8C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void Load()
 		{
@@ -40,7 +40,7 @@ namespace DynamicMusic.Legacy
 			LayerReserve.CurrentLoading = null;
 		}
 
-		// Token: 0x0600CD61 RID: 52577 RVA: 0x004AB63F File Offset: 0x004A983F
+		// Token: 0x0600CEB9 RID: 52921 RVA: 0x004AFB0B File Offset: 0x004ADD0B
 		public static void AddLoad(InstrumentID _id)
 		{
 			if (LayerReserve.toLoad == null)
@@ -50,11 +50,11 @@ namespace DynamicMusic.Legacy
 			LayerReserve.toLoad.Enqueue(_id);
 		}
 
-		// Token: 0x04009BA4 RID: 39844
+		// Token: 0x04009C6A RID: 40042
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Queue<InstrumentID> toLoad;
 
-		// Token: 0x04009BA5 RID: 39845
+		// Token: 0x04009C6B RID: 40043
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static InstrumentID CurrentLoading;
 	}

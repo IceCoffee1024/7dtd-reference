@@ -4,11 +4,11 @@ using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000A4C RID: 2636
+// Token: 0x02000A56 RID: 2646
 [DisallowMultipleComponent]
 public class GearBoneMap : MonoBehaviour
 {
-	// Token: 0x06004FDB RID: 20443 RVA: 0x001E4128 File Offset: 0x001E2328
+	// Token: 0x06004FAA RID: 20394 RVA: 0x001E53D8 File Offset: 0x001E35D8
 	public IReadOnlyList<Transform> GetPartBones(string partName)
 	{
 		if (string.IsNullOrEmpty(partName))
@@ -34,13 +34,13 @@ public class GearBoneMap : MonoBehaviour
 		return Array.Empty<Transform>();
 	}
 
-	// Token: 0x06004FDC RID: 20444 RVA: 0x001E41E2 File Offset: 0x001E23E2
+	// Token: 0x06004FAB RID: 20395 RVA: 0x001E5492 File Offset: 0x001E3692
 	public IReadOnlyList<string> GetPartNames()
 	{
 		return this.parts.Select<GearBoneMap.PartBones, string>((GearBoneMap.PartBones p) => p.partName).ToArray<string>();
 	}
 
-	// Token: 0x06004FDD RID: 20445 RVA: 0x001E4214 File Offset: 0x001E2414
+	// Token: 0x06004FAC RID: 20396 RVA: 0x001E54C4 File Offset: 0x001E36C4
 	public void SetBones(string partName, IEnumerable<Transform> newBones)
 	{
 		if (string.IsNullOrEmpty(partName))
@@ -63,13 +63,13 @@ public class GearBoneMap : MonoBehaviour
 		partBones.bones.AddRange(list);
 	}
 
-	// Token: 0x06004FDE RID: 20446 RVA: 0x001E4304 File Offset: 0x001E2504
+	// Token: 0x06004FAD RID: 20397 RVA: 0x001E55B4 File Offset: 0x001E37B4
 	public void ClearAll()
 	{
 		this.parts.Clear();
 	}
 
-	// Token: 0x06004FDF RID: 20447 RVA: 0x001E4314 File Offset: 0x001E2514
+	// Token: 0x06004FAE RID: 20398 RVA: 0x001E55C4 File Offset: 0x001E37C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetHierarchyPath(Transform t)
 	{
@@ -87,7 +87,7 @@ public class GearBoneMap : MonoBehaviour
 		return string.Join("/", stack);
 	}
 
-	// Token: 0x06004FE0 RID: 20448 RVA: 0x001E4364 File Offset: 0x001E2564
+	// Token: 0x06004FAF RID: 20399 RVA: 0x001E5614 File Offset: 0x001E3814
 	public void Bake()
 	{
 		List<Transform> list = new List<Transform>();
@@ -156,29 +156,56 @@ public class GearBoneMap : MonoBehaviour
 					}
 				}
 			}
+			GearBoneMap.AddComponentHostsUnderIncluded<DynamicBone>(hashSet);
+			GearBoneMap.AddComponentHostsUnderIncluded<DynamicBoneColliderBase>(hashSet);
 			this.SetBones(transform2.name, hashSet);
 		}
 	}
 
-	// Token: 0x04003D71 RID: 15729
+	// Token: 0x06004FB0 RID: 20400 RVA: 0x001E587C File Offset: 0x001E3A7C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static void AddComponentHostsUnderIncluded<DynamicComponent>(HashSet<Transform> collected) where DynamicComponent : Component
+	{
+		List<Transform> list = new List<Transform>(collected);
+		for (int i = 0; i < list.Count; i++)
+		{
+			Transform transform = list[i];
+			if (!(transform == null))
+			{
+				foreach (DynamicComponent dynamicComponent in transform.GetComponentsInChildren<DynamicComponent>(true))
+				{
+					if (!(dynamicComponent == null))
+					{
+						Transform transform2 = dynamicComponent.transform;
+						if (!collected.Contains(transform2))
+						{
+							collected.Add(transform2);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Token: 0x04003D7E RID: 15742
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GearBoneMap.PartBones> parts = new List<GearBoneMap.PartBones>();
 
-	// Token: 0x04003D72 RID: 15730
+	// Token: 0x04003D7F RID: 15743
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string[] DefaultParts = new string[] { "head", "body", "feet", "hands" };
 
-	// Token: 0x02000A4D RID: 2637
+	// Token: 0x02000A57 RID: 2647
 	[Serializable]
 	public class PartBones
 	{
-		// Token: 0x04003D73 RID: 15731
+		// Token: 0x04003D80 RID: 15744
 		[Tooltip("e.g. head, body, feet, hands")]
 		public string partName;
 
-		// Token: 0x04003D74 RID: 15732
+		// Token: 0x04003D81 RID: 15745
 		[Tooltip("The unique bones actually referenced by skin weights for this part")]
 		public List<Transform> bones = new List<Transform>();
 	}

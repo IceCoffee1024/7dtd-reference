@@ -2,10 +2,10 @@
 using mumblelib;
 using UnityEngine;
 
-// Token: 0x0200144D RID: 5197
+// Token: 0x0200146D RID: 5229
 public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudio>
 {
-	// Token: 0x0600A336 RID: 41782 RVA: 0x003D0040 File Offset: 0x003CE240
+	// Token: 0x0600A3E2 RID: 41954 RVA: 0x003D4C50 File Offset: 0x003D2E50
 	public static void Init()
 	{
 		if (!Application.isPlaying)
@@ -19,7 +19,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		new GameObject("MumbleLink").AddComponent<MumblePositionalAudio>().IsPersistant = true;
 	}
 
-	// Token: 0x0600A337 RID: 41783 RVA: 0x003D006D File Offset: 0x003CE26D
+	// Token: 0x0600A3E3 RID: 41955 RVA: 0x003D4C7D File Offset: 0x003D2E7D
 	public static void Destroy()
 	{
 		if (SingletonMonoBehaviour<MumblePositionalAudio>.Instance == null)
@@ -29,7 +29,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		global::UnityEngine.Object.Destroy(SingletonMonoBehaviour<MumblePositionalAudio>.Instance.gameObject);
 	}
 
-	// Token: 0x0600A338 RID: 41784 RVA: 0x003D008C File Offset: 0x003CE28C
+	// Token: 0x0600A3E4 RID: 41956 RVA: 0x003D4C9C File Offset: 0x003D2E9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setCommonValues()
 	{
@@ -48,7 +48,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		this.mumbleLink.Context = text2;
 	}
 
-	// Token: 0x0600A339 RID: 41785 RVA: 0x003D014E File Offset: 0x003CE34E
+	// Token: 0x0600A3E5 RID: 41957 RVA: 0x003D4D5E File Offset: 0x003D2F5E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initShm()
 	{
@@ -57,7 +57,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		Log.Out("[Mumble] Shared Memory initialized");
 	}
 
-	// Token: 0x0600A33A RID: 41786 RVA: 0x003D016B File Offset: 0x003CE36B
+	// Token: 0x0600A3E6 RID: 41958 RVA: 0x003D4D7B File Offset: 0x003D2F7B
 	public void ReinitShm()
 	{
 		if (this.mumbleLink == null)
@@ -68,13 +68,13 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		this.setCommonValues();
 	}
 
-	// Token: 0x0600A33B RID: 41787 RVA: 0x003D0182 File Offset: 0x003CE382
+	// Token: 0x0600A3E7 RID: 41959 RVA: 0x003D4D92 File Offset: 0x003D2F92
 	public void SetPlayer(EntityPlayerLocal player)
 	{
 		this.player = player;
 	}
 
-	// Token: 0x0600A33C RID: 41788 RVA: 0x003D018C File Offset: 0x003CE38C
+	// Token: 0x0600A3E8 RID: 41960 RVA: 0x003D4D9C File Offset: 0x003D2F9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -129,7 +129,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		this.mumbleLink.Tick();
 	}
 
-	// Token: 0x0600A33D RID: 41789 RVA: 0x003D02D4 File Offset: 0x003CE4D4
+	// Token: 0x0600A3E9 RID: 41961 RVA: 0x003D4EE4 File Offset: 0x003D30E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void singletonDestroy()
 	{
@@ -148,7 +148,7 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		Log.Out("[Mumble] Link destroyed");
 	}
 
-	// Token: 0x0600A33E RID: 41790 RVA: 0x003D0339 File Offset: 0x003CE539
+	// Token: 0x0600A3EA RID: 41962 RVA: 0x003D4F49 File Offset: 0x003D3149
 	public void printUiVersion()
 	{
 		if (this.mumbleLink == null)
@@ -159,32 +159,32 @@ public class MumblePositionalAudio : SingletonMonoBehaviour<MumblePositionalAudi
 		Log.Out(string.Format("[Mumble] UiVersion = {0}", this.mumbleLink.UIVersion));
 	}
 
-	// Token: 0x04007A42 RID: 31298
+	// Token: 0x04007ABD RID: 31421
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float updateInterval = 0.02f;
 
-	// Token: 0x04007A43 RID: 31299
+	// Token: 0x04007ABE RID: 31422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ILinkFile mumbleLink;
 
-	// Token: 0x04007A44 RID: 31300
+	// Token: 0x04007ABF RID: 31423
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04007A45 RID: 31301
+	// Token: 0x04007AC0 RID: 31424
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool initErrorLoggedOnce;
 
-	// Token: 0x04007A46 RID: 31302
+	// Token: 0x04007AC1 RID: 31425
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool contextCleared;
 
-	// Token: 0x04007A47 RID: 31303
+	// Token: 0x04007AC2 RID: 31426
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastUpdateTime;

@@ -4,38 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F9 RID: 505
+// Token: 0x020001FA RID: 506
 [Preserve]
 public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 {
-	// Token: 0x06000F7F RID: 3967 RVA: 0x000646CB File Offset: 0x000628CB
+	// Token: 0x06000F72 RID: 3954 RVA: 0x000646BB File Offset: 0x000628BB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "chunkreset", "cr" };
 	}
 
-	// Token: 0x06000F80 RID: 3968 RVA: 0x000646E3 File Offset: 0x000628E3
+	// Token: 0x06000F73 RID: 3955 RVA: 0x000646D3 File Offset: 0x000628D3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "resets the specified chunks";
 	}
 
-	// Token: 0x06000F81 RID: 3969 RVA: 0x000646EA File Offset: 0x000628EA
+	// Token: 0x06000F74 RID: 3956 RVA: 0x000646DA File Offset: 0x000628DA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. chunkreset <x1> <z1> <x2> <z2>\n  2. chunkreset [f]\n1. Rebuilds the chunks that contain the given coordinate range.\n2. Can only be executed by a player in the ingame console! Behaviour depends on whether the\n   player is currently within the bounds of a POI:\n   Within a POI: The POI is reset.\n   Not within a POI: The chunk the player is in and the eight chunks around that one are\n     rebuilt. Not deco! Does not reload POI data!\n   d - regen deco\n   f - fully regenerates chunks (may cause double entities!)\n   u, utimed, ue - Unload chunks or entities\n   nq - Enqueue a 3x3 group of chunks centred around the player to be reset when unsynced, unless they are otherwise protected from the chunk reset system.";
 	}
 
-	// Token: 0x06000F82 RID: 3970 RVA: 0x000646F1 File Offset: 0x000628F1
+	// Token: 0x06000F75 RID: 3957 RVA: 0x000646E1 File Offset: 0x000628E1
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		GameManager.Instance.StartCoroutine(this.execute(_params, _senderInfo));
 	}
 
-	// Token: 0x06000F83 RID: 3971 RVA: 0x00064706 File Offset: 0x00062906
+	// Token: 0x06000F76 RID: 3958 RVA: 0x000646F6 File Offset: 0x000628F6
 	public IEnumerator execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;
@@ -280,7 +280,7 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x06000F84 RID: 3972 RVA: 0x00064723 File Offset: 0x00062923
+	// Token: 0x06000F77 RID: 3959 RVA: 0x00064713 File Offset: 0x00062913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UnloadTimed()
 	{
@@ -315,7 +315,7 @@ public class ConsoleCmdChunkReset : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x04000C99 RID: 3225
+	// Token: 0x04000C92 RID: 3218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine unloadTimed;
 }

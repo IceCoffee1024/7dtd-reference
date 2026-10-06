@@ -6,10 +6,10 @@ using System.Xml.Linq;
 using UnityEngine;
 using XMLData.Item;
 
-// Token: 0x02000D14 RID: 3348
+// Token: 0x02000D22 RID: 3362
 public class ItemClassesFromXml
 {
-	// Token: 0x0600662F RID: 26159 RVA: 0x00280580 File Offset: 0x0027E780
+	// Token: 0x06006621 RID: 26145 RVA: 0x00283924 File Offset: 0x00281B24
 	public static void CreateItemsFromBlocks()
 	{
 		for (int i = 1; i < Block.ItemsStartHere; i++)
@@ -26,7 +26,7 @@ public class ItemClassesFromXml
 		}
 	}
 
-	// Token: 0x06006630 RID: 26160 RVA: 0x002805FA File Offset: 0x0027E7FA
+	// Token: 0x06006622 RID: 26146 RVA: 0x0028399E File Offset: 0x00281B9E
 	public static IEnumerator CreateItems(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -64,7 +64,7 @@ public class ItemClassesFromXml
 		yield break;
 	}
 
-	// Token: 0x06006631 RID: 26161 RVA: 0x0028060C File Offset: 0x0027E80C
+	// Token: 0x06006623 RID: 26147 RVA: 0x002839B0 File Offset: 0x00281BB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseItem(XElement _node)
 	{
@@ -320,7 +320,7 @@ public class ItemClassesFromXml
 		itemClass2.Init();
 	}
 
-	// Token: 0x06006632 RID: 26162 RVA: 0x00280FE4 File Offset: 0x0027F1E4
+	// Token: 0x06006624 RID: 26148 RVA: 0x00284388 File Offset: 0x00282588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAnimation(XElement _node)
 	{
@@ -371,7 +371,7 @@ public class ItemClassesFromXml
 		}
 	}
 
-	// Token: 0x06006633 RID: 26163 RVA: 0x002811E4 File Offset: 0x0027F3E4
+	// Token: 0x06006625 RID: 26149 RVA: 0x00284588 File Offset: 0x00282788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseNoise(XElement _node)
 	{

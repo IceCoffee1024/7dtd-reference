@@ -4,22 +4,22 @@ using UnityEngine.Scripting;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001CBC RID: 7356
+	// Token: 0x02001CEE RID: 7406
 	[Preserve]
 	public class Factory : IPlatform
 	{
-		// Token: 0x17001B25 RID: 6949
-		// (get) Token: 0x0600DA42 RID: 55874 RVA: 0x004E2BF7 File Offset: 0x004E0DF7
-		// (set) Token: 0x0600DA43 RID: 55875 RVA: 0x004E2BFF File Offset: 0x004E0DFF
+		// Token: 0x17001BCB RID: 7115
+		// (get) Token: 0x0600DBBC RID: 56252 RVA: 0x004E773F File Offset: 0x004E593F
+		// (set) Token: 0x0600DBBD RID: 56253 RVA: 0x004E7747 File Offset: 0x004E5947
 		public bool AsServerOnly { get; set; }
 
-		// Token: 0x17001B26 RID: 6950
-		// (get) Token: 0x0600DA44 RID: 55876 RVA: 0x004E2C08 File Offset: 0x004E0E08
-		// (set) Token: 0x0600DA45 RID: 55877 RVA: 0x004E2C10 File Offset: 0x004E0E10
+		// Token: 0x17001BCC RID: 7116
+		// (get) Token: 0x0600DBBE RID: 56254 RVA: 0x004E7750 File Offset: 0x004E5950
+		// (set) Token: 0x0600DBBF RID: 56255 RVA: 0x004E7758 File Offset: 0x004E5958
 		public bool IsCrossplatform { get; set; }
 
-		// Token: 0x17001B27 RID: 6951
-		// (get) Token: 0x0600DA46 RID: 55878 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001BCD RID: 7117
+		// (get) Token: 0x0600DBC0 RID: 56256 RVA: 0x00010E62 File Offset: 0x0000F062
 		public EPlatformIdentifier PlatformIdentifier
 		{
 			get
@@ -28,8 +28,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B28 RID: 6952
-		// (get) Token: 0x0600DA47 RID: 55879 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BCE RID: 7118
+		// (get) Token: 0x0600DBC1 RID: 56257 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public string PlatformDisplayName
 		{
 			get
@@ -38,7 +38,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600DA48 RID: 55880 RVA: 0x004E2C19 File Offset: 0x004E0E19
+		// Token: 0x0600DBC2 RID: 56258 RVA: 0x004E7761 File Offset: 0x004E5961
 		public void Init()
 		{
 			this.User.Init(this);
@@ -47,25 +47,25 @@ namespace Platform.MultiPlatform
 			this.UserDataRoaming.Init(this);
 		}
 
-		// Token: 0x0600DA49 RID: 55881 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DBC3 RID: 56259 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool HasNetworkingEnabled(IList<string> _disabledProtocolNames)
 		{
 			return false;
 		}
 
-		// Token: 0x0600DA4A RID: 55882 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DBC4 RID: 56260 RVA: 0x0008806C File Offset: 0x0008626C
 		public INetworkServer GetNetworkingServer(ProtocolManager _protocolManager)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DA4B RID: 55883 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DBC5 RID: 56261 RVA: 0x0008806C File Offset: 0x0008626C
 		public INetworkClient GetNetworkingClient(ProtocolManager _protocolManager)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DA4C RID: 55884 RVA: 0x004E2C4B File Offset: 0x004E0E4B
+		// Token: 0x0600DBC6 RID: 56262 RVA: 0x004E7793 File Offset: 0x004E5993
 		public void UserAdded(PlatformUserIdentifierAbs _id, bool _isPrimary)
 		{
 			PlatformManager.NativePlatform.UserAdded(_id, _isPrimary);
@@ -77,13 +77,13 @@ namespace Platform.MultiPlatform
 			crossplatformPlatform.UserAdded(_id, _isPrimary);
 		}
 
-		// Token: 0x0600DA4D RID: 55885 RVA: 0x004C6207 File Offset: 0x004C4407
+		// Token: 0x0600DBC7 RID: 56263 RVA: 0x004CACEF File Offset: 0x004C8EEF
 		public string[] GetArgumentsForRelaunch()
 		{
 			return new string[0];
 		}
 
-		// Token: 0x0600DA4E RID: 55886 RVA: 0x004E2C6A File Offset: 0x004E0E6A
+		// Token: 0x0600DBC8 RID: 56264 RVA: 0x004E77B2 File Offset: 0x004E59B2
 		public void CreateInstances()
 		{
 			this.User = new User();
@@ -93,17 +93,17 @@ namespace Platform.MultiPlatform
 			this.UserDataRoaming = new UserDataRoamingMultiPlatform();
 		}
 
-		// Token: 0x0600DA4F RID: 55887 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBC9 RID: 56265 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x0600DA50 RID: 55888 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBCA RID: 56266 RVA: 0x000027FC File Offset: 0x000009FC
 		public void LateUpdate()
 		{
 		}
 
-		// Token: 0x0600DA51 RID: 55889 RVA: 0x004E2CA3 File Offset: 0x004E0EA3
+		// Token: 0x0600DBCB RID: 56267 RVA: 0x004E77EB File Offset: 0x004E59EB
 		public void Destroy()
 		{
 			this.ServerListAnnouncer = null;
@@ -115,8 +115,8 @@ namespace Platform.MultiPlatform
 			this.User = null;
 		}
 
-		// Token: 0x17001B29 RID: 6953
-		// (get) Token: 0x0600DA52 RID: 55890 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BCF RID: 7119
+		// (get) Token: 0x0600DBCC RID: 56268 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IPlatformApi Api
 		{
 			get
@@ -125,26 +125,26 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B2A RID: 6954
-		// (get) Token: 0x0600DA53 RID: 55891 RVA: 0x004E2CC4 File Offset: 0x004E0EC4
-		// (set) Token: 0x0600DA54 RID: 55892 RVA: 0x004E2CCC File Offset: 0x004E0ECC
+		// Token: 0x17001BD0 RID: 7120
+		// (get) Token: 0x0600DBCD RID: 56269 RVA: 0x004E780C File Offset: 0x004E5A0C
+		// (set) Token: 0x0600DBCE RID: 56270 RVA: 0x004E7814 File Offset: 0x004E5A14
 		public IUserClient User
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B2B RID: 6955
-		// (get) Token: 0x0600DA55 RID: 55893 RVA: 0x004E2CD5 File Offset: 0x004E0ED5
-		// (set) Token: 0x0600DA56 RID: 55894 RVA: 0x004E2CDD File Offset: 0x004E0EDD
+		// Token: 0x17001BD1 RID: 7121
+		// (get) Token: 0x0600DBCF RID: 56271 RVA: 0x004E781D File Offset: 0x004E5A1D
+		// (set) Token: 0x0600DBD0 RID: 56272 RVA: 0x004E7825 File Offset: 0x004E5A25
 		public IUserClient UserServer
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B2C RID: 6956
-		// (get) Token: 0x0600DA57 RID: 55895 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BD2 RID: 7122
+		// (get) Token: 0x0600DBD1 RID: 56273 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IAuthenticationClient AuthenticationClient
 		{
 			get
@@ -153,8 +153,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B2D RID: 6957
-		// (get) Token: 0x0600DA58 RID: 55896 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BD3 RID: 7123
+		// (get) Token: 0x0600DBD2 RID: 56274 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IAuthenticationServer AuthenticationServer
 		{
 			get
@@ -163,8 +163,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B2E RID: 6958
-		// (get) Token: 0x0600DA59 RID: 55897 RVA: 0x004E2CE8 File Offset: 0x004E0EE8
+		// Token: 0x17001BD4 RID: 7124
+		// (get) Token: 0x0600DBD3 RID: 56275 RVA: 0x004E7830 File Offset: 0x004E5A30
 		public IList<IServerListInterface> ServerListInterfaces
 		{
 			get
@@ -189,8 +189,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B2F RID: 6959
-		// (get) Token: 0x0600DA5A RID: 55898 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BD5 RID: 7125
+		// (get) Token: 0x0600DBD4 RID: 56276 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IServerListInterface ServerLookupInterface
 		{
 			get
@@ -199,17 +199,17 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B30 RID: 6960
-		// (get) Token: 0x0600DA5B RID: 55899 RVA: 0x004E2D50 File Offset: 0x004E0F50
-		// (set) Token: 0x0600DA5C RID: 55900 RVA: 0x004E2D58 File Offset: 0x004E0F58
+		// Token: 0x17001BD6 RID: 7126
+		// (get) Token: 0x0600DBD5 RID: 56277 RVA: 0x004E7898 File Offset: 0x004E5A98
+		// (set) Token: 0x0600DBD6 RID: 56278 RVA: 0x004E78A0 File Offset: 0x004E5AA0
 		public IMasterServerAnnouncer ServerListAnnouncer
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B31 RID: 6961
-		// (get) Token: 0x0600DA5D RID: 55901 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BD7 RID: 7127
+		// (get) Token: 0x0600DBD7 RID: 56279 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public ILobbyHost LobbyHost
 		{
 			get
@@ -218,26 +218,26 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B32 RID: 6962
-		// (get) Token: 0x0600DA5E RID: 55902 RVA: 0x004E2D61 File Offset: 0x004E0F61
-		// (set) Token: 0x0600DA5F RID: 55903 RVA: 0x004E2D69 File Offset: 0x004E0F69
+		// Token: 0x17001BD8 RID: 7128
+		// (get) Token: 0x0600DBD8 RID: 56280 RVA: 0x004E78A9 File Offset: 0x004E5AA9
+		// (set) Token: 0x0600DBD9 RID: 56281 RVA: 0x004E78B1 File Offset: 0x004E5AB1
 		public IPlayerInteractionsRecorder PlayerInteractionsRecorder
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B33 RID: 6963
-		// (get) Token: 0x0600DA60 RID: 55904 RVA: 0x004E2D72 File Offset: 0x004E0F72
-		// (set) Token: 0x0600DA61 RID: 55905 RVA: 0x004E2D7A File Offset: 0x004E0F7A
+		// Token: 0x17001BD9 RID: 7129
+		// (get) Token: 0x0600DBDA RID: 56282 RVA: 0x004E78BA File Offset: 0x004E5ABA
+		// (set) Token: 0x0600DBDB RID: 56283 RVA: 0x004E78C2 File Offset: 0x004E5AC2
 		public IGameplayNotifier GameplayNotifier
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B34 RID: 6964
-		// (get) Token: 0x0600DA62 RID: 55906 RVA: 0x004E2D83 File Offset: 0x004E0F83
+		// Token: 0x17001BDA RID: 7130
+		// (get) Token: 0x0600DBDC RID: 56284 RVA: 0x004E78CB File Offset: 0x004E5ACB
 		public IList<IJoinSessionGameInviteListener> InviteListeners
 		{
 			get
@@ -246,8 +246,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B35 RID: 6965
-		// (get) Token: 0x0600DA63 RID: 55907 RVA: 0x004E2D8F File Offset: 0x004E0F8F
+		// Token: 0x17001BDB RID: 7131
+		// (get) Token: 0x0600DBDD RID: 56285 RVA: 0x004E78D7 File Offset: 0x004E5AD7
 		public IMultiplayerInvitationDialog MultiplayerInvitationDialog
 		{
 			get
@@ -256,8 +256,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B36 RID: 6966
-		// (get) Token: 0x0600DA64 RID: 55908 RVA: 0x004E2D9B File Offset: 0x004E0F9B
+		// Token: 0x17001BDC RID: 7132
+		// (get) Token: 0x0600DBDE RID: 56286 RVA: 0x004E78E3 File Offset: 0x004E5AE3
 		public IPartyVoice PartyVoice
 		{
 			get
@@ -267,8 +267,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B37 RID: 6967
-		// (get) Token: 0x0600DA65 RID: 55909 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BDD RID: 7133
+		// (get) Token: 0x0600DBDF RID: 56287 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IUtils Utils
 		{
 			get
@@ -277,8 +277,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B38 RID: 6968
-		// (get) Token: 0x0600DA66 RID: 55910 RVA: 0x004E2DBC File Offset: 0x004E0FBC
+		// Token: 0x17001BDE RID: 7134
+		// (get) Token: 0x0600DBE0 RID: 56288 RVA: 0x004E7904 File Offset: 0x004E5B04
 		public IPlatformMemory Memory
 		{
 			get
@@ -287,8 +287,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B39 RID: 6969
-		// (get) Token: 0x0600DA67 RID: 55911 RVA: 0x004E2DC8 File Offset: 0x004E0FC8
+		// Token: 0x17001BDF RID: 7135
+		// (get) Token: 0x0600DBE1 RID: 56289 RVA: 0x004E7910 File Offset: 0x004E5B10
 		public IAntiCheatClient AntiCheatClient
 		{
 			get
@@ -298,8 +298,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3A RID: 6970
-		// (get) Token: 0x0600DA68 RID: 55912 RVA: 0x004E2DE9 File Offset: 0x004E0FE9
+		// Token: 0x17001BE0 RID: 7136
+		// (get) Token: 0x0600DBE2 RID: 56290 RVA: 0x004E7931 File Offset: 0x004E5B31
 		public IAntiCheatServer AntiCheatServer
 		{
 			get
@@ -309,8 +309,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3B RID: 6971
-		// (get) Token: 0x0600DA69 RID: 55913 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BE1 RID: 7137
+		// (get) Token: 0x0600DBE3 RID: 56291 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IUserIdentifierMappingService IdMappingService
 		{
 			get
@@ -319,8 +319,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3C RID: 6972
-		// (get) Token: 0x0600DA6A RID: 55914 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BE2 RID: 7138
+		// (get) Token: 0x0600DBE4 RID: 56292 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IUserDetailsService UserDetailsService
 		{
 			get
@@ -329,8 +329,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3D RID: 6973
-		// (get) Token: 0x0600DA6B RID: 55915 RVA: 0x004E2E0A File Offset: 0x004E100A
+		// Token: 0x17001BE3 RID: 7139
+		// (get) Token: 0x0600DBE5 RID: 56293 RVA: 0x004E7952 File Offset: 0x004E5B52
 		public IPlayerReporting PlayerReporting
 		{
 			get
@@ -340,8 +340,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3E RID: 6974
-		// (get) Token: 0x0600DA6C RID: 55916 RVA: 0x004E2E2B File Offset: 0x004E102B
+		// Token: 0x17001BE4 RID: 7140
+		// (get) Token: 0x0600DBE6 RID: 56294 RVA: 0x004E7973 File Offset: 0x004E5B73
 		public ITextCensor TextCensor
 		{
 			get
@@ -361,8 +361,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B3F RID: 6975
-		// (get) Token: 0x0600DA6D RID: 55917 RVA: 0x004E2E52 File Offset: 0x004E1052
+		// Token: 0x17001BE5 RID: 7141
+		// (get) Token: 0x0600DBE7 RID: 56295 RVA: 0x004E799A File Offset: 0x004E5B9A
 		public IRemoteFileStorage RemoteFileStorage
 		{
 			get
@@ -372,8 +372,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B40 RID: 6976
-		// (get) Token: 0x0600DA6E RID: 55918 RVA: 0x004E2E73 File Offset: 0x004E1073
+		// Token: 0x17001BE6 RID: 7142
+		// (get) Token: 0x0600DBE8 RID: 56296 RVA: 0x004E79BB File Offset: 0x004E5BBB
 		public IRemotePlayerFileStorage RemotePlayerFileStorage
 		{
 			get
@@ -383,8 +383,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B41 RID: 6977
-		// (get) Token: 0x0600DA6F RID: 55919 RVA: 0x004E2E94 File Offset: 0x004E1094
+		// Token: 0x17001BE7 RID: 7143
+		// (get) Token: 0x0600DBE9 RID: 56297 RVA: 0x004E79DC File Offset: 0x004E5BDC
 		public IList<IEntitlementValidator> EntitlementValidators
 		{
 			get
@@ -393,8 +393,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B42 RID: 6978
-		// (get) Token: 0x0600DA70 RID: 55920 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BE8 RID: 7144
+		// (get) Token: 0x0600DBEA RID: 56298 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IPlatformNetworkServer NetworkServer
 		{
 			get
@@ -403,8 +403,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B43 RID: 6979
-		// (get) Token: 0x0600DA71 RID: 55921 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BE9 RID: 7145
+		// (get) Token: 0x0600DBEB RID: 56299 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public PlayerInputManager Input
 		{
 			get
@@ -413,8 +413,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B44 RID: 6980
-		// (get) Token: 0x0600DA72 RID: 55922 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BEA RID: 7146
+		// (get) Token: 0x0600DBEC RID: 56300 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IVirtualKeyboard VirtualKeyboard
 		{
 			get
@@ -423,8 +423,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B45 RID: 6981
-		// (get) Token: 0x0600DA73 RID: 55923 RVA: 0x004E2EA0 File Offset: 0x004E10A0
+		// Token: 0x17001BEB RID: 7147
+		// (get) Token: 0x0600DBED RID: 56301 RVA: 0x004E79E8 File Offset: 0x004E5BE8
 		public IPlatformSaveGameProvider SaveGameProvider
 		{
 			get
@@ -433,17 +433,17 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B46 RID: 6982
-		// (get) Token: 0x0600DA74 RID: 55924 RVA: 0x004E2EAC File Offset: 0x004E10AC
-		// (set) Token: 0x0600DA75 RID: 55925 RVA: 0x004E2EB4 File Offset: 0x004E10B4
+		// Token: 0x17001BEC RID: 7148
+		// (get) Token: 0x0600DBEE RID: 56302 RVA: 0x004E79F4 File Offset: 0x004E5BF4
+		// (set) Token: 0x0600DBEF RID: 56303 RVA: 0x004E79FC File Offset: 0x004E5BFC
 		public IUserDataRoaming UserDataRoaming
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B47 RID: 6983
-		// (get) Token: 0x0600DA76 RID: 55926 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+		// Token: 0x17001BED RID: 7149
+		// (get) Token: 0x0600DBF0 RID: 56304 RVA: 0x000200DA File Offset: 0x0001E2DA
 		public IAchievementManager AchievementManager
 		{
 			get
@@ -452,17 +452,17 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001B48 RID: 6984
-		// (get) Token: 0x0600DA77 RID: 55927 RVA: 0x004E2EBD File Offset: 0x004E10BD
-		// (set) Token: 0x0600DA78 RID: 55928 RVA: 0x004E2EC5 File Offset: 0x004E10C5
+		// Token: 0x17001BEE RID: 7150
+		// (get) Token: 0x0600DBF1 RID: 56305 RVA: 0x004E7A05 File Offset: 0x004E5C05
+		// (set) Token: 0x0600DBF2 RID: 56306 RVA: 0x004E7A0D File Offset: 0x004E5C0D
 		public IRichPresence RichPresence
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001B49 RID: 6985
-		// (get) Token: 0x0600DA79 RID: 55929 RVA: 0x004E2ECE File Offset: 0x004E10CE
+		// Token: 0x17001BEF RID: 7151
+		// (get) Token: 0x0600DBF3 RID: 56307 RVA: 0x004E7A16 File Offset: 0x004E5C16
 		public IApplicationStateController ApplicationState
 		{
 			get
@@ -471,7 +471,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0400A55F RID: 42335
+		// Token: 0x0400A634 RID: 42548
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<IServerListInterface> serverListInterfaces;
 	}

@@ -2,10 +2,10 @@
 using System.IO;
 using System.Xml;
 
-// Token: 0x02000A0E RID: 2574
+// Token: 0x02000A18 RID: 2584
 public static class SdXmlDocumentExtensions
 {
-	// Token: 0x06004D6A RID: 19818 RVA: 0x001DAD8C File Offset: 0x001D8F8C
+	// Token: 0x06004D39 RID: 19769 RVA: 0x001DC03C File Offset: 0x001DA23C
 	public static void SdLoad(this XmlDocument xmlDoc, string filename)
 	{
 		using (Stream stream = SdFile.OpenRead(filename))
@@ -14,7 +14,7 @@ public static class SdXmlDocumentExtensions
 		}
 	}
 
-	// Token: 0x06004D6B RID: 19819 RVA: 0x001DADC4 File Offset: 0x001D8FC4
+	// Token: 0x06004D3A RID: 19770 RVA: 0x001DC074 File Offset: 0x001DA274
 	public static void SdSave(this XmlDocument xmlDoc, string filename)
 	{
 		using (Stream stream = SdFile.Open(filename, FileMode.Create, FileAccess.Write, FileShare.Read))

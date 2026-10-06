@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020013B8 RID: 5048
+// Token: 0x020013D8 RID: 5080
 public class CachedStringFormatterFloat : CachedStringFormatter<float>
 {
-	// Token: 0x06009EEC RID: 40684 RVA: 0x003BED58 File Offset: 0x003BCF58
+	// Token: 0x06009F97 RID: 40855 RVA: 0x003C38F4 File Offset: 0x003C1AF4
 	public CachedStringFormatterFloat(string _format = null)
 		: base(null)
 	{
@@ -11,14 +11,14 @@ public class CachedStringFormatterFloat : CachedStringFormatter<float>
 		this.format = _format;
 	}
 
-	// Token: 0x06009EED RID: 40685 RVA: 0x003BED7A File Offset: 0x003BCF7A
+	// Token: 0x06009F98 RID: 40856 RVA: 0x003C3916 File Offset: 0x003C1B16
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string formatterFunc(float _f)
 	{
 		return _f.ToCultureInvariantString(this.format);
 	}
 
-	// Token: 0x04007874 RID: 30836
+	// Token: 0x040078EF RID: 30959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string format;
 }

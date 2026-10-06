@@ -9,11 +9,11 @@ using UnityEngine.Networking;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C9C RID: 7324
+	// Token: 0x02001CCE RID: 7374
 	public class NetworkServerSteam : IPlatformNetworkServer, INetworkServer
 	{
-		// Token: 0x17001AF5 RID: 6901
-		// (get) Token: 0x0600D92C RID: 55596 RVA: 0x004DF51E File Offset: 0x004DD71E
+		// Token: 0x17001B9B RID: 7067
+		// (get) Token: 0x0600DAA6 RID: 55974 RVA: 0x004E4066 File Offset: 0x004E2266
 		public bool ServerRunning
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -23,8 +23,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AF6 RID: 6902
-		// (get) Token: 0x0600D92D RID: 55597 RVA: 0x004DF538 File Offset: 0x004DD738
+		// Token: 0x17001B9C RID: 7068
+		// (get) Token: 0x0600DAA7 RID: 55975 RVA: 0x004E4080 File Offset: 0x004E2280
 		public bool SteamGameServerRunning
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -34,7 +34,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D92E RID: 55598 RVA: 0x004DF54C File Offset: 0x004DD74C
+		// Token: 0x0600DAA8 RID: 55976 RVA: 0x004E4094 File Offset: 0x004E2294
 		public NetworkServerSteam(IPlatform _owner, IProtocolManagerProtocolInterface _protoManager)
 		{
 			this.owner = _owner;
@@ -45,7 +45,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D92F RID: 55599 RVA: 0x004DF600 File Offset: 0x004DD800
+		// Token: 0x0600DAA9 RID: 55977 RVA: 0x004E4148 File Offset: 0x004E2348
 		public NetworkConnectionError StartServer(int _basePort, string _password)
 		{
 			if (this.ServerRunning)
@@ -59,13 +59,13 @@ namespace Platform.Steam
 			return NetworkConnectionError.NoError;
 		}
 
-		// Token: 0x0600D930 RID: 55600 RVA: 0x004DF65F File Offset: 0x004DD85F
+		// Token: 0x0600DAAA RID: 55978 RVA: 0x004E41A7 File Offset: 0x004E23A7
 		public void SetServerPassword(string _password)
 		{
 			this.serverPassword = (string.IsNullOrEmpty(_password) ? null : _password);
 		}
 
-		// Token: 0x0600D931 RID: 55601 RVA: 0x004DF674 File Offset: 0x004DD874
+		// Token: 0x0600DAAB RID: 55979 RVA: 0x004E41BC File Offset: 0x004E23BC
 		public void StopServer()
 		{
 			if (!this.ServerRunning)
@@ -92,14 +92,14 @@ namespace Platform.Steam
 			Log.Out("[Steamworks.NET] NET: Server stopped");
 		}
 
-		// Token: 0x0600D932 RID: 55602 RVA: 0x004DF75C File Offset: 0x004DD95C
+		// Token: 0x0600DAAC RID: 55980 RVA: 0x004E42A4 File Offset: 0x004E24A4
 		public void DropClient(ClientInfo _clientInfo, bool _clientDisconnect)
 		{
 			CSteamID csteamID = new CSteamID(((UserIdentifierSteam)_clientInfo.PlatformId).SteamId);
 			ThreadManager.StartCoroutine(this.dropLater(csteamID, 0.2f));
 		}
 
-		// Token: 0x0600D933 RID: 55603 RVA: 0x004DF792 File Offset: 0x004DD992
+		// Token: 0x0600DAAD RID: 55981 RVA: 0x004E42DA File Offset: 0x004E24DA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator dropLater(CSteamID _id, float _delay)
 		{
@@ -121,7 +121,7 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0600D934 RID: 55604 RVA: 0x004DF7B0 File Offset: 0x004DD9B0
+		// Token: 0x0600DAAE RID: 55982 RVA: 0x004E42F8 File Offset: 0x004E24F8
 		public NetworkError SendData(ClientInfo _clientInfo, int _channel, ArrayListMP<byte> _data, bool reliableDelivery = true)
 		{
 			if (this.ServerRunning)
@@ -145,7 +145,7 @@ namespace Platform.Steam
 			return NetworkError.Ok;
 		}
 
-		// Token: 0x0600D935 RID: 55605 RVA: 0x004DF846 File Offset: 0x004DDA46
+		// Token: 0x0600DAAF RID: 55983 RVA: 0x004E438E File Offset: 0x004E258E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void P2PSessionRequest(P2PSessionRequest_t _par)
 		{
@@ -157,7 +157,7 @@ namespace Platform.Steam
 			this.acceptQueue.Enqueue(_par.m_steamIDRemote);
 		}
 
-		// Token: 0x0600D936 RID: 55606 RVA: 0x004DF884 File Offset: 0x004DDA84
+		// Token: 0x0600DAB0 RID: 55984 RVA: 0x004E43CC File Offset: 0x004E25CC
 		public void Update()
 		{
 			if (!this.ServerRunning)
@@ -171,14 +171,14 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D937 RID: 55607 RVA: 0x004DF8BA File Offset: 0x004DDABA
+		// Token: 0x0600DAB1 RID: 55985 RVA: 0x004E4402 File Offset: 0x004E2602
 		public void LateUpdate()
 		{
 			this.flushBuffers = true;
 			this.signalThread.Set();
 		}
 
-		// Token: 0x0600D938 RID: 55608 RVA: 0x004DF8D4 File Offset: 0x004DDAD4
+		// Token: 0x0600DAB2 RID: 55986 RVA: 0x004E441C File Offset: 0x004E261C
 		public string GetIP(ClientInfo _cInfo)
 		{
 			NetworkServerSteam.ConnectionInformation connectionInformation;
@@ -189,7 +189,7 @@ namespace Platform.Steam
 			return NetworkUtils.ToAddr(connectionInformation.Ip);
 		}
 
-		// Token: 0x0600D939 RID: 55609 RVA: 0x004DF918 File Offset: 0x004DDB18
+		// Token: 0x0600DAB3 RID: 55987 RVA: 0x004E4460 File Offset: 0x004E2660
 		public int GetPing(ClientInfo _cInfo)
 		{
 			NetworkServerSteam.ConnectionInformation connectionInformation;
@@ -205,7 +205,7 @@ namespace Platform.Steam
 			return num / 50;
 		}
 
-		// Token: 0x0600D93A RID: 55610 RVA: 0x004DF96C File Offset: 0x004DDB6C
+		// Token: 0x0600DAB4 RID: 55988 RVA: 0x004E44B4 File Offset: 0x004E26B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerDisconnected(CSteamID _id)
 		{
@@ -214,13 +214,13 @@ namespace Platform.Steam
 			SingletonMonoBehaviour<ConnectionManager>.Instance.Net_PlayerDisconnected(clientInfo);
 		}
 
-		// Token: 0x0600D93B RID: 55611 RVA: 0x00032147 File Offset: 0x00030347
+		// Token: 0x0600DAB5 RID: 55989 RVA: 0x0003223F File Offset: 0x0003043F
 		public string GetServerPorts(int _basePort)
 		{
 			return "";
 		}
 
-		// Token: 0x0600D93C RID: 55612 RVA: 0x004DF99C File Offset: 0x004DDB9C
+		// Token: 0x0600DAB6 RID: 55990 RVA: 0x004E44E4 File Offset: 0x004E26E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void threadHandlerMethod(ThreadManager.ThreadInfo _threadinfo)
 		{
@@ -312,7 +312,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D93D RID: 55613 RVA: 0x004DFC18 File Offset: 0x004DDE18
+		// Token: 0x0600DAB7 RID: 55991 RVA: 0x004E4760 File Offset: 0x004E2960
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CheckConnections()
 		{
@@ -364,7 +364,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D93E RID: 55614 RVA: 0x004DFE08 File Offset: 0x004DE008
+		// Token: 0x0600DAB8 RID: 55992 RVA: 0x004E4950 File Offset: 0x004E2B50
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ReceivePackets()
 		{
@@ -441,7 +441,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D93F RID: 55615 RVA: 0x004DFFFC File Offset: 0x004DE1FC
+		// Token: 0x0600DAB9 RID: 55993 RVA: 0x004E4B44 File Offset: 0x004E2D44
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool Authenticate(CSteamID _id, string _password)
 		{
@@ -464,7 +464,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D940 RID: 55616 RVA: 0x004E00A4 File Offset: 0x004DE2A4
+		// Token: 0x0600DABA RID: 55994 RVA: 0x004E4BEC File Offset: 0x004E2DEC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerConnected(CSteamID _id)
 		{
@@ -482,7 +482,7 @@ namespace Platform.Steam
 			SingletonMonoBehaviour<ConnectionManager>.Instance.Net_PlayerConnected(clientInfo);
 		}
 
-		// Token: 0x0600D941 RID: 55617 RVA: 0x004E0114 File Offset: 0x004DE314
+		// Token: 0x0600DABB RID: 55995 RVA: 0x004E4C5C File Offset: 0x004E2E5C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FlushBuffer(CSteamID _id)
 		{
@@ -494,7 +494,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D942 RID: 55618 RVA: 0x004E0158 File Offset: 0x004DE358
+		// Token: 0x0600DABC RID: 55996 RVA: 0x004E4CA0 File Offset: 0x004E2EA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdatePing(CSteamID _sourceId, byte[] _data, long _curTime)
 		{
@@ -509,165 +509,165 @@ namespace Platform.Steam
 			connectionInformation.Pings[connectionInformation.LastPingIndex] = num2;
 		}
 
-		// Token: 0x0600D943 RID: 55619 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DABD RID: 55997 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetLatencySimulation(bool _enable, int _minLatency, int _maxLatency)
 		{
 		}
 
-		// Token: 0x0600D944 RID: 55620 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DABE RID: 55998 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SetPacketLossSimulation(bool _enable, int _chance)
 		{
 		}
 
-		// Token: 0x0600D945 RID: 55621 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DABF RID: 55999 RVA: 0x000027FC File Offset: 0x000009FC
 		public void EnableStatistics()
 		{
 		}
 
-		// Token: 0x0600D946 RID: 55622 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAC0 RID: 56000 RVA: 0x000027FC File Offset: 0x000009FC
 		public void DisableStatistics()
 		{
 		}
 
-		// Token: 0x0600D947 RID: 55623 RVA: 0x00032147 File Offset: 0x00030347
+		// Token: 0x0600DAC1 RID: 56001 RVA: 0x0003223F File Offset: 0x0003043F
 		public string PrintNetworkStatistics()
 		{
 			return "";
 		}
 
-		// Token: 0x0600D948 RID: 55624 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAC2 RID: 56002 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ResetNetworkStatistics()
 		{
 		}
 
-		// Token: 0x0600D949 RID: 55625 RVA: 0x004E01AC File Offset: 0x004DE3AC
+		// Token: 0x0600DAC3 RID: 56003 RVA: 0x004E4CF4 File Offset: 0x004E2EF4
 		public int GetMaximumPacketSize(ClientInfo _cInfo, bool reliable = false)
 		{
 			return 1200;
 		}
 
-		// Token: 0x0600D94A RID: 55626 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DAC4 RID: 56004 RVA: 0x00010E62 File Offset: 0x0000F062
 		public int GetBadPacketCount(ClientInfo _cInfo)
 		{
 			return 0;
 		}
 
-		// Token: 0x0400A4C0 RID: 42176
+		// Token: 0x0400A595 RID: 42389
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A4C1 RID: 42177
+		// Token: 0x0400A596 RID: 42390
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IProtocolManagerProtocolInterface protoManager;
 
-		// Token: 0x0400A4C2 RID: 42178
+		// Token: 0x0400A597 RID: 42391
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PingCount = 50;
 
-		// Token: 0x0400A4C3 RID: 42179
+		// Token: 0x0400A598 RID: 42392
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MicroStopwatch mswPing = new MicroStopwatch();
 
-		// Token: 0x0400A4C4 RID: 42180
+		// Token: 0x0400A599 RID: 42393
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreadManager.ThreadInfo handlerThread;
 
-		// Token: 0x0400A4C5 RID: 42181
+		// Token: 0x0400A59A RID: 42394
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AutoResetEvent signalThread = new AutoResetEvent(false);
 
-		// Token: 0x0400A4C6 RID: 42182
+		// Token: 0x0400A59B RID: 42395
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<NetworkCommonSteam.SendInfo> sendBufs = new BlockingQueue<NetworkCommonSteam.SendInfo>();
 
-		// Token: 0x0400A4C7 RID: 42183
+		// Token: 0x0400A59C RID: 42396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<NetworkCommonSteam.SendInfo> sendBufsUnreliable = new BlockingQueue<NetworkCommonSteam.SendInfo>();
 
-		// Token: 0x0400A4C8 RID: 42184
+		// Token: 0x0400A59D RID: 42397
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<CSteamID> acceptQueue = new BlockingQueue<CSteamID>();
 
-		// Token: 0x0400A4C9 RID: 42185
+		// Token: 0x0400A59E RID: 42398
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<CSteamID> dropQueue = new BlockingQueue<CSteamID>();
 
-		// Token: 0x0400A4CA RID: 42186
+		// Token: 0x0400A59F RID: 42399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public volatile bool flushBuffers;
 
-		// Token: 0x0400A4CB RID: 42187
+		// Token: 0x0400A5A0 RID: 42400
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BlockingQueue<CSteamID> disconnectQueue = new BlockingQueue<CSteamID>();
 
-		// Token: 0x0400A4CC RID: 42188
+		// Token: 0x0400A5A1 RID: 42401
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<CSteamID, NetworkServerSteam.ConnectionInformation> connections = new Dictionary<CSteamID, NetworkServerSteam.ConnectionInformation>();
 
-		// Token: 0x0400A4CD RID: 42189
+		// Token: 0x0400A5A2 RID: 42402
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<P2PSessionRequest_t> m_P2PSessionRequest;
 
-		// Token: 0x0400A4CE RID: 42190
+		// Token: 0x0400A5A3 RID: 42403
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string serverPassword;
 
-		// Token: 0x0400A4CF RID: 42191
+		// Token: 0x0400A5A4 RID: 42404
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<CSteamID, NetworkServerSteam.ConnectionInformation> checkConnections = new Dictionary<CSteamID, NetworkServerSteam.ConnectionInformation>();
 
-		// Token: 0x0400A4D0 RID: 42192
+		// Token: 0x0400A5A5 RID: 42405
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int checkPerFrame;
 
-		// Token: 0x0400A4D1 RID: 42193
+		// Token: 0x0400A5A6 RID: 42406
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] passwordValidPacket = new byte[] { 1, 50 };
 
-		// Token: 0x0400A4D2 RID: 42194
+		// Token: 0x0400A5A7 RID: 42407
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] passwordInvalidPacket = new byte[] { 0, 50 };
 
-		// Token: 0x0400A4D3 RID: 42195
+		// Token: 0x0400A5A8 RID: 42408
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly byte[] recvBuf = new byte[1048576];
 
-		// Token: 0x0400A4D4 RID: 42196
+		// Token: 0x0400A5A9 RID: 42409
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] timeData = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 60 };
 
-		// Token: 0x02001C9D RID: 7325
+		// Token: 0x02001CCF RID: 7375
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum EConnectionState
 		{
-			// Token: 0x0400A4D6 RID: 42198
+			// Token: 0x0400A5AB RID: 42411
 			Disconnected,
-			// Token: 0x0400A4D7 RID: 42199
+			// Token: 0x0400A5AC RID: 42412
 			Authenticating,
-			// Token: 0x0400A4D8 RID: 42200
+			// Token: 0x0400A5AD RID: 42413
 			Connected
 		}
 
-		// Token: 0x02001C9E RID: 7326
+		// Token: 0x02001CD0 RID: 7376
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class ConnectionInformation
 		{
-			// Token: 0x0400A4D9 RID: 42201
+			// Token: 0x0400A5AE RID: 42414
 			public NetworkServerSteam.EConnectionState State;
 
-			// Token: 0x0400A4DA RID: 42202
+			// Token: 0x0400A5AF RID: 42415
 			public uint Ip;
 
-			// Token: 0x0400A4DB RID: 42203
+			// Token: 0x0400A5B0 RID: 42416
 			public bool PacketsPendingSend;
 
-			// Token: 0x0400A4DC RID: 42204
+			// Token: 0x0400A5B1 RID: 42417
 			public UserIdentifierSteam UserIdentifier;
 
-			// Token: 0x0400A4DD RID: 42205
+			// Token: 0x0400A5B2 RID: 42418
 			public int LastPingIndex = -1;
 
-			// Token: 0x0400A4DE RID: 42206
+			// Token: 0x0400A5B3 RID: 42419
 			public readonly int[] Pings = new int[50];
 		}
 	}

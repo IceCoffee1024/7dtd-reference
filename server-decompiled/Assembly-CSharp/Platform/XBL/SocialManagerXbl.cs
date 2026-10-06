@@ -8,10 +8,10 @@ using UnityEngine;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C02 RID: 7170
+	// Token: 0x02001C34 RID: 7220
 	public class SocialManagerXbl
 	{
-		// Token: 0x0600D516 RID: 54550 RVA: 0x004CD000 File Offset: 0x004CB200
+		// Token: 0x0600D68E RID: 54926 RVA: 0x004D1AE8 File Offset: 0x004CFCE8
 		public SocialManagerXbl(XUserHandle user)
 		{
 			int num = SDK.XBL.XblSocialManagerAddLocalUser(user, XblSocialManagerExtraDetailLevel.NoExtraDetail);
@@ -23,7 +23,7 @@ namespace Platform.XBL
 			this.localUser = user;
 		}
 
-		// Token: 0x0600D517 RID: 54551 RVA: 0x004CD044 File Offset: 0x004CB244
+		// Token: 0x0600D68F RID: 54927 RVA: 0x004D1B2C File Offset: 0x004CFD2C
 		public bool TryCreateUserGroup(XblPresenceFilter presenceFilter, XblRelationshipFilter relationshipFilter, SocialManagerXbl.UserGroupMembersChanged callback, out XblSocialManagerUserGroupHandle handle)
 		{
 			if (this.localUser == null)
@@ -54,7 +54,7 @@ namespace Platform.XBL
 			return true;
 		}
 
-		// Token: 0x0600D518 RID: 54552 RVA: 0x004CD0F8 File Offset: 0x004CB2F8
+		// Token: 0x0600D690 RID: 54928 RVA: 0x004D1BE0 File Offset: 0x004CFDE0
 		public void DestroyUserGroup(XblSocialManagerUserGroupHandle handle)
 		{
 			this.userGroups.Remove(handle);
@@ -70,7 +70,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D519 RID: 54553 RVA: 0x004CD154 File Offset: 0x004CB354
+		// Token: 0x0600D691 RID: 54929 RVA: 0x004D1C3C File Offset: 0x004CFE3C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator UpdateSocialManagerCoroutine()
 		{
@@ -116,7 +116,7 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0600D51A RID: 54554 RVA: 0x004CD164 File Offset: 0x004CB364
+		// Token: 0x0600D692 RID: 54930 RVA: 0x004D1C4C File Offset: 0x004CFE4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool IsUpdateRequired(XblSocialManagerEvent[] socialEvents)
 		{
@@ -135,34 +135,34 @@ namespace Platform.XBL
 			return false;
 		}
 
-		// Token: 0x0400A208 RID: 41480
+		// Token: 0x0400A2DD RID: 41693
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUserHandle localUser;
 
-		// Token: 0x0400A209 RID: 41481
+		// Token: 0x0400A2DE RID: 41694
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine updateCoroutine;
 
-		// Token: 0x0400A20A RID: 41482
+		// Token: 0x0400A2DF RID: 41695
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<XblSocialManagerUserGroupHandle, SocialManagerXbl.UserGroup> userGroups = new Dictionary<XblSocialManagerUserGroupHandle, SocialManagerXbl.UserGroup>();
 
-		// Token: 0x02001C03 RID: 7171
-		// (Invoke) Token: 0x0600D51C RID: 54556
+		// Token: 0x02001C35 RID: 7221
+		// (Invoke) Token: 0x0600D694 RID: 54932
 		public delegate void UserGroupMembersChanged(ulong[] members);
 
-		// Token: 0x02001C04 RID: 7172
+		// Token: 0x02001C36 RID: 7222
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class UserGroup
 		{
-			// Token: 0x0600D51F RID: 54559 RVA: 0x004CD1BB File Offset: 0x004CB3BB
+			// Token: 0x0600D697 RID: 54935 RVA: 0x004D1CA3 File Offset: 0x004CFEA3
 			public UserGroup(XblSocialManagerUserGroupHandle handle, SocialManagerXbl.UserGroupMembersChanged membersChangedCallback)
 			{
 				this.handle = handle;
 				this.membersChangedCallback = membersChangedCallback;
 			}
 
-			// Token: 0x0600D520 RID: 54560 RVA: 0x004CD1D4 File Offset: 0x004CB3D4
+			// Token: 0x0600D698 RID: 54936 RVA: 0x004D1CBC File Offset: 0x004CFEBC
 			public void NotifyChanged()
 			{
 				if (!this.isLoaded)
@@ -188,16 +188,16 @@ namespace Platform.XBL
 				this.membersChangedCallback(array2);
 			}
 
-			// Token: 0x0400A20B RID: 41483
+			// Token: 0x0400A2E0 RID: 41696
 			public readonly XblSocialManagerUserGroupHandle handle;
 
-			// Token: 0x0400A20C RID: 41484
+			// Token: 0x0400A2E1 RID: 41697
 			public readonly SocialManagerXbl.UserGroupMembersChanged membersChangedCallback;
 
-			// Token: 0x0400A20D RID: 41485
+			// Token: 0x0400A2E2 RID: 41698
 			public bool isLoaded;
 
-			// Token: 0x0400A20E RID: 41486
+			// Token: 0x0400A2E3 RID: 41699
 			[PublicizedFrom(EAccessModifier.Private)]
 			public ulong[] membersCache;
 		}

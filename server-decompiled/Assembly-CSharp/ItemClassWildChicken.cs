@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000602 RID: 1538
+// Token: 0x02000604 RID: 1540
 public class ItemClassWildChicken : ItemClassHeldEntity
 {
-	// Token: 0x0600322D RID: 12845 RVA: 0x00145E6C File Offset: 0x0014406C
+	// Token: 0x06003270 RID: 12912 RVA: 0x001467F8 File Offset: 0x001449F8
 	public override void Init()
 	{
 		base.Init();
@@ -14,7 +14,7 @@ public class ItemClassWildChicken : ItemClassHeldEntity
 		this.Properties.ParseInt(ItemClassWildChicken.PropMurderChickensGS, ref this.MurderChickensGS);
 	}
 
-	// Token: 0x0600322E RID: 12846 RVA: 0x00145EC4 File Offset: 0x001440C4
+	// Token: 0x06003271 RID: 12913 RVA: 0x00146850 File Offset: 0x00144A50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool HandleFullStress(EntityPlayerLocal epl)
 	{
@@ -76,53 +76,53 @@ public class ItemClassWildChicken : ItemClassHeldEntity
 		}
 	}
 
-	// Token: 0x040027AA RID: 10154
+	// Token: 0x040027A1 RID: 10145
 	public static ItemClassWildChicken.FullStressEvents FullStressEventType;
 
-	// Token: 0x040027AB RID: 10155
+	// Token: 0x040027A2 RID: 10146
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int ZombieHordeGS = 15;
 
-	// Token: 0x040027AC RID: 10156
+	// Token: 0x040027A3 RID: 10147
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int AngryChickenGS = 30;
 
-	// Token: 0x040027AD RID: 10157
+	// Token: 0x040027A4 RID: 10148
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int MurderChickensGS = 100;
 
-	// Token: 0x040027AE RID: 10158
+	// Token: 0x040027A5 RID: 10149
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropZombieHordeGS = "ZombieHordeGS";
 
-	// Token: 0x040027AF RID: 10159
+	// Token: 0x040027A6 RID: 10150
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropAngryChickenGS = "AngryChickenGS";
 
-	// Token: 0x040027B0 RID: 10160
+	// Token: 0x040027A7 RID: 10151
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropMurderChickensGS = "MurderChickensGS";
 
-	// Token: 0x040027B1 RID: 10161
+	// Token: 0x040027A8 RID: 10152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemClassWildChicken.FullStressEvents> StressEvents = new List<ItemClassWildChicken.FullStressEvents>();
 
-	// Token: 0x02000603 RID: 1539
+	// Token: 0x02000605 RID: 1541
 	public enum FullStressEvents
 	{
-		// Token: 0x040027B3 RID: 10163
+		// Token: 0x040027AA RID: 10154
 		None,
-		// Token: 0x040027B4 RID: 10164
+		// Token: 0x040027AB RID: 10155
 		Random,
-		// Token: 0x040027B5 RID: 10165
+		// Token: 0x040027AC RID: 10156
 		DropChicken,
-		// Token: 0x040027B6 RID: 10166
+		// Token: 0x040027AD RID: 10157
 		AngryChicken,
-		// Token: 0x040027B7 RID: 10167
+		// Token: 0x040027AE RID: 10158
 		SpawnZombieHorde,
-		// Token: 0x040027B8 RID: 10168
+		// Token: 0x040027AF RID: 10159
 		SpawnMurderChickens,
-		// Token: 0x040027B9 RID: 10169
+		// Token: 0x040027B0 RID: 10160
 		EnrageZombies
 	}
 }

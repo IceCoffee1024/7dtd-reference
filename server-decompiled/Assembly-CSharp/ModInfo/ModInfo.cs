@@ -9,12 +9,12 @@ using XMLData.Parsers;
 
 namespace ModInfo
 {
-	// Token: 0x02001621 RID: 5665
+	// Token: 0x02001640 RID: 5696
 	public class ModInfo : IXMLData
 	{
-		// Token: 0x170014E4 RID: 5348
-		// (get) Token: 0x0600B21E RID: 45598 RVA: 0x004274E4 File Offset: 0x004256E4
-		// (set) Token: 0x0600B21F RID: 45599 RVA: 0x004274EC File Offset: 0x004256EC
+		// Token: 0x17001527 RID: 5415
+		// (get) Token: 0x0600B2B0 RID: 45744 RVA: 0x0042B1C0 File Offset: 0x004293C0
+		// (set) Token: 0x0600B2B1 RID: 45745 RVA: 0x0042B1C8 File Offset: 0x004293C8
 		public DataItem<string> Name
 		{
 			get
@@ -27,9 +27,9 @@ namespace ModInfo
 			}
 		}
 
-		// Token: 0x170014E5 RID: 5349
-		// (get) Token: 0x0600B220 RID: 45600 RVA: 0x004274F5 File Offset: 0x004256F5
-		// (set) Token: 0x0600B221 RID: 45601 RVA: 0x004274FD File Offset: 0x004256FD
+		// Token: 0x17001528 RID: 5416
+		// (get) Token: 0x0600B2B2 RID: 45746 RVA: 0x0042B1D1 File Offset: 0x004293D1
+		// (set) Token: 0x0600B2B3 RID: 45747 RVA: 0x0042B1D9 File Offset: 0x004293D9
 		public DataItem<string> Description
 		{
 			get
@@ -42,9 +42,9 @@ namespace ModInfo
 			}
 		}
 
-		// Token: 0x170014E6 RID: 5350
-		// (get) Token: 0x0600B222 RID: 45602 RVA: 0x00427506 File Offset: 0x00425706
-		// (set) Token: 0x0600B223 RID: 45603 RVA: 0x0042750E File Offset: 0x0042570E
+		// Token: 0x17001529 RID: 5417
+		// (get) Token: 0x0600B2B4 RID: 45748 RVA: 0x0042B1E2 File Offset: 0x004293E2
+		// (set) Token: 0x0600B2B5 RID: 45749 RVA: 0x0042B1EA File Offset: 0x004293EA
 		public DataItem<string> Author
 		{
 			get
@@ -57,9 +57,9 @@ namespace ModInfo
 			}
 		}
 
-		// Token: 0x170014E7 RID: 5351
-		// (get) Token: 0x0600B224 RID: 45604 RVA: 0x00427517 File Offset: 0x00425717
-		// (set) Token: 0x0600B225 RID: 45605 RVA: 0x0042751F File Offset: 0x0042571F
+		// Token: 0x1700152A RID: 5418
+		// (get) Token: 0x0600B2B6 RID: 45750 RVA: 0x0042B1F3 File Offset: 0x004293F3
+		// (set) Token: 0x0600B2B7 RID: 45751 RVA: 0x0042B1FB File Offset: 0x004293FB
 		public DataItem<string> Version
 		{
 			get
@@ -72,9 +72,9 @@ namespace ModInfo
 			}
 		}
 
-		// Token: 0x170014E8 RID: 5352
-		// (get) Token: 0x0600B226 RID: 45606 RVA: 0x00427528 File Offset: 0x00425728
-		// (set) Token: 0x0600B227 RID: 45607 RVA: 0x00427530 File Offset: 0x00425730
+		// Token: 0x1700152B RID: 5419
+		// (get) Token: 0x0600B2B8 RID: 45752 RVA: 0x0042B204 File Offset: 0x00429404
+		// (set) Token: 0x0600B2B9 RID: 45753 RVA: 0x0042B20C File Offset: 0x0042940C
 		public DataItem<string> Website
 		{
 			get
@@ -87,30 +87,30 @@ namespace ModInfo
 			}
 		}
 
-		// Token: 0x040085F0 RID: 34288
+		// Token: 0x04008646 RID: 34374
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pName;
 
-		// Token: 0x040085F1 RID: 34289
+		// Token: 0x04008647 RID: 34375
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pDescription;
 
-		// Token: 0x040085F2 RID: 34290
+		// Token: 0x04008648 RID: 34376
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pAuthor;
 
-		// Token: 0x040085F3 RID: 34291
+		// Token: 0x04008649 RID: 34377
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pVersion;
 
-		// Token: 0x040085F4 RID: 34292
+		// Token: 0x0400864A RID: 34378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pWebsite;
 
-		// Token: 0x02001622 RID: 5666
+		// Token: 0x02001641 RID: 5697
 		public static class Parser
 		{
-			// Token: 0x0600B229 RID: 45609 RVA: 0x0042753C File Offset: 0x0042573C
+			// Token: 0x0600B2BB RID: 45755 RVA: 0x0042B218 File Offset: 0x00429418
 			public static ModInfo Parse(XElement _elem, Dictionary<PositionXmlElement, DataItem<ModInfo>> _updateLater)
 			{
 				ModInfo modInfo = new ModInfo();
@@ -177,7 +177,7 @@ namespace ModInfo
 				return modInfo;
 			}
 
-			// Token: 0x0600B22A RID: 45610 RVA: 0x0042775C File Offset: 0x0042595C
+			// Token: 0x0600B2BC RID: 45756 RVA: 0x0042B438 File Offset: 0x00429638
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void ParseFieldAttributeName(ModInfo _entry, Dictionary<string, int> _foundAttributes, XElement _elem)
 			{
@@ -208,7 +208,7 @@ namespace ModInfo
 				}
 			}
 
-			// Token: 0x0600B22B RID: 45611 RVA: 0x00427808 File Offset: 0x00425A08
+			// Token: 0x0600B2BD RID: 45757 RVA: 0x0042B4E4 File Offset: 0x004296E4
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void ParseFieldAttributeDescription(ModInfo _entry, Dictionary<string, int> _foundAttributes, XElement _elem)
 			{
@@ -239,7 +239,7 @@ namespace ModInfo
 				}
 			}
 
-			// Token: 0x0600B22C RID: 45612 RVA: 0x004278B4 File Offset: 0x00425AB4
+			// Token: 0x0600B2BE RID: 45758 RVA: 0x0042B590 File Offset: 0x00429790
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void ParseFieldAttributeAuthor(ModInfo _entry, Dictionary<string, int> _foundAttributes, XElement _elem)
 			{
@@ -270,7 +270,7 @@ namespace ModInfo
 				}
 			}
 
-			// Token: 0x0600B22D RID: 45613 RVA: 0x00427960 File Offset: 0x00425B60
+			// Token: 0x0600B2BF RID: 45759 RVA: 0x0042B63C File Offset: 0x0042983C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void ParseFieldAttributeVersion(ModInfo _entry, Dictionary<string, int> _foundAttributes, XElement _elem)
 			{
@@ -301,7 +301,7 @@ namespace ModInfo
 				}
 			}
 
-			// Token: 0x0600B22E RID: 45614 RVA: 0x00427A0C File Offset: 0x00425C0C
+			// Token: 0x0600B2C0 RID: 45760 RVA: 0x0042B6E8 File Offset: 0x004298E8
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void ParseFieldAttributeWebsite(ModInfo _entry, Dictionary<string, int> _foundAttributes, XElement _elem)
 			{
@@ -332,7 +332,7 @@ namespace ModInfo
 				}
 			}
 
-			// Token: 0x040085F5 RID: 34293
+			// Token: 0x0400864B RID: 34379
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static readonly Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

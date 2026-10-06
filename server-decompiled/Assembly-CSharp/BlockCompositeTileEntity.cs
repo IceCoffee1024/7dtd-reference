@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200016A RID: 362
+// Token: 0x0200016C RID: 364
 [Preserve]
 public class BlockCompositeTileEntity : Block
 {
 	// Token: 0x170000CC RID: 204
-	// (get) Token: 0x06000A50 RID: 2640 RVA: 0x00020021 File Offset: 0x0001E221
+	// (get) Token: 0x06000A56 RID: 2646 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowBlockTriggers
 	{
 		get
@@ -18,21 +18,21 @@ public class BlockCompositeTileEntity : Block
 	}
 
 	// Token: 0x170000CD RID: 205
-	// (get) Token: 0x06000A51 RID: 2641 RVA: 0x00044D18 File Offset: 0x00042F18
-	// (set) Token: 0x06000A52 RID: 2642 RVA: 0x00044D20 File Offset: 0x00042F20
+	// (get) Token: 0x06000A57 RID: 2647 RVA: 0x00044DE8 File Offset: 0x00042FE8
+	// (set) Token: 0x06000A58 RID: 2648 RVA: 0x00044DF0 File Offset: 0x00042FF0
 	public TileEntityCompositeData CompositeData
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06000A53 RID: 2643 RVA: 0x00044D29 File Offset: 0x00042F29
+	// Token: 0x06000A59 RID: 2649 RVA: 0x00044DF9 File Offset: 0x00042FF9
 	public BlockCompositeTileEntity()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000A54 RID: 2644 RVA: 0x00044D38 File Offset: 0x00042F38
+	// Token: 0x06000A5A RID: 2650 RVA: 0x00044E08 File Offset: 0x00043008
 	public override void Init()
 	{
 		base.Init();
@@ -43,7 +43,7 @@ public class BlockCompositeTileEntity : Block
 		}
 	}
 
-	// Token: 0x06000A55 RID: 2645 RVA: 0x00044D60 File Offset: 0x00042F60
+	// Token: 0x06000A5B RID: 2651 RVA: 0x00044E30 File Offset: 0x00043030
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -73,7 +73,7 @@ public class BlockCompositeTileEntity : Block
 		_chunk.AddTileEntity(tileEntityComposite);
 	}
 
-	// Token: 0x06000A56 RID: 2646 RVA: 0x00044E00 File Offset: 0x00043000
+	// Token: 0x06000A5C RID: 2652 RVA: 0x00044ED0 File Offset: 0x000430D0
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -94,7 +94,7 @@ public class BlockCompositeTileEntity : Block
 		_chunk.RemoveTileEntityAt<TileEntityComposite>((World)_world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000A57 RID: 2647 RVA: 0x00044E7C File Offset: 0x0004307C
+	// Token: 0x06000A5D RID: 2653 RVA: 0x00044F4C File Offset: 0x0004314C
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -114,7 +114,7 @@ public class BlockCompositeTileEntity : Block
 		}
 	}
 
-	// Token: 0x06000A58 RID: 2648 RVA: 0x00044EE9 File Offset: 0x000430E9
+	// Token: 0x06000A5E RID: 2654 RVA: 0x00044FB9 File Offset: 0x000431B9
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -124,7 +124,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnBlockUnloaded(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000A59 RID: 2649 RVA: 0x00044F1B File Offset: 0x0004311B
+	// Token: 0x06000A5F RID: 2655 RVA: 0x00044FEB File Offset: 0x000431EB
 	public override BlockValue OnBlockPlaced(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, GameRandom _rnd)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -134,7 +134,7 @@ public class BlockCompositeTileEntity : Block
 		return base.OnBlockPlaced(_world, _blockPos, _blockValue, _rnd);
 	}
 
-	// Token: 0x06000A5A RID: 2650 RVA: 0x00044F50 File Offset: 0x00043150
+	// Token: 0x06000A60 RID: 2656 RVA: 0x00045020 File Offset: 0x00043220
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -156,7 +156,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 	}
 
-	// Token: 0x06000A5B RID: 2651 RVA: 0x00044FD4 File Offset: 0x000431D4
+	// Token: 0x06000A61 RID: 2657 RVA: 0x000450A4 File Offset: 0x000432A4
 	public override void OnBlockReset(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -177,7 +177,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnBlockReset(_world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000A5C RID: 2652 RVA: 0x00045048 File Offset: 0x00043248
+	// Token: 0x06000A62 RID: 2658 RVA: 0x00045118 File Offset: 0x00043318
 	public override void OnBlockStartsToFall(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -192,7 +192,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnBlockStartsToFall(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000A5D RID: 2653 RVA: 0x0004509C File Offset: 0x0004329C
+	// Token: 0x06000A63 RID: 2659 RVA: 0x0004516C File Offset: 0x0004336C
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -219,7 +219,7 @@ public class BlockCompositeTileEntity : Block
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x06000A5E RID: 2654 RVA: 0x0004511C File Offset: 0x0004331C
+	// Token: 0x06000A64 RID: 2660 RVA: 0x000451EC File Offset: 0x000433EC
 	public override Block.DestroyedResult OnBlockDestroyedByExplosion(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		Block.DestroyedResult destroyedResult = base.OnBlockDestroyedByExplosion(_world, _bvRef, _blockValue, _playerThatStartedExpl);
@@ -246,7 +246,7 @@ public class BlockCompositeTileEntity : Block
 		return destroyedResult;
 	}
 
-	// Token: 0x06000A5F RID: 2655 RVA: 0x0004519C File Offset: 0x0004339C
+	// Token: 0x06000A65 RID: 2661 RVA: 0x0004526C File Offset: 0x0004346C
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -266,7 +266,7 @@ public class BlockCompositeTileEntity : Block
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x06000A60 RID: 2656 RVA: 0x00045228 File Offset: 0x00043428
+	// Token: 0x06000A66 RID: 2662 RVA: 0x000452F8 File Offset: 0x000434F8
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _bed)
 	{
 		if (_bed == null)
@@ -287,7 +287,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _bed);
 	}
 
-	// Token: 0x06000A61 RID: 2657 RVA: 0x00045288 File Offset: 0x00043488
+	// Token: 0x06000A67 RID: 2663 RVA: 0x00045358 File Offset: 0x00043558
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -309,7 +309,7 @@ public class BlockCompositeTileEntity : Block
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);
 	}
 
-	// Token: 0x06000A62 RID: 2658 RVA: 0x0004530C File Offset: 0x0004350C
+	// Token: 0x06000A68 RID: 2664 RVA: 0x000453DC File Offset: 0x000435DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetParentBlockAndTileEntity(ref BlockValueRef _bvRef, ref BlockValue _blockValue, out TileEntityComposite _te)
 	{
@@ -333,7 +333,7 @@ public class BlockCompositeTileEntity : Block
 		}
 	}
 
-	// Token: 0x06000A63 RID: 2659 RVA: 0x00045364 File Offset: 0x00043564
+	// Token: 0x06000A69 RID: 2665 RVA: 0x00045434 File Offset: 0x00043634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetParentBlockAndTileEntity(ref Vector3i _blockPos, ref BlockValue _blockValue, out TileEntityComposite _te)
 	{
@@ -359,7 +359,7 @@ public class BlockCompositeTileEntity : Block
 		return _te != null;
 	}
 
-	// Token: 0x06000A64 RID: 2660 RVA: 0x00045420 File Offset: 0x00043620
+	// Token: 0x06000A6A RID: 2666 RVA: 0x000454F0 File Offset: 0x000436F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetTileEntity(Vector3i _blockPos, BlockValue _blockValue, out TileEntityComposite _te)
 	{
@@ -383,7 +383,7 @@ public class BlockCompositeTileEntity : Block
 		return _te != null;
 	}
 
-	// Token: 0x06000A65 RID: 2661 RVA: 0x000454C0 File Offset: 0x000436C0
+	// Token: 0x06000A6B RID: 2667 RVA: 0x00045590 File Offset: 0x00043790
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -415,7 +415,7 @@ public class BlockCompositeTileEntity : Block
 		return tileEntityComposite.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, text, localizedBlockName);
 	}
 
-	// Token: 0x06000A66 RID: 2662 RVA: 0x0004558C File Offset: 0x0004378C
+	// Token: 0x06000A6C RID: 2668 RVA: 0x0004565C File Offset: 0x0004385C
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -440,7 +440,7 @@ public class BlockCompositeTileEntity : Block
 		return this.commands.Length != 0 && tileEntityComposite.UpdateBlockActivationCommands(this.commands, _world, _blockPos, _blockValue, _entityFocusing);
 	}
 
-	// Token: 0x06000A67 RID: 2663 RVA: 0x00045614 File Offset: 0x00043814
+	// Token: 0x06000A6D RID: 2669 RVA: 0x000456E4 File Offset: 0x000438E4
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -470,7 +470,7 @@ public class BlockCompositeTileEntity : Block
 		return this.commands;
 	}
 
-	// Token: 0x06000A68 RID: 2664 RVA: 0x000456AC File Offset: 0x000438AC
+	// Token: 0x06000A6E RID: 2670 RVA: 0x0004577C File Offset: 0x0004397C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (TEFeatureAbs.DebugLogCTE)
@@ -496,7 +496,7 @@ public class BlockCompositeTileEntity : Block
 		return tileEntityComposite.OnBlockActivated(this.commands, _commandName, _world, _blockPos, _blockValue, _player);
 	}
 
-	// Token: 0x06000A69 RID: 2665 RVA: 0x00045730 File Offset: 0x00043930
+	// Token: 0x06000A6F RID: 2671 RVA: 0x00045800 File Offset: 0x00043A00
 	public override bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFace _face)
 	{
 		TileEntityComposite tileEntityComposite;
@@ -517,7 +517,7 @@ public class BlockCompositeTileEntity : Block
 		return base.IsMovementBlocked(_world, _blockPos, _blockValue, _face);
 	}
 
-	// Token: 0x06000A6A RID: 2666 RVA: 0x000457A8 File Offset: 0x000439A8
+	// Token: 0x06000A70 RID: 2672 RVA: 0x00045878 File Offset: 0x00043A78
 	public override bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFaceFlag _sides)
 	{
 		TileEntityComposite tileEntityComposite;
@@ -538,7 +538,7 @@ public class BlockCompositeTileEntity : Block
 		return base.IsMovementBlocked(_world, _blockPos, _blockValue, _sides);
 	}
 
-	// Token: 0x06000A6B RID: 2667 RVA: 0x00045820 File Offset: 0x00043A20
+	// Token: 0x06000A71 RID: 2673 RVA: 0x000458F0 File Offset: 0x00043AF0
 	public override bool IsSeeThrough(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		TileEntityComposite tileEntityComposite;
@@ -559,7 +559,7 @@ public class BlockCompositeTileEntity : Block
 		return base.IsSeeThrough(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000A6C RID: 2668 RVA: 0x00045894 File Offset: 0x00043A94
+	// Token: 0x06000A72 RID: 2674 RVA: 0x00045964 File Offset: 0x00043B64
 	public override float GetStepHeight(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFace _crossingFace)
 	{
 		TileEntityComposite tileEntityComposite;
@@ -575,13 +575,13 @@ public class BlockCompositeTileEntity : Block
 		return base.GetStepHeight(_world, _blockPos, _blockValue, _crossingFace);
 	}
 
-	// Token: 0x06000A6D RID: 2669 RVA: 0x00045914 File Offset: 0x00043B14
+	// Token: 0x06000A73 RID: 2675 RVA: 0x000459E4 File Offset: 0x00043BE4
 	public override bool IsTileEntitySavedInPrefab()
 	{
 		return this.CompositeData.HasFeature<IFeatureSavedInPrefab>();
 	}
 
-	// Token: 0x04000A22 RID: 2594
+	// Token: 0x04000A25 RID: 2597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockActivationCommand[] commands;
 }

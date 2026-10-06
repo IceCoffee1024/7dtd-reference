@@ -5,26 +5,26 @@ using System.Runtime.CompilerServices;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02001136 RID: 4406
+// Token: 0x0200114E RID: 4430
 public class XUiM_PlayerInventory : XUiModel, IInventory
 {
-	// Token: 0x140000E6 RID: 230
-	// (add) Token: 0x06008B3E RID: 35646 RVA: 0x0034FCAC File Offset: 0x0034DEAC
-	// (remove) Token: 0x06008B3F RID: 35647 RVA: 0x0034FCE4 File Offset: 0x0034DEE4
+	// Token: 0x140000E5 RID: 229
+	// (add) Token: 0x06008BA9 RID: 35753 RVA: 0x003540C4 File Offset: 0x003522C4
+	// (remove) Token: 0x06008BAA RID: 35754 RVA: 0x003540FC File Offset: 0x003522FC
 	public event XUiEvent_BackpackItemsChanged OnBackpackItemsChanged;
 
-	// Token: 0x140000E7 RID: 231
-	// (add) Token: 0x06008B40 RID: 35648 RVA: 0x0034FD1C File Offset: 0x0034DF1C
-	// (remove) Token: 0x06008B41 RID: 35649 RVA: 0x0034FD54 File Offset: 0x0034DF54
+	// Token: 0x140000E6 RID: 230
+	// (add) Token: 0x06008BAB RID: 35755 RVA: 0x00354134 File Offset: 0x00352334
+	// (remove) Token: 0x06008BAC RID: 35756 RVA: 0x0035416C File Offset: 0x0035236C
 	public event XUiEvent_ToolbeltItemsChanged OnToolbeltItemsChanged;
 
-	// Token: 0x140000E8 RID: 232
-	// (add) Token: 0x06008B42 RID: 35650 RVA: 0x0034FD8C File Offset: 0x0034DF8C
-	// (remove) Token: 0x06008B43 RID: 35651 RVA: 0x0034FDC4 File Offset: 0x0034DFC4
+	// Token: 0x140000E7 RID: 231
+	// (add) Token: 0x06008BAD RID: 35757 RVA: 0x003541A4 File Offset: 0x003523A4
+	// (remove) Token: 0x06008BAE RID: 35758 RVA: 0x003541DC File Offset: 0x003523DC
 	public event XUiEvent_CurrencyChanged OnCurrencyChanged;
 
-	// Token: 0x17001017 RID: 4119
-	// (get) Token: 0x06008B44 RID: 35652 RVA: 0x0034FDF9 File Offset: 0x0034DFF9
+	// Token: 0x1700104C RID: 4172
+	// (get) Token: 0x06008BAF RID: 35759 RVA: 0x00354211 File Offset: 0x00352411
 	public Bag Backpack
 	{
 		get
@@ -33,8 +33,8 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		}
 	}
 
-	// Token: 0x17001018 RID: 4120
-	// (get) Token: 0x06008B45 RID: 35653 RVA: 0x0034FE01 File Offset: 0x0034E001
+	// Token: 0x1700104D RID: 4173
+	// (get) Token: 0x06008BB0 RID: 35760 RVA: 0x00354219 File Offset: 0x00352419
 	public Inventory Toolbelt
 	{
 		get
@@ -43,17 +43,17 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		}
 	}
 
-	// Token: 0x17001019 RID: 4121
-	// (get) Token: 0x06008B46 RID: 35654 RVA: 0x0034FE09 File Offset: 0x0034E009
-	// (set) Token: 0x06008B47 RID: 35655 RVA: 0x0034FE11 File Offset: 0x0034E011
+	// Token: 0x1700104E RID: 4174
+	// (get) Token: 0x06008BB1 RID: 35761 RVA: 0x00354221 File Offset: 0x00352421
+	// (set) Token: 0x06008BB2 RID: 35762 RVA: 0x00354229 File Offset: 0x00352429
 	public int CurrencyAmount
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700101A RID: 4122
-	// (get) Token: 0x06008B48 RID: 35656 RVA: 0x0034FE1A File Offset: 0x0034E01A
+	// Token: 0x1700104F RID: 4175
+	// (get) Token: 0x06008BB3 RID: 35763 RVA: 0x00354232 File Offset: 0x00352432
 	public int QuickSwapSlot
 	{
 		get
@@ -62,7 +62,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		}
 	}
 
-	// Token: 0x06008B49 RID: 35657 RVA: 0x0034FE28 File Offset: 0x0034E028
+	// Token: 0x06008BB4 RID: 35764 RVA: 0x00354240 File Offset: 0x00352440
 	public XUiM_PlayerInventory(XUi _xui, EntityPlayerLocal _player)
 	{
 		if (_player == null)
@@ -79,7 +79,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		this.currencyItem = ItemClass.GetItem(TraderInfo.CurrencyItem, false);
 	}
 
-	// Token: 0x06008B4A RID: 35658 RVA: 0x0034FED0 File Offset: 0x0034E0D0
+	// Token: 0x06008BB5 RID: 35765 RVA: 0x003542E8 File Offset: 0x003524E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dispatchBackpackItemsChanged()
 	{
@@ -91,7 +91,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		this.RefreshCurrency();
 	}
 
-	// Token: 0x06008B4B RID: 35659 RVA: 0x0034FEE9 File Offset: 0x0034E0E9
+	// Token: 0x06008BB6 RID: 35766 RVA: 0x00354301 File Offset: 0x00352501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dispatchToolbeltItemsChanged()
 	{
@@ -103,19 +103,19 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		this.RefreshCurrency();
 	}
 
-	// Token: 0x06008B4C RID: 35660 RVA: 0x0034FF02 File Offset: 0x0034E102
+	// Token: 0x06008BB7 RID: 35767 RVA: 0x0035431A File Offset: 0x0035251A
 	public bool AddItemToPreferredToolbeltSlot(ItemStack _itemStack, int _slot)
 	{
 		return this.toolbelt.AddItemAtSlot(_itemStack, _slot);
 	}
 
-	// Token: 0x06008B4D RID: 35661 RVA: 0x0034FF11 File Offset: 0x0034E111
+	// Token: 0x06008BB8 RID: 35768 RVA: 0x00354329 File Offset: 0x00352529
 	public bool AddItemNoPartial(ItemStack _itemStack, bool _playCollectSound = true)
 	{
 		return (this.backpack.CanStack(_itemStack) || this.toolbelt.CanStack(_itemStack)) && this.AddItem(_itemStack, _playCollectSound);
 	}
 
-	// Token: 0x06008B4E RID: 35662 RVA: 0x0034FF3C File Offset: 0x0034E13C
+	// Token: 0x06008BB9 RID: 35769 RVA: 0x00354354 File Offset: 0x00352554
 	public bool CanSwapItems(ItemStack _removedStack, ItemStack _addedStack, int _slotNumber = -1)
 	{
 		List<ItemStack> allItemStacks = this.GetAllItemStacks();
@@ -162,17 +162,16 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return false;
 	}
 
-	// Token: 0x06008B4F RID: 35663 RVA: 0x00350054 File Offset: 0x0034E254
-	public void SortStacks(int _ignoreSlots = 0, PackedBoolArray _ignoredSlots = null)
+	// Token: 0x06008BBA RID: 35770 RVA: 0x0035446C File Offset: 0x0035266C
+	public void SortStacks()
 	{
 		if (EffectManager.GetValue(PassiveEffects.ShuffledBackpack, null, 0f, this.localPlayer, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) == 0f)
 		{
-			ItemStack[] array = StackSortUtil.CombineAndSortStacks(this.GetBackpackItemStacks(), _ignoreSlots, _ignoredSlots);
-			this.backpack.SetSlots(array);
+			this.backpack.ItemGrid.Sort();
 		}
 	}
 
-	// Token: 0x06008B50 RID: 35664 RVA: 0x003500AC File Offset: 0x0034E2AC
+	// Token: 0x06008BBB RID: 35771 RVA: 0x003544B8 File Offset: 0x003526B8
 	public bool AddItem(ItemStack _itemStack, bool _playCollectSound)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.ToolBelt, -1))
@@ -189,14 +188,14 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 			if (itemClassArmor.AllowUnEquip)
 			{
 				ItemValue slotItem = equipment.GetSlotItem(equipSlot);
-				equipment.SetSlotItem(equipSlot, itemStack.itemValue, true);
+				equipment.SetSlotItem(equipSlot, itemStack.itemValue);
 				QuestEventManager.Current.WoreItem(itemStack.itemValue);
 				itemStack.count = 0;
 				itemStack = new ItemStack(slotItem, 1);
 			}
 			else
 			{
-				equipment.SetSlotItem(equipSlot, itemStack.itemValue, true);
+				equipment.SetSlotItem(equipSlot, itemStack.itemValue);
 				QuestEventManager.Current.WoreItem(itemStack.itemValue);
 				flag = true;
 				itemStack.count = 0;
@@ -243,7 +242,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 					ItemStack itemStack2 = itemStack.Clone();
 					itemStack2.count = num2;
 					ItemClassArmor itemClassArmor2 = itemStack.itemValue.ItemClass as ItemClassArmor;
-					if (itemClassArmor2 != null && !this.xui.PlayerEquipment.IsEquipmentTypeWorn(itemClassArmor2.EquipSlot) && this.localPlayer.equipment.ReturnItem(itemStack2, true))
+					if (itemClassArmor2 != null && !this.xui.PlayerEquipment.IsEquipmentTypeWorn(itemClassArmor2.EquipSlot) && this.localPlayer.equipment.ReturnItem(itemStack2))
 					{
 						flag = true;
 						flag2 = true;
@@ -290,7 +289,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 			else
 			{
 				ItemClassArmor itemClassArmor3 = itemStack.itemValue.ItemClass as ItemClassArmor;
-				if (itemClassArmor3 != null && !this.xui.PlayerEquipment.IsEquipmentTypeWorn(itemClassArmor3.EquipSlot) && this.localPlayer.equipment.ReturnItem(itemStack, true))
+				if (itemClassArmor3 != null && !this.xui.PlayerEquipment.IsEquipmentTypeWorn(itemClassArmor3.EquipSlot) && this.localPlayer.equipment.ReturnItem(itemStack))
 				{
 					flag = true;
 					itemStack = itemStack.Clone();
@@ -342,38 +341,38 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return flag;
 	}
 
-	// Token: 0x06008B51 RID: 35665 RVA: 0x0035054C File Offset: 0x0034E74C
+	// Token: 0x06008BBC RID: 35772 RVA: 0x00354954 File Offset: 0x00352B54
 	public int CountAvailableSpaceForItem(ItemValue _itemValue, bool _limitToOneStack = true)
 	{
 		ItemStack itemStack = new ItemStack(_itemValue, 1);
 		int maxCount = _itemValue.ItemClass.MaxCount;
 		int num = 0;
-		ItemStack[] slots = this.backpack.GetSlots();
-		for (int i = 0; i < slots.Length; i++)
+		for (int i = 0; i < this.backpack.SlotCount; i++)
 		{
-			if (slots[i].IsEmpty())
+			ItemStack itemStack2 = this.backpack.ItemGrid[i];
+			if (itemStack2.IsEmpty())
 			{
 				num += maxCount;
 			}
-			else if (itemStack.CanStackWith(slots[i], false))
+			else if (itemStack.CanStackWith(itemStack2, false))
 			{
-				num += maxCount - slots[i].count;
+				num += maxCount - itemStack2.count;
 			}
 			if (_limitToOneStack && num >= maxCount)
 			{
 				return maxCount;
 			}
 		}
-		ItemStack[] slots2 = this.toolbelt.GetSlots();
-		for (int j = 0; j < this.toolbelt.PUBLIC_SLOTS; j++)
+		for (int j = 0; j < this.toolbelt.Length; j++)
 		{
-			if (slots2[j].IsEmpty())
+			ItemStack item = this.toolbelt.GetItem(j);
+			if (item.IsEmpty())
 			{
 				num += maxCount;
 			}
-			else if (itemStack.CanStackWith(slots2[j], false))
+			else if (itemStack.CanStackWith(item, false))
 			{
-				num += maxCount - slots2[j].count;
+				num += maxCount - item.count;
 			}
 			if (_limitToOneStack && num > maxCount)
 			{
@@ -383,7 +382,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return num;
 	}
 
-	// Token: 0x06008B52 RID: 35666 RVA: 0x00350624 File Offset: 0x0034E824
+	// Token: 0x06008BBD RID: 35773 RVA: 0x00354A28 File Offset: 0x00352C28
 	public void DropItem(ItemStack _stack)
 	{
 		GameManager instance = GameManager.Instance;
@@ -400,7 +399,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		collectedItemList.RemoveItemStack(_stack);
 	}
 
-	// Token: 0x06008B53 RID: 35667 RVA: 0x00350688 File Offset: 0x0034E888
+	// Token: 0x06008BBE RID: 35774 RVA: 0x00354A8C File Offset: 0x00352C8C
 	public bool AddItems(ItemStack[] _itemStacks)
 	{
 		bool flag = true;
@@ -411,7 +410,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return flag;
 	}
 
-	// Token: 0x06008B54 RID: 35668 RVA: 0x003506B4 File Offset: 0x0034E8B4
+	// Token: 0x06008BBF RID: 35775 RVA: 0x00354AB8 File Offset: 0x00352CB8
 	public bool AddItemsUsingPreferenceTracker(XUiC_ItemStackGrid _srcGrid, PreferenceTracker _preferences)
 	{
 		if (!_preferences.AnyPreferences)
@@ -444,69 +443,70 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 				_srcGrid.HandleSlotChangedEvent(j, itemStackControllers[j].ItemStack);
 			}
 		}
-		if (_preferences.toolbelt != null)
-		{
-			ItemStack[] slots = this.toolbelt.GetSlots();
-			int k = 0;
-			while (k < _preferences.toolbelt.Length && k < slots.Length)
-			{
-				if (slots[k].IsEmpty())
-				{
-					int type2 = _preferences.toolbelt[k].itemValue.type;
-					XUiC_ItemStack xuiC_ItemStack;
-					if (hashSet.Contains(type2))
-					{
-						xuiC_ItemStack = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.itemValue.type == type2);
-					}
-					else
-					{
-						xuiC_ItemStack = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.Equals(_preferences.toolbelt[k]));
-					}
-					if (((xuiC_ItemStack != null) ? xuiC_ItemStack.ItemStack : null) != null && !xuiC_ItemStack.ItemStack.IsEmpty())
-					{
-						this.toolbelt.SetItem(k, xuiC_ItemStack.ItemStack);
-						xuiC_ItemStack.ItemStack = ItemStack.Empty;
-						_srcGrid.HandleSlotChangedEvent(xuiC_ItemStack.SlotNumber, ItemStack.Empty);
-						flag = true;
-					}
-				}
-				int num = k;
-				k = num + 1;
-			}
-		}
 		if (_preferences.equipment != null)
 		{
-			int num2 = Utils.FastMin(this.localPlayer.equipment.GetSlotCount(), _preferences.equipment.Length);
-			int num;
-			int l;
-			for (l = 0; l < num2; l = num + 1)
+			int num = Utils.FastMin(this.localPlayer.equipment.GetSlotCount(), _preferences.equipment.Length);
+			int num2;
+			int k;
+			for (k = 0; k < num; k = num2 + 1)
 			{
-				if (this.localPlayer.equipment.GetSlotItem(l) == null)
+				if (this.localPlayer.equipment.GetSlotItem(k).IsEmpty())
 				{
-					XUiC_ItemStack xuiC_ItemStack2 = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.itemValue.Equals(_preferences.equipment[l]));
-					if (((xuiC_ItemStack2 != null) ? xuiC_ItemStack2.ItemStack : null) != null && !xuiC_ItemStack2.ItemStack.IsEmpty())
+					XUiC_ItemStack xuiC_ItemStack = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.itemValue.Equals(_preferences.equipment[k]));
+					if (((xuiC_ItemStack != null) ? xuiC_ItemStack.ItemStack : null) != null && !xuiC_ItemStack.ItemStack.IsEmpty())
 					{
-						this.localPlayer.equipment.SetSlotItem(l, xuiC_ItemStack2.ItemStack.itemValue, true);
-						xuiC_ItemStack2.ItemStack.count--;
-						if (xuiC_ItemStack2.ItemStack.IsEmpty())
+						this.localPlayer.equipment.SetSlotItem(k, xuiC_ItemStack.ItemStack.itemValue);
+						ItemStack itemStack = xuiC_ItemStack.ItemStack;
+						num2 = itemStack.count;
+						itemStack.count = num2 - 1;
+						if (xuiC_ItemStack.ItemStack.IsEmpty())
 						{
-							xuiC_ItemStack2.ItemStack = ItemStack.Empty;
-							_srcGrid.HandleSlotChangedEvent(xuiC_ItemStack2.SlotNumber, ItemStack.Empty);
+							xuiC_ItemStack.ItemStack = ItemStack.Empty;
+							_srcGrid.HandleSlotChangedEvent(xuiC_ItemStack.SlotNumber, ItemStack.Empty);
 						}
 						flag = true;
 					}
 				}
-				num = l;
+				num2 = k;
 			}
 		}
 		this.xui.PlayerEquipment.RefreshEquipment();
+		this.localPlayer.UpdateBagpackSize();
+		if (_preferences.toolbelt != null)
+		{
+			int l = 0;
+			while (l < _preferences.toolbelt.Length && l < this.toolbelt.Length)
+			{
+				if (this.toolbelt.GetItem(l).IsEmpty())
+				{
+					int type2 = _preferences.toolbelt[l].itemValue.type;
+					XUiC_ItemStack xuiC_ItemStack2;
+					if (hashSet.Contains(type2))
+					{
+						xuiC_ItemStack2 = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.itemValue.type == type2);
+					}
+					else
+					{
+						xuiC_ItemStack2 = itemStackControllers.FirstOrDefault<XUiC_ItemStack>((XUiC_ItemStack _stack) => _stack.ItemStack.Equals(_preferences.toolbelt[l]));
+					}
+					if (((xuiC_ItemStack2 != null) ? xuiC_ItemStack2.ItemStack : null) != null && !xuiC_ItemStack2.ItemStack.IsEmpty())
+					{
+						this.toolbelt.SetItem(l, xuiC_ItemStack2.ItemStack);
+						xuiC_ItemStack2.ItemStack = ItemStack.Empty;
+						_srcGrid.HandleSlotChangedEvent(xuiC_ItemStack2.SlotNumber, ItemStack.Empty);
+						flag = true;
+					}
+				}
+				int num2 = l;
+				l = num2 + 1;
+			}
+		}
 		if (_preferences.bag != null)
 		{
-			ItemStack[] slots2 = this.backpack.GetSlots();
 			int i = 0;
-			while (i < _preferences.bag.Length && i < slots2.Length)
+			while (i < _preferences.bag.Length && i < this.backpack.SlotCount)
 			{
-				if (slots2[i].IsEmpty())
+				if (this.backpack.ItemGrid[i].IsEmpty())
 				{
 					int type = _preferences.bag[i].itemValue.type;
 					XUiC_ItemStack xuiC_ItemStack3;
@@ -520,40 +520,40 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 					}
 					if (((xuiC_ItemStack3 != null) ? xuiC_ItemStack3.ItemStack : null) != null && !xuiC_ItemStack3.ItemStack.IsEmpty())
 					{
-						this.backpack.SetSlot(i, xuiC_ItemStack3.ItemStack, true);
+						this.backpack.SetSlot(i, xuiC_ItemStack3.ItemStack);
 						xuiC_ItemStack3.ItemStack = ItemStack.Empty;
 						_srcGrid.HandleSlotChangedEvent(xuiC_ItemStack3.SlotNumber, ItemStack.Empty);
 						flag = true;
 					}
 				}
-				int num = i;
-				i = num + 1;
+				int num2 = i;
+				i = num2 + 1;
 			}
 		}
 		return flag;
 	}
 
-	// Token: 0x06008B55 RID: 35669 RVA: 0x00350B58 File Offset: 0x0034ED58
+	// Token: 0x06008BC0 RID: 35776 RVA: 0x00354F77 File Offset: 0x00353177
 	public bool AddItemToBackpack(ItemStack _itemStack)
 	{
 		this.backpack.TryStackItem(0, _itemStack);
 		return _itemStack.count > 0 && this.backpack.AddItem(_itemStack);
 	}
 
-	// Token: 0x06008B56 RID: 35670 RVA: 0x00350B82 File Offset: 0x0034ED82
+	// Token: 0x06008BC1 RID: 35777 RVA: 0x00354FA1 File Offset: 0x003531A1
 	public bool AddItemToToolbelt(ItemStack _itemStack)
 	{
 		this.toolbelt.TryStackItem(0, _itemStack);
 		return _itemStack.count > 0 && this.toolbelt.AddItem(_itemStack);
 	}
 
-	// Token: 0x06008B57 RID: 35671 RVA: 0x00350BAC File Offset: 0x0034EDAC
+	// Token: 0x06008BC2 RID: 35778 RVA: 0x00354FCB File Offset: 0x003531CB
 	public bool HasItem(ItemStack _itemStack)
 	{
 		return this.HasItems(new ItemStack[] { _itemStack }, 1);
 	}
 
-	// Token: 0x06008B58 RID: 35672 RVA: 0x00350BC0 File Offset: 0x0034EDC0
+	// Token: 0x06008BC3 RID: 35779 RVA: 0x00354FE0 File Offset: 0x003531E0
 	public bool HasItems(IList<ItemStack> _itemStacks, int _multiplier = 1)
 	{
 		for (int i = 0; i < _itemStacks.Count; i++)
@@ -572,13 +572,13 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return true;
 	}
 
-	// Token: 0x06008B59 RID: 35673 RVA: 0x00350C33 File Offset: 0x0034EE33
+	// Token: 0x06008BC4 RID: 35780 RVA: 0x00355053 File Offset: 0x00353253
 	public void RemoveItem(ItemStack _itemStack)
 	{
 		this.RemoveItems(new ItemStack[] { _itemStack }, 1, null);
 	}
 
-	// Token: 0x06008B5A RID: 35674 RVA: 0x00350C48 File Offset: 0x0034EE48
+	// Token: 0x06008BC5 RID: 35781 RVA: 0x00355068 File Offset: 0x00353268
 	public void RemoveItems(IList<ItemStack> _itemStacks, int _multiplier = 1, IList<ItemStack> _removedItems = null)
 	{
 		if (!this.HasItems(_itemStacks, 1))
@@ -598,26 +598,26 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		this.dispatchToolbeltItemsChanged();
 	}
 
-	// Token: 0x06008B5B RID: 35675 RVA: 0x00350CC8 File Offset: 0x0034EEC8
+	// Token: 0x06008BC6 RID: 35782 RVA: 0x003550E8 File Offset: 0x003532E8
 	public int GetItemCount(ItemValue _itemValue)
 	{
 		return 0 + this.backpack.GetItemCount(_itemValue, -1, -1, true) + this.toolbelt.GetItemCount(_itemValue, false, -1, -1, true);
 	}
 
-	// Token: 0x06008B5C RID: 35676 RVA: 0x00350CEC File Offset: 0x0034EEEC
+	// Token: 0x06008BC7 RID: 35783 RVA: 0x0035510C File Offset: 0x0035330C
 	public int GetItemCountWithMods(ItemValue _itemValue)
 	{
 		return 0 + this.backpack.GetItemCount(_itemValue, -1, -1, false) + this.toolbelt.GetItemCount(_itemValue, false, -1, -1, false);
 	}
 
-	// Token: 0x06008B5D RID: 35677 RVA: 0x00350D10 File Offset: 0x0034EF10
+	// Token: 0x06008BC8 RID: 35784 RVA: 0x00355130 File Offset: 0x00353330
 	public int GetItemCount(int _itemId)
 	{
 		ItemValue itemValue = new ItemValue(_itemId, false);
 		return 0 + this.backpack.GetItemCount(itemValue, -1, -1, true) + this.toolbelt.GetItemCount(itemValue, false, -1, -1, true);
 	}
 
-	// Token: 0x06008B5E RID: 35678 RVA: 0x00350D47 File Offset: 0x0034EF47
+	// Token: 0x06008BC9 RID: 35785 RVA: 0x00355167 File Offset: 0x00353367
 	public List<ItemStack> GetAllItemStacks()
 	{
 		List<ItemStack> list = new List<ItemStack>();
@@ -626,33 +626,33 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return list;
 	}
 
-	// Token: 0x06008B5F RID: 35679 RVA: 0x00350D66 File Offset: 0x0034EF66
+	// Token: 0x06008BCA RID: 35786 RVA: 0x00355186 File Offset: 0x00353386
 	public ItemStack[] GetBackpackItemStacks()
 	{
-		return this.backpack.GetSlots();
+		return this.backpack.ItemGrid.CloneItems();
 	}
 
-	// Token: 0x06008B60 RID: 35680 RVA: 0x00350D73 File Offset: 0x0034EF73
+	// Token: 0x06008BCB RID: 35787 RVA: 0x00355198 File Offset: 0x00353398
 	public ItemStack[] GetToolbeltItemStacks()
 	{
-		return this.toolbelt.GetSlots();
+		return this.toolbelt.ItemGrid.CloneItems();
 	}
 
-	// Token: 0x06008B61 RID: 35681 RVA: 0x00350D80 File Offset: 0x0034EF80
+	// Token: 0x06008BCC RID: 35788 RVA: 0x003551AA File Offset: 0x003533AA
 	public void SetBackpackItemStacks(ItemStack[] _itemStacks)
 	{
-		this.backpack.SetSlots(_itemStacks);
+		this.backpack.SetSlots(_itemStacks, false);
 		this.dispatchBackpackItemsChanged();
 	}
 
-	// Token: 0x06008B62 RID: 35682 RVA: 0x00350D94 File Offset: 0x0034EF94
+	// Token: 0x06008BCD RID: 35789 RVA: 0x003551BF File Offset: 0x003533BF
 	public void SetToolbeltItemStacks(ItemStack[] _itemStacks)
 	{
-		this.toolbelt.SetSlots(_itemStacks, false);
+		this.toolbelt.SetSlots(_itemStacks);
 		this.dispatchToolbeltItemsChanged();
 	}
 
-	// Token: 0x06008B63 RID: 35683 RVA: 0x00350DAC File Offset: 0x0034EFAC
+	// Token: 0x06008BCE RID: 35790 RVA: 0x003551D4 File Offset: 0x003533D4
 	public void RefreshCurrency()
 	{
 		int itemCount = this.GetItemCount(this.currencyItem);
@@ -668,7 +668,7 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		}
 	}
 
-	// Token: 0x06008B64 RID: 35684 RVA: 0x00350DE8 File Offset: 0x0034EFE8
+	// Token: 0x06008BCF RID: 35791 RVA: 0x00355210 File Offset: 0x00353410
 	public void HandleUIShutdown()
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(this.localPlayer);
@@ -680,13 +680,13 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		this.toolbelt.OnToolbeltItemsChangedInternal -= this.dispatchToolbeltItemsChanged;
 	}
 
-	// Token: 0x06008B65 RID: 35685 RVA: 0x00350E4A File Offset: 0x0034F04A
+	// Token: 0x06008BD0 RID: 35792 RVA: 0x00355272 File Offset: 0x00353472
 	public bool AddItem(ItemStack _itemStack)
 	{
 		return this.AddItem(_itemStack, true);
 	}
 
-	// Token: 0x06008B66 RID: 35686 RVA: 0x00350E54 File Offset: 0x0034F054
+	// Token: 0x06008BD1 RID: 35793 RVA: 0x0035527C File Offset: 0x0035347C
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	public ValueTuple<bool, bool> TryStackItem(int _startIndex, ItemStack _itemStack)
 	{
@@ -710,13 +710,13 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return new ValueTuple<bool, bool>(count != _itemStack.count, flag);
 	}
 
-	// Token: 0x06008B67 RID: 35687 RVA: 0x00350EF5 File Offset: 0x0034F0F5
+	// Token: 0x06008BD2 RID: 35794 RVA: 0x0035531D File Offset: 0x0035351D
 	public bool HasItem(ItemValue _item)
 	{
 		return this.GetItemCount(_item) > 0;
 	}
 
-	// Token: 0x06008B68 RID: 35688 RVA: 0x00350F04 File Offset: 0x0034F104
+	// Token: 0x06008BD3 RID: 35795 RVA: 0x0035532C File Offset: 0x0035352C
 	public static bool TryStackItem(int _startIndex, ItemStack _itemStack, ItemStack[] _items)
 	{
 		for (int i = _startIndex; i < _items.Length; i++)
@@ -735,23 +735,23 @@ public class XUiM_PlayerInventory : XUiModel, IInventory
 		return false;
 	}
 
-	// Token: 0x04006708 RID: 26376
+	// Token: 0x0400675D RID: 26461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUi xui;
 
-	// Token: 0x04006709 RID: 26377
+	// Token: 0x0400675E RID: 26462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly EntityPlayerLocal localPlayer;
 
-	// Token: 0x0400670A RID: 26378
+	// Token: 0x0400675F RID: 26463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Bag backpack;
 
-	// Token: 0x0400670B RID: 26379
+	// Token: 0x04006760 RID: 26464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Inventory toolbelt;
 
-	// Token: 0x0400670C RID: 26380
+	// Token: 0x04006761 RID: 26465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ItemValue currencyItem;
 }

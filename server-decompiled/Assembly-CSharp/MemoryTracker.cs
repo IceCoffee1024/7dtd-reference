@@ -7,11 +7,11 @@ using UniLinq;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
-// Token: 0x02001445 RID: 5189
+// Token: 0x02001465 RID: 5221
 public class MemoryTracker
 {
-	// Token: 0x1700132C RID: 4908
-	// (get) Token: 0x0600A309 RID: 41737 RVA: 0x003CEE98 File Offset: 0x003CD098
+	// Token: 0x17001371 RID: 4977
+	// (get) Token: 0x0600A3B5 RID: 41909 RVA: 0x003D3AA8 File Offset: 0x003D1CA8
 	public static MemoryTracker Instance
 	{
 		get
@@ -24,7 +24,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A30A RID: 41738 RVA: 0x003CEEB0 File Offset: 0x003CD0B0
+	// Token: 0x0600A3B6 RID: 41910 RVA: 0x003D3AC0 File Offset: 0x003D1CC0
 	public void New(object _o)
 	{
 		Dictionary<object, int> dictionary = this.refs;
@@ -35,7 +35,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A30B RID: 41739 RVA: 0x003CEF1C File Offset: 0x003CD11C
+	// Token: 0x0600A3B7 RID: 41911 RVA: 0x003D3B2C File Offset: 0x003D1D2C
 	public void Delete(object _o)
 	{
 		Dictionary<object, int> dictionary = this.refs;
@@ -46,7 +46,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A30C RID: 41740 RVA: 0x003CEF78 File Offset: 0x003CD178
+	// Token: 0x0600A3B8 RID: 41912 RVA: 0x003D3B88 File Offset: 0x003D1D88
 	public void SetEstimationFunction(object _o, MemoryTracker.EstimateOwnedBytes _func)
 	{
 		if (_o == null)
@@ -67,7 +67,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A30D RID: 41741 RVA: 0x003CEFF4 File Offset: 0x003CD1F4
+	// Token: 0x0600A3B9 RID: 41913 RVA: 0x003D3C04 File Offset: 0x003D1E04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int EstimateSelfBytes()
 	{
@@ -90,7 +90,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A30E RID: 41742 RVA: 0x003CF0DC File Offset: 0x003CD2DC
+	// Token: 0x0600A3BA RID: 41914 RVA: 0x003D3CEC File Offset: 0x003D1EEC
 	public void Dump()
 	{
 		Dictionary<string, MemoryTracker.AllocationsForType.Summary> dictionary = new Dictionary<string, MemoryTracker.AllocationsForType.Summary>();
@@ -218,7 +218,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A30F RID: 41743 RVA: 0x003CF8A8 File Offset: 0x003CDAA8
+	// Token: 0x0600A3BB RID: 41915 RVA: 0x003D44B8 File Offset: 0x003D26B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawLabel(float _left, float _top, string _text)
 	{
@@ -232,7 +232,7 @@ public class MemoryTracker
 		GUI.Label(rect, _text);
 	}
 
-	// Token: 0x0600A310 RID: 41744 RVA: 0x003CF920 File Offset: 0x003CDB20
+	// Token: 0x0600A3BC RID: 41916 RVA: 0x003D4530 File Offset: 0x003D2730
 	public void DebugOnGui()
 	{
 		this.DrawLabel(800f, 30f, "Type");
@@ -250,13 +250,13 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A311 RID: 41745 RVA: 0x003CFA08 File Offset: 0x003CDC08
+	// Token: 0x0600A3BD RID: 41917 RVA: 0x003D4618 File Offset: 0x003D2818
 	public static int GetSize<T>()
 	{
 		return MemoryTracker.GetSize(typeof(T));
 	}
 
-	// Token: 0x0600A312 RID: 41746 RVA: 0x003CFA19 File Offset: 0x003CDC19
+	// Token: 0x0600A3BE RID: 41918 RVA: 0x003D4629 File Offset: 0x003D2829
 	public static int GetSize(Type _type)
 	{
 		if (_type.IsEnum)
@@ -270,7 +270,7 @@ public class MemoryTracker
 		return IntPtr.Size;
 	}
 
-	// Token: 0x0600A313 RID: 41747 RVA: 0x003CFA44 File Offset: 0x003CDC44
+	// Token: 0x0600A3BF RID: 41919 RVA: 0x003D4654 File Offset: 0x003D2854
 	public static int GetSize<[IsUnmanaged] T>(IBackedArray<T> _array) where T : struct, ValueType
 	{
 		int num = IntPtr.Size;
@@ -281,7 +281,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A314 RID: 41748 RVA: 0x003CFA6C File Offset: 0x003CDC6C
+	// Token: 0x0600A3C0 RID: 41920 RVA: 0x003D467C File Offset: 0x003D287C
 	public static int GetSize<T>(T[] _array)
 	{
 		int num = IntPtr.Size;
@@ -292,7 +292,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A315 RID: 41749 RVA: 0x003CFA90 File Offset: 0x003CDC90
+	// Token: 0x0600A3C1 RID: 41921 RVA: 0x003D46A0 File Offset: 0x003D28A0
 	public static int GetSize<T>(T[][] _doubleArray)
 	{
 		int num = IntPtr.Size;
@@ -306,7 +306,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A316 RID: 41750 RVA: 0x003CFAC4 File Offset: 0x003CDCC4
+	// Token: 0x0600A3C2 RID: 41922 RVA: 0x003D46D4 File Offset: 0x003D28D4
 	public static int GetSize<T>(T[,] _array)
 	{
 		int num = IntPtr.Size;
@@ -317,7 +317,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A317 RID: 41751 RVA: 0x003CFAF4 File Offset: 0x003CDCF4
+	// Token: 0x0600A3C3 RID: 41923 RVA: 0x003D4704 File Offset: 0x003D2904
 	public static int GetSize<T>(List<T> _list)
 	{
 		int num = IntPtr.Size;
@@ -328,7 +328,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A318 RID: 41752 RVA: 0x003CFB1C File Offset: 0x003CDD1C
+	// Token: 0x0600A3C4 RID: 41924 RVA: 0x003D472C File Offset: 0x003D292C
 	public static int GetUsedSize<TKey, TValue>(IDictionary<TKey, TValue> _dictionary)
 	{
 		int num = IntPtr.Size;
@@ -339,7 +339,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A319 RID: 41753 RVA: 0x003CFB48 File Offset: 0x003CDD48
+	// Token: 0x0600A3C5 RID: 41925 RVA: 0x003D4758 File Offset: 0x003D2958
 	public static int GetSize(string stringVal)
 	{
 		if (stringVal == null)
@@ -349,7 +349,7 @@ public class MemoryTracker
 		return stringVal.Length * 2 + IntPtr.Size;
 	}
 
-	// Token: 0x0600A31A RID: 41754 RVA: 0x003CFB64 File Offset: 0x003CDD64
+	// Token: 0x0600A3C6 RID: 41926 RVA: 0x003D4774 File Offset: 0x003D2974
 	public static int GetSize(Dictionary<string, string> stringDict)
 	{
 		int num = 0;
@@ -360,7 +360,7 @@ public class MemoryTracker
 		return num;
 	}
 
-	// Token: 0x0600A31B RID: 41755 RVA: 0x003CFBCC File Offset: 0x003CDDCC
+	// Token: 0x0600A3C7 RID: 41927 RVA: 0x003D47DC File Offset: 0x003D29DC
 	public static void EstimateMemoryUsage(object _obj, ref MemoryTracker.EstimatedMemoryContext estimatedMemoryContext)
 	{
 		if (_obj == null)
@@ -430,7 +430,7 @@ public class MemoryTracker
 		}
 	}
 
-	// Token: 0x0600A31C RID: 41756 RVA: 0x003CFD5C File Offset: 0x003CDF5C
+	// Token: 0x0600A3C8 RID: 41928 RVA: 0x003D496C File Offset: 0x003D2B6C
 	public static int GetSizeAuto(object _obj)
 	{
 		if (_obj == null)
@@ -473,26 +473,26 @@ public class MemoryTracker
 		return IntPtr.Size;
 	}
 
-	// Token: 0x04007A31 RID: 31281
+	// Token: 0x04007AAC RID: 31404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryTracker m_Instance;
 
-	// Token: 0x04007A32 RID: 31282
+	// Token: 0x04007AAD RID: 31405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<object, int> refs = new Dictionary<object, int>();
 
-	// Token: 0x04007A33 RID: 31283
+	// Token: 0x04007AAE RID: 31406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<object, int> last = new Dictionary<object, int>();
 
-	// Token: 0x04007A34 RID: 31284
+	// Token: 0x04007AAF RID: 31407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Type, MemoryTracker.AllocationsForType> allocTypeDict = new Dictionary<Type, MemoryTracker.AllocationsForType>();
 
-	// Token: 0x02001446 RID: 5190
+	// Token: 0x02001466 RID: 5222
 	public struct EstimatedMemoryContext
 	{
-		// Token: 0x0600A31E RID: 41758 RVA: 0x003CFE46 File Offset: 0x003CE046
+		// Token: 0x0600A3CA RID: 41930 RVA: 0x003D4A56 File Offset: 0x003D2C56
 		public EstimatedMemoryContext(int lame)
 		{
 			this.InteredStrings = new Dictionary<string, int>();
@@ -501,34 +501,34 @@ public class MemoryTracker
 			this.BytesInterned = 0L;
 		}
 
-		// Token: 0x04007A35 RID: 31285
+		// Token: 0x04007AB0 RID: 31408
 		public Dictionary<string, int> InteredStrings;
 
-		// Token: 0x04007A36 RID: 31286
+		// Token: 0x04007AB1 RID: 31409
 		public Dictionary<string, int> NonInteredStrings;
 
-		// Token: 0x04007A37 RID: 31287
+		// Token: 0x04007AB2 RID: 31410
 		public long ActualBytes;
 
-		// Token: 0x04007A38 RID: 31288
+		// Token: 0x04007AB3 RID: 31411
 		public long BytesInterned;
 	}
 
-	// Token: 0x02001447 RID: 5191
-	// (Invoke) Token: 0x0600A320 RID: 41760
+	// Token: 0x02001467 RID: 5223
+	// (Invoke) Token: 0x0600A3CC RID: 41932
 	public delegate int EstimateOwnedBytes(object obj);
 
-	// Token: 0x02001448 RID: 5192
+	// Token: 0x02001468 RID: 5224
 	public struct Allocation
 	{
-		// Token: 0x0600A323 RID: 41763 RVA: 0x003CFE6E File Offset: 0x003CE06E
+		// Token: 0x0600A3CF RID: 41935 RVA: 0x003D4A7E File Offset: 0x003D2C7E
 		public Allocation(object _obj, MemoryTracker.EstimateOwnedBytes _func)
 		{
 			this.obj = new WeakReference<object>(_obj);
 			this.estimateBytesFunc = _func;
 		}
 
-		// Token: 0x0600A324 RID: 41764 RVA: 0x003CFE84 File Offset: 0x003CE084
+		// Token: 0x0600A3D0 RID: 41936 RVA: 0x003D4A94 File Offset: 0x003D2C94
 		public int GetOwnedBytes()
 		{
 			object obj;
@@ -539,17 +539,17 @@ public class MemoryTracker
 			return 0;
 		}
 
-		// Token: 0x04007A39 RID: 31289
+		// Token: 0x04007AB4 RID: 31412
 		public WeakReference<object> obj;
 
-		// Token: 0x04007A3A RID: 31290
+		// Token: 0x04007AB5 RID: 31413
 		public MemoryTracker.EstimateOwnedBytes estimateBytesFunc;
 	}
 
-	// Token: 0x02001449 RID: 5193
+	// Token: 0x02001469 RID: 5225
 	public class AllocationsForType
 	{
-		// Token: 0x0600A325 RID: 41765 RVA: 0x003CFEB0 File Offset: 0x003CE0B0
+		// Token: 0x0600A3D1 RID: 41937 RVA: 0x003D4AC0 File Offset: 0x003D2CC0
 		public int ClearDeadAllocations()
 		{
 			int num = 0;
@@ -567,13 +567,13 @@ public class MemoryTracker
 			return num;
 		}
 
-		// Token: 0x04007A3B RID: 31291
+		// Token: 0x04007AB6 RID: 31414
 		public LinkedList<MemoryTracker.Allocation> allocations = new LinkedList<MemoryTracker.Allocation>();
 
-		// Token: 0x0200144A RID: 5194
+		// Token: 0x0200146A RID: 5226
 		public struct Summary
 		{
-			// Token: 0x0600A327 RID: 41767 RVA: 0x003CFF12 File Offset: 0x003CE112
+			// Token: 0x0600A3D3 RID: 41939 RVA: 0x003D4B22 File Offset: 0x003D2D22
 			public Summary(long _totalBytes)
 			{
 				this.totalBytes = _totalBytes;
@@ -581,13 +581,13 @@ public class MemoryTracker
 				this.numGC = 0;
 			}
 
-			// Token: 0x04007A3C RID: 31292
+			// Token: 0x04007AB7 RID: 31415
 			public long totalBytes;
 
-			// Token: 0x04007A3D RID: 31293
+			// Token: 0x04007AB8 RID: 31416
 			public int numInstances;
 
-			// Token: 0x04007A3E RID: 31294
+			// Token: 0x04007AB9 RID: 31417
 			public int numGC;
 		}
 	}

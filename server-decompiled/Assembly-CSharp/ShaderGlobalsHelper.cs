@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200136C RID: 4972
+// Token: 0x0200138C RID: 5004
 [ExecuteInEditMode]
 public class ShaderGlobalsHelper : MonoBehaviour
 {
-	// Token: 0x06009C93 RID: 40083 RVA: 0x003B1CFC File Offset: 0x003AFEFC
+	// Token: 0x06009D3F RID: 40255 RVA: 0x003B6878 File Offset: 0x003B4A78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -18,49 +18,49 @@ public class ShaderGlobalsHelper : MonoBehaviour
 		Shader.SetGlobalFloat("_ElectricShockTexturePanSpeed", this.electricShockTexturePanSpeed);
 	}
 
-	// Token: 0x06009C94 RID: 40084 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009D40 RID: 40256 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x04007659 RID: 30297
+	// Token: 0x040076D4 RID: 30420
 	[Header("Electric Shock Shader Properties")]
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float electricShockIntensity = 1f;
 
-	// Token: 0x0400765A RID: 30298
+	// Token: 0x040076D5 RID: 30421
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color electricShockColor = new Color(0.5f, 0.8f, 1f, 1f);
 
-	// Token: 0x0400765B RID: 30299
+	// Token: 0x040076D6 RID: 30422
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float electricShockSpeed = 5f;
 
-	// Token: 0x0400765C RID: 30300
+	// Token: 0x040076D7 RID: 30423
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float electricShockScale = 2.5f;
 
-	// Token: 0x0400765D RID: 30301
+	// Token: 0x040076D8 RID: 30424
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture electricShockTexture;
 
-	// Token: 0x0400765E RID: 30302
+	// Token: 0x040076D9 RID: 30425
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector4 electricShockTexture_ST;
 
-	// Token: 0x0400765F RID: 30303
+	// Token: 0x040076DA RID: 30426
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float electricShockTexturePanSpeed = 10f;
 
-	// Token: 0x04007660 RID: 30304
+	// Token: 0x040076DB RID: 30427
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateEveryFrame;

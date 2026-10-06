@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200099E RID: 2462
+// Token: 0x020009A4 RID: 2468
 [Preserve]
 public class ObjectivePOIBlockUpgrade : BaseObjective
 {
-	// Token: 0x170007A8 RID: 1960
-	// (get) Token: 0x0600487A RID: 18554 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007C8 RID: 1992
+	// (get) Token: 0x0600482F RID: 18479 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -17,8 +17,8 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x170007A9 RID: 1961
-	// (get) Token: 0x0600487B RID: 18555 RVA: 0x001C10DC File Offset: 0x001BF2DC
+	// Token: 0x170007C9 RID: 1993
+	// (get) Token: 0x06004830 RID: 18480 RVA: 0x001C1750 File Offset: 0x001BF950
 	public override bool UpdateUI
 	{
 		get
@@ -27,13 +27,13 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x0600487C RID: 18556 RVA: 0x001C4BBB File Offset: 0x001C2DBB
+	// Token: 0x06004831 RID: 18481 RVA: 0x001C544F File Offset: 0x001C364F
 	public override void SetupQuestTag()
 	{
 		base.OwnerQuest.AddQuestTag(QuestEventManager.restorePowerTag);
 	}
 
-	// Token: 0x0600487D RID: 18557 RVA: 0x001C52B8 File Offset: 0x001C34B8
+	// Token: 0x06004832 RID: 18482 RVA: 0x001C5B78 File Offset: 0x001C3D78
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveBlockUpgrade_keyword", false, null);
@@ -41,14 +41,14 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		base.OwnerQuest.AddQuestTag(QuestEventManager.restorePowerTag);
 	}
 
-	// Token: 0x0600487E RID: 18558 RVA: 0x001C531B File Offset: 0x001C351B
+	// Token: 0x06004833 RID: 18483 RVA: 0x001C5BDB File Offset: 0x001C3DDB
 	public override void SetupDisplay()
 	{
 		base.Description = "TEST";
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.neededCount);
 	}
 
-	// Token: 0x0600487F RID: 18559 RVA: 0x001C534E File Offset: 0x001C354E
+	// Token: 0x06004834 RID: 18484 RVA: 0x001C5C0E File Offset: 0x001C3E0E
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AddObjectiveToBeUpdated(this);
@@ -56,14 +56,14 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		QuestEventManager.Current.BlockUpgrade += this.Current_BlockUpgrade;
 	}
 
-	// Token: 0x06004880 RID: 18560 RVA: 0x001C5387 File Offset: 0x001C3587
+	// Token: 0x06004835 RID: 18485 RVA: 0x001C5C47 File Offset: 0x001C3E47
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
 		QuestEventManager.Current.BlockUpgrade -= this.Current_BlockUpgrade;
 	}
 
-	// Token: 0x06004881 RID: 18561 RVA: 0x001C53AC File Offset: 0x001C35AC
+	// Token: 0x06004836 RID: 18486 RVA: 0x001C5C6C File Offset: 0x001C3E6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockUpgrade(string blockname, Vector3i blockPos)
 	{
@@ -81,7 +81,7 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x06004882 RID: 18562 RVA: 0x001C5448 File Offset: 0x001C3648
+	// Token: 0x06004837 RID: 18487 RVA: 0x001C5D08 File Offset: 0x001C3F08
 	public override void Refresh()
 	{
 		if (this.neededCount == -1)
@@ -105,7 +105,7 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x06004883 RID: 18563 RVA: 0x001C54DC File Offset: 0x001C36DC
+	// Token: 0x06004838 RID: 18488 RVA: 0x001C5D9C File Offset: 0x001C3F9C
 	public override void Update(float deltaTime)
 	{
 		if (Time.time > this.updateTime)
@@ -142,25 +142,25 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x06004884 RID: 18564 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004839 RID: 18489 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_WaitingForServer()
 	{
 	}
 
-	// Token: 0x06004885 RID: 18565 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600483A RID: 18490 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_Update()
 	{
 	}
 
-	// Token: 0x06004886 RID: 18566 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600483B RID: 18491 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_Completed()
 	{
 	}
 
-	// Token: 0x06004887 RID: 18567 RVA: 0x001C55EC File Offset: 0x001C37EC
+	// Token: 0x0600483C RID: 18492 RVA: 0x001C5EAC File Offset: 0x001C40AC
 	public override BaseObjective Clone()
 	{
 		ObjectivePOIBlockUpgrade objectivePOIBlockUpgrade = new ObjectivePOIBlockUpgrade();
@@ -168,7 +168,7 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		return objectivePOIBlockUpgrade;
 	}
 
-	// Token: 0x06004888 RID: 18568 RVA: 0x001C5607 File Offset: 0x001C3807
+	// Token: 0x0600483D RID: 18493 RVA: 0x001C5EC7 File Offset: 0x001C40C7
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -178,18 +178,26 @@ public class ObjectivePOIBlockUpgrade : BaseObjective
 		}
 	}
 
-	// Token: 0x040039C5 RID: 14789
+	// Token: 0x0600483E RID: 18494 RVA: 0x001C5EF8 File Offset: 0x001C40F8
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("block_id", this.ID);
+		parameters.Add("count", this.neededCount);
+	}
+
+	// Token: 0x040039C2 RID: 14786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 
-	// Token: 0x040039C6 RID: 14790
+	// Token: 0x040039C3 RID: 14787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int neededCount = -1;
 
-	// Token: 0x040039C7 RID: 14791
+	// Token: 0x040039C4 RID: 14788
 	public static string PropBlockName = "block_index";
 
-	// Token: 0x040039C8 RID: 14792
+	// Token: 0x040039C5 RID: 14789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new float updateTime;
 }

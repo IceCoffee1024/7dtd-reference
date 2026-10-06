@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Twitch
 {
-	// Token: 0x02001862 RID: 6242
+	// Token: 0x0200188E RID: 6286
 	public class ViewerEntry
 	{
-		// Token: 0x1700179E RID: 6046
-		// (get) Token: 0x0600C0E2 RID: 49378 RVA: 0x00476582 File Offset: 0x00474782
+		// Token: 0x17001840 RID: 6208
+		// (get) Token: 0x0600C23A RID: 49722 RVA: 0x0047AABE File Offset: 0x00478CBE
 		public float CombinedPoints
 		{
 			get
@@ -16,7 +16,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600C0E3 RID: 49379 RVA: 0x00476594 File Offset: 0x00474794
+		// Token: 0x0600C23B RID: 49723 RVA: 0x0047AAD0 File Offset: 0x00478CD0
 		public void RemovePoints(float usedPoints, TwitchAction.PointTypes pointType, TwitchActionEntry entry)
 		{
 			if (pointType == TwitchAction.PointTypes.SP)
@@ -54,31 +54,31 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0400916F RID: 37231
+		// Token: 0x04009235 RID: 37429
 		public float SpecialPoints;
 
-		// Token: 0x04009170 RID: 37232
+		// Token: 0x04009236 RID: 37430
 		public float StandardPoints;
 
-		// Token: 0x04009171 RID: 37233
+		// Token: 0x04009237 RID: 37431
 		public int BitCredits;
 
-		// Token: 0x04009172 RID: 37234
+		// Token: 0x04009238 RID: 37432
 		public int UserID = -1;
 
-		// Token: 0x04009173 RID: 37235
+		// Token: 0x04009239 RID: 37433
 		public string UserColor = "FFFFFF";
 
-		// Token: 0x04009174 RID: 37236
+		// Token: 0x0400923A RID: 37434
 		public float LastAction = -1f;
 
-		// Token: 0x04009175 RID: 37237
+		// Token: 0x0400923B RID: 37435
 		public float addPointsUntil;
 
-		// Token: 0x04009176 RID: 37238
+		// Token: 0x0400923C RID: 37436
 		public bool IsActive;
 
-		// Token: 0x04009177 RID: 37239
+		// Token: 0x0400923D RID: 37437
 		public bool IsSub;
 	}
 }

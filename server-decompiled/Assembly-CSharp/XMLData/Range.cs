@@ -2,15 +2,15 @@
 
 namespace XMLData
 {
-	// Token: 0x02001636 RID: 5686
+	// Token: 0x02001655 RID: 5717
 	public class Range<TValue>
 	{
-		// Token: 0x0600B284 RID: 45700 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600B316 RID: 45846 RVA: 0x0000640C File Offset: 0x0000460C
 		public Range()
 		{
 		}
 
-		// Token: 0x0600B285 RID: 45701 RVA: 0x0042854B File Offset: 0x0042674B
+		// Token: 0x0600B317 RID: 45847 RVA: 0x0042C227 File Offset: 0x0042A427
 		public Range(bool _hasMin, TValue _min, bool _hasMax, TValue _max)
 		{
 			this.hasMin = _hasMin;
@@ -19,22 +19,22 @@ namespace XMLData
 			this.max = _max;
 		}
 
-		// Token: 0x0600B286 RID: 45702 RVA: 0x00428570 File Offset: 0x00426770
+		// Token: 0x0600B318 RID: 45848 RVA: 0x0042C24C File Offset: 0x0042A44C
 		public override string ToString()
 		{
 			return string.Format("{0}-{1}", this.hasMin ? this.min.ToString() : "*", this.hasMax ? this.max.ToString() : "*");
 		}
 
-		// Token: 0x0400861D RID: 34333
+		// Token: 0x04008673 RID: 34419
 		public bool hasMin;
 
-		// Token: 0x0400861E RID: 34334
+		// Token: 0x04008674 RID: 34420
 		public bool hasMax;
 
-		// Token: 0x0400861F RID: 34335
+		// Token: 0x04008675 RID: 34421
 		public TValue min;
 
-		// Token: 0x04008620 RID: 34336
+		// Token: 0x04008676 RID: 34422
 		public TValue max;
 	}
 }

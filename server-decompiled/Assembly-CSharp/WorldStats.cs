@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000C0E RID: 3086
+// Token: 0x02000C20 RID: 3104
 public class WorldStats
 {
-	// Token: 0x170009A2 RID: 2466
-	// (get) Token: 0x06005E33 RID: 24115 RVA: 0x0024A980 File Offset: 0x00248B80
+	// Token: 0x170009C4 RID: 2500
+	// (get) Token: 0x06005E4C RID: 24140 RVA: 0x0024DC7C File Offset: 0x0024BE7C
 	public int TotalVertices
 	{
 		get
@@ -31,8 +31,8 @@ public class WorldStats
 		}
 	}
 
-	// Token: 0x170009A3 RID: 2467
-	// (get) Token: 0x06005E34 RID: 24116 RVA: 0x0024A9D4 File Offset: 0x00248BD4
+	// Token: 0x170009C5 RID: 2501
+	// (get) Token: 0x06005E4D RID: 24141 RVA: 0x0024DCD0 File Offset: 0x0024BED0
 	public int TotalTriangles
 	{
 		get
@@ -56,7 +56,7 @@ public class WorldStats
 		}
 	}
 
-	// Token: 0x06005E35 RID: 24117 RVA: 0x0024AA25 File Offset: 0x00248C25
+	// Token: 0x06005E4E RID: 24142 RVA: 0x0024DD21 File Offset: 0x0024BF21
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldStats(WorldStats.MeshStats _blockEntities, WorldStats.MeshStats[] _chunkMeshes, float _lightsVolume)
 	{
@@ -65,7 +65,7 @@ public class WorldStats
 		this.LightsVolume = _lightsVolume;
 	}
 
-	// Token: 0x06005E36 RID: 24118 RVA: 0x0024AA44 File Offset: 0x00248C44
+	// Token: 0x06005E4F RID: 24143 RVA: 0x0024DD40 File Offset: 0x0024BF40
 	public static WorldStats FromProperties(DynamicProperties _props)
 	{
 		WorldStats.MeshStats meshStats = null;
@@ -91,7 +91,7 @@ public class WorldStats
 		return new WorldStats(meshStats, array, num);
 	}
 
-	// Token: 0x06005E37 RID: 24119 RVA: 0x0024AB08 File Offset: 0x00248D08
+	// Token: 0x06005E50 RID: 24144 RVA: 0x0024DE04 File Offset: 0x0024C004
 	public DynamicProperties ToProperties()
 	{
 		DynamicProperties dynamicProperties = new DynamicProperties();
@@ -115,7 +115,7 @@ public class WorldStats
 		return dynamicProperties;
 	}
 
-	// Token: 0x06005E38 RID: 24120 RVA: 0x0024ABE4 File Offset: 0x00248DE4
+	// Token: 0x06005E51 RID: 24145 RVA: 0x0024DEE0 File Offset: 0x0024C0E0
 	public static WorldStats CaptureWorldStats()
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -176,7 +176,7 @@ public class WorldStats
 		return worldStats;
 	}
 
-	// Token: 0x06005E39 RID: 24121 RVA: 0x0024AE24 File Offset: 0x00249024
+	// Token: 0x06005E52 RID: 24146 RVA: 0x0024E120 File Offset: 0x0024C320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void calcLightsVolume(GameObject _go, ref float _lightsVolume)
 	{
@@ -192,7 +192,7 @@ public class WorldStats
 		_lightsVolume += 4.1887903f * Mathf.Pow(componentInChildren.lightRange, 3f);
 	}
 
-	// Token: 0x06005E3A RID: 24122 RVA: 0x0024AE68 File Offset: 0x00249068
+	// Token: 0x06005E53 RID: 24147 RVA: 0x0024E164 File Offset: 0x0024C364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void calcComplexityGameObject(GameObject _go, ref int _verts, ref int _tris, bool _onlyActive = true, Chunk _onChunk = null)
 	{
@@ -289,7 +289,7 @@ public class WorldStats
 		_tris += num2;
 	}
 
-	// Token: 0x06005E3B RID: 24123 RVA: 0x0024B0D2 File Offset: 0x002492D2
+	// Token: 0x06005E54 RID: 24148 RVA: 0x0024E3CE File Offset: 0x0024C5CE
 	public static IEnumerator CaptureCameraStatsCo(XUi _xui)
 	{
 		PrefabEditModeManager.Instance.UpdateMinMax();
@@ -339,26 +339,26 @@ public class WorldStats
 		yield break;
 	}
 
-	// Token: 0x04004919 RID: 18713
+	// Token: 0x04004958 RID: 18776
 	public readonly WorldStats.MeshStats BlockEntities;
 
-	// Token: 0x0400491A RID: 18714
+	// Token: 0x04004959 RID: 18777
 	public readonly WorldStats.MeshStats[] ChunkMeshes;
 
-	// Token: 0x0400491B RID: 18715
+	// Token: 0x0400495A RID: 18778
 	public readonly float LightsVolume;
 
-	// Token: 0x02000C0F RID: 3087
+	// Token: 0x02000C21 RID: 3105
 	public class MeshStats
 	{
-		// Token: 0x06005E3C RID: 24124 RVA: 0x0024B0E1 File Offset: 0x002492E1
+		// Token: 0x06005E55 RID: 24149 RVA: 0x0024E3DD File Offset: 0x0024C5DD
 		public MeshStats(int _vertices, int _triangles)
 		{
 			this.Vertices = _vertices;
 			this.Triangles = _triangles;
 		}
 
-		// Token: 0x06005E3D RID: 24125 RVA: 0x0024B0F8 File Offset: 0x002492F8
+		// Token: 0x06005E56 RID: 24150 RVA: 0x0024E3F4 File Offset: 0x0024C5F4
 		public static WorldStats.MeshStats FromProperties(DynamicProperties _props)
 		{
 			int @int = _props.GetInt("Vertices");
@@ -366,7 +366,7 @@ public class WorldStats
 			return new WorldStats.MeshStats(@int, int2);
 		}
 
-		// Token: 0x06005E3E RID: 24126 RVA: 0x0024B124 File Offset: 0x00249324
+		// Token: 0x06005E57 RID: 24151 RVA: 0x0024E420 File Offset: 0x0024C620
 		public DynamicProperties ToProperties()
 		{
 			DynamicProperties dynamicProperties = new DynamicProperties();
@@ -375,10 +375,10 @@ public class WorldStats
 			return dynamicProperties;
 		}
 
-		// Token: 0x0400491C RID: 18716
+		// Token: 0x0400495B RID: 18779
 		public readonly int Vertices;
 
-		// Token: 0x0400491D RID: 18717
+		// Token: 0x0400495C RID: 18780
 		public readonly int Triangles;
 	}
 }

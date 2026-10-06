@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using Audio;
 using Challenges;
 using UniLinq;
 using UnityEngine;
 
-// Token: 0x02000608 RID: 1544
+// Token: 0x0200060A RID: 1546
 public class ChallengeJournal
 {
-	// Token: 0x0600324A RID: 12874 RVA: 0x00147D38 File Offset: 0x00145F38
-	public void Read(BinaryReader _br)
+	// Token: 0x0600328D RID: 12941 RVA: 0x001486DC File Offset: 0x001468DC
+	public void Read(PooledBinaryReader _br)
 	{
 		this.SetupData();
 		if (_br.ReadByte() == 1)
@@ -65,8 +64,8 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x0600324B RID: 12875 RVA: 0x00147F50 File Offset: 0x00146150
-	public void Write(BinaryWriter _bw)
+	// Token: 0x0600328E RID: 12942 RVA: 0x001488F4 File Offset: 0x00146AF4
+	public void Write(PooledBinaryWriter _bw)
 	{
 		string text = "";
 		_bw.Write(2);
@@ -100,7 +99,7 @@ public class ChallengeJournal
 		_bw.Write(text);
 	}
 
-	// Token: 0x0600324C RID: 12876 RVA: 0x00148060 File Offset: 0x00146260
+	// Token: 0x0600328F RID: 12943 RVA: 0x00148A04 File Offset: 0x00146C04
 	public ChallengeJournal Clone()
 	{
 		ChallengeJournal challengeJournal = new ChallengeJournal();
@@ -118,7 +117,7 @@ public class ChallengeJournal
 		return challengeJournal;
 	}
 
-	// Token: 0x0600324D RID: 12877 RVA: 0x001480F8 File Offset: 0x001462F8
+	// Token: 0x06003290 RID: 12944 RVA: 0x00148A9C File Offset: 0x00146C9C
 	public void Update(World world)
 	{
 		int num = GameUtils.WorldTimeToDays(world.worldTime);
@@ -137,7 +136,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x0600324E RID: 12878 RVA: 0x00148180 File Offset: 0x00146380
+	// Token: 0x06003291 RID: 12945 RVA: 0x00148B24 File Offset: 0x00146D24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupData()
 	{
@@ -151,7 +150,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x0600324F RID: 12879 RVA: 0x001481F8 File Offset: 0x001463F8
+	// Token: 0x06003292 RID: 12946 RVA: 0x00148B9C File Offset: 0x00146D9C
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 	{
 		if (this.eventList == null)
@@ -167,7 +166,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003250 RID: 12880 RVA: 0x00148248 File Offset: 0x00146448
+	// Token: 0x06003293 RID: 12947 RVA: 0x00148BEC File Offset: 0x00146DEC
 	public void ModifyValue(PassiveEffects _effect, ref float _base_val, ref float _perc_val, FastTags<TagGroup.Global> _tags)
 	{
 		for (int i = 0; i < this.CompleteChallengesForMinEvents.Count; i++)
@@ -208,7 +207,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003251 RID: 12881 RVA: 0x0014831C File Offset: 0x0014651C
+	// Token: 0x06003294 RID: 12948 RVA: 0x00148CC0 File Offset: 0x00146EC0
 	public void StartChallenges(EntityPlayerLocal player)
 	{
 		if (this.Player == null)
@@ -274,7 +273,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003252 RID: 12882 RVA: 0x00148530 File Offset: 0x00146730
+	// Token: 0x06003295 RID: 12949 RVA: 0x00148ED4 File Offset: 0x001470D4
 	public void EndChallenges()
 	{
 		for (int i = 0; i < this.Challenges.Count; i++)
@@ -283,14 +282,14 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003253 RID: 12883 RVA: 0x00148565 File Offset: 0x00146765
+	// Token: 0x06003296 RID: 12950 RVA: 0x00148F09 File Offset: 0x00147109
 	public void AddChallenge(Challenge challenge)
 	{
 		this.ChallengeDictionary.Add(challenge.ChallengeClass.Name, challenge);
 		this.Challenges.Add(challenge);
 	}
 
-	// Token: 0x06003254 RID: 12884 RVA: 0x0014858C File Offset: 0x0014678C
+	// Token: 0x06003297 RID: 12951 RVA: 0x00148F30 File Offset: 0x00147130
 	public void RemoveChallengesForGroup(ChallengeGroup challengeGroup)
 	{
 		for (int i = this.Challenges.Count - 1; i >= 0; i--)
@@ -305,7 +304,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003255 RID: 12885 RVA: 0x001485F4 File Offset: 0x001467F4
+	// Token: 0x06003298 RID: 12952 RVA: 0x00148F98 File Offset: 0x00147198
 	public void ResetChallenges()
 	{
 		if (!GameManager.Instance.World.IsEditor() && !GameUtils.IsWorldEditor() && !GameUtils.IsPlaytesting())
@@ -321,7 +320,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003256 RID: 12886 RVA: 0x0014867E File Offset: 0x0014687E
+	// Token: 0x06003299 RID: 12953 RVA: 0x00149022 File Offset: 0x00147222
 	public void HandleChallengeRedeemed(Challenge challenge)
 	{
 		if (this.eventList.ContainsKey(challenge.ChallengeClass.Name))
@@ -330,7 +329,7 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x06003257 RID: 12887 RVA: 0x001486A4 File Offset: 0x001468A4
+	// Token: 0x0600329A RID: 12954 RVA: 0x00149048 File Offset: 0x00147248
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void HandleChallengeGroupComplete(ChallengeGroup group)
 	{
@@ -357,7 +356,7 @@ public class ChallengeJournal
 		GameManager.Instance.StartCoroutine(this.unhideRowLater(group));
 	}
 
-	// Token: 0x06003258 RID: 12888 RVA: 0x00148778 File Offset: 0x00146978
+	// Token: 0x0600329B RID: 12955 RVA: 0x0014911C File Offset: 0x0014731C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator unhideRowLater(ChallengeGroup group)
 	{
@@ -378,7 +377,7 @@ public class ChallengeJournal
 		yield break;
 	}
 
-	// Token: 0x06003259 RID: 12889 RVA: 0x00148788 File Offset: 0x00146988
+	// Token: 0x0600329C RID: 12956 RVA: 0x0014912C File Offset: 0x0014732C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public Challenge GetNextChallenge(Challenge challenge)
 	{
@@ -403,7 +402,7 @@ public class ChallengeJournal
 		return challenge2;
 	}
 
-	// Token: 0x0600325A RID: 12890 RVA: 0x0014881C File Offset: 0x00146A1C
+	// Token: 0x0600329D RID: 12957 RVA: 0x001491C0 File Offset: 0x001473C0
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public Challenge GetNextRedeemableChallenge(Challenge challenge)
 	{
@@ -428,7 +427,7 @@ public class ChallengeJournal
 		return challenge2;
 	}
 
-	// Token: 0x0600325B RID: 12891 RVA: 0x001488B0 File Offset: 0x00146AB0
+	// Token: 0x0600329E RID: 12958 RVA: 0x00149254 File Offset: 0x00147454
 	public bool HasCompletedChallenges()
 	{
 		for (int i = 0; i < this.Challenges.Count; i++)
@@ -441,7 +440,7 @@ public class ChallengeJournal
 		return false;
 	}
 
-	// Token: 0x0600325C RID: 12892 RVA: 0x001488EC File Offset: 0x00146AEC
+	// Token: 0x0600329F RID: 12959 RVA: 0x00149290 File Offset: 0x00147490
 	public void CompleteIntroChallenges()
 	{
 		for (int i = 0; i < this.Challenges.Count; i++)
@@ -461,43 +460,43 @@ public class ChallengeJournal
 		}
 	}
 
-	// Token: 0x040027F6 RID: 10230
+	// Token: 0x040027EF RID: 10223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCurrentSaveVersion = 2;
 
-	// Token: 0x040027F7 RID: 10231
+	// Token: 0x040027F0 RID: 10224
 	public List<ChallengeGroupEntry> ChallengeGroups = new List<ChallengeGroupEntry>();
 
-	// Token: 0x040027F8 RID: 10232
+	// Token: 0x040027F1 RID: 10225
 	public Dictionary<string, Challenge> ChallengeDictionary = new Dictionary<string, Challenge>();
 
-	// Token: 0x040027F9 RID: 10233
+	// Token: 0x040027F2 RID: 10226
 	public List<Challenge> Challenges = new List<Challenge>();
 
-	// Token: 0x040027FA RID: 10234
+	// Token: 0x040027F3 RID: 10227
 	public List<Challenge> CompleteChallengesForMinEvents = new List<Challenge>();
 
-	// Token: 0x040027FB RID: 10235
+	// Token: 0x040027F4 RID: 10228
 	public List<ChallengeGroup> CompleteChallengeGroupsForMinEvents = new List<ChallengeGroup>();
 
-	// Token: 0x040027FC RID: 10236
+	// Token: 0x040027F5 RID: 10229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, ChallengeClass> eventList = new Dictionary<string, ChallengeClass>();
 
-	// Token: 0x040027FD RID: 10237
+	// Token: 0x040027F6 RID: 10230
 	public EntityPlayerLocal Player;
 
-	// Token: 0x040027FE RID: 10238
+	// Token: 0x040027F7 RID: 10231
 	public static bool AllowChallenges = true;
 
-	// Token: 0x040027FF RID: 10239
+	// Token: 0x040027F8 RID: 10232
 	public static bool IntroChallengesEnabled = true;
 
-	// Token: 0x04002800 RID: 10240
+	// Token: 0x040027F9 RID: 10233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastDay;
 
-	// Token: 0x04002801 RID: 10241
+	// Token: 0x040027FA RID: 10234
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastUpdateTime;
 }

@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000288 RID: 648
+// Token: 0x0200028B RID: 651
 [Preserve]
 public class ConsoleCmdSetTime : ConsoleCmdAbstract
 {
-	// Token: 0x060012FE RID: 4862 RVA: 0x0007558C File Offset: 0x0007378C
+	// Token: 0x060012FB RID: 4859 RVA: 0x00075840 File Offset: 0x00073A40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "settime", "st" };
 	}
 
-	// Token: 0x060012FF RID: 4863 RVA: 0x000755A4 File Offset: 0x000737A4
+	// Token: 0x060012FC RID: 4860 RVA: 0x00075858 File Offset: 0x00073A58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Set the current game time";
 	}
 
-	// Token: 0x06001300 RID: 4864 RVA: 0x000755AB File Offset: 0x000737AB
+	// Token: 0x060012FD RID: 4861 RVA: 0x0007585F File Offset: 0x00073A5F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set the current game time.\nUsage:\n  1. settime day\n  2. settime night\n  3. settime <time>\n  4. settime <day> <hour> <minute>\n1. sets the time to day 1, 12:00 pm.\n2. sets the time to day 2, 12:00 am.\n3. sets the time to the given value. 1000 is one hour.\n4. sets the time to the given day/hour/minute values.";
 	}
 
-	// Token: 0x06001301 RID: 4865 RVA: 0x000755B4 File Offset: 0x000737B4
+	// Token: 0x060012FE RID: 4862 RVA: 0x00075868 File Offset: 0x00073A68
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ulong num = 0UL;

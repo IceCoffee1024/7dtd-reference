@@ -1,23 +1,23 @@
 ﻿using System;
 
-// Token: 0x02000E8C RID: 3724
+// Token: 0x02000E9B RID: 3739
 public abstract class XUiListEntry<T> : IComparable<T> where T : XUiListEntry<T>
 {
-	// Token: 0x06007396 RID: 29590
+	// Token: 0x0600738E RID: 29582
 	public abstract int CompareTo(T _otherEntry);
 
-	// Token: 0x06007397 RID: 29591 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600738F RID: 29583 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool MatchesSearch(string _searchString)
 	{
 		return true;
 	}
 
-	// Token: 0x17000D6B RID: 3435
-	// (get) Token: 0x06007398 RID: 29592 RVA: 0x002BDA15 File Offset: 0x002BBC15
-	// (set) Token: 0x06007399 RID: 29593 RVA: 0x002BDA1D File Offset: 0x002BBC1D
+	// Token: 0x17000D86 RID: 3462
+	// (get) Token: 0x06007390 RID: 29584 RVA: 0x002C0DC5 File Offset: 0x002BEFC5
+	// (set) Token: 0x06007391 RID: 29585 RVA: 0x002C0DCD File Offset: 0x002BEFCD
 	public virtual bool UiDirty { get; set; }
 
-	// Token: 0x0600739A RID: 29594 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06007392 RID: 29586 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiListEntry()
 	{

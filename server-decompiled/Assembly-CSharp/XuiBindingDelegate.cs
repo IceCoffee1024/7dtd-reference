@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020010F7 RID: 4343
-// (Invoke) Token: 0x060089E5 RID: 35301
+// Token: 0x02001108 RID: 4360
+// (Invoke) Token: 0x06008A37 RID: 35383
 public delegate object XuiBindingDelegate(XUiController _controllerInstance);

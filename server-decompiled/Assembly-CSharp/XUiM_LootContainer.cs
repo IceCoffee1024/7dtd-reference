@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001129 RID: 4393
+// Token: 0x02001141 RID: 4417
 public class XUiM_LootContainer : XUiModel
 {
-	// Token: 0x06008AD5 RID: 35541 RVA: 0x0034E838 File Offset: 0x0034CA38
+	// Token: 0x06008B41 RID: 35649 RVA: 0x00352CBC File Offset: 0x00350EBC
 	public static bool AddItem(ItemStack _itemStack, XUi _xui)
 	{
 		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.LootContainer, -1))
@@ -20,29 +20,7 @@ public class XUiM_LootContainer : XUiModel
 		return _itemStack.count > 0 && _xui.LootContainer.AddItem(_itemStack);
 	}
 
-	// Token: 0x06008AD6 RID: 35542 RVA: 0x0034E878 File Offset: 0x0034CA78
-	public static bool TakeAll(XUi _xui)
-	{
-		XUiM_PlayerInventory playerInventory = _xui.PlayerInventory;
-		ItemStack[] items = _xui.LootContainer.items;
-		bool flag = true;
-		for (int i = 0; i < items.Length; i++)
-		{
-			if (!items[i].IsEmpty())
-			{
-				ItemStack itemStack = items[i].Clone();
-				if (!playerInventory.AddItem(itemStack))
-				{
-					playerInventory.DropItem(itemStack);
-					flag = false;
-				}
-				_xui.LootContainer.UpdateSlot(i, ItemStack.Empty);
-			}
-		}
-		return flag;
-	}
-
-	// Token: 0x06008AD7 RID: 35543 RVA: 0x0034E8E4 File Offset: 0x0034CAE4
+	// Token: 0x06008B42 RID: 35650 RVA: 0x00352CFC File Offset: 0x00350EFC
 	[return: TupleElementNames(new string[] { "_allMoved", "_anyMoved" })]
 	public static ValueTuple<bool, bool> StashItems(XUiController _srcWindow, XUiC_ItemStackGrid _srcGrid, IInventory _dstInventory, int _ignoreSlots, PackedBoolArray _ignoredSlots, XUiM_LootContainer.EItemMoveKind _moveKind, bool _startBottomRight)
 	{
@@ -120,24 +98,24 @@ public class XUiM_LootContainer : XUiModel
 		return new ValueTuple<bool, bool>(flag, flag2);
 	}
 
-	// Token: 0x040066F8 RID: 26360
+	// Token: 0x0400674D RID: 26445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastStashTime;
 
-	// Token: 0x040066F9 RID: 26361
+	// Token: 0x0400674E RID: 26446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SecondClickMaxDelaySec = 2f;
 
-	// Token: 0x0200112A RID: 4394
+	// Token: 0x02001142 RID: 4418
 	public enum EItemMoveKind
 	{
-		// Token: 0x040066FB RID: 26363
+		// Token: 0x04006750 RID: 26448
 		All,
-		// Token: 0x040066FC RID: 26364
+		// Token: 0x04006751 RID: 26449
 		FillOnly,
-		// Token: 0x040066FD RID: 26365
+		// Token: 0x04006752 RID: 26450
 		FillAndCreate,
-		// Token: 0x040066FE RID: 26366
+		// Token: 0x04006753 RID: 26451
 		FillOnlyFirstCreateSecond
 	}
 }

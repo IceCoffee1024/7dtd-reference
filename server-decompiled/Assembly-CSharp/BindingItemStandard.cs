@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020010F3 RID: 4339
+// Token: 0x02001104 RID: 4356
 public class BindingItemStandard : BindingItem
 {
-	// Token: 0x060089D2 RID: 35282 RVA: 0x003485C0 File Offset: 0x003467C0
+	// Token: 0x06008A23 RID: 35363 RVA: 0x0034C554 File Offset: 0x0034A754
 	public BindingItemStandard(BindingInfo _parent, string _sourceText)
 		: base(_sourceText)
 	{
@@ -18,8 +18,15 @@ public class BindingItemStandard : BindingItem
 					this.dataContext.Bindings.AddBinding(_parent);
 					return;
 				}
-				if (BindingMethodCache.Instance.TryGetBindingDelegate(xuiController, this.fieldName, out this.bindingDelegate))
+				BindingMethodCache.BindingMethodData bindingMethodData;
+				if (BindingMethodCache.Instance.TryGetBindingData(xuiController, this.fieldName, out bindingMethodData))
 				{
+					this.bindingDelegate = bindingMethodData.Delegate;
+					if (bindingMethodData.BoxWriter != null)
+					{
+						this.boxWriter = bindingMethodData.BoxWriter;
+						this.reusableBox = bindingMethodData.CreateBox();
+					}
 					this.dataContext.Bindings.AddBinding(_parent);
 					return;
 				}
@@ -31,7 +38,7 @@ public class BindingItemStandard : BindingItem
 		}
 	}
 
-	// Token: 0x060089D3 RID: 35283 RVA: 0x00348690 File Offset: 0x00346890
+	// Token: 0x06008A24 RID: 35364 RVA: 0x0034C65C File Offset: 0x0034A85C
 	public override string GetValue()
 	{
 		if (this.bindingDelegate != null)
@@ -49,11 +56,37 @@ public class BindingItemStandard : BindingItem
 		return text;
 	}
 
-	// Token: 0x0400668C RID: 26252
+	// Token: 0x06008A25 RID: 35365 RVA: 0x0034C6D4 File Offset: 0x0034A8D4
+	public override bool TryGetTypedValue(out object _value)
+	{
+		if (this.boxWriter != null)
+		{
+			this.boxWriter(this.dataContext, this.reusableBox);
+			_value = this.reusableBox;
+			return true;
+		}
+		if (this.bindingDelegate != null)
+		{
+			_value = this.bindingDelegate(this.dataContext);
+			return _value != null;
+		}
+		_value = null;
+		return false;
+	}
+
+	// Token: 0x040066D3 RID: 26323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController dataContext;
 
-	// Token: 0x0400668D RID: 26253
+	// Token: 0x040066D4 RID: 26324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XuiBindingDelegate bindingDelegate;
+
+	// Token: 0x040066D5 RID: 26325
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly XuiBindingBoxWriterDelegate boxWriter;
+
+	// Token: 0x040066D6 RID: 26326
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly object reusableBox;
 }

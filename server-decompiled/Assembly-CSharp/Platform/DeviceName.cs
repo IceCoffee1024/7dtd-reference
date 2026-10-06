@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B43 RID: 6979
+	// Token: 0x02001B75 RID: 7029
 	public static class DeviceName
 	{
-		// Token: 0x0600D12D RID: 53549 RVA: 0x004C5288 File Offset: 0x004C3488
+		// Token: 0x0600D2A4 RID: 53924 RVA: 0x004C9D70 File Offset: 0x004C7F70
 		public static string GetDeviceName(this DeviceFlag _deviceId)
 		{
 			if (_deviceId <= DeviceFlag.XBoxSeriesS)
@@ -43,22 +43,22 @@ namespace Platform
 			return string.Empty;
 		}
 
-		// Token: 0x0400A01F RID: 40991
+		// Token: 0x0400A0F4 RID: 41204
 		public const string StandaloneWindows = "Windows";
 
-		// Token: 0x0400A020 RID: 40992
+		// Token: 0x0400A0F5 RID: 41205
 		public const string StandaloneLinux = "Linux";
 
-		// Token: 0x0400A021 RID: 40993
+		// Token: 0x0400A0F6 RID: 41206
 		public const string StandaloneOSX = "OSX";
 
-		// Token: 0x0400A022 RID: 40994
+		// Token: 0x0400A0F7 RID: 41207
 		public const string PS5 = "PS5";
 
-		// Token: 0x0400A023 RID: 40995
+		// Token: 0x0400A0F8 RID: 41208
 		public const string XBoxSeriesS = "XBoxSeriesS";
 
-		// Token: 0x0400A024 RID: 40996
+		// Token: 0x0400A0F9 RID: 41209
 		public const string XBoxSeriesX = "XBoxSeriesX";
 	}
 }

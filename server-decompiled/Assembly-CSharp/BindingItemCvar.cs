@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020010F4 RID: 4340
+// Token: 0x02001105 RID: 4357
 public class BindingItemCvar : BindingItem
 {
-	// Token: 0x060089D4 RID: 35284 RVA: 0x00348708 File Offset: 0x00346908
+	// Token: 0x06008A26 RID: 35366 RVA: 0x0034C730 File Offset: 0x0034A930
 	public BindingItemCvar(BindingInfo _parent, string _sourceText)
 		: base(_sourceText)
 	{
@@ -24,13 +24,13 @@ public class BindingItemCvar : BindingItem
 		}
 	}
 
-	// Token: 0x060089D5 RID: 35285 RVA: 0x003487B4 File Offset: 0x003469B4
+	// Token: 0x06008A27 RID: 35367 RVA: 0x0034C7DC File Offset: 0x0034A9DC
 	public override string GetValue()
 	{
 		return XUiM_Player.GetPlayer().GetCVar(this.fieldName).ToString(this.format);
 	}
 
-	// Token: 0x0400668E RID: 26254
+	// Token: 0x040066D7 RID: 26327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string format;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001300 RID: 4864
+// Token: 0x02001320 RID: 4896
 public class WorkBatch<T>
 {
-	// Token: 0x060099F8 RID: 39416 RVA: 0x003A503C File Offset: 0x003A323C
+	// Token: 0x06009AA4 RID: 39588 RVA: 0x003A9BEC File Offset: 0x003A7DEC
 	public WorkBatch()
 	{
 		this.queuingList = new List<T>();
@@ -12,7 +12,7 @@ public class WorkBatch<T>
 		this.sync = new object();
 	}
 
-	// Token: 0x060099F9 RID: 39417 RVA: 0x003A5068 File Offset: 0x003A3268
+	// Token: 0x06009AA5 RID: 39589 RVA: 0x003A9C18 File Offset: 0x003A7E18
 	public int Count()
 	{
 		int num = this.workingList.Count;
@@ -24,7 +24,7 @@ public class WorkBatch<T>
 		return num;
 	}
 
-	// Token: 0x060099FA RID: 39418 RVA: 0x003A50C0 File Offset: 0x003A32C0
+	// Token: 0x06009AA6 RID: 39590 RVA: 0x003A9C70 File Offset: 0x003A7E70
 	public void Clear()
 	{
 		object obj = this.sync;
@@ -35,7 +35,7 @@ public class WorkBatch<T>
 		this.workingList.Clear();
 	}
 
-	// Token: 0x060099FB RID: 39419 RVA: 0x003A5110 File Offset: 0x003A3310
+	// Token: 0x06009AA7 RID: 39591 RVA: 0x003A9CC0 File Offset: 0x003A7EC0
 	public void DoWork(Action<T> _action)
 	{
 		this.FlipLists();
@@ -43,7 +43,7 @@ public class WorkBatch<T>
 		this.workingList.Clear();
 	}
 
-	// Token: 0x060099FC RID: 39420 RVA: 0x003A5130 File Offset: 0x003A3330
+	// Token: 0x06009AA8 RID: 39592 RVA: 0x003A9CE0 File Offset: 0x003A7EE0
 	public void Add(T _item)
 	{
 		object obj = this.sync;
@@ -53,7 +53,7 @@ public class WorkBatch<T>
 		}
 	}
 
-	// Token: 0x060099FD RID: 39421 RVA: 0x003A5178 File Offset: 0x003A3378
+	// Token: 0x06009AA9 RID: 39593 RVA: 0x003A9D28 File Offset: 0x003A7F28
 	public bool Remove(T _item)
 	{
 		object obj = this.sync;
@@ -65,7 +65,7 @@ public class WorkBatch<T>
 		return flag2;
 	}
 
-	// Token: 0x060099FE RID: 39422 RVA: 0x003A51C0 File Offset: 0x003A33C0
+	// Token: 0x06009AAA RID: 39594 RVA: 0x003A9D70 File Offset: 0x003A7F70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FlipLists()
 	{
@@ -78,15 +78,15 @@ public class WorkBatch<T>
 		}
 	}
 
-	// Token: 0x04007419 RID: 29721
+	// Token: 0x04007494 RID: 29844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T> queuingList;
 
-	// Token: 0x0400741A RID: 29722
+	// Token: 0x04007495 RID: 29845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T> workingList;
 
-	// Token: 0x0400741B RID: 29723
+	// Token: 0x04007496 RID: 29846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object sync;
 }

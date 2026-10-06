@@ -1,13 +1,12 @@
 ﻿using System;
-using System.IO;
 using UnityEngine;
 
-// Token: 0x02000A6B RID: 2667
+// Token: 0x02000A77 RID: 2679
 public class ImposterCanvas
 {
-	// Token: 0x170008B5 RID: 2229
-	// (get) Token: 0x060050D1 RID: 20689 RVA: 0x001EDE2B File Offset: 0x001EC02B
-	// (set) Token: 0x060050D2 RID: 20690 RVA: 0x001EDE4D File Offset: 0x001EC04D
+	// Token: 0x170008D7 RID: 2263
+	// (get) Token: 0x060050B9 RID: 20665 RVA: 0x001EF9B1 File Offset: 0x001EDBB1
+	// (set) Token: 0x060050BA RID: 20666 RVA: 0x001EF9D3 File Offset: 0x001EDBD3
 	public SignCanvas.CanvasState State
 	{
 		get
@@ -29,7 +28,7 @@ public class ImposterCanvas
 		}
 	}
 
-	// Token: 0x060050D3 RID: 20691 RVA: 0x001EDE74 File Offset: 0x001EC074
+	// Token: 0x060050BB RID: 20667 RVA: 0x001EF9F8 File Offset: 0x001EDBF8
 	public ImposterCanvas Clone()
 	{
 		ImposterCanvas imposterCanvas = new ImposterCanvas();
@@ -43,8 +42,8 @@ public class ImposterCanvas
 		return imposterCanvas;
 	}
 
-	// Token: 0x060050D4 RID: 20692 RVA: 0x001EDEDC File Offset: 0x001EC0DC
-	public void Write(BinaryWriter _bw)
+	// Token: 0x060050BC RID: 20668 RVA: 0x001EFA60 File Offset: 0x001EDC60
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(2);
 		_bw.Write(this.WorldPosition.x);
@@ -61,8 +60,8 @@ public class ImposterCanvas
 		this.State.Write(_bw);
 	}
 
-	// Token: 0x060050D5 RID: 20693 RVA: 0x001EDFB0 File Offset: 0x001EC1B0
-	public static ImposterCanvas Read(BinaryReader _br)
+	// Token: 0x060050BD RID: 20669 RVA: 0x001EFB34 File Offset: 0x001EDD34
+	public static ImposterCanvas Read(PooledBinaryReader _br)
 	{
 		ImposterCanvas imposterCanvas = new ImposterCanvas();
 		ushort num = _br.ReadUInt16();
@@ -84,29 +83,29 @@ public class ImposterCanvas
 		return imposterCanvas;
 	}
 
-	// Token: 0x04003E21 RID: 15905
+	// Token: 0x04003E3D RID: 15933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 2;
 
-	// Token: 0x04003E22 RID: 15906
+	// Token: 0x04003E3E RID: 15934
 	public Vector3 WorldPosition;
 
-	// Token: 0x04003E23 RID: 15907
+	// Token: 0x04003E3F RID: 15935
 	public Quaternion WorldRotation;
 
-	// Token: 0x04003E24 RID: 15908
+	// Token: 0x04003E40 RID: 15936
 	public Vector2 Size;
 
-	// Token: 0x04003E25 RID: 15909
+	// Token: 0x04003E41 RID: 15937
 	public float CanvasAspect;
 
-	// Token: 0x04003E26 RID: 15910
+	// Token: 0x04003E42 RID: 15938
 	public bool IsDecal;
 
-	// Token: 0x04003E27 RID: 15911
+	// Token: 0x04003E43 RID: 15939
 	public SignCanvas Canvas;
 
-	// Token: 0x04003E28 RID: 15912
+	// Token: 0x04003E44 RID: 15940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignCanvas.CanvasState pendingCanvasState = new SignCanvas.CanvasState();
 }

@@ -6,13 +6,13 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001538 RID: 5432
+// Token: 0x0200155A RID: 5466
 [Preserve]
 public sealed class vp_ComponentPreset
 {
-	// Token: 0x170013D7 RID: 5079
-	// (get) Token: 0x0600AA9D RID: 43677 RVA: 0x003FA0AB File Offset: 0x003F82AB
-	// (set) Token: 0x0600AA9E RID: 43678 RVA: 0x003FA0B3 File Offset: 0x003F82B3
+	// Token: 0x1700141C RID: 5148
+	// (get) Token: 0x0600AB50 RID: 43856 RVA: 0x003FEEFF File Offset: 0x003FD0FF
+	// (set) Token: 0x0600AB51 RID: 43857 RVA: 0x003FEF07 File Offset: 0x003FD107
 	public Type ComponentType
 	{
 		get
@@ -25,7 +25,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AA9F RID: 43679 RVA: 0x003FA0BC File Offset: 0x003F82BC
+	// Token: 0x0600AB52 RID: 43858 RVA: 0x003FEF10 File Offset: 0x003FD110
 	public static string Save(Component component, string fullPath)
 	{
 		vp_ComponentPreset vp_ComponentPreset = new vp_ComponentPreset();
@@ -33,7 +33,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset.Save(vp_ComponentPreset, fullPath, false);
 	}
 
-	// Token: 0x0600AAA0 RID: 43680 RVA: 0x003FA0D4 File Offset: 0x003F82D4
+	// Token: 0x0600AB53 RID: 43859 RVA: 0x003FEF28 File Offset: 0x003FD128
 	public static string Save(vp_ComponentPreset savePreset, string fullPath, bool isDifference = false)
 	{
 		vp_ComponentPreset.m_FullPath = fullPath;
@@ -143,7 +143,7 @@ public sealed class vp_ComponentPreset
 		return null;
 	}
 
-	// Token: 0x0600AAA1 RID: 43681 RVA: 0x003FA530 File Offset: 0x003F8730
+	// Token: 0x0600AB54 RID: 43860 RVA: 0x003FF384 File Offset: 0x003FD584
 	public static string SaveDifference(vp_ComponentPreset initialStatePreset, Component modifiedComponent, string fullPath, vp_ComponentPreset diskPreset)
 	{
 		if (initialStatePreset.ComponentType != modifiedComponent.GetType())
@@ -192,7 +192,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset.Save(vp_ComponentPreset2, fullPath, true);
 	}
 
-	// Token: 0x0600AAA2 RID: 43682 RVA: 0x003FA6E8 File Offset: 0x003F88E8
+	// Token: 0x0600AB55 RID: 43861 RVA: 0x003FF53C File Offset: 0x003FD73C
 	public void InitFromComponent(Component component)
 	{
 		this.m_ComponentType = component.GetType();
@@ -206,7 +206,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AAA3 RID: 43683 RVA: 0x003FA7FC File Offset: 0x003F89FC
+	// Token: 0x0600AB56 RID: 43862 RVA: 0x003FF650 File Offset: 0x003FD850
 	public static vp_ComponentPreset CreateFromComponent(Component component)
 	{
 		vp_ComponentPreset vp_ComponentPreset = new vp_ComponentPreset();
@@ -221,7 +221,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset;
 	}
 
-	// Token: 0x0600AAA4 RID: 43684 RVA: 0x003FA90C File Offset: 0x003F8B0C
+	// Token: 0x0600AB57 RID: 43863 RVA: 0x003FF760 File Offset: 0x003FD960
 	public int TryMakeCompatibleWithComponent(vp_Component component)
 	{
 		this.m_ComponentType = component.GetType();
@@ -251,7 +251,7 @@ public sealed class vp_ComponentPreset
 		return this.m_Fields.Count;
 	}
 
-	// Token: 0x0600AAA5 RID: 43685 RVA: 0x003FA9F8 File Offset: 0x003F8BF8
+	// Token: 0x0600AB58 RID: 43864 RVA: 0x003FF84C File Offset: 0x003FDA4C
 	public bool LoadTextStream(string fullPath)
 	{
 		vp_ComponentPreset.m_FullPath = fullPath;
@@ -278,7 +278,7 @@ public sealed class vp_ComponentPreset
 		return true;
 	}
 
-	// Token: 0x0600AAA6 RID: 43686 RVA: 0x003FAA90 File Offset: 0x003F8C90
+	// Token: 0x0600AB59 RID: 43865 RVA: 0x003FF8E4 File Offset: 0x003FDAE4
 	public static bool Load(vp_Component component, string fullPath)
 	{
 		vp_ComponentPreset vp_ComponentPreset = new vp_ComponentPreset();
@@ -286,7 +286,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset.Apply(component, vp_ComponentPreset);
 	}
 
-	// Token: 0x0600AAA7 RID: 43687 RVA: 0x003FAAB4 File Offset: 0x003F8CB4
+	// Token: 0x0600AB5A RID: 43866 RVA: 0x003FF908 File Offset: 0x003FDB08
 	public bool LoadFromResources(string resourcePath)
 	{
 		vp_ComponentPreset.m_FullPath = resourcePath;
@@ -299,7 +299,7 @@ public sealed class vp_ComponentPreset
 		return this.LoadFromTextAsset(textAsset);
 	}
 
-	// Token: 0x0600AAA8 RID: 43688 RVA: 0x003FAB04 File Offset: 0x003F8D04
+	// Token: 0x0600AB5B RID: 43867 RVA: 0x003FF958 File Offset: 0x003FDB58
 	public static vp_ComponentPreset LoadFromResources(vp_Component component, string resourcePath)
 	{
 		vp_ComponentPreset vp_ComponentPreset = new vp_ComponentPreset();
@@ -308,7 +308,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset;
 	}
 
-	// Token: 0x0600AAA9 RID: 43689 RVA: 0x003FAB28 File Offset: 0x003F8D28
+	// Token: 0x0600AB5C RID: 43868 RVA: 0x003FF97C File Offset: 0x003FDB7C
 	public bool LoadFromTextAsset(TextAsset file)
 	{
 		vp_ComponentPreset.m_FullPath = file.name;
@@ -326,7 +326,7 @@ public sealed class vp_ComponentPreset
 		return true;
 	}
 
-	// Token: 0x0600AAAA RID: 43690 RVA: 0x003FAB94 File Offset: 0x003F8D94
+	// Token: 0x0600AB5D RID: 43869 RVA: 0x003FF9E8 File Offset: 0x003FDBE8
 	public static vp_ComponentPreset LoadFromTextAsset(vp_Component component, TextAsset file)
 	{
 		vp_ComponentPreset vp_ComponentPreset = new vp_ComponentPreset();
@@ -335,7 +335,7 @@ public sealed class vp_ComponentPreset
 		return vp_ComponentPreset;
 	}
 
-	// Token: 0x0600AAAB RID: 43691 RVA: 0x003FABB8 File Offset: 0x003F8DB8
+	// Token: 0x0600AB5E RID: 43870 RVA: 0x003FFA0C File Offset: 0x003FDC0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Append(string str)
 	{
@@ -360,7 +360,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AAAC RID: 43692 RVA: 0x003FAC2C File Offset: 0x003F8E2C
+	// Token: 0x0600AB5F RID: 43871 RVA: 0x003FFA80 File Offset: 0x003FDC80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ClearTextFile()
 	{
@@ -383,7 +383,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AAAD RID: 43693 RVA: 0x003FAC88 File Offset: 0x003F8E88
+	// Token: 0x0600AB60 RID: 43872 RVA: 0x003FFADC File Offset: 0x003FDCDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParseLines(List<string> lines)
 	{
@@ -400,7 +400,7 @@ public sealed class vp_ComponentPreset
 		vp_ComponentPreset.m_LineNumber = 0;
 	}
 
-	// Token: 0x0600AAAE RID: 43694 RVA: 0x003FAD00 File Offset: 0x003F8F00
+	// Token: 0x0600AB61 RID: 43873 RVA: 0x003FFB54 File Offset: 0x003FDD54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool Parse(string line)
 	{
@@ -514,7 +514,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AAAF RID: 43695 RVA: 0x003FB02C File Offset: 0x003F922C
+	// Token: 0x0600AB62 RID: 43874 RVA: 0x003FFE80 File Offset: 0x003FE080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] FindMovedParameter(string type, string field)
 	{
@@ -526,7 +526,7 @@ public sealed class vp_ComponentPreset
 		return array;
 	}
 
-	// Token: 0x0600AAB0 RID: 43696 RVA: 0x003FB058 File Offset: 0x003F9258
+	// Token: 0x0600AB63 RID: 43875 RVA: 0x003FFEAC File Offset: 0x003FE0AC
 	public static bool Apply(vp_Component component, vp_ComponentPreset preset)
 	{
 		if (preset == null)
@@ -578,7 +578,7 @@ public sealed class vp_ComponentPreset
 		return true;
 	}
 
-	// Token: 0x0600AAB1 RID: 43697 RVA: 0x003FB1F4 File Offset: 0x003F93F4
+	// Token: 0x0600AB64 RID: 43876 RVA: 0x00400048 File Offset: 0x003FE248
 	public static Type GetFileType(string fullPath)
 	{
 		bool logErrors = vp_ComponentPreset.LogErrors;
@@ -593,7 +593,7 @@ public sealed class vp_ComponentPreset
 		return null;
 	}
 
-	// Token: 0x0600AAB2 RID: 43698 RVA: 0x003FB238 File Offset: 0x003F9438
+	// Token: 0x0600AB65 RID: 43877 RVA: 0x0040008C File Offset: 0x003FE28C
 	public static Type GetFileTypeFromAsset(TextAsset asset)
 	{
 		bool logErrors = vp_ComponentPreset.LogErrors;
@@ -608,7 +608,7 @@ public sealed class vp_ComponentPreset
 		return null;
 	}
 
-	// Token: 0x0600AAB3 RID: 43699 RVA: 0x003FB27C File Offset: 0x003F947C
+	// Token: 0x0600AB66 RID: 43878 RVA: 0x004000D0 File Offset: 0x003FE2D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object TokensToObject(FieldInfo field, string[] tokens)
 	{
@@ -643,7 +643,7 @@ public sealed class vp_ComponentPreset
 		return null;
 	}
 
-	// Token: 0x0600AAB4 RID: 43700 RVA: 0x003FB37C File Offset: 0x003F957C
+	// Token: 0x0600AB67 RID: 43879 RVA: 0x004001D0 File Offset: 0x003FE3D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string RemoveComments(string str)
 	{
@@ -686,7 +686,7 @@ public sealed class vp_ComponentPreset
 		return text;
 	}
 
-	// Token: 0x0600AAB5 RID: 43701 RVA: 0x003FB45C File Offset: 0x003F965C
+	// Token: 0x0600AB68 RID: 43880 RVA: 0x004002B0 File Offset: 0x003FE4B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector4 ArgsToVector4(string[] args)
 	{
@@ -719,7 +719,7 @@ public sealed class vp_ComponentPreset
 		return vector;
 	}
 
-	// Token: 0x0600AAB6 RID: 43702 RVA: 0x003FB538 File Offset: 0x003F9738
+	// Token: 0x0600AB69 RID: 43881 RVA: 0x0040038C File Offset: 0x003FE58C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 ArgsToVector3(string[] args)
 	{
@@ -750,7 +750,7 @@ public sealed class vp_ComponentPreset
 		return vector;
 	}
 
-	// Token: 0x0600AAB7 RID: 43703 RVA: 0x003FB5F8 File Offset: 0x003F97F8
+	// Token: 0x0600AB6A RID: 43882 RVA: 0x0040044C File Offset: 0x003FE64C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 ArgsToVector2(string[] args)
 	{
@@ -779,7 +779,7 @@ public sealed class vp_ComponentPreset
 		return vector;
 	}
 
-	// Token: 0x0600AAB8 RID: 43704 RVA: 0x003FB6A0 File Offset: 0x003F98A0
+	// Token: 0x0600AB6B RID: 43883 RVA: 0x004004F4 File Offset: 0x003FE6F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ArgsToFloat(string[] args)
 	{
@@ -801,7 +801,7 @@ public sealed class vp_ComponentPreset
 		return num;
 	}
 
-	// Token: 0x0600AAB9 RID: 43705 RVA: 0x003FB718 File Offset: 0x003F9918
+	// Token: 0x0600AB6C RID: 43884 RVA: 0x0040056C File Offset: 0x003FE76C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int ArgsToInt(string[] args)
 	{
@@ -823,7 +823,7 @@ public sealed class vp_ComponentPreset
 		return num;
 	}
 
-	// Token: 0x0600AABA RID: 43706 RVA: 0x003FB788 File Offset: 0x003F9988
+	// Token: 0x0600AB6D RID: 43885 RVA: 0x004005DC File Offset: 0x003FE7DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ArgsToBool(string[] args)
 	{
@@ -844,7 +844,7 @@ public sealed class vp_ComponentPreset
 		return false;
 	}
 
-	// Token: 0x0600AABB RID: 43707 RVA: 0x003FB7FC File Offset: 0x003F99FC
+	// Token: 0x0600AB6E RID: 43886 RVA: 0x00400650 File Offset: 0x003FE850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ArgsToString(string[] args)
 	{
@@ -860,7 +860,7 @@ public sealed class vp_ComponentPreset
 		return text;
 	}
 
-	// Token: 0x0600AABC RID: 43708 RVA: 0x003FB83C File Offset: 0x003F9A3C
+	// Token: 0x0600AB6F RID: 43887 RVA: 0x00400690 File Offset: 0x003FE890
 	public Type GetFieldType(string fieldName)
 	{
 		Type type = null;
@@ -875,7 +875,7 @@ public sealed class vp_ComponentPreset
 		return type;
 	}
 
-	// Token: 0x0600AABD RID: 43709 RVA: 0x003FB8AC File Offset: 0x003F9AAC
+	// Token: 0x0600AB70 RID: 43888 RVA: 0x00400700 File Offset: 0x003FE900
 	public object GetFieldValue(string fieldName)
 	{
 		object obj = null;
@@ -889,7 +889,7 @@ public sealed class vp_ComponentPreset
 		return obj;
 	}
 
-	// Token: 0x0600AABE RID: 43710 RVA: 0x003FB91C File Offset: 0x003F9B1C
+	// Token: 0x0600AB71 RID: 43889 RVA: 0x00400770 File Offset: 0x003FE970
 	public void SetFieldValue(string fieldName, object value)
 	{
 		foreach (vp_ComponentPreset.Field field in this.m_Fields)
@@ -902,7 +902,7 @@ public sealed class vp_ComponentPreset
 		}
 	}
 
-	// Token: 0x0600AABF RID: 43711 RVA: 0x003FB98C File Offset: 0x003F9B8C
+	// Token: 0x0600AB72 RID: 43890 RVA: 0x004007E0 File Offset: 0x003FE9E0
 	public static string ExtractFilenameFromPath(string path)
 	{
 		int num = Math.Max(path.LastIndexOf('/'), path.LastIndexOf('\\'));
@@ -917,7 +917,7 @@ public sealed class vp_ComponentPreset
 		return path.Substring(num + 1, path.Length - num - 1);
 	}
 
-	// Token: 0x0600AAC0 RID: 43712 RVA: 0x003FB9DC File Offset: 0x003F9BDC
+	// Token: 0x0600AB73 RID: 43891 RVA: 0x00400830 File Offset: 0x003FEA30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PresetError(string message)
 	{
@@ -936,7 +936,7 @@ public sealed class vp_ComponentPreset
 		}));
 	}
 
-	// Token: 0x0600AAC1 RID: 43713 RVA: 0x003FBA34 File Offset: 0x003F9C34
+	// Token: 0x0600AB74 RID: 43892 RVA: 0x00400888 File Offset: 0x003FEA88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PresetWarning(string message)
 	{
@@ -955,7 +955,7 @@ public sealed class vp_ComponentPreset
 		}));
 	}
 
-	// Token: 0x0600AAC2 RID: 43714 RVA: 0x003FBA8A File Offset: 0x003F9C8A
+	// Token: 0x0600AB75 RID: 43893 RVA: 0x004008DE File Offset: 0x003FEADE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Error(string message)
 	{
@@ -966,34 +966,34 @@ public sealed class vp_ComponentPreset
 		Debug.LogError("Error: " + message);
 	}
 
-	// Token: 0x04007ED1 RID: 32465
+	// Token: 0x04007F54 RID: 32596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string m_FullPath = null;
 
-	// Token: 0x04007ED2 RID: 32466
+	// Token: 0x04007F55 RID: 32597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int m_LineNumber = 0;
 
-	// Token: 0x04007ED3 RID: 32467
+	// Token: 0x04007F56 RID: 32598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Type m_Type = null;
 
-	// Token: 0x04007ED4 RID: 32468
+	// Token: 0x04007F57 RID: 32599
 	public static bool LogErrors = true;
 
-	// Token: 0x04007ED5 RID: 32469
+	// Token: 0x04007F58 RID: 32600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static vp_ComponentPreset.ReadMode m_ReadMode = vp_ComponentPreset.ReadMode.Normal;
 
-	// Token: 0x04007ED6 RID: 32470
+	// Token: 0x04007F59 RID: 32601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Type m_ComponentType;
 
-	// Token: 0x04007ED7 RID: 32471
+	// Token: 0x04007F5A RID: 32602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<vp_ComponentPreset.Field> m_Fields = new List<vp_ComponentPreset.Field>();
 
-	// Token: 0x04007ED8 RID: 32472
+	// Token: 0x04007F5B RID: 32603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, string[]> MovedParameters = new Dictionary<string, string[]>
 	{
@@ -1023,33 +1023,33 @@ public sealed class vp_ComponentPreset
 		}
 	};
 
-	// Token: 0x02001539 RID: 5433
+	// Token: 0x0200155B RID: 5467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ReadMode
 	{
-		// Token: 0x04007EDA RID: 32474
+		// Token: 0x04007F5D RID: 32605
 		Normal,
-		// Token: 0x04007EDB RID: 32475
+		// Token: 0x04007F5E RID: 32606
 		LineComment,
-		// Token: 0x04007EDC RID: 32476
+		// Token: 0x04007F5F RID: 32607
 		BlockComment
 	}
 
-	// Token: 0x0200153A RID: 5434
+	// Token: 0x0200155C RID: 5468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Field
 	{
-		// Token: 0x0600AAC5 RID: 43717 RVA: 0x003FBBB5 File Offset: 0x003F9DB5
+		// Token: 0x0600AB78 RID: 43896 RVA: 0x00400A09 File Offset: 0x003FEC09
 		public Field(RuntimeFieldHandle fieldHandle, object args)
 		{
 			this.FieldHandle = fieldHandle;
 			this.Args = args;
 		}
 
-		// Token: 0x04007EDD RID: 32477
+		// Token: 0x04007F60 RID: 32608
 		public RuntimeFieldHandle FieldHandle;
 
-		// Token: 0x04007EDE RID: 32478
+		// Token: 0x04007F61 RID: 32609
 		public object Args;
 	}
 }

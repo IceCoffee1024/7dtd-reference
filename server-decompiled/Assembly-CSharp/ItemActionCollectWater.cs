@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200059C RID: 1436
+// Token: 0x0200059D RID: 1437
 [Preserve]
 public class ItemActionCollectWater : ItemAction
 {
-	// Token: 0x06002F1F RID: 12063 RVA: 0x0012AD93 File Offset: 0x00128F93
+	// Token: 0x06002F61 RID: 12129 RVA: 0x0012B883 File Offset: 0x00129A83
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -15,13 +15,13 @@ public class ItemActionCollectWater : ItemAction
 		this.isReduceWater = _props.GetBool("ReduceWater");
 	}
 
-	// Token: 0x06002F20 RID: 12064 RVA: 0x0012ADBE File Offset: 0x00128FBE
+	// Token: 0x06002F62 RID: 12130 RVA: 0x0012B8AE File Offset: 0x00129AAE
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionCollectWater.CollectWaterActionData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002F21 RID: 12065 RVA: 0x0012ADC8 File Offset: 0x00128FC8
+	// Token: 0x06002F63 RID: 12131 RVA: 0x0012B8B8 File Offset: 0x00129AB8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -62,20 +62,20 @@ public class ItemActionCollectWater : ItemAction
 		}
 	}
 
-	// Token: 0x06002F22 RID: 12066 RVA: 0x0012A684 File Offset: 0x00128884
+	// Token: 0x06002F64 RID: 12132 RVA: 0x0012B1A4 File Offset: 0x001293A4
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.lastUseTime != 0f && Time.time - _actionData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06002F23 RID: 12067 RVA: 0x0012AEE6 File Offset: 0x001290E6
+	// Token: 0x06002F65 RID: 12133 RVA: 0x0012B9D6 File Offset: 0x00129BD6
 	public override void StopHolding(ItemActionData _actionDatadata)
 	{
 		base.StopHolding(_actionDatadata);
 		_actionDatadata.lastUseTime = 0f;
 	}
 
-	// Token: 0x06002F24 RID: 12068 RVA: 0x0012AEFC File Offset: 0x001290FC
+	// Token: 0x06002F66 RID: 12134 RVA: 0x0012B9EC File Offset: 0x00129BEC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		if (_actionData.lastUseTime == 0f || this.IsActionRunning(_actionData))
@@ -107,40 +107,40 @@ public class ItemActionCollectWater : ItemAction
 			}
 			if (!string.IsNullOrEmpty(this.changeItemToItem))
 			{
-				ItemStack itemStack = new ItemStack(ItemClass.GetItem(this.changeItemToItem, false), _actionData.invData.holdingEntity.inventory.holdingCount);
-				itemStack.itemValue.Meta = _actionData.invData.itemValue.Meta + num;
-				_actionData.invData.holdingEntity.inventory.SetItem(_actionData.invData.slotIdx, itemStack);
+				ItemValue item = ItemClass.GetItem(this.changeItemToItem, false);
+				item.Meta = _actionData.invData.itemValue.Meta + num;
+				_actionData.invData.itemStack.Set(item, _actionData.invData.itemStack.count);
 			}
 		}
 		this.waterPoints.Clear();
 	}
 
-	// Token: 0x04002487 RID: 9351
+	// Token: 0x04002480 RID: 9344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string changeItemToItem;
 
-	// Token: 0x04002488 RID: 9352
+	// Token: 0x04002481 RID: 9345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isReduceWater;
 
-	// Token: 0x04002489 RID: 9353
+	// Token: 0x04002482 RID: 9346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<CollectWaterUtils.WaterPoint> waterPoints = new List<CollectWaterUtils.WaterPoint>();
 
-	// Token: 0x0200059D RID: 1437
+	// Token: 0x0200059E RID: 1438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class CollectWaterActionData : ItemActionAttackData
 	{
-		// Token: 0x06002F26 RID: 12070 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x06002F68 RID: 12136 RVA: 0x0012B224 File Offset: 0x00129424
 		public CollectWaterActionData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400248A RID: 9354
+		// Token: 0x04002483 RID: 9347
 		public Vector3i targetPosition;
 
-		// Token: 0x0400248B RID: 9355
+		// Token: 0x04002484 RID: 9348
 		public int targetMass;
 	}
 }

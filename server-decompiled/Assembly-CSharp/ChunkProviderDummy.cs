@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 
-// Token: 0x02000B2B RID: 2859
+// Token: 0x02000B3D RID: 2877
 public class ChunkProviderDummy : ChunkProviderAbstract
 {
-	// Token: 0x06005696 RID: 22166 RVA: 0x0021330B File Offset: 0x0021150B
+	// Token: 0x060056B0 RID: 22192 RVA: 0x00216597 File Offset: 0x00214797
 	public override IEnumerator Init(World _worldData)
 	{
 		MultiBlockManager.Instance.Initialize(null);
@@ -12,43 +12,43 @@ public class ChunkProviderDummy : ChunkProviderAbstract
 		yield break;
 	}
 
-	// Token: 0x06005697 RID: 22167 RVA: 0x00213313 File Offset: 0x00211513
+	// Token: 0x060056B1 RID: 22193 RVA: 0x0021659F File Offset: 0x0021479F
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		MultiBlockManager.Instance.Cleanup();
 	}
 
-	// Token: 0x06005698 RID: 22168 RVA: 0x00046EDA File Offset: 0x000450DA
+	// Token: 0x060056B2 RID: 22194 RVA: 0x000470B6 File Offset: 0x000452B6
 	public override EnumChunkProviderId GetProviderId()
 	{
 		return EnumChunkProviderId.NetworkClient;
 	}
 
-	// Token: 0x06005699 RID: 22169 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060056B3 RID: 22195 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void setChunkPrerequisits(string sSeed)
 	{
 	}
 
-	// Token: 0x0600569A RID: 22170 RVA: 0x00213325 File Offset: 0x00211525
+	// Token: 0x060056B4 RID: 22196 RVA: 0x002165B1 File Offset: 0x002147B1
 	public override void UnloadChunk(Chunk _c)
 	{
 		MemoryPools.PoolChunks.FreeSync(_c);
 	}
 
-	// Token: 0x0600569B RID: 22171 RVA: 0x00213332 File Offset: 0x00211532
+	// Token: 0x060056B5 RID: 22197 RVA: 0x002165BE File Offset: 0x002147BE
 	public override SpawnPointList GetSpawnPointList()
 	{
 		return this.dummySpawnPointList;
 	}
 
-	// Token: 0x0600569C RID: 22172 RVA: 0x0021333A File Offset: 0x0021153A
+	// Token: 0x060056B6 RID: 22198 RVA: 0x002165C6 File Offset: 0x002147C6
 	public override void SetSpawnPointList(SpawnPointList _spawnPointList)
 	{
 		this.dummySpawnPointList = _spawnPointList;
 	}
 
-	// Token: 0x04004315 RID: 17173
+	// Token: 0x04004353 RID: 17235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpawnPointList dummySpawnPointList = new SpawnPointList();
 }

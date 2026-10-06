@@ -1,16 +1,15 @@
 ﻿using System;
-using System.IO;
 using UnityEngine;
 
-// Token: 0x02000522 RID: 1314
+// Token: 0x02000528 RID: 1320
 public class Faction
 {
-	// Token: 0x06002B4A RID: 11082 RVA: 0x00111B1F File Offset: 0x0010FD1F
+	// Token: 0x06002B40 RID: 11072 RVA: 0x001128EF File Offset: 0x00110AEF
 	public Faction()
 	{
 	}
 
-	// Token: 0x06002B4B RID: 11083 RVA: 0x00111B38 File Offset: 0x0010FD38
+	// Token: 0x06002B41 RID: 11073 RVA: 0x00112908 File Offset: 0x00110B08
 	public Faction(string _name, bool _playerFaction = false, string _icon = "")
 	{
 		this.Name = _name;
@@ -22,7 +21,7 @@ public class Faction
 		}
 	}
 
-	// Token: 0x06002B4C RID: 11084 RVA: 0x00111B90 File Offset: 0x0010FD90
+	// Token: 0x06002B42 RID: 11074 RVA: 0x00112960 File Offset: 0x00110B60
 	public void ModifyRelationship(byte _factionId, float _modifier)
 	{
 		float num = this.Relationships[(int)_factionId];
@@ -33,26 +32,26 @@ public class Faction
 		this.Relationships[(int)_factionId] = num;
 	}
 
-	// Token: 0x06002B4D RID: 11085 RVA: 0x00111BCA File Offset: 0x0010FDCA
+	// Token: 0x06002B43 RID: 11075 RVA: 0x0011299A File Offset: 0x00110B9A
 	public void SetRelationship(byte _factionId, float _value)
 	{
 		this.Relationships[(int)_factionId] = (float)((byte)Mathf.Clamp(_value, 0f, 1000f));
 	}
 
-	// Token: 0x06002B4E RID: 11086 RVA: 0x00111BE6 File Offset: 0x0010FDE6
+	// Token: 0x06002B44 RID: 11076 RVA: 0x001129B6 File Offset: 0x00110BB6
 	public float GetRelationship(byte _factionId)
 	{
 		return this.Relationships[(int)_factionId];
 	}
 
-	// Token: 0x06002B4F RID: 11087 RVA: 0x00111BF0 File Offset: 0x0010FDF0
+	// Token: 0x06002B45 RID: 11077 RVA: 0x001129C0 File Offset: 0x00110BC0
 	public void SetAlly(byte _factionId)
 	{
 		this.Relationships[(int)_factionId] = 1000f;
 	}
 
-	// Token: 0x06002B50 RID: 11088 RVA: 0x00111C00 File Offset: 0x0010FE00
-	public void Write(BinaryWriter bw)
+	// Token: 0x06002B46 RID: 11078 RVA: 0x001129D0 File Offset: 0x00110BD0
+	public void Write(PooledBinaryWriter bw)
 	{
 		for (int i = 0; i < 255; i++)
 		{
@@ -61,8 +60,8 @@ public class Faction
 		bw.Write(this.IsPlayerFaction);
 	}
 
-	// Token: 0x06002B51 RID: 11089 RVA: 0x00111C38 File Offset: 0x0010FE38
-	public void Read(BinaryReader br)
+	// Token: 0x06002B47 RID: 11079 RVA: 0x00112A08 File Offset: 0x00110C08
+	public void Read(PooledBinaryReader br)
 	{
 		this.Relationships = new float[255];
 		for (int i = 0; i < 255; i++)
@@ -72,24 +71,24 @@ public class Faction
 		this.IsPlayerFaction = br.ReadBoolean();
 	}
 
-	// Token: 0x06002B52 RID: 11090 RVA: 0x00111C80 File Offset: 0x0010FE80
+	// Token: 0x06002B48 RID: 11080 RVA: 0x00112A50 File Offset: 0x00110C50
 	public override string ToString()
 	{
 		return string.Format("{0} : {1}", this.Name, string.Join(", ", Array.ConvertAll<float, string>(this.Relationships, (float x) => x.ToCultureInvariantString())));
 	}
 
-	// Token: 0x0400211A RID: 8474
+	// Token: 0x04002122 RID: 8482
 	public byte ID;
 
-	// Token: 0x0400211B RID: 8475
+	// Token: 0x04002123 RID: 8483
 	public string Name;
 
-	// Token: 0x0400211C RID: 8476
+	// Token: 0x04002124 RID: 8484
 	public string Icon;
 
-	// Token: 0x0400211D RID: 8477
+	// Token: 0x04002125 RID: 8485
 	public bool IsPlayerFaction;
 
-	// Token: 0x0400211E RID: 8478
+	// Token: 0x04002126 RID: 8486
 	public float[] Relationships = new float[255];
 }

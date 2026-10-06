@@ -3,31 +3,31 @@ using System.Runtime.CompilerServices;
 
 namespace Platform
 {
-	// Token: 0x02001B54 RID: 6996
+	// Token: 0x02001B86 RID: 7046
 	public interface IAntiCheatClient : IAntiCheatEncryption, IEncryptionModule
 	{
-		// Token: 0x0600D1AB RID: 53675
+		// Token: 0x0600D322 RID: 54050
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D1AC RID: 53676
+		// Token: 0x0600D323 RID: 54051
 		bool ClientAntiCheatEnabled();
 
-		// Token: 0x0600D1AD RID: 53677
+		// Token: 0x0600D324 RID: 54052
 		bool GetUnhandledViolationMessage(out string _message);
 
-		// Token: 0x0600D1AE RID: 53678
+		// Token: 0x0600D325 RID: 54053
 		void WaitForRemoteAuth(Action onRemoteAuthSkippedOrComplete);
 
-		// Token: 0x0600D1AF RID: 53679
+		// Token: 0x0600D326 RID: 54054
 		void ConnectToServer([TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> hostUserAndToken, Action onNoAntiCheatOrConnectionComplete, Action<string> onConnectionFailed);
 
-		// Token: 0x0600D1B0 RID: 53680
+		// Token: 0x0600D327 RID: 54055
 		void HandleMessageFromServer(byte[] _data);
 
-		// Token: 0x0600D1B1 RID: 53681
+		// Token: 0x0600D328 RID: 54056
 		void DisconnectFromServer();
 
-		// Token: 0x0600D1B2 RID: 53682
+		// Token: 0x0600D329 RID: 54057
 		void Destroy();
 	}
 }

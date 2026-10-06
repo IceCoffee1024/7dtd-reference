@@ -2,32 +2,32 @@
 
 namespace Platform
 {
-	// Token: 0x02001B76 RID: 7030
+	// Token: 0x02001BA8 RID: 7080
 	public enum EApiStatusReason
 	{
-		// Token: 0x0400A0A7 RID: 41127
+		// Token: 0x0400A17C RID: 41340
 		ApiNotLoadable,
-		// Token: 0x0400A0A8 RID: 41128
+		// Token: 0x0400A17D RID: 41341
 		SteamNotRunning,
-		// Token: 0x0400A0A9 RID: 41129
+		// Token: 0x0400A17E RID: 41342
 		NoLicense,
-		// Token: 0x0400A0AA RID: 41130
+		// Token: 0x0400A17F RID: 41343
 		NoFriendsName,
-		// Token: 0x0400A0AB RID: 41131
+		// Token: 0x0400A180 RID: 41344
 		NotLoggedOn,
-		// Token: 0x0400A0AC RID: 41132
+		// Token: 0x0400A181 RID: 41345
 		Other,
-		// Token: 0x0400A0AD RID: 41133
+		// Token: 0x0400A182 RID: 41346
 		NoLoginTicket,
-		// Token: 0x0400A0AE RID: 41134
+		// Token: 0x0400A183 RID: 41347
 		NoOnlineStart,
-		// Token: 0x0400A0AF RID: 41135
+		// Token: 0x0400A184 RID: 41348
 		Unknown,
-		// Token: 0x0400A0B0 RID: 41136
+		// Token: 0x0400A185 RID: 41349
 		NoConnection,
-		// Token: 0x0400A0B1 RID: 41137
+		// Token: 0x0400A186 RID: 41350
 		ExternalAuthUnavailable,
-		// Token: 0x0400A0B2 RID: 41138
+		// Token: 0x0400A187 RID: 41351
 		Ok
 	}
 }

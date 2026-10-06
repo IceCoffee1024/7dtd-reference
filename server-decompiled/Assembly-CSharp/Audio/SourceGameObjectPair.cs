@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001B15 RID: 6933
+	// Token: 0x02001B41 RID: 6977
 	public struct SourceGameObjectPair
 	{
-		// Token: 0x04009E8C RID: 40588
+		// Token: 0x04009F52 RID: 40786
 		public AudioSource src;
 
-		// Token: 0x04009E8D RID: 40589
+		// Token: 0x04009F53 RID: 40787
 		public GameObject go;
 	}
 }

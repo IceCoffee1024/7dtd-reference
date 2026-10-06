@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000C0B RID: 3083
+// Token: 0x02000C1D RID: 3101
 [Preserve]
 public class WorldEnvironment : MonoBehaviour
 {
-	// Token: 0x06005E0B RID: 24075 RVA: 0x002486E9 File Offset: 0x002468E9
+	// Token: 0x06005E24 RID: 24100 RVA: 0x0024B9E5 File Offset: 0x00249BE5
 	public void Init(WorldCreationData _wcd, World _world)
 	{
 		this.world = _world;
@@ -18,7 +18,7 @@ public class WorldEnvironment : MonoBehaviour
 		this.createDistantTerrain();
 	}
 
-	// Token: 0x06005E0C RID: 24076 RVA: 0x00248714 File Offset: 0x00246914
+	// Token: 0x06005E25 RID: 24101 RVA: 0x0024BA10 File Offset: 0x00249C10
 	public static void OnXMLChanged()
 	{
 		DynamicProperties properties = WorldEnvironment.Properties;
@@ -42,12 +42,12 @@ public class WorldEnvironment : MonoBehaviour
 		properties.ParseFloat("test", ref WorldEnvironment.dataTest);
 	}
 
-	// Token: 0x06005E0D RID: 24077 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E26 RID: 24102 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CreateUnityTerrain()
 	{
 	}
 
-	// Token: 0x06005E0E RID: 24078 RVA: 0x0024880C File Offset: 0x00246A0C
+	// Token: 0x06005E27 RID: 24103 RVA: 0x0024BB08 File Offset: 0x00249D08
 	public static GameObject CreateUnityTerrainOld(string _worldPath, int _sliceAtWidth, int _heightMapDataWidth, int _heightMapDataHeight, List<float[,]> _heightMapDataList, int _worldScale = 1, float _yOffsetTerrain = 1f, int _sliceAt = 2048, bool _bEditMode = true, Action<float> _progressCallback = null)
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -261,7 +261,7 @@ public class WorldEnvironment : MonoBehaviour
 		return gameObject;
 	}
 
-	// Token: 0x06005E0F RID: 24079 RVA: 0x002490E0 File Offset: 0x002472E0
+	// Token: 0x06005E28 RID: 24104 RVA: 0x0024C3DC File Offset: 0x0024A5DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createDistantTerrain()
 	{
@@ -272,7 +272,7 @@ public class WorldEnvironment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005E10 RID: 24080 RVA: 0x0024912E File Offset: 0x0024732E
+	// Token: 0x06005E29 RID: 24105 RVA: 0x0024C42A File Offset: 0x0024A62A
 	public void OnChunkDisplayed(long _key, bool _bDisplayed)
 	{
 		if (UnityDistantTerrainTest.Instance != null)
@@ -281,13 +281,13 @@ public class WorldEnvironment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005E11 RID: 24081 RVA: 0x0024914E File Offset: 0x0024734E
+	// Token: 0x06005E2A RID: 24106 RVA: 0x0024C44A File Offset: 0x0024A64A
 	public void Cleanup()
 	{
 		this.localPlayer = null;
 	}
 
-	// Token: 0x06005E12 RID: 24082 RVA: 0x00249158 File Offset: 0x00247358
+	// Token: 0x06005E2B RID: 24107 RVA: 0x0024C454 File Offset: 0x0024A654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createPrefab(WorldCreationData _wcd)
 	{
@@ -297,25 +297,25 @@ public class WorldEnvironment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005E13 RID: 24083 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E2C RID: 24108 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createWeatherEffects(WorldCreationData _wcd)
 	{
 	}
 
-	// Token: 0x06005E14 RID: 24084 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E2D RID: 24109 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createTransforms(WorldCreationData _wcd)
 	{
 	}
 
-	// Token: 0x06005E15 RID: 24085 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E2E RID: 24110 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createAtmosphere(WorldCreationData _wcd)
 	{
 	}
 
-	// Token: 0x06005E16 RID: 24086 RVA: 0x002491AB File Offset: 0x002473AB
+	// Token: 0x06005E2F RID: 24111 RVA: 0x0024C4A7 File Offset: 0x0024A6A7
 	public Color GetAmbientColor()
 	{
 		if (this.world == null || this.world.BiomeAtmosphereEffects == null)
@@ -325,7 +325,7 @@ public class WorldEnvironment : MonoBehaviour
 		return this.world.BiomeAtmosphereEffects.GetSkyColorSpectrum(this.dayTimeScalar);
 	}
 
-	// Token: 0x06005E17 RID: 24087 RVA: 0x002491E0 File Offset: 0x002473E0
+	// Token: 0x06005E30 RID: 24112 RVA: 0x0024C4DC File Offset: 0x0024A6DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AmbientSpectrumFrameUpdate()
 	{
@@ -374,7 +374,7 @@ public class WorldEnvironment : MonoBehaviour
 		WorldEnvironment.AmbientTotal = num9 * num4;
 	}
 
-	// Token: 0x06005E18 RID: 24088 RVA: 0x00249478 File Offset: 0x00247678
+	// Token: 0x06005E31 RID: 24113 RVA: 0x0024C774 File Offset: 0x0024A974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpectrumsFrameUpdate()
 	{
@@ -438,7 +438,7 @@ public class WorldEnvironment : MonoBehaviour
 		SkyManager.SetFogDensity(Mathf.Lerp(SkyManager.GetFogDensity(), num, num2));
 	}
 
-	// Token: 0x06005E19 RID: 24089 RVA: 0x002496EC File Offset: 0x002478EC
+	// Token: 0x06005E32 RID: 24114 RVA: 0x0024C9E8 File Offset: 0x0024ABE8
 	public void WorldTimeChanged()
 	{
 		WeatherManager.SetWorldTime(this.world.worldTime);
@@ -449,13 +449,13 @@ public class WorldEnvironment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005E1A RID: 24090 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E33 RID: 24115 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void enableAllDisplayedDistantChunks(bool _bEnable)
 	{
 	}
 
-	// Token: 0x06005E1B RID: 24091 RVA: 0x0024972C File Offset: 0x0024792C
+	// Token: 0x06005E34 RID: 24116 RVA: 0x0024CA28 File Offset: 0x0024AC28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -498,29 +498,29 @@ public class WorldEnvironment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005E1C RID: 24092 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E35 RID: 24117 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CreateLevelBorderBox(World _world)
 	{
 	}
 
-	// Token: 0x06005E1D RID: 24093 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005E36 RID: 24118 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetColliders(float _worldX, float _worldZ, float _worldXDim, float _worldZDim, float _waterSize, float _bDistance)
 	{
 	}
 
-	// Token: 0x06005E1E RID: 24094 RVA: 0x0024980F File Offset: 0x00247A0F
+	// Token: 0x06005E37 RID: 24119 RVA: 0x0024CB0B File Offset: 0x0024AD0B
 	public Color GetSunLightColor()
 	{
 		return this.world.BiomeAtmosphereEffects.GetSunColorSpectrum(this.dayTimeScalar);
 	}
 
-	// Token: 0x06005E1F RID: 24095 RVA: 0x00249827 File Offset: 0x00247A27
+	// Token: 0x06005E38 RID: 24120 RVA: 0x0024CB23 File Offset: 0x0024AD23
 	public Color GetMoonLightColor()
 	{
 		return this.world.BiomeAtmosphereEffects.GetMoonColorSpectrum(this.dayTimeScalar);
 	}
 
-	// Token: 0x06005E20 RID: 24096 RVA: 0x00249840 File Offset: 0x00247A40
+	// Token: 0x06005E39 RID: 24121 RVA: 0x0024CB3C File Offset: 0x0024AD3C
 	public static float CalculateCelestialAngle(ulong _worldTime, float _t)
 	{
 		float num = ((float)((int)(_worldTime % 24000UL)) + _t) / 24000f - 0.25f;
@@ -537,13 +537,13 @@ public class WorldEnvironment : MonoBehaviour
 		return num2 + (num - num2) / 3f;
 	}
 
-	// Token: 0x06005E21 RID: 24097 RVA: 0x002498C2 File Offset: 0x00247AC2
+	// Token: 0x06005E3A RID: 24122 RVA: 0x0024CBBE File Offset: 0x0024ADBE
 	public BiomeAtmosphereEffects GetBiomeAtmosphereEffects()
 	{
 		return this.world.BiomeAtmosphereEffects;
 	}
 
-	// Token: 0x06005E22 RID: 24098 RVA: 0x002498D0 File Offset: 0x00247AD0
+	// Token: 0x06005E3B RID: 24123 RVA: 0x0024CBCC File Offset: 0x0024ADCC
 	public int DistantTerrain_GetBlockIdAt(int x, int y, int z)
 	{
 		int poiblockIdOverride = this.world.ChunkCache.ChunkProvider.GetPOIBlockIdOverride(x, z);
@@ -566,157 +566,157 @@ public class WorldEnvironment : MonoBehaviour
 		return blockValue.type;
 	}
 
-	// Token: 0x06005E23 RID: 24099 RVA: 0x00249970 File Offset: 0x00247B70
+	// Token: 0x06005E3C RID: 24124 RVA: 0x0024CC6C File Offset: 0x0024AE6C
 	public void SetFogOverride(Color _color = default(Color), float _density = -1f)
 	{
 		this.fogColorOverride = _color;
 		this.fogDensityOverride = _density;
 	}
 
-	// Token: 0x06005E24 RID: 24100 RVA: 0x00249980 File Offset: 0x00247B80
+	// Token: 0x06005E3D RID: 24125 RVA: 0x0024CC7C File Offset: 0x0024AE7C
 	public void SetNightVision(float _brightness)
 	{
 		this.nightVisionBrightness = _brightness * 0.4f;
 	}
 
-	// Token: 0x040048DE RID: 18654
+	// Token: 0x0400491D RID: 18717
 	public static DynamicProperties Properties;
 
-	// Token: 0x040048DF RID: 18655
+	// Token: 0x0400491E RID: 18718
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientEquatorScale;
 
-	// Token: 0x040048E0 RID: 18656
+	// Token: 0x0400491F RID: 18719
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientGroundScale;
 
-	// Token: 0x040048E1 RID: 18657
+	// Token: 0x04004920 RID: 18720
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientSkyScale;
 
-	// Token: 0x040048E2 RID: 18658
+	// Token: 0x04004921 RID: 18721
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientSkyDesat;
 
-	// Token: 0x040048E3 RID: 18659
+	// Token: 0x04004922 RID: 18722
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientMoon;
 
-	// Token: 0x040048E4 RID: 18660
+	// Token: 0x04004923 RID: 18723
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float dataAmbientInsideSpeed;
 
-	// Token: 0x040048E5 RID: 18661
+	// Token: 0x04004924 RID: 18724
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float dataAmbientInsideThreshold;
 
-	// Token: 0x040048E6 RID: 18662
+	// Token: 0x04004925 RID: 18725
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientInsideEquatorScale;
 
-	// Token: 0x040048E7 RID: 18663
+	// Token: 0x04004926 RID: 18726
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientInsideGroundScale;
 
-	// Token: 0x040048E8 RID: 18664
+	// Token: 0x04004927 RID: 18727
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataAmbientInsideSkyScale;
 
-	// Token: 0x040048E9 RID: 18665
+	// Token: 0x04004928 RID: 18728
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataFogPow;
 
-	// Token: 0x040048EA RID: 18666
+	// Token: 0x04004929 RID: 18729
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 dataFogWater;
 
-	// Token: 0x040048EB RID: 18667
+	// Token: 0x0400492A RID: 18730
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector3 dataFogWaterColor;
 
-	// Token: 0x040048EC RID: 18668
+	// Token: 0x0400492B RID: 18731
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float dataTest;
 
-	// Token: 0x040048ED RID: 18669
+	// Token: 0x0400492C RID: 18732
 	public const float cFogTransitionSpeed = 0.01f;
 
-	// Token: 0x040048EE RID: 18670
+	// Token: 0x0400492D RID: 18733
 	public const float cBrightnessMin = 0.2f;
 
-	// Token: 0x040048EF RID: 18671
+	// Token: 0x0400492E RID: 18734
 	public static float AmbientTotal;
 
-	// Token: 0x040048F0 RID: 18672
+	// Token: 0x0400492F RID: 18735
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public World world;
 
-	// Token: 0x040048F1 RID: 18673
+	// Token: 0x04004930 RID: 18736
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal localPlayer;
 
-	// Token: 0x040048F2 RID: 18674
+	// Token: 0x04004931 RID: 18737
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float dayTimeScalar;
 
-	// Token: 0x040048F3 RID: 18675
+	// Token: 0x04004932 RID: 18738
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float insideCurrent;
 
-	// Token: 0x040048F4 RID: 18676
+	// Token: 0x04004933 RID: 18739
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color fogColorOverride;
 
-	// Token: 0x040048F5 RID: 18677
+	// Token: 0x04004934 RID: 18740
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fogDensityOverride = -1f;
 
-	// Token: 0x040048F6 RID: 18678
+	// Token: 0x04004935 RID: 18741
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float brightnessInOutDayNight;
 
-	// Token: 0x040048F7 RID: 18679
+	// Token: 0x04004936 RID: 18742
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float nightVisionBrightness;
 
-	// Token: 0x040048F8 RID: 18680
+	// Token: 0x04004937 RID: 18743
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isUnderWater;
 
-	// Token: 0x040048F9 RID: 18681
+	// Token: 0x04004938 RID: 18744
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ChunkCluster.OnChunkVisibleDelegate chunkClusterVisibleDelegate;
 
-	// Token: 0x040048FA RID: 18682
+	// Token: 0x04004939 RID: 18745
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bTerrainActived;
 
-	// Token: 0x040048FB RID: 18683
+	// Token: 0x0400493A RID: 18746
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int chunkLODIndex;

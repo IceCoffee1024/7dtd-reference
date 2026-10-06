@@ -2,10 +2,10 @@
 using System.Collections.ObjectModel;
 using Platform;
 
-// Token: 0x020002C9 RID: 713
+// Token: 0x020002CC RID: 716
 public static class ConsoleHelper
 {
-	// Token: 0x06001493 RID: 5267 RVA: 0x0007C6D8 File Offset: 0x0007A8D8
+	// Token: 0x06001490 RID: 5264 RVA: 0x0007C98C File Offset: 0x0007AB8C
 	public static bool ParseParamBool(string _param, bool _invalidStringsAsFalse = false)
 	{
 		if (_param.EqualsCaseInsensitive("y") || _param.EqualsCaseInsensitive("yes") || _param.EqualsCaseInsensitive("true") || _param.EqualsCaseInsensitive("on") || _param.EqualsCaseInsensitive("1"))
@@ -23,7 +23,7 @@ public static class ConsoleHelper
 		throw new ArgumentException("Not a bool value");
 	}
 
-	// Token: 0x06001494 RID: 5268 RVA: 0x0007C77C File Offset: 0x0007A97C
+	// Token: 0x06001491 RID: 5265 RVA: 0x0007CA30 File Offset: 0x0007AC30
 	public static Entity ParseParamEntityIdToEntity(string _param, bool _playersOnly = true)
 	{
 		int num;
@@ -45,7 +45,7 @@ public static class ConsoleHelper
 		return null;
 	}
 
-	// Token: 0x06001495 RID: 5269 RVA: 0x0007C808 File Offset: 0x0007AA08
+	// Token: 0x06001492 RID: 5266 RVA: 0x0007CABC File Offset: 0x0007ACBC
 	public static ClientInfo ParseParamEntityIdToClientInfo(string _param)
 	{
 		int num;
@@ -56,14 +56,14 @@ public static class ConsoleHelper
 		return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.ForEntityId(num);
 	}
 
-	// Token: 0x06001496 RID: 5270 RVA: 0x0007C834 File Offset: 0x0007AA34
+	// Token: 0x06001493 RID: 5267 RVA: 0x0007CAE8 File Offset: 0x0007ACE8
 	public static bool ParseParamSteamGroupIdValid(string _param)
 	{
 		ulong num;
 		return _param.Length == 18 && ulong.TryParse(_param, out num);
 	}
 
-	// Token: 0x06001497 RID: 5271 RVA: 0x0007C858 File Offset: 0x0007AA58
+	// Token: 0x06001494 RID: 5268 RVA: 0x0007CB0C File Offset: 0x0007AD0C
 	public static bool ParamIsLocalPlayer(string _param, bool _ignoreCase = true, bool _ignoreBlanks = false)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -93,25 +93,25 @@ public static class ConsoleHelper
 		return string.Equals(text, _param, _ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
 	}
 
-	// Token: 0x06001498 RID: 5272 RVA: 0x0007C8F8 File Offset: 0x0007AAF8
+	// Token: 0x06001495 RID: 5269 RVA: 0x0007CBAC File Offset: 0x0007ADAC
 	public static ClientInfo ParseParamPlayerName(string _param, bool _ignoreCase = true, bool _ignoreBlanks = false)
 	{
 		return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.GetForPlayerName(_param, _ignoreCase, _ignoreBlanks);
 	}
 
-	// Token: 0x06001499 RID: 5273 RVA: 0x0007C90C File Offset: 0x0007AB0C
+	// Token: 0x06001496 RID: 5270 RVA: 0x0007CBC0 File Offset: 0x0007ADC0
 	public static PlatformUserIdentifierAbs ParseParamUserId(string _param)
 	{
 		return PlatformUserIdentifierAbs.FromCombinedString(_param, true);
 	}
 
-	// Token: 0x0600149A RID: 5274 RVA: 0x0007C915 File Offset: 0x0007AB15
+	// Token: 0x06001497 RID: 5271 RVA: 0x0007CBC9 File Offset: 0x0007ADC9
 	public static ClientInfo ParseParamIdOrName(string _param, bool _ignoreCase = true, bool _ignoreBlanks = false)
 	{
 		return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.GetForNameOrId(_param, _ignoreCase, _ignoreBlanks);
 	}
 
-	// Token: 0x0600149B RID: 5275 RVA: 0x0007C92C File Offset: 0x0007AB2C
+	// Token: 0x06001498 RID: 5272 RVA: 0x0007CBE0 File Offset: 0x0007ADE0
 	public static int ParseParamPartialNameOrId(string _param, out PlatformUserIdentifierAbs _id, out ClientInfo _cInfo, bool _sendError = true)
 	{
 		_id = null;

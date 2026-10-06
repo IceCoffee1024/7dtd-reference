@@ -4,17 +4,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200059E RID: 1438
+// Token: 0x0200059F RID: 1439
 [Preserve]
 public class ItemActionConnectPower : ItemAction
 {
-	// Token: 0x06002F27 RID: 12071 RVA: 0x0012B083 File Offset: 0x00129283
+	// Token: 0x06002F69 RID: 12137 RVA: 0x0012BB53 File Offset: 0x00129D53
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionConnectPower.ConnectPowerData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002F28 RID: 12072 RVA: 0x0012B08C File Offset: 0x0012928C
+	// Token: 0x06002F6A RID: 12138 RVA: 0x0012BB5C File Offset: 0x00129D5C
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -28,7 +28,7 @@ public class ItemActionConnectPower : ItemAction
 		}
 	}
 
-	// Token: 0x06002F29 RID: 12073 RVA: 0x0012B100 File Offset: 0x00129300
+	// Token: 0x06002F6B RID: 12139 RVA: 0x0012BBD0 File Offset: 0x00129DD0
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -59,7 +59,7 @@ public class ItemActionConnectPower : ItemAction
 		WireManager.Instance.ToggleAllWirePulse(false);
 	}
 
-	// Token: 0x06002F2A RID: 12074 RVA: 0x0012B224 File Offset: 0x00129424
+	// Token: 0x06002F6C RID: 12140 RVA: 0x0012BCF4 File Offset: 0x00129EF4
 	public override void StartHolding(ItemActionData _data)
 	{
 		base.StartHolding(_data);
@@ -71,7 +71,7 @@ public class ItemActionConnectPower : ItemAction
 		WireManager.Instance.ToggleAllWirePulse(true);
 	}
 
-	// Token: 0x06002F2B RID: 12075 RVA: 0x0012B276 File Offset: 0x00129476
+	// Token: 0x06002F6D RID: 12141 RVA: 0x0012BD46 File Offset: 0x00129F46
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -86,14 +86,14 @@ public class ItemActionConnectPower : ItemAction
 		((ItemActionConnectPower.ConnectPowerData)_actionData).StartLink = true;
 	}
 
-	// Token: 0x06002F2C RID: 12076 RVA: 0x0012B2A8 File Offset: 0x001294A8
+	// Token: 0x06002F6E RID: 12142 RVA: 0x0012BD78 File Offset: 0x00129F78
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionConnectPower.ConnectPowerData connectPowerData = (ItemActionConnectPower.ConnectPowerData)_actionData;
 		return connectPowerData.StartLink && Time.time - connectPowerData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[connectPowerData.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06002F2D RID: 12077 RVA: 0x0012B300 File Offset: 0x00129500
+	// Token: 0x06002F6F RID: 12143 RVA: 0x0012BDD0 File Offset: 0x00129FD0
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionConnectPower.ConnectPowerData connectPowerData = (ItemActionConnectPower.ConnectPowerData)_actionData;
@@ -335,7 +335,7 @@ public class ItemActionConnectPower : ItemAction
 		}
 	}
 
-	// Token: 0x06002F2E RID: 12078 RVA: 0x0012BD64 File Offset: 0x00129F64
+	// Token: 0x06002F70 RID: 12144 RVA: 0x0012C834 File Offset: 0x0012AA34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform GetHandTransform(EntityAlive holdingEntity)
 	{
@@ -360,7 +360,7 @@ public class ItemActionConnectPower : ItemAction
 		return transform2;
 	}
 
-	// Token: 0x06002F2F RID: 12079 RVA: 0x0012BDE8 File Offset: 0x00129FE8
+	// Token: 0x06002F71 RID: 12145 RVA: 0x0012C8B8 File Offset: 0x0012AAB8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void CheckForWireRemoveNeeded(EntityAlive _player, Vector3i _blockPos)
 	{
@@ -371,7 +371,7 @@ public class ItemActionConnectPower : ItemAction
 		}
 	}
 
-	// Token: 0x06002F30 RID: 12080 RVA: 0x0012BE30 File Offset: 0x0012A030
+	// Token: 0x06002F72 RID: 12146 RVA: 0x0012C900 File Offset: 0x0012AB00
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		WorldRayHitInfo hitInfo = ((EntityPlayerLocal)_actionData.invData.holdingEntity).HitInfo;
@@ -395,7 +395,7 @@ public class ItemActionConnectPower : ItemAction
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x06002F31 RID: 12081 RVA: 0x0012BEC4 File Offset: 0x0012A0C4
+	// Token: 0x06002F73 RID: 12147 RVA: 0x0012C994 File Offset: 0x0012AB94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowered GetPoweredBlock(ItemInventoryData data)
 	{
@@ -439,7 +439,7 @@ public class ItemActionConnectPower : ItemAction
 		return tileEntity as TileEntityPowered;
 	}
 
-	// Token: 0x06002F32 RID: 12082 RVA: 0x0012BFF4 File Offset: 0x0012A1F4
+	// Token: 0x06002F74 RID: 12148 RVA: 0x0012CAC4 File Offset: 0x0012ACC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowered GetPoweredBlock(Vector3i tileEntityPos)
 	{
@@ -477,7 +477,7 @@ public class ItemActionConnectPower : ItemAction
 		return tileEntity as TileEntityPowered;
 	}
 
-	// Token: 0x06002F33 RID: 12083 RVA: 0x0012C0DC File Offset: 0x0012A2DC
+	// Token: 0x06002F75 RID: 12149 RVA: 0x0012CBAC File Offset: 0x0012ADAC
 	public bool DisconnectWire(ItemActionConnectPower.ConnectPowerData _actionData)
 	{
 		if (!_actionData.HasStartPoint)
@@ -517,7 +517,7 @@ public class ItemActionConnectPower : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002F34 RID: 12084 RVA: 0x0012C2B4 File Offset: 0x0012A4B4
+	// Token: 0x06002F76 RID: 12150 RVA: 0x0012CD84 File Offset: 0x0012AF84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DecreaseDurability(ItemActionConnectPower.ConnectPowerData _actionData)
 	{
@@ -533,42 +533,42 @@ public class ItemActionConnectPower : ItemAction
 		}
 	}
 
-	// Token: 0x0400248C RID: 9356
+	// Token: 0x04002485 RID: 9349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 wireOffset = Vector3.zero;
 
-	// Token: 0x0400248D RID: 9357
+	// Token: 0x04002486 RID: 9350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxWireLength = 15;
 
-	// Token: 0x0200059F RID: 1439
+	// Token: 0x020005A0 RID: 1440
 	public class ConnectPowerData : ItemActionAttackData
 	{
-		// Token: 0x06002F36 RID: 12086 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x06002F78 RID: 12152 RVA: 0x0012B224 File Offset: 0x00129424
 		public ConnectPowerData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400248E RID: 9358
+		// Token: 0x04002487 RID: 9351
 		public bool StartLink;
 
-		// Token: 0x0400248F RID: 9359
+		// Token: 0x04002488 RID: 9352
 		public bool HasStartPoint;
 
-		// Token: 0x04002490 RID: 9360
+		// Token: 0x04002489 RID: 9353
 		public LocalPlayerUI playerUI;
 
-		// Token: 0x04002491 RID: 9361
+		// Token: 0x0400248A RID: 9354
 		public Vector3i startPoint;
 
-		// Token: 0x04002492 RID: 9362
+		// Token: 0x0400248B RID: 9355
 		public bool inRange;
 
-		// Token: 0x04002493 RID: 9363
+		// Token: 0x0400248C RID: 9356
 		public bool isFriendly;
 
-		// Token: 0x04002494 RID: 9364
+		// Token: 0x0400248D RID: 9357
 		public WireNode wireNode;
 	}
 }

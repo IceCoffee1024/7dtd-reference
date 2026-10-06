@@ -4,12 +4,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001EA RID: 490
+// Token: 0x020001EB RID: 491
 [Preserve]
 public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 {
-	// Token: 0x1700013E RID: 318
-	// (get) Token: 0x06000F1E RID: 3870 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000136 RID: 310
+	// (get) Token: 0x06000F11 RID: 3857 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,8 +18,8 @@ public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700013F RID: 319
-	// (get) Token: 0x06000F1F RID: 3871 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000137 RID: 311
+	// (get) Token: 0x06000F12 RID: 3858 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -28,28 +28,28 @@ public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x00062542 File Offset: 0x00060742
+	// Token: 0x06000F13 RID: 3859 RVA: 0x00062532 File Offset: 0x00060732
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "automove" };
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x00062552 File Offset: 0x00060752
+	// Token: 0x06000F14 RID: 3860 RVA: 0x00062542 File Offset: 0x00060742
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Player auto movement";
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x00062559 File Offset: 0x00060759
+	// Token: 0x06000F15 RID: 3861 RVA: 0x00062549 File Offset: 0x00060749
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Parameters:\noff - disable\ngototarget - goto the target position\nsettarget - set target to current player position\nclearlookat - disable look at\nsetlookat - set look at to current player position\nline duration loops <x> <y> <z> - move to x y z (or target) over duration with loops (-loops will ping pong)\norbit duration loops <x> <y> <z> - circle around x y z (or target) over duration with loops (-loops will ping pong)\nrelative x z angle - move by x (left/right) and z (forward) and turn by angle per second";
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x00062560 File Offset: 0x00060760
+	// Token: 0x06000F16 RID: 3862 RVA: 0x00062550 File Offset: 0x00060750
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -334,7 +334,7 @@ public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("unknown command " + _params[0]);
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x00062AB4 File Offset: 0x00060CB4
+	// Token: 0x06000F17 RID: 3863 RVA: 0x00062AA4 File Offset: 0x00060CA4
 	public int IntParse(string s)
 	{
 		int num;
@@ -342,7 +342,7 @@ public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x06000F25 RID: 3877 RVA: 0x00062ACC File Offset: 0x00060CCC
+	// Token: 0x06000F18 RID: 3864 RVA: 0x00062ABC File Offset: 0x00060CBC
 	public float FloatParse(string s)
 	{
 		float num;
@@ -350,11 +350,11 @@ public class ConsoleCmdAutoMove : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x04000C8D RID: 3213
+	// Token: 0x04000C86 RID: 3206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 targetPos;
 
-	// Token: 0x04000C8E RID: 3214
+	// Token: 0x04000C87 RID: 3207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 lookAtPos;
 }

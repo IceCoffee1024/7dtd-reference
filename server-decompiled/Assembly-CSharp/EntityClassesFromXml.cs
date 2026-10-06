@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000D06 RID: 3334
+// Token: 0x02000D14 RID: 3348
 public class EntityClassesFromXml
 {
-	// Token: 0x060065DC RID: 26076 RVA: 0x0027DB48 File Offset: 0x0027BD48
+	// Token: 0x060065CE RID: 26062 RVA: 0x00280EEC File Offset: 0x0027F0EC
 	public static IEnumerator LoadMain(XmlFile _xmlFile)
 	{
 		return EntityClassesFromXml.Load(_xmlFile, false);
 	}
 
-	// Token: 0x060065DD RID: 26077 RVA: 0x0027DB51 File Offset: 0x0027BD51
+	// Token: 0x060065CF RID: 26063 RVA: 0x00280EF5 File Offset: 0x0027F0F5
 	public static IEnumerator LoadAppend(XmlFile _xmlFile)
 	{
 		return EntityClassesFromXml.Load(_xmlFile, true);
 	}
 
-	// Token: 0x060065DE RID: 26078 RVA: 0x0027DB5A File Offset: 0x0027BD5A
+	// Token: 0x060065D0 RID: 26064 RVA: 0x00280EFE File Offset: 0x0027F0FE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator Load(XmlFile _xmlFile, bool _append)
 	{
@@ -179,7 +179,7 @@ public class EntityClassesFromXml
 		yield break;
 	}
 
-	// Token: 0x060065DF RID: 26079 RVA: 0x0027DB70 File Offset: 0x0027BD70
+	// Token: 0x060065D1 RID: 26065 RVA: 0x00280F14 File Offset: 0x0027F114
 	public static string ReplaceProperty(string _value)
 	{
 		if (_value.Length > 0 && _value[0] == '^')
@@ -189,12 +189,12 @@ public class EntityClassesFromXml
 		return _value;
 	}
 
-	// Token: 0x04004F0B RID: 20235
+	// Token: 0x04004F41 RID: 20289
 	public const char cReplaceChar = '^';
 
-	// Token: 0x04004F0C RID: 20236
+	// Token: 0x04004F42 RID: 20290
 	public static Dictionary<string, string> sReplaceProperties = new Dictionary<string, string>();
 
-	// Token: 0x04004F0D RID: 20237
+	// Token: 0x04004F43 RID: 20291
 	public static Dictionary<string, string> sReplacePassiveEffects = new Dictionary<string, string>();
 }

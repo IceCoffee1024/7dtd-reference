@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002E8 RID: 744
+// Token: 0x020002EB RID: 747
 [Preserve]
 public class DialogActionVoice : BaseDialogAction
 {
-	// Token: 0x1700025F RID: 607
-	// (get) Token: 0x06001563 RID: 5475 RVA: 0x00080719 File Offset: 0x0007E919
+	// Token: 0x17000257 RID: 599
+	// (get) Token: 0x06001560 RID: 5472 RVA: 0x000809CD File Offset: 0x0007EBCD
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -15,13 +15,13 @@ public class DialogActionVoice : BaseDialogAction
 		}
 	}
 
-	// Token: 0x06001564 RID: 5476 RVA: 0x0008071C File Offset: 0x0007E91C
+	// Token: 0x06001561 RID: 5473 RVA: 0x000809D0 File Offset: 0x0007EBD0
 	public override void PerformAction(EntityPlayer player)
 	{
 		LocalPlayerUI.primaryUI.xui.Dialog.Respondent.PlayVoiceSetEntry(base.ID, player, true, true);
 	}
 
-	// Token: 0x04000E5D RID: 3677
+	// Token: 0x04000E56 RID: 3670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 }

@@ -5,12 +5,12 @@ using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x0200036A RID: 874
+// Token: 0x0200036D RID: 877
 [DebuggerDisplay("{Name} O:{OpaqueMesh.Vertices.Count} T:{TerrainMesh.Vertices.Count}")]
 public class DyMeshData
 {
-	// Token: 0x1700030A RID: 778
-	// (get) Token: 0x06001998 RID: 6552 RVA: 0x00092AB8 File Offset: 0x00090CB8
+	// Token: 0x17000302 RID: 770
+	// (get) Token: 0x06001993 RID: 6547 RVA: 0x00092D38 File Offset: 0x00090F38
 	public static int TotalItems
 	{
 		get
@@ -19,14 +19,14 @@ public class DyMeshData
 		}
 	}
 
-	// Token: 0x06001999 RID: 6553 RVA: 0x00092ACA File Offset: 0x00090CCA
+	// Token: 0x06001994 RID: 6548 RVA: 0x00092D4A File Offset: 0x00090F4A
 	public void Reset()
 	{
 		DyMeshData.ResetMesh(this.OpaqueMesh);
 		DyMeshData.ResetTerrainMesh(this.TerrainMesh);
 	}
 
-	// Token: 0x0600199A RID: 6554 RVA: 0x00092AE4 File Offset: 0x00090CE4
+	// Token: 0x06001995 RID: 6549 RVA: 0x00092D64 File Offset: 0x00090F64
 	public static void ResetMeshLayer(VoxelMeshLayer layer)
 	{
 		VoxelMesh[] meshes = layer.meshes;
@@ -36,7 +36,7 @@ public class DyMeshData
 		}
 	}
 
-	// Token: 0x0600199B RID: 6555 RVA: 0x00092B10 File Offset: 0x00090D10
+	// Token: 0x06001996 RID: 6550 RVA: 0x00092D90 File Offset: 0x00090F90
 	public static void ResetMesh(VoxelMesh mesh)
 	{
 		VoxelMeshTerrain voxelMeshTerrain = mesh as VoxelMeshTerrain;
@@ -48,14 +48,14 @@ public class DyMeshData
 		DyMeshData.ResetOpaqueMesh(mesh);
 	}
 
-	// Token: 0x0600199C RID: 6556 RVA: 0x00092B34 File Offset: 0x00090D34
+	// Token: 0x06001997 RID: 6551 RVA: 0x00092DB4 File Offset: 0x00090FB4
 	public static void ResetTerrainMesh(VoxelMeshTerrain mesh)
 	{
 		DyMeshData.ResetOpaqueMesh(mesh);
 		mesh.submeshes.Clear();
 	}
 
-	// Token: 0x0600199D RID: 6557 RVA: 0x00092B48 File Offset: 0x00090D48
+	// Token: 0x06001998 RID: 6552 RVA: 0x00092DC8 File Offset: 0x00090FC8
 	public static void ResetOpaqueMesh(VoxelMesh mesh)
 	{
 		mesh.CurTriangleIndex = 0;
@@ -84,7 +84,7 @@ public class DyMeshData
 		}
 	}
 
-	// Token: 0x0600199E RID: 6558 RVA: 0x00092C00 File Offset: 0x00090E00
+	// Token: 0x06001999 RID: 6553 RVA: 0x00092E80 File Offset: 0x00091080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string DebugDyMeshdata(DyMeshData data)
 	{
@@ -146,7 +146,7 @@ public class DyMeshData
 		return string.Format(text, array);
 	}
 
-	// Token: 0x0600199F RID: 6559 RVA: 0x00092EEC File Offset: 0x000910EC
+	// Token: 0x0600199A RID: 6554 RVA: 0x0009316C File Offset: 0x0009136C
 	public static DyMeshData AddToCache(DyMeshData data)
 	{
 		if (data == null)
@@ -167,7 +167,7 @@ public class DyMeshData
 		return null;
 	}
 
-	// Token: 0x060019A0 RID: 6560 RVA: 0x00092F78 File Offset: 0x00091178
+	// Token: 0x0600199B RID: 6555 RVA: 0x000931F8 File Offset: 0x000913F8
 	public static DyMeshData GetFromCache()
 	{
 		DyMeshData dyMeshData;
@@ -183,7 +183,7 @@ public class DyMeshData
 		return dyMeshData;
 	}
 
-	// Token: 0x060019A1 RID: 6561 RVA: 0x00092FC0 File Offset: 0x000911C0
+	// Token: 0x0600199C RID: 6556 RVA: 0x00093240 File Offset: 0x00091440
 	public static DyMeshData Create(int opaqueSize = 32000, int terrainSize = 32000)
 	{
 		DyMeshData dyMeshData = new DyMeshData();
@@ -194,23 +194,23 @@ public class DyMeshData
 		return dyMeshData;
 	}
 
-	// Token: 0x04001036 RID: 4150
+	// Token: 0x0400102F RID: 4143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConcurrentQueue<DyMeshData> Cache = new ConcurrentQueue<DyMeshData>();
 
-	// Token: 0x04001037 RID: 4151
+	// Token: 0x04001030 RID: 4144
 	public static int ActiveItems = 0;
 
-	// Token: 0x04001038 RID: 4152
+	// Token: 0x04001031 RID: 4145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int InstanceCount;
 
-	// Token: 0x04001039 RID: 4153
+	// Token: 0x04001032 RID: 4146
 	public string Name;
 
-	// Token: 0x0400103A RID: 4154
+	// Token: 0x04001033 RID: 4147
 	public VoxelMesh OpaqueMesh;
 
-	// Token: 0x0400103B RID: 4155
+	// Token: 0x04001034 RID: 4148
 	public VoxelMeshTerrain TerrainMesh;
 }

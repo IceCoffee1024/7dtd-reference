@@ -1,13 +1,14 @@
 ﻿using System;
+using AssetManagement;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005F8 RID: 1528
+// Token: 0x020005FB RID: 1531
 [Preserve]
 public class ItemClassBlock : ItemClass
 {
-	// Token: 0x1700051D RID: 1309
-	// (get) Token: 0x060031C5 RID: 12741 RVA: 0x00143CBA File Offset: 0x00141EBA
+	// Token: 0x17000544 RID: 1348
+	// (get) Token: 0x0600320E RID: 12814 RVA: 0x00144794 File Offset: 0x00142994
 	public override bool IsLimitedItem
 	{
 		get
@@ -16,7 +17,7 @@ public class ItemClassBlock : ItemClass
 		}
 	}
 
-	// Token: 0x060031C6 RID: 12742 RVA: 0x00143CC8 File Offset: 0x00141EC8
+	// Token: 0x0600320F RID: 12815 RVA: 0x001447A4 File Offset: 0x001429A4
 	public ItemClassBlock()
 	{
 		this.HoldType = new DataItem<int>(7);
@@ -24,7 +25,7 @@ public class ItemClassBlock : ItemClass
 		this.Stacknumber = new DataItem<int>(500);
 	}
 
-	// Token: 0x060031C7 RID: 12743 RVA: 0x00143D28 File Offset: 0x00141F28
+	// Token: 0x06003210 RID: 12816 RVA: 0x00144804 File Offset: 0x00142A04
 	public override void Init()
 	{
 		base.Init();
@@ -45,67 +46,55 @@ public class ItemClassBlock : ItemClass
 		this.IsLimited = block.IsLimited;
 	}
 
-	// Token: 0x060031C8 RID: 12744 RVA: 0x00143DD9 File Offset: 0x00141FD9
+	// Token: 0x06003211 RID: 12817 RVA: 0x001448B5 File Offset: 0x00142AB5
 	public override bool IsActionRunning(ItemInventoryData _data)
 	{
-		return Time.time - (_data as ItemClassBlock.ItemBlockInventoryData).lastBuildTime < Constants.cBuildIntervall;
+		return Time.time - _data.lastBuildTime < Constants.cBuildIntervall;
 	}
 
-	// Token: 0x060031C9 RID: 12745 RVA: 0x00143DF3 File Offset: 0x00141FF3
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public override ItemInventoryData createItemInventoryData(ItemStack _itemStack, IGameManager _gameManager, EntityAlive _holdingEntity, int _slotIdx)
-	{
-		return new ItemClassBlock.ItemBlockInventoryData(this, _itemStack, _gameManager, _holdingEntity, _slotIdx);
-	}
-
-	// Token: 0x060031CA RID: 12746 RVA: 0x000027FC File Offset: 0x000009FC
-	public override void StopHolding(ItemInventoryData _data, Transform _modelTransform)
-	{
-	}
-
-	// Token: 0x060031CB RID: 12747 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003212 RID: 12818 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsBlock()
 	{
 		return true;
 	}
 
-	// Token: 0x060031CC RID: 12748 RVA: 0x00143E00 File Offset: 0x00142000
+	// Token: 0x06003213 RID: 12819 RVA: 0x001448CA File Offset: 0x00142ACA
 	public override bool IsProp()
 	{
 		return this.GetBlock().IsProp;
 	}
 
-	// Token: 0x060031CD RID: 12749 RVA: 0x00143E0D File Offset: 0x0014200D
+	// Token: 0x06003214 RID: 12820 RVA: 0x001448D7 File Offset: 0x00142AD7
 	public override Block GetBlock()
 	{
 		return Block.list[base.Id];
 	}
 
-	// Token: 0x060031CE RID: 12750 RVA: 0x00143E1B File Offset: 0x0014201B
+	// Token: 0x06003215 RID: 12821 RVA: 0x001448E5 File Offset: 0x00142AE5
 	public override string GetItemName()
 	{
 		return this.GetBlock().GetBlockName();
 	}
 
-	// Token: 0x060031CF RID: 12751 RVA: 0x00143E28 File Offset: 0x00142028
+	// Token: 0x06003216 RID: 12822 RVA: 0x001448F2 File Offset: 0x00142AF2
 	public override string GetLocalizedItemName()
 	{
 		return this.GetBlock().GetLocalizedBlockName();
 	}
 
-	// Token: 0x060031D0 RID: 12752 RVA: 0x00143E35 File Offset: 0x00142035
+	// Token: 0x06003217 RID: 12823 RVA: 0x001448FF File Offset: 0x00142AFF
 	public override bool HasAnyTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.GetBlock().Tags.Test_AnySet(_tags);
 	}
 
-	// Token: 0x060031D1 RID: 12753 RVA: 0x00143E48 File Offset: 0x00142048
+	// Token: 0x06003218 RID: 12824 RVA: 0x00144912 File Offset: 0x00142B12
 	public override bool HasAllTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.GetBlock().Tags.Test_AllSet(_tags);
 	}
 
-	// Token: 0x060031D2 RID: 12754 RVA: 0x00143E5C File Offset: 0x0014205C
+	// Token: 0x06003219 RID: 12825 RVA: 0x00144928 File Offset: 0x00142B28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue GetBlockValueFromItemValue(ItemValue _itemValue)
 	{
@@ -117,19 +106,13 @@ public class ItemClassBlock : ItemClass
 		return _itemValue.ToBlockValue(false);
 	}
 
-	// Token: 0x060031D3 RID: 12755 RVA: 0x00143E8C File Offset: 0x0014208C
-	public override Transform CloneModel(GameObject _go, World _world, BlockValue _blockValue, Vector3[] _vertices, Vector3 _position, Transform _parent, BlockShape.MeshPurpose _purpose, TextureFullArray _textureFullArray = default(TextureFullArray))
+	// Token: 0x0600321A RID: 12826 RVA: 0x00144958 File Offset: 0x00142B58
+	public override InstanceHandle<GameObject> CloneModel(ItemValue _itemValue, Transform _parent, BlockShape.MeshPurpose _purpose)
 	{
-		return ItemClassBlock.CreateMesh(_go, _world, _blockValue, _vertices, _position, _parent, _purpose, _textureFullArray);
+		throw new NotImplementedException("ItemClassBlock does not support CloneModel use CreateMesh instead");
 	}
 
-	// Token: 0x060031D4 RID: 12756 RVA: 0x00143EA0 File Offset: 0x001420A0
-	public override Transform CloneModel(World _world, ItemValue _itemValue, Vector3 _position, Transform _parent, BlockShape.MeshPurpose _purpose, TextureFullArray _textureFullArray = default(TextureFullArray))
-	{
-		return ItemClassBlock.CreateMesh(null, _world, this.GetBlockValueFromItemValue(_itemValue), null, _position, _parent, _purpose, _textureFullArray);
-	}
-
-	// Token: 0x060031D5 RID: 12757 RVA: 0x00143EB8 File Offset: 0x001420B8
+	// Token: 0x0600321B RID: 12827 RVA: 0x00144964 File Offset: 0x00142B64
 	public static Transform CreateMesh(GameObject _go, World _world, BlockValue _blockValue, Vector3[] _vertices, Vector3 _worldPos, Transform _parent, BlockShape.MeshPurpose _purpose, TextureFullArray _textureFullArray = default(TextureFullArray))
 	{
 		if (_purpose == BlockShape.MeshPurpose.Drop)
@@ -173,7 +156,7 @@ public class ItemClassBlock : ItemClass
 		return transform2;
 	}
 
-	// Token: 0x060031D6 RID: 12758 RVA: 0x00143FB8 File Offset: 0x001421B8
+	// Token: 0x0600321C RID: 12828 RVA: 0x00144A64 File Offset: 0x00142C64
 	public static Transform CreateMeshOfType(GameObject _go, World _world, BlockValue _blockValue, Vector3[] _vertices, Vector3 _worldPos, Transform _parent, BlockShape.MeshPurpose _purpose, TextureFullArray _textureFullArray, int _meshIndex)
 	{
 		Vector3i vector3i = World.worldToBlockPos(_worldPos);
@@ -221,25 +204,25 @@ public class ItemClassBlock : ItemClass
 		return _go.transform;
 	}
 
-	// Token: 0x060031D7 RID: 12759 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600321D RID: 12829 RVA: 0x00020119 File Offset: 0x0001E319
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemInventoryData _holdingData)
 	{
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x060031D8 RID: 12760 RVA: 0x00131719 File Offset: 0x0012F919
+	// Token: 0x0600321E RID: 12830 RVA: 0x001321B1 File Offset: 0x001303B1
 	public override RenderCubeType GetFocusType(ItemInventoryData _data)
 	{
 		return RenderCubeType.FullBlockBothSides;
 	}
 
-	// Token: 0x060031D9 RID: 12761 RVA: 0x0014413A File Offset: 0x0014233A
+	// Token: 0x0600321F RID: 12831 RVA: 0x00144BE6 File Offset: 0x00142DE6
 	public override float GetFocusRange()
 	{
 		return Constants.cDigAndBuildDistance;
 	}
 
-	// Token: 0x060031DA RID: 12762 RVA: 0x00144144 File Offset: 0x00142344
+	// Token: 0x06003220 RID: 12832 RVA: 0x00144BF0 File Offset: 0x00142DF0
 	public override void ExecuteAction(int _actionIdx, ItemInventoryData _data, bool _bReleased, PlayerActionsLocal _playerActions)
 	{
 		EntityPlayerLocal entityPlayerLocal = _data.holdingEntity as EntityPlayerLocal;
@@ -255,112 +238,43 @@ public class ItemClassBlock : ItemClass
 		GameManager.Instance.GetActiveBlockTool().ExecuteUseAction(_data, _bReleased, _playerActions);
 	}
 
-	// Token: 0x060031DB RID: 12763 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003221 RID: 12833 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsFocusBlockInside()
 	{
 		return false;
 	}
 
-	// Token: 0x060031DC RID: 12764 RVA: 0x0004E48E File Offset: 0x0004C68E
+	// Token: 0x06003222 RID: 12834 RVA: 0x0004E492 File Offset: 0x0004C692
 	public override Vector3 GetDroppedCorrectionRotation()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x060031DD RID: 12765 RVA: 0x0014419A File Offset: 0x0014239A
+	// Token: 0x06003223 RID: 12835 RVA: 0x00144C46 File Offset: 0x00142E46
 	public override Vector3 GetCorrectionRotation()
 	{
 		return new Vector3(90f, 0f, 0f);
 	}
 
-	// Token: 0x060031DE RID: 12766 RVA: 0x0004E48E File Offset: 0x0004C68E
+	// Token: 0x06003224 RID: 12836 RVA: 0x0004E492 File Offset: 0x0004C692
 	public override Vector3 GetCorrectionPosition()
 	{
 		return Vector3.zero;
 	}
 
-	// Token: 0x060031DF RID: 12767 RVA: 0x001441B0 File Offset: 0x001423B0
+	// Token: 0x06003225 RID: 12837 RVA: 0x00144C5C File Offset: 0x00142E5C
 	public override Vector3 GetCorrectionScale()
 	{
 		return new Vector3(0.1f, 0.1f, 0.1f);
 	}
 
-	// Token: 0x060031E0 RID: 12768 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003226 RID: 12838 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanHold()
 	{
 		return false;
 	}
 
-	// Token: 0x04002759 RID: 10073
-	[PublicizedFrom(EAccessModifier.Private)]
-	public const byte cNoRotation = 128;
-
-	// Token: 0x0400275A RID: 10074
+	// Token: 0x04002758 RID: 10072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3 renderOffsetV = new Vector3(-0.5f, -0.5f, -0.5f);
-
-	// Token: 0x020005F9 RID: 1529
-	public class ItemBlockInventoryData : ItemInventoryData
-	{
-		// Token: 0x060031E2 RID: 12770 RVA: 0x001441E4 File Offset: 0x001423E4
-		public ItemBlockInventoryData(ItemClass _item, ItemStack _itemStack, IGameManager _gameManager, EntityAlive _holdingEntity, int _slotIdx)
-			: base(_item, _itemStack, _gameManager, _holdingEntity, _slotIdx)
-		{
-			this.lastBuildTime = 0f;
-			this.rotation = 128;
-			Block block = Block.list[_item.Id];
-			if (block.HandleFace != BlockFace.None)
-			{
-				this.mode = BlockPlacement.EnumRotationMode.ToFace;
-			}
-			if (block.BlockPlacementHelper != BlockPlacement.None)
-			{
-				this.mode = BlockPlacement.EnumRotationMode.Auto;
-			}
-		}
-
-		// Token: 0x1700051E RID: 1310
-		// (get) Token: 0x060031E3 RID: 12771 RVA: 0x0014425C File Offset: 0x0014245C
-		// (set) Token: 0x060031E4 RID: 12772 RVA: 0x001442A5 File Offset: 0x001424A5
-		public BlockPlacement.EnumPlacement Placement
-		{
-			get
-			{
-				BlockPlacement.EnumPlacement placement = this.m_placement;
-				bool flag = placement == BlockPlacement.EnumPlacement.Voxel || placement != BlockPlacement.EnumPlacement.Free || this.item.IsProp();
-				bool flag2 = flag;
-				if (!LaunchPrefs.EnableProps.Value || !flag2)
-				{
-					return BlockPlacement.EnumPlacement.Voxel;
-				}
-				return this.m_placement;
-			}
-			set
-			{
-				this.m_placement = value;
-			}
-		}
-
-		// Token: 0x0400275B RID: 10075
-		public float lastBuildTime;
-
-		// Token: 0x0400275C RID: 10076
-		public byte rotation;
-
-		// Token: 0x0400275D RID: 10077
-		[PublicizedFrom(EAccessModifier.Private)]
-		public BlockPlacement.EnumPlacement m_placement;
-
-		// Token: 0x0400275E RID: 10078
-		public BlockPlacement.EnumRotationMode mode = BlockPlacement.EnumRotationMode.Simple;
-
-		// Token: 0x0400275F RID: 10079
-		public int localRot;
-
-		// Token: 0x04002760 RID: 10080
-		public int damage;
-
-		// Token: 0x04002761 RID: 10081
-		public PropTransform propTransform = PropTransform.identity;
-	}
 }

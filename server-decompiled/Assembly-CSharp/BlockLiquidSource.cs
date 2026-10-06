@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200012B RID: 299
+// Token: 0x0200012D RID: 301
 [Preserve]
 public class BlockLiquidSource : Block
 {
-	// Token: 0x060007F9 RID: 2041 RVA: 0x000387C8 File Offset: 0x000369C8
+	// Token: 0x060007FF RID: 2047 RVA: 0x000388B8 File Offset: 0x00036AB8
 	public BlockLiquidSource()
 	{
 		Vector3i[,] array = new Vector3i[8, 4];
@@ -46,7 +46,7 @@ public class BlockLiquidSource : Block
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x060007FA RID: 2042 RVA: 0x000389F0 File Offset: 0x00036BF0
+	// Token: 0x06000800 RID: 2048 RVA: 0x00038AE0 File Offset: 0x00036CE0
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -59,7 +59,7 @@ public class BlockLiquidSource : Block
 		this.waterBlock = BlockValue.Air;
 	}
 
-	// Token: 0x060007FB RID: 2043 RVA: 0x00038A2C File Offset: 0x00036C2C
+	// Token: 0x06000801 RID: 2049 RVA: 0x00038B1C File Offset: 0x00036D1C
 	public override void OnNeighborBlockChange(WorldBase world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 		base.OnNeighborBlockChange(world, _myBlockPos, _myBlockValue, _blockPosThatChanged, _newNeighborBlockValue, _oldNeighborBlockValue);
@@ -71,19 +71,19 @@ public class BlockLiquidSource : Block
 		}
 	}
 
-	// Token: 0x060007FC RID: 2044 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000802 RID: 2050 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(IBlockAccess world, Vector3i _blockPos, BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return false;
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00038A83 File Offset: 0x00036C83
+	// Token: 0x06000803 RID: 2051 RVA: 0x00038B73 File Offset: 0x00036D73
 	public override ulong GetTickRate()
 	{
 		return 20UL;
 	}
 
-	// Token: 0x060007FE RID: 2046 RVA: 0x00038A88 File Offset: 0x00036C88
+	// Token: 0x06000804 RID: 2052 RVA: 0x00038B78 File Offset: 0x00036D78
 	public override bool UpdateTick(WorldBase world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		BlockValue blockValue;
@@ -116,7 +116,7 @@ public class BlockLiquidSource : Block
 		return true;
 	}
 
-	// Token: 0x060007FF RID: 2047 RVA: 0x00038BC4 File Offset: 0x00036DC4
+	// Token: 0x06000805 RID: 2053 RVA: 0x00038CB4 File Offset: 0x00036EB4
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -128,19 +128,19 @@ public class BlockLiquidSource : Block
 		}
 	}
 
-	// Token: 0x0400092B RID: 2347
+	// Token: 0x0400092E RID: 2350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue waterBlock;
 
-	// Token: 0x0400092C RID: 2348
+	// Token: 0x0400092F RID: 2351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i[,] fallDirsSet;
 
-	// Token: 0x0400092D RID: 2349
+	// Token: 0x04000930 RID: 2352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int fallSet;
 
-	// Token: 0x0400092E RID: 2350
+	// Token: 0x04000931 RID: 2353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i emitionPos;
 }

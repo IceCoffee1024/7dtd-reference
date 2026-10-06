@@ -2,13 +2,13 @@
 
 namespace UniLinq
 {
-	// Token: 0x020017BC RID: 6076
+	// Token: 0x020017E8 RID: 6120
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public enum SortDirection
 	{
-		// Token: 0x04008D55 RID: 36181
+		// Token: 0x04008E1A RID: 36378
 		Ascending,
-		// Token: 0x04008D56 RID: 36182
+		// Token: 0x04008E1B RID: 36379
 		Descending
 	}
 }

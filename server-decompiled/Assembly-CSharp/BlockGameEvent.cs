@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200011F RID: 287
+// Token: 0x02000121 RID: 289
 [Preserve]
 public class BlockGameEvent : Block
 {
 	// Token: 0x17000092 RID: 146
-	// (get) Token: 0x0600078D RID: 1933 RVA: 0x00020021 File Offset: 0x0001E221
+	// (get) Token: 0x06000793 RID: 1939 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowBlockTriggers
 	{
 		get
@@ -17,7 +17,7 @@ public class BlockGameEvent : Block
 		}
 	}
 
-	// Token: 0x0600078F RID: 1935 RVA: 0x00035B4C File Offset: 0x00033D4C
+	// Token: 0x06000795 RID: 1941 RVA: 0x00035C40 File Offset: 0x00033E40
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class BlockGameEvent : Block
 		base.Properties.ParseFloat(BlockGameEvent.PropActivateTime, ref this.activateTime);
 	}
 
-	// Token: 0x06000790 RID: 1936 RVA: 0x00035BFC File Offset: 0x00033DFC
+	// Token: 0x06000796 RID: 1942 RVA: 0x00035CF0 File Offset: 0x00033EF0
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (this.onActivateEvent == "" && !_world.IsEditor())
@@ -43,7 +43,7 @@ public class BlockGameEvent : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000791 RID: 1937 RVA: 0x00035C80 File Offset: 0x00033E80
+	// Token: 0x06000797 RID: 1943 RVA: 0x00035D74 File Offset: 0x00033F74
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -54,7 +54,7 @@ public class BlockGameEvent : Block
 		}
 	}
 
-	// Token: 0x06000792 RID: 1938 RVA: 0x00035CF8 File Offset: 0x00033EF8
+	// Token: 0x06000798 RID: 1944 RVA: 0x00035DEC File Offset: 0x00033FEC
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "activate")
@@ -89,7 +89,7 @@ public class BlockGameEvent : Block
 		return true;
 	}
 
-	// Token: 0x06000793 RID: 1939 RVA: 0x00035E20 File Offset: 0x00034020
+	// Token: 0x06000799 RID: 1945 RVA: 0x00035F14 File Offset: 0x00034114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_Event(TimerEventData timerData)
 	{
@@ -99,13 +99,13 @@ public class BlockGameEvent : Block
 		GameEventManager.Current.HandleAction(this.onActivateEvent, null, entityPlayerLocal, false, vector3i, "", "", false, true, "", null, null);
 	}
 
-	// Token: 0x06000794 RID: 1940 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600079A RID: 1946 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x06000795 RID: 1941 RVA: 0x00035E78 File Offset: 0x00034078
+	// Token: 0x0600079B RID: 1947 RVA: 0x00035F6C File Offset: 0x0003416C
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = !_world.IsEditor() && this.onActivateEvent != "";
@@ -113,7 +113,7 @@ public class BlockGameEvent : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000796 RID: 1942 RVA: 0x00035EDC File Offset: 0x000340DC
+	// Token: 0x0600079C RID: 1948 RVA: 0x00035FD0 File Offset: 0x000341D0
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (this.onDamageEvent != "")
@@ -150,7 +150,7 @@ public class BlockGameEvent : Block
 		return num;
 	}
 
-	// Token: 0x06000797 RID: 1943 RVA: 0x00036008 File Offset: 0x00034208
+	// Token: 0x0600079D RID: 1949 RVA: 0x000360FC File Offset: 0x000342FC
 	public override void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		base.OnTriggered(_player, _world, _blockPos, _blockValue, _blockChanges, _triggeredBy);
@@ -169,63 +169,63 @@ public class BlockGameEvent : Block
 		}
 	}
 
-	// Token: 0x040008EA RID: 2282
+	// Token: 0x040008ED RID: 2285
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOnActivateEvent = "ActivateEvent";
 
-	// Token: 0x040008EB RID: 2283
+	// Token: 0x040008EE RID: 2286
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOnDamageEvent = "DamageEvent";
 
-	// Token: 0x040008EC RID: 2284
+	// Token: 0x040008EF RID: 2287
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOnTriggeredEvent = "TriggeredEvent";
 
-	// Token: 0x040008ED RID: 2285
+	// Token: 0x040008F0 RID: 2288
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOnAddedEvent = "AddedEvent";
 
-	// Token: 0x040008EE RID: 2286
+	// Token: 0x040008F1 RID: 2289
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropDestroyOnEvent = "DestroyOnEvent";
 
-	// Token: 0x040008EF RID: 2287
+	// Token: 0x040008F2 RID: 2290
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropSendDamageUpdate = "SendDamageUpdate";
 
-	// Token: 0x040008F0 RID: 2288
+	// Token: 0x040008F3 RID: 2291
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropActivateTime = "ActivateTime";
 
-	// Token: 0x040008F1 RID: 2289
+	// Token: 0x040008F4 RID: 2292
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string onActivateEvent = "";
 
-	// Token: 0x040008F2 RID: 2290
+	// Token: 0x040008F5 RID: 2293
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string onDamageEvent = "";
 
-	// Token: 0x040008F3 RID: 2291
+	// Token: 0x040008F6 RID: 2294
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string onTriggeredEvent = "";
 
-	// Token: 0x040008F4 RID: 2292
+	// Token: 0x040008F7 RID: 2295
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string onAddedEvent = "";
 
-	// Token: 0x040008F5 RID: 2293
+	// Token: 0x040008F8 RID: 2296
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool destroyOnEvent;
 
-	// Token: 0x040008F6 RID: 2294
+	// Token: 0x040008F9 RID: 2297
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool sendDamageUpdate;
 
-	// Token: 0x040008F7 RID: 2295
+	// Token: 0x040008FA RID: 2298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float activateTime;
 
-	// Token: 0x040008F8 RID: 2296
+	// Token: 0x040008FB RID: 2299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

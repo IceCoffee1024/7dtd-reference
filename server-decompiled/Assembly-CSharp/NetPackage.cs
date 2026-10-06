@@ -2,12 +2,12 @@
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x0200079D RID: 1949
+// Token: 0x020007A0 RID: 1952
 [Preserve]
 public abstract class NetPackage
 {
-	// Token: 0x170005F5 RID: 1525
-	// (get) Token: 0x060039F6 RID: 14838 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061A RID: 1562
+	// (get) Token: 0x06003A39 RID: 14905 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual int Channel
 	{
 		get
@@ -16,8 +16,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F6 RID: 1526
-	// (get) Token: 0x060039F7 RID: 14839 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061B RID: 1563
+	// (get) Token: 0x06003A3A RID: 14906 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool Compress
 	{
 		get
@@ -26,8 +26,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F7 RID: 1527
-	// (get) Token: 0x060039F8 RID: 14840 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061C RID: 1564
+	// (get) Token: 0x06003A3B RID: 14907 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool FlushQueue
 	{
 		get
@@ -36,8 +36,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F8 RID: 1528
-	// (get) Token: 0x060039F9 RID: 14841 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061D RID: 1565
+	// (get) Token: 0x06003A3C RID: 14908 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual NetPackageDirection PackageDirection
 	{
 		get
@@ -46,8 +46,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F9 RID: 1529
-	// (get) Token: 0x060039FA RID: 14842 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700061E RID: 1566
+	// (get) Token: 0x06003A3D RID: 14909 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool AllowedBeforeAuth
 	{
 		get
@@ -56,8 +56,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005FA RID: 1530
-	// (get) Token: 0x060039FB RID: 14843 RVA: 0x0017AAD5 File Offset: 0x00178CD5
+	// Token: 0x1700061F RID: 1567
+	// (get) Token: 0x06003A3E RID: 14910 RVA: 0x0017B28D File Offset: 0x0017948D
 	public int PackageId
 	{
 		get
@@ -66,13 +66,13 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005FB RID: 1531
-	// (get) Token: 0x060039FC RID: 14844 RVA: 0x0017AAE2 File Offset: 0x00178CE2
-	// (set) Token: 0x060039FD RID: 14845 RVA: 0x0017AAEA File Offset: 0x00178CEA
+	// Token: 0x17000620 RID: 1568
+	// (get) Token: 0x06003A3F RID: 14911 RVA: 0x0017B29A File Offset: 0x0017949A
+	// (set) Token: 0x06003A40 RID: 14912 RVA: 0x0017B2A2 File Offset: 0x001794A2
 	public ClientInfo Sender { get; set; }
 
-	// Token: 0x170005FC RID: 1532
-	// (get) Token: 0x060039FE RID: 14846 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000621 RID: 1569
+	// (get) Token: 0x06003A41 RID: 14913 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool ReliableDelivery
 	{
 		get
@@ -81,34 +81,31 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x060039FF RID: 14847
+	// Token: 0x06003A42 RID: 14914
 	public abstract void read(PooledBinaryReader _reader);
 
-	// Token: 0x06003A00 RID: 14848 RVA: 0x0017AAF3 File Offset: 0x00178CF3
+	// Token: 0x06003A43 RID: 14915 RVA: 0x0017B2AB File Offset: 0x001794AB
 	public virtual void write(PooledBinaryWriter _writer)
 	{
 		_writer.Write((ushort)this.PackageId);
 	}
 
-	// Token: 0x06003A01 RID: 14849 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003A44 RID: 14916 RVA: 0x00020119 File Offset: 0x0001E319
 	public virtual bool ShouldProcess(World _world, GameManager _callbacks)
 	{
 		return true;
 	}
 
-	// Token: 0x06003A02 RID: 14850
+	// Token: 0x06003A45 RID: 14917
 	public abstract void ProcessPackage(World _world, GameManager _callbacks);
 
-	// Token: 0x06003A03 RID: 14851 RVA: 0x0017AB02 File Offset: 0x00178D02
+	// Token: 0x06003A46 RID: 14918 RVA: 0x0017B2BA File Offset: 0x001794BA
 	public virtual void HandleSkipped(World _world, GameManager _callbacks)
 	{
 		NetPackageManager.FreePackage(this);
 	}
 
-	// Token: 0x06003A04 RID: 14852
-	public abstract int GetLength();
-
-	// Token: 0x06003A05 RID: 14853 RVA: 0x0017AB0C File Offset: 0x00178D0C
+	// Token: 0x06003A47 RID: 14919 RVA: 0x0017B2C4 File Offset: 0x001794C4
 	public override string ToString()
 	{
 		string text;
@@ -119,13 +116,13 @@ public abstract class NetPackage
 		return text;
 	}
 
-	// Token: 0x06003A06 RID: 14854 RVA: 0x0017AB37 File Offset: 0x00178D37
+	// Token: 0x06003A48 RID: 14920 RVA: 0x0017B2EF File Offset: 0x001794EF
 	public void RegisterSendQueue()
 	{
 		Interlocked.Increment(ref this.inSendQueuesCount);
 	}
 
-	// Token: 0x06003A07 RID: 14855 RVA: 0x0017AB45 File Offset: 0x00178D45
+	// Token: 0x06003A49 RID: 14921 RVA: 0x0017B2FD File Offset: 0x001794FD
 	public void SendQueueHandled()
 	{
 		if (Interlocked.Decrement(ref this.inSendQueuesCount) == 0)
@@ -134,7 +131,7 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x06003A08 RID: 14856 RVA: 0x0017AB5C File Offset: 0x00178D5C
+	// Token: 0x06003A4A RID: 14922 RVA: 0x0017B314 File Offset: 0x00179514
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidEntityIdForSender(int _entityId, bool _allowAttachedToEntity = false)
 	{
@@ -158,7 +155,7 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x06003A09 RID: 14857 RVA: 0x0017ABF4 File Offset: 0x00178DF4
+	// Token: 0x06003A4B RID: 14923 RVA: 0x0017B3AC File Offset: 0x001795AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidUserIdForSender(PlatformUserIdentifierAbs _userId)
 	{
@@ -174,17 +171,17 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x06003A0A RID: 14858 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06003A4C RID: 14924 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NetPackage()
 	{
 	}
 
-	// Token: 0x04002FA3 RID: 12195
+	// Token: 0x04002F9D RID: 12189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inSendQueuesCount;
 
-	// Token: 0x04002FA4 RID: 12196
+	// Token: 0x04002F9E RID: 12190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string classnameCached;
 }

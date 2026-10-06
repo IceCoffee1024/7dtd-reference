@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020013E3 RID: 5091
+// Token: 0x02001403 RID: 5123
 public class DictionaryNameIdMapping
 {
-	// Token: 0x06009FCA RID: 40906 RVA: 0x003C2040 File Offset: 0x003C0240
+	// Token: 0x0600A075 RID: 41077 RVA: 0x003C6BDC File Offset: 0x003C4DDC
 	public int Add(string _name)
 	{
 		int num;
@@ -18,14 +18,14 @@ public class DictionaryNameIdMapping
 		return num;
 	}
 
-	// Token: 0x06009FCB RID: 40907 RVA: 0x003C207F File Offset: 0x003C027F
+	// Token: 0x0600A076 RID: 41078 RVA: 0x003C6C1B File Offset: 0x003C4E1B
 	public void Clear()
 	{
 		this.nextId = 0;
 		this.namesToIds.Clear();
 	}
 
-	// Token: 0x06009FCC RID: 40908 RVA: 0x003C2094 File Offset: 0x003C0294
+	// Token: 0x0600A077 RID: 41079 RVA: 0x003C6C30 File Offset: 0x003C4E30
 	public int FindId(string _name)
 	{
 		int num;
@@ -33,14 +33,14 @@ public class DictionaryNameIdMapping
 		return num;
 	}
 
-	// Token: 0x040078F0 RID: 30960
+	// Token: 0x0400796B RID: 31083
 	public const int cIDNone = 0;
 
-	// Token: 0x040078F1 RID: 30961
+	// Token: 0x0400796C RID: 31084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextId;
 
-	// Token: 0x040078F2 RID: 30962
+	// Token: 0x0400796D RID: 31085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CaseInsensitiveStringDictionary<int> namesToIds = new CaseInsensitiveStringDictionary<int>();
 }

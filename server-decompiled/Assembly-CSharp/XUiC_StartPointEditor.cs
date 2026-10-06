@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200107E RID: 4222
+// Token: 0x0200108E RID: 4238
 [Preserve]
 public class XUiC_StartPointEditor : XUiController
 {
-	// Token: 0x0600862B RID: 34347 RVA: 0x003324BC File Offset: 0x003306BC
+	// Token: 0x0600866D RID: 34413 RVA: 0x00335DF4 File Offset: 0x00333FF4
 	public override void Init()
 	{
 		base.Init();
@@ -16,14 +16,14 @@ public class XUiC_StartPointEditor : XUiController
 		((XUiC_SimpleButton)base.GetChildById("btnOk")).OnPressed += this.BtnOk_OnPressed;
 	}
 
-	// Token: 0x0600862C RID: 34348 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
+	// Token: 0x0600866E RID: 34414 RVA: 0x002AAE45 File Offset: 0x002A9045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x0600862D RID: 34349 RVA: 0x0033254E File Offset: 0x0033074E
+	// Token: 0x0600866F RID: 34415 RVA: 0x00335E86 File Offset: 0x00334086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOk_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -31,7 +31,7 @@ public class XUiC_StartPointEditor : XUiController
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x0600862E RID: 34350 RVA: 0x00332580 File Offset: 0x00330780
+	// Token: 0x06008670 RID: 34416 RVA: 0x00335EB8 File Offset: 0x003340B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxHeading_OnValueChanged(XUiController _sender, long _oldvalue, long _newvalue)
 	{
@@ -39,7 +39,7 @@ public class XUiC_StartPointEditor : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600862F RID: 34351 RVA: 0x003325B4 File Offset: 0x003307B4
+	// Token: 0x06008671 RID: 34417 RVA: 0x00335EEC File Offset: 0x003340EC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -53,7 +53,7 @@ public class XUiC_StartPointEditor : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008630 RID: 34352 RVA: 0x00332638 File Offset: 0x00330838
+	// Token: 0x06008672 RID: 34418 RVA: 0x00335F70 File Offset: 0x00334170
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -62,7 +62,7 @@ public class XUiC_StartPointEditor : XUiController
 		this.selectionBox = null;
 	}
 
-	// Token: 0x06008631 RID: 34353 RVA: 0x00332680 File Offset: 0x00330880
+	// Token: 0x06008673 RID: 34419 RVA: 0x00335FB8 File Offset: 0x003341B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -81,22 +81,22 @@ public class XUiC_StartPointEditor : XUiController
 		return true;
 	}
 
-	// Token: 0x040063A8 RID: 25512
+	// Token: 0x040063E8 RID: 25576
 	public static string ID = "";
 
-	// Token: 0x040063A9 RID: 25513
+	// Token: 0x040063E9 RID: 25577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxHeading;
 
-	// Token: 0x040063AA RID: 25514
+	// Token: 0x040063EA RID: 25578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpawnPoint spawnPoint;
 
-	// Token: 0x040063AB RID: 25515
+	// Token: 0x040063EB RID: 25579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SelectionBox selectionBox;
 
-	// Token: 0x040063AC RID: 25516
+	// Token: 0x040063EC RID: 25580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long headingOnOpen;
 }

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000451 RID: 1105
+// Token: 0x02000453 RID: 1107
 [Preserve]
 public class EAIRunawayFromEntity : EAIRunAway
 {
-	// Token: 0x060021BA RID: 8634 RVA: 0x000C7104 File Offset: 0x000C5304
+	// Token: 0x060021A9 RID: 8617 RVA: 0x000C71B8 File Offset: 0x000C53B8
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060021BB RID: 8635 RVA: 0x000CBD08 File Offset: 0x000C9F08
+	// Token: 0x060021AA RID: 8618 RVA: 0x000CBDBC File Offset: 0x000C9FBC
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -31,14 +31,14 @@ public class EAIRunawayFromEntity : EAIRunAway
 		base.GetData(data, "dangerDistance", ref this.dangerDistance);
 	}
 
-	// Token: 0x060021BC RID: 8636 RVA: 0x000CBD76 File Offset: 0x000C9F76
+	// Token: 0x060021AB RID: 8619 RVA: 0x000CBE2A File Offset: 0x000CA02A
 	public override bool CanExecute()
 	{
 		this.FindEnemy();
 		return this.enemy && base.CanExecute();
 	}
 
-	// Token: 0x060021BD RID: 8637 RVA: 0x000CBD94 File Offset: 0x000C9F94
+	// Token: 0x060021AC RID: 8620 RVA: 0x000CBE48 File Offset: 0x000CA048
 	public void FindEnemy()
 	{
 		this.enemy = null;
@@ -83,47 +83,47 @@ public class EAIRunawayFromEntity : EAIRunAway
 		}
 	}
 
-	// Token: 0x060021BE RID: 8638 RVA: 0x000CBF23 File Offset: 0x000CA123
+	// Token: 0x060021AD RID: 8621 RVA: 0x000CBFD7 File Offset: 0x000CA1D7
 	public override bool Continue()
 	{
 		return this.theEntity.GetDistanceSq(this.enemy) < this.safeDistance * this.safeDistance && base.Continue();
 	}
 
-	// Token: 0x060021BF RID: 8639 RVA: 0x000CBF4D File Offset: 0x000CA14D
+	// Token: 0x060021AE RID: 8622 RVA: 0x000CC001 File Offset: 0x000CA201
 	public override void Update()
 	{
 		base.Update();
 		this.theEntity.navigator.setMoveSpeed(this.theEntity.IsSwimming() ? this.theEntity.GetMoveSpeed() : this.theEntity.GetMoveSpeedPanic());
 	}
 
-	// Token: 0x060021C0 RID: 8640 RVA: 0x000CBF8A File Offset: 0x000CA18A
+	// Token: 0x060021AF RID: 8623 RVA: 0x000CC03E File Offset: 0x000CA23E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetFleeFromPos()
 	{
 		return this.enemy.position;
 	}
 
-	// Token: 0x0400174F RID: 5967
+	// Token: 0x04001746 RID: 5958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRunNoiseVolume = 8;
 
-	// Token: 0x04001750 RID: 5968
+	// Token: 0x04001747 RID: 5959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityFlags flags;
 
-	// Token: 0x04001751 RID: 5969
+	// Token: 0x04001748 RID: 5960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityFlags safeFlags;
 
-	// Token: 0x04001752 RID: 5970
+	// Token: 0x04001749 RID: 5961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float safeDistance = 38f;
 
-	// Token: 0x04001753 RID: 5971
+	// Token: 0x0400174A RID: 5962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dangerDistance = 4.5f;
 
-	// Token: 0x04001754 RID: 5972
+	// Token: 0x0400174B RID: 5963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Entity> entityList = new List<Entity>();
 }

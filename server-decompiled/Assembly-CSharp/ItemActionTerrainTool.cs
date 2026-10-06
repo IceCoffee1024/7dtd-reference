@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005D7 RID: 1495
+// Token: 0x020005D8 RID: 1496
 [Preserve]
 public class ItemActionTerrainTool : ItemActionRanged
 {
-	// Token: 0x06003099 RID: 12441 RVA: 0x0013A268 File Offset: 0x00138468
+	// Token: 0x060030E0 RID: 12512 RVA: 0x0013AD48 File Offset: 0x00138F48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateModel()
 	{
@@ -25,7 +25,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		ItemActionTerrainTool.modelObj.GetComponent<Renderer>().material = ItemActionTerrainTool.modelMat;
 	}
 
-	// Token: 0x0600309A RID: 12442 RVA: 0x0013A2E1 File Offset: 0x001384E1
+	// Token: 0x060030E1 RID: 12513 RVA: 0x0013ADC1 File Offset: 0x00138FC1
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -35,25 +35,25 @@ public class ItemActionTerrainTool : ItemActionRanged
 		}
 	}
 
-	// Token: 0x0600309B RID: 12443 RVA: 0x0013A318 File Offset: 0x00138518
+	// Token: 0x060030E2 RID: 12514 RVA: 0x0013ADF8 File Offset: 0x00138FF8
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionTerrainTool.MyInventoryData(_invData, _indexInEntityOfAction, null);
 	}
 
-	// Token: 0x0600309C RID: 12444 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060030E3 RID: 12515 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetInitialMeta(ItemValue _itemValue)
 	{
 		return 0;
 	}
 
-	// Token: 0x0600309D RID: 12445 RVA: 0x0013A322 File Offset: 0x00138522
+	// Token: 0x060030E4 RID: 12516 RVA: 0x0013AE02 File Offset: 0x00139002
 	public override void StartHolding(ItemActionData _actionData)
 	{
 		this.showSphere(_actionData);
 	}
 
-	// Token: 0x0600309E RID: 12446 RVA: 0x0013A32B File Offset: 0x0013852B
+	// Token: 0x060030E5 RID: 12517 RVA: 0x0013AE0B File Offset: 0x0013900B
 	public override void StopHolding(ItemActionData _actionData)
 	{
 		base.StopHolding(_actionData);
@@ -61,7 +61,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		this.hideSphere(_actionData);
 	}
 
-	// Token: 0x0600309F RID: 12447 RVA: 0x0013A348 File Offset: 0x00138548
+	// Token: 0x060030E6 RID: 12518 RVA: 0x0013AE28 File Offset: 0x00139028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showSphere(ItemActionData _actionData)
 	{
@@ -77,7 +77,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		ItemActionTerrainTool.modelMat.color = new Color(0f, 0f, 0f, 0f);
 	}
 
-	// Token: 0x060030A0 RID: 12448 RVA: 0x0013A42C File Offset: 0x0013862C
+	// Token: 0x060030E7 RID: 12519 RVA: 0x0013AF0C File Offset: 0x0013910C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void hideSphere(ItemActionData _actionData)
 	{
@@ -86,7 +86,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		ItemActionTerrainTool.modelObj.transform.SetParent(myInventoryData.invData.model);
 	}
 
-	// Token: 0x060030A1 RID: 12449 RVA: 0x0013A468 File Offset: 0x00138668
+	// Token: 0x060030E8 RID: 12520 RVA: 0x0013AF48 File Offset: 0x00139148
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionTerrainTool.MyInventoryData myInventoryData = (ItemActionTerrainTool.MyInventoryData)_actionData;
@@ -101,7 +101,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		GameManager.Instance.ItemActionEffectsServer(myInventoryData.invData.holdingEntity.entityId, myInventoryData.invData.slotIdx, myInventoryData.indexInEntityOfAction, 1, Vector3.zero, Vector3.zero, 0);
 	}
 
-	// Token: 0x060030A2 RID: 12450 RVA: 0x0013A508 File Offset: 0x00138708
+	// Token: 0x060030E9 RID: 12521 RVA: 0x0013AFE8 File Offset: 0x001391E8
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		switch (_firingState)
@@ -124,13 +124,13 @@ public class ItemActionTerrainTool : ItemActionRanged
 		}
 	}
 
-	// Token: 0x060030A3 RID: 12451 RVA: 0x0013A59D File Offset: 0x0013879D
+	// Token: 0x060030EA RID: 12522 RVA: 0x0013B07D File Offset: 0x0013927D
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return ((ItemActionTerrainTool.MyInventoryData)_actionData).bActivated;
 	}
 
-	// Token: 0x060030A4 RID: 12452 RVA: 0x0013A5AC File Offset: 0x001387AC
+	// Token: 0x060030EB RID: 12523 RVA: 0x0013B08C File Offset: 0x0013928C
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -185,13 +185,13 @@ public class ItemActionTerrainTool : ItemActionRanged
 		}
 	}
 
-	// Token: 0x060030A5 RID: 12453 RVA: 0x0013A767 File Offset: 0x00138967
+	// Token: 0x060030EC RID: 12524 RVA: 0x0013B247 File Offset: 0x00139447
 	public override float GetRange(ItemActionData _actionData)
 	{
 		return 20f;
 	}
 
-	// Token: 0x060030A6 RID: 12454 RVA: 0x0013A770 File Offset: 0x00138970
+	// Token: 0x060030ED RID: 12525 RVA: 0x0013B250 File Offset: 0x00139450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GrowTerrain(ItemActionData _actionData, Vector3 _worldPos, int _densityStep)
 	{
@@ -384,7 +384,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		return 0;
 	}
 
-	// Token: 0x060030A7 RID: 12455 RVA: 0x0013ACD4 File Offset: 0x00138ED4
+	// Token: 0x060030EE RID: 12526 RVA: 0x0013B7B4 File Offset: 0x001399B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int setTerrainOLD(ItemActionData _actionData, Vector3 _worldPos, float _damage = 0f, DamageMultiplier _damageMultiplier = null, bool _bChangeBlocks = true)
 	{
@@ -464,7 +464,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		return 0;
 	}
 
-	// Token: 0x060030A8 RID: 12456 RVA: 0x0013AF6C File Offset: 0x0013916C
+	// Token: 0x060030EF RID: 12527 RVA: 0x0013BA4C File Offset: 0x00139C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int RemoveTerrain(ItemActionData _actionData, Vector3 _worldPos, float _damage = 0f, DamageMultiplier _damageMultiplier = null, bool _bChangeBlocks = true)
 	{
@@ -556,13 +556,13 @@ public class ItemActionTerrainTool : ItemActionRanged
 		return 0;
 	}
 
-	// Token: 0x060030A9 RID: 12457 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060030F0 RID: 12528 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsEditingTool()
 	{
 		return true;
 	}
 
-	// Token: 0x060030AA RID: 12458 RVA: 0x0013B231 File Offset: 0x00139431
+	// Token: 0x060030F1 RID: 12529 RVA: 0x0013BD11 File Offset: 0x00139F11
 	public override string GetStat(ItemActionData _data)
 	{
 		if (!ItemActionTerrainTool.blockValueSelected.isair)
@@ -572,13 +572,13 @@ public class ItemActionTerrainTool : ItemActionRanged
 		return "-";
 	}
 
-	// Token: 0x060030AB RID: 12459 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060030F2 RID: 12530 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsStatChanged()
 	{
 		return true;
 	}
 
-	// Token: 0x060030AC RID: 12460 RVA: 0x0013B254 File Offset: 0x00139454
+	// Token: 0x060030F3 RID: 12531 RVA: 0x0013BD34 File Offset: 0x00139F34
 	public override bool ConsumeScrollWheel(ItemActionData _actionData, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		ItemActionTerrainTool.MyInventoryData myInventoryData = (ItemActionTerrainTool.MyInventoryData)_actionData;
@@ -592,47 +592,47 @@ public class ItemActionTerrainTool : ItemActionRanged
 		return false;
 	}
 
-	// Token: 0x040025C1 RID: 9665
+	// Token: 0x040025BB RID: 9659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTransparency = 0f;
 
-	// Token: 0x040025C2 RID: 9666
+	// Token: 0x040025BC RID: 9660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRadiusMin = 0.5f;
 
-	// Token: 0x040025C3 RID: 9667
+	// Token: 0x040025BD RID: 9661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRadiusMax = 30f;
 
-	// Token: 0x040025C4 RID: 9668
+	// Token: 0x040025BE RID: 9662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRadiusStep = 1f;
 
-	// Token: 0x040025C5 RID: 9669
+	// Token: 0x040025BF RID: 9663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float damage;
 
-	// Token: 0x040025C6 RID: 9670
+	// Token: 0x040025C0 RID: 9664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionTerrainTool.EnumMode mode;
 
-	// Token: 0x040025C7 RID: 9671
+	// Token: 0x040025C1 RID: 9665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject modelObj;
 
-	// Token: 0x040025C8 RID: 9672
+	// Token: 0x040025C2 RID: 9666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Material modelMat;
 
-	// Token: 0x040025C9 RID: 9673
+	// Token: 0x040025C3 RID: 9667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float sphereRadius = 2f;
 
-	// Token: 0x040025CA RID: 9674
+	// Token: 0x040025C4 RID: 9668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BlockValue blockValueSelected = BlockValue.Air;
 
-	// Token: 0x040025CB RID: 9675
+	// Token: 0x040025C5 RID: 9669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[] INNER_POINTS = new Vector3[]
 	{
@@ -655,7 +655,7 @@ public class ItemActionTerrainTool : ItemActionRanged
 		new Vector3(0.75f, 0.75f, 0.75f)
 	};
 
-	// Token: 0x040025CC RID: 9676
+	// Token: 0x040025C6 RID: 9670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3[] INNER_POINTS_XZ = new Vector3[]
 	{
@@ -669,39 +669,39 @@ public class ItemActionTerrainTool : ItemActionRanged
 		new Vector3(0.75f, 0f, 0.75f)
 	};
 
-	// Token: 0x040025CD RID: 9677
+	// Token: 0x040025C7 RID: 9671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockChangeInfo> blockChanges = new List<BlockChangeInfo>();
 
-	// Token: 0x020005D8 RID: 1496
+	// Token: 0x020005D9 RID: 1497
 	public enum EnumMode
 	{
-		// Token: 0x040025CF RID: 9679
+		// Token: 0x040025C9 RID: 9673
 		Grow,
-		// Token: 0x040025D0 RID: 9680
+		// Token: 0x040025CA RID: 9674
 		Shrink
 	}
 
-	// Token: 0x020005D9 RID: 1497
+	// Token: 0x020005DA RID: 1498
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class MyInventoryData : ItemActionRanged.ItemActionDataRanged
 	{
-		// Token: 0x060030AF RID: 12463 RVA: 0x0013B5E3 File Offset: 0x001397E3
+		// Token: 0x060030F6 RID: 12534 RVA: 0x0013C0C3 File Offset: 0x0013A2C3
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction, string _particleTransform)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025D1 RID: 9681
+		// Token: 0x040025CB RID: 9675
 		public float activateTime;
 
-		// Token: 0x040025D2 RID: 9682
+		// Token: 0x040025CC RID: 9676
 		public float lastHitTime;
 
-		// Token: 0x040025D3 RID: 9683
+		// Token: 0x040025CD RID: 9677
 		public bool bActivated;
 
-		// Token: 0x040025D4 RID: 9684
+		// Token: 0x040025CE RID: 9678
 		public float sphereDistance = 5f;
 	}
 }

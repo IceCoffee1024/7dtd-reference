@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x020014EF RID: 5359
+// Token: 0x02001511 RID: 5393
 public struct Vector2d : IEquatable<Vector2d>
 {
-	// Token: 0x0600A86F RID: 43119 RVA: 0x003EB72A File Offset: 0x003E992A
+	// Token: 0x0600A922 RID: 43298 RVA: 0x003F057E File Offset: 0x003EE77E
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2d(double _x, double _y)
 	{
@@ -13,7 +13,7 @@ public struct Vector2d : IEquatable<Vector2d>
 		this.y = _y;
 	}
 
-	// Token: 0x0600A870 RID: 43120 RVA: 0x003EB73A File Offset: 0x003E993A
+	// Token: 0x0600A923 RID: 43299 RVA: 0x003F058E File Offset: 0x003EE78E
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2d(Vector2 _v)
 	{
@@ -21,7 +21,7 @@ public struct Vector2d : IEquatable<Vector2d>
 		this.y = (double)_v.y;
 	}
 
-	// Token: 0x0600A871 RID: 43121 RVA: 0x003EB756 File Offset: 0x003E9956
+	// Token: 0x0600A924 RID: 43300 RVA: 0x003F05AA File Offset: 0x003EE7AA
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Vector2d(Vector2i _v)
 	{
@@ -29,88 +29,88 @@ public struct Vector2d : IEquatable<Vector2d>
 		this.y = (double)_v.y;
 	}
 
-	// Token: 0x0600A872 RID: 43122 RVA: 0x003EB772 File Offset: 0x003E9972
+	// Token: 0x0600A925 RID: 43301 RVA: 0x003F05C6 File Offset: 0x003EE7C6
 	public bool Equals(double _x, double _y)
 	{
 		return this.x == _x && this.y == _y;
 	}
 
-	// Token: 0x0600A873 RID: 43123 RVA: 0x003EB788 File Offset: 0x003E9988
+	// Token: 0x0600A926 RID: 43302 RVA: 0x003F05DC File Offset: 0x003EE7DC
 	public override bool Equals(object obj)
 	{
 		Vector2d vector2d = (Vector2d)obj;
 		return this.Equals(vector2d);
 	}
 
-	// Token: 0x0600A874 RID: 43124 RVA: 0x003EB7A3 File Offset: 0x003E99A3
+	// Token: 0x0600A927 RID: 43303 RVA: 0x003F05F7 File Offset: 0x003EE7F7
 	public bool Equals(Vector2d other)
 	{
 		return other.x == this.x && other.y == this.y;
 	}
 
-	// Token: 0x0600A875 RID: 43125 RVA: 0x003EB7C3 File Offset: 0x003E99C3
+	// Token: 0x0600A928 RID: 43304 RVA: 0x003F0617 File Offset: 0x003EE817
 	public static bool operator ==(Vector2d one, Vector2d other)
 	{
 		return one.x == other.x && one.y == other.y;
 	}
 
-	// Token: 0x0600A876 RID: 43126 RVA: 0x003EB7E3 File Offset: 0x003E99E3
+	// Token: 0x0600A929 RID: 43305 RVA: 0x003F0637 File Offset: 0x003EE837
 	public override int GetHashCode()
 	{
 		return this.x.GetHashCode() ^ (this.y.GetHashCode() << 2);
 	}
 
-	// Token: 0x0600A877 RID: 43127 RVA: 0x003EB7FE File Offset: 0x003E99FE
+	// Token: 0x0600A92A RID: 43306 RVA: 0x003F0652 File Offset: 0x003EE852
 	public static bool operator !=(Vector2d one, Vector2d other)
 	{
 		return !(one == other);
 	}
 
-	// Token: 0x0600A878 RID: 43128 RVA: 0x003EB80A File Offset: 0x003E9A0A
+	// Token: 0x0600A92B RID: 43307 RVA: 0x003F065E File Offset: 0x003EE85E
 	public static Vector2d operator -(Vector2d one, Vector2d other)
 	{
 		return new Vector2d(one.x - other.x, one.y - other.y);
 	}
 
-	// Token: 0x0600A879 RID: 43129 RVA: 0x003EB82B File Offset: 0x003E9A2B
+	// Token: 0x0600A92C RID: 43308 RVA: 0x003F067F File Offset: 0x003EE87F
 	public static Vector2d operator +(Vector2d one, Vector2d other)
 	{
 		return new Vector2d(one.x + other.x, one.y + other.y);
 	}
 
-	// Token: 0x0600A87A RID: 43130 RVA: 0x003EB84C File Offset: 0x003E9A4C
+	// Token: 0x0600A92D RID: 43309 RVA: 0x003F06A0 File Offset: 0x003EE8A0
 	public static Vector2d operator *(Vector2d a, double d)
 	{
 		return new Vector2d(a.x * d, a.y * d);
 	}
 
-	// Token: 0x0600A87B RID: 43131 RVA: 0x003EB863 File Offset: 0x003E9A63
+	// Token: 0x0600A92E RID: 43310 RVA: 0x003F06B7 File Offset: 0x003EE8B7
 	public static Vector2d operator *(double d, Vector2d a)
 	{
 		return new Vector2d(a.x * d, a.y * d);
 	}
 
-	// Token: 0x0600A87C RID: 43132 RVA: 0x003EB87A File Offset: 0x003E9A7A
+	// Token: 0x0600A92F RID: 43311 RVA: 0x003F06CE File Offset: 0x003EE8CE
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static double Dot(Vector2d lhs, Vector2d rhs)
 	{
 		return lhs.x * rhs.x + lhs.y * rhs.y;
 	}
 
-	// Token: 0x0600A87D RID: 43133 RVA: 0x003EB897 File Offset: 0x003E9A97
+	// Token: 0x0600A930 RID: 43312 RVA: 0x003F06EB File Offset: 0x003EE8EB
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public double Dot(Vector2 rhs)
 	{
 		return this.x * (double)rhs.x + this.y * (double)rhs.y;
 	}
 
-	// Token: 0x0600A87E RID: 43134 RVA: 0x003EB8B6 File Offset: 0x003E9AB6
+	// Token: 0x0600A931 RID: 43313 RVA: 0x003F070A File Offset: 0x003EE90A
 	public override string ToString()
 	{
 		return this.ToCultureInvariantString();
 	}
 
-	// Token: 0x0600A87F RID: 43135 RVA: 0x003EB8C0 File Offset: 0x003E9AC0
+	// Token: 0x0600A932 RID: 43314 RVA: 0x003F0714 File Offset: 0x003EE914
 	public string ToCultureInvariantString()
 	{
 		return string.Concat(new string[]
@@ -123,12 +123,12 @@ public struct Vector2d : IEquatable<Vector2d>
 		});
 	}
 
-	// Token: 0x04007CD4 RID: 31956
+	// Token: 0x04007D57 RID: 32087
 	public double x;
 
-	// Token: 0x04007CD5 RID: 31957
+	// Token: 0x04007D58 RID: 32088
 	public double y;
 
-	// Token: 0x04007CD6 RID: 31958
+	// Token: 0x04007D59 RID: 32089
 	public static readonly Vector2d Zero = new Vector2d(0.0, 0.0);
 }

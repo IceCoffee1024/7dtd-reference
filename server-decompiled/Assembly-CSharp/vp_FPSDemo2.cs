@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200159D RID: 5533
+// Token: 0x020015BF RID: 5567
 public class vp_FPSDemo2 : MonoBehaviour
 {
-	// Token: 0x0600AD17 RID: 44311 RVA: 0x00407D20 File Offset: 0x00405F20
+	// Token: 0x0600ADCA RID: 44490 RVA: 0x0040CB74 File Offset: 0x0040AD74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -32,14 +32,14 @@ public class vp_FPSDemo2 : MonoBehaviour
 		this.m_Demo.PlayerEventHandler.FallImpact.Register(this, "FallImpact", 0);
 	}
 
-	// Token: 0x0600AD18 RID: 44312 RVA: 0x00407FC7 File Offset: 0x004061C7
+	// Token: 0x0600ADCB RID: 44491 RVA: 0x0040CE1B File Offset: 0x0040B01B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 		this.m_Demo.Update();
 	}
 
-	// Token: 0x0600AD19 RID: 44313 RVA: 0x00407FD4 File Offset: 0x004061D4
+	// Token: 0x0600ADCC RID: 44492 RVA: 0x0040CE28 File Offset: 0x0040B028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoPhysics()
 	{
@@ -284,7 +284,7 @@ public class vp_FPSDemo2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD1A RID: 44314 RVA: 0x00408AD4 File Offset: 0x00406CD4
+	// Token: 0x0600ADCD RID: 44493 RVA: 0x0040D928 File Offset: 0x0040BB28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoPresets()
 	{
@@ -308,7 +308,7 @@ public class vp_FPSDemo2 : MonoBehaviour
 		this.m_Demo.ForceCameraShake();
 	}
 
-	// Token: 0x0600AD1B RID: 44315 RVA: 0x00408C24 File Offset: 0x00406E24
+	// Token: 0x0600ADCE RID: 44494 RVA: 0x0040DA78 File Offset: 0x0040BC78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoOutro()
 	{
@@ -329,7 +329,7 @@ public class vp_FPSDemo2 : MonoBehaviour
 		this.m_Demo.DrawImage(this.ImageAllParams);
 	}
 
-	// Token: 0x0600AD1C RID: 44316 RVA: 0x00408D2F File Offset: 0x00406F2F
+	// Token: 0x0600ADCF RID: 44495 RVA: 0x0040DB83 File Offset: 0x0040BD83
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FallImpact(float f)
 	{
@@ -339,7 +339,7 @@ public class vp_FPSDemo2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD1D RID: 44317 RVA: 0x00408D50 File Offset: 0x00406F50
+	// Token: 0x0600ADD0 RID: 44496 RVA: 0x0040DBA4 File Offset: 0x0040BDA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
@@ -357,234 +357,234 @@ public class vp_FPSDemo2 : MonoBehaviour
 		this.DemoOutro();
 	}
 
-	// Token: 0x0400807D RID: 32893
+	// Token: 0x04008100 RID: 33024
 	public GameObject Player;
 
-	// Token: 0x0400807E RID: 32894
+	// Token: 0x04008101 RID: 33025
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPSDemoManager m_Demo;
 
-	// Token: 0x0400807F RID: 32895
+	// Token: 0x04008102 RID: 33026
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPCamera m_FPSCamera;
 
-	// Token: 0x04008080 RID: 32896
+	// Token: 0x04008103 RID: 33027
 	public Texture ImageLeftArrow;
 
-	// Token: 0x04008081 RID: 32897
+	// Token: 0x04008104 RID: 33028
 	public Texture ImageRightArrow;
 
-	// Token: 0x04008082 RID: 32898
+	// Token: 0x04008105 RID: 33029
 	public Texture ImageRightPointer;
 
-	// Token: 0x04008083 RID: 32899
+	// Token: 0x04008106 RID: 33030
 	public Texture ImageLeftPointer;
 
-	// Token: 0x04008084 RID: 32900
+	// Token: 0x04008107 RID: 33031
 	public Texture ImageCheckmark;
 
-	// Token: 0x04008085 RID: 32901
+	// Token: 0x04008108 RID: 33032
 	public Texture ImagePresetDialogs;
 
-	// Token: 0x04008086 RID: 32902
+	// Token: 0x04008109 RID: 33033
 	public Texture ImageShooter;
 
-	// Token: 0x04008087 RID: 32903
+	// Token: 0x0400810A RID: 33034
 	public Texture ImageAllParams;
 
-	// Token: 0x04008088 RID: 32904
+	// Token: 0x0400810B RID: 33035
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_ExamplesCurrentSel;
 
-	// Token: 0x04008089 RID: 32905
+	// Token: 0x0400810C RID: 33036
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_GoAgainButtonAlpha;
 
-	// Token: 0x0400808A RID: 32906
+	// Token: 0x0400810D RID: 33037
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_WASDInfoClickTime;
 
-	// Token: 0x0400808B RID: 32907
+	// Token: 0x0400810E RID: 33038
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_SlimePos = new Vector3(115.3f, 113.3f, -94.5f);
 
-	// Token: 0x0400808C RID: 32908
+	// Token: 0x0400810F RID: 33039
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_WetRoofPos = new Vector3(115.3f, 113.3f, -86.5f);
 
-	// Token: 0x0400808D RID: 32909
+	// Token: 0x04008110 RID: 33040
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_FallDeflectPos = new Vector3(106.6f, 116.8f, -97.1f);
 
-	// Token: 0x0400808E RID: 32910
+	// Token: 0x04008111 RID: 33041
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_BlownAwayPos = new Vector3(132f, 122.18f, -100.6f);
 
-	// Token: 0x0400808F RID: 32911
+	// Token: 0x04008112 RID: 33042
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_ActionPos = new Vector3(127f, 122.18f, -97.6f);
 
-	// Token: 0x04008090 RID: 32912
+	// Token: 0x04008113 RID: 33043
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_HeadBumpPos = new Vector3(106.4f, 102.4f, -99.89f);
 
-	// Token: 0x04008091 RID: 32913
+	// Token: 0x04008114 RID: 33044
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_WallBouncePos = new Vector3(114.2f, 104.6f, -91.9f);
 
-	// Token: 0x04008092 RID: 32914
+	// Token: 0x04008115 RID: 33045
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_ExplorePos = new Vector3(134.0023f, 107.64261f, -109.5f);
 
-	// Token: 0x04008093 RID: 32915
+	// Token: 0x04008116 RID: 33046
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OverViewPos = new Vector3(135f, 105.8f, -70.7f);
 
-	// Token: 0x04008094 RID: 32916
+	// Token: 0x04008117 RID: 33047
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OutroPos = new Vector3(135f, 205.8f, -70.7f);
 
-	// Token: 0x04008095 RID: 32917
+	// Token: 0x04008118 RID: 33048
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OutroAngle = new Vector2(-19.3f, 241.7f);
 
-	// Token: 0x04008096 RID: 32918
+	// Token: 0x04008119 RID: 33049
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_SlimeAngle = new Vector2(0f, 180f);
 
-	// Token: 0x04008097 RID: 32919
+	// Token: 0x0400811A RID: 33050
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_WetRoofAngle = new Vector2(30f, 230f);
 
-	// Token: 0x04008098 RID: 32920
+	// Token: 0x0400811B RID: 33051
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_FallDeflectAngle = new Vector2(25f, 180f);
 
-	// Token: 0x04008099 RID: 32921
+	// Token: 0x0400811C RID: 33052
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_BlownAwayAngle = new Vector2(0f, -90f);
 
-	// Token: 0x0400809A RID: 32922
+	// Token: 0x0400811D RID: 33053
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_ActionAngle = new Vector2(0f, 180f);
 
-	// Token: 0x0400809B RID: 32923
+	// Token: 0x0400811E RID: 33054
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_HeadBumpAngle = new Vector2(0f, 180f);
 
-	// Token: 0x0400809C RID: 32924
+	// Token: 0x0400811F RID: 33055
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_WallBounceAngle = new Vector2(0f, 130f);
 
-	// Token: 0x0400809D RID: 32925
+	// Token: 0x04008120 RID: 33056
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_ExploreAngle = new Vector2(30f, 40f);
 
-	// Token: 0x0400809E RID: 32926
+	// Token: 0x04008121 RID: 33057
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OverViewAngle = new Vector2(-16.5f, 215f);
 
-	// Token: 0x0400809F RID: 32927
+	// Token: 0x04008122 RID: 33058
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ForceTimer = new vp_Timer.Handle();
 
-	// Token: 0x040080A0 RID: 32928
+	// Token: 0x04008123 RID: 33059
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_GoAgainTimer = new vp_Timer.Handle();
 
-	// Token: 0x040080A1 RID: 32929
+	// Token: 0x04008124 RID: 33060
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_HeadBumpTimer1 = new vp_Timer.Handle();
 
-	// Token: 0x040080A2 RID: 32930
+	// Token: 0x04008125 RID: 33061
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_HeadBumpTimer2 = new vp_Timer.Handle();
 
-	// Token: 0x040080A3 RID: 32931
+	// Token: 0x04008126 RID: 33062
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ActionTimer1 = new vp_Timer.Handle();
 
-	// Token: 0x040080A4 RID: 32932
+	// Token: 0x04008127 RID: 33063
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ActionTimer2 = new vp_Timer.Handle();
 
-	// Token: 0x040080A5 RID: 32933
+	// Token: 0x04008128 RID: 33064
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ActionTimer3 = new vp_Timer.Handle();
 
-	// Token: 0x040080A6 RID: 32934
+	// Token: 0x04008129 RID: 33065
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ActionTimer4 = new vp_Timer.Handle();
 
-	// Token: 0x040080A7 RID: 32935
+	// Token: 0x0400812A RID: 33066
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ActionTimer5 = new vp_Timer.Handle();
 
-	// Token: 0x040080A8 RID: 32936
+	// Token: 0x0400812B RID: 33067
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_OutroStartTime;
 
-	// Token: 0x040080A9 RID: 32937
+	// Token: 0x0400812C RID: 33068
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_RunForward;
 
-	// Token: 0x040080AA RID: 32938
+	// Token: 0x0400812D RID: 33069
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_Jump;
 
-	// Token: 0x040080AB RID: 32939
+	// Token: 0x0400812E RID: 33070
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_LookPoint;
 
-	// Token: 0x040080AC RID: 32940
+	// Token: 0x0400812F RID: 33071
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3[] m_LookPoints = new Vector3[9];
 
-	// Token: 0x040080AD RID: 32941
+	// Token: 0x04008130 RID: 33072
 	public AudioClip m_ExplosionSound;
 
-	// Token: 0x040080AE RID: 32942
+	// Token: 0x04008131 RID: 33073
 	public List<AudioClip> FallImpactSounds;
 
-	// Token: 0x040080AF RID: 32943
+	// Token: 0x04008132 RID: 33074
 	public GameObject m_ExplosionFX;
 }

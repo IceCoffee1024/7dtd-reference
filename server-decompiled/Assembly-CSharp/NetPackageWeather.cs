@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200137A RID: 4986
+// Token: 0x0200139A RID: 5018
 [Preserve]
 public class NetPackageWeather : NetPackage
 {
-	// Token: 0x17001298 RID: 4760
-	// (get) Token: 0x06009D4C RID: 40268 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x170012DD RID: 4829
+	// (get) Token: 0x06009DF8 RID: 40440 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,14 +15,14 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009D4D RID: 40269 RVA: 0x003B6A2C File Offset: 0x003B4C2C
+	// Token: 0x06009DF9 RID: 40441 RVA: 0x003BB5A8 File Offset: 0x003B97A8
 	public NetPackageWeather Setup(WeatherPackage[] _packages)
 	{
 		this.weatherPackages = _packages;
 		return this;
 	}
 
-	// Token: 0x06009D4E RID: 40270 RVA: 0x003B6A38 File Offset: 0x003B4C38
+	// Token: 0x06009DFA RID: 40442 RVA: 0x003BB5B4 File Offset: 0x003B97B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitPackages()
 	{
@@ -37,7 +37,7 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009D4F RID: 40271 RVA: 0x003B6A88 File Offset: 0x003B4C88
+	// Token: 0x06009DFB RID: 40443 RVA: 0x003BB604 File Offset: 0x003B9804
 	public override void read(PooledBinaryReader _br)
 	{
 		if (this.weatherPackages == null)
@@ -61,7 +61,7 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009D50 RID: 40272 RVA: 0x003B6B10 File Offset: 0x003B4D10
+	// Token: 0x06009DFC RID: 40444 RVA: 0x003BB68C File Offset: 0x003B988C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -78,18 +78,12 @@ public class NetPackageWeather : NetPackage
 		}
 	}
 
-	// Token: 0x06009D51 RID: 40273 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009DFD RID: 40445 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 	}
 
-	// Token: 0x06009D52 RID: 40274 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x04007743 RID: 30531
+	// Token: 0x040077BE RID: 30654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WeatherPackage[] weatherPackages;
 }

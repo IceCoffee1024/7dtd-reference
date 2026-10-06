@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001AA RID: 426
+// Token: 0x020001AB RID: 427
 [Preserve]
 public class BlockShapeGrassShort : BlockShapeGrass
 {
-	// Token: 0x06000CD8 RID: 3288 RVA: 0x00050B2C File Offset: 0x0004ED2C
+	// Token: 0x06000CCF RID: 3279 RVA: 0x00050B30 File Offset: 0x0004ED30
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		Vector3 vector;

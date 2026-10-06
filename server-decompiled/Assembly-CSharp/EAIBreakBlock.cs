@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000436 RID: 1078
+// Token: 0x02000438 RID: 1080
 [Preserve]
 public class EAIBreakBlock : EAIBase
 {
-	// Token: 0x0600210E RID: 8462 RVA: 0x000C72AE File Offset: 0x000C54AE
+	// Token: 0x060020FD RID: 8445 RVA: 0x000C7362 File Offset: 0x000C5562
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -15,7 +15,7 @@ public class EAIBreakBlock : EAIBase
 		this.executeDelay = 0.15f;
 	}
 
-	// Token: 0x0600210F RID: 8463 RVA: 0x000C72CC File Offset: 0x000C54CC
+	// Token: 0x060020FE RID: 8446 RVA: 0x000C7380 File Offset: 0x000C5580
 	public override bool CanExecute()
 	{
 		if (this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None)
@@ -49,7 +49,7 @@ public class EAIBreakBlock : EAIBase
 		return false;
 	}
 
-	// Token: 0x06002110 RID: 8464 RVA: 0x000C73AC File Offset: 0x000C55AC
+	// Token: 0x060020FF RID: 8447 RVA: 0x000C7460 File Offset: 0x000C5660
 	public override void Start()
 	{
 		this.attackDelay = 1;
@@ -61,13 +61,13 @@ public class EAIBreakBlock : EAIBase
 		}
 	}
 
-	// Token: 0x06002111 RID: 8465 RVA: 0x000C7416 File Offset: 0x000C5616
+	// Token: 0x06002100 RID: 8448 RVA: 0x000C74CA File Offset: 0x000C56CA
 	public override bool Continue()
 	{
 		return (this.theEntity.onGround || this.theEntity.IsInElevator()) && this.CanExecute();
 	}
 
-	// Token: 0x06002112 RID: 8466 RVA: 0x000C743A File Offset: 0x000C563A
+	// Token: 0x06002101 RID: 8449 RVA: 0x000C74EE File Offset: 0x000C56EE
 	public override void Update()
 	{
 		EntityMoveHelper moveHelper = this.theEntity.moveHelper;
@@ -81,14 +81,14 @@ public class EAIBreakBlock : EAIBase
 		}
 	}
 
-	// Token: 0x06002113 RID: 8467 RVA: 0x000C746E File Offset: 0x000C566E
+	// Token: 0x06002102 RID: 8450 RVA: 0x000C7522 File Offset: 0x000C5722
 	public override void Reset()
 	{
 		this.theEntity.IsBreakingBlocks = false;
 		this.theEntity.IsBreakingDoors = false;
 	}
 
-	// Token: 0x06002114 RID: 8468 RVA: 0x000C7488 File Offset: 0x000C5688
+	// Token: 0x06002103 RID: 8451 RVA: 0x000C753C File Offset: 0x000C573C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AttackBlock()
 	{
@@ -126,7 +126,7 @@ public class EAIBreakBlock : EAIBase
 		}
 	}
 
-	// Token: 0x06002115 RID: 8469 RVA: 0x000C75FC File Offset: 0x000C57FC
+	// Token: 0x06002104 RID: 8452 RVA: 0x000C76B0 File Offset: 0x000C58B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldRayHitInfo GetHitInfo(out float damageScale)
 	{
@@ -135,19 +135,19 @@ public class EAIBreakBlock : EAIBase
 		return moveHelper.HitInfo;
 	}
 
-	// Token: 0x040016AF RID: 5807
+	// Token: 0x040016A6 RID: 5798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDamageBoostPerAlly = 0.2f;
 
-	// Token: 0x040016B0 RID: 5808
+	// Token: 0x040016A7 RID: 5799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int attackDelay;
 
-	// Token: 0x040016B1 RID: 5809
+	// Token: 0x040016A8 RID: 5800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float damageBoostPercent;
 
-	// Token: 0x040016B2 RID: 5810
+	// Token: 0x040016A9 RID: 5801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> allies = new List<Entity>();
 }

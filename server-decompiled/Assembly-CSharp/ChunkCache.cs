@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000B10 RID: 2832
+// Token: 0x02000B22 RID: 2850
 public class ChunkCache : IBlockAccess
 {
-	// Token: 0x0600556E RID: 21870 RVA: 0x0020A950 File Offset: 0x00208B50
+	// Token: 0x06005587 RID: 21895 RVA: 0x0020DBC0 File Offset: 0x0020BDC0
 	public ChunkCache(int _dim)
 	{
 		this.chunkArray = new Chunk[_dim, _dim];
 	}
 
-	// Token: 0x0600556F RID: 21871 RVA: 0x0020A968 File Offset: 0x00208B68
+	// Token: 0x06005588 RID: 21896 RVA: 0x0020DBD8 File Offset: 0x0020BDD8
 	public void Init(World world, int x, int y, int z, int sx, int sy, int sz)
 	{
 		this.worldObj = world;
@@ -30,20 +30,20 @@ public class ChunkCache : IBlockAccess
 		}
 	}
 
-	// Token: 0x06005570 RID: 21872 RVA: 0x0020A9EB File Offset: 0x00208BEB
+	// Token: 0x06005589 RID: 21897 RVA: 0x0020DC5B File Offset: 0x0020BE5B
 	public void Clear()
 	{
 		Array.Clear(this.chunkArray, 0, this.chunkArray.GetLength(0) * this.chunkArray.GetLength(1));
 	}
 
-	// Token: 0x06005571 RID: 21873 RVA: 0x0020AA12 File Offset: 0x00208C12
+	// Token: 0x0600558A RID: 21898 RVA: 0x0020DC82 File Offset: 0x0020BE82
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsChunkValid(Chunk _chunk)
 	{
 		return _chunk != null && _chunk.IsInitialized;
 	}
 
-	// Token: 0x06005572 RID: 21874 RVA: 0x0020AA20 File Offset: 0x00208C20
+	// Token: 0x0600558B RID: 21899 RVA: 0x0020DC90 File Offset: 0x0020BE90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetChunk(int _cX, int _cY, out Chunk _chunk)
 	{
@@ -67,7 +67,7 @@ public class ChunkCache : IBlockAccess
 		return true;
 	}
 
-	// Token: 0x06005573 RID: 21875 RVA: 0x0020AA9C File Offset: 0x00208C9C
+	// Token: 0x0600558C RID: 21900 RVA: 0x0020DD0C File Offset: 0x0020BF0C
 	public BlockValue GetBlock(int _x, int _y, int _z)
 	{
 		if (_y < 0)
@@ -86,19 +86,19 @@ public class ChunkCache : IBlockAccess
 		return chunk.GetBlock(_x & 15, _y, _z & 15);
 	}
 
-	// Token: 0x06005574 RID: 21876 RVA: 0x001B233C File Offset: 0x001B053C
+	// Token: 0x0600558D RID: 21901 RVA: 0x001B2790 File Offset: 0x001B0990
 	public BlockValue GetBlock(Vector3i pos)
 	{
 		return IBlockAccess.DefaultGetBlock(this, pos);
 	}
 
-	// Token: 0x06005575 RID: 21877 RVA: 0x001B2345 File Offset: 0x001B0545
+	// Token: 0x0600558E RID: 21902 RVA: 0x001B2799 File Offset: 0x001B0999
 	public BlockValue GetBlock(BlockValueRef bvRef)
 	{
 		return IBlockAccess.DefaultGetBlock(this, bvRef);
 	}
 
-	// Token: 0x06005576 RID: 21878 RVA: 0x0020AAEC File Offset: 0x00208CEC
+	// Token: 0x0600558F RID: 21903 RVA: 0x0020DD5C File Offset: 0x0020BF5C
 	public PropValue GetProp(int chunkX, int chunkZ, int propId)
 	{
 		Chunk chunk;
@@ -109,37 +109,37 @@ public class ChunkCache : IBlockAccess
 		return chunk.GetProp(chunkX, chunkZ, propId);
 	}
 
-	// Token: 0x06005577 RID: 21879 RVA: 0x0020AB14 File Offset: 0x00208D14
+	// Token: 0x06005590 RID: 21904 RVA: 0x0020DD84 File Offset: 0x0020BF84
 	public PropValue GetProp(long chunkKey, int propId)
 	{
 		return this.GetProp(WorldChunkCache.extractX(chunkKey), WorldChunkCache.extractZ(chunkKey), propId);
 	}
 
-	// Token: 0x06005578 RID: 21880 RVA: 0x001B24D1 File Offset: 0x001B06D1
+	// Token: 0x06005591 RID: 21905 RVA: 0x001B2925 File Offset: 0x001B0B25
 	public PropValue GetProp(Vector2i chunkPos, int propId)
 	{
 		return IBlockAccess.DefaultGetProp(this, chunkPos, propId);
 	}
 
-	// Token: 0x06005579 RID: 21881 RVA: 0x001B24DB File Offset: 0x001B06DB
+	// Token: 0x06005592 RID: 21906 RVA: 0x001B292F File Offset: 0x001B0B2F
 	public PropValue GetProp(PropRef propRef)
 	{
 		return IBlockAccess.DefaultGetProp(this, propRef);
 	}
 
-	// Token: 0x04004247 RID: 16967
+	// Token: 0x04004284 RID: 17028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkX;
 
-	// Token: 0x04004248 RID: 16968
+	// Token: 0x04004285 RID: 17029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkZ;
 
-	// Token: 0x04004249 RID: 16969
+	// Token: 0x04004286 RID: 17030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk[,] chunkArray;
 
-	// Token: 0x0400424A RID: 16970
+	// Token: 0x04004287 RID: 17031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World worldObj;
 }

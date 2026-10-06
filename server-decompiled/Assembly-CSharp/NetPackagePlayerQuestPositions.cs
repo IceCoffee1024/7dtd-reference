@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200082D RID: 2093
+// Token: 0x0200082E RID: 2094
 [Preserve]
 public class NetPackagePlayerQuestPositions : NetPackage
 {
-	// Token: 0x1700066C RID: 1644
-	// (get) Token: 0x06003D7A RID: 15738 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700068B RID: 1675
+	// (get) Token: 0x06003D39 RID: 15673 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D7B RID: 15739 RVA: 0x001863D5 File Offset: 0x001845D5
+	// Token: 0x06003D3A RID: 15674 RVA: 0x00185F0D File Offset: 0x0018410D
 	public NetPackagePlayerQuestPositions Setup(int entityId, PersistentPlayerData ppd)
 	{
 		this.entityId = entityId;
@@ -24,7 +24,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D7C RID: 15740 RVA: 0x001863F0 File Offset: 0x001845F0
+	// Token: 0x06003D3B RID: 15675 RVA: 0x00185F28 File Offset: 0x00184128
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D7D RID: 15741 RVA: 0x00186438 File Offset: 0x00184638
+	// Token: 0x06003D3C RID: 15676 RVA: 0x00185F70 File Offset: 0x00184170
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -48,7 +48,7 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D7E RID: 15742 RVA: 0x001864B0 File Offset: 0x001846B0
+	// Token: 0x06003D3D RID: 15677 RVA: 0x00185FE8 File Offset: 0x001841E8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidEntityIdForSender(this.entityId, false))
@@ -63,17 +63,11 @@ public class NetPackagePlayerQuestPositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003D7F RID: 15743 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x040031D6 RID: 12758
+	// Token: 0x040031BD RID: 12733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040031D7 RID: 12759
+	// Token: 0x040031BE RID: 12734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<QuestPositionData> questPositions;
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002F7 RID: 759
+// Token: 0x020002FA RID: 762
 [Preserve]
 public class DialogRequirementDroneState : BaseDialogRequirement
 {
-	// Token: 0x17000272 RID: 626
-	// (get) Token: 0x060015AE RID: 5550 RVA: 0x0008121D File Offset: 0x0007F41D
+	// Token: 0x1700026A RID: 618
+	// (get) Token: 0x060015AB RID: 5547 RVA: 0x000814D1 File Offset: 0x0007F6D1
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -15,7 +15,7 @@ public class DialogRequirementDroneState : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015AF RID: 5551 RVA: 0x00081220 File Offset: 0x0007F420
+	// Token: 0x060015AC RID: 5548 RVA: 0x000814D4 File Offset: 0x0007F6D4
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		EntityDrone entityDrone = talkingTo as EntityDrone;

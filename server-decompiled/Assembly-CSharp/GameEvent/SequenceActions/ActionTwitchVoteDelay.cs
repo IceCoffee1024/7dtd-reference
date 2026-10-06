@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A03 RID: 6659
+	// Token: 0x02001A2F RID: 6703
 	[Preserve]
 	public class ActionTwitchVoteDelay : BaseAction
 	{
-		// Token: 0x0600CAD5 RID: 51925 RVA: 0x004A4E5C File Offset: 0x004A305C
+		// Token: 0x0600CC2D RID: 52269 RVA: 0x004A9328 File Offset: 0x004A7528
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			TwitchManager twitchManager = TwitchManager.Current;
@@ -25,14 +25,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CAD6 RID: 51926 RVA: 0x004A4ED9 File Offset: 0x004A30D9
+		// Token: 0x0600CC2E RID: 52270 RVA: 0x004A93A5 File Offset: 0x004A75A5
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionTwitchVoteDelay.PropTime, ref this.delayTimeText);
 		}
 
-		// Token: 0x0600CAD7 RID: 51927 RVA: 0x004A4EF3 File Offset: 0x004A30F3
+		// Token: 0x0600CC2F RID: 52271 RVA: 0x004A93BF File Offset: 0x004A75BF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -42,11 +42,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A08 RID: 39432
+		// Token: 0x04009ACE RID: 39630
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string delayTimeText;
 
-		// Token: 0x04009A09 RID: 39433
+		// Token: 0x04009ACF RID: 39631
 		public static string PropTime = "time";
 	}
 }

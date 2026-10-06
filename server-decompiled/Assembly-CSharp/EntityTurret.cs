@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004E0 RID: 1248
+// Token: 0x020004E7 RID: 1255
 [Preserve]
 public class EntityTurret : EntityAlive
 {
-	// Token: 0x17000484 RID: 1156
-	// (get) Token: 0x0600289C RID: 10396 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000479 RID: 1145
+	// (get) Token: 0x0600289B RID: 10395 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsValidAimAssistSnapTarget
 	{
 		get
@@ -18,8 +17,8 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x17000485 RID: 1157
-	// (get) Token: 0x0600289D RID: 10397 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700047A RID: 1146
+	// (get) Token: 0x0600289C RID: 10396 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsValidAimAssistSlowdownTarget
 	{
 		get
@@ -28,8 +27,8 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x17000486 RID: 1158
-	// (get) Token: 0x0600289E RID: 10398 RVA: 0x000EBF5A File Offset: 0x000EA15A
+	// Token: 0x1700047B RID: 1147
+	// (get) Token: 0x0600289D RID: 10397 RVA: 0x000EC052 File Offset: 0x000EA252
 	public override string LocalizedEntityName
 	{
 		get
@@ -38,9 +37,9 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x17000487 RID: 1159
-	// (get) Token: 0x0600289F RID: 10399 RVA: 0x000FBEC3 File Offset: 0x000FA0C3
-	// (set) Token: 0x060028A0 RID: 10400 RVA: 0x000FBED0 File Offset: 0x000FA0D0
+	// Token: 0x1700047C RID: 1148
+	// (get) Token: 0x0600289E RID: 10398 RVA: 0x000FC8DF File Offset: 0x000FAADF
+	// (set) Token: 0x0600289F RID: 10399 RVA: 0x000FC8EC File Offset: 0x000FAAEC
 	public int AmmoCount
 	{
 		get
@@ -53,8 +52,8 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x17000488 RID: 1160
-	// (get) Token: 0x060028A1 RID: 10401 RVA: 0x000FBEDE File Offset: 0x000FA0DE
+	// Token: 0x1700047D RID: 1149
+	// (get) Token: 0x060028A0 RID: 10400 RVA: 0x000FC8FA File Offset: 0x000FAAFA
 	public bool IsTurning
 	{
 		get
@@ -63,9 +62,9 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x17000489 RID: 1161
-	// (get) Token: 0x060028A2 RID: 10402 RVA: 0x000FBF04 File Offset: 0x000FA104
-	// (set) Token: 0x060028A3 RID: 10403 RVA: 0x000FBF29 File Offset: 0x000FA129
+	// Token: 0x1700047E RID: 1150
+	// (get) Token: 0x060028A1 RID: 10401 RVA: 0x000FC920 File Offset: 0x000FAB20
+	// (set) Token: 0x060028A2 RID: 10402 RVA: 0x000FC945 File Offset: 0x000FAB45
 	public override int Health
 	{
 		get
@@ -78,7 +77,7 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028A4 RID: 10404 RVA: 0x000FBF44 File Offset: 0x000FA144
+	// Token: 0x060028A3 RID: 10403 RVA: 0x000FC960 File Offset: 0x000FAB60
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -97,25 +96,25 @@ public class EntityTurret : EntityAlive
 		this.alertEnabled = false;
 	}
 
-	// Token: 0x060028A5 RID: 10405 RVA: 0x000FC012 File Offset: 0x000FA212
+	// Token: 0x060028A4 RID: 10404 RVA: 0x000FCA2E File Offset: 0x000FAC2E
 	public override void Kill(DamageResponse _dmResponse)
 	{
 		_dmResponse.Fatal = false;
 	}
 
-	// Token: 0x060028A6 RID: 10406 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060028A5 RID: 10405 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetDead()
 	{
 	}
 
-	// Token: 0x060028A7 RID: 10407 RVA: 0x000FC012 File Offset: 0x000FA212
+	// Token: 0x060028A6 RID: 10406 RVA: 0x000FCA2E File Offset: 0x000FAC2E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ClientKill(DamageResponse _dmResponse)
 	{
 		_dmResponse.Fatal = false;
 	}
 
-	// Token: 0x060028A8 RID: 10408 RVA: 0x000FC01C File Offset: 0x000FA21C
+	// Token: 0x060028A7 RID: 10407 RVA: 0x000FCA38 File Offset: 0x000FAC38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override DamageResponse damageEntityLocal(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale)
 	{
@@ -124,7 +123,7 @@ public class EntityTurret : EntityAlive
 		return damageResponse;
 	}
 
-	// Token: 0x060028A9 RID: 10409 RVA: 0x000FC040 File Offset: 0x000FA240
+	// Token: 0x060028A8 RID: 10408 RVA: 0x000FCA5C File Offset: 0x000FAC5C
 	public override void OnEntityUnload()
 	{
 		base.OnEntityUnload();
@@ -140,13 +139,13 @@ public class EntityTurret : EntityAlive
 		this.FireController.Update();
 	}
 
-	// Token: 0x060028AA RID: 10410 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060028A9 RID: 10409 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void AddCharacterController()
 	{
 	}
 
-	// Token: 0x060028AB RID: 10411 RVA: 0x000FC0B8 File Offset: 0x000FA2B8
+	// Token: 0x060028AA RID: 10410 RVA: 0x000FCAD4 File Offset: 0x000FACD4
 	public override void PostInit()
 	{
 		Transform transform = base.transform;
@@ -167,28 +166,22 @@ public class EntityTurret : EntityAlive
 		this.InitTurret();
 	}
 
-	// Token: 0x060028AC RID: 10412 RVA: 0x000FC169 File Offset: 0x000FA369
-	public override void InitInventory()
-	{
-		this.inventory = new EntityTurret.TurretInventory(GameManager.Instance, this);
-	}
-
-	// Token: 0x060028AD RID: 10413 RVA: 0x000FC17C File Offset: 0x000FA37C
+	// Token: 0x060028AB RID: 10411 RVA: 0x000FCB85 File Offset: 0x000FAD85
 	public void InitTurret()
 	{
 		this.FireController.Init(base.EntityClass.Properties, this);
 	}
 
-	// Token: 0x060028AE RID: 10414 RVA: 0x000FC198 File Offset: 0x000FA398
+	// Token: 0x060028AC RID: 10412 RVA: 0x000FCBA0 File Offset: 0x000FADA0
 	public override void OnAddedToWorld()
 	{
 		base.OnAddedToWorld();
 		if (this.OriginalItemValue.HasMods())
 		{
-			for (int i = 0; i < this.OriginalItemValue.Modifications.Length; i++)
+			for (int i = 0; i < this.OriginalItemValue.ModificationCount; i++)
 			{
-				ItemValue itemValue = this.OriginalItemValue.Modifications[i];
-				if (((itemValue != null) ? itemValue.ItemClass : null) != null && itemValue.ItemClass.Name == "modMeleeClubBurningShaft")
+				ItemValue modification = this.OriginalItemValue.GetModification(i);
+				if (((modification != null) ? modification.ItemClass : null) != null && modification.ItemClass.Name == "modMeleeClubBurningShaft")
 				{
 					Transform transform = base.transform.FindInChilds("mod_junk_sledge_flamePrefab", false);
 					if (transform)
@@ -200,7 +193,7 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028AF RID: 10415 RVA: 0x000FC22C File Offset: 0x000FA42C
+	// Token: 0x060028AD RID: 10413 RVA: 0x000FCC30 File Offset: 0x000FAE30
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -306,12 +299,12 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028B0 RID: 10416 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060028AE RID: 10414 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 	}
 
-	// Token: 0x060028B1 RID: 10417 RVA: 0x000FC6F8 File Offset: 0x000FA8F8
+	// Token: 0x060028AF RID: 10415 RVA: 0x000FD0FC File Offset: 0x000FB2FC
 	public void InitDynamicSpawn()
 	{
 		for (int i = 1; i < ItemClass.list.Length - 1; i++)
@@ -335,7 +328,7 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028B2 RID: 10418 RVA: 0x000FC7DC File Offset: 0x000FA9DC
+	// Token: 0x060028B0 RID: 10416 RVA: 0x000FD1E0 File Offset: 0x000FB3E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTransform()
 	{
@@ -390,7 +383,7 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028B3 RID: 10419 RVA: 0x000FC9DA File Offset: 0x000FABDA
+	// Token: 0x060028B1 RID: 10417 RVA: 0x000FD3DE File Offset: 0x000FB5DE
 	public override void OnCollectServer(int _playerId)
 	{
 		this.OriginalItemValue = ItemValue.None;
@@ -400,7 +393,7 @@ public class EntityTurret : EntityAlive
 		this.world.RemoveEntity(this.entityId, EnumRemoveEntityReason.Killed);
 	}
 
-	// Token: 0x060028B4 RID: 10420 RVA: 0x000FCA1C File Offset: 0x000FAC1C
+	// Token: 0x060028B2 RID: 10418 RVA: 0x000FD420 File Offset: 0x000FB620
 	public override void OnCollectLocal(int _playerId)
 	{
 		EntityPlayerLocal entityPlayerLocal = this.world.GetEntity(_playerId) as EntityPlayerLocal;
@@ -412,13 +405,13 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028B5 RID: 10421 RVA: 0x000FCA7D File Offset: 0x000FAC7D
+	// Token: 0x060028B3 RID: 10419 RVA: 0x000FD481 File Offset: 0x000FB681
 	public bool CanInteract(int _interactingEntityId)
 	{
 		return !this.isFalling && !this.PickedUpWaitingToDelete && this.OriginalItemValue.type != 0 && (this.belongsPlayerId == _interactingEntityId || this.Health <= 1);
 	}
 
-	// Token: 0x060028B6 RID: 10422 RVA: 0x000FCAB8 File Offset: 0x000FACB8
+	// Token: 0x060028B4 RID: 10420 RVA: 0x000FD4BC File Offset: 0x000FB6BC
 	public override string GetActivationText()
 	{
 		GameManager instance = GameManager.Instance;
@@ -442,14 +435,14 @@ public class EntityTurret : EntityAlive
 		return string.Format(Localization.Get("turretPickUp", false, null), text, this.LocalizedEntityName);
 	}
 
-	// Token: 0x060028B7 RID: 10423 RVA: 0x000FCB38 File Offset: 0x000FAD38
+	// Token: 0x060028B5 RID: 10421 RVA: 0x000FD53C File Offset: 0x000FB73C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitLocalActivationCommands(Action<EntityActivationCommand> _addCallback)
 	{
 		_addCallback(new EntityActivationCommand("take", "hand", null, null));
 	}
 
-	// Token: 0x060028B8 RID: 10424 RVA: 0x000FCB51 File Offset: 0x000FAD51
+	// Token: 0x060028B6 RID: 10422 RVA: 0x000FD555 File Offset: 0x000FB755
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (base.CommandIs(_commandName, "take"))
@@ -459,7 +452,7 @@ public class EntityTurret : EntityAlive
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x060028B9 RID: 10425 RVA: 0x000FCB78 File Offset: 0x000FAD78
+	// Token: 0x060028B7 RID: 10423 RVA: 0x000FD57C File Offset: 0x000FB77C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityActivated(EntityActivationCommand _command, EntityPlayerLocal _playerFocusing)
 	{
@@ -475,26 +468,26 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x060028BA RID: 10426 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060028B8 RID: 10424 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsDead()
 	{
 		return false;
 	}
 
-	// Token: 0x060028BB RID: 10427 RVA: 0x000FCBF7 File Offset: 0x000FADF7
-	public override void Write(BinaryWriter _bw, bool _bNetworkWrite)
+	// Token: 0x060028B9 RID: 10425 RVA: 0x000FD5FB File Offset: 0x000FB7FB
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
-		base.Write(_bw, _bNetworkWrite);
+		base.Write(_bw, _eStreamMode);
 		_bw.Write(1);
 		this.OwnerID.ToStream(_bw, false);
 		this.OriginalItemValue.Write(_bw);
 		StreamUtils.Write(_bw, this.StaticPosition);
 	}
 
-	// Token: 0x060028BC RID: 10428 RVA: 0x000FCC30 File Offset: 0x000FAE30
-	public override void Read(byte _version, BinaryReader _br)
+	// Token: 0x060028BA RID: 10426 RVA: 0x000FD634 File Offset: 0x000FB834
+	public override void Read(byte _version, PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
-		base.Read(_version, _br);
+		base.Read(_version, _br, _eStreamMode);
 		int num = _br.ReadInt32();
 		this.OwnerID = PlatformUserIdentifierAbs.FromStream(_br, false, false);
 		this.OriginalItemValue = ItemValue.None;
@@ -505,183 +498,147 @@ public class EntityTurret : EntityAlive
 		}
 	}
 
-	// Token: 0x04001E7B RID: 7803
+	// Token: 0x04001E81 RID: 7809
 	public const int SaveVersion = 1;
 
-	// Token: 0x04001E7C RID: 7804
+	// Token: 0x04001E82 RID: 7810
 	public const string JunkTurretSledgeItem = "gunBotT1JunkSledge";
 
-	// Token: 0x04001E7D RID: 7805
+	// Token: 0x04001E83 RID: 7811
 	public const string JunkTurretRangedItem = "gunBotT2JunkTurret";
 
-	// Token: 0x04001E7E RID: 7806
+	// Token: 0x04001E84 RID: 7812
 	public AutoTurretYawLerp YawController;
 
-	// Token: 0x04001E7F RID: 7807
+	// Token: 0x04001E85 RID: 7813
 	public AutoTurretPitchLerp PitchController;
 
-	// Token: 0x04001E80 RID: 7808
+	// Token: 0x04001E86 RID: 7814
 	public MiniTurretFireController FireController;
 
-	// Token: 0x04001E81 RID: 7809
+	// Token: 0x04001E87 RID: 7815
 	public Transform Laser;
 
-	// Token: 0x04001E82 RID: 7810
+	// Token: 0x04001E88 RID: 7816
 	public Transform Cone;
 
-	// Token: 0x04001E83 RID: 7811
+	// Token: 0x04001E89 RID: 7817
 	public Material ConeMaterial;
 
-	// Token: 0x04001E84 RID: 7812
+	// Token: 0x04001E8A RID: 7818
 	public Color ConeColor;
 
-	// Token: 0x04001E85 RID: 7813
+	// Token: 0x04001E8B RID: 7819
 	public float CenteredYaw;
 
-	// Token: 0x04001E86 RID: 7814
+	// Token: 0x04001E8C RID: 7820
 	public float CenteredPitch;
 
-	// Token: 0x04001E87 RID: 7815
+	// Token: 0x04001E8D RID: 7821
 	public bool TargetOwner;
 
-	// Token: 0x04001E88 RID: 7816
+	// Token: 0x04001E8E RID: 7822
 	public bool TargetAllies;
 
-	// Token: 0x04001E89 RID: 7817
+	// Token: 0x04001E8F RID: 7823
 	public bool TargetStrangers = true;
 
-	// Token: 0x04001E8A RID: 7818
+	// Token: 0x04001E90 RID: 7824
 	public bool TargetEnemies = true;
 
-	// Token: 0x04001E8B RID: 7819
+	// Token: 0x04001E91 RID: 7825
 	public int maxOwnerDistance = 10;
 
-	// Token: 0x04001E8C RID: 7820
+	// Token: 0x04001E92 RID: 7826
 	public ItemValue OriginalItemValue = ItemValue.None;
 
-	// Token: 0x04001E8D RID: 7821
+	// Token: 0x04001E93 RID: 7827
 	public bool PickedUpWaitingToDelete;
 
-	// Token: 0x04001E8E RID: 7822
+	// Token: 0x04001E94 RID: 7828
 	public PlatformUserIdentifierAbs OwnerID;
 
-	// Token: 0x04001E8F RID: 7823
-	public bool IsOn;
-
-	// Token: 0x04001E90 RID: 7824
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Rigidbody thisRigidBody;
-
-	// Token: 0x04001E91 RID: 7825
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public UpdateLightOnAllMaterials uloam;
-
-	// Token: 0x04001E92 RID: 7826
-	public EntityAlive Owner;
-
-	// Token: 0x04001E93 RID: 7827
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int lastTargetEntityId = -2;
-
-	// Token: 0x04001E94 RID: 7828
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool lastIsOn;
-
 	// Token: 0x04001E95 RID: 7829
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ItemValue lastOriginalItemValue = ItemValue.None;
+	public bool IsOn;
 
 	// Token: 0x04001E96 RID: 7830
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cPOSITION_UPDATE_CHECK_TIME = 0.5f;
+	public Rigidbody thisRigidBody;
 
 	// Token: 0x04001E97 RID: 7831
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float posCheckTimer = 0.5f;
+	public UpdateLightOnAllMaterials uloam;
 
 	// Token: 0x04001E98 RID: 7832
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int fallDelay;
+	public EntityAlive Owner;
 
 	// Token: 0x04001E99 RID: 7833
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 fallPos;
+	public int lastTargetEntityId = -2;
 
 	// Token: 0x04001E9A RID: 7834
-	public int TargetEntityId = -1;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool lastIsOn;
 
 	// Token: 0x04001E9B RID: 7835
-	public bool ForceOn;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public ItemValue lastOriginalItemValue = ItemValue.None;
 
 	// Token: 0x04001E9C RID: 7836
-	public float DistanceToOwner = float.MaxValue;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cPOSITION_UPDATE_CHECK_TIME = 0.5f;
 
 	// Token: 0x04001E9D RID: 7837
-	public Vector3 groundPosition;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float posCheckTimer = 0.5f;
 
 	// Token: 0x04001E9E RID: 7838
-	public Vector3 groundUpDirection;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int fallDelay;
 
 	// Token: 0x04001E9F RID: 7839
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool isFalling;
+	public Vector3 fallPos;
 
 	// Token: 0x04001EA0 RID: 7840
+	public int TargetEntityId = -1;
+
+	// Token: 0x04001EA1 RID: 7841
+	public bool ForceOn;
+
+	// Token: 0x04001EA2 RID: 7842
+	public float DistanceToOwner = float.MaxValue;
+
+	// Token: 0x04001EA3 RID: 7843
+	public Vector3 groundPosition;
+
+	// Token: 0x04001EA4 RID: 7844
+	public Vector3 groundUpDirection;
+
+	// Token: 0x04001EA5 RID: 7845
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isFalling;
+
+	// Token: 0x04001EA6 RID: 7846
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 StaticPosition;
 
-	// Token: 0x04001EA1 RID: 7841
+	// Token: 0x04001EA7 RID: 7847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cLerpTimeScale = 8f;
 
-	// Token: 0x04001EA2 RID: 7842
+	// Token: 0x04001EA8 RID: 7848
 	public int tmpBelongsPlayerID;
-
-	// Token: 0x020004E1 RID: 1249
-	public class TurretInventory : Inventory
-	{
-		// Token: 0x060028BE RID: 10430 RVA: 0x000FCCE4 File Offset: 0x000FAEE4
-		public TurretInventory(IGameManager _gameManager, EntityAlive _entity)
-			: base(_gameManager, _entity)
-		{
-			this.cSlotCount = base.PUBLIC_SLOTS + 1;
-			this.SetupSlots();
-		}
-
-		// Token: 0x060028BF RID: 10431 RVA: 0x000027FC File Offset: 0x000009FC
-		public override void Execute(int _actionIdx, bool _bReleased, PlayerActionsLocal _playerActions = null)
-		{
-		}
-
-		// Token: 0x060028C0 RID: 10432 RVA: 0x000FCD02 File Offset: 0x000FAF02
-		public void SetupSlots()
-		{
-			this.slots = new ItemInventoryData[this.cSlotCount];
-			this.models = new Transform[this.cSlotCount];
-			this.m_HoldingItemIdx = 0;
-			base.Clear();
-		}
-
-		// Token: 0x060028C1 RID: 10433 RVA: 0x000027FC File Offset: 0x000009FC
-		[PublicizedFrom(EAccessModifier.Protected)]
-		public override void updateHoldingItem()
-		{
-		}
-
-		// Token: 0x04001EA3 RID: 7843
-		[PublicizedFrom(EAccessModifier.Private)]
-		public readonly int cSlotCount;
-	}
 }

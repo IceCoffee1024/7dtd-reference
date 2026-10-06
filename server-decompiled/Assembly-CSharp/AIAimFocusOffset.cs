@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000443 RID: 1091
+// Token: 0x02000445 RID: 1093
 public enum AIAimFocusOffset
 {
-	// Token: 0x040016F3 RID: 5875
+	// Token: 0x040016EA RID: 5866
 	Feet,
-	// Token: 0x040016F4 RID: 5876
+	// Token: 0x040016EB RID: 5867
 	Belly,
-	// Token: 0x040016F5 RID: 5877
+	// Token: 0x040016EC RID: 5868
 	Chest,
-	// Token: 0x040016F6 RID: 5878
+	// Token: 0x040016ED RID: 5869
 	Head
 }

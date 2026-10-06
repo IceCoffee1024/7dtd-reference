@@ -2,28 +2,28 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000611 RID: 1553
+// Token: 0x02000613 RID: 1555
 public class LocalPlayer : MonoBehaviour
 {
-	// Token: 0x17000534 RID: 1332
-	// (get) Token: 0x0600328A RID: 12938 RVA: 0x00148F06 File Offset: 0x00147106
-	// (set) Token: 0x0600328B RID: 12939 RVA: 0x00148F0E File Offset: 0x0014710E
+	// Token: 0x1700055A RID: 1370
+	// (get) Token: 0x060032CD RID: 13005 RVA: 0x001498AA File Offset: 0x00147AAA
+	// (set) Token: 0x060032CE RID: 13006 RVA: 0x001498B2 File Offset: 0x00147AB2
 	public EntityPlayerLocal entityPlayerLocal
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000535 RID: 1333
-	// (get) Token: 0x0600328C RID: 12940 RVA: 0x00148F17 File Offset: 0x00147117
-	// (set) Token: 0x0600328D RID: 12941 RVA: 0x00148F1F File Offset: 0x0014711F
+	// Token: 0x1700055B RID: 1371
+	// (get) Token: 0x060032CF RID: 13007 RVA: 0x001498BB File Offset: 0x00147ABB
+	// (set) Token: 0x060032D0 RID: 13008 RVA: 0x001498C3 File Offset: 0x00147AC3
 	public LocalPlayerUI playerUI
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600328E RID: 12942 RVA: 0x00148F28 File Offset: 0x00147128
+	// Token: 0x060032D1 RID: 13009 RVA: 0x001498CC File Offset: 0x00147ACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -61,13 +61,13 @@ public class LocalPlayer : MonoBehaviour
 		this.SetupLocalPlayerVisual(transform.Find("effect_water_fade"));
 	}
 
-	// Token: 0x0600328F RID: 12943 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060032D2 RID: 13010 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupLocalPlayerVisual(Transform _transform)
 	{
 	}
 
-	// Token: 0x06003290 RID: 12944 RVA: 0x0014904C File Offset: 0x0014724C
+	// Token: 0x060032D3 RID: 13011 RVA: 0x001499F0 File Offset: 0x00147BF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator Start()
 	{
@@ -80,28 +80,28 @@ public class LocalPlayer : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06003291 RID: 12945 RVA: 0x0014905B File Offset: 0x0014725B
+	// Token: 0x060032D4 RID: 13012 RVA: 0x001499FF File Offset: 0x00147BFF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged += this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003292 RID: 12946 RVA: 0x0014906E File Offset: 0x0014726E
+	// Token: 0x060032D5 RID: 13013 RVA: 0x00149A12 File Offset: 0x00147C12
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged -= this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003293 RID: 12947 RVA: 0x00149081 File Offset: 0x00147281
+	// Token: 0x060032D6 RID: 13014 RVA: 0x00149A25 File Offset: 0x00147C25
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DispatchLocalPlayersChanged()
 	{
 		LocalPlayerManager.LocalPlayersChanged();
 	}
 
-	// Token: 0x06003294 RID: 12948 RVA: 0x00149088 File Offset: 0x00147288
+	// Token: 0x060032D7 RID: 13015 RVA: 0x00149A2C File Offset: 0x00147C2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLocalPlayersChanged()
 	{
@@ -113,14 +113,14 @@ public class LocalPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003295 RID: 12949 RVA: 0x001490D4 File Offset: 0x001472D4
+	// Token: 0x060032D8 RID: 13016 RVA: 0x00149A78 File Offset: 0x00147C78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		this.DispatchLocalPlayersChanged();
 	}
 
-	// Token: 0x04002822 RID: 10274
+	// Token: 0x0400281B RID: 10267
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AvatarLocalPlayerController avatarController;

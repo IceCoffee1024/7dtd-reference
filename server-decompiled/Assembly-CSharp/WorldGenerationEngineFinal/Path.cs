@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001703 RID: 5891
+	// Token: 0x0200172F RID: 5935
 	public class Path
 	{
-		// Token: 0x0600B78A RID: 46986 RVA: 0x00442124 File Offset: 0x00440324
+		// Token: 0x0600B8E1 RID: 47329 RVA: 0x00446644 File Offset: 0x00444844
 		public Path(WorldBuilder _worldBuilder, Vector2i _startPosition, Vector2i _endPosition, int _lanes, bool _isCountryRoad)
 		{
 			this.worldBuilder = _worldBuilder;
@@ -21,7 +21,7 @@ namespace WorldGenerationEngineFinal
 			this.CreatePath();
 		}
 
-		// Token: 0x0600B78B RID: 46987 RVA: 0x00442198 File Offset: 0x00440398
+		// Token: 0x0600B8E2 RID: 47330 RVA: 0x004466B8 File Offset: 0x004448B8
 		public Path(WorldBuilder _worldBuilder, Vector2i _startPosition, Vector2i _endPosition, float _radius, bool _isCountryRoad)
 		{
 			this.worldBuilder = _worldBuilder;
@@ -33,14 +33,14 @@ namespace WorldGenerationEngineFinal
 			this.CreatePath();
 		}
 
-		// Token: 0x0600B78C RID: 46988 RVA: 0x00442210 File Offset: 0x00440410
+		// Token: 0x0600B8E3 RID: 47331 RVA: 0x00446730 File Offset: 0x00444930
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~Path()
 		{
 			this.Cleanup();
 		}
 
-		// Token: 0x0600B78D RID: 46989 RVA: 0x0044223C File Offset: 0x0044043C
+		// Token: 0x0600B8E4 RID: 47332 RVA: 0x0044675C File Offset: 0x0044495C
 		public void Cleanup()
 		{
 			if (this.FinalPathPoints.IsCreated)
@@ -53,7 +53,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B78E RID: 46990 RVA: 0x00442270 File Offset: 0x00440470
+		// Token: 0x0600B8E5 RID: 47333 RVA: 0x00446790 File Offset: 0x00444990
 		public void RemoveFromStreetTiles()
 		{
 			if (this.isCountryRoad)
@@ -79,7 +79,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B78F RID: 46991 RVA: 0x004422FC File Offset: 0x004404FC
+		// Token: 0x0600B8E6 RID: 47334 RVA: 0x0044681C File Offset: 0x00444A1C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CreatePath()
 		{
@@ -111,7 +111,7 @@ namespace WorldGenerationEngineFinal
 			this.ProcessPath();
 		}
 
-		// Token: 0x0600B790 RID: 46992 RVA: 0x00442498 File Offset: 0x00440698
+		// Token: 0x0600B8E7 RID: 47335 RVA: 0x004469B8 File Offset: 0x00444BB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ProcessPath()
 		{
@@ -190,7 +190,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B791 RID: 46993 RVA: 0x00442780 File Offset: 0x00440980
+		// Token: 0x0600B8E8 RID: 47336 RVA: 0x00446CA0 File Offset: 0x00444EA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RoundOffCorners(float _weight, int _skipIndex)
 		{
@@ -204,7 +204,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B792 RID: 46994 RVA: 0x00442808 File Offset: 0x00440A08
+		// Token: 0x0600B8E9 RID: 47337 RVA: 0x00446D28 File Offset: 0x00444F28
 		public void DrawPathToRoadIds(byte[] ids)
 		{
 			float num = this.radius;
@@ -338,7 +338,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B793 RID: 46995 RVA: 0x00442C78 File Offset: 0x00440E78
+		// Token: 0x0600B8EA RID: 47338 RVA: 0x00447198 File Offset: 0x00445398
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float GetPointToLineDistanceSq(Vector2 point, Vector2 lineStart, Vector2 lineEnd, out Vector2 pointOnLine)
 		{
@@ -358,7 +358,7 @@ namespace WorldGenerationEngineFinal
 			return this.distanceSqr(point, pointOnLine);
 		}
 
-		// Token: 0x0600B794 RID: 46996 RVA: 0x00442D44 File Offset: 0x00440F44
+		// Token: 0x0600B8EB RID: 47339 RVA: 0x00447264 File Offset: 0x00445464
 		public bool Crosses(Path path)
 		{
 			foreach (Vector2 vector in this.FinalPathPoints)
@@ -374,7 +374,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B795 RID: 46997 RVA: 0x00442DE4 File Offset: 0x00440FE4
+		// Token: 0x0600B8EC RID: 47340 RVA: 0x00447304 File Offset: 0x00445504
 		public bool IsConnectedTo(Path path)
 		{
 			if (this.Crosses(path))
@@ -395,7 +395,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B796 RID: 46998 RVA: 0x00442E80 File Offset: 0x00441080
+		// Token: 0x0600B8ED RID: 47341 RVA: 0x004473A0 File Offset: 0x004455A0
 		public bool IsConnectedToHighway()
 		{
 			if (this.worldBuilder.PathingUtils.IsPointOnHighwayWorld(this.StartPosition.x, this.StartPosition.y))
@@ -416,7 +416,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B797 RID: 46999 RVA: 0x00442F48 File Offset: 0x00441148
+		// Token: 0x0600B8EE RID: 47342 RVA: 0x00447468 File Offset: 0x00445668
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float DistanceSqr(Vector2i v1, Vector2i v2)
@@ -426,7 +426,7 @@ namespace WorldGenerationEngineFinal
 			return (float)(num * num + num2 * num2);
 		}
 
-		// Token: 0x0600B798 RID: 47000 RVA: 0x00442F78 File Offset: 0x00441178
+		// Token: 0x0600B8EF RID: 47343 RVA: 0x00447498 File Offset: 0x00445698
 		[PublicizedFrom(EAccessModifier.Protected)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public float distanceSqr(Vector2 v1, Vector2 v2)
@@ -436,7 +436,7 @@ namespace WorldGenerationEngineFinal
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x0600B799 RID: 47001 RVA: 0x00442FA8 File Offset: 0x004411A8
+		// Token: 0x0600B8F0 RID: 47344 RVA: 0x004474C8 File Offset: 0x004456C8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public float distanceSqr(float x, float y, Vector2 v2)
@@ -446,7 +446,7 @@ namespace WorldGenerationEngineFinal
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x0600B79A RID: 47002 RVA: 0x00442FCC File Offset: 0x004411CC
+		// Token: 0x0600B8F1 RID: 47345 RVA: 0x004474EC File Offset: 0x004456EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<Vector3> romChain(List<Vector3> points, int numberOfPointsOnCurve = 5, float parametricSplineVal = 0.2f)
 		{
@@ -458,7 +458,7 @@ namespace WorldGenerationEngineFinal
 			return list;
 		}
 
-		// Token: 0x0600B79B RID: 47003 RVA: 0x00443030 File Offset: 0x00441230
+		// Token: 0x0600B8F2 RID: 47346 RVA: 0x00447550 File Offset: 0x00445750
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Vector3> catmulRom(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, int numberOfPointsOnCurve, float parametricSplineVal)
 		{
@@ -479,7 +479,7 @@ namespace WorldGenerationEngineFinal
 			return list;
 		}
 
-		// Token: 0x0600B79C RID: 47004 RVA: 0x00443188 File Offset: 0x00441388
+		// Token: 0x0600B8F3 RID: 47347 RVA: 0x004476A8 File Offset: 0x004458A8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float getT(float t, Vector3 p0, Vector3 p1, float alpha)
 		{
@@ -490,7 +490,7 @@ namespace WorldGenerationEngineFinal
 			return Mathf.Pow((p1 - p0).sqrMagnitude, 0.5f * alpha) + t;
 		}
 
-		// Token: 0x0600B79D RID: 47005 RVA: 0x004431C0 File Offset: 0x004413C0
+		// Token: 0x0600B8F4 RID: 47348 RVA: 0x004476E0 File Offset: 0x004458E0
 		public void CommitPathingMapData()
 		{
 			PathTile pathTile;
@@ -516,7 +516,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B79E RID: 47006 RVA: 0x00443284 File Offset: 0x00441484
+		// Token: 0x0600B8F5 RID: 47349 RVA: 0x004477A4 File Offset: 0x004459A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetPathTileWorld(int x, int y, PathTile _tile)
 		{
@@ -534,7 +534,7 @@ namespace WorldGenerationEngineFinal
 			this.worldBuilder.data.PathTileGrid[num] = _tile;
 		}
 
-		// Token: 0x0600B79F RID: 47007 RVA: 0x004432F8 File Offset: 0x004414F8
+		// Token: 0x0600B8F6 RID: 47350 RVA: 0x00447818 File Offset: 0x00445A18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetPathTileAnd4WayWorld(int x, int y, PathTile _tile)
 		{
@@ -567,7 +567,7 @@ namespace WorldGenerationEngineFinal
 			this.worldBuilder.data.PathTileGrid[num + 2] = _tile;
 		}
 
-		// Token: 0x0600B7A0 RID: 47008 RVA: 0x00443434 File Offset: 0x00441634
+		// Token: 0x0600B8F7 RID: 47351 RVA: 0x00447954 File Offset: 0x00445B54
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SmoothHeights(float[] heights)
 		{
@@ -587,91 +587,91 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x04008939 RID: 35129
+		// Token: 0x040089FE RID: 35326
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cSingleLaneRadius = 4.5f;
 
-		// Token: 0x0400893A RID: 35130
+		// Token: 0x040089FF RID: 35327
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cShoulderWidth = 1;
 
-		// Token: 0x0400893B RID: 35131
+		// Token: 0x04008A00 RID: 35328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cBlendDistCountry = 6f;
 
-		// Token: 0x0400893C RID: 35132
+		// Token: 0x04008A01 RID: 35329
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cBlendDistHighway = 10f;
 
-		// Token: 0x0400893D RID: 35133
+		// Token: 0x04008A02 RID: 35330
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cHeightSmoothAverageBias = 8f;
 
-		// Token: 0x0400893E RID: 35134
+		// Token: 0x04008A03 RID: 35331
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cHeightSmoothDecreasePer = 0.3f;
 
-		// Token: 0x0400893F RID: 35135
+		// Token: 0x04008A04 RID: 35332
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008940 RID: 35136
+		// Token: 0x04008A05 RID: 35333
 		public readonly Vector2i StartPosition;
 
-		// Token: 0x04008941 RID: 35137
+		// Token: 0x04008A06 RID: 35334
 		public readonly Vector2i EndPosition;
 
-		// Token: 0x04008942 RID: 35138
+		// Token: 0x04008A07 RID: 35335
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int lanes;
 
-		// Token: 0x04008943 RID: 35139
+		// Token: 0x04008A08 RID: 35336
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float radius = 8f;
 
-		// Token: 0x04008944 RID: 35140
+		// Token: 0x04008A09 RID: 35337
 		public bool isCountryRoad;
 
-		// Token: 0x04008945 RID: 35141
+		// Token: 0x04008A0A RID: 35338
 		public bool isRiver;
 
-		// Token: 0x04008946 RID: 35142
+		// Token: 0x04008A0B RID: 35339
 		public bool connectsToHighway;
 
-		// Token: 0x04008947 RID: 35143
+		// Token: 0x04008A0C RID: 35340
 		public int Cost;
 
-		// Token: 0x04008948 RID: 35144
+		// Token: 0x04008A0D RID: 35341
 		public bool IsValid;
 
-		// Token: 0x04008949 RID: 35145
+		// Token: 0x04008A0E RID: 35342
 		public NativeList<Vector2> FinalPathPoints;
 
-		// Token: 0x0400894A RID: 35146
+		// Token: 0x04008A0F RID: 35343
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NativeList<Vector3> pathPoints3d = new NativeList<Vector3>(Allocator.Persistent);
 
-		// Token: 0x0400894B RID: 35147
+		// Token: 0x04008A10 RID: 35344
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int FreeId = 0;
 
-		// Token: 0x0400894C RID: 35148
+		// Token: 0x04008A11 RID: 35345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int CountryId = 1;
 
-		// Token: 0x0400894D RID: 35149
+		// Token: 0x04008A12 RID: 35346
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int HighwayId = 2;
 
-		// Token: 0x0400894E RID: 35150
+		// Token: 0x04008A13 RID: 35347
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int HighwayDirtId = 3;
 
-		// Token: 0x0400894F RID: 35151
+		// Token: 0x04008A14 RID: 35348
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int WaterId = 4;
 
-		// Token: 0x04008950 RID: 35152
+		// Token: 0x04008A15 RID: 35349
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int HighwayBlendIdMask = 128;
 	}

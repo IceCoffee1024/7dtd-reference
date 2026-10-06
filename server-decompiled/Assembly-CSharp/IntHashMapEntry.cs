@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02001422 RID: 5154
+// Token: 0x02001442 RID: 5186
 [PublicizedFrom(EAccessModifier.Internal)]
 public class IntHashMapEntry
 {
-	// Token: 0x0600A202 RID: 41474 RVA: 0x003CBDFE File Offset: 0x003C9FFE
+	// Token: 0x0600A2AD RID: 41645 RVA: 0x003D099A File Offset: 0x003CEB9A
 	public IntHashMapEntry(int _i1, int _i2, object _obj, IntHashMapEntry _entry)
 	{
 		this.valueEntry = _obj;
@@ -13,19 +13,19 @@ public class IntHashMapEntry
 		this.slotHash = _i1;
 	}
 
-	// Token: 0x0600A203 RID: 41475 RVA: 0x003CBE23 File Offset: 0x003CA023
+	// Token: 0x0600A2AE RID: 41646 RVA: 0x003D09BF File Offset: 0x003CEBBF
 	public int getHash()
 	{
 		return this.hashEntry;
 	}
 
-	// Token: 0x0600A204 RID: 41476 RVA: 0x003CBE2B File Offset: 0x003CA02B
+	// Token: 0x0600A2AF RID: 41647 RVA: 0x003D09C7 File Offset: 0x003CEBC7
 	public object getValue()
 	{
 		return this.valueEntry;
 	}
 
-	// Token: 0x0600A205 RID: 41477 RVA: 0x003CBE34 File Offset: 0x003CA034
+	// Token: 0x0600A2B0 RID: 41648 RVA: 0x003D09D0 File Offset: 0x003CEBD0
 	public bool equals(object _obj)
 	{
 		if (!(_obj is IntHashMapEntry))
@@ -47,13 +47,13 @@ public class IntHashMapEntry
 		return false;
 	}
 
-	// Token: 0x0600A206 RID: 41478 RVA: 0x003CBE83 File Offset: 0x003CA083
+	// Token: 0x0600A2B1 RID: 41649 RVA: 0x003D0A1F File Offset: 0x003CEC1F
 	public int hashCode()
 	{
 		return IntHashMap.getHash(this.hashEntry);
 	}
 
-	// Token: 0x0600A207 RID: 41479 RVA: 0x003CBE90 File Offset: 0x003CA090
+	// Token: 0x0600A2B2 RID: 41650 RVA: 0x003D0A2C File Offset: 0x003CEC2C
 	public string toString()
 	{
 		string text = this.getHash().ToString();
@@ -62,15 +62,15 @@ public class IntHashMapEntry
 		return text + text2 + ((value != null) ? value.ToString() : null);
 	}
 
-	// Token: 0x040079B5 RID: 31157
+	// Token: 0x04007A30 RID: 31280
 	public int hashEntry;
 
-	// Token: 0x040079B6 RID: 31158
+	// Token: 0x04007A31 RID: 31281
 	public object valueEntry;
 
-	// Token: 0x040079B7 RID: 31159
+	// Token: 0x04007A32 RID: 31282
 	public IntHashMapEntry nextEntry;
 
-	// Token: 0x040079B8 RID: 31160
+	// Token: 0x04007A33 RID: 31283
 	public int slotHash;
 }

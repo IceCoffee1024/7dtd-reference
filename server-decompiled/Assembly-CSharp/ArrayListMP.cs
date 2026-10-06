@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001382 RID: 4994
+// Token: 0x020013A2 RID: 5026
 public class ArrayListMP<T> where T : new()
 {
-	// Token: 0x06009D96 RID: 40342 RVA: 0x003B8E4A File Offset: 0x003B704A
+	// Token: 0x06009E41 RID: 40513 RVA: 0x003BD9C6 File Offset: 0x003BBBC6
 	public ArrayListMP(MemoryPooledArray<T> _pool, int _minSize = 0)
 	{
 		this.pool = _pool;
@@ -14,7 +14,7 @@ public class ArrayListMP<T> where T : new()
 		}
 	}
 
-	// Token: 0x06009D97 RID: 40343 RVA: 0x003B8E78 File Offset: 0x003B7078
+	// Token: 0x06009E42 RID: 40514 RVA: 0x003BD9F4 File Offset: 0x003BBBF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~ArrayListMP()
 	{
@@ -25,7 +25,7 @@ public class ArrayListMP<T> where T : new()
 		}
 	}
 
-	// Token: 0x06009D98 RID: 40344 RVA: 0x003B8EC0 File Offset: 0x003B70C0
+	// Token: 0x06009E43 RID: 40515 RVA: 0x003BDA3C File Offset: 0x003BBC3C
 	public void Add(T _item)
 	{
 		if (this.Items == null)
@@ -42,7 +42,7 @@ public class ArrayListMP<T> where T : new()
 		items[count] = _item;
 	}
 
-	// Token: 0x1700129D RID: 4765
+	// Token: 0x170012E2 RID: 4834
 	public T this[int idx]
 	{
 		get
@@ -55,7 +55,7 @@ public class ArrayListMP<T> where T : new()
 		}
 	}
 
-	// Token: 0x06009D9B RID: 40347 RVA: 0x003B8F48 File Offset: 0x003B7148
+	// Token: 0x06009E46 RID: 40518 RVA: 0x003BDAC4 File Offset: 0x003BBCC4
 	public void Clear()
 	{
 		this.Count = 0;
@@ -66,7 +66,7 @@ public class ArrayListMP<T> where T : new()
 		}
 	}
 
-	// Token: 0x06009D9C RID: 40348 RVA: 0x003B8F74 File Offset: 0x003B7174
+	// Token: 0x06009E47 RID: 40519 RVA: 0x003BDAF0 File Offset: 0x003BBCF0
 	public T[] ToArray()
 	{
 		if (this.Items == null)
@@ -78,13 +78,13 @@ public class ArrayListMP<T> where T : new()
 		return array;
 	}
 
-	// Token: 0x06009D9D RID: 40349 RVA: 0x003B8FAF File Offset: 0x003B71AF
+	// Token: 0x06009E48 RID: 40520 RVA: 0x003BDB2B File Offset: 0x003BBD2B
 	public void AddRange(T[] _range)
 	{
 		this.AddRange(_range, 0, _range.Length);
 	}
 
-	// Token: 0x06009D9E RID: 40350 RVA: 0x003B8FBC File Offset: 0x003B71BC
+	// Token: 0x06009E49 RID: 40521 RVA: 0x003BDB38 File Offset: 0x003BBD38
 	public void AddRange(T[] _range, int _offs, int _count)
 	{
 		if (_range == null || _range.Length == 0)
@@ -103,7 +103,7 @@ public class ArrayListMP<T> where T : new()
 		this.Count += _count;
 	}
 
-	// Token: 0x06009D9F RID: 40351 RVA: 0x003B9040 File Offset: 0x003B7240
+	// Token: 0x06009E4A RID: 40522 RVA: 0x003BDBBC File Offset: 0x003BBDBC
 	public int Alloc(int _count)
 	{
 		if (this.Items == null)
@@ -119,7 +119,7 @@ public class ArrayListMP<T> where T : new()
 		return count;
 	}
 
-	// Token: 0x06009DA0 RID: 40352 RVA: 0x003B90AE File Offset: 0x003B72AE
+	// Token: 0x06009E4B RID: 40523 RVA: 0x003BDC2A File Offset: 0x003BBE2A
 	public void Grow(int newSize)
 	{
 		if (this.Items == null)
@@ -133,12 +133,12 @@ public class ArrayListMP<T> where T : new()
 		}
 	}
 
-	// Token: 0x040077AA RID: 30634
+	// Token: 0x04007825 RID: 30757
 	public readonly MemoryPooledArray<T> pool;
 
-	// Token: 0x040077AB RID: 30635
+	// Token: 0x04007826 RID: 30758
 	public T[] Items;
 
-	// Token: 0x040077AC RID: 30636
+	// Token: 0x04007827 RID: 30759
 	public int Count;
 }

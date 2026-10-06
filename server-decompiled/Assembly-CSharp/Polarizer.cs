@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200135C RID: 4956
+// Token: 0x0200137C RID: 4988
 public class Polarizer : MonoBehaviour
 {
-	// Token: 0x06009C4C RID: 40012 RVA: 0x003B0030 File Offset: 0x003AE230
+	// Token: 0x06009CF8 RID: 40184 RVA: 0x003B4BAC File Offset: 0x003B2DAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -15,46 +15,46 @@ public class Polarizer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C4D RID: 40013 RVA: 0x003B005D File Offset: 0x003AE25D
+	// Token: 0x06009CF9 RID: 40185 RVA: 0x003B4BD9 File Offset: 0x003B2DD9
 	public static void SetDebugView(Polarizer.ViewEnums view)
 	{
 		Polarizer.currDebugView = view;
 	}
 
-	// Token: 0x06009C4E RID: 40014 RVA: 0x003B0065 File Offset: 0x003AE265
+	// Token: 0x06009CFA RID: 40186 RVA: 0x003B4BE1 File Offset: 0x003B2DE1
 	public static Polarizer.ViewEnums GetDebugView()
 	{
 		return Polarizer.currDebugView;
 	}
 
-	// Token: 0x06009C4F RID: 40015 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009CFB RID: 40187 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnPreRender()
 	{
 	}
 
-	// Token: 0x06009C50 RID: 40016 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009CFC RID: 40188 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnPostRender()
 	{
 	}
 
-	// Token: 0x04007607 RID: 30215
+	// Token: 0x04007682 RID: 30338
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material material;
 
-	// Token: 0x04007608 RID: 30216
+	// Token: 0x04007683 RID: 30339
 	public static Polarizer.ViewEnums currDebugView;
 
-	// Token: 0x0200135D RID: 4957
+	// Token: 0x0200137D RID: 4989
 	public enum ViewEnums
 	{
-		// Token: 0x0400760A RID: 30218
+		// Token: 0x04007685 RID: 30341
 		None,
-		// Token: 0x0400760B RID: 30219
+		// Token: 0x04007686 RID: 30342
 		Normals,
-		// Token: 0x0400760C RID: 30220
+		// Token: 0x04007687 RID: 30343
 		Albedo,
-		// Token: 0x0400760D RID: 30221
+		// Token: 0x04007688 RID: 30344
 		Specular
 	}
 }

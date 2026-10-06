@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Platform.Shared
 {
-	// Token: 0x02001CAB RID: 7339
+	// Token: 0x02001CDD RID: 7389
 	public class PlatformApplicationStandalone : IPlatformApplication
 	{
-		// Token: 0x17001B0B RID: 6923
-		// (get) Token: 0x0600D9C1 RID: 55745 RVA: 0x004E1960 File Offset: 0x004DFB60
+		// Token: 0x17001BB1 RID: 7089
+		// (get) Token: 0x0600DB3B RID: 56123 RVA: 0x004E64A8 File Offset: 0x004E46A8
 		public Resolution[] SupportedResolutions
 		{
 			get
@@ -51,8 +51,8 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x17001B0C RID: 6924
-		// (get) Token: 0x0600D9C2 RID: 55746 RVA: 0x004E1A28 File Offset: 0x004DFC28
+		// Token: 0x17001BB2 RID: 7090
+		// (get) Token: 0x0600DB3C RID: 56124 RVA: 0x004E6570 File Offset: 0x004E4770
 		[TupleElementNames(new string[] { "width", "height", "fullScreenMode" })]
 		public ValueTuple<int, int, FullScreenMode> ScreenOptions
 		{
@@ -76,7 +76,7 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D9C3 RID: 55747 RVA: 0x004E1AB4 File Offset: 0x004DFCB4
+		// Token: 0x0600DB3D RID: 56125 RVA: 0x004E65FC File Offset: 0x004E47FC
 		public void SetResolution(int width, int height, FullScreenMode fullscreen)
 		{
 			if (width < 640 || height < 480 || width <= height)
@@ -94,8 +94,8 @@ namespace Platform.Shared
 			Screen.SetResolution(width, height, fullscreen);
 		}
 
-		// Token: 0x17001B0D RID: 6925
-		// (get) Token: 0x0600D9C4 RID: 55748 RVA: 0x004E1B13 File Offset: 0x004DFD13
+		// Token: 0x17001BB3 RID: 7091
+		// (get) Token: 0x0600DB3E RID: 56126 RVA: 0x004E665B File Offset: 0x004E485B
 		public string temporaryCachePath
 		{
 			get
@@ -104,37 +104,37 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D9C5 RID: 55749 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DB3F RID: 56127 RVA: 0x0008806C File Offset: 0x0008626C
 		public void RestartProcess(params string[] argv)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0400A516 RID: 42262
+		// Token: 0x0400A5EB RID: 42475
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string prefResolutionWidth = "Screenmanager Resolution Width";
 
-		// Token: 0x0400A517 RID: 42263
+		// Token: 0x0400A5EC RID: 42476
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string prefResolutionHeight = "Screenmanager Resolution Height";
 
-		// Token: 0x0400A518 RID: 42264
+		// Token: 0x0400A5ED RID: 42477
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string prefFullscreen = "Screenmanager Fullscreen mode";
 
-		// Token: 0x0400A519 RID: 42265
+		// Token: 0x0400A5EE RID: 42478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int minResWidth = 640;
 
-		// Token: 0x0400A51A RID: 42266
+		// Token: 0x0400A5EF RID: 42479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int minResHeight = 480;
 
-		// Token: 0x0400A51B RID: 42267
+		// Token: 0x0400A5F0 RID: 42480
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Resolution[] lastResolutions;
 
-		// Token: 0x0400A51C RID: 42268
+		// Token: 0x0400A5F1 RID: 42481
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Resolution[] supportedResolutions;
 	}

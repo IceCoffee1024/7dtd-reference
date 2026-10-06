@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using Unity.Profiling;
 
-// Token: 0x0200152B RID: 5419
+// Token: 0x0200154D RID: 5453
 public class ProfilingMetricCapture
 {
-	// Token: 0x0600AA25 RID: 43557 RVA: 0x003F73E8 File Offset: 0x003F55E8
+	// Token: 0x0600AAD8 RID: 43736 RVA: 0x003FC23C File Offset: 0x003FA43C
 	public void AddDummy(string header)
 	{
 		this.metrics.Add(new ConstantValueMetric
@@ -16,7 +16,7 @@ public class ProfilingMetricCapture
 		});
 	}
 
-	// Token: 0x0600AA26 RID: 43558 RVA: 0x003F7408 File Offset: 0x003F5608
+	// Token: 0x0600AAD9 RID: 43737 RVA: 0x003FC25C File Offset: 0x003FA45C
 	public void Add(string header, ProfilerRecorder recorder)
 	{
 		if (!recorder.IsRunning)
@@ -30,7 +30,7 @@ public class ProfilingMetricCapture
 		});
 	}
 
-	// Token: 0x0600AA27 RID: 43559 RVA: 0x003F7438 File Offset: 0x003F5638
+	// Token: 0x0600AADA RID: 43738 RVA: 0x003FC28C File Offset: 0x003FA48C
 	public void Add(string header, CallbackMetric.GetLastValue callback)
 	{
 		this.metrics.Add(new CallbackMetric
@@ -40,13 +40,13 @@ public class ProfilingMetricCapture
 		});
 	}
 
-	// Token: 0x0600AA28 RID: 43560 RVA: 0x003F7458 File Offset: 0x003F5658
+	// Token: 0x0600AADB RID: 43739 RVA: 0x003FC2AC File Offset: 0x003FA4AC
 	public void Add(IMetric metric)
 	{
 		this.metrics.Add(metric);
 	}
 
-	// Token: 0x0600AA29 RID: 43561 RVA: 0x003F7468 File Offset: 0x003F5668
+	// Token: 0x0600AADC RID: 43740 RVA: 0x003FC2BC File Offset: 0x003FA4BC
 	public void Cleanup()
 	{
 		foreach (IMetric metric in this.metrics)
@@ -56,7 +56,7 @@ public class ProfilingMetricCapture
 		this.metrics.Clear();
 	}
 
-	// Token: 0x0600AA2A RID: 43562 RVA: 0x003F74C4 File Offset: 0x003F56C4
+	// Token: 0x0600AADD RID: 43741 RVA: 0x003FC318 File Offset: 0x003FA518
 	public string GetCsvHeader()
 	{
 		for (int i = 0; i < this.metrics.Count; i++)
@@ -72,7 +72,7 @@ public class ProfilingMetricCapture
 		return text;
 	}
 
-	// Token: 0x0600AA2B RID: 43563 RVA: 0x003F753C File Offset: 0x003F573C
+	// Token: 0x0600AADE RID: 43742 RVA: 0x003FC390 File Offset: 0x003FA590
 	public string GetLastValueCsv()
 	{
 		for (int i = 0; i < this.metrics.Count; i++)
@@ -88,7 +88,7 @@ public class ProfilingMetricCapture
 		return text;
 	}
 
-	// Token: 0x0600AA2C RID: 43564 RVA: 0x003F75B0 File Offset: 0x003F57B0
+	// Token: 0x0600AADF RID: 43743 RVA: 0x003FC404 File Offset: 0x003FA604
 	public string PrettyPrint()
 	{
 		for (int i = 0; i < this.metrics.Count; i++)
@@ -102,11 +102,11 @@ public class ProfilingMetricCapture
 		return text;
 	}
 
-	// Token: 0x04007E54 RID: 32340
+	// Token: 0x04007ED7 RID: 32471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<IMetric> metrics = new List<IMetric>();
 
-	// Token: 0x04007E55 RID: 32341
+	// Token: 0x04007ED8 RID: 32472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StringBuilder outputBuilder = new StringBuilder();
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001357 RID: 4951
+// Token: 0x02001377 RID: 4983
 public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 {
-	// Token: 0x06009C25 RID: 39973 RVA: 0x003AF344 File Offset: 0x003AD544
+	// Token: 0x06009CD1 RID: 40145 RVA: 0x003B3EC0 File Offset: 0x003B20C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -45,14 +45,14 @@ public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 		GameOptionsManager.OnGameOptionsApplied += this.OnGameOptionsApplied;
 	}
 
-	// Token: 0x06009C26 RID: 39974 RVA: 0x003AF49B File Offset: 0x003AD69B
+	// Token: 0x06009CD2 RID: 40146 RVA: 0x003B4017 File Offset: 0x003B2217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		GameOptionsManager.OnGameOptionsApplied -= this.OnGameOptionsApplied;
 	}
 
-	// Token: 0x06009C27 RID: 39975 RVA: 0x003AF4B0 File Offset: 0x003AD6B0
+	// Token: 0x06009CD3 RID: 40147 RVA: 0x003B402C File Offset: 0x003B222C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGameOptionsApplied()
 	{
@@ -67,7 +67,7 @@ public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C28 RID: 39976 RVA: 0x003AF504 File Offset: 0x003AD704
+	// Token: 0x06009CD4 RID: 40148 RVA: 0x003B4080 File Offset: 0x003B2280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ScaleEmissionRate(ParticleSystem ps, float scale)
 	{
@@ -106,7 +106,7 @@ public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009C29 RID: 39977 RVA: 0x003AF640 File Offset: 0x003AD840
+	// Token: 0x06009CD5 RID: 40149 RVA: 0x003B41BC File Offset: 0x003B23BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ParticleSystem.MinMaxCurve ScaleBurstCurve(ParticleSystem.MinMaxCurve original, float scale)
 	{
@@ -134,7 +134,7 @@ public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 		return minMaxCurve;
 	}
 
-	// Token: 0x06009C2A RID: 39978 RVA: 0x003AF713 File Offset: 0x003AD913
+	// Token: 0x06009CD6 RID: 40150 RVA: 0x003B428F File Offset: 0x003B248F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ScaleBurstConstant(float constant, float scale)
 	{
@@ -145,45 +145,45 @@ public class ParticleSystemSpawnRateLimiter : MonoBehaviour
 		return Utils.FastMax(Mathf.Round(constant * scale), 1f) + float.Epsilon;
 	}
 
-	// Token: 0x040075EC RID: 30188
+	// Token: 0x04007667 RID: 30311
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cScaleMin = 0.15f;
 
-	// Token: 0x040075ED RID: 30189
+	// Token: 0x04007668 RID: 30312
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<ParticleSystem, ParticleSystemSpawnRateLimiter.EmissionRateData> originalRates = new Dictionary<ParticleSystem, ParticleSystemSpawnRateLimiter.EmissionRateData>();
 
-	// Token: 0x02001358 RID: 4952
+	// Token: 0x02001378 RID: 4984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class EmissionRateData
 	{
-		// Token: 0x040075EE RID: 30190
+		// Token: 0x04007669 RID: 30313
 		public ParticleSystemCurveMode mode;
 
-		// Token: 0x040075EF RID: 30191
+		// Token: 0x0400766A RID: 30314
 		public float constant;
 
-		// Token: 0x040075F0 RID: 30192
+		// Token: 0x0400766B RID: 30315
 		public AnimationCurve curve;
 
-		// Token: 0x040075F1 RID: 30193
+		// Token: 0x0400766C RID: 30316
 		public float curveMultiplier;
 
-		// Token: 0x040075F2 RID: 30194
+		// Token: 0x0400766D RID: 30317
 		public float constantMin;
 
-		// Token: 0x040075F3 RID: 30195
+		// Token: 0x0400766E RID: 30318
 		public float constantMax;
 
-		// Token: 0x040075F4 RID: 30196
+		// Token: 0x0400766F RID: 30319
 		public AnimationCurve curveMin;
 
-		// Token: 0x040075F5 RID: 30197
+		// Token: 0x04007670 RID: 30320
 		public AnimationCurve curveMax;
 
-		// Token: 0x040075F6 RID: 30198
+		// Token: 0x04007671 RID: 30321
 		public ParticleSystem.Burst[] originalBursts;
 	}
 }

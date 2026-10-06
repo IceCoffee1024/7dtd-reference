@@ -6,16 +6,16 @@ using Webserver.WebAPI;
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001AEE RID: 6894
+	// Token: 0x02001B1A RID: 6938
 	public class ApiHandler : AbsHandler
 	{
-		// Token: 0x0600CF6A RID: 53098 RVA: 0x004B8115 File Offset: 0x004B6315
+		// Token: 0x0600D0C2 RID: 53442 RVA: 0x004BC5E1 File Offset: 0x004BA7E1
 		public ApiHandler()
 			: base(null, 0)
 		{
 		}
 
-		// Token: 0x0600CF6B RID: 53099 RVA: 0x004B812C File Offset: 0x004B632C
+		// Token: 0x0600D0C3 RID: 53443 RVA: 0x004BC5F8 File Offset: 0x004BA7F8
 		public override void SetBasePathAndParent(Web _parent, string _relativePath)
 		{
 			base.SetBasePathAndParent(_parent, _relativePath);
@@ -25,7 +25,7 @@ namespace Webserver.UrlHandlers
 			this.addApi(new Null("viewallplayers"));
 		}
 
-		// Token: 0x0600CF6C RID: 53100 RVA: 0x004B8188 File Offset: 0x004B6388
+		// Token: 0x0600D0C4 RID: 53444 RVA: 0x004BC654 File Offset: 0x004BA854
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiFoundCallback(Type _type)
 		{
@@ -44,7 +44,7 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x0600CF6D RID: 53101 RVA: 0x004B81F8 File Offset: 0x004B63F8
+		// Token: 0x0600D0C5 RID: 53445 RVA: 0x004BC6C4 File Offset: 0x004BA8C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void addApi(AbsWebAPI _api)
 		{
@@ -52,7 +52,7 @@ namespace Webserver.UrlHandlers
 			this.parent.OpenApiHelpers.LoadOpenApiSpec(_api);
 		}
 
-		// Token: 0x0600CF6E RID: 53102 RVA: 0x004B8220 File Offset: 0x004B6420
+		// Token: 0x0600D0C6 RID: 53446 RVA: 0x004BC6EC File Offset: 0x004BA8EC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool HandleCors(RequestContext _context)
 		{
@@ -74,7 +74,7 @@ namespace Webserver.UrlHandlers
 			return true;
 		}
 
-		// Token: 0x0600CF6F RID: 53103 RVA: 0x004B82C8 File Offset: 0x004B64C8
+		// Token: 0x0600D0C7 RID: 53447 RVA: 0x004BC794 File Offset: 0x004BA994
 		public override void HandleRequest(RequestContext _context)
 		{
 			string text = null;
@@ -119,27 +119,27 @@ namespace Webserver.UrlHandlers
 			}
 		}
 
-		// Token: 0x04009D71 RID: 40305
+		// Token: 0x04009E37 RID: 40503
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, AbsWebAPI> apis = new CaseInsensitiveStringDictionary<AbsWebAPI>();
 
-		// Token: 0x04009D72 RID: 40306
+		// Token: 0x04009E38 RID: 40504
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Type[] apiWithParentCtorTypes = new Type[] { typeof(Web) };
 
-		// Token: 0x04009D73 RID: 40307
+		// Token: 0x04009E39 RID: 40505
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly object[] apiWithParentCtorArgs = new object[1];
 
-		// Token: 0x04009D74 RID: 40308
+		// Token: 0x04009E3A RID: 40506
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Type[] apiEmptyCtorTypes = new Type[0];
 
-		// Token: 0x04009D75 RID: 40309
+		// Token: 0x04009E3B RID: 40507
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly object[] apiEmptyCtorArgs = new object[0];
 
-		// Token: 0x04009D76 RID: 40310
+		// Token: 0x04009E3C RID: 40508
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly CustomSampler apiHandlerSampler = CustomSampler.Create("API_Handler", false);
 	}

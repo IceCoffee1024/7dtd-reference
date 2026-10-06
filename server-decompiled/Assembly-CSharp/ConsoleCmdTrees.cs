@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B5 RID: 693
+// Token: 0x020002B8 RID: 696
 [Preserve]
 public class ConsoleCmdTrees : ConsoleCmdAbstract
 {
-	// Token: 0x060013FB RID: 5115 RVA: 0x00079A01 File Offset: 0x00077C01
+	// Token: 0x060013F8 RID: 5112 RVA: 0x00079CB5 File Offset: 0x00077EB5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "trees" };
 	}
 
-	// Token: 0x060013FC RID: 5116 RVA: 0x00079A11 File Offset: 0x00077C11
+	// Token: 0x060013F9 RID: 5113 RVA: 0x00079CC5 File Offset: 0x00077EC5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Switches trees on/off";
 	}
 
-	// Token: 0x060013FD RID: 5117 RVA: 0x00079A18 File Offset: 0x00077C18
+	// Token: 0x060013FA RID: 5114 RVA: 0x00079CCC File Offset: 0x00077ECC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "trees - toggles\ntrees <value> - (off, on)";
 	}
 
-	// Token: 0x060013FE RID: 5118 RVA: 0x00079A20 File Offset: 0x00077C20
+	// Token: 0x060013FB RID: 5115 RVA: 0x00079CD4 File Offset: 0x00077ED4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

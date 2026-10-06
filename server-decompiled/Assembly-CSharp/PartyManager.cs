@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020008CD RID: 2253
+// Token: 0x020008D2 RID: 2258
 public class PartyManager
 {
-	// Token: 0x170006CE RID: 1742
-	// (get) Token: 0x0600414A RID: 16714 RVA: 0x00197DE4 File Offset: 0x00195FE4
+	// Token: 0x170006ED RID: 1773
+	// (get) Token: 0x060040E0 RID: 16608 RVA: 0x00197EE8 File Offset: 0x001960E8
 	public static PartyManager Current
 	{
 		get
@@ -19,8 +19,8 @@ public class PartyManager
 		}
 	}
 
-	// Token: 0x170006CF RID: 1743
-	// (get) Token: 0x0600414B RID: 16715 RVA: 0x00197DFA File Offset: 0x00195FFA
+	// Token: 0x170006EE RID: 1774
+	// (get) Token: 0x060040E1 RID: 16609 RVA: 0x00197EFE File Offset: 0x001960FE
 	public static bool HasInstance
 	{
 		get
@@ -29,14 +29,14 @@ public class PartyManager
 		}
 	}
 
-	// Token: 0x0600414C RID: 16716 RVA: 0x00197E04 File Offset: 0x00196004
+	// Token: 0x060040E2 RID: 16610 RVA: 0x00197F08 File Offset: 0x00196108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PartyManager()
 	{
 		this.voice = PartyVoice.Instance;
 	}
 
-	// Token: 0x0600414D RID: 16717 RVA: 0x00197E24 File Offset: 0x00196024
+	// Token: 0x060040E3 RID: 16611 RVA: 0x00197F28 File Offset: 0x00196128
 	public Party CreateParty()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -52,7 +52,7 @@ public class PartyManager
 		return party2;
 	}
 
-	// Token: 0x0600414E RID: 16718 RVA: 0x00197E6C File Offset: 0x0019606C
+	// Token: 0x060040E4 RID: 16612 RVA: 0x00197F70 File Offset: 0x00196170
 	public Party CreateClientParty(World world, int partyID, int leaderIndex, int[] partyMembers, string voiceLobbyId)
 	{
 		Party party = new Party
@@ -66,7 +66,7 @@ public class PartyManager
 		return party;
 	}
 
-	// Token: 0x0600414F RID: 16719 RVA: 0x00197EAB File Offset: 0x001960AB
+	// Token: 0x060040E5 RID: 16613 RVA: 0x00197FAF File Offset: 0x001961AF
 	public void RemoveParty(Party party)
 	{
 		if (this.partyList.Contains(party))
@@ -75,7 +75,7 @@ public class PartyManager
 		}
 	}
 
-	// Token: 0x06004150 RID: 16720 RVA: 0x00197EC8 File Offset: 0x001960C8
+	// Token: 0x060040E6 RID: 16614 RVA: 0x00197FCC File Offset: 0x001961CC
 	public Party GetParty(int partyID)
 	{
 		for (int i = 0; i < this.partyList.Count; i++)
@@ -88,32 +88,32 @@ public class PartyManager
 		return null;
 	}
 
-	// Token: 0x06004151 RID: 16721 RVA: 0x00197F0D File Offset: 0x0019610D
+	// Token: 0x060040E7 RID: 16615 RVA: 0x00198011 File Offset: 0x00196211
 	public void Cleanup()
 	{
 		this.partyList.Clear();
 		this.nextPartyID = 0;
 	}
 
-	// Token: 0x06004152 RID: 16722 RVA: 0x00197F21 File Offset: 0x00196121
+	// Token: 0x060040E8 RID: 16616 RVA: 0x00198025 File Offset: 0x00196225
 	public void Update()
 	{
 		this.voice.Update();
 	}
 
-	// Token: 0x040034F2 RID: 13554
+	// Token: 0x040034E6 RID: 13542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PartyManager instance;
 
-	// Token: 0x040034F3 RID: 13555
+	// Token: 0x040034E7 RID: 13543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly PartyVoice voice;
 
-	// Token: 0x040034F4 RID: 13556
+	// Token: 0x040034E8 RID: 13544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextPartyID;
 
-	// Token: 0x040034F5 RID: 13557
+	// Token: 0x040034E9 RID: 13545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Party> partyList = new List<Party>();
 }

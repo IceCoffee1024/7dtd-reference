@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using InControl;
 
-// Token: 0x02000563 RID: 1379
+// Token: 0x02000569 RID: 1385
 public class PlayerActionsLocal : PlayerActionsBase
 {
-	// Token: 0x170004C5 RID: 1221
-	// (get) Token: 0x06002CCE RID: 11470 RVA: 0x0011C114 File Offset: 0x0011A314
+	// Token: 0x170004BB RID: 1211
+	// (get) Token: 0x06002CC4 RID: 11460 RVA: 0x0011CEE4 File Offset: 0x0011B0E4
 	public int InventorySlotWasPressed
 	{
 		get
@@ -22,8 +22,8 @@ public class PlayerActionsLocal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x170004C6 RID: 1222
-	// (get) Token: 0x06002CCF RID: 11471 RVA: 0x0011C150 File Offset: 0x0011A350
+	// Token: 0x170004BC RID: 1212
+	// (get) Token: 0x06002CC5 RID: 11461 RVA: 0x0011CF20 File Offset: 0x0011B120
 	public int InventorySlotWasReleased
 	{
 		get
@@ -39,8 +39,8 @@ public class PlayerActionsLocal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x170004C7 RID: 1223
-	// (get) Token: 0x06002CD0 RID: 11472 RVA: 0x0011C18C File Offset: 0x0011A38C
+	// Token: 0x170004BD RID: 1213
+	// (get) Token: 0x06002CC6 RID: 11462 RVA: 0x0011CF5C File Offset: 0x0011B15C
 	public int InventorySlotIsPressed
 	{
 		get
@@ -56,19 +56,19 @@ public class PlayerActionsLocal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x170004C8 RID: 1224
-	// (get) Token: 0x06002CD1 RID: 11473 RVA: 0x0011C1C5 File Offset: 0x0011A3C5
+	// Token: 0x170004BE RID: 1214
+	// (get) Token: 0x06002CC7 RID: 11463 RVA: 0x0011CF95 File Offset: 0x0011B195
 	public PlayerActionsGUI GUIActions { get; }
 
-	// Token: 0x170004C9 RID: 1225
-	// (get) Token: 0x06002CD2 RID: 11474 RVA: 0x0011C1CD File Offset: 0x0011A3CD
+	// Token: 0x170004BF RID: 1215
+	// (get) Token: 0x06002CC8 RID: 11464 RVA: 0x0011CF9D File Offset: 0x0011B19D
 	public PlayerActionsVehicle VehicleActions { get; }
 
-	// Token: 0x170004CA RID: 1226
-	// (get) Token: 0x06002CD3 RID: 11475 RVA: 0x0011C1D5 File Offset: 0x0011A3D5
+	// Token: 0x170004C0 RID: 1216
+	// (get) Token: 0x06002CC9 RID: 11465 RVA: 0x0011CFA5 File Offset: 0x0011B1A5
 	public PlayerActionsPermanent PermanentActions { get; }
 
-	// Token: 0x06002CD4 RID: 11476 RVA: 0x0011C1E0 File Offset: 0x0011A3E0
+	// Token: 0x06002CCA RID: 11466 RVA: 0x0011CFB0 File Offset: 0x0011B1B0
 	public PlayerActionsLocal()
 	{
 		base.Name = "local";
@@ -105,7 +105,7 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.UpdateDeadzones();
 	}
 
-	// Token: 0x06002CD5 RID: 11477 RVA: 0x0011C39C File Offset: 0x0011A59C
+	// Token: 0x06002CCB RID: 11467 RVA: 0x0011D16C File Offset: 0x0011B36C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateActions()
 	{
@@ -184,6 +184,10 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.InventorySlotLeft.UserData = new PlayerActionData.ActionUserData("inpActInventorySlotLeftName", null, PlayerActionData.GroupToolbelt, PlayerActionData.EAppliesToInputType.Both, true, false, false, true);
 		this.InventorySlotRight = base.CreatePlayerAction("InventorySelectRight");
 		this.InventorySlotRight.UserData = new PlayerActionData.ActionUserData("inpActInventorySlotRightName", null, PlayerActionData.GroupToolbelt, PlayerActionData.EAppliesToInputType.Both, true, false, false, true);
+		this.InventoryPagePrev = base.CreatePlayerAction("InventoryPagePrev");
+		this.InventoryPagePrev.UserData = new PlayerActionData.ActionUserData("inpActInventoryPagePrevName", null, PlayerActionData.GroupToolbelt, PlayerActionData.EAppliesToInputType.Both, true, false, false, true);
+		this.InventoryPageNext = base.CreatePlayerAction("InventoryPageNext");
+		this.InventoryPageNext.UserData = new PlayerActionData.ActionUserData("inpActInventoryPageNextName", null, PlayerActionData.GroupToolbelt, PlayerActionData.EAppliesToInputType.Both, true, false, false, true);
 		this.Menu = base.CreatePlayerAction("Menu");
 		this.Menu.UserData = new PlayerActionData.ActionUserData("inpActMenuName", null, PlayerActionData.GroupMenu, PlayerActionData.EAppliesToInputType.Both, true, false, false, true);
 		this.God = base.CreatePlayerAction("God");
@@ -244,7 +248,7 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.AiFreeze.UserData = new PlayerActionData.ActionUserData("inpActAiFreezeName", null, PlayerActionData.GroupDebugFunctions, PlayerActionData.EAppliesToInputType.KbdMouseOnly, true, false, false, true);
 	}
 
-	// Token: 0x06002CD6 RID: 11478 RVA: 0x0011D050 File Offset: 0x0011B250
+	// Token: 0x06002CCC RID: 11468 RVA: 0x0011DE84 File Offset: 0x0011C084
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultJoystickBindings()
 	{
@@ -299,9 +303,11 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.ControllerRebindableActions.Add(this.InventorySlot8);
 		this.ControllerRebindableActions.Add(this.InventorySlot9);
 		this.ControllerRebindableActions.Add(this.InventorySlot10);
+		this.ControllerRebindableActions.Add(this.InventoryPagePrev);
+		this.ControllerRebindableActions.Add(this.InventoryPageNext);
 	}
 
-	// Token: 0x06002CD7 RID: 11479 RVA: 0x0011D354 File Offset: 0x0011B554
+	// Token: 0x06002CCD RID: 11469 RVA: 0x0011E1AC File Offset: 0x0011C3AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultKeyboardBindings()
 	{
@@ -365,12 +371,14 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.InventorySlot8.AddDefaultBinding(new Key[] { Key.Key8 });
 		this.InventorySlot9.AddDefaultBinding(new Key[] { Key.Key9 });
 		this.InventorySlot10.AddDefaultBinding(new Key[] { Key.Key0 });
+		this.InventoryPagePrev.AddDefaultBinding(new Key[] { Key.PageDown });
+		this.InventoryPageNext.AddDefaultBinding(new Key[] { Key.PageUp });
 		this.InventorySlotRight.AddDefaultBinding(Mouse.NegativeScrollWheel);
 		this.InventorySlotLeft.AddDefaultBinding(Mouse.PositiveScrollWheel);
 		this.AiFreeze.AddDefaultBinding(new Key[] { Key.PadMultiply });
 	}
 
-	// Token: 0x06002CD8 RID: 11480 RVA: 0x0011D78D File Offset: 0x0011B98D
+	// Token: 0x06002CCE RID: 11470 RVA: 0x0011E611 File Offset: 0x0011C811
 	public void SetDeadzones(float _left, float _right)
 	{
 		this.leftStickDeadzone = _left;
@@ -378,21 +386,21 @@ public class PlayerActionsLocal : PlayerActionsBase
 		this.UpdateDeadzones();
 	}
 
-	// Token: 0x06002CD9 RID: 11481 RVA: 0x0011D7A3 File Offset: 0x0011B9A3
+	// Token: 0x06002CCF RID: 11471 RVA: 0x0011E627 File Offset: 0x0011C827
 	public void UpdateDeadzones()
 	{
 		InputManager.ActiveDevice.LeftStick.LowerDeadZone = this.leftStickDeadzone;
 		InputManager.ActiveDevice.RightStick.LowerDeadZone = this.rightStickDeadzone;
 	}
 
-	// Token: 0x06002CDA RID: 11482 RVA: 0x0011D7CF File Offset: 0x0011B9CF
+	// Token: 0x06002CD0 RID: 11472 RVA: 0x0011E653 File Offset: 0x0011C853
 	public void SetJoyStickLayout(eControllerJoystickLayout layout)
 	{
 		this.joystickLayout = layout;
 		this.ConfigureJoystickLayout();
 	}
 
-	// Token: 0x06002CDB RID: 11483 RVA: 0x0011D7E0 File Offset: 0x0011B9E0
+	// Token: 0x06002CD1 RID: 11473 RVA: 0x0011E664 File Offset: 0x0011C864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ConfigureJoystickLayout()
 	{
@@ -475,7 +483,7 @@ public class PlayerActionsLocal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x06002CDC RID: 11484 RVA: 0x0011DBB8 File Offset: 0x0011BDB8
+	// Token: 0x06002CD2 RID: 11474 RVA: 0x0011EA3C File Offset: 0x0011CC3C
 	public bool AnyGUIActionPressed()
 	{
 		using (IEnumerator<PlayerAction> enumerator = this.GUIActions.Actions.GetEnumerator())
@@ -491,214 +499,220 @@ public class PlayerActionsLocal : PlayerActionsBase
 		return false;
 	}
 
-	// Token: 0x040022BF RID: 8895
+	// Token: 0x040022C7 RID: 8903
 	public PlayerTwoAxisAction Move;
 
-	// Token: 0x040022C0 RID: 8896
+	// Token: 0x040022C8 RID: 8904
 	public PlayerAction MoveLeft;
 
-	// Token: 0x040022C1 RID: 8897
+	// Token: 0x040022C9 RID: 8905
 	public PlayerAction MoveRight;
 
-	// Token: 0x040022C2 RID: 8898
+	// Token: 0x040022CA RID: 8906
 	public PlayerAction MoveForward;
 
-	// Token: 0x040022C3 RID: 8899
+	// Token: 0x040022CB RID: 8907
 	public PlayerAction MoveBack;
 
-	// Token: 0x040022C4 RID: 8900
+	// Token: 0x040022CC RID: 8908
 	public PlayerTwoAxisAction Look;
 
-	// Token: 0x040022C5 RID: 8901
+	// Token: 0x040022CD RID: 8909
 	public PlayerAction LookLeft;
 
-	// Token: 0x040022C6 RID: 8902
+	// Token: 0x040022CE RID: 8910
 	public PlayerAction LookRight;
 
-	// Token: 0x040022C7 RID: 8903
+	// Token: 0x040022CF RID: 8911
 	public PlayerAction LookUp;
 
-	// Token: 0x040022C8 RID: 8904
+	// Token: 0x040022D0 RID: 8912
 	public PlayerAction LookDown;
 
-	// Token: 0x040022C9 RID: 8905
+	// Token: 0x040022D1 RID: 8913
 	public PlayerAction Run;
 
-	// Token: 0x040022CA RID: 8906
+	// Token: 0x040022D2 RID: 8914
 	public PlayerAction Jump;
 
-	// Token: 0x040022CB RID: 8907
+	// Token: 0x040022D3 RID: 8915
 	public PlayerAction Crouch;
 
-	// Token: 0x040022CC RID: 8908
+	// Token: 0x040022D4 RID: 8916
 	public PlayerOneAxisAction JumpCrouch;
 
-	// Token: 0x040022CD RID: 8909
+	// Token: 0x040022D5 RID: 8917
 	public PlayerAction ToggleCrouch;
 
-	// Token: 0x040022CE RID: 8910
+	// Token: 0x040022D6 RID: 8918
 	public PlayerAction Activate;
 
-	// Token: 0x040022CF RID: 8911
+	// Token: 0x040022D7 RID: 8919
 	public PlayerAction Drop;
 
-	// Token: 0x040022D0 RID: 8912
+	// Token: 0x040022D8 RID: 8920
 	public PlayerAction Swap;
 
-	// Token: 0x040022D1 RID: 8913
+	// Token: 0x040022D9 RID: 8921
 	public PlayerAction Reload;
 
-	// Token: 0x040022D2 RID: 8914
+	// Token: 0x040022DA RID: 8922
 	public PlayerAction Primary;
 
-	// Token: 0x040022D3 RID: 8915
+	// Token: 0x040022DB RID: 8923
 	public PlayerAction Secondary;
 
-	// Token: 0x040022D4 RID: 8916
+	// Token: 0x040022DC RID: 8924
 	public PlayerAction ToggleFlashlight;
 
-	// Token: 0x040022D5 RID: 8917
+	// Token: 0x040022DD RID: 8925
 	public PlayerAction God;
 
-	// Token: 0x040022D6 RID: 8918
+	// Token: 0x040022DE RID: 8926
 	public PlayerAction Fly;
 
-	// Token: 0x040022D7 RID: 8919
+	// Token: 0x040022DF RID: 8927
 	public PlayerAction Invisible;
 
-	// Token: 0x040022D8 RID: 8920
+	// Token: 0x040022E0 RID: 8928
 	public PlayerAction IncSpeed;
 
-	// Token: 0x040022D9 RID: 8921
+	// Token: 0x040022E1 RID: 8929
 	public PlayerAction DecSpeed;
 
-	// Token: 0x040022DA RID: 8922
+	// Token: 0x040022E2 RID: 8930
 	public PlayerAction GodAlternate;
 
-	// Token: 0x040022DB RID: 8923
+	// Token: 0x040022E3 RID: 8931
 	public PlayerAction TeleportAlternate;
 
-	// Token: 0x040022DC RID: 8924
+	// Token: 0x040022E4 RID: 8932
 	public PlayerAction CameraChange;
 
-	// Token: 0x040022DD RID: 8925
+	// Token: 0x040022E5 RID: 8933
 	public PlayerAction CameraFunction;
 
-	// Token: 0x040022DE RID: 8926
+	// Token: 0x040022E6 RID: 8934
 	public PlayerAction SelectionFill;
 
-	// Token: 0x040022DF RID: 8927
+	// Token: 0x040022E7 RID: 8935
 	public PlayerAction SelectionClear;
 
-	// Token: 0x040022E0 RID: 8928
+	// Token: 0x040022E8 RID: 8936
 	public PlayerAction SelectionSet;
 
-	// Token: 0x040022E1 RID: 8929
+	// Token: 0x040022E9 RID: 8937
 	public PlayerAction SelectionRotate;
 
-	// Token: 0x040022E2 RID: 8930
+	// Token: 0x040022EA RID: 8938
 	public PlayerAction SelectionDelete;
 
-	// Token: 0x040022E3 RID: 8931
+	// Token: 0x040022EB RID: 8939
 	public PlayerAction SelectionMoveMode;
 
-	// Token: 0x040022E4 RID: 8932
+	// Token: 0x040022EC RID: 8940
 	public PlayerAction FocusCopyBlock;
 
-	// Token: 0x040022E5 RID: 8933
+	// Token: 0x040022ED RID: 8941
 	public PlayerAction Prefab;
 
-	// Token: 0x040022E6 RID: 8934
+	// Token: 0x040022EE RID: 8942
 	public PlayerAction DetachCamera;
 
-	// Token: 0x040022E7 RID: 8935
+	// Token: 0x040022EF RID: 8943
 	public PlayerAction ToggleDCMove;
 
-	// Token: 0x040022E8 RID: 8936
+	// Token: 0x040022F0 RID: 8944
 	public PlayerAction LockFreeCamera;
 
-	// Token: 0x040022E9 RID: 8937
+	// Token: 0x040022F1 RID: 8945
 	public PlayerAction DensityM1;
 
-	// Token: 0x040022EA RID: 8938
+	// Token: 0x040022F2 RID: 8946
 	public PlayerAction DensityP1;
 
-	// Token: 0x040022EB RID: 8939
+	// Token: 0x040022F3 RID: 8947
 	public PlayerAction DensityM10;
 
-	// Token: 0x040022EC RID: 8940
+	// Token: 0x040022F4 RID: 8948
 	public PlayerAction DensityP10;
 
-	// Token: 0x040022ED RID: 8941
+	// Token: 0x040022F5 RID: 8949
 	public PlayerAction ScrollUp;
 
-	// Token: 0x040022EE RID: 8942
+	// Token: 0x040022F6 RID: 8950
 	public PlayerAction ScrollDown;
 
-	// Token: 0x040022EF RID: 8943
+	// Token: 0x040022F7 RID: 8951
 	public PlayerOneAxisAction Scroll;
 
-	// Token: 0x040022F0 RID: 8944
+	// Token: 0x040022F8 RID: 8952
 	public PlayerAction Menu;
 
-	// Token: 0x040022F1 RID: 8945
+	// Token: 0x040022F9 RID: 8953
 	public PlayerAction Inventory;
 
-	// Token: 0x040022F2 RID: 8946
+	// Token: 0x040022FA RID: 8954
 	public PlayerAction Scoreboard;
 
-	// Token: 0x040022F3 RID: 8947
+	// Token: 0x040022FB RID: 8955
 	public PlayerAction InventorySlot1;
 
-	// Token: 0x040022F4 RID: 8948
+	// Token: 0x040022FC RID: 8956
 	public PlayerAction InventorySlot2;
 
-	// Token: 0x040022F5 RID: 8949
+	// Token: 0x040022FD RID: 8957
 	public PlayerAction InventorySlot3;
 
-	// Token: 0x040022F6 RID: 8950
+	// Token: 0x040022FE RID: 8958
 	public PlayerAction InventorySlot4;
 
-	// Token: 0x040022F7 RID: 8951
+	// Token: 0x040022FF RID: 8959
 	public PlayerAction InventorySlot5;
 
-	// Token: 0x040022F8 RID: 8952
+	// Token: 0x04002300 RID: 8960
 	public PlayerAction InventorySlot6;
 
-	// Token: 0x040022F9 RID: 8953
+	// Token: 0x04002301 RID: 8961
 	public PlayerAction InventorySlot7;
 
-	// Token: 0x040022FA RID: 8954
+	// Token: 0x04002302 RID: 8962
 	public PlayerAction InventorySlot8;
 
-	// Token: 0x040022FB RID: 8955
+	// Token: 0x04002303 RID: 8963
 	public PlayerAction InventorySlot9;
 
-	// Token: 0x040022FC RID: 8956
+	// Token: 0x04002304 RID: 8964
 	public PlayerAction InventorySlot10;
 
-	// Token: 0x040022FD RID: 8957
+	// Token: 0x04002305 RID: 8965
 	public PlayerAction InventorySlotLeft;
 
-	// Token: 0x040022FE RID: 8958
+	// Token: 0x04002306 RID: 8966
 	public PlayerAction InventorySlotRight;
 
-	// Token: 0x040022FF RID: 8959
+	// Token: 0x04002307 RID: 8967
+	public PlayerAction InventoryPagePrev;
+
+	// Token: 0x04002308 RID: 8968
+	public PlayerAction InventoryPageNext;
+
+	// Token: 0x04002309 RID: 8969
 	public PlayerAction AiFreeze;
 
-	// Token: 0x04002300 RID: 8960
+	// Token: 0x0400230A RID: 8970
 	public PlayerAction QuickMenu;
 
-	// Token: 0x04002301 RID: 8961
+	// Token: 0x0400230B RID: 8971
 	public float leftStickDeadzone = 0.1f;
 
-	// Token: 0x04002302 RID: 8962
+	// Token: 0x0400230C RID: 8972
 	public float rightStickDeadzone = 0.1f;
 
-	// Token: 0x04002303 RID: 8963
+	// Token: 0x0400230D RID: 8973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PlayerAction> InventoryActions = new List<PlayerAction>();
 
-	// Token: 0x04002304 RID: 8964
+	// Token: 0x0400230E RID: 8974
 	public eControllerJoystickLayout joystickLayout;
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02001393 RID: 5011
+// Token: 0x020013B3 RID: 5043
 public interface IBackedArrayHandle : IDisposable
 {
-	// Token: 0x170012B1 RID: 4785
-	// (get) Token: 0x06009E13 RID: 40467
+	// Token: 0x170012F6 RID: 4854
+	// (get) Token: 0x06009EBE RID: 40638
 	BackedArrayHandleMode Mode { get; }
 
-	// Token: 0x06009E14 RID: 40468
+	// Token: 0x06009EBF RID: 40639
 	void Flush();
 }

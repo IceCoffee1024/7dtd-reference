@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine.Pool;
 
-// Token: 0x02000587 RID: 1415
+// Token: 0x02000588 RID: 1416
 public class LockManager
 {
-	// Token: 0x170004F2 RID: 1266
-	// (get) Token: 0x06002E4D RID: 11853 RVA: 0x00125D80 File Offset: 0x00123F80
+	// Token: 0x17000518 RID: 1304
+	// (get) Token: 0x06002E99 RID: 11929 RVA: 0x00126AF4 File Offset: 0x00124CF4
 	public static LockManager Instance
 	{
 		get
@@ -19,7 +19,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E4E RID: 11854 RVA: 0x00125D98 File Offset: 0x00123F98
+	// Token: 0x06002E9A RID: 11930 RVA: 0x00126B0C File Offset: 0x00124D0C
 	public void Init()
 	{
 		if (this.pendingClientLocks.Count > 0 || this.singleLocks.CountKeys > 0 || this.sharedLocks.CountValues > 0)
@@ -34,7 +34,7 @@ public class LockManager
 		this.lastUpdate = DateTime.UtcNow;
 	}
 
-	// Token: 0x06002E4F RID: 11855 RVA: 0x00125E1C File Offset: 0x0012401C
+	// Token: 0x06002E9B RID: 11931 RVA: 0x00126B90 File Offset: 0x00124D90
 	public void Update()
 	{
 		if (GameManager.Instance.World == null)
@@ -61,28 +61,17 @@ public class LockManager
 					list.Add(keyValuePair.Key);
 				}
 			}
-			foreach (int num in this.playersWithLocks)
-			{
-				if (!this.keepOpenTimes.ContainsKey(num))
-				{
-					if (list == null)
-					{
-						list = new List<int>();
-					}
-					list.Add(num);
-				}
-			}
 			if (list == null)
 			{
 				return;
 			}
-			using (List<int>.Enumerator enumerator3 = list.GetEnumerator())
+			using (List<int>.Enumerator enumerator2 = list.GetEnumerator())
 			{
-				while (enumerator3.MoveNext())
+				while (enumerator2.MoveNext())
 				{
-					int num2 = enumerator3.Current;
-					Log.Warning(string.Format("[{0}] No keep-open packet received from player {1}.", "LockManager", num2));
-					this.ForceUnlockByPlayer(num2);
+					int num = enumerator2.Current;
+					Log.Warning(string.Format("[{0}] No keep-open packet received from player {1}.", "LockManager", num));
+					this.ForceUnlockByPlayer(num);
 				}
 				return;
 			}
@@ -93,14 +82,14 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E50 RID: 11856 RVA: 0x00125FE8 File Offset: 0x001241E8
+	// Token: 0x06002E9C RID: 11932 RVA: 0x00126D00 File Offset: 0x00124F00
 	public bool IsLockedByLocalPlayer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (_target == null)
 		{
 			return false;
 		}
-		LockEntry lockEntry = new LockEntry(_target, _channel);
+		LockManager.LockEntry lockEntry = new LockManager.LockEntry(_target, _channel);
 		if (this.pendingClientLocks.Contains(lockEntry))
 		{
 			return true;
@@ -129,7 +118,7 @@ public class LockManager
 		return !_target.IsSharedLock(_channel) && this.singleLocks.TryGetByValue(lockEntry, out num) && num == primaryPlayerId;
 	}
 
-	// Token: 0x06002E51 RID: 11857 RVA: 0x001260A8 File Offset: 0x001242A8
+	// Token: 0x06002E9D RID: 11933 RVA: 0x00126DC0 File Offset: 0x00124FC0
 	public bool IsLockedServer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -137,56 +126,122 @@ public class LockManager
 			Log.Warning("[LockManager] Clients may only check local lock states by using IsLockedByLocalPlayer.");
 			return false;
 		}
-		LockEntry lockEntry = new LockEntry(_target, _channel);
+		LockManager.LockEntry lockEntry = new LockManager.LockEntry(_target, _channel);
 		return (_target.IsSharedLock(_channel) && this.sharedLocks.ContainsValue(lockEntry)) || (!_target.IsSharedLock(_channel) && this.singleLocks.ContainsValue(lockEntry));
 	}
 
-	// Token: 0x06002E52 RID: 11858 RVA: 0x0012610C File Offset: 0x0012430C
-	public void LockRequestLocal(ILockTarget _target, ILockContext _context = null, ushort _channel = 0)
+	// Token: 0x06002E9E RID: 11934 RVA: 0x00126E21 File Offset: 0x00125021
+	public void LockRequestLocal(ILockTarget _target, ushort _channel = 0)
 	{
 		if (_target == null)
 		{
 			Log.Error("[LockManager] target supplied for locking was null.");
 			return;
 		}
-		ReadOnlySpan<ILockTarget> readOnlySpan = new ILockTarget[] { _target };
-		this.LockRequestLocal(readOnlySpan, _context, _channel);
+		this.requestTargets[0] = _target;
+		this.LockRequestLocal(1, _channel);
 	}
 
-	// Token: 0x06002E53 RID: 11859 RVA: 0x00126140 File Offset: 0x00124340
-	public unsafe void LockRequestLocal(ReadOnlySpan<ILockTarget> _targets, ILockContext _context = null, ushort _channel = 0)
+	// Token: 0x06002E9F RID: 11935 RVA: 0x00126E42 File Offset: 0x00125042
+	public void LockRequestLocal(ILockTarget _targetA, ILockTarget _targetB, ushort _channel = 0)
 	{
-		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
+		if (_targetA == null || _targetB == null)
 		{
-			this.LockRequestServer(_targets, GameManager.Instance.World.GetPrimaryPlayerId(), _context, _channel);
+			Log.Error("[LockManager] target supplied for locking was null.");
 			return;
 		}
+		this.requestTargets[0] = _targetA;
+		this.requestTargets[1] = _targetB;
+		this.LockRequestLocal(2, _channel);
+	}
+
+	// Token: 0x06002EA0 RID: 11936 RVA: 0x00126E6F File Offset: 0x0012506F
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void LockRequestLocal(int _count, ushort _channel)
+	{
+		this.LockRequestLocal(new ReadOnlySpan<ILockTarget>(this.requestTargets, 0, _count), _channel);
+		Array.Clear(this.requestTargets, 0, _count);
+	}
+
+	// Token: 0x06002EA1 RID: 11937 RVA: 0x00126E94 File Offset: 0x00125094
+	public unsafe void LockRequestLocal(ReadOnlySpan<ILockTarget> _targets, ushort _channel = 0)
+	{
 		if (_targets == null || _targets.Length == 0)
 		{
 			Log.Error("[LockManager] no targets supplied for locking.");
 			return;
 		}
-		if (this.pendingClientLocks.Count > 0)
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
 		{
-			Log.Warning("[LockManager] lock request already in progress.");
-			return;
+			if (this.pendingClientLocks.Count > 0)
+			{
+				Log.Warning("[LockManager] lock request already in progress.");
+				return;
+			}
+			for (int i = 0; i < _targets.Length; i++)
+			{
+				this.pendingClientLocks.Add(new LockManager.LockEntry(*_targets[i], _channel));
+			}
 		}
-		for (int i = 0; i < _targets.Length; i++)
+		PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
+		try
 		{
-			this.pendingClientLocks.Add(new LockEntry(*_targets[i], _channel));
+			using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
+			{
+				pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
+				pooledBinaryWriter.Write(true);
+				pooledBinaryWriter.Write(_channel);
+				pooledBinaryWriter.Write(_targets.Length);
+				for (int j = 0; j < _targets.Length; j++)
+				{
+					WorldAddress.Create(*_targets[j]).Write(pooledBinaryWriter);
+				}
+				for (int k = 0; k < _targets.Length; k++)
+				{
+					_targets[k]->OnLockRequestLocal(pooledBinaryWriter, _channel);
+				}
+			}
+			this.DispatchRequest(pooledExpandableMemoryStream);
 		}
-		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageLockRequest>().Setup(_targets, _context, _channel), false);
+		finally
+		{
+			MemoryPools.poolMemoryStream.FreeSync(pooledExpandableMemoryStream);
+		}
 	}
 
-	// Token: 0x06002E54 RID: 11860 RVA: 0x001261F8 File Offset: 0x001243F8
-	public unsafe void LockRequestServer(ReadOnlySpan<ILockTarget> _targets, int _playerId, ILockContext _context = null, ushort _channel = 0)
+	// Token: 0x06002EA2 RID: 11938 RVA: 0x00126FE0 File Offset: 0x001251E0
+	public void ProcessRequest(PooledBinaryReader _br, int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
 		{
 			Log.Warning("[LockManager] Clients must only request a lock by using LockRequestLocal.");
 			return;
 		}
-		if (this.singleLocks.ContainsKey(_playerId) || this.sharedLocks.ContainsKey(_playerId) || this.keepOpenTimes.ContainsKey(_playerId))
+		if (_br.ReadBoolean())
+		{
+			this.LockRequestServer(_playerId, _br);
+			return;
+		}
+		this.UnlockRequestServer(_playerId, false);
+	}
+
+	// Token: 0x06002EA3 RID: 11939 RVA: 0x00127014 File Offset: 0x00125214
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void LockRequestServer(int _playerId, PooledBinaryReader _br)
+	{
+		ushort num = _br.ReadUInt16();
+		int num2 = _br.ReadInt32();
+		if (num2 < 1 || num2 > 5)
+		{
+			Log.Warning(string.Format("[{0}] Player {1} requested {2} lock targets, limit is {3}.", new object[] { "LockManager", _playerId, num2, 5 }));
+			return;
+		}
+		ILockTarget[] array = new ILockTarget[num2];
+		for (int i = 0; i < num2; i++)
+		{
+			array[i] = WorldAddress.Read(_br).Resolve<ILockTarget>();
+		}
+		if (this.playersWithLocks.Contains(_playerId))
 		{
 			Log.Warning(string.Format("[{0}] Invalid lock state for player {1} when calling {2}. The player tried requesting a lock despite having an existing lock state.", "LockManager", _playerId, "LockRequestServer"));
 			this.ForceUnlockByPlayer(_playerId);
@@ -196,149 +251,178 @@ public class LockManager
 		string text = null;
 		try
 		{
-			for (int i = 0; i < _targets.Length; i++)
+			for (int j = 0; j < array.Length; j++)
 			{
-				if (!(*_targets[i]))
+				if (array[j] == null)
 				{
 					text = "[LockManager] Failed to lock targets. A requested target was null.";
 					return;
 				}
 			}
-			if (_targets.Length > 5)
+			foreach (ILockTarget lockTarget in array)
 			{
-				text = string.Format("[{0}] Failed to lock targets. Requested {1} exceeds limit {2}.", "LockManager", _targets.Length, 5);
+				LockManager.LockEntry lockEntry = new LockManager.LockEntry(lockTarget, num);
+				if (!lockTarget.IsSharedLock(num) && this.singleLocks.ContainsValue(lockEntry))
+				{
+					text = string.Format("[{0}] Failed to lock {1} on channel {2}. It is already locked by another player.", "LockManager", lockTarget.GetType(), num);
+					return;
+				}
 			}
-			else
+			foreach (ILockTarget lockTarget2 in array)
 			{
-				for (int j = 0; j < _targets.Length; j++)
+				if (!lockTarget2.OnLockRequestServer(_playerId, _br, num))
 				{
-					ILockTarget lockTarget = *_targets[j];
-					LockEntry lockEntry = new LockEntry(lockTarget, _channel);
-					if (!lockTarget.IsSharedLock(_channel) && this.singleLocks.ContainsValue(lockEntry))
-					{
-						text = string.Format("[{0}] Failed to lock {1} on channel {2}. It is already locked by another player.", "LockManager", lockTarget.GetType(), _channel);
-						return;
-					}
+					text = string.Format("[{0}] Failed to lock {1} on channel {2}. Target refused to be locked on server.", "LockManager", lockTarget2.GetType(), num);
+					return;
 				}
-				for (int k = 0; k < _targets.Length; k++)
-				{
-					ILockTarget lockTarget2 = *_targets[k];
-					if (!lockTarget2.CanLockOnServer(_playerId, _context, _channel))
-					{
-						text = string.Format("[{0}] Failed to lock {1} on channel {2}. Target refused to be locked on server.", "LockManager", lockTarget2.GetType(), _channel);
-						return;
-					}
-				}
-				flag = true;
 			}
+			flag = true;
 		}
 		finally
 		{
-			if (flag)
+			PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
+			try
 			{
-				for (int l = 0; l < _targets.Length; l++)
+				using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
 				{
-					ILockTarget lockTarget3 = *_targets[l];
-					LockEntry lockEntry2 = new LockEntry(lockTarget3, _channel);
-					if (lockTarget3.IsSharedLock(_channel))
+					pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
+					pooledBinaryWriter.Write(true);
+					pooledBinaryWriter.Write(flag);
+					pooledBinaryWriter.Write(text ?? string.Empty);
+					pooledBinaryWriter.Write(num);
+					pooledBinaryWriter.Write(array.Length);
+					for (int m = 0; m < array.Length; m++)
 					{
-						this.sharedLocks.Add(_playerId, lockEntry2);
+						WorldAddress.Create(array[m]).Write(pooledBinaryWriter);
 					}
-					else
+					if (flag)
 					{
-						this.singleLocks.Add(_playerId, lockEntry2);
+						foreach (ILockTarget lockTarget3 in array)
+						{
+							LockManager.LockEntry lockEntry2 = new LockManager.LockEntry(lockTarget3, num);
+							if (lockTarget3.IsSharedLock(num))
+							{
+								this.sharedLocks.Add(_playerId, lockEntry2);
+							}
+							else
+							{
+								this.singleLocks.Add(_playerId, lockEntry2);
+							}
+						}
+						this.RefreshPlayerActive(_playerId);
+						for (int num3 = 0; num3 < array.Length; num3++)
+						{
+							array[num3].OnLockResponseServer(_playerId, pooledBinaryWriter, num);
+						}
 					}
-					this.RefreshPlayerActive(_playerId);
-					this.keepOpenTimes[_playerId] = DateTime.UtcNow;
 				}
-				for (int m = 0; m < _targets.Length; m++)
-				{
-					_targets[m]->OnLockedServer(true, _playerId, _context, _channel);
-				}
+				this.DispatchResponse(pooledExpandableMemoryStream, _playerId);
 			}
-			if (GameManager.Instance.World.GetPrimaryPlayerId() != _playerId)
+			finally
 			{
-				SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageLockResponse>().Setup(flag, text, _targets, _context, _channel), false, _playerId, -1, -1, null, 192, false);
-			}
-			else
-			{
-				this.LockResponse(flag, text, _targets, _context, _channel);
+				MemoryPools.poolMemoryStream.FreeSync(pooledExpandableMemoryStream);
 			}
 		}
 	}
 
-	// Token: 0x06002E55 RID: 11861 RVA: 0x00126494 File Offset: 0x00124694
-	public unsafe void LockResponse(bool _success, string _errorMsg, ReadOnlySpan<ILockTarget> _targets, ILockContext _context, ushort _channel)
+	// Token: 0x06002EA4 RID: 11940 RVA: 0x00127308 File Offset: 0x00125508
+	public void ProcessResponse(PooledBinaryReader _br)
 	{
-		this.pendingClientLocks.Clear();
-		if (!string.IsNullOrEmpty(_errorMsg))
+		if (_br.ReadBoolean())
 		{
-			Log.Warning(_errorMsg);
+			this.LockResponseLocal(_br);
+			return;
+		}
+		this.UnlockResponseLocal(_br);
+	}
+
+	// Token: 0x06002EA5 RID: 11941 RVA: 0x00127324 File Offset: 0x00125524
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void LockResponseLocal(PooledBinaryReader _br)
+	{
+		bool flag = _br.ReadBoolean();
+		string text = _br.ReadString();
+		ushort num = _br.ReadUInt16();
+		int num2 = _br.ReadInt32();
+		ILockTarget[] array = new ILockTarget[num2];
+		for (int i = 0; i < num2; i++)
+		{
+			array[i] = WorldAddress.Read(_br).Resolve<ILockTarget>();
+		}
+		this.pendingClientLocks.Clear();
+		if (!string.IsNullOrEmpty(text))
+		{
+			Log.Warning(text);
 		}
 		if (GameManager.Instance.World == null)
 		{
 			Log.Warning("[LockManager] World not fully initialized.");
 			return;
 		}
-		for (int i = 0; i < _targets.Length; i++)
+		for (int j = 0; j < array.Length; j++)
 		{
-			if (!(*_targets[i]))
+			if (array[j] == null)
 			{
 				Log.Warning("[LockManager] target supplied for locking was null.");
+				if (flag)
+				{
+					this.UnlockRequestLocal();
+				}
 				return;
 			}
 		}
 		int primaryPlayerId = GameManager.Instance.World.GetPrimaryPlayerId();
-		if (_success)
+		if (flag && SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
 		{
-			for (int j = 0; j < _targets.Length; j++)
+			foreach (ILockTarget lockTarget in array)
 			{
-				ILockTarget lockTarget = *_targets[j];
-				if (!lockTarget.CanLockLocally(_context, _channel))
+				LockManager.LockEntry lockEntry = new LockManager.LockEntry(lockTarget, num);
+				if (lockTarget.IsSharedLock(num))
 				{
-					Log.Warning(string.Format("[{0}] Failed to lock {1} on channel {2}. Target refused to be locked locally.", "LockManager", lockTarget.GetType(), _channel));
-					return;
+					this.sharedLocks.Add(primaryPlayerId, lockEntry);
+				}
+				else
+				{
+					this.singleLocks.Add(primaryPlayerId, lockEntry);
 				}
 			}
-			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
-			{
-				for (int k = 0; k < _targets.Length; k++)
-				{
-					ILockTarget lockTarget2 = *_targets[k];
-					LockEntry lockEntry = new LockEntry(lockTarget2, _channel);
-					if (lockTarget2.IsSharedLock(_channel))
-					{
-						this.sharedLocks.Add(primaryPlayerId, lockEntry);
-					}
-					else
-					{
-						this.singleLocks.Add(primaryPlayerId, lockEntry);
-					}
-					this.RefreshPlayerActive(primaryPlayerId);
-				}
-				this.keepOpenTimes[primaryPlayerId] = DateTime.UtcNow;
-			}
+			this.RefreshPlayerActive(primaryPlayerId);
 		}
-		for (int l = 0; l < _targets.Length; l++)
+		foreach (ILockTarget lockTarget2 in array)
 		{
-			_targets[l]->OnLockedLocal(_success, _context, _channel);
+			if (!lockTarget2.OnLockResponseLocal(flag, _br, num) && flag)
+			{
+				Log.Warning(string.Format("[{0}] {1} on channel {2} refused the lock locally, unlocking.", "LockManager", lockTarget2.GetType(), num));
+				this.UnlockRequestLocal();
+				return;
+			}
 		}
 	}
 
-	// Token: 0x06002E56 RID: 11862 RVA: 0x00126600 File Offset: 0x00124800
+	// Token: 0x06002EA6 RID: 11942 RVA: 0x001274A0 File Offset: 0x001256A0
 	public void UnlockRequestLocal()
 	{
-		int primaryPlayerId = GameManager.Instance.World.GetPrimaryPlayerId();
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
 		{
-			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageLockRequest>().Setup(), false);
 			LocalPlayerUI.GetUIForPrimaryPlayer().windowManager.CloseAllOpenModalWindows(null, false);
-			return;
 		}
-		this.UnlockRequestServer(primaryPlayerId, false);
+		PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
+		try
+		{
+			using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
+			{
+				pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
+				pooledBinaryWriter.Write(false);
+			}
+			this.DispatchRequest(pooledExpandableMemoryStream);
+		}
+		finally
+		{
+			MemoryPools.poolMemoryStream.FreeSync(pooledExpandableMemoryStream);
+		}
 	}
 
-	// Token: 0x06002E57 RID: 11863 RVA: 0x0012665C File Offset: 0x0012485C
+	// Token: 0x06002EA7 RID: 11943 RVA: 0x00127530 File Offset: 0x00125730
 	public void UnlockRequestServer(int _playerId, bool _isForceUnlocked)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -350,81 +434,116 @@ public class LockManager
 		string text = null;
 		try
 		{
-			if (this.playersWithLocks.Contains(_playerId))
+			if (!this.playersWithLocks.Contains(_playerId))
 			{
-				bool flag2 = false;
-				IReadOnlyCollection<LockEntry> readOnlyCollection;
-				if (this.singleLocks.TryGetByKey(_playerId, out readOnlyCollection) && readOnlyCollection != null)
-				{
-					flag2 = true;
-					foreach (LockEntry lockEntry in readOnlyCollection.ToArray<LockEntry>())
-					{
-						this.singleLocks.RemoveByValue(lockEntry);
-						lockEntry.Target.OnUnlockedServer(_playerId, lockEntry.Channel);
-					}
-					this.singleLocks.RemoveByKey(_playerId);
-				}
-				IReadOnlyCollection<LockEntry> readOnlyCollection2;
-				if (this.sharedLocks.TryGetByKey(_playerId, out readOnlyCollection2) && readOnlyCollection2 != null)
-				{
-					flag2 = true;
-					foreach (LockEntry lockEntry2 in readOnlyCollection2.ToArray<LockEntry>())
-					{
-						this.sharedLocks.Remove(_playerId, lockEntry2);
-						lockEntry2.Target.OnUnlockedServer(_playerId, lockEntry2.Channel);
-					}
-					this.sharedLocks.RemoveByKey(_playerId);
-				}
-				this.keepOpenTimes.Remove(_playerId);
-				this.RefreshPlayerActive(_playerId);
-				if (!flag2)
-				{
-					text = string.Format("[{0}] Found no targets while trying to unlock for player {1}.", "LockManager", _playerId);
-				}
-				else
-				{
-					flag = true;
-				}
+				text = "[LockManager] Player entity has nothing to unlock.";
 			}
 			else
 			{
-				text = "[LockManager] Player entity has nothing to unlock.";
+				List<LockManager.LockEntry> list;
+				using (CollectionPool<List<LockManager.LockEntry>, LockManager.LockEntry>.Get(out list))
+				{
+					this.singleLocks.TryGetByKey(_playerId, list);
+					this.sharedLocks.TryGetByKey(_playerId, list);
+					this.singleLocks.RemoveByKey(_playerId);
+					this.sharedLocks.RemoveByKey(_playerId);
+					this.RefreshPlayerActive(_playerId);
+					if (list.Count == 0)
+					{
+						text = string.Format("[{0}] Found no targets while trying to unlock for player {1}.", "LockManager", _playerId);
+						return;
+					}
+					for (int i = 0; i < list.Count; i++)
+					{
+						list[i].Target.OnUnlockedServer(_playerId, list[i].Channel);
+					}
+				}
+				flag = true;
 			}
 		}
 		finally
 		{
-			if (GameManager.Instance.World.GetPrimaryPlayerId() != _playerId)
-			{
-				SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageLockResponse>().Setup(flag, text, _isForceUnlocked), false, _playerId, -1, -1, null, 192, false);
-			}
-			else
+			if (GameManager.Instance.World.GetPrimaryPlayerId() == _playerId)
 			{
 				LocalPlayerUI.GetUIForPrimaryPlayer().windowManager.CloseAllOpenModalWindows(null, false);
-				this.UnlockResponse(flag, text, _isForceUnlocked);
+			}
+			PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
+			try
+			{
+				using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
+				{
+					pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
+					pooledBinaryWriter.Write(false);
+					pooledBinaryWriter.Write(flag);
+					pooledBinaryWriter.Write(text ?? string.Empty);
+					pooledBinaryWriter.Write(_isForceUnlocked);
+				}
+				this.DispatchResponse(pooledExpandableMemoryStream, _playerId);
+			}
+			finally
+			{
+				MemoryPools.poolMemoryStream.FreeSync(pooledExpandableMemoryStream);
 			}
 		}
 	}
 
-	// Token: 0x06002E58 RID: 11864 RVA: 0x00126820 File Offset: 0x00124A20
-	public void UnlockResponse(bool _success, string _errorMsg, bool _isForceUnlocked = false)
+	// Token: 0x06002EA8 RID: 11944 RVA: 0x001276F0 File Offset: 0x001258F0
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void DispatchRequest(PooledExpandableMemoryStream _request)
 	{
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageLockTarget>().Setup(_request), false);
+			return;
+		}
+		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
+		{
+			pooledBinaryReader.SetBaseStream(_request);
+			_request.Position = 0L;
+			this.ProcessRequest(pooledBinaryReader, GameManager.Instance.World.GetPrimaryPlayerId());
+		}
+	}
+
+	// Token: 0x06002EA9 RID: 11945 RVA: 0x00127770 File Offset: 0x00125970
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void DispatchResponse(PooledExpandableMemoryStream _response, int _playerId)
+	{
+		if (GameManager.Instance.World.GetPrimaryPlayerId() != _playerId)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageLockTarget>().Setup(_response), false, _playerId, -1, -1, null, 192, false);
+			return;
+		}
+		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
+		{
+			pooledBinaryReader.SetBaseStream(_response);
+			_response.Position = 0L;
+			this.ProcessResponse(pooledBinaryReader);
+		}
+	}
+
+	// Token: 0x06002EAA RID: 11946 RVA: 0x001277F8 File Offset: 0x001259F8
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void UnlockResponseLocal(PooledBinaryReader _br)
+	{
+		bool flag = _br.ReadBoolean();
+		string text = _br.ReadString();
+		bool flag2 = _br.ReadBoolean();
 		int primaryPlayerId = GameManager.Instance.World.GetPrimaryPlayerId();
 		this.singleLocks.RemoveByKey(primaryPlayerId);
 		this.sharedLocks.RemoveByKey(primaryPlayerId);
-		this.keepOpenTimes.Remove(primaryPlayerId);
 		this.RefreshPlayerActive(primaryPlayerId);
-		if (!_success && !string.IsNullOrEmpty(_errorMsg))
+		if (!flag && !string.IsNullOrEmpty(text))
 		{
-			Log.Warning(_errorMsg);
+			Log.Warning(text);
 		}
-		if (_isForceUnlocked)
+		if (flag2)
 		{
 			LocalPlayerUI.GetUIForPrimaryPlayer().windowManager.CloseAllOpenModalWindows(null, false);
 			this.pendingClientLocks.Clear();
 		}
 	}
 
-	// Token: 0x06002E59 RID: 11865 RVA: 0x0012689C File Offset: 0x00124A9C
+	// Token: 0x06002EAB RID: 11947 RVA: 0x0012787C File Offset: 0x00125A7C
 	public void ForceUnlockAll()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -432,14 +551,18 @@ public class LockManager
 			Log.Warning("[LockManager] Only servers can use ForceUnlockAll");
 			return;
 		}
-		int[] array = this.playersWithLocks.ToArray<int>();
-		for (int i = 0; i < array.Length; i++)
+		List<int> list;
+		using (CollectionPool<List<int>, int>.Get(out list))
 		{
-			this.ForceUnlockByPlayer(array[i]);
+			list.AddRange(this.playersWithLocks);
+			for (int i = 0; i < list.Count; i++)
+			{
+				this.ForceUnlockByPlayer(list[i]);
+			}
 		}
 	}
 
-	// Token: 0x06002E5A RID: 11866 RVA: 0x001268E3 File Offset: 0x00124AE3
+	// Token: 0x06002EAC RID: 11948 RVA: 0x001278F4 File Offset: 0x00125AF4
 	public void ForceUnlockByPlayer(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -450,7 +573,7 @@ public class LockManager
 		this.UnlockRequestServer(_playerId, true);
 	}
 
-	// Token: 0x06002E5B RID: 11867 RVA: 0x00126904 File Offset: 0x00124B04
+	// Token: 0x06002EAD RID: 11949 RVA: 0x00127918 File Offset: 0x00125B18
 	public void ForceUnlockLockTarget(ILockTarget _target)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -463,7 +586,7 @@ public class LockManager
 			return;
 		}
 		List<int> list = new List<int>();
-		foreach (LockEntry lockEntry in this.singleLocks.Values)
+		foreach (LockManager.LockEntry lockEntry in this.singleLocks.Values)
 		{
 			int num;
 			if (lockEntry.Target == _target && this.singleLocks.TryGetByValue(lockEntry, out num) && !list.Contains(num))
@@ -471,7 +594,7 @@ public class LockManager
 				list.Add(num);
 			}
 		}
-		foreach (LockEntry lockEntry2 in this.sharedLocks.Values)
+		foreach (LockManager.LockEntry lockEntry2 in this.sharedLocks.Values)
 		{
 			IReadOnlyCollection<int> readOnlyCollection;
 			if (lockEntry2.Target == _target && this.sharedLocks.TryGetByValue(lockEntry2, out readOnlyCollection))
@@ -496,7 +619,7 @@ public class LockManager
 		Log.Warning("[LockManager] Target is not locked.");
 	}
 
-	// Token: 0x06002E5C RID: 11868 RVA: 0x00126A90 File Offset: 0x00124C90
+	// Token: 0x06002EAE RID: 11950 RVA: 0x00127AA4 File Offset: 0x00125CA4
 	public void ForceUnlockByChunk(HashSetLong chunks)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -507,7 +630,7 @@ public class LockManager
 		List<ILockTarget> list = new List<ILockTarget>();
 		foreach (long num in chunks)
 		{
-			foreach (LockEntry lockEntry in this.singleLocks.Values)
+			foreach (LockManager.LockEntry lockEntry in this.singleLocks.Values)
 			{
 				TileEntity tileEntity = lockEntry.Target as TileEntity;
 				if (tileEntity != null)
@@ -532,7 +655,7 @@ public class LockManager
 					}
 				}
 			}
-			foreach (LockEntry lockEntry2 in this.sharedLocks.Values)
+			foreach (LockManager.LockEntry lockEntry2 in this.sharedLocks.Values)
 			{
 				TileEntity tileEntity2 = lockEntry2.Target as TileEntity;
 				if (tileEntity2 != null)
@@ -564,72 +687,130 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E5D RID: 11869 RVA: 0x00126D1C File Offset: 0x00124F1C
+	// Token: 0x06002EAF RID: 11951 RVA: 0x00127D30 File Offset: 0x00125F30
 	public void ProcessKeepOpen(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
 		{
 			return;
 		}
-		if (!this.singleLocks.ContainsKey(_playerId) && !this.sharedLocks.ContainsKey(_playerId))
+		this.RefreshPlayerActive(_playerId);
+		if (!this.playersWithLocks.Contains(_playerId))
 		{
 			Log.Warning("[LockManager] Keep Open request received but player owns no locks.");
-			this.keepOpenTimes.Remove(_playerId);
 			this.ForceUnlockByPlayer(_playerId);
-			return;
 		}
-		this.keepOpenTimes[_playerId] = DateTime.UtcNow;
 	}
 
-	// Token: 0x06002E5E RID: 11870 RVA: 0x00126D82 File Offset: 0x00124F82
+	// Token: 0x06002EB0 RID: 11952 RVA: 0x00127D68 File Offset: 0x00125F68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshPlayerActive(int playerId)
 	{
 		if (this.singleLocks.ContainsKey(playerId) || this.sharedLocks.ContainsKey(playerId))
 		{
 			this.playersWithLocks.Add(playerId);
+			this.keepOpenTimes[playerId] = DateTime.UtcNow;
 			return;
 		}
 		this.playersWithLocks.Remove(playerId);
+		this.keepOpenTimes.Remove(playerId);
 	}
 
-	// Token: 0x040023F0 RID: 9200
+	// Token: 0x040023EB RID: 9195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxLocksPerPlayer = 5;
 
-	// Token: 0x040023F1 RID: 9201
+	// Token: 0x040023EC RID: 9196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenTimeoutSeconds = 10f;
 
-	// Token: 0x040023F2 RID: 9202
+	// Token: 0x040023ED RID: 9197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenPeriodSeconds = 2.5f;
 
-	// Token: 0x040023F3 RID: 9203
+	// Token: 0x040023EE RID: 9198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LockManager _instance;
 
-	// Token: 0x040023F4 RID: 9204
+	// Token: 0x040023EF RID: 9199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> playersWithLocks = new HashSet<int>();
 
-	// Token: 0x040023F5 RID: 9205
+	// Token: 0x040023F0 RID: 9200
 	[PublicizedFrom(EAccessModifier.Private)]
-	public OneToManyDictionary<int, LockEntry> singleLocks = new OneToManyDictionary<int, LockEntry>();
+	public OneToManyDictionary<int, LockManager.LockEntry> singleLocks = new OneToManyDictionary<int, LockManager.LockEntry>();
 
-	// Token: 0x040023F6 RID: 9206
+	// Token: 0x040023F1 RID: 9201
 	[PublicizedFrom(EAccessModifier.Private)]
-	public ManyToManyDictionary<int, LockEntry> sharedLocks = new ManyToManyDictionary<int, LockEntry>();
+	public ManyToManyDictionary<int, LockManager.LockEntry> sharedLocks = new ManyToManyDictionary<int, LockManager.LockEntry>();
 
-	// Token: 0x040023F7 RID: 9207
+	// Token: 0x040023F2 RID: 9202
 	[PublicizedFrom(EAccessModifier.Private)]
-	public HashSet<LockEntry> pendingClientLocks = new HashSet<LockEntry>();
+	public HashSet<LockManager.LockEntry> pendingClientLocks = new HashSet<LockManager.LockEntry>();
 
-	// Token: 0x040023F8 RID: 9208
+	// Token: 0x040023F3 RID: 9203
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly ILockTarget[] requestTargets = new ILockTarget[5];
+
+	// Token: 0x040023F4 RID: 9204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DateTime> keepOpenTimes = new Dictionary<int, DateTime>();
 
-	// Token: 0x040023F9 RID: 9209
+	// Token: 0x040023F5 RID: 9205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastUpdate;
+
+	// Token: 0x02000589 RID: 1417
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly struct LockEntry : IEquatable<LockManager.LockEntry>
+	{
+		// Token: 0x06002EB2 RID: 11954 RVA: 0x00127E26 File Offset: 0x00126026
+		public LockEntry(ILockTarget target, ushort channel = 0)
+		{
+			this.Target = target;
+			this.Channel = channel;
+		}
+
+		// Token: 0x06002EB3 RID: 11955 RVA: 0x00127E36 File Offset: 0x00126036
+		public bool Equals(LockManager.LockEntry other)
+		{
+			return this.Target == other.Target && this.Channel == other.Channel;
+		}
+
+		// Token: 0x06002EB4 RID: 11956 RVA: 0x00127E56 File Offset: 0x00126056
+		public override int GetHashCode()
+		{
+			ILockTarget target = this.Target;
+			return HashCode.Combine<int, ushort>((target != null) ? target.GetHashCode() : 0, this.Channel);
+		}
+
+		// Token: 0x06002EB5 RID: 11957 RVA: 0x00127E78 File Offset: 0x00126078
+		public override bool Equals(object obj)
+		{
+			if (obj is LockManager.LockEntry)
+			{
+				LockManager.LockEntry lockEntry = (LockManager.LockEntry)obj;
+				return this.Equals(lockEntry);
+			}
+			return false;
+		}
+
+		// Token: 0x06002EB6 RID: 11958 RVA: 0x00127E9D File Offset: 0x0012609D
+		public static bool operator ==(LockManager.LockEntry left, LockManager.LockEntry right)
+		{
+			return left.Equals(right);
+		}
+
+		// Token: 0x06002EB7 RID: 11959 RVA: 0x00127EA7 File Offset: 0x001260A7
+		public static bool operator !=(LockManager.LockEntry left, LockManager.LockEntry right)
+		{
+			return !left.Equals(right);
+		}
+
+		// Token: 0x040023F6 RID: 9206
+		public readonly ILockTarget Target;
+
+		// Token: 0x040023F7 RID: 9207
+		public readonly ushort Channel;
+	}
 }

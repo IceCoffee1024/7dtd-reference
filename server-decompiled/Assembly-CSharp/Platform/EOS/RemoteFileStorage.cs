@@ -6,10 +6,10 @@ using Epic.OnlineServices.TitleStorage;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D01 RID: 7425
+	// Token: 0x02001D33 RID: 7475
 	public class RemoteFileStorage : IRemoteFileStorage
 	{
-		// Token: 0x0600DC36 RID: 56374 RVA: 0x004EB918 File Offset: 0x004E9B18
+		// Token: 0x0600DDB1 RID: 56753 RVA: 0x004F0460 File Offset: 0x004EE660
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -20,7 +20,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC37 RID: 56375 RVA: 0x004EB971 File Offset: 0x004E9B71
+		// Token: 0x0600DDB2 RID: 56754 RVA: 0x004F04B9 File Offset: 0x004EE6B9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnUserLoggedIn(IPlatform _obj)
 		{
@@ -30,15 +30,15 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC38 RID: 56376 RVA: 0x004EB981 File Offset: 0x004E9B81
+		// Token: 0x0600DDB3 RID: 56755 RVA: 0x004F04C9 File Offset: 0x004EE6C9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnClientApiInitialized()
 		{
 			this.titleStorageInterface = ((Api)this.owner.Api).PlatformInterface.GetTitleStorageInterface();
 		}
 
-		// Token: 0x17001B74 RID: 7028
-		// (get) Token: 0x0600DC39 RID: 56377 RVA: 0x004EB9A4 File Offset: 0x004E9BA4
+		// Token: 0x17001C1A RID: 7194
+		// (get) Token: 0x0600DDB4 RID: 56756 RVA: 0x004F04EC File Offset: 0x004EE6EC
 		public bool IsReady
 		{
 			get
@@ -63,8 +63,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B75 RID: 7029
-		// (get) Token: 0x0600DC3A RID: 56378 RVA: 0x004EBA0C File Offset: 0x004E9C0C
+		// Token: 0x17001C1B RID: 7195
+		// (get) Token: 0x0600DDB5 RID: 56757 RVA: 0x004F0554 File Offset: 0x004EE754
 		public bool Unavailable
 		{
 			get
@@ -102,7 +102,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC3B RID: 56379 RVA: 0x004EBA80 File Offset: 0x004E9C80
+		// Token: 0x0600DDB6 RID: 56758 RVA: 0x004F05C8 File Offset: 0x004EE7C8
 		public void GetFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback)
 		{
 			if (_callback == null)
@@ -149,7 +149,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC3C RID: 56380 RVA: 0x004EBB8C File Offset: 0x004E9D8C
+		// Token: 0x0600DDB7 RID: 56759 RVA: 0x004F06D4 File Offset: 0x004EE8D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void TryProcessNextRequest()
 		{
@@ -159,25 +159,46 @@ namespace Platform.EOS
 				while (this.activeRequests < 16 && this.requestQueue.Count > 0)
 				{
 					RemoteFileStorage.RequestDetails requestDetails = this.requestQueue.Dequeue();
-					this.activeRequests++;
-					this.getMetadata(requestDetails);
+					if (!requestDetails.Cancelled)
+					{
+						this.activeRequests++;
+						this.getMetadata(requestDetails);
+					}
 				}
 			}
 		}
 
-		// Token: 0x0600DC3D RID: 56381 RVA: 0x004EBC04 File Offset: 0x004E9E04
+		// Token: 0x0600DDB8 RID: 56760 RVA: 0x004F0754 File Offset: 0x004EE954
 		public bool CancelGetFile(string fileName, string cancelReason)
 		{
+			object lockObject = this.requestsLock;
 			RemoteFileStorage.RequestDetails requestDetails;
-			if (this.requests.TryGetValue(fileName, out requestDetails))
+			lock (lockObject)
 			{
-				this.CompleteRequest(requestDetails, IRemoteFileStorage.EFileDownloadResult.Other, cancelReason, null);
-				return true;
+				if (!this.requests.TryGetValue(fileName, out requestDetails))
+				{
+					return false;
+				}
+				requestDetails.Cancelled = true;
 			}
-			return false;
+			if (requestDetails.Transfer != null)
+			{
+				lockObject = AntiCheatCommon.LockObject;
+				Result result;
+				lock (lockObject)
+				{
+					result = requestDetails.Transfer.CancelRequest();
+				}
+				if (result != Result.Success && result != Result.NoChange)
+				{
+					Log.Warning("[EOS] CancelRequest (" + fileName + ") returned: " + result.ToStringCached<Result>());
+				}
+			}
+			this.CompleteRequest(requestDetails, IRemoteFileStorage.EFileDownloadResult.Other, cancelReason, null);
+			return true;
 		}
 
-		// Token: 0x0600DC3E RID: 56382 RVA: 0x004EBC30 File Offset: 0x004E9E30
+		// Token: 0x0600DDB9 RID: 56761 RVA: 0x004F0820 File Offset: 0x004EEA20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getMetadata(RemoteFileStorage.RequestDetails _details)
 		{
@@ -193,11 +214,15 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC3F RID: 56383 RVA: 0x004EBCAC File Offset: 0x004E9EAC
+		// Token: 0x0600DDBA RID: 56762 RVA: 0x004F089C File Offset: 0x004EEA9C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void queryFileCallback(ref QueryFileCallbackInfo _callbackData)
 		{
 			RemoteFileStorage.RequestDetails requestDetails = (RemoteFileStorage.RequestDetails)_callbackData.ClientData;
+			if (requestDetails.Cancelled)
+			{
+				return;
+			}
 			if (_callbackData.ResultCode != Result.Success)
 			{
 				Log.Error("[EOS] QueryFile (" + requestDetails.Filename + ") failed: " + _callbackData.ResultCode.ToStringCached<Result>());
@@ -219,13 +244,13 @@ namespace Platform.EOS
 			if (result != Result.Success)
 			{
 				Log.Error("[EOS] CopyFileMetadataByFilename (" + requestDetails.Filename + ") failed: " + result.ToStringCached<Result>());
-				this.CompleteRequest(requestDetails, IRemoteFileStorage.EFileDownloadResult.Other, _callbackData.ResultCode.ToStringCached<Result>(), null);
+				this.CompleteRequest(requestDetails, IRemoteFileStorage.EFileDownloadResult.Other, result.ToStringCached<Result>(), null);
 				return;
 			}
 			this.readFile(requestDetails);
 		}
 
-		// Token: 0x0600DC40 RID: 56384 RVA: 0x004EBDB0 File Offset: 0x004E9FB0
+		// Token: 0x0600DDBB RID: 56763 RVA: 0x004F09A4 File Offset: 0x004EEBA4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void readFile(RemoteFileStorage.RequestDetails _details)
 		{
@@ -239,11 +264,11 @@ namespace Platform.EOS
 			object lockObject = AntiCheatCommon.LockObject;
 			lock (lockObject)
 			{
-				this.titleStorageInterface.ReadFile(ref readFileOptions, _details, new OnReadFileCompleteCallback(this.readCompletedCallback));
+				_details.Transfer = this.titleStorageInterface.ReadFile(ref readFileOptions, _details, new OnReadFileCompleteCallback(this.readCompletedCallback));
 			}
 		}
 
-		// Token: 0x0600DC41 RID: 56385 RVA: 0x004EBE4C File Offset: 0x004EA04C
+		// Token: 0x0600DDBC RID: 56764 RVA: 0x004F0A48 File Offset: 0x004EEC48
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void fileTransferProgressCallback(ref FileTransferProgressCallbackInfo _callbackData)
 		{
@@ -251,7 +276,7 @@ namespace Platform.EOS
 			Log.Out(string.Format("[EOS] TransferProgress: {0}, {1} / {2}", _callbackData.Filename, _callbackData.BytesTransferred, _callbackData.TotalFileSizeBytes));
 		}
 
-		// Token: 0x0600DC42 RID: 56386 RVA: 0x004EBE85 File Offset: 0x004EA085
+		// Token: 0x0600DDBD RID: 56765 RVA: 0x004F0A81 File Offset: 0x004EEC81
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ReadResult readFileDataCallback(ref ReadFileDataCallbackInfo _callbackData)
 		{
@@ -259,11 +284,15 @@ namespace Platform.EOS
 			return ReadResult.RrContinueReading;
 		}
 
-		// Token: 0x0600DC43 RID: 56387 RVA: 0x004EBEA4 File Offset: 0x004EA0A4
+		// Token: 0x0600DDBE RID: 56766 RVA: 0x004F0AA0 File Offset: 0x004EECA0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void readCompletedCallback(ref ReadFileCallbackInfo _callbackData)
 		{
 			RemoteFileStorage.RequestDetails requestDetails = (RemoteFileStorage.RequestDetails)_callbackData.ClientData;
+			if (requestDetails.Cancelled)
+			{
+				return;
+			}
 			if (_callbackData.ResultCode == Result.Success)
 			{
 				int num = 0;
@@ -303,25 +332,35 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC44 RID: 56388 RVA: 0x004EC078 File Offset: 0x004EA278
+		// Token: 0x0600DDBF RID: 56767 RVA: 0x004F0C80 File Offset: 0x004EEE80
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CompleteRequest(RemoteFileStorage.RequestDetails _details, IRemoteFileStorage.EFileDownloadResult _result, string _errorName, byte[] _data)
 		{
 			object obj = this.requestsLock;
 			lock (obj)
 			{
-				if (!this.requests.Remove(_details.Filename))
+				RemoteFileStorage.RequestDetails requestDetails;
+				if (!this.requests.TryGetValue(_details.Filename, out requestDetails) || requestDetails != _details)
 				{
-					Log.Warning("[EOS] Unexpected RFS request being completed: " + _details.Filename);
+					Log.Out(string.Concat(new string[]
+					{
+						"[EOS] Ignoring completion of RFS request no longer tracked: ",
+						_details.Filename,
+						" (",
+						_result.ToStringCached<IRemoteFileStorage.EFileDownloadResult>(),
+						")"
+					}));
+					return;
 				}
+				this.requests.Remove(_details.Filename);
 				this.activeRequests = Math.Max(0, this.activeRequests - 1);
 				this.TryProcessNextRequest();
 			}
 			_details.ExecuteCallback(_result, _errorName, _data);
 		}
 
-		// Token: 0x17001B76 RID: 7030
-		// (get) Token: 0x0600DC45 RID: 56389 RVA: 0x004EC100 File Offset: 0x004EA300
+		// Token: 0x17001C1C RID: 7196
+		// (get) Token: 0x0600DDC0 RID: 56768 RVA: 0x004F0D48 File Offset: 0x004EEF48
 		public string CacheFilePrefix
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -331,8 +370,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B77 RID: 7031
-		// (get) Token: 0x0600DC46 RID: 56390 RVA: 0x004EC107 File Offset: 0x004EA307
+		// Token: 0x17001C1D RID: 7197
+		// (get) Token: 0x0600DDC1 RID: 56769 RVA: 0x004F0D4F File Offset: 0x004EEF4F
 		public string CacheFolder
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -342,7 +381,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC47 RID: 56391 RVA: 0x004EC118 File Offset: 0x004EA318
+		// Token: 0x0600DDC2 RID: 56770 RVA: 0x004F0D60 File Offset: 0x004EEF60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void clearCache()
 		{
@@ -359,7 +398,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DC48 RID: 56392 RVA: 0x004EC16A File Offset: 0x004EA36A
+		// Token: 0x0600DDC3 RID: 56771 RVA: 0x004F0DB2 File Offset: 0x004EEFB2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void cacheFile(string _filename, byte[] _data)
 		{
@@ -367,7 +406,7 @@ namespace Platform.EOS
 			SdFile.WriteAllBytes(this.CacheFolder + "/" + this.CacheFilePrefix + _filename, _data);
 		}
 
-		// Token: 0x0600DC49 RID: 56393 RVA: 0x004EC198 File Offset: 0x004EA398
+		// Token: 0x0600DDC4 RID: 56772 RVA: 0x004F0DE0 File Offset: 0x004EEFE0
 		public void GetCachedFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback)
 		{
 			if (_callback == null)
@@ -390,47 +429,47 @@ namespace Platform.EOS
 			_callback(IRemoteFileStorage.EFileDownloadResult.Ok, null, array);
 		}
 
-		// Token: 0x0400A671 RID: 42609
+		// Token: 0x0400A746 RID: 42822
 		public const string CacheFolderName = "RfsCache";
 
-		// Token: 0x0400A672 RID: 42610
+		// Token: 0x0400A747 RID: 42823
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxConcurrentReads = 16;
 
-		// Token: 0x0400A673 RID: 42611
+		// Token: 0x0400A748 RID: 42824
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A674 RID: 42612
+		// Token: 0x0400A749 RID: 42825
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TitleStorageInterface titleStorageInterface;
 
-		// Token: 0x0400A675 RID: 42613
+		// Token: 0x0400A74A RID: 42826
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object requestsLock = new object();
 
-		// Token: 0x0400A676 RID: 42614
+		// Token: 0x0400A74B RID: 42827
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, RemoteFileStorage.RequestDetails> requests = new Dictionary<string, RemoteFileStorage.RequestDetails>();
 
-		// Token: 0x0400A677 RID: 42615
+		// Token: 0x0400A74C RID: 42828
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<RemoteFileStorage.RequestDetails> requestQueue = new Queue<RemoteFileStorage.RequestDetails>();
 
-		// Token: 0x0400A678 RID: 42616
+		// Token: 0x0400A74D RID: 42829
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int activeRequests;
 
-		// Token: 0x02001D02 RID: 7426
+		// Token: 0x02001D34 RID: 7476
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class RequestDetails
 		{
-			// Token: 0x14000141 RID: 321
-			// (add) Token: 0x0600DC4B RID: 56395 RVA: 0x004EC23C File Offset: 0x004EA43C
-			// (remove) Token: 0x0600DC4C RID: 56396 RVA: 0x004EC274 File Offset: 0x004EA474
+			// Token: 0x14000140 RID: 320
+			// (add) Token: 0x0600DDC6 RID: 56774 RVA: 0x004F0E84 File Offset: 0x004EF084
+			// (remove) Token: 0x0600DDC7 RID: 56775 RVA: 0x004F0EBC File Offset: 0x004EF0BC
 			public event IRemoteFileStorage.FileDownloadCompleteCallback Callback;
 
-			// Token: 0x0600DC4D RID: 56397 RVA: 0x004EC2A9 File Offset: 0x004EA4A9
+			// Token: 0x0600DDC8 RID: 56776 RVA: 0x004F0EF1 File Offset: 0x004EF0F1
 			public RequestDetails(string _filename, ProductUserId _localUserId, IRemoteFileStorage.FileDownloadCompleteCallback _callback)
 			{
 				this.Filename = _filename;
@@ -438,7 +477,7 @@ namespace Platform.EOS
 				this.Callback = _callback;
 			}
 
-			// Token: 0x0600DC4E RID: 56398 RVA: 0x004EC2D1 File Offset: 0x004EA4D1
+			// Token: 0x0600DDC9 RID: 56777 RVA: 0x004F0F19 File Offset: 0x004EF119
 			public void ExecuteCallback(IRemoteFileStorage.EFileDownloadResult _result, string _errorName, byte[] _data)
 			{
 				IRemoteFileStorage.FileDownloadCompleteCallback callback = this.Callback;
@@ -449,14 +488,20 @@ namespace Platform.EOS
 				callback(_result, _errorName, _data);
 			}
 
-			// Token: 0x0400A679 RID: 42617
+			// Token: 0x0400A74E RID: 42830
 			public readonly string Filename;
 
-			// Token: 0x0400A67A RID: 42618
+			// Token: 0x0400A74F RID: 42831
 			public readonly ProductUserId LocalUserId;
 
-			// Token: 0x0400A67C RID: 42620
+			// Token: 0x0400A751 RID: 42833
 			public readonly List<ArraySegment<byte>> Chunks = new List<ArraySegment<byte>>();
+
+			// Token: 0x0400A752 RID: 42834
+			public TitleStorageFileTransferRequest Transfer;
+
+			// Token: 0x0400A753 RID: 42835
+			public bool Cancelled;
 		}
 	}
 }

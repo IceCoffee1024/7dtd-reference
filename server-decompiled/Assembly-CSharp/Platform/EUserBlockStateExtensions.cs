@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001BEC RID: 7148
+	// Token: 0x02001C1E RID: 7198
 	public static class EUserBlockStateExtensions
 	{
-		// Token: 0x0600D496 RID: 54422 RVA: 0x004CB0F8 File Offset: 0x004C92F8
+		// Token: 0x0600D60E RID: 54798 RVA: 0x004CFBE0 File Offset: 0x004CDDE0
 		public static bool IsBlocked(this EUserBlockState blockState)
 		{
 			bool flag;

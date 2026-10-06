@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000338 RID: 824
+// Token: 0x0200033B RID: 827
 [Preserve]
 public class NetPackageDiscordIdMappings : NetPackage
 {
-	// Token: 0x060017E2 RID: 6114 RVA: 0x0008911A File Offset: 0x0008731A
+	// Token: 0x060017DF RID: 6111 RVA: 0x000893CE File Offset: 0x000875CE
 	public NetPackageDiscordIdMappings Setup(int _entityId, bool _remove, ulong _discordId)
 	{
 		this.entityId = _entityId;
@@ -25,7 +25,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		return this;
 	}
 
-	// Token: 0x060017E3 RID: 6115 RVA: 0x00089154 File Offset: 0x00087354
+	// Token: 0x060017E0 RID: 6112 RVA: 0x00089408 File Offset: 0x00087608
 	public NetPackageDiscordIdMappings Setup(List<int> _entityIds, List<ulong> _discordIds)
 	{
 		this.entityId = 0;
@@ -36,7 +36,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		return this;
 	}
 
-	// Token: 0x060017E4 RID: 6116 RVA: 0x0008917C File Offset: 0x0008737C
+	// Token: 0x060017E1 RID: 6113 RVA: 0x00089430 File Offset: 0x00087630
 	public override void read(PooledBinaryReader _reader)
 	{
 		List<int> list = this.entityIds;
@@ -75,7 +75,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x060017E5 RID: 6117 RVA: 0x0008924C File Offset: 0x0008744C
+	// Token: 0x060017E2 RID: 6114 RVA: 0x00089500 File Offset: 0x00087700
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -97,7 +97,7 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x060017E6 RID: 6118 RVA: 0x000892DC File Offset: 0x000874DC
+	// Token: 0x060017E3 RID: 6115 RVA: 0x00089590 File Offset: 0x00087790
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.entityId > 0)
@@ -130,29 +130,23 @@ public class NetPackageDiscordIdMappings : NetPackage
 		}
 	}
 
-	// Token: 0x060017E7 RID: 6119 RVA: 0x0008939D File Offset: 0x0008759D
-	public override int GetLength()
-	{
-		return 2 + ((this.entityId > 0) ? 12 : (4 + this.entityIds.Count * 12));
-	}
-
-	// Token: 0x04000F77 RID: 3959
+	// Token: 0x04000F70 RID: 3952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04000F78 RID: 3960
+	// Token: 0x04000F71 RID: 3953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool remove;
 
-	// Token: 0x04000F79 RID: 3961
+	// Token: 0x04000F72 RID: 3954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong discordId;
 
-	// Token: 0x04000F7A RID: 3962
+	// Token: 0x04000F73 RID: 3955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> entityIds;
 
-	// Token: 0x04000F7B RID: 3963
+	// Token: 0x04000F74 RID: 3956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ulong> discordIds;
 }

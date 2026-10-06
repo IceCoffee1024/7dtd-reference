@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x02001781 RID: 6017
+	// Token: 0x020017AD RID: 6061
 	[Preserve]
 	public class UAITaskMoveToTarget : UAITaskBase
 	{
-		// Token: 0x0600BA71 RID: 47729 RVA: 0x00456A34 File Offset: 0x00454C34
+		// Token: 0x0600BBC8 RID: 48072 RVA: 0x0045AF54 File Offset: 0x00459154
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void initializeParameters()
 		{
@@ -28,7 +28,7 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x0600BA72 RID: 47730 RVA: 0x00456ADC File Offset: 0x00454CDC
+		// Token: 0x0600BBC9 RID: 48073 RVA: 0x0045AFFC File Offset: 0x004591FC
 		public override void Start(Context _context)
 		{
 			base.Start(_context);
@@ -46,7 +46,7 @@ namespace UAI
 			this.Stop(_context);
 		}
 
-		// Token: 0x0600BA73 RID: 47731 RVA: 0x00456BFA File Offset: 0x00454DFA
+		// Token: 0x0600BBCA RID: 48074 RVA: 0x0045B11A File Offset: 0x0045931A
 		public override void Update(Context _context)
 		{
 			base.Update(_context);
@@ -56,13 +56,13 @@ namespace UAI
 			}
 		}
 
-		// Token: 0x04008BC0 RID: 35776
+		// Token: 0x04008C85 RID: 35973
 		public float distance;
 
-		// Token: 0x04008BC1 RID: 35777
+		// Token: 0x04008C86 RID: 35974
 		public bool run;
 
-		// Token: 0x04008BC2 RID: 35778
+		// Token: 0x04008C87 RID: 35975
 		public bool shouldBreakWalls;
 	}
 }

@@ -2,10 +2,10 @@
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x020013BE RID: 5054
+// Token: 0x020013DE RID: 5086
 public class ColorSpectrum
 {
-	// Token: 0x06009F00 RID: 40704 RVA: 0x003BF190 File Offset: 0x003BD390
+	// Token: 0x06009FAB RID: 40875 RVA: 0x003C3D2C File Offset: 0x003C1F2C
 	public static ColorSpectrum FromTexture(string _filename)
 	{
 		Texture2D texture2D = DataLoader.LoadAsset<Texture2D>(_filename, false);
@@ -18,14 +18,14 @@ public class ColorSpectrum
 		return colorSpectrum;
 	}
 
-	// Token: 0x06009F01 RID: 40705 RVA: 0x003BF1BE File Offset: 0x003BD3BE
+	// Token: 0x06009FAC RID: 40876 RVA: 0x003C3D5A File Offset: 0x003C1F5A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsSupportedRawTextureFormat(TextureFormat _format)
 	{
 		return _format - TextureFormat.RGB24 <= 2 || _format == TextureFormat.BGRA32;
 	}
 
-	// Token: 0x06009F02 RID: 40706 RVA: 0x003BF1D0 File Offset: 0x003BD3D0
+	// Token: 0x06009FAD RID: 40877 RVA: 0x003C3D6C File Offset: 0x003C1F6C
 	public ColorSpectrum(string name, Texture2D _tex)
 	{
 		int width = _tex.width;
@@ -86,7 +86,7 @@ public class ColorSpectrum
 		}
 	}
 
-	// Token: 0x06009F03 RID: 40707 RVA: 0x003BF340 File Offset: 0x003BD540
+	// Token: 0x06009FAE RID: 40878 RVA: 0x003C3EDC File Offset: 0x003C20DC
 	public Color GetValue(float _v)
 	{
 		int num = this.values.Length;
@@ -97,13 +97,13 @@ public class ColorSpectrum
 		return Color.LerpUnclamped(color, color2, num2 - (float)num3);
 	}
 
-	// Token: 0x06009F04 RID: 40708 RVA: 0x003BF385 File Offset: 0x003BD585
+	// Token: 0x06009FAF RID: 40879 RVA: 0x003C3F21 File Offset: 0x003C2121
 	public static bool Exists(string _filename)
 	{
 		return Resources.Load(_filename) != null;
 	}
 
-	// Token: 0x04007878 RID: 30840
+	// Token: 0x040078F3 RID: 30963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color[] values;
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F31 RID: 3889
+// Token: 0x02000F40 RID: 3904
 [Preserve]
 public class XUiC_EnteringArea : XUiController
 {
-	// Token: 0x06007A09 RID: 31241 RVA: 0x002DF5C8 File Offset: 0x002DD7C8
+	// Token: 0x06007A06 RID: 31238 RVA: 0x002E2934 File Offset: 0x002E0B34
 	public override void Init()
 	{
 		base.Init();
@@ -21,7 +21,7 @@ public class XUiC_EnteringArea : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A0A RID: 31242 RVA: 0x002DF61C File Offset: 0x002DD81C
+	// Token: 0x06007A07 RID: 31239 RVA: 0x002E2988 File Offset: 0x002E0B88
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -133,7 +133,7 @@ public class XUiC_EnteringArea : XUiController
 		}
 	}
 
-	// Token: 0x06007A0B RID: 31243 RVA: 0x002DF948 File Offset: 0x002DDB48
+	// Token: 0x06007A08 RID: 31240 RVA: 0x002E2CB4 File Offset: 0x002E0EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcBiomeDifficulty()
 	{
@@ -142,7 +142,7 @@ public class XUiC_EnteringArea : XUiController
 		this.showBiomeHalf = num - (float)this.biomeDiff == 0.5f;
 	}
 
-	// Token: 0x06007A0C RID: 31244 RVA: 0x002DF994 File Offset: 0x002DDB94
+	// Token: 0x06007A09 RID: 31241 RVA: 0x002E2D00 File Offset: 0x002E0F00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FadeUpdate()
 	{
@@ -175,14 +175,14 @@ public class XUiC_EnteringArea : XUiController
 		}
 	}
 
-	// Token: 0x06007A0D RID: 31245 RVA: 0x002DFA93 File Offset: 0x002DDC93
+	// Token: 0x06007A0A RID: 31242 RVA: 0x002E2DFF File Offset: 0x002E0FFF
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.ignoreFirst = true;
 	}
 
-	// Token: 0x06007A0E RID: 31246 RVA: 0x002DFAA4 File Offset: 0x002DDCA4
+	// Token: 0x06007A0B RID: 31243 RVA: 0x002E2E10 File Offset: 0x002E1010
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -370,7 +370,7 @@ public class XUiC_EnteringArea : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007A0F RID: 31247 RVA: 0x002DFF94 File Offset: 0x002DE194
+	// Token: 0x06007A0C RID: 31244 RVA: 0x002E3300 File Offset: 0x002E1500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetNumberedColor(int _number)
 	{
@@ -385,7 +385,7 @@ public class XUiC_EnteringArea : XUiController
 		return this.inactiveColorFormatter.Format(this.inactiveColor);
 	}
 
-	// Token: 0x06007A10 RID: 31248 RVA: 0x002E0000 File Offset: 0x002DE200
+	// Token: 0x06007A0D RID: 31245 RVA: 0x002E336C File Offset: 0x002E156C
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -408,94 +408,94 @@ public class XUiC_EnteringArea : XUiController
 		return flag;
 	}
 
-	// Token: 0x04005A38 RID: 23096
+	// Token: 0x04005A70 RID: 23152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiV_Label> labels = new List<XUiV_Label>();
 
-	// Token: 0x04005A39 RID: 23097
+	// Token: 0x04005A71 RID: 23153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite bgSprite;
 
-	// Token: 0x04005A3A RID: 23098
+	// Token: 0x04005A72 RID: 23154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiV_Sprite> sprites = new List<XUiV_Sprite>();
 
-	// Token: 0x04005A3B RID: 23099
+	// Token: 0x04005A73 RID: 23155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadePercent = 0.0001f;
 
-	// Token: 0x04005A3C RID: 23100
+	// Token: 0x04005A74 RID: 23156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadePercentTarget;
 
-	// Token: 0x04005A3D RID: 23101
+	// Token: 0x04005A75 RID: 23157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float showTime;
 
-	// Token: 0x04005A3E RID: 23102
+	// Token: 0x04005A76 RID: 23158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab lastPrefab;
 
-	// Token: 0x04005A3F RID: 23103
+	// Token: 0x04005A77 RID: 23159
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab prefab;
 
-	// Token: 0x04005A40 RID: 23104
+	// Token: 0x04005A78 RID: 23160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition lastBiome;
 
-	// Token: 0x04005A41 RID: 23105
+	// Token: 0x04005A79 RID: 23161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition biome;
 
-	// Token: 0x04005A42 RID: 23106
+	// Token: 0x04005A7A RID: 23162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message;
 
-	// Token: 0x04005A43 RID: 23107
+	// Token: 0x04005A7B RID: 23163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ignoreFirst;
 
-	// Token: 0x04005A44 RID: 23108
+	// Token: 0x04005A7C RID: 23164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal LocalPlayer;
 
-	// Token: 0x04005A45 RID: 23109
+	// Token: 0x04005A7D RID: 23165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabDiff;
 
-	// Token: 0x04005A46 RID: 23110
+	// Token: 0x04005A7E RID: 23166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int biomeDiff;
 
-	// Token: 0x04005A47 RID: 23111
+	// Token: 0x04005A7F RID: 23167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showBiomeHalf;
 
-	// Token: 0x04005A48 RID: 23112
+	// Token: 0x04005A80 RID: 23168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color difficultyActiveColor = Color.red;
 
-	// Token: 0x04005A49 RID: 23113
+	// Token: 0x04005A81 RID: 23169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color biomeActiveColor = new Color(1f, 0.5f, 0f);
 
-	// Token: 0x04005A4A RID: 23114
+	// Token: 0x04005A82 RID: 23170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color inactiveColor = Color.grey;
 
-	// Token: 0x04005A4B RID: 23115
+	// Token: 0x04005A83 RID: 23171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Poi> prefabIgnoreTags = FastTags<TagGroup.Poi>.Parse("part,streettile,navonly,hideui");
 
-	// Token: 0x04005A4C RID: 23116
+	// Token: 0x04005A84 RID: 23172
 	public static XUiC_Location.ShowLocationInfoTypes ShowLocation = XUiC_Location.ShowLocationInfoTypes.Yes;
 
-	// Token: 0x04005A4D RID: 23117
+	// Token: 0x04005A85 RID: 23173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor activeColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005A4E RID: 23118
+	// Token: 0x04005A86 RID: 23174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor inactiveColorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

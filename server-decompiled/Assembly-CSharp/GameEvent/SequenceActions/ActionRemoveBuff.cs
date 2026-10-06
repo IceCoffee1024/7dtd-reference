@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199F RID: 6559
+	// Token: 0x020019CB RID: 6603
 	[Preserve]
 	public class ActionRemoveBuff : ActionBaseTargetAction
 	{
-		// Token: 0x0600C8F0 RID: 51440 RVA: 0x0049C680 File Offset: 0x0049A880
+		// Token: 0x0600CA48 RID: 51784 RVA: 0x004A0B44 File Offset: 0x0049ED44
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 			this.BuffList = this.buffName.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600C8F1 RID: 51441 RVA: 0x0049C698 File Offset: 0x0049A898
+		// Token: 0x0600CA49 RID: 51785 RVA: 0x004A0B5C File Offset: 0x0049ED5C
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -31,7 +31,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8F2 RID: 51442 RVA: 0x0049C6F3 File Offset: 0x0049A8F3
+		// Token: 0x0600CA4A RID: 51786 RVA: 0x004A0BB7 File Offset: 0x0049EDB7
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8F3 RID: 51443 RVA: 0x0049C724 File Offset: 0x0049A924
+		// Token: 0x0600CA4B RID: 51787 RVA: 0x004A0BE8 File Offset: 0x0049EDE8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -53,15 +53,15 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009844 RID: 38980
+		// Token: 0x0400990A RID: 39178
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string buffName = "";
 
-		// Token: 0x04009845 RID: 38981
+		// Token: 0x0400990B RID: 39179
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] BuffList;
 
-		// Token: 0x04009846 RID: 38982
+		// Token: 0x0400990C RID: 39180
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffName = "buff_name";
 	}

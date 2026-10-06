@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.Profiling;
 
-// Token: 0x02000B53 RID: 2899
+// Token: 0x02000B65 RID: 2917
 public class LightProcessor : ILightProcessor
 {
-	// Token: 0x060057E5 RID: 22501 RVA: 0x00218ACD File Offset: 0x00216CCD
+	// Token: 0x060057FF RID: 22527 RVA: 0x0021BD59 File Offset: 0x00219F59
 	public LightProcessor(IChunkAccess _world)
 	{
 		this.m_World = _world;
 	}
 
-	// Token: 0x060057E6 RID: 22502 RVA: 0x00218AE8 File Offset: 0x00216CE8
+	// Token: 0x06005800 RID: 22528 RVA: 0x0021BD74 File Offset: 0x00219F74
 	public void GenerateSunlight(Chunk chunk, bool _isSpread)
 	{
 		for (int i = 0; i < 16; i++)
@@ -24,7 +24,7 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057E7 RID: 22503 RVA: 0x00218B1C File Offset: 0x00216D1C
+	// Token: 0x06005801 RID: 22529 RVA: 0x0021BDA8 File Offset: 0x00219FA8
 	public void LightChunk(Chunk c)
 	{
 		int maxHeight = (int)c.GetMaxHeight();
@@ -44,7 +44,7 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057E8 RID: 22504 RVA: 0x00218B78 File Offset: 0x00216D78
+	// Token: 0x06005802 RID: 22530 RVA: 0x0021BE04 File Offset: 0x0021A004
 	public void RefreshSunlightAtLocalPos(Chunk c, int x, int z, bool _isSpread)
 	{
 		bool flag = false;
@@ -94,7 +94,7 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057E9 RID: 22505 RVA: 0x00218C48 File Offset: 0x00216E48
+	// Token: 0x06005803 RID: 22531 RVA: 0x0021BED4 File Offset: 0x0021A0D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte GetLightAt(int worldX, int worldY, int worldZ, Chunk.LIGHT_TYPE type)
 	{
@@ -106,7 +106,7 @@ public class LightProcessor : ILightProcessor
 		return 0;
 	}
 
-	// Token: 0x060057EA RID: 22506 RVA: 0x00218C84 File Offset: 0x00216E84
+	// Token: 0x06005804 RID: 22532 RVA: 0x0021BF10 File Offset: 0x0021A110
 	public byte RefreshLightAtLocalPos(Chunk c, int x, int y, int z, Chunk.LIGHT_TYPE type)
 	{
 		byte b = 0;
@@ -139,7 +139,7 @@ public class LightProcessor : ILightProcessor
 		return b;
 	}
 
-	// Token: 0x060057EB RID: 22507 RVA: 0x00218D94 File Offset: 0x00216F94
+	// Token: 0x06005805 RID: 22533 RVA: 0x0021C020 File Offset: 0x0021A220
 	public void UnspreadLight(Chunk c, int x, int y, int z, byte lightValue, Chunk.LIGHT_TYPE type)
 	{
 		this.brightSpots.Clear();
@@ -155,7 +155,7 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057EC RID: 22508 RVA: 0x00218E70 File Offset: 0x00217070
+	// Token: 0x06005806 RID: 22534 RVA: 0x0021C0FC File Offset: 0x0021A2FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UnspreadLight(Chunk _chunk, int _blockX, int _blockY, int _blockZ, byte _lightValue, int depth, Chunk.LIGHT_TYPE type, List<Vector3i> brightSpots)
 	{
@@ -197,14 +197,14 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057ED RID: 22509 RVA: 0x00218F98 File Offset: 0x00217198
+	// Token: 0x06005807 RID: 22535 RVA: 0x0021C224 File Offset: 0x0021A424
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void SpreadLight(Chunk c, int blockX, int blockY, int blockZ, byte lightValue, Chunk.LIGHT_TYPE type, bool bSetAtStarterPos = true)
 	{
 		this.SpreadLight(c, blockX, blockY, blockZ, lightValue, 0, type, bSetAtStarterPos);
 	}
 
-	// Token: 0x060057EE RID: 22510 RVA: 0x00218FB8 File Offset: 0x002171B8
+	// Token: 0x06005808 RID: 22536 RVA: 0x0021C244 File Offset: 0x0021A444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpreadLight(Chunk _chunk, int _blockX, int _blockY, int _blockZ, byte _lightValue, int depth, Chunk.LIGHT_TYPE type, bool bSetAtStarterPos = true)
 	{
@@ -250,7 +250,7 @@ public class LightProcessor : ILightProcessor
 		}
 	}
 
-	// Token: 0x060057EF RID: 22511 RVA: 0x002190C0 File Offset: 0x002172C0
+	// Token: 0x06005809 RID: 22537 RVA: 0x0021C34C File Offset: 0x0021A54C
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public byte CalcNextLightStep(byte _currentLight, int _id)
@@ -260,19 +260,19 @@ public class LightProcessor : ILightProcessor
 		return (byte)((num >= 0) ? num : 0);
 	}
 
-	// Token: 0x040043E2 RID: 17378
+	// Token: 0x04004420 RID: 17440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IChunkAccess m_World;
 
-	// Token: 0x040043E3 RID: 17379
+	// Token: 0x04004421 RID: 17441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<Vector3i> brightSpots = new List<Vector3i>();
 
-	// Token: 0x040043E4 RID: 17380
+	// Token: 0x04004422 RID: 17442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ProfilerMarker pmSpreadLight = new ProfilerMarker("LightProcessor SpreadLight");
 
-	// Token: 0x040043E5 RID: 17381
+	// Token: 0x04004423 RID: 17443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ProfilerMarker pmUnspreadLight = new ProfilerMarker("LightProcessor UnspreadLight");
 }

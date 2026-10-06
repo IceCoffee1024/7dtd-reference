@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000274 RID: 628
+// Token: 0x02000277 RID: 631
 [Preserve]
 public class ConsoleCmdRegionReset : ConsoleCmdAbstract
 {
-	// Token: 0x0600129B RID: 4763 RVA: 0x0007429C File Offset: 0x0007249C
+	// Token: 0x06001298 RID: 4760 RVA: 0x00074550 File Offset: 0x00072750
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "regionreset", "rr" };
 	}
 
-	// Token: 0x0600129C RID: 4764 RVA: 0x000742B4 File Offset: 0x000724B4
+	// Token: 0x06001299 RID: 4761 RVA: 0x00074568 File Offset: 0x00072768
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Resets chunks within a target region, or for the entire map.";
 	}
 
-	// Token: 0x0600129D RID: 4765 RVA: 0x000742BB File Offset: 0x000724BB
+	// Token: 0x0600129A RID: 4762 RVA: 0x0007456F File Offset: 0x0007276F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage: rr [-p|-pmode <n>] [-g|-gmode <n>] [-r|-region <x> <z>]\n\nExamples: \n'rr' - reset all unprotected chunks in all regions (defaults).\n'rr -p 2' - all regions, protection mode 2.\n'rr -r 1 -2' - only region (1,-2), default modes.\n'rr -r 1 -2 -p 0 -g 3' - region (1,-2) with protection mode 0 and grouping mode 3.\n\nProtection modes (-p|-pmode, default 0): \n'0' - Default: All protection statuses are respected, including the dynamic protection of synced chunks around active player position(s).\n'1' - EXPERIMENTAL: Most protection statuses are respected, excepting the dynamic protection of synced chunks around active player position(s). Chunks whose *only* protection status is \"CurrentlySynced\" will be treated as unprotected and are subject to being reset.\n'2' - EXPERIMENTAL: All protection statuses are ignored. Every chunk in the target area will be reset whether protected or not.\n'3' - EXPERIMENTAL: Most protection statuses are ignored, excepting the dynamic protection of synced chunks around active player position(s). Chunks whose protection status includes \"CurrentlySynced\" will be treated as protected; all other chunks are subject to being reset.\n\nGrouping modes (-g|-gmode, default 3): \n'1' - NoGrouping: Chunks are reset based on their own protection flags only.\n'2' - SeparatePOIs: Each POI gets the combined protection flags from all chunks overlapping the POI.\n'3' - GroupedPOIs: Like SeparatePOIs, but POIs with overlapping chunks also merge into groups. Standard reset; should not cause POI discontinuities.\n\nNotes: \n - Use with caution! This operation permanently deletes all saved data for affected chunks.\n - The experimental protection modes are provided for debug purposes only. They bypass various protections in order to force chunks to be reset. This can cause a significant hitch whilst any synced chunks are regenerated, and may cause other side effects such as failing to clean up nav markers for land claims, etc.";
 	}
 
-	// Token: 0x0600129E RID: 4766 RVA: 0x000742C4 File Offset: 0x000724C4
+	// Token: 0x0600129B RID: 4763 RVA: 0x00074578 File Offset: 0x00072778
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ChunkProtectionLevel chunkProtectionLevel;

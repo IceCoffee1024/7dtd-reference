@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EBE RID: 3774
+// Token: 0x02000ECD RID: 3789
 [Preserve]
 public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 {
-	// Token: 0x17000DE0 RID: 3552
-	// (get) Token: 0x060075E3 RID: 30179 RVA: 0x002C3E6F File Offset: 0x002C206F
-	// (set) Token: 0x060075E4 RID: 30180 RVA: 0x002C3E78 File Offset: 0x002C2078
+	// Token: 0x17000DFB RID: 3579
+	// (get) Token: 0x060075DB RID: 30171 RVA: 0x002C7227 File Offset: 0x002C5427
+	// (set) Token: 0x060075DC RID: 30172 RVA: 0x002C7230 File Offset: 0x002C5430
 	public EntityUINotification Notification
 	{
 		get
@@ -38,12 +38,12 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000DE1 RID: 3553
-	// (get) Token: 0x060075E5 RID: 30181 RVA: 0x002C3F66 File Offset: 0x002C2166
-	// (set) Token: 0x060075E6 RID: 30182 RVA: 0x002C3F6E File Offset: 0x002C216E
+	// Token: 0x17000DFC RID: 3580
+	// (get) Token: 0x060075DD RID: 30173 RVA: 0x002C731E File Offset: 0x002C551E
+	// (set) Token: 0x060075DE RID: 30174 RVA: 0x002C7326 File Offset: 0x002C5526
 	public XUiC_BuffInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x060075E7 RID: 30183 RVA: 0x002C3F78 File Offset: 0x002C2178
+	// Token: 0x060075DF RID: 30175 RVA: 0x002C7330 File Offset: 0x002C5530
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -58,7 +58,7 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060075E8 RID: 30184 RVA: 0x002C3FF4 File Offset: 0x002C21F4
+	// Token: 0x060075E0 RID: 30176 RVA: 0x002C73AC File Offset: 0x002C55AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -92,7 +92,7 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		return true;
 	}
 
-	// Token: 0x060075E9 RID: 30185 RVA: 0x002C4134 File Offset: 0x002C2334
+	// Token: 0x060075E1 RID: 30177 RVA: 0x002C74EC File Offset: 0x002C56EC
 	public override void Init()
 	{
 		base.Init();
@@ -101,7 +101,7 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060075EA RID: 30186 RVA: 0x002C4170 File Offset: 0x002C2370
+	// Token: 0x060075E2 RID: 30178 RVA: 0x002C7528 File Offset: 0x002C5728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -127,7 +127,7 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060075EB RID: 30187 RVA: 0x002C41BC File Offset: 0x002C23BC
+	// Token: 0x060075E3 RID: 30179 RVA: 0x002C7574 File Offset: 0x002C5774
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -145,7 +145,7 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x060075EC RID: 30188 RVA: 0x002C422D File Offset: 0x002C242D
+	// Token: 0x060075E4 RID: 30180 RVA: 0x002C75E5 File Offset: 0x002C57E5
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -153,25 +153,25 @@ public class XUiC_ActiveBuffEntry : XUiC_SelectableEntry
 		base.Update(_dt);
 	}
 
-	// Token: 0x060075ED RID: 30189 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x060075E5 RID: 30181 RVA: 0x0008A995 File Offset: 0x00088B95
 	public void Refresh()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x04005731 RID: 22321
+	// Token: 0x04005768 RID: 22376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04005732 RID: 22322
+	// Token: 0x04005769 RID: 22377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buffName = "";
 
-	// Token: 0x04005733 RID: 22323
+	// Token: 0x0400576A RID: 22378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityUINotification notification;
 
-	// Token: 0x04005734 RID: 22324
+	// Token: 0x0400576B RID: 22379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BuffValue overridenBuff;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020012C0 RID: 4800
+// Token: 0x020012E0 RID: 4832
 public static class ProjectileManager
 {
-	// Token: 0x06009850 RID: 38992 RVA: 0x0039B3C5 File Offset: 0x003995C5
+	// Token: 0x060098FD RID: 39165 RVA: 0x0039FFF5 File Offset: 0x0039E1F5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void init()
 	{
@@ -16,7 +16,7 @@ public static class ProjectileManager
 		Origin.Add(ProjectileManager.blockHitParent, 0);
 	}
 
-	// Token: 0x06009851 RID: 38993 RVA: 0x0039B400 File Offset: 0x00399600
+	// Token: 0x060098FE RID: 39166 RVA: 0x003A0030 File Offset: 0x0039E230
 	public static void Update()
 	{
 		if (ProjectileManager.projectiles == null)
@@ -43,7 +43,7 @@ public static class ProjectileManager
 		ProjectileManager.keysToRemove.Clear();
 	}
 
-	// Token: 0x06009852 RID: 38994 RVA: 0x0039B520 File Offset: 0x00399720
+	// Token: 0x060098FF RID: 39167 RVA: 0x003A0150 File Offset: 0x0039E350
 	public static void Cleanup()
 	{
 		ProjectileManager.keysToRemove = new List<int>();
@@ -61,8 +61,8 @@ public static class ProjectileManager
 		}
 	}
 
-	// Token: 0x06009853 RID: 38995 RVA: 0x0039B59C File Offset: 0x0039979C
-	public static int AddProjectileItem(Transform _transform = null, int _pId = -1, Vector3 _position = default(Vector3), Vector3 _movementLastFrame = default(Vector3), int _itemValueType = -1)
+	// Token: 0x06009900 RID: 39168 RVA: 0x003A01CC File Offset: 0x0039E3CC
+	public static int AddProjectileItem(Transform _transform, int _pId = -1, Vector3 _position = default(Vector3), Vector3 _movementLastFrame = default(Vector3), int _itemValueType = -1)
 	{
 		if (ProjectileManager.projectiles == null)
 		{
@@ -73,10 +73,6 @@ public static class ProjectileManager
 		{
 			_pId = ProjectileManager.nextId;
 			ProjectileManager.nextId++;
-		}
-		if (_transform == null && _itemValueType != -1)
-		{
-			_transform = ProjectileManager.instantiateProjectile(_pId, _itemValueType);
 		}
 		float num = ItemClass.GetForId(_itemValueType).StickyOffset;
 		Renderer renderer = _transform.GetComponent<Renderer>();
@@ -206,7 +202,7 @@ public static class ProjectileManager
 		return _pId;
 	}
 
-	// Token: 0x06009854 RID: 38996 RVA: 0x0039BA70 File Offset: 0x00399C70
+	// Token: 0x06009901 RID: 39169 RVA: 0x003A0688 File Offset: 0x0039E888
 	public static bool RemoveProjectile(int _id, bool revive = false)
 	{
 		if (ProjectileManager.projectiles == null)
@@ -258,7 +254,7 @@ public static class ProjectileManager
 		return true;
 	}
 
-	// Token: 0x06009855 RID: 38997 RVA: 0x0039BB60 File Offset: 0x00399D60
+	// Token: 0x06009902 RID: 39170 RVA: 0x003A0778 File Offset: 0x0039E978
 	public static Transform GetProjectile(int _id)
 	{
 		Transform transform = null;
@@ -269,35 +265,19 @@ public static class ProjectileManager
 		return transform;
 	}
 
-	// Token: 0x06009856 RID: 38998 RVA: 0x0039BBAC File Offset: 0x00399DAC
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static Transform instantiateProjectile(int _id, int _itemValueType)
-	{
-		ItemClass forId = ItemClass.GetForId(_itemValueType);
-		if (forId == null)
-		{
-			return null;
-		}
-		ItemValue itemValue = new ItemValue(forId.Id, false);
-		Transform transform = forId.CloneModel(GameManager.Instance.World, itemValue, Vector3.zero, null, BlockShape.MeshPurpose.World, default(TextureFullArray));
-		Utils.SetLayerRecursively(transform.gameObject, 13);
-		transform.gameObject.SetActive(true);
-		return transform;
-	}
-
-	// Token: 0x0400726B RID: 29291
+	// Token: 0x040072E6 RID: 29414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int nextId;
 
-	// Token: 0x0400726C RID: 29292
+	// Token: 0x040072E7 RID: 29415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DictionaryKeyValueList<int, Transform> projectiles;
 
-	// Token: 0x0400726D RID: 29293
+	// Token: 0x040072E8 RID: 29416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> keysToRemove;
 
-	// Token: 0x0400726E RID: 29294
+	// Token: 0x040072E9 RID: 29417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform blockHitParent;
 }

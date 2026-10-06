@@ -2,11 +2,11 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-// Token: 0x020014C2 RID: 5314
+// Token: 0x020014E4 RID: 5348
 public class TextEllipsisAnimator
 {
-	// Token: 0x17001397 RID: 5015
-	// (get) Token: 0x0600A6F8 RID: 42744 RVA: 0x003E135A File Offset: 0x003DF55A
+	// Token: 0x170013DC RID: 5084
+	// (get) Token: 0x0600A7AB RID: 42923 RVA: 0x003E61AE File Offset: 0x003E43AE
 	public int animationStates
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,7 +20,7 @@ public class TextEllipsisAnimator
 		}
 	}
 
-	// Token: 0x0600A6F9 RID: 42745 RVA: 0x003E1368 File Offset: 0x003DF568
+	// Token: 0x0600A7AC RID: 42924 RVA: 0x003E61BC File Offset: 0x003E43BC
 	public TextEllipsisAnimator(string _input, UILabel _uiLabel)
 	{
 		this.uiLabel = _uiLabel;
@@ -29,7 +29,7 @@ public class TextEllipsisAnimator
 		this.Init(_input);
 	}
 
-	// Token: 0x0600A6FA RID: 42746 RVA: 0x003E13E8 File Offset: 0x003DF5E8
+	// Token: 0x0600A7AD RID: 42925 RVA: 0x003E623C File Offset: 0x003E443C
 	public TextEllipsisAnimator(string _input, XUiV_Label _label, UILabel _uiLabel)
 	{
 		this.uiLabel = _uiLabel;
@@ -39,7 +39,7 @@ public class TextEllipsisAnimator
 		this.Init(_input);
 	}
 
-	// Token: 0x0600A6FB RID: 42747 RVA: 0x003E1470 File Offset: 0x003DF670
+	// Token: 0x0600A7AE RID: 42926 RVA: 0x003E62C4 File Offset: 0x003E44C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init(string _input)
 	{
@@ -52,7 +52,7 @@ public class TextEllipsisAnimator
 		this.SetBaseString(_input, TextEllipsisAnimator.AnimationMode.All);
 	}
 
-	// Token: 0x0600A6FC RID: 42748 RVA: 0x003E14C8 File Offset: 0x003DF6C8
+	// Token: 0x0600A7AF RID: 42927 RVA: 0x003E631C File Offset: 0x003E451C
 	public void GetNextAnimatedString(float _dt)
 	{
 		if (this.totalEllipsis == 0 || this.baseString == null || this.uiLabel == null)
@@ -68,7 +68,7 @@ public class TextEllipsisAnimator
 		}
 	}
 
-	// Token: 0x0600A6FD RID: 42749 RVA: 0x003E1538 File Offset: 0x003DF738
+	// Token: 0x0600A7B0 RID: 42928 RVA: 0x003E638C File Offset: 0x003E458C
 	public void SetBaseString(string _input, TextEllipsisAnimator.AnimationMode _mode = TextEllipsisAnimator.AnimationMode.All)
 	{
 		if (_input == null || this.uiLabel == null || (this.xuiLabel != null && !this.xuiLabel.SupportBbCode) || _mode == TextEllipsisAnimator.AnimationMode.Off)
@@ -219,7 +219,7 @@ public class TextEllipsisAnimator
 		this.UpdateLabel();
 	}
 
-	// Token: 0x0600A6FE RID: 42750 RVA: 0x003E1AFC File Offset: 0x003DFCFC
+	// Token: 0x0600A7B1 RID: 42929 RVA: 0x003E6950 File Offset: 0x003E4B50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLabel()
 	{
@@ -257,89 +257,89 @@ public class TextEllipsisAnimator
 		}
 	}
 
-	// Token: 0x0600A6FF RID: 42751 RVA: 0x003E1BF4 File Offset: 0x003DFDF4
+	// Token: 0x0600A7B2 RID: 42930 RVA: 0x003E6A48 File Offset: 0x003E4C48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsHexDigit(char c)
 	{
 		return char.IsDigit(c) || (char.ToLower(c) >= 'a' && char.ToLower(c) <= 'f');
 	}
 
-	// Token: 0x04007BDD RID: 31709
+	// Token: 0x04007C60 RID: 31840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] ellipsisEndings = new string[] { "[00]...", ".[00]..", "..[00].", "..." };
 
-	// Token: 0x04007BDE RID: 31710
+	// Token: 0x04007C61 RID: 31841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] ellipsisEndingsChinese = new string[] { "[00]……", "…[00]…", "……" };
 
-	// Token: 0x04007BDF RID: 31711
+	// Token: 0x04007C62 RID: 31842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isChinese;
 
-	// Token: 0x04007BE0 RID: 31712
+	// Token: 0x04007C63 RID: 31843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string lastEllipsisState;
 
-	// Token: 0x04007BE1 RID: 31713
+	// Token: 0x04007C64 RID: 31844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Regex ellipsisBreakPatternEastern = null;
 
-	// Token: 0x04007BE2 RID: 31714
+	// Token: 0x04007C65 RID: 31845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex ellipsisBreakPattern = new Regex("(\\b\\w+\\b)(\\n\\.\\.\\.|\\.\\n\\.\\.|\\.\\.\\n\\.)");
 
-	// Token: 0x04007BE3 RID: 31715
+	// Token: 0x04007C66 RID: 31846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char ellipsisChar = '…';
 
-	// Token: 0x04007BE4 RID: 31716
+	// Token: 0x04007C67 RID: 31847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label xuiLabel;
 
-	// Token: 0x04007BE5 RID: 31717
+	// Token: 0x04007C68 RID: 31848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UILabel uiLabel;
 
-	// Token: 0x04007BE6 RID: 31718
+	// Token: 0x04007C69 RID: 31849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentEllipsisState;
 
-	// Token: 0x04007BE7 RID: 31719
+	// Token: 0x04007C6A RID: 31850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ellipsisTimer;
 
-	// Token: 0x04007BE8 RID: 31720
+	// Token: 0x04007C6B RID: 31851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cycles;
 
-	// Token: 0x04007BE9 RID: 31721
+	// Token: 0x04007C6C RID: 31852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string baseString;
 
-	// Token: 0x04007BEA RID: 31722
+	// Token: 0x04007C6D RID: 31853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalEllipsis;
 
-	// Token: 0x04007BEB RID: 31723
+	// Token: 0x04007C6E RID: 31854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] animatedStrings = new string[4];
 
-	// Token: 0x04007BEC RID: 31724
+	// Token: 0x04007C6F RID: 31855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string mostRecentAlphaBB = "[FF]";
 
-	// Token: 0x04007BED RID: 31725
+	// Token: 0x04007C70 RID: 31856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StringBuilder sb;
 
-	// Token: 0x020014C3 RID: 5315
+	// Token: 0x020014E5 RID: 5349
 	public enum AnimationMode
 	{
-		// Token: 0x04007BEF RID: 31727
+		// Token: 0x04007C72 RID: 31858
 		Off,
-		// Token: 0x04007BF0 RID: 31728
+		// Token: 0x04007C73 RID: 31859
 		Final,
-		// Token: 0x04007BF1 RID: 31729
+		// Token: 0x04007C74 RID: 31860
 		All
 	}
 }

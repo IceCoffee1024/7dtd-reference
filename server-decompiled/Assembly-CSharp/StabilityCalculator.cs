@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000AF5 RID: 2805
+// Token: 0x02000B07 RID: 2823
 public class StabilityCalculator
 {
-	// Token: 0x06005392 RID: 21394 RVA: 0x001FECB0 File Offset: 0x001FCEB0
+	// Token: 0x060053AB RID: 21419 RVA: 0x00201F10 File Offset: 0x00200110
 	public void Init(WorldBase _world)
 	{
 		this.bRunning = true;
@@ -19,7 +19,7 @@ public class StabilityCalculator
 		ThreadManager.StartCoroutine(this.ienumCoroutine);
 	}
 
-	// Token: 0x06005393 RID: 21395 RVA: 0x001FED08 File Offset: 0x001FCF08
+	// Token: 0x060053AC RID: 21420 RVA: 0x00201F68 File Offset: 0x00200168
 	public void Cleanup()
 	{
 		this.bRunning = false;
@@ -31,7 +31,7 @@ public class StabilityCalculator
 		this.channelCalculator = null;
 	}
 
-	// Token: 0x06005394 RID: 21396 RVA: 0x001FED34 File Offset: 0x001FCF34
+	// Token: 0x060053AD RID: 21421 RVA: 0x00201F94 File Offset: 0x00200194
 	public void BlockRemovedAt(Vector3i _pos)
 	{
 		if (_pos.y >= 255)
@@ -78,7 +78,7 @@ public class StabilityCalculator
 		}
 	}
 
-	// Token: 0x06005395 RID: 21397 RVA: 0x001FEEB4 File Offset: 0x001FD0B4
+	// Token: 0x060053AE RID: 21422 RVA: 0x00202114 File Offset: 0x00200314
 	public void BlockPlacedAt(Vector3i _pos, bool _bForceFullStabe = false)
 	{
 		this.channelCalculator.BlockPlacedAt(_pos, _bForceFullStabe);
@@ -92,7 +92,7 @@ public class StabilityCalculator
 		}
 	}
 
-	// Token: 0x06005396 RID: 21398 RVA: 0x001FEEF0 File Offset: 0x001FD0F0
+	// Token: 0x060053AF RID: 21423 RVA: 0x00202150 File Offset: 0x00200350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void physicsIsolation(Vector3i _pos)
 	{
@@ -136,7 +136,7 @@ public class StabilityCalculator
 		}
 	}
 
-	// Token: 0x06005397 RID: 21399 RVA: 0x001FF06D File Offset: 0x001FD26D
+	// Token: 0x060053B0 RID: 21424 RVA: 0x002022CD File Offset: 0x002004CD
 	public static float GetBlockStability(Vector3i _pos)
 	{
 		float blockStability = StabilityCalculator.GetBlockStability(_pos, BlockValue.Air);
@@ -146,7 +146,7 @@ public class StabilityCalculator
 		return blockStability;
 	}
 
-	// Token: 0x06005398 RID: 21400 RVA: 0x001FF098 File Offset: 0x001FD298
+	// Token: 0x060053B1 RID: 21425 RVA: 0x002022F8 File Offset: 0x002004F8
 	public static float GetBlockStabilityIfPlaced(Vector3i _pos, BlockValue _bv)
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -221,7 +221,7 @@ public class StabilityCalculator
 		return num2;
 	}
 
-	// Token: 0x06005399 RID: 21401 RVA: 0x001FF308 File Offset: 0x001FD508
+	// Token: 0x060053B2 RID: 21426 RVA: 0x00202568 File Offset: 0x00200768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetBlockStability(Vector3i _pos, BlockValue _newBV)
 	{
@@ -351,7 +351,7 @@ public class StabilityCalculator
 		return 1f - num5;
 	}
 
-	// Token: 0x0600539A RID: 21402 RVA: 0x001FF648 File Offset: 0x001FD848
+	// Token: 0x060053B3 RID: 21427 RVA: 0x002028A8 File Offset: 0x00200AA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> CalcPhysicsStabilityToFall(Vector3i _pos, int maxBlocksToCheck, out float calculatedStability)
 	{
@@ -444,14 +444,14 @@ public class StabilityCalculator
 		return list;
 	}
 
-	// Token: 0x0600539B RID: 21403 RVA: 0x001FF938 File Offset: 0x001FDB38
+	// Token: 0x060053B4 RID: 21428 RVA: 0x00202B98 File Offset: 0x00200D98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addToFallingBlocks(IList<Vector3i> _list)
 	{
 		StabilityCalculator.world.AddFallingBlocks(_list);
 	}
 
-	// Token: 0x0600539C RID: 21404 RVA: 0x001FF948 File Offset: 0x001FDB48
+	// Token: 0x060053B5 RID: 21429 RVA: 0x00202BA8 File Offset: 0x00200DA8
 	public void ClearChunkStabilityQueues(HashSetLong chunks)
 	{
 		this.resetTempPositions.Clear();
@@ -479,118 +479,118 @@ public class StabilityCalculator
 		this.resetTempPositions.Clear();
 	}
 
-	// Token: 0x0400414D RID: 16717
+	// Token: 0x0400418A RID: 16778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WorldBase world;
 
-	// Token: 0x0400414E RID: 16718
+	// Token: 0x0400418B RID: 16779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChannelCalculator channelCalculator;
 
-	// Token: 0x0400414F RID: 16719
+	// Token: 0x0400418C RID: 16780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bRunning;
 
-	// Token: 0x04004150 RID: 16720
+	// Token: 0x0400418D RID: 16781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ienumCoroutine;
 
-	// Token: 0x04004151 RID: 16721
+	// Token: 0x0400418E RID: 16782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int maxIterations = 20;
 
-	// Token: 0x04004152 RID: 16722
+	// Token: 0x0400418F RID: 16783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updatePeriod = 0.1f;
 
-	// Token: 0x04004153 RID: 16723
+	// Token: 0x04004190 RID: 16784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int isolatedBlockLimit = 1000;
 
-	// Token: 0x04004154 RID: 16724
+	// Token: 0x04004191 RID: 16785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int stabilityQueueLimit = 200;
 
-	// Token: 0x04004155 RID: 16725
+	// Token: 0x04004192 RID: 16786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int updateTimeLimit = 3000;
 
-	// Token: 0x04004156 RID: 16726
+	// Token: 0x04004193 RID: 16787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> queueStabilityAvail;
 
-	// Token: 0x04004157 RID: 16727
+	// Token: 0x04004194 RID: 16788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> queueStabilityEmpty;
 
-	// Token: 0x04004158 RID: 16728
+	// Token: 0x04004195 RID: 16789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> stab0Positions = new HashSet<Vector3i>();
 
-	// Token: 0x04004159 RID: 16729
+	// Token: 0x04004196 RID: 16790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> hashSetIsolation = new HashSet<Vector3i>();
 
-	// Token: 0x0400415A RID: 16730
+	// Token: 0x04004197 RID: 16791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> hashSetProcessed = new HashSet<Vector3i>();
 
-	// Token: 0x0400415B RID: 16731
+	// Token: 0x04004198 RID: 16792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> queueIsolation = new Queue<Vector3i>();
 
-	// Token: 0x0400415C RID: 16732
+	// Token: 0x04004199 RID: 16793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<Vector3i> posChecked = new HashSet<Vector3i>();
 
-	// Token: 0x0400415D RID: 16733
+	// Token: 0x0400419A RID: 16794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3i> posToCheck = new List<Vector3i>(6);
 
-	// Token: 0x0400415E RID: 16734
+	// Token: 0x0400419B RID: 16795
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3i> posToCheckNext = new List<Vector3i>(6);
 
-	// Token: 0x0400415F RID: 16735
+	// Token: 0x0400419C RID: 16796
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<Vector3i, int> posPlaced = new Dictionary<Vector3i, int>(256);
 
-	// Token: 0x04004160 RID: 16736
+	// Token: 0x0400419D RID: 16797
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cInfiniteSupport = 100000;
 
-	// Token: 0x04004161 RID: 16737
+	// Token: 0x0400419E RID: 16798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSupportScale = 1.01f;
 
-	// Token: 0x04004162 RID: 16738
+	// Token: 0x0400419F RID: 16799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> unstablePositions = new HashSet<Vector3i>();
 
-	// Token: 0x04004163 RID: 16739
+	// Token: 0x040041A0 RID: 16800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> positionsToCheck = new Queue<Vector3i>();
 
-	// Token: 0x04004164 RID: 16740
+	// Token: 0x040041A1 RID: 16801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> uniqueUnstablePositions = new Queue<Vector3i>();
 
-	// Token: 0x04004165 RID: 16741
+	// Token: 0x040041A2 RID: 16802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> resetTempPositions = new List<Vector3i>();
 
-	// Token: 0x02000AF6 RID: 2806
+	// Token: 0x02000B08 RID: 2824
 	public class UpdatePhysics : IEnumerator<object>, IEnumerator, IDisposable
 	{
-		// Token: 0x0600539F RID: 21407 RVA: 0x001FFAE6 File Offset: 0x001FDCE6
+		// Token: 0x060053B8 RID: 21432 RVA: 0x00202D46 File Offset: 0x00200F46
 		public UpdatePhysics(StabilityCalculator _sp)
 		{
 			this.physicsCalculator = _sp;
 			this.sw = MicroStopwatch.a();
 		}
 
-		// Token: 0x1700090C RID: 2316
-		// (get) Token: 0x060053A0 RID: 21408 RVA: 0x001FFB00 File Offset: 0x001FDD00
+		// Token: 0x1700092E RID: 2350
+		// (get) Token: 0x060053B9 RID: 21433 RVA: 0x00202D60 File Offset: 0x00200F60
 		public object System.Collections.Generic.IEnumerator<System.Object>.Current
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -600,8 +600,8 @@ public class StabilityCalculator
 			}
 		}
 
-		// Token: 0x1700090D RID: 2317
-		// (get) Token: 0x060053A1 RID: 21409 RVA: 0x001FFB00 File Offset: 0x001FDD00
+		// Token: 0x1700092F RID: 2351
+		// (get) Token: 0x060053BA RID: 21434 RVA: 0x00202D60 File Offset: 0x00200F60
 		public object System.Collections.IEnumerator.Current
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -611,7 +611,7 @@ public class StabilityCalculator
 			}
 		}
 
-		// Token: 0x060053A2 RID: 21410 RVA: 0x001FFB08 File Offset: 0x001FDD08
+		// Token: 0x060053BB RID: 21435 RVA: 0x00202D68 File Offset: 0x00200F68
 		public bool MoveNext()
 		{
 			int num = this.state;
@@ -660,35 +660,35 @@ public class StabilityCalculator
 			return true;
 		}
 
-		// Token: 0x060053A3 RID: 21411 RVA: 0x001FFC94 File Offset: 0x001FDE94
+		// Token: 0x060053BC RID: 21436 RVA: 0x00202EF4 File Offset: 0x002010F4
 		public void Dispose()
 		{
 			this.state = -1;
 		}
 
-		// Token: 0x060053A4 RID: 21412 RVA: 0x00006566 File Offset: 0x00004766
+		// Token: 0x060053BD RID: 21437 RVA: 0x00006566 File Offset: 0x00004766
 		public void Reset()
 		{
 			throw new NotSupportedException();
 		}
 
-		// Token: 0x04004166 RID: 16742
+		// Token: 0x040041A3 RID: 16803
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MicroStopwatch sw;
 
-		// Token: 0x04004167 RID: 16743
+		// Token: 0x040041A4 RID: 16804
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3i curPosition;
 
-		// Token: 0x04004168 RID: 16744
+		// Token: 0x040041A5 RID: 16805
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int state;
 
-		// Token: 0x04004169 RID: 16745
+		// Token: 0x040041A6 RID: 16806
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object myEnumerator;
 
-		// Token: 0x0400416A RID: 16746
+		// Token: 0x040041A7 RID: 16807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StabilityCalculator physicsCalculator;
 	}

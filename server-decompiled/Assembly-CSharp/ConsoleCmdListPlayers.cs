@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Scripting;
 
-// Token: 0x02000237 RID: 567
+// Token: 0x0200023A RID: 570
 [Preserve]
 public class ConsoleCmdListPlayers : ConsoleCmdAbstract
 {
-	// Token: 0x06001110 RID: 4368 RVA: 0x0006C600 File Offset: 0x0006A800
+	// Token: 0x0600110D RID: 4365 RVA: 0x0006C8A8 File Offset: 0x0006AAA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "listplayers", "lp" };
 	}
 
-	// Token: 0x06001111 RID: 4369 RVA: 0x0006C618 File Offset: 0x0006A818
+	// Token: 0x0600110E RID: 4366 RVA: 0x0006C8C0 File Offset: 0x0006AAC0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		List<EntityPlayer> list = GameManager.Instance.World.Players.list;
@@ -82,7 +82,7 @@ public class ConsoleCmdListPlayers : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Total of " + list.Count.ToString() + " in the game");
 	}
 
-	// Token: 0x06001112 RID: 4370 RVA: 0x0006C88E File Offset: 0x0006AA8E
+	// Token: 0x0600110F RID: 4367 RVA: 0x0006CB36 File Offset: 0x0006AD36
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

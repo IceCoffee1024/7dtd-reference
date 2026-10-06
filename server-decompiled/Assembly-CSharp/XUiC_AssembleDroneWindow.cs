@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F28 RID: 3880
+// Token: 0x02000F37 RID: 3895
 [Preserve]
 public class XUiC_AssembleDroneWindow : XUiC_AssembleWindow
 {
-	// Token: 0x060079D0 RID: 31184 RVA: 0x00295FE1 File Offset: 0x002941E1
+	// Token: 0x060079CD RID: 31181 RVA: 0x0029936D File Offset: 0x0029756D
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000E3D RID: 3645
-	// (set) Token: 0x060079D1 RID: 31185 RVA: 0x002DE27B File Offset: 0x002DC47B
+	// Token: 0x17000E5A RID: 3674
+	// (set) Token: 0x060079CE RID: 31182 RVA: 0x002E1646 File Offset: 0x002DF846
 	public override ItemStack ItemStack
 	{
 		set
@@ -23,14 +23,14 @@ public class XUiC_AssembleDroneWindow : XUiC_AssembleWindow
 		}
 	}
 
-	// Token: 0x060079D2 RID: 31186 RVA: 0x002DE294 File Offset: 0x002DC494
+	// Token: 0x060079CF RID: 31183 RVA: 0x002E165F File Offset: 0x002DF85F
 	public override void OnChanged()
 	{
 		this.group.OnItemChanged(this.ItemStack);
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060079D3 RID: 31187 RVA: 0x002DE2B0 File Offset: 0x002DC4B0
+	// Token: 0x060079D0 RID: 31184 RVA: 0x002E167C File Offset: 0x002DF87C
 	public override void Init()
 	{
 		base.Init();
@@ -42,7 +42,7 @@ public class XUiC_AssembleDroneWindow : XUiC_AssembleWindow
 		}
 	}
 
-	// Token: 0x060079D4 RID: 31188 RVA: 0x002DE30C File Offset: 0x002DC50C
+	// Token: 0x060079D1 RID: 31185 RVA: 0x002E16D8 File Offset: 0x002DF8D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRepair_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -56,7 +56,7 @@ public class XUiC_AssembleDroneWindow : XUiC_AssembleWindow
 		}
 	}
 
-	// Token: 0x060079D5 RID: 31189 RVA: 0x002DE354 File Offset: 0x002DC554
+	// Token: 0x060079D2 RID: 31186 RVA: 0x002E1720 File Offset: 0x002DF920
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -75,14 +75,14 @@ public class XUiC_AssembleDroneWindow : XUiC_AssembleWindow
 		return true;
 	}
 
-	// Token: 0x04005A06 RID: 23046
+	// Token: 0x04005A3E RID: 23102
 	public XUiC_DroneWindowGroup group;
 
-	// Token: 0x04005A07 RID: 23047
+	// Token: 0x04005A3F RID: 23103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnRepair_Background;
 
-	// Token: 0x04005A08 RID: 23048
+	// Token: 0x04005A40 RID: 23104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> vehicleDurabilityFormatter = new CachedStringFormatter<int, int>((int _i1, int _i2) => string.Format("{0}/{1}", _i1, _i2));
 }

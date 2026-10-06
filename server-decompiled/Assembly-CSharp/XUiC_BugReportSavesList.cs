@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF1 RID: 3569
+// Token: 0x02000E00 RID: 3584
 [Preserve]
 public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEntry>
 {
-	// Token: 0x06006D3E RID: 27966 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006D36 RID: 27958 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RebuildList(bool _resetFilter = false)
 	{
 	}
 
-	// Token: 0x06006D3F RID: 27967 RVA: 0x002A755C File Offset: 0x002A575C
+	// Token: 0x06006D37 RID: 27959 RVA: 0x002AA8EC File Offset: 0x002A8AEC
 	public void RebuildList(IReadOnlyCollection<SaveInfoProvider.SaveEntryInfo> _saveEntryInfos, bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -24,11 +24,11 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x02000DF2 RID: 3570
+	// Token: 0x02000E01 RID: 3585
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_BugReportSavesList.ListEntry>
 	{
-		// Token: 0x06006D41 RID: 27969 RVA: 0x002A75D4 File Offset: 0x002A57D4
+		// Token: 0x06006D39 RID: 27961 RVA: 0x002AA964 File Offset: 0x002A8B64
 		public ListEntry(SaveInfoProvider.SaveEntryInfo _saveEntryInfo)
 		{
 			this.SaveEntryInfo = _saveEntryInfo;
@@ -39,7 +39,7 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			this.LastSaved = _saveEntryInfo.LastSaved;
 		}
 
-		// Token: 0x06006D42 RID: 27970 RVA: 0x002A762F File Offset: 0x002A582F
+		// Token: 0x06006D3A RID: 27962 RVA: 0x002AA9BF File Offset: 0x002A8BBF
 		public override int CompareTo(XUiC_BugReportSavesList.ListEntry _otherEntry)
 		{
 			if (_otherEntry != null)
@@ -49,37 +49,37 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			return 1;
 		}
 
-		// Token: 0x06006D43 RID: 27971 RVA: 0x002A7647 File Offset: 0x002A5847
+		// Token: 0x06006D3B RID: 27963 RVA: 0x002AA9D7 File Offset: 0x002A8BD7
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.SaveName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005348 RID: 21320
+		// Token: 0x0400537F RID: 21375
 		public readonly string SaveName;
 
-		// Token: 0x04005349 RID: 21321
+		// Token: 0x04005380 RID: 21376
 		public readonly string SaveDisplayName;
 
-		// Token: 0x0400534A RID: 21322
+		// Token: 0x04005381 RID: 21377
 		public readonly string WorldKey;
 
-		// Token: 0x0400534B RID: 21323
+		// Token: 0x04005382 RID: 21378
 		public readonly string SaveDirectory;
 
-		// Token: 0x0400534C RID: 21324
+		// Token: 0x04005383 RID: 21379
 		public readonly DateTime LastSaved;
 
-		// Token: 0x0400534D RID: 21325
+		// Token: 0x04005384 RID: 21380
 		public readonly SaveInfoProvider.SaveEntryInfo SaveEntryInfo;
 	}
 
-	// Token: 0x02000DF3 RID: 3571
+	// Token: 0x02000E02 RID: 3586
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_BugReportSavesList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006D44 RID: 27972 RVA: 0x002A7655 File Offset: 0x002A5855
+		// Token: 0x06006D3C RID: 27964 RVA: 0x002AA9E5 File Offset: 0x002A8BE5
 		[XuiXmlBinding("savename")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveName()
@@ -88,7 +88,7 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			return ((entryData != null) ? entryData.SaveDisplayName : null) ?? "";
 		}
 
-		// Token: 0x06006D45 RID: 27973 RVA: 0x002A7672 File Offset: 0x002A5872
+		// Token: 0x06006D3D RID: 27965 RVA: 0x002AAA02 File Offset: 0x002A8C02
 		[XuiXmlBinding("saveusesdatalimit")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingSaveUsesDataLimit()
@@ -96,7 +96,7 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			return this.entryData != null && PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional && this.entryData.SaveEntryInfo.StorageType.UsesDataLimit();
 		}
 
-		// Token: 0x06006D46 RID: 27974 RVA: 0x002A76A4 File Offset: 0x002A58A4
+		// Token: 0x06006D3E RID: 27966 RVA: 0x002AAA34 File Offset: 0x002A8C34
 		[XuiXmlBinding("worldname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingWorldName()
@@ -105,7 +105,7 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			return ((entryData != null) ? entryData.SaveEntryInfo.WorldEntry.Name : null) ?? "";
 		}
 
-		// Token: 0x06006D47 RID: 27975 RVA: 0x002A76CB File Offset: 0x002A58CB
+		// Token: 0x06006D3F RID: 27967 RVA: 0x002AAA5B File Offset: 0x002A8C5B
 		[XuiXmlBinding("worldusesdatalimit")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingWorldUsesDataLimit()
@@ -113,7 +113,7 @@ public class XUiC_BugReportSavesList : XUiC_List<XUiC_BugReportSavesList.ListEnt
 			return this.entryData != null && PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional && this.entryData.SaveEntryInfo.WorldEntry.Location.StorageType.UsesDataLimit();
 		}
 
-		// Token: 0x06006D48 RID: 27976 RVA: 0x002A7708 File Offset: 0x002A5908
+		// Token: 0x06006D40 RID: 27968 RVA: 0x002AAA98 File Offset: 0x002A8C98
 		[XuiXmlBinding("lastplayed")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayed()

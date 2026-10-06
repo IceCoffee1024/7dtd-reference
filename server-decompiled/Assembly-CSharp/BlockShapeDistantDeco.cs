@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A7 RID: 423
+// Token: 0x020001A8 RID: 424
 [Preserve]
 public class BlockShapeDistantDeco : BlockShapeModelEntity
 {
-	// Token: 0x06000CC9 RID: 3273 RVA: 0x00050708 File Offset: 0x0004E908
+	// Token: 0x06000CC0 RID: 3264 RVA: 0x0005070C File Offset: 0x0004E90C
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
 	}
 
-	// Token: 0x06000CCA RID: 3274 RVA: 0x00050711 File Offset: 0x0004E911
+	// Token: 0x06000CC1 RID: 3265 RVA: 0x00050715 File Offset: 0x0004E915
 	public override void OnBlockValueChanged(WorldBase _world, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (!DecoManager.Instance.IsEnabled)
@@ -22,7 +22,7 @@ public class BlockShapeDistantDeco : BlockShapeModelEntity
 		}
 	}
 
-	// Token: 0x06000CCB RID: 3275 RVA: 0x0005072B File Offset: 0x0004E92B
+	// Token: 0x06000CC2 RID: 3266 RVA: 0x0005072F File Offset: 0x0004E92F
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!DecoManager.Instance.IsEnabled)
@@ -37,7 +37,7 @@ public class BlockShapeDistantDeco : BlockShapeModelEntity
 		DecoManager.Instance.AddDecorationAt((World)_world, _blockValue, _blockPos, true);
 	}
 
-	// Token: 0x06000CCC RID: 3276 RVA: 0x00050768 File Offset: 0x0004E968
+	// Token: 0x06000CC3 RID: 3267 RVA: 0x0005076C File Offset: 0x0004E96C
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!DecoManager.Instance.IsEnabled)
@@ -47,7 +47,7 @@ public class BlockShapeDistantDeco : BlockShapeModelEntity
 		DecoManager.Instance.RemoveDecorationAt(_blockPos);
 	}
 
-	// Token: 0x06000CCD RID: 3277 RVA: 0x00050790 File Offset: 0x0004E990
+	// Token: 0x06000CC4 RID: 3268 RVA: 0x00050794 File Offset: 0x0004E994
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!DecoManager.Instance.IsEnabled)
@@ -65,7 +65,7 @@ public class BlockShapeDistantDeco : BlockShapeModelEntity
 		}
 	}
 
-	// Token: 0x06000CCE RID: 3278 RVA: 0x000507E0 File Offset: 0x0004E9E0
+	// Token: 0x06000CC5 RID: 3269 RVA: 0x000507E4 File Offset: 0x0004E9E4
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		if (!DecoManager.Instance.IsEnabled)

@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000520 RID: 1312
+// Token: 0x02000526 RID: 1318
 public class FactionManager
 {
-	// Token: 0x06002B37 RID: 11063 RVA: 0x00111568 File Offset: 0x0010F768
+	// Token: 0x06002B2D RID: 11053 RVA: 0x00112338 File Offset: 0x00110538
 	public void PrintData()
 	{
 		for (int i = 0; i < this.Factions.Length; i++)
@@ -17,13 +17,13 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B38 RID: 11064 RVA: 0x001115A4 File Offset: 0x0010F7A4
+	// Token: 0x06002B2E RID: 11054 RVA: 0x00112374 File Offset: 0x00110574
 	public static void Init()
 	{
 		FactionManager.Instance = new FactionManager();
 	}
 
-	// Token: 0x06002B39 RID: 11065 RVA: 0x001115B0 File Offset: 0x0010F7B0
+	// Token: 0x06002B2F RID: 11055 RVA: 0x00112380 File Offset: 0x00110580
 	public void Update()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer || GameManager.Instance.World == null || GameManager.Instance.World.Players == null || GameManager.Instance.World.Players.Count == 0 || GameManager.Instance.gameStateManager.IsGameStarted())
@@ -38,7 +38,7 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B3A RID: 11066 RVA: 0x00111654 File Offset: 0x0010F854
+	// Token: 0x06002B30 RID: 11056 RVA: 0x00112424 File Offset: 0x00110624
 	public FactionManager.Relationship GetRelationshipTier(EntityAlive checkingEntity, EntityAlive targetEntity)
 	{
 		if (checkingEntity == null || targetEntity == null)
@@ -69,7 +69,7 @@ public class FactionManager
 		return FactionManager.Relationship.Leader;
 	}
 
-	// Token: 0x06002B3B RID: 11067 RVA: 0x001116E8 File Offset: 0x0010F8E8
+	// Token: 0x06002B31 RID: 11057 RVA: 0x001124B8 File Offset: 0x001106B8
 	public Faction CreateFaction(string _name = "", bool _playerFaction = true, string _icon = "")
 	{
 		Faction faction = new Faction(_name, _playerFaction, _icon);
@@ -77,7 +77,7 @@ public class FactionManager
 		return faction;
 	}
 
-	// Token: 0x06002B3C RID: 11068 RVA: 0x00111708 File Offset: 0x0010F908
+	// Token: 0x06002B32 RID: 11058 RVA: 0x001124D8 File Offset: 0x001106D8
 	public void AddFaction(Faction _faction)
 	{
 		for (int i = (_faction.IsPlayerFaction ? 8 : 0); i < this.Factions.Length; i++)
@@ -91,19 +91,19 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B3D RID: 11069 RVA: 0x0011174F File Offset: 0x0010F94F
+	// Token: 0x06002B33 RID: 11059 RVA: 0x0011251F File Offset: 0x0011071F
 	public void RemoveFaction(byte _id)
 	{
 		this.Factions[(int)_id] = null;
 	}
 
-	// Token: 0x06002B3E RID: 11070 RVA: 0x0011175A File Offset: 0x0010F95A
+	// Token: 0x06002B34 RID: 11060 RVA: 0x0011252A File Offset: 0x0011072A
 	public Faction GetFaction(byte _id)
 	{
 		return this.Factions[(int)_id];
 	}
 
-	// Token: 0x06002B3F RID: 11071 RVA: 0x00111764 File Offset: 0x0010F964
+	// Token: 0x06002B35 RID: 11061 RVA: 0x00112534 File Offset: 0x00110734
 	public Faction GetFactionByName(string _name)
 	{
 		for (int i = 0; i < this.Factions.Length; i++)
@@ -116,7 +116,7 @@ public class FactionManager
 		return null;
 	}
 
-	// Token: 0x06002B40 RID: 11072 RVA: 0x001117A4 File Offset: 0x0010F9A4
+	// Token: 0x06002B36 RID: 11062 RVA: 0x00112574 File Offset: 0x00110774
 	public float GetRelationshipValue(EntityAlive checkingEntity, EntityAlive targetEntity)
 	{
 		if (checkingEntity == null || targetEntity == null)
@@ -134,7 +134,7 @@ public class FactionManager
 		return 400f;
 	}
 
-	// Token: 0x06002B41 RID: 11073 RVA: 0x00111819 File Offset: 0x0010FA19
+	// Token: 0x06002B37 RID: 11063 RVA: 0x001125E9 File Offset: 0x001107E9
 	public void SetRelationship(byte _myFaction, byte _targetFaction, sbyte _modification)
 	{
 		if (this.Factions[(int)_myFaction] != null)
@@ -143,7 +143,7 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B42 RID: 11074 RVA: 0x00111819 File Offset: 0x0010FA19
+	// Token: 0x06002B38 RID: 11064 RVA: 0x001125E9 File Offset: 0x001107E9
 	public void ModifyRelationship(byte _myFaction, byte _targetFaction, sbyte _modification)
 	{
 		if (this.Factions[(int)_myFaction] != null)
@@ -152,8 +152,8 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B43 RID: 11075 RVA: 0x00111838 File Offset: 0x0010FA38
-	public void Write(BinaryWriter _bw)
+	// Token: 0x06002B39 RID: 11065 RVA: 0x00112608 File Offset: 0x00110808
+	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(FactionManager.Version);
 		for (int i = 0; i < this.Factions.Length; i++)
@@ -166,8 +166,8 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B44 RID: 11076 RVA: 0x0011188C File Offset: 0x0010FA8C
-	public void Read(BinaryReader _br)
+	// Token: 0x06002B3A RID: 11066 RVA: 0x0011265C File Offset: 0x0011085C
+	public void Read(PooledBinaryReader _br)
 	{
 		_br.ReadByte();
 		for (int i = 0; i < 255; i++)
@@ -180,7 +180,7 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B45 RID: 11077 RVA: 0x001118D4 File Offset: 0x0010FAD4
+	// Token: 0x06002B3B RID: 11067 RVA: 0x001126A4 File Offset: 0x001108A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int saveFactionDataThreaded(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -200,7 +200,7 @@ public class FactionManager
 		return -1;
 	}
 
-	// Token: 0x06002B46 RID: 11078 RVA: 0x00111950 File Offset: 0x0010FB50
+	// Token: 0x06002B3C RID: 11068 RVA: 0x00112720 File Offset: 0x00110920
 	public void Save()
 	{
 		if (this.dataSaveThreadInfo == null || !ThreadManager.ActiveThreads.ContainsKey("factionDataSave"))
@@ -215,7 +215,7 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x06002B47 RID: 11079 RVA: 0x001119DC File Offset: 0x0010FBDC
+	// Token: 0x06002B3D RID: 11069 RVA: 0x001127AC File Offset: 0x001109AC
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "factions.dat");
@@ -250,47 +250,47 @@ public class FactionManager
 		}
 	}
 
-	// Token: 0x0400210C RID: 8460
+	// Token: 0x04002114 RID: 8468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SAVE_TIME_SEC = 60f;
 
-	// Token: 0x0400210D RID: 8461
+	// Token: 0x04002115 RID: 8469
 	public static FactionManager Instance;
 
-	// Token: 0x0400210E RID: 8462
+	// Token: 0x04002116 RID: 8470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte Version = 1;
 
-	// Token: 0x0400210F RID: 8463
+	// Token: 0x04002117 RID: 8471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Faction[] Factions = new Faction[255];
 
-	// Token: 0x04002110 RID: 8464
+	// Token: 0x04002118 RID: 8472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saveTime = 60f;
 
-	// Token: 0x04002111 RID: 8465
+	// Token: 0x04002119 RID: 8473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo dataSaveThreadInfo;
 
-	// Token: 0x04002112 RID: 8466
+	// Token: 0x0400211A RID: 8474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rel;
 
-	// Token: 0x02000521 RID: 1313
+	// Token: 0x02000527 RID: 1319
 	public enum Relationship
 	{
-		// Token: 0x04002114 RID: 8468
+		// Token: 0x0400211C RID: 8476
 		Hate,
-		// Token: 0x04002115 RID: 8469
+		// Token: 0x0400211D RID: 8477
 		Dislike = 200,
-		// Token: 0x04002116 RID: 8470
+		// Token: 0x0400211E RID: 8478
 		Neutral = 400,
-		// Token: 0x04002117 RID: 8471
+		// Token: 0x0400211F RID: 8479
 		Like = 600,
-		// Token: 0x04002118 RID: 8472
+		// Token: 0x04002120 RID: 8480
 		Love = 800,
-		// Token: 0x04002119 RID: 8473
+		// Token: 0x04002121 RID: 8481
 		Leader = 1001
 	}
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020009A6 RID: 2470
+// Token: 0x020009AC RID: 2476
 public class ObjectiveRallyPointData : MonoBehaviour
 {
-	// Token: 0x060048CB RID: 18635 RVA: 0x001C715C File Offset: 0x001C535C
+	// Token: 0x06004883 RID: 18563 RVA: 0x001C7ACC File Offset: 0x001C5CCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -45,13 +45,13 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		this.Root.SetActive(GameManager.Instance.World.IsEditor());
 	}
 
-	// Token: 0x060048CC RID: 18636 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004884 RID: 18564 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x060048CD RID: 18637 RVA: 0x001C72C8 File Offset: 0x001C54C8
+	// Token: 0x06004885 RID: 18565 RVA: 0x001C7C38 File Offset: 0x001C5E38
 	public void ClearAllFlags()
 	{
 		for (int i = 0; i < this.Flags.Length; i++)
@@ -61,7 +61,7 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		this.highlightFlag = -1;
 	}
 
-	// Token: 0x060048CE RID: 18638 RVA: 0x001C72F8 File Offset: 0x001C54F8
+	// Token: 0x06004886 RID: 18566 RVA: 0x001C7C68 File Offset: 0x001C5E68
 	public void AddFlag(string flagName, bool highLight)
 	{
 		for (int i = 0; i < this.Flags.Length; i++)
@@ -77,7 +77,7 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060048CF RID: 18639 RVA: 0x001C7348 File Offset: 0x001C5548
+	// Token: 0x06004887 RID: 18567 RVA: 0x001C7CB8 File Offset: 0x001C5EB8
 	public void RemoveFlag(string flagName)
 	{
 		for (int i = 0; i < this.Flags.Length; i++)
@@ -89,7 +89,7 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060048D0 RID: 18640 RVA: 0x001C739C File Offset: 0x001C559C
+	// Token: 0x06004888 RID: 18568 RVA: 0x001C7D0C File Offset: 0x001C5F0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRootActive(bool active)
 	{
@@ -104,7 +104,7 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060048D1 RID: 18641 RVA: 0x001C73DC File Offset: 0x001C55DC
+	// Token: 0x06004889 RID: 18569 RVA: 0x001C7D4C File Offset: 0x001C5F4C
 	public void UpdateAllFlags()
 	{
 		int i = 0;
@@ -149,7 +149,7 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060048D2 RID: 18642 RVA: 0x001C7538 File Offset: 0x001C5738
+	// Token: 0x0600488A RID: 18570 RVA: 0x001C7EA8 File Offset: 0x001C60A8
 	public GameObject GetFlagParentNode(int flagCount, int flagIndex)
 	{
 		if (flagCount >= 0 && flagCount < this.FlagParents.Length)
@@ -163,47 +163,47 @@ public class ObjectiveRallyPointData : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x040039FD RID: 14845
+	// Token: 0x040039FA RID: 14842
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] Flags;
 
-	// Token: 0x040039FE RID: 14846
+	// Token: 0x040039FB RID: 14843
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] FlagParents;
 
-	// Token: 0x040039FF RID: 14847
+	// Token: 0x040039FC RID: 14844
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject Root;
 
-	// Token: 0x04003A00 RID: 14848
+	// Token: 0x040039FD RID: 14845
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject HelperFlag;
 
-	// Token: 0x04003A01 RID: 14849
+	// Token: 0x040039FE RID: 14846
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject Highlight;
 
-	// Token: 0x04003A02 RID: 14850
+	// Token: 0x040039FF RID: 14847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<GameObject, List<GameObject>> flagNodes = new Dictionary<GameObject, List<GameObject>>();
 
-	// Token: 0x04003A03 RID: 14851
+	// Token: 0x04003A00 RID: 14848
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<GameObject, List<GameObject>> highlightNodes = new Dictionary<GameObject, List<GameObject>>();
 
-	// Token: 0x04003A04 RID: 14852
+	// Token: 0x04003A01 RID: 14849
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int[] flagCounts;
 
-	// Token: 0x04003A05 RID: 14853
+	// Token: 0x04003A02 RID: 14850
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int highlightFlag = -1;

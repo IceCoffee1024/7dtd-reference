@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x02001541 RID: 5441
+// Token: 0x02001563 RID: 5475
 [Preserve]
 public class vp_Attempt : vp_Event
 {
-	// Token: 0x0600AAF7 RID: 43767 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600ABAA RID: 43946 RVA: 0x00020119 File Offset: 0x0001E319
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool AlwaysOK()
 	{
 		return true;
 	}
 
-	// Token: 0x0600AAF8 RID: 43768 RVA: 0x003FC7B9 File Offset: 0x003FA9B9
+	// Token: 0x0600ABAB RID: 43947 RVA: 0x0040160D File Offset: 0x003FF80D
 	public vp_Attempt(string name)
 		: base(name)
 	{
 		this.InitFields();
 	}
 
-	// Token: 0x0600AAF9 RID: 43769 RVA: 0x003FC7C8 File Offset: 0x003FA9C8
+	// Token: 0x0600ABAC RID: 43948 RVA: 0x0040161C File Offset: 0x003FF81C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
 	{
@@ -33,24 +33,24 @@ public class vp_Attempt : vp_Event
 		this.Try = new vp_Attempt.Tryer(vp_Attempt.AlwaysOK);
 	}
 
-	// Token: 0x0600AAFA RID: 43770 RVA: 0x003FC85B File Offset: 0x003FAA5B
+	// Token: 0x0600ABAD RID: 43949 RVA: 0x004016AF File Offset: 0x003FF8AF
 	public override void Register(object t, string m, int v)
 	{
 		this.Try = (vp_Attempt.Tryer)Delegate.CreateDelegate(this.m_DelegateTypes[v], t, m);
 		base.Refresh();
 	}
 
-	// Token: 0x0600AAFB RID: 43771 RVA: 0x003FC87D File Offset: 0x003FAA7D
+	// Token: 0x0600ABAE RID: 43950 RVA: 0x004016D1 File Offset: 0x003FF8D1
 	public override void Unregister(object t)
 	{
 		this.Try = new vp_Attempt.Tryer(vp_Attempt.AlwaysOK);
 		base.Refresh();
 	}
 
-	// Token: 0x04007EFC RID: 32508
+	// Token: 0x04007F7F RID: 32639
 	public vp_Attempt.Tryer Try;
 
-	// Token: 0x02001542 RID: 5442
-	// (Invoke) Token: 0x0600AAFD RID: 43773
+	// Token: 0x02001564 RID: 5476
+	// (Invoke) Token: 0x0600ABB0 RID: 43952
 	public delegate bool Tryer();
 }

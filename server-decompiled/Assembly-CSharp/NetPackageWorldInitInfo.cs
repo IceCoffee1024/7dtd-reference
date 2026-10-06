@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200087A RID: 2170
+// Token: 0x0200087D RID: 2173
 [Preserve]
 public class NetPackageWorldInitInfo : NetPackage
 {
-	// Token: 0x17000698 RID: 1688
-	// (get) Token: 0x06003F4E RID: 16206 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x170006B7 RID: 1719
+	// (get) Token: 0x06003EE0 RID: 16096 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003F4F RID: 16207 RVA: 0x0018DFA0 File Offset: 0x0018C1A0
+	// Token: 0x06003EE1 RID: 16097 RVA: 0x0018DDB4 File Offset: 0x0018BFB4
 	public NetPackageWorldInitInfo Setup(List<PrefabInstance.Serializable> _eventPrefabs, List<ValueTuple<int, WallVolume>> _wallVolumes)
 	{
 		this.eventPrefabs = _eventPrefabs;
@@ -29,7 +29,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003F50 RID: 16208 RVA: 0x0018E028 File Offset: 0x0018C228
+	// Token: 0x06003EE2 RID: 16098 RVA: 0x0018DE3C File Offset: 0x0018C03C
 	public override void read(PooledBinaryReader _br)
 	{
 		if (this.eventPrefabs == null)
@@ -54,7 +54,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003F51 RID: 16209 RVA: 0x0018E0C4 File Offset: 0x0018C2C4
+	// Token: 0x06003EE3 RID: 16099 RVA: 0x0018DED8 File Offset: 0x0018C0D8
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -73,7 +73,7 @@ public class NetPackageWorldInitInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003F52 RID: 16210 RVA: 0x0018E194 File Offset: 0x0018C394
+	// Token: 0x06003EE4 RID: 16100 RVA: 0x0018DFA8 File Offset: 0x0018C1A8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -100,21 +100,15 @@ public class NetPackageWorldInitInfo : NetPackage
 		_callbacks.worldInitInfoReceived = true;
 	}
 
-	// Token: 0x06003F53 RID: 16211 RVA: 0x0018E234 File Offset: 0x0018C434
-	public override int GetLength()
-	{
-		return this.dataLength;
-	}
-
-	// Token: 0x04003339 RID: 13113
+	// Token: 0x04003324 RID: 13092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance.Serializable> eventPrefabs;
 
-	// Token: 0x0400333A RID: 13114
+	// Token: 0x04003325 RID: 13093
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ValueTuple<int, WallVolume>> wallVolumes;
 
-	// Token: 0x0400333B RID: 13115
+	// Token: 0x04003326 RID: 13094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dataLength;
 }

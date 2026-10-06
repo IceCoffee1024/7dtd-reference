@@ -3,10 +3,10 @@ using System.IO;
 
 namespace Webserver.FileCache
 {
-	// Token: 0x02001B09 RID: 6921
+	// Token: 0x02001B35 RID: 6965
 	public class DirectAccess : AbstractCache
 	{
-		// Token: 0x0600CFFC RID: 53244 RVA: 0x004BB704 File Offset: 0x004B9904
+		// Token: 0x0600D154 RID: 53588 RVA: 0x004BFBD0 File Offset: 0x004BDDD0
 		public override byte[] GetFileContent(string _filename)
 		{
 			try
@@ -20,7 +20,7 @@ namespace Webserver.FileCache
 			return null;
 		}
 
-		// Token: 0x0600CFFD RID: 53245 RVA: 0x004AF36C File Offset: 0x004AD56C
+		// Token: 0x0600D155 RID: 53589 RVA: 0x004B3838 File Offset: 0x004B1A38
 		public override ValueTuple<int, int> Invalidate()
 		{
 			return new ValueTuple<int, int>(0, 0);

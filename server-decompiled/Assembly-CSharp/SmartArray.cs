@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x020014A6 RID: 5286
+// Token: 0x020014C6 RID: 5318
 public class SmartArray
 {
-	// Token: 0x0600A5CC RID: 42444 RVA: 0x003DAC48 File Offset: 0x003D8E48
+	// Token: 0x0600A67A RID: 42618 RVA: 0x003DF8D4 File Offset: 0x003DDAD4
 	public SmartArray(int xPow, int yPow, int zPos)
 	{
 		this._lXPow = xPow;
@@ -15,7 +15,7 @@ public class SmartArray
 		this._array = new byte[this._halfSize];
 	}
 
-	// Token: 0x0600A5CD RID: 42445 RVA: 0x003DACB8 File Offset: 0x003D8EB8
+	// Token: 0x0600A67B RID: 42619 RVA: 0x003DF944 File Offset: 0x003DDB44
 	public void clear()
 	{
 		for (int i = 0; i < this._array.Length; i++)
@@ -24,19 +24,19 @@ public class SmartArray
 		}
 	}
 
-	// Token: 0x0600A5CE RID: 42446 RVA: 0x003DACE1 File Offset: 0x003D8EE1
+	// Token: 0x0600A67C RID: 42620 RVA: 0x003DF96D File Offset: 0x003DDB6D
 	public void write(BinaryWriter stream)
 	{
 		stream.Write(this._array);
 	}
 
-	// Token: 0x0600A5CF RID: 42447 RVA: 0x003DACEF File Offset: 0x003D8EEF
+	// Token: 0x0600A67D RID: 42621 RVA: 0x003DF97B File Offset: 0x003DDB7B
 	public void read(BinaryReader stream)
 	{
 		this._array = stream.ReadBytes(this._halfSize);
 	}
 
-	// Token: 0x0600A5D0 RID: 42448 RVA: 0x003DAD04 File Offset: 0x003D8F04
+	// Token: 0x0600A67E RID: 42622 RVA: 0x003DF990 File Offset: 0x003DDB90
 	public byte get(int x, int y, int z)
 	{
 		int num = (x << this._lXPow << this._lYPow) + (y << this._lXPow) + z;
@@ -47,7 +47,7 @@ public class SmartArray
 		return (byte)((this._array[num % this._halfSize] >> 4) & 15);
 	}
 
-	// Token: 0x0600A5D1 RID: 42449 RVA: 0x003DAD60 File Offset: 0x003D8F60
+	// Token: 0x0600A67F RID: 42623 RVA: 0x003DF9EC File Offset: 0x003DDBEC
 	public void set(int x, int y, int z, byte b)
 	{
 		int num = (x << this._lXPow << this._lYPow) + (y << this._lXPow) + z;
@@ -62,48 +62,48 @@ public class SmartArray
 		this._array[num % this._halfSize] = (byte)num2;
 	}
 
-	// Token: 0x0600A5D2 RID: 42450 RVA: 0x003DADEB File Offset: 0x003D8FEB
+	// Token: 0x0600A680 RID: 42624 RVA: 0x003DFA77 File Offset: 0x003DDC77
 	public int size()
 	{
 		return this._size;
 	}
 
-	// Token: 0x0600A5D3 RID: 42451 RVA: 0x003DADF3 File Offset: 0x003D8FF3
+	// Token: 0x0600A681 RID: 42625 RVA: 0x003DFA7F File Offset: 0x003DDC7F
 	public int sizePacked()
 	{
 		return this._halfSize;
 	}
 
-	// Token: 0x0600A5D4 RID: 42452 RVA: 0x003DADFB File Offset: 0x003D8FFB
+	// Token: 0x0600A682 RID: 42626 RVA: 0x003DFA87 File Offset: 0x003DDC87
 	public void copyFrom(SmartArray _other)
 	{
 		_other._array.CopyTo(this._array, 0);
 	}
 
-	// Token: 0x0600A5D5 RID: 42453 RVA: 0x003DAE0F File Offset: 0x003D900F
+	// Token: 0x0600A683 RID: 42627 RVA: 0x003DFA9B File Offset: 0x003DDC9B
 	public int GetUsedMem()
 	{
 		return this._array.Length;
 	}
 
-	// Token: 0x04007B88 RID: 31624
+	// Token: 0x04007C03 RID: 31747
 	public byte[] _array;
 
-	// Token: 0x04007B89 RID: 31625
+	// Token: 0x04007C04 RID: 31748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _lXPow;
 
-	// Token: 0x04007B8A RID: 31626
+	// Token: 0x04007C05 RID: 31749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _lYPow;
 
-	// Token: 0x04007B8B RID: 31627
+	// Token: 0x04007C06 RID: 31750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _lZPow;
 
-	// Token: 0x04007B8C RID: 31628
+	// Token: 0x04007C07 RID: 31751
 	public int _size;
 
-	// Token: 0x04007B8D RID: 31629
+	// Token: 0x04007C08 RID: 31752
 	public int _halfSize;
 }

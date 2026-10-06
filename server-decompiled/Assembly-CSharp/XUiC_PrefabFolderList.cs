@@ -2,13 +2,13 @@
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FC7 RID: 4039
+// Token: 0x02000FD6 RID: 4054
 [Preserve]
 public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolderEntry>
 {
-	// Token: 0x17000EE3 RID: 3811
-	// (get) Token: 0x06007FA6 RID: 32678 RVA: 0x003064B5 File Offset: 0x003046B5
-	// (set) Token: 0x06007FA7 RID: 32679 RVA: 0x003064BD File Offset: 0x003046BD
+	// Token: 0x17000F0A RID: 3850
+	// (get) Token: 0x06007FB5 RID: 32693 RVA: 0x0030948D File Offset: 0x0030768D
+	// (set) Token: 0x06007FB6 RID: 32694 RVA: 0x00309495 File Offset: 0x00307695
 	public PathAbstractions.EAbstractedLocationType LocationType
 	{
 		get
@@ -26,9 +26,9 @@ public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolde
 		}
 	}
 
-	// Token: 0x17000EE4 RID: 3812
-	// (get) Token: 0x06007FA8 RID: 32680 RVA: 0x003064D7 File Offset: 0x003046D7
-	// (set) Token: 0x06007FA9 RID: 32681 RVA: 0x003064DF File Offset: 0x003046DF
+	// Token: 0x17000F0B RID: 3851
+	// (get) Token: 0x06007FB7 RID: 32695 RVA: 0x003094AF File Offset: 0x003076AF
+	// (set) Token: 0x06007FB8 RID: 32696 RVA: 0x003094B7 File Offset: 0x003076B7
 	public Mod Mod
 	{
 		get
@@ -46,14 +46,14 @@ public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolde
 		}
 	}
 
-	// Token: 0x06007FAA RID: 32682 RVA: 0x003064F9 File Offset: 0x003046F9
+	// Token: 0x06007FB9 RID: 32697 RVA: 0x003094D1 File Offset: 0x003076D1
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007FAB RID: 32683 RVA: 0x00306508 File Offset: 0x00304708
+	// Token: 0x06007FBA RID: 32698 RVA: 0x003094E0 File Offset: 0x003076E0
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -72,7 +72,7 @@ public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolde
 		base.SelectedEntryIndex = 0;
 	}
 
-	// Token: 0x06007FAC RID: 32684 RVA: 0x003065AC File Offset: 0x003047AC
+	// Token: 0x06007FBB RID: 32699 RVA: 0x00309584 File Offset: 0x00307784
 	public bool SelectByName(string _name)
 	{
 		if (string.IsNullOrEmpty(_name))
@@ -90,18 +90,18 @@ public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolde
 		return false;
 	}
 
-	// Token: 0x04005EA8 RID: 24232
+	// Token: 0x04005ED1 RID: 24273
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PathAbstractions.EAbstractedLocationType locationType = PathAbstractions.EAbstractedLocationType.GameData;
 
-	// Token: 0x04005EA9 RID: 24233
+	// Token: 0x04005ED2 RID: 24274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mod mod;
 
-	// Token: 0x02000FC8 RID: 4040
+	// Token: 0x02000FD7 RID: 4055
 	public class PrefabFolderEntry : XUiListEntry<XUiC_PrefabFolderList.PrefabFolderEntry>
 	{
-		// Token: 0x06007FAE RID: 32686 RVA: 0x0030660C File Offset: 0x0030480C
+		// Token: 0x06007FBD RID: 32701 RVA: 0x003095E4 File Offset: 0x003077E4
 		public PrefabFolderEntry(string _name, string _relativePath, string _absolutePath)
 		{
 			this.Name = _name;
@@ -109,34 +109,34 @@ public class XUiC_PrefabFolderList : XUiC_List<XUiC_PrefabFolderList.PrefabFolde
 			this.AbsolutePath = _absolutePath;
 		}
 
-		// Token: 0x06007FAF RID: 32687 RVA: 0x00306629 File Offset: 0x00304829
+		// Token: 0x06007FBE RID: 32702 RVA: 0x00309601 File Offset: 0x00307801
 		public override int CompareTo(XUiC_PrefabFolderList.PrefabFolderEntry _otherEntry)
 		{
 			return string.Compare(this.Name, _otherEntry.Name, StringComparison.Ordinal);
 		}
 
-		// Token: 0x06007FB0 RID: 32688 RVA: 0x0030663D File Offset: 0x0030483D
+		// Token: 0x06007FBF RID: 32703 RVA: 0x00309615 File Offset: 0x00307815
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.Name.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005EAA RID: 24234
+		// Token: 0x04005ED3 RID: 24275
 		public readonly string Name;
 
-		// Token: 0x04005EAB RID: 24235
+		// Token: 0x04005ED4 RID: 24276
 		public readonly string RelativePath;
 
-		// Token: 0x04005EAC RID: 24236
+		// Token: 0x04005ED5 RID: 24277
 		public readonly string AbsolutePath;
 	}
 
-	// Token: 0x02000FC9 RID: 4041
+	// Token: 0x02000FD8 RID: 4056
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PrefabFolderList.PrefabFolderEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007FB1 RID: 32689 RVA: 0x0030664B File Offset: 0x0030484B
+		// Token: 0x06007FC0 RID: 32704 RVA: 0x00309623 File Offset: 0x00307823
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

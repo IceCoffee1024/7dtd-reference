@@ -1,17 +1,17 @@
 ﻿using System;
 
-// Token: 0x0200016F RID: 367
+// Token: 0x02000171 RID: 369
 public interface IFeaturePhysicalCapabilities
 {
-	// Token: 0x06000A89 RID: 2697
+	// Token: 0x06000A8F RID: 2703
 	bool IsMovementBlocked(Vector3i _blockPos, BlockValue _blockValue, BlockFace _face);
 
-	// Token: 0x06000A8A RID: 2698
+	// Token: 0x06000A90 RID: 2704
 	bool IsMovementBlocked(Vector3i _blockPos, BlockValue _blockValue, BlockFaceFlag _sides);
 
-	// Token: 0x06000A8B RID: 2699
+	// Token: 0x06000A91 RID: 2705
 	bool IsSeeThrough(Vector3i _blockPos, BlockValue _blockValue);
 
-	// Token: 0x06000A8C RID: 2700
+	// Token: 0x06000A92 RID: 2706
 	float GetStepHeight(Vector3i _blockPos, BlockValue _blockValue, BlockFace crossingFace);
 }

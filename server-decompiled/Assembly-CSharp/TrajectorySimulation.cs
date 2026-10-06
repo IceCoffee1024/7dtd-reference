@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020014D8 RID: 5336
+// Token: 0x020014FA RID: 5370
 public class TrajectorySimulation
 {
-	// Token: 0x0600A7AA RID: 42922 RVA: 0x003E5780 File Offset: 0x003E3980
+	// Token: 0x0600A85D RID: 43101 RVA: 0x003EA5D4 File Offset: 0x003E87D4
 	public bool TryGetSolution(out Trajectory.AimTrajectory trajectory)
 	{
 		if (this.TrajectoryState == TrajectorySimulation.State.DoneWithSolution)
@@ -17,7 +17,7 @@ public class TrajectorySimulation
 		return false;
 	}
 
-	// Token: 0x0600A7AB RID: 42923 RVA: 0x003E57AC File Offset: 0x003E39AC
+	// Token: 0x0600A85E RID: 43102 RVA: 0x003EA600 File Offset: 0x003E8800
 	public TrajectorySimulation(EntityAlive owner, EntityAlive target, float maxSimTime, TrajectorySimulation.ProjectileInfo projectile, float renderDuration, Action<TrajectorySimulation> onSimulationComplete)
 	{
 		this.TrajectoryState = TrajectorySimulation.State.ReadyToSimulate;
@@ -32,7 +32,7 @@ public class TrajectorySimulation
 		this.CullPlane = new Plane(Vector3.up, this.TargetPosition - Vector3.up * this.Projectile.ProjectileTargetRadius);
 	}
 
-	// Token: 0x0600A7AC RID: 42924 RVA: 0x003E5854 File Offset: 0x003E3A54
+	// Token: 0x0600A85F RID: 43103 RVA: 0x003EA6A8 File Offset: 0x003E88A8
 	public bool IsValid()
 	{
 		if (this.TrajectoryState == TrajectorySimulation.State.Invalid)
@@ -60,7 +60,7 @@ public class TrajectorySimulation
 		return true;
 	}
 
-	// Token: 0x0600A7AD RID: 42925 RVA: 0x003E58F8 File Offset: 0x003E3AF8
+	// Token: 0x0600A860 RID: 43104 RVA: 0x003EA74C File Offset: 0x003E894C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickSimulation(int maxIterations = 20)
 	{
@@ -188,13 +188,13 @@ public class TrajectorySimulation
 		this.OnSimulationComplete(this);
 	}
 
-	// Token: 0x0600A7AE RID: 42926 RVA: 0x003E5DDF File Offset: 0x003E3FDF
+	// Token: 0x0600A861 RID: 43105 RVA: 0x003EAC33 File Offset: 0x003E8E33
 	public static void Cleanup()
 	{
 		TrajectorySimulation.Trajectories.Clear();
 	}
 
-	// Token: 0x0600A7AF RID: 42927 RVA: 0x003E5DEB File Offset: 0x003E3FEB
+	// Token: 0x0600A862 RID: 43106 RVA: 0x003EAC3F File Offset: 0x003E8E3F
 	public static void Queue(TrajectorySimulation trajectory)
 	{
 		if (!TrajectorySimulation.Trajectories.Contains(trajectory))
@@ -204,7 +204,7 @@ public class TrajectorySimulation
 		trajectory.TrajectoryState = TrajectorySimulation.State.ReadyToSimulate;
 	}
 
-	// Token: 0x0600A7B0 RID: 42928 RVA: 0x003E5E0C File Offset: 0x003E400C
+	// Token: 0x0600A863 RID: 43107 RVA: 0x003EAC60 File Offset: 0x003E8E60
 	public static void UpdateSimulationQueue()
 	{
 		TrajectorySimulation trajectorySimulation;
@@ -218,114 +218,114 @@ public class TrajectorySimulation
 		}
 	}
 
-	// Token: 0x04007C41 RID: 31809
+	// Token: 0x04007CC4 RID: 31940
 	public TrajectorySimulation.State TrajectoryState;
 
-	// Token: 0x04007C42 RID: 31810
+	// Token: 0x04007CC5 RID: 31941
 	public readonly EntityAlive Owner;
 
-	// Token: 0x04007C43 RID: 31811
+	// Token: 0x04007CC6 RID: 31942
 	public readonly EntityAlive Target;
 
-	// Token: 0x04007C44 RID: 31812
+	// Token: 0x04007CC7 RID: 31943
 	public readonly float MaxSimTime;
 
-	// Token: 0x04007C45 RID: 31813
+	// Token: 0x04007CC8 RID: 31944
 	public readonly TrajectorySimulation.ProjectileInfo Projectile;
 
-	// Token: 0x04007C46 RID: 31814
+	// Token: 0x04007CC9 RID: 31945
 	public readonly float RenderDuration;
 
-	// Token: 0x04007C47 RID: 31815
+	// Token: 0x04007CCA RID: 31946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<TrajectorySimulation> OnSimulationComplete;
 
-	// Token: 0x04007C48 RID: 31816
+	// Token: 0x04007CCB RID: 31947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 LaunchPosition;
 
-	// Token: 0x04007C49 RID: 31817
+	// Token: 0x04007CCC RID: 31948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 TargetPosition;
 
-	// Token: 0x04007C4A RID: 31818
+	// Token: 0x04007CCD RID: 31949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Trajectory.AimTrajectory[] SimTrajectories = new Trajectory.AimTrajectory[2];
 
-	// Token: 0x04007C4B RID: 31819
+	// Token: 0x04007CCE RID: 31950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SimTrajectoryIndex;
 
-	// Token: 0x04007C4C RID: 31820
+	// Token: 0x04007CCF RID: 31951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SimTrajectoryCount;
 
-	// Token: 0x04007C4D RID: 31821
+	// Token: 0x04007CD0 RID: 31952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float SimTime;
 
-	// Token: 0x04007C4E RID: 31822
+	// Token: 0x04007CD1 RID: 31953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 SimVelocity;
 
-	// Token: 0x04007C4F RID: 31823
+	// Token: 0x04007CD2 RID: 31954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 SimLastPos;
 
-	// Token: 0x04007C50 RID: 31824
+	// Token: 0x04007CD3 RID: 31955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 SimCurrentPos;
 
-	// Token: 0x04007C51 RID: 31825
+	// Token: 0x04007CD4 RID: 31956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Plane CullPlane;
 
-	// Token: 0x04007C52 RID: 31826
+	// Token: 0x04007CD5 RID: 31957
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMaxOwnerDelta = 16f;
 
-	// Token: 0x04007C53 RID: 31827
+	// Token: 0x04007CD6 RID: 31958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMaxTargetDelta = 16f;
 
-	// Token: 0x04007C54 RID: 31828
+	// Token: 0x04007CD7 RID: 31959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSimInterval = 0.05f;
 
-	// Token: 0x04007C55 RID: 31829
+	// Token: 0x04007CD8 RID: 31960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Queue<TrajectorySimulation> Trajectories = new Queue<TrajectorySimulation>();
 
-	// Token: 0x020014D9 RID: 5337
+	// Token: 0x020014FB RID: 5371
 	public enum State
 	{
-		// Token: 0x04007C57 RID: 31831
+		// Token: 0x04007CDA RID: 31962
 		Init,
-		// Token: 0x04007C58 RID: 31832
+		// Token: 0x04007CDB RID: 31963
 		Invalid,
-		// Token: 0x04007C59 RID: 31833
+		// Token: 0x04007CDC RID: 31964
 		ReadyToSimulate,
-		// Token: 0x04007C5A RID: 31834
+		// Token: 0x04007CDD RID: 31965
 		Simulating,
-		// Token: 0x04007C5B RID: 31835
+		// Token: 0x04007CDE RID: 31966
 		DoneWithSolution,
-		// Token: 0x04007C5C RID: 31836
+		// Token: 0x04007CDF RID: 31967
 		DoneWithoutSolution
 	}
 
-	// Token: 0x020014DA RID: 5338
+	// Token: 0x020014FC RID: 5372
 	public struct ProjectileInfo
 	{
-		// Token: 0x04007C5D RID: 31837
+		// Token: 0x04007CE0 RID: 31968
 		public float ProjectileSpeed;
 
-		// Token: 0x04007C5E RID: 31838
+		// Token: 0x04007CE1 RID: 31969
 		public float ProjectileGravity;
 
-		// Token: 0x04007C5F RID: 31839
+		// Token: 0x04007CE2 RID: 31970
 		public float ProjectileRadius;
 
-		// Token: 0x04007C60 RID: 31840
+		// Token: 0x04007CE3 RID: 31971
 		public float ProjectileTargetRadius;
 	}
 }

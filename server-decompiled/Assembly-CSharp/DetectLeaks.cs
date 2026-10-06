@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020013D8 RID: 5080
+// Token: 0x020013F8 RID: 5112
 public class DetectLeaks : MonoBehaviour
 {
-	// Token: 0x06009F94 RID: 40852 RVA: 0x003C15E0 File Offset: 0x003BF7E0
+	// Token: 0x0600A03F RID: 41023 RVA: 0x003C617C File Offset: 0x003C437C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{

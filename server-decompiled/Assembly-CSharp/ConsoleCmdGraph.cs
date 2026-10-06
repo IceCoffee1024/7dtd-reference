@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000226 RID: 550
+// Token: 0x02000228 RID: 552
 [Preserve]
 public class ConsoleCmdGraph : ConsoleCmdAbstract
 {
-	// Token: 0x1700019C RID: 412
-	// (get) Token: 0x060010A8 RID: 4264 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000194 RID: 404
+	// (get) Token: 0x060010A0 RID: 4256 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdGraph : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700019D RID: 413
-	// (get) Token: 0x060010A9 RID: 4265 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x17000195 RID: 405
+	// (get) Token: 0x060010A1 RID: 4257 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -27,28 +27,28 @@ public class ConsoleCmdGraph : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060010AA RID: 4266 RVA: 0x00069C35 File Offset: 0x00067E35
+	// Token: 0x060010A2 RID: 4258 RVA: 0x00069DF9 File Offset: 0x00067FF9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "graph" };
 	}
 
-	// Token: 0x060010AB RID: 4267 RVA: 0x00069C45 File Offset: 0x00067E45
+	// Token: 0x060010A3 RID: 4259 RVA: 0x00069E09 File Offset: 0x00068009
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Draws graphs on screen";
 	}
 
-	// Token: 0x060010AC RID: 4268 RVA: 0x00069C4C File Offset: 0x00067E4C
+	// Token: 0x060010A4 RID: 4260 RVA: 0x00069E10 File Offset: 0x00068010
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Graph commands:\n# - 0 removes all graphs, 1+ sets graphs height\ncvar <name> <count> <max> - show graph of a cvar, line count (0 hides), max graph value (default is 1)\ndr <count> - show dynamic res graph, line count (0 hides)\nfps <count> <fps max> - show fps graph, line count (0 hides), max graph value\npe <name> <count> <max> - show graph of a passive effect (healthmax..), line count (0 hides), max graph value (default is 1)\nspf <count> <spf max> - show seconds per frame graph, line count (0 hides), max graph value\nstat <name> <count> <max> - show graph of a stat (health, stamina..) with line count (0 hides), max graph value (default is 1)\ntex <name> <count> - show texture graph (mem or stream), line count (0 hides)";
 	}
 
-	// Token: 0x060010AD RID: 4269 RVA: 0x00069C54 File Offset: 0x00067E54
+	// Token: 0x060010A5 RID: 4261 RVA: 0x00069E18 File Offset: 0x00068018
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

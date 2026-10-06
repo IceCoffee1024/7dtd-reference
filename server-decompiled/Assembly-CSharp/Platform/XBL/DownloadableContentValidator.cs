@@ -5,10 +5,10 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C31 RID: 7217
+	// Token: 0x02001C63 RID: 7267
 	public class DownloadableContentValidator : IEntitlementValidator
 	{
-		// Token: 0x0600D624 RID: 54820 RVA: 0x004D0FA4 File Offset: 0x004CF1A4
+		// Token: 0x0600D79C RID: 55196 RVA: 0x004D5A8C File Offset: 0x004D3C8C
 		public void Init(IPlatform _owner)
 		{
 			PlatformManager.NativePlatform.User.UserLoggedIn += delegate(IPlatform _)
@@ -21,7 +21,7 @@ namespace Platform.XBL
 			};
 		}
 
-		// Token: 0x0600D625 RID: 54821 RVA: 0x004D0FE0 File Offset: 0x004CF1E0
+		// Token: 0x0600D79D RID: 55197 RVA: 0x004D5AC8 File Offset: 0x004D3CC8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FetchEntitlement(EntitlementSetEnum _dlcSet, Action<EntitlementSetEnum> _onDlcFetched = null)
 		{
@@ -45,13 +45,13 @@ namespace Platform.XBL
 			SDK.XStoreAcquireLicenseForDurablesAsync(this.storeContext, DownloadableContentValidator.entitlementMap[CS$<>8__locals1._dlcSet], new XStoreAcquireLicenseForDurablesCompleted(CS$<>8__locals1.<FetchEntitlement>g__licenseAcquired|0));
 		}
 
-		// Token: 0x0600D626 RID: 54822 RVA: 0x004D106F File Offset: 0x004CF26F
+		// Token: 0x0600D79E RID: 55198 RVA: 0x004D5B57 File Offset: 0x004D3D57
 		public bool IsAvailableOnPlatform(EntitlementSetEnum _dlcSet)
 		{
 			return _dlcSet == EntitlementSetEnum.None || DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet);
 		}
 
-		// Token: 0x0600D627 RID: 54823 RVA: 0x004D1084 File Offset: 0x004CF284
+		// Token: 0x0600D79F RID: 55199 RVA: 0x004D5B6C File Offset: 0x004D3D6C
 		public bool IsEntitlementPurchasable(EntitlementSetEnum _dlcSet)
 		{
 			DLCEnvironmentFlags dlcenvironmentFlags = DLCEnvironmentFlags.None;
@@ -67,19 +67,31 @@ namespace Platform.XBL
 			return DLCTitleStorageManager.Instance.IsDLCPurchasable(_dlcSet, dlcenvironmentFlags);
 		}
 
-		// Token: 0x0600D628 RID: 54824 RVA: 0x004D10E1 File Offset: 0x004CF2E1
+		// Token: 0x0600D7A0 RID: 55200 RVA: 0x004D5BC9 File Offset: 0x004D3DC9
 		public string GetEntitlementSetId(EntitlementSetEnum _entitlementSet)
 		{
 			return DownloadableContentValidator.entitlementMap.GetValueOrDefault(_entitlementSet);
 		}
 
-		// Token: 0x0600D629 RID: 54825 RVA: 0x004D10F0 File Offset: 0x004CF2F0
+		// Token: 0x0600D7A1 RID: 55201 RVA: 0x004D5BD8 File Offset: 0x004D3DD8
 		public DateTime? GetAcquiredDate(EntitlementSetEnum _entitlementSet)
 		{
 			return null;
 		}
 
-		// Token: 0x0600D62A RID: 54826 RVA: 0x004D1108 File Offset: 0x004CF308
+		// Token: 0x0600D7A2 RID: 55202 RVA: 0x004D5BF0 File Offset: 0x004D3DF0
+		public bool IsFetchingEntitlements()
+		{
+			object obj = this.lockObj;
+			bool flag2;
+			lock (obj)
+			{
+				flag2 = this.storeContext != null;
+			}
+			return flag2;
+		}
+
+		// Token: 0x0600D7A3 RID: 55203 RVA: 0x004D5C38 File Offset: 0x004D3E38
 		public bool HasEntitlement(EntitlementSetEnum _dlcSet)
 		{
 			if (_dlcSet == EntitlementSetEnum.None)
@@ -99,10 +111,10 @@ namespace Platform.XBL
 			return flag2;
 		}
 
-		// Token: 0x0600D62B RID: 54827 RVA: 0x004D1170 File Offset: 0x004CF370
+		// Token: 0x0600D7A4 RID: 55204 RVA: 0x004D5CA0 File Offset: 0x004D3EA0
 		public bool OpenStore(EntitlementSetEnum _dlcSet, Action<EntitlementSetEnum> _onDlcPurchased)
 		{
-			DownloadableContentValidator.<>c__DisplayClass13_0 CS$<>8__locals1 = new DownloadableContentValidator.<>c__DisplayClass13_0();
+			DownloadableContentValidator.<>c__DisplayClass14_0 CS$<>8__locals1 = new DownloadableContentValidator.<>c__DisplayClass14_0();
 			CS$<>8__locals1.<>4__this = this;
 			CS$<>8__locals1._onDlcPurchased = _onDlcPurchased;
 			CS$<>8__locals1._dlcSet = _dlcSet;
@@ -119,7 +131,7 @@ namespace Platform.XBL
 			return true;
 		}
 
-		// Token: 0x0600D62C RID: 54828 RVA: 0x004D11F0 File Offset: 0x004CF3F0
+		// Token: 0x0600D7A5 RID: 55205 RVA: 0x004D5D20 File Offset: 0x004D3F20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool StartStoreOperation()
 		{
@@ -143,7 +155,7 @@ namespace Platform.XBL
 			return flag2;
 		}
 
-		// Token: 0x0600D62D RID: 54829 RVA: 0x004D1288 File Offset: 0x004CF488
+		// Token: 0x0600D7A6 RID: 55206 RVA: 0x004D5DB8 File Offset: 0x004D3FB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CompleteStoreOperation()
 		{
@@ -162,7 +174,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0400A31D RID: 41757
+		// Token: 0x0400A3F2 RID: 41970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EntitlementSetEnum, string> entitlementMap = new Dictionary<EntitlementSetEnum, string>
 		{
@@ -209,26 +221,30 @@ namespace Platform.XBL
 			{
 				EntitlementSetEnum.HenpocalypseCosmetic,
 				"9NL21ND88ZVM"
+			},
+			{
+				EntitlementSetEnum.OktoberfestCosmetic,
+				"9NQJBBMD3PFQ"
 			}
 		};
 
-		// Token: 0x0400A31E RID: 41758
+		// Token: 0x0400A3F3 RID: 41971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<string> ownedEntitlements = new HashSet<string>();
 
-		// Token: 0x0400A31F RID: 41759
+		// Token: 0x0400A3F4 RID: 41972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object lockObj = new object();
 
-		// Token: 0x0400A320 RID: 41760
+		// Token: 0x0400A3F5 RID: 41973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User user;
 
-		// Token: 0x0400A321 RID: 41761
+		// Token: 0x0400A3F6 RID: 41974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XStoreContext storeContext;
 
-		// Token: 0x0400A322 RID: 41762
+		// Token: 0x0400A3F7 RID: 41975
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int remainingStoreOperations;
 	}

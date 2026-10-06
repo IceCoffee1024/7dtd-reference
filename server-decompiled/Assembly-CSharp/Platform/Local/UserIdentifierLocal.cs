@@ -3,14 +3,14 @@ using UnityEngine.Scripting;
 
 namespace Platform.Local
 {
-	// Token: 0x02001CCC RID: 7372
+	// Token: 0x02001CFE RID: 7422
 	[Preserve]
 	[DoNotTouchSerializableFlags]
 	[Serializable]
 	public class UserIdentifierLocal : PlatformUserIdentifierAbs
 	{
-		// Token: 0x17001B58 RID: 7000
-		// (get) Token: 0x0600DAE9 RID: 56041 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001BFE RID: 7166
+		// (get) Token: 0x0600DC64 RID: 56420 RVA: 0x00020119 File Offset: 0x0001E319
 		public override EPlatformIdentifier PlatformIdentifier
 		{
 			get
@@ -19,19 +19,19 @@ namespace Platform.Local
 			}
 		}
 
-		// Token: 0x17001B59 RID: 7001
-		// (get) Token: 0x0600DAEA RID: 56042 RVA: 0x004E3E0E File Offset: 0x004E200E
+		// Token: 0x17001BFF RID: 7167
+		// (get) Token: 0x0600DC65 RID: 56421 RVA: 0x004E8956 File Offset: 0x004E6B56
 		public override string PlatformIdentifierString { get; } = PlatformManager.PlatformStringFromEnum(EPlatformIdentifier.Local);
 
-		// Token: 0x17001B5A RID: 7002
-		// (get) Token: 0x0600DAEB RID: 56043 RVA: 0x004E3E16 File Offset: 0x004E2016
+		// Token: 0x17001C00 RID: 7168
+		// (get) Token: 0x0600DC66 RID: 56422 RVA: 0x004E895E File Offset: 0x004E6B5E
 		public override string ReadablePlatformUserIdentifier { get; }
 
-		// Token: 0x17001B5B RID: 7003
-		// (get) Token: 0x0600DAEC RID: 56044 RVA: 0x004E3E1E File Offset: 0x004E201E
+		// Token: 0x17001C01 RID: 7169
+		// (get) Token: 0x0600DC67 RID: 56423 RVA: 0x004E8966 File Offset: 0x004E6B66
 		public override string CombinedString { get; }
 
-		// Token: 0x0600DAED RID: 56045 RVA: 0x004E3E28 File Offset: 0x004E2028
+		// Token: 0x0600DC68 RID: 56424 RVA: 0x004E8970 File Offset: 0x004E6B70
 		public UserIdentifierLocal(string _playername)
 		{
 			if (string.IsNullOrEmpty(_playername))
@@ -44,13 +44,13 @@ namespace Platform.Local
 			this.hashcode = _playername.GetHashCode() ^ ((int)this.PlatformIdentifier * 397);
 		}
 
-		// Token: 0x0600DAEE RID: 56046 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x0600DC69 RID: 56425 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool DecodeTicket(string _ticket)
 		{
 			return true;
 		}
 
-		// Token: 0x0600DAEF RID: 56047 RVA: 0x004E3EA0 File Offset: 0x004E20A0
+		// Token: 0x0600DC6A RID: 56426 RVA: 0x004E89E8 File Offset: 0x004E6BE8
 		public override bool Equals(PlatformUserIdentifierAbs _other)
 		{
 			if (_other == null)
@@ -65,16 +65,16 @@ namespace Platform.Local
 			return userIdentifierLocal != null && userIdentifierLocal.PlayerName == this.PlayerName;
 		}
 
-		// Token: 0x0600DAF0 RID: 56048 RVA: 0x004E3ED5 File Offset: 0x004E20D5
+		// Token: 0x0600DC6B RID: 56427 RVA: 0x004E8A1D File Offset: 0x004E6C1D
 		public override int GetHashCode()
 		{
 			return this.hashcode;
 		}
 
-		// Token: 0x0400A57E RID: 42366
+		// Token: 0x0400A653 RID: 42579
 		public readonly string PlayerName;
 
-		// Token: 0x0400A57F RID: 42367
+		// Token: 0x0400A654 RID: 42580
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int hashcode;
 	}

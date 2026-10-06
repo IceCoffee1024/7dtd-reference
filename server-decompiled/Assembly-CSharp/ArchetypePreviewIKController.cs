@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000BB RID: 187
+// Token: 0x020000BD RID: 189
 public class ArchetypePreviewIKController : MonoBehaviour
 {
-	// Token: 0x060003A9 RID: 937 RVA: 0x0001AEE8 File Offset: 0x000190E8
+	// Token: 0x060003AF RID: 943 RVA: 0x0001AFE0 File Offset: 0x000191E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -17,7 +17,7 @@ public class ArchetypePreviewIKController : MonoBehaviour
 		this.rightFootRot = transform2.rotation;
 	}
 
-	// Token: 0x060003AA RID: 938 RVA: 0x0001AF58 File Offset: 0x00019158
+	// Token: 0x060003B0 RID: 944 RVA: 0x0001B050 File Offset: 0x00019250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAnimatorIK()
 	{
@@ -34,40 +34,40 @@ public class ArchetypePreviewIKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000442 RID: 1090
+	// Token: 0x04000445 RID: 1093
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Animator animator;
 
-	// Token: 0x04000443 RID: 1091
+	// Token: 0x04000446 RID: 1094
 	public bool ikActive;
 
-	// Token: 0x04000444 RID: 1092
+	// Token: 0x04000447 RID: 1095
 	public Transform rightHandObj;
 
-	// Token: 0x04000445 RID: 1093
-	public Transform lookObj;
-
-	// Token: 0x04000446 RID: 1094
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 leftFootPos;
-
-	// Token: 0x04000447 RID: 1095
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 rightFootPos;
-
 	// Token: 0x04000448 RID: 1096
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Quaternion leftFootRot;
+	public Transform lookObj;
 
 	// Token: 0x04000449 RID: 1097
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Quaternion rightFootRot;
+	public Vector3 leftFootPos;
 
 	// Token: 0x0400044A RID: 1098
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 rightFootPos;
+
+	// Token: 0x0400044B RID: 1099
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Quaternion leftFootRot;
+
+	// Token: 0x0400044C RID: 1100
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Quaternion rightFootRot;
+
+	// Token: 0x0400044D RID: 1101
 	public Vector3 FootRotationModifier = new Vector3(-62f, -198f, -93.5f);
 }

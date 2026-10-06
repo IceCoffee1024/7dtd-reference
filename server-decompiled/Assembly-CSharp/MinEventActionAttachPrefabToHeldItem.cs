@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000702 RID: 1794
+// Token: 0x02000704 RID: 1796
 [Preserve]
 public class MinEventActionAttachPrefabToHeldItem : MinEventActionBase
 {
-	// Token: 0x060036CA RID: 14026 RVA: 0x001698D0 File Offset: 0x00167AD0
+	// Token: 0x0600370D RID: 14093 RVA: 0x0016A234 File Offset: 0x00168434
 	public override void Execute(MinEventParams _params)
 	{
 		Transform transform = null;
@@ -65,13 +65,13 @@ public class MinEventActionAttachPrefabToHeldItem : MinEventActionBase
 		}
 	}
 
-	// Token: 0x060036CB RID: 14027 RVA: 0x00169AEC File Offset: 0x00167CEC
+	// Token: 0x0600370E RID: 14094 RVA: 0x0016A450 File Offset: 0x00168650
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && (_params.Self != null || _params.Transform != null) && (this.goToInstantiate != null || this.itemPropertyName != null);
 	}
 
-	// Token: 0x060036CC RID: 14028 RVA: 0x00169B3C File Offset: 0x00167D3C
+	// Token: 0x0600370F RID: 14095 RVA: 0x0016A4A0 File Offset: 0x001686A0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -110,27 +110,27 @@ public class MinEventActionAttachPrefabToHeldItem : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002C37 RID: 11319
+	// Token: 0x04002C30 RID: 11312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goToInstantiate;
 
-	// Token: 0x04002C38 RID: 11320
+	// Token: 0x04002C31 RID: 11313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string itemPropertyName;
 
-	// Token: 0x04002C39 RID: 11321
+	// Token: 0x04002C32 RID: 11314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string prefab;
 
-	// Token: 0x04002C3A RID: 11322
+	// Token: 0x04002C33 RID: 11315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform = "";
 
-	// Token: 0x04002C3B RID: 11323
+	// Token: 0x04002C34 RID: 11316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_offset = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x04002C3C RID: 11324
+	// Token: 0x04002C35 RID: 11317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_rotation = new Vector3(0f, 0f, 0f);
 }

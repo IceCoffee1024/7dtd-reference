@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C82 RID: 7298
+	// Token: 0x02001CB4 RID: 7348
 	[Preserve]
 	public class SteamGroupsAuthorizer : AuthorizerAbs
 	{
-		// Token: 0x17001AD4 RID: 6868
-		// (get) Token: 0x0600D866 RID: 55398 RVA: 0x004DC755 File Offset: 0x004DA955
+		// Token: 0x17001B7A RID: 7034
+		// (get) Token: 0x0600D9DF RID: 55775 RVA: 0x004E1291 File Offset: 0x004DF491
 		public override int Order
 		{
 			get
@@ -19,8 +19,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AD5 RID: 6869
-		// (get) Token: 0x0600D867 RID: 55399 RVA: 0x004DC75C File Offset: 0x004DA95C
+		// Token: 0x17001B7B RID: 7035
+		// (get) Token: 0x0600D9E0 RID: 55776 RVA: 0x004E1298 File Offset: 0x004DF498
 		public override string AuthorizerName
 		{
 			get
@@ -29,8 +29,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AD6 RID: 6870
-		// (get) Token: 0x0600D868 RID: 55400 RVA: 0x004DC763 File Offset: 0x004DA963
+		// Token: 0x17001B7C RID: 7036
+		// (get) Token: 0x0600D9E1 RID: 55777 RVA: 0x004E129F File Offset: 0x004DF49F
 		public override string StateLocalizationKey
 		{
 			get
@@ -39,8 +39,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AD7 RID: 6871
-		// (get) Token: 0x0600D869 RID: 55401 RVA: 0x00046EDA File Offset: 0x000450DA
+		// Token: 0x17001B7D RID: 7037
+		// (get) Token: 0x0600D9E2 RID: 55778 RVA: 0x000470B6 File Offset: 0x000452B6
 		public override EPlatformIdentifier PlatformRestriction
 		{
 			get
@@ -49,8 +49,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001AD8 RID: 6872
-		// (get) Token: 0x0600D86A RID: 55402 RVA: 0x004DC76A File Offset: 0x004DA96A
+		// Token: 0x17001B7E RID: 7038
+		// (get) Token: 0x0600D9E3 RID: 55779 RVA: 0x004E12A6 File Offset: 0x004DF4A6
 		public override bool AuthorizerActive
 		{
 			get
@@ -59,7 +59,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D86B RID: 55403 RVA: 0x004DC783 File Offset: 0x004DA983
+		// Token: 0x0600D9E4 RID: 55780 RVA: 0x004E12BF File Offset: 0x004DF4BF
 		public override void ServerStart()
 		{
 			base.ServerStart();
@@ -71,7 +71,7 @@ namespace Platform.Steam
 			authenticationServer.StartServerSteamGroups(new SteamGroupStatusResponse(this.groupStatusCallback));
 		}
 
-		// Token: 0x0600D86C RID: 55404 RVA: 0x004DC7AC File Offset: 0x004DA9AC
+		// Token: 0x0600D9E5 RID: 55781 RVA: 0x004E12E8 File Offset: 0x004DF4E8
 		public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 		{
 			Dictionary<string, AdminWhitelist.WhitelistGroup> groups = GameManager.Instance.adminTools.Whitelist.GetGroups();
@@ -108,7 +108,7 @@ namespace Platform.Steam
 			return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 		}
 
-		// Token: 0x0600D86D RID: 55405 RVA: 0x004DC8F0 File Offset: 0x004DAAF0
+		// Token: 0x0600D9E6 RID: 55782 RVA: 0x004E142C File Offset: 0x004DF62C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void groupStatusCallback(ClientInfo _clientInfo, ulong _groupId, bool _member, bool _officer)
 		{

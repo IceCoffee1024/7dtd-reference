@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001971 RID: 6513
+	// Token: 0x0200199D RID: 6557
 	[Preserve]
 	public class ActionBeltTooltip : ActionBaseClientAction
 	{
-		// Token: 0x0600C839 RID: 51257 RVA: 0x00497090 File Offset: 0x00495290
+		// Token: 0x0600C991 RID: 51601 RVA: 0x0049B56C File Offset: 0x0049976C
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C83A RID: 51258 RVA: 0x004970EC File Offset: 0x004952EC
+		// Token: 0x0600C992 RID: 51602 RVA: 0x0049B5C8 File Offset: 0x004997C8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -38,7 +38,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionBeltTooltip.PropSound, ref this.soundName);
 		}
 
-		// Token: 0x0600C83B RID: 51259 RVA: 0x00497174 File Offset: 0x00495374
+		// Token: 0x0600C993 RID: 51603 RVA: 0x0049B650 File Offset: 0x00499850
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -51,27 +51,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009721 RID: 38689
+		// Token: 0x040097E7 RID: 38887
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string textKey = "Sequence Complete";
 
-		// Token: 0x04009722 RID: 38690
+		// Token: 0x040097E8 RID: 38888
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string text = "";
 
-		// Token: 0x04009723 RID: 38691
+		// Token: 0x040097E9 RID: 38889
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string soundName = "";
 
-		// Token: 0x04009724 RID: 38692
+		// Token: 0x040097EA RID: 38890
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropText = "text";
 
-		// Token: 0x04009725 RID: 38693
+		// Token: 0x040097EB RID: 38891
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTextKey = "text_key";
 
-		// Token: 0x04009726 RID: 38694
+		// Token: 0x040097EC RID: 38892
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSound = "sound";
 	}

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x020017CD RID: 6093
+	// Token: 0x020017F9 RID: 6137
 	[Serializable]
 	public class ExtensionActionResponse
 	{
-		// Token: 0x04008D8A RID: 36234
+		// Token: 0x04008E50 RID: 36432
 		public List<ExtensionAction> standardActions;
 
-		// Token: 0x04008D8B RID: 36235
+		// Token: 0x04008E51 RID: 36433
 		public List<ExtensionBitAction> bitActions;
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020010A3 RID: 4259
+// Token: 0x020010B4 RID: 4276
 [Preserve]
 public class XUiC_TwitchHowToWindow : XUiController
 {
-	// Token: 0x060087B0 RID: 34736 RVA: 0x0033D330 File Offset: 0x0033B530
+	// Token: 0x060087FF RID: 34815 RVA: 0x00341148 File Offset: 0x0033F348
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class XUiC_TwitchHowToWindow : XUiController
 		this.lblTipHeader = Localization.Get("TwitchInfo_TipHeader", false, null);
 	}
 
-	// Token: 0x060087B1 RID: 34737 RVA: 0x0033D38D File Offset: 0x0033B58D
+	// Token: 0x06008800 RID: 34816 RVA: 0x003411A5 File Offset: 0x0033F3A5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Left_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -28,7 +28,7 @@ public class XUiC_TwitchHowToWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060087B2 RID: 34738 RVA: 0x0033D3BF File Offset: 0x0033B5BF
+	// Token: 0x06008801 RID: 34817 RVA: 0x003411D7 File Offset: 0x0033F3D7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Right_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -40,7 +40,7 @@ public class XUiC_TwitchHowToWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060087B3 RID: 34739 RVA: 0x0033D3EF File Offset: 0x0033B5EF
+	// Token: 0x06008802 RID: 34818 RVA: 0x00341207 File Offset: 0x0033F407
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -49,7 +49,7 @@ public class XUiC_TwitchHowToWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060087B4 RID: 34740 RVA: 0x0033D420 File Offset: 0x0033B620
+	// Token: 0x06008803 RID: 34819 RVA: 0x00341238 File Offset: 0x0033F438
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -71,19 +71,19 @@ public class XUiC_TwitchHowToWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04006517 RID: 25879
+	// Token: 0x04006559 RID: 25945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tipIndex;
 
-	// Token: 0x04006518 RID: 25880
+	// Token: 0x0400655A RID: 25946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> TipNames = new List<string>();
 
-	// Token: 0x04006519 RID: 25881
+	// Token: 0x0400655B RID: 25947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> TipText = new List<string>();
 
-	// Token: 0x0400651A RID: 25882
+	// Token: 0x0400655C RID: 25948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTipHeader;
 }

@@ -7,12 +7,12 @@ using Webserver.LiveData;
 
 namespace Webserver.WebAPI.APIs.WorldState
 {
-	// Token: 0x02001AD7 RID: 6871
+	// Token: 0x02001B03 RID: 6915
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class Hostile : AbsRestApi
 	{
-		// Token: 0x0600CEE5 RID: 52965 RVA: 0x004B51F8 File Offset: 0x004B33F8
+		// Token: 0x0600D03D RID: 53309 RVA: 0x004B96C4 File Offset: 0x004B78C4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -44,25 +44,25 @@ namespace Webserver.WebAPI.APIs.WorldState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CEE6 RID: 52966 RVA: 0x004B5320 File Offset: 0x004B3520
+		// Token: 0x0600D03E RID: 53310 RVA: 0x004B97EC File Offset: 0x004B79EC
 		public Hostile()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009CEF RID: 40175
+		// Token: 0x04009DB5 RID: 40373
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<EntityEnemy> entities = new List<EntityEnemy>();
 
-		// Token: 0x04009CF0 RID: 40176
+		// Token: 0x04009DB6 RID: 40374
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyId = JsonWriter.GetEncodedPropertyNameWithBeginObject("id");
 
-		// Token: 0x04009CF1 RID: 40177
+		// Token: 0x04009DB7 RID: 40375
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyName = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("name");
 
-		// Token: 0x04009CF2 RID: 40178
+		// Token: 0x04009DB8 RID: 40376
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPosition = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("position");
 	}

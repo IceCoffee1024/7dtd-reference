@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CA3 RID: 3235
+// Token: 0x02000CB1 RID: 3249
 [Preserve]
 public class VPPedals : VehiclePart
 {
-	// Token: 0x0600633C RID: 25404 RVA: 0x0026FA54 File Offset: 0x0026DC54
+	// Token: 0x0600632F RID: 25391 RVA: 0x00272E98 File Offset: 0x00271098
 	public override void InitPrefabConnections()
 	{
 		this.initPedal("L", 0);
@@ -14,7 +14,7 @@ public class VPPedals : VehiclePart
 		this.ParticleEffectUpdate();
 	}
 
-	// Token: 0x0600633D RID: 25405 RVA: 0x0026FA74 File Offset: 0x0026DC74
+	// Token: 0x06006330 RID: 25392 RVA: 0x00272EB8 File Offset: 0x002710B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initPedal(string name, int index)
 	{
@@ -24,7 +24,7 @@ public class VPPedals : VehiclePart
 		base.InitIKTarget(AvatarIKGoal.LeftFoot + index, transform);
 	}
 
-	// Token: 0x0600633E RID: 25406 RVA: 0x0026FAB7 File Offset: 0x0026DCB7
+	// Token: 0x06006331 RID: 25393 RVA: 0x00272EFB File Offset: 0x002710FB
 	public override void SetProperties(DynamicProperties _properties)
 	{
 		base.SetProperties(_properties);
@@ -32,7 +32,7 @@ public class VPPedals : VehiclePart
 		_properties.ParseVec("staminaDrain", ref this.staminaDrain, ref this.staminaDrainTurbo);
 	}
 
-	// Token: 0x0600633F RID: 25407 RVA: 0x0026FAE8 File Offset: 0x0026DCE8
+	// Token: 0x06006332 RID: 25394 RVA: 0x00272F2C File Offset: 0x0027112C
 	public override void Update(float deltaTime)
 	{
 		if (!this.vehicle.entity.HasDriver)
@@ -112,7 +112,7 @@ public class VPPedals : VehiclePart
 		this.vehicle.CanTurbo = true;
 	}
 
-	// Token: 0x06006340 RID: 25408 RVA: 0x0026FD94 File Offset: 0x0026DF94
+	// Token: 0x06006333 RID: 25395 RVA: 0x002731D8 File Offset: 0x002713D8
 	public override void HandleEvent(Vehicle.Event _event, float _arg)
 	{
 		if (_event == Vehicle.Event.Start || _event == Vehicle.Event.Stop || _event == Vehicle.Event.HealthChanged)
@@ -121,7 +121,7 @@ public class VPPedals : VehiclePart
 		}
 	}
 
-	// Token: 0x06006341 RID: 25409 RVA: 0x0026FDA8 File Offset: 0x0026DFA8
+	// Token: 0x06006334 RID: 25396 RVA: 0x002731EC File Offset: 0x002713EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParticleEffectUpdate()
 	{
@@ -143,7 +143,7 @@ public class VPPedals : VehiclePart
 		base.SetTransformActive("particleDamaged", false);
 	}
 
-	// Token: 0x06006342 RID: 25410 RVA: 0x0026FE34 File Offset: 0x0026E034
+	// Token: 0x06006335 RID: 25397 RVA: 0x00273278 File Offset: 0x00271478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playSound(string _sound)
 	{
@@ -153,55 +153,55 @@ public class VPPedals : VehiclePart
 		}
 	}
 
-	// Token: 0x04004D29 RID: 19753
+	// Token: 0x04004D5F RID: 19807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform crankT;
 
-	// Token: 0x04004D2A RID: 19754
+	// Token: 0x04004D60 RID: 19808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform[] pedalTs = new Transform[2];
 
-	// Token: 0x04004D2B RID: 19755
+	// Token: 0x04004D61 RID: 19809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rot;
 
-	// Token: 0x04004D2C RID: 19756
+	// Token: 0x04004D62 RID: 19810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rotSpeed;
 
-	// Token: 0x04004D2D RID: 19757
+	// Token: 0x04004D63 RID: 19811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float backPedalTime;
 
-	// Token: 0x04004D2E RID: 19758
+	// Token: 0x04004D64 RID: 19812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string pedalSoundName;
 
-	// Token: 0x04004D2F RID: 19759
+	// Token: 0x04004D65 RID: 19813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float pedalSoundTime;
 
-	// Token: 0x04004D30 RID: 19760
+	// Token: 0x04004D66 RID: 19814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool didPedal;
 
-	// Token: 0x04004D31 RID: 19761
+	// Token: 0x04004D67 RID: 19815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool didRun;
 
-	// Token: 0x04004D32 RID: 19762
+	// Token: 0x04004D68 RID: 19816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float staminaCheckTime;
 
-	// Token: 0x04004D33 RID: 19763
+	// Token: 0x04004D69 RID: 19817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float staminaDrain;
 
-	// Token: 0x04004D34 RID: 19764
+	// Token: 0x04004D6A RID: 19818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float staminaDrainTurbo;
 
-	// Token: 0x04004D35 RID: 19765
+	// Token: 0x04004D6B RID: 19819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float staminaCooldownDelay;
 }

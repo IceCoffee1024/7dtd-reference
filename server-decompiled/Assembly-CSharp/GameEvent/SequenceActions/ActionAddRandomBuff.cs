@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001961 RID: 6497
+	// Token: 0x0200198D RID: 6541
 	[Preserve]
 	public class ActionAddRandomBuff : ActionBaseTargetAction
 	{
-		// Token: 0x0600C7ED RID: 51181 RVA: 0x004951BC File Offset: 0x004933BC
+		// Token: 0x0600C945 RID: 51525 RVA: 0x004996AC File Offset: 0x004978AC
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			if (this.removesBuffs == null)
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7EE RID: 51182 RVA: 0x00495286 File Offset: 0x00493486
+		// Token: 0x0600C946 RID: 51526 RVA: 0x00499776 File Offset: 0x00497976
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -47,7 +47,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionAddRandomBuff.PropRemovesBuff, ref this.removesBuff);
 		}
 
-		// Token: 0x0600C7EF RID: 51183 RVA: 0x004952B1 File Offset: 0x004934B1
+		// Token: 0x0600C947 RID: 51527 RVA: 0x004997A1 File Offset: 0x004979A1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -59,27 +59,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040096B6 RID: 38582
+		// Token: 0x0400977C RID: 38780
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string addsBuff = "";
 
-		// Token: 0x040096B7 RID: 38583
+		// Token: 0x0400977D RID: 38781
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] buffNames;
 
-		// Token: 0x040096B8 RID: 38584
+		// Token: 0x0400977E RID: 38782
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string removesBuff = "";
 
-		// Token: 0x040096B9 RID: 38585
+		// Token: 0x0400977F RID: 38783
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] removesBuffs;
 
-		// Token: 0x040096BA RID: 38586
+		// Token: 0x04009780 RID: 38784
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffName = "buff_names";
 
-		// Token: 0x040096BB RID: 38587
+		// Token: 0x04009781 RID: 38785
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemovesBuff = "removes_buff";
 	}

@@ -3,36 +3,36 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020013AC RID: 5036
+// Token: 0x020013CC RID: 5068
 public class BoundsUtils
 {
-	// Token: 0x06009EB3 RID: 40627 RVA: 0x003BDC5F File Offset: 0x003BBE5F
+	// Token: 0x06009F5E RID: 40798 RVA: 0x003C27FB File Offset: 0x003C09FB
 	public static Bounds BoundsForMinMax(float mnx, float mny, float mnz, float mxx, float mxy, float mxz)
 	{
 		return BoundsUtils.BoundsForMinMax(new Vector3(mnx, mny, mnz), new Vector3(mxx, mxy, mxz));
 	}
 
-	// Token: 0x06009EB4 RID: 40628 RVA: 0x003BDC78 File Offset: 0x003BBE78
+	// Token: 0x06009F5F RID: 40799 RVA: 0x003C2814 File Offset: 0x003C0A14
 	public static Bounds BoundsForMinMax(Vector3 _v1, Vector3 _v2)
 	{
 		Vector3 vector = _v2 - _v1;
 		return new Bounds(_v1 + vector / 2f, vector);
 	}
 
-	// Token: 0x06009EB5 RID: 40629 RVA: 0x003BDCA4 File Offset: 0x003BBEA4
+	// Token: 0x06009F60 RID: 40800 RVA: 0x003C2840 File Offset: 0x003C0A40
 	public static Bounds ExpandBounds(Bounds bounds, float x, float y, float z)
 	{
 		bounds.Expand(new Vector3(x, y, z));
 		return bounds;
 	}
 
-	// Token: 0x06009EB6 RID: 40630 RVA: 0x003BDCB6 File Offset: 0x003BBEB6
+	// Token: 0x06009F61 RID: 40801 RVA: 0x003C2852 File Offset: 0x003C0A52
 	public static Bounds ContractBounds(Bounds bounds, float x, float y, float z)
 	{
 		return BoundsUtils.ExpandBounds(bounds, -x, -y, -z);
 	}
 
-	// Token: 0x06009EB7 RID: 40631 RVA: 0x003BDCC4 File Offset: 0x003BBEC4
+	// Token: 0x06009F62 RID: 40802 RVA: 0x003C2860 File Offset: 0x003C0A60
 	public static float ClipBoundsMoveY(Vector3 bmins, Vector3 bmaxs, float move, Bounds collider)
 	{
 		Vector3 min = collider.min;
@@ -63,7 +63,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EB8 RID: 40632 RVA: 0x003BDDCC File Offset: 0x003BBFCC
+	// Token: 0x06009F63 RID: 40803 RVA: 0x003C2968 File Offset: 0x003C0B68
 	public static float ClipBoundsMoveX(Vector3 bmins, Vector3 bmaxs, float move, Bounds collider)
 	{
 		Vector3 min = collider.min;
@@ -86,7 +86,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EB9 RID: 40633 RVA: 0x003BDEAC File Offset: 0x003BC0AC
+	// Token: 0x06009F64 RID: 40804 RVA: 0x003C2A48 File Offset: 0x003C0C48
 	public static float ClipBoundsMoveZ(Vector3 bmins, Vector3 bmaxs, float move, Bounds collider)
 	{
 		Vector3 min = collider.min;
@@ -109,7 +109,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EBA RID: 40634 RVA: 0x003BDF8C File Offset: 0x003BC18C
+	// Token: 0x06009F65 RID: 40805 RVA: 0x003C2B28 File Offset: 0x003C0D28
 	public static Vector3 ClipBoundsMove(Bounds bounds, Vector3 move, IList<Bounds> colliderList, int numColliders)
 	{
 		Vector3 min = bounds.min;
@@ -124,7 +124,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EBB RID: 40635 RVA: 0x003BE030 File Offset: 0x003BC230
+	// Token: 0x06009F66 RID: 40806 RVA: 0x003C2BCC File Offset: 0x003C0DCC
 	public static float ClipBoundsMoveY(Vector3 bmins, Vector3 bmaxs, float move, IList<Bounds> colliderList, int numColliders)
 	{
 		if (move != 0f)
@@ -163,7 +163,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EBC RID: 40636 RVA: 0x003BE17C File Offset: 0x003BC37C
+	// Token: 0x06009F67 RID: 40807 RVA: 0x003C2D18 File Offset: 0x003C0F18
 	public static float ClipBoundsMoveX(Vector3 bmins, Vector3 bmaxs, float move, IList<Bounds> colliderList, int numColliders)
 	{
 		if (move != 0f)
@@ -194,7 +194,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EBD RID: 40637 RVA: 0x003BE2A0 File Offset: 0x003BC4A0
+	// Token: 0x06009F68 RID: 40808 RVA: 0x003C2E3C File Offset: 0x003C103C
 	public static float ClipBoundsMoveZ(Vector3 bmins, Vector3 bmaxs, float move, IList<Bounds> colliderList, int numColliders)
 	{
 		if (move != 0f)
@@ -225,7 +225,7 @@ public class BoundsUtils
 		return move;
 	}
 
-	// Token: 0x06009EBE RID: 40638 RVA: 0x003BE3C4 File Offset: 0x003BC5C4
+	// Token: 0x06009F69 RID: 40809 RVA: 0x003C2F60 File Offset: 0x003C1160
 	public static bool Intersects(Bounds bounds, Vector3 min1, Vector3 max1)
 	{
 		Vector3 min2 = bounds.min;
@@ -233,7 +233,7 @@ public class BoundsUtils
 		return min2.x <= max1.x && max2.x >= min1.x && min2.y <= max1.y && max2.y >= min1.y && min2.z <= max1.z && max2.z >= min1.z;
 	}
 
-	// Token: 0x06009EBF RID: 40639 RVA: 0x003BE43C File Offset: 0x003BC63C
+	// Token: 0x06009F6A RID: 40810 RVA: 0x003C2FD8 File Offset: 0x003C11D8
 	public static Bounds ExpandDirectional(Bounds bounds, Vector3 move)
 	{
 		Vector3 min = bounds.min;
@@ -266,7 +266,7 @@ public class BoundsUtils
 		return bounds;
 	}
 
-	// Token: 0x06009EC0 RID: 40640 RVA: 0x003BE4F8 File Offset: 0x003BC6F8
+	// Token: 0x06009F6B RID: 40811 RVA: 0x003C3094 File Offset: 0x003C1294
 	public static void WriteBounds(BinaryWriter _bw, Bounds bounds)
 	{
 		_bw.Write(bounds.min.x);
@@ -277,7 +277,7 @@ public class BoundsUtils
 		_bw.Write(bounds.max.z);
 	}
 
-	// Token: 0x06009EC1 RID: 40641 RVA: 0x003BE574 File Offset: 0x003BC774
+	// Token: 0x06009F6C RID: 40812 RVA: 0x003C3110 File Offset: 0x003C1310
 	public static Bounds ReadBounds(BinaryReader _br)
 	{
 		Bounds bounds = default(Bounds);
@@ -285,11 +285,11 @@ public class BoundsUtils
 		return bounds;
 	}
 
-	// Token: 0x04007846 RID: 30790
+	// Token: 0x040078C1 RID: 30913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kClipEpsilon = 0f;
 
-	// Token: 0x04007847 RID: 30791
+	// Token: 0x040078C2 RID: 30914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinMoveClamp = 0.0001f;
 }

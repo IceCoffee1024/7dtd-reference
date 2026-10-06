@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001579 RID: 5497
+// Token: 0x0200159B RID: 5531
 [RequireComponent(typeof(Rigidbody))]
 public class vp_RigidbodyImpulse : MonoBehaviour
 {
-	// Token: 0x0600AC08 RID: 44040 RVA: 0x0040141F File Offset: 0x003FF61F
+	// Token: 0x0600ACBB RID: 44219 RVA: 0x00406273 File Offset: 0x00404473
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.m_Rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x0600AC09 RID: 44041 RVA: 0x00401430 File Offset: 0x003FF630
+	// Token: 0x0600ACBC RID: 44220 RVA: 0x00406284 File Offset: 0x00404484
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -30,14 +30,14 @@ public class vp_RigidbodyImpulse : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007F48 RID: 32584
+	// Token: 0x04007FCB RID: 32715
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x04007F49 RID: 32585
+	// Token: 0x04007FCC RID: 32716
 	public Vector3 RigidbodyForce = new Vector3(0f, 5f, 0f);
 
-	// Token: 0x04007F4A RID: 32586
+	// Token: 0x04007FCD RID: 32717
 	public float RigidbodySpin = 0.2f;
 }

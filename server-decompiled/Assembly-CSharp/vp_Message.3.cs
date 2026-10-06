@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x02001561 RID: 5473
+// Token: 0x02001583 RID: 5507
 public class vp_Message<V, VResult> : vp_Message
 {
-	// Token: 0x0600AB8D RID: 43917 RVA: 0x003FED94 File Offset: 0x003FCF94
+	// Token: 0x0600AC40 RID: 44096 RVA: 0x00403BE8 File Offset: 0x00401DE8
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static TResult Empty<T, TResult>(T value)
@@ -14,14 +14,14 @@ public class vp_Message<V, VResult> : vp_Message
 		return default(TResult);
 	}
 
-	// Token: 0x0600AB8E RID: 43918 RVA: 0x003FEC84 File Offset: 0x003FCE84
+	// Token: 0x0600AC41 RID: 44097 RVA: 0x00403AD8 File Offset: 0x00401CD8
 	[Preserve]
 	public vp_Message(string name)
 		: base(name)
 	{
 	}
 
-	// Token: 0x0600AB8F RID: 43919 RVA: 0x003FEDAC File Offset: 0x003FCFAC
+	// Token: 0x0600AC42 RID: 44098 RVA: 0x00403C00 File Offset: 0x00401E00
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
@@ -37,7 +37,7 @@ public class vp_Message<V, VResult> : vp_Message
 		}
 	}
 
-	// Token: 0x0600AB90 RID: 43920 RVA: 0x003FEE6E File Offset: 0x003FD06E
+	// Token: 0x0600AC43 RID: 44099 RVA: 0x00403CC2 File Offset: 0x00401EC2
 	[Preserve]
 	public override void Register(object t, string m, int v)
 	{
@@ -49,7 +49,7 @@ public class vp_Message<V, VResult> : vp_Message
 		base.Refresh();
 	}
 
-	// Token: 0x0600AB91 RID: 43921 RVA: 0x003FEC6D File Offset: 0x003FCE6D
+	// Token: 0x0600AC44 RID: 44100 RVA: 0x00403AC1 File Offset: 0x00401CC1
 	[Preserve]
 	public override void Unregister(object t)
 	{
@@ -57,12 +57,12 @@ public class vp_Message<V, VResult> : vp_Message
 		base.Refresh();
 	}
 
-	// Token: 0x04007F1A RID: 32538
+	// Token: 0x04007F9D RID: 32669
 	[Preserve]
 	public new vp_Message<V, VResult>.Sender<V, VResult> Send;
 
-	// Token: 0x02001562 RID: 5474
-	// (Invoke) Token: 0x0600AB93 RID: 43923
+	// Token: 0x02001584 RID: 5508
+	// (Invoke) Token: 0x0600AC46 RID: 44102
 	[Preserve]
 	public delegate TResult Sender<T, TResult>(T value);
 }

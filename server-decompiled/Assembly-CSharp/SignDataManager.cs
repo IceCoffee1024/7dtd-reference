@@ -5,15 +5,17 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Platform;
 using TMPro;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.TextCore;
 
-// Token: 0x02000A93 RID: 2707
+// Token: 0x02000AA2 RID: 2722
 public class SignDataManager
 {
-	// Token: 0x170008DE RID: 2270
-	// (get) Token: 0x060051B7 RID: 20919 RVA: 0x001F242B File Offset: 0x001F062B
+	// Token: 0x17000900 RID: 2304
+	// (get) Token: 0x060051AC RID: 20908 RVA: 0x001F4457 File Offset: 0x001F2657
 	public static SignDataManager Instance
 	{
 		get
@@ -26,8 +28,8 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x170008DF RID: 2271
-	// (get) Token: 0x060051B8 RID: 20920 RVA: 0x001F2443 File Offset: 0x001F0643
+	// Token: 0x17000901 RID: 2305
+	// (get) Token: 0x060051AD RID: 20909 RVA: 0x001F446F File Offset: 0x001F266F
 	public static bool HasInstance
 	{
 		get
@@ -36,8 +38,8 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x170008E0 RID: 2272
-	// (get) Token: 0x060051B9 RID: 20921 RVA: 0x001F244D File Offset: 0x001F064D
+	// Token: 0x17000902 RID: 2306
+	// (get) Token: 0x060051AE RID: 20910 RVA: 0x001F4479 File Offset: 0x001F2679
 	public IEnumerable<string> FontNames
 	{
 		get
@@ -46,7 +48,7 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x060051BA RID: 20922 RVA: 0x001F245C File Offset: 0x001F065C
+	// Token: 0x060051AF RID: 20911 RVA: 0x001F4488 File Offset: 0x001F2688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignDataManager()
 	{
@@ -95,12 +97,12 @@ public class SignDataManager
 						SignDataManager.SignFontData value = keyValuePair.Value;
 						Graphics.CopyTexture(value.AtlasTexture, 0, this.fontAtlasTextureArray, value.AtlasIndex);
 					}
-					goto IL_063C;
+					goto IL_0673;
 				}
 			}
 			Log.Error("Texture arrays are not supported on this platform/GPU; sign fonts will not be rendered correctly.");
 		}
-		IL_063C:
+		IL_0673:
 		this.intermediateDataWrappers = new SignDataManager.IIntermediateDataWrapper[]
 		{
 			this.layerDescriptors, this.circleLayers, this.polygonLayers, this.charLayers, this.noiseLayers, this.transformWarps, this.skewWarps, this.bulgeWarps, this.twirlWarps, this.kaleidoWarps,
@@ -108,7 +110,7 @@ public class SignDataManager
 		};
 	}
 
-	// Token: 0x060051BB RID: 20923 RVA: 0x001F2B54 File Offset: 0x001F0D54
+	// Token: 0x060051B0 RID: 20912 RVA: 0x001F4BB4 File Offset: 0x001F2DB4
 	public static string GetLibraryNiceName(GlobalSignId signId)
 	{
 		if (!signId.IsValid)
@@ -116,47 +118,79 @@ public class SignDataManager
 			return "-";
 		}
 		string libraryId = signId.libraryId;
-		string text;
-		if (!(libraryId == "[D]"))
+		if (libraryId == "[D]")
 		{
-			if (!(libraryId == "[U]"))
+			return Localization.Get("lblSignLibraryDefault", false, null);
+		}
+		if (libraryId == "[U]")
+		{
+			return Localization.Get("lblSignLibraryUser", false, null);
+		}
+		if (SignDataManager.IsPlayerLibraryId(signId.libraryId))
+		{
+			return SignDataManager.GetPlayerLibraryOwnerName(signId.libraryId);
+		}
+		return Localization.Get(signId.libraryId, false, null);
+	}
+
+	// Token: 0x060051B1 RID: 20913 RVA: 0x001F4C34 File Offset: 0x001F2E34
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static string GetPlayerLibraryOwnerName(string playerLibraryId)
+	{
+		PlatformUserIdentifierAbs platformUserIdentifierAbs;
+		if (PlatformUserIdentifierAbs.TryFromCombinedString(playerLibraryId, out platformUserIdentifierAbs))
+		{
+			GameManager instance = GameManager.Instance;
+			PersistentPlayerData persistentPlayerData;
+			if (instance == null)
 			{
-				text = signId.libraryId;
+				persistentPlayerData = null;
 			}
 			else
 			{
-				text = Localization.Get("lblSignLibraryUser", false, null);
+				PersistentPlayerList persistentPlayers = instance.persistentPlayers;
+				persistentPlayerData = ((persistentPlayers != null) ? persistentPlayers.GetPlayerData(platformUserIdentifierAbs) : null);
+			}
+			PersistentPlayerData persistentPlayerData2 = persistentPlayerData;
+			if (persistentPlayerData2 != null)
+			{
+				return persistentPlayerData2.PlayerName.DisplayName;
 			}
 		}
-		else
-		{
-			text = Localization.Get("lblSignLibraryDefault", false, null);
-		}
-		return text;
+		return Localization.Get("lblSignFontUnknown", false, null);
 	}
 
-	// Token: 0x170008E1 RID: 2273
-	// (get) Token: 0x060051BC RID: 20924 RVA: 0x001F2BB9 File Offset: 0x001F0DB9
-	// (set) Token: 0x060051BD RID: 20925 RVA: 0x001F2BC0 File Offset: 0x001F0DC0
+	// Token: 0x17000903 RID: 2307
+	// (get) Token: 0x060051B2 RID: 20914 RVA: 0x001F4C85 File Offset: 0x001F2E85
+	// (set) Token: 0x060051B3 RID: 20915 RVA: 0x001F4C8C File Offset: 0x001F2E8C
 	public static GlobalSignId ErrorSignId
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060051BE RID: 20926 RVA: 0x001F2BC8 File Offset: 0x001F0DC8
+	// Token: 0x060051B4 RID: 20916 RVA: 0x001F4C94 File Offset: 0x001F2E94
 	public static IEnumerator LoadDefaultLibrary(XmlFile file)
 	{
 		SignLibrary signLibrary = new SignLibrary();
 		signLibrary.ReadXml(file);
 		SignDataManager.Instance.TryRegisterLibrary("[D]", signLibrary, false);
-		SignDataManager.ErrorSignId = SignDataManager.Instance.AddSignToLibrary("[I]", SignData.GetErrorSignData());
+		SignDataManager.ErrorSignId = SignDataManager.Instance.AddSignToLibraryLocal("[I]", SignData.GetErrorSignData());
 		yield break;
 	}
 
-	// Token: 0x060051BF RID: 20927 RVA: 0x001F2BD8 File Offset: 0x001F0DD8
+	// Token: 0x060051B5 RID: 20917 RVA: 0x001F4CA4 File Offset: 0x001F2EA4
 	public void Cleanup()
 	{
+		this.FlushPendingPlayerSignWrites();
+		this.playerSignStates.Clear();
+		DeletedSignStore deletedSignStore = this.deletedSignStore;
+		if (deletedSignStore != null)
+		{
+			deletedSignStore.Flush();
+		}
+		this.deletedSignStore = null;
+		this.sessionDeletedSignIds.Clear();
 		foreach (KeyValuePair<GlobalSignId, SignDataManager.SignRenderingData> keyValuePair in this.renderingDataByID)
 		{
 			SignDataManager.SignRenderingData value = keyValuePair.Value;
@@ -170,7 +204,7 @@ public class SignDataManager
 		this.updateListenerMap.Clear();
 	}
 
-	// Token: 0x060051C0 RID: 20928 RVA: 0x001F2C58 File Offset: 0x001F0E58
+	// Token: 0x060051B6 RID: 20918 RVA: 0x001F4D58 File Offset: 0x001F2F58
 	public void RegisterListener(GlobalSignId id, ISignRenderingDataUpdateListener listener, bool exclusive = true)
 	{
 		if (exclusive)
@@ -180,13 +214,13 @@ public class SignDataManager
 		this.updateListenerMap.RegisterListener(id, listener);
 	}
 
-	// Token: 0x060051C1 RID: 20929 RVA: 0x001F2C76 File Offset: 0x001F0E76
+	// Token: 0x060051B7 RID: 20919 RVA: 0x001F4D76 File Offset: 0x001F2F76
 	public void DeregisterListener(ISignRenderingDataUpdateListener listener)
 	{
 		this.updateListenerMap.DeregisterListener(listener);
 	}
 
-	// Token: 0x060051C2 RID: 20930 RVA: 0x001F2C84 File Offset: 0x001F0E84
+	// Token: 0x060051B8 RID: 20920 RVA: 0x001F4D84 File Offset: 0x001F2F84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool LibraryContainsName(string libraryName, string signName)
 	{
@@ -208,7 +242,7 @@ public class SignDataManager
 		return false;
 	}
 
-	// Token: 0x060051C3 RID: 20931 RVA: 0x001F2CF8 File Offset: 0x001F0EF8
+	// Token: 0x060051B9 RID: 20921 RVA: 0x001F4DF8 File Offset: 0x001F2FF8
 	public string GetDuplicateName(string libraryName, string signName)
 	{
 		string text = signName;
@@ -229,22 +263,40 @@ public class SignDataManager
 		return string.Format("{0} ({1})", text, num);
 	}
 
-	// Token: 0x060051C4 RID: 20932 RVA: 0x001F2D6C File Offset: 0x001F0F6C
-	public bool MoveSignToLibrary(GlobalSignId signId, string libraryName, out GlobalSignId newId)
+	// Token: 0x060051BA RID: 20922 RVA: 0x001F4E6C File Offset: 0x001F306C
+	public bool CopySignToLibrary(GlobalSignId signId, string libraryName, out GlobalSignId newId)
 	{
 		SignData signData;
 		if (this.TryGetSignData(signId, out signData))
 		{
-			SignData signData2 = SignData.Duplicate(signData, "");
-			newId = this.AddSignToLibrary(libraryName, signData2);
+			this.CopySignToLibrary(signData, libraryName, out newId);
 			return true;
 		}
 		newId = GlobalSignId.InvalidId;
 		return false;
 	}
 
-	// Token: 0x060051C5 RID: 20933 RVA: 0x001F2DAC File Offset: 0x001F0FAC
+	// Token: 0x060051BB RID: 20923 RVA: 0x001F4E9C File Offset: 0x001F309C
+	public void CopySignToLibrary(SignData signData, string libraryName, out GlobalSignId newId)
+	{
+		SignData signData2 = SignData.Duplicate(signData, this.GetDuplicateName(libraryName, signData.name) ?? "");
+		newId = this.AddSignToLibrary(libraryName, signData2);
+	}
+
+	// Token: 0x060051BC RID: 20924 RVA: 0x001F4ED4 File Offset: 0x001F30D4
 	public GlobalSignId AddSignToLibrary(string libraryId, SignData sign)
+	{
+		GlobalSignId globalSignId = this.AddSignToLibraryLocal(libraryId, sign);
+		if (!SignDataManager.localLibraryIds.Contains(libraryId))
+		{
+			this.SyncSignData(globalSignId, sign);
+		}
+		return globalSignId;
+	}
+
+	// Token: 0x060051BD RID: 20925 RVA: 0x001F4F00 File Offset: 0x001F3100
+	[PublicizedFrom(EAccessModifier.Private)]
+	public GlobalSignId AddSignToLibraryLocal(string libraryId, SignData sign)
 	{
 		SignLibrary signLibrary;
 		if (!this.signLibraries.TryGetValue(libraryId, out signLibrary))
@@ -253,20 +305,153 @@ public class SignDataManager
 			this.signLibraries[libraryId] = signLibrary;
 		}
 		signLibrary.signs[sign.guid] = sign;
-		return new GlobalSignId(libraryId, sign.guid);
+		GlobalSignId globalSignId = new GlobalSignId(libraryId, sign.guid);
+		this.sessionDeletedSignIds.Remove(globalSignId);
+		DeletedSignStore deletedSignStore = this.deletedSignStore;
+		if (deletedSignStore != null)
+		{
+			deletedSignStore.Remove(globalSignId);
+		}
+		return globalSignId;
 	}
 
-	// Token: 0x060051C6 RID: 20934 RVA: 0x001F2DFC File Offset: 0x001F0FFC
+	// Token: 0x060051BE RID: 20926 RVA: 0x001F4F70 File Offset: 0x001F3170
 	public bool TryDeleteSign(GlobalSignId signId)
 	{
-		this.TryClearRenderingData(signId);
-		SignLibrary signLibrary;
-		return this.signLibraries.TryGetValue(signId.libraryId, out signLibrary) && signLibrary.signs.Remove(signId.signGuid);
+		bool flag = this.TryDeleteSignLocal(signId);
+		if (flag && !SignDataManager.localLibraryIds.Contains(signId.libraryId))
+		{
+			this.SyncSignDelete(signId);
+		}
+		return flag;
 	}
 
-	// Token: 0x060051C7 RID: 20935 RVA: 0x001F2E3C File Offset: 0x001F103C
+	// Token: 0x060051BF RID: 20927 RVA: 0x001F4F98 File Offset: 0x001F3198
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool TryDeleteSignLocal(GlobalSignId signId)
+	{
+		this.TryClearRenderingData(signId);
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			this.RemovePlayerSignBlob(signId);
+		}
+		SignLibrary signLibrary;
+		bool flag = this.signLibraries.TryGetValue(signId.libraryId, out signLibrary) && signLibrary.signs.Remove(signId.signGuid);
+		if (SignDataManager.IsPlayerLibraryId(signId.libraryId))
+		{
+			this.HandlePlayerSignDeleted(signId);
+		}
+		return flag;
+	}
+
+	// Token: 0x060051C0 RID: 20928 RVA: 0x001F5000 File Offset: 0x001F3200
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void HandlePlayerSignDeleted(GlobalSignId signId)
+	{
+		this.sessionDeletedSignIds.Add(signId);
+		DeletedSignStore deletedSignStore = this.deletedSignStore;
+		if (deletedSignStore != null)
+		{
+			deletedSignStore.Add(signId);
+		}
+		if (this.updateListenerMap.HasListeners(signId))
+		{
+			this.deletedSignListenerScratch.Clear();
+			this.deletedSignListenerScratch.AddRange(this.updateListenerMap.GetListeners(signId));
+			foreach (ISignRenderingDataUpdateListener signRenderingDataUpdateListener in this.deletedSignListenerScratch)
+			{
+				signRenderingDataUpdateListener.HandleSignDataRemoved();
+			}
+			this.deletedSignListenerScratch.Clear();
+		}
+		SignTextureManager.Instance.Invalidate(signId);
+		this.ReplaceLoadedSignReferences(signId);
+	}
+
+	// Token: 0x060051C1 RID: 20929 RVA: 0x001F50BC File Offset: 0x001F32BC
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void ReplaceLoadedSignReferences(GlobalSignId signId)
+	{
+		using (SignDataManager.s_SignDataManagerReplaceLoadedSignReferences.Auto())
+		{
+			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+			{
+				World world = ((GameManager.Instance != null) ? GameManager.Instance.World : null);
+				if (world != null && world.ChunkCache != null)
+				{
+					List<Chunk> chunkArrayCopySync = world.ChunkCache.GetChunkArrayCopySync();
+					for (int i = 0; i < chunkArrayCopySync.Count; i++)
+					{
+						Chunk chunk = chunkArrayCopySync[i];
+						if (chunk != null)
+						{
+							List<TileEntity> list = chunk.GetTileEntities().list;
+							for (int j = 0; j < list.Count; j++)
+							{
+								TileEntity tileEntity = list[j];
+								TEFeatureCanvas tefeatureCanvas;
+								if (tileEntity != null && tileEntity.TryGetSelfOrFeature<TEFeatureCanvas>(out tefeatureCanvas) && tefeatureCanvas.TryReplaceSignReference(signId, SignData.defaultSignDataID))
+								{
+									tefeatureCanvas.SetModified();
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Token: 0x060051C2 RID: 20930 RVA: 0x001F51B8 File Offset: 0x001F33B8
+	public bool IsKnownDeleted(GlobalSignId signId)
+	{
+		return this.sessionDeletedSignIds.Contains(signId) || (this.deletedSignStore != null && this.deletedSignStore.IsDeleted(signId));
+	}
+
+	// Token: 0x060051C3 RID: 20931 RVA: 0x001F51E0 File Offset: 0x001F33E0
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void SyncSignDelete(GlobalSignId signId)
+	{
+		NetPackageSignDelete netPackageSignDelete = new NetPackageSignDelete().Setup(signId);
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageSignDelete, false, -1, -1, -1, null, 192, false);
+			return;
+		}
+		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSignDelete, false);
+	}
+
+	// Token: 0x060051C4 RID: 20932 RVA: 0x001F5230 File Offset: 0x001F3430
 	public bool MarkSignDirty(GlobalSignId signId)
 	{
+		SignData signData;
+		if (!SignDataManager.localLibraryIds.Contains(signId.libraryId) && this.TryGetSignData(signId, out signData))
+		{
+			this.SyncSignData(signId, signData);
+		}
+		return this.MarkSignDirtyLocal(signId);
+	}
+
+	// Token: 0x060051C5 RID: 20933 RVA: 0x001F526C File Offset: 0x001F346C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void SyncSignData(GlobalSignId signId, SignData sign)
+	{
+		byte[] array = SignDataManager.SerializeSign(sign);
+		NetPackageSingleSignData netPackageSingleSignData = new NetPackageSingleSignData().Setup(signId.libraryId, array);
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageSingleSignData, false, -1, -1, -1, null, 192, false);
+			this.StorePlayerSignBlob(signId.libraryId, sign.guid, array);
+			return;
+		}
+		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSingleSignData, false);
+	}
+
+	// Token: 0x060051C6 RID: 20934 RVA: 0x001F52DC File Offset: 0x001F34DC
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool MarkSignDirtyLocal(GlobalSignId signId)
+	{
+		SignTextureManager.Instance.Invalidate(signId);
 		SignData signData;
 		if (this.updateListenerMap.HasListeners(signId) && this.TryGetSignData(signId, out signData))
 		{
@@ -280,7 +465,7 @@ public class SignDataManager
 		return this.TryClearRenderingData(signId);
 	}
 
-	// Token: 0x060051C8 RID: 20936 RVA: 0x001F2EB8 File Offset: 0x001F10B8
+	// Token: 0x060051C7 RID: 20935 RVA: 0x001F5364 File Offset: 0x001F3564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryClearRenderingData(GlobalSignId signId)
 	{
@@ -294,7 +479,7 @@ public class SignDataManager
 		return false;
 	}
 
-	// Token: 0x060051C9 RID: 20937 RVA: 0x001F2EEC File Offset: 0x001F10EC
+	// Token: 0x060051C8 RID: 20936 RVA: 0x001F5398 File Offset: 0x001F3598
 	public bool TryRegisterLibrary(string libraryId, SignLibrary library, bool replaceExisting = false)
 	{
 		SignLibrary signLibrary;
@@ -319,7 +504,7 @@ public class SignDataManager
 		return true;
 	}
 
-	// Token: 0x060051CA RID: 20938 RVA: 0x001F2F90 File Offset: 0x001F1190
+	// Token: 0x060051C9 RID: 20937 RVA: 0x001F543C File Offset: 0x001F363C
 	public IEnumerator RequestWorldSignDataFromServer()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -348,7 +533,7 @@ public class SignDataManager
 		yield break;
 	}
 
-	// Token: 0x060051CB RID: 20939 RVA: 0x001F2FA0 File Offset: 0x001F11A0
+	// Token: 0x060051CA RID: 20938 RVA: 0x001F544C File Offset: 0x001F364C
 	public void SendSignDataToClient(ClientInfo client)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -393,7 +578,7 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x060051CC RID: 20940 RVA: 0x001F3178 File Offset: 0x001F1378
+	// Token: 0x060051CB RID: 20939 RVA: 0x001F5624 File Offset: 0x001F3824
 	public void ProcessSignDataBatchReceived(byte[] data, bool isLastBatch)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -415,16 +600,17 @@ public class SignDataManager
 						while (memoryStream.Position < num)
 						{
 							string text = pooledBinaryReader.ReadString();
-							SignData signData = SignData.Read(pooledBinaryReader);
-							this.AddSignToLibrary(text, signData);
+							int num2;
+							SignData signData = SignData.Read(pooledBinaryReader, out num2);
+							this.AddSignToLibraryLocal(text, signData);
 						}
 					}
 				}
 			}
 		}
-		catch
+		catch (Exception ex)
 		{
-			Log.Error("[SignDataManager] Failed to apply sign data batch from server");
+			Log.Error(string.Format("[SignDataManager] Failed to apply sign data batch from server: {0}", ex));
 		}
 		finally
 		{
@@ -437,13 +623,13 @@ public class SignDataManager
 		SignDataManager.ErrorSignId = SignDataManager.Instance.AddSignToLibrary("[I]", SignData.GetErrorSignData());
 	}
 
-	// Token: 0x060051CD RID: 20941 RVA: 0x001F3280 File Offset: 0x001F1480
+	// Token: 0x060051CC RID: 20940 RVA: 0x001F5734 File Offset: 0x001F3934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<KeyValuePair<string, SignLibrary>> EnumeratePublicSignLibraries()
 	{
 		foreach (KeyValuePair<string, SignLibrary> keyValuePair in this.signLibraries)
 		{
-			if (!keyValuePair.Key.Equals("[I]") || !keyValuePair.Key.Equals("[U]"))
+			if (!SignDataManager.localLibraryIds.Contains(keyValuePair.Key))
 			{
 				yield return keyValuePair;
 			}
@@ -453,7 +639,7 @@ public class SignDataManager
 		yield break;
 	}
 
-	// Token: 0x060051CE RID: 20942 RVA: 0x001F3290 File Offset: 0x001F1490
+	// Token: 0x060051CD RID: 20941 RVA: 0x001F5744 File Offset: 0x001F3944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetRenderingData(GlobalSignId signId, out SignDataManager.SignRenderingData signRenderingData)
 	{
@@ -476,7 +662,7 @@ public class SignDataManager
 		return true;
 	}
 
-	// Token: 0x060051CF RID: 20943 RVA: 0x001F3314 File Offset: 0x001F1514
+	// Token: 0x060051CE RID: 20942 RVA: 0x001F57C8 File Offset: 0x001F39C8
 	public bool TryApplyRenderingData(GlobalSignId signId, SignDataManager.RenderingDataPatcher patcher, List<SignRenderer> signRenderers, SignCanvas.SignBlendMode blendMode = SignCanvas.SignBlendMode.Cutout, Camera targetCamera = null)
 	{
 		SignDataManager.SignRenderingData signRenderingData;
@@ -512,7 +698,7 @@ public class SignDataManager
 		return true;
 	}
 
-	// Token: 0x060051D0 RID: 20944 RVA: 0x001F33F8 File Offset: 0x001F15F8
+	// Token: 0x060051CF RID: 20943 RVA: 0x001F58AC File Offset: 0x001F3AAC
 	public bool TryApplyRenderingData(GlobalSignId signId, float canvasAspect, Material material, SignData.SignLayer isolateLayer = null, SignUIStyle style = SignUIStyle.Standard)
 	{
 		SignDataManager.SignRenderingData signRenderingData;
@@ -549,7 +735,7 @@ public class SignDataManager
 		return true;
 	}
 
-	// Token: 0x060051D1 RID: 20945 RVA: 0x001F3504 File Offset: 0x001F1704
+	// Token: 0x060051D0 RID: 20944 RVA: 0x001F59B8 File Offset: 0x001F3BB8
 	public bool TryGetSignComplexityInfo(GlobalSignId signId, out SignComplexityInfo complexityInfo)
 	{
 		SignDataManager.SignRenderingData signRenderingData;
@@ -562,15 +748,15 @@ public class SignDataManager
 		return false;
 	}
 
-	// Token: 0x060051D2 RID: 20946 RVA: 0x001F3548 File Offset: 0x001F1748
+	// Token: 0x060051D1 RID: 20945 RVA: 0x001F59FC File Offset: 0x001F3BFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignDataManager.SignRenderingData UpdateRenderingData(SignData signData, GlobalSignId id)
 	{
-		SignDataManager.<>c__DisplayClass91_0 CS$<>8__locals1;
+		SignDataManager.<>c__DisplayClass106_0 CS$<>8__locals1;
 		CS$<>8__locals1.<>4__this = this;
 		CS$<>8__locals1.signData = signData;
 		CS$<>8__locals1.id = id;
-		this.<UpdateRenderingData>g__ClearIntermediateLists|91_0(ref CS$<>8__locals1);
+		this.<UpdateRenderingData>g__ClearIntermediateLists|106_0(ref CS$<>8__locals1);
 		if (this.renderingDataByID.TryGetValue(CS$<>8__locals1.id, out CS$<>8__locals1.signRenderingData))
 		{
 			CS$<>8__locals1.signRenderingData.Reset();
@@ -582,7 +768,7 @@ public class SignDataManager
 		}
 		CS$<>8__locals1.compStackIndex = 0;
 		CS$<>8__locals1.uvStackIndex = 0;
-		CS$<>8__locals1.signRenderingData.stackInfo = this.<UpdateRenderingData>g__ProcessLayers|91_1(CS$<>8__locals1.signData.layers, SignData.SignTransform.Identity, this.colorOpStack, default(SignDataManager.GroupOffsets), ref CS$<>8__locals1);
+		CS$<>8__locals1.signRenderingData.stackInfo = this.<UpdateRenderingData>g__ProcessLayers|106_1(CS$<>8__locals1.signData.layers, SignData.SignTransform.Identity, this.colorOpStack, default(SignDataManager.GroupOffsets), ref CS$<>8__locals1);
 		CS$<>8__locals1.signRenderingData.layerCount = this.layerDescriptors.List.Count;
 		if (this.fontAtlasTextureArray != null)
 		{
@@ -595,11 +781,11 @@ public class SignDataManager
 		{
 			array[i].UpdateBuffer(CS$<>8__locals1.signRenderingData);
 		}
-		this.<UpdateRenderingData>g__ClearIntermediateLists|91_0(ref CS$<>8__locals1);
+		this.<UpdateRenderingData>g__ClearIntermediateLists|106_0(ref CS$<>8__locals1);
 		return CS$<>8__locals1.signRenderingData;
 	}
 
-	// Token: 0x060051D3 RID: 20947 RVA: 0x001F36AC File Offset: 0x001F18AC
+	// Token: 0x060051D2 RID: 20946 RVA: 0x001F5B60 File Offset: 0x001F3D60
 	public void AddFilteredSignIdsToList(string libraryId, string nameFilter, List<GlobalSignId> signIds)
 	{
 		SignLibrary signLibrary;
@@ -608,9 +794,20 @@ public class SignDataManager
 			Log.Error("Failed to retrieve sign IDs. Library '" + libraryId + "' not found.");
 			return;
 		}
+		bool flag;
+		if (SignDataManager.IsPlayerLibraryId(libraryId))
+		{
+			PlatformUserIdentifierAbs internalLocalUserIdentifier = PlatformManager.InternalLocalUserIdentifier;
+			flag = !string.Equals(libraryId, (internalLocalUserIdentifier != null) ? internalLocalUserIdentifier.CombinedString : null);
+		}
+		else
+		{
+			flag = false;
+		}
+		bool flag2 = flag;
 		foreach (SignData signData in signLibrary.signs.Values)
 		{
-			if (string.IsNullOrEmpty(nameFilter) || signData.name.ContainsCaseInsensitive(nameFilter))
+			if ((!flag2 || signData.sharing != SignData.SignSharing.Private) && (string.IsNullOrEmpty(nameFilter) || signData.name.ContainsCaseInsensitive(nameFilter)))
 			{
 				GlobalSignId globalSignId = new GlobalSignId(libraryId, signData.guid);
 				signIds.Add(globalSignId);
@@ -618,7 +815,30 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x060051D4 RID: 20948 RVA: 0x001F3750 File Offset: 0x001F1950
+	// Token: 0x060051D3 RID: 20947 RVA: 0x001F5C34 File Offset: 0x001F3E34
+	public SignData.SignSharing GetEffectiveSharing(GlobalSignId signId)
+	{
+		SignData signData;
+		if (!this.TryGetSignData(signId, out signData))
+		{
+			return SignData.SignSharing.Private;
+		}
+		return signData.sharing;
+	}
+
+	// Token: 0x060051D4 RID: 20948 RVA: 0x001F5C54 File Offset: 0x001F3E54
+	public static bool IsLocalPlayerAlliedWith(string playerLibraryId)
+	{
+		PlatformUserIdentifierAbs platformUserIdentifierAbs;
+		if (!PlatformUserIdentifierAbs.TryFromCombinedString(playerLibraryId, out platformUserIdentifierAbs))
+		{
+			return false;
+		}
+		PersistentPlayerData persistentLocalPlayer = GameManager.Instance.persistentLocalPlayer;
+		return persistentLocalPlayer != null && persistentLocalPlayer.IsAlly(platformUserIdentifierAbs);
+	}
+
+	// Token: 0x060051D5 RID: 20949 RVA: 0x001F5C84 File Offset: 0x001F3E84
 	public bool TryGetSignData(GlobalSignId signId, out SignData signData)
 	{
 		SignLibrary signLibrary;
@@ -630,22 +850,348 @@ public class SignDataManager
 		return signLibrary.signs.TryGetValue(signId.signGuid, out signData);
 	}
 
-	// Token: 0x060051D5 RID: 20949 RVA: 0x001F3789 File Offset: 0x001F1989
+	// Token: 0x060051D6 RID: 20950 RVA: 0x001F5CBD File Offset: 0x001F3EBD
 	public bool HasSignLibrary(string libraryId)
 	{
 		return this.signLibraries.ContainsKey(libraryId);
 	}
 
-	// Token: 0x060051D6 RID: 20950 RVA: 0x001F3797 File Offset: 0x001F1997
+	// Token: 0x060051D7 RID: 20951 RVA: 0x001F5CCB File Offset: 0x001F3ECB
 	public bool TryGetSignLibrary(string libraryId, out SignLibrary library)
 	{
 		return this.signLibraries.TryGetValue(libraryId, out library);
 	}
 
-	// Token: 0x060051D7 RID: 20951 RVA: 0x001F37A8 File Offset: 0x001F19A8
+	// Token: 0x060051D8 RID: 20952 RVA: 0x001F5CDC File Offset: 0x001F3EDC
+	public void ProcessSignReceived(string libraryId, byte[] signBlob)
+	{
+		SignData signData;
+		try
+		{
+			int num;
+			signData = SignDataManager.DeserializeSign(signBlob, out num);
+		}
+		catch (Exception ex)
+		{
+			Log.Error(string.Format("[SignDataManager] Failed to deserialise a received sign for library '{0}': {1}", libraryId, ex));
+			return;
+		}
+		GlobalSignId globalSignId = this.AddSignToLibraryLocal(libraryId, signData);
+		this.MarkSignDirtyLocal(globalSignId);
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			this.StorePlayerSignBlob(libraryId, signData.guid, signBlob);
+		}
+	}
+
+	// Token: 0x060051D9 RID: 20953 RVA: 0x001F5D44 File Offset: 0x001F3F44
+	public void ProcessSignDeleteReceived(GlobalSignId signId)
+	{
+		this.TryDeleteSignLocal(signId);
+	}
+
+	// Token: 0x060051DA RID: 20954 RVA: 0x001F5D50 File Offset: 0x001F3F50
+	public static bool IsPlayerLibraryId(string libraryId)
+	{
+		PlatformUserIdentifierAbs platformUserIdentifierAbs;
+		return !string.IsNullOrEmpty(libraryId) && !SignDataManager.localLibraryIds.Contains(libraryId) && libraryId != "[D]" && PlatformUserIdentifierAbs.TryFromCombinedString(libraryId, out platformUserIdentifierAbs);
+	}
+
+	// Token: 0x060051DB RID: 20955 RVA: 0x001F5D8C File Offset: 0x001F3F8C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static byte[] SerializeSign(SignData sign)
+	{
+		byte[] array;
+		using (PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true))
+		{
+			using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
+			{
+				pooledBinaryWriter.SetBaseStream(pooledExpandableMemoryStream);
+				pooledExpandableMemoryStream.SetLength(0L);
+				sign.Write(pooledBinaryWriter);
+				array = pooledExpandableMemoryStream.ToArray();
+			}
+		}
+		return array;
+	}
+
+	// Token: 0x060051DC RID: 20956 RVA: 0x001F5E04 File Offset: 0x001F4004
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static SignData DeserializeSign(byte[] bytes, out int binaryVersion)
+	{
+		SignData signData2;
+		using (PooledBinaryReader pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
+		{
+			using (MemoryStream memoryStream = new MemoryStream(bytes))
+			{
+				pooledBinaryReader.SetBaseStream(memoryStream);
+				SignData signData = SignData.Read(pooledBinaryReader, out binaryVersion);
+				if (memoryStream.Position != memoryStream.Length)
+				{
+					throw new InvalidDataException(string.Format("Sign blob has {0} trailing byte(s) after deserialisation; SignData.Read and SignData.Write are out of sync.", memoryStream.Length - memoryStream.Position));
+				}
+				signData2 = signData;
+			}
+		}
+		return signData2;
+	}
+
+	// Token: 0x060051DD RID: 20957 RVA: 0x001F5E98 File Offset: 0x001F4098
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void StorePlayerSignBlob(string libraryId, Guid signGuid, byte[] signBlob)
+	{
+		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer || !SignDataManager.IsPlayerLibraryId(libraryId) || signBlob == null)
+		{
+			return;
+		}
+		SignDataManager.PlayerSignLibraryState orCreatePlayerSignState = this.GetOrCreatePlayerSignState(libraryId);
+		orCreatePlayerSignState.blobsByGuid[signGuid] = signBlob;
+		SignDataManager.MarkPlayerSignsDirty(orCreatePlayerSignState);
+	}
+
+	// Token: 0x060051DE RID: 20958 RVA: 0x001F5ECC File Offset: 0x001F40CC
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void RemovePlayerSignBlob(GlobalSignId signId)
+	{
+		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer || !SignDataManager.IsPlayerLibraryId(signId.libraryId))
+		{
+			return;
+		}
+		SignDataManager.PlayerSignLibraryState playerSignLibraryState;
+		if (!this.playerSignStates.TryGetValue(signId.libraryId, out playerSignLibraryState))
+		{
+			return;
+		}
+		if (playerSignLibraryState.blobsByGuid.Remove(signId.signGuid))
+		{
+			SignDataManager.MarkPlayerSignsDirty(playerSignLibraryState);
+		}
+	}
+
+	// Token: 0x060051DF RID: 20959 RVA: 0x001F5F24 File Offset: 0x001F4124
+	[PublicizedFrom(EAccessModifier.Private)]
+	public SignDataManager.PlayerSignLibraryState GetOrCreatePlayerSignState(string libraryId)
+	{
+		SignDataManager.PlayerSignLibraryState playerSignLibraryState;
+		if (!this.playerSignStates.TryGetValue(libraryId, out playerSignLibraryState))
+		{
+			playerSignLibraryState = new SignDataManager.PlayerSignLibraryState();
+			this.playerSignStates[libraryId] = playerSignLibraryState;
+		}
+		return playerSignLibraryState;
+	}
+
+	// Token: 0x060051E0 RID: 20960 RVA: 0x001F5F55 File Offset: 0x001F4155
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static void MarkPlayerSignsDirty(SignDataManager.PlayerSignLibraryState state)
+	{
+		state.dirty = true;
+	}
+
+	// Token: 0x060051E1 RID: 20961 RVA: 0x001F5F60 File Offset: 0x001F4160
+	public void Update()
+	{
+		DeletedSignStore deletedSignStore = this.deletedSignStore;
+		if (deletedSignStore != null)
+		{
+			deletedSignStore.Update();
+		}
+		if (this.playerSignStates.Count == 0)
+		{
+			return;
+		}
+		float unscaledTime = Time.unscaledTime;
+		this.playerSignWriteScratch.Clear();
+		foreach (KeyValuePair<string, SignDataManager.PlayerSignLibraryState> keyValuePair in this.playerSignStates)
+		{
+			SignDataManager.PlayerSignLibraryState value = keyValuePair.Value;
+			SignDataManager.<Update>g__CheckCompletedPlayerSignWrite|126_0(value);
+			if (value.dirty && !value.writesBlocked && value.writeTask == null && unscaledTime - value.lastWriteTime >= 60f)
+			{
+				this.playerSignWriteScratch.Add(keyValuePair.Key);
+			}
+		}
+		for (int i = 0; i < this.playerSignWriteScratch.Count; i++)
+		{
+			string text = this.playerSignWriteScratch[i];
+			this.BeginPlayerSignWrite(text, this.playerSignStates[text], false);
+		}
+		this.playerSignWriteScratch.Clear();
+	}
+
+	// Token: 0x060051E2 RID: 20962 RVA: 0x001F6070 File Offset: 0x001F4270
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void BeginPlayerSignWrite(string libraryId, SignDataManager.PlayerSignLibraryState state, bool waitForCompletion)
+	{
+		state.dirty = false;
+		state.lastWriteTime = Time.unscaledTime;
+		PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
+		try
+		{
+			this.playerSignBlobScratch.Clear();
+			foreach (byte[] array in state.blobsByGuid.Values)
+			{
+				this.playerSignBlobScratch.Add(array);
+			}
+			PlayerSignStore.BuildImage(this.playerSignBlobScratch, pooledExpandableMemoryStream);
+		}
+		catch (Exception ex)
+		{
+			Log.Error(string.Format("[SignDataManager] Failed to build sign store image for '{0}': {1}", libraryId, ex));
+			MemoryPools.poolMemoryStream.FreeSync(pooledExpandableMemoryStream);
+			return;
+		}
+		finally
+		{
+			this.playerSignBlobScratch.Clear();
+		}
+		SignDataManager.PlayerSignWriteRequest playerSignWriteRequest = new SignDataManager.PlayerSignWriteRequest
+		{
+			libraryId = libraryId,
+			image = pooledExpandableMemoryStream
+		};
+		if (waitForCompletion)
+		{
+			SignDataManager.WritePlayerSignImage(playerSignWriteRequest);
+			return;
+		}
+		state.writeTask = ThreadManager.AddSingleTask(new ThreadManager.TaskFunctionDelegate(SignDataManager.PlayerSignWriteTask), playerSignWriteRequest, null, true);
+	}
+
+	// Token: 0x060051E3 RID: 20963 RVA: 0x001F6184 File Offset: 0x001F4384
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static void PlayerSignWriteTask(ThreadManager.TaskInfo _taskInfo)
+	{
+		SignDataManager.WritePlayerSignImage((SignDataManager.PlayerSignWriteRequest)_taskInfo.parameter);
+	}
+
+	// Token: 0x060051E4 RID: 20964 RVA: 0x001F6198 File Offset: 0x001F4398
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static void WritePlayerSignImage(SignDataManager.PlayerSignWriteRequest request)
+	{
+		try
+		{
+			PlayerSignStore.Write(request.libraryId, request.image);
+		}
+		catch (Exception ex)
+		{
+			Log.Error(string.Format("[SignDataManager] Failed to write sign store for '{0}': {1}", request.libraryId, ex));
+		}
+		finally
+		{
+			MemoryPools.poolMemoryStream.FreeSync(request.image);
+			request.image = null;
+		}
+	}
+
+	// Token: 0x060051E5 RID: 20965 RVA: 0x001F6208 File Offset: 0x001F4408
+	public void FlushPendingPlayerSignWrites()
+	{
+		foreach (KeyValuePair<string, SignDataManager.PlayerSignLibraryState> keyValuePair in this.playerSignStates)
+		{
+			SignDataManager.PlayerSignLibraryState value = keyValuePair.Value;
+			if (value.writeTask != null)
+			{
+				value.writeTask.WaitForEnd();
+				ThreadManager.ReleaseTaskInfo(value.writeTask);
+				value.writeTask = null;
+			}
+			if (value.dirty && !value.writesBlocked)
+			{
+				this.BeginPlayerSignWrite(keyValuePair.Key, value, true);
+			}
+		}
+	}
+
+	// Token: 0x060051E6 RID: 20966 RVA: 0x001F62A0 File Offset: 0x001F44A0
+	public void LoadPlayerSignLibraries()
+	{
+		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			return;
+		}
+		this.deletedSignStore = new DeletedSignStore();
+		this.deletedSignStore.Load();
+		HashSet<string> hashSet = new HashSet<string>();
+		PlayerSignStore.GetStoredLibraryIds(hashSet);
+		List<byte[]> list = new List<byte[]>();
+		foreach (string text in hashSet)
+		{
+			if (!SignDataManager.IsPlayerLibraryId(text))
+			{
+				Log.Warning("[SignDataManager] Skipping sign store with unrecognised player id: " + text);
+			}
+			else
+			{
+				list.Clear();
+				int num;
+				if (!PlayerSignStore.TryLoad(text, list, out num))
+				{
+					this.GetOrCreatePlayerSignState(text).writesBlocked = true;
+					Log.Error("[SignDataManager] No readable sign store for player '" + text + "'; their libray appears on disk but signs could not be loaded. Writes for this library are disabled for the session to avoid overwriting it.");
+				}
+				else
+				{
+					bool flag = num != 3;
+					if (flag)
+					{
+						Log.Out(string.Format("[SignDataManager] Migrating sign store for player '{0}' from container version {1} to {2}.", text, num, 3));
+					}
+					SignLibrary signLibrary = new SignLibrary();
+					SignDataManager.PlayerSignLibraryState orCreatePlayerSignState = this.GetOrCreatePlayerSignState(text);
+					orCreatePlayerSignState.blobsByGuid.Clear();
+					orCreatePlayerSignState.dirty = false;
+					int num2 = 0;
+					int num3 = 0;
+					for (int i = 0; i < list.Count; i++)
+					{
+						byte[] array = list[i];
+						try
+						{
+							int num4;
+							SignData signData = SignDataManager.DeserializeSign(array, out num4);
+							signLibrary.signs[signData.guid] = signData;
+							bool flag2 = num4 != 3;
+							orCreatePlayerSignState.blobsByGuid[signData.guid] = (flag2 ? SignDataManager.SerializeSign(signData) : array);
+							if (flag2)
+							{
+								num3++;
+							}
+						}
+						catch (Exception ex)
+						{
+							num2++;
+							Log.Error(string.Format("[SignDataManager] Failed to deserialise sign {0} of {1} for player '{2}'; skipping it: {3}", new object[] { i, list.Count, text, ex }));
+						}
+					}
+					if (num3 > 0)
+					{
+						Log.Out(string.Format("[SignDataManager] Migrated {0} of {1} sign(s) for player '{2}' to blob version {3}.", new object[] { num3, list.Count, text, 3 }));
+					}
+					if (num2 > 0)
+					{
+						PlayerSignStore.PreserveUnreadable(text);
+					}
+					if (num2 > 0 && num2 == list.Count)
+					{
+						orCreatePlayerSignState.writesBlocked = true;
+						Log.Error(string.Format("[SignDataManager] Every one of the {0} sign record(s) for player '{1}' failed to load. ", list.Count, text) + "This suggests a SignData serialisation problem rather than a damaged store, so writes for this library are disabled for the session to avoid overwriting it. The store has been preserved for investigation.");
+					}
+					else if (num2 > 0 || num3 > 0 || flag)
+					{
+						SignDataManager.MarkPlayerSignsDirty(orCreatePlayerSignState);
+					}
+					this.TryRegisterLibrary(text, signLibrary, true);
+				}
+			}
+		}
+		this.deletedSignStore.PruneExistingSigns(this);
+	}
+
+	// Token: 0x060051E8 RID: 20968 RVA: 0x001F6598 File Offset: 0x001F4798
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__ClearIntermediateLists|91_0(ref SignDataManager.<>c__DisplayClass91_0 A_1)
+	public void <UpdateRenderingData>g__ClearIntermediateLists|106_0(ref SignDataManager.<>c__DisplayClass106_0 A_1)
 	{
 		this.colorOpStack.Clear();
 		SignDataManager.IIntermediateDataWrapper[] array = this.intermediateDataWrappers;
@@ -655,10 +1201,10 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x060051D8 RID: 20952 RVA: 0x001F37E0 File Offset: 0x001F19E0
+	// Token: 0x060051E9 RID: 20969 RVA: 0x001F65D0 File Offset: 0x001F47D0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public LayerStackInfo <UpdateRenderingData>g__ProcessLayers|91_1(List<SignData.SignLayer> layers, SignData.SignTransform parentTransform, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets parentOffsets = default(SignDataManager.GroupOffsets), ref SignDataManager.<>c__DisplayClass91_0 A_5)
+	public LayerStackInfo <UpdateRenderingData>g__ProcessLayers|106_1(List<SignData.SignLayer> layers, SignData.SignTransform parentTransform, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets parentOffsets = default(SignDataManager.GroupOffsets), ref SignDataManager.<>c__DisplayClass106_0 A_5)
 	{
 		int num = 0;
 		LayerStackInfo layerStackInfo = new LayerStackInfo(A_5.compStackIndex, A_5.uvStackIndex);
@@ -703,39 +1249,39 @@ public class SignDataManager
 						{
 							if (signLayer.HasTransformOrWarps || parentTransform != SignData.SignTransform.Identity)
 							{
-								this.<UpdateRenderingData>g__PushWarps|91_5(parentTransform, signLayer, ref A_5);
+								this.<UpdateRenderingData>g__PushWarps|106_5(parentTransform, signLayer, ref A_5);
 								layerComplexityInfo.MaxUVStackIndex = A_5.uvStackIndex;
-								this.<UpdateRenderingData>g__ProcessNoiseLayer|91_3(noiseSignLayer, colorOps, parentOffsets, ref A_5);
-								this.<UpdateRenderingData>g__PopWarps|91_6(ref A_5);
+								this.<UpdateRenderingData>g__ProcessNoiseLayer|106_3(noiseSignLayer, colorOps, parentOffsets, ref A_5);
+								this.<UpdateRenderingData>g__PopWarps|106_6(ref A_5);
 							}
 							else
 							{
-								this.<UpdateRenderingData>g__ProcessNoiseLayer|91_3(noiseSignLayer, colorOps, parentOffsets, ref A_5);
+								this.<UpdateRenderingData>g__ProcessNoiseLayer|106_3(noiseSignLayer, colorOps, parentOffsets, ref A_5);
 							}
 						}
 					}
 					else if (signLayer.HasTransformOrWarps || parentTransform != SignData.SignTransform.Identity)
 					{
-						this.<UpdateRenderingData>g__PushWarps|91_5(parentTransform, signLayer, ref A_5);
+						this.<UpdateRenderingData>g__PushWarps|106_5(parentTransform, signLayer, ref A_5);
 						layerComplexityInfo.MaxUVStackIndex = A_5.uvStackIndex;
-						this.<UpdateRenderingData>g__ProcessPolygonLayer|91_2(polygonSignLayer, colorOps, parentOffsets, ref A_5);
-						this.<UpdateRenderingData>g__PopWarps|91_6(ref A_5);
+						this.<UpdateRenderingData>g__ProcessPolygonLayer|106_2(polygonSignLayer, colorOps, parentOffsets, ref A_5);
+						this.<UpdateRenderingData>g__PopWarps|106_6(ref A_5);
 					}
 					else
 					{
-						this.<UpdateRenderingData>g__ProcessPolygonLayer|91_2(polygonSignLayer, colorOps, parentOffsets, ref A_5);
+						this.<UpdateRenderingData>g__ProcessPolygonLayer|106_2(polygonSignLayer, colorOps, parentOffsets, ref A_5);
 					}
 				}
 				else if (signLayer.HasTransformOrWarps || parentTransform != SignData.SignTransform.Identity)
 				{
-					this.<UpdateRenderingData>g__PushWarps|91_5(parentTransform, signLayer, ref A_5);
+					this.<UpdateRenderingData>g__PushWarps|106_5(parentTransform, signLayer, ref A_5);
 					layerComplexityInfo.MaxUVStackIndex = A_5.uvStackIndex;
-					this.<UpdateRenderingData>g__ProcessTextLayer|91_4(textSignLayer, colorOps, parentOffsets, ref A_5);
-					this.<UpdateRenderingData>g__PopWarps|91_6(ref A_5);
+					this.<UpdateRenderingData>g__ProcessTextLayer|106_4(textSignLayer, colorOps, parentOffsets, ref A_5);
+					this.<UpdateRenderingData>g__PopWarps|106_6(ref A_5);
 				}
 				else
 				{
-					this.<UpdateRenderingData>g__ProcessTextLayer|91_4(textSignLayer, colorOps, parentOffsets, ref A_5);
+					this.<UpdateRenderingData>g__ProcessTextLayer|106_4(textSignLayer, colorOps, parentOffsets, ref A_5);
 				}
 			}
 			else
@@ -753,16 +1299,16 @@ public class SignDataManager
 				}
 				if (groupSignLayer.HasWarps || !groupSignLayer.transform.HasUniformScale)
 				{
-					this.<UpdateRenderingData>g__PushWarps|91_5(parentTransform, signLayer, ref A_5);
-					LayerStackInfo layerStackInfo2 = this.<UpdateRenderingData>g__ProcessLayers|91_1(groupSignLayer.layers, SignData.SignTransform.Identity, colorOps, groupOffsets, ref A_5);
+					this.<UpdateRenderingData>g__PushWarps|106_5(parentTransform, signLayer, ref A_5);
+					LayerStackInfo layerStackInfo2 = this.<UpdateRenderingData>g__ProcessLayers|106_1(groupSignLayer.layers, SignData.SignTransform.Identity, colorOps, groupOffsets, ref A_5);
 					layerComplexityInfo.MaxCompStackIndex = layerStackInfo2.MaxCompStackIndex;
 					layerComplexityInfo.MaxUVStackIndex = layerStackInfo2.MaxUVStackIndex;
 					layerComplexityInfo.GroupDepth = layerStackInfo2.GroupDepth + 1;
-					this.<UpdateRenderingData>g__PopWarps|91_6(ref A_5);
+					this.<UpdateRenderingData>g__PopWarps|106_6(ref A_5);
 				}
 				else
 				{
-					LayerStackInfo layerStackInfo3 = this.<UpdateRenderingData>g__ProcessLayers|91_1(groupSignLayer.layers, parentTransform * groupSignLayer.transform, colorOps, groupOffsets, ref A_5);
+					LayerStackInfo layerStackInfo3 = this.<UpdateRenderingData>g__ProcessLayers|106_1(groupSignLayer.layers, parentTransform * groupSignLayer.transform, colorOps, groupOffsets, ref A_5);
 					layerComplexityInfo.MaxCompStackIndex = layerStackInfo3.MaxCompStackIndex;
 					layerComplexityInfo.MaxUVStackIndex = layerStackInfo3.MaxUVStackIndex;
 					layerComplexityInfo.GroupDepth = layerStackInfo3.GroupDepth + 1;
@@ -820,10 +1366,10 @@ public class SignDataManager
 		return layerStackInfo;
 	}
 
-	// Token: 0x060051D9 RID: 20953 RVA: 0x001F3E0C File Offset: 0x001F200C
+	// Token: 0x060051EA RID: 20970 RVA: 0x001F6BFC File Offset: 0x001F4DFC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__PushWarps|91_5(SignData.SignTransform parentTransform, SignData.SignLayer layer, ref SignDataManager.<>c__DisplayClass91_0 A_3)
+	public void <UpdateRenderingData>g__PushWarps|106_5(SignData.SignTransform parentTransform, SignData.SignLayer layer, ref SignDataManager.<>c__DisplayClass106_0 A_3)
 	{
 		this.layerDescriptors.List.Add(new SignDataManager.LayerDescriptor
 		{
@@ -1026,10 +1572,10 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x060051DA RID: 20954 RVA: 0x001F45A0 File Offset: 0x001F27A0
+	// Token: 0x060051EB RID: 20971 RVA: 0x001F7390 File Offset: 0x001F5590
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__PopWarps|91_6(ref SignDataManager.<>c__DisplayClass91_0 A_1)
+	public void <UpdateRenderingData>g__PopWarps|106_6(ref SignDataManager.<>c__DisplayClass106_0 A_1)
 	{
 		SignDataManager.LayerDescriptor layerDescriptor = this.layerDescriptors.List[this.layerDescriptors.List.Count - 1];
 		if (layerDescriptor.type == 1)
@@ -1050,10 +1596,10 @@ public class SignDataManager
 		A_1.uvStackIndex = uvStackIndex - 1;
 	}
 
-	// Token: 0x060051DB RID: 20955 RVA: 0x001F465C File Offset: 0x001F285C
+	// Token: 0x060051EC RID: 20972 RVA: 0x001F744C File Offset: 0x001F564C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__ProcessPolygonLayer|91_2(SignData.PolygonSignLayer polygonLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass91_0 A_4)
+	public void <UpdateRenderingData>g__ProcessPolygonLayer|106_2(SignData.PolygonSignLayer polygonLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass106_0 A_4)
 	{
 		float num = Mathf.Max(0f, polygonLayer.softness + offsets.shapeSoftnessOffset);
 		float num2 = polygonLayer.dilate + offsets.shapeDilateOffset;
@@ -1101,10 +1647,10 @@ public class SignDataManager
 		A_4.signRenderingData.totalDraws++;
 	}
 
-	// Token: 0x060051DC RID: 20956 RVA: 0x001F485C File Offset: 0x001F2A5C
+	// Token: 0x060051ED RID: 20973 RVA: 0x001F764C File Offset: 0x001F584C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__ProcessNoiseLayer|91_3(SignData.NoiseSignLayer noiseLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass91_0 A_4)
+	public void <UpdateRenderingData>g__ProcessNoiseLayer|106_3(SignData.NoiseSignLayer noiseLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass106_0 A_4)
 	{
 		SignDataManager.LayerDescriptor layerDescriptor = new SignDataManager.LayerDescriptor
 		{
@@ -1128,10 +1674,10 @@ public class SignDataManager
 		A_4.signRenderingData.totalDraws++;
 	}
 
-	// Token: 0x060051DD RID: 20957 RVA: 0x001F4980 File Offset: 0x001F2B80
+	// Token: 0x060051EE RID: 20974 RVA: 0x001F7770 File Offset: 0x001F5970
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateRenderingData>g__ProcessTextLayer|91_4(SignData.TextSignLayer textLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass91_0 A_4)
+	public void <UpdateRenderingData>g__ProcessTextLayer|106_4(SignData.TextSignLayer textLayer, List<SignDataManager.ColorOperation> colorOps, SignDataManager.GroupOffsets offsets, ref SignDataManager.<>c__DisplayClass106_0 A_4)
 	{
 		SignDataManager.SignFontData signFontData;
 		if (textLayer.font == null || !this.fontDataByName.TryGetValue(textLayer.font, out signFontData))
@@ -1216,206 +1762,256 @@ public class SignDataManager
 		}
 	}
 
-	// Token: 0x04003EF7 RID: 16119
+	// Token: 0x060051EF RID: 20975 RVA: 0x001F7B4B File Offset: 0x001F5D4B
+	[CompilerGenerated]
+	[PublicizedFrom(EAccessModifier.Internal)]
+	public static void <Update>g__CheckCompletedPlayerSignWrite|126_0(SignDataManager.PlayerSignLibraryState state)
+	{
+		if (state.writeTask == null)
+		{
+			return;
+		}
+		if (state.writeTask.evStopped == null || state.writeTask.evStopped.WaitOne(0))
+		{
+			ThreadManager.ReleaseTaskInfo(state.writeTask);
+			state.writeTask = null;
+		}
+	}
+
+	// Token: 0x04003F22 RID: 16162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string fontConfigLoc = "@:Fonts/SignFontConfig.asset";
 
-	// Token: 0x04003EF8 RID: 16120
+	// Token: 0x04003F23 RID: 16163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float baseDescriptorComplexity = 0.5f;
 
-	// Token: 0x04003EF9 RID: 16121
+	// Token: 0x04003F24 RID: 16164
 	public const string defaultFontName = "LiberationSans";
 
-	// Token: 0x04003EFA RID: 16122
+	// Token: 0x04003F25 RID: 16165
+	public static readonly ProfilerMarker s_SignDataManagerReplaceLoadedSignReferences = new ProfilerMarker("SignDataManager.ReplaceLoadedSignReferences");
+
+	// Token: 0x04003F26 RID: 16166
 	public const string defaultLibraryId = "[D]";
 
-	// Token: 0x04003EFB RID: 16123
+	// Token: 0x04003F27 RID: 16167
 	public const string internalLibraryId = "[I]";
 
-	// Token: 0x04003EFC RID: 16124
+	// Token: 0x04003F28 RID: 16168
 	public const string userLibraryId = "[U]";
 
-	// Token: 0x04003EFD RID: 16125
+	// Token: 0x04003F29 RID: 16169
+	public static readonly HashSet<string> localLibraryIds = new HashSet<string> { "[I]", "[U]" };
+
+	// Token: 0x04003F2A RID: 16170
 	public const float cMaxComplexity = 600f;
 
-	// Token: 0x04003EFE RID: 16126
+	// Token: 0x04003F2B RID: 16171
 	public const int cMaxCompStackIndex = 7;
 
-	// Token: 0x04003EFF RID: 16127
+	// Token: 0x04003F2C RID: 16172
 	public const int cMaxUVStackIndex = 7;
 
-	// Token: 0x04003F00 RID: 16128
+	// Token: 0x04003F2D RID: 16173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, SignDataManager.SignFontData> fontDataByName = new Dictionary<string, SignDataManager.SignFontData>();
 
-	// Token: 0x04003F01 RID: 16129
+	// Token: 0x04003F2E RID: 16174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, SignLibrary> signLibraries = new Dictionary<string, SignLibrary>(100);
 
-	// Token: 0x04003F02 RID: 16130
+	// Token: 0x04003F2F RID: 16175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<GlobalSignId, SignDataManager.SignRenderingData> renderingDataByID = new Dictionary<GlobalSignId, SignDataManager.SignRenderingData>(100);
 
-	// Token: 0x04003F03 RID: 16131
+	// Token: 0x04003F30 RID: 16176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.UpdateListenerMap updateListenerMap = new SignDataManager.UpdateListenerMap(100);
 
-	// Token: 0x04003F04 RID: 16132
+	// Token: 0x04003F31 RID: 16177
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly HashSet<GlobalSignId> sessionDeletedSignIds = new HashSet<GlobalSignId>();
+
+	// Token: 0x04003F32 RID: 16178
+	[PublicizedFrom(EAccessModifier.Private)]
+	public DeletedSignStore deletedSignStore;
+
+	// Token: 0x04003F33 RID: 16179
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.LayerDescriptor> layerDescriptors = new SignDataManager.IntermediateDataWrapper<SignDataManager.LayerDescriptor>(SignShaderIDs._LayerDescriptors, 100, (SignDataManager.SignRenderingData srd) => srd.descriptorBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.descriptorBuffer = b;
 	});
 
-	// Token: 0x04003F05 RID: 16133
+	// Token: 0x04003F34 RID: 16180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.CircleLayer> circleLayers = new SignDataManager.IntermediateDataWrapper<SignDataManager.CircleLayer>(SignShaderIDs._CircleLayers, 100, (SignDataManager.SignRenderingData srd) => srd.circleBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.circleBuffer = b;
 	});
 
-	// Token: 0x04003F06 RID: 16134
+	// Token: 0x04003F35 RID: 16181
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.PolygonLayer> polygonLayers = new SignDataManager.IntermediateDataWrapper<SignDataManager.PolygonLayer>(SignShaderIDs._PolygonLayers, 100, (SignDataManager.SignRenderingData srd) => srd.polygonBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.polygonBuffer = b;
 	});
 
-	// Token: 0x04003F07 RID: 16135
+	// Token: 0x04003F36 RID: 16182
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.CharLayer> charLayers = new SignDataManager.IntermediateDataWrapper<SignDataManager.CharLayer>(SignShaderIDs._CharLayers, 100, (SignDataManager.SignRenderingData srd) => srd.charBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.charBuffer = b;
 	});
 
-	// Token: 0x04003F08 RID: 16136
+	// Token: 0x04003F37 RID: 16183
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.NoiseLayer> noiseLayers = new SignDataManager.IntermediateDataWrapper<SignDataManager.NoiseLayer>(SignShaderIDs._NoiseLayers, 100, (SignDataManager.SignRenderingData srd) => srd.noiseBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.noiseBuffer = b;
 	});
 
-	// Token: 0x04003F09 RID: 16137
+	// Token: 0x04003F38 RID: 16184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.TransformWarp> transformWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.TransformWarp>(SignShaderIDs._TransformWarps, 100, (SignDataManager.SignRenderingData srd) => srd.transformBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.transformBuffer = b;
 	});
 
-	// Token: 0x04003F0A RID: 16138
+	// Token: 0x04003F39 RID: 16185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.SkewWarp> skewWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.SkewWarp>(SignShaderIDs._SkewWarps, 100, (SignDataManager.SignRenderingData srd) => srd.skewBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.skewBuffer = b;
 	});
 
-	// Token: 0x04003F0B RID: 16139
+	// Token: 0x04003F3A RID: 16186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.BulgeWarp> bulgeWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.BulgeWarp>(SignShaderIDs._BulgeWarps, 100, (SignDataManager.SignRenderingData srd) => srd.bulgeBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.bulgeBuffer = b;
 	});
 
-	// Token: 0x04003F0C RID: 16140
+	// Token: 0x04003F3B RID: 16187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.TwirlWarp> twirlWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.TwirlWarp>(SignShaderIDs._TwirlWarps, 100, (SignDataManager.SignRenderingData srd) => srd.twirlBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.twirlBuffer = b;
 	});
 
-	// Token: 0x04003F0D RID: 16141
+	// Token: 0x04003F3C RID: 16188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.KaleidoWarp> kaleidoWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.KaleidoWarp>(SignShaderIDs._KaleidoWarps, 100, (SignDataManager.SignRenderingData srd) => srd.kaleidoBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.kaleidoBuffer = b;
 	});
 
-	// Token: 0x04003F0E RID: 16142
+	// Token: 0x04003F3D RID: 16189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.PerspectiveWarp> perspectiveWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.PerspectiveWarp>(SignShaderIDs._PerspectiveWarps, 100, (SignDataManager.SignRenderingData srd) => srd.perspectiveBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.perspectiveBuffer = b;
 	});
 
-	// Token: 0x04003F0F RID: 16143
+	// Token: 0x04003F3E RID: 16190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.ArcWarp> arcWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.ArcWarp>(SignShaderIDs._ArcWarps, 100, (SignDataManager.SignRenderingData srd) => srd.arcBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.arcBuffer = b;
 	});
 
-	// Token: 0x04003F10 RID: 16144
+	// Token: 0x04003F3F RID: 16191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.StretchWarp> stretchWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.StretchWarp>(SignShaderIDs._StretchWarps, 100, (SignDataManager.SignRenderingData srd) => srd.stretchBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.stretchBuffer = b;
 	});
 
-	// Token: 0x04003F11 RID: 16145
+	// Token: 0x04003F40 RID: 16192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IntermediateDataWrapper<SignDataManager.GridWarp> gridWarps = new SignDataManager.IntermediateDataWrapper<SignDataManager.GridWarp>(SignShaderIDs._GridWarps, 100, (SignDataManager.SignRenderingData srd) => srd.gridBuffer, delegate(SignDataManager.SignRenderingData srd, ComputeBuffer b)
 	{
 		srd.gridBuffer = b;
 	});
 
-	// Token: 0x04003F12 RID: 16146
+	// Token: 0x04003F41 RID: 16193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignDataManager.IIntermediateDataWrapper[] intermediateDataWrappers;
 
-	// Token: 0x04003F13 RID: 16147
+	// Token: 0x04003F42 RID: 16194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SignDataManager.ColorOperation> colorOpStack = new List<SignDataManager.ColorOperation>();
 
-	// Token: 0x04003F14 RID: 16148
+	// Token: 0x04003F43 RID: 16195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2DArray fontAtlasTextureArray;
 
-	// Token: 0x04003F15 RID: 16149
+	// Token: 0x04003F44 RID: 16196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SignDataManager m_Instance;
 
-	// Token: 0x04003F17 RID: 16151
+	// Token: 0x04003F46 RID: 16198
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly List<ISignRenderingDataUpdateListener> deletedSignListenerScratch = new List<ISignRenderingDataUpdateListener>();
+
+	// Token: 0x04003F47 RID: 16199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSignSyncBatchBytes = 1048576;
 
-	// Token: 0x04003F18 RID: 16152
+	// Token: 0x04003F48 RID: 16200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool signDataDownloadInProgress;
 
-	// Token: 0x04003F19 RID: 16153
+	// Token: 0x04003F49 RID: 16201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool signDataDownloadComplete;
 
-	// Token: 0x02000A94 RID: 2708
+	// Token: 0x04003F4A RID: 16202
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const float cPlayerSignWriteCooldownSeconds = 60f;
+
+	// Token: 0x04003F4B RID: 16203
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly Dictionary<string, SignDataManager.PlayerSignLibraryState> playerSignStates = new Dictionary<string, SignDataManager.PlayerSignLibraryState>();
+
+	// Token: 0x04003F4C RID: 16204
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly List<string> playerSignWriteScratch = new List<string>();
+
+	// Token: 0x04003F4D RID: 16205
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly List<byte[]> playerSignBlobScratch = new List<byte[]>();
+
+	// Token: 0x02000AA3 RID: 2723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RuntimeRenderingInfo
 	{
-		// Token: 0x060051DE RID: 20958 RVA: 0x001F4D5B File Offset: 0x001F2F5B
+		// Token: 0x060051F0 RID: 20976 RVA: 0x001F7B88 File Offset: 0x001F5D88
 		public RuntimeRenderingInfo(int baseDescriptorIndex, int descriptorCount)
 		{
 			this.BaseDescriptorIndex = baseDescriptorIndex;
 			this.DescriptorCount = descriptorCount;
 		}
 
-		// Token: 0x04003F1A RID: 16154
+		// Token: 0x04003F4E RID: 16206
 		public readonly int BaseDescriptorIndex;
 
-		// Token: 0x04003F1B RID: 16155
+		// Token: 0x04003F4F RID: 16207
 		public readonly int DescriptorCount;
 	}
 
-	// Token: 0x02000A95 RID: 2709
+	// Token: 0x02000AA4 RID: 2724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SignRenderingData : IDisposable
 	{
-		// Token: 0x060051DF RID: 20959 RVA: 0x001F4D6B File Offset: 0x001F2F6B
+		// Token: 0x060051F1 RID: 20977 RVA: 0x001F7B98 File Offset: 0x001F5D98
 		public SignRenderingData()
 		{
 			this.materialPropertyBlock = new MaterialPropertyBlock();
 		}
 
-		// Token: 0x060051E0 RID: 20960 RVA: 0x001F4D94 File Offset: 0x001F2F94
+		// Token: 0x060051F2 RID: 20978 RVA: 0x001F7BC4 File Offset: 0x001F5DC4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void Dispose(bool disposing)
 		{
@@ -1437,21 +2033,21 @@ public class SignDataManager
 			}
 		}
 
-		// Token: 0x060051E1 RID: 20961 RVA: 0x001F4DE8 File Offset: 0x001F2FE8
+		// Token: 0x060051F3 RID: 20979 RVA: 0x001F7C18 File Offset: 0x001F5E18
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~SignRenderingData()
 		{
 			this.Dispose(false);
 		}
 
-		// Token: 0x060051E2 RID: 20962 RVA: 0x001F4E18 File Offset: 0x001F3018
+		// Token: 0x060051F4 RID: 20980 RVA: 0x001F7C48 File Offset: 0x001F5E48
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x060051E3 RID: 20963 RVA: 0x001F4E28 File Offset: 0x001F3028
+		// Token: 0x060051F5 RID: 20981 RVA: 0x001F7C58 File Offset: 0x001F5E58
 		public void Reset()
 		{
 			this.layerCount = 0;
@@ -1469,7 +2065,7 @@ public class SignDataManager
 			this.DisposeBuffers();
 		}
 
-		// Token: 0x060051E4 RID: 20964 RVA: 0x001F4E90 File Offset: 0x001F3090
+		// Token: 0x060051F6 RID: 20982 RVA: 0x001F7CC0 File Offset: 0x001F5EC0
 		public void DisposeBuffers()
 		{
 			ComputeBuffer computeBuffer = this.descriptorBuffer;
@@ -1558,92 +2154,92 @@ public class SignDataManager
 			this.gridBuffer = null;
 		}
 
-		// Token: 0x04003F1C RID: 16156
+		// Token: 0x04003F50 RID: 16208
 		public static ComputeBuffer DummyBuffer = new ComputeBuffer(1, 4);
 
-		// Token: 0x04003F1D RID: 16157
+		// Token: 0x04003F51 RID: 16209
 		public MaterialPropertyBlock materialPropertyBlock;
 
-		// Token: 0x04003F1E RID: 16158
+		// Token: 0x04003F52 RID: 16210
 		public int layerCount;
 
-		// Token: 0x04003F1F RID: 16159
+		// Token: 0x04003F53 RID: 16211
 		public ComputeBuffer descriptorBuffer;
 
-		// Token: 0x04003F20 RID: 16160
+		// Token: 0x04003F54 RID: 16212
 		public ComputeBuffer circleBuffer;
 
-		// Token: 0x04003F21 RID: 16161
+		// Token: 0x04003F55 RID: 16213
 		public ComputeBuffer polygonBuffer;
 
-		// Token: 0x04003F22 RID: 16162
+		// Token: 0x04003F56 RID: 16214
 		public ComputeBuffer charBuffer;
 
-		// Token: 0x04003F23 RID: 16163
+		// Token: 0x04003F57 RID: 16215
 		public ComputeBuffer noiseBuffer;
 
-		// Token: 0x04003F24 RID: 16164
+		// Token: 0x04003F58 RID: 16216
 		public ComputeBuffer transformBuffer;
 
-		// Token: 0x04003F25 RID: 16165
+		// Token: 0x04003F59 RID: 16217
 		public ComputeBuffer skewBuffer;
 
-		// Token: 0x04003F26 RID: 16166
+		// Token: 0x04003F5A RID: 16218
 		public ComputeBuffer bulgeBuffer;
 
-		// Token: 0x04003F27 RID: 16167
+		// Token: 0x04003F5B RID: 16219
 		public ComputeBuffer twirlBuffer;
 
-		// Token: 0x04003F28 RID: 16168
+		// Token: 0x04003F5C RID: 16220
 		public ComputeBuffer kaleidoBuffer;
 
-		// Token: 0x04003F29 RID: 16169
+		// Token: 0x04003F5D RID: 16221
 		public ComputeBuffer perspectiveBuffer;
 
-		// Token: 0x04003F2A RID: 16170
+		// Token: 0x04003F5E RID: 16222
 		public ComputeBuffer arcBuffer;
 
-		// Token: 0x04003F2B RID: 16171
+		// Token: 0x04003F5F RID: 16223
 		public ComputeBuffer stretchBuffer;
 
-		// Token: 0x04003F2C RID: 16172
+		// Token: 0x04003F60 RID: 16224
 		public ComputeBuffer gridBuffer;
 
-		// Token: 0x04003F2D RID: 16173
+		// Token: 0x04003F61 RID: 16225
 		public readonly Dictionary<SignData.SignLayer, SignDataManager.RuntimeRenderingInfo> renderingInfoByLayer = new Dictionary<SignData.SignLayer, SignDataManager.RuntimeRenderingInfo>();
 
-		// Token: 0x04003F2E RID: 16174
+		// Token: 0x04003F62 RID: 16226
 		public readonly Dictionary<SignData.SignLayer, LayerComplexityInfo> complexityByLayer = new Dictionary<SignData.SignLayer, LayerComplexityInfo>();
 
-		// Token: 0x04003F2F RID: 16175
+		// Token: 0x04003F63 RID: 16227
 		public float totalComplexity;
 
-		// Token: 0x04003F30 RID: 16176
+		// Token: 0x04003F64 RID: 16228
 		public int totalWarps;
 
-		// Token: 0x04003F31 RID: 16177
+		// Token: 0x04003F65 RID: 16229
 		public int totalDraws;
 
-		// Token: 0x04003F32 RID: 16178
+		// Token: 0x04003F66 RID: 16230
 		public LayerStackInfo stackInfo;
 
-		// Token: 0x04003F33 RID: 16179
+		// Token: 0x04003F67 RID: 16231
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool disposedValue;
 	}
 
-	// Token: 0x02000A96 RID: 2710
+	// Token: 0x02000AA5 RID: 2725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class UpdateListenerMap
 	{
-		// Token: 0x060051E6 RID: 20966 RVA: 0x001F4FFB File Offset: 0x001F31FB
+		// Token: 0x060051F8 RID: 20984 RVA: 0x001F7E2B File Offset: 0x001F602B
 		public UpdateListenerMap(int capacity)
 		{
 			this._idsByListener = new Dictionary<ISignRenderingDataUpdateListener, HashSet<GlobalSignId>>(capacity);
 			this._listenersById = new Dictionary<GlobalSignId, HashSet<ISignRenderingDataUpdateListener>>(capacity);
 		}
 
-		// Token: 0x060051E7 RID: 20967 RVA: 0x001F501C File Offset: 0x001F321C
+		// Token: 0x060051F9 RID: 20985 RVA: 0x001F7E4C File Offset: 0x001F604C
 		public void RegisterListener(GlobalSignId id, ISignRenderingDataUpdateListener listener)
 		{
 			HashSet<ISignRenderingDataUpdateListener> hashSet;
@@ -1662,7 +2258,7 @@ public class SignDataManager
 			hashSet2.Add(id);
 		}
 
-		// Token: 0x060051E8 RID: 20968 RVA: 0x001F5084 File Offset: 0x001F3284
+		// Token: 0x060051FA RID: 20986 RVA: 0x001F7EB4 File Offset: 0x001F60B4
 		public void DeregisterListener(ISignRenderingDataUpdateListener listener)
 		{
 			HashSet<GlobalSignId> hashSet;
@@ -1684,7 +2280,7 @@ public class SignDataManager
 			}
 		}
 
-		// Token: 0x060051E9 RID: 20969 RVA: 0x001F5118 File Offset: 0x001F3318
+		// Token: 0x060051FB RID: 20987 RVA: 0x001F7F48 File Offset: 0x001F6148
 		public IEnumerable<ISignRenderingDataUpdateListener> GetListeners(GlobalSignId id)
 		{
 			HashSet<ISignRenderingDataUpdateListener> hashSet;
@@ -1695,7 +2291,7 @@ public class SignDataManager
 			return hashSet;
 		}
 
-		// Token: 0x060051EA RID: 20970 RVA: 0x001F5140 File Offset: 0x001F3340
+		// Token: 0x060051FC RID: 20988 RVA: 0x001F7F70 File Offset: 0x001F6170
 		public IEnumerable<GlobalSignId> GetIds(ISignRenderingDataUpdateListener listener)
 		{
 			HashSet<GlobalSignId> hashSet;
@@ -1706,318 +2302,318 @@ public class SignDataManager
 			return hashSet;
 		}
 
-		// Token: 0x060051EB RID: 20971 RVA: 0x001F5168 File Offset: 0x001F3368
+		// Token: 0x060051FD RID: 20989 RVA: 0x001F7F98 File Offset: 0x001F6198
 		public void Clear()
 		{
 			this._listenersById.Clear();
 			this._idsByListener.Clear();
 		}
 
-		// Token: 0x060051EC RID: 20972 RVA: 0x001F5180 File Offset: 0x001F3380
+		// Token: 0x060051FE RID: 20990 RVA: 0x001F7FB0 File Offset: 0x001F61B0
 		public bool HasListeners(GlobalSignId signId)
 		{
 			return this._listenersById.ContainsKey(signId);
 		}
 
-		// Token: 0x04003F34 RID: 16180
+		// Token: 0x04003F68 RID: 16232
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<GlobalSignId, HashSet<ISignRenderingDataUpdateListener>> _listenersById;
 
-		// Token: 0x04003F35 RID: 16181
+		// Token: 0x04003F69 RID: 16233
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<ISignRenderingDataUpdateListener, HashSet<GlobalSignId>> _idsByListener;
 	}
 
-	// Token: 0x02000A97 RID: 2711
+	// Token: 0x02000AA6 RID: 2726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum LayerTypeID
 	{
-		// Token: 0x04003F37 RID: 16183
+		// Token: 0x04003F6B RID: 16235
 		UvClear,
-		// Token: 0x04003F38 RID: 16184
+		// Token: 0x04003F6C RID: 16236
 		UvPop,
-		// Token: 0x04003F39 RID: 16185
+		// Token: 0x04003F6D RID: 16237
 		UvPush,
-		// Token: 0x04003F3A RID: 16186
+		// Token: 0x04003F6E RID: 16238
 		MaskBegin,
-		// Token: 0x04003F3B RID: 16187
+		// Token: 0x04003F6F RID: 16239
 		MaskFlipPhase,
-		// Token: 0x04003F3C RID: 16188
+		// Token: 0x04003F70 RID: 16240
 		MaskEnd,
-		// Token: 0x04003F3D RID: 16189
+		// Token: 0x04003F71 RID: 16241
 		WarpTransform = 10,
-		// Token: 0x04003F3E RID: 16190
+		// Token: 0x04003F72 RID: 16242
 		WarpSkew,
-		// Token: 0x04003F3F RID: 16191
+		// Token: 0x04003F73 RID: 16243
 		WarpBulge,
-		// Token: 0x04003F40 RID: 16192
+		// Token: 0x04003F74 RID: 16244
 		WarpTwirl,
-		// Token: 0x04003F41 RID: 16193
+		// Token: 0x04003F75 RID: 16245
 		WarpKaleido,
-		// Token: 0x04003F42 RID: 16194
+		// Token: 0x04003F76 RID: 16246
 		WarpPerspective,
-		// Token: 0x04003F43 RID: 16195
+		// Token: 0x04003F77 RID: 16247
 		WarpArc,
-		// Token: 0x04003F44 RID: 16196
+		// Token: 0x04003F78 RID: 16248
 		WarpStretch,
-		// Token: 0x04003F45 RID: 16197
+		// Token: 0x04003F79 RID: 16249
 		WarpGrid,
-		// Token: 0x04003F46 RID: 16198
+		// Token: 0x04003F7A RID: 16250
 		Polygon = 100,
-		// Token: 0x04003F47 RID: 16199
+		// Token: 0x04003F7B RID: 16251
 		Char,
-		// Token: 0x04003F48 RID: 16200
+		// Token: 0x04003F7C RID: 16252
 		Circle,
-		// Token: 0x04003F49 RID: 16201
+		// Token: 0x04003F7D RID: 16253
 		Noise
 	}
 
-	// Token: 0x02000A98 RID: 2712
+	// Token: 0x02000AA7 RID: 2727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct LayerDescriptor
 	{
-		// Token: 0x04003F4A RID: 16202
+		// Token: 0x04003F7E RID: 16254
 		public int type;
 
-		// Token: 0x04003F4B RID: 16203
+		// Token: 0x04003F7F RID: 16255
 		public int index;
 	}
 
-	// Token: 0x02000A99 RID: 2713
+	// Token: 0x02000AA8 RID: 2728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct CircleLayer
 	{
-		// Token: 0x04003F4C RID: 16204
+		// Token: 0x04003F80 RID: 16256
 		public Vector4 color;
 
-		// Token: 0x04003F4D RID: 16205
+		// Token: 0x04003F81 RID: 16257
 		public float softness;
 
-		// Token: 0x04003F4E RID: 16206
+		// Token: 0x04003F82 RID: 16258
 		public float dilate;
 
-		// Token: 0x04003F4F RID: 16207
+		// Token: 0x04003F83 RID: 16259
 		public float frequency;
 
-		// Token: 0x04003F50 RID: 16208
+		// Token: 0x04003F84 RID: 16260
 		public int mode;
 	}
 
-	// Token: 0x02000A9A RID: 2714
+	// Token: 0x02000AA9 RID: 2729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct PolygonLayer
 	{
-		// Token: 0x04003F51 RID: 16209
+		// Token: 0x04003F85 RID: 16261
 		public Vector4 color;
 
-		// Token: 0x04003F52 RID: 16210
+		// Token: 0x04003F86 RID: 16262
 		public float sides;
 
-		// Token: 0x04003F53 RID: 16211
+		// Token: 0x04003F87 RID: 16263
 		public float smoothness;
 
-		// Token: 0x04003F54 RID: 16212
+		// Token: 0x04003F88 RID: 16264
 		public float starify;
 
-		// Token: 0x04003F55 RID: 16213
+		// Token: 0x04003F89 RID: 16265
 		public float softness;
 
-		// Token: 0x04003F56 RID: 16214
+		// Token: 0x04003F8A RID: 16266
 		public float dilate;
 
-		// Token: 0x04003F57 RID: 16215
+		// Token: 0x04003F8B RID: 16267
 		public float frequency;
 
-		// Token: 0x04003F58 RID: 16216
+		// Token: 0x04003F8C RID: 16268
 		public int mode;
 	}
 
-	// Token: 0x02000A9B RID: 2715
+	// Token: 0x02000AAA RID: 2730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct CharLayer
 	{
-		// Token: 0x04003F59 RID: 16217
+		// Token: 0x04003F8D RID: 16269
 		public Vector2 position;
 
-		// Token: 0x04003F5A RID: 16218
+		// Token: 0x04003F8E RID: 16270
 		public Vector2 scale;
 
-		// Token: 0x04003F5B RID: 16219
+		// Token: 0x04003F8F RID: 16271
 		public Vector4 color;
 
-		// Token: 0x04003F5C RID: 16220
+		// Token: 0x04003F90 RID: 16272
 		public int atlasIndex;
 
-		// Token: 0x04003F5D RID: 16221
+		// Token: 0x04003F91 RID: 16273
 		public Vector4 offsetSize;
 
-		// Token: 0x04003F5E RID: 16222
+		// Token: 0x04003F92 RID: 16274
 		public float softness;
 
-		// Token: 0x04003F5F RID: 16223
+		// Token: 0x04003F93 RID: 16275
 		public float dilate;
 	}
 
-	// Token: 0x02000A9C RID: 2716
+	// Token: 0x02000AAB RID: 2731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct NoiseLayer
 	{
-		// Token: 0x04003F60 RID: 16224
+		// Token: 0x04003F94 RID: 16276
 		public Vector4 color;
 
-		// Token: 0x04003F61 RID: 16225
+		// Token: 0x04003F95 RID: 16277
 		public float offset;
 
-		// Token: 0x04003F62 RID: 16226
+		// Token: 0x04003F96 RID: 16278
 		public int detail;
 
-		// Token: 0x04003F63 RID: 16227
+		// Token: 0x04003F97 RID: 16279
 		public float softness;
 
-		// Token: 0x04003F64 RID: 16228
+		// Token: 0x04003F98 RID: 16280
 		public float dilate;
 
-		// Token: 0x04003F65 RID: 16229
+		// Token: 0x04003F99 RID: 16281
 		public float fade;
 	}
 
-	// Token: 0x02000A9D RID: 2717
+	// Token: 0x02000AAC RID: 2732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TransformWarp
 	{
-		// Token: 0x04003F66 RID: 16230
+		// Token: 0x04003F9A RID: 16282
 		public Vector2 position;
 
-		// Token: 0x04003F67 RID: 16231
+		// Token: 0x04003F9B RID: 16283
 		public float rotation;
 
-		// Token: 0x04003F68 RID: 16232
+		// Token: 0x04003F9C RID: 16284
 		public Vector2 scale;
 	}
 
-	// Token: 0x02000A9E RID: 2718
+	// Token: 0x02000AAD RID: 2733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct SkewWarp
 	{
-		// Token: 0x04003F69 RID: 16233
+		// Token: 0x04003F9D RID: 16285
 		public float rotation;
 
-		// Token: 0x04003F6A RID: 16234
+		// Token: 0x04003F9E RID: 16286
 		public Vector2 amount;
 	}
 
-	// Token: 0x02000A9F RID: 2719
+	// Token: 0x02000AAE RID: 2734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BulgeWarp
 	{
-		// Token: 0x04003F6B RID: 16235
+		// Token: 0x04003F9F RID: 16287
 		public Vector2 position;
 
-		// Token: 0x04003F6C RID: 16236
+		// Token: 0x04003FA0 RID: 16288
 		public float amount;
 	}
 
-	// Token: 0x02000AA0 RID: 2720
+	// Token: 0x02000AAF RID: 2735
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TwirlWarp
 	{
-		// Token: 0x04003F6D RID: 16237
+		// Token: 0x04003FA1 RID: 16289
 		public Vector2 position;
 
-		// Token: 0x04003F6E RID: 16238
+		// Token: 0x04003FA2 RID: 16290
 		public float amount;
 
-		// Token: 0x04003F6F RID: 16239
+		// Token: 0x04003FA3 RID: 16291
 		public float frequency;
 	}
 
-	// Token: 0x02000AA1 RID: 2721
+	// Token: 0x02000AB0 RID: 2736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct KaleidoWarp
 	{
-		// Token: 0x04003F70 RID: 16240
+		// Token: 0x04003FA4 RID: 16292
 		public Vector2 position;
 
-		// Token: 0x04003F71 RID: 16241
+		// Token: 0x04003FA5 RID: 16293
 		public float angle;
 
-		// Token: 0x04003F72 RID: 16242
+		// Token: 0x04003FA6 RID: 16294
 		public float offset;
 	}
 
-	// Token: 0x02000AA2 RID: 2722
+	// Token: 0x02000AB1 RID: 2737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct PerspectiveWarp
 	{
-		// Token: 0x04003F73 RID: 16243
+		// Token: 0x04003FA7 RID: 16295
 		public Vector3 rotation;
 
-		// Token: 0x04003F74 RID: 16244
+		// Token: 0x04003FA8 RID: 16296
 		public float strength;
 	}
 
-	// Token: 0x02000AA3 RID: 2723
+	// Token: 0x02000AB2 RID: 2738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct ArcWarp
 	{
-		// Token: 0x04003F75 RID: 16245
+		// Token: 0x04003FA9 RID: 16297
 		public float rotation;
 
-		// Token: 0x04003F76 RID: 16246
+		// Token: 0x04003FAA RID: 16298
 		public float radius;
 
-		// Token: 0x04003F77 RID: 16247
+		// Token: 0x04003FAB RID: 16299
 		public float width;
 	}
 
-	// Token: 0x02000AA4 RID: 2724
+	// Token: 0x02000AB3 RID: 2739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct StretchWarp
 	{
-		// Token: 0x04003F78 RID: 16248
+		// Token: 0x04003FAC RID: 16300
 		public Vector2 position;
 
-		// Token: 0x04003F79 RID: 16249
+		// Token: 0x04003FAD RID: 16301
 		public float rotation;
 
-		// Token: 0x04003F7A RID: 16250
+		// Token: 0x04003FAE RID: 16302
 		public float distance;
 
-		// Token: 0x04003F7B RID: 16251
+		// Token: 0x04003FAF RID: 16303
 		public float width;
 
-		// Token: 0x04003F7C RID: 16252
+		// Token: 0x04003FB0 RID: 16304
 		public float exponent;
 	}
 
-	// Token: 0x02000AA5 RID: 2725
+	// Token: 0x02000AB4 RID: 2740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct GridWarp
 	{
-		// Token: 0x04003F7D RID: 16253
+		// Token: 0x04003FB1 RID: 16305
 		public Vector2 offset;
 
-		// Token: 0x04003F7E RID: 16254
+		// Token: 0x04003FB2 RID: 16306
 		public float rotation;
 
-		// Token: 0x04003F7F RID: 16255
+		// Token: 0x04003FB3 RID: 16307
 		public float scale;
 
-		// Token: 0x04003F80 RID: 16256
+		// Token: 0x04003FB4 RID: 16308
 		public int mode;
 
-		// Token: 0x04003F81 RID: 16257
+		// Token: 0x04003FB5 RID: 16309
 		public float aspect;
 
-		// Token: 0x04003F82 RID: 16258
+		// Token: 0x04003FB6 RID: 16310
 		public float shift;
 	}
 
-	// Token: 0x02000AA6 RID: 2726
+	// Token: 0x02000AB5 RID: 2741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class CharAtlasData
 	{
-		// Token: 0x060051ED RID: 20973 RVA: 0x001F518E File Offset: 0x001F338E
+		// Token: 0x060051FF RID: 20991 RVA: 0x001F7FBE File Offset: 0x001F61BE
 		public CharAtlasData(Vector2 quadOffset, Vector2 quadSize, Vector4 uvOffsetSize, float charWidth)
 		{
 			this.quadOffset = quadOffset;
@@ -2026,51 +2622,51 @@ public class SignDataManager
 			this.charWidth = charWidth;
 		}
 
-		// Token: 0x04003F83 RID: 16259
+		// Token: 0x04003FB7 RID: 16311
 		public Vector2 quadOffset;
 
-		// Token: 0x04003F84 RID: 16260
+		// Token: 0x04003FB8 RID: 16312
 		public Vector2 quadSize;
 
-		// Token: 0x04003F85 RID: 16261
+		// Token: 0x04003FB9 RID: 16313
 		public Vector4 uvOffsetSize;
 
-		// Token: 0x04003F86 RID: 16262
+		// Token: 0x04003FBA RID: 16314
 		public float charWidth;
 	}
 
-	// Token: 0x02000AA7 RID: 2727
+	// Token: 0x02000AB6 RID: 2742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SignFontData
 	{
-		// Token: 0x170008E2 RID: 2274
-		// (get) Token: 0x060051EE RID: 20974 RVA: 0x001F51B3 File Offset: 0x001F33B3
-		// (set) Token: 0x060051EF RID: 20975 RVA: 0x001F51BB File Offset: 0x001F33BB
+		// Token: 0x17000904 RID: 2308
+		// (get) Token: 0x06005200 RID: 20992 RVA: 0x001F7FE3 File Offset: 0x001F61E3
+		// (set) Token: 0x06005201 RID: 20993 RVA: 0x001F7FEB File Offset: 0x001F61EB
 		public int AtlasIndex
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170008E3 RID: 2275
-		// (get) Token: 0x060051F0 RID: 20976 RVA: 0x001F51C4 File Offset: 0x001F33C4
-		// (set) Token: 0x060051F1 RID: 20977 RVA: 0x001F51CC File Offset: 0x001F33CC
+		// Token: 0x17000905 RID: 2309
+		// (get) Token: 0x06005202 RID: 20994 RVA: 0x001F7FF4 File Offset: 0x001F61F4
+		// (set) Token: 0x06005203 RID: 20995 RVA: 0x001F7FFC File Offset: 0x001F61FC
 		public Texture2D AtlasTexture
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170008E4 RID: 2276
-		// (get) Token: 0x060051F2 RID: 20978 RVA: 0x001F51D5 File Offset: 0x001F33D5
-		// (set) Token: 0x060051F3 RID: 20979 RVA: 0x001F51DD File Offset: 0x001F33DD
+		// Token: 0x17000906 RID: 2310
+		// (get) Token: 0x06005204 RID: 20996 RVA: 0x001F8005 File Offset: 0x001F6205
+		// (set) Token: 0x06005205 RID: 20997 RVA: 0x001F800D File Offset: 0x001F620D
 		public float LineHeight
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x060051F4 RID: 20980 RVA: 0x001F51E8 File Offset: 0x001F33E8
+		// Token: 0x06005206 RID: 20998 RVA: 0x001F8018 File Offset: 0x001F6218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConstructAtlasDataMap(TMP_FontAsset fontAsset)
 		{
@@ -2096,7 +2692,7 @@ public class SignDataManager
 			}
 		}
 
-		// Token: 0x060051F5 RID: 20981 RVA: 0x001F53D0 File Offset: 0x001F35D0
+		// Token: 0x06005207 RID: 20999 RVA: 0x001F8200 File Offset: 0x001F6400
 		public SignFontData(int atlasIndex, TMP_FontAsset fontAsset)
 		{
 			this.AtlasIndex = atlasIndex;
@@ -2104,21 +2700,21 @@ public class SignDataManager
 			this.ConstructAtlasDataMap(fontAsset);
 		}
 
-		// Token: 0x060051F6 RID: 20982 RVA: 0x001F53FD File Offset: 0x001F35FD
+		// Token: 0x06005208 RID: 21000 RVA: 0x001F822D File Offset: 0x001F642D
 		public bool TryGetCharAtlasData(char character, out SignDataManager.CharAtlasData atlasData)
 		{
 			return this.charToAtlasDataMap.TryGetValue((uint)character, out atlasData);
 		}
 
-		// Token: 0x04003F8A RID: 16266
+		// Token: 0x04003FBE RID: 16318
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<uint, SignDataManager.CharAtlasData> charToAtlasDataMap = new Dictionary<uint, SignDataManager.CharAtlasData>();
 	}
 
-	// Token: 0x02000AA8 RID: 2728
+	// Token: 0x02000AB7 RID: 2743
 	public struct ColorOperation
 	{
-		// Token: 0x060051F7 RID: 20983 RVA: 0x001F540C File Offset: 0x001F360C
+		// Token: 0x06005209 RID: 21001 RVA: 0x001F823C File Offset: 0x001F643C
 		public static Color EvaluateColor(Color leafColor, List<SignDataManager.ColorOperation> colorOps)
 		{
 			Color color = leafColor;
@@ -2144,17 +2740,17 @@ public class SignDataManager
 			return color;
 		}
 
-		// Token: 0x04003F8B RID: 16267
+		// Token: 0x04003FBF RID: 16319
 		public Color color;
 
-		// Token: 0x04003F8C RID: 16268
+		// Token: 0x04003FC0 RID: 16320
 		public SignData.GroupSignLayer.ColorMode mode;
 	}
 
-	// Token: 0x02000AA9 RID: 2729
+	// Token: 0x02000AB8 RID: 2744
 	public struct GroupOffsets
 	{
-		// Token: 0x060051F8 RID: 20984 RVA: 0x001F54D0 File Offset: 0x001F36D0
+		// Token: 0x0600520A RID: 21002 RVA: 0x001F8300 File Offset: 0x001F6500
 		public SignDataManager.GroupOffsets WithOffsets(float softness, float dilate, SignData.GroupSignLayer.OffsetTarget target)
 		{
 			SignDataManager.GroupOffsets groupOffsets = this;
@@ -2184,44 +2780,44 @@ public class SignDataManager
 			return groupOffsets;
 		}
 
-		// Token: 0x04003F8D RID: 16269
+		// Token: 0x04003FC1 RID: 16321
 		public float shapeSoftnessOffset;
 
-		// Token: 0x04003F8E RID: 16270
+		// Token: 0x04003FC2 RID: 16322
 		public float shapeDilateOffset;
 
-		// Token: 0x04003F8F RID: 16271
+		// Token: 0x04003FC3 RID: 16323
 		public float textSoftnessOffset;
 
-		// Token: 0x04003F90 RID: 16272
+		// Token: 0x04003FC4 RID: 16324
 		public float textDilateOffset;
 
-		// Token: 0x04003F91 RID: 16273
+		// Token: 0x04003FC5 RID: 16325
 		public float noiseSoftnessOffset;
 
-		// Token: 0x04003F92 RID: 16274
+		// Token: 0x04003FC6 RID: 16326
 		public float noiseDilateOffset;
 	}
 
-	// Token: 0x02000AAA RID: 2730
+	// Token: 0x02000AB9 RID: 2745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public interface IIntermediateDataWrapper
 	{
-		// Token: 0x060051F9 RID: 20985
+		// Token: 0x0600520B RID: 21003
 		void UpdateBuffer(SignDataManager.SignRenderingData signRenderingData);
 
-		// Token: 0x060051FA RID: 20986
+		// Token: 0x0600520C RID: 21004
 		void ApplyToMaterial(SignDataManager.SignRenderingData signRenderingData, Material material);
 
-		// Token: 0x060051FB RID: 20987
+		// Token: 0x0600520D RID: 21005
 		void ClearStagingList();
 	}
 
-	// Token: 0x02000AAB RID: 2731
+	// Token: 0x02000ABA RID: 2746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class IntermediateDataWrapper<T> : SignDataManager.IIntermediateDataWrapper where T : struct
 	{
-		// Token: 0x060051FC RID: 20988 RVA: 0x001F5596 File Offset: 0x001F3796
+		// Token: 0x0600520E RID: 21006 RVA: 0x001F83C6 File Offset: 0x001F65C6
 		public IntermediateDataWrapper(int shaderPropertyId, int capacity, Func<SignDataManager.SignRenderingData, ComputeBuffer> getter, Action<SignDataManager.SignRenderingData, ComputeBuffer> setter)
 		{
 			this._shaderPropertyId = shaderPropertyId;
@@ -2230,7 +2826,7 @@ public class SignDataManager
 			this._set = setter;
 		}
 
-		// Token: 0x060051FD RID: 20989 RVA: 0x001F55C0 File Offset: 0x001F37C0
+		// Token: 0x0600520F RID: 21007 RVA: 0x001F83F0 File Offset: 0x001F65F0
 		public void UpdateBuffer(SignDataManager.SignRenderingData signRenderingData)
 		{
 			ComputeBuffer computeBuffer = this._get(signRenderingData);
@@ -2260,19 +2856,19 @@ public class SignDataManager
 			signRenderingData.materialPropertyBlock.SetBuffer(this._shaderPropertyId, computeBuffer ?? SignDataManager.SignRenderingData.DummyBuffer);
 		}
 
-		// Token: 0x060051FE RID: 20990 RVA: 0x001F569A File Offset: 0x001F389A
+		// Token: 0x06005210 RID: 21008 RVA: 0x001F84CA File Offset: 0x001F66CA
 		public void ApplyToMaterial(SignDataManager.SignRenderingData signRenderingData, Material material)
 		{
 			material.SetBuffer(this._shaderPropertyId, this._get(signRenderingData) ?? SignDataManager.SignRenderingData.DummyBuffer);
 		}
 
-		// Token: 0x060051FF RID: 20991 RVA: 0x001F56BD File Offset: 0x001F38BD
+		// Token: 0x06005211 RID: 21009 RVA: 0x001F84ED File Offset: 0x001F66ED
 		public void ClearStagingList()
 		{
 			this.List.Clear();
 		}
 
-		// Token: 0x06005200 RID: 20992 RVA: 0x001F56CA File Offset: 0x001F38CA
+		// Token: 0x06005212 RID: 21010 RVA: 0x001F84FA File Offset: 0x001F66FA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int NextPow2(int v)
 		{
@@ -2289,27 +2885,58 @@ public class SignDataManager
 			return v + 1;
 		}
 
-		// Token: 0x04003F93 RID: 16275
+		// Token: 0x04003FC7 RID: 16327
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly int _stride = Marshal.SizeOf(typeof(T));
 
-		// Token: 0x04003F94 RID: 16276
+		// Token: 0x04003FC8 RID: 16328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int _shaderPropertyId;
 
-		// Token: 0x04003F95 RID: 16277
+		// Token: 0x04003FC9 RID: 16329
 		public readonly List<T> List;
 
-		// Token: 0x04003F96 RID: 16278
+		// Token: 0x04003FCA RID: 16330
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Func<SignDataManager.SignRenderingData, ComputeBuffer> _get;
 
-		// Token: 0x04003F97 RID: 16279
+		// Token: 0x04003FCB RID: 16331
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Action<SignDataManager.SignRenderingData, ComputeBuffer> _set;
 	}
 
-	// Token: 0x02000AAC RID: 2732
-	// (Invoke) Token: 0x06005203 RID: 20995
+	// Token: 0x02000ABB RID: 2747
+	// (Invoke) Token: 0x06005215 RID: 21013
 	public delegate void RenderingDataPatcher(MaterialPropertyBlock mpb);
+
+	// Token: 0x02000ABC RID: 2748
+	[PublicizedFrom(EAccessModifier.Private)]
+	public class PlayerSignLibraryState
+	{
+		// Token: 0x04003FCC RID: 16332
+		public readonly Dictionary<Guid, byte[]> blobsByGuid = new Dictionary<Guid, byte[]>();
+
+		// Token: 0x04003FCD RID: 16333
+		public bool dirty;
+
+		// Token: 0x04003FCE RID: 16334
+		public float lastWriteTime = float.NegativeInfinity;
+
+		// Token: 0x04003FCF RID: 16335
+		public ThreadManager.TaskInfo writeTask;
+
+		// Token: 0x04003FD0 RID: 16336
+		public bool writesBlocked;
+	}
+
+	// Token: 0x02000ABD RID: 2749
+	[PublicizedFrom(EAccessModifier.Private)]
+	public class PlayerSignWriteRequest
+	{
+		// Token: 0x04003FD1 RID: 16337
+		public string libraryId;
+
+		// Token: 0x04003FD2 RID: 16338
+		public PooledExpandableMemoryStream image;
+	}
 }

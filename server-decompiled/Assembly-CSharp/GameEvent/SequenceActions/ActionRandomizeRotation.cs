@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199D RID: 6557
+	// Token: 0x020019C9 RID: 6601
 	[Preserve]
 	public class ActionRandomizeRotation : ActionBaseClientAction
 	{
-		// Token: 0x0600C8E8 RID: 51432 RVA: 0x0049C448 File Offset: 0x0049A648
+		// Token: 0x0600CA40 RID: 51776 RVA: 0x004A090C File Offset: 0x0049EB0C
 		public override void OnClientPerform(Entity target)
 		{
 			if (target != null)
@@ -38,7 +38,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8E9 RID: 51433 RVA: 0x0049C4F3 File Offset: 0x0049A6F3
+		// Token: 0x0600CA41 RID: 51777 RVA: 0x004A09B7 File Offset: 0x0049EBB7
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

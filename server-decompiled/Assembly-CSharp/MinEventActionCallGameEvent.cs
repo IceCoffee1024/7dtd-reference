@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F5 RID: 1781
+// Token: 0x020006F7 RID: 1783
 [Preserve]
 public class MinEventActionCallGameEvent : MinEventActionTargetedBase
 {
-	// Token: 0x060036A4 RID: 13988 RVA: 0x00168CF4 File Offset: 0x00166EF4
+	// Token: 0x060036E7 RID: 14055 RVA: 0x00169658 File Offset: 0x00167858
 	public override void Execute(MinEventParams _params)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer || this.allowClientCall)
@@ -21,7 +21,7 @@ public class MinEventActionCallGameEvent : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036A5 RID: 13989 RVA: 0x00168D7C File Offset: 0x00166F7C
+	// Token: 0x060036E8 RID: 14056 RVA: 0x001696E0 File Offset: 0x001678E0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -50,15 +50,15 @@ public class MinEventActionCallGameEvent : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C1E RID: 11294
+	// Token: 0x04002C17 RID: 11287
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string eventName = "";
 
-	// Token: 0x04002C1F RID: 11295
+	// Token: 0x04002C18 RID: 11288
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string sequenceLink = "";
 
-	// Token: 0x04002C20 RID: 11296
+	// Token: 0x04002C19 RID: 11289
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool allowClientCall;
 }

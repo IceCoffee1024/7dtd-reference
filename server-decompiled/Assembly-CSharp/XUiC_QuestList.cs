@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FDF RID: 4063
+// Token: 0x02000FEE RID: 4078
 [Preserve]
 public class XUiC_QuestList : XUiController
 {
-	// Token: 0x17000EEC RID: 3820
-	// (get) Token: 0x06008034 RID: 32820 RVA: 0x00308E27 File Offset: 0x00307027
-	// (set) Token: 0x06008035 RID: 32821 RVA: 0x00308E2F File Offset: 0x0030702F
+	// Token: 0x17000F13 RID: 3859
+	// (get) Token: 0x06008043 RID: 32835 RVA: 0x0030BDFF File Offset: 0x00309FFF
+	// (set) Token: 0x06008044 RID: 32836 RVA: 0x0030BE07 File Offset: 0x0030A007
 	public int Page
 	{
 		get
@@ -30,9 +30,9 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x17000EED RID: 3821
-	// (get) Token: 0x06008036 RID: 32822 RVA: 0x00308E5F File Offset: 0x0030705F
-	// (set) Token: 0x06008037 RID: 32823 RVA: 0x00308E68 File Offset: 0x00307068
+	// Token: 0x17000F14 RID: 3860
+	// (get) Token: 0x06008045 RID: 32837 RVA: 0x0030BE37 File Offset: 0x0030A037
+	// (set) Token: 0x06008046 RID: 32838 RVA: 0x0030BE40 File Offset: 0x0030A040
 	public XUiC_QuestEntry SelectedEntry
 	{
 		get
@@ -72,9 +72,9 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x17000EEE RID: 3822
-	// (get) Token: 0x06008038 RID: 32824 RVA: 0x00308F21 File Offset: 0x00307121
-	// (set) Token: 0x06008039 RID: 32825 RVA: 0x00308F29 File Offset: 0x00307129
+	// Token: 0x17000F15 RID: 3861
+	// (get) Token: 0x06008047 RID: 32839 RVA: 0x0030BEF9 File Offset: 0x0030A0F9
+	// (set) Token: 0x06008048 RID: 32840 RVA: 0x0030BF01 File Offset: 0x0030A101
 	public int VisibleEntries
 	{
 		get
@@ -91,7 +91,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x0600803A RID: 32826 RVA: 0x00308F44 File Offset: 0x00307144
+	// Token: 0x06008049 RID: 32841 RVA: 0x0030BF1C File Offset: 0x0030A11C
 	public override void Init()
 	{
 		base.Init();
@@ -116,7 +116,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x0600803B RID: 32827 RVA: 0x00308FF8 File Offset: 0x003071F8
+	// Token: 0x0600804A RID: 32842 RVA: 0x0030BFD0 File Offset: 0x0030A1D0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -171,7 +171,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x0600803C RID: 32828 RVA: 0x003091D4 File Offset: 0x003073D4
+	// Token: 0x0600804B RID: 32843 RVA: 0x0030C1AC File Offset: 0x0030A3AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressQuest(XUiController _sender, int _mouseButton)
 	{
@@ -193,7 +193,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x0600803D RID: 32829 RVA: 0x00309278 File Offset: 0x00307478
+	// Token: 0x0600804C RID: 32844 RVA: 0x0030C250 File Offset: 0x0030A450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScrollQuest(XUiController _sender, float _delta)
 	{
@@ -219,7 +219,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x0600803E RID: 32830 RVA: 0x003092A5 File Offset: 0x003074A5
+	// Token: 0x0600804D RID: 32845 RVA: 0x0030C27D File Offset: 0x0030A47D
 	public void SetQuestList(List<Quest> newQuestList)
 	{
 		this.Page = 0;
@@ -227,7 +227,7 @@ public class XUiC_QuestList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600803F RID: 32831 RVA: 0x003092BC File Offset: 0x003074BC
+	// Token: 0x0600804E RID: 32846 RVA: 0x0030C294 File Offset: 0x0030A494
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -236,7 +236,7 @@ public class XUiC_QuestList : XUiController
 		this.xui.QuestTracker.OnTrackedQuestChanged += this.QuestTracker_OnTrackedQuestChanged;
 	}
 
-	// Token: 0x06008040 RID: 32832 RVA: 0x00309318 File Offset: 0x00307518
+	// Token: 0x0600804F RID: 32847 RVA: 0x0030C2F0 File Offset: 0x0030A4F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestTracker_OnTrackedQuestChanged()
 	{
@@ -246,7 +246,7 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x06008041 RID: 32833 RVA: 0x0030934D File Offset: 0x0030754D
+	// Token: 0x06008050 RID: 32848 RVA: 0x0030C325 File Offset: 0x0030A525
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -254,7 +254,7 @@ public class XUiC_QuestList : XUiController
 		this.xui.QuestTracker.OnTrackedQuestChanged -= this.QuestTracker_OnTrackedQuestChanged;
 	}
 
-	// Token: 0x06008042 RID: 32834 RVA: 0x00309388 File Offset: 0x00307588
+	// Token: 0x06008051 RID: 32849 RVA: 0x0030C360 File Offset: 0x0030A560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestJournal_QuestChanged(Quest q)
 	{
@@ -264,43 +264,43 @@ public class XUiC_QuestList : XUiController
 		}
 	}
 
-	// Token: 0x06008043 RID: 32835 RVA: 0x003093AC File Offset: 0x003075AC
+	// Token: 0x06008052 RID: 32850 RVA: 0x0030C384 File Offset: 0x0030A584
 	public bool HasQuests()
 	{
 		return this.questList != null && this.questList.Count > 0;
 	}
 
-	// Token: 0x04005EF1 RID: 24305
+	// Token: 0x04005F1A RID: 24346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04005EF2 RID: 24306
+	// Token: 0x04005F1B RID: 24347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_QuestEntry> entryList = new List<XUiC_QuestEntry>();
 
-	// Token: 0x04005EF3 RID: 24307
+	// Token: 0x04005F1C RID: 24348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04005EF4 RID: 24308
+	// Token: 0x04005F1D RID: 24349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestEntry selectedEntry;
 
-	// Token: 0x04005EF5 RID: 24309
+	// Token: 0x04005F1E RID: 24350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Quest> questList = new List<Quest>();
 
-	// Token: 0x04005EF6 RID: 24310
+	// Token: 0x04005F1F RID: 24351
 	public XUiC_QuestListWindow QuestListWindow;
 
-	// Token: 0x04005EF7 RID: 24311
+	// Token: 0x04005F20 RID: 24352
 	public XUiC_QuestSharedList SharedList;
 
-	// Token: 0x04005EF8 RID: 24312
+	// Token: 0x04005F21 RID: 24353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x04005EF9 RID: 24313
+	// Token: 0x04005F22 RID: 24354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int visibleEntries;
 }

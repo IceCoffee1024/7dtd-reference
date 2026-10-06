@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001578 RID: 5496
+// Token: 0x0200159A RID: 5530
 public class vp_FractalNoise
 {
-	// Token: 0x0600AC03 RID: 44035 RVA: 0x004011AE File Offset: 0x003FF3AE
+	// Token: 0x0600ACB6 RID: 44214 RVA: 0x00406002 File Offset: 0x00404202
 	public vp_FractalNoise(float inH, float inLacunarity, float inOctaves)
 		: this(inH, inLacunarity, inOctaves, null)
 	{
 	}
 
-	// Token: 0x0600AC04 RID: 44036 RVA: 0x004011BC File Offset: 0x003FF3BC
+	// Token: 0x0600ACB7 RID: 44215 RVA: 0x00406010 File Offset: 0x00404210
 	public vp_FractalNoise(float inH, float inLacunarity, float inOctaves, vp_Perlin noise)
 	{
 		this.m_Lacunarity = inLacunarity;
@@ -31,7 +31,7 @@ public class vp_FractalNoise
 		this.m_Noise = noise;
 	}
 
-	// Token: 0x0600AC05 RID: 44037 RVA: 0x0040124C File Offset: 0x003FF44C
+	// Token: 0x0600ACB8 RID: 44216 RVA: 0x004060A0 File Offset: 0x004042A0
 	public float HybridMultifractal(float x, float y, float offset)
 	{
 		float num = (this.m_Noise.Noise(x, y) + offset) * this.m_Exponent[0];
@@ -55,7 +55,7 @@ public class vp_FractalNoise
 		return num + num4 * this.m_Noise.Noise(x, y) * this.m_Exponent[i];
 	}
 
-	// Token: 0x0600AC06 RID: 44038 RVA: 0x00401310 File Offset: 0x003FF510
+	// Token: 0x0600ACB9 RID: 44217 RVA: 0x00406164 File Offset: 0x00404364
 	public float RidgedMultifractal(float x, float y, float offset, float gain)
 	{
 		float num = Mathf.Abs(this.m_Noise.Noise(x, y));
@@ -77,7 +77,7 @@ public class vp_FractalNoise
 		return num2;
 	}
 
-	// Token: 0x0600AC07 RID: 44039 RVA: 0x004013A0 File Offset: 0x003FF5A0
+	// Token: 0x0600ACBA RID: 44218 RVA: 0x004061F4 File Offset: 0x004043F4
 	public float BrownianMotion(float x, float y)
 	{
 		float num = 0f;
@@ -92,23 +92,23 @@ public class vp_FractalNoise
 		return num + num3 * this.m_Noise.Noise(x, y) * this.m_Exponent[(int)(checked((IntPtr)num2))];
 	}
 
-	// Token: 0x04007F43 RID: 32579
+	// Token: 0x04007FC6 RID: 32710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_Perlin m_Noise;
 
-	// Token: 0x04007F44 RID: 32580
+	// Token: 0x04007FC7 RID: 32711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] m_Exponent;
 
-	// Token: 0x04007F45 RID: 32581
+	// Token: 0x04007FC8 RID: 32712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_IntOctaves;
 
-	// Token: 0x04007F46 RID: 32582
+	// Token: 0x04007FC9 RID: 32713
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_Octaves;
 
-	// Token: 0x04007F47 RID: 32583
+	// Token: 0x04007FCA RID: 32714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_Lacunarity;
 }

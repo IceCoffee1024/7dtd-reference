@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000857 RID: 2135
+// Token: 0x0200085A RID: 2138
 [Preserve]
 public class NetPackageSoundAtPosition : NetPackage
 {
-	// Token: 0x06003E6E RID: 15982 RVA: 0x0018A48F File Offset: 0x0018868F
+	// Token: 0x06003E16 RID: 15894 RVA: 0x0018A33B File Offset: 0x0018853B
 	public NetPackageSoundAtPosition Setup(Vector3 _pos, string _audioClipName, AudioRolloffMode _mode, int _distance, int _entityId, float _volumeScale)
 	{
 		this.pos = _pos;
@@ -18,7 +18,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E6F RID: 15983 RVA: 0x0018A4BF File Offset: 0x001886BF
+	// Token: 0x06003E17 RID: 15895 RVA: 0x0018A36B File Offset: 0x0018856B
 	public override void read(PooledBinaryReader _br)
 	{
 		this.pos = StreamUtils.ReadVector3(_br);
@@ -28,7 +28,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		this.entityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003E70 RID: 15984 RVA: 0x0018A500 File Offset: 0x00188700
+	// Token: 0x06003E18 RID: 15896 RVA: 0x0018A3AC File Offset: 0x001885AC
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -39,7 +39,7 @@ public class NetPackageSoundAtPosition : NetPackage
 		_bw.Write(this.entityId);
 	}
 
-	// Token: 0x06003E71 RID: 15985 RVA: 0x0018A554 File Offset: 0x00188754
+	// Token: 0x06003E19 RID: 15897 RVA: 0x0018A400 File Offset: 0x00188600
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -54,33 +54,27 @@ public class NetPackageSoundAtPosition : NetPackage
 		_world.gameManager.PlaySoundAtPositionClient(this.pos, this.audioClipName, this.mode, this.distance, this.volumeScale);
 	}
 
-	// Token: 0x06003E72 RID: 15986 RVA: 0x0017CB1E File Offset: 0x0017AD1E
-	public override int GetLength()
-	{
-		return 40;
-	}
-
-	// Token: 0x0400328C RID: 12940
+	// Token: 0x04003277 RID: 12919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 pos;
 
-	// Token: 0x0400328D RID: 12941
+	// Token: 0x04003278 RID: 12920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string audioClipName;
 
-	// Token: 0x0400328E RID: 12942
+	// Token: 0x04003279 RID: 12921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioRolloffMode mode;
 
-	// Token: 0x0400328F RID: 12943
+	// Token: 0x0400327A RID: 12922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int distance;
 
-	// Token: 0x04003290 RID: 12944
+	// Token: 0x0400327B RID: 12923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003291 RID: 12945
+	// Token: 0x0400327C RID: 12924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float volumeScale;
 }

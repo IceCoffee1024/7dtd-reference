@@ -2,24 +2,24 @@
 
 namespace Webserver
 {
-	// Token: 0x02001AB9 RID: 6841
+	// Token: 0x02001AE5 RID: 6885
 	public enum ERequestMethod
 	{
-		// Token: 0x04009C39 RID: 39993
+		// Token: 0x04009CFF RID: 40191
 		Other,
-		// Token: 0x04009C3A RID: 39994
+		// Token: 0x04009D00 RID: 40192
 		GET,
-		// Token: 0x04009C3B RID: 39995
+		// Token: 0x04009D01 RID: 40193
 		POST,
-		// Token: 0x04009C3C RID: 39996
+		// Token: 0x04009D02 RID: 40194
 		PUT,
-		// Token: 0x04009C3D RID: 39997
+		// Token: 0x04009D03 RID: 40195
 		DELETE,
-		// Token: 0x04009C3E RID: 39998
+		// Token: 0x04009D04 RID: 40196
 		HEAD,
-		// Token: 0x04009C3F RID: 39999
+		// Token: 0x04009D05 RID: 40197
 		OPTIONS,
-		// Token: 0x04009C40 RID: 40000
+		// Token: 0x04009D06 RID: 40198
 		Count
 	}
 }

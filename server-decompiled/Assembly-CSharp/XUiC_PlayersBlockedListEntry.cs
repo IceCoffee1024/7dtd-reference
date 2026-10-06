@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E2B RID: 3627
+// Token: 0x02000E3A RID: 3642
 [Preserve]
 public class XUiC_PlayersBlockedListEntry : XUiC_PlayersBlockedListEntryBase
 {
-	// Token: 0x06006F91 RID: 28561 RVA: 0x002B1100 File Offset: 0x002AF300
+	// Token: 0x06006F89 RID: 28553 RVA: 0x002B44B0 File Offset: 0x002B26B0
 	[XuiBindEvent("OnPress", "btnUnblockPlayer")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void unblockPlayerPressed(XUiController _sender, int _mouseButton)
@@ -24,7 +24,7 @@ public class XUiC_PlayersBlockedListEntry : XUiC_PlayersBlockedListEntryBase
 		this.BlockList.IsDirty = true;
 	}
 
-	// Token: 0x04005474 RID: 21620
+	// Token: 0x040054AB RID: 21675
 	[XuiBindComponent("unblockBtn", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnUnblockPlayer;

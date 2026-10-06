@@ -5,12 +5,12 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000180 RID: 384
+// Token: 0x02000181 RID: 385
 [Preserve]
 public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 {
-	// Token: 0x170000E3 RID: 227
-	// (get) Token: 0x06000B66 RID: 2918 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170000E2 RID: 226
+	// (get) Token: 0x06000B6F RID: 2927 RVA: 0x00020119 File Offset: 0x0001E319
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get
@@ -19,7 +19,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B67 RID: 2919 RVA: 0x00048924 File Offset: 0x00046B24
+	// Token: 0x06000B70 RID: 2928 RVA: 0x00048AF8 File Offset: 0x00046CF8
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -64,17 +64,17 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		this.unlockCompletion = 1f;
 	}
 
-	// Token: 0x06000B68 RID: 2920 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000B71 RID: 2929 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
 	}
 
-	// Token: 0x06000B69 RID: 2921 RVA: 0x00045E42 File Offset: 0x00044042
-	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x06000B72 RID: 2930 RVA: 0x00045F3E File Offset: 0x0004413E
+	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			if (base.Parent.UseLocalVersioning())
 			{
@@ -85,38 +85,33 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B6A RID: 2922 RVA: 0x00045E70 File Offset: 0x00044070
-	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06000B73 RID: 2931 RVA: 0x00045F6C File Offset: 0x0004416C
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
 	}
 
-	// Token: 0x06000B6B RID: 2923 RVA: 0x00048A9E File Offset: 0x00046C9E
+	// Token: 0x06000B74 RID: 2932 RVA: 0x00048C72 File Offset: 0x00046E72
 	public bool NeedsLockpicking()
 	{
 		return this.unlockCompletion < 1f;
 	}
 
-	// Token: 0x06000B6C RID: 2924 RVA: 0x00048AAD File Offset: 0x00046CAD
-	public override bool CanLockLocally(ILockContext _context, ushort _channel)
-	{
-		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
-	}
-
-	// Token: 0x06000B6D RID: 2925 RVA: 0x00048ABA File Offset: 0x00046CBA
-	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
+	// Token: 0x06000B75 RID: 2933 RVA: 0x00048C81 File Offset: 0x00046E81
+	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		this.ShowUI(_success);
+		return true;
 	}
 
-	// Token: 0x06000B6E RID: 2926 RVA: 0x00048AC4 File Offset: 0x00046CC4
+	// Token: 0x06000B76 RID: 2934 RVA: 0x00048C8C File Offset: 0x00046E8C
 	public void ShowUI(bool _lockGranted)
 	{
-		TEFeatureLockPickable.<>c__DisplayClass25_0 CS$<>8__locals1;
+		TEFeatureLockPickable.<>c__DisplayClass24_0 CS$<>8__locals1;
 		CS$<>8__locals1.<>4__this = this;
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		if (!_lockGranted)
@@ -135,10 +130,10 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		float value = EffectManager.GetValue(PassiveEffects.LockPickTime, CS$<>8__locals1.player.inventory.holdingItemItemValue, this.lockPickTime, CS$<>8__locals1.player, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 		float num2 = value * (1f - this.unlockCompletion);
 		float value2 = EffectManager.GetValue(PassiveEffects.LockPickBreakChance, CS$<>8__locals1.player.inventory.holdingItemItemValue, this.lockPickBreakChance, CS$<>8__locals1.player, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
-		int num3 = this.<ShowUI>g__CalculateLockpicksNeeded|25_0(1f - value2, this.nthPercentile, 15, ref CS$<>8__locals1) - this.lockPicksUsed;
+		int num3 = this.<ShowUI>g__CalculateLockpicksNeeded|24_0(1f - value2, this.nthPercentile, 15, ref CS$<>8__locals1) - this.lockPicksUsed;
 		if (num3 > 1)
 		{
-			num = value - num2 + this.<ShowUI>g__RandomizeNextBreak|25_1(num3 - 1, ref CS$<>8__locals1) * num2;
+			num = value - num2 + this.<ShowUI>g__RandomizeNextBreak|24_1(num3 - 1, ref CS$<>8__locals1) * num2;
 		}
 		TimerEventData timerEventData = new TimerEventData();
 		timerEventData.CloseEvent += this.EventData_CloseEvent;
@@ -150,7 +145,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		Manager.BroadcastPlayByLocalPlayer(base.ToWorldPos().ToVector3() + Vector3.one * 0.5f, "Misc/unlocking");
 	}
 
-	// Token: 0x06000B6F RID: 2927 RVA: 0x00048CB0 File Offset: 0x00046EB0
+	// Token: 0x06000B77 RID: 2935 RVA: 0x00048E78 File Offset: 0x00047078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_CloseEvent(TimerEventData _timerData)
 	{
@@ -159,7 +154,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x06000B70 RID: 2928 RVA: 0x00048D00 File Offset: 0x00046F00
+	// Token: 0x06000B78 RID: 2936 RVA: 0x00048EC8 File Offset: 0x000470C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_BreakEvent(TimerEventData _timerData)
 	{
@@ -181,7 +176,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x06000B71 RID: 2929 RVA: 0x00048E00 File Offset: 0x00047000
+	// Token: 0x06000B79 RID: 2937 RVA: 0x00048FC8 File Offset: 0x000471C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EventData_Event(TimerEventData _timerData)
 	{
@@ -198,7 +193,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B72 RID: 2930 RVA: 0x00048EA4 File Offset: 0x000470A4
+	// Token: 0x06000B7A RID: 2938 RVA: 0x0004906C File Offset: 0x0004726C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DowngradeToUnlockedVariant(Vector3i _blockPos)
 	{
@@ -215,7 +210,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		world.SetBlockRPC(_blockPos, blockValue, blockValue.Block.Density);
 	}
 
-	// Token: 0x06000B73 RID: 2931 RVA: 0x00048F2D File Offset: 0x0004712D
+	// Token: 0x06000B7B RID: 2939 RVA: 0x000490F5 File Offset: 0x000472F5
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -226,14 +221,14 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		return null;
 	}
 
-	// Token: 0x06000B74 RID: 2932 RVA: 0x00048F63 File Offset: 0x00047163
+	// Token: 0x06000B7C RID: 2940 RVA: 0x0004912B File Offset: 0x0004732B
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
 		_addCallback(new BlockActivationCommand("pick", "unlock", false, false, null), TileEntityComposite.EBlockCommandOrder.First, base.FeatureData);
 	}
 
-	// Token: 0x06000B75 RID: 2933 RVA: 0x00048F8C File Offset: 0x0004718C
+	// Token: 0x06000B7D RID: 2941 RVA: 0x00049154 File Offset: 0x00047354
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -247,7 +242,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		return !base.CommandIs(_commandName, "pick") || !base.Parent.LocalPlayerIsOwner;
 	}
 
-	// Token: 0x06000B76 RID: 2934 RVA: 0x00048FEE File Offset: 0x000471EE
+	// Token: 0x06000B7E RID: 2942 RVA: 0x000491B6 File Offset: 0x000473B6
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (_triggeredBy == null)
@@ -260,7 +255,7 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		}
 	}
 
-	// Token: 0x06000B77 RID: 2935 RVA: 0x00049008 File Offset: 0x00047208
+	// Token: 0x06000B7F RID: 2943 RVA: 0x000491D0 File Offset: 0x000473D0
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -277,14 +272,14 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 			return true;
 		}
 		_player.AimingGun = false;
-		LockManager.Instance.LockRequestLocal(this, null, 0);
+		LockManager.Instance.LockRequestLocal(this, 0);
 		return true;
 	}
 
-	// Token: 0x06000B7A RID: 2938 RVA: 0x00049108 File Offset: 0x00047308
+	// Token: 0x06000B82 RID: 2946 RVA: 0x000492D0 File Offset: 0x000474D0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public int <ShowUI>g__CalculateLockpicksNeeded|25_0(float _lpSuccess, float _nthPercentile, int _maxTries = 15, ref TEFeatureLockPickable.<>c__DisplayClass25_0 A_4)
+	public int <ShowUI>g__CalculateLockpicksNeeded|24_0(float _lpSuccess, float _nthPercentile, int _maxTries = 15, ref TEFeatureLockPickable.<>c__DisplayClass24_0 A_4)
 	{
 		if (_lpSuccess <= 0f || _lpSuccess > 1f || _maxTries <= 0)
 		{
@@ -294,10 +289,10 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		return Utils.FastMin(Utils.Fastfloor(Math.Log(1.0 - (double)this.nthPercentile) / Math.Log((double)num)) + 1, _maxTries);
 	}
 
-	// Token: 0x06000B7B RID: 2939 RVA: 0x00049160 File Offset: 0x00047360
+	// Token: 0x06000B83 RID: 2947 RVA: 0x00049328 File Offset: 0x00047528
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float <ShowUI>g__RandomizeNextBreak|25_1(int _breaksRemaining, ref TEFeatureLockPickable.<>c__DisplayClass25_0 A_2)
+	public float <ShowUI>g__RandomizeNextBreak|24_1(int _breaksRemaining, ref TEFeatureLockPickable.<>c__DisplayClass24_0 A_2)
 	{
 		if (_breaksRemaining <= 0)
 		{
@@ -315,67 +310,67 @@ public class TEFeatureLockPickable : TEFeatureAbs, IFeatureTriggerCapability
 		return Utils.FastClamp(num, 0.05f, 0.95f);
 	}
 
-	// Token: 0x04000A8A RID: 2698
+	// Token: 0x04000A89 RID: 2697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 18;
 
-	// Token: 0x04000A8B RID: 2699
+	// Token: 0x04000A8A RID: 2698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropLockPickTime = "LockPickTime";
 
-	// Token: 0x04000A8C RID: 2700
+	// Token: 0x04000A8B RID: 2699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropLockPickItem = "LockPickItem";
 
-	// Token: 0x04000A8D RID: 2701
+	// Token: 0x04000A8C RID: 2700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropLockPickBreakChance = "LockPickBreakChance";
 
-	// Token: 0x04000A8E RID: 2702
+	// Token: 0x04000A8D RID: 2701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropOnLockPickSuccessEvent = "LockPickSuccessEvent";
 
-	// Token: 0x04000A8F RID: 2703
+	// Token: 0x04000A8E RID: 2702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropOnLockPickFailedEvent = "LockPickFailedEvent";
 
-	// Token: 0x04000A90 RID: 2704
+	// Token: 0x04000A8F RID: 2703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropLockpickDowngradeBlock = "LockPickDowngradeBlock";
 
-	// Token: 0x04000A91 RID: 2705
+	// Token: 0x04000A90 RID: 2704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lockPickItem;
 
-	// Token: 0x04000A92 RID: 2706
+	// Token: 0x04000A91 RID: 2705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lockPickTime;
 
-	// Token: 0x04000A93 RID: 2707
+	// Token: 0x04000A92 RID: 2706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lockPickBreakChance;
 
-	// Token: 0x04000A94 RID: 2708
+	// Token: 0x04000A93 RID: 2707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lockPickSuccessEvent;
 
-	// Token: 0x04000A95 RID: 2709
+	// Token: 0x04000A94 RID: 2708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lockPickFailedEvent;
 
-	// Token: 0x04000A96 RID: 2710
+	// Token: 0x04000A95 RID: 2709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue lockpickDowngradeBlock;
 
-	// Token: 0x04000A97 RID: 2711
+	// Token: 0x04000A96 RID: 2710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float unlockCompletion = -1f;
 
-	// Token: 0x04000A98 RID: 2712
+	// Token: 0x04000A97 RID: 2711
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lockPicksUsed = -1;
 
-	// Token: 0x04000A99 RID: 2713
+	// Token: 0x04000A98 RID: 2712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float nthPercentile = -1f;
 }

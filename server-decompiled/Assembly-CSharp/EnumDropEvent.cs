@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020000FF RID: 255
+// Token: 0x02000101 RID: 257
 public enum EnumDropEvent
 {
-	// Token: 0x040006EA RID: 1770
+	// Token: 0x040006ED RID: 1773
 	Destroy,
-	// Token: 0x040006EB RID: 1771
+	// Token: 0x040006EE RID: 1774
 	Fall,
-	// Token: 0x040006EC RID: 1772
+	// Token: 0x040006EF RID: 1775
 	Harvest
 }

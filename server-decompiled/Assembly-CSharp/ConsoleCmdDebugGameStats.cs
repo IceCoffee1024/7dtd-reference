@@ -5,12 +5,12 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000207 RID: 519
+// Token: 0x02000208 RID: 520
 [Preserve]
 public class ConsoleCmdDebugGameStats : ConsoleCmdAbstract
 {
-	// Token: 0x17000160 RID: 352
-	// (get) Token: 0x06000FD7 RID: 4055 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000158 RID: 344
+	// (get) Token: 0x06000FCA RID: 4042 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -19,21 +19,21 @@ public class ConsoleCmdDebugGameStats : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FD8 RID: 4056 RVA: 0x00066319 File Offset: 0x00064519
+	// Token: 0x06000FCB RID: 4043 RVA: 0x00066309 File Offset: 0x00064509
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debuggamestats" };
 	}
 
-	// Token: 0x06000FD9 RID: 4057 RVA: 0x00066329 File Offset: 0x00064529
+	// Token: 0x06000FCC RID: 4044 RVA: 0x00066319 File Offset: 0x00064519
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "GameStats commands";
 	}
 
-	// Token: 0x06000FDA RID: 4058 RVA: 0x00066330 File Offset: 0x00064530
+	// Token: 0x06000FCD RID: 4045 RVA: 0x00066320 File Offset: 0x00064520
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count >= 1)
@@ -70,7 +70,7 @@ public class ConsoleCmdDebugGameStats : ConsoleCmdAbstract
 		Log.Out("Incorrect params, expected 'log [true|false]' or 'print'");
 	}
 
-	// Token: 0x06000FDB RID: 4059 RVA: 0x0006648C File Offset: 0x0006468C
+	// Token: 0x06000FCE RID: 4046 RVA: 0x0006647C File Offset: 0x0006467C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void logDebugGameStats(Dictionary<string, string> statisticsDictionary)
 	{
@@ -84,11 +84,11 @@ public class ConsoleCmdDebugGameStats : ConsoleCmdAbstract
 		File.AppendAllText(this.logFile, this.stringBuilder.ToString());
 	}
 
-	// Token: 0x04000CAA RID: 3242
+	// Token: 0x04000CA3 RID: 3235
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string logFile;
 
-	// Token: 0x04000CAB RID: 3243
+	// Token: 0x04000CA4 RID: 3236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StringBuilder stringBuilder;
 }

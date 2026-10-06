@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000D3D RID: 3389
+// Token: 0x02000D4D RID: 3405
 public class UIDisplayInfoFromXml
 {
-	// Token: 0x06006735 RID: 26421 RVA: 0x0028CF1C File Offset: 0x0028B11C
+	// Token: 0x0600672F RID: 26415 RVA: 0x00290484 File Offset: 0x0028E684
 	public static IEnumerator Load(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -18,7 +18,7 @@ public class UIDisplayInfoFromXml
 		yield break;
 	}
 
-	// Token: 0x06006736 RID: 26422 RVA: 0x0028CF2C File Offset: 0x0028B12C
+	// Token: 0x06006730 RID: 26416 RVA: 0x00290494 File Offset: 0x0028E694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -71,7 +71,7 @@ public class UIDisplayInfoFromXml
 		}
 	}
 
-	// Token: 0x06006737 RID: 26423 RVA: 0x0028D0C8 File Offset: 0x0028B2C8
+	// Token: 0x06006731 RID: 26417 RVA: 0x00290630 File Offset: 0x0028E830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseItemDisplayInfo(XElement e)
 	{
@@ -115,7 +115,7 @@ public class UIDisplayInfoFromXml
 		throw new Exception(string.Format("Extends item_display_info {0} is not specified.'", attribute2));
 	}
 
-	// Token: 0x06006738 RID: 26424 RVA: 0x0028D230 File Offset: 0x0028B430
+	// Token: 0x06006732 RID: 26418 RVA: 0x00290798 File Offset: 0x0028E998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DisplayInfoEntry ParseDisplayInfoEntry(XElement node)
 	{
@@ -159,7 +159,7 @@ public class UIDisplayInfoFromXml
 		return displayInfoEntry;
 	}
 
-	// Token: 0x06006739 RID: 26425 RVA: 0x0028D3A4 File Offset: 0x0028B5A4
+	// Token: 0x06006733 RID: 26419 RVA: 0x0029090C File Offset: 0x0028EB0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCraftingCategoryList(XElement e)
 	{
@@ -182,7 +182,7 @@ public class UIDisplayInfoFromXml
 		}
 	}
 
-	// Token: 0x0600673A RID: 26426 RVA: 0x0028D454 File Offset: 0x0028B654
+	// Token: 0x06006734 RID: 26420 RVA: 0x002909BC File Offset: 0x0028EBBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderCategoryList(XElement e)
 	{
@@ -196,7 +196,7 @@ public class UIDisplayInfoFromXml
 		}
 	}
 
-	// Token: 0x0600673B RID: 26427 RVA: 0x0028D4B8 File Offset: 0x0028B6B8
+	// Token: 0x06006735 RID: 26421 RVA: 0x00290A20 File Offset: 0x0028EC20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static CraftingCategoryDisplayEntry ParseCraftingCategory(XElement node)
 	{

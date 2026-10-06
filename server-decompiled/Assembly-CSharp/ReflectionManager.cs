@@ -4,10 +4,10 @@ using ShinyScreenSpaceRaytracedReflections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02001362 RID: 4962
+// Token: 0x02001382 RID: 4994
 public class ReflectionManager
 {
-	// Token: 0x06009C64 RID: 40036 RVA: 0x003B0556 File Offset: 0x003AE756
+	// Token: 0x06009D10 RID: 40208 RVA: 0x003B50D2 File Offset: 0x003B32D2
 	public static ReflectionManager Create(EntityPlayerLocal player)
 	{
 		ReflectionManager reflectionManager = new ReflectionManager();
@@ -16,7 +16,7 @@ public class ReflectionManager
 		return reflectionManager;
 	}
 
-	// Token: 0x06009C65 RID: 40037 RVA: 0x003B056C File Offset: 0x003AE76C
+	// Token: 0x06009D11 RID: 40209 RVA: 0x003B50E8 File Offset: 0x003B32E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -40,7 +40,7 @@ public class ReflectionManager
 		this.ApplyProbeOptions(@int, @bool);
 	}
 
-	// Token: 0x06009C66 RID: 40038 RVA: 0x003B0634 File Offset: 0x003AE834
+	// Token: 0x06009D12 RID: 40210 RVA: 0x003B51B0 File Offset: 0x003B33B0
 	public static void ApplyOptions(bool useSimple = false)
 	{
 		int num = GamePrefs.GetInt(EnumGamePrefs.OptionsGfxReflectQuality);
@@ -61,7 +61,7 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x06009C67 RID: 40039 RVA: 0x003B06A0 File Offset: 0x003AE8A0
+	// Token: 0x06009D13 RID: 40211 RVA: 0x003B521C File Offset: 0x003B341C
 	public void Destroy()
 	{
 		global::UnityEngine.Object.Destroy(this.managerObj);
@@ -85,7 +85,7 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x06009C68 RID: 40040 RVA: 0x003B073C File Offset: 0x003AE93C
+	// Token: 0x06009D14 RID: 40212 RVA: 0x003B52B8 File Offset: 0x003B34B8
 	public void LightChanged(Vector3 lightPos)
 	{
 		ReflectionManager.Probe probe = this.mainProbe;
@@ -99,7 +99,7 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x06009C69 RID: 40041 RVA: 0x003B0794 File Offset: 0x003AE994
+	// Token: 0x06009D15 RID: 40213 RVA: 0x003B5310 File Offset: 0x003B3510
 	public void FrameUpdate()
 	{
 		if (ReflectionManager.optionsSelected.resolution == 0)
@@ -239,7 +239,7 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x06009C6A RID: 40042 RVA: 0x003B0C2C File Offset: 0x003AEE2C
+	// Token: 0x06009D16 RID: 40214 RVA: 0x003B57A8 File Offset: 0x003B39A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortProbes(Vector3 pos)
 	{
@@ -251,7 +251,7 @@ public class ReflectionManager
 		this.probes.Sort(this.sorter);
 	}
 
-	// Token: 0x06009C6B RID: 40043 RVA: 0x003B0C8C File Offset: 0x003AEE8C
+	// Token: 0x06009D17 RID: 40215 RVA: 0x003B5808 File Offset: 0x003B3A08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectionManager.Probe AddProbe(Transform parentT, bool isMain)
 	{
@@ -283,7 +283,7 @@ public class ReflectionManager
 		return probe;
 	}
 
-	// Token: 0x06009C6C RID: 40044 RVA: 0x003B0D50 File Offset: 0x003AEF50
+	// Token: 0x06009D18 RID: 40216 RVA: 0x003B58CC File Offset: 0x003B3ACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyProbeOptions(int quality, bool useShadows)
 	{
@@ -362,7 +362,7 @@ public class ReflectionManager
 		this.ApplyWaterSetting();
 	}
 
-	// Token: 0x06009C6D RID: 40045 RVA: 0x003B0F84 File Offset: 0x003AF184
+	// Token: 0x06009D19 RID: 40217 RVA: 0x003B5B00 File Offset: 0x003B3D00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyProbeOptions(ReflectionManager.Probe probe, bool useShadows)
 	{
@@ -392,13 +392,13 @@ public class ReflectionManager
 		reflectionProbe.timeSlicingMode = ReflectionProbeTimeSlicingMode.NoTimeSlicing;
 	}
 
-	// Token: 0x06009C6E RID: 40046 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009D1A RID: 40218 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyWaterSetting()
 	{
 	}
 
-	// Token: 0x06009C6F RID: 40047 RVA: 0x003B1070 File Offset: 0x003AF270
+	// Token: 0x06009D1B RID: 40219 RVA: 0x003B5BEC File Offset: 0x003B3DEC
 	public void ApplyCameraOptions(Camera camera)
 	{
 		int @int = GamePrefs.GetInt(EnumGamePrefs.OptionsGfxSSReflections);
@@ -433,7 +433,7 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x06009C70 RID: 40048 RVA: 0x003B1140 File Offset: 0x003AF340
+	// Token: 0x06009D1C RID: 40220 RVA: 0x003B5CBC File Offset: 0x003B3EBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture CreateTexture(bool autoGenMips)
 	{
@@ -452,103 +452,103 @@ public class ReflectionManager
 		return renderTexture;
 	}
 
-	// Token: 0x04007619 RID: 30233
+	// Token: 0x04007694 RID: 30356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cProbeCount = 1;
 
-	// Token: 0x0400761A RID: 30234
+	// Token: 0x04007695 RID: 30357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cUpdateAge = 8f;
 
-	// Token: 0x0400761B RID: 30235
+	// Token: 0x04007696 RID: 30358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cUpdatePlayerDistance = 0.3f;
 
-	// Token: 0x0400761C RID: 30236
+	// Token: 0x04007697 RID: 30359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cUpdateLightDistance = 15f;
 
-	// Token: 0x0400761D RID: 30237
+	// Token: 0x04007698 RID: 30360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cBlendInPerSec = 0.8333333f;
 
-	// Token: 0x0400761E RID: 30238
+	// Token: 0x04007699 RID: 30361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cOffsetY = 1.55f;
 
-	// Token: 0x0400761F RID: 30239
+	// Token: 0x0400769A RID: 30362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cIntensityNoShadowsScale = 0.85f;
 
-	// Token: 0x04007620 RID: 30240
+	// Token: 0x0400769B RID: 30363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04007621 RID: 30241
+	// Token: 0x0400769C RID: 30364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject managerObj;
 
-	// Token: 0x04007622 RID: 30242
+	// Token: 0x0400769D RID: 30365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectionManager.Probe mainProbe;
 
-	// Token: 0x04007623 RID: 30243
+	// Token: 0x0400769E RID: 30366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture mainTex;
 
-	// Token: 0x04007624 RID: 30244
+	// Token: 0x0400769F RID: 30367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ReflectionManager.Probe> probes;
 
-	// Token: 0x04007625 RID: 30245
+	// Token: 0x040076A0 RID: 30368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasCopySupport;
 
-	// Token: 0x04007626 RID: 30246
+	// Token: 0x040076A1 RID: 30369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float blendPer;
 
-	// Token: 0x04007627 RID: 30247
+	// Token: 0x040076A2 RID: 30370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 blendPos;
 
-	// Token: 0x04007628 RID: 30248
+	// Token: 0x040076A3 RID: 30371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectionManager.Probe blendProbe;
 
-	// Token: 0x04007629 RID: 30249
+	// Token: 0x040076A4 RID: 30372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture blendTex;
 
-	// Token: 0x0400762A RID: 30250
+	// Token: 0x040076A5 RID: 30373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture captureTex;
 
-	// Token: 0x0400762B RID: 30251
+	// Token: 0x040076A6 RID: 30374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectionManager.Probe renderProbe;
 
-	// Token: 0x0400762C RID: 30252
+	// Token: 0x040076A7 RID: 30375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float renderDuration;
 
-	// Token: 0x0400762D RID: 30253
+	// Token: 0x040076A8 RID: 30376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int renderId;
 
-	// Token: 0x0400762E RID: 30254
+	// Token: 0x040076A9 RID: 30377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float renderFixTime;
 
-	// Token: 0x0400762F RID: 30255
+	// Token: 0x040076AA RID: 30378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectionManager.Sorter sorter = new ReflectionManager.Sorter();
 
-	// Token: 0x04007630 RID: 30256
+	// Token: 0x040076AB RID: 30379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSkyLayer = 9;
 
-	// Token: 0x04007631 RID: 30257
+	// Token: 0x040076AC RID: 30380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ReflectionManager.Options[] optionsData = new ReflectionManager.Options[]
 	{
@@ -627,11 +627,11 @@ public class ReflectionManager
 		}
 	};
 
-	// Token: 0x04007632 RID: 30258
+	// Token: 0x040076AD RID: 30381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ReflectionManager.Options optionsSelected;
 
-	// Token: 0x04007633 RID: 30259
+	// Token: 0x040076AE RID: 30382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] waterTransparencyDistances = new int[]
 	{
@@ -639,35 +639,35 @@ public class ReflectionManager
 		52, 56, 60
 	};
 
-	// Token: 0x02001363 RID: 4963
+	// Token: 0x02001383 RID: 4995
 	public class Probe
 	{
-		// Token: 0x04007634 RID: 30260
+		// Token: 0x040076AF RID: 30383
 		public Transform t;
 
-		// Token: 0x04007635 RID: 30261
+		// Token: 0x040076B0 RID: 30384
 		public ReflectionProbe reflectionProbe;
 
-		// Token: 0x04007636 RID: 30262
+		// Token: 0x040076B1 RID: 30385
 		public Vector3 worldPos;
 
-		// Token: 0x04007637 RID: 30263
+		// Token: 0x040076B2 RID: 30386
 		public Vector3 forward;
 
-		// Token: 0x04007638 RID: 30264
+		// Token: 0x040076B3 RID: 30387
 		public float distSq;
 
-		// Token: 0x04007639 RID: 30265
+		// Token: 0x040076B4 RID: 30388
 		public float lightLevel;
 
-		// Token: 0x0400763A RID: 30266
+		// Token: 0x040076B5 RID: 30389
 		public float updateTime;
 	}
 
-	// Token: 0x02001364 RID: 4964
+	// Token: 0x02001384 RID: 4996
 	public class Sorter : IComparer<ReflectionManager.Probe>
 	{
-		// Token: 0x06009C74 RID: 40052 RVA: 0x003B14BC File Offset: 0x003AF6BC
+		// Token: 0x06009D20 RID: 40224 RVA: 0x003B6038 File Offset: 0x003B4238
 		public int Compare(ReflectionManager.Probe _p1, ReflectionManager.Probe _p2)
 		{
 			if (_p1.distSq < _p2.distSq)
@@ -682,35 +682,35 @@ public class ReflectionManager
 		}
 	}
 
-	// Token: 0x02001365 RID: 4965
+	// Token: 0x02001385 RID: 4997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Options
 	{
-		// Token: 0x0400763B RID: 30267
+		// Token: 0x040076B6 RID: 30390
 		public int rate;
 
-		// Token: 0x0400763C RID: 30268
+		// Token: 0x040076B7 RID: 30391
 		public float rateScale;
 
-		// Token: 0x0400763D RID: 30269
+		// Token: 0x040076B8 RID: 30392
 		public float rateRender;
 
-		// Token: 0x0400763E RID: 30270
+		// Token: 0x040076B9 RID: 30393
 		public float playerVel;
 
-		// Token: 0x0400763F RID: 30271
+		// Token: 0x040076BA RID: 30394
 		public float farClip;
 
-		// Token: 0x04007640 RID: 30272
+		// Token: 0x040076BB RID: 30395
 		public float shadowDist;
 
-		// Token: 0x04007641 RID: 30273
+		// Token: 0x040076BC RID: 30396
 		public int resolution;
 
-		// Token: 0x04007642 RID: 30274
+		// Token: 0x040076BD RID: 30397
 		public float intensity;
 
-		// Token: 0x04007643 RID: 30275
+		// Token: 0x040076BE RID: 30398
 		public int mask;
 	}
 }

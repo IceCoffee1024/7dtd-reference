@@ -1,32 +1,32 @@
 ﻿using System;
 
-// Token: 0x02000EB0 RID: 3760
+// Token: 0x02000EBF RID: 3775
 public enum EXUiControllerInteractionType
 {
-	// Token: 0x040056FE RID: 22270
+	// Token: 0x04005735 RID: 22325
 	LeftClick,
-	// Token: 0x040056FF RID: 22271
+	// Token: 0x04005736 RID: 22326
 	RightClick,
-	// Token: 0x04005700 RID: 22272
+	// Token: 0x04005737 RID: 22327
 	DoubleClick,
-	// Token: 0x04005701 RID: 22273
+	// Token: 0x04005738 RID: 22328
 	Hover,
-	// Token: 0x04005702 RID: 22274
+	// Token: 0x04005739 RID: 22329
 	Drag,
-	// Token: 0x04005703 RID: 22275
+	// Token: 0x0400573A RID: 22330
 	Held,
-	// Token: 0x04005704 RID: 22276
+	// Token: 0x0400573B RID: 22331
 	Scroll,
-	// Token: 0x04005705 RID: 22277
+	// Token: 0x0400573C RID: 22332
 	Select,
-	// Token: 0x04005706 RID: 22278
+	// Token: 0x0400573D RID: 22333
 	VisibilityChanged,
-	// Token: 0x04005707 RID: 22279
+	// Token: 0x0400573E RID: 22334
 	EnabledChanged,
-	// Token: 0x04005708 RID: 22280
+	// Token: 0x0400573F RID: 22335
 	Open,
-	// Token: 0x04005709 RID: 22281
+	// Token: 0x04005740 RID: 22336
 	Close,
-	// Token: 0x0400570A RID: 22282
+	// Token: 0x04005741 RID: 22337
 	MouseUpDown
 }

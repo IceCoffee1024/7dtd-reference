@@ -3,21 +3,21 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E36 RID: 3638
+// Token: 0x02000E45 RID: 3653
 [Preserve]
 public class XUiC_SandBoxOptionEntry : XUiController
 {
-	// Token: 0x17000C90 RID: 3216
-	// (get) Token: 0x06006FC3 RID: 28611 RVA: 0x002B1891 File Offset: 0x002AFA91
-	// (set) Token: 0x06006FC4 RID: 28612 RVA: 0x002B1899 File Offset: 0x002AFA99
+	// Token: 0x17000CAB RID: 3243
+	// (get) Token: 0x06006FBB RID: 28603 RVA: 0x002B4C41 File Offset: 0x002B2E41
+	// (set) Token: 0x06006FBC RID: 28604 RVA: 0x002B4C49 File Offset: 0x002B2E49
 	public BaseSandboxOption Option
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000C91 RID: 3217
-	// (get) Token: 0x06006FC5 RID: 28613 RVA: 0x002B18A2 File Offset: 0x002AFAA2
+	// Token: 0x17000CAC RID: 3244
+	// (get) Token: 0x06006FBD RID: 28605 RVA: 0x002B4C52 File Offset: 0x002B2E52
 	public XUiC_SandBoxOptionEntry.SandboxOptionValue OriginalValue
 	{
 		get
@@ -26,8 +26,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C92 RID: 3218
-	// (get) Token: 0x06006FC6 RID: 28614 RVA: 0x002B18AA File Offset: 0x002AFAAA
+	// Token: 0x17000CAD RID: 3245
+	// (get) Token: 0x06006FBE RID: 28606 RVA: 0x002B4C5A File Offset: 0x002B2E5A
 	[XuiXmlBinding("option_enabled")]
 	public bool Enabled
 	{
@@ -37,8 +37,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C93 RID: 3219
-	// (get) Token: 0x06006FC7 RID: 28615 RVA: 0x002B18DB File Offset: 0x002AFADB
+	// Token: 0x17000CAE RID: 3246
+	// (get) Token: 0x06006FBF RID: 28607 RVA: 0x002B4C8B File Offset: 0x002B2E8B
 	[XuiXmlBinding("option_disabled_by_mod")]
 	public bool DisabledByMod
 	{
@@ -48,8 +48,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C94 RID: 3220
-	// (get) Token: 0x06006FC8 RID: 28616 RVA: 0x002B18F7 File Offset: 0x002AFAF7
+	// Token: 0x17000CAF RID: 3247
+	// (get) Token: 0x06006FC0 RID: 28608 RVA: 0x002B4CA7 File Offset: 0x002B2EA7
 	[XuiXmlBinding("option_disabled_by_option")]
 	public bool DisabledByOption
 	{
@@ -59,8 +59,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C95 RID: 3221
-	// (get) Token: 0x06006FC9 RID: 28617 RVA: 0x002B1916 File Offset: 0x002AFB16
+	// Token: 0x17000CB0 RID: 3248
+	// (get) Token: 0x06006FC1 RID: 28609 RVA: 0x002B4CC6 File Offset: 0x002B2EC6
 	[XuiXmlBinding("option_changed")]
 	public bool IsChanged
 	{
@@ -70,8 +70,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C96 RID: 3222
-	// (get) Token: 0x06006FCA RID: 28618 RVA: 0x002B193B File Offset: 0x002AFB3B
+	// Token: 0x17000CB1 RID: 3249
+	// (get) Token: 0x06006FC2 RID: 28610 RVA: 0x002B4CEB File Offset: 0x002B2EEB
 	[XuiXmlBinding("title")]
 	public string Title
 	{
@@ -83,8 +83,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C97 RID: 3223
-	// (get) Token: 0x06006FCB RID: 28619 RVA: 0x002B1958 File Offset: 0x002AFB58
+	// Token: 0x17000CB2 RID: 3250
+	// (get) Token: 0x06006FC3 RID: 28611 RVA: 0x002B4D08 File Offset: 0x002B2F08
 	[XuiXmlBinding("tooltip_key")]
 	public string TooltipKey
 	{
@@ -96,8 +96,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C98 RID: 3224
-	// (get) Token: 0x06006FCC RID: 28620 RVA: 0x002B1975 File Offset: 0x002AFB75
+	// Token: 0x17000CB3 RID: 3251
+	// (get) Token: 0x06006FC4 RID: 28612 RVA: 0x002B4D25 File Offset: 0x002B2F25
 	[XuiXmlBinding("tooltip_key_disabledoption")]
 	public string TooltipKeyDisabledOption
 	{
@@ -109,9 +109,9 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C99 RID: 3225
-	// (get) Token: 0x06006FCD RID: 28621 RVA: 0x002B1992 File Offset: 0x002AFB92
-	// (set) Token: 0x06006FCE RID: 28622 RVA: 0x002B199A File Offset: 0x002AFB9A
+	// Token: 0x17000CB4 RID: 3252
+	// (get) Token: 0x06006FC5 RID: 28613 RVA: 0x002B4D42 File Offset: 0x002B2F42
+	// (set) Token: 0x06006FC6 RID: 28614 RVA: 0x002B4D4A File Offset: 0x002B2F4A
 	[XuiXmlBinding("is_separator")]
 	public bool IsSeparator
 	{
@@ -127,8 +127,8 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000C9A RID: 3226
-	// (get) Token: 0x06006FCF RID: 28623 RVA: 0x002B19A3 File Offset: 0x002AFBA3
+	// Token: 0x17000CB5 RID: 3253
+	// (get) Token: 0x06006FC7 RID: 28615 RVA: 0x002B4D53 File Offset: 0x002B2F53
 	[XuiXmlBinding("has_entry")]
 	public bool HasEntry
 	{
@@ -139,7 +139,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006FD0 RID: 28624 RVA: 0x002B19AE File Offset: 0x002AFBAE
+	// Token: 0x06006FC8 RID: 28616 RVA: 0x002B4D5E File Offset: 0x002B2F5E
 	public override void Init()
 	{
 		base.Init();
@@ -147,7 +147,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.setupOptions();
 	}
 
-	// Token: 0x06006FD1 RID: 28625 RVA: 0x002B19D3 File Offset: 0x002AFBD3
+	// Token: 0x06006FC9 RID: 28617 RVA: 0x002B4D83 File Offset: 0x002B2F83
 	public void setupSeparator()
 	{
 		this.isSeparator = true;
@@ -156,7 +156,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FD2 RID: 28626 RVA: 0x002B19F8 File Offset: 0x002AFBF8
+	// Token: 0x06006FCA RID: 28618 RVA: 0x002B4DA8 File Offset: 0x002B2FA8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void setupOption(BaseSandboxOption _baseSandboxOption)
 	{
@@ -177,7 +177,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FD3 RID: 28627 RVA: 0x002B1A6B File Offset: 0x002AFC6B
+	// Token: 0x06006FCB RID: 28619 RVA: 0x002B4E1B File Offset: 0x002B301B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -187,7 +187,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006FD4 RID: 28628 RVA: 0x002B1AAC File Offset: 0x002AFCAC
+	// Token: 0x06006FCC RID: 28620 RVA: 0x002B4E5C File Offset: 0x002B305C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupOptions()
 	{
@@ -226,7 +226,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		}
 	}
 
-	// Token: 0x06006FD5 RID: 28629 RVA: 0x002B1B9F File Offset: 0x002AFD9F
+	// Token: 0x06006FCD RID: 28621 RVA: 0x002B4F4F File Offset: 0x002B314F
 	[XuiBindEvent("OnValueChanged", "controlCombo")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlCombo_OnValueChanged(XUiController _sender, XUiC_SandBoxOptionEntry.SandboxOptionValue _oldValue, XUiC_SandBoxOptionEntry.SandboxOptionValue _newValue)
@@ -239,20 +239,20 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FD6 RID: 28630 RVA: 0x002B1BC0 File Offset: 0x002AFDC0
+	// Token: 0x06006FCE RID: 28622 RVA: 0x002B4F70 File Offset: 0x002B3170
 	public void ForceOriginalValue(XUiC_SandBoxOptionEntry.SandboxOptionValue _value)
 	{
 		this.originalValue = _value;
 	}
 
-	// Token: 0x06006FD7 RID: 28631 RVA: 0x002B1BC9 File Offset: 0x002AFDC9
+	// Token: 0x06006FCF RID: 28623 RVA: 0x002B4F79 File Offset: 0x002B3179
 	public void ResetToDefault(bool _storeAsOriginal)
 	{
 		SandboxOptionManager.Current.SetOptionToDefault(this.sandboxOption);
 		this.setComboBoxValue(false, _storeAsOriginal);
 	}
 
-	// Token: 0x06006FD8 RID: 28632 RVA: 0x002B1BE4 File Offset: 0x002AFDE4
+	// Token: 0x06006FD0 RID: 28624 RVA: 0x002B4F94 File Offset: 0x002B3194
 	public void ApplyChange(bool _forceChange)
 	{
 		if (this.originalValue.Equals(this.controlCombo.Value) && !_forceChange)
@@ -279,7 +279,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FD9 RID: 28633 RVA: 0x002B1CE4 File Offset: 0x002AFEE4
+	// Token: 0x06006FD1 RID: 28625 RVA: 0x002B5094 File Offset: 0x002B3294
 	public void SetComboBoxIndex(int _index)
 	{
 		if (this.controlCombo.Elements.Count > _index)
@@ -295,7 +295,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FDA RID: 28634 RVA: 0x002B1D40 File Offset: 0x002AFF40
+	// Token: 0x06006FD2 RID: 28626 RVA: 0x002B50F0 File Offset: 0x002B32F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setComboBoxValue(bool _useCurrent, bool _storeAsOriginal)
 	{
@@ -404,7 +404,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006FDB RID: 28635 RVA: 0x002B2000 File Offset: 0x002B0200
+	// Token: 0x06006FD3 RID: 28627 RVA: 0x002B53B0 File Offset: 0x002B35B0
 	[XuiXmlBinding("option_default")]
 	public bool IsDefaultValue()
 	{
@@ -438,54 +438,54 @@ public class XUiC_SandBoxOptionEntry : XUiController
 		return flag;
 	}
 
-	// Token: 0x04005489 RID: 21641
+	// Token: 0x040054C0 RID: 21696
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_SandBoxOptionEntry.SandboxOptionValue> controlCombo;
 
-	// Token: 0x0400548A RID: 21642
+	// Token: 0x040054C1 RID: 21697
 	public string CategoryName;
 
-	// Token: 0x0400548B RID: 21643
+	// Token: 0x040054C2 RID: 21698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public global::SandboxOptions.SandboxOptions sandboxOption = global::SandboxOptions.SandboxOptions.Max;
 
-	// Token: 0x0400548C RID: 21644
+	// Token: 0x040054C3 RID: 21699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseSandboxOption.OptionTypes valueType;
 
-	// Token: 0x0400548E RID: 21646
+	// Token: 0x040054C5 RID: 21701
 	public Action<XUiC_SandBoxOptionEntry, global::SandboxOptions.SandboxOptions> OnValueChanged;
 
-	// Token: 0x0400548F RID: 21647
+	// Token: 0x040054C6 RID: 21702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SandBoxOptionEntry.SandboxOptionValue originalValue;
 
-	// Token: 0x04005490 RID: 21648
+	// Token: 0x040054C7 RID: 21703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSeparator;
 
-	// Token: 0x02000E37 RID: 3639
+	// Token: 0x02000E46 RID: 3654
 	public enum EOptionValueType
 	{
-		// Token: 0x04005492 RID: 21650
+		// Token: 0x040054C9 RID: 21705
 		Null,
-		// Token: 0x04005493 RID: 21651
+		// Token: 0x040054CA RID: 21706
 		Custom,
-		// Token: 0x04005494 RID: 21652
+		// Token: 0x040054CB RID: 21707
 		Any,
-		// Token: 0x04005495 RID: 21653
+		// Token: 0x040054CC RID: 21708
 		Int,
-		// Token: 0x04005496 RID: 21654
+		// Token: 0x040054CD RID: 21709
 		Float,
-		// Token: 0x04005497 RID: 21655
+		// Token: 0x040054CE RID: 21710
 		String
 	}
 
-	// Token: 0x02000E38 RID: 3640
+	// Token: 0x02000E47 RID: 3655
 	public readonly struct SandboxOptionValue : IEquatable<XUiC_SandBoxOptionEntry.SandboxOptionValue>
 	{
-		// Token: 0x06006FDD RID: 28637 RVA: 0x002B2109 File Offset: 0x002B0309
+		// Token: 0x06006FD5 RID: 28629 RVA: 0x002B54B9 File Offset: 0x002B36B9
 		public SandboxOptionValue(XUiC_SandBoxOptionEntry.EOptionValueType _type, string _displayName)
 		{
 			this.Type = _type;
@@ -495,7 +495,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			this.DisplayName = _displayName;
 		}
 
-		// Token: 0x06006FDE RID: 28638 RVA: 0x002B2132 File Offset: 0x002B0332
+		// Token: 0x06006FD6 RID: 28630 RVA: 0x002B54E2 File Offset: 0x002B36E2
 		public SandboxOptionValue(int _intValue, string _displayName)
 		{
 			this.Type = XUiC_SandBoxOptionEntry.EOptionValueType.Int;
@@ -505,7 +505,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			this.DisplayName = _displayName;
 		}
 
-		// Token: 0x06006FDF RID: 28639 RVA: 0x002B215B File Offset: 0x002B035B
+		// Token: 0x06006FD7 RID: 28631 RVA: 0x002B550B File Offset: 0x002B370B
 		public SandboxOptionValue(float _floatValue, string _displayName)
 		{
 			this.Type = XUiC_SandBoxOptionEntry.EOptionValueType.Float;
@@ -515,7 +515,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			this.DisplayName = _displayName;
 		}
 
-		// Token: 0x06006FE0 RID: 28640 RVA: 0x002B2180 File Offset: 0x002B0380
+		// Token: 0x06006FD8 RID: 28632 RVA: 0x002B5530 File Offset: 0x002B3730
 		public SandboxOptionValue(string _stringValue, string _displayName)
 		{
 			this.Type = XUiC_SandBoxOptionEntry.EOptionValueType.String;
@@ -525,13 +525,13 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			this.DisplayName = _displayName;
 		}
 
-		// Token: 0x06006FE1 RID: 28641 RVA: 0x002B21A9 File Offset: 0x002B03A9
+		// Token: 0x06006FD9 RID: 28633 RVA: 0x002B5559 File Offset: 0x002B3759
 		public override string ToString()
 		{
 			return this.DisplayName;
 		}
 
-		// Token: 0x06006FE2 RID: 28642 RVA: 0x002B21B4 File Offset: 0x002B03B4
+		// Token: 0x06006FDA RID: 28634 RVA: 0x002B5564 File Offset: 0x002B3764
 		public bool Equals(XUiC_SandBoxOptionEntry.SandboxOptionValue _other)
 		{
 			if (this.Type != _other.Type)
@@ -563,7 +563,7 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			return flag;
 		}
 
-		// Token: 0x06006FE3 RID: 28643 RVA: 0x002B223C File Offset: 0x002B043C
+		// Token: 0x06006FDB RID: 28635 RVA: 0x002B55EC File Offset: 0x002B37EC
 		public override bool Equals(object _obj)
 		{
 			if (_obj is XUiC_SandBoxOptionEntry.SandboxOptionValue)
@@ -574,25 +574,25 @@ public class XUiC_SandBoxOptionEntry : XUiController
 			return false;
 		}
 
-		// Token: 0x06006FE4 RID: 28644 RVA: 0x002B2264 File Offset: 0x002B0464
+		// Token: 0x06006FDC RID: 28636 RVA: 0x002B5614 File Offset: 0x002B3814
 		public override int GetHashCode()
 		{
 			return (int)((((((this.Type * (XUiC_SandBoxOptionEntry.EOptionValueType)397) ^ (XUiC_SandBoxOptionEntry.EOptionValueType)this.IntValue) * (XUiC_SandBoxOptionEntry.EOptionValueType)397) ^ (XUiC_SandBoxOptionEntry.EOptionValueType)((this.StringValue != null) ? this.StringValue.GetHashCode() : 0)) * (XUiC_SandBoxOptionEntry.EOptionValueType)397) ^ (XUiC_SandBoxOptionEntry.EOptionValueType)((this.DisplayName != null) ? this.DisplayName.GetHashCode() : 0));
 		}
 
-		// Token: 0x04005498 RID: 21656
+		// Token: 0x040054CF RID: 21711
 		public readonly XUiC_SandBoxOptionEntry.EOptionValueType Type;
 
-		// Token: 0x04005499 RID: 21657
+		// Token: 0x040054D0 RID: 21712
 		public readonly int IntValue;
 
-		// Token: 0x0400549A RID: 21658
+		// Token: 0x040054D1 RID: 21713
 		public readonly float FloatValue;
 
-		// Token: 0x0400549B RID: 21659
+		// Token: 0x040054D2 RID: 21714
 		public readonly string StringValue;
 
-		// Token: 0x0400549C RID: 21660
+		// Token: 0x040054D3 RID: 21715
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string DisplayName;
 	}

@@ -5,45 +5,45 @@ using UnityEngine;
 
 namespace XMLEditing
 {
-	// Token: 0x02001663 RID: 5731
+	// Token: 0x02001682 RID: 5762
 	public class BlockNode
 	{
-		// Token: 0x17001593 RID: 5523
-		// (get) Token: 0x0600B3FD RID: 46077 RVA: 0x004342AE File Offset: 0x004324AE
-		// (set) Token: 0x0600B3FE RID: 46078 RVA: 0x004342B6 File Offset: 0x004324B6
+		// Token: 0x170015D6 RID: 5590
+		// (get) Token: 0x0600B48F RID: 46223 RVA: 0x00437F8A File Offset: 0x0043618A
+		// (set) Token: 0x0600B490 RID: 46224 RVA: 0x00437F92 File Offset: 0x00436192
 		public string Name { get; set; }
 
-		// Token: 0x17001594 RID: 5524
-		// (get) Token: 0x0600B3FF RID: 46079 RVA: 0x004342BF File Offset: 0x004324BF
-		// (set) Token: 0x0600B400 RID: 46080 RVA: 0x004342C7 File Offset: 0x004324C7
+		// Token: 0x170015D7 RID: 5591
+		// (get) Token: 0x0600B491 RID: 46225 RVA: 0x00437F9B File Offset: 0x0043619B
+		// (set) Token: 0x0600B492 RID: 46226 RVA: 0x00437FA3 File Offset: 0x004361A3
 		public XElement Element { get; set; }
 
-		// Token: 0x17001595 RID: 5525
-		// (get) Token: 0x0600B401 RID: 46081 RVA: 0x004342D0 File Offset: 0x004324D0
-		// (set) Token: 0x0600B402 RID: 46082 RVA: 0x004342D8 File Offset: 0x004324D8
+		// Token: 0x170015D8 RID: 5592
+		// (get) Token: 0x0600B493 RID: 46227 RVA: 0x00437FAC File Offset: 0x004361AC
+		// (set) Token: 0x0600B494 RID: 46228 RVA: 0x00437FB4 File Offset: 0x004361B4
 		public BlockNode Parent { get; set; }
 
-		// Token: 0x17001596 RID: 5526
-		// (get) Token: 0x0600B403 RID: 46083 RVA: 0x004342E1 File Offset: 0x004324E1
+		// Token: 0x170015D9 RID: 5593
+		// (get) Token: 0x0600B495 RID: 46229 RVA: 0x00437FBD File Offset: 0x004361BD
 		public List<BlockNode> Children { get; } = new List<BlockNode>();
 
-		// Token: 0x17001597 RID: 5527
-		// (get) Token: 0x0600B404 RID: 46084 RVA: 0x004342E9 File Offset: 0x004324E9
-		// (set) Token: 0x0600B405 RID: 46085 RVA: 0x004342F1 File Offset: 0x004324F1
+		// Token: 0x170015DA RID: 5594
+		// (get) Token: 0x0600B496 RID: 46230 RVA: 0x00437FC5 File Offset: 0x004361C5
+		// (set) Token: 0x0600B497 RID: 46231 RVA: 0x00437FCD File Offset: 0x004361CD
 		public Dictionary<string, BlockNode.ElementInfo> ElementInfos
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = new Dictionary<string, BlockNode.ElementInfo>();
 
-		// Token: 0x0600B406 RID: 46086 RVA: 0x004342FA File Offset: 0x004324FA
+		// Token: 0x0600B498 RID: 46232 RVA: 0x00437FD6 File Offset: 0x004361D6
 		public void AddChild(BlockNode child)
 		{
 			child.Parent = this;
 			this.Children.Add(child);
 		}
 
-		// Token: 0x0600B407 RID: 46087 RVA: 0x00434310 File Offset: 0x00432510
+		// Token: 0x0600B499 RID: 46233 RVA: 0x00437FEC File Offset: 0x004361EC
 		public bool TryGetPropertyParent(string targetPropertyName, out BlockNode propertyParentBlockNode, out BlockNode.ElementInfo propertyElementInfo, out int depth)
 		{
 			depth = 0;
@@ -79,7 +79,7 @@ namespace XMLEditing
 			return false;
 		}
 
-		// Token: 0x0600B408 RID: 46088 RVA: 0x00434384 File Offset: 0x00432584
+		// Token: 0x0600B49A RID: 46234 RVA: 0x00438060 File Offset: 0x00436260
 		public bool TryGetModelOffset(out Vector3 modelOffset, out int depth, out BlockNode.ModelOffsetType modelOffsetType)
 		{
 			BlockNode blockNode;
@@ -130,7 +130,7 @@ namespace XMLEditing
 			return false;
 		}
 
-		// Token: 0x0600B409 RID: 46089 RVA: 0x004344E4 File Offset: 0x004326E4
+		// Token: 0x0600B49B RID: 46235 RVA: 0x004381C0 File Offset: 0x004363C0
 		public bool ShapeSupportsModelOffset()
 		{
 			BlockNode blockNode;
@@ -153,41 +153,41 @@ namespace XMLEditing
 			return true;
 		}
 
-		// Token: 0x02001664 RID: 5732
+		// Token: 0x02001683 RID: 5763
 		public enum ModelOffsetType
 		{
-			// Token: 0x040086FC RID: 34556
+			// Token: 0x04008752 RID: 34642
 			None,
-			// Token: 0x040086FD RID: 34557
+			// Token: 0x04008753 RID: 34643
 			Explicit,
-			// Token: 0x040086FE RID: 34558
+			// Token: 0x04008754 RID: 34644
 			ShapeNew,
-			// Token: 0x040086FF RID: 34559
+			// Token: 0x04008755 RID: 34645
 			ShapeModelEntity,
-			// Token: 0x04008700 RID: 34560
+			// Token: 0x04008756 RID: 34646
 			ShapeExt3dModel,
-			// Token: 0x04008701 RID: 34561
+			// Token: 0x04008757 RID: 34647
 			ShapeOther,
-			// Token: 0x04008702 RID: 34562
+			// Token: 0x04008758 RID: 34648
 			DefaultShapeNew
 		}
 
-		// Token: 0x02001665 RID: 5733
+		// Token: 0x02001684 RID: 5764
 		public class ElementInfo
 		{
-			// Token: 0x17001598 RID: 5528
-			// (get) Token: 0x0600B40B RID: 46091 RVA: 0x00434595 File Offset: 0x00432795
-			// (set) Token: 0x0600B40C RID: 46092 RVA: 0x0043459D File Offset: 0x0043279D
+			// Token: 0x170015DB RID: 5595
+			// (get) Token: 0x0600B49D RID: 46237 RVA: 0x00438271 File Offset: 0x00436471
+			// (set) Token: 0x0600B49E RID: 46238 RVA: 0x00438279 File Offset: 0x00436479
 			public bool CanInherit { get; set; } = true;
 
-			// Token: 0x17001599 RID: 5529
-			// (get) Token: 0x0600B40D RID: 46093 RVA: 0x004345A6 File Offset: 0x004327A6
-			// (set) Token: 0x0600B40E RID: 46094 RVA: 0x004345AE File Offset: 0x004327AE
+			// Token: 0x170015DC RID: 5596
+			// (get) Token: 0x0600B49F RID: 46239 RVA: 0x00438282 File Offset: 0x00436482
+			// (set) Token: 0x0600B4A0 RID: 46240 RVA: 0x0043828A File Offset: 0x0043648A
 			public bool IsClass { get; set; } = true;
 
-			// Token: 0x1700159A RID: 5530
-			// (get) Token: 0x0600B40F RID: 46095 RVA: 0x004345B7 File Offset: 0x004327B7
-			// (set) Token: 0x0600B410 RID: 46096 RVA: 0x004345BF File Offset: 0x004327BF
+			// Token: 0x170015DD RID: 5597
+			// (get) Token: 0x0600B4A1 RID: 46241 RVA: 0x00438293 File Offset: 0x00436493
+			// (set) Token: 0x0600B4A2 RID: 46242 RVA: 0x0043829B File Offset: 0x0043649B
 			public XElement Element { get; set; }
 		}
 	}

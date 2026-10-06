@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D1A RID: 3354
+// Token: 0x02000D28 RID: 3368
 public static class MiscFromXml
 {
-	// Token: 0x06006653 RID: 26195 RVA: 0x00282F54 File Offset: 0x00281154
+	// Token: 0x06006645 RID: 26181 RVA: 0x002862F8 File Offset: 0x002844F8
 	public static IEnumerator Create(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

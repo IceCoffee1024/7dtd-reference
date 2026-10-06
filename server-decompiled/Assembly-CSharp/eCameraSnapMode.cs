@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020012B6 RID: 4790
+// Token: 0x020012D5 RID: 4821
 public enum eCameraSnapMode
 {
-	// Token: 0x040071F8 RID: 29176
+	// Token: 0x0400726C RID: 29292
 	Zoom,
-	// Token: 0x040071F9 RID: 29177
+	// Token: 0x0400726D RID: 29293
 	MeleeAttack
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200149F RID: 5279
+// Token: 0x020014BF RID: 5311
 public abstract class ScriptBase : MonoBehaviour
 {
-	// Token: 0x1700137F RID: 4991
-	// (get) Token: 0x0600A59A RID: 42394 RVA: 0x003D9E48 File Offset: 0x003D8048
+	// Token: 0x170013C4 RID: 5060
+	// (get) Token: 0x0600A648 RID: 42568 RVA: 0x003DEAD4 File Offset: 0x003DCCD4
 	public new Transform transform
 	{
 		get
@@ -18,8 +18,8 @@ public abstract class ScriptBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001380 RID: 4992
-	// (get) Token: 0x0600A59B RID: 42395 RVA: 0x003D9E7C File Offset: 0x003D807C
+	// Token: 0x170013C5 RID: 5061
+	// (get) Token: 0x0600A649 RID: 42569 RVA: 0x003DEB08 File Offset: 0x003DCD08
 	public new GameObject gameObject
 	{
 		get
@@ -32,7 +32,7 @@ public abstract class ScriptBase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A59C RID: 42396 RVA: 0x003D9EAD File Offset: 0x003D80AD
+	// Token: 0x0600A64A RID: 42570 RVA: 0x003DEB39 File Offset: 0x003DCD39
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -40,68 +40,68 @@ public abstract class ScriptBase : MonoBehaviour
 		this.sbAwake();
 	}
 
-	// Token: 0x0600A59D RID: 42397 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A64B RID: 42571 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void sbAwake()
 	{
 	}
 
-	// Token: 0x0600A59E RID: 42398 RVA: 0x003D9EC6 File Offset: 0x003D80C6
+	// Token: 0x0600A64C RID: 42572 RVA: 0x003DEB52 File Offset: 0x003DCD52
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
 		this.sbUpdate();
 	}
 
-	// Token: 0x0600A59F RID: 42399 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A64D RID: 42573 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void sbUpdate()
 	{
 	}
 
-	// Token: 0x0600A5A0 RID: 42400 RVA: 0x003D9ECE File Offset: 0x003D80CE
+	// Token: 0x0600A64E RID: 42574 RVA: 0x003DEB5A File Offset: 0x003DCD5A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
 		this.sbFixedUpdate();
 	}
 
-	// Token: 0x0600A5A1 RID: 42401 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A64F RID: 42575 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void sbFixedUpdate()
 	{
 	}
 
-	// Token: 0x0600A5A2 RID: 42402 RVA: 0x003D9ED6 File Offset: 0x003D80D6
+	// Token: 0x0600A650 RID: 42576 RVA: 0x003DEB62 File Offset: 0x003DCD62
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void LateUpdate()
 	{
 		this.sbLateUpdate();
 	}
 
-	// Token: 0x0600A5A3 RID: 42403 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A651 RID: 42577 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void sbLateUpdate()
 	{
 	}
 
-	// Token: 0x0600A5A4 RID: 42404 RVA: 0x00002C47 File Offset: 0x00000E47
+	// Token: 0x0600A652 RID: 42578 RVA: 0x00002C47 File Offset: 0x00000E47
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ScriptBase()
 	{
 	}
 
-	// Token: 0x04007B6F RID: 31599
+	// Token: 0x04007BEA RID: 31722
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform myTransform;
 
-	// Token: 0x04007B70 RID: 31600
+	// Token: 0x04007BEB RID: 31723
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject myGameObject;
 
-	// Token: 0x04007B71 RID: 31601
+	// Token: 0x04007BEC RID: 31724
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string className;

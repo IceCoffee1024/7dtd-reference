@@ -4,11 +4,11 @@ using System.Text;
 
 namespace SandboxOptions
 {
-	// Token: 0x0200189C RID: 6300
+	// Token: 0x020018C8 RID: 6344
 	public class SandboxOptionPreset
 	{
-		// Token: 0x170017E5 RID: 6117
-		// (get) Token: 0x0600C27F RID: 49791 RVA: 0x004800C5 File Offset: 0x0047E2C5
+		// Token: 0x17001887 RID: 6279
+		// (get) Token: 0x0600C3D7 RID: 50135 RVA: 0x00484601 File Offset: 0x00482801
 		public string DisplayName
 		{
 			get
@@ -21,8 +21,8 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x170017E6 RID: 6118
-		// (get) Token: 0x0600C280 RID: 49792 RVA: 0x004800E8 File Offset: 0x0047E2E8
+		// Token: 0x17001888 RID: 6280
+		// (get) Token: 0x0600C3D8 RID: 50136 RVA: 0x00484624 File Offset: 0x00482824
 		public string DisplayDescription
 		{
 			get
@@ -35,8 +35,8 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x170017E7 RID: 6119
-		// (get) Token: 0x0600C281 RID: 49793 RVA: 0x0048010B File Offset: 0x0047E30B
+		// Token: 0x17001889 RID: 6281
+		// (get) Token: 0x0600C3D9 RID: 50137 RVA: 0x00484647 File Offset: 0x00482847
 		public string SandboxCode
 		{
 			get
@@ -45,13 +45,13 @@ namespace SandboxOptions
 			}
 		}
 
-		// Token: 0x0600C282 RID: 49794 RVA: 0x00480113 File Offset: 0x0047E313
+		// Token: 0x0600C3DA RID: 50138 RVA: 0x0048464F File Offset: 0x0048284F
 		public bool ForceShowOption(SandboxOptions option)
 		{
 			return this.AlwaysShow != null && this.AlwaysShow.Contains(option);
 		}
 
-		// Token: 0x0600C283 RID: 49795 RVA: 0x0048012C File Offset: 0x0047E32C
+		// Token: 0x0600C3DB RID: 50139 RVA: 0x00484668 File Offset: 0x00482868
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string saveOptionsToCode()
 		{
@@ -64,43 +64,43 @@ namespace SandboxOptions
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0400939C RID: 37788
+		// Token: 0x04009462 RID: 37986
 		public string Name;
 
-		// Token: 0x0400939D RID: 37789
+		// Token: 0x04009463 RID: 37987
 		public string LocalizedName;
 
-		// Token: 0x0400939E RID: 37790
+		// Token: 0x04009464 RID: 37988
 		public string Description = "";
 
-		// Token: 0x0400939F RID: 37791
+		// Token: 0x04009465 RID: 37989
 		public string DescriptionKey = "";
 
-		// Token: 0x040093A0 RID: 37792
+		// Token: 0x04009466 RID: 37990
 		public string Icon = "";
 
-		// Token: 0x040093A1 RID: 37793
+		// Token: 0x04009467 RID: 37991
 		public string Group = "";
 
-		// Token: 0x040093A2 RID: 37794
+		// Token: 0x04009468 RID: 37992
 		public List<SandboxOptions> AlwaysShow;
 
-		// Token: 0x040093A3 RID: 37795
+		// Token: 0x04009469 RID: 37993
 		public bool IsDefault;
 
-		// Token: 0x040093A4 RID: 37796
+		// Token: 0x0400946A RID: 37994
 		public bool IsUserPreset;
 
-		// Token: 0x040093A5 RID: 37797
+		// Token: 0x0400946B RID: 37995
 		public bool IsModded;
 
-		// Token: 0x040093A6 RID: 37798
+		// Token: 0x0400946C RID: 37996
 		public bool IsCustomPreset;
 
-		// Token: 0x040093A7 RID: 37799
+		// Token: 0x0400946D RID: 37997
 		public short DifficultyRating;
 
-		// Token: 0x040093A8 RID: 37800
+		// Token: 0x0400946E RID: 37998
 		public readonly Dictionary<SandboxOptions, int> PresetValues = new Dictionary<SandboxOptions, int>();
 	}
 }

@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CA RID: 1994
+// Token: 0x020007CD RID: 1997
 [Preserve]
 public class NetPackageEAC : NetPackage
 {
-	// Token: 0x17000625 RID: 1573
-	// (get) Token: 0x06003B28 RID: 15144 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700064A RID: 1610
+	// (get) Token: 0x06003B49 RID: 15177 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B29 RID: 15145 RVA: 0x0017E25D File Offset: 0x0017C45D
+	// Token: 0x06003B4A RID: 15178 RVA: 0x0017E82D File Offset: 0x0017CA2D
 	public NetPackageEAC Setup(int _size, byte[] _data)
 	{
 		this.data = new byte[_size];
@@ -24,7 +24,7 @@ public class NetPackageEAC : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B2A RID: 15146 RVA: 0x0017E27C File Offset: 0x0017C47C
+	// Token: 0x06003B4B RID: 15179 RVA: 0x0017E84C File Offset: 0x0017CA4C
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -35,7 +35,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B2B RID: 15147 RVA: 0x0017E2C0 File Offset: 0x0017C4C0
+	// Token: 0x06003B4C RID: 15180 RVA: 0x0017E890 File Offset: 0x0017CA90
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -46,7 +46,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B2C RID: 15148 RVA: 0x0017E304 File Offset: 0x0017C504
+	// Token: 0x06003B4D RID: 15181 RVA: 0x0017E8D4 File Offset: 0x0017CAD4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -71,13 +71,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003B2D RID: 15149 RVA: 0x0017E358 File Offset: 0x0017C558
-	public override int GetLength()
-	{
-		return 4 + ((this.data != null) ? this.data.Length : 0);
-	}
-
-	// Token: 0x04003047 RID: 12359
+	// Token: 0x04003041 RID: 12353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

@@ -6,12 +6,12 @@ using Noemax.GZip;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200080A RID: 2058
+// Token: 0x02000809 RID: 2057
 [Preserve]
 public class NetPackageLocalization : NetPackage
 {
-	// Token: 0x1700064D RID: 1613
-	// (get) Token: 0x06003C9F RID: 15519 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700066E RID: 1646
+	// (get) Token: 0x06003C76 RID: 15478 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool Compress
 	{
 		get
@@ -20,7 +20,7 @@ public class NetPackageLocalization : NetPackage
 		}
 	}
 
-	// Token: 0x06003CA0 RID: 15520 RVA: 0x00182D41 File Offset: 0x00180F41
+	// Token: 0x06003C77 RID: 15479 RVA: 0x00182D4C File Offset: 0x00180F4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageLocalization Setup(byte[] _data, int _seqNr, int _totalParts)
 	{
@@ -30,7 +30,7 @@ public class NetPackageLocalization : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CA1 RID: 15521 RVA: 0x00182D5C File Offset: 0x00180F5C
+	// Token: 0x06003C78 RID: 15480 RVA: 0x00182D64 File Offset: 0x00180F64
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.seqNr = _reader.ReadInt32();
@@ -42,7 +42,7 @@ public class NetPackageLocalization : NetPackage
 		}
 	}
 
-	// Token: 0x06003CA2 RID: 15522 RVA: 0x00182D9C File Offset: 0x00180F9C
+	// Token: 0x06003C79 RID: 15481 RVA: 0x00182DA4 File Offset: 0x00180FA4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -56,7 +56,7 @@ public class NetPackageLocalization : NetPackage
 		}
 	}
 
-	// Token: 0x06003CA3 RID: 15523 RVA: 0x00182DF4 File Offset: 0x00180FF4
+	// Token: 0x06003C7A RID: 15482 RVA: 0x00182DFC File Offset: 0x00180FFC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		DateTime now = DateTime.Now;
@@ -93,14 +93,8 @@ public class NetPackageLocalization : NetPackage
 		}
 	}
 
-	// Token: 0x06003CA4 RID: 15524 RVA: 0x00182F74 File Offset: 0x00181174
-	public override int GetLength()
-	{
-		return 16 + this.data.Length;
-	}
-
-	// Token: 0x1700064E RID: 1614
-	// (get) Token: 0x06003CA5 RID: 15525 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700066F RID: 1647
+	// (get) Token: 0x06003C7B RID: 15483 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -109,7 +103,7 @@ public class NetPackageLocalization : NetPackage
 		}
 	}
 
-	// Token: 0x06003CA6 RID: 15526 RVA: 0x00182F81 File Offset: 0x00181181
+	// Token: 0x06003C7C RID: 15484 RVA: 0x00182F7C File Offset: 0x0018117C
 	public static IEnumerator StartSendingPacketsToClient(ClientInfo _cInfo)
 	{
 		byte[] patchedData = Localization.PatchedData;
@@ -128,7 +122,7 @@ public class NetPackageLocalization : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003CA7 RID: 15527 RVA: 0x00182F90 File Offset: 0x00181190
+	// Token: 0x06003C7D RID: 15485 RVA: 0x00182F8C File Offset: 0x0018118C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void prepareDataPackets(byte[] _patchedData)
 	{
@@ -167,7 +161,7 @@ public class NetPackageLocalization : NetPackage
 		NetPackageLocalization.dataChunks = list;
 	}
 
-	// Token: 0x06003CA8 RID: 15528 RVA: 0x0018307E File Offset: 0x0018127E
+	// Token: 0x06003C7E RID: 15486 RVA: 0x0018307A File Offset: 0x0018127A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator sendPacketsToClient(ClientInfo _cInfo)
 	{
@@ -188,43 +182,43 @@ public class NetPackageLocalization : NetPackage
 		yield break;
 	}
 
-	// Token: 0x04003134 RID: 12596
+	// Token: 0x04003122 RID: 12578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 
-	// Token: 0x04003135 RID: 12597
+	// Token: 0x04003123 RID: 12579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int seqNr;
 
-	// Token: 0x04003136 RID: 12598
+	// Token: 0x04003124 RID: 12580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalParts;
 
-	// Token: 0x04003137 RID: 12599
+	// Token: 0x04003125 RID: 12581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime downloadStartTime;
 
-	// Token: 0x04003138 RID: 12600
+	// Token: 0x04003126 RID: 12582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryStream receiveStream;
 
-	// Token: 0x04003139 RID: 12601
+	// Token: 0x04003127 RID: 12583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WaitForSeconds PACKET_SEND_DELAY = new WaitForSeconds(0.25f);
 
-	// Token: 0x0400313A RID: 12602
+	// Token: 0x04003128 RID: 12584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CHUNK_SIZE = 131072;
 
-	// Token: 0x0400313B RID: 12603
+	// Token: 0x04003129 RID: 12585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<byte[]> dataChunks;
 
-	// Token: 0x0400313C RID: 12604
+	// Token: 0x0400312A RID: 12586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int cachedDataSize;
 
-	// Token: 0x0400313D RID: 12605
+	// Token: 0x0400312B RID: 12587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObj = new object();
 }

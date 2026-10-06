@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020014EA RID: 5354
+// Token: 0x0200150C RID: 5388
 public enum EDaytime
 {
-	// Token: 0x04007CB5 RID: 31925
+	// Token: 0x04007D38 RID: 32056
 	Any,
-	// Token: 0x04007CB6 RID: 31926
+	// Token: 0x04007D39 RID: 32057
 	Day,
-	// Token: 0x04007CB7 RID: 31927
+	// Token: 0x04007D3A RID: 32058
 	Night
 }

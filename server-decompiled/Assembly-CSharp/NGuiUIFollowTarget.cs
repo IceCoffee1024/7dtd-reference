@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200129C RID: 4764
+// Token: 0x020012B4 RID: 4788
 [AddComponentMenu("NGUI/Examples/Follow Target")]
 public class NGuiUIFollowTarget : MonoBehaviour
 {
-	// Token: 0x06009736 RID: 38710 RVA: 0x0038D302 File Offset: 0x0038B502
+	// Token: 0x060097C3 RID: 38851 RVA: 0x00391B4A File Offset: 0x0038FD4A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
 		this.mTrans = base.transform;
 	}
 
-	// Token: 0x06009737 RID: 38711 RVA: 0x0038D310 File Offset: 0x0038B510
+	// Token: 0x060097C4 RID: 38852 RVA: 0x00391B58 File Offset: 0x0038FD58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -33,7 +33,7 @@ public class NGuiUIFollowTarget : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06009738 RID: 38712 RVA: 0x0038D39C File Offset: 0x0038B59C
+	// Token: 0x060097C5 RID: 38853 RVA: 0x00391BE4 File Offset: 0x0038FDE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetVisible(bool val)
 	{
@@ -47,7 +47,7 @@ public class NGuiUIFollowTarget : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009739 RID: 38713 RVA: 0x0038D3E0 File Offset: 0x0038B5E0
+	// Token: 0x060097C6 RID: 38854 RVA: 0x00391C28 File Offset: 0x0038FE28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void LateUpdate()
 	{
@@ -73,34 +73,34 @@ public class NGuiUIFollowTarget : MonoBehaviour
 		this.OnUpdate(flag);
 	}
 
-	// Token: 0x0600973A RID: 38714 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060097C7 RID: 38855 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnUpdate(bool isVisible)
 	{
 	}
 
-	// Token: 0x04007133 RID: 28979
+	// Token: 0x0400719D RID: 29085
 	public Transform target;
 
-	// Token: 0x04007134 RID: 28980
+	// Token: 0x0400719E RID: 29086
 	public Camera gameCamera;
 
-	// Token: 0x04007135 RID: 28981
+	// Token: 0x0400719F RID: 29087
 	public Camera uiCamera;
 
-	// Token: 0x04007136 RID: 28982
+	// Token: 0x040071A0 RID: 29088
 	public bool disableIfInvisible = true;
 
-	// Token: 0x04007137 RID: 28983
+	// Token: 0x040071A1 RID: 29089
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform mTrans;
 
-	// Token: 0x04007138 RID: 28984
+	// Token: 0x040071A2 RID: 29090
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool mIsVisible;
 
-	// Token: 0x04007139 RID: 28985
+	// Token: 0x040071A3 RID: 29091
 	public Vector3 offset = Vector3.zero;
 }

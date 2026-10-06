@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F1 RID: 2033
+// Token: 0x020007F4 RID: 2036
 [Preserve]
 public class NetPackageEntityWaypointList : NetPackage
 {
-	// Token: 0x06003C04 RID: 15364 RVA: 0x00180C8F File Offset: 0x0017EE8F
+	// Token: 0x06003C08 RID: 15368 RVA: 0x001811C7 File Offset: 0x0017F3C7
 	public NetPackageEntityWaypointList Setup(eWayPointListType _listType, [TupleElementNames(new string[] { "entityId", "position" })] List<ValueTuple<int, Vector3>> _positions)
 	{
 		this.listType = (short)_listType;
@@ -16,7 +16,7 @@ public class NetPackageEntityWaypointList : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C05 RID: 15365 RVA: 0x00180CA8 File Offset: 0x0017EEA8
+	// Token: 0x06003C09 RID: 15369 RVA: 0x001811E0 File Offset: 0x0017F3E0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		EntityPlayerLocal primaryPlayer = _world.GetPrimaryPlayer();
@@ -31,7 +31,7 @@ public class NetPackageEntityWaypointList : NetPackage
 		}
 	}
 
-	// Token: 0x06003C06 RID: 15366 RVA: 0x00180CF0 File Offset: 0x0017EEF0
+	// Token: 0x06003C0A RID: 15370 RVA: 0x00181228 File Offset: 0x0017F428
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.listType = _reader.ReadInt16();
@@ -43,7 +43,7 @@ public class NetPackageEntityWaypointList : NetPackage
 		}
 	}
 
-	// Token: 0x06003C07 RID: 15367 RVA: 0x00180D44 File Offset: 0x0017EF44
+	// Token: 0x06003C0B RID: 15371 RVA: 0x0018127C File Offset: 0x0017F47C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -56,17 +56,11 @@ public class NetPackageEntityWaypointList : NetPackage
 		}
 	}
 
-	// Token: 0x06003C08 RID: 15368 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x040030CA RID: 12490
+	// Token: 0x040030C3 RID: 12483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short listType;
 
-	// Token: 0x040030CB RID: 12491
+	// Token: 0x040030C4 RID: 12484
 	[TupleElementNames(new string[] { "entityId", "position" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ValueTuple<int, Vector3>> positions;

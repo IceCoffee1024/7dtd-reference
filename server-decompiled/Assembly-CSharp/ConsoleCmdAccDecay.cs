@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001DE RID: 478
+// Token: 0x020001DF RID: 479
 [Preserve]
 public class ConsoleCmdAccDecay : ConsoleCmdAbstract
 {
-	// Token: 0x06000EC9 RID: 3785 RVA: 0x0006027E File Offset: 0x0005E47E
+	// Token: 0x06000EBC RID: 3772 RVA: 0x0006026E File Offset: 0x0005E46E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "AccDecay", "SetAccDecay", "SetAccuracyDecay", "sad" };
 	}
 
-	// Token: 0x17000135 RID: 309
-	// (get) Token: 0x06000ECA RID: 3786 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700012D RID: 301
+	// (get) Token: 0x06000EBD RID: 3773 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,21 +23,21 @@ public class ConsoleCmdAccDecay : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000ECB RID: 3787 RVA: 0x000602A6 File Offset: 0x0005E4A6
+	// Token: 0x06000EBE RID: 3774 RVA: 0x00060296 File Offset: 0x0005E496
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Accuracy Decay for guns, show/hide/reset/<Decimal value>";
 	}
 
-	// Token: 0x06000ECC RID: 3788 RVA: 0x000602AD File Offset: 0x0005E4AD
+	// Token: 0x06000EBF RID: 3775 RVA: 0x0006029D File Offset: 0x0005E49D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "reset - apply the default settings for this command\n<Decimal Value> - Sets the decay constant for accuracy calculations using ItemActionRanged";
 	}
 
-	// Token: 0x06000ECD RID: 3789 RVA: 0x000602B4 File Offset: 0x0005E4B4
+	// Token: 0x06000EC0 RID: 3776 RVA: 0x000602A4 File Offset: 0x0005E4A4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 1)

@@ -4,17 +4,17 @@ using System.Text;
 
 namespace PrefabVolumes
 {
-	// Token: 0x020018B4 RID: 6324
+	// Token: 0x020018E0 RID: 6368
 	public class PrefabWallVolumeList : PrefabVolumeListAbs<PrefabWallVolumeList, PrefabWallVolume>
 	{
-		// Token: 0x0600C337 RID: 49975 RVA: 0x00482594 File Offset: 0x00480794
+		// Token: 0x0600C48F RID: 50319 RVA: 0x00486ADC File Offset: 0x00484CDC
 		public PrefabWallVolumeList(Prefab _owner)
 			: base(_owner)
 		{
 		}
 
-		// Token: 0x170017FE RID: 6142
-		// (get) Token: 0x0600C338 RID: 49976 RVA: 0x00046EDA File Offset: 0x000450DA
+		// Token: 0x170018A0 RID: 6304
+		// (get) Token: 0x0600C490 RID: 50320 RVA: 0x000470B6 File Offset: 0x000452B6
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -23,8 +23,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x170017FF RID: 6143
-		// (get) Token: 0x0600C339 RID: 49977 RVA: 0x0048259D File Offset: 0x0048079D
+		// Token: 0x170018A1 RID: 6305
+		// (get) Token: 0x0600C491 RID: 50321 RVA: 0x00486AE5 File Offset: 0x00484CE5
 		public override SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -34,7 +34,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C33A RID: 49978 RVA: 0x004825AC File Offset: 0x004807AC
+		// Token: 0x0600C492 RID: 50322 RVA: 0x00486AF4 File Offset: 0x00484CF4
 		public override void ReadFromProperties(DynamicProperties _properties)
 		{
 			this.List.Clear();
@@ -55,7 +55,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C33B RID: 49979 RVA: 0x0048269C File Offset: 0x0048089C
+		// Token: 0x0600C493 RID: 50323 RVA: 0x00486BE4 File Offset: 0x00484DE4
 		public override void WriteToProperties(DynamicProperties _properties)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -83,14 +83,14 @@ namespace PrefabVolumes
 			_properties.Values.Remove("WallVolumeStart");
 		}
 
-		// Token: 0x0600C33C RID: 49980 RVA: 0x004827A8 File Offset: 0x004809A8
+		// Token: 0x0600C494 RID: 50324 RVA: 0x00486CF0 File Offset: 0x00484EF0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override int FindWorldVolume(World _world, Vector3i _min, Vector3i _max)
 		{
 			return _world.FindWallVolume(_min, _max);
 		}
 
-		// Token: 0x0600C33D RID: 49981 RVA: 0x004827B4 File Offset: 0x004809B4
+		// Token: 0x0600C495 RID: 50325 RVA: 0x00486CFC File Offset: 0x00484EFC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override int CreateWorldVolume(int _prefabVolumeIndex, PrefabWallVolume _prefabVolume, Vector3i _offset, Vector3i _volumeMin, Vector3i _volumeMax, World _world, Vector3i _volumeWorldMin, Vector3i _volumeWorldMax)
 		{
@@ -98,14 +98,14 @@ namespace PrefabVolumes
 			return _world.AddWallVolume(wallVolume);
 		}
 
-		// Token: 0x0600C33E RID: 49982 RVA: 0x004827D4 File Offset: 0x004809D4
+		// Token: 0x0600C496 RID: 50326 RVA: 0x00486D1C File Offset: 0x00484F1C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void AddWorldVolume(Chunk _chunk, int _volumeIndex)
 		{
 			_chunk.AddWallVolumeId(_volumeIndex);
 		}
 
-		// Token: 0x0600C33F RID: 49983 RVA: 0x004827DD File Offset: 0x004809DD
+		// Token: 0x0600C497 RID: 50327 RVA: 0x00486D25 File Offset: 0x00484F25
 		public override void CopyVolumesIntoWorld(World _world, Chunk _chunk, Vector3i _offset)
 		{
 			base.CopyVolumesIntoWorldCommon(_world, _chunk, _offset, Vector3i.zero);

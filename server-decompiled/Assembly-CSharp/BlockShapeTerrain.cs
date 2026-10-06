@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001B9 RID: 441
+// Token: 0x020001BA RID: 442
 [Preserve]
 public class BlockShapeTerrain : BlockShapeCube
 {
-	// Token: 0x06000D44 RID: 3396 RVA: 0x00056B64 File Offset: 0x00054D64
+	// Token: 0x06000D3B RID: 3387 RVA: 0x00056B68 File Offset: 0x00054D68
 	public BlockShapeTerrain()
 	{
 		this.IsOmitTerrainSnappingUp = true;
 	}
 
-	// Token: 0x06000D45 RID: 3397 RVA: 0x00056C2C File Offset: 0x00054E2C
+	// Token: 0x06000D3C RID: 3388 RVA: 0x00056C30 File Offset: 0x00054E30
 	public override void renderFace(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, BlockFace _face, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		float num = _drawPos.y - _vertices[0].y + 1f + 0.0001f;
@@ -25,25 +25,25 @@ public class BlockShapeTerrain : BlockShapeCube
 		_meshes[4].AddQuadNoCollision(_vertices[0], _vertices[1], _vertices[2], _vertices[3], Color.white, uvrectTiling.uv);
 	}
 
-	// Token: 0x06000D46 RID: 3398 RVA: 0x00056CCA File Offset: 0x00054ECA
+	// Token: 0x06000D3D RID: 3389 RVA: 0x00056CCE File Offset: 0x00054ECE
 	public override bool isRenderFace(BlockValue _blockValue, BlockFace _face, BlockValue _adjBlockValue)
 	{
 		return _blockValue.hasdecal && _blockValue.decalface == _face;
 	}
 
-	// Token: 0x06000D47 RID: 3399 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000D3E RID: 3390 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int getFacesDrawnFullBitfield(BlockValue _blockValue)
 	{
 		return 0;
 	}
 
-	// Token: 0x06000D48 RID: 3400 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06000D3F RID: 3391 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsTerrain()
 	{
 		return true;
 	}
 
-	// Token: 0x06000D49 RID: 3401 RVA: 0x00056CE4 File Offset: 0x00054EE4
+	// Token: 0x06000D40 RID: 3392 RVA: 0x00056CE8 File Offset: 0x00054EE8
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -68,13 +68,13 @@ public class BlockShapeTerrain : BlockShapeCube
 		}
 	}
 
-	// Token: 0x06000D4A RID: 3402 RVA: 0x00056FC9 File Offset: 0x000551C9
+	// Token: 0x06000D41 RID: 3393 RVA: 0x00056FCD File Offset: 0x000551CD
 	public override Quaternion GetPreviewRotation()
 	{
 		return Quaternion.AngleAxis(55f, Vector3.up) * Quaternion.AngleAxis(10f, Vector3.forward);
 	}
 
-	// Token: 0x04000BB6 RID: 2998
+	// Token: 0x04000BAF RID: 2991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new readonly Vector3[] v = new Vector3[]
 	{

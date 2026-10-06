@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001618 RID: 5656
+// Token: 0x02001637 RID: 5687
 public class vp_WeaponThrower : MonoBehaviour
 {
-	// Token: 0x170014D2 RID: 5330
-	// (get) Token: 0x0600B1D7 RID: 45527 RVA: 0x004258F4 File Offset: 0x00423AF4
+	// Token: 0x17001515 RID: 5397
+	// (get) Token: 0x0600B269 RID: 45673 RVA: 0x004295D0 File Offset: 0x004277D0
 	public Transform Transform
 	{
 		get
@@ -18,8 +18,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D3 RID: 5331
-	// (get) Token: 0x0600B1D8 RID: 45528 RVA: 0x00425916 File Offset: 0x00423B16
+	// Token: 0x17001516 RID: 5398
+	// (get) Token: 0x0600B26A RID: 45674 RVA: 0x004295F2 File Offset: 0x004277F2
 	public Transform Root
 	{
 		get
@@ -32,8 +32,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D4 RID: 5332
-	// (get) Token: 0x0600B1D9 RID: 45529 RVA: 0x0042593D File Offset: 0x00423B3D
+	// Token: 0x17001517 RID: 5399
+	// (get) Token: 0x0600B26B RID: 45675 RVA: 0x00429619 File Offset: 0x00427819
 	public vp_Weapon Weapon
 	{
 		get
@@ -46,8 +46,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D5 RID: 5333
-	// (get) Token: 0x0600B1DA RID: 45530 RVA: 0x00425973 File Offset: 0x00423B73
+	// Token: 0x17001518 RID: 5400
+	// (get) Token: 0x0600B26C RID: 45676 RVA: 0x0042964F File Offset: 0x0042784F
 	public vp_WeaponShooter Shooter
 	{
 		get
@@ -60,8 +60,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D6 RID: 5334
-	// (get) Token: 0x0600B1DB RID: 45531 RVA: 0x004259AC File Offset: 0x00423BAC
+	// Token: 0x17001519 RID: 5401
+	// (get) Token: 0x0600B26D RID: 45677 RVA: 0x00429688 File Offset: 0x00427888
 	public vp_UnitBankType UnitBankType
 	{
 		get
@@ -84,8 +84,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D7 RID: 5335
-	// (get) Token: 0x0600B1DC RID: 45532 RVA: 0x004259F4 File Offset: 0x00423BF4
+	// Token: 0x1700151A RID: 5402
+	// (get) Token: 0x0600B26E RID: 45678 RVA: 0x004296D0 File Offset: 0x004278D0
 	public vp_UnitBankInstance UnitBank
 	{
 		get
@@ -104,8 +104,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D8 RID: 5336
-	// (get) Token: 0x0600B1DD RID: 45533 RVA: 0x00425A90 File Offset: 0x00423C90
+	// Token: 0x1700151B RID: 5403
+	// (get) Token: 0x0600B26F RID: 45679 RVA: 0x0042976C File Offset: 0x0042796C
 	public vp_ItemIdentifier ItemIdentifier
 	{
 		get
@@ -118,8 +118,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014D9 RID: 5337
-	// (get) Token: 0x0600B1DE RID: 45534 RVA: 0x00425AC6 File Offset: 0x00423CC6
+	// Token: 0x1700151C RID: 5404
+	// (get) Token: 0x0600B270 RID: 45680 RVA: 0x004297A2 File Offset: 0x004279A2
 	public vp_PlayerEventHandler Player
 	{
 		get
@@ -132,8 +132,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014DA RID: 5338
-	// (get) Token: 0x0600B1DF RID: 45535 RVA: 0x00425AFC File Offset: 0x00423CFC
+	// Token: 0x1700151D RID: 5405
+	// (get) Token: 0x0600B271 RID: 45681 RVA: 0x004297D8 File Offset: 0x004279D8
 	public vp_PlayerInventory Inventory
 	{
 		get
@@ -146,7 +146,7 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1E0 RID: 45536 RVA: 0x00425B34 File Offset: 0x00423D34
+	// Token: 0x0600B272 RID: 45682 RVA: 0x00429810 File Offset: 0x00427A10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -160,7 +160,7 @@ public class vp_WeaponThrower : MonoBehaviour
 		this.Inventory.CapsEnabled = true;
 	}
 
-	// Token: 0x0600B1E1 RID: 45537 RVA: 0x00425B86 File Offset: 0x00423D86
+	// Token: 0x0600B273 RID: 45683 RVA: 0x00429862 File Offset: 0x00427A62
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -171,7 +171,7 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1E2 RID: 45538 RVA: 0x00425BA8 File Offset: 0x00423DA8
+	// Token: 0x0600B274 RID: 45684 RVA: 0x00429884 File Offset: 0x00427A84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -211,7 +211,7 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1E3 RID: 45539 RVA: 0x00425CCC File Offset: 0x00423ECC
+	// Token: 0x0600B275 RID: 45685 RVA: 0x004299A8 File Offset: 0x00427BA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TryStoreAttackMinDuration()
 	{
@@ -227,7 +227,7 @@ public class vp_WeaponThrower : MonoBehaviour
 		this.Player.Attack.MinDuration = this.AttackMinDuration;
 	}
 
-	// Token: 0x0600B1E4 RID: 45540 RVA: 0x00425D21 File Offset: 0x00423F21
+	// Token: 0x0600B276 RID: 45686 RVA: 0x004299FD File Offset: 0x00427BFD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TryRestoreAttackMinDuration()
 	{
@@ -242,8 +242,8 @@ public class vp_WeaponThrower : MonoBehaviour
 		this.Player.Attack.MinDuration = this.m_OriginalAttackMinDuration;
 	}
 
-	// Token: 0x170014DB RID: 5339
-	// (get) Token: 0x0600B1E5 RID: 45541 RVA: 0x00425D55 File Offset: 0x00423F55
+	// Token: 0x1700151E RID: 5406
+	// (get) Token: 0x0600B277 RID: 45687 RVA: 0x00429A31 File Offset: 0x00427C31
 	public bool HaveAmmoForCurrentWeapon
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -253,14 +253,14 @@ public class vp_WeaponThrower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B1E6 RID: 45542 RVA: 0x00425D89 File Offset: 0x00423F89
+	// Token: 0x0600B278 RID: 45688 RVA: 0x00429A65 File Offset: 0x00427C65
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool TryReload()
 	{
 		return this.UnitBank != null && this.Inventory.TryReload(this.UnitBank);
 	}
 
-	// Token: 0x0600B1E7 RID: 45543 RVA: 0x00425DA8 File Offset: 0x00423FA8
+	// Token: 0x0600B279 RID: 45689 RVA: 0x00429A84 File Offset: 0x00427C84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Attack()
 	{
@@ -288,76 +288,76 @@ public class vp_WeaponThrower : MonoBehaviour
 		}, null);
 	}
 
-	// Token: 0x0600B1E8 RID: 45544 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600B27A RID: 45690 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_Reload()
 	{
 		return false;
 	}
 
-	// Token: 0x0600B1E9 RID: 45545 RVA: 0x00425E4E File Offset: 0x0042404E
+	// Token: 0x0600B27B RID: 45691 RVA: 0x00429B2A File Offset: 0x00427D2A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Attack()
 	{
 		this.TryReload();
 	}
 
-	// Token: 0x0600B1EA RID: 45546 RVA: 0x00425E57 File Offset: 0x00424057
+	// Token: 0x0600B27C RID: 45692 RVA: 0x00429B33 File Offset: 0x00427D33
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_SetWeapon()
 	{
 		this.m_UnitBank = null;
 	}
 
-	// Token: 0x040085A1 RID: 34209
+	// Token: 0x040085F7 RID: 34295
 	public float AttackMinDuration = 1f;
 
-	// Token: 0x040085A2 RID: 34210
+	// Token: 0x040085F8 RID: 34296
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_OriginalAttackMinDuration;
 
-	// Token: 0x040085A3 RID: 34211
+	// Token: 0x040085F9 RID: 34297
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040085A4 RID: 34212
+	// Token: 0x040085FA RID: 34298
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Root;
 
-	// Token: 0x040085A5 RID: 34213
+	// Token: 0x040085FB RID: 34299
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Weapon m_Weapon;
 
-	// Token: 0x040085A6 RID: 34214
+	// Token: 0x040085FC RID: 34300
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_WeaponShooter m_Shooter;
 
-	// Token: 0x040085A7 RID: 34215
+	// Token: 0x040085FD RID: 34301
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_UnitBankType m_UnitBankType;
 
-	// Token: 0x040085A8 RID: 34216
+	// Token: 0x040085FE RID: 34302
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_UnitBankInstance m_UnitBank;
 
-	// Token: 0x040085A9 RID: 34217
+	// Token: 0x040085FF RID: 34303
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemIdentifier m_ItemIdentifier;
 
-	// Token: 0x040085AA RID: 34218
+	// Token: 0x04008600 RID: 34304
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x040085AB RID: 34219
+	// Token: 0x04008601 RID: 34305
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerInventory m_Inventory;

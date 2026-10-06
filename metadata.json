@@ -1,13 +1,10 @@
 {
-  "gameVersion": "v3.2.0-b9",
-  "gameBuild": "3.2.0 build 9",
+  "gameVersion": "v3.3.0-b18",
+  "gameBuild": "3.3.0 build 18",
   "targetFramework": "net48",
   "decompiler": "dnSpy-generated project",
-  "extractedAt": "2026-08-30",
+  "extractedAt": "2026-10-06",
   "status": "reference-only",
-  "referenceCommit": "see Git tag v3.2.0-b9",
-  "archive": {
-    "asset": "7dtd-reference-v3.2.0-b9.zip",
-    "sha256": "9ff51a44ebc06aa3fd4bdd17cb45e4eeca2779701118de68b7597e5742f3c892"
-  }
+  "referenceCommit": "see Git tag v3.3.0-b18",
+  "archive": null
 }

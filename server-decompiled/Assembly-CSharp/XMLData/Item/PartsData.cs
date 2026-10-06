@@ -7,13 +7,13 @@ using XMLData.Exceptions;
 
 namespace XMLData.Item
 {
-	// Token: 0x02001649 RID: 5705
+	// Token: 0x02001668 RID: 5736
 	[Preserve]
 	public class PartsData : IXMLData
 	{
-		// Token: 0x17001583 RID: 5507
-		// (get) Token: 0x0600B3AA RID: 45994 RVA: 0x00432981 File Offset: 0x00430B81
-		// (set) Token: 0x0600B3AB RID: 45995 RVA: 0x00432989 File Offset: 0x00430B89
+		// Token: 0x170015C6 RID: 5574
+		// (get) Token: 0x0600B43C RID: 46140 RVA: 0x0043665D File Offset: 0x0043485D
+		// (set) Token: 0x0600B43D RID: 46141 RVA: 0x00436665 File Offset: 0x00434865
 		public DataItem<ItemClass> Stock
 		{
 			get
@@ -26,9 +26,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001584 RID: 5508
-		// (get) Token: 0x0600B3AC RID: 45996 RVA: 0x00432992 File Offset: 0x00430B92
-		// (set) Token: 0x0600B3AD RID: 45997 RVA: 0x0043299A File Offset: 0x00430B9A
+		// Token: 0x170015C7 RID: 5575
+		// (get) Token: 0x0600B43E RID: 46142 RVA: 0x0043666E File Offset: 0x0043486E
+		// (set) Token: 0x0600B43F RID: 46143 RVA: 0x00436676 File Offset: 0x00434876
 		public DataItem<ItemClass> Receiver
 		{
 			get
@@ -41,9 +41,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001585 RID: 5509
-		// (get) Token: 0x0600B3AE RID: 45998 RVA: 0x004329A3 File Offset: 0x00430BA3
-		// (set) Token: 0x0600B3AF RID: 45999 RVA: 0x004329AB File Offset: 0x00430BAB
+		// Token: 0x170015C8 RID: 5576
+		// (get) Token: 0x0600B440 RID: 46144 RVA: 0x0043667F File Offset: 0x0043487F
+		// (set) Token: 0x0600B441 RID: 46145 RVA: 0x00436687 File Offset: 0x00434887
 		public DataItem<ItemClass> Pump
 		{
 			get
@@ -56,9 +56,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001586 RID: 5510
-		// (get) Token: 0x0600B3B0 RID: 46000 RVA: 0x004329B4 File Offset: 0x00430BB4
-		// (set) Token: 0x0600B3B1 RID: 46001 RVA: 0x004329BC File Offset: 0x00430BBC
+		// Token: 0x170015C9 RID: 5577
+		// (get) Token: 0x0600B442 RID: 46146 RVA: 0x00436690 File Offset: 0x00434890
+		// (set) Token: 0x0600B443 RID: 46147 RVA: 0x00436698 File Offset: 0x00434898
 		public DataItem<ItemClass> Barrel
 		{
 			get
@@ -71,32 +71,32 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B3B2 RID: 46002 RVA: 0x0042865B File Offset: 0x0042685B
+		// Token: 0x0600B444 RID: 46148 RVA: 0x0042C337 File Offset: 0x0042A537
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x040086DB RID: 34523
+		// Token: 0x04008731 RID: 34609
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ItemClass> pStock;
 
-		// Token: 0x040086DC RID: 34524
+		// Token: 0x04008732 RID: 34610
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ItemClass> pReceiver;
 
-		// Token: 0x040086DD RID: 34525
+		// Token: 0x04008733 RID: 34611
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ItemClass> pPump;
 
-		// Token: 0x040086DE RID: 34526
+		// Token: 0x04008734 RID: 34612
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ItemClass> pBarrel;
 
-		// Token: 0x0200164A RID: 5706
+		// Token: 0x02001669 RID: 5737
 		public static class Parser
 		{
-			// Token: 0x0600B3B4 RID: 46004 RVA: 0x004329C8 File Offset: 0x00430BC8
+			// Token: 0x0600B446 RID: 46150 RVA: 0x004366A4 File Offset: 0x004348A4
 			public static PartsData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "PartsData");
@@ -256,7 +256,7 @@ namespace XMLData.Item
 				return partsData;
 			}
 
-			// Token: 0x040086DF RID: 34527
+			// Token: 0x04008735 RID: 34613
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

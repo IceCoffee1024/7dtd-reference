@@ -5,10 +5,10 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017E7 RID: 6119
+	// Token: 0x02001813 RID: 6163
 	public class ExtensionManager
 	{
-		// Token: 0x0600BDA4 RID: 48548 RVA: 0x004629F0 File Offset: 0x00460BF0
+		// Token: 0x0600BEFC RID: 48892 RVA: 0x00466F2C File Offset: 0x0046512C
 		public void Init()
 		{
 			this.extensionStateManager = new ExtensionStateManager();
@@ -17,7 +17,7 @@ namespace Twitch
 			this.extensionCommandPoller.Init();
 		}
 
-		// Token: 0x0600BDA5 RID: 48549 RVA: 0x00462A1E File Offset: 0x00460C1E
+		// Token: 0x0600BEFD RID: 48893 RVA: 0x00466F5A File Offset: 0x0046515A
 		public void OnPartyChanged()
 		{
 			ExtensionStateManager extensionStateManager = this.extensionStateManager;
@@ -28,7 +28,7 @@ namespace Twitch
 			extensionStateManager.OnPartyChanged();
 		}
 
-		// Token: 0x0600BDA6 RID: 48550 RVA: 0x00462A30 File Offset: 0x00460C30
+		// Token: 0x0600BEFE RID: 48894 RVA: 0x00466F6C File Offset: 0x0046516C
 		public void TwitchEnabledChanged(EntityPlayer _ep)
 		{
 			EntityPlayerLocal localPlayer = TwitchManager.Current.LocalPlayer;
@@ -38,7 +38,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BDA7 RID: 48551 RVA: 0x00462A72 File Offset: 0x00460C72
+		// Token: 0x0600BEFF RID: 48895 RVA: 0x00466FAE File Offset: 0x004651AE
 		public void PushUserBalance(ValueTuple<string, int> userBalance)
 		{
 			ExtensionStateManager extensionStateManager = this.extensionStateManager;
@@ -49,7 +49,7 @@ namespace Twitch
 			extensionStateManager.PushUserBalance(userBalance);
 		}
 
-		// Token: 0x0600BDA8 RID: 48552 RVA: 0x00462A85 File Offset: 0x00460C85
+		// Token: 0x0600BF00 RID: 48896 RVA: 0x00466FC1 File Offset: 0x004651C1
 		public void PushViewerChatState(string id, bool hasChatted)
 		{
 			ExtensionStateManager extensionStateManager = this.extensionStateManager;
@@ -60,38 +60,38 @@ namespace Twitch
 			extensionStateManager.PushViewerChatState(id, hasChatted);
 		}
 
-		// Token: 0x0600BDA9 RID: 48553 RVA: 0x00462A99 File Offset: 0x00460C99
+		// Token: 0x0600BF01 RID: 48897 RVA: 0x00466FD5 File Offset: 0x004651D5
 		public bool CanUseBitCommands()
 		{
 			return this.extensionStateManager.CanUseBitCommands();
 		}
 
-		// Token: 0x0600BDAA RID: 48554 RVA: 0x00462AA6 File Offset: 0x00460CA6
+		// Token: 0x0600BF02 RID: 48898 RVA: 0x00466FE2 File Offset: 0x004651E2
 		public void Update()
 		{
 			this.extensionStateManager.Update();
 			this.extensionCommandPoller.Update();
 		}
 
-		// Token: 0x0600BDAB RID: 48555 RVA: 0x00462ABE File Offset: 0x00460CBE
+		// Token: 0x0600BF03 RID: 48899 RVA: 0x00466FFA File Offset: 0x004651FA
 		public bool HasCommand()
 		{
 			return this.extensionCommandPoller.HasCommand();
 		}
 
-		// Token: 0x0600BDAC RID: 48556 RVA: 0x00462ACB File Offset: 0x00460CCB
+		// Token: 0x0600BF04 RID: 48900 RVA: 0x00467007 File Offset: 0x00465207
 		public ExtensionAction GetCommand()
 		{
 			return this.extensionCommandPoller.GetCommand();
 		}
 
-		// Token: 0x0600BDAD RID: 48557 RVA: 0x00462AD8 File Offset: 0x00460CD8
+		// Token: 0x0600BF05 RID: 48901 RVA: 0x00467014 File Offset: 0x00465214
 		public void RetrieveJWT()
 		{
 			this.extensionStateManager.RetrieveJWT();
 		}
 
-		// Token: 0x0600BDAE RID: 48558 RVA: 0x00462AE5 File Offset: 0x00460CE5
+		// Token: 0x0600BF06 RID: 48902 RVA: 0x00467021 File Offset: 0x00465221
 		public void Cleanup()
 		{
 			this.extensionCommandPoller.Cleanup();
@@ -100,13 +100,13 @@ namespace Twitch
 			this.extensionStateManager = null;
 		}
 
-		// Token: 0x0600BDAF RID: 48559 RVA: 0x00462B0B File Offset: 0x00460D0B
+		// Token: 0x0600BF07 RID: 48903 RVA: 0x00467047 File Offset: 0x00465247
 		public static void CheckExtensionInstalled(Action<bool> _cb)
 		{
 			GameManager.Instance.StartCoroutine(ExtensionManager.CheckExtensionInstall(_cb));
 		}
 
-		// Token: 0x0600BDB0 RID: 48560 RVA: 0x00462B1E File Offset: 0x00460D1E
+		// Token: 0x0600BF08 RID: 48904 RVA: 0x0046705A File Offset: 0x0046525A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator CheckExtensionInstall(Action<bool> _cb)
 		{
@@ -162,20 +162,20 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x04008E13 RID: 36371
+		// Token: 0x04008ED9 RID: 36569
 		public const string API_STAGE = "prod";
 
-		// Token: 0x04008E14 RID: 36372
+		// Token: 0x04008EDA RID: 36570
 		public const string EXTENSION_ID = "k6ji189bf7i4ge8il4iczzw7kpgmjt";
 
-		// Token: 0x04008E15 RID: 36373
+		// Token: 0x04008EDB RID: 36571
 		public static string Version = "2.0.2";
 
-		// Token: 0x04008E16 RID: 36374
+		// Token: 0x04008EDC RID: 36572
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ExtensionStateManager extensionStateManager;
 
-		// Token: 0x04008E17 RID: 36375
+		// Token: 0x04008EDD RID: 36573
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ExtensionCommandPoller extensionCommandPoller;
 	}

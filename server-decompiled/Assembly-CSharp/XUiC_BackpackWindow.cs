@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EC4 RID: 3780
+// Token: 0x02000ED3 RID: 3795
 [Preserve]
 public class XUiC_BackpackWindow : XUiController
 {
-	// Token: 0x17000DE9 RID: 3561
-	// (get) Token: 0x06007622 RID: 30242 RVA: 0x002C5633 File Offset: 0x002C3833
-	// (set) Token: 0x06007623 RID: 30243 RVA: 0x002C563C File Offset: 0x002C383C
+	// Token: 0x17000E05 RID: 3589
+	// (get) Token: 0x0600761D RID: 30237 RVA: 0x002C8A23 File Offset: 0x002C6C23
+	// (set) Token: 0x0600761E RID: 30238 RVA: 0x002C8A2C File Offset: 0x002C6C2C
 	public bool UserLockMode
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007624 RID: 30244 RVA: 0x002C56C0 File Offset: 0x002C38C0
+	// Token: 0x0600761F RID: 30239 RVA: 0x002C8AB0 File Offset: 0x002C6CB0
 	public override void Init()
 	{
 		base.Init();
@@ -49,7 +49,7 @@ public class XUiC_BackpackWindow : XUiController
 			this.standardControls.GetLockedSlotsFromStorage = () => this.xui.playerUI.entityPlayer.bag.LockedSlots;
 			this.standardControls.SetLockedSlotsToStorage = delegate(PackedBoolArray _slots)
 			{
-				this.xui.playerUI.entityPlayer.bag.LockedSlots = _slots;
+				this.xui.playerUI.entityPlayer.bag.LockedSlots.CopyFrom(_slots);
 			};
 			this.standardControls.ApplyLockedSlotStates = new Action<PackedBoolArray>(this.ApplyLockedSlotStates);
 			this.standardControls.UpdateLockedSlotStates = new Action<XUiC_ContainerStandardControls>(this.UpdateLockedSlots);
@@ -72,7 +72,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007625 RID: 30245 RVA: 0x002C57B8 File Offset: 0x002C39B8
+	// Token: 0x06007620 RID: 30240 RVA: 0x002C8BA8 File Offset: 0x002C6DA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetMoveDestinationInventory(out IInventory _dstInventory)
 	{
@@ -96,14 +96,14 @@ public class XUiC_BackpackWindow : XUiController
 		return false;
 	}
 
-	// Token: 0x06007626 RID: 30246 RVA: 0x002C5834 File Offset: 0x002C3A34
+	// Token: 0x06007621 RID: 30241 RVA: 0x002C8C24 File Offset: 0x002C6E24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClearInventory_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.entityPlayer.EmptyBackpack();
 	}
 
-	// Token: 0x06007627 RID: 30247 RVA: 0x002C584C File Offset: 0x002C3A4C
+	// Token: 0x06007622 RID: 30242 RVA: 0x002C8C3C File Offset: 0x002C6E3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSort_OnPress(PackedBoolArray _ignoredSlots)
 	{
@@ -112,14 +112,14 @@ public class XUiC_BackpackWindow : XUiController
 		{
 			itemStack = this.xui.AssembleItem.CurrentItemStackController.ItemStack;
 		}
-		this.xui.PlayerInventory.SortStacks(0, _ignoredSlots);
+		this.xui.PlayerInventory.SortStacks();
 		if (itemStack != null)
 		{
 			base.GetChildByType<XUiC_ItemStackGrid>().AssembleLockSingleStack(itemStack);
 		}
 	}
 
-	// Token: 0x06007628 RID: 30248 RVA: 0x002C58A4 File Offset: 0x002C3AA4
+	// Token: 0x06007623 RID: 30243 RVA: 0x002C8C94 File Offset: 0x002C6E94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLockedSlotStates(PackedBoolArray _lockedSlots)
 	{
@@ -130,7 +130,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007629 RID: 30249 RVA: 0x002C58EC File Offset: 0x002C3AEC
+	// Token: 0x06007624 RID: 30244 RVA: 0x002C8CDC File Offset: 0x002C6EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLockedSlots(XUiC_ContainerStandardControls _csc)
 	{
@@ -154,7 +154,7 @@ public class XUiC_BackpackWindow : XUiController
 		_csc.LockedSlots = packedBoolArray;
 	}
 
-	// Token: 0x0600762A RID: 30250 RVA: 0x002C5970 File Offset: 0x002C3B70
+	// Token: 0x06007625 RID: 30245 RVA: 0x002C8D60 File Offset: 0x002C6F60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -191,7 +191,7 @@ public class XUiC_BackpackWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0600762B RID: 30251 RVA: 0x002C5A6C File Offset: 0x002C3C6C
+	// Token: 0x06007626 RID: 30246 RVA: 0x002C8E5C File Offset: 0x002C705C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -207,7 +207,7 @@ public class XUiC_BackpackWindow : XUiController
 		}, false));
 	}
 
-	// Token: 0x0600762C RID: 30252 RVA: 0x002C5B14 File Offset: 0x002C3D14
+	// Token: 0x06007627 RID: 30247 RVA: 0x002C8F04 File Offset: 0x002C7104
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -218,14 +218,14 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600762D RID: 30253 RVA: 0x002C5B65 File Offset: 0x002C3D65
+	// Token: 0x06007628 RID: 30248 RVA: 0x002C8F55 File Offset: 0x002C7155
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.UpdateInput();
 	}
 
-	// Token: 0x0600762E RID: 30254 RVA: 0x002C5B74 File Offset: 0x002C3D74
+	// Token: 0x06007629 RID: 30249 RVA: 0x002C8F64 File Offset: 0x002C7164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -236,33 +236,33 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600762F RID: 30255 RVA: 0x0008B2BB File Offset: 0x000894BB
+	// Token: 0x0600762A RID: 30250 RVA: 0x0008B53B File Offset: 0x0008973B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnCurrencyChanged()
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005753 RID: 22355
+	// Token: 0x0400578B RID: 22411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Backpack backpackGrid;
 
-	// Token: 0x04005754 RID: 22356
+	// Token: 0x0400578C RID: 22412
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHidden;
 
-	// Token: 0x04005755 RID: 22357
+	// Token: 0x0400578D RID: 22413
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool userLockMode;
 
-	// Token: 0x04005756 RID: 22358
+	// Token: 0x0400578E RID: 22414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls standardControls;
 
-	// Token: 0x04005757 RID: 22359
+	// Token: 0x0400578F RID: 22415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt currencyFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005758 RID: 22360
+	// Token: 0x04005790 RID: 22416
 	public static string defaultSelectedElement;
 }

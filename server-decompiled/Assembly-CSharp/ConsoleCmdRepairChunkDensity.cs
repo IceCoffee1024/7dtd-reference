@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000279 RID: 633
+// Token: 0x0200027C RID: 636
 [Preserve]
 public class ConsoleCmdRepairChunkDensity : ConsoleCmdAbstract
 {
-	// Token: 0x060012B6 RID: 4790 RVA: 0x0007491F File Offset: 0x00072B1F
+	// Token: 0x060012B3 RID: 4787 RVA: 0x00074BD3 File Offset: 0x00072DD3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "check and optionally fix densities of a chunk";
 	}
 
-	// Token: 0x060012B7 RID: 4791 RVA: 0x00074926 File Offset: 0x00072B26
+	// Token: 0x060012B4 RID: 4788 RVA: 0x00074BDA File Offset: 0x00072DDA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "This command is used to check if the densities of blocks in a chunk match the actual block type.\nIf there is a mismatch it can lead to the chunk rendering incorrectly or not at all, typically\nindicated by the error message \"Failed setting triangles. Some indices are referencing out of\nbounds vertices.\". It can also fix such mismatches within a chunk.\nUsage:\n  1. repairchunkdensity <x> <z>\n  2. repairchunkdensity <x> <z> fix\n1. Just checks the chunk and prints mismatched to the server log. x and z are the coordinates of any\n   block within the chunk to check.\n2. Repairs any mismatch found in the chunk.";
 	}
 
-	// Token: 0x060012B8 RID: 4792 RVA: 0x0007492D File Offset: 0x00072B2D
+	// Token: 0x060012B5 RID: 4789 RVA: 0x00074BE1 File Offset: 0x00072DE1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "repairchunkdensity", "rcd" };
 	}
 
-	// Token: 0x060012B9 RID: 4793 RVA: 0x00074948 File Offset: 0x00072B48
+	// Token: 0x060012B6 RID: 4790 RVA: 0x00074BFC File Offset: 0x00072DFC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 2 || _params.Count > 3)

@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000805 RID: 2053
+// Token: 0x02000804 RID: 2052
 [Preserve]
 public class NetPackageItemDrop : NetPackage
 {
-	// Token: 0x1700064A RID: 1610
-	// (get) Token: 0x06003C81 RID: 15489 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700066B RID: 1643
+	// (get) Token: 0x06003C5C RID: 15452 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageItemDrop : NetPackage
 		}
 	}
 
-	// Token: 0x06003C82 RID: 15490 RVA: 0x001828E4 File Offset: 0x00180AE4
+	// Token: 0x06003C5D RID: 15453 RVA: 0x00182940 File Offset: 0x00180B40
 	public NetPackageItemDrop Setup(ItemStack _itemStack, Vector3 _dropPos, Vector3 _initialMotion, Vector3 _randomPosAdd, float _lifetime, int _entityId, bool _bDropPosIsRelativeToHead, int _clientInstanceId)
 	{
 		this.itemStack = _itemStack.Clone();
@@ -30,7 +30,7 @@ public class NetPackageItemDrop : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C83 RID: 15491 RVA: 0x00182934 File Offset: 0x00180B34
+	// Token: 0x06003C5E RID: 15454 RVA: 0x00182990 File Offset: 0x00180B90
 	public override void read(PooledBinaryReader _br)
 	{
 		this.itemStack = new ItemStack();
@@ -44,7 +44,7 @@ public class NetPackageItemDrop : NetPackage
 		this.bDropPosIsRelativeToHead = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003C84 RID: 15492 RVA: 0x001829B0 File Offset: 0x00180BB0
+	// Token: 0x06003C5F RID: 15455 RVA: 0x00182A0C File Offset: 0x00180C0C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -58,7 +58,7 @@ public class NetPackageItemDrop : NetPackage
 		_bw.Write(this.bDropPosIsRelativeToHead);
 	}
 
-	// Token: 0x06003C85 RID: 15493 RVA: 0x00182A28 File Offset: 0x00180C28
+	// Token: 0x06003C60 RID: 15456 RVA: 0x00182A84 File Offset: 0x00180C84
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -68,41 +68,35 @@ public class NetPackageItemDrop : NetPackage
 		_world.GetGameManager().ItemDropServer(this.itemStack, this.dropPos, this.randomPosAdd, this.initialMotion, this.entityId, this.lifetime, this.bDropPosIsRelativeToHead, this.clientInstanceId);
 	}
 
-	// Token: 0x06003C86 RID: 15494 RVA: 0x00182A74 File Offset: 0x00180C74
-	public override int GetLength()
-	{
-		return 52;
-	}
-
-	// Token: 0x04003126 RID: 12582
+	// Token: 0x04003114 RID: 12564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack;
 
-	// Token: 0x04003127 RID: 12583
+	// Token: 0x04003115 RID: 12565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 dropPos;
 
-	// Token: 0x04003128 RID: 12584
+	// Token: 0x04003116 RID: 12566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 initialMotion;
 
-	// Token: 0x04003129 RID: 12585
+	// Token: 0x04003117 RID: 12567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 randomPosAdd;
 
-	// Token: 0x0400312A RID: 12586
+	// Token: 0x04003118 RID: 12568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lifetime;
 
-	// Token: 0x0400312B RID: 12587
+	// Token: 0x04003119 RID: 12569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400312C RID: 12588
+	// Token: 0x0400311A RID: 12570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int clientInstanceId;
 
-	// Token: 0x0400312D RID: 12589
+	// Token: 0x0400311B RID: 12571
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bDropPosIsRelativeToHead;
 }

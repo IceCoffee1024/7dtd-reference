@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x020014F7 RID: 5367
+// Token: 0x02001519 RID: 5401
 public class WorldGridCompressedData<[IsUnmanaged] T> where T : struct, ValueType, IEquatable<T>
 {
-	// Token: 0x0600A8EE RID: 43246 RVA: 0x003ED013 File Offset: 0x003EB213
+	// Token: 0x0600A9A1 RID: 43425 RVA: 0x003F1E67 File Offset: 0x003F0067
 	public WorldGridCompressedData(T[] _colors, int _dimX, int _dimY, int _gridSizeX, int _gridSizeY)
 		: this(_colors, _dimX, _dimY, _gridSizeX, _gridSizeY, 0, 0)
 	{
 	}
 
-	// Token: 0x0600A8EF RID: 43247 RVA: 0x003ED024 File Offset: 0x003EB224
+	// Token: 0x0600A9A2 RID: 43426 RVA: 0x003F1E78 File Offset: 0x003F0078
 	public WorldGridCompressedData(T[] _colors, int _dimX, int _dimY, int _gridSizeX, int _gridSizeY, int _addXOffs, int _addYOffs)
 	{
 		this.colors = new GridCompressedData<T>(_dimX, _dimY, _gridSizeX, _gridSizeY);
@@ -25,13 +25,13 @@ public class WorldGridCompressedData<[IsUnmanaged] T> where T : struct, ValueTyp
 		this.MaxPos = new Vector2i(this.sizeXHalf - this.addXOffs - 1, this.sizeYHalf - this.addYOffs - 1);
 	}
 
-	// Token: 0x0600A8F0 RID: 43248 RVA: 0x003ED0D4 File Offset: 0x003EB2D4
+	// Token: 0x0600A9A3 RID: 43427 RVA: 0x003F1F28 File Offset: 0x003F0128
 	public WorldGridCompressedData(GridCompressedData<T> _data)
 		: this(_data, 0, 0)
 	{
 	}
 
-	// Token: 0x0600A8F1 RID: 43249 RVA: 0x003ED0E0 File Offset: 0x003EB2E0
+	// Token: 0x0600A9A4 RID: 43428 RVA: 0x003F1F34 File Offset: 0x003F0134
 	public WorldGridCompressedData(GridCompressedData<T> _data, int _addXOffs, int _addYOffs)
 	{
 		this.colors = _data;
@@ -45,55 +45,55 @@ public class WorldGridCompressedData<[IsUnmanaged] T> where T : struct, ValueTyp
 		this.MaxPos = new Vector2i(this.sizeXHalf - this.addXOffs - 1, this.sizeYHalf - this.addYOffs - 1);
 	}
 
-	// Token: 0x0600A8F2 RID: 43250 RVA: 0x003ED18C File Offset: 0x003EB38C
+	// Token: 0x0600A9A5 RID: 43429 RVA: 0x003F1FE0 File Offset: 0x003F01E0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public T GetData(int _x, int _y)
 	{
 		return this.colors.GetValue(_x + this.addXOffs + this.sizeXHalf, _y + this.addYOffs + this.sizeYHalf);
 	}
 
-	// Token: 0x0600A8F3 RID: 43251 RVA: 0x003ED1B7 File Offset: 0x003EB3B7
+	// Token: 0x0600A9A6 RID: 43430 RVA: 0x003F200B File Offset: 0x003F020B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public T GetData(int _offs)
 	{
 		return this.colors.GetValue(_offs);
 	}
 
-	// Token: 0x0600A8F4 RID: 43252 RVA: 0x003ED1C5 File Offset: 0x003EB3C5
+	// Token: 0x0600A9A7 RID: 43431 RVA: 0x003F2019 File Offset: 0x003F0219
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool Contains(int _x, int _y)
 	{
 		return _x >= this.MinPos.x && _y >= this.MinPos.y && _x <= this.MaxPos.x && _y <= this.MaxPos.y;
 	}
 
-	// Token: 0x04007D0A RID: 32010
+	// Token: 0x04007D8D RID: 32141
 	public GridCompressedData<T> colors;
 
-	// Token: 0x04007D0B RID: 32011
+	// Token: 0x04007D8E RID: 32142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeXHalf;
 
-	// Token: 0x04007D0C RID: 32012
+	// Token: 0x04007D8F RID: 32143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeYHalf;
 
-	// Token: 0x04007D0D RID: 32013
+	// Token: 0x04007D90 RID: 32144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int addXOffs;
 
-	// Token: 0x04007D0E RID: 32014
+	// Token: 0x04007D91 RID: 32145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int addYOffs;
 
-	// Token: 0x04007D0F RID: 32015
+	// Token: 0x04007D92 RID: 32146
 	public int DimX;
 
-	// Token: 0x04007D10 RID: 32016
+	// Token: 0x04007D93 RID: 32147
 	public int DimY;
 
-	// Token: 0x04007D11 RID: 32017
+	// Token: 0x04007D94 RID: 32148
 	public Vector2i MinPos;
 
-	// Token: 0x04007D12 RID: 32018
+	// Token: 0x04007D95 RID: 32149
 	public Vector2i MaxPos;
 }

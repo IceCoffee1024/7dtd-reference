@@ -4,17 +4,17 @@ using System.Globalization;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000952 RID: 2386
+// Token: 0x02000958 RID: 2392
 public class PrefabLODManager
 {
-	// Token: 0x0600460F RID: 17935 RVA: 0x001BAD26 File Offset: 0x001B8F26
+	// Token: 0x060045B0 RID: 17840 RVA: 0x001BB22E File Offset: 0x001B942E
 	public void TriggerUpdate()
 	{
 		this.lastTime = 0f;
 		this.lastDisplayUpdate = 0f;
 	}
 
-	// Token: 0x06004610 RID: 17936 RVA: 0x001BAD40 File Offset: 0x001B8F40
+	// Token: 0x060045B1 RID: 17841 RVA: 0x001BB248 File Offset: 0x001B9448
 	public void FrameUpdate()
 	{
 		try
@@ -76,7 +76,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004611 RID: 17937 RVA: 0x001BAF38 File Offset: 0x001B9138
+	// Token: 0x060045B2 RID: 17842 RVA: 0x001BB440 File Offset: 0x001B9640
 	public PrefabLODManager.PrefabGameObject GetInstance(int id)
 	{
 		PrefabLODManager.PrefabGameObject prefabGameObject;
@@ -84,7 +84,7 @@ public class PrefabLODManager
 		return prefabGameObject;
 	}
 
-	// Token: 0x06004612 RID: 17938 RVA: 0x001BAF58 File Offset: 0x001B9158
+	// Token: 0x060045B3 RID: 17843 RVA: 0x001BB460 File Offset: 0x001B9660
 	public void UpdatePrefabsAround(Dictionary<int, PrefabInstance> _prefabsAroundFar, Dictionary<int, PrefabInstance> _prefabsAroundNear)
 	{
 		try
@@ -137,7 +137,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004613 RID: 17939 RVA: 0x001BB12C File Offset: 0x001B932C
+	// Token: 0x060045B4 RID: 17844 RVA: 0x001BB634 File Offset: 0x001B9834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removePrefabs(List<int> toRemove)
 	{
@@ -177,7 +177,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004614 RID: 17940 RVA: 0x001BB2AC File Offset: 0x001B94AC
+	// Token: 0x060045B5 RID: 17845 RVA: 0x001BB7B4 File Offset: 0x001B99B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildGameObjectFromMeshInfo(SimpleMeshInfo _meshInfo, PrefabLODManager.PrefabGameObject _pgo)
 	{
@@ -252,7 +252,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004615 RID: 17941 RVA: 0x001BB538 File Offset: 0x001B9738
+	// Token: 0x060045B6 RID: 17846 RVA: 0x001BBA40 File Offset: 0x001B9C40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadImposterSigns(PrefabLODManager.PrefabGameObject _pgo, GameObject _go, SimpleMeshInfo _meshInfo)
 	{
@@ -272,7 +272,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004616 RID: 17942 RVA: 0x001BB5CC File Offset: 0x001B97CC
+	// Token: 0x060045B7 RID: 17847 RVA: 0x001BBAD4 File Offset: 0x001B9CD4
 	public void meshLoadedCallback(SimpleMeshInfo meshInfo, object userCallbackData)
 	{
 		try
@@ -299,7 +299,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004617 RID: 17943 RVA: 0x001BB660 File Offset: 0x001B9860
+	// Token: 0x060045B8 RID: 17848 RVA: 0x001BBB68 File Offset: 0x001B9D68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateDisplay(EntityPlayerLocal _localPlayer)
 	{
@@ -516,7 +516,7 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x06004618 RID: 17944 RVA: 0x001BBD78 File Offset: 0x001B9F78
+	// Token: 0x060045B9 RID: 17849 RVA: 0x001BC280 File Offset: 0x001BA480
 	public void Cleanup()
 	{
 		if (this.parentTransform != null)
@@ -528,7 +528,7 @@ public class PrefabLODManager
 		this.removePrefabs(this.displayedPrefabs.Keys.ToList<int>());
 	}
 
-	// Token: 0x06004619 RID: 17945 RVA: 0x001BBDCB File Offset: 0x001B9FCB
+	// Token: 0x060045BA RID: 17850 RVA: 0x001BC2D3 File Offset: 0x001BA4D3
 	public void SetPOIDistance(int _distance)
 	{
 		PrefabLODManager.lodPoiDistance = _distance;
@@ -536,7 +536,7 @@ public class PrefabLODManager
 		this.lastTime = 0f;
 	}
 
-	// Token: 0x0600461A RID: 17946 RVA: 0x001BBDEC File Offset: 0x001B9FEC
+	// Token: 0x060045BB RID: 17851 RVA: 0x001BC2F4 File Offset: 0x001BA4F4
 	public void UpdateMaterials()
 	{
 		try
@@ -562,78 +562,78 @@ public class PrefabLODManager
 		}
 	}
 
-	// Token: 0x04003849 RID: 14409
+	// Token: 0x04003845 RID: 14405
 	public const int cPrefabYPosition = 4;
 
-	// Token: 0x0400384A RID: 14410
+	// Token: 0x04003846 RID: 14406
 	public const int cLodPoiDistance = 1000;
 
-	// Token: 0x0400384B RID: 14411
+	// Token: 0x04003847 RID: 14407
 	public static int lodPoiDistance = 1000;
 
-	// Token: 0x0400384C RID: 14412
+	// Token: 0x04003848 RID: 14408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material sharedMat;
 
-	// Token: 0x0400384D RID: 14413
+	// Token: 0x04003849 RID: 14409
 	public Dictionary<int, PrefabInstance> prefabsAroundFar = new Dictionary<int, PrefabInstance>();
 
-	// Token: 0x0400384E RID: 14414
+	// Token: 0x0400384A RID: 14410
 	public Dictionary<int, PrefabInstance> prefabsAroundNear = new Dictionary<int, PrefabInstance>();
 
-	// Token: 0x0400384F RID: 14415
+	// Token: 0x0400384B RID: 14411
 	public Dictionary<int, PrefabLODManager.PrefabGameObject> displayedPrefabs = new Dictionary<int, PrefabLODManager.PrefabGameObject>();
 
-	// Token: 0x04003850 RID: 14416
+	// Token: 0x0400384C RID: 14412
 	public Dictionary<string, PrefabLODManager.MeshPrefabSet> meshPathToData = new Dictionary<string, PrefabLODManager.MeshPrefabSet>();
 
-	// Token: 0x04003851 RID: 14417
+	// Token: 0x0400384D RID: 14413
 	public Transform parentTransform;
 
-	// Token: 0x04003852 RID: 14418
+	// Token: 0x0400384E RID: 14414
 	public float lastTime;
 
-	// Token: 0x04003853 RID: 14419
+	// Token: 0x0400384F RID: 14415
 	public float lastDisplayUpdate;
 
-	// Token: 0x04003854 RID: 14420
+	// Token: 0x04003850 RID: 14416
 	public MicroStopwatch stopWatch = new MicroStopwatch();
 
-	// Token: 0x02000953 RID: 2387
+	// Token: 0x02000959 RID: 2393
 	public class PrefabGameObject
 	{
-		// Token: 0x04003855 RID: 14421
+		// Token: 0x04003851 RID: 14417
 		public string meshPath;
 
-		// Token: 0x04003856 RID: 14422
+		// Token: 0x04003852 RID: 14418
 		public PrefabInstance prefabInstance;
 
-		// Token: 0x04003857 RID: 14423
+		// Token: 0x04003853 RID: 14419
 		public GameObject go;
 
-		// Token: 0x04003858 RID: 14424
+		// Token: 0x04003854 RID: 14420
 		public bool isAllShown;
 
-		// Token: 0x04003859 RID: 14425
+		// Token: 0x04003855 RID: 14421
 		public List<ImposterCanvas> signDatas;
 	}
 
-	// Token: 0x02000954 RID: 2388
+	// Token: 0x0200095A RID: 2394
 	public class MeshPrefabSet
 	{
-		// Token: 0x0600461E RID: 17950 RVA: 0x001BBEEF File Offset: 0x001BA0EF
+		// Token: 0x060045BF RID: 17855 RVA: 0x001BC3F7 File Offset: 0x001BA5F7
 		public MeshPrefabSet()
 		{
 			this.prefabIDs = new List<int>();
 		}
 
-		// Token: 0x0400385A RID: 14426
+		// Token: 0x04003856 RID: 14422
 		public bool isLoading;
 
-		// Token: 0x0400385B RID: 14427
+		// Token: 0x04003857 RID: 14423
 		public SimpleMeshInfo meshInfo;
 
-		// Token: 0x0400385C RID: 14428
+		// Token: 0x04003858 RID: 14424
 		public List<int> prefabIDs;
 	}
 }

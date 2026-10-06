@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000D11 RID: 3345
+// Token: 0x02000D1F RID: 3359
 public class GameStagesFromXml
 {
-	// Token: 0x06006622 RID: 26146 RVA: 0x0027FF7C File Offset: 0x0027E17C
+	// Token: 0x06006614 RID: 26132 RVA: 0x00283320 File Offset: 0x00281520
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		GameStageGroup.Clear();
@@ -88,7 +88,7 @@ public class GameStagesFromXml
 		yield break;
 	}
 
-	// Token: 0x06006623 RID: 26147 RVA: 0x0027FF8C File Offset: 0x0027E18C
+	// Token: 0x06006615 RID: 26133 RVA: 0x00283330 File Offset: 0x00281530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameStagesFromXml.Group ParseGameStageGroup(XElement root)
 	{
@@ -101,7 +101,7 @@ public class GameStagesFromXml
 		return new GameStagesFromXml.Group(attribute, attribute2, root);
 	}
 
-	// Token: 0x06006624 RID: 26148 RVA: 0x0027FFDC File Offset: 0x0027E1DC
+	// Token: 0x06006616 RID: 26134 RVA: 0x00283380 File Offset: 0x00281580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseGameStageDef(XElement root)
 	{
@@ -118,7 +118,7 @@ public class GameStagesFromXml
 		GameStageDefinition.AddGameStage(gameStageDefinition);
 	}
 
-	// Token: 0x06006625 RID: 26149 RVA: 0x00280068 File Offset: 0x0027E268
+	// Token: 0x06006617 RID: 26135 RVA: 0x0028340C File Offset: 0x0028160C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseStage(GameStageDefinition gsd, XElement root)
 	{
@@ -138,7 +138,7 @@ public class GameStagesFromXml
 		}
 	}
 
-	// Token: 0x06006626 RID: 26150 RVA: 0x00280114 File Offset: 0x0027E314
+	// Token: 0x06006618 RID: 26136 RVA: 0x002834B8 File Offset: 0x002816B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseSpawn(GameStageDefinition gsd, GameStageDefinition.Stage stage, XElement root)
 	{
@@ -163,15 +163,15 @@ public class GameStagesFromXml
 		stage.AddSpawnGroup(spawnGroup);
 	}
 
-	// Token: 0x04004F28 RID: 20264
+	// Token: 0x04004F5E RID: 20318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string XMLName = "gamestages.xml";
 
-	// Token: 0x02000D12 RID: 3346
+	// Token: 0x02000D20 RID: 3360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Group
 	{
-		// Token: 0x06006628 RID: 26152 RVA: 0x002801EA File Offset: 0x0027E3EA
+		// Token: 0x0600661A RID: 26138 RVA: 0x0028358E File Offset: 0x0028178E
 		public Group(string _name, string _spawnerName, XElement _element)
 		{
 			this.name = _name;
@@ -179,13 +179,13 @@ public class GameStagesFromXml
 			this.element = _element;
 		}
 
-		// Token: 0x04004F29 RID: 20265
+		// Token: 0x04004F5F RID: 20319
 		public readonly string name;
 
-		// Token: 0x04004F2A RID: 20266
+		// Token: 0x04004F60 RID: 20320
 		public readonly string spawnerName;
 
-		// Token: 0x04004F2B RID: 20267
+		// Token: 0x04004F61 RID: 20321
 		public readonly XElement element;
 	}
 }

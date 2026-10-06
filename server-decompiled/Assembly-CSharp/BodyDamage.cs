@@ -1,12 +1,11 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x0200046F RID: 1135
+// Token: 0x02000471 RID: 1137
 public struct BodyDamage
 {
-	// Token: 0x170003EA RID: 1002
-	// (get) Token: 0x06002228 RID: 8744 RVA: 0x000CE2A1 File Offset: 0x000CC4A1
+	// Token: 0x170003DE RID: 990
+	// (get) Token: 0x06002217 RID: 8727 RVA: 0x000CE355 File Offset: 0x000CC555
 	public bool HasLeftLeg
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16,8 +15,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x170003EB RID: 1003
-	// (get) Token: 0x06002229 RID: 8745 RVA: 0x000CE2AF File Offset: 0x000CC4AF
+	// Token: 0x170003DF RID: 991
+	// (get) Token: 0x06002218 RID: 8728 RVA: 0x000CE363 File Offset: 0x000CC563
 	public bool HasRightLeg
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,8 +26,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x170003EC RID: 1004
-	// (get) Token: 0x0600222A RID: 8746 RVA: 0x000CE2C0 File Offset: 0x000CC4C0
+	// Token: 0x170003E0 RID: 992
+	// (get) Token: 0x06002219 RID: 8729 RVA: 0x000CE374 File Offset: 0x000CC574
 	public bool HasLimbs
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,8 +37,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x170003ED RID: 1005
-	// (get) Token: 0x0600222B RID: 8747 RVA: 0x000CE2D8 File Offset: 0x000CC4D8
+	// Token: 0x170003E1 RID: 993
+	// (get) Token: 0x0600221A RID: 8730 RVA: 0x000CE38C File Offset: 0x000CC58C
 	public bool IsAnyLegMissing
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,8 +48,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x170003EE RID: 1006
-	// (get) Token: 0x0600222C RID: 8748 RVA: 0x000CE2E9 File Offset: 0x000CC4E9
+	// Token: 0x170003E2 RID: 994
+	// (get) Token: 0x0600221B RID: 8731 RVA: 0x000CE39D File Offset: 0x000CC59D
 	public bool IsAnyArmOrLegMissing
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,8 +59,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x170003EF RID: 1007
-	// (get) Token: 0x0600222D RID: 8749 RVA: 0x000CE2FA File Offset: 0x000CC4FA
+	// Token: 0x170003E3 RID: 995
+	// (get) Token: 0x0600221C RID: 8732 RVA: 0x000CE3AE File Offset: 0x000CC5AE
 	public bool IsCrippled
 	{
 		get
@@ -70,8 +69,8 @@ public struct BodyDamage
 		}
 	}
 
-	// Token: 0x0600222E RID: 8750 RVA: 0x000CE30C File Offset: 0x000CC50C
-	public static BodyDamage Read(BinaryReader _br, int _version)
+	// Token: 0x0600221D RID: 8733 RVA: 0x000CE3C0 File Offset: 0x000CC5C0
+	public static BodyDamage Read(PooledBinaryReader _br, int _version)
 	{
 		if (_version > 21)
 		{
@@ -88,9 +87,9 @@ public struct BodyDamage
 		return default(BodyDamage);
 	}
 
-	// Token: 0x0600222F RID: 8751 RVA: 0x000CE350 File Offset: 0x000CC550
+	// Token: 0x0600221E RID: 8734 RVA: 0x000CE404 File Offset: 0x000CC604
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static BodyDamage ReadData(BinaryReader br, int version)
+	public static BodyDamage ReadData(PooledBinaryReader br, int version)
 	{
 		BodyDamage bodyDamage = default(BodyDamage);
 		if (version >= 4)
@@ -165,78 +164,78 @@ public struct BodyDamage
 		return bodyDamage;
 	}
 
-	// Token: 0x06002230 RID: 8752 RVA: 0x000CE4EA File Offset: 0x000CC6EA
-	public void Write(BinaryWriter bw)
+	// Token: 0x0600221F RID: 8735 RVA: 0x000CE59E File Offset: 0x000CC79E
+	public void Write(PooledBinaryWriter bw)
 	{
 		bw.Write(BodyDamage.cBinaryVersion);
 		bw.Write((int)this.damageType);
 		bw.Write(this.Flags);
 	}
 
-	// Token: 0x040017E0 RID: 6112
+	// Token: 0x040017D7 RID: 6103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int cBinaryVersion = 4;
 
-	// Token: 0x040017E1 RID: 6113
+	// Token: 0x040017D8 RID: 6104
 	public int StunKnee;
 
-	// Token: 0x040017E2 RID: 6114
+	// Token: 0x040017D9 RID: 6105
 	public int StunProne;
 
-	// Token: 0x040017E3 RID: 6115
+	// Token: 0x040017DA RID: 6106
 	public float StunDuration;
 
-	// Token: 0x040017E4 RID: 6116
+	// Token: 0x040017DB RID: 6107
 	public EnumEntityStunType CurrentStun;
 
-	// Token: 0x040017E5 RID: 6117
+	// Token: 0x040017DC RID: 6108
 	public bool ShouldBeCrawler;
 
-	// Token: 0x040017E6 RID: 6118
+	// Token: 0x040017DD RID: 6109
 	public const uint cNoHead = 1U;
 
-	// Token: 0x040017E7 RID: 6119
+	// Token: 0x040017DE RID: 6110
 	public const uint cNoArmLUpper = 2U;
 
-	// Token: 0x040017E8 RID: 6120
+	// Token: 0x040017DF RID: 6111
 	public const uint cNoArmLLower = 4U;
 
-	// Token: 0x040017E9 RID: 6121
+	// Token: 0x040017E0 RID: 6112
 	public const uint cNoArmRUpper = 8U;
 
-	// Token: 0x040017EA RID: 6122
+	// Token: 0x040017E1 RID: 6113
 	public const uint cNoArmRLower = 16U;
 
-	// Token: 0x040017EB RID: 6123
+	// Token: 0x040017E2 RID: 6114
 	public const uint cNoArm = 30U;
 
-	// Token: 0x040017EC RID: 6124
+	// Token: 0x040017E3 RID: 6115
 	public const uint cNoLegLUpper = 32U;
 
-	// Token: 0x040017ED RID: 6125
+	// Token: 0x040017E4 RID: 6116
 	public const uint cNoLegLLower = 64U;
 
-	// Token: 0x040017EE RID: 6126
+	// Token: 0x040017E5 RID: 6117
 	public const uint cNoLegRUpper = 128U;
 
-	// Token: 0x040017EF RID: 6127
+	// Token: 0x040017E6 RID: 6118
 	public const uint cNoLegRLower = 256U;
 
-	// Token: 0x040017F0 RID: 6128
+	// Token: 0x040017E7 RID: 6119
 	public const uint cNoLeg = 480U;
 
-	// Token: 0x040017F1 RID: 6129
+	// Token: 0x040017E8 RID: 6120
 	public const uint cCrippledLegL = 4096U;
 
-	// Token: 0x040017F2 RID: 6130
+	// Token: 0x040017E9 RID: 6121
 	public const uint cCrippledLegR = 8192U;
 
-	// Token: 0x040017F3 RID: 6131
+	// Token: 0x040017EA RID: 6122
 	public uint Flags;
 
-	// Token: 0x040017F4 RID: 6132
+	// Token: 0x040017EB RID: 6123
 	public EnumDamageTypes damageType;
 
-	// Token: 0x040017F5 RID: 6133
+	// Token: 0x040017EC RID: 6124
 	public EnumBodyPartHit bodyPartHit;
 }

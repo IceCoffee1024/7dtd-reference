@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D2 RID: 6610
+	// Token: 0x020019FE RID: 6654
 	[Preserve]
 	public class ActionTimeChange : BaseAction
 	{
-		// Token: 0x0600C9E1 RID: 51681 RVA: 0x004A0CBC File Offset: 0x0049EEBC
+		// Token: 0x0600CB39 RID: 52025 RVA: 0x004A5160 File Offset: 0x004A3360
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			World world = GameManager.Instance.World;
@@ -103,7 +103,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C9E2 RID: 51682 RVA: 0x004A0E8A File Offset: 0x0049F08A
+		// Token: 0x0600CB3A RID: 52026 RVA: 0x004A532E File Offset: 0x004A352E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -111,7 +111,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionTimeChange.TimePresets>(ActionTimeChange.PropTimePreset, ref this.timePreset);
 		}
 
-		// Token: 0x0600C9E3 RID: 51683 RVA: 0x004A0EB5 File Offset: 0x0049F0B5
+		// Token: 0x0600CB3B RID: 52027 RVA: 0x004A5359 File Offset: 0x004A3559
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -122,39 +122,39 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400992C RID: 39212
+		// Token: 0x040099F2 RID: 39410
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string timeText;
 
-		// Token: 0x0400992D RID: 39213
+		// Token: 0x040099F3 RID: 39411
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTimeChange.TimePresets timePreset;
 
-		// Token: 0x0400992E RID: 39214
+		// Token: 0x040099F4 RID: 39412
 		public static string PropTimePreset = "time_preset";
 
-		// Token: 0x0400992F RID: 39215
+		// Token: 0x040099F5 RID: 39413
 		public static string PropTime = "time";
 
-		// Token: 0x020019D3 RID: 6611
+		// Token: 0x020019FF RID: 6655
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum TimePresets
 		{
-			// Token: 0x04009931 RID: 39217
+			// Token: 0x040099F7 RID: 39415
 			Current,
-			// Token: 0x04009932 RID: 39218
+			// Token: 0x040099F8 RID: 39416
 			Morning,
-			// Token: 0x04009933 RID: 39219
+			// Token: 0x040099F9 RID: 39417
 			Noon,
-			// Token: 0x04009934 RID: 39220
+			// Token: 0x040099FA RID: 39418
 			Night,
-			// Token: 0x04009935 RID: 39221
+			// Token: 0x040099FB RID: 39419
 			NextMorning,
-			// Token: 0x04009936 RID: 39222
+			// Token: 0x040099FC RID: 39420
 			NextNoon,
-			// Token: 0x04009937 RID: 39223
+			// Token: 0x040099FD RID: 39421
 			NextNight,
-			// Token: 0x04009938 RID: 39224
+			// Token: 0x040099FE RID: 39422
 			HordeNight
 		}
 	}

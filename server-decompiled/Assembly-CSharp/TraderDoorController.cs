@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000F1 RID: 241
+// Token: 0x020000F3 RID: 243
 public class TraderDoorController : MonoBehaviour
 {
-	// Token: 0x06000627 RID: 1575 RVA: 0x0002BC10 File Offset: 0x00029E10
+	// Token: 0x0600062D RID: 1581 RVA: 0x0002BD08 File Offset: 0x00029F08
 	public static TraderDoorController AddTraderDoorController(Vector3 pos, GameObject go)
 	{
 		if (!TraderDoorController.ControllerDictionary.ContainsKey(pos))
@@ -17,7 +17,7 @@ public class TraderDoorController : MonoBehaviour
 		return TraderDoorController.ControllerDictionary[pos];
 	}
 
-	// Token: 0x06000628 RID: 1576 RVA: 0x0002BC4A File Offset: 0x00029E4A
+	// Token: 0x0600062E RID: 1582 RVA: 0x0002BD42 File Offset: 0x00029F42
 	public static TraderDoorController GetTraderDoorController(Vector3 pos)
 	{
 		if (TraderDoorController.ControllerDictionary.ContainsKey(pos))
@@ -27,7 +27,7 @@ public class TraderDoorController : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000629 RID: 1577 RVA: 0x0002BC68 File Offset: 0x00029E68
+	// Token: 0x0600062F RID: 1583 RVA: 0x0002BD60 File Offset: 0x00029F60
 	public static void RemoveTraderDoorController(Vector3 pos)
 	{
 		if (TraderDoorController.ControllerDictionary.ContainsKey(pos))
@@ -50,7 +50,7 @@ public class TraderDoorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600062A RID: 1578 RVA: 0x0002BCE0 File Offset: 0x00029EE0
+	// Token: 0x06000630 RID: 1584 RVA: 0x0002BDD8 File Offset: 0x00029FD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -61,7 +61,7 @@ public class TraderDoorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600062B RID: 1579 RVA: 0x0002BD08 File Offset: 0x00029F08
+	// Token: 0x06000631 RID: 1585 RVA: 0x0002BE00 File Offset: 0x0002A000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -72,7 +72,7 @@ public class TraderDoorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600062C RID: 1580 RVA: 0x0002BD30 File Offset: 0x00029F30
+	// Token: 0x06000632 RID: 1586 RVA: 0x0002BE28 File Offset: 0x0002A028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityVehicle GetVehicleFromCollider(Collider collider)
 	{
@@ -104,7 +104,7 @@ public class TraderDoorController : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600062D RID: 1581 RVA: 0x0002BDB8 File Offset: 0x00029FB8
+	// Token: 0x06000633 RID: 1587 RVA: 0x0002BEB0 File Offset: 0x0002A0B0
 	public void Activate()
 	{
 		TEFeatureLockable tefeatureLockable = null;
@@ -116,10 +116,10 @@ public class TraderDoorController : MonoBehaviour
 		this.OwnerDoor.SetOpen(!this.OwnerDoor.IsOpen(), true);
 	}
 
-	// Token: 0x040006D8 RID: 1752
+	// Token: 0x040006DB RID: 1755
 	public TEFeatureDoor OwnerDoor;
 
-	// Token: 0x040006D9 RID: 1753
+	// Token: 0x040006DC RID: 1756
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Dictionary<Vector3, TraderDoorController> ControllerDictionary = new Dictionary<Vector3, TraderDoorController>();

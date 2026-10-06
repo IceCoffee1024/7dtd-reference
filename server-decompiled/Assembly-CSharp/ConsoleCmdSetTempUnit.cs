@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000287 RID: 647
+// Token: 0x0200028A RID: 650
 [Preserve]
 public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 {
-	// Token: 0x060012F6 RID: 4854 RVA: 0x00075490 File Offset: 0x00073690
+	// Token: 0x060012F3 RID: 4851 RVA: 0x00075744 File Offset: 0x00073944
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "settempunit", "stu" };
 	}
 
-	// Token: 0x170001FF RID: 511
-	// (get) Token: 0x060012F7 RID: 4855 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001F7 RID: 503
+	// (get) Token: 0x060012F4 RID: 4852 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,15 +23,15 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012F8 RID: 4856 RVA: 0x000754A8 File Offset: 0x000736A8
+	// Token: 0x060012F5 RID: 4853 RVA: 0x0007575C File Offset: 0x0007395C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Set the current temperature units.";
 	}
 
-	// Token: 0x17000200 RID: 512
-	// (get) Token: 0x060012F9 RID: 4857 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x170001F8 RID: 504
+	// (get) Token: 0x060012F6 RID: 4854 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -40,15 +40,15 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012FA RID: 4858 RVA: 0x000754AF File Offset: 0x000736AF
+	// Token: 0x060012F7 RID: 4855 RVA: 0x00075763 File Offset: 0x00073963
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set the current temperature units.\nUsage:\n  1. settempunit F\n  2. settempunit C\n1. sets the temperature unit to Fahrenheit.\n2. sets the temperature unit to Celsius.\n";
 	}
 
-	// Token: 0x17000201 RID: 513
-	// (get) Token: 0x060012FB RID: 4859 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001F9 RID: 505
+	// (get) Token: 0x060012F8 RID: 4856 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -57,7 +57,7 @@ public class ConsoleCmdSetTempUnit : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012FC RID: 4860 RVA: 0x000754B8 File Offset: 0x000736B8
+	// Token: 0x060012F9 RID: 4857 RVA: 0x0007576C File Offset: 0x0007396C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 1)

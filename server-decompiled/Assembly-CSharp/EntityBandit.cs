@@ -2,11 +2,20 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200048A RID: 1162
+// Token: 0x0200048C RID: 1164
 [Preserve]
 public class EntityBandit : EntityHuman
 {
-	// Token: 0x0600241C RID: 9244 RVA: 0x000DA7A4 File Offset: 0x000D89A4
+	// Token: 0x0600240C RID: 9228 RVA: 0x000DA732 File Offset: 0x000D8932
+	public override void InitInventory()
+	{
+		if (this.inventory == null)
+		{
+			this.inventory = new Inventory(this, 8);
+		}
+	}
+
+	// Token: 0x0600240D RID: 9229 RVA: 0x000DA74C File Offset: 0x000D894C
 	public override void PostInit()
 	{
 		string @string = EntityClass.list[this.entityClass].Properties.GetString(EntityClass.PropHandItem);
@@ -16,10 +25,10 @@ public class EntityBandit : EntityHuman
 		}
 		if (this.inventory.GetItem(0).IsEmpty())
 		{
-			ItemValue bareHandItemValue = this.inventory.GetBareHandItemValue();
+			ItemValue bareHandItemValue = base.Hand.BareHandItemValue;
 			bareHandItemValue.Quality = (ushort)this.rand.RandomRange(1, 3);
 			bareHandItemValue.UseTimes = (float)bareHandItemValue.MaxUseTimes * 0.7f - 1f;
-			this.inventory.SetItem(0, bareHandItemValue, 1, true);
+			this.inventory.SetItem(0, bareHandItemValue, 1);
 		}
 		int num = 1;
 		if (!this.inventory.GetItem(num).IsEmpty())
@@ -32,19 +41,19 @@ public class EntityBandit : EntityHuman
 		}
 	}
 
-	// Token: 0x0600241D RID: 9245 RVA: 0x000DA871 File Offset: 0x000D8A71
+	// Token: 0x0600240E RID: 9230 RVA: 0x000DA818 File Offset: 0x000D8A18
 	public override void OnAddedToWorld()
 	{
 		base.OnAddedToWorld();
 	}
 
-	// Token: 0x0600241E RID: 9246 RVA: 0x000DA879 File Offset: 0x000D8A79
+	// Token: 0x0600240F RID: 9231 RVA: 0x000DA820 File Offset: 0x000D8A20
 	public override void SetupHandItem()
 	{
 		this.ShowHoldingItem(true);
 	}
 
-	// Token: 0x0600241F RID: 9247 RVA: 0x000DA884 File Offset: 0x000D8A84
+	// Token: 0x06002410 RID: 9232 RVA: 0x000DA82C File Offset: 0x000D8A2C
 	public override bool UseHoldingItem(int _actionIndex, bool _isReleased)
 	{
 		if (!_isReleased)
@@ -63,7 +72,7 @@ public class EntityBandit : EntityHuman
 		return base.UseHoldingItem(_actionIndex, _isReleased);
 	}
 
-	// Token: 0x06002420 RID: 9248 RVA: 0x000DA8F0 File Offset: 0x000D8AF0
+	// Token: 0x06002411 RID: 9233 RVA: 0x000DA898 File Offset: 0x000D8A98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTasks()
 	{
@@ -75,19 +84,19 @@ public class EntityBandit : EntityHuman
 		}
 	}
 
-	// Token: 0x06002421 RID: 9249 RVA: 0x000DA91A File Offset: 0x000D8B1A
+	// Token: 0x06002412 RID: 9234 RVA: 0x000DA8C2 File Offset: 0x000D8AC2
 	public override bool GetAimTarget(out Vector3 aimTarget)
 	{
 		return AIFocusAim.GetActiveFocus(this, this.focusAim, out aimTarget) || base.GetAimTarget(out aimTarget);
 	}
 
-	// Token: 0x06002422 RID: 9250 RVA: 0x000DA934 File Offset: 0x000D8B34
+	// Token: 0x06002413 RID: 9235 RVA: 0x000DA8DC File Offset: 0x000D8ADC
 	public override bool GetHeadLookTarget(out Vector3 lookTarget)
 	{
 		return AIFocusAim.GetActiveFocus(this, this.focusAim, out lookTarget) || base.GetHeadLookTarget(out lookTarget);
 	}
 
-	// Token: 0x06002423 RID: 9251 RVA: 0x000DA950 File Offset: 0x000D8B50
+	// Token: 0x06002414 RID: 9236 RVA: 0x000DA8F8 File Offset: 0x000D8AF8
 	public override bool CalcStrafeYawOffset(float _moveX, float _moveZ, ref float _desiredyaw, ref float _yawOffset)
 	{
 		float num;
@@ -101,23 +110,23 @@ public class EntityBandit : EntityHuman
 		return false;
 	}
 
-	// Token: 0x04001997 RID: 6551
+	// Token: 0x0400198B RID: 6539
 	public readonly AIFocus<AIFocusBody> focusBody = new AIFocus<AIFocusBody>(true);
 
-	// Token: 0x04001998 RID: 6552
+	// Token: 0x0400198C RID: 6540
 	public readonly AIFocus<AIFocusAim> focusAim = new AIFocus<AIFocusAim>(true);
 
-	// Token: 0x0200048B RID: 1163
+	// Token: 0x0200048D RID: 1165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum InvSlots
 	{
-		// Token: 0x0400199A RID: 6554
+		// Token: 0x0400198E RID: 6542
 		Melee,
-		// Token: 0x0400199B RID: 6555
+		// Token: 0x0400198F RID: 6543
 		Ranged,
-		// Token: 0x0400199C RID: 6556
+		// Token: 0x04001990 RID: 6544
 		Thrown,
-		// Token: 0x0400199D RID: 6557
+		// Token: 0x04001991 RID: 6545
 		Heal
 	}
 }

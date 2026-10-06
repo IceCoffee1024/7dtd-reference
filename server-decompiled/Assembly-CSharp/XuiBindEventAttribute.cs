@@ -1,21 +1,21 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-// Token: 0x0200111B RID: 4379
+// Token: 0x02001133 RID: 4403
 [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
 [MeansImplicitUse]
 public class XuiBindEventAttribute : Attribute
 {
-	// Token: 0x06008AA2 RID: 35490 RVA: 0x0034C457 File Offset: 0x0034A657
+	// Token: 0x06008B0E RID: 35598 RVA: 0x00350903 File Offset: 0x0034EB03
 	public XuiBindEventAttribute(string _targetEvent, string _componentFieldName = null)
 	{
 		this.ComponentFieldName = _componentFieldName;
 		this.TargetEvent = _targetEvent;
 	}
 
-	// Token: 0x040066E0 RID: 26336
+	// Token: 0x04006735 RID: 26421
 	public readonly string ComponentFieldName;
 
-	// Token: 0x040066E1 RID: 26337
+	// Token: 0x04006736 RID: 26422
 	public readonly string TargetEvent;
 }

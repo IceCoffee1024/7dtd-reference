@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000991 RID: 2449
+// Token: 0x02000997 RID: 2455
 [Preserve]
 public class ObjectiveExchangeItemFrom : BaseObjective
 {
-	// Token: 0x17000798 RID: 1944
-	// (get) Token: 0x060047D5 RID: 18389 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007B8 RID: 1976
+	// (get) Token: 0x06004782 RID: 18306 RVA: 0x00020119 File Offset: 0x0001E319
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,7 +16,7 @@ public class ObjectiveExchangeItemFrom : BaseObjective
 		}
 	}
 
-	// Token: 0x060047D6 RID: 18390 RVA: 0x001C1F18 File Offset: 0x001C0118
+	// Token: 0x06004783 RID: 18307 RVA: 0x001C2634 File Offset: 0x001C0834
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveExchangeItemFrom_keyword", false, null);
@@ -24,26 +25,26 @@ public class ObjectiveExchangeItemFrom : BaseObjective
 		this.exchangeCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x060047D7 RID: 18391 RVA: 0x001C1F6C File Offset: 0x001C016C
+	// Token: 0x06004784 RID: 18308 RVA: 0x001C2688 File Offset: 0x001C0888
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.expectedItemClass.GetLocalizedItemName());
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.exchangeCount);
 	}
 
-	// Token: 0x060047D8 RID: 18392 RVA: 0x001C1FBB File Offset: 0x001C01BB
+	// Token: 0x06004785 RID: 18309 RVA: 0x001C26D7 File Offset: 0x001C08D7
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.ExchangeFromItem += this.Current_ExchangeItem;
 	}
 
-	// Token: 0x060047D9 RID: 18393 RVA: 0x001C1FD3 File Offset: 0x001C01D3
+	// Token: 0x06004786 RID: 18310 RVA: 0x001C26EF File Offset: 0x001C08EF
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.ExchangeFromItem -= this.Current_ExchangeItem;
 	}
 
-	// Token: 0x060047DA RID: 18394 RVA: 0x001C1FEC File Offset: 0x001C01EC
+	// Token: 0x06004787 RID: 18311 RVA: 0x001C2708 File Offset: 0x001C0908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_ExchangeItem(ItemStack itemStack)
 	{
@@ -58,7 +59,7 @@ public class ObjectiveExchangeItemFrom : BaseObjective
 		}
 	}
 
-	// Token: 0x060047DB RID: 18395 RVA: 0x001C2042 File Offset: 0x001C0242
+	// Token: 0x06004788 RID: 18312 RVA: 0x001C275E File Offset: 0x001C095E
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -72,7 +73,7 @@ public class ObjectiveExchangeItemFrom : BaseObjective
 		}
 	}
 
-	// Token: 0x060047DC RID: 18396 RVA: 0x001C207C File Offset: 0x001C027C
+	// Token: 0x06004789 RID: 18313 RVA: 0x001C2798 File Offset: 0x001C0998
 	public override BaseObjective Clone()
 	{
 		ObjectiveExchangeItemFrom objectiveExchangeItemFrom = new ObjectiveExchangeItemFrom();
@@ -80,15 +81,23 @@ public class ObjectiveExchangeItemFrom : BaseObjective
 		return objectiveExchangeItemFrom;
 	}
 
-	// Token: 0x04003983 RID: 14723
+	// Token: 0x0600478A RID: 18314 RVA: 0x001C27B3 File Offset: 0x001C09B3
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("expected_item_id", this.expectedItem.ItemClass.Name);
+		parameters.Add("count", this.exchangeCount);
+	}
+
+	// Token: 0x0400397F RID: 14719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x04003984 RID: 14724
+	// Token: 0x04003980 RID: 14720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04003985 RID: 14725
+	// Token: 0x04003981 RID: 14721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int exchangeCount;
 }

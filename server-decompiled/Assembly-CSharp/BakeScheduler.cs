@@ -4,11 +4,11 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000AC6 RID: 2758
+// Token: 0x02000AD8 RID: 2776
 public sealed class BakeScheduler
 {
-	// Token: 0x170008F3 RID: 2291
-	// (get) Token: 0x0600529D RID: 21149 RVA: 0x001F8DB5 File Offset: 0x001F6FB5
+	// Token: 0x17000915 RID: 2325
+	// (get) Token: 0x060052B6 RID: 21174 RVA: 0x001FBFBD File Offset: 0x001FA1BD
 	public BakeScheduler.BakeJobState CurrentState
 	{
 		get
@@ -17,7 +17,7 @@ public sealed class BakeScheduler
 		}
 	}
 
-	// Token: 0x0600529E RID: 21150 RVA: 0x001F8DC4 File Offset: 0x001F6FC4
+	// Token: 0x060052B7 RID: 21175 RVA: 0x001FBFCC File Offset: 0x001FA1CC
 	public void Clear()
 	{
 		using (BakeScheduler.s_SignTextureManagerClear.Auto())
@@ -30,7 +30,7 @@ public sealed class BakeScheduler
 		}
 	}
 
-	// Token: 0x0600529F RID: 21151 RVA: 0x001F8E3C File Offset: 0x001F703C
+	// Token: 0x060052B8 RID: 21176 RVA: 0x001FC044 File Offset: 0x001FA244
 	public void ResetRequests(List<SignBakeRequest> newRequests)
 	{
 		using (BakeScheduler.s_SignTextureManagerResetRequests.Auto())
@@ -45,7 +45,7 @@ public sealed class BakeScheduler
 		}
 	}
 
-	// Token: 0x060052A0 RID: 21152 RVA: 0x001F8EB8 File Offset: 0x001F70B8
+	// Token: 0x060052B9 RID: 21177 RVA: 0x001FC0C0 File Offset: 0x001FA2C0
 	public bool TickOnce(int tileSize, Material material, CommandBuffer cmd, SignTextureStore store, SignPrioritizer prioritizer, bool showProgress = false)
 	{
 		bool flag;
@@ -89,6 +89,16 @@ public sealed class BakeScheduler
 					if (!SignDataManager.Instance.TryApplyRenderingData(groupSignId, 1f, material, null, SignUIStyle.Baked))
 					{
 						Debug.LogError(string.Format("Failed to retrieve rendering data for sign ID: {0}", groupSignId));
+						if (!SignDataManager.Instance.TryApplyRenderingData(SignDataManager.ErrorSignId, 1f, material, null, SignUIStyle.Baked))
+						{
+							Debug.LogError("Failed to retrieve fallback error sign data.");
+							cmd.SetRenderTarget(renderTargetIdentifier);
+							cmd.ClearRenderTarget(true, true, Color.magenta);
+							Graphics.ExecuteCommandBuffer(cmd);
+							cmd.Clear();
+							this._current.State = BakeScheduler.BakeJobState.Complete;
+							return true;
+						}
 					}
 					material.SetVector(SignShaderIDs._CanvasAspect, Vector2.one);
 					cmd.SetRenderTarget(renderTargetIdentifier);
@@ -138,55 +148,55 @@ public sealed class BakeScheduler
 		return flag;
 	}
 
-	// Token: 0x0400403D RID: 16445
+	// Token: 0x0400407A RID: 16506
 	public static readonly ProfilerMarker s_SignTextureManagerClear = new ProfilerMarker("SignTextureManager.BakeScheduler.Clear");
 
-	// Token: 0x0400403E RID: 16446
+	// Token: 0x0400407B RID: 16507
 	public static readonly ProfilerMarker s_SignTextureManagerResetRequests = new ProfilerMarker("SignTextureManager.BakeScheduler.ResetRequests");
 
-	// Token: 0x0400403F RID: 16447
+	// Token: 0x0400407C RID: 16508
 	public static readonly ProfilerMarker s_SignTextureManagerTickOnce = new ProfilerMarker("SignTextureManager.BakeScheduler.TickOnce");
 
-	// Token: 0x04004040 RID: 16448
+	// Token: 0x0400407D RID: 16509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<double> s_BakeJobProgress = new ProfilerCounterValue<double>(ProfilerCategory.Scripts, "STM Job Progress", ProfilerMarkerDataUnit.Percent, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x04004041 RID: 16449
+	// Token: 0x0400407E RID: 16510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<int> s_PendingBakeJobs = new ProfilerCounterValue<int>(ProfilerCategory.Scripts, "STM Pending Jobs", ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x04004042 RID: 16450
+	// Token: 0x0400407F RID: 16511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SignBakeRequest> _requests = new List<SignBakeRequest>(256);
 
-	// Token: 0x04004043 RID: 16451
+	// Token: 0x04004080 RID: 16512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _index;
 
-	// Token: 0x04004044 RID: 16452
+	// Token: 0x04004081 RID: 16513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BakeScheduler.BakeJob _current;
 
-	// Token: 0x02000AC7 RID: 2759
+	// Token: 0x02000AD9 RID: 2777
 	public enum BakeJobState
 	{
-		// Token: 0x04004046 RID: 16454
+		// Token: 0x04004083 RID: 16515
 		None,
-		// Token: 0x04004047 RID: 16455
+		// Token: 0x04004084 RID: 16516
 		Pending,
-		// Token: 0x04004048 RID: 16456
+		// Token: 0x04004085 RID: 16517
 		InProgress,
-		// Token: 0x04004049 RID: 16457
+		// Token: 0x04004086 RID: 16518
 		GeneratingMips,
-		// Token: 0x0400404A RID: 16458
+		// Token: 0x04004087 RID: 16519
 		Complete
 	}
 
-	// Token: 0x02000AC8 RID: 2760
+	// Token: 0x02000ADA RID: 2778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BakeJob
 	{
-		// Token: 0x060052A3 RID: 21155 RVA: 0x001F9312 File Offset: 0x001F7512
+		// Token: 0x060052BC RID: 21180 RVA: 0x001FC572 File Offset: 0x001FA772
 		public void Begin(SignBakeRequest request, RenderTexture rt)
 		{
 			this.Request = request;
@@ -195,7 +205,7 @@ public sealed class BakeScheduler
 			this.State = BakeScheduler.BakeJobState.Pending;
 		}
 
-		// Token: 0x060052A4 RID: 21156 RVA: 0x001F9330 File Offset: 0x001F7530
+		// Token: 0x060052BD RID: 21181 RVA: 0x001FC590 File Offset: 0x001FA790
 		public void End()
 		{
 			this.RT = null;
@@ -204,16 +214,16 @@ public sealed class BakeScheduler
 			this.Request = default(SignBakeRequest);
 		}
 
-		// Token: 0x0400404B RID: 16459
+		// Token: 0x04004088 RID: 16520
 		public SignBakeRequest Request;
 
-		// Token: 0x0400404C RID: 16460
+		// Token: 0x04004089 RID: 16521
 		public RenderTexture RT;
 
-		// Token: 0x0400404D RID: 16461
+		// Token: 0x0400408A RID: 16522
 		public int Step;
 
-		// Token: 0x0400404E RID: 16462
+		// Token: 0x0400408B RID: 16523
 		public BakeScheduler.BakeJobState State;
 	}
 }

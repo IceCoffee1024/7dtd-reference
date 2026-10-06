@@ -2,14 +2,14 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x02001A1E RID: 6686
+	// Token: 0x02001A4A RID: 6730
 	public enum LayerStateType
 	{
-		// Token: 0x04009A80 RID: 39552
+		// Token: 0x04009B46 RID: 39750
 		disabled,
-		// Token: 0x04009A81 RID: 39553
+		// Token: 0x04009B47 RID: 39751
 		lo,
-		// Token: 0x04009A82 RID: 39554
+		// Token: 0x04009B48 RID: 39752
 		hi
 	}
 }

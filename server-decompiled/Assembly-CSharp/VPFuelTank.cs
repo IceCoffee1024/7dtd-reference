@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CA1 RID: 3233
+// Token: 0x02000CAF RID: 3247
 [Preserve]
 public class VPFuelTank : VehiclePart
 {
-	// Token: 0x06006327 RID: 25383 RVA: 0x0026F354 File Offset: 0x0026D554
+	// Token: 0x0600631A RID: 25370 RVA: 0x00272798 File Offset: 0x00270998
 	public VPFuelTank()
 	{
 		this.fuelLevel = 0f;
 	}
 
-	// Token: 0x06006328 RID: 25384 RVA: 0x0026F368 File Offset: 0x0026D568
+	// Token: 0x0600631B RID: 25371 RVA: 0x002727AC File Offset: 0x002709AC
 	public override void SetProperties(DynamicProperties _properties)
 	{
 		base.SetProperties(_properties);
@@ -23,7 +23,7 @@ public class VPFuelTank : VehiclePart
 		this.fuelLevel = this.fuelCapacity;
 	}
 
-	// Token: 0x06006329 RID: 25385 RVA: 0x0026F3B7 File Offset: 0x0026D5B7
+	// Token: 0x0600631C RID: 25372 RVA: 0x002727FB File Offset: 0x002709FB
 	public override void HandleEvent(VehiclePart.Event _event, VehiclePart _part, float _amount)
 	{
 		if (_event == VehiclePart.Event.FuelRemove)
@@ -32,13 +32,13 @@ public class VPFuelTank : VehiclePart
 		}
 	}
 
-	// Token: 0x0600632A RID: 25386 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600631D RID: 25373 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsBroken()
 	{
 		return false;
 	}
 
-	// Token: 0x0600632B RID: 25387 RVA: 0x0026F3C5 File Offset: 0x0026D5C5
+	// Token: 0x0600631E RID: 25374 RVA: 0x00272809 File Offset: 0x00270A09
 	public float GetFuelLevel()
 	{
 		if (this.IsBroken())
@@ -48,7 +48,7 @@ public class VPFuelTank : VehiclePart
 		return this.fuelLevel;
 	}
 
-	// Token: 0x0600632C RID: 25388 RVA: 0x0026F3DB File Offset: 0x0026D5DB
+	// Token: 0x0600631F RID: 25375 RVA: 0x0027281F File Offset: 0x00270A1F
 	public float GetMaxFuelLevel()
 	{
 		if (this.IsBroken())
@@ -58,7 +58,7 @@ public class VPFuelTank : VehiclePart
 		return this.fuelCapacity * this.vehicle.EffectFuelMaxPer;
 	}
 
-	// Token: 0x0600632D RID: 25389 RVA: 0x0026F400 File Offset: 0x0026D600
+	// Token: 0x06006320 RID: 25376 RVA: 0x00272844 File Offset: 0x00270A44
 	public float GetFuelLevelPercent()
 	{
 		if (this.IsBroken())
@@ -73,7 +73,7 @@ public class VPFuelTank : VehiclePart
 		return num;
 	}
 
-	// Token: 0x0600632E RID: 25390 RVA: 0x0026F444 File Offset: 0x0026D644
+	// Token: 0x06006321 RID: 25377 RVA: 0x00272888 File Offset: 0x00270A88
 	public void SetFuelLevel(float _fuelLevel)
 	{
 		if (_fuelLevel <= 0f)
@@ -96,17 +96,17 @@ public class VPFuelTank : VehiclePart
 		}
 	}
 
-	// Token: 0x0600632F RID: 25391 RVA: 0x0026F4A4 File Offset: 0x0026D6A4
+	// Token: 0x06006322 RID: 25378 RVA: 0x002728E8 File Offset: 0x00270AE8
 	public void AddFuel(float _amount)
 	{
 		this.SetFuelLevel(this.fuelLevel + _amount);
 	}
 
-	// Token: 0x04004D17 RID: 19735
+	// Token: 0x04004D4D RID: 19789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fuelCapacity;
 
-	// Token: 0x04004D18 RID: 19736
+	// Token: 0x04004D4E RID: 19790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fuelLevel;
 }

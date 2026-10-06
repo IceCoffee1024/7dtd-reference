@@ -6,11 +6,11 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001C36 RID: 7222
+	// Token: 0x02001C68 RID: 7272
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class JoinSessionGameInviteListener : IJoinSessionGameInviteListener
 	{
-		// Token: 0x0600D63B RID: 54843 RVA: 0x004D1756 File Offset: 0x004CF956
+		// Token: 0x0600D7B4 RID: 55220 RVA: 0x004D6292 File Offset: 0x004D4492
 		public void Init(IPlatform _owner)
 		{
 			PlatformManager.NativePlatform.User.UserLoggedIn += delegate(IPlatform _platform)
@@ -20,7 +20,7 @@ namespace Platform.XBL
 			};
 		}
 
-		// Token: 0x0600D63C RID: 54844 RVA: 0x004D1774 File Offset: 0x004CF974
+		// Token: 0x0600D7B5 RID: 55221 RVA: 0x004D62B0 File Offset: 0x004D44B0
 		[return: TupleElementNames(new string[] { "invite", "password" })]
 		public ValueTuple<string, string> TakePendingInvite()
 		{
@@ -37,20 +37,20 @@ namespace Platform.XBL
 			return valueTuple;
 		}
 
-		// Token: 0x0600D63D RID: 54845 RVA: 0x004D17D4 File Offset: 0x004CF9D4
+		// Token: 0x0600D7B6 RID: 55222 RVA: 0x004D6310 File Offset: 0x004D4510
 		public IEnumerator ConnectToInvite(string _invite, string _password = null, Action<bool> _onFinished = null)
 		{
 			yield return InviteManager.HandleSessionIdInvite(_invite, _password, _onFinished);
 			yield break;
 		}
 
-		// Token: 0x0600D63E RID: 54846 RVA: 0x004D17F1 File Offset: 0x004CF9F1
+		// Token: 0x0600D7B7 RID: 55223 RVA: 0x004D632D File Offset: 0x004D452D
 		public string GetListenerIdentifier()
 		{
 			return "XBL";
 		}
 
-		// Token: 0x0600D63F RID: 54847 RVA: 0x004D17F8 File Offset: 0x004CF9F8
+		// Token: 0x0600D7B8 RID: 55224 RVA: 0x004D6334 File Offset: 0x004D4534
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InviteReceivedCallback(IntPtr _, string _inviteuri)
 		{
@@ -68,7 +68,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D640 RID: 54848 RVA: 0x004D1864 File Offset: 0x004CFA64
+		// Token: 0x0600D7B9 RID: 55225 RVA: 0x004D63A0 File Offset: 0x004D45A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string ParseInviteUri(string _inviteUri)
 		{
@@ -89,19 +89,19 @@ namespace Platform.XBL
 			return null;
 		}
 
-		// Token: 0x0400A32C RID: 41772
+		// Token: 0x0400A401 RID: 41985
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object inviteLock = new object();
 
-		// Token: 0x0400A32D RID: 41773
+		// Token: 0x0400A402 RID: 41986
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string pendingInvite;
 
-		// Token: 0x0400A32E RID: 41774
+		// Token: 0x0400A403 RID: 41987
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string pendingPassword;
 
-		// Token: 0x0400A32F RID: 41775
+		// Token: 0x0400A404 RID: 41988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex msInviteUriMatcher = new Regex("^ms-xbl-(\\w+):\\/\\/(\\w+)\\/?\\?(.*)$", RegexOptions.Compiled);
 	}

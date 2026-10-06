@@ -5,29 +5,29 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018CB RID: 6347
+	// Token: 0x020018F7 RID: 6391
 	[Preserve]
 	public class FloodFillPath : RaycastPath
 	{
-		// Token: 0x0600C3EB RID: 50155 RVA: 0x00484835 File Offset: 0x00482A35
+		// Token: 0x0600C543 RID: 50499 RVA: 0x00488D7D File Offset: 0x00486F7D
 		public FloodFillPath(Vector3 start, Vector3 target)
 			: base(start, target)
 		{
 		}
 
-		// Token: 0x0600C3EC RID: 50156 RVA: 0x00484858 File Offset: 0x00482A58
+		// Token: 0x0600C544 RID: 50500 RVA: 0x00488DA0 File Offset: 0x00486FA0
 		public bool IsPosOpen(Vector3 pos)
 		{
 			return this.open.Find((FloodFillNode n) => n.Position == pos) != null;
 		}
 
-		// Token: 0x0600C3ED RID: 50157 RVA: 0x0048488C File Offset: 0x00482A8C
+		// Token: 0x0600C545 RID: 50501 RVA: 0x00488DD4 File Offset: 0x00486FD4
 		public bool IsPosClosed(Vector3 pos)
 		{
 			return this.closed.Find((FloodFillNode n) => n.Position == pos) != null;
 		}
 
-		// Token: 0x0600C3EE RID: 50158 RVA: 0x004848C0 File Offset: 0x00482AC0
+		// Token: 0x0600C546 RID: 50502 RVA: 0x00488E08 File Offset: 0x00487008
 		public FloodFillNode getLowestScore()
 		{
 			FloodFillNode floodFillNode = null;
@@ -46,7 +46,7 @@ namespace RaycastPathing
 			return floodFillNode;
 		}
 
-		// Token: 0x0600C3EF RID: 50159 RVA: 0x00484928 File Offset: 0x00482B28
+		// Token: 0x0600C547 RID: 50503 RVA: 0x00488E70 File Offset: 0x00487070
 		public override void DebugDraw()
 		{
 			for (int i = 0; i < this.closed.Count; i++)
@@ -60,10 +60,10 @@ namespace RaycastPathing
 			base.DebugDraw();
 		}
 
-		// Token: 0x04009437 RID: 37943
+		// Token: 0x040094FD RID: 38141
 		public List<FloodFillNode> open = new List<FloodFillNode>();
 
-		// Token: 0x04009438 RID: 37944
+		// Token: 0x040094FE RID: 38142
 		public List<FloodFillNode> closed = new List<FloodFillNode>();
 	}
 }

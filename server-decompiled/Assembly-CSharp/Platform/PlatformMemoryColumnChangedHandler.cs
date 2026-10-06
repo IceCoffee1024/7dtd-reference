@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001B7B RID: 7035
-	// (Invoke) Token: 0x0600D27F RID: 53887
+	// Token: 0x02001BAD RID: 7085
+	// (Invoke) Token: 0x0600D3F7 RID: 54263
 	public delegate void PlatformMemoryColumnChangedHandler<in T>(MemoryStatColumn column, T value);
 }

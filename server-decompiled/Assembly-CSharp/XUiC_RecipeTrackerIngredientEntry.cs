@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001011 RID: 4113
+// Token: 0x02001020 RID: 4128
 [Preserve]
 public class XUiC_RecipeTrackerIngredientEntry : XUiController
 {
-	// Token: 0x17000F27 RID: 3879
-	// (get) Token: 0x06008212 RID: 33298 RVA: 0x003165CB File Offset: 0x003147CB
-	// (set) Token: 0x06008213 RID: 33299 RVA: 0x003165D3 File Offset: 0x003147D3
+	// Token: 0x17000F4E RID: 3918
+	// (get) Token: 0x06008221 RID: 33313 RVA: 0x003195FB File Offset: 0x003177FB
+	// (set) Token: 0x06008222 RID: 33314 RVA: 0x00319603 File Offset: 0x00317803
 	public XUiC_RecipeTrackerIngredientsList Owner { get; set; }
 
-	// Token: 0x17000F28 RID: 3880
-	// (get) Token: 0x06008214 RID: 33300 RVA: 0x003165DC File Offset: 0x003147DC
-	// (set) Token: 0x06008215 RID: 33301 RVA: 0x003165E4 File Offset: 0x003147E4
+	// Token: 0x17000F4F RID: 3919
+	// (get) Token: 0x06008223 RID: 33315 RVA: 0x0031960C File Offset: 0x0031780C
+	// (set) Token: 0x06008224 RID: 33316 RVA: 0x00319614 File Offset: 0x00317814
 	public ItemStack Ingredient
 	{
 		get
@@ -41,7 +41,7 @@ public class XUiC_RecipeTrackerIngredientEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008216 RID: 33302 RVA: 0x00316684 File Offset: 0x00314884
+	// Token: 0x06008225 RID: 33317 RVA: 0x003196B4 File Offset: 0x003178B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -99,14 +99,14 @@ public class XUiC_RecipeTrackerIngredientEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06008217 RID: 33303 RVA: 0x0008B2BB File Offset: 0x000894BB
+	// Token: 0x06008226 RID: 33318 RVA: 0x0008B53B File Offset: 0x0008973B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008218 RID: 33304 RVA: 0x002E5FE6 File Offset: 0x002E41E6
+	// Token: 0x06008227 RID: 33319 RVA: 0x002E9366 File Offset: 0x002E7566
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -118,22 +118,22 @@ public class XUiC_RecipeTrackerIngredientEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04006052 RID: 24658
+	// Token: 0x0400607B RID: 24699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack ingredient;
 
-	// Token: 0x04006053 RID: 24659
+	// Token: 0x0400607C RID: 24700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentCount;
 
-	// Token: 0x04006054 RID: 24660
+	// Token: 0x0400607D RID: 24701
 	public bool IsComplete;
 
-	// Token: 0x04006056 RID: 24662
+	// Token: 0x0400607F RID: 24703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04006057 RID: 24663
+	// Token: 0x04006080 RID: 24704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> countFormatter = new CachedStringFormatter<int, int>((int _i1, int _i2) => _i1.ToString() + "/" + _i2.ToString());
 }

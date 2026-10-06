@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000810 RID: 2064
+// Token: 0x0200080E RID: 2062
 [Preserve]
 public class NetPackageMapPosition : NetPackage
 {
-	// Token: 0x17000658 RID: 1624
-	// (get) Token: 0x06003CD0 RID: 15568 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000677 RID: 1655
+	// (get) Token: 0x06003C9C RID: 15516 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageMapPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003CD1 RID: 15569 RVA: 0x00183A02 File Offset: 0x00181C02
+	// Token: 0x06003C9D RID: 15517 RVA: 0x001835E1 File Offset: 0x001817E1
 	public NetPackageMapPosition Setup(int _entityId, Vector2i _mapMiddlePosition)
 	{
 		this.entityId = _entityId;
@@ -23,14 +23,14 @@ public class NetPackageMapPosition : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CD2 RID: 15570 RVA: 0x00183A13 File Offset: 0x00181C13
+	// Token: 0x06003C9E RID: 15518 RVA: 0x001835F2 File Offset: 0x001817F2
 	public override void read(PooledBinaryReader _br)
 	{
 		this.entityId = _br.ReadInt32();
 		this.mapMiddlePosition = StreamUtils.ReadVector2i(_br);
 	}
 
-	// Token: 0x06003CD3 RID: 15571 RVA: 0x00183A2D File Offset: 0x00181C2D
+	// Token: 0x06003C9F RID: 15519 RVA: 0x0018360C File Offset: 0x0018180C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -38,7 +38,7 @@ public class NetPackageMapPosition : NetPackage
 		StreamUtils.Write(_bw, this.mapMiddlePosition);
 	}
 
-	// Token: 0x06003CD4 RID: 15572 RVA: 0x00183A50 File Offset: 0x00181C50
+	// Token: 0x06003CA0 RID: 15520 RVA: 0x00183630 File Offset: 0x00181830
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -56,17 +56,11 @@ public class NetPackageMapPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003CD5 RID: 15573 RVA: 0x0017E246 File Offset: 0x0017C446
-	public override int GetLength()
-	{
-		return 16;
-	}
-
-	// Token: 0x04003154 RID: 12628
+	// Token: 0x04003138 RID: 12600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003155 RID: 12629
+	// Token: 0x04003139 RID: 12601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i mapMiddlePosition;
 }

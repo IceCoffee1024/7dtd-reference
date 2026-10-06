@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D9B RID: 3483
+// Token: 0x02000DAA RID: 3498
 [Preserve]
 public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 {
-	// Token: 0x17000B60 RID: 2912
-	// (get) Token: 0x06006A00 RID: 27136 RVA: 0x00299B54 File Offset: 0x00297D54
-	// (set) Token: 0x06006A01 RID: 27137 RVA: 0x00299B5C File Offset: 0x00297D5C
+	// Token: 0x17000B7B RID: 2939
+	// (get) Token: 0x060069F8 RID: 27128 RVA: 0x0029CEE0 File Offset: 0x0029B0E0
+	// (set) Token: 0x060069F9 RID: 27129 RVA: 0x0029CEE8 File Offset: 0x0029B0E8
 	public int SettingValue
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -16,9 +16,9 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		set;
 	}
 
-	// Token: 0x17000B61 RID: 2913
-	// (get) Token: 0x06006A02 RID: 27138 RVA: 0x00299B65 File Offset: 0x00297D65
-	// (set) Token: 0x06006A03 RID: 27139 RVA: 0x00299B7B File Offset: 0x00297D7B
+	// Token: 0x17000B7C RID: 2940
+	// (get) Token: 0x060069FA RID: 27130 RVA: 0x0029CEF1 File Offset: 0x0029B0F1
+	// (set) Token: 0x060069FB RID: 27131 RVA: 0x0029CF07 File Offset: 0x0029B107
 	public int CurrentValue
 	{
 		get
@@ -33,9 +33,9 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		}
 	}
 
-	// Token: 0x17000B62 RID: 2914
-	// (get) Token: 0x06006A04 RID: 27140 RVA: 0x00299B8A File Offset: 0x00297D8A
-	// (set) Token: 0x06006A05 RID: 27141 RVA: 0x00299B98 File Offset: 0x00297D98
+	// Token: 0x17000B7D RID: 2941
+	// (get) Token: 0x060069FC RID: 27132 RVA: 0x0029CF16 File Offset: 0x0029B116
+	// (set) Token: 0x060069FD RID: 27133 RVA: 0x0029CF24 File Offset: 0x0029B124
 	public override object SelectedValue
 	{
 		get
@@ -63,8 +63,8 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		}
 	}
 
-	// Token: 0x17000B63 RID: 2915
-	// (get) Token: 0x06006A06 RID: 27142 RVA: 0x00299C11 File Offset: 0x00297E11
+	// Token: 0x17000B7E RID: 2942
+	// (get) Token: 0x060069FE RID: 27134 RVA: 0x0029CF9D File Offset: 0x0029B19D
 	public override bool IsChanged
 	{
 		get
@@ -73,8 +73,8 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		}
 	}
 
-	// Token: 0x17000B64 RID: 2916
-	// (get) Token: 0x06006A07 RID: 27143 RVA: 0x00299C24 File Offset: 0x00297E24
+	// Token: 0x17000B7F RID: 2943
+	// (get) Token: 0x060069FF RID: 27135 RVA: 0x0029CFB0 File Offset: 0x0029B1B0
 	public override bool IsDefault
 	{
 		get
@@ -83,8 +83,8 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		}
 	}
 
-	// Token: 0x17000B65 RID: 2917
-	// (get) Token: 0x06006A08 RID: 27144 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000B80 RID: 2944
+	// (get) Token: 0x06006A00 RID: 27136 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override GamePrefs.EnumType expectedPrefType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -94,28 +94,28 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		}
 	}
 
-	// Token: 0x06006A09 RID: 27145 RVA: 0x00299C43 File Offset: 0x00297E43
+	// Token: 0x06006A01 RID: 27137 RVA: 0x0029CFCF File Offset: 0x0029B1CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getPrefDefault()
 	{
 		return (int)GamePrefs.GetDefault(this.gamePref.Value);
 	}
 
-	// Token: 0x06006A0A RID: 27146 RVA: 0x00299C5A File Offset: 0x00297E5A
+	// Token: 0x06006A02 RID: 27138 RVA: 0x0029CFE6 File Offset: 0x0029B1E6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getPrefValue()
 	{
 		return GamePrefs.GetInt(this.gamePref.Value);
 	}
 
-	// Token: 0x06006A0B RID: 27147 RVA: 0x00299C6C File Offset: 0x00297E6C
+	// Token: 0x06006A03 RID: 27139 RVA: 0x0029CFF8 File Offset: 0x0029B1F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setPrefValue(int _value)
 	{
 		GamePrefs.Set(this.gamePref.Value, _value);
 	}
 
-	// Token: 0x06006A0C RID: 27148 RVA: 0x00299C80 File Offset: 0x00297E80
+	// Token: 0x06006A04 RID: 27140 RVA: 0x0029D00C File Offset: 0x0029B20C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void initCurrentValue()
 	{
@@ -127,7 +127,7 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		XUiC_OptionEntryAbs.DebugLog(string.Format("GOT CURRENT INT FOR {0}: {1}", this.gamePref, this.SettingValue));
 	}
 
-	// Token: 0x06006A0D RID: 27149 RVA: 0x00299CD8 File Offset: 0x00297ED8
+	// Token: 0x06006A05 RID: 27141 RVA: 0x0029D064 File Offset: 0x0029B264
 	public override void DiscardCurrentChange()
 	{
 		if (this.gamePref == null)
@@ -142,7 +142,7 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		XUiC_OptionEntryAbs.DebugLog(string.Format("DISCARDED INT FOR {0} TO {1}", this.gamePref, this.SettingValue));
 	}
 
-	// Token: 0x06006A0E RID: 27150 RVA: 0x00299D38 File Offset: 0x00297F38
+	// Token: 0x06006A06 RID: 27142 RVA: 0x0029D0C4 File Offset: 0x0029B2C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void applySelectionInternal()
 	{
@@ -151,7 +151,7 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		XUiC_OptionEntryAbs.DebugLog(string.Format("SAVED INT FOR {0} TO {1}", this.gamePref, this.SettingValue));
 	}
 
-	// Token: 0x06006A0F RID: 27151 RVA: 0x00299D78 File Offset: 0x00297F78
+	// Token: 0x06006A07 RID: 27143 RVA: 0x0029D104 File Offset: 0x0029B304
 	public override void ResetToDefault()
 	{
 		if (!base.ApplyDefaults || this.gamePref == null)
@@ -167,14 +167,14 @@ public class XUiC_OptionEntryGamePrefInt : XUiC_OptionEntryGamePrefAbs
 		base.invokeValueChanged();
 	}
 
-	// Token: 0x06006A10 RID: 27152 RVA: 0x00299DE6 File Offset: 0x00297FE6
+	// Token: 0x06006A08 RID: 27144 RVA: 0x0029D172 File Offset: 0x0029B372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void immediatelyApplyCurrentSelection()
 	{
 		this.setPrefValue(this.CurrentValue);
 	}
 
-	// Token: 0x0400512B RID: 20779
+	// Token: 0x04005162 RID: 20834
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxInt combo;

@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1E RID: 3870
+// Token: 0x02000F2D RID: 3885
 [Preserve]
 public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 {
-	// Token: 0x17000E30 RID: 3632
-	// (get) Token: 0x0600796A RID: 31082 RVA: 0x002DC508 File Offset: 0x002DA708
-	// (set) Token: 0x0600796B RID: 31083 RVA: 0x002DC510 File Offset: 0x002DA710
+	// Token: 0x17000E4D RID: 3661
+	// (get) Token: 0x06007965 RID: 31077 RVA: 0x002DF8A4 File Offset: 0x002DDAA4
+	// (set) Token: 0x06007966 RID: 31078 RVA: 0x002DF8AC File Offset: 0x002DDAAC
 	public bool IsModded
 	{
 		get
@@ -22,9 +22,9 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		}
 	}
 
-	// Token: 0x17000E31 RID: 3633
-	// (get) Token: 0x0600796C RID: 31084 RVA: 0x002DC535 File Offset: 0x002DA735
-	// (set) Token: 0x0600796D RID: 31085 RVA: 0x002DC53D File Offset: 0x002DA73D
+	// Token: 0x17000E4E RID: 3662
+	// (get) Token: 0x06007967 RID: 31079 RVA: 0x002DF8D1 File Offset: 0x002DDAD1
+	// (set) Token: 0x06007968 RID: 31080 RVA: 0x002DF8D9 File Offset: 0x002DDAD9
 	public float FillAmount
 	{
 		get
@@ -40,7 +40,7 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		}
 	}
 
-	// Token: 0x0600796E RID: 31086 RVA: 0x002DC550 File Offset: 0x002DA750
+	// Token: 0x06007969 RID: 31081 RVA: 0x002DF8EC File Offset: 0x002DDAEC
 	public override void Init()
 	{
 		base.Init();
@@ -51,7 +51,7 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		}
 	}
 
-	// Token: 0x0600796F RID: 31087 RVA: 0x002DC584 File Offset: 0x002DA784
+	// Token: 0x0600796A RID: 31082 RVA: 0x002DF920 File Offset: 0x002DDB20
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -72,7 +72,7 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		base.ViewComponent.IsNavigatable = !base.ItemStack.IsEmpty();
 	}
 
-	// Token: 0x06007970 RID: 31088 RVA: 0x002DC630 File Offset: 0x002DA830
+	// Token: 0x0600796B RID: 31083 RVA: 0x002DF9CC File Offset: 0x002DDBCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -115,21 +115,21 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		return true;
 	}
 
-	// Token: 0x06007971 RID: 31089 RVA: 0x002DC742 File Offset: 0x002DA942
+	// Token: 0x0600796C RID: 31084 RVA: 0x002DFADE File Offset: 0x002DDCDE
 	public void SetStandardFillColor(string colorString)
 	{
 		this.standardFillColorString = colorString;
 		this.standardFillColor = StringParsers.ParseColor32(this.standardFillColorString);
 	}
 
-	// Token: 0x06007972 RID: 31090 RVA: 0x002DC75C File Offset: 0x002DA95C
+	// Token: 0x0600796D RID: 31085 RVA: 0x002DFAF8 File Offset: 0x002DDCF8
 	public void SetModdedFillColor(string colorString)
 	{
 		this.moddedFillColorString = colorString;
 		this.moddedFillColor = StringParsers.ParseColor32(this.moddedFillColorString);
 	}
 
-	// Token: 0x06007973 RID: 31091 RVA: 0x002DC778 File Offset: 0x002DA978
+	// Token: 0x0600796E RID: 31086 RVA: 0x002DFB14 File Offset: 0x002DDD14
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -154,7 +154,7 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		return flag;
 	}
 
-	// Token: 0x06007974 RID: 31092 RVA: 0x002DC7E6 File Offset: 0x002DA9E6
+	// Token: 0x0600796F RID: 31087 RVA: 0x002DFB82 File Offset: 0x002DDD82
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -166,62 +166,62 @@ public class XUiC_DewCollectorStack : XUiC_RequiredItemStack
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x06007975 RID: 31093 RVA: 0x002DC804 File Offset: 0x002DAA04
+	// Token: 0x06007970 RID: 31088 RVA: 0x002DFBA0 File Offset: 0x002DDDA0
 	public void SetSprite(string sprite)
 	{
 		this.fillIcon.SpriteName = sprite;
 	}
 
-	// Token: 0x040059BD RID: 22973
+	// Token: 0x040059F5 RID: 23029
 	public bool IsCurrentStack;
 
-	// Token: 0x040059BE RID: 22974
+	// Token: 0x040059F6 RID: 23030
 	public bool IsBlocked;
 
-	// Token: 0x040059BF RID: 22975
+	// Token: 0x040059F7 RID: 23031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isModded;
 
-	// Token: 0x040059C0 RID: 22976
+	// Token: 0x040059F8 RID: 23032
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Sprite fillIcon;
 
-	// Token: 0x040059C1 RID: 22977
+	// Token: 0x040059F9 RID: 23033
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public TileEntityCollector tileEntity;
 
-	// Token: 0x040059C2 RID: 22978
+	// Token: 0x040059FA RID: 23034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string standardFillColorString = "202,190,33,255";
 
-	// Token: 0x040059C3 RID: 22979
+	// Token: 0x040059FB RID: 23035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color standardFillColor = new Color32(202, 190, 33, byte.MaxValue);
 
-	// Token: 0x040059C4 RID: 22980
+	// Token: 0x040059FC RID: 23036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string moddedFillColorString = "0,173,216,255";
 
-	// Token: 0x040059C5 RID: 22981
+	// Token: 0x040059FD RID: 23037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color moddedFillColor = new Color32(0, 173, 216, byte.MaxValue);
 
-	// Token: 0x040059C6 RID: 22982
+	// Token: 0x040059FE RID: 23038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color disabledColor = new Color32(64, 64, 64, byte.MaxValue);
 
-	// Token: 0x040059C7 RID: 22983
+	// Token: 0x040059FF RID: 23039
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color blockedColor = new Color32(byte.MaxValue, 0, 0, byte.MaxValue);
 
-	// Token: 0x040059C8 RID: 22984
+	// Token: 0x04005A00 RID: 23040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color currentFillColor;
 
-	// Token: 0x040059C9 RID: 22985
+	// Token: 0x04005A01 RID: 23041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fillAmount = -1f;
 
-	// Token: 0x040059CA RID: 22986
+	// Token: 0x04005A02 RID: 23042
 	public float MaxFill = 15f;
 }

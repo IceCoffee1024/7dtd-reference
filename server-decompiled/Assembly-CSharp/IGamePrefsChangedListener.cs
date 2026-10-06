@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x020011EC RID: 4588
+// Token: 0x02001204 RID: 4612
 public interface IGamePrefsChangedListener
 {
-	// Token: 0x0600927E RID: 37502
+	// Token: 0x0600930C RID: 37644
 	void OnGamePrefChanged(EnumGamePrefs _enum);
 }

@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002EB RID: 747
+// Token: 0x020002EE RID: 750
 public class BaseStatement : BaseDialogItem
 {
-	// Token: 0x17000263 RID: 611
-	// (get) Token: 0x06001576 RID: 5494 RVA: 0x00080ACF File Offset: 0x0007ECCF
-	// (set) Token: 0x06001577 RID: 5495 RVA: 0x00080AD7 File Offset: 0x0007ECD7
+	// Token: 0x1700025B RID: 603
+	// (get) Token: 0x06001573 RID: 5491 RVA: 0x00080D83 File Offset: 0x0007EF83
+	// (set) Token: 0x06001574 RID: 5492 RVA: 0x00080D8B File Offset: 0x0007EF8B
 	public string NextStatementID
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x06001578 RID: 5496 RVA: 0x00080AE0 File Offset: 0x0007ECE0
+	// Token: 0x06001575 RID: 5493 RVA: 0x00080D94 File Offset: 0x0007EF94
 	public override string ToString()
 	{
 		return this.Text;
 	}
 
-	// Token: 0x06001579 RID: 5497 RVA: 0x00080AE8 File Offset: 0x0007ECE8
+	// Token: 0x06001576 RID: 5494 RVA: 0x00080D9C File Offset: 0x0007EF9C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void AddAction(BaseDialogAction action)
 	{
 		this.Actions.Add(action);
 	}
 
-	// Token: 0x04000E6D RID: 3693
+	// Token: 0x04000E66 RID: 3686
 	public string Text;
 
-	// Token: 0x04000E6F RID: 3695
+	// Token: 0x04000E68 RID: 3688
 	public List<BaseDialogAction> Actions = new List<BaseDialogAction>();
 }

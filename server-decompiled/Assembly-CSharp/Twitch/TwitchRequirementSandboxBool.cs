@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x0200185D RID: 6237
+	// Token: 0x02001889 RID: 6281
 	[Preserve]
 	public class TwitchRequirementSandboxBool : BaseTwitchOperationRequirement
 	{
-		// Token: 0x0600C0A4 RID: 49316 RVA: 0x00474922 File Offset: 0x00472B22
+		// Token: 0x0600C1FC RID: 49660 RVA: 0x00478E5E File Offset: 0x0047705E
 		public override bool CanPerform(Entity target)
 		{
 			if (SandboxOptionManager.GetBool(this.sandboxOption))
@@ -18,7 +18,7 @@ namespace Twitch
 			return this.Invert;
 		}
 
-		// Token: 0x0600C0A5 RID: 49317 RVA: 0x00474944 File Offset: 0x00472B44
+		// Token: 0x0600C1FD RID: 49661 RVA: 0x00478E80 File Offset: 0x00477080
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -27,11 +27,11 @@ namespace Twitch
 			this.sandboxOption = Enum.Parse<global::SandboxOptions.SandboxOptions>(text);
 		}
 
-		// Token: 0x04009144 RID: 37188
+		// Token: 0x0400920A RID: 37386
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public global::SandboxOptions.SandboxOptions sandboxOption;
 
-		// Token: 0x04009145 RID: 37189
+		// Token: 0x0400920B RID: 37387
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSandbox = "sandbox_option";
 	}

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000C41 RID: 3137
+// Token: 0x02000C53 RID: 3155
 public struct BiomeIntensity : IEquatable<BiomeIntensity>
 {
-	// Token: 0x170009B9 RID: 2489
-	// (get) Token: 0x06005F77 RID: 24439 RVA: 0x0025BF47 File Offset: 0x0025A147
-	// (set) Token: 0x06005F78 RID: 24440 RVA: 0x0025BF59 File Offset: 0x0025A159
+	// Token: 0x170009DB RID: 2523
+	// (get) Token: 0x06005F90 RID: 24464 RVA: 0x0025F243 File Offset: 0x0025D443
+	// (set) Token: 0x06005F91 RID: 24465 RVA: 0x0025F255 File Offset: 0x0025D455
 	public float intensity0
 	{
 		get
@@ -19,9 +19,9 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		}
 	}
 
-	// Token: 0x170009BA RID: 2490
-	// (get) Token: 0x06005F79 RID: 24441 RVA: 0x0025BF7A File Offset: 0x0025A17A
-	// (set) Token: 0x06005F7A RID: 24442 RVA: 0x0025BF8E File Offset: 0x0025A18E
+	// Token: 0x170009DC RID: 2524
+	// (get) Token: 0x06005F92 RID: 24466 RVA: 0x0025F276 File Offset: 0x0025D476
+	// (set) Token: 0x06005F93 RID: 24467 RVA: 0x0025F28A File Offset: 0x0025D48A
 	public float intensity1
 	{
 		get
@@ -34,9 +34,9 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		}
 	}
 
-	// Token: 0x170009BB RID: 2491
-	// (get) Token: 0x06005F7B RID: 24443 RVA: 0x0025BFB1 File Offset: 0x0025A1B1
-	// (set) Token: 0x06005F7C RID: 24444 RVA: 0x0025BFC3 File Offset: 0x0025A1C3
+	// Token: 0x170009DD RID: 2525
+	// (get) Token: 0x06005F94 RID: 24468 RVA: 0x0025F2AD File Offset: 0x0025D4AD
+	// (set) Token: 0x06005F95 RID: 24469 RVA: 0x0025F2BF File Offset: 0x0025D4BF
 	public float intensity2
 	{
 		get
@@ -49,9 +49,9 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		}
 	}
 
-	// Token: 0x170009BC RID: 2492
-	// (get) Token: 0x06005F7D RID: 24445 RVA: 0x0025BFE4 File Offset: 0x0025A1E4
-	// (set) Token: 0x06005F7E RID: 24446 RVA: 0x0025BFF8 File Offset: 0x0025A1F8
+	// Token: 0x170009DE RID: 2526
+	// (get) Token: 0x06005F96 RID: 24470 RVA: 0x0025F2E0 File Offset: 0x0025D4E0
+	// (set) Token: 0x06005F97 RID: 24471 RVA: 0x0025F2F4 File Offset: 0x0025D4F4
 	public float intensity3
 	{
 		get
@@ -64,7 +64,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		}
 	}
 
-	// Token: 0x06005F7F RID: 24447 RVA: 0x0025C01B File Offset: 0x0025A21B
+	// Token: 0x06005F98 RID: 24472 RVA: 0x0025F317 File Offset: 0x0025D517
 	public BiomeIntensity(byte _singleBiomeId)
 	{
 		this.biomeId0 = _singleBiomeId;
@@ -75,7 +75,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		this.intensity2and3 = 0;
 	}
 
-	// Token: 0x06005F80 RID: 24448 RVA: 0x0025C048 File Offset: 0x0025A248
+	// Token: 0x06005F99 RID: 24473 RVA: 0x0025F344 File Offset: 0x0025D544
 	public BiomeIntensity(byte[] _chunkBiomeIntensityArray, int _offs)
 	{
 		this.biomeId0 = _chunkBiomeIntensityArray[_offs];
@@ -86,7 +86,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		this.intensity2and3 = _chunkBiomeIntensityArray[_offs + 5];
 	}
 
-	// Token: 0x06005F81 RID: 24449 RVA: 0x0025C098 File Offset: 0x0025A298
+	// Token: 0x06005F9A RID: 24474 RVA: 0x0025F394 File Offset: 0x0025D594
 	public static BiomeIntensity FromArray(int[] _unsortedBiomeIdArray)
 	{
 		int num = 0;
@@ -154,7 +154,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		return biomeIntensity;
 	}
 
-	// Token: 0x06005F82 RID: 24450 RVA: 0x0025C1D8 File Offset: 0x0025A3D8
+	// Token: 0x06005F9B RID: 24475 RVA: 0x0025F4D4 File Offset: 0x0025D6D4
 	public void ToArray(byte[] _array, int offs)
 	{
 		_array[offs] = this.biomeId0;
@@ -165,7 +165,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		_array[5 + offs] = this.intensity2and3;
 	}
 
-	// Token: 0x06005F83 RID: 24451 RVA: 0x0025C228 File Offset: 0x0025A428
+	// Token: 0x06005F9C RID: 24476 RVA: 0x0025F524 File Offset: 0x0025D724
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(this.biomeId0);
@@ -178,7 +178,7 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		_bw.Write((byte)(this.intensity3 * 255f));
 	}
 
-	// Token: 0x06005F84 RID: 24452 RVA: 0x0025C2B4 File Offset: 0x0025A4B4
+	// Token: 0x06005F9D RID: 24477 RVA: 0x0025F5B0 File Offset: 0x0025D7B0
 	public void Read(BinaryReader _br)
 	{
 		this.biomeId0 = _br.ReadByte();
@@ -191,25 +191,25 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		this.intensity3 = (float)_br.ReadByte() / 255f;
 	}
 
-	// Token: 0x06005F85 RID: 24453 RVA: 0x0025C340 File Offset: 0x0025A540
+	// Token: 0x06005F9E RID: 24478 RVA: 0x0025F63C File Offset: 0x0025D83C
 	public bool Equals(BiomeIntensity other)
 	{
 		return this.biomeId0 == other.biomeId0 && this.biomeId1 == other.biomeId1 && this.biomeId2 == other.biomeId2 && this.biomeId3 == other.biomeId3 && this.intensity0and1 == other.intensity0and1 && this.intensity2and3 == other.intensity2and3;
 	}
 
-	// Token: 0x06005F86 RID: 24454 RVA: 0x0025C3A3 File Offset: 0x0025A5A3
+	// Token: 0x06005F9F RID: 24479 RVA: 0x0025F69F File Offset: 0x0025D89F
 	public override bool Equals(object obj)
 	{
 		return obj != null && obj is BiomeIntensity && this.Equals((BiomeIntensity)obj);
 	}
 
-	// Token: 0x06005F87 RID: 24455 RVA: 0x0025C3C0 File Offset: 0x0025A5C0
+	// Token: 0x06005FA0 RID: 24480 RVA: 0x0025F6BC File Offset: 0x0025D8BC
 	public override int GetHashCode()
 	{
 		return (((((((((this.biomeId0.GetHashCode() * 397) ^ this.biomeId1.GetHashCode()) * 397) ^ this.biomeId2.GetHashCode()) * 397) ^ this.biomeId3.GetHashCode()) * 397) ^ this.intensity0and1.GetHashCode()) * 397) ^ this.intensity2and3.GetHashCode();
 	}
 
-	// Token: 0x06005F88 RID: 24456 RVA: 0x0025C434 File Offset: 0x0025A634
+	// Token: 0x06005FA1 RID: 24481 RVA: 0x0025F730 File Offset: 0x0025D930
 	public override string ToString()
 	{
 		return string.Format("[b0={0} b1={1} i0={2} i1={3}]", new object[]
@@ -221,27 +221,27 @@ public struct BiomeIntensity : IEquatable<BiomeIntensity>
 		});
 	}
 
-	// Token: 0x04004AE8 RID: 19176
+	// Token: 0x04004B27 RID: 19239
 	public const int cDataSize = 6;
 
-	// Token: 0x04004AE9 RID: 19177
+	// Token: 0x04004B28 RID: 19240
 	public static BiomeIntensity Default = new BiomeIntensity(0);
 
-	// Token: 0x04004AEA RID: 19178
+	// Token: 0x04004B29 RID: 19241
 	public byte biomeId0;
 
-	// Token: 0x04004AEB RID: 19179
+	// Token: 0x04004B2A RID: 19242
 	public byte biomeId1;
 
-	// Token: 0x04004AEC RID: 19180
+	// Token: 0x04004B2B RID: 19243
 	public byte biomeId2;
 
-	// Token: 0x04004AED RID: 19181
+	// Token: 0x04004B2C RID: 19244
 	public byte biomeId3;
 
-	// Token: 0x04004AEE RID: 19182
+	// Token: 0x04004B2D RID: 19245
 	public byte intensity0and1;
 
-	// Token: 0x04004AEF RID: 19183
+	// Token: 0x04004B2E RID: 19246
 	public byte intensity2and3;
 }

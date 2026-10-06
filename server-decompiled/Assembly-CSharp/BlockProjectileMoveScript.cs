@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000127 RID: 295
+// Token: 0x02000129 RID: 297
 public class BlockProjectileMoveScript : ProjectileMoveScript
 {
-	// Token: 0x060007CD RID: 1997 RVA: 0x00037444 File Offset: 0x00035644
+	// Token: 0x060007D3 RID: 2003 RVA: 0x00037534 File Offset: 0x00035734
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkCollision()
 	{
@@ -97,7 +97,7 @@ public class BlockProjectileMoveScript : ProjectileMoveScript
 		}
 	}
 
-	// Token: 0x060007CE RID: 1998 RVA: 0x00037753 File Offset: 0x00035953
+	// Token: 0x060007D4 RID: 2004 RVA: 0x00037843 File Offset: 0x00035A43
 	public float GetProjectileDamageEntity()
 	{
 		return this.itemActionProjectile.GetDamageEntity(this.itemValueProjectile, null, 0);

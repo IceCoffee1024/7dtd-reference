@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020009AB RID: 2475
+// Token: 0x020009B1 RID: 2481
 [Preserve]
 public class ObjectiveRandomPOIGoto : ObjectiveGoto
 {
-	// Token: 0x170007BB RID: 1979
-	// (get) Token: 0x060048F2 RID: 18674 RVA: 0x001C826C File Offset: 0x001C646C
-	// (set) Token: 0x060048F1 RID: 18673 RVA: 0x001C8263 File Offset: 0x001C6463
+	// Token: 0x170007DB RID: 2011
+	// (get) Token: 0x060048AB RID: 18603 RVA: 0x001C8BFC File Offset: 0x001C6DFC
+	// (set) Token: 0x060048AA RID: 18602 RVA: 0x001C8BF3 File Offset: 0x001C6DF3
 	public int POITier
 	{
 		get
@@ -26,21 +26,21 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		}
 	}
 
-	// Token: 0x060048F3 RID: 18675 RVA: 0x001C158C File Offset: 0x001BF78C
+	// Token: 0x060048AC RID: 18604 RVA: 0x001C1C1F File Offset: 0x001BFE1F
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveRallyPointHeadTo", false, null);
 	}
 
-	// Token: 0x060048F4 RID: 18676 RVA: 0x001C15AE File Offset: 0x001BF7AE
+	// Token: 0x060048AD RID: 18605 RVA: 0x001C1C41 File Offset: 0x001BFE41
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetupIcon()
 	{
 		this.icon = "ui_game_symbol_quest";
 	}
 
-	// Token: 0x170007BC RID: 1980
-	// (get) Token: 0x060048F5 RID: 18677 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170007DC RID: 2012
+	// (get) Token: 0x060048AE RID: 18606 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool NeedsNPCSetPosition
 	{
 		get
@@ -49,8 +49,8 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		}
 	}
 
-	// Token: 0x170007BD RID: 1981
-	// (get) Token: 0x060048F6 RID: 18678 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007DD RID: 2013
+	// (get) Token: 0x060048AF RID: 18607 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool PlayObjectiveComplete
 	{
 		get
@@ -59,20 +59,20 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		}
 	}
 
-	// Token: 0x060048F7 RID: 18679 RVA: 0x001C3BD4 File Offset: 0x001C1DD4
+	// Token: 0x060048B0 RID: 18608 RVA: 0x001C4404 File Offset: 0x001C2604
 	public override bool SetupPosition(EntityNPC ownerNPC = null, EntityPlayer player = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
 		return this.GetPosition(ownerNPC, player, usedPOILocations, entityIDforQuests) != Vector3.zero;
 	}
 
-	// Token: 0x060048F8 RID: 18680 RVA: 0x001C828E File Offset: 0x001C648E
+	// Token: 0x060048B1 RID: 18609 RVA: 0x001C8C1E File Offset: 0x001C6E1E
 	public override void AddHooks()
 	{
 		base.AddHooks();
 		base.OwnerQuest.HandleMapObject(Quest.PositionDataTypes.POIPosition, this.NavObjectName, -1);
 	}
 
-	// Token: 0x060048F9 RID: 18681 RVA: 0x001C82A9 File Offset: 0x001C64A9
+	// Token: 0x060048B2 RID: 18610 RVA: 0x001C8C39 File Offset: 0x001C6E39
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDistanceOffset(Vector3 POISize)
 	{
@@ -84,7 +84,7 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		this.distanceOffset = POISize.z;
 	}
 
-	// Token: 0x060048FA RID: 18682 RVA: 0x001C82D2 File Offset: 0x001C64D2
+	// Token: 0x060048B3 RID: 18611 RVA: 0x001C8C62 File Offset: 0x001C6E62
 	public override void SetPosition(Vector3 POIPosition, Vector3 POISize)
 	{
 		this.SetDistanceOffset(POISize);
@@ -94,7 +94,7 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		this.position = POIPosition;
 	}
 
-	// Token: 0x060048FB RID: 18683 RVA: 0x001C8308 File Offset: 0x001C6508
+	// Token: 0x060048B4 RID: 18612 RVA: 0x001C8C98 File Offset: 0x001C6E98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetPosition(EntityNPC ownerNPC = null, EntityPlayer entityPlayer = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
@@ -170,7 +170,7 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		return Vector3.zero;
 	}
 
-	// Token: 0x060048FC RID: 18684 RVA: 0x001C870C File Offset: 0x001C690C
+	// Token: 0x060048B5 RID: 18613 RVA: 0x001C909C File Offset: 0x001C729C
 	public override BaseObjective Clone()
 	{
 		ObjectiveRandomPOIGoto objectiveRandomPOIGoto = new ObjectiveRandomPOIGoto();
@@ -183,7 +183,7 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		return objectiveRandomPOIGoto;
 	}
 
-	// Token: 0x060048FD RID: 18685 RVA: 0x001C8764 File Offset: 0x001C6964
+	// Token: 0x060048B6 RID: 18614 RVA: 0x001C90F4 File Offset: 0x001C72F4
 	public override string ParseBinding(string bindingName)
 	{
 		string id = this.ID;
@@ -241,17 +241,17 @@ public class ObjectiveRandomPOIGoto : ObjectiveGoto
 		}
 	}
 
-	// Token: 0x060048FE RID: 18686 RVA: 0x001C8946 File Offset: 0x001C6B46
+	// Token: 0x060048B7 RID: 18615 RVA: 0x001C92D6 File Offset: 0x001C74D6
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
 		properties.ParseInt(ObjectiveRandomPOIGoto.PropPOITier, ref this.poiTier);
 	}
 
-	// Token: 0x04003A1B RID: 14875
+	// Token: 0x04003A18 RID: 14872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int poiTier = -1;
 
-	// Token: 0x04003A1C RID: 14876
+	// Token: 0x04003A19 RID: 14873
 	public static string PropPOITier = "poi_tier";
 }

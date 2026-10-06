@@ -2,22 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x020013D4 RID: 5076
+// Token: 0x020013F4 RID: 5108
 public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrapper<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable
 {
-	// Token: 0x06009F7B RID: 40827 RVA: 0x003C123A File Offset: 0x003BF43A
+	// Token: 0x0600A026 RID: 40998 RVA: 0x003C5DD6 File Offset: 0x003C3FD6
 	public DictionaryDebugWrapper()
 		: this(new Dictionary<TKey, TValue>())
 	{
 	}
 
-	// Token: 0x06009F7C RID: 40828 RVA: 0x003C1247 File Offset: 0x003BF447
+	// Token: 0x0600A027 RID: 40999 RVA: 0x003C5DE3 File Offset: 0x003C3FE3
 	public DictionaryDebugWrapper(IDictionary<TKey, TValue> dictionary)
 		: this(null, dictionary)
 	{
 	}
 
-	// Token: 0x06009F7D RID: 40829 RVA: 0x003C1251 File Offset: 0x003BF451
+	// Token: 0x0600A028 RID: 41000 RVA: 0x003C5DED File Offset: 0x003C3FED
 	public DictionaryDebugWrapper(DebugWrapper parent, IDictionary<TKey, TValue> dictionary)
 		: base(parent, dictionary)
 	{
@@ -26,7 +26,7 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		this.Values = new CollectionDebugWrapper<TValue>(this, this.m_dictionary.Values);
 	}
 
-	// Token: 0x06009F7E RID: 40830 RVA: 0x003C1290 File Offset: 0x003BF490
+	// Token: 0x0600A029 RID: 41001 RVA: 0x003C5E2C File Offset: 0x003C402C
 	public void Add(TKey key, TValue value)
 	{
 		using (base.DebugReadWriteScope())
@@ -35,7 +35,7 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		}
 	}
 
-	// Token: 0x06009F7F RID: 40831 RVA: 0x003C12D0 File Offset: 0x003BF4D0
+	// Token: 0x0600A02A RID: 41002 RVA: 0x003C5E6C File Offset: 0x003C406C
 	public bool ContainsKey(TKey key)
 	{
 		bool flag;
@@ -46,7 +46,7 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		return flag;
 	}
 
-	// Token: 0x06009F80 RID: 40832 RVA: 0x003C1310 File Offset: 0x003BF510
+	// Token: 0x0600A02B RID: 41003 RVA: 0x003C5EAC File Offset: 0x003C40AC
 	public bool Remove(TKey key)
 	{
 		bool flag;
@@ -57,7 +57,7 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		return flag;
 	}
 
-	// Token: 0x06009F81 RID: 40833 RVA: 0x003C1350 File Offset: 0x003BF550
+	// Token: 0x0600A02C RID: 41004 RVA: 0x003C5EEC File Offset: 0x003C40EC
 	public bool TryGetValue(TKey key, out TValue value)
 	{
 		bool flag;
@@ -68,7 +68,7 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		return flag;
 	}
 
-	// Token: 0x170012D5 RID: 4821
+	// Token: 0x1700131A RID: 4890
 	public TValue this[TKey key]
 	{
 		get
@@ -89,15 +89,15 @@ public sealed class DictionaryDebugWrapper<TKey, TValue> : CollectionDebugWrappe
 		}
 	}
 
-	// Token: 0x170012D6 RID: 4822
-	// (get) Token: 0x06009F84 RID: 40836 RVA: 0x003C1410 File Offset: 0x003BF610
+	// Token: 0x1700131B RID: 4891
+	// (get) Token: 0x0600A02F RID: 41007 RVA: 0x003C5FAC File Offset: 0x003C41AC
 	public ICollection<TKey> Keys { get; }
 
-	// Token: 0x170012D7 RID: 4823
-	// (get) Token: 0x06009F85 RID: 40837 RVA: 0x003C1418 File Offset: 0x003BF618
+	// Token: 0x1700131C RID: 4892
+	// (get) Token: 0x0600A030 RID: 41008 RVA: 0x003C5FB4 File Offset: 0x003C41B4
 	public ICollection<TValue> Values { get; }
 
-	// Token: 0x040078D3 RID: 30931
+	// Token: 0x0400794E RID: 31054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IDictionary<TKey, TValue> m_dictionary;
 }

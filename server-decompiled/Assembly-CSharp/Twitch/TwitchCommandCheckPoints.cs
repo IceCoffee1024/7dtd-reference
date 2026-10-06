@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001812 RID: 6162
+	// Token: 0x0200183E RID: 6206
 	public class TwitchCommandCheckPoints : BaseTwitchCommand
 	{
-		// Token: 0x17001730 RID: 5936
-		// (get) Token: 0x0600BE8D RID: 48781 RVA: 0x004674D1 File Offset: 0x004656D1
+		// Token: 0x170017D2 RID: 6098
+		// (get) Token: 0x0600BFE5 RID: 49125 RVA: 0x0046BA0D File Offset: 0x00469C0D
 		public override string[] CommandText
 		{
 			get
@@ -16,8 +16,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x17001731 RID: 5937
-		// (get) Token: 0x0600BE8E RID: 48782 RVA: 0x004674E9 File Offset: 0x004656E9
+		// Token: 0x170017D3 RID: 6099
+		// (get) Token: 0x0600BFE6 RID: 49126 RVA: 0x0046BA25 File Offset: 0x00469C25
 		public override string[] LocalizedCommandNames
 		{
 			get
@@ -30,7 +30,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BE8F RID: 48783 RVA: 0x00467510 File Offset: 0x00465710
+		// Token: 0x0600BFE7 RID: 49127 RVA: 0x0046BA4C File Offset: 0x00469C4C
 		public override void Execute(ViewerEntry entry, TwitchIRCClient.TwitchChatMessage message)
 		{
 			string[] array = message.Message.Split(' ', StringSplitOptions.None);
@@ -63,7 +63,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BE90 RID: 48784 RVA: 0x004675B8 File Offset: 0x004657B8
+		// Token: 0x0600BFE8 RID: 49128 RVA: 0x0046BAF4 File Offset: 0x00469CF4
 		public override void ExecuteConsole(List<string> arguments)
 		{
 			if (arguments.Count != 2)

@@ -1,11 +1,11 @@
 ﻿using System;
 using Unity.Mathematics;
 
-// Token: 0x02000CCB RID: 3275
+// Token: 0x02000CD9 RID: 3289
 public struct GroundWaterBounds
 {
-	// Token: 0x17000A7E RID: 2686
-	// (get) Token: 0x06006486 RID: 25734 RVA: 0x00274D51 File Offset: 0x00272F51
+	// Token: 0x17000A94 RID: 2708
+	// (get) Token: 0x06006479 RID: 25721 RVA: 0x00278155 File Offset: 0x00276355
 	public bool IsGroundWater
 	{
 		get
@@ -14,7 +14,7 @@ public struct GroundWaterBounds
 		}
 	}
 
-	// Token: 0x06006487 RID: 25735 RVA: 0x00274D5C File Offset: 0x00272F5C
+	// Token: 0x0600647A RID: 25722 RVA: 0x00278160 File Offset: 0x00276360
 	public GroundWaterBounds(int _groundHeight, int _waterHeight)
 	{
 		this.state = 1;
@@ -22,13 +22,13 @@ public struct GroundWaterBounds
 		this.bottom = (byte)math.clamp(_groundHeight, 0, (int)this.waterHeight);
 	}
 
-	// Token: 0x04004E30 RID: 20016
+	// Token: 0x04004E66 RID: 20070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte state;
 
-	// Token: 0x04004E31 RID: 20017
+	// Token: 0x04004E67 RID: 20071
 	public byte waterHeight;
 
-	// Token: 0x04004E32 RID: 20018
+	// Token: 0x04004E68 RID: 20072
 	public byte bottom;
 }

@@ -2,20 +2,20 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x02001A1D RID: 6685
+	// Token: 0x02001A49 RID: 6729
 	public enum MusicActionType : byte
 	{
-		// Token: 0x04009A79 RID: 39545
+		// Token: 0x04009B3F RID: 39743
 		Play,
-		// Token: 0x04009A7A RID: 39546
+		// Token: 0x04009B40 RID: 39744
 		Pause,
-		// Token: 0x04009A7B RID: 39547
+		// Token: 0x04009B41 RID: 39745
 		UnPause,
-		// Token: 0x04009A7C RID: 39548
+		// Token: 0x04009B42 RID: 39746
 		Stop,
-		// Token: 0x04009A7D RID: 39549
+		// Token: 0x04009B43 RID: 39747
 		FadeIn,
-		// Token: 0x04009A7E RID: 39550
+		// Token: 0x04009B44 RID: 39748
 		FadeOut
 	}
 }

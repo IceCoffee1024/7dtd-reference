@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B7 RID: 1463
+// Token: 0x020005B8 RID: 1464
 [Preserve]
 public class ItemActionMakeFertile : ItemActionMelee
 {
-	// Token: 0x06002FBC RID: 12220 RVA: 0x00131408 File Offset: 0x0012F608
+	// Token: 0x06002FFF RID: 12287 RVA: 0x00131EA0 File Offset: 0x001300A0
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -33,7 +33,7 @@ public class ItemActionMakeFertile : ItemActionMelee
 		}
 	}
 
-	// Token: 0x06002FBD RID: 12221 RVA: 0x001314F0 File Offset: 0x0012F6F0
+	// Token: 0x06003000 RID: 12288 RVA: 0x00131F88 File Offset: 0x00130188
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void hitTheTarget(ItemActionMelee.InventoryDataMelee _actionData, WorldRayHitInfo hitInfo, float damageScale)
 	{
@@ -79,17 +79,17 @@ public class ItemActionMakeFertile : ItemActionMelee
 		}
 	}
 
-	// Token: 0x06002FBE RID: 12222 RVA: 0x00131719 File Offset: 0x0012F919
+	// Token: 0x06003001 RID: 12289 RVA: 0x001321B1 File Offset: 0x001303B1
 	public override RenderCubeType GetFocusType(ItemActionData _actionData)
 	{
 		return RenderCubeType.FullBlockBothSides;
 	}
 
-	// Token: 0x040024F7 RID: 9463
+	// Token: 0x040024F0 RID: 9456
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue fertileBlock;
 
-	// Token: 0x040024F8 RID: 9464
+	// Token: 0x040024F1 RID: 9457
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue adjacentBlock;
 }

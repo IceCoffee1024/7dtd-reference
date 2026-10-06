@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-// Token: 0x02000B6C RID: 2924
+// Token: 0x02000B7E RID: 2942
 [Serializable]
 public class MeshDescription
 {
-	// Token: 0x06005883 RID: 22659 RVA: 0x0021C91C File Offset: 0x0021AB1C
+	// Token: 0x0600589D RID: 22685 RVA: 0x0021FBA8 File Offset: 0x0021DDA8
 	public IEnumerator Init(int _idx, TextureAtlas _ta)
 	{
 		this.textureAtlas = _ta;
@@ -147,7 +147,7 @@ public class MeshDescription
 		yield break;
 	}
 
-	// Token: 0x06005884 RID: 22660 RVA: 0x0021C939 File Offset: 0x0021AB39
+	// Token: 0x0600589E RID: 22686 RVA: 0x0021FBC5 File Offset: 0x0021DDC5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setupPrefabTerrainMaterials(int _idx, TextureAtlas _ta)
 	{
@@ -233,7 +233,7 @@ public class MeshDescription
 		yield break;
 	}
 
-	// Token: 0x06005885 RID: 22661 RVA: 0x0021C958 File Offset: 0x0021AB58
+	// Token: 0x0600589F RID: 22687 RVA: 0x0021FBE4 File Offset: 0x0021DDE4
 	public void ReloadTextureArrays(bool _isSplatmap)
 	{
 		if (_isSplatmap)
@@ -287,9 +287,9 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x1700094E RID: 2382
-	// (get) Token: 0x06005886 RID: 22662 RVA: 0x0021CC69 File Offset: 0x0021AE69
-	// (set) Token: 0x06005887 RID: 22663 RVA: 0x0021CC7D File Offset: 0x0021AE7D
+	// Token: 0x17000970 RID: 2416
+	// (get) Token: 0x060058A0 RID: 22688 RVA: 0x0021FEF5 File Offset: 0x0021E0F5
+	// (set) Token: 0x060058A1 RID: 22689 RVA: 0x0021FF09 File Offset: 0x0021E109
 	public Material material
 	{
 		get
@@ -309,9 +309,9 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x1700094F RID: 2383
-	// (get) Token: 0x06005888 RID: 22664 RVA: 0x0021CC90 File Offset: 0x0021AE90
-	// (set) Token: 0x06005889 RID: 22665 RVA: 0x0021CCA4 File Offset: 0x0021AEA4
+	// Token: 0x17000971 RID: 2417
+	// (get) Token: 0x060058A2 RID: 22690 RVA: 0x0021FF1C File Offset: 0x0021E11C
+	// (set) Token: 0x060058A3 RID: 22691 RVA: 0x0021FF30 File Offset: 0x0021E130
 	public Material prefabPreviewMaterial
 	{
 		get
@@ -331,19 +331,19 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600588A RID: 22666 RVA: 0x0021CCB7 File Offset: 0x0021AEB7
+	// Token: 0x060058A4 RID: 22692 RVA: 0x0021FF43 File Offset: 0x0021E143
 	public bool IsSplatmap(int _index)
 	{
 		return _index == 5;
 	}
 
-	// Token: 0x0600588B RID: 22667 RVA: 0x0021CCBD File Offset: 0x0021AEBD
+	// Token: 0x060058A5 RID: 22693 RVA: 0x0021FF49 File Offset: 0x0021E149
 	public bool UseSplatmap(int _index)
 	{
 		return GameManager.IsSplatMapAvailable() && this.IsSplatmap(_index);
 	}
 
-	// Token: 0x0600588C RID: 22668 RVA: 0x0021CCD0 File Offset: 0x0021AED0
+	// Token: 0x060058A6 RID: 22694 RVA: 0x0021FF5C File Offset: 0x0021E15C
 	public static void SetDebugStabilityShader(bool _bOn)
 	{
 		if (_bOn)
@@ -391,7 +391,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600588D RID: 22669 RVA: 0x0021CDE8 File Offset: 0x0021AFE8
+	// Token: 0x060058A7 RID: 22695 RVA: 0x00220074 File Offset: 0x0021E274
 	public static void SetGrassQuality()
 	{
 		if (GameManager.IsDedicatedServer)
@@ -420,7 +420,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600588E RID: 22670 RVA: 0x0021CE74 File Offset: 0x0021B074
+	// Token: 0x060058A8 RID: 22696 RVA: 0x00220100 File Offset: 0x0021E300
 	public static void SetWaterQuality()
 	{
 		if (GameManager.IsDedicatedServer)
@@ -444,7 +444,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600588F RID: 22671 RVA: 0x0021CEEC File Offset: 0x0021B0EC
+	// Token: 0x060058A9 RID: 22697 RVA: 0x00220178 File Offset: 0x0021E378
 	public static void Cleanup()
 	{
 		foreach (MeshDescription meshDescription in MeshDescription.meshes)
@@ -455,7 +455,7 @@ public class MeshDescription
 		MeshDescription.meshes = new MeshDescription[0];
 	}
 
-	// Token: 0x06005890 RID: 22672 RVA: 0x0021CF2C File Offset: 0x0021B12C
+	// Token: 0x060058AA RID: 22698 RVA: 0x002201B8 File Offset: 0x0021E3B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CleanupMats()
 	{
@@ -474,12 +474,12 @@ public class MeshDescription
 		global::UnityEngine.Object.Destroy(this.materialDistant);
 	}
 
-	// Token: 0x06005891 RID: 22673 RVA: 0x0021CF9B File Offset: 0x0021B19B
+	// Token: 0x060058AB RID: 22699 RVA: 0x00220227 File Offset: 0x0021E427
 	public MeshDescription()
 	{
 	}
 
-	// Token: 0x06005892 RID: 22674 RVA: 0x0021CFB8 File Offset: 0x0021B1B8
+	// Token: 0x060058AC RID: 22700 RVA: 0x00220244 File Offset: 0x0021E444
 	public MeshDescription(MeshDescription other)
 	{
 		this.Name = other.Name;
@@ -518,7 +518,7 @@ public class MeshDescription
 		this.MetaData = other.MetaData;
 	}
 
-	// Token: 0x06005893 RID: 22675 RVA: 0x0021D198 File Offset: 0x0021B398
+	// Token: 0x060058AD RID: 22701 RVA: 0x00220424 File Offset: 0x0021E624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetupMaterialWithBlendMode(Material material, MeshDescription.EnumRenderMode blendMode)
 	{
@@ -566,7 +566,7 @@ public class MeshDescription
 		MeshDescription.SetMaterialKeywords(material);
 	}
 
-	// Token: 0x06005894 RID: 22676 RVA: 0x0021D330 File Offset: 0x0021B530
+	// Token: 0x060058AE RID: 22702 RVA: 0x002205BC File Offset: 0x0021E7BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetMaterialKeywords(Material material)
 	{
@@ -591,7 +591,7 @@ public class MeshDescription
 		MeshDescription.SetKeyword(material, "_DETAIL_MULX2", (material.HasProperty(num) && material.GetTexture(num)) || (material.HasProperty(num2) && material.GetTexture(num2)));
 	}
 
-	// Token: 0x06005895 RID: 22677 RVA: 0x0021D3EB File Offset: 0x0021B5EB
+	// Token: 0x060058AF RID: 22703 RVA: 0x00220677 File Offset: 0x0021E877
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetKeyword(Material m, string keyword, bool state)
 	{
@@ -603,7 +603,7 @@ public class MeshDescription
 		m.DisableKeyword(keyword);
 	}
 
-	// Token: 0x06005896 RID: 22678 RVA: 0x0021D400 File Offset: 0x0021B600
+	// Token: 0x060058B0 RID: 22704 RVA: 0x0022068C File Offset: 0x0021E88C
 	public static Material GetOpaqueMaterial()
 	{
 		if (MeshDescription.meshes.Length == 0)
@@ -627,7 +627,7 @@ public class MeshDescription
 		return material;
 	}
 
-	// Token: 0x06005897 RID: 22679 RVA: 0x0021D49C File Offset: 0x0021B69C
+	// Token: 0x060058B1 RID: 22705 RVA: 0x00220728 File Offset: 0x0021E928
 	public IEnumerator LoadTextureArraysForQuality(MeshDescriptionCollection _meshDescriptionCollection, int _index, int _quality, bool _isReload = false)
 	{
 		bool isSplatmap = this.IsSplatmap(_index);
@@ -652,7 +652,7 @@ public class MeshDescription
 		yield break;
 	}
 
-	// Token: 0x06005898 RID: 22680 RVA: 0x0021D4C8 File Offset: 0x0021B6C8
+	// Token: 0x060058B2 RID: 22706 RVA: 0x00220754 File Offset: 0x0021E954
 	public void UnloadTextureArrays(int _index)
 	{
 		if (this.IsSplatmap(_index) || this.bTextureArray)
@@ -663,7 +663,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x06005899 RID: 22681 RVA: 0x0021D4FF File Offset: 0x0021B6FF
+	// Token: 0x060058B3 RID: 22707 RVA: 0x0022078B File Offset: 0x0021E98B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator loadSingleArray(int _quality, bool _isSplatmap, MeshDescription.ETextureType _texType)
 	{
@@ -714,7 +714,7 @@ public class MeshDescription
 		yield break;
 	}
 
-	// Token: 0x0600589A RID: 22682 RVA: 0x0021D524 File Offset: 0x0021B724
+	// Token: 0x060058B4 RID: 22708 RVA: 0x002207B0 File Offset: 0x0021E9B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetFileSuffixForTextureType(MeshDescription.ETextureType _type, bool _isSplatmap)
 	{
@@ -743,7 +743,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600589B RID: 22683 RVA: 0x0021D583 File Offset: 0x0021B783
+	// Token: 0x060058B5 RID: 22709 RVA: 0x0022080F File Offset: 0x0021EA0F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetFileSuffixForQuality(int _quality, bool _isSplatmap)
 	{
@@ -758,7 +758,7 @@ public class MeshDescription
 		return "";
 	}
 
-	// Token: 0x0600589C RID: 22684 RVA: 0x0021D5B4 File Offset: 0x0021B7B4
+	// Token: 0x060058B6 RID: 22710 RVA: 0x00220840 File Offset: 0x0021EA40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Unload(ref Texture tex)
 	{
@@ -771,7 +771,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600589D RID: 22685 RVA: 0x0021D5E5 File Offset: 0x0021B7E5
+	// Token: 0x060058B7 RID: 22711 RVA: 0x00220871 File Offset: 0x0021EA71
 	public void SetTextureFilter(int _index, int anisoLevel)
 	{
 		if (this.IsSplatmap(_index) || this.bTextureArray)
@@ -782,7 +782,7 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0600589E RID: 22686 RVA: 0x0021D61F File Offset: 0x0021B81F
+	// Token: 0x060058B8 RID: 22712 RVA: 0x002208AB File Offset: 0x0021EAAB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAF(Texture tex, int anisoLevel)
 	{
@@ -792,203 +792,203 @@ public class MeshDescription
 		}
 	}
 
-	// Token: 0x0400447C RID: 17532
+	// Token: 0x040044BA RID: 17594
 	public const int cIndexOpaque = 0;
 
-	// Token: 0x0400447D RID: 17533
+	// Token: 0x040044BB RID: 17595
 	public const int cIndexWater = 1;
 
-	// Token: 0x0400447E RID: 17534
+	// Token: 0x040044BC RID: 17596
 	public const int cIndexTransparent = 2;
 
-	// Token: 0x0400447F RID: 17535
+	// Token: 0x040044BD RID: 17597
 	public const int cIndexGrass = 3;
 
-	// Token: 0x04004480 RID: 17536
+	// Token: 0x040044BE RID: 17598
 	public const int cIndexDecals = 4;
 
-	// Token: 0x04004481 RID: 17537
+	// Token: 0x040044BF RID: 17599
 	public const int cIndexTerrain = 5;
 
-	// Token: 0x04004482 RID: 17538
+	// Token: 0x040044C0 RID: 17600
 	public const int cIndexCount = 6;
 
-	// Token: 0x04004483 RID: 17539
+	// Token: 0x040044C1 RID: 17601
 	public const int MESH_OPAQUE = 0;
 
-	// Token: 0x04004484 RID: 17540
+	// Token: 0x040044C2 RID: 17602
 	public const int MESH_WATER = 1;
 
-	// Token: 0x04004485 RID: 17541
+	// Token: 0x040044C3 RID: 17603
 	public const int MESH_TRANSPARENT = 2;
 
-	// Token: 0x04004486 RID: 17542
+	// Token: 0x040044C4 RID: 17604
 	public const int MESH_GRASS = 3;
 
-	// Token: 0x04004487 RID: 17543
+	// Token: 0x040044C5 RID: 17605
 	public const int MESH_DECALS = 4;
 
-	// Token: 0x04004488 RID: 17544
+	// Token: 0x040044C6 RID: 17606
 	public const int MESH_TERRAIN = 5;
 
-	// Token: 0x04004489 RID: 17545
+	// Token: 0x040044C7 RID: 17607
 	public const int MESH_MODELS = 0;
 
-	// Token: 0x0400448A RID: 17546
+	// Token: 0x040044C8 RID: 17608
 	public static MeshDescription[] meshes = new MeshDescription[0];
 
-	// Token: 0x0400448B RID: 17547
+	// Token: 0x040044C9 RID: 17609
 	public static int GrassQualityPlanes;
 
-	// Token: 0x0400448C RID: 17548
+	// Token: 0x040044CA RID: 17610
 	public string Name;
 
-	// Token: 0x0400448D RID: 17549
+	// Token: 0x040044CB RID: 17611
 	public string Tag;
 
-	// Token: 0x0400448E RID: 17550
+	// Token: 0x040044CC RID: 17612
 	public VoxelMesh.EnumMeshType meshType;
 
-	// Token: 0x0400448F RID: 17551
+	// Token: 0x040044CD RID: 17613
 	public bool bCastShadows;
 
-	// Token: 0x04004490 RID: 17552
+	// Token: 0x040044CE RID: 17614
 	public bool bReceiveShadows;
 
-	// Token: 0x04004491 RID: 17553
+	// Token: 0x040044CF RID: 17615
 	public bool bHasLODs;
 
-	// Token: 0x04004492 RID: 17554
+	// Token: 0x040044D0 RID: 17616
 	public bool bUseDebugStabilityShader;
 
-	// Token: 0x04004493 RID: 17555
+	// Token: 0x040044D1 RID: 17617
 	public bool bTerrain;
 
-	// Token: 0x04004494 RID: 17556
+	// Token: 0x040044D2 RID: 17618
 	public bool bTextureArray;
 
-	// Token: 0x04004495 RID: 17557
+	// Token: 0x040044D3 RID: 17619
 	public bool bSpecularIsBlack;
 
-	// Token: 0x04004496 RID: 17558
+	// Token: 0x040044D4 RID: 17620
 	public bool CreateTextureAtlas = true;
 
-	// Token: 0x04004497 RID: 17559
+	// Token: 0x040044D5 RID: 17621
 	public bool CreateSpecularMap = true;
 
-	// Token: 0x04004498 RID: 17560
+	// Token: 0x040044D6 RID: 17622
 	public bool CreateNormalMap = true;
 
-	// Token: 0x04004499 RID: 17561
+	// Token: 0x040044D7 RID: 17623
 	public bool CreateEmissionMap;
 
-	// Token: 0x0400449A RID: 17562
+	// Token: 0x040044D8 RID: 17624
 	public bool CreateHeightMap;
 
-	// Token: 0x0400449B RID: 17563
+	// Token: 0x040044D9 RID: 17625
 	public bool CreateOcclusionMap;
 
-	// Token: 0x0400449C RID: 17564
+	// Token: 0x040044DA RID: 17626
 	public string MeshLayerName;
 
-	// Token: 0x0400449D RID: 17565
+	// Token: 0x040044DB RID: 17627
 	public string ColliderLayerName;
 
-	// Token: 0x0400449E RID: 17566
+	// Token: 0x040044DC RID: 17628
 	public AssetReference PrimaryShader;
 
-	// Token: 0x0400449F RID: 17567
+	// Token: 0x040044DD RID: 17629
 	public AssetReference SecondaryShader;
 
-	// Token: 0x040044A0 RID: 17568
+	// Token: 0x040044DE RID: 17630
 	public AssetReference DistantShader;
 
-	// Token: 0x040044A1 RID: 17569
+	// Token: 0x040044DF RID: 17631
 	public MeshDescription.EnumRenderMode BlendMode;
 
-	// Token: 0x040044A2 RID: 17570
+	// Token: 0x040044E0 RID: 17632
 	public Material BaseMaterial;
 
-	// Token: 0x040044A3 RID: 17571
+	// Token: 0x040044E1 RID: 17633
 	public Material SecondaryMaterial;
 
-	// Token: 0x040044A4 RID: 17572
+	// Token: 0x040044E2 RID: 17634
 	public string TextureAtlasClass;
 
-	// Token: 0x040044A5 RID: 17573
+	// Token: 0x040044E3 RID: 17635
 	public Texture TexDiffuse;
 
-	// Token: 0x040044A6 RID: 17574
+	// Token: 0x040044E4 RID: 17636
 	public Texture TexNormal;
 
-	// Token: 0x040044A7 RID: 17575
+	// Token: 0x040044E5 RID: 17637
 	public Texture TexSpecular;
 
-	// Token: 0x040044A8 RID: 17576
+	// Token: 0x040044E6 RID: 17638
 	public Texture TexEmission;
 
-	// Token: 0x040044A9 RID: 17577
+	// Token: 0x040044E7 RID: 17639
 	public Texture TexHeight;
 
-	// Token: 0x040044AA RID: 17578
+	// Token: 0x040044E8 RID: 17640
 	public Texture TexOcclusion;
 
-	// Token: 0x040044AB RID: 17579
+	// Token: 0x040044E9 RID: 17641
 	public Texture2D TexMask;
 
-	// Token: 0x040044AC RID: 17580
+	// Token: 0x040044EA RID: 17642
 	public Texture2D TexMaskNormal;
 
-	// Token: 0x040044AD RID: 17581
+	// Token: 0x040044EB RID: 17643
 	public TextAsset MetaData;
 
-	// Token: 0x040044AE RID: 17582
+	// Token: 0x040044EC RID: 17644
 	[HideInInspector]
 	public TextureAtlas textureAtlas;
 
-	// Token: 0x040044AF RID: 17583
+	// Token: 0x040044ED RID: 17645
 	[NonSerialized]
 	public Material[] materials;
 
-	// Token: 0x040044B0 RID: 17584
+	// Token: 0x040044EE RID: 17646
 	[NonSerialized]
 	public Material materialDistant;
 
-	// Token: 0x040044B1 RID: 17585
+	// Token: 0x040044EF RID: 17647
 	[NonSerialized]
 	public Material[] prefabTerrainMaterials;
 
-	// Token: 0x040044B2 RID: 17586
+	// Token: 0x040044F0 RID: 17648
 	[NonSerialized]
 	public Material prefabTerrainMaterialDistant;
 
-	// Token: 0x040044B3 RID: 17587
+	// Token: 0x040044F1 RID: 17649
 	public static bool bDebugStability;
 
-	// Token: 0x02000B6D RID: 2925
+	// Token: 0x02000B7F RID: 2943
 	public enum EnumRenderMode
 	{
-		// Token: 0x040044B5 RID: 17589
+		// Token: 0x040044F3 RID: 17651
 		Default = -1,
-		// Token: 0x040044B6 RID: 17590
+		// Token: 0x040044F4 RID: 17652
 		Opaque,
-		// Token: 0x040044B7 RID: 17591
+		// Token: 0x040044F5 RID: 17653
 		Cutout,
-		// Token: 0x040044B8 RID: 17592
+		// Token: 0x040044F6 RID: 17654
 		Fade,
-		// Token: 0x040044B9 RID: 17593
+		// Token: 0x040044F7 RID: 17655
 		Transparent
 	}
 
-	// Token: 0x02000B6E RID: 2926
+	// Token: 0x02000B80 RID: 2944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ETextureType
 	{
-		// Token: 0x040044BB RID: 17595
+		// Token: 0x040044F9 RID: 17657
 		Diffuse,
-		// Token: 0x040044BC RID: 17596
+		// Token: 0x040044FA RID: 17658
 		Normal,
-		// Token: 0x040044BD RID: 17597
+		// Token: 0x040044FB RID: 17659
 		Specular
 	}
 }

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000807 RID: 2055
+// Token: 0x02000806 RID: 2054
 [Preserve]
 public class NetPackageLobbyJoin : NetPackage
 {
-	// Token: 0x1700064B RID: 1611
-	// (get) Token: 0x06003C8E RID: 15502 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700066C RID: 1644
+	// (get) Token: 0x06003C67 RID: 15463 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -17,27 +16,27 @@ public class NetPackageLobbyJoin : NetPackage
 		}
 	}
 
-	// Token: 0x06003C8F RID: 15503 RVA: 0x00182AD6 File Offset: 0x00180CD6
+	// Token: 0x06003C68 RID: 15464 RVA: 0x00182B2E File Offset: 0x00180D2E
 	public NetPackageLobbyJoin Setup(PlatformLobbyId lobbyId)
 	{
 		this.serverLobbyId = lobbyId;
 		return this;
 	}
 
-	// Token: 0x06003C90 RID: 15504 RVA: 0x00182AE0 File Offset: 0x00180CE0
+	// Token: 0x06003C69 RID: 15465 RVA: 0x00182B38 File Offset: 0x00180D38
 	public override void read(PooledBinaryReader _br)
 	{
 		this.serverLobbyId = PlatformLobbyId.Read(_br);
 	}
 
-	// Token: 0x06003C91 RID: 15505 RVA: 0x00182AEE File Offset: 0x00180CEE
+	// Token: 0x06003C6A RID: 15466 RVA: 0x00182B46 File Offset: 0x00180D46
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		this.serverLobbyId.Write(_bw);
 	}
 
-	// Token: 0x06003C92 RID: 15506 RVA: 0x00182B04 File Offset: 0x00180D04
+	// Token: 0x06003C6B RID: 15467 RVA: 0x00182B5C File Offset: 0x00180D5C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		ILobbyHost lobbyHost = PlatformManager.NativePlatform.LobbyHost;
@@ -66,19 +65,7 @@ public class NetPackageLobbyJoin : NetPackage
 		});
 	}
 
-	// Token: 0x06003C93 RID: 15507 RVA: 0x00182BF0 File Offset: 0x00180DF0
-	public override int GetLength()
-	{
-		Encoding utf = Encoding.UTF8;
-		PlatformLobbyId platformLobbyId = this.serverLobbyId;
-		if (platformLobbyId == null)
-		{
-			return 0;
-		}
-		return platformLobbyId.GetWriteLength(utf);
-	}
-
-	// Token: 0x0400312F RID: 12591
+	// Token: 0x0400311D RID: 12573
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformLobbyId serverLobbyId;
 }

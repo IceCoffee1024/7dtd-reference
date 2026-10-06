@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001A02 RID: 6658
+	// Token: 0x02001A2E RID: 6702
 	[Preserve]
 	public class ActionTwitchStartVote : BaseAction
 	{
-		// Token: 0x0600CAD0 RID: 51920 RVA: 0x004A4DC0 File Offset: 0x004A2FC0
+		// Token: 0x0600CC28 RID: 52264 RVA: 0x004A928C File Offset: 0x004A748C
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.voteType == "")
@@ -24,14 +24,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600CAD1 RID: 51921 RVA: 0x004A4E10 File Offset: 0x004A3010
+		// Token: 0x0600CC29 RID: 52265 RVA: 0x004A92DC File Offset: 0x004A74DC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionTwitchStartVote.PropVoteType, ref this.voteType);
 		}
 
-		// Token: 0x0600CAD2 RID: 51922 RVA: 0x004A4E2A File Offset: 0x004A302A
+		// Token: 0x0600CC2A RID: 52266 RVA: 0x004A92F6 File Offset: 0x004A74F6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -41,11 +41,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009A06 RID: 39430
+		// Token: 0x04009ACC RID: 39628
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string voteType = "";
 
-		// Token: 0x04009A07 RID: 39431
+		// Token: 0x04009ACD RID: 39629
 		public static string PropVoteType = "vote_type";
 	}
 }

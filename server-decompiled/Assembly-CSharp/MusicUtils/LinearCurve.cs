@@ -2,22 +2,22 @@
 
 namespace MusicUtils
 {
-	// Token: 0x02001A13 RID: 6675
+	// Token: 0x02001A3F RID: 6719
 	public class LinearCurve : Curve
 	{
-		// Token: 0x0600CB0D RID: 51981 RVA: 0x004A59D0 File Offset: 0x004A3BD0
+		// Token: 0x0600CC65 RID: 52325 RVA: 0x004A9E9C File Offset: 0x004A809C
 		public LinearCurve(float _startY, float _endY, float _startX, float _endX)
 			: base(_startY, _endY, _startX, _endX)
 		{
 		}
 
-		// Token: 0x0600CB0E RID: 51982 RVA: 0x004A59DD File Offset: 0x004A3BDD
+		// Token: 0x0600CC66 RID: 52326 RVA: 0x004A9EA9 File Offset: 0x004A80A9
 		public override float GetMixerValue(float _param)
 		{
 			return Utils.FastClamp(this.GetLine(_param), this.linearStart, this.linearEnd);
 		}
 
-		// Token: 0x0600CB0F RID: 51983 RVA: 0x004A59F7 File Offset: 0x004A3BF7
+		// Token: 0x0600CC67 RID: 52327 RVA: 0x004A9EC3 File Offset: 0x004A80C3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float GetLine(float _param)
 		{

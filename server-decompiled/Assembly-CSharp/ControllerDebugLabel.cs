@@ -5,10 +5,10 @@ using System.Text;
 using InControl;
 using UnityEngine;
 
-// Token: 0x02001190 RID: 4496
+// Token: 0x020011A8 RID: 4520
 public class ControllerDebugLabel : MonoBehaviour
 {
-	// Token: 0x06008FCC RID: 36812 RVA: 0x00360BA8 File Offset: 0x0035EDA8
+	// Token: 0x06009058 RID: 36952 RVA: 0x00365374 File Offset: 0x00363574
 	public ControllerDebugLabel()
 	{
 		this.m_debugStringProviders = new SortedDictionary<string, Action<StringBuilder>>();
@@ -18,7 +18,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		this.m_debugStringBuilderForControlsString = new StringBuilder(512);
 	}
 
-	// Token: 0x06008FCD RID: 36813 RVA: 0x00360C35 File Offset: 0x0035EE35
+	// Token: 0x06009059 RID: 36953 RVA: 0x00365401 File Offset: 0x00363601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -27,7 +27,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		this.AddDebugProvider("Devices", new Action<StringBuilder>(this.BuildDevicesString));
 	}
 
-	// Token: 0x06008FCE RID: 36814 RVA: 0x00360C71 File Offset: 0x0035EE71
+	// Token: 0x0600905A RID: 36954 RVA: 0x0036543D File Offset: 0x0036363D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -35,7 +35,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		this.RemoveDebugProvider("Devices");
 	}
 
-	// Token: 0x06008FCF RID: 36815 RVA: 0x00360C8C File Offset: 0x0035EE8C
+	// Token: 0x0600905B RID: 36955 RVA: 0x00365458 File Offset: 0x00363658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -86,7 +86,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FD0 RID: 36816 RVA: 0x00360E14 File Offset: 0x0035F014
+	// Token: 0x0600905C RID: 36956 RVA: 0x003655E0 File Offset: 0x003637E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateProviderNames()
 	{
@@ -94,7 +94,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		this.m_debugStringProviderNames.AddRange(this.m_debugStringProviders.Keys);
 	}
 
-	// Token: 0x06008FD1 RID: 36817 RVA: 0x00360E37 File Offset: 0x0035F037
+	// Token: 0x0600905D RID: 36957 RVA: 0x00365603 File Offset: 0x00363803
 	public void AddDebugProvider(string providerName, Action<StringBuilder> provider)
 	{
 		bool flag = !this.m_debugStringProviders.ContainsKey(providerName);
@@ -105,7 +105,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FD2 RID: 36818 RVA: 0x00360E5D File Offset: 0x0035F05D
+	// Token: 0x0600905E RID: 36958 RVA: 0x00365629 File Offset: 0x00363829
 	public void RemoveDebugProvider(string providerName)
 	{
 		if (this.m_debugStringProviders.Remove(providerName))
@@ -114,7 +114,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FD3 RID: 36819 RVA: 0x00360E74 File Offset: 0x0035F074
+	// Token: 0x0600905F RID: 36959 RVA: 0x00365640 File Offset: 0x00363840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildKeyCodeString(StringBuilder builder)
 	{
@@ -131,7 +131,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FD4 RID: 36820 RVA: 0x00360EC4 File Offset: 0x0035F0C4
+	// Token: 0x06009060 RID: 36960 RVA: 0x00365690 File Offset: 0x00363890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildDevicesString(StringBuilder builder)
 	{
@@ -155,7 +155,7 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06008FD5 RID: 36821 RVA: 0x00360F3C File Offset: 0x0035F13C
+	// Token: 0x06009061 RID: 36961 RVA: 0x00365708 File Offset: 0x00363908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildControlsString(StringBuilder builder, InputDevice device)
 	{
@@ -190,52 +190,52 @@ public class ControllerDebugLabel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04006A52 RID: 27218
+	// Token: 0x04006AB8 RID: 27320
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string KEY_DEVICES = "Devices";
 
-	// Token: 0x04006A53 RID: 27219
+	// Token: 0x04006AB9 RID: 27321
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string KEY_KEY_CODES = "Key Codes";
 
-	// Token: 0x04006A54 RID: 27220
+	// Token: 0x04006ABA RID: 27322
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly SortedDictionary<string, Action<StringBuilder>> m_debugStringProviders;
 
-	// Token: 0x04006A55 RID: 27221
+	// Token: 0x04006ABB RID: 27323
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<string> m_debugStringProviderNames;
 
-	// Token: 0x04006A56 RID: 27222
+	// Token: 0x04006ABC RID: 27324
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StringBuilder m_debugStringBuilderMain;
 
-	// Token: 0x04006A57 RID: 27223
+	// Token: 0x04006ABD RID: 27325
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StringBuilder m_debugStringBuilderForProvider;
 
-	// Token: 0x04006A58 RID: 27224
+	// Token: 0x04006ABE RID: 27326
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StringBuilder m_debugStringBuilderForControlsString;
 
-	// Token: 0x04006A59 RID: 27225
+	// Token: 0x04006ABF RID: 27327
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UILabel m_label;
 
-	// Token: 0x04006A5A RID: 27226
+	// Token: 0x04006AC0 RID: 27328
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly KeyCode[] m_allKeyCodes = (KeyCode[])Enum.GetValues(typeof(KeyCode));
 
-	// Token: 0x04006A5B RID: 27227
+	// Token: 0x04006AC1 RID: 27329
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly InputControlType[] m_allControls = (InputControlType[])Enum.GetValues(typeof(InputControlType));

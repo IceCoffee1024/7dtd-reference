@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000297 RID: 663
+// Token: 0x0200029A RID: 666
 [Preserve]
 public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 {
-	// Token: 0x06001354 RID: 4948 RVA: 0x0007635D File Offset: 0x0007455D
+	// Token: 0x06001351 RID: 4945 RVA: 0x00076611 File Offset: 0x00074811
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "signtexman", "stm" };
 	}
 
-	// Token: 0x06001355 RID: 4949 RVA: 0x00076375 File Offset: 0x00074575
+	// Token: 0x06001352 RID: 4946 RVA: 0x00076629 File Offset: 0x00074829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Allows enabling/disabling the Sign Texture Manager and configuring various baking settings.";
 	}
 
-	// Token: 0x06001356 RID: 4950 RVA: 0x0007637C File Offset: 0x0007457C
+	// Token: 0x06001353 RID: 4947 RVA: 0x00076630 File Offset: 0x00074830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "No params: Toggles the enabled state of SignTextureManager. When enabled (default), signs are baked to textures when close to the camera. When disabled, all signs are rendered dynamically (infinite resolution).\nTwo parameter modes: either (string), or (int, optional int, optional bool).\nSingle string parameter:\n   `stm l` (log) will log debug info.\n   `stm ld` (log disk) will do the same and also save the log to the application directory.\nFirst param (integer): Sets sign texture quality level. 0-4 inclusive: Lowest-Ultra. 5: Infinite (no textures).\nSecond param (integer, optional after first param): Sets tile size. Intended to be a neat power of two in the range of 64-1024.\nThird param (bool, optional after second param): Sets debug visualization of in-progress bakes on/off.";
 	}
 
-	// Token: 0x17000214 RID: 532
-	// (get) Token: 0x06001357 RID: 4951 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700020C RID: 524
+	// (get) Token: 0x06001354 RID: 4948 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -37,8 +37,8 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000215 RID: 533
-	// (get) Token: 0x06001358 RID: 4952 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x1700020D RID: 525
+	// (get) Token: 0x06001355 RID: 4949 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -47,7 +47,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001359 RID: 4953 RVA: 0x00076384 File Offset: 0x00074584
+	// Token: 0x06001356 RID: 4950 RVA: 0x00076638 File Offset: 0x00074838
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.World == null)
@@ -114,7 +114,7 @@ public class ConsoleCmdSignTextureManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000D6E RID: 3438
+	// Token: 0x04000D67 RID: 3431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureManager.SignTextureQuality previousQuality = SignTextureManager.SignTextureQuality.Medium;
 }

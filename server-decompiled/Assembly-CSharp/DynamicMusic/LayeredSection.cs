@@ -6,17 +6,17 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A60 RID: 6752
+	// Token: 0x02001A8C RID: 6796
 	[Preserve]
 	public abstract class LayeredSection<T> : Section, ISection, IPlayable, IFadeable, ICleanable where T : ILayerMixer, new()
 	{
-		// Token: 0x0600CC93 RID: 52371 RVA: 0x004AA0CA File Offset: 0x004A82CA
+		// Token: 0x0600CDEB RID: 52715 RVA: 0x004AE596 File Offset: 0x004AC796
 		public LayeredSection()
 		{
 			this.Mixer = new T();
 		}
 
-		// Token: 0x0600CC94 RID: 52372 RVA: 0x004AA0E0 File Offset: 0x004A82E0
+		// Token: 0x0600CDEC RID: 52716 RVA: 0x004AE5AC File Offset: 0x004AC7AC
 		public override void Init()
 		{
 			base.Init();
@@ -24,7 +24,7 @@ namespace DynamicMusic
 			this.IsReady = (base.IsInitialized = true);
 		}
 
-		// Token: 0x0600CC95 RID: 52373 RVA: 0x004AA10C File Offset: 0x004A830C
+		// Token: 0x0600CDED RID: 52717 RVA: 0x004AE5D8 File Offset: 0x004AC7D8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void Reset()
 		{
@@ -36,7 +36,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CC96 RID: 52374 RVA: 0x004AA149 File Offset: 0x004A8349
+		// Token: 0x0600CDEE RID: 52718 RVA: 0x004AE615 File Offset: 0x004AC815
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator PlayCoroutine()
 		{
@@ -49,7 +49,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CC97 RID: 52375 RVA: 0x004AA158 File Offset: 0x004A8358
+		// Token: 0x0600CDEF RID: 52719 RVA: 0x004AE624 File Offset: 0x004AC824
 		public override IEnumerator PreloadRoutine()
 		{
 			Log.Out("Preloading LayeredSection {0} : Type: {1}", new object[]
@@ -62,7 +62,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CC98 RID: 52376 RVA: 0x004AA167 File Offset: 0x004A8367
+		// Token: 0x0600CDF0 RID: 52720 RVA: 0x004AE633 File Offset: 0x004AC833
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator LoadContentCoroutine()
 		{
@@ -95,7 +95,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CC99 RID: 52377 RVA: 0x004AA178 File Offset: 0x004A8378
+		// Token: 0x0600CDF1 RID: 52721 RVA: 0x004AE644 File Offset: 0x004AC844
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void FillStream(float[] data)
 		{
@@ -111,22 +111,22 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x04009B51 RID: 39761
+		// Token: 0x04009C17 RID: 39959
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_FillStreamMarker = new ProfilerMarker("DynamicMusic.LayeredSection.FillStream");
 
-		// Token: 0x04009B52 RID: 39762
+		// Token: 0x04009C18 RID: 39960
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ProfilerMarker s_LoadContentMarker = new ProfilerMarker("DynamicMusic.LayeredSection.LoadContentCoroutine");
 
-		// Token: 0x04009B53 RID: 39763
+		// Token: 0x04009C19 RID: 39961
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public T Mixer;
 
-		// Token: 0x04009B54 RID: 39764
+		// Token: 0x04009C1A RID: 39962
 		public int cursor;
 
-		// Token: 0x04009B55 RID: 39765
+		// Token: 0x04009C1B RID: 39963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool preloaded;
 	}

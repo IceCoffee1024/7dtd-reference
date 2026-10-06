@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000394 RID: 916
+// Token: 0x02000397 RID: 919
 [Preserve]
 public class NetPackageDynamicClientArrive : NetPackage
 {
-	// Token: 0x06001B30 RID: 6960 RVA: 0x000A1390 File Offset: 0x0009F590
+	// Token: 0x06001B2A RID: 6954 RVA: 0x000A15E4 File Offset: 0x0009F7E4
 	public void BuildData()
 	{
 		foreach (DynamicMeshItem dynamicMeshItem in DynamicMeshManager.Instance.ItemsDictionary.Values)
@@ -16,14 +16,14 @@ public class NetPackageDynamicClientArrive : NetPackage
 		Log.Out("Client package items: " + this.Items.Count.ToString());
 	}
 
-	// Token: 0x06001B31 RID: 6961 RVA: 0x000A1414 File Offset: 0x0009F614
+	// Token: 0x06001B2B RID: 6955 RVA: 0x000A1668 File Offset: 0x0009F868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionItemData FromPool(DynamicMeshItem i)
 	{
 		return new RegionItemData(i.WorldPosition.x, i.WorldPosition.z, i.UpdateTime);
 	}
 
-	// Token: 0x06001B32 RID: 6962 RVA: 0x000A1438 File Offset: 0x0009F638
+	// Token: 0x06001B2C RID: 6956 RVA: 0x000A168C File Offset: 0x0009F88C
 	public override void read(PooledBinaryReader reader)
 	{
 		int num = reader.ReadInt32();
@@ -37,8 +37,8 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x17000336 RID: 822
-	// (get) Token: 0x06001B33 RID: 6963 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700032E RID: 814
+	// (get) Token: 0x06001B2D RID: 6957 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -47,7 +47,7 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x06001B34 RID: 6964 RVA: 0x000A1490 File Offset: 0x0009F690
+	// Token: 0x06001B2E RID: 6958 RVA: 0x000A16E4 File Offset: 0x0009F8E4
 	public override void write(PooledBinaryWriter writer)
 	{
 		base.write(writer);
@@ -60,7 +60,7 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x06001B35 RID: 6965 RVA: 0x000A1510 File Offset: 0x0009F710
+	// Token: 0x06001B2F RID: 6959 RVA: 0x000A1764 File Offset: 0x0009F964
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (DynamicMeshManager.CONTENT_ENABLED)
@@ -69,14 +69,8 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x06001B36 RID: 6966 RVA: 0x000A151F File Offset: 0x0009F71F
-	public override int GetLength()
-	{
-		return 4 + 12 * this.Items.Count;
-	}
-
-	// Token: 0x17000337 RID: 823
-	// (get) Token: 0x06001B37 RID: 6967 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700032F RID: 815
+	// (get) Token: 0x06001B30 RID: 6960 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int Channel
 	{
 		get
@@ -85,8 +79,8 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x17000338 RID: 824
-	// (get) Token: 0x06001B38 RID: 6968 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000330 RID: 816
+	// (get) Token: 0x06001B31 RID: 6961 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool Compress
 	{
 		get
@@ -95,6 +89,6 @@ public class NetPackageDynamicClientArrive : NetPackage
 		}
 	}
 
-	// Token: 0x04001188 RID: 4488
+	// Token: 0x04001181 RID: 4481
 	public List<RegionItemData> Items = new List<RegionItemData>();
 }

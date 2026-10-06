@@ -4,17 +4,17 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005E3 RID: 1507
+// Token: 0x020005E4 RID: 1508
 [Preserve]
 public class ItemActionUseOther : ItemAction
 {
-	// Token: 0x06003101 RID: 12545 RVA: 0x0013E1E2 File Offset: 0x0013C3E2
+	// Token: 0x06003148 RID: 12616 RVA: 0x0013EC8A File Offset: 0x0013CE8A
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionUseOther.FeedInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06003102 RID: 12546 RVA: 0x0013E1EC File Offset: 0x0013C3EC
+	// Token: 0x06003149 RID: 12617 RVA: 0x0013EC94 File Offset: 0x0013CE94
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -41,7 +41,7 @@ public class ItemActionUseOther : ItemAction
 		this.CreateItemCount = 1;
 	}
 
-	// Token: 0x06003103 RID: 12547 RVA: 0x0013E2A8 File Offset: 0x0013C4A8
+	// Token: 0x0600314A RID: 12618 RVA: 0x0013ED50 File Offset: 0x0013CF50
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -56,7 +56,7 @@ public class ItemActionUseOther : ItemAction
 		}
 	}
 
-	// Token: 0x06003104 RID: 12548 RVA: 0x0013E308 File Offset: 0x0013C508
+	// Token: 0x0600314B RID: 12619 RVA: 0x0013EDB0 File Offset: 0x0013CFB0
 	public override bool CanExecute(ItemActionData _actionData)
 	{
 		if (Time.time - _actionData.lastUseTime < this.Delay)
@@ -88,7 +88,7 @@ public class ItemActionUseOther : ItemAction
 		return base.CanExecute(_actionData);
 	}
 
-	// Token: 0x06003105 RID: 12549 RVA: 0x0013E444 File Offset: 0x0013C644
+	// Token: 0x0600314C RID: 12620 RVA: 0x0013EEEC File Offset: 0x0013D0EC
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -144,9 +144,7 @@ public class ItemActionUseOther : ItemAction
 		{
 			if (_actionData.invData.itemValue.MaxUseTimes > 0 && _actionData.invData.itemValue.UseTimes + 1f < (float)_actionData.invData.itemValue.MaxUseTimes)
 			{
-				ItemValue itemValue = _actionData.invData.itemValue;
-				itemValue.UseTimes += EffectManager.GetValue(PassiveEffects.DegradationPerUse, feedInventoryData.invData.itemValue, 1f, holdingEntity, null, _actionData.invData.itemValue.ItemClass.ItemTags, true, true, true, true, true, 1, true, false) * ItemAction.ItemDegradationModifier;
-				feedInventoryData.invData.itemValue = itemValue;
+				_actionData.invData.itemValue.UseTimes += EffectManager.GetValue(PassiveEffects.DegradationPerUse, feedInventoryData.invData.itemValue, 1f, holdingEntity, null, _actionData.invData.itemValue.ItemClass.ItemTags, true, true, true, true, true, 1, true, false) * ItemAction.ItemDegradationModifier;
 				return;
 			}
 			holdingEntity.inventory.DecHoldingItem(1);
@@ -164,20 +162,20 @@ public class ItemActionUseOther : ItemAction
 		feedInventoryData.TargetEntity = null;
 	}
 
-	// Token: 0x06003106 RID: 12550 RVA: 0x0013E780 File Offset: 0x0013C980
+	// Token: 0x0600314D RID: 12621 RVA: 0x0013F214 File Offset: 0x0013D414
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
 		return feedInventoryData.bFeedingStarted && Time.time - feedInventoryData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06003107 RID: 12551 RVA: 0x0013E7B3 File Offset: 0x0013C9B3
+	// Token: 0x0600314E RID: 12622 RVA: 0x0013F247 File Offset: 0x0013D447
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
 	}
 
-	// Token: 0x06003108 RID: 12552 RVA: 0x0013E7BC File Offset: 0x0013C9BC
+	// Token: 0x0600314F RID: 12623 RVA: 0x0013F250 File Offset: 0x0013D450
 	public static Entity GetEntityFromHit(WorldRayHitInfo hitInfo)
 	{
 		Transform hitRootTransform = GameUtils.GetHitRootTransform(hitInfo.tag, hitInfo.transform);
@@ -188,14 +186,14 @@ public class ItemActionUseOther : ItemAction
 		return null;
 	}
 
-	// Token: 0x06003109 RID: 12553 RVA: 0x0013E7EC File Offset: 0x0013C9EC
+	// Token: 0x06003150 RID: 12624 RVA: 0x0013F280 File Offset: 0x0013D480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canShowOverlay(ItemActionData _actionData)
 	{
 		return this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData);
 	}
 
-	// Token: 0x0600310A RID: 12554 RVA: 0x0013E7FA File Offset: 0x0013C9FA
+	// Token: 0x06003151 RID: 12625 RVA: 0x0013F28E File Offset: 0x0013D48E
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		if (this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData))
@@ -205,14 +203,14 @@ public class ItemActionUseOther : ItemAction
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x0600310B RID: 12555 RVA: 0x0013E7EC File Offset: 0x0013C9EC
+	// Token: 0x06003152 RID: 12626 RVA: 0x0013F280 File Offset: 0x0013D480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isShowOverlay(ItemActionData _actionData)
 	{
 		return this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData);
 	}
 
-	// Token: 0x0600310C RID: 12556 RVA: 0x0013E810 File Offset: 0x0013CA10
+	// Token: 0x06003153 RID: 12627 RVA: 0x0013F2A4 File Offset: 0x0013D4A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void getOverlayData(ItemActionData _actionData, out float _perc, out string _text)
 	{
@@ -226,14 +224,14 @@ public class ItemActionUseOther : ItemAction
 		_text = string.Format("{0}/{1}", feedInventoryData.TargetEntity.Stats.Health.Value.ToCultureInvariantString(), feedInventoryData.TargetEntity.Stats.Health.Max.ToCultureInvariantString());
 	}
 
-	// Token: 0x0600310D RID: 12557 RVA: 0x0013E8A4 File Offset: 0x0013CAA4
+	// Token: 0x06003154 RID: 12628 RVA: 0x0013F338 File Offset: 0x0013D538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isValidEntityToHeal(ItemActionUseOther.FeedInventoryData _actionData)
 	{
 		return _actionData.TargetEntity != null;
 	}
 
-	// Token: 0x0600310E RID: 12558 RVA: 0x0013E8B4 File Offset: 0x0013CAB4
+	// Token: 0x06003155 RID: 12629 RVA: 0x0013F348 File Offset: 0x0013D548
 	public override void OnHUD(ItemActionData _actionData, int _x, int _y)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
@@ -273,43 +271,43 @@ public class ItemActionUseOther : ItemAction
 		}
 	}
 
-	// Token: 0x0400260D RID: 9741
+	// Token: 0x04002607 RID: 9735
 	public new string CreateItem;
 
-	// Token: 0x0400260E RID: 9742
+	// Token: 0x04002608 RID: 9736
 	public int CreateItemCount;
 
-	// Token: 0x0400260F RID: 9743
+	// Token: 0x04002609 RID: 9737
 	public new bool Consume;
 
-	// Token: 0x04002610 RID: 9744
+	// Token: 0x0400260A RID: 9738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> noMedBuffsTag = FastTags<TagGroup.Global>.Parse("noMedBuffs");
 
-	// Token: 0x04002611 RID: 9745
+	// Token: 0x0400260B RID: 9739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> medicalItemTag = FastTags<TagGroup.Global>.Parse("medical");
 
-	// Token: 0x04002612 RID: 9746
+	// Token: 0x0400260C RID: 9740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> stopBleed = FastTags<TagGroup.Global>.Parse("stopsBleeding");
 
-	// Token: 0x020005E4 RID: 1508
+	// Token: 0x020005E5 RID: 1509
 	public class FeedInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06003110 RID: 12560 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x06003157 RID: 12631 RVA: 0x0012B224 File Offset: 0x00129424
 		public FeedInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002613 RID: 9747
+		// Token: 0x0400260D RID: 9741
 		public bool bFeedingStarted;
 
-		// Token: 0x04002614 RID: 9748
+		// Token: 0x0400260E RID: 9742
 		public EntityAlive TargetEntity;
 
-		// Token: 0x04002615 RID: 9749
+		// Token: 0x0400260F RID: 9743
 		public Ray ray;
 	}
 }

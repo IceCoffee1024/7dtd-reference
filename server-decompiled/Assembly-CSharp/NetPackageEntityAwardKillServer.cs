@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DB RID: 2011
+// Token: 0x020007DE RID: 2014
 [Preserve]
 public class NetPackageEntityAwardKillServer : NetPackage
 {
-	// Token: 0x1700062F RID: 1583
-	// (get) Token: 0x06003B81 RID: 15233 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000654 RID: 1620
+	// (get) Token: 0x06003B97 RID: 15255 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityAwardKillServer : NetPackage
 		}
 	}
 
-	// Token: 0x06003B82 RID: 15234 RVA: 0x0017F17C File Offset: 0x0017D37C
+	// Token: 0x06003B98 RID: 15256 RVA: 0x0017F6C0 File Offset: 0x0017D8C0
 	public NetPackageEntityAwardKillServer Setup(int _killerEntityId, int _killedEntityId)
 	{
 		this.EntityId = _killerEntityId;
@@ -23,14 +23,14 @@ public class NetPackageEntityAwardKillServer : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B83 RID: 15235 RVA: 0x0017F18D File Offset: 0x0017D38D
+	// Token: 0x06003B99 RID: 15257 RVA: 0x0017F6D1 File Offset: 0x0017D8D1
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.EntityId = _reader.ReadInt32();
 		this.KilledEntityId = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003B84 RID: 15236 RVA: 0x0017F1A7 File Offset: 0x0017D3A7
+	// Token: 0x06003B9A RID: 15258 RVA: 0x0017F6EB File Offset: 0x0017D8EB
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -38,7 +38,7 @@ public class NetPackageEntityAwardKillServer : NetPackage
 		_writer.Write(this.KilledEntityId);
 	}
 
-	// Token: 0x06003B85 RID: 15237 RVA: 0x0017F1C8 File Offset: 0x0017D3C8
+	// Token: 0x06003B9B RID: 15259 RVA: 0x0017F70C File Offset: 0x0017D90C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -56,15 +56,9 @@ public class NetPackageEntityAwardKillServer : NetPackage
 		}
 	}
 
-	// Token: 0x06003B86 RID: 15238 RVA: 0x0008121D File Offset: 0x0007F41D
-	public override int GetLength()
-	{
-		return 8;
-	}
-
-	// Token: 0x04003083 RID: 12419
+	// Token: 0x0400307C RID: 12412
 	public int EntityId;
 
-	// Token: 0x04003084 RID: 12420
+	// Token: 0x0400307D RID: 12413
 	public int KilledEntityId;
 }

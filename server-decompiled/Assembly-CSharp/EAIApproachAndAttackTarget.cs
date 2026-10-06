@@ -5,11 +5,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200042C RID: 1068
+// Token: 0x0200042E RID: 1070
 [Preserve]
 public class EAIApproachAndAttackTarget : EAIBase
 {
-	// Token: 0x060020D5 RID: 8405 RVA: 0x000C5833 File Offset: 0x000C3A33
+	// Token: 0x060020C4 RID: 8388 RVA: 0x000C58E7 File Offset: 0x000C3AE7
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -17,7 +17,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		this.executeDelay = 0.1f;
 	}
 
-	// Token: 0x060020D6 RID: 8406 RVA: 0x000C5850 File Offset: 0x000C3A50
+	// Token: 0x060020C5 RID: 8389 RVA: 0x000C5904 File Offset: 0x000C3B04
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -45,7 +45,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x060020D7 RID: 8407 RVA: 0x000C5924 File Offset: 0x000C3B24
+	// Token: 0x060020C6 RID: 8390 RVA: 0x000C59D8 File Offset: 0x000C3BD8
 	public void SetTargetOnlyPlayers()
 	{
 		this.targetClasses.Clear();
@@ -54,7 +54,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		this.targetClasses.Add(targetClass);
 	}
 
-	// Token: 0x060020D8 RID: 8408 RVA: 0x000C5964 File Offset: 0x000C3B64
+	// Token: 0x060020C7 RID: 8391 RVA: 0x000C5A18 File Offset: 0x000C3C18
 	public override bool CanExecute()
 	{
 		if (this.theEntity.sleepingOrWakingUp || this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None || (this.theEntity.Jumping && !this.theEntity.isSwimming))
@@ -79,7 +79,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		return false;
 	}
 
-	// Token: 0x060020D9 RID: 8409 RVA: 0x000C5A28 File Offset: 0x000C3C28
+	// Token: 0x060020C8 RID: 8392 RVA: 0x000C5ADC File Offset: 0x000C3CDC
 	public override void Start()
 	{
 		this.entityTargetPos = this.entityTarget.position;
@@ -99,7 +99,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		this.attackTimeout = 5;
 	}
 
-	// Token: 0x060020DA RID: 8410 RVA: 0x000C5B0C File Offset: 0x000C3D0C
+	// Token: 0x060020C9 RID: 8393 RVA: 0x000C5BC0 File Offset: 0x000C3DC0
 	public override bool Continue()
 	{
 		if (this.theEntity.sleepingOrWakingUp || this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None)
@@ -114,7 +114,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		return attackTarget && !(attackTarget != this.entityTarget) && attackTarget.IsDead() == this.isTargetToEat;
 	}
 
-	// Token: 0x060020DB RID: 8411 RVA: 0x000C5B99 File Offset: 0x000C3D99
+	// Token: 0x060020CA RID: 8394 RVA: 0x000C5C4D File Offset: 0x000C3E4D
 	public override void Reset()
 	{
 		this.theEntity.IsEating = false;
@@ -125,7 +125,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x060020DC RID: 8412 RVA: 0x000C5BCC File Offset: 0x000C3DCC
+	// Token: 0x060020CB RID: 8395 RVA: 0x000C5C80 File Offset: 0x000C3E80
 	public override void Update()
 	{
 		if (this.hasHome && !this.isTargetToEat)
@@ -401,7 +401,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x060020DD RID: 8413 RVA: 0x000C659C File Offset: 0x000C479C
+	// Token: 0x060020CC RID: 8396 RVA: 0x000C6650 File Offset: 0x000C4850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetTargetXZDistanceSq(float estimatedTicks)
 	{
@@ -416,7 +416,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		return vector2.sqrMagnitude;
 	}
 
-	// Token: 0x060020DE RID: 8414 RVA: 0x000C6618 File Offset: 0x000C4818
+	// Token: 0x060020CD RID: 8397 RVA: 0x000C66CC File Offset: 0x000C48CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 GetMoveToLocation(float maxDist)
 	{
@@ -484,7 +484,7 @@ public class EAIApproachAndAttackTarget : EAIBase
 		return vector;
 	}
 
-	// Token: 0x060020DF RID: 8415 RVA: 0x000C681C File Offset: 0x000C4A1C
+	// Token: 0x060020CE RID: 8398 RVA: 0x000C68D0 File Offset: 0x000C4AD0
 	public override string ToString()
 	{
 		ItemValue holdingItemItemValue = this.theEntity.inventory.holdingItemItemValue;
@@ -514,82 +514,82 @@ public class EAIApproachAndAttackTarget : EAIBase
 		});
 	}
 
-	// Token: 0x0400167A RID: 5754
+	// Token: 0x04001671 RID: 5745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSleeperChaseTime = 90f;
 
-	// Token: 0x0400167B RID: 5755
+	// Token: 0x04001672 RID: 5746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAIApproachAndAttackTarget.TargetClass> targetClasses;
 
-	// Token: 0x0400167C RID: 5756
+	// Token: 0x04001673 RID: 5747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float chaseTimeMax;
 
-	// Token: 0x0400167D RID: 5757
+	// Token: 0x04001674 RID: 5748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasHome;
 
-	// Token: 0x0400167E RID: 5758
+	// Token: 0x04001675 RID: 5749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isGoingHome;
 
-	// Token: 0x0400167F RID: 5759
+	// Token: 0x04001676 RID: 5750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float homeTimeout;
 
-	// Token: 0x04001680 RID: 5760
+	// Token: 0x04001677 RID: 5751
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entityTarget;
 
-	// Token: 0x04001681 RID: 5761
+	// Token: 0x04001678 RID: 5752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 entityTargetPos;
 
-	// Token: 0x04001682 RID: 5762
+	// Token: 0x04001679 RID: 5753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 entityTargetVel;
 
-	// Token: 0x04001683 RID: 5763
+	// Token: 0x0400167A RID: 5754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int attackTimeout;
 
-	// Token: 0x04001684 RID: 5764
+	// Token: 0x0400167B RID: 5755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pathCounter;
 
-	// Token: 0x04001685 RID: 5765
+	// Token: 0x0400167C RID: 5756
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 seekPosOffset;
 
-	// Token: 0x04001686 RID: 5766
+	// Token: 0x0400167D RID: 5757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTargetToEat;
 
-	// Token: 0x04001687 RID: 5767
+	// Token: 0x0400167E RID: 5758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isEating;
 
-	// Token: 0x04001688 RID: 5768
+	// Token: 0x0400167F RID: 5759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int eatCount;
 
-	// Token: 0x04001689 RID: 5769
+	// Token: 0x04001680 RID: 5760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAIBlockingTargetTask blockTargetTask;
 
-	// Token: 0x0400168A RID: 5770
+	// Token: 0x04001681 RID: 5761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int relocateTicks;
 
-	// Token: 0x0200042D RID: 1069
+	// Token: 0x0200042F RID: 1071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TargetClass
 	{
-		// Token: 0x0400168B RID: 5771
+		// Token: 0x04001682 RID: 5762
 		public Type type;
 
-		// Token: 0x0400168C RID: 5772
+		// Token: 0x04001683 RID: 5763
 		public float chaseTimeMax;
 	}
 }

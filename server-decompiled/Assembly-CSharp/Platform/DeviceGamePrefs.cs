@@ -3,10 +3,10 @@ using System.IO;
 
 namespace Platform
 {
-	// Token: 0x02001B45 RID: 6981
+	// Token: 0x02001B77 RID: 7031
 	public static class DeviceGamePrefs
 	{
-		// Token: 0x0600D12F RID: 53551 RVA: 0x004C5314 File Offset: 0x004C3514
+		// Token: 0x0600D2A6 RID: 53926 RVA: 0x004C9DFC File Offset: 0x004C7FFC
 		public static void Apply()
 		{
 			if ((DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent())
@@ -28,13 +28,13 @@ namespace Platform
 			DeviceGamePrefs.ApplyConfigFilePrefs();
 		}
 
-		// Token: 0x0600D130 RID: 53552 RVA: 0x004C53A8 File Offset: 0x004C35A8
+		// Token: 0x0600D2A7 RID: 53927 RVA: 0x004C9E90 File Offset: 0x004C8090
 		public static string ConfigFilename(string _deviceName)
 		{
 			return "gameprefs_" + _deviceName;
 		}
 
-		// Token: 0x0600D131 RID: 53553 RVA: 0x004C53B8 File Offset: 0x004C35B8
+		// Token: 0x0600D2A8 RID: 53928 RVA: 0x004C9EA0 File Offset: 0x004C80A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ApplyConfigFilePrefs()
 		{
@@ -51,7 +51,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D132 RID: 53554 RVA: 0x004C5420 File Offset: 0x004C3620
+		// Token: 0x0600D2A9 RID: 53929 RVA: 0x004C9F08 File Offset: 0x004C8108
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ApplyGamePrefs(DynamicProperties properties)
 		{

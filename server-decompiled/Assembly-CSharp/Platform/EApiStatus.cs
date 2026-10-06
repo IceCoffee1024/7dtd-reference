@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001B75 RID: 7029
+	// Token: 0x02001BA7 RID: 7079
 	public enum EApiStatus
 	{
-		// Token: 0x0400A0A2 RID: 41122
+		// Token: 0x0400A177 RID: 41335
 		Ok,
-		// Token: 0x0400A0A3 RID: 41123
+		// Token: 0x0400A178 RID: 41336
 		PermanentError,
-		// Token: 0x0400A0A4 RID: 41124
+		// Token: 0x0400A179 RID: 41337
 		TemporaryError,
-		// Token: 0x0400A0A5 RID: 41125
+		// Token: 0x0400A17A RID: 41338
 		Uninitialized
 	}
 }

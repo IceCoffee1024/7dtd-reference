@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001344 RID: 4932
+// Token: 0x02001364 RID: 4964
 [CreateAssetMenu(fileName = "NewIdPalette", menuName = "ID Maps/ID Palette", order = 0)]
 public class IdPalette : ScriptableObject
 {
-	// Token: 0x17001280 RID: 4736
-	// (get) Token: 0x06009BD3 RID: 39891 RVA: 0x003AD12B File Offset: 0x003AB32B
+	// Token: 0x170012C5 RID: 4805
+	// (get) Token: 0x06009C7F RID: 40063 RVA: 0x003B1CA7 File Offset: 0x003AFEA7
 	public static IdPalette Instance
 	{
 		get
@@ -25,7 +25,7 @@ public class IdPalette : ScriptableObject
 		}
 	}
 
-	// Token: 0x06009BD4 RID: 39892 RVA: 0x003AD16A File Offset: 0x003AB36A
+	// Token: 0x06009C80 RID: 40064 RVA: 0x003B1CE6 File Offset: 0x003AFEE6
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ResetStatic()
@@ -33,7 +33,7 @@ public class IdPalette : ScriptableObject
 		IdPalette._instance = null;
 	}
 
-	// Token: 0x06009BD5 RID: 39893 RVA: 0x003AD172 File Offset: 0x003AB372
+	// Token: 0x06009C81 RID: 40065 RVA: 0x003B1CEE File Offset: 0x003AFEEE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -45,13 +45,13 @@ public class IdPalette : ScriptableObject
 		IdPalette._instance = this;
 	}
 
-	// Token: 0x0400758F RID: 30095
+	// Token: 0x0400760A RID: 30218
 	public List<PaletteEntry> entries = new List<PaletteEntry>();
 
-	// Token: 0x04007590 RID: 30096
+	// Token: 0x0400760B RID: 30219
 	public const string ResourcesPath = "IdPalette";
 
-	// Token: 0x04007591 RID: 30097
+	// Token: 0x0400760C RID: 30220
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static IdPalette _instance;

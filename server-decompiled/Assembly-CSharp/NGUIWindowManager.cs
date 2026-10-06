@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020012A8 RID: 4776
+// Token: 0x020012C0 RID: 4800
 public class NGUIWindowManager : MonoBehaviour
 {
-	// Token: 0x170011FB RID: 4603
-	// (get) Token: 0x06009780 RID: 38784 RVA: 0x0039130C File Offset: 0x0038F50C
+	// Token: 0x1700123F RID: 4671
+	// (get) Token: 0x0600980D RID: 38925 RVA: 0x00395B74 File Offset: 0x00393D74
 	public GUIWindowManager WindowManager
 	{
 		get
@@ -19,16 +19,16 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170011FC RID: 4604
-	// (get) Token: 0x06009781 RID: 38785 RVA: 0x00391329 File Offset: 0x0038F529
-	// (set) Token: 0x06009782 RID: 38786 RVA: 0x00391331 File Offset: 0x0038F531
+	// Token: 0x17001240 RID: 4672
+	// (get) Token: 0x0600980E RID: 38926 RVA: 0x00395B91 File Offset: 0x00393D91
+	// (set) Token: 0x0600980F RID: 38927 RVA: 0x00395B99 File Offset: 0x00393D99
 	public NGuiWdwInGameHUD InGameHUD
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06009783 RID: 38787 RVA: 0x0039133A File Offset: 0x0038F53A
+	// Token: 0x06009810 RID: 38928 RVA: 0x00395BA2 File Offset: 0x00393DA2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -37,7 +37,7 @@ public class NGUIWindowManager : MonoBehaviour
 		this.ParseWindows();
 	}
 
-	// Token: 0x06009784 RID: 38788 RVA: 0x00391358 File Offset: 0x0038F558
+	// Token: 0x06009811 RID: 38929 RVA: 0x00395BC0 File Offset: 0x00393DC0
 	public void ParseWindows()
 	{
 		if (this.parsedWindows)
@@ -62,7 +62,7 @@ public class NGUIWindowManager : MonoBehaviour
 		Log.Error("Window wdwInGameHUD not found!");
 	}
 
-	// Token: 0x06009785 RID: 38789 RVA: 0x003913E4 File Offset: 0x0038F5E4
+	// Token: 0x06009812 RID: 38930 RVA: 0x00395C4C File Offset: 0x00393E4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform GetWindow(EnumNGUIWindow _wdw)
 	{
@@ -74,7 +74,7 @@ public class NGUIWindowManager : MonoBehaviour
 		return transform;
 	}
 
-	// Token: 0x06009786 RID: 38790 RVA: 0x0039141C File Offset: 0x0038F61C
+	// Token: 0x06009813 RID: 38931 RVA: 0x00395C84 File Offset: 0x00393E84
 	public void ShowAll(bool _bShow)
 	{
 		this.bGlobalShowFlag = _bShow;
@@ -105,14 +105,14 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009787 RID: 38791 RVA: 0x003914F0 File Offset: 0x0038F6F0
+	// Token: 0x06009814 RID: 38932 RVA: 0x00395D58 File Offset: 0x00393F58
 	public bool IsShowing(EnumNGUIWindow _eWindow)
 	{
 		Transform window = this.GetWindow(_eWindow);
 		return window != null && window.gameObject.activeSelf;
 	}
 
-	// Token: 0x06009788 RID: 38792 RVA: 0x0039151C File Offset: 0x0038F71C
+	// Token: 0x06009815 RID: 38933 RVA: 0x00395D84 File Offset: 0x00393F84
 	public void Show(EnumNGUIWindow _eWindow, bool _bEnable)
 	{
 		Transform window = this.GetWindow(_eWindow);
@@ -127,7 +127,7 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009789 RID: 38793 RVA: 0x00391568 File Offset: 0x0038F768
+	// Token: 0x06009816 RID: 38934 RVA: 0x00395DD0 File Offset: 0x00393FD0
 	public void SetLabelText(EnumNGUIWindow _eElement, string _text, bool _toUpper = true)
 	{
 		Transform window = this.GetWindow(_eElement);
@@ -153,7 +153,7 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600978A RID: 38794 RVA: 0x003915D8 File Offset: 0x0038F7D8
+	// Token: 0x06009817 RID: 38935 RVA: 0x00395E40 File Offset: 0x00394040
 	public void SetLabel(EnumNGUIWindow _eElement, string _text, Color? _color = null, bool _toUpper = true)
 	{
 		Transform window = this.GetWindow(_eElement);
@@ -179,7 +179,7 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600978B RID: 38795 RVA: 0x00391670 File Offset: 0x0038F870
+	// Token: 0x06009818 RID: 38936 RVA: 0x00395ED8 File Offset: 0x003940D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -200,7 +200,7 @@ public class NGUIWindowManager : MonoBehaviour
 		textEllipsisAnimator.GetNextAnimatedString(Time.unscaledDeltaTime);
 	}
 
-	// Token: 0x0600978C RID: 38796 RVA: 0x003916C0 File Offset: 0x0038F8C0
+	// Token: 0x06009819 RID: 38937 RVA: 0x00395F28 File Offset: 0x00394128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateVersionLabelDisplayState()
 	{
@@ -217,13 +217,13 @@ public class NGUIWindowManager : MonoBehaviour
 		this.ShowVersionUi(flag);
 	}
 
-	// Token: 0x170011FD RID: 4605
-	// (get) Token: 0x0600978D RID: 38797 RVA: 0x00391717 File Offset: 0x0038F917
-	// (set) Token: 0x0600978E RID: 38798 RVA: 0x0039171F File Offset: 0x0038F91F
+	// Token: 0x17001241 RID: 4673
+	// (get) Token: 0x0600981A RID: 38938 RVA: 0x00395F7F File Offset: 0x0039417F
+	// (set) Token: 0x0600981B RID: 38939 RVA: 0x00395F87 File Offset: 0x00394187
 	public bool AlwaysShowVersionUi { get; set; } = true;
 
-	// Token: 0x170011FE RID: 4606
-	// (get) Token: 0x0600978F RID: 38799 RVA: 0x00391728 File Offset: 0x0038F928
+	// Token: 0x17001242 RID: 4674
+	// (get) Token: 0x0600981C RID: 38940 RVA: 0x00395F90 File Offset: 0x00394190
 	public bool VersionUiVisible
 	{
 		get
@@ -232,53 +232,53 @@ public class NGUIWindowManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009790 RID: 38800 RVA: 0x0039173B File Offset: 0x0038F93B
+	// Token: 0x0600981D RID: 38941 RVA: 0x00395FA3 File Offset: 0x003941A3
 	public void ToggleVersionUi()
 	{
 		this.ShowVersionUi(!this.VersionUiVisible);
 	}
 
-	// Token: 0x06009791 RID: 38801 RVA: 0x0039174C File Offset: 0x0038F94C
+	// Token: 0x0600981E RID: 38942 RVA: 0x00395FB4 File Offset: 0x003941B4
 	public void ShowVersionUi(bool _show)
 	{
 		this.GetWindow(EnumNGUIWindow.Version).gameObject.SetActive(_show);
 	}
 
-	// Token: 0x06009792 RID: 38802 RVA: 0x00391760 File Offset: 0x0038F960
+	// Token: 0x0600981F RID: 38943 RVA: 0x00395FC8 File Offset: 0x003941C8
 	public void SetBackgroundScale(float _uiScale)
 	{
 		this.GetWindow(EnumNGUIWindow.MainMenuBackground).localScale = new Vector3(_uiScale, _uiScale, _uiScale);
 	}
 
-	// Token: 0x0400718C RID: 29068
+	// Token: 0x040071F6 RID: 29174
 	public Transform[] Windows;
 
-	// Token: 0x0400718D RID: 29069
+	// Token: 0x040071F7 RID: 29175
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Dictionary<EnumNGUIWindow, Transform> windowMap = new EnumDictionary<EnumNGUIWindow, Transform>();
 
-	// Token: 0x0400718E RID: 29070
+	// Token: 0x040071F8 RID: 29176
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly HashSet<EnumNGUIWindow> windowsVisibleBeforeHide = new HashSet<EnumNGUIWindow>();
 
-	// Token: 0x0400718F RID: 29071
+	// Token: 0x040071F9 RID: 29177
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bGlobalShowFlag;
 
-	// Token: 0x04007190 RID: 29072
+	// Token: 0x040071FA RID: 29178
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x04007191 RID: 29073
+	// Token: 0x040071FB RID: 29179
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool parsedWindows;
 
-	// Token: 0x04007193 RID: 29075
+	// Token: 0x040071FD RID: 29181
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public TextEllipsisAnimator ellipsisAnimator;

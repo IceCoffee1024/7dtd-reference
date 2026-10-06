@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000260 RID: 608
+// Token: 0x02000263 RID: 611
 [Preserve]
 public class ConsoleCmdPlaceObserver : ConsoleCmdAbstract
 {
-	// Token: 0x0600120D RID: 4621 RVA: 0x00070BDE File Offset: 0x0006EDDE
+	// Token: 0x0600120A RID: 4618 RVA: 0x00070E8F File Offset: 0x0006F08F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Place a chunk observer on a given position.";
 	}
 
-	// Token: 0x0600120E RID: 4622 RVA: 0x00070BE5 File Offset: 0x0006EDE5
+	// Token: 0x0600120B RID: 4619 RVA: 0x00070E96 File Offset: 0x0006F096
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. chunkobserver add <x> <z> [size]\n  2. chunkobserver remove <x> <z>\n  3. chunkobserver list\n1. Place an observer on the chunk that contains the coordinate x/z.\n   Optionally specifying the box radius in chunks, defaulting to 1.\n2. Remove the observer from the chunk with the coordinate, if any.\n3. List all currently placed observers";
 	}
 
-	// Token: 0x0600120F RID: 4623 RVA: 0x00070BEC File Offset: 0x0006EDEC
+	// Token: 0x0600120C RID: 4620 RVA: 0x00070E9D File Offset: 0x0006F09D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "chunkobserver", "co" };
 	}
 
-	// Token: 0x06001210 RID: 4624 RVA: 0x00070C04 File Offset: 0x0006EE04
+	// Token: 0x0600120D RID: 4621 RVA: 0x00070EB8 File Offset: 0x0006F0B8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 1 && _params[0].EqualsCaseInsensitive("list"))
@@ -101,7 +101,7 @@ public class ConsoleCmdPlaceObserver : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001211 RID: 4625 RVA: 0x00070E0C File Offset: 0x0006F00C
+	// Token: 0x0600120E RID: 4622 RVA: 0x000710C0 File Offset: 0x0006F2C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool addObserver(Vector2i _pos, int _radius)
 	{
@@ -115,7 +115,7 @@ public class ConsoleCmdPlaceObserver : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x06001212 RID: 4626 RVA: 0x00070E68 File Offset: 0x0006F068
+	// Token: 0x0600120F RID: 4623 RVA: 0x0007111C File Offset: 0x0006F31C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool removeObserver(Vector2i _pos)
 	{
@@ -129,7 +129,7 @@ public class ConsoleCmdPlaceObserver : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x06001213 RID: 4627 RVA: 0x00070EB8 File Offset: 0x0006F0B8
+	// Token: 0x06001210 RID: 4624 RVA: 0x0007116C File Offset: 0x0006F36C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void listObservers()
 	{
@@ -141,11 +141,11 @@ public class ConsoleCmdPlaceObserver : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(num.ToString() + " observers");
 	}
 
-	// Token: 0x04000D0A RID: 3338
+	// Token: 0x04000D03 RID: 3331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MapVisitor mapVisitor;
 
-	// Token: 0x04000D0B RID: 3339
+	// Token: 0x04000D04 RID: 3332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DictionaryList<Vector2i, ChunkManager.ChunkObserver> observers = new DictionaryList<Vector2i, ChunkManager.ChunkObserver>();
 }

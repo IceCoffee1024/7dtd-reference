@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000CF3 RID: 3315
+// Token: 0x02000D01 RID: 3329
 public class BiomeSpawningFromXml
 {
-	// Token: 0x06006572 RID: 25970 RVA: 0x00279FC2 File Offset: 0x002781C2
+	// Token: 0x06006564 RID: 25956 RVA: 0x0027D366 File Offset: 0x0027B566
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

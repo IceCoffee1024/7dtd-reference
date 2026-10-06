@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005E0 RID: 1504
+// Token: 0x020005E1 RID: 1505
 [Preserve]
 public class ItemActionThrowAway : ItemAction
 {
-	// Token: 0x060030DC RID: 12508 RVA: 0x0013D0D0 File Offset: 0x0013B2D0
+	// Token: 0x06003123 RID: 12579 RVA: 0x0013DB98 File Offset: 0x0013BD98
 	public ItemActionThrowAway()
 	{
 		Texture2D texture2D = new Texture2D(1, 1);
@@ -17,7 +17,7 @@ public class ItemActionThrowAway : ItemAction
 		this.progressBarStyle.normal.background = texture2D;
 	}
 
-	// Token: 0x060030DD RID: 12509 RVA: 0x0013D130 File Offset: 0x0013B330
+	// Token: 0x06003124 RID: 12580 RVA: 0x0013DBF8 File Offset: 0x0013BDF8
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -29,13 +29,13 @@ public class ItemActionThrowAway : ItemAction
 		_props.ParseFloat("Max_strain_time", ref this.maxStrainTime);
 	}
 
-	// Token: 0x060030DE RID: 12510 RVA: 0x0013D198 File Offset: 0x0013B398
+	// Token: 0x06003125 RID: 12581 RVA: 0x0013DC60 File Offset: 0x0013BE60
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionThrowAway.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x060030DF RID: 12511 RVA: 0x0013D1A4 File Offset: 0x0013B3A4
+	// Token: 0x06003126 RID: 12582 RVA: 0x0013DC6C File Offset: 0x0013BE6C
 	public override void OnScreenOverlay(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -53,14 +53,14 @@ public class ItemActionThrowAway : ItemAction
 		}
 	}
 
-	// Token: 0x060030E0 RID: 12512 RVA: 0x0013D22E File Offset: 0x0013B42E
+	// Token: 0x06003127 RID: 12583 RVA: 0x0013DCF6 File Offset: 0x0013BEF6
 	public override void StartHolding(ItemActionData _data)
 	{
 		this.originalType = _data.invData.holdingEntity.inventory.holdingItemItemValue.type;
 		base.StartHolding(_data);
 	}
 
-	// Token: 0x060030E1 RID: 12513 RVA: 0x0013D258 File Offset: 0x0013B458
+	// Token: 0x06003128 RID: 12584 RVA: 0x0013DD20 File Offset: 0x0013BF20
 	public override void StopHolding(ItemActionData _actionData)
 	{
 		base.StopHolding(_actionData);
@@ -75,7 +75,7 @@ public class ItemActionThrowAway : ItemAction
 		myInventoryData.m_LastThrowTime = -1f;
 	}
 
-	// Token: 0x060030E2 RID: 12514 RVA: 0x0013D2B4 File Offset: 0x0013B4B4
+	// Token: 0x06003129 RID: 12585 RVA: 0x0013DD7C File Offset: 0x0013BF7C
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -87,13 +87,13 @@ public class ItemActionThrowAway : ItemAction
 		}
 	}
 
-	// Token: 0x060030E3 RID: 12515 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600312A RID: 12586 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowConcurrentActions()
 	{
 		return false;
 	}
 
-	// Token: 0x060030E4 RID: 12516 RVA: 0x0013D2E8 File Offset: 0x0013B4E8
+	// Token: 0x0600312B RID: 12587 RVA: 0x0013DDB0 File Offset: 0x0013BFB0
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -144,14 +144,14 @@ public class ItemActionThrowAway : ItemAction
 		}
 	}
 
-	// Token: 0x060030E5 RID: 12517 RVA: 0x0013D47C File Offset: 0x0013B67C
+	// Token: 0x0600312C RID: 12588 RVA: 0x0013DF44 File Offset: 0x0013C144
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
 		return myInventoryData.m_bActivated || (myInventoryData.m_LastThrowTime > 0f && Time.time - myInventoryData.m_LastThrowTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast);
 	}
 
-	// Token: 0x060030E6 RID: 12518 RVA: 0x0013D4E0 File Offset: 0x0013B6E0
+	// Token: 0x0600312D RID: 12589 RVA: 0x0013DFA8 File Offset: 0x0013C1A8
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionThrowAway.MyInventoryData myInventoryData = (ItemActionThrowAway.MyInventoryData)_actionData;
@@ -194,12 +194,11 @@ public class ItemActionThrowAway : ItemAction
 		}
 	}
 
-	// Token: 0x060030E7 RID: 12519 RVA: 0x0013D624 File Offset: 0x0013B824
+	// Token: 0x0600312E RID: 12590 RVA: 0x0013E0EC File Offset: 0x0013C2EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void throwAway(ItemActionThrowAway.MyInventoryData _actionData)
 	{
-		ItemInventoryData invData = _actionData.invData;
-		EntityAlive holdingEntity = invData.holdingEntity;
+		EntityAlive holdingEntity = _actionData.invData.holdingEntity;
 		EntityPlayerLocal entityPlayerLocal = holdingEntity as EntityPlayerLocal;
 		bool flag = entityPlayerLocal != null && !entityPlayerLocal.bFirstPersonView;
 		if (holdingEntity.inventory.holdingItemItemValue.Meta == 0 && EffectManager.GetValue(PassiveEffects.DisableItem, holdingEntity.inventory.holdingItemItemValue, 0f, holdingEntity, null, _actionData.invData.item.ItemTags, true, true, true, true, true, 1, true, false) > 0f)
@@ -229,7 +228,7 @@ public class ItemActionThrowAway : ItemAction
 		{
 			vector += 0.23f * lookVector;
 			vector -= headPosition;
-			invData.gameManager.ItemDropServer(new ItemStack(holdingEntity.inventory.holdingItemItemValue, 1), vector, Vector3.zero, lookVector * _actionData.m_ThrowStrength, holdingEntity.entityId, 60f, true, -1);
+			GameManager.Instance.ItemDropServer(new ItemStack(holdingEntity.inventory.holdingItemItemValue.Clone(), 1), vector, Vector3.zero, lookVector * _actionData.m_ThrowStrength, holdingEntity.entityId, 60f, true, -1);
 			if (!holdingEntity.inventory.DecHoldingItem(1))
 			{
 				_actionData.invData.holdingEntity.emodel.avatarController.CancelEvent(AvatarController.itemThrownAwayTriggerHash);
@@ -237,58 +236,58 @@ public class ItemActionThrowAway : ItemAction
 		}
 	}
 
-	// Token: 0x040025F5 RID: 9717
+	// Token: 0x040025EF RID: 9711
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const float SHORT_CLICK_TIME = 0.2f;
 
-	// Token: 0x040025F6 RID: 9718
+	// Token: 0x040025F0 RID: 9712
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float defaultThrowStrength;
 
-	// Token: 0x040025F7 RID: 9719
+	// Token: 0x040025F1 RID: 9713
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float maxThrowStrength;
 
-	// Token: 0x040025F8 RID: 9720
+	// Token: 0x040025F2 RID: 9714
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float maxStrainTime;
 
-	// Token: 0x040025F9 RID: 9721
+	// Token: 0x040025F3 RID: 9715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GUIStyle progressBarStyle;
 
-	// Token: 0x040025FA RID: 9722
+	// Token: 0x040025F4 RID: 9716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int originalType;
 
-	// Token: 0x020005E1 RID: 1505
+	// Token: 0x020005E2 RID: 1506
 	public class MyInventoryData : ItemActionData
 	{
-		// Token: 0x060030E8 RID: 12520 RVA: 0x0013D7C5 File Offset: 0x0013B9C5
+		// Token: 0x0600312F RID: 12591 RVA: 0x0013E28B File Offset: 0x0013C48B
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025FB RID: 9723
+		// Token: 0x040025F5 RID: 9717
 		public float m_ActivateTime;
 
-		// Token: 0x040025FC RID: 9724
+		// Token: 0x040025F6 RID: 9718
 		public bool m_bActivated;
 
-		// Token: 0x040025FD RID: 9725
+		// Token: 0x040025F7 RID: 9719
 		public bool m_bReleased;
 
-		// Token: 0x040025FE RID: 9726
+		// Token: 0x040025F8 RID: 9720
 		public float m_LastThrowTime;
 
-		// Token: 0x040025FF RID: 9727
+		// Token: 0x040025F9 RID: 9721
 		public float m_ThrowStrength;
 
-		// Token: 0x04002600 RID: 9728
+		// Token: 0x040025FA RID: 9722
 		public bool m_bCanceled;
 
-		// Token: 0x04002601 RID: 9729
+		// Token: 0x040025FB RID: 9723
 		public bool isCooldown;
 	}
 }

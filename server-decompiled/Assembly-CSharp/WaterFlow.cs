@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000CCA RID: 3274
+// Token: 0x02000CD8 RID: 3288
 public struct WaterFlow
 {
-	// Token: 0x04004E2E RID: 20014
+	// Token: 0x04004E64 RID: 20068
 	public int voxelIndex;
 
-	// Token: 0x04004E2F RID: 20015
+	// Token: 0x04004E65 RID: 20069
 	public int flow;
 }

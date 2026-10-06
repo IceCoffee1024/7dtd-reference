@@ -10,11 +10,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Token: 0x02000C93 RID: 3219
+// Token: 0x02000CA1 RID: 3233
 public sealed class TwitchDropAvailabilityManager
 {
-	// Token: 0x17000A44 RID: 2628
-	// (get) Token: 0x060062DA RID: 25306 RVA: 0x0026D7B5 File Offset: 0x0026B9B5
+	// Token: 0x17000A5A RID: 2650
+	// (get) Token: 0x060062CD RID: 25293 RVA: 0x00270BF9 File Offset: 0x0026EDF9
 	public static TwitchDropAvailabilityManager Instance
 	{
 		get
@@ -29,17 +29,17 @@ public sealed class TwitchDropAvailabilityManager
 	}
 
 	// Token: 0x1400008B RID: 139
-	// (add) Token: 0x060062DB RID: 25307 RVA: 0x0026D7CC File Offset: 0x0026B9CC
-	// (remove) Token: 0x060062DC RID: 25308 RVA: 0x0026D804 File Offset: 0x0026BA04
+	// (add) Token: 0x060062CE RID: 25294 RVA: 0x00270C10 File Offset: 0x0026EE10
+	// (remove) Token: 0x060062CF RID: 25295 RVA: 0x00270C48 File Offset: 0x0026EE48
 	public event Action<TwitchDropAvailabilityManager> Updated;
 
-	// Token: 0x060062DD RID: 25309 RVA: 0x0026D839 File Offset: 0x0026BA39
+	// Token: 0x060062D0 RID: 25296 RVA: 0x00270C7D File Offset: 0x0026EE7D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchDropAvailabilityManager()
 	{
 	}
 
-	// Token: 0x060062DE RID: 25310 RVA: 0x0026D84C File Offset: 0x0026BA4C
+	// Token: 0x060062D1 RID: 25297 RVA: 0x00270C90 File Offset: 0x0026EE90
 	public void RegisterSource(string uri)
 	{
 		if (this._sources.ContainsKey(uri))
@@ -51,7 +51,7 @@ public sealed class TwitchDropAvailabilityManager
 		dropSource.RequestData(false);
 	}
 
-	// Token: 0x060062DF RID: 25311 RVA: 0x0026D884 File Offset: 0x0026BA84
+	// Token: 0x060062D2 RID: 25298 RVA: 0x00270CC8 File Offset: 0x0026EEC8
 	public void UpdateAll(bool force = false)
 	{
 		foreach (KeyValuePair<string, TwitchDropAvailabilityManager.DropSource> keyValuePair in this._sources)
@@ -60,7 +60,7 @@ public sealed class TwitchDropAvailabilityManager
 		}
 	}
 
-	// Token: 0x060062E0 RID: 25312 RVA: 0x0026D8E0 File Offset: 0x0026BAE0
+	// Token: 0x060062D3 RID: 25299 RVA: 0x00270D24 File Offset: 0x0026EF24
 	public void GetEntries(List<string> sourceUris, List<TwitchDropAvailabilityManager.TwitchDropEntry> target)
 	{
 		target.Clear();
@@ -75,7 +75,7 @@ public sealed class TwitchDropAvailabilityManager
 		target.Sort((TwitchDropAvailabilityManager.TwitchDropEntry a, TwitchDropAvailabilityManager.TwitchDropEntry b) => b.Start.CompareTo(a.Start));
 	}
 
-	// Token: 0x060062E1 RID: 25313 RVA: 0x0026D96C File Offset: 0x0026BB6C
+	// Token: 0x060062D4 RID: 25300 RVA: 0x00270DB0 File Offset: 0x0026EFB0
 	public TwitchDropAvailabilityManager.TwitchDropEntry GetLatestForBenefit(string benefitId, List<string> sourceUris)
 	{
 		List<TwitchDropAvailabilityManager.TwitchDropEntry> list = new List<TwitchDropAvailabilityManager.TwitchDropEntry>();
@@ -90,7 +90,7 @@ public sealed class TwitchDropAvailabilityManager
 		return null;
 	}
 
-	// Token: 0x060062E2 RID: 25314 RVA: 0x0026D9B6 File Offset: 0x0026BBB6
+	// Token: 0x060062D5 RID: 25301 RVA: 0x00270DFA File Offset: 0x0026EFFA
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void Notify()
 	{
@@ -102,7 +102,7 @@ public sealed class TwitchDropAvailabilityManager
 		updated(this);
 	}
 
-	// Token: 0x060062E3 RID: 25315 RVA: 0x0026D9CC File Offset: 0x0026BBCC
+	// Token: 0x060062D6 RID: 25302 RVA: 0x00270E10 File Offset: 0x0026F010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<TwitchDropAvailabilityManager.TwitchDropEntry> ParseEntries(byte[] bytes)
 	{
@@ -155,7 +155,7 @@ public sealed class TwitchDropAvailabilityManager
 		return list;
 	}
 
-	// Token: 0x060062E4 RID: 25316 RVA: 0x0026DB20 File Offset: 0x0026BD20
+	// Token: 0x060062D7 RID: 25303 RVA: 0x00270F64 File Offset: 0x0026F164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TwitchDropAvailabilityManager.TwitchDropEntry FromXmlBenefit(XElement element)
 	{
@@ -199,18 +199,18 @@ public sealed class TwitchDropAvailabilityManager
 		return new TwitchDropAvailabilityManager.TwitchDropEntry(text, dateTime, entitlementSetEnum);
 	}
 
-	// Token: 0x04004CD6 RID: 19670
+	// Token: 0x04004D0C RID: 19724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TwitchDropAvailabilityManager _instance;
 
-	// Token: 0x04004CD7 RID: 19671
+	// Token: 0x04004D0D RID: 19725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, TwitchDropAvailabilityManager.DropSource> _sources = new CaseInsensitiveStringDictionary<TwitchDropAvailabilityManager.DropSource>();
 
-	// Token: 0x02000C94 RID: 3220
+	// Token: 0x02000CA2 RID: 3234
 	public sealed class TwitchDropEntry : IEquatable<TwitchDropAvailabilityManager.TwitchDropEntry>
 	{
-		// Token: 0x060062E5 RID: 25317 RVA: 0x0026DCA1 File Offset: 0x0026BEA1
+		// Token: 0x060062D8 RID: 25304 RVA: 0x002710E5 File Offset: 0x0026F2E5
 		public TwitchDropEntry(string benefitId, DateTime startUtc, EntitlementSetEnum entitlementSet)
 		{
 			this.BenefitId = benefitId;
@@ -218,45 +218,45 @@ public sealed class TwitchDropAvailabilityManager
 			this.EntitlementSet = entitlementSet;
 		}
 
-		// Token: 0x060062E6 RID: 25318 RVA: 0x0026DCBE File Offset: 0x0026BEBE
+		// Token: 0x060062D9 RID: 25305 RVA: 0x00271102 File Offset: 0x0026F302
 		public bool IsAvailable(DateTime localNow)
 		{
 			return localNow.ToUniversalTime() >= this.Start;
 		}
 
-		// Token: 0x060062E7 RID: 25319 RVA: 0x0026DCD4 File Offset: 0x0026BED4
+		// Token: 0x060062DA RID: 25306 RVA: 0x00271118 File Offset: 0x0026F318
 		public bool Equals(TwitchDropAvailabilityManager.TwitchDropEntry other)
 		{
 			return other != null && (this == other || (string.Equals(this.BenefitId, other.BenefitId, StringComparison.OrdinalIgnoreCase) && this.Start.Equals(other.Start) && this.EntitlementSet == other.EntitlementSet));
 		}
 
-		// Token: 0x060062E8 RID: 25320 RVA: 0x0026DD28 File Offset: 0x0026BF28
+		// Token: 0x060062DB RID: 25307 RVA: 0x0027116C File Offset: 0x0026F36C
 		public override bool Equals(object obj)
 		{
 			TwitchDropAvailabilityManager.TwitchDropEntry twitchDropEntry = obj as TwitchDropAvailabilityManager.TwitchDropEntry;
 			return twitchDropEntry != null && this.Equals(twitchDropEntry);
 		}
 
-		// Token: 0x060062E9 RID: 25321 RVA: 0x0026DD48 File Offset: 0x0026BF48
+		// Token: 0x060062DC RID: 25308 RVA: 0x0027118C File Offset: 0x0026F38C
 		public override int GetHashCode()
 		{
 			return (((StringComparer.OrdinalIgnoreCase.GetHashCode(this.BenefitId ?? string.Empty) * 397) ^ this.Start.GetHashCode()) * 397) ^ (int)this.EntitlementSet;
 		}
 
-		// Token: 0x04004CD9 RID: 19673
+		// Token: 0x04004D0F RID: 19727
 		public readonly string BenefitId;
 
-		// Token: 0x04004CDA RID: 19674
+		// Token: 0x04004D10 RID: 19728
 		public readonly DateTime Start;
 
-		// Token: 0x04004CDB RID: 19675
+		// Token: 0x04004D11 RID: 19729
 		public readonly EntitlementSetEnum EntitlementSet;
 	}
 
-	// Token: 0x02000C95 RID: 3221
+	// Token: 0x02000CA3 RID: 3235
 	public abstract class DropSource
 	{
-		// Token: 0x060062EA RID: 25322 RVA: 0x0026DD90 File Offset: 0x0026BF90
+		// Token: 0x060062DD RID: 25309 RVA: 0x002711D4 File Offset: 0x0026F3D4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public DropSource(TwitchDropAvailabilityManager owner, string uri)
 		{
@@ -264,7 +264,7 @@ public sealed class TwitchDropAvailabilityManager
 			this.OrigUri = uri;
 		}
 
-		// Token: 0x060062EB RID: 25323 RVA: 0x0026DDB4 File Offset: 0x0026BFB4
+		// Token: 0x060062DE RID: 25310 RVA: 0x002711F8 File Offset: 0x0026F3F8
 		public void RequestData(bool force)
 		{
 			if (this._isUpdating)
@@ -285,7 +285,7 @@ public sealed class TwitchDropAvailabilityManager
 			ThreadManager.StartCoroutine(this.GetDataCo());
 		}
 
-		// Token: 0x060062EC RID: 25324 RVA: 0x0026DE4C File Offset: 0x0026C04C
+		// Token: 0x060062DF RID: 25311 RVA: 0x00271290 File Offset: 0x0026F490
 		public void GetData(List<TwitchDropAvailabilityManager.TwitchDropEntry> target)
 		{
 			TwitchDropAvailabilityManager owner = this.Owner;
@@ -295,7 +295,7 @@ public sealed class TwitchDropAvailabilityManager
 			}
 		}
 
-		// Token: 0x060062ED RID: 25325 RVA: 0x0026DE94 File Offset: 0x0026C094
+		// Token: 0x060062E0 RID: 25312 RVA: 0x002712D8 File Offset: 0x0026F4D8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void ApplyBytes(byte[] bytes)
 		{
@@ -310,11 +310,11 @@ public sealed class TwitchDropAvailabilityManager
 			this.Owner.Notify();
 		}
 
-		// Token: 0x060062EE RID: 25326
+		// Token: 0x060062E1 RID: 25313
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract IEnumerator GetDataCo();
 
-		// Token: 0x060062EF RID: 25327 RVA: 0x0026DF00 File Offset: 0x0026C100
+		// Token: 0x060062E2 RID: 25314 RVA: 0x00271344 File Offset: 0x0026F544
 		public static TwitchDropAvailabilityManager.DropSource FromUri(TwitchDropAvailabilityManager owner, string uri)
 		{
 			if (uri.StartsWith("rfs://", StringComparison.OrdinalIgnoreCase))
@@ -324,43 +324,43 @@ public sealed class TwitchDropAvailabilityManager
 			return new TwitchDropAvailabilityManager.DropSourceWww(owner, uri);
 		}
 
-		// Token: 0x04004CDC RID: 19676
+		// Token: 0x04004D12 RID: 19730
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public const string RfsScheme = "rfs://";
 
-		// Token: 0x04004CDD RID: 19677
+		// Token: 0x04004D13 RID: 19731
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly TwitchDropAvailabilityManager Owner;
 
-		// Token: 0x04004CDE RID: 19678
+		// Token: 0x04004D14 RID: 19732
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string OrigUri;
 
-		// Token: 0x04004CDF RID: 19679
+		// Token: 0x04004D15 RID: 19733
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool _isUpdating;
 
-		// Token: 0x04004CE0 RID: 19680
+		// Token: 0x04004D16 RID: 19734
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public DateTime _lastUpdated;
 
-		// Token: 0x04004CE1 RID: 19681
+		// Token: 0x04004D17 RID: 19735
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<TwitchDropAvailabilityManager.TwitchDropEntry> _entries = new List<TwitchDropAvailabilityManager.TwitchDropEntry>();
 	}
 
-	// Token: 0x02000C96 RID: 3222
+	// Token: 0x02000CA4 RID: 3236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class DropSourceRfs : TwitchDropAvailabilityManager.DropSource
 	{
-		// Token: 0x060062F0 RID: 25328 RVA: 0x0026DF1F File Offset: 0x0026C11F
+		// Token: 0x060062E3 RID: 25315 RVA: 0x00271363 File Offset: 0x0026F563
 		public DropSourceRfs(TwitchDropAvailabilityManager owner, string uri)
 			: base(owner, uri)
 		{
 			this._rfsKey = uri.Substring("rfs://".Length);
 		}
 
-		// Token: 0x060062F1 RID: 25329 RVA: 0x0026DF3F File Offset: 0x0026C13F
+		// Token: 0x060062E4 RID: 25316 RVA: 0x00271383 File Offset: 0x0026F583
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator GetDataCo()
 		{
@@ -397,7 +397,7 @@ public sealed class TwitchDropAvailabilityManager
 			yield break;
 		}
 
-		// Token: 0x060062F2 RID: 25330 RVA: 0x0026DF50 File Offset: 0x0026C150
+		// Token: 0x060062E5 RID: 25317 RVA: 0x00271394 File Offset: 0x0026F594
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <GetDataCo>g__Callback|2_0(IRemoteFileStorage.EFileDownloadResult result, string error, byte[] data)
@@ -420,16 +420,16 @@ public sealed class TwitchDropAvailabilityManager
 			base.ApplyBytes(data);
 		}
 
-		// Token: 0x04004CE2 RID: 19682
+		// Token: 0x04004D18 RID: 19736
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string _rfsKey;
 	}
 
-	// Token: 0x02000C98 RID: 3224
+	// Token: 0x02000CA6 RID: 3238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class DropSourceWww : TwitchDropAvailabilityManager.DropSource
 	{
-		// Token: 0x060062F9 RID: 25337 RVA: 0x0026E0F8 File Offset: 0x0026C2F8
+		// Token: 0x060062EC RID: 25324 RVA: 0x0027153C File Offset: 0x0026F73C
 		public DropSourceWww(TwitchDropAvailabilityManager owner, string uri)
 			: base(owner, uri)
 		{
@@ -447,7 +447,7 @@ public sealed class TwitchDropAvailabilityManager
 			this._patchedUri = text;
 		}
 
-		// Token: 0x060062FA RID: 25338 RVA: 0x0026E170 File Offset: 0x0026C370
+		// Token: 0x060062ED RID: 25325 RVA: 0x002715B4 File Offset: 0x0026F7B4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator GetDataCo()
 		{
@@ -467,7 +467,7 @@ public sealed class TwitchDropAvailabilityManager
 			yield break;
 		}
 
-		// Token: 0x04004CE9 RID: 19689
+		// Token: 0x04004D1F RID: 19743
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string _patchedUri;
 	}

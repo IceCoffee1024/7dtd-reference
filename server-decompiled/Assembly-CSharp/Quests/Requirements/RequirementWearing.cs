@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace Quests.Requirements
 {
-	// Token: 0x020018AA RID: 6314
+	// Token: 0x020018D6 RID: 6358
 	[Preserve]
 	public class RequirementWearing : BaseRequirement
 	{
-		// Token: 0x0600C2DA RID: 49882 RVA: 0x00480D20 File Offset: 0x0047EF20
+		// Token: 0x0600C432 RID: 50226 RVA: 0x00485268 File Offset: 0x00483468
 		public override void SetupRequirement()
 		{
 			string text = Localization.Get("RequirementWearing_keyword", false, null);
@@ -16,13 +16,13 @@ namespace Quests.Requirements
 			base.Description = string.Format("{0} {1}", text, this.expectedItemClass.GetLocalizedItemName());
 		}
 
-		// Token: 0x0600C2DB RID: 49883 RVA: 0x00480D7A File Offset: 0x0047EF7A
+		// Token: 0x0600C433 RID: 50227 RVA: 0x004852C2 File Offset: 0x004834C2
 		public override bool CheckRequirement()
 		{
 			return !base.OwnerQuest.Active || LocalPlayerUI.GetUIForPlayer(base.OwnerQuest.OwnerJournal.OwnerPlayer).xui.PlayerEquipment.IsWearing(this.expectedItem);
 		}
 
-		// Token: 0x0600C2DC RID: 49884 RVA: 0x00480DB5 File Offset: 0x0047EFB5
+		// Token: 0x0600C434 RID: 50228 RVA: 0x004852FD File Offset: 0x004834FD
 		public override BaseRequirement Clone()
 		{
 			return new RequirementWearing
@@ -33,11 +33,11 @@ namespace Quests.Requirements
 			};
 		}
 
-		// Token: 0x040093CE RID: 37838
+		// Token: 0x04009494 RID: 38036
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemValue expectedItem = ItemValue.None;
 
-		// Token: 0x040093CF RID: 37839
+		// Token: 0x04009495 RID: 38037
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemClass expectedItemClass;
 	}

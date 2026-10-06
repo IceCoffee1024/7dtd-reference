@@ -1,36 +1,36 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x0200094B RID: 2379
+// Token: 0x02000951 RID: 2385
 public class PrefabInsideDataFile
 {
-	// Token: 0x060045BD RID: 17853 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600455E RID: 17758 RVA: 0x0000640C File Offset: 0x0000460C
 	public PrefabInsideDataFile()
 	{
 	}
 
-	// Token: 0x060045BE RID: 17854 RVA: 0x001B8AAE File Offset: 0x001B6CAE
+	// Token: 0x0600455F RID: 17759 RVA: 0x001B8FB6 File Offset: 0x001B71B6
 	public PrefabInsideDataFile(PrefabInsideDataFile _other)
 	{
 		this.size = _other.size;
 		this.data = _other.data;
 	}
 
-	// Token: 0x060045BF RID: 17855 RVA: 0x001B8ACE File Offset: 0x001B6CCE
+	// Token: 0x06004560 RID: 17760 RVA: 0x001B8FD6 File Offset: 0x001B71D6
 	public void Init(Vector3i _size)
 	{
 		this.size = _size;
 		this.data = null;
 	}
 
-	// Token: 0x060045C0 RID: 17856 RVA: 0x001B8ADE File Offset: 0x001B6CDE
+	// Token: 0x06004561 RID: 17761 RVA: 0x001B8FE6 File Offset: 0x001B71E6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Alloc()
 	{
 		this.data = new byte[this.size.x * this.size.y * this.size.z + 7 >> 3];
 	}
 
-	// Token: 0x060045C1 RID: 17857 RVA: 0x001B8B12 File Offset: 0x001B6D12
+	// Token: 0x06004562 RID: 17762 RVA: 0x001B901A File Offset: 0x001B721A
 	public void Add(int _offset)
 	{
 		if (this.data == null)
@@ -42,14 +42,14 @@ public class PrefabInsideDataFile
 		array[num] |= (byte)(1 << (_offset & 7));
 	}
 
-	// Token: 0x060045C2 RID: 17858 RVA: 0x001B8B40 File Offset: 0x001B6D40
+	// Token: 0x06004563 RID: 17763 RVA: 0x001B9048 File Offset: 0x001B7248
 	public void Add(int x, int y, int z)
 	{
 		int num = x + y * this.size.x + z * this.size.x * this.size.y;
 		this.Add(num);
 	}
 
-	// Token: 0x060045C3 RID: 17859 RVA: 0x001B8B80 File Offset: 0x001B6D80
+	// Token: 0x06004564 RID: 17764 RVA: 0x001B9088 File Offset: 0x001B7288
 	public bool Contains(int x, int y, int z)
 	{
 		if (this.data == null)
@@ -60,13 +60,13 @@ public class PrefabInsideDataFile
 		return ((int)this.data[num >> 3] & (1 << (num & 7))) > 0;
 	}
 
-	// Token: 0x060045C4 RID: 17860 RVA: 0x001B8BD7 File Offset: 0x001B6DD7
+	// Token: 0x06004565 RID: 17765 RVA: 0x001B90DF File Offset: 0x001B72DF
 	public PrefabInsideDataFile Clone()
 	{
 		return new PrefabInsideDataFile(this);
 	}
 
-	// Token: 0x060045C5 RID: 17861 RVA: 0x001B8BE0 File Offset: 0x001B6DE0
+	// Token: 0x06004566 RID: 17766 RVA: 0x001B90E8 File Offset: 0x001B72E8
 	public void Load(string _filename, Vector3i _size)
 	{
 		this.Init(_size);
@@ -103,7 +103,7 @@ public class PrefabInsideDataFile
 		}
 	}
 
-	// Token: 0x060045C6 RID: 17862 RVA: 0x001B8CA4 File Offset: 0x001B6EA4
+	// Token: 0x06004567 RID: 17767 RVA: 0x001B91AC File Offset: 0x001B73AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Read(BinaryReader _br)
 	{
@@ -127,7 +127,7 @@ public class PrefabInsideDataFile
 		}
 	}
 
-	// Token: 0x060045C7 RID: 17863 RVA: 0x001B8D08 File Offset: 0x001B6F08
+	// Token: 0x06004568 RID: 17768 RVA: 0x001B9210 File Offset: 0x001B7410
 	public void Save(string _filename)
 	{
 		try
@@ -147,7 +147,7 @@ public class PrefabInsideDataFile
 		}
 	}
 
-	// Token: 0x060045C8 RID: 17864 RVA: 0x001B8D80 File Offset: 0x001B6F80
+	// Token: 0x06004569 RID: 17769 RVA: 0x001B9288 File Offset: 0x001B7488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Write(BinaryWriter _bw)
 	{
@@ -160,15 +160,15 @@ public class PrefabInsideDataFile
 		}
 	}
 
-	// Token: 0x0400380D RID: 14349
+	// Token: 0x04003809 RID: 14345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSaveVersion = 2;
 
-	// Token: 0x0400380E RID: 14350
+	// Token: 0x0400380A RID: 14346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i size;
 
-	// Token: 0x0400380F RID: 14351
+	// Token: 0x0400380B RID: 14347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

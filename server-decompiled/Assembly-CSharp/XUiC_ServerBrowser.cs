@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DC4 RID: 3524
+// Token: 0x02000DD3 RID: 3539
 [Preserve]
 public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 {
-	// Token: 0x17000BD0 RID: 3024
-	// (get) Token: 0x06006BCE RID: 27598 RVA: 0x002A17E7 File Offset: 0x0029F9E7
-	// (set) Token: 0x06006BCF RID: 27599 RVA: 0x002A17EF File Offset: 0x0029F9EF
+	// Token: 0x17000BEB RID: 3051
+	// (get) Token: 0x06006BC6 RID: 27590 RVA: 0x002A4B77 File Offset: 0x002A2D77
+	// (set) Token: 0x06006BC7 RID: 27591 RVA: 0x002A4B7F File Offset: 0x002A2D7F
 	[XuiXmlBinding("filtersvisible")]
 	public bool ShowingFilters
 	{
@@ -32,8 +32,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD1 RID: 3025
-	// (get) Token: 0x06006BD0 RID: 27600 RVA: 0x002A1817 File Offset: 0x0029FA17
+	// Token: 0x17000BEC RID: 3052
+	// (get) Token: 0x06006BC8 RID: 27592 RVA: 0x002A4BA7 File Offset: 0x002A2DA7
 	[XuiXmlBinding("filtersbuttonselected")]
 	public bool HasActiveFilters
 	{
@@ -44,8 +44,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD2 RID: 3026
-	// (get) Token: 0x06006BD1 RID: 27601 RVA: 0x002A181F File Offset: 0x0029FA1F
+	// Token: 0x17000BED RID: 3053
+	// (get) Token: 0x06006BC9 RID: 27593 RVA: 0x002A4BAF File Offset: 0x002A2DAF
 	[XuiXmlBinding("selectedlisttype")]
 	public XUiC_ServersList.EnumServerLists SelectedListType
 	{
@@ -61,8 +61,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD3 RID: 3027
-	// (get) Token: 0x06006BD2 RID: 27602 RVA: 0x002A1832 File Offset: 0x0029FA32
+	// Token: 0x17000BEE RID: 3054
+	// (get) Token: 0x06006BCA RID: 27594 RVA: 0x002A4BC2 File Offset: 0x002A2DC2
 	[XuiXmlBinding("typededicatedcount")]
 	public int ServersCountDedicated
 	{
@@ -78,8 +78,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD4 RID: 3028
-	// (get) Token: 0x06006BD3 RID: 27603 RVA: 0x002A1846 File Offset: 0x0029FA46
+	// Token: 0x17000BEF RID: 3055
+	// (get) Token: 0x06006BCB RID: 27595 RVA: 0x002A4BD6 File Offset: 0x002A2DD6
 	[XuiXmlBinding("typepeercount")]
 	public int ServersCountPeer
 	{
@@ -95,8 +95,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD5 RID: 3029
-	// (get) Token: 0x06006BD4 RID: 27604 RVA: 0x002A185A File Offset: 0x0029FA5A
+	// Token: 0x17000BF0 RID: 3056
+	// (get) Token: 0x06006BCC RID: 27596 RVA: 0x002A4BEA File Offset: 0x002A2DEA
 	[XuiXmlBinding("typefriendscount")]
 	public int ServersCountFriends
 	{
@@ -112,8 +112,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD6 RID: 3030
-	// (get) Token: 0x06006BD5 RID: 27605 RVA: 0x002A186E File Offset: 0x0029FA6E
+	// Token: 0x17000BF1 RID: 3057
+	// (get) Token: 0x06006BCD RID: 27597 RVA: 0x002A4BFE File Offset: 0x002A2DFE
 	[XuiXmlBinding("typehistorycount")]
 	public int ServersCountHistory
 	{
@@ -129,8 +129,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD7 RID: 3031
-	// (get) Token: 0x06006BD6 RID: 27606 RVA: 0x002A1882 File Offset: 0x0029FA82
+	// Token: 0x17000BF2 RID: 3058
+	// (get) Token: 0x06006BCE RID: 27598 RVA: 0x002A4C12 File Offset: 0x002A2E12
 	[XuiXmlBinding("typelancount")]
 	public int ServersCountLan
 	{
@@ -146,8 +146,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD8 RID: 3032
-	// (get) Token: 0x06006BD7 RID: 27607 RVA: 0x002A1897 File Offset: 0x0029FA97
+	// Token: 0x17000BF3 RID: 3059
+	// (get) Token: 0x06006BCF RID: 27599 RVA: 0x002A4C27 File Offset: 0x002A2E27
 	[XuiXmlBinding("isprefilteredsearch")]
 	public bool IsPrefilteredSearch
 	{
@@ -158,8 +158,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BD9 RID: 3033
-	// (get) Token: 0x06006BD8 RID: 27608 RVA: 0x002A18A3 File Offset: 0x0029FAA3
+	// Token: 0x17000BF4 RID: 3060
+	// (get) Token: 0x06006BD0 RID: 27600 RVA: 0x002A4C33 File Offset: 0x002A2E33
 	[XuiXmlBinding("limitwarningvisible")]
 	public bool SearchLimitReached
 	{
@@ -170,8 +170,8 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000BDA RID: 3034
-	// (get) Token: 0x06006BD9 RID: 27609 RVA: 0x002A18AB File Offset: 0x0029FAAB
+	// Token: 0x17000BF5 RID: 3061
+	// (get) Token: 0x06006BD1 RID: 27601 RVA: 0x002A4C3B File Offset: 0x002A2E3B
 	[XuiXmlBinding("resultlimit")]
 	public int SearchLimit
 	{
@@ -182,7 +182,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BDA RID: 27610 RVA: 0x002A18B4 File Offset: 0x0029FAB4
+	// Token: 0x06006BD2 RID: 27602 RVA: 0x002A4C44 File Offset: 0x002A2E44
 	public override void Init()
 	{
 		base.Init();
@@ -209,7 +209,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.setServerListType((DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent() ? XUiC_ServersList.EnumServerLists.Peer : XUiC_ServersList.EnumServerLists.Dedicated);
 	}
 
-	// Token: 0x06006BDB RID: 27611 RVA: 0x002A1988 File Offset: 0x0029FB88
+	// Token: 0x06006BD3 RID: 27603 RVA: 0x002A4D18 File Offset: 0x002A2F18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setServerListType(XUiC_ServersList.EnumServerLists _type)
 	{
@@ -218,7 +218,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006BDC RID: 27612 RVA: 0x002A19AC File Offset: 0x0029FBAC
+	// Token: 0x06006BD4 RID: 27604 RVA: 0x002A4D3C File Offset: 0x002A2F3C
 	[XuiBindEvent("OnPress", "btnDirectConnect")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDirectConnect_OnPressed(XUiController _sender, int _mouseButton)
@@ -232,7 +232,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		});
 	}
 
-	// Token: 0x06006BDD RID: 27613 RVA: 0x002A19F0 File Offset: 0x0029FBF0
+	// Token: 0x06006BD5 RID: 27605 RVA: 0x002A4D80 File Offset: 0x002A2F80
 	[XuiBindEvent("OnPress", "btnConnect")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnConnect_OnPressed(XUiController _sender, int _mouseButton)
@@ -296,7 +296,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}, -1f, false, null);
 	}
 
-	// Token: 0x06006BDE RID: 27614 RVA: 0x002A1A74 File Offset: 0x0029FC74
+	// Token: 0x06006BD6 RID: 27606 RVA: 0x002A4E04 File Offset: 0x002A3004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void connectToServer(string _password)
 	{
@@ -309,7 +309,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Connect(SingletonMonoBehaviour<ConnectionManager>.Instance.LastGameServerInfo);
 	}
 
-	// Token: 0x06006BDF RID: 27615 RVA: 0x002A1AE1 File Offset: 0x0029FCE1
+	// Token: 0x06006BD7 RID: 27607 RVA: 0x002A4E71 File Offset: 0x002A3071
 	[XuiBindEvent("OnFilterChanged", "serverFilters")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnFilterValueChanged(IServerBrowserFilterControl _sender)
@@ -318,14 +318,14 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006BE0 RID: 27616 RVA: 0x002A1AFB File Offset: 0x0029FCFB
+	// Token: 0x06006BD8 RID: 27608 RVA: 0x002A4E8B File Offset: 0x002A308B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool anyFilterSet()
 	{
 		return this.serversList != null && this.serversList.GetActiveFilterCount() > 0;
 	}
 
-	// Token: 0x06006BE1 RID: 27617 RVA: 0x002A1B15 File Offset: 0x0029FD15
+	// Token: 0x06006BD9 RID: 27609 RVA: 0x002A4EA5 File Offset: 0x002A30A5
 	[XuiBindEvent("OnPress", "btnShowFilters")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowFiltersButton_OnPress(XUiController _sender, int _mouseButton)
@@ -333,7 +333,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.showFilters();
 	}
 
-	// Token: 0x06006BE2 RID: 27618 RVA: 0x002A1B20 File Offset: 0x0029FD20
+	// Token: 0x06006BDA RID: 27610 RVA: 0x002A4EB0 File Offset: 0x002A30B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showFilters()
 	{
@@ -349,7 +349,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BE3 RID: 27619 RVA: 0x002A1B94 File Offset: 0x0029FD94
+	// Token: 0x06006BDB RID: 27611 RVA: 0x002A4F24 File Offset: 0x002A3124
 	public override void OnOpen()
 	{
 		this.IsDirty = true;
@@ -367,7 +367,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		base.GetChildById("btnBack").SelectCursorElement(false, false);
 	}
 
-	// Token: 0x06006BE4 RID: 27620 RVA: 0x002A1C31 File Offset: 0x0029FE31
+	// Token: 0x06006BDC RID: 27612 RVA: 0x002A4FC1 File Offset: 0x002A31C1
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -375,7 +375,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		ServerListManager.Instance.Disconnect();
 	}
 
-	// Token: 0x06006BE5 RID: 27621 RVA: 0x002A1C48 File Offset: 0x0029FE48
+	// Token: 0x06006BDD RID: 27613 RVA: 0x002A4FD8 File Offset: 0x002A31D8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -393,14 +393,14 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BE6 RID: 27622 RVA: 0x002A1CF2 File Offset: 0x0029FEF2
+	// Token: 0x06006BDE RID: 27614 RVA: 0x002A5082 File Offset: 0x002A3282
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void close()
 	{
 		this.handleBackOrEscape();
 	}
 
-	// Token: 0x06006BE7 RID: 27623 RVA: 0x002A1CFC File Offset: 0x0029FEFC
+	// Token: 0x06006BDF RID: 27615 RVA: 0x002A508C File Offset: 0x002A328C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onDirtyUpdate()
 	{
@@ -418,7 +418,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		base.GetChildById("btnShowFilters").SelectCursorElement(true, false);
 	}
 
-	// Token: 0x06006BE8 RID: 27624 RVA: 0x002A1D52 File Offset: 0x0029FF52
+	// Token: 0x06006BE0 RID: 27616 RVA: 0x002A50E2 File Offset: 0x002A32E2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onGameServerDetailsCallback(bool _success, string _message, GameServerInfo _info)
 	{
@@ -434,7 +434,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BE9 RID: 27625 RVA: 0x002A1D90 File Offset: 0x0029FF90
+	// Token: 0x06006BE1 RID: 27617 RVA: 0x002A5120 File Offset: 0x002A3320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onGameServerFoundCallback(IPlatform _owner, GameServerInfo _gameServerInfo, EServerRelationType _source)
 	{
@@ -465,7 +465,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		ThreadManager.StartCoroutine(this.resolveBlocksAndAddServerCoroutine(platformUserIdentifierAbs, platformUserIdentifierAbs2, _gameServerInfo, _source));
 	}
 
-	// Token: 0x06006BEA RID: 27626 RVA: 0x002A1E40 File Offset: 0x002A0040
+	// Token: 0x06006BE2 RID: 27618 RVA: 0x002A51D0 File Offset: 0x002A33D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator resolveBlocksAndAddServerCoroutine(PlatformUserIdentifierAbs _hostPrimaryId, PlatformUserIdentifierAbs _hostNativeId, GameServerInfo _gameServerInfo, EServerRelationType _source)
 	{
@@ -482,7 +482,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		yield break;
 	}
 
-	// Token: 0x06006BEB RID: 27627 RVA: 0x002A1E6C File Offset: 0x002A006C
+	// Token: 0x06006BE3 RID: 27619 RVA: 0x002A51FC File Offset: 0x002A33FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void maxResultsCallback(IPlatform _sourcePlatform, bool _maxReached, int _limit)
 	{
@@ -491,14 +491,14 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006BEC RID: 27628 RVA: 0x002A1E83 File Offset: 0x002A0083
+	// Token: 0x06006BE4 RID: 27620 RVA: 0x002A5213 File Offset: 0x002A3413
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void serverSearchErrorCallback(string _message)
 	{
 		XUiC_MessageBoxWindowGroup.ShowOk(this.xui, Localization.Get("xuiServerBrowserSearchErrorTitle", false, null), _message, "", null, false, false, true);
 	}
 
-	// Token: 0x06006BED RID: 27629 RVA: 0x002A1EA6 File Offset: 0x002A00A6
+	// Token: 0x06006BE5 RID: 27621 RVA: 0x002A5236 File Offset: 0x002A3436
 	[XuiBindEvent("ListEntryDoubleClicked", "serversList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ServersList_OnEntryDoubleClicked(XUiC_List<XUiC_ServersList.ListEntry> _list, XUiC_ServersList.ListEntry _entry)
@@ -509,7 +509,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BEE RID: 27630 RVA: 0x002A1ED0 File Offset: 0x002A00D0
+	// Token: 0x06006BE6 RID: 27622 RVA: 0x002A5260 File Offset: 0x002A3460
 	[XuiBindEvent("SelectionChanged", "serversList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ServersList_OnSelectionChanged(XUiC_List<XUiC_ServersList.ListEntry> _list, XUiC_ServersList.ListEntry _previousEntry, XUiC_ServersList.ListEntry _newEntry)
@@ -524,7 +524,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BEF RID: 27631 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x06006BE7 RID: 27623 RVA: 0x0008A995 File Offset: 0x00088B95
 	[XuiBindEvent("CountsChanged", "serversList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ServersList_OnCountsChanged()
@@ -532,7 +532,7 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006BF0 RID: 27632 RVA: 0x002A1F30 File Offset: 0x002A0130
+	// Token: 0x06006BE8 RID: 27624 RVA: 0x002A52C0 File Offset: 0x002A34C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleBackOrEscape()
 	{
@@ -562,59 +562,59 @@ public class XUiC_ServerBrowser : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006BF1 RID: 27633 RVA: 0x0008A567 File Offset: 0x00088767
+	// Token: 0x06006BE9 RID: 27625 RVA: 0x0008A7E7 File Offset: 0x000889E7
 	public void CloseBrowser()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 		this.xui.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x04005255 RID: 21077
+	// Token: 0x0400528C RID: 21132
 	public static string ID = "";
 
-	// Token: 0x04005256 RID: 21078
+	// Token: 0x0400528D RID: 21133
 	[XuiBindComponent("btnConnect", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConnect;
 
-	// Token: 0x04005257 RID: 21079
+	// Token: 0x0400528E RID: 21134
 	[XuiBindComponent("btnDirectConnect", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button[] btnDirectConnect;
 
-	// Token: 0x04005258 RID: 21080
+	// Token: 0x0400528F RID: 21135
 	[XuiBindComponent("btnShowFilters", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnShowFilters;
 
-	// Token: 0x04005259 RID: 21081
+	// Token: 0x04005290 RID: 21136
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ServersList serversList;
 
-	// Token: 0x0400525A RID: 21082
+	// Token: 0x04005291 RID: 21137
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ServerFilters serverFilters;
 
-	// Token: 0x0400525B RID: 21083
+	// Token: 0x04005292 RID: 21138
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ServerInfo serverInfo;
 
-	// Token: 0x0400525C RID: 21084
+	// Token: 0x04005293 RID: 21139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool maxSearchResultsReached;
 
-	// Token: 0x0400525D RID: 21085
+	// Token: 0x04005294 RID: 21140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int searchResultLimit;
 
-	// Token: 0x0400525E RID: 21086
+	// Token: 0x04005295 RID: 21141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showingFilters;
 
-	// Token: 0x0400525F RID: 21087
+	// Token: 0x04005296 RID: 21142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool filtersHiddenRefreshRequired;
 }

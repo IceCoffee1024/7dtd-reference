@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001981 RID: 6529
+	// Token: 0x020019AD RID: 6573
 	[Preserve]
 	public class ActionFillArea : BaseAction
 	{
-		// Token: 0x170018A0 RID: 6304
-		// (get) Token: 0x0600C882 RID: 51330 RVA: 0x00498E75 File Offset: 0x00497075
+		// Token: 0x17001942 RID: 6466
+		// (get) Token: 0x0600C9DA RID: 51674 RVA: 0x0049D339 File Offset: 0x0049B539
 		public string ModifiedName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C883 RID: 51331 RVA: 0x00498E84 File Offset: 0x00497084
+		// Token: 0x0600C9DB RID: 51675 RVA: 0x0049D348 File Offset: 0x0049B548
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string ParseTextElement(string element)
 		{
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			return base.Owner.ExtraData.Insert(12, "\n");
 		}
 
-		// Token: 0x0600C884 RID: 51332 RVA: 0x00498ED8 File Offset: 0x004970D8
+		// Token: 0x0600C9DC RID: 51676 RVA: 0x0049D39C File Offset: 0x0049B59C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -48,7 +48,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C885 RID: 51333 RVA: 0x00498F2C File Offset: 0x0049712C
+		// Token: 0x0600C9DD RID: 51677 RVA: 0x0049D3F0 File Offset: 0x0049B5F0
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			World world = GameManager.Instance.World;
@@ -320,7 +320,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C886 RID: 51334 RVA: 0x00499A58 File Offset: 0x00497C58
+		// Token: 0x0600C9DE RID: 51678 RVA: 0x0049DF1C File Offset: 0x0049C11C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void TeleportPlayers()
 		{
@@ -330,7 +330,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C887 RID: 51335 RVA: 0x00499ACC File Offset: 0x00497CCC
+		// Token: 0x0600C9DF RID: 51679 RVA: 0x0049DF90 File Offset: 0x0049C190
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -344,7 +344,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionFillArea.PropMaxDensity, ref this.maxDensity);
 		}
 
-		// Token: 0x0600C888 RID: 51336 RVA: 0x00499B68 File Offset: 0x00497D68
+		// Token: 0x0600C9E0 RID: 51680 RVA: 0x0049E02C File Offset: 0x0049C22C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -362,147 +362,147 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009780 RID: 38784
+		// Token: 0x04009846 RID: 38982
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionFillArea.FillSafeZoneStates currentState;
 
-		// Token: 0x04009781 RID: 38785
+		// Token: 0x04009847 RID: 38983
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionFillArea.FillTypes FillType = ActionFillArea.FillTypes.Sphere;
 
-		// Token: 0x04009782 RID: 38786
+		// Token: 0x04009848 RID: 38984
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string fillTypeNames = "Sphere";
 
-		// Token: 0x04009783 RID: 38787
+		// Token: 0x04009849 RID: 38985
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<ActionFillArea.FillTypes> FillTypeList = new List<ActionFillArea.FillTypes>();
 
-		// Token: 0x04009784 RID: 38788
+		// Token: 0x0400984A RID: 38986
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool destroyClaim;
 
-		// Token: 0x04009785 RID: 38789
+		// Token: 0x0400984B RID: 38987
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string newName = "";
 
-		// Token: 0x04009786 RID: 38790
+		// Token: 0x0400984C RID: 38988
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blockTags;
 
-		// Token: 0x04009787 RID: 38791
+		// Token: 0x0400984D RID: 38989
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string excludeBlockTags;
 
-		// Token: 0x04009788 RID: 38792
+		// Token: 0x0400984E RID: 38990
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool replaceAll;
 
-		// Token: 0x04009789 RID: 38793
+		// Token: 0x0400984F RID: 38991
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool maxDensity;
 
-		// Token: 0x0400978A RID: 38794
+		// Token: 0x04009850 RID: 38992
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropFillType = "fill_type";
 
-		// Token: 0x0400978B RID: 38795
+		// Token: 0x04009851 RID: 38993
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBlock = "block";
 
-		// Token: 0x0400978C RID: 38796
+		// Token: 0x04009852 RID: 38994
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDestroyClaim = "destroy_claim";
 
-		// Token: 0x0400978D RID: 38797
+		// Token: 0x04009853 RID: 38995
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBlockTags = "block_tags";
 
-		// Token: 0x0400978E RID: 38798
+		// Token: 0x04009854 RID: 38996
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeBlockTags = "exclude_block_tags";
 
-		// Token: 0x0400978F RID: 38799
+		// Token: 0x04009855 RID: 38997
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropReplaceAll = "replace_all";
 
-		// Token: 0x04009790 RID: 38800
+		// Token: 0x04009856 RID: 38998
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropNewName = "new_name";
 
-		// Token: 0x04009791 RID: 38801
+		// Token: 0x04009857 RID: 38999
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDensity = "max_density";
 
-		// Token: 0x04009792 RID: 38802
+		// Token: 0x04009858 RID: 39000
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string blockName = "terrDirtTwitch";
 
-		// Token: 0x04009793 RID: 38803
+		// Token: 0x04009859 RID: 39001
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3i claimPos = Vector3i.zero;
 
-		// Token: 0x04009794 RID: 38804
+		// Token: 0x0400985A RID: 39002
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<BlockChangeInfo> blockChanges = new List<BlockChangeInfo>();
 
-		// Token: 0x04009795 RID: 38805
+		// Token: 0x0400985B RID: 39003
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Chunk> chunkList = new List<Chunk>();
 
-		// Token: 0x04009796 RID: 38806
+		// Token: 0x0400985C RID: 39004
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int claimSize = 10;
 
-		// Token: 0x04009797 RID: 38807
+		// Token: 0x0400985D RID: 39005
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int halfClaimSize = 5;
 
-		// Token: 0x04009798 RID: 38808
+		// Token: 0x0400985E RID: 39006
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int distanceSq = 25;
 
-		// Token: 0x04009799 RID: 38809
+		// Token: 0x0400985F RID: 39007
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<Vector3i> blockedPositions = new HashSet<Vector3i>();
 
-		// Token: 0x0400979A RID: 38810
+		// Token: 0x04009860 RID: 39008
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSetLong chunkHash = new HashSetLong();
 
-		// Token: 0x0400979B RID: 38811
+		// Token: 0x04009861 RID: 39009
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<EntityPlayer, Vector3> playerDictionary = new Dictionary<EntityPlayer, Vector3>();
 
-		// Token: 0x0400979C RID: 38812
+		// Token: 0x04009862 RID: 39010
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Vector3i> signPositions;
 
-		// Token: 0x02001982 RID: 6530
+		// Token: 0x020019AE RID: 6574
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum FillSafeZoneStates
 		{
-			// Token: 0x0400979E RID: 38814
+			// Token: 0x04009864 RID: 39012
 			HandleChunks,
-			// Token: 0x0400979F RID: 38815
+			// Token: 0x04009865 RID: 39013
 			SetupChanges,
-			// Token: 0x040097A0 RID: 38816
+			// Token: 0x04009866 RID: 39014
 			AddSigns,
-			// Token: 0x040097A1 RID: 38817
+			// Token: 0x04009867 RID: 39015
 			Action,
-			// Token: 0x040097A2 RID: 38818
+			// Token: 0x04009868 RID: 39016
 			ResetChunks
 		}
 
-		// Token: 0x02001983 RID: 6531
+		// Token: 0x020019AF RID: 6575
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum FillTypes
 		{
-			// Token: 0x040097A4 RID: 38820
+			// Token: 0x0400986A RID: 39018
 			Cube,
-			// Token: 0x040097A5 RID: 38821
+			// Token: 0x0400986B RID: 39019
 			Sphere,
-			// Token: 0x040097A6 RID: 38822
+			// Token: 0x0400986C RID: 39020
 			Cylinder
 		}
 	}

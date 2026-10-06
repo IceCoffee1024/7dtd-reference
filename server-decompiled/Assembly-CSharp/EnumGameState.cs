@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x0200119F RID: 4511
+// Token: 0x020011B7 RID: 4535
 public enum EnumGameState
 {
-	// Token: 0x04006AAF RID: 27311
+	// Token: 0x04006B18 RID: 27416
 	Off = -1,
-	// Token: 0x04006AB0 RID: 27312
+	// Token: 0x04006B19 RID: 27417
 	Loading,
-	// Token: 0x04006AB1 RID: 27313
+	// Token: 0x04006B1A RID: 27418
 	Running,
-	// Token: 0x04006AB2 RID: 27314
+	// Token: 0x04006B1B RID: 27419
 	Over
 }

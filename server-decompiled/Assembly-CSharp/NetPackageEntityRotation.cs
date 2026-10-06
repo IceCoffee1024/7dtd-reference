@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E6 RID: 2022
+// Token: 0x020007E9 RID: 2025
 [Preserve]
 public class NetPackageEntityRotation : NetPackageEntityTargeted
 {
-	// Token: 0x17000636 RID: 1590
-	// (get) Token: 0x06003BC7 RID: 15303 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700065B RID: 1627
+	// (get) Token: 0x06003BD3 RID: 15315 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityRotation : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003BC8 RID: 15304 RVA: 0x0018007E File Offset: 0x0017E27E
+	// Token: 0x06003BD4 RID: 15316 RVA: 0x001805BA File Offset: 0x0017E7BA
 	public NetPackageEntityRotation Setup(int _entityId, Vector3i _rot, Quaternion _qrot, bool _bUseQRot)
 	{
 		base.Setup(_entityId);
@@ -26,7 +26,7 @@ public class NetPackageEntityRotation : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BC9 RID: 15305 RVA: 0x001800A0 File Offset: 0x0017E2A0
+	// Token: 0x06003BD5 RID: 15317 RVA: 0x001805DC File Offset: 0x0017E7DC
 	public override void read(PooledBinaryReader _br)
 	{
 		base.read(_br);
@@ -39,7 +39,7 @@ public class NetPackageEntityRotation : NetPackageEntityTargeted
 		this.qrot = new Quaternion(_br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle());
 	}
 
-	// Token: 0x06003BCA RID: 15306 RVA: 0x0018010C File Offset: 0x0017E30C
+	// Token: 0x06003BD6 RID: 15318 RVA: 0x00180648 File Offset: 0x0017E848
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -57,7 +57,7 @@ public class NetPackageEntityRotation : NetPackageEntityTargeted
 		_bw.Write(this.qrot.w);
 	}
 
-	// Token: 0x06003BCB RID: 15307 RVA: 0x001801B4 File Offset: 0x0017E3B4
+	// Token: 0x06003BD7 RID: 15319 RVA: 0x001806F0 File Offset: 0x0017E8F0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -87,21 +87,15 @@ public class NetPackageEntityRotation : NetPackageEntityTargeted
 		entity.SetRotFromNetwork(vector, 3);
 	}
 
-	// Token: 0x06003BCC RID: 15308 RVA: 0x00180278 File Offset: 0x0017E478
-	public override int GetLength()
-	{
-		return 12;
-	}
-
-	// Token: 0x040030AE RID: 12462
+	// Token: 0x040030A7 RID: 12455
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3i rot;
 
-	// Token: 0x040030AF RID: 12463
+	// Token: 0x040030A8 RID: 12456
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Quaternion qrot;
 
-	// Token: 0x040030B0 RID: 12464
+	// Token: 0x040030A9 RID: 12457
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool bUseQRotation;
 }

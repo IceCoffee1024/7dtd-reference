@@ -1,19 +1,19 @@
 ﻿using System;
 
-// Token: 0x02000BCC RID: 3020
+// Token: 0x02000BDE RID: 3038
 public interface ITileArea<T> where T : class
 {
-	// Token: 0x1700097D RID: 2429
-	// (get) Token: 0x06005B0D RID: 23309
+	// Token: 0x1700099F RID: 2463
+	// (get) Token: 0x06005B26 RID: 23334
 	TileAreaConfig Config { get; }
 
-	// Token: 0x1700097E RID: 2430
+	// Token: 0x170009A0 RID: 2464
 	T this[int _tileX, int _tileZ] { get; }
 
-	// Token: 0x1700097F RID: 2431
+	// Token: 0x170009A1 RID: 2465
 	T this[uint _key] { get; }
 
-	// Token: 0x06005B10 RID: 23312 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005B29 RID: 23337 RVA: 0x000027FC File Offset: 0x000009FC
 	void Cleanup()
 	{
 	}

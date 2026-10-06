@@ -7,12 +7,12 @@ using NCalc;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010FE RID: 4350
+// Token: 0x02001113 RID: 4371
 [XuiBindingNcalcFunction]
 [Preserve]
 public static class BindingNcalcFunctions
 {
-	// Token: 0x060089FF RID: 35327 RVA: 0x00349560 File Offset: 0x00347760
+	// Token: 0x06008A60 RID: 35424 RVA: 0x0034D807 File Offset: 0x0034BA07
 	[XuiBindingNcalcFunction("<ERROR>", 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void localization(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -20,7 +20,7 @@ public static class BindingNcalcFunctions
 		_args.Result = Localization.Get(_evaluatedArguments[0].ToString(), false, null);
 	}
 
-	// Token: 0x06008A00 RID: 35328 RVA: 0x00349578 File Offset: 0x00347778
+	// Token: 0x06008A61 RID: 35425 RVA: 0x0034D820 File Offset: 0x0034BA20
 	[XuiBindingNcalcFunction(1f, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void cvar(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -42,7 +42,7 @@ public static class BindingNcalcFunctions
 		_args.Result = primaryPlayer.GetCVar(text);
 	}
 
-	// Token: 0x06008A01 RID: 35329 RVA: 0x003495E8 File Offset: 0x003477E8
+	// Token: 0x06008A62 RID: 35426 RVA: 0x0034D890 File Offset: 0x0034BA90
 	[XuiBindingNcalcFunction(0, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void gamepref(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -66,7 +66,7 @@ public static class BindingNcalcFunctions
 		_args.Result = GamePrefs.GetObject(enumGamePrefs);
 	}
 
-	// Token: 0x06008A02 RID: 35330 RVA: 0x00349664 File Offset: 0x00347864
+	// Token: 0x06008A63 RID: 35427 RVA: 0x0034D90C File Offset: 0x0034BB0C
 	[XuiBindingNcalcFunction(0, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void gamestat(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -90,7 +90,7 @@ public static class BindingNcalcFunctions
 		_args.Result = GameStats.GetObject(enumGameStats);
 	}
 
-	// Token: 0x06008A03 RID: 35331 RVA: 0x003496E0 File Offset: 0x003478E0
+	// Token: 0x06008A64 RID: 35428 RVA: 0x0034D988 File Offset: 0x0034BB88
 	[XuiBindingNcalcFunction(0, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void serverinfoint(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -120,7 +120,7 @@ public static class BindingNcalcFunctions
 		_args.Result = gameServerInfo.GetValue(gameInfoInt);
 	}
 
-	// Token: 0x06008A04 RID: 35332 RVA: 0x0034979C File Offset: 0x0034799C
+	// Token: 0x06008A65 RID: 35429 RVA: 0x0034DA44 File Offset: 0x0034BC44
 	[XuiBindingNcalcFunction(false, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void serverinfobool(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -150,7 +150,7 @@ public static class BindingNcalcFunctions
 		_args.Result = gameServerInfo.GetValue(gameInfoBool);
 	}
 
-	// Token: 0x06008A05 RID: 35333 RVA: 0x00349858 File Offset: 0x00347A58
+	// Token: 0x06008A66 RID: 35430 RVA: 0x0034DB00 File Offset: 0x0034BD00
 	[XuiBindingNcalcFunction("", 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void serverinfostring(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -180,7 +180,7 @@ public static class BindingNcalcFunctions
 		_args.Result = gameServerInfo.GetValue(gameInfoString);
 	}
 
-	// Token: 0x06008A06 RID: 35334 RVA: 0x00349910 File Offset: 0x00347B10
+	// Token: 0x06008A67 RID: 35431 RVA: 0x0034DBB8 File Offset: 0x0034BDB8
 	[XuiBindingNcalcFunction(null, 2, "dictvalue")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void dictValue(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -206,7 +206,7 @@ public static class BindingNcalcFunctions
 		_args.Result = dictionary[obj];
 	}
 
-	// Token: 0x06008A07 RID: 35335 RVA: 0x00349984 File Offset: 0x00347B84
+	// Token: 0x06008A68 RID: 35432 RVA: 0x0034DC2C File Offset: 0x0034BE2C
 	[XuiBindingNcalcFunction("", -1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void format(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -232,7 +232,7 @@ public static class BindingNcalcFunctions
 		_args.Result = text;
 	}
 
-	// Token: 0x06008A08 RID: 35336 RVA: 0x00349A32 File Offset: 0x00347C32
+	// Token: 0x06008A69 RID: 35433 RVA: 0x0034DCDA File Offset: 0x0034BEDA
 	[XuiBindingNcalcFunction(0, 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void length(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -240,7 +240,7 @@ public static class BindingNcalcFunctions
 		_args.Result = _evaluatedArguments[0].ToString().Length;
 	}
 
-	// Token: 0x06008A09 RID: 35337 RVA: 0x00349A4C File Offset: 0x00347C4C
+	// Token: 0x06008A6A RID: 35434 RVA: 0x0034DCF4 File Offset: 0x0034BEF4
 	[XuiBindingNcalcFunction(0, 1, "int")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void toInt(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -255,7 +255,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A0A RID: 35338 RVA: 0x00349A9C File Offset: 0x00347C9C
+	// Token: 0x06008A6B RID: 35435 RVA: 0x0034DD44 File Offset: 0x0034BF44
 	[XuiBindingNcalcFunction(0, 1, "roundtoint")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void roundToInt(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -268,7 +268,7 @@ public static class BindingNcalcFunctions
 		_args.Result = Mathf.RoundToInt(num);
 	}
 
-	// Token: 0x06008A0B RID: 35339 RVA: 0x00349AD4 File Offset: 0x00347CD4
+	// Token: 0x06008A6C RID: 35436 RVA: 0x0034DD7C File Offset: 0x0034BF7C
 	[XuiBindingNcalcFunction(0.0, 1, "float")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void toFloat(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -283,7 +283,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A0C RID: 35340 RVA: 0x00349B24 File Offset: 0x00347D24
+	// Token: 0x06008A6D RID: 35437 RVA: 0x0034DDCC File Offset: 0x0034BFCC
 	[XuiBindingNcalcFunction("", 1, "str")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void toString(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -292,7 +292,7 @@ public static class BindingNcalcFunctions
 		_args.Result = ((obj != null) ? obj.ToString() : null) ?? "";
 	}
 
-	// Token: 0x06008A0D RID: 35341 RVA: 0x00349B44 File Offset: 0x00347D44
+	// Token: 0x06008A6E RID: 35438 RVA: 0x0034DDEC File Offset: 0x0034BFEC
 	[XuiBindingNcalcFunction("", 2, "itos")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void intToString(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -305,7 +305,7 @@ public static class BindingNcalcFunctions
 		_args.Result = num.ToString(_evaluatedArguments[1].ToString());
 	}
 
-	// Token: 0x06008A0E RID: 35342 RVA: 0x00349B80 File Offset: 0x00347D80
+	// Token: 0x06008A6F RID: 35439 RVA: 0x0034DE28 File Offset: 0x0034C028
 	[XuiBindingNcalcFunction("", 2, "ftos")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void floatToString(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -318,7 +318,7 @@ public static class BindingNcalcFunctions
 		_args.Result = num.ToString(_evaluatedArguments[1].ToString());
 	}
 
-	// Token: 0x06008A0F RID: 35343 RVA: 0x00349BBC File Offset: 0x00347DBC
+	// Token: 0x06008A70 RID: 35440 RVA: 0x0034DE64 File Offset: 0x0034C064
 	[XuiBindingNcalcFunction(false, 1, "bound")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void isBound(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -326,7 +326,7 @@ public static class BindingNcalcFunctions
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06008A10 RID: 35344 RVA: 0x00349BCE File Offset: 0x00347DCE
+	// Token: 0x06008A71 RID: 35441 RVA: 0x0034DE76 File Offset: 0x0034C076
 	[XuiBindingNcalcFunction("", 1, null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void always(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -335,7 +335,7 @@ public static class BindingNcalcFunctions
 		_args.Result = _evaluatedArguments[0];
 	}
 
-	// Token: 0x06008A11 RID: 35345 RVA: 0x00349BE0 File Offset: 0x00347DE0
+	// Token: 0x06008A72 RID: 35442 RVA: 0x0034DE88 File Offset: 0x0034C088
 	[XuiBindingNcalcFunction(false, 1, "defined")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void isDefined(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -344,7 +344,7 @@ public static class BindingNcalcFunctions
 		_args.Result = (_bindingInstance.FindParameter(_evaluatedArguments[0].ToString(), out obj) ? BindingNcalcFunctions.boxedTrue : BindingNcalcFunctions.boxedFalse);
 	}
 
-	// Token: 0x06008A12 RID: 35346 RVA: 0x00349C14 File Offset: 0x00347E14
+	// Token: 0x06008A73 RID: 35443 RVA: 0x0034DEBC File Offset: 0x0034C0BC
 	[XuiBindingNcalcFunction(0, 2, "c_i")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32_i(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -368,7 +368,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A13 RID: 35347 RVA: 0x00349CA4 File Offset: 0x00347EA4
+	// Token: 0x06008A74 RID: 35444 RVA: 0x0034DF4C File Offset: 0x0034C14C
 	[XuiBindingNcalcFunction(0, 1, "c_r")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32_r(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -383,7 +383,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A14 RID: 35348 RVA: 0x00349CF8 File Offset: 0x00347EF8
+	// Token: 0x06008A75 RID: 35445 RVA: 0x0034DFA0 File Offset: 0x0034C1A0
 	[XuiBindingNcalcFunction(0, 1, "c_g")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32_g(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -398,7 +398,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A15 RID: 35349 RVA: 0x00349D4C File Offset: 0x00347F4C
+	// Token: 0x06008A76 RID: 35446 RVA: 0x0034DFF4 File Offset: 0x0034C1F4
 	[XuiBindingNcalcFunction(0, 1, "c_b")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32_b(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -413,7 +413,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A16 RID: 35350 RVA: 0x00349DA0 File Offset: 0x00347FA0
+	// Token: 0x06008A77 RID: 35447 RVA: 0x0034E048 File Offset: 0x0034C248
 	[XuiBindingNcalcFunction(0, 1, "c_a")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32_a(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -428,7 +428,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A17 RID: 35351 RVA: 0x00349DF4 File Offset: 0x00347FF4
+	// Token: 0x06008A78 RID: 35448 RVA: 0x0034E09C File Offset: 0x0034C29C
 	[XuiBindingNcalcFunction(null, 4, "color")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void color32(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -456,7 +456,7 @@ public static class BindingNcalcFunctions
 		_args.Result = new Color32(b, b2, b3, b4);
 	}
 
-	// Token: 0x06008A18 RID: 35352 RVA: 0x00349E74 File Offset: 0x00348074
+	// Token: 0x06008A79 RID: 35449 RVA: 0x0034E11C File Offset: 0x0034C31C
 	[XuiBindingNcalcFunction(0, 2, "v2i_i")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v2i_i(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -480,7 +480,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A19 RID: 35353 RVA: 0x00349F04 File Offset: 0x00348104
+	// Token: 0x06008A7A RID: 35450 RVA: 0x0034E1AC File Offset: 0x0034C3AC
 	[XuiBindingNcalcFunction(0, 1, "v2i_x")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v2i_x(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -495,7 +495,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A1A RID: 35354 RVA: 0x00349F58 File Offset: 0x00348158
+	// Token: 0x06008A7B RID: 35451 RVA: 0x0034E200 File Offset: 0x0034C400
 	[XuiBindingNcalcFunction(0, 1, "v2i_y")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v2i_y(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -510,7 +510,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A1B RID: 35355 RVA: 0x00349FAC File Offset: 0x003481AC
+	// Token: 0x06008A7C RID: 35452 RVA: 0x0034E254 File Offset: 0x0034C454
 	[XuiBindingNcalcFunction(null, 2, "v2i")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void vector2i(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -528,7 +528,7 @@ public static class BindingNcalcFunctions
 		_args.Result = new Vector2i(num, num2);
 	}
 
-	// Token: 0x06008A1C RID: 35356 RVA: 0x00349FFC File Offset: 0x003481FC
+	// Token: 0x06008A7D RID: 35453 RVA: 0x0034E2A4 File Offset: 0x0034C4A4
 	[XuiBindingNcalcFunction(0, 2, "v3i_i")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v3i_i(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -552,7 +552,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A1D RID: 35357 RVA: 0x0034A08C File Offset: 0x0034828C
+	// Token: 0x06008A7E RID: 35454 RVA: 0x0034E334 File Offset: 0x0034C534
 	[XuiBindingNcalcFunction(0, 1, "v3i_x")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v3i_x(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -567,7 +567,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A1E RID: 35358 RVA: 0x0034A0E0 File Offset: 0x003482E0
+	// Token: 0x06008A7F RID: 35455 RVA: 0x0034E388 File Offset: 0x0034C588
 	[XuiBindingNcalcFunction(0, 1, "v3i_y")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v3i_y(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -582,7 +582,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A1F RID: 35359 RVA: 0x0034A134 File Offset: 0x00348334
+	// Token: 0x06008A80 RID: 35456 RVA: 0x0034E3DC File Offset: 0x0034C5DC
 	[XuiBindingNcalcFunction(0, 1, "v3i_z")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void v3i_z(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -597,7 +597,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A20 RID: 35360 RVA: 0x0034A188 File Offset: 0x00348388
+	// Token: 0x06008A81 RID: 35457 RVA: 0x0034E430 File Offset: 0x0034C630
 	[XuiBindingNcalcFunction(null, 3, "v3i")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void vector3i(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -620,7 +620,7 @@ public static class BindingNcalcFunctions
 		_args.Result = new Vector3i(num, num2, num3);
 	}
 
-	// Token: 0x06008A21 RID: 35361 RVA: 0x0034A1F0 File Offset: 0x003483F0
+	// Token: 0x06008A82 RID: 35458 RVA: 0x0034E498 File Offset: 0x0034C698
 	[XuiBindingNcalcFunction(null, 2, "v2")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void vector2(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -638,7 +638,7 @@ public static class BindingNcalcFunctions
 		_args.Result = new Vector2(num, num2);
 	}
 
-	// Token: 0x06008A22 RID: 35362 RVA: 0x0034A240 File Offset: 0x00348440
+	// Token: 0x06008A83 RID: 35459 RVA: 0x0034E4E8 File Offset: 0x0034C6E8
 	[XuiBindingNcalcFunction(null, 3, "v3")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void vector3(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments)
@@ -661,7 +661,7 @@ public static class BindingNcalcFunctions
 		_args.Result = new Vector3(num, num2, num3);
 	}
 
-	// Token: 0x06008A23 RID: 35363 RVA: 0x0034A2A8 File Offset: 0x003484A8
+	// Token: 0x06008A84 RID: 35460 RVA: 0x0034E550 File Offset: 0x0034C750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryArgAsByteClamped(IBindingNcalc _bindingInstance, object[] _evaluatedArguments, int _argIndex, string _argName, out byte _value, [CallerMemberName] string _funcName = null)
 	{
@@ -681,7 +681,7 @@ public static class BindingNcalcFunctions
 		return flag;
 	}
 
-	// Token: 0x06008A24 RID: 35364 RVA: 0x0034A30C File Offset: 0x0034850C
+	// Token: 0x06008A85 RID: 35461 RVA: 0x0034E5B4 File Offset: 0x0034C7B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryArgAsInt(IBindingNcalc _bindingInstance, object[] _evaluatedArguments, int _argIndex, string _argName, out int _value, [CallerMemberName] string _funcName = null)
 	{
@@ -701,7 +701,7 @@ public static class BindingNcalcFunctions
 		return flag;
 	}
 
-	// Token: 0x06008A25 RID: 35365 RVA: 0x0034A364 File Offset: 0x00348564
+	// Token: 0x06008A86 RID: 35462 RVA: 0x0034E60C File Offset: 0x0034C80C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryArgAsFloat(IBindingNcalc _bindingInstance, object[] _evaluatedArguments, int _argIndex, string _argName, out float _value, [CallerMemberName] string _funcName = null)
 	{
@@ -721,7 +721,7 @@ public static class BindingNcalcFunctions
 		return flag;
 	}
 
-	// Token: 0x06008A26 RID: 35366 RVA: 0x0034A3C0 File Offset: 0x003485C0
+	// Token: 0x06008A87 RID: 35463 RVA: 0x0034E668 File Offset: 0x0034C868
 	public static void LogFunctionError(IBindingNcalc _bindingInstance, string _message, Exception _e = null, [CallerMemberName] string _funcName = null)
 	{
 		Log.Error(string.Concat(new string[]
@@ -741,7 +741,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A27 RID: 35367 RVA: 0x0034A428 File Offset: 0x00348628
+	// Token: 0x06008A88 RID: 35464 RVA: 0x0034E6D0 File Offset: 0x0034C8D0
 	public static void EvaluateFunc(IBindingNcalc _bindingInstance, string _name, FunctionArgs _args)
 	{
 		BindingNcalcFunctions.FunctionDefinition functionDefinition;
@@ -789,7 +789,7 @@ public static class BindingNcalcFunctions
 		BindingNcalcFunctions.ReturnObjectArray(array);
 	}
 
-	// Token: 0x06008A28 RID: 35368 RVA: 0x0034A545 File Offset: 0x00348745
+	// Token: 0x06008A89 RID: 35465 RVA: 0x0034E7ED File Offset: 0x0034C9ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object[] GetObjectArray(int _length)
 	{
@@ -804,7 +804,7 @@ public static class BindingNcalcFunctions
 		return BindingNcalcFunctions.objectArrays.Pop();
 	}
 
-	// Token: 0x06008A29 RID: 35369 RVA: 0x0034A570 File Offset: 0x00348770
+	// Token: 0x06008A8A RID: 35466 RVA: 0x0034E818 File Offset: 0x0034CA18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReturnObjectArray(object[] _arr)
 	{
@@ -814,7 +814,7 @@ public static class BindingNcalcFunctions
 		}
 	}
 
-	// Token: 0x06008A2A RID: 35370 RVA: 0x0034A588 File Offset: 0x00348788
+	// Token: 0x06008A8B RID: 35467 RVA: 0x0034E830 File Offset: 0x0034CA30
 	public static void RegisterNcalcFunctions()
 	{
 		if (BindingNcalcFunctions.ncalcFunctions.Count > 0)
@@ -828,7 +828,7 @@ public static class BindingNcalcFunctions
 		ReflectionHelpers.FindTypesWithAttribute<XuiBindingNcalcFunctionAttribute>(new Action<Type, bool, XuiBindingNcalcFunctionAttribute>(BindingNcalcFunctions.<RegisterNcalcFunctions>g__TypeFoundCallback|50_0), true);
 	}
 
-	// Token: 0x06008A2C RID: 35372 RVA: 0x0034A5FF File Offset: 0x003487FF
+	// Token: 0x06008A8D RID: 35469 RVA: 0x0034E8A7 File Offset: 0x0034CAA7
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <RegisterNcalcFunctions>g__TypeFoundCallback|50_0(Type _type, bool _hasMultiple, XuiBindingNcalcFunctionAttribute _classAttribute)
@@ -836,7 +836,7 @@ public static class BindingNcalcFunctions
 		ReflectionHelpers.GetMethodsWithAttribute<XuiBindingNcalcFunctionAttribute>(_type, new Action<MethodInfo, bool, XuiBindingNcalcFunctionAttribute>(BindingNcalcFunctions.<RegisterNcalcFunctions>g__MethodFoundCallback|50_1), true, true, true);
 	}
 
-	// Token: 0x06008A2D RID: 35373 RVA: 0x0034A618 File Offset: 0x00348818
+	// Token: 0x06008A8E RID: 35470 RVA: 0x0034E8C0 File Offset: 0x0034CAC0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <RegisterNcalcFunctions>g__MethodFoundCallback|50_1(MethodInfo _method, bool _hasMultiple, XuiBindingNcalcFunctionAttribute _methodAttribute)
@@ -871,35 +871,35 @@ public static class BindingNcalcFunctions
 		BindingNcalcFunctions.ncalcFunctions[text] = new BindingNcalcFunctions.FunctionDefinition(customNcalcFunctionDelegate, _methodAttribute.ExpectedArgumentCount, _methodAttribute.ErrorResult);
 	}
 
-	// Token: 0x040066AA RID: 26282
+	// Token: 0x040066F9 RID: 26361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedFalse = false;
 
-	// Token: 0x040066AB RID: 26283
+	// Token: 0x040066FA RID: 26362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedTrue = true;
 
-	// Token: 0x040066AC RID: 26284
+	// Token: 0x040066FB RID: 26363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ObjectArrayLengthCached = 20;
 
-	// Token: 0x040066AD RID: 26285
+	// Token: 0x040066FC RID: 26364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Stack<object[]> objectArrays = new Stack<object[]>();
 
-	// Token: 0x040066AE RID: 26286
+	// Token: 0x040066FD RID: 26365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, BindingNcalcFunctions.FunctionDefinition> ncalcFunctions = new Dictionary<string, BindingNcalcFunctions.FunctionDefinition>();
 
-	// Token: 0x020010FF RID: 4351
-	// (Invoke) Token: 0x06008A2F RID: 35375
+	// Token: 0x02001114 RID: 4372
+	// (Invoke) Token: 0x06008A90 RID: 35472
 	public delegate void CustomNcalcFunctionDelegate(IBindingNcalc _bindingInstance, FunctionArgs _args, object[] _evaluatedArguments);
 
-	// Token: 0x02001100 RID: 4352
+	// Token: 0x02001115 RID: 4373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class FunctionDefinition
 	{
-		// Token: 0x06008A32 RID: 35378 RVA: 0x0034A70F File Offset: 0x0034890F
+		// Token: 0x06008A93 RID: 35475 RVA: 0x0034E9B7 File Offset: 0x0034CBB7
 		public FunctionDefinition(BindingNcalcFunctions.CustomNcalcFunctionDelegate _delegate, int _expectedArgumentCount, object _errorResult)
 		{
 			this.Delegate = _delegate;
@@ -907,13 +907,13 @@ public static class BindingNcalcFunctions
 			this.ErrorResult = _errorResult;
 		}
 
-		// Token: 0x040066AF RID: 26287
+		// Token: 0x040066FE RID: 26366
 		public readonly BindingNcalcFunctions.CustomNcalcFunctionDelegate Delegate;
 
-		// Token: 0x040066B0 RID: 26288
+		// Token: 0x040066FF RID: 26367
 		public readonly int ExpectedArgumentCount;
 
-		// Token: 0x040066B1 RID: 26289
+		// Token: 0x04006700 RID: 26368
 		public readonly object ErrorResult;
 	}
 }

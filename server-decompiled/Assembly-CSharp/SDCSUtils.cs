@@ -7,10 +7,10 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Animations.Rigging;
 
-// Token: 0x02000A57 RID: 2647
+// Token: 0x02000A61 RID: 2657
 public static class SDCSUtils
 {
-	// Token: 0x06005006 RID: 20486 RVA: 0x001E54B8 File Offset: 0x001E36B8
+	// Token: 0x06004FD6 RID: 20438 RVA: 0x001E67FC File Offset: 0x001E49FC
 	public static GameObject Stitch(GameObject sourceObj, GameObject parentObj, SDCSUtils.TransformCatalog boneCatalog, EModelSDCS emodel = null, bool isFPV = false, bool isUI = false, Material eyeMat = null, bool isGear = false)
 	{
 		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(sourceObj, parentObj.transform);
@@ -89,7 +89,7 @@ public static class SDCSUtils
 		return gameObject;
 	}
 
-	// Token: 0x06005007 RID: 20487 RVA: 0x001E57C4 File Offset: 0x001E39C4
+	// Token: 0x06004FD7 RID: 20439 RVA: 0x001E6B08 File Offset: 0x001E4D08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RemoveFPViewObstructingGearPolygons(SkinnedMeshRenderer smr, params int[] submeshIndices)
 	{
@@ -160,7 +160,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005008 RID: 20488 RVA: 0x001E5998 File Offset: 0x001E3B98
+	// Token: 0x06004FD8 RID: 20440 RVA: 0x001E6CDC File Offset: 0x001E4EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<string> CollectRequiredNamesForSlot(Transform root, Transform slotSubRoot)
 	{
@@ -246,17 +246,17 @@ public static class SDCSUtils
 		return SDCSUtils.BuildAllowedWithAncestors(root, hashSet);
 	}
 
-	// Token: 0x06005009 RID: 20489 RVA: 0x001E5C3C File Offset: 0x001E3E3C
+	// Token: 0x06004FD9 RID: 20441 RVA: 0x001E6F80 File Offset: 0x001E5180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, Transform> MapSourceByName(Transform sourceOrigin)
 	{
-		SDCSUtils.<>c__DisplayClass10_0 CS$<>8__locals1;
+		SDCSUtils.<>c__DisplayClass11_0 CS$<>8__locals1;
 		CS$<>8__locals1.map = new Dictionary<string, Transform>(StringComparer.Ordinal);
-		SDCSUtils.<MapSourceByName>g__Recurse|10_0(sourceOrigin, ref CS$<>8__locals1);
+		SDCSUtils.<MapSourceByName>g__Recurse|11_0(sourceOrigin, ref CS$<>8__locals1);
 		return CS$<>8__locals1.map;
 	}
 
-	// Token: 0x0600500A RID: 20490 RVA: 0x001E5C68 File Offset: 0x001E3E68
+	// Token: 0x06004FDA RID: 20442 RVA: 0x001E6FAC File Offset: 0x001E51AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<string> BuildAllowedWithAncestors(Transform sourceOrigin, HashSet<string> allowedBones)
 	{
@@ -282,7 +282,7 @@ public static class SDCSUtils
 		return hashSet;
 	}
 
-	// Token: 0x0600500B RID: 20491 RVA: 0x001E5D04 File Offset: 0x001E3F04
+	// Token: 0x06004FDB RID: 20443 RVA: 0x001E7048 File Offset: 0x001E5248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AddRequiredChildren(Transform sourceT, Transform targetT, SDCSUtils.TransformCatalog catalog, HashSet<string> allowedBones, AuxBoneTracker auxBoneTracker = null)
 	{
@@ -326,7 +326,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600500C RID: 20492 RVA: 0x001E5E50 File Offset: 0x001E4050
+	// Token: 0x06004FDC RID: 20444 RVA: 0x001E7194 File Offset: 0x001E5394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetupRigConstraints(RigBuilder rigBuilder, Transform sourceRootT, Transform targetRootT, SDCSUtils.TransformCatalog catalog, HashSet<string> allowedBones)
 	{
@@ -368,7 +368,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600500D RID: 20493 RVA: 0x001E6048 File Offset: 0x001E4248
+	// Token: 0x06004FDD RID: 20445 RVA: 0x001E738C File Offset: 0x001E558C
 	public static void MatchRigs(Transform source, Transform target, SDCSUtils.TransformCatalog catalog, HashSet<string> allowedBones)
 	{
 		Transform transform = source.Find("Origin");
@@ -385,7 +385,7 @@ public static class SDCSUtils
 		SDCSUtils.AddRequiredChildren(transform, transform2, catalog, allowedBones, auxBoneTracker);
 	}
 
-	// Token: 0x0600500E RID: 20494 RVA: 0x001E60B4 File Offset: 0x001E42B4
+	// Token: 0x06004FDE RID: 20446 RVA: 0x001E73F8 File Offset: 0x001E55F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void TransferCharacterJoint(Transform source, GameObject newBone, SDCSUtils.TransformCatalog transformCatalog)
 	{
@@ -398,7 +398,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600500F RID: 20495 RVA: 0x001E610C File Offset: 0x001E430C
+	// Token: 0x06004FDF RID: 20447 RVA: 0x001E7450 File Offset: 0x001E5650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform[] TranslateTransforms(Transform[] transforms, SDCSUtils.TransformCatalog transformCatalog)
 	{
@@ -417,7 +417,7 @@ public static class SDCSUtils
 		return transforms;
 	}
 
-	// Token: 0x06005010 RID: 20496 RVA: 0x001E6150 File Offset: 0x001E4350
+	// Token: 0x06004FE0 RID: 20448 RVA: 0x001E7494 File Offset: 0x001E5694
 	public static TValue Find<TKey, TValue>(Dictionary<TKey, TValue> source, TKey key)
 	{
 		TValue tvalue;
@@ -425,8 +425,8 @@ public static class SDCSUtils
 		return tvalue;
 	}
 
-	// Token: 0x17000890 RID: 2192
-	// (get) Token: 0x06005011 RID: 20497 RVA: 0x001E6168 File Offset: 0x001E4368
+	// Token: 0x170008B0 RID: 2224
+	// (get) Token: 0x06004FE1 RID: 20449 RVA: 0x001E74AC File Offset: 0x001E56AC
 	public static string baseBodyLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -443,8 +443,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000891 RID: 2193
-	// (get) Token: 0x06005012 RID: 20498 RVA: 0x001E61A8 File Offset: 0x001E43A8
+	// Token: 0x170008B1 RID: 2225
+	// (get) Token: 0x06004FE2 RID: 20450 RVA: 0x001E74EC File Offset: 0x001E56EC
 	public static string baseHeadLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -467,8 +467,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000892 RID: 2194
-	// (get) Token: 0x06005013 RID: 20499 RVA: 0x001E6250 File Offset: 0x001E4450
+	// Token: 0x170008B2 RID: 2226
+	// (get) Token: 0x06004FE3 RID: 20451 RVA: 0x001E7594 File Offset: 0x001E5794
 	public static string baseHairLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -487,8 +487,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000893 RID: 2195
-	// (get) Token: 0x06005014 RID: 20500 RVA: 0x001E62C0 File Offset: 0x001E44C0
+	// Token: 0x170008B3 RID: 2227
+	// (get) Token: 0x06004FE4 RID: 20452 RVA: 0x001E7604 File Offset: 0x001E5804
 	public static string baseMustacheLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -507,8 +507,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000894 RID: 2196
-	// (get) Token: 0x06005015 RID: 20501 RVA: 0x001E6330 File Offset: 0x001E4530
+	// Token: 0x170008B4 RID: 2228
+	// (get) Token: 0x06004FE5 RID: 20453 RVA: 0x001E7674 File Offset: 0x001E5874
 	public static string baseChopsLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -527,8 +527,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000895 RID: 2197
-	// (get) Token: 0x06005016 RID: 20502 RVA: 0x001E63A0 File Offset: 0x001E45A0
+	// Token: 0x170008B5 RID: 2229
+	// (get) Token: 0x06004FE6 RID: 20454 RVA: 0x001E76E4 File Offset: 0x001E58E4
 	public static string baseBeardLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -547,8 +547,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000896 RID: 2198
-	// (get) Token: 0x06005017 RID: 20503 RVA: 0x0000A1FE File Offset: 0x000083FE
+	// Token: 0x170008B6 RID: 2230
+	// (get) Token: 0x06004FE7 RID: 20455 RVA: 0x0000A1FE File Offset: 0x000083FE
 	public static string baseHairColorLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -558,8 +558,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000897 RID: 2199
-	// (get) Token: 0x06005018 RID: 20504 RVA: 0x001E640E File Offset: 0x001E460E
+	// Token: 0x170008B7 RID: 2231
+	// (get) Token: 0x06004FE8 RID: 20456 RVA: 0x001E7752 File Offset: 0x001E5952
 	public static string baseEyeColorMatLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -569,8 +569,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000898 RID: 2200
-	// (get) Token: 0x06005019 RID: 20505 RVA: 0x001E642C File Offset: 0x001E462C
+	// Token: 0x170008B8 RID: 2232
+	// (get) Token: 0x06004FE9 RID: 20457 RVA: 0x001E7770 File Offset: 0x001E5970
 	public static string baseBodyMatLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -593,8 +593,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x17000899 RID: 2201
-	// (get) Token: 0x0600501A RID: 20506 RVA: 0x001E64D4 File Offset: 0x001E46D4
+	// Token: 0x170008B9 RID: 2233
+	// (get) Token: 0x06004FEA RID: 20458 RVA: 0x001E7818 File Offset: 0x001E5A18
 	public static string baseHeadMatLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -617,8 +617,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089A RID: 2202
-	// (get) Token: 0x0600501B RID: 20507 RVA: 0x001E657C File Offset: 0x001E477C
+	// Token: 0x170008BA RID: 2234
+	// (get) Token: 0x06004FEB RID: 20459 RVA: 0x001E78C0 File Offset: 0x001E5AC0
 	public static string baseHandsMatLoc
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -641,8 +641,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089B RID: 2203
-	// (get) Token: 0x0600501C RID: 20508 RVA: 0x0000A415 File Offset: 0x00008615
+	// Token: 0x170008BB RID: 2235
+	// (get) Token: 0x06004FEC RID: 20460 RVA: 0x0000A415 File Offset: 0x00008615
 	public static string baseRigPrefab
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -652,8 +652,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089C RID: 2204
-	// (get) Token: 0x0600501D RID: 20509 RVA: 0x001E6621 File Offset: 0x001E4821
+	// Token: 0x170008BC RID: 2236
+	// (get) Token: 0x06004FED RID: 20461 RVA: 0x001E7965 File Offset: 0x001E5B65
 	public static string baseRigFPPrefab
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -663,8 +663,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089D RID: 2205
-	// (get) Token: 0x0600501E RID: 20510 RVA: 0x001E6628 File Offset: 0x001E4828
+	// Token: 0x170008BD RID: 2237
+	// (get) Token: 0x06004FEE RID: 20462 RVA: 0x001E796C File Offset: 0x001E5B6C
 	public static RuntimeAnimatorController UIAnimController
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -674,8 +674,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089E RID: 2206
-	// (get) Token: 0x0600501F RID: 20511 RVA: 0x001E6661 File Offset: 0x001E4861
+	// Token: 0x170008BE RID: 2238
+	// (get) Token: 0x06004FEF RID: 20463 RVA: 0x001E79A5 File Offset: 0x001E5BA5
 	public static RuntimeAnimatorController TPAnimController
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -685,8 +685,8 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x1700089F RID: 2207
-	// (get) Token: 0x06005020 RID: 20512 RVA: 0x001E669A File Offset: 0x001E489A
+	// Token: 0x170008BF RID: 2239
+	// (get) Token: 0x06004FF0 RID: 20464 RVA: 0x001E79DE File Offset: 0x001E5BDE
 	public static RuntimeAnimatorController FPAnimController
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -696,7 +696,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005021 RID: 20513 RVA: 0x001E66A8 File Offset: 0x001E48A8
+	// Token: 0x06004FF1 RID: 20465 RVA: 0x001E79EC File Offset: 0x001E5BEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SDCSUtils.AssetRefs RemoveAssetOwnerForRig(GameObject rig)
 	{
@@ -710,7 +710,7 @@ public static class SDCSUtils
 		return assetRefs;
 	}
 
-	// Token: 0x06005022 RID: 20514 RVA: 0x001E66D8 File Offset: 0x001E48D8
+	// Token: 0x06004FF2 RID: 20466 RVA: 0x001E7A1C File Offset: 0x001E5C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SDCSUtils.AssetRefs GetAssetOwnerForRig(GameObject rig)
 	{
@@ -724,7 +724,7 @@ public static class SDCSUtils
 		return assetRefs;
 	}
 
-	// Token: 0x06005023 RID: 20515 RVA: 0x001E6710 File Offset: 0x001E4910
+	// Token: 0x06004FF3 RID: 20467 RVA: 0x001E7A54 File Offset: 0x001E5C54
 	public static void CreateVizTP(Archetype _archetype, ref GameObject baseRig, ref SDCSUtils.TransformCatalog boneCatalog, EntityAlive entity, bool isFPV)
 	{
 		SDCSUtils.AssetRefs assetRefs = SDCSUtils.RemoveAssetOwnerForRig(baseRig);
@@ -745,7 +745,7 @@ public static class SDCSUtils
 		assetRefs.ReleaseAssets();
 	}
 
-	// Token: 0x06005024 RID: 20516 RVA: 0x001E679C File Offset: 0x001E499C
+	// Token: 0x06004FF4 RID: 20468 RVA: 0x001E7AE0 File Offset: 0x001E5CE0
 	public static void CreateVizFP(Archetype _archetype, ref GameObject baseRigFP, ref SDCSUtils.TransformCatalog boneCatalogFP, EntityAlive entity, bool isFPV)
 	{
 		SDCSUtils.AssetRefs assetRefs = SDCSUtils.RemoveAssetOwnerForRig(baseRigFP);
@@ -797,7 +797,7 @@ public static class SDCSUtils
 		SDCSUtils.tempCloths.Clear();
 	}
 
-	// Token: 0x06005025 RID: 20517 RVA: 0x001E6974 File Offset: 0x001E4B74
+	// Token: 0x06004FF5 RID: 20469 RVA: 0x001E7CB8 File Offset: 0x001E5EB8
 	public static void CreateVizUI(Archetype _archetype, ref GameObject baseRigUI, ref SDCSUtils.TransformCatalog boneCatalogUI, EntityAlive entity, bool useTempCosmetics)
 	{
 		SDCSUtils.AssetRefs assetRefs = SDCSUtils.RemoveAssetOwnerForRig(baseRigUI);
@@ -828,7 +828,7 @@ public static class SDCSUtils
 		SDCSUtils.fixCloths(baseRigUI);
 	}
 
-	// Token: 0x06005026 RID: 20518 RVA: 0x001E6A78 File Offset: 0x001E4C78
+	// Token: 0x06004FF6 RID: 20470 RVA: 0x001E7DBC File Offset: 0x001E5FBC
 	public static void CreateVizUI(Archetype _archetype, ref GameObject baseRigUI, ref SDCSUtils.TransformCatalog boneCatalogUI)
 	{
 		SDCSUtils.AssetRefs assetRefs = SDCSUtils.RemoveAssetOwnerForRig(baseRigUI);
@@ -859,7 +859,7 @@ public static class SDCSUtils
 		SDCSUtils.fixCloths(baseRigUI);
 	}
 
-	// Token: 0x06005027 RID: 20519 RVA: 0x001E6B98 File Offset: 0x001E4D98
+	// Token: 0x06004FF7 RID: 20471 RVA: 0x001E7EDC File Offset: 0x001E60DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DestroyViz(GameObject _baseRig, bool _keepRig = false)
 	{
@@ -895,7 +895,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005028 RID: 20520 RVA: 0x001E6C80 File Offset: 0x001E4E80
+	// Token: 0x06004FF8 RID: 20472 RVA: 0x001E7FC4 File Offset: 0x001E61C4
 	public static void UnloadViz(GameObject _baseRig)
 	{
 		if (_baseRig == null)
@@ -907,7 +907,7 @@ public static class SDCSUtils
 		assetRefs.ReleaseAssets();
 	}
 
-	// Token: 0x06005029 RID: 20521 RVA: 0x001E6CA0 File Offset: 0x001E4EA0
+	// Token: 0x06004FF9 RID: 20473 RVA: 0x001E7FE4 File Offset: 0x001E61E4
 	public static void SetVisible(GameObject _baseRigUI, bool _visible)
 	{
 		if (_baseRigUI)
@@ -928,7 +928,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600502A RID: 20522 RVA: 0x001E6D3C File Offset: 0x001E4F3C
+	// Token: 0x06004FFA RID: 20474 RVA: 0x001E8080 File Offset: 0x001E6280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupRig(ref GameObject _rigObj, ref SDCSUtils.TransformCatalog _boneCatalog, string prefabLocation, Transform parent, RuntimeAnimatorController animController)
 	{
@@ -960,7 +960,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600502B RID: 20523 RVA: 0x001E6E14 File Offset: 0x001E5014
+	// Token: 0x06004FFB RID: 20475 RVA: 0x001E8158 File Offset: 0x001E6358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void cleanupEquipment(GameObject _rigObj, SDCSUtils.TransformCatalog _boneCatalog)
 	{
@@ -987,7 +987,7 @@ public static class SDCSUtils
 		SDCSUtils.SanitizeRig(_rigObj, _boneCatalog);
 	}
 
-	// Token: 0x0600502C RID: 20524 RVA: 0x001E6EB8 File Offset: 0x001E50B8
+	// Token: 0x06004FFC RID: 20476 RVA: 0x001E81FC File Offset: 0x001E63FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SanitizeRig(GameObject _rigObj, SDCSUtils.TransformCatalog _boneCatalog)
 	{
@@ -1022,7 +1022,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600502D RID: 20525 RVA: 0x001E7014 File Offset: 0x001E5214
+	// Token: 0x06004FFD RID: 20477 RVA: 0x001E8358 File Offset: 0x001E6558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupBase(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, string[] baseParts, bool isFPV)
 	{
@@ -1090,7 +1090,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x0600502E RID: 20526 RVA: 0x001E72EC File Offset: 0x001E54EC
+	// Token: 0x06004FFE RID: 20478 RVA: 0x001E8630 File Offset: 0x001E6830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupEquipment(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, string[] ignoredParts, bool isUI, List<SDCSUtils.SlotData> slotData, bool _ignoreDlcEntitlements)
 	{
@@ -1152,7 +1152,7 @@ public static class SDCSUtils
 		SDCSUtils.setupEquipmentCommon(_rig, _boneCatalog, list);
 	}
 
-	// Token: 0x0600502F RID: 20527 RVA: 0x001E74D0 File Offset: 0x001E56D0
+	// Token: 0x06004FFF RID: 20479 RVA: 0x001E8814 File Offset: 0x001E6A14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupEquipment(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, string[] ignoredParts, EntityAlive entity, bool isUI, bool _ignoreDlcEntitlements, bool useTempCosmetics = false)
 	{
@@ -1260,7 +1260,7 @@ public static class SDCSUtils
 		SDCSUtils.setupEquipmentCommon(_rig, _boneCatalog, list);
 	}
 
-	// Token: 0x06005030 RID: 20528 RVA: 0x001E7810 File Offset: 0x001E5A10
+	// Token: 0x06005000 RID: 20480 RVA: 0x001E8B54 File Offset: 0x001E6D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform setupEquipmentSlot(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, string[] ignoredParts, SDCSUtils.SlotData wornItem, List<Transform> allGears, bool _ignoreDlcEntitlements)
 	{
@@ -1323,7 +1323,7 @@ public static class SDCSUtils
 		return clothingPartWithName;
 	}
 
-	// Token: 0x06005031 RID: 20529 RVA: 0x001E7A0C File Offset: 0x001E5C0C
+	// Token: 0x06005001 RID: 20481 RVA: 0x001E8D50 File Offset: 0x001E6F50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getPartNameWithVariant(string partName, string sourceGearPath, string targetBodyPath)
 	{
@@ -1347,7 +1347,105 @@ public static class SDCSUtils
 		return partName + "_" + text;
 	}
 
-	// Token: 0x06005032 RID: 20530 RVA: 0x001E7A7C File Offset: 0x001E5C7C
+	// Token: 0x06005002 RID: 20482 RVA: 0x001E8DC0 File Offset: 0x001E6FC0
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static Transform RemapBone(Transform t, SDCSUtils.TransformCatalog boneCatalog)
+	{
+		if (t == null)
+		{
+			return null;
+		}
+		Transform transform = SDCSUtils.Find<string, Transform>(boneCatalog, t.name);
+		if (!(transform != null))
+		{
+			return t;
+		}
+		return transform;
+	}
+
+	// Token: 0x06005003 RID: 20483 RVA: 0x001E8DF4 File Offset: 0x001E6FF4
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static int RemapBoneListAndCount(List<Transform> list, SDCSUtils.TransformCatalog boneCatalog)
+	{
+		if (list == null)
+		{
+			return 0;
+		}
+		int num = 0;
+		for (int i = 0; i < list.Count; i++)
+		{
+			Transform transform = list[i];
+			if (!(transform == null))
+			{
+				Transform transform2 = SDCSUtils.Find<string, Transform>(boneCatalog, transform.name);
+				if (transform2 != null && transform2 != transform)
+				{
+					list[i] = transform2;
+					num++;
+				}
+			}
+		}
+		return num;
+	}
+
+	// Token: 0x06005004 RID: 20484 RVA: 0x001E8E58 File Offset: 0x001E7058
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static void SetupDynamicBones(GameObject rigObj, SDCSUtils.TransformCatalog boneCatalog)
+	{
+		Transform transform = boneCatalog["Hips"];
+		if (transform == null)
+		{
+			return;
+		}
+		rigObj.GetComponentsInChildren<DynamicBone>(true, SDCSUtils.tempDynamicBones);
+		if (SDCSUtils.tempDynamicBones.Count == 0)
+		{
+			return;
+		}
+		foreach (DynamicBone dynamicBone in SDCSUtils.tempDynamicBones)
+		{
+			SDCSUtils.RemapColliderList(dynamicBone.m_Colliders, boneCatalog);
+			dynamicBone.m_Root = SDCSUtils.RemapBone(dynamicBone.m_Root, boneCatalog);
+			SDCSUtils.RemapBoneListAndCount(dynamicBone.m_Roots, boneCatalog);
+			SDCSUtils.RemapBoneListAndCount(dynamicBone.m_Exclusions, boneCatalog);
+			if (dynamicBone.m_ReferenceObject == null)
+			{
+				dynamicBone.m_ReferenceObject = transform;
+			}
+		}
+		SDCSUtils.tempDynamicBones.Clear();
+	}
+
+	// Token: 0x06005005 RID: 20485 RVA: 0x001E8F2C File Offset: 0x001E712C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static int RemapColliderList(List<DynamicBoneColliderBase> list, SDCSUtils.TransformCatalog boneCatalog)
+	{
+		if (list == null)
+		{
+			return 0;
+		}
+		int num = 0;
+		for (int i = 0; i < list.Count; i++)
+		{
+			DynamicBoneColliderBase dynamicBoneColliderBase = list[i];
+			if (!(dynamicBoneColliderBase == null))
+			{
+				Transform transform = SDCSUtils.Find<string, Transform>(boneCatalog, dynamicBoneColliderBase.transform.name);
+				if (!(transform == null) && !(transform == dynamicBoneColliderBase.transform))
+				{
+					DynamicBoneColliderBase component = transform.GetComponent<DynamicBoneColliderBase>();
+					if (component != null && component != dynamicBoneColliderBase)
+					{
+						list[i] = component;
+						num++;
+					}
+				}
+			}
+		}
+		return num;
+	}
+
+	// Token: 0x06005006 RID: 20486 RVA: 0x001E8FB8 File Offset: 0x001E71B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupEquipmentCommon(GameObject _rigObj, SDCSUtils.TransformCatalog _boneCatalog, List<Transform> allGears)
 	{
@@ -1374,9 +1472,10 @@ public static class SDCSUtils
 			hingeJoint.autoConfigureConnectedAnchor = true;
 		}
 		orAddComponent.enabled = true;
+		SDCSUtils.SetupDynamicBones(_rigObj, _boneCatalog);
 	}
 
-	// Token: 0x06005033 RID: 20531 RVA: 0x001E7B90 File Offset: 0x001E5D90
+	// Token: 0x06005007 RID: 20487 RVA: 0x001E90D0 File Offset: 0x001E72D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupHairObjects(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, string[] ignoredParts, EntityAlive entity, bool isUI)
 	{
@@ -1399,7 +1498,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005034 RID: 20532 RVA: 0x001E7C1C File Offset: 0x001E5E1C
+	// Token: 0x06005008 RID: 20488 RVA: 0x001E915C File Offset: 0x001E735C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupHairObjects(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, EModelSDCS _emodel, bool _isFPV, string[] ignoredParts, bool isUI, string hairName, string mustacheName, string chopsName, string beardName)
 	{
@@ -1498,7 +1597,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005035 RID: 20533 RVA: 0x001E7EA8 File Offset: 0x001E60A8
+	// Token: 0x06005009 RID: 20489 RVA: 0x001E93E8 File Offset: 0x001E75E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplySwatchToGameObject(GameObject targetGameObject, HairColorSwatch hairSwatch)
 	{
@@ -1528,7 +1627,7 @@ public static class SDCSUtils
 		Debug.LogWarning("No target GameObject selected.");
 	}
 
-	// Token: 0x06005036 RID: 20534 RVA: 0x001E7F50 File Offset: 0x001E6150
+	// Token: 0x0600500A RID: 20490 RVA: 0x001E9490 File Offset: 0x001E7690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void setupHair(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, EModelSDCS _emodel, bool _isFPV, string[] ignoredParts, bool isUI, string path, string hairName)
 	{
@@ -1551,7 +1650,7 @@ public static class SDCSUtils
 		global::UnityEngine.Object.Destroy(gameObject);
 	}
 
-	// Token: 0x06005037 RID: 20535 RVA: 0x001E7FEC File Offset: 0x001E61EC
+	// Token: 0x0600500B RID: 20491 RVA: 0x001E952C File Offset: 0x001E772C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetPathForSlotData(SDCSUtils.SlotData _slotData, bool _headgearShortHairMask = false)
 	{
@@ -1612,7 +1711,7 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x06005038 RID: 20536 RVA: 0x001E815C File Offset: 0x001E635C
+	// Token: 0x0600500C RID: 20492 RVA: 0x001E969C File Offset: 0x001E789C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject setupHeadgearMorph(GameObject _rig, SDCSUtils.TransformCatalog _boneCatalog, EModelSDCS _emodel, bool _isFPV, bool isUI, SDCSUtils.SlotData _slotData, bool _ignoreDlcEntitlements)
 	{
@@ -1655,7 +1754,7 @@ public static class SDCSUtils
 		return gameObject;
 	}
 
-	// Token: 0x06005039 RID: 20537 RVA: 0x001E8298 File Offset: 0x001E6498
+	// Token: 0x0600500D RID: 20493 RVA: 0x001E97D8 File Offset: 0x001E79D8
 	public static bool BasePartsExist(Archetype _archetype)
 	{
 		SDCSUtils.tmpArchetype = _archetype;
@@ -1682,7 +1781,7 @@ public static class SDCSUtils
 		return true;
 	}
 
-	// Token: 0x0600503A RID: 20538 RVA: 0x001E834C File Offset: 0x001E654C
+	// Token: 0x0600500E RID: 20494 RVA: 0x001E988C File Offset: 0x001E7A8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Transform> findStartsWith(Transform parent, string key)
 	{
@@ -1698,7 +1797,7 @@ public static class SDCSUtils
 		return list;
 	}
 
-	// Token: 0x0600503B RID: 20539 RVA: 0x001E83B8 File Offset: 0x001E65B8
+	// Token: 0x0600500F RID: 20495 RVA: 0x001E98F8 File Offset: 0x001E7AF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject getBodyPartContainingName(Transform parent, string name)
 	{
@@ -1713,7 +1812,7 @@ public static class SDCSUtils
 		return null;
 	}
 
-	// Token: 0x0600503C RID: 20540 RVA: 0x001E842C File Offset: 0x001E662C
+	// Token: 0x06005010 RID: 20496 RVA: 0x001E996C File Offset: 0x001E7B6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform getClothingPartWithName(GameObject clothingPrefab, string partName)
 	{
@@ -1728,18 +1827,18 @@ public static class SDCSUtils
 		return null;
 	}
 
-	// Token: 0x0600503D RID: 20541 RVA: 0x0000B890 File Offset: 0x00009A90
+	// Token: 0x06005011 RID: 20497 RVA: 0x0000B890 File Offset: 0x00009A90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string parseSexedLocation(string sexedLocation, string sex)
 	{
 		return sexedLocation.Replace("{sex}", sex);
 	}
 
-	// Token: 0x0600503E RID: 20542 RVA: 0x001E84A0 File Offset: 0x001E66A0
+	// Token: 0x06005012 RID: 20498 RVA: 0x001E99E0 File Offset: 0x001E7BE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void fixCloths(GameObject root)
 	{
-		SDCSUtils.<>c__DisplayClass104_0 CS$<>8__locals1 = new SDCSUtils.<>c__DisplayClass104_0();
+		SDCSUtils.<>c__DisplayClass109_0 CS$<>8__locals1 = new SDCSUtils.<>c__DisplayClass109_0();
 		CS$<>8__locals1.cloths = root.GetComponentsInChildren<Cloth>();
 		if (CS$<>8__locals1.cloths.Length == 0)
 		{
@@ -1753,170 +1852,174 @@ public static class SDCSUtils
 		ThreadManager.StartCoroutine(CS$<>8__locals1.<fixCloths>g__EnableClothLater|0());
 	}
 
-	// Token: 0x06005040 RID: 20544 RVA: 0x001E8600 File Offset: 0x001E6800
+	// Token: 0x06005014 RID: 20500 RVA: 0x001E9B4C File Offset: 0x001E7D4C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static void <MapSourceByName>g__Recurse|10_0(Transform t, ref SDCSUtils.<>c__DisplayClass10_0 A_1)
+	public static void <MapSourceByName>g__Recurse|11_0(Transform t, ref SDCSUtils.<>c__DisplayClass11_0 A_1)
 	{
 		A_1.map[t.name] = t;
 		for (int i = 0; i < t.childCount; i++)
 		{
-			SDCSUtils.<MapSourceByName>g__Recurse|10_0(t.GetChild(i), ref A_1);
+			SDCSUtils.<MapSourceByName>g__Recurse|11_0(t.GetChild(i), ref A_1);
 		}
 	}
 
-	// Token: 0x04003D91 RID: 15761
+	// Token: 0x04003D9E RID: 15774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Cloth> tempCloths = new List<Cloth>();
 
-	// Token: 0x04003D92 RID: 15762
+	// Token: 0x04003D9F RID: 15775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Material> tempMats = new List<Material>();
 
-	// Token: 0x04003D93 RID: 15763
+	// Token: 0x04003DA0 RID: 15776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<SkinnedMeshRenderer> tempSMRs = new List<SkinnedMeshRenderer>();
 
-	// Token: 0x04003D94 RID: 15764
+	// Token: 0x04003DA1 RID: 15777
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static readonly List<DynamicBone> tempDynamicBones = new List<DynamicBone>();
+
+	// Token: 0x04003DA2 RID: 15778
 	public static readonly string[] shortHairNames = new string[] { "buzzcut", "cornrows", "flattop_fro", "mohawk", "small_fro" };
 
-	// Token: 0x04003D95 RID: 15765
+	// Token: 0x04003DA3 RID: 15779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<SkinnedMeshRenderer> _smrBuf = new List<SkinnedMeshRenderer>(64);
 
-	// Token: 0x04003D96 RID: 15766
+	// Token: 0x04003DA4 RID: 15780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<HingeJoint> _hingeBuf = new List<HingeJoint>(32);
 
-	// Token: 0x04003D97 RID: 15767
+	// Token: 0x04003DA5 RID: 15781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<BlendConstraint> _bcBuf = new List<BlendConstraint>(32);
 
-	// Token: 0x04003D98 RID: 15768
+	// Token: 0x04003DA6 RID: 15782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string ORIGIN = "Origin";
 
-	// Token: 0x04003D99 RID: 15769
+	// Token: 0x04003DA7 RID: 15783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string RIGCON = "RigConstraints";
 
-	// Token: 0x04003D9A RID: 15770
+	// Token: 0x04003DA8 RID: 15784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string IKRIG = "IKRig";
 
-	// Token: 0x04003D9B RID: 15771
+	// Token: 0x04003DA9 RID: 15785
 	public const string HEAD = "head";
 
-	// Token: 0x04003D9C RID: 15772
+	// Token: 0x04003DAA RID: 15786
 	public const string EYES = "eyes";
 
-	// Token: 0x04003D9D RID: 15773
+	// Token: 0x04003DAB RID: 15787
 	public const string BEARD = "beard";
 
-	// Token: 0x04003D9E RID: 15774
+	// Token: 0x04003DAC RID: 15788
 	public const string HAIR = "hair";
 
-	// Token: 0x04003D9F RID: 15775
+	// Token: 0x04003DAD RID: 15789
 	public const string BODY = "body";
 
-	// Token: 0x04003DA0 RID: 15776
+	// Token: 0x04003DAE RID: 15790
 	public const string HANDS = "hands";
 
-	// Token: 0x04003DA1 RID: 15777
+	// Token: 0x04003DAF RID: 15791
 	public const string FEET = "feet";
 
-	// Token: 0x04003DA2 RID: 15778
+	// Token: 0x04003DB0 RID: 15792
 	public const string HELMET = "helmet";
 
-	// Token: 0x04003DA3 RID: 15779
+	// Token: 0x04003DB1 RID: 15793
 	public const string TORSO = "torso";
 
-	// Token: 0x04003DA4 RID: 15780
+	// Token: 0x04003DB2 RID: 15794
 	public const string GLOVES = "gloves";
 
-	// Token: 0x04003DA5 RID: 15781
+	// Token: 0x04003DB3 RID: 15795
 	public const string BOOTS = "boots";
 
-	// Token: 0x04003DA6 RID: 15782
+	// Token: 0x04003DB4 RID: 15796
 	public const string SEX_MARKER = "{sex}";
 
-	// Token: 0x04003DA7 RID: 15783
+	// Token: 0x04003DB5 RID: 15797
 	public const string RACE_MARKER = "{race}";
 
-	// Token: 0x04003DA8 RID: 15784
+	// Token: 0x04003DB6 RID: 15798
 	public const string VARIANT_MARKER = "{variant}";
 
-	// Token: 0x04003DA9 RID: 15785
+	// Token: 0x04003DB7 RID: 15799
 	public const string HAIR_MARKER = "{hair}";
 
-	// Token: 0x04003DAA RID: 15786
+	// Token: 0x04003DB8 RID: 15800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Archetype tmpArchetype;
 
-	// Token: 0x04003DAB RID: 15787
+	// Token: 0x04003DB9 RID: 15801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] baseParts = new string[] { "head", "body", "hands", "feet" };
 
-	// Token: 0x04003DAC RID: 15788
+	// Token: 0x04003DBA RID: 15802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] ignoredParts = new string[0];
 
-	// Token: 0x04003DAD RID: 15789
+	// Token: 0x04003DBB RID: 15803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] basePartsFP = new string[] { "body", "hands" };
 
-	// Token: 0x04003DAE RID: 15790
+	// Token: 0x04003DBC RID: 15804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] ignoredPartsFP = new string[] { "head", "helmet", "feet", "boots" };
 
-	// Token: 0x04003DAF RID: 15791
+	// Token: 0x04003DBD RID: 15805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<int, SDCSUtils.AssetRefs> rigOwnedAssets = new Dictionary<int, SDCSUtils.AssetRefs>();
 
-	// Token: 0x04003DB0 RID: 15792
+	// Token: 0x04003DBE RID: 15806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SDCSUtils.AssetRefs tmpAssetsOwner;
 
-	// Token: 0x02000A58 RID: 2648
+	// Token: 0x02000A62 RID: 2658
 	public class SlotData
 	{
-		// Token: 0x04003DB1 RID: 15793
+		// Token: 0x04003DBF RID: 15807
 		public string PrefabName;
 
-		// Token: 0x04003DB2 RID: 15794
+		// Token: 0x04003DC0 RID: 15808
 		public string PartName;
 
-		// Token: 0x04003DB3 RID: 15795
+		// Token: 0x04003DC1 RID: 15809
 		public string BaseToTurnOff;
 
-		// Token: 0x04003DB4 RID: 15796
+		// Token: 0x04003DC2 RID: 15810
 		public SDCSUtils.SlotData.HairMaskTypes HairMaskType;
 
-		// Token: 0x04003DB5 RID: 15797
+		// Token: 0x04003DC3 RID: 15811
 		public SDCSUtils.SlotData.HairMaskTypes FacialHairMaskType;
 
-		// Token: 0x02000A59 RID: 2649
+		// Token: 0x02000A63 RID: 2659
 		public enum HairMaskTypes
 		{
-			// Token: 0x04003DB7 RID: 15799
+			// Token: 0x04003DC5 RID: 15813
 			Full,
-			// Token: 0x04003DB8 RID: 15800
+			// Token: 0x04003DC6 RID: 15814
 			Hat,
-			// Token: 0x04003DB9 RID: 15801
+			// Token: 0x04003DC7 RID: 15815
 			None
 		}
 	}
 
-	// Token: 0x02000A5A RID: 2650
+	// Token: 0x02000A64 RID: 2660
 	public class TransformCatalog : Dictionary<string, Transform>
 	{
-		// Token: 0x06005042 RID: 20546 RVA: 0x001E863D File Offset: 0x001E683D
+		// Token: 0x06005016 RID: 20502 RVA: 0x001E9B89 File Offset: 0x001E7D89
 		public TransformCatalog(Transform _transform)
 		{
 			this.AddRecursive(_transform);
 		}
 
-		// Token: 0x06005043 RID: 20547 RVA: 0x001E864C File Offset: 0x001E684C
+		// Token: 0x06005017 RID: 20503 RVA: 0x001E9B98 File Offset: 0x001E7D98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddRecursive(Transform _transform)
 		{
@@ -1937,10 +2040,10 @@ public static class SDCSUtils
 		}
 	}
 
-	// Token: 0x02000A5B RID: 2651
+	// Token: 0x02000A65 RID: 2661
 	public static class SlotAllowedBonesCache
 	{
-		// Token: 0x06005044 RID: 20548 RVA: 0x001E86C4 File Offset: 0x001E68C4
+		// Token: 0x06005018 RID: 20504 RVA: 0x001E9C10 File Offset: 0x001E7E10
 		public static void Set(Transform slotRoot, HashSet<string> allowedBones)
 		{
 			if (!slotRoot || allowedBones == null)
@@ -1950,14 +2053,14 @@ public static class SDCSUtils
 			SDCSUtils.SlotAllowedBonesCache._map[slotRoot.GetInstanceID()] = allowedBones;
 		}
 
-		// Token: 0x06005045 RID: 20549 RVA: 0x001E86E3 File Offset: 0x001E68E3
+		// Token: 0x06005019 RID: 20505 RVA: 0x001E9C2F File Offset: 0x001E7E2F
 		public static bool TryGet(Transform slotRoot, out HashSet<string> allowedBones)
 		{
 			allowedBones = null;
 			return slotRoot && SDCSUtils.SlotAllowedBonesCache._map.TryGetValue(slotRoot.GetInstanceID(), out allowedBones);
 		}
 
-		// Token: 0x06005046 RID: 20550 RVA: 0x001E8703 File Offset: 0x001E6903
+		// Token: 0x0600501A RID: 20506 RVA: 0x001E9C4F File Offset: 0x001E7E4F
 		public static void Remove(Transform slotRoot)
 		{
 			if (!slotRoot)
@@ -1967,26 +2070,26 @@ public static class SDCSUtils
 			SDCSUtils.SlotAllowedBonesCache._map.Remove(slotRoot.GetInstanceID());
 		}
 
-		// Token: 0x06005047 RID: 20551 RVA: 0x001E871F File Offset: 0x001E691F
+		// Token: 0x0600501B RID: 20507 RVA: 0x001E9C6B File Offset: 0x001E7E6B
 		public static void Clear()
 		{
 			SDCSUtils.SlotAllowedBonesCache._map.Clear();
 		}
 
-		// Token: 0x04003DBA RID: 15802
+		// Token: 0x04003DC8 RID: 15816
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<int, HashSet<string>> _map = new Dictionary<int, HashSet<string>>();
 	}
 
-	// Token: 0x02000A5C RID: 2652
+	// Token: 0x02000A66 RID: 2662
 	public class AssetRefs
 	{
-		// Token: 0x06005049 RID: 20553 RVA: 0x001E8737 File Offset: 0x001E6937
+		// Token: 0x0600501D RID: 20509 RVA: 0x001E9C83 File Offset: 0x001E7E83
 		public AssetRefs()
 		{
 		}
 
-		// Token: 0x0600504A RID: 20554 RVA: 0x001E874C File Offset: 0x001E694C
+		// Token: 0x0600501E RID: 20510 RVA: 0x001E9C98 File Offset: 0x001E7E98
 		public AssetRefs(SDCSUtils.AssetRefs other)
 		{
 			foreach (LoadManager.IAssetHandle assetHandle in other.trackedAssetHandles)
@@ -1995,13 +2098,13 @@ public static class SDCSUtils
 			}
 		}
 
-		// Token: 0x0600504B RID: 20555 RVA: 0x001E87BC File Offset: 0x001E69BC
+		// Token: 0x0600501F RID: 20511 RVA: 0x001E9D08 File Offset: 0x001E7F08
 		public void AddAssetHandle(LoadManager.IAssetHandle handle)
 		{
 			this.trackedAssetHandles.Add(handle);
 		}
 
-		// Token: 0x0600504C RID: 20556 RVA: 0x001E87CC File Offset: 0x001E69CC
+		// Token: 0x06005020 RID: 20512 RVA: 0x001E9D18 File Offset: 0x001E7F18
 		public void ReleaseAssets()
 		{
 			foreach (LoadManager.IAssetHandle assetHandle in this.trackedAssetHandles)
@@ -2011,7 +2114,7 @@ public static class SDCSUtils
 			this.trackedAssetHandles.Clear();
 		}
 
-		// Token: 0x0600504D RID: 20557 RVA: 0x001E8828 File Offset: 0x001E6A28
+		// Token: 0x06005021 RID: 20513 RVA: 0x001E9D74 File Offset: 0x001E7F74
 		public void LogAssets()
 		{
 			foreach (LoadManager.IAssetHandle assetHandle in this.trackedAssetHandles)
@@ -2020,7 +2123,7 @@ public static class SDCSUtils
 			}
 		}
 
-		// Token: 0x04003DBB RID: 15803
+		// Token: 0x04003DC9 RID: 15817
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<LoadManager.IAssetHandle> trackedAssetHandles = new List<LoadManager.IAssetHandle>();
 	}

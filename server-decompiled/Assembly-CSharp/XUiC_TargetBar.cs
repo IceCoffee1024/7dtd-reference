@@ -3,16 +3,16 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001080 RID: 4224
+// Token: 0x02001090 RID: 4240
 [Preserve]
 public class XUiC_TargetBar : XUiController
 {
-	// Token: 0x17000FA4 RID: 4004
-	// (get) Token: 0x0600863E RID: 34366 RVA: 0x00332921 File Offset: 0x00330B21
-	// (set) Token: 0x0600863F RID: 34367 RVA: 0x00332929 File Offset: 0x00330B29
+	// Token: 0x17000FD9 RID: 4057
+	// (get) Token: 0x06008680 RID: 34432 RVA: 0x00336259 File Offset: 0x00334459
+	// (set) Token: 0x06008681 RID: 34433 RVA: 0x00336261 File Offset: 0x00334461
 	public EntityAlive Target { get; set; }
 
-	// Token: 0x06008640 RID: 34368 RVA: 0x002DBCDB File Offset: 0x002D9EDB
+	// Token: 0x06008682 RID: 34434 RVA: 0x002DF077 File Offset: 0x002DD277
 	public override void Init()
 	{
 		base.Init();
@@ -20,7 +20,7 @@ public class XUiC_TargetBar : XUiController
 		this.viewComponent.IsVisible = false;
 	}
 
-	// Token: 0x06008641 RID: 34369 RVA: 0x00332934 File Offset: 0x00330B34
+	// Token: 0x06008683 RID: 34435 RVA: 0x0033626C File Offset: 0x0033446C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -136,7 +136,7 @@ public class XUiC_TargetBar : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06008642 RID: 34370 RVA: 0x00332C3C File Offset: 0x00330E3C
+	// Token: 0x06008684 RID: 34436 RVA: 0x00336574 File Offset: 0x00334774
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -267,7 +267,7 @@ public class XUiC_TargetBar : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008643 RID: 34371 RVA: 0x00332FB7 File Offset: 0x003311B7
+	// Token: 0x06008685 RID: 34437 RVA: 0x003368EF File Offset: 0x00334AEF
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "visibility")
@@ -283,68 +283,68 @@ public class XUiC_TargetBar : XUiController
 		return true;
 	}
 
-	// Token: 0x040063BB RID: 25531
+	// Token: 0x040063FB RID: 25595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastValue;
 
-	// Token: 0x040063BC RID: 25532
+	// Token: 0x040063FC RID: 25596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float deltaTime;
 
-	// Token: 0x040063BD RID: 25533
+	// Token: 0x040063FD RID: 25597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float noTargetFadeTime;
 
-	// Token: 0x040063BE RID: 25534
+	// Token: 0x040063FE RID: 25598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float noTargetFadeTimeMax = 3f;
 
-	// Token: 0x040063BF RID: 25535
+	// Token: 0x040063FF RID: 25599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TargetBar.EVisibility visibility;
 
-	// Token: 0x040063C0 RID: 25536
+	// Token: 0x04006400 RID: 25600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultBossIcon = "ui_game_symbol_twitch_boss_bar_default";
 
-	// Token: 0x040063C1 RID: 25537
+	// Token: 0x04006401 RID: 25601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameEventManager gameEventManager;
 
-	// Token: 0x040063C2 RID: 25538
+	// Token: 0x04006402 RID: 25602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BossGroup CurrentBossGroup;
 
-	// Token: 0x040063C3 RID: 25539
+	// Token: 0x04006403 RID: 25603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float checkSandboxOption;
 
-	// Token: 0x040063C4 RID: 25540
+	// Token: 0x04006404 RID: 25604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sandboxForceShow;
 
-	// Token: 0x040063C5 RID: 25541
+	// Token: 0x04006405 RID: 25605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statcurrentFormatterInt = new CachedStringFormatterInt();
 
-	// Token: 0x040063C6 RID: 25542
+	// Token: 0x04006406 RID: 25606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> statcurrentWMaxFormatterAOfB = new CachedStringFormatter<int, int>((int _i, int _i1) => string.Format("{0}/{1}", _i, _i1));
 
-	// Token: 0x040063C7 RID: 25543
+	// Token: 0x04006407 RID: 25607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat statfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x02001081 RID: 4225
+	// Token: 0x02001091 RID: 4241
 	public enum EVisibility
 	{
-		// Token: 0x040063C9 RID: 25545
+		// Token: 0x04006409 RID: 25609
 		Never,
-		// Token: 0x040063CA RID: 25546
+		// Token: 0x0400640A RID: 25610
 		GodMode,
-		// Token: 0x040063CB RID: 25547
+		// Token: 0x0400640B RID: 25611
 		Always,
-		// Token: 0x040063CC RID: 25548
+		// Token: 0x0400640C RID: 25612
 		Boss
 	}
 }

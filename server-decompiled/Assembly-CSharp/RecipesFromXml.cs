@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000D2A RID: 3370
+// Token: 0x02000D38 RID: 3384
 public class RecipesFromXml
 {
-	// Token: 0x060066AE RID: 26286 RVA: 0x00286FFC File Offset: 0x002851FC
+	// Token: 0x060066A0 RID: 26272 RVA: 0x0028A3A0 File Offset: 0x002885A0
 	public static bool SaveRecipes(string _filename)
 	{
 		XmlDocument xmlDocument = new XmlDocument();
@@ -45,7 +45,7 @@ public class RecipesFromXml
 		return true;
 	}
 
-	// Token: 0x060066AF RID: 26287 RVA: 0x002871B4 File Offset: 0x002853B4
+	// Token: 0x060066A1 RID: 26273 RVA: 0x0028A55C File Offset: 0x0028875C
 	public static IEnumerator LoadRecipies(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

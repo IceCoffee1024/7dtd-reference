@@ -3,15 +3,15 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-// Token: 0x02000CE1 RID: 3297
+// Token: 0x02000CEF RID: 3311
 public class WaterDebugManager
 {
-	// Token: 0x17000A8F RID: 2703
-	// (get) Token: 0x0600650C RID: 25868 RVA: 0x00277E69 File Offset: 0x00276069
-	// (set) Token: 0x0600650D RID: 25869 RVA: 0x00277E71 File Offset: 0x00276071
+	// Token: 0x17000AA5 RID: 2725
+	// (get) Token: 0x060064FE RID: 25854 RVA: 0x0027B20D File Offset: 0x0027940D
+	// (set) Token: 0x060064FF RID: 25855 RVA: 0x0027B215 File Offset: 0x00279415
 	public bool RenderingEnabled { get; set; } = true;
 
-	// Token: 0x0600650E RID: 25870 RVA: 0x00277E7C File Offset: 0x0027607C
+	// Token: 0x06006500 RID: 25856 RVA: 0x0027B220 File Offset: 0x00279420
 	public void InitializeDebugRender(Chunk chunk)
 	{
 		WaterDebugRenderer waterDebugRenderer = WaterDebugPools.rendererPool.AllocSync(true);
@@ -24,14 +24,14 @@ public class WaterDebugManager
 		});
 	}
 
-	// Token: 0x0600650F RID: 25871 RVA: 0x00277ED2 File Offset: 0x002760D2
+	// Token: 0x06006501 RID: 25857 RVA: 0x0027B276 File Offset: 0x00279476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReturnRenderer(long key)
 	{
 		this.renderersToRemove.Enqueue(key);
 	}
 
-	// Token: 0x06006510 RID: 25872 RVA: 0x00277EE0 File Offset: 0x002760E0
+	// Token: 0x06006502 RID: 25858 RVA: 0x0027B284 File Offset: 0x00279484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRenderers()
 	{
@@ -58,7 +58,7 @@ public class WaterDebugManager
 		}
 	}
 
-	// Token: 0x06006511 RID: 25873 RVA: 0x00277F80 File Offset: 0x00276180
+	// Token: 0x06006503 RID: 25859 RVA: 0x0027B324 File Offset: 0x00279524
 	public void DebugDraw()
 	{
 		this.UpdateRenderers();
@@ -71,7 +71,7 @@ public class WaterDebugManager
 		}
 	}
 
-	// Token: 0x06006512 RID: 25874 RVA: 0x00277FE4 File Offset: 0x002761E4
+	// Token: 0x06006504 RID: 25860 RVA: 0x0027B388 File Offset: 0x00279588
 	public void Cleanup()
 	{
 		WaterDebugManager.InitializedRenderer initializedRenderer;
@@ -86,34 +86,34 @@ public class WaterDebugManager
 		this.activeRenderers.Clear();
 	}
 
-	// Token: 0x04004E9A RID: 20122
+	// Token: 0x04004ED0 RID: 20176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentQueue<WaterDebugManager.InitializedRenderer> newRenderers = new ConcurrentQueue<WaterDebugManager.InitializedRenderer>();
 
-	// Token: 0x04004E9B RID: 20123
+	// Token: 0x04004ED1 RID: 20177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, WaterDebugRenderer> activeRenderers = new Dictionary<long, WaterDebugRenderer>();
 
-	// Token: 0x04004E9C RID: 20124
+	// Token: 0x04004ED2 RID: 20178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentQueue<long> renderersToRemove = new ConcurrentQueue<long>();
 
-	// Token: 0x02000CE2 RID: 3298
+	// Token: 0x02000CF0 RID: 3312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct InitializedRenderer
 	{
-		// Token: 0x04004E9D RID: 20125
+		// Token: 0x04004ED3 RID: 20179
 		public long chunkKey;
 
-		// Token: 0x04004E9E RID: 20126
+		// Token: 0x04004ED4 RID: 20180
 		public WaterDebugRenderer renderer;
 	}
 
-	// Token: 0x02000CE3 RID: 3299
+	// Token: 0x02000CF1 RID: 3313
 	public struct RendererHandle
 	{
-		// Token: 0x17000A90 RID: 2704
-		// (get) Token: 0x06006514 RID: 25876 RVA: 0x0027809C File Offset: 0x0027629C
+		// Token: 0x17000AA6 RID: 2726
+		// (get) Token: 0x06006506 RID: 25862 RVA: 0x0027B440 File Offset: 0x00279640
 		public bool IsValid
 		{
 			get
@@ -122,14 +122,14 @@ public class WaterDebugManager
 			}
 		}
 
-		// Token: 0x06006515 RID: 25877 RVA: 0x002780B3 File Offset: 0x002762B3
+		// Token: 0x06006507 RID: 25863 RVA: 0x0027B457 File Offset: 0x00279657
 		public RendererHandle(Chunk _chunk, WaterDebugManager _manager)
 		{
 			this.manager = _manager;
 			this.key = new long?(_chunk.Key);
 		}
 
-		// Token: 0x06006516 RID: 25878 RVA: 0x002780D0 File Offset: 0x002762D0
+		// Token: 0x06006508 RID: 25864 RVA: 0x0027B474 File Offset: 0x00279674
 		[Conditional("UNITY_EDITOR")]
 		public void SetChunkOrigin(Vector3i _origin)
 		{
@@ -144,7 +144,7 @@ public class WaterDebugManager
 			}
 		}
 
-		// Token: 0x06006517 RID: 25879 RVA: 0x00278114 File Offset: 0x00276314
+		// Token: 0x06006509 RID: 25865 RVA: 0x0027B4B8 File Offset: 0x002796B8
 		[Conditional("UNITY_EDITOR")]
 		public void SetWater(int _x, int _y, int _z, float mass)
 		{
@@ -159,7 +159,7 @@ public class WaterDebugManager
 			}
 		}
 
-		// Token: 0x06006518 RID: 25880 RVA: 0x00278154 File Offset: 0x00276354
+		// Token: 0x0600650A RID: 25866 RVA: 0x0027B4F8 File Offset: 0x002796F8
 		[Conditional("UNITY_EDITOR")]
 		public void Reset()
 		{
@@ -171,11 +171,11 @@ public class WaterDebugManager
 			this.key = null;
 		}
 
-		// Token: 0x04004E9F RID: 20127
+		// Token: 0x04004ED5 RID: 20181
 		[PublicizedFrom(EAccessModifier.Private)]
 		public WaterDebugManager manager;
 
-		// Token: 0x04004EA0 RID: 20128
+		// Token: 0x04004ED6 RID: 20182
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long? key;
 	}

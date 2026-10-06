@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020003D5 RID: 981
+// Token: 0x020003D8 RID: 984
 public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 {
-	// Token: 0x17000398 RID: 920
-	// (get) Token: 0x06001D96 RID: 7574 RVA: 0x000B3EDA File Offset: 0x000B20DA
-	// (set) Token: 0x06001D97 RID: 7575 RVA: 0x000B3EE2 File Offset: 0x000B20E2
+	// Token: 0x17000390 RID: 912
+	// (get) Token: 0x06001D8E RID: 7566 RVA: 0x000B40E6 File Offset: 0x000B22E6
+	// (set) Token: 0x06001D8F RID: 7567 RVA: 0x000B40EE File Offset: 0x000B22EE
 	public int UserAccessingId
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = -1;
 
-	// Token: 0x06001D98 RID: 7576 RVA: 0x000B3EEB File Offset: 0x000B20EB
+	// Token: 0x06001D90 RID: 7568 RVA: 0x000B40F7 File Offset: 0x000B22F7
 	public void OnDestroy()
 	{
 		this.Cleanup();
@@ -25,7 +25,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001D99 RID: 7577 RVA: 0x000B3F0C File Offset: 0x000B210C
+	// Token: 0x06001D91 RID: 7569 RVA: 0x000B4118 File Offset: 0x000B2318
 	public void Init(DynamicProperties _properties)
 	{
 		if (this.initialized)
@@ -91,7 +91,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001D9A RID: 7578 RVA: 0x000B41E0 File Offset: 0x000B23E0
+	// Token: 0x06001D92 RID: 7570 RVA: 0x000B43EC File Offset: 0x000B25EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -147,7 +147,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001D9B RID: 7579 RVA: 0x000B4340 File Offset: 0x000B2540
+	// Token: 0x06001D93 RID: 7571 RVA: 0x000B454C File Offset: 0x000B274C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEmissionColor(bool isTriggered)
 	{
@@ -173,7 +173,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001D9C RID: 7580 RVA: 0x000B43F8 File Offset: 0x000B25F8
+	// Token: 0x06001D94 RID: 7572 RVA: 0x000B4604 File Offset: 0x000B2804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasTarget()
 	{
@@ -222,7 +222,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		return false;
 	}
 
-	// Token: 0x06001D9D RID: 7581 RVA: 0x000B4624 File Offset: 0x000B2824
+	// Token: 0x06001D95 RID: 7573 RVA: 0x000B4830 File Offset: 0x000B2A30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool trackTarget(Entity _target, ref float _yaw, ref float _pitch, out Vector3 _targetPos)
 	{
@@ -280,7 +280,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		return true;
 	}
 
-	// Token: 0x06001D9E RID: 7582 RVA: 0x000B4870 File Offset: 0x000B2A70
+	// Token: 0x06001D96 RID: 7574 RVA: 0x000B4A7C File Offset: 0x000B2C7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldIgnoreTarget(Entity _target)
 	{
@@ -349,43 +349,43 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		return (_target is EntityEnemy && !this.TileEntity.TargetZombies) || (_target is EntityAnimal && !_target.EntityClass.bIsEnemyEntity);
 	}
 
-	// Token: 0x06001D9F RID: 7583 RVA: 0x000B4A17 File Offset: 0x000B2C17
+	// Token: 0x06001D97 RID: 7575 RVA: 0x000B4C23 File Offset: 0x000B2E23
 	public void SetPitch(float pitch)
 	{
 		this.TileEntity.CenteredPitch = pitch;
 	}
 
-	// Token: 0x06001DA0 RID: 7584 RVA: 0x000B4A25 File Offset: 0x000B2C25
+	// Token: 0x06001D98 RID: 7576 RVA: 0x000B4C31 File Offset: 0x000B2E31
 	public void SetYaw(float yaw)
 	{
 		this.TileEntity.CenteredYaw = yaw;
 	}
 
-	// Token: 0x06001DA1 RID: 7585 RVA: 0x000B4A33 File Offset: 0x000B2C33
+	// Token: 0x06001D99 RID: 7577 RVA: 0x000B4C3F File Offset: 0x000B2E3F
 	public float GetPitch()
 	{
 		return this.TileEntity.CenteredPitch;
 	}
 
-	// Token: 0x06001DA2 RID: 7586 RVA: 0x000B4A40 File Offset: 0x000B2C40
+	// Token: 0x06001D9A RID: 7578 RVA: 0x000B4C4C File Offset: 0x000B2E4C
 	public float GetYaw()
 	{
 		return this.TileEntity.CenteredYaw;
 	}
 
-	// Token: 0x06001DA3 RID: 7587 RVA: 0x000B4A4D File Offset: 0x000B2C4D
+	// Token: 0x06001D9B RID: 7579 RVA: 0x000B4C59 File Offset: 0x000B2E59
 	public Transform GetCameraTransform()
 	{
 		return this.Cone;
 	}
 
-	// Token: 0x06001DA4 RID: 7588 RVA: 0x000B4A55 File Offset: 0x000B2C55
+	// Token: 0x06001D9C RID: 7580 RVA: 0x000B4C61 File Offset: 0x000B2E61
 	public void SetUserAccessing(int userAccessingId)
 	{
 		this.UserAccessingId = userAccessingId;
 	}
 
-	// Token: 0x06001DA5 RID: 7589 RVA: 0x000B4A5E File Offset: 0x000B2C5E
+	// Token: 0x06001D9D RID: 7581 RVA: 0x000B4C6A File Offset: 0x000B2E6A
 	public void Cleanup()
 	{
 		if (this.Cone != null && WireManager.HasInstance)
@@ -394,7 +394,7 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DA6 RID: 7590 RVA: 0x000B4A8B File Offset: 0x000B2C8B
+	// Token: 0x06001D9E RID: 7582 RVA: 0x000B4C97 File Offset: 0x000B2E97
 	public void SetConeColor(Color _color)
 	{
 		if (this.ConeMaterial != null)
@@ -403,13 +403,13 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DA7 RID: 7591 RVA: 0x000B4AAC File Offset: 0x000B2CAC
+	// Token: 0x06001D9F RID: 7583 RVA: 0x000B4CB8 File Offset: 0x000B2EB8
 	public Color GetOriginalConeColor()
 	{
 		return this.ConeColor;
 	}
 
-	// Token: 0x06001DA8 RID: 7592 RVA: 0x000B4AB4 File Offset: 0x000B2CB4
+	// Token: 0x06001DA0 RID: 7584 RVA: 0x000B4CC0 File Offset: 0x000B2EC0
 	public void SetConeActive(bool _active)
 	{
 		if (this.Cone != null)
@@ -418,113 +418,113 @@ public class MotionSensorController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DA9 RID: 7593 RVA: 0x000B4AD5 File Offset: 0x000B2CD5
+	// Token: 0x06001DA1 RID: 7585 RVA: 0x000B4CE1 File Offset: 0x000B2EE1
 	public bool GetConeActive()
 	{
 		return this.Cone != null && this.Cone.gameObject.activeSelf;
 	}
 
-	// Token: 0x06001DAA RID: 7594 RVA: 0x000B4AF7 File Offset: 0x000B2CF7
+	// Token: 0x06001DA2 RID: 7586 RVA: 0x000B4D03 File Offset: 0x000B2F03
 	public bool HasCone()
 	{
 		return this.Cone != null;
 	}
 
-	// Token: 0x06001DAB RID: 7595 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06001DA3 RID: 7587 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool HasLaser()
 	{
 		return false;
 	}
 
-	// Token: 0x06001DAC RID: 7596 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DA4 RID: 7588 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetLaserColor(Color _color)
 	{
 	}
 
-	// Token: 0x06001DAD RID: 7597 RVA: 0x000AF39D File Offset: 0x000AD59D
+	// Token: 0x06001DA5 RID: 7589 RVA: 0x000AF5A9 File Offset: 0x000AD7A9
 	public Color GetOriginalLaserColor()
 	{
 		return Color.black;
 	}
 
-	// Token: 0x06001DAE RID: 7598 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DA6 RID: 7590 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetLaserActive(bool _active)
 	{
 	}
 
-	// Token: 0x06001DAF RID: 7599 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06001DA7 RID: 7591 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool GetLaserActive()
 	{
 		return false;
 	}
 
-	// Token: 0x040013AD RID: 5037
+	// Token: 0x040013A6 RID: 5030
 	public AutoTurretYawLerp YawController;
 
-	// Token: 0x040013AE RID: 5038
+	// Token: 0x040013A7 RID: 5031
 	public AutoTurretPitchLerp PitchController;
 
-	// Token: 0x040013AF RID: 5039
+	// Token: 0x040013A8 RID: 5032
 	public Transform Cone;
 
-	// Token: 0x040013B0 RID: 5040
+	// Token: 0x040013A9 RID: 5033
 	public Material ConeMaterial;
 
-	// Token: 0x040013B1 RID: 5041
+	// Token: 0x040013AA RID: 5034
 	public Color ConeColor;
 
-	// Token: 0x040013B2 RID: 5042
+	// Token: 0x040013AB RID: 5035
 	public bool IsOn;
 
-	// Token: 0x040013B3 RID: 5043
+	// Token: 0x040013AC RID: 5036
 	public TileEntityPoweredTrigger TileEntity;
 
-	// Token: 0x040013B5 RID: 5045
+	// Token: 0x040013AE RID: 5038
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConeYaw = 45f;
 
-	// Token: 0x040013B6 RID: 5046
+	// Token: 0x040013AF RID: 5039
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConePitch = 45f;
 
-	// Token: 0x040013B7 RID: 5047
+	// Token: 0x040013B0 RID: 5040
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConeDistance = 4f;
 
-	// Token: 0x040013B8 RID: 5048
+	// Token: 0x040013B1 RID: 5041
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float maxDistance;
 
-	// Token: 0x040013B9 RID: 5049
+	// Token: 0x040013B2 RID: 5042
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 yawRange;
 
-	// Token: 0x040013BA RID: 5050
+	// Token: 0x040013B3 RID: 5043
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 pitchRange;
 
-	// Token: 0x040013BB RID: 5051
+	// Token: 0x040013B4 RID: 5044
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Bounds targetingBounds;
 
-	// Token: 0x040013BC RID: 5052
+	// Token: 0x040013B5 RID: 5045
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fallAsleepTimeMax = 1f;
 
-	// Token: 0x040013BD RID: 5053
+	// Token: 0x040013B6 RID: 5046
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fallAsleepTime;
 
-	// Token: 0x040013BE RID: 5054
+	// Token: 0x040013B7 RID: 5047
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool initialized;

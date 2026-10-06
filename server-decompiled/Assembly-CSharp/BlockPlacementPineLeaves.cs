@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000F8 RID: 248
+// Token: 0x020000FA RID: 250
 [Preserve]
 public class BlockPlacementPineLeaves : BlockPlacement
 {
-	// Token: 0x0600063C RID: 1596 RVA: 0x0002C604 File Offset: 0x0002A804
+	// Token: 0x06000642 RID: 1602 RVA: 0x0002C6FC File Offset: 0x0002A8FC
 	public override BlockPlacement.Result OnPlaceBlock(BlockPlacement.EnumPlacement _placement, BlockPlacement.EnumRotationMode _mode, int _localRot, WorldBase _world, BlockValue _blockValue, PropTransform _propTransform, HitInfoDetails _hitInfo, Vector3 _entityPos)
 	{
 		if (_mode != BlockPlacement.EnumRotationMode.Auto)

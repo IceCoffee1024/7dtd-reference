@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020005C3 RID: 1475
+// Token: 0x020005C4 RID: 1476
 public enum ItemActionFiringState
 {
-	// Token: 0x0400251D RID: 9501
+	// Token: 0x04002516 RID: 9494
 	Off,
-	// Token: 0x0400251E RID: 9502
+	// Token: 0x04002517 RID: 9495
 	Start,
-	// Token: 0x0400251F RID: 9503
+	// Token: 0x04002518 RID: 9496
 	Loop
 }

@@ -3,10 +3,10 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic.Legacy.ObjectModel
 {
-	// Token: 0x02001A9C RID: 6812
+	// Token: 0x02001AC8 RID: 6856
 	public class ThreatLevel : EnumDictionary<LayerType, Layer>
 	{
-		// Token: 0x0600CDA9 RID: 52649 RVA: 0x004AC6B0 File Offset: 0x004AA8B0
+		// Token: 0x0600CF01 RID: 52993 RVA: 0x004B0B7C File Offset: 0x004AED7C
 		public ThreatLevel(double _tempo, double _sigHi, double _sigLo)
 		{
 			this.Tempo = _tempo;
@@ -14,13 +14,13 @@ namespace DynamicMusic.Legacy.ObjectModel
 			this.SignatureLo = _sigLo;
 		}
 
-		// Token: 0x04009BD2 RID: 39890
+		// Token: 0x04009C98 RID: 40088
 		public readonly double Tempo;
 
-		// Token: 0x04009BD3 RID: 39891
+		// Token: 0x04009C99 RID: 40089
 		public readonly double SignatureHi;
 
-		// Token: 0x04009BD4 RID: 39892
+		// Token: 0x04009C9A RID: 40090
 		public readonly double SignatureLo;
 	}
 }

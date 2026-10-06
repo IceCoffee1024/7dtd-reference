@@ -4,10 +4,10 @@ using System.Net;
 
 namespace Twitch
 {
-	// Token: 0x020017E0 RID: 6112
+	// Token: 0x0200180C RID: 6156
 	public class TwitchExtensionCommand
 	{
-		// Token: 0x0600BD9D RID: 48541 RVA: 0x00462948 File Offset: 0x00460B48
+		// Token: 0x0600BEF5 RID: 48885 RVA: 0x00466E84 File Offset: 0x00465084
 		public TwitchExtensionCommand(HttpListenerRequest _req)
 		{
 			this.userId = StringParsers.ParseSInt32(_req.QueryString.Get(0), 0, -1, NumberStyles.Integer);
@@ -17,16 +17,16 @@ namespace Twitch
 			Log.Out(string.Format("{0}: {1} : {2}", this.userId, this.command, this.id));
 		}
 
-		// Token: 0x04008DF9 RID: 36345
+		// Token: 0x04008EBF RID: 36543
 		public int userId;
 
-		// Token: 0x04008DFA RID: 36346
+		// Token: 0x04008EC0 RID: 36544
 		public string command;
 
-		// Token: 0x04008DFB RID: 36347
+		// Token: 0x04008EC1 RID: 36545
 		public int id;
 
-		// Token: 0x04008DFC RID: 36348
+		// Token: 0x04008EC2 RID: 36546
 		public bool isRerun;
 	}
 }

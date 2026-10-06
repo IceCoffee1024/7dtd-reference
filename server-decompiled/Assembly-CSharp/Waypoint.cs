@@ -1,12 +1,11 @@
 ﻿using System;
-using System.IO;
 
-// Token: 0x020012FE RID: 4862
+// Token: 0x0200131E RID: 4894
 public class Waypoint
 {
-	// Token: 0x17001233 RID: 4659
-	// (get) Token: 0x060099DD RID: 39389 RVA: 0x003A41F5 File Offset: 0x003A23F5
-	// (set) Token: 0x060099DE RID: 39390 RVA: 0x003A4200 File Offset: 0x003A2400
+	// Token: 0x17001278 RID: 4728
+	// (get) Token: 0x06009A89 RID: 39561 RVA: 0x003A8DA5 File Offset: 0x003A6FA5
+	// (set) Token: 0x06009A8A RID: 39562 RVA: 0x003A8DB0 File Offset: 0x003A6FB0
 	public int InviterEntityId
 	{
 		get
@@ -21,9 +20,9 @@ public class Waypoint
 		}
 	}
 
-	// Token: 0x17001234 RID: 4660
-	// (get) Token: 0x060099DF RID: 39391 RVA: 0x003A4241 File Offset: 0x003A2441
-	// (set) Token: 0x060099E0 RID: 39392 RVA: 0x003A4249 File Offset: 0x003A2449
+	// Token: 0x17001279 RID: 4729
+	// (get) Token: 0x06009A8B RID: 39563 RVA: 0x003A8DF1 File Offset: 0x003A6FF1
+	// (set) Token: 0x06009A8C RID: 39564 RVA: 0x003A8DF9 File Offset: 0x003A6FF9
 	public bool HiddenOnMap
 	{
 		get
@@ -37,13 +36,13 @@ public class Waypoint
 		}
 	}
 
-	// Token: 0x060099E1 RID: 39393 RVA: 0x003A4263 File Offset: 0x003A2463
+	// Token: 0x06009A8D RID: 39565 RVA: 0x003A8E13 File Offset: 0x003A7013
 	public Waypoint()
 	{
 		this.name = new AuthoredText();
 	}
 
-	// Token: 0x060099E2 RID: 39394 RVA: 0x003A4284 File Offset: 0x003A2484
+	// Token: 0x06009A8E RID: 39566 RVA: 0x003A8E34 File Offset: 0x003A7034
 	public Waypoint Clone()
 	{
 		Waypoint waypoint = new Waypoint();
@@ -65,8 +64,8 @@ public class Waypoint
 		return waypoint;
 	}
 
-	// Token: 0x060099E3 RID: 39395 RVA: 0x003A434C File Offset: 0x003A254C
-	public void Read(BinaryReader _br, int version = 7)
+	// Token: 0x06009A8F RID: 39567 RVA: 0x003A8EFC File Offset: 0x003A70FC
+	public void Read(PooledBinaryReader _br, int version = 7)
 	{
 		this.pos = StreamUtils.ReadVector3i(_br);
 		this.icon = _br.ReadString();
@@ -105,8 +104,8 @@ public class Waypoint
 		}
 	}
 
-	// Token: 0x060099E4 RID: 39396 RVA: 0x003A4414 File Offset: 0x003A2614
-	public void Write(BinaryWriter _bw)
+	// Token: 0x06009A90 RID: 39568 RVA: 0x003A8FC4 File Offset: 0x003A71C4
+	public void Write(PooledBinaryWriter _bw)
 	{
 		StreamUtils.Write(_bw, this.pos);
 		if (this.icon == null)
@@ -129,14 +128,14 @@ public class Waypoint
 		_bw.Write((int)this.lastKnownPositionEntityType);
 	}
 
-	// Token: 0x060099E5 RID: 39397 RVA: 0x003A44C8 File Offset: 0x003A26C8
+	// Token: 0x06009A91 RID: 39569 RVA: 0x003A9078 File Offset: 0x003A7278
 	public override bool Equals(object obj)
 	{
 		Waypoint waypoint = obj as Waypoint;
 		return waypoint != null && (waypoint.pos.Equals(this.pos) && waypoint.icon == this.icon && waypoint.name.Text == this.name.Text && object.Equals(waypoint.ownerId, this.ownerId)) && waypoint.lastKnownPositionEntityId == this.lastKnownPositionEntityId;
 	}
 
-	// Token: 0x060099E6 RID: 39398 RVA: 0x003A4548 File Offset: 0x003A2748
+	// Token: 0x06009A92 RID: 39570 RVA: 0x003A90F8 File Offset: 0x003A72F8
 	public override int GetHashCode()
 	{
 		int num = (((17 * 31 + this.pos.GetHashCode()) * 31 + this.icon.GetHashCode()) * 31 + this.name.Text.GetHashCode()) * 31;
@@ -144,13 +143,13 @@ public class Waypoint
 		return (num + ((platformUserIdentifierAbs != null) ? platformUserIdentifierAbs.GetHashCode() : 0)) * 31 + this.lastKnownPositionEntityId.GetHashCode();
 	}
 
-	// Token: 0x060099E7 RID: 39399 RVA: 0x003A45B4 File Offset: 0x003A27B4
+	// Token: 0x06009A93 RID: 39571 RVA: 0x003A9164 File Offset: 0x003A7364
 	public bool CanBeViewedBy(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return this.lastKnownPositionEntityId == -1 || (_userIdentifier != null && _userIdentifier.Equals(this.ownerId));
 	}
 
-	// Token: 0x060099E8 RID: 39400 RVA: 0x003A45D4 File Offset: 0x003A27D4
+	// Token: 0x06009A94 RID: 39572 RVA: 0x003A9184 File Offset: 0x003A7384
 	public override string ToString()
 	{
 		string[] array = new string[6];
@@ -165,50 +164,50 @@ public class Waypoint
 		return string.Concat(array);
 	}
 
-	// Token: 0x04007408 RID: 29704
+	// Token: 0x04007483 RID: 29827
 	public Vector3i pos;
 
-	// Token: 0x04007409 RID: 29705
+	// Token: 0x04007484 RID: 29828
 	public string icon;
 
-	// Token: 0x0400740A RID: 29706
+	// Token: 0x04007485 RID: 29829
 	public AuthoredText name;
 
-	// Token: 0x0400740B RID: 29707
+	// Token: 0x04007486 RID: 29830
 	public bool bTracked;
 
-	// Token: 0x0400740C RID: 29708
+	// Token: 0x04007487 RID: 29831
 	public PlatformUserIdentifierAbs ownerId;
 
-	// Token: 0x0400740D RID: 29709
+	// Token: 0x04007488 RID: 29832
 	public int lastKnownPositionEntityId = -1;
 
-	// Token: 0x0400740E RID: 29710
+	// Token: 0x04007489 RID: 29833
 	public eLastKnownPositionEntityType lastKnownPositionEntityType;
 
-	// Token: 0x0400740F RID: 29711
+	// Token: 0x0400748A RID: 29834
 	public long MapObjectKey;
 
-	// Token: 0x04007410 RID: 29712
+	// Token: 0x0400748B RID: 29835
 	public bool hiddenOnCompass;
 
-	// Token: 0x04007411 RID: 29713
+	// Token: 0x0400748C RID: 29836
 	public NavObject navObject;
 
-	// Token: 0x04007412 RID: 29714
+	// Token: 0x0400748D RID: 29837
 	public bool bIsAutoWaypoint;
 
-	// Token: 0x04007413 RID: 29715
+	// Token: 0x0400748E RID: 29838
 	public bool bUsingLocalizationId;
 
-	// Token: 0x04007414 RID: 29716
+	// Token: 0x0400748F RID: 29839
 	public bool IsSaved = true;
 
-	// Token: 0x04007415 RID: 29717
+	// Token: 0x04007490 RID: 29840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inviterEntityId;
 
-	// Token: 0x04007416 RID: 29718
+	// Token: 0x04007491 RID: 29841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hiddenOnMap;
 }

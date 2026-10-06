@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200068C RID: 1676
+// Token: 0x0200068E RID: 1678
 [Preserve]
 public class RequirementItemModTier : RequirementBase
 {
-	// Token: 0x06003532 RID: 13618 RVA: 0x001604E8 File Offset: 0x0015E6E8
+	// Token: 0x06003575 RID: 13685 RVA: 0x00160E6C File Offset: 0x0015F06C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -23,15 +23,15 @@ public class RequirementItemModTier : RequirementBase
 			return false;
 		}
 		ItemValue itemValue = ItemValue.None;
-		for (int i = 0; i < _params.ItemValue.Modifications.Length; i++)
+		for (int i = 0; i < _params.ItemValue.ModificationCount; i++)
 		{
-			ItemValue itemValue2 = _params.ItemValue.Modifications[i];
-			if (itemValue2 != null && itemValue2 != ItemValue.None)
+			ItemValue modification = _params.ItemValue.GetModification(i);
+			if (modification != null && modification != ItemValue.None)
 			{
-				ItemClass itemClass = itemValue2.ItemClass;
+				ItemClass itemClass = modification.ItemClass;
 				if (itemClass != null && itemClass.Name != null && itemClass.Name.EqualsCaseInsensitive(this.modName))
 				{
-					itemValue = itemValue2;
+					itemValue = modification;
 					break;
 				}
 			}
@@ -43,13 +43,13 @@ public class RequirementItemModTier : RequirementBase
 		return !RequirementBase.compareValues((float)itemValue.Quality, this.operation, this.value);
 	}
 
-	// Token: 0x06003533 RID: 13619 RVA: 0x001605B5 File Offset: 0x0015E7B5
+	// Token: 0x06003576 RID: 13686 RVA: 0x00160F36 File Offset: 0x0015F136
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Item Mod tier {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x06003534 RID: 13620 RVA: 0x001605F4 File Offset: 0x0015E7F4
+	// Token: 0x06003577 RID: 13687 RVA: 0x00160F74 File Offset: 0x0015F174
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -61,7 +61,7 @@ public class RequirementItemModTier : RequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B4A RID: 11082
+	// Token: 0x04002B43 RID: 11075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string modName;
 }

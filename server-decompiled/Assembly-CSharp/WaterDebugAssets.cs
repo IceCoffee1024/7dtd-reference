@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000CDE RID: 3294
+// Token: 0x02000CEC RID: 3308
 public static class WaterDebugAssets
 {
-	// Token: 0x17000A8C RID: 2700
-	// (get) Token: 0x060064F1 RID: 25841 RVA: 0x002775BC File Offset: 0x002757BC
+	// Token: 0x17000AA2 RID: 2722
+	// (get) Token: 0x060064E3 RID: 25827 RVA: 0x0027A960 File Offset: 0x00278B60
 	public static Mesh CubeMesh
 	{
 		get
@@ -14,7 +14,7 @@ public static class WaterDebugAssets
 		}
 	}
 
-	// Token: 0x060064F2 RID: 25842 RVA: 0x002775C8 File Offset: 0x002757C8
+	// Token: 0x060064E4 RID: 25828 RVA: 0x0027A96C File Offset: 0x00278B6C
 	public static Mesh GenerateCubeMesh()
 	{
 		Mesh mesh = new Mesh();
@@ -41,8 +41,8 @@ public static class WaterDebugAssets
 		return mesh;
 	}
 
-	// Token: 0x17000A8D RID: 2701
-	// (get) Token: 0x060064F3 RID: 25843 RVA: 0x002776E4 File Offset: 0x002758E4
+	// Token: 0x17000AA3 RID: 2723
+	// (get) Token: 0x060064E5 RID: 25829 RVA: 0x0027AA88 File Offset: 0x00278C88
 	public static Material DebugMaterial
 	{
 		get
@@ -51,7 +51,7 @@ public static class WaterDebugAssets
 		}
 	}
 
-	// Token: 0x060064F4 RID: 25844 RVA: 0x002776F0 File Offset: 0x002758F0
+	// Token: 0x060064E6 RID: 25830 RVA: 0x0027AA94 File Offset: 0x00278C94
 	public static Material CreateDebugMaterial()
 	{
 		return new Material(Shader.Find("Debug/DebugInstancedProcedural"))
@@ -60,11 +60,11 @@ public static class WaterDebugAssets
 		};
 	}
 
-	// Token: 0x04004E7D RID: 20093
+	// Token: 0x04004EB3 RID: 20147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Lazy<Mesh> cubeMesh = new Lazy<Mesh>(new Func<Mesh>(WaterDebugAssets.GenerateCubeMesh));
 
-	// Token: 0x04004E7E RID: 20094
+	// Token: 0x04004EB4 RID: 20148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Lazy<Material> sharedMaterial = new Lazy<Material>(new Func<Material>(WaterDebugAssets.CreateDebugMaterial));
 }

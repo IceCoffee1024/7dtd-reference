@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-// Token: 0x0200035C RID: 860
+// Token: 0x0200035F RID: 863
 public class DynamicMeshPrefabPreviewThread
 {
-	// Token: 0x170002F6 RID: 758
-	// (get) Token: 0x060018EC RID: 6380 RVA: 0x0008C7F2 File Offset: 0x0008A9F2
+	// Token: 0x170002EE RID: 750
+	// (get) Token: 0x060018E7 RID: 6375 RVA: 0x0008CA72 File Offset: 0x0008AC72
 	public bool HasStopBeenRequested
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -18,7 +18,7 @@ public class DynamicMeshPrefabPreviewThread
 		}
 	}
 
-	// Token: 0x060018ED RID: 6381 RVA: 0x0008C800 File Offset: 0x0008AA00
+	// Token: 0x060018E8 RID: 6376 RVA: 0x0008CA80 File Offset: 0x0008AC80
 	public void StartThread()
 	{
 		this.StopThread();
@@ -33,7 +33,7 @@ public class DynamicMeshPrefabPreviewThread
 		this.PreviewCheckThread.Start();
 	}
 
-	// Token: 0x060018EE RID: 6382 RVA: 0x0008C890 File Offset: 0x0008AA90
+	// Token: 0x060018E9 RID: 6377 RVA: 0x0008CB10 File Offset: 0x0008AD10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ThreadLoop()
 	{
@@ -55,7 +55,7 @@ public class DynamicMeshPrefabPreviewThread
 		}
 	}
 
-	// Token: 0x060018EF RID: 6383 RVA: 0x0008C8E0 File Offset: 0x0008AAE0
+	// Token: 0x060018EA RID: 6378 RVA: 0x0008CB60 File Offset: 0x0008AD60
 	public void StopThread()
 	{
 		if (this.PreviewCheckThread == null)
@@ -85,7 +85,7 @@ public class DynamicMeshPrefabPreviewThread
 		}
 	}
 
-	// Token: 0x060018F0 RID: 6384 RVA: 0x0008C978 File Offset: 0x0008AB78
+	// Token: 0x060018EB RID: 6379 RVA: 0x0008CBF8 File Offset: 0x0008ADF8
 	public void AddChunk(DynamicMeshItem item)
 	{
 		this.LockGenerationUntil = DateTime.Now.AddMilliseconds(300.0);
@@ -93,20 +93,20 @@ public class DynamicMeshPrefabPreviewThread
 		this.Wait.Set();
 	}
 
-	// Token: 0x060018F1 RID: 6385 RVA: 0x0008C9C0 File Offset: 0x0008ABC0
+	// Token: 0x060018EC RID: 6380 RVA: 0x0008CC40 File Offset: 0x0008AE40
 	public void ClearChunks()
 	{
 		this.ChunksToProcess.Clear();
 	}
 
-	// Token: 0x060018F2 RID: 6386 RVA: 0x0008C9CD File Offset: 0x0008ABCD
+	// Token: 0x060018ED RID: 6381 RVA: 0x0008CC4D File Offset: 0x0008AE4D
 	public void CleanUp()
 	{
 		this.BuilderManager.StopThreads(true);
 		this.ChunksToProcess.Clear();
 	}
 
-	// Token: 0x060018F3 RID: 6387 RVA: 0x0008C9E8 File Offset: 0x0008ABE8
+	// Token: 0x060018EE RID: 6382 RVA: 0x0008CC68 File Offset: 0x0008AE68
 	public bool ProcessList()
 	{
 		if (this.LockGenerationUntil > DateTime.Now)
@@ -129,44 +129,44 @@ public class DynamicMeshPrefabPreviewThread
 		return true;
 	}
 
-	// Token: 0x04000FDD RID: 4061
+	// Token: 0x04000FD6 RID: 4054
 	public ConcurrentDictionary<long, DynamicMeshItem> ChunksToProcess = new ConcurrentDictionary<long, DynamicMeshItem>();
 
-	// Token: 0x04000FDE RID: 4062
+	// Token: 0x04000FD7 RID: 4055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMeshBuilderManager BuilderManager;
 
-	// Token: 0x04000FDF RID: 4063
+	// Token: 0x04000FD8 RID: 4056
 	public static DynamicMeshPrefabPreviewThread Instance;
 
-	// Token: 0x04000FE0 RID: 4064
+	// Token: 0x04000FD9 RID: 4057
 	public ChunkPreviewData PreviewData;
 
-	// Token: 0x04000FE1 RID: 4065
+	// Token: 0x04000FDA RID: 4058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AutoResetEvent Wait;
 
-	// Token: 0x04000FE2 RID: 4066
+	// Token: 0x04000FDB RID: 4059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CancellationTokenSource TokenSource;
 
-	// Token: 0x04000FE3 RID: 4067
+	// Token: 0x04000FDC RID: 4060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CancellationToken CancelToken;
 
-	// Token: 0x04000FE4 RID: 4068
+	// Token: 0x04000FDD RID: 4061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaitHandle[] WaitHandles = new WaitHandle[2];
 
-	// Token: 0x04000FE5 RID: 4069
+	// Token: 0x04000FDE RID: 4062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Thread PreviewCheckThread;
 
-	// Token: 0x04000FE6 RID: 4070
+	// Token: 0x04000FDF RID: 4063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool chunkAdded;
 
-	// Token: 0x04000FE7 RID: 4071
+	// Token: 0x04000FE0 RID: 4064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime LockGenerationUntil;
 }

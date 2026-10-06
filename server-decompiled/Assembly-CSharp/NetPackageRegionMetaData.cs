@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000390 RID: 912
+// Token: 0x02000393 RID: 915
 [Preserve]
 public class NetPackageRegionMetaData : DynamicMeshServerData
 {
-	// Token: 0x06001B24 RID: 6948 RVA: 0x000A107F File Offset: 0x0009F27F
+	// Token: 0x06001B1F RID: 6943 RVA: 0x000A12FF File Offset: 0x0009F4FF
 	public NetPackageRegionMetaData()
 	{
 	}
 
-	// Token: 0x06001B25 RID: 6949 RVA: 0x000A1092 File Offset: 0x0009F292
+	// Token: 0x06001B20 RID: 6944 RVA: 0x000A1312 File Offset: 0x0009F512
 	public NetPackageRegionMetaData(DynamicMeshRegion region)
 	{
 		this.X = region.WorldPosition.x;
 		this.Z = region.WorldPosition.z;
 	}
 
-	// Token: 0x06001B26 RID: 6950 RVA: 0x000A10C8 File Offset: 0x0009F2C8
+	// Token: 0x06001B21 RID: 6945 RVA: 0x000A1348 File Offset: 0x0009F548
 	public override bool Prechecks()
 	{
 		if (DynamicMeshManager.DoLog)
@@ -30,21 +30,13 @@ public class NetPackageRegionMetaData : DynamicMeshServerData
 				",",
 				this.Z.ToString(),
 				"  Items: ",
-				this.ChunksWithData.Count.ToString(),
-				"   length: ",
-				this.GetLength().ToString()
+				this.ChunksWithData.Count.ToString()
 			}));
 		}
 		return true;
 	}
 
-	// Token: 0x06001B27 RID: 6951 RVA: 0x000A1150 File Offset: 0x0009F350
-	public override int GetLength()
-	{
-		return 12 + this.ChunksWithData.Count * 8;
-	}
-
-	// Token: 0x06001B28 RID: 6952 RVA: 0x000A1164 File Offset: 0x0009F364
+	// Token: 0x06001B22 RID: 6946 RVA: 0x000A13B8 File Offset: 0x0009F5B8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!DynamicMeshManager.CONTENT_ENABLED)
@@ -68,7 +60,7 @@ public class NetPackageRegionMetaData : DynamicMeshServerData
 		}
 	}
 
-	// Token: 0x06001B29 RID: 6953 RVA: 0x000A1244 File Offset: 0x0009F444
+	// Token: 0x06001B23 RID: 6947 RVA: 0x000A1498 File Offset: 0x0009F698
 	public override void read(PooledBinaryReader reader)
 	{
 		this.X = reader.ReadInt32();
@@ -80,8 +72,8 @@ public class NetPackageRegionMetaData : DynamicMeshServerData
 		}
 	}
 
-	// Token: 0x17000335 RID: 821
-	// (get) Token: 0x06001B2A RID: 6954 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700032D RID: 813
+	// (get) Token: 0x06001B24 RID: 6948 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool FlushQueue
 	{
 		get
@@ -90,7 +82,7 @@ public class NetPackageRegionMetaData : DynamicMeshServerData
 		}
 	}
 
-	// Token: 0x06001B2B RID: 6955 RVA: 0x000A1298 File Offset: 0x0009F498
+	// Token: 0x06001B25 RID: 6949 RVA: 0x000A14EC File Offset: 0x0009F6EC
 	public override void write(PooledBinaryWriter writer)
 	{
 		base.write(writer);
@@ -104,6 +96,6 @@ public class NetPackageRegionMetaData : DynamicMeshServerData
 		}
 	}
 
-	// Token: 0x0400117D RID: 4477
+	// Token: 0x04001176 RID: 4470
 	public List<Vector2i> ChunksWithData = new List<Vector2i>();
 }

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200027A RID: 634
+// Token: 0x0200027D RID: 637
 [Preserve]
 public class ConsoleCmdResetAchievementStats : ConsoleCmdAbstract
 {
-	// Token: 0x060012BB RID: 4795 RVA: 0x00074AF7 File Offset: 0x00072CF7
+	// Token: 0x060012B8 RID: 4792 RVA: 0x00074DAB File Offset: 0x00072FAB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "resetallstats" };
 	}
 
-	// Token: 0x170001F4 RID: 500
-	// (get) Token: 0x060012BC RID: 4796 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001EC RID: 492
+	// (get) Token: 0x060012B9 RID: 4793 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdResetAchievementStats : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001F5 RID: 501
-	// (get) Token: 0x060012BD RID: 4797 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001ED RID: 493
+	// (get) Token: 0x060012BA RID: 4794 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -34,14 +34,14 @@ public class ConsoleCmdResetAchievementStats : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012BE RID: 4798 RVA: 0x00074B07 File Offset: 0x00072D07
+	// Token: 0x060012BB RID: 4795 RVA: 0x00074DBB File Offset: 0x00072FBB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Resets all achievement stats (and achievements when parameter is true)";
 	}
 
-	// Token: 0x060012BF RID: 4799 RVA: 0x00074B10 File Offset: 0x00072D10
+	// Token: 0x060012BC RID: 4796 RVA: 0x00074DC4 File Offset: 0x00072FC4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)

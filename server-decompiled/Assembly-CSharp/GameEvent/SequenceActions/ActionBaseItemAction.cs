@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001968 RID: 6504
+	// Token: 0x02001994 RID: 6548
 	[Preserve]
 	public class ActionBaseItemAction : ActionBaseClientAction
 	{
-		// Token: 0x0600C80C RID: 51212 RVA: 0x0049572C File Offset: 0x0049392C
+		// Token: 0x0600C964 RID: 51556 RVA: 0x00499C1C File Offset: 0x00497E1C
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -21,11 +21,12 @@ namespace GameEvent.SequenceActions
 				FastTags<TagGroup.Global>.Parse(this.itemTags);
 				if (this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Toolbelt) && !this.isFinished)
 				{
-					ItemStack[] array = ((entityPlayer.AttachedToEntity != null && entityPlayer.saveInventory != null) ? entityPlayer.saveInventory.GetSlots() : entityPlayer.inventory.GetSlots());
-					for (int i = 0; i < array.Length; i++)
+					for (int i = 0; i < entityPlayer.inventory.Length; i++)
 					{
-						if (this.HandleItemStackChange(ref array[i], entityPlayer))
+						ItemStack itemStack = entityPlayer.inventory.GetItem(i).Clone();
+						if (this.HandleItemStackChange(ref itemStack, entityPlayer))
 						{
+							entityPlayer.inventory.SetItem(i, itemStack);
 							flag = true;
 						}
 						if (this.isFinished)
@@ -35,7 +36,6 @@ namespace GameEvent.SequenceActions
 					}
 					if (flag)
 					{
-						entityPlayer.inventory.SetSlots(array, true);
 						entityPlayer.bPlayerStatsChanged = true;
 					}
 				}
@@ -43,17 +43,16 @@ namespace GameEvent.SequenceActions
 				if (this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Equipment) || (this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.BiomeBadge) && !this.isFinished))
 				{
 					int slotCount = entityPlayer.equipment.GetSlotCount();
-					int num = 4;
 					for (int j = 0; j < slotCount; j++)
 					{
-						if ((j < num || this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.BiomeBadge)) && (j >= num || this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Equipment)))
+						if ((((EquipmentSlots)j).SlotType() != EquipmentSlotType.BiomeGear || this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.BiomeBadge)) && (((EquipmentSlots)j).SlotType() != EquipmentSlotType.Armor || this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Equipment)))
 						{
 							if (this.CheckEquipmentReplace(entityPlayer.equipment, j))
 							{
-								ItemValue slotItemOrNone = entityPlayer.equipment.GetSlotItemOrNone(j);
-								if (this.HandleItemValueChange(ref slotItemOrNone, entityPlayer))
+								ItemValue slotItem = entityPlayer.equipment.GetSlotItem(j);
+								if (this.HandleItemValueChange(ref slotItem, entityPlayer))
 								{
-									entityPlayer.equipment.SetSlotItem(j, slotItemOrNone, true);
+									entityPlayer.equipment.SetSlotItem(j, slotItem);
 									flag = true;
 								}
 							}
@@ -71,11 +70,12 @@ namespace GameEvent.SequenceActions
 				flag = false;
 				if (this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Backpack) && !this.isFinished)
 				{
-					ItemStack[] slots = entityPlayer.bag.GetSlots();
-					for (int k = 0; k < slots.Length; k++)
+					for (int k = 0; k < entityPlayer.bag.SlotCount; k++)
 					{
-						if (this.HandleItemStackChange(ref slots[k], entityPlayer))
+						ItemStack itemStack2 = entityPlayer.bag.ItemGrid[k].Clone();
+						if (this.HandleItemStackChange(ref itemStack2, entityPlayer))
 						{
+							entityPlayer.bag.ItemGrid[k] = itemStack2;
 							flag = true;
 						}
 						if (this.isFinished)
@@ -85,7 +85,6 @@ namespace GameEvent.SequenceActions
 					}
 					if (flag)
 					{
-						entityPlayer.bag.SetSlots(slots);
 						entityPlayer.bPlayerStatsChanged = true;
 					}
 				}
@@ -103,8 +102,8 @@ namespace GameEvent.SequenceActions
 				}
 				if (!this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Toolbelt) && this.itemLocations.Contains(ActionBaseItemAction.ItemLocations.Held) && !this.isFinished)
 				{
-					Inventory inventory = ((entityPlayer.saveInventory != null) ? entityPlayer.saveInventory : entityPlayer.inventory);
-					if (inventory.holdingItem != entityPlayer.inventory.GetBareHandItem())
+					Inventory inventory = entityPlayer.inventory;
+					if (inventory.holdingItem != inventory.Hand.BareHandItem)
 					{
 						ItemStack holdingItemStack = inventory.holdingItemStack;
 						if (this.HandleItemStackChange(ref holdingItemStack, entityPlayer))
@@ -118,40 +117,40 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C80D RID: 51213 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x0600C965 RID: 51557 RVA: 0x00020119 File Offset: 0x0001E319
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool CheckEquipmentReplace(Equipment equipment, int slot)
 		{
 			return true;
 		}
 
-		// Token: 0x0600C80E RID: 51214 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C966 RID: 51558 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnClientActionStarted(EntityPlayer player)
 		{
 		}
 
-		// Token: 0x0600C80F RID: 51215 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C967 RID: 51559 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnClientActionEnded(EntityPlayer player)
 		{
 		}
 
-		// Token: 0x0600C810 RID: 51216 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600C968 RID: 51560 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
 			return false;
 		}
 
-		// Token: 0x0600C811 RID: 51217 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600C969 RID: 51561 RVA: 0x00010E62 File Offset: 0x0000F062
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool HandleItemValueChange(ref ItemValue itemValue, EntityPlayer player)
 		{
 			return false;
 		}
 
-		// Token: 0x0600C812 RID: 51218 RVA: 0x004959F2 File Offset: 0x00493BF2
+		// Token: 0x0600C96A RID: 51562 RVA: 0x00499ED0 File Offset: 0x004980D0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void AddStack(EntityPlayerLocal player, ItemStack stack)
 		{
@@ -161,7 +160,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C813 RID: 51219 RVA: 0x00495A2C File Offset: 0x00493C2C
+		// Token: 0x0600C96B RID: 51563 RVA: 0x00499F08 File Offset: 0x00498108
 		public override BaseAction Clone()
 		{
 			ActionBaseItemAction actionBaseItemAction = (ActionBaseItemAction)base.Clone();
@@ -173,7 +172,7 @@ namespace GameEvent.SequenceActions
 			return actionBaseItemAction;
 		}
 
-		// Token: 0x0600C814 RID: 51220 RVA: 0x00495A88 File Offset: 0x00493C88
+		// Token: 0x0600C96C RID: 51564 RVA: 0x00499F64 File Offset: 0x00498164
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -196,71 +195,71 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionBaseItemAction.CountTypes>(ActionBaseItemAction.PropCountType, ref this.countType);
 		}
 
-		// Token: 0x040096CC RID: 38604
+		// Token: 0x04009792 RID: 38802
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<ActionBaseItemAction.ItemLocations> itemLocations = new List<ActionBaseItemAction.ItemLocations>();
 
-		// Token: 0x040096CD RID: 38605
+		// Token: 0x04009793 RID: 38803
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string itemTags = "";
 
-		// Token: 0x040096CE RID: 38606
+		// Token: 0x04009794 RID: 38804
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> fastItemTags = FastTags<TagGroup.Global>.none;
 
-		// Token: 0x040096CF RID: 38607
+		// Token: 0x04009795 RID: 38805
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionBaseItemAction.CountTypes countType;
 
-		// Token: 0x040096D0 RID: 38608
+		// Token: 0x04009796 RID: 38806
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isFinished;
 
-		// Token: 0x040096D1 RID: 38609
+		// Token: 0x04009797 RID: 38807
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int count = -1;
 
-		// Token: 0x040096D2 RID: 38610
+		// Token: 0x04009798 RID: 38808
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string countText = "";
 
-		// Token: 0x040096D3 RID: 38611
+		// Token: 0x04009799 RID: 38809
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropItemLocation = "items_location";
 
-		// Token: 0x040096D4 RID: 38612
+		// Token: 0x0400979A RID: 38810
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropItemTag = "items_tags";
 
-		// Token: 0x040096D5 RID: 38613
+		// Token: 0x0400979B RID: 38811
 		public static string PropFullCount = "count";
 
-		// Token: 0x040096D6 RID: 38614
+		// Token: 0x0400979C RID: 38812
 		public static string PropCountType = "count_type";
 
-		// Token: 0x02001969 RID: 6505
+		// Token: 0x02001995 RID: 6549
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ItemLocations
 		{
-			// Token: 0x040096D8 RID: 38616
+			// Token: 0x0400979E RID: 38814
 			Toolbelt,
-			// Token: 0x040096D9 RID: 38617
+			// Token: 0x0400979F RID: 38815
 			Backpack,
-			// Token: 0x040096DA RID: 38618
+			// Token: 0x040097A0 RID: 38816
 			Equipment,
-			// Token: 0x040096DB RID: 38619
+			// Token: 0x040097A1 RID: 38817
 			BiomeBadge,
-			// Token: 0x040096DC RID: 38620
+			// Token: 0x040097A2 RID: 38818
 			Held
 		}
 
-		// Token: 0x0200196A RID: 6506
+		// Token: 0x02001996 RID: 6550
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum CountTypes
 		{
-			// Token: 0x040096DE RID: 38622
+			// Token: 0x040097A4 RID: 38820
 			Items,
-			// Token: 0x040096DF RID: 38623
+			// Token: 0x040097A5 RID: 38821
 			Slots
 		}
 	}

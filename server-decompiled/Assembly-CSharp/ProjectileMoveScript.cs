@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using AssetManagement;
 using UnityEngine;
 
-// Token: 0x02000604 RID: 1540
+// Token: 0x02000606 RID: 1542
 public class ProjectileMoveScript : MonoBehaviour
 {
-	// Token: 0x06003231 RID: 12849 RVA: 0x00146136 File Offset: 0x00144336
+	// Token: 0x06003274 RID: 12916 RVA: 0x00146AC2 File Offset: 0x00144CC2
 	[PublicizedFrom(EAccessModifier.Private)]
 	static ProjectileMoveScript()
 	{
@@ -14,13 +15,13 @@ public class ProjectileMoveScript : MonoBehaviour
 		ProjectileMoveScript.OnWorldChanged(GameManager.Instance.World);
 	}
 
-	// Token: 0x06003232 RID: 12850 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003275 RID: 12917 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
 	}
 
-	// Token: 0x06003233 RID: 12851 RVA: 0x00146160 File Offset: 0x00144360
+	// Token: 0x06003276 RID: 12918 RVA: 0x00146AEC File Offset: 0x00144CEC
 	public void Fire(Vector3 _idealStartPos, Vector3 _dirOrPos, Entity _firingEntity, int _hmOverride = 0, float _radius = 0f, bool _isBallistic = false)
 	{
 		Transform transform = base.transform;
@@ -85,7 +86,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		this.SetState(ProjectileMoveScript.State.Active);
 	}
 
-	// Token: 0x06003234 RID: 12852 RVA: 0x00146414 File Offset: 0x00144614
+	// Token: 0x06003277 RID: 12919 RVA: 0x00146DA0 File Offset: 0x00144FA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetState(ProjectileMoveScript.State _state)
 	{
@@ -107,7 +108,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003235 RID: 12853 RVA: 0x0014647C File Offset: 0x0014467C
+	// Token: 0x06003278 RID: 12920 RVA: 0x00146E08 File Offset: 0x00145008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OnWorldChanged(World _world)
 	{
@@ -126,7 +127,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		ProjectileMoveScript.s_lastWorld = _world;
 	}
 
-	// Token: 0x06003236 RID: 12854 RVA: 0x001464CC File Offset: 0x001446CC
+	// Token: 0x06003279 RID: 12921 RVA: 0x00146E58 File Offset: 0x00145058
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FixedUpdate()
 	{
@@ -193,7 +194,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003237 RID: 12855 RVA: 0x00146718 File Offset: 0x00144918
+	// Token: 0x0600327A RID: 12922 RVA: 0x001470A4 File Offset: 0x001452A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoRevive()
 	{
@@ -237,7 +238,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		this.SetState(ProjectileMoveScript.State.Active);
 	}
 
-	// Token: 0x06003238 RID: 12856 RVA: 0x0014681C File Offset: 0x00144A1C
+	// Token: 0x0600327B RID: 12923 RVA: 0x001471A8 File Offset: 0x001453A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void checkCollision()
 	{
@@ -412,19 +413,19 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003239 RID: 12857 RVA: 0x00146FDC File Offset: 0x001451DC
+	// Token: 0x0600327C RID: 12924 RVA: 0x00147968 File Offset: 0x00145B68
 	public static void OnEntityUnloaded(Entity _entity, EnumRemoveEntityReason _reason)
 	{
-		ProjectileMoveScript.<>c__DisplayClass39_0 CS$<>8__locals1;
+		ProjectileMoveScript.<>c__DisplayClass40_0 CS$<>8__locals1;
 		CS$<>8__locals1.toUnload = new List<ProjectileMoveScript>();
-		ProjectileMoveScript.<OnEntityUnloaded>g__Search|39_0(_entity.RootTransform, ref CS$<>8__locals1);
+		ProjectileMoveScript.<OnEntityUnloaded>g__Search|40_0(_entity.RootTransform, ref CS$<>8__locals1);
 		foreach (ProjectileMoveScript projectileMoveScript in CS$<>8__locals1.toUnload)
 		{
 			projectileMoveScript.OnUnloaded();
 		}
 	}
 
-	// Token: 0x0600323A RID: 12858 RVA: 0x00147048 File Offset: 0x00145248
+	// Token: 0x0600327D RID: 12925 RVA: 0x001479D4 File Offset: 0x00145BD4
 	public void OnUnloaded()
 	{
 		if (this.state == ProjectileMoveScript.State.Sticky)
@@ -436,9 +437,10 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600323B RID: 12859 RVA: 0x001470B0 File Offset: 0x001452B0
+	// Token: 0x0600327E RID: 12926 RVA: 0x00147A3C File Offset: 0x00145C3C
 	public void OnDestroy()
 	{
+		this.assetHandle.Release();
 		GameManager instance = GameManager.Instance;
 		if (!instance || instance.World == null || !this.firingEntity || this.itemValueProjectile == null)
 		{
@@ -458,7 +460,7 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600323C RID: 12860 RVA: 0x00147198 File Offset: 0x00145398
+	// Token: 0x0600327F RID: 12927 RVA: 0x00147B30 File Offset: 0x00145D30
 	public bool TryCollect(EntityPlayerLocal _player)
 	{
 		if (!this.itemProjectile.IsSticky)
@@ -476,21 +478,21 @@ public class ProjectileMoveScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600323D RID: 12861 RVA: 0x00147212 File Offset: 0x00145412
+	// Token: 0x06003280 RID: 12928 RVA: 0x00147BAA File Offset: 0x00145DAA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<string> getBuffActions()
 	{
 		return this.itemActionProjectile.BuffActions;
 	}
 
-	// Token: 0x0600323F RID: 12863 RVA: 0x0014723C File Offset: 0x0014543C
+	// Token: 0x06003282 RID: 12930 RVA: 0x00147BD4 File Offset: 0x00145DD4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static void <OnEntityUnloaded>g__Search|39_0(Transform parent, ref ProjectileMoveScript.<>c__DisplayClass39_0 A_1)
+	public static void <OnEntityUnloaded>g__Search|40_0(Transform parent, ref ProjectileMoveScript.<>c__DisplayClass40_0 A_1)
 	{
 		foreach (object obj in parent)
 		{
-			ProjectileMoveScript.<OnEntityUnloaded>g__Search|39_0((Transform)obj, ref A_1);
+			ProjectileMoveScript.<OnEntityUnloaded>g__Search|40_0((Transform)obj, ref A_1);
 		}
 		ProjectileMoveScript projectileMoveScript;
 		if (parent.TryGetComponent<ProjectileMoveScript>(out projectileMoveScript))
@@ -499,150 +501,153 @@ public class ProjectileMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040027BA RID: 10170
+	// Token: 0x040027B1 RID: 10161
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float ReviveSpread = 0.4f;
 
-	// Token: 0x040027BB RID: 10171
+	// Token: 0x040027B2 RID: 10162
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float ReviveVelocity = 0.9f;
 
-	// Token: 0x040027BC RID: 10172
+	// Token: 0x040027B3 RID: 10163
 	public const int InvalidID = -1;
 
-	// Token: 0x040027BD RID: 10173
+	// Token: 0x040027B4 RID: 10164
 	public static World s_lastWorld;
 
-	// Token: 0x040027BE RID: 10174
+	// Token: 0x040027B5 RID: 10165
 	public int ProjectileID = -1;
 
-	// Token: 0x040027BF RID: 10175
+	// Token: 0x040027B6 RID: 10166
 	public int ProjectileOwnerID;
 
-	// Token: 0x040027C0 RID: 10176
+	// Token: 0x040027B7 RID: 10167
 	public ItemActionProjectile itemActionProjectile;
 
-	// Token: 0x040027C1 RID: 10177
+	// Token: 0x040027B8 RID: 10168
 	public ItemClass itemProjectile;
 
-	// Token: 0x040027C2 RID: 10178
+	// Token: 0x040027B9 RID: 10169
 	public ItemValue itemValueProjectile;
 
-	// Token: 0x040027C3 RID: 10179
+	// Token: 0x040027BA RID: 10170
 	public ItemValue itemValueLauncher;
 
-	// Token: 0x040027C4 RID: 10180
+	// Token: 0x040027BB RID: 10171
 	public ItemActionLauncher.ItemActionDataLauncher actionData;
 
-	// Token: 0x040027C5 RID: 10181
+	// Token: 0x040027BC RID: 10172
+	public InstanceHandle<GameObject> assetHandle;
+
+	// Token: 0x040027BD RID: 10173
 	public Vector3 FinalPosition;
 
-	// Token: 0x040027C6 RID: 10182
+	// Token: 0x040027BE RID: 10174
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 flyDirection;
 
-	// Token: 0x040027C7 RID: 10183
+	// Token: 0x040027BF RID: 10175
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 idealPosition;
 
-	// Token: 0x040027C8 RID: 10184
+	// Token: 0x040027C0 RID: 10176
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 velocity;
 
-	// Token: 0x040027C9 RID: 10185
+	// Token: 0x040027C1 RID: 10177
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public ProjectileMoveScript.State state;
 
-	// Token: 0x040027CA RID: 10186
+	// Token: 0x040027C2 RID: 10178
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float stateTime;
 
-	// Token: 0x040027CB RID: 10187
+	// Token: 0x040027C3 RID: 10179
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Entity firingEntity;
 
-	// Token: 0x040027CC RID: 10188
+	// Token: 0x040027C4 RID: 10180
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 previousPosition;
 
-	// Token: 0x040027CD RID: 10189
+	// Token: 0x040027C5 RID: 10181
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float gravity;
 
-	// Token: 0x040027CE RID: 10190
+	// Token: 0x040027C6 RID: 10182
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isOnIdealPos;
 
-	// Token: 0x040027CF RID: 10191
+	// Token: 0x040027C7 RID: 10183
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int hitMask;
 
-	// Token: 0x040027D0 RID: 10192
+	// Token: 0x040027C8 RID: 10184
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float radius;
 
-	// Token: 0x040027D1 RID: 10193
+	// Token: 0x040027C9 RID: 10185
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float collisionStartBack;
 
-	// Token: 0x040027D2 RID: 10194
+	// Token: 0x040027CA RID: 10186
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool explosionDisabled;
 
-	// Token: 0x040027D3 RID: 10195
+	// Token: 0x040027CB RID: 10187
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 
-	// Token: 0x040027D4 RID: 10196
+	// Token: 0x040027CC RID: 10188
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float? stickyRoll;
 
-	// Token: 0x040027D5 RID: 10197
+	// Token: 0x040027CD RID: 10189
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Ray? stickyRay;
 
-	// Token: 0x040027D6 RID: 10198
+	// Token: 0x040027CE RID: 10190
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float stickyRayDistance;
 
-	// Token: 0x040027D7 RID: 10199
+	// Token: 0x040027CF RID: 10191
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool stickyForceRevive;
 
-	// Token: 0x02000605 RID: 1541
+	// Token: 0x02000607 RID: 1543
 	public enum State
 	{
-		// Token: 0x040027D9 RID: 10201
+		// Token: 0x040027D1 RID: 10193
 		Idle,
-		// Token: 0x040027DA RID: 10202
+		// Token: 0x040027D2 RID: 10194
 		Active,
-		// Token: 0x040027DB RID: 10203
+		// Token: 0x040027D3 RID: 10195
 		Sticky,
-		// Token: 0x040027DC RID: 10204
+		// Token: 0x040027D4 RID: 10196
 		StickyDestroyed,
-		// Token: 0x040027DD RID: 10205
+		// Token: 0x040027D5 RID: 10197
 		Dead,
-		// Token: 0x040027DE RID: 10206
+		// Token: 0x040027D6 RID: 10198
 		Destroyed
 	}
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020001D2 RID: 466
+// Token: 0x020001D3 RID: 467
 [Preserve]
 public class NetPackageEntityStatsBuff : NetPackage
 {
-	// Token: 0x17000115 RID: 277
-	// (get) Token: 0x06000E77 RID: 3703 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700010D RID: 269
+	// (get) Token: 0x06000E6D RID: 3693 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityStatsBuff : NetPackage
 		}
 	}
 
-	// Token: 0x06000E78 RID: 3704 RVA: 0x0005F538 File Offset: 0x0005D738
+	// Token: 0x06000E6E RID: 3694 RVA: 0x0005F534 File Offset: 0x0005D734
 	public NetPackageEntityStatsBuff Setup(EntityAlive entity, byte[] _data = null)
 	{
 		this.m_entityId = entity.entityId;
@@ -36,14 +36,14 @@ public class NetPackageEntityStatsBuff : NetPackage
 		return this;
 	}
 
-	// Token: 0x06000E79 RID: 3705 RVA: 0x0005F5C8 File Offset: 0x0005D7C8
+	// Token: 0x06000E6F RID: 3695 RVA: 0x0005F5C4 File Offset: 0x0005D7C4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.m_entityId = _reader.ReadInt32();
 		this.data = _reader.ReadBytes(_reader.ReadInt32());
 	}
 
-	// Token: 0x06000E7A RID: 3706 RVA: 0x0005F5E8 File Offset: 0x0005D7E8
+	// Token: 0x06000E70 RID: 3696 RVA: 0x0005F5E4 File Offset: 0x0005D7E4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -52,7 +52,7 @@ public class NetPackageEntityStatsBuff : NetPackage
 		_writer.Write(this.data);
 	}
 
-	// Token: 0x06000E7B RID: 3707 RVA: 0x0005F618 File Offset: 0x0005D818
+	// Token: 0x06000E71 RID: 3697 RVA: 0x0005F614 File Offset: 0x0005D814
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -82,17 +82,11 @@ public class NetPackageEntityStatsBuff : NetPackage
 		}
 	}
 
-	// Token: 0x06000E7C RID: 3708 RVA: 0x0005F708 File Offset: 0x0005D908
-	public override int GetLength()
-	{
-		return this.data.Length + 4;
-	}
-
-	// Token: 0x04000C56 RID: 3158
+	// Token: 0x04000C4F RID: 3151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_entityId;
 
-	// Token: 0x04000C57 RID: 3159
+	// Token: 0x04000C50 RID: 3152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

@@ -3,27 +3,27 @@ using UnityEngine;
 
 namespace CoverClippingTool
 {
-	// Token: 0x0200167C RID: 5756
+	// Token: 0x0200169B RID: 5787
 	[Serializable]
 	public class BlockSettings
 	{
-		// Token: 0x0600B46B RID: 46187 RVA: 0x00436DF2 File Offset: 0x00434FF2
+		// Token: 0x0600B4FD RID: 46333 RVA: 0x0043AACE File Offset: 0x00438CCE
 		public BlockSettings()
 		{
 			this.ResetToDefault();
 		}
 
-		// Token: 0x0600B46C RID: 46188 RVA: 0x00436E00 File Offset: 0x00435000
+		// Token: 0x0600B4FE RID: 46334 RVA: 0x0043AADC File Offset: 0x00438CDC
 		public void ResetToDefault()
 		{
 			this.shapeModel = null;
 			this.savedShapeInfo = null;
 		}
 
-		// Token: 0x04008755 RID: 34645
+		// Token: 0x040087AB RID: 34731
 		public GameObject shapeModel;
 
-		// Token: 0x04008756 RID: 34646
+		// Token: 0x040087AC RID: 34732
 		public BlockShapeInfo savedShapeInfo;
 	}
 }

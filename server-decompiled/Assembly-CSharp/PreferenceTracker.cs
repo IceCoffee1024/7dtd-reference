@@ -1,46 +1,46 @@
 ﻿using System;
 
-// Token: 0x02000588 RID: 1416
+// Token: 0x0200058A RID: 1418
 public class PreferenceTracker
 {
-	// Token: 0x170004F3 RID: 1267
-	// (get) Token: 0x06002E60 RID: 11872 RVA: 0x00126DFD File Offset: 0x00124FFD
-	// (set) Token: 0x06002E61 RID: 11873 RVA: 0x00126E05 File Offset: 0x00125005
+	// Token: 0x17000519 RID: 1305
+	// (get) Token: 0x06002EB8 RID: 11960 RVA: 0x00127EB4 File Offset: 0x001260B4
+	// (set) Token: 0x06002EB9 RID: 11961 RVA: 0x00127EBC File Offset: 0x001260BC
 	public int PlayerID
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F4 RID: 1268
-	// (get) Token: 0x06002E62 RID: 11874 RVA: 0x00126E0E File Offset: 0x0012500E
-	// (set) Token: 0x06002E63 RID: 11875 RVA: 0x00126E16 File Offset: 0x00125016
+	// Token: 0x1700051A RID: 1306
+	// (get) Token: 0x06002EBA RID: 11962 RVA: 0x00127EC5 File Offset: 0x001260C5
+	// (set) Token: 0x06002EBB RID: 11963 RVA: 0x00127ECD File Offset: 0x001260CD
 	public ItemStack[] toolbelt
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F5 RID: 1269
-	// (get) Token: 0x06002E64 RID: 11876 RVA: 0x00126E1F File Offset: 0x0012501F
-	// (set) Token: 0x06002E65 RID: 11877 RVA: 0x00126E27 File Offset: 0x00125027
+	// Token: 0x1700051B RID: 1307
+	// (get) Token: 0x06002EBC RID: 11964 RVA: 0x00127ED6 File Offset: 0x001260D6
+	// (set) Token: 0x06002EBD RID: 11965 RVA: 0x00127EDE File Offset: 0x001260DE
 	public ItemStack[] bag
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F6 RID: 1270
-	// (get) Token: 0x06002E66 RID: 11878 RVA: 0x00126E30 File Offset: 0x00125030
-	// (set) Token: 0x06002E67 RID: 11879 RVA: 0x00126E38 File Offset: 0x00125038
+	// Token: 0x1700051C RID: 1308
+	// (get) Token: 0x06002EBE RID: 11966 RVA: 0x00127EE7 File Offset: 0x001260E7
+	// (set) Token: 0x06002EBF RID: 11967 RVA: 0x00127EEF File Offset: 0x001260EF
 	public ItemValue[] equipment
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F7 RID: 1271
-	// (get) Token: 0x06002E68 RID: 11880 RVA: 0x00126E41 File Offset: 0x00125041
+	// Token: 0x1700051D RID: 1309
+	// (get) Token: 0x06002EC0 RID: 11968 RVA: 0x00127EF8 File Offset: 0x001260F8
 	public bool AnyPreferences
 	{
 		get
@@ -49,13 +49,13 @@ public class PreferenceTracker
 		}
 	}
 
-	// Token: 0x06002E69 RID: 11881 RVA: 0x00126E5E File Offset: 0x0012505E
+	// Token: 0x06002EC1 RID: 11969 RVA: 0x00127F15 File Offset: 0x00126115
 	public PreferenceTracker(int playerId)
 	{
 		this.PlayerID = playerId;
 	}
 
-	// Token: 0x06002E6A RID: 11882 RVA: 0x00126E70 File Offset: 0x00125070
+	// Token: 0x06002EC2 RID: 11970 RVA: 0x00127F24 File Offset: 0x00126124
 	public PreferenceTracker Clone()
 	{
 		PreferenceTracker preferenceTracker = new PreferenceTracker(this.PlayerID);
@@ -72,7 +72,16 @@ public class PreferenceTracker
 		return preferenceTracker;
 	}
 
-	// Token: 0x06002E6B RID: 11883 RVA: 0x00126F08 File Offset: 0x00125108
+	// Token: 0x06002EC3 RID: 11971 RVA: 0x00127FB9 File Offset: 0x001261B9
+	public void CopyFrom(PreferenceTracker _other)
+	{
+		this.PlayerID = _other.PlayerID;
+		this.toolbelt = _other.toolbelt;
+		this.bag = _other.bag;
+		this.equipment = _other.equipment;
+	}
+
+	// Token: 0x06002EC4 RID: 11972 RVA: 0x00127FEC File Offset: 0x001261EC
 	public void SetToolbelt(ItemStack[] _itemStacks, Predicate<ItemStack> _includeCondition)
 	{
 		if (_itemStacks == null || _itemStacks.Length == 0)
@@ -93,8 +102,8 @@ public class PreferenceTracker
 		}
 	}
 
-	// Token: 0x06002E6C RID: 11884 RVA: 0x00126F68 File Offset: 0x00125168
-	public void SetBag(ItemStack[] _itemStacks, Predicate<ItemStack> _includeCondition)
+	// Token: 0x06002EC5 RID: 11973 RVA: 0x0012804C File Offset: 0x0012624C
+	public void SetBag(ItemStackGrid _itemStacks, Predicate<ItemStack> _includeCondition)
 	{
 		if (_itemStacks == null || _itemStacks.Length == 0)
 		{
@@ -114,7 +123,7 @@ public class PreferenceTracker
 		}
 	}
 
-	// Token: 0x06002E6D RID: 11885 RVA: 0x00126FC8 File Offset: 0x001251C8
+	// Token: 0x06002EC6 RID: 11974 RVA: 0x001280BC File Offset: 0x001262BC
 	public void SetEquipment(ItemValue[] _itemValues, Predicate<ItemValue> _includeCondition)
 	{
 		if (_itemValues == null && _itemValues.Length != 0)
@@ -135,7 +144,15 @@ public class PreferenceTracker
 		}
 	}
 
-	// Token: 0x06002E6E RID: 11886 RVA: 0x00127028 File Offset: 0x00125228
+	// Token: 0x06002EC7 RID: 11975 RVA: 0x0012811C File Offset: 0x0012631C
+	public void Clear()
+	{
+		this.toolbelt.ClearItemStackArray();
+		this.bag.ClearItemStackArray();
+		this.equipment.ClearItemValueArray();
+	}
+
+	// Token: 0x06002EC8 RID: 11976 RVA: 0x00128140 File Offset: 0x00126340
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.PlayerID);
@@ -159,7 +176,7 @@ public class PreferenceTracker
 		}
 	}
 
-	// Token: 0x06002E6F RID: 11887 RVA: 0x001270C8 File Offset: 0x001252C8
+	// Token: 0x06002EC9 RID: 11977 RVA: 0x001281E0 File Offset: 0x001263E0
 	public void Read(PooledBinaryReader _br)
 	{
 		this.PlayerID = _br.ReadInt32();

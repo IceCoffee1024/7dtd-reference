@@ -4,10 +4,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001CA5 RID: 7333
+	// Token: 0x02001CD7 RID: 7383
 	public class VirtualKeyboard : IVirtualKeyboard
 	{
-		// Token: 0x0600D98E RID: 55694 RVA: 0x004E1293 File Offset: 0x004DF493
+		// Token: 0x0600DB08 RID: 56072 RVA: 0x004E5DDB File Offset: 0x004E3FDB
 		public void Init(IPlatform _owner)
 		{
 			_owner.Api.ClientApiInitialized += delegate
@@ -31,7 +31,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D98F RID: 55695 RVA: 0x004E12AC File Offset: 0x004DF4AC
+		// Token: 0x0600DB09 RID: 56073 RVA: 0x004E5DF4 File Offset: 0x004E3FF4
 		public string Open(string _title, string _defaultText, Action<bool, string> _onTextReceived, UIInput.InputType _mode = UIInput.InputType.Standard, bool _multiLine = false, uint singleLineLength = 200U)
 		{
 			if (this.onTextReceived != null)
@@ -55,12 +55,12 @@ namespace Platform.Steam
 			return Localization.Get("ttSteamBPM", false, null);
 		}
 
-		// Token: 0x0600D990 RID: 55696 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DB0A RID: 56074 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0600D991 RID: 55697 RVA: 0x004E133C File Offset: 0x004DF53C
+		// Token: 0x0600DB0B RID: 56075 RVA: 0x004E5E84 File Offset: 0x004E4084
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GamePadTextInputDismissed_Callback(GamepadTextInputDismissed_t _result)
 		{
@@ -75,7 +75,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D992 RID: 55698 RVA: 0x004E13B8 File Offset: 0x004DF5B8
+		// Token: 0x0600DB0C RID: 56076 RVA: 0x004E5F00 File Offset: 0x004E4100
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator debugOut()
 		{
@@ -96,15 +96,15 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0400A4FC RID: 42236
+		// Token: 0x0400A5D1 RID: 42449
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<GamepadTextInputDismissed_t> m_TextInputDismissed;
 
-		// Token: 0x0400A4FD RID: 42237
+		// Token: 0x0400A5D2 RID: 42450
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<bool, string> onTextReceived;
 
-		// Token: 0x0400A4FE RID: 42238
+		// Token: 0x0400A5D3 RID: 42451
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string textBefore;
 	}

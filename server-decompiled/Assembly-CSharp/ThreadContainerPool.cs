@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C38 RID: 3128
+// Token: 0x02000C4A RID: 3146
 public class ThreadContainerPool
 {
-	// Token: 0x170009B3 RID: 2483
-	// (get) Token: 0x06005F45 RID: 24389 RVA: 0x0025AC14 File Offset: 0x00258E14
+	// Token: 0x170009D5 RID: 2517
+	// (get) Token: 0x06005F5E RID: 24414 RVA: 0x0025DF10 File Offset: 0x0025C110
 	public int Count
 	{
 		get
@@ -20,7 +20,7 @@ public class ThreadContainerPool
 		}
 	}
 
-	// Token: 0x06005F46 RID: 24390 RVA: 0x0025AC5C File Offset: 0x00258E5C
+	// Token: 0x06005F5F RID: 24415 RVA: 0x0025DF58 File Offset: 0x0025C158
 	public ThreadContainerPool(int initialCapacity, int initialCount)
 	{
 		this._poolLock = new object();
@@ -31,7 +31,7 @@ public class ThreadContainerPool
 		}
 	}
 
-	// Token: 0x06005F47 RID: 24391 RVA: 0x0025ACA4 File Offset: 0x00258EA4
+	// Token: 0x06005F60 RID: 24416 RVA: 0x0025DFA0 File Offset: 0x0025C1A0
 	public ThreadContainer GetObject(DistantTerrain _TerExt, DistantChunk _DChunk, DistantChunkBasicMesh _BMesh, bool _WasReset)
 	{
 		object poolLock = this._poolLock;
@@ -53,7 +53,7 @@ public class ThreadContainerPool
 		return threadContainer;
 	}
 
-	// Token: 0x06005F48 RID: 24392 RVA: 0x0025AD38 File Offset: 0x00258F38
+	// Token: 0x06005F61 RID: 24417 RVA: 0x0025E034 File Offset: 0x0025C234
 	public void ReturnObject(ThreadContainer item, bool IsClearItem)
 	{
 		if (item == null)
@@ -72,11 +72,11 @@ public class ThreadContainerPool
 		}
 	}
 
-	// Token: 0x04004AB6 RID: 19126
+	// Token: 0x04004AF5 RID: 19189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ThreadContainer> pool;
 
-	// Token: 0x04004AB7 RID: 19127
+	// Token: 0x04004AF6 RID: 19190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object _poolLock;
 }

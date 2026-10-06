@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x0200136B RID: 4971
+// Token: 0x0200138B RID: 5003
 [ExecuteInEditMode]
 [RequireComponent(typeof(Light))]
 public class SetShadowMapAsGlobalTexture : MonoBehaviour
 {
-	// Token: 0x06009C8E RID: 40078 RVA: 0x003B1C58 File Offset: 0x003AFE58
+	// Token: 0x06009D3A RID: 40250 RVA: 0x003B67D4 File Offset: 0x003B49D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -15,7 +15,7 @@ public class SetShadowMapAsGlobalTexture : MonoBehaviour
 		this.SetupCommandBuffer();
 	}
 
-	// Token: 0x06009C8F RID: 40079 RVA: 0x003B1C6C File Offset: 0x003AFE6C
+	// Token: 0x06009D3B RID: 40251 RVA: 0x003B67E8 File Offset: 0x003B49E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -23,7 +23,7 @@ public class SetShadowMapAsGlobalTexture : MonoBehaviour
 		this.ReleaseCommandBuffer();
 	}
 
-	// Token: 0x06009C90 RID: 40080 RVA: 0x003B1C88 File Offset: 0x003AFE88
+	// Token: 0x06009D3C RID: 40252 RVA: 0x003B6804 File Offset: 0x003B4A04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupCommandBuffer()
 	{
@@ -34,27 +34,27 @@ public class SetShadowMapAsGlobalTexture : MonoBehaviour
 		this.lightComponent.AddCommandBuffer(LightEvent.AfterShadowMap, this.commandBuffer);
 	}
 
-	// Token: 0x06009C91 RID: 40081 RVA: 0x003B1CDB File Offset: 0x003AFEDB
+	// Token: 0x06009D3D RID: 40253 RVA: 0x003B6857 File Offset: 0x003B4A57
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReleaseCommandBuffer()
 	{
 		this.commandBuffer.Clear();
 	}
 
-	// Token: 0x04007655 RID: 30293
+	// Token: 0x040076D0 RID: 30416
 	public string textureSemanticName = "_SunCascadedShadowMap";
 
-	// Token: 0x04007656 RID: 30294
+	// Token: 0x040076D1 RID: 30417
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public RenderTexture shadowMapRenderTexture;
 
-	// Token: 0x04007657 RID: 30295
+	// Token: 0x040076D2 RID: 30418
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CommandBuffer commandBuffer;
 
-	// Token: 0x04007658 RID: 30296
+	// Token: 0x040076D3 RID: 30419
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light lightComponent;

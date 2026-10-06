@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001B8C RID: 7052
+	// Token: 0x02001BBE RID: 7102
 	public enum ESaveGameProviderStatus
 	{
-		// Token: 0x0400A0C6 RID: 41158
+		// Token: 0x0400A19B RID: 41371
 		Uninitialized,
-		// Token: 0x0400A0C7 RID: 41159
+		// Token: 0x0400A19C RID: 41372
 		Ok,
-		// Token: 0x0400A0C8 RID: 41160
+		// Token: 0x0400A19D RID: 41373
 		PermanentError,
-		// Token: 0x0400A0C9 RID: 41161
+		// Token: 0x0400A19E RID: 41374
 		TemporaryError
 	}
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002E4 RID: 740
+// Token: 0x020002E7 RID: 743
 [Preserve]
 public class DialogActionAddQuest : BaseDialogAction
 {
-	// Token: 0x1700025C RID: 604
-	// (get) Token: 0x06001558 RID: 5464 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000254 RID: 596
+	// (get) Token: 0x06001555 RID: 5461 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -15,7 +15,7 @@ public class DialogActionAddQuest : BaseDialogAction
 		}
 	}
 
-	// Token: 0x06001559 RID: 5465 RVA: 0x0008039C File Offset: 0x0007E59C
+	// Token: 0x06001556 RID: 5462 RVA: 0x00080650 File Offset: 0x0007E850
 	public override void PerformAction(EntityPlayer player)
 	{
 		if (this.Quest != null && this.Quest.QuestClass != null)
@@ -35,13 +35,13 @@ public class DialogActionAddQuest : BaseDialogAction
 		}
 	}
 
-	// Token: 0x04000E57 RID: 3671
+	// Token: 0x04000E50 RID: 3664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 
-	// Token: 0x04000E58 RID: 3672
+	// Token: 0x04000E51 RID: 3665
 	public Quest Quest;
 
-	// Token: 0x04000E59 RID: 3673
+	// Token: 0x04000E52 RID: 3666
 	public int ListIndex;
 }

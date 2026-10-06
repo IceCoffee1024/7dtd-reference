@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001EF RID: 495
+// Token: 0x020001F0 RID: 496
 [Preserve]
 public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 {
-	// Token: 0x17000144 RID: 324
-	// (get) Token: 0x06000F44 RID: 3908 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700013C RID: 316
+	// (get) Token: 0x06000F37 RID: 3895 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,22 +16,22 @@ public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F45 RID: 3909 RVA: 0x00063789 File Offset: 0x00061989
+	// Token: 0x06000F38 RID: 3896 RVA: 0x00063779 File Offset: 0x00061979
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testoccreport", "toccr" };
 	}
 
-	// Token: 0x06000F46 RID: 3910 RVA: 0x000637A1 File Offset: 0x000619A1
+	// Token: 0x06000F39 RID: 3897 RVA: 0x00063791 File Offset: 0x00061991
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Test the occlusion manager self reporting to backtrace, requires Backtrace to be enabled at build creation";
 	}
 
-	// Token: 0x17000145 RID: 325
-	// (get) Token: 0x06000F47 RID: 3911 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700013D RID: 317
+	// (get) Token: 0x06000F3A RID: 3898 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F48 RID: 3912 RVA: 0x000637A8 File Offset: 0x000619A8
+	// Token: 0x06000F3B RID: 3899 RVA: 0x00063798 File Offset: 0x00061998
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled))

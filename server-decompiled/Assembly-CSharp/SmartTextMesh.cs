@@ -2,13 +2,13 @@
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02001370 RID: 4976
+// Token: 0x02001390 RID: 5008
 [RequireComponent(typeof(TextMesh))]
 public class SmartTextMesh : MonoBehaviour
 {
-	// Token: 0x17001295 RID: 4757
-	// (get) Token: 0x06009CED RID: 40173 RVA: 0x003B450B File Offset: 0x003B270B
-	// (set) Token: 0x06009CEE RID: 40174 RVA: 0x003B4513 File Offset: 0x003B2713
+	// Token: 0x170012DA RID: 4826
+	// (get) Token: 0x06009D99 RID: 40345 RVA: 0x003B9087 File Offset: 0x003B7287
+	// (set) Token: 0x06009D9A RID: 40346 RVA: 0x003B908F File Offset: 0x003B728F
 	public string UnwrappedText
 	{
 		get
@@ -25,9 +25,9 @@ public class SmartTextMesh : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001296 RID: 4758
-	// (get) Token: 0x06009CEF RID: 40175 RVA: 0x003B453A File Offset: 0x003B273A
-	// (set) Token: 0x06009CF0 RID: 40176 RVA: 0x003B4548 File Offset: 0x003B2748
+	// Token: 0x170012DB RID: 4827
+	// (get) Token: 0x06009D9B RID: 40347 RVA: 0x003B90B6 File Offset: 0x003B72B6
+	// (set) Token: 0x06009D9C RID: 40348 RVA: 0x003B90C4 File Offset: 0x003B72C4
 	public float MaxWidthReal
 	{
 		get
@@ -40,7 +40,7 @@ public class SmartTextMesh : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009CF1 RID: 40177 RVA: 0x003B4558 File Offset: 0x003B2758
+	// Token: 0x06009D9D RID: 40349 RVA: 0x003B90D4 File Offset: 0x003B72D4
 	public void Start()
 	{
 		this.TheMesh = base.GetComponent<TextMesh>();
@@ -54,7 +54,7 @@ public class SmartTextMesh : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009CF2 RID: 40178 RVA: 0x003B45B4 File Offset: 0x003B27B4
+	// Token: 0x06009D9E RID: 40350 RVA: 0x003B9130 File Offset: 0x003B7330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -76,7 +76,7 @@ public class SmartTextMesh : MonoBehaviour
 		this.WrapTextToWidth();
 	}
 
-	// Token: 0x06009CF3 RID: 40179 RVA: 0x003B4608 File Offset: 0x003B2808
+	// Token: 0x06009D9F RID: 40351 RVA: 0x003B9184 File Offset: 0x003B7384
 	public bool CanRenderString(string _text)
 	{
 		foreach (char c in _text.Trim())
@@ -89,7 +89,7 @@ public class SmartTextMesh : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06009CF4 RID: 40180 RVA: 0x003B4650 File Offset: 0x003B2850
+	// Token: 0x06009DA0 RID: 40352 RVA: 0x003B91CC File Offset: 0x003B73CC
 	public unsafe void WrapTextToWidth()
 	{
 		this.TheMesh.font.RequestCharactersInTexture(this.unwrappedText, this.TheMesh.fontSize, this.TheMesh.fontStyle);
@@ -163,7 +163,7 @@ public class SmartTextMesh : MonoBehaviour
 		this.TheMesh.text = this.wrappedText.ToString();
 	}
 
-	// Token: 0x06009CF5 RID: 40181 RVA: 0x003B48DC File Offset: 0x003B2ADC
+	// Token: 0x06009DA1 RID: 40353 RVA: 0x003B9458 File Offset: 0x003B7658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FormatSeparateLines()
 	{
@@ -202,7 +202,7 @@ public class SmartTextMesh : MonoBehaviour
 		this.TheMesh.text = this.wrappedText.ToString();
 	}
 
-	// Token: 0x06009CF6 RID: 40182 RVA: 0x003B4A40 File Offset: 0x003B2C40
+	// Token: 0x06009DA2 RID: 40354 RVA: 0x003B95BC File Offset: 0x003B77BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe float GetTextWidth(TextMesh _textMesh, ReadOnlySpan<char> _s)
 	{
@@ -227,32 +227,32 @@ public class SmartTextMesh : MonoBehaviour
 		return (float)num * _textMesh.characterSize * Mathf.Abs(_textMesh.transform.lossyScale.x) * 0.1f;
 	}
 
-	// Token: 0x040076C8 RID: 30408
+	// Token: 0x04007743 RID: 30531
 	public TextMesh TheMesh;
 
-	// Token: 0x040076C9 RID: 30409
+	// Token: 0x04007744 RID: 30532
 	[TextArea]
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string unwrappedText;
 
-	// Token: 0x040076CA RID: 30410
+	// Token: 0x04007745 RID: 30533
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly StringBuilder wrappedText = new StringBuilder();
 
-	// Token: 0x040076CB RID: 30411
+	// Token: 0x04007746 RID: 30534
 	public float MaxWidth;
 
-	// Token: 0x040076CC RID: 30412
+	// Token: 0x04007747 RID: 30535
 	public int MaxLines;
 
-	// Token: 0x040076CD RID: 30413
+	// Token: 0x04007748 RID: 30536
 	public bool NeedsLayout = true;
 
-	// Token: 0x040076CE RID: 30414
+	// Token: 0x04007749 RID: 30537
 	public bool ConvertNewLines;
 
-	// Token: 0x040076CF RID: 30415
+	// Token: 0x0400774A RID: 30538
 	public bool SeperatedLinesMode;
 }

@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-// Token: 0x0200076D RID: 1901
+// Token: 0x0200076F RID: 1903
 public class ClientInfoCollection
 {
-	// Token: 0x06003858 RID: 14424 RVA: 0x00171D70 File Offset: 0x0016FF70
+	// Token: 0x0600389B RID: 14491 RVA: 0x001726D4 File Offset: 0x001708D4
 	public ClientInfoCollection()
 	{
 		this.List = new ReadOnlyCollection<ClientInfo>(this.list);
 	}
 
-	// Token: 0x06003859 RID: 14425 RVA: 0x00171DCB File Offset: 0x0016FFCB
+	// Token: 0x0600389C RID: 14492 RVA: 0x0017272F File Offset: 0x0017092F
 	public void Add(ClientInfo _cInfo)
 	{
 		this.list.Add(_cInfo);
 		this.clientNumberMap.Add(_cInfo.ClientNumber, _cInfo);
 	}
 
-	// Token: 0x0600385A RID: 14426 RVA: 0x00171DEB File Offset: 0x0016FFEB
+	// Token: 0x0600389D RID: 14493 RVA: 0x0017274F File Offset: 0x0017094F
 	public void Clear()
 	{
 		this.list.Clear();
@@ -28,13 +28,13 @@ public class ClientInfoCollection
 		this.userIdMap.Clear();
 	}
 
-	// Token: 0x0600385B RID: 14427 RVA: 0x00171E24 File Offset: 0x00170024
+	// Token: 0x0600389E RID: 14494 RVA: 0x00172788 File Offset: 0x00170988
 	public bool Contains(ClientInfo _cInfo)
 	{
 		return this.list.Contains(_cInfo);
 	}
 
-	// Token: 0x0600385C RID: 14428 RVA: 0x00171E34 File Offset: 0x00170034
+	// Token: 0x0600389F RID: 14495 RVA: 0x00172798 File Offset: 0x00170998
 	public void Remove(ClientInfo _cInfo)
 	{
 		this.list.Remove(_cInfo);
@@ -54,8 +54,8 @@ public class ClientInfoCollection
 		}
 	}
 
-	// Token: 0x17000595 RID: 1429
-	// (get) Token: 0x0600385D RID: 14429 RVA: 0x00171EC2 File Offset: 0x001700C2
+	// Token: 0x170005BB RID: 1467
+	// (get) Token: 0x060038A0 RID: 14496 RVA: 0x00172826 File Offset: 0x00170A26
 	public int Count
 	{
 		get
@@ -64,7 +64,7 @@ public class ClientInfoCollection
 		}
 	}
 
-	// Token: 0x0600385E RID: 14430 RVA: 0x00171ED0 File Offset: 0x001700D0
+	// Token: 0x060038A1 RID: 14497 RVA: 0x00172834 File Offset: 0x00170A34
 	public ClientInfo ForClientNumber(int _clientNumber)
 	{
 		ClientInfo clientInfo;
@@ -75,7 +75,7 @@ public class ClientInfoCollection
 		return null;
 	}
 
-	// Token: 0x0600385F RID: 14431 RVA: 0x00171EF0 File Offset: 0x001700F0
+	// Token: 0x060038A2 RID: 14498 RVA: 0x00172854 File Offset: 0x00170A54
 	public ClientInfo ForEntityId(int _entityId)
 	{
 		ClientInfo clientInfo;
@@ -95,7 +95,7 @@ public class ClientInfoCollection
 		return null;
 	}
 
-	// Token: 0x06003860 RID: 14432 RVA: 0x00171F4C File Offset: 0x0017014C
+	// Token: 0x060038A3 RID: 14499 RVA: 0x001728B0 File Offset: 0x00170AB0
 	public ClientInfo ForLiteNetPeer(long _peerConnectId)
 	{
 		ClientInfo clientInfo;
@@ -115,7 +115,7 @@ public class ClientInfoCollection
 		return null;
 	}
 
-	// Token: 0x06003861 RID: 14433 RVA: 0x00171FA8 File Offset: 0x001701A8
+	// Token: 0x060038A4 RID: 14500 RVA: 0x0017290C File Offset: 0x00170B0C
 	public ClientInfo ForUserId(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		ClientInfo clientInfo;
@@ -140,7 +140,7 @@ public class ClientInfoCollection
 		return null;
 	}
 
-	// Token: 0x06003862 RID: 14434 RVA: 0x00172028 File Offset: 0x00170228
+	// Token: 0x060038A5 RID: 14501 RVA: 0x0017298C File Offset: 0x00170B8C
 	public ClientInfo GetForPlayerName(string _playerName, bool _ignoreCase = true, bool _ignoreBlanks = false)
 	{
 		if (_ignoreBlanks)
@@ -163,7 +163,7 @@ public class ClientInfoCollection
 		return null;
 	}
 
-	// Token: 0x06003863 RID: 14435 RVA: 0x001720A4 File Offset: 0x001702A4
+	// Token: 0x060038A6 RID: 14502 RVA: 0x00172A08 File Offset: 0x00170C08
 	public ClientInfo GetForNameOrId(string _nameOrId, bool _ignoreCase = true, bool _ignoreBlanks = false)
 	{
 		int num;
@@ -187,26 +187,26 @@ public class ClientInfoCollection
 		return this.GetForPlayerName(_nameOrId, _ignoreCase, _ignoreBlanks);
 	}
 
-	// Token: 0x04002E63 RID: 11875
+	// Token: 0x04002E5C RID: 11868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ClientInfo> list = new List<ClientInfo>();
 
-	// Token: 0x04002E64 RID: 11876
+	// Token: 0x04002E5D RID: 11869
 	public readonly ReadOnlyCollection<ClientInfo> List;
 
-	// Token: 0x04002E65 RID: 11877
+	// Token: 0x04002E5E RID: 11870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, ClientInfo> clientNumberMap = new Dictionary<int, ClientInfo>();
 
-	// Token: 0x04002E66 RID: 11878
+	// Token: 0x04002E5F RID: 11871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, ClientInfo> entityIdMap = new Dictionary<int, ClientInfo>();
 
-	// Token: 0x04002E67 RID: 11879
+	// Token: 0x04002E60 RID: 11872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<long, ClientInfo> litenetPeerMap = new Dictionary<long, ClientInfo>();
 
-	// Token: 0x04002E68 RID: 11880
+	// Token: 0x04002E61 RID: 11873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PlatformUserIdentifierAbs, ClientInfo> userIdMap = new Dictionary<PlatformUserIdentifierAbs, ClientInfo>();
 }

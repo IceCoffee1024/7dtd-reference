@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Platform;
 
-// Token: 0x02000769 RID: 1897
+// Token: 0x0200076B RID: 1899
 public class AuthorizationManager : IAuthorizationResponses
 {
-	// Token: 0x17000592 RID: 1426
-	// (get) Token: 0x06003840 RID: 14400 RVA: 0x001714BC File Offset: 0x0016F6BC
+	// Token: 0x170005B8 RID: 1464
+	// (get) Token: 0x06003883 RID: 14467 RVA: 0x00171E20 File Offset: 0x00170020
 	public static AuthorizationManager Instance
 	{
 		get
@@ -21,7 +21,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		}
 	}
 
-	// Token: 0x06003841 RID: 14401 RVA: 0x001714D4 File Offset: 0x0016F6D4
+	// Token: 0x06003884 RID: 14468 RVA: 0x00171E38 File Offset: 0x00170038
 	public void Init()
 	{
 		new SortedList<string, IConsoleCommand>();
@@ -36,7 +36,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		}
 	}
 
-	// Token: 0x06003842 RID: 14402 RVA: 0x00171548 File Offset: 0x0016F748
+	// Token: 0x06003885 RID: 14469 RVA: 0x00171EAC File Offset: 0x001700AC
 	public void Cleanup()
 	{
 		foreach (IAuthorizer authorizer in this.authorizers.Keys)
@@ -45,7 +45,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		}
 	}
 
-	// Token: 0x06003843 RID: 14403 RVA: 0x00171598 File Offset: 0x0016F798
+	// Token: 0x06003886 RID: 14470 RVA: 0x00171EFC File Offset: 0x001700FC
 	public void ServerStart()
 	{
 		foreach (IAuthorizer authorizer in this.authorizers.Keys)
@@ -55,7 +55,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		this.clientsInAuthorization.Clear();
 	}
 
-	// Token: 0x06003844 RID: 14404 RVA: 0x001715F4 File Offset: 0x0016F7F4
+	// Token: 0x06003887 RID: 14471 RVA: 0x00171F58 File Offset: 0x00170158
 	public void ServerStop()
 	{
 		foreach (IAuthorizer authorizer in this.authorizers.Keys)
@@ -65,7 +65,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		this.clientsInAuthorization.Clear();
 	}
 
-	// Token: 0x06003845 RID: 14405 RVA: 0x00171650 File Offset: 0x0016F850
+	// Token: 0x06003888 RID: 14472 RVA: 0x00171FB4 File Offset: 0x001701B4
 	public void Authorize(ClientInfo _clientInfo, string _playerName, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _platformUserAndToken, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _crossplatformUserAndToken, string _compatibilityVersion, ulong _discordUserId)
 	{
 		this.clientsInAuthorization.Add(_clientInfo);
@@ -87,7 +87,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		this.tryAuthorizer(0, _clientInfo);
 	}
 
-	// Token: 0x06003846 RID: 14406 RVA: 0x001716D4 File Offset: 0x0016F8D4
+	// Token: 0x06003889 RID: 14473 RVA: 0x00172038 File Offset: 0x00170238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void tryAuthorizer(int _currentIndex, ClientInfo _clientInfo)
 	{
@@ -133,7 +133,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		this.playerAllowed(_clientInfo);
 	}
 
-	// Token: 0x06003847 RID: 14407 RVA: 0x001717CA File Offset: 0x0016F9CA
+	// Token: 0x0600388A RID: 14474 RVA: 0x0017212E File Offset: 0x0017032E
 	public void AuthorizationDenied(IAuthorizer _authorizer, ClientInfo _clientInfo, GameUtils.KickPlayerData _kickPlayerData)
 	{
 		if (_authorizer != null)
@@ -144,7 +144,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		GameUtils.KickPlayerForClientInfo(_clientInfo, _kickPlayerData);
 	}
 
-	// Token: 0x06003848 RID: 14408 RVA: 0x001717FC File Offset: 0x0016F9FC
+	// Token: 0x0600388B RID: 14475 RVA: 0x00172160 File Offset: 0x00170360
 	public void AuthorizationAccepted(IAuthorizer _authorizer, ClientInfo _clientInfo)
 	{
 		Log.Out(string.Format("[Auth] {0} authorization successful: {1}", _authorizer.AuthorizerName, _clientInfo));
@@ -156,7 +156,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		this.tryAuthorizer(num + 1, _clientInfo);
 	}
 
-	// Token: 0x06003849 RID: 14409 RVA: 0x00171848 File Offset: 0x0016FA48
+	// Token: 0x0600388C RID: 14476 RVA: 0x001721AC File Offset: 0x001703AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playerAllowed(ClientInfo _clientInfo)
 	{
@@ -239,7 +239,7 @@ public class AuthorizationManager : IAuthorizationResponses
 		}
 	}
 
-	// Token: 0x0600384A RID: 14410 RVA: 0x00171A2C File Offset: 0x0016FC2C
+	// Token: 0x0600388D RID: 14477 RVA: 0x00172390 File Offset: 0x00170590
 	public void Disconnect(ClientInfo _cInfo)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -281,23 +281,23 @@ public class AuthorizationManager : IAuthorizationResponses
 		}
 	}
 
-	// Token: 0x04002E44 RID: 11844
+	// Token: 0x04002E3D RID: 11837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SortedList<IAuthorizer, int> authorizers = new SortedList<IAuthorizer, int>(new AuthorizationManager.AuthorizerComparer());
 
-	// Token: 0x04002E45 RID: 11845
+	// Token: 0x04002E3E RID: 11838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AuthorizationManager instance;
 
-	// Token: 0x04002E46 RID: 11846
+	// Token: 0x04002E3F RID: 11839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<ClientInfo> clientsInAuthorization = new HashSet<ClientInfo>();
 
-	// Token: 0x0200076A RID: 1898
+	// Token: 0x0200076C RID: 1900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class AuthorizerComparer : IComparer<IAuthorizer>
 	{
-		// Token: 0x0600384E RID: 14414 RVA: 0x00171B50 File Offset: 0x0016FD50
+		// Token: 0x06003891 RID: 14481 RVA: 0x001724B4 File Offset: 0x001706B4
 		public int Compare(IAuthorizer _x, IAuthorizer _y)
 		{
 			return _x.Order.CompareTo(_y.Order);

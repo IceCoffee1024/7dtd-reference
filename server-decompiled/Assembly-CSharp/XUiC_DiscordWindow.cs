@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000356 RID: 854
+// Token: 0x02000359 RID: 857
 [Preserve]
 public class XUiC_DiscordWindow : XUiController
 {
-	// Token: 0x060018B7 RID: 6327 RVA: 0x0008BB88 File Offset: 0x00089D88
+	// Token: 0x060018B2 RID: 6322 RVA: 0x0008BE08 File Offset: 0x0008A008
 	public override void Init()
 	{
 		base.Init();
@@ -36,14 +36,14 @@ public class XUiC_DiscordWindow : XUiController
 		}
 	}
 
-	// Token: 0x060018B8 RID: 6328 RVA: 0x0008BC56 File Offset: 0x00089E56
+	// Token: 0x060018B3 RID: 6323 RVA: 0x0008BED6 File Offset: 0x0008A0D6
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.RefreshBindingsSelfAndChildren();
 	}
 
-	// Token: 0x060018B9 RID: 6329 RVA: 0x0008BC68 File Offset: 0x00089E68
+	// Token: 0x060018B4 RID: 6324 RVA: 0x0008BEE8 File Offset: 0x0008A0E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -129,6 +129,6 @@ public class XUiC_DiscordWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04000FC7 RID: 4039
+	// Token: 0x04000FC0 RID: 4032
 	public static string ID = "";
 }

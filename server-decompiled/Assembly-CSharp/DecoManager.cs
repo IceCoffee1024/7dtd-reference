@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000C14 RID: 3092
+// Token: 0x02000C26 RID: 3110
 public class DecoManager
 {
-	// Token: 0x170009A8 RID: 2472
-	// (get) Token: 0x06005E5E RID: 24158 RVA: 0x0024BE9A File Offset: 0x0024A09A
+	// Token: 0x170009CA RID: 2506
+	// (get) Token: 0x06005E77 RID: 24183 RVA: 0x0024F196 File Offset: 0x0024D396
 	public static DecoManager Instance
 	{
 		get
@@ -21,13 +21,13 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E5F RID: 24159 RVA: 0x0024BEB4 File Offset: 0x0024A0B4
+	// Token: 0x06005E78 RID: 24184 RVA: 0x0024F1B0 File Offset: 0x0024D3B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DecoManager()
 	{
 	}
 
-	// Token: 0x06005E60 RID: 24160 RVA: 0x0024BF4C File Offset: 0x0024A14C
+	// Token: 0x06005E79 RID: 24185 RVA: 0x0024F248 File Offset: 0x0024D448
 	public IEnumerator OnWorldLoaded(int _worldWidth, int _worldHeight, World _world, IChunkProvider _chunkProvider)
 	{
 		if (!this.IsEnabled)
@@ -141,7 +141,7 @@ public class DecoManager
 		yield break;
 	}
 
-	// Token: 0x06005E61 RID: 24161 RVA: 0x0024BF78 File Offset: 0x0024A178
+	// Token: 0x06005E7A RID: 24186 RVA: 0x0024F274 File Offset: 0x0024D474
 	public void OriginChanged(Vector3 _offset)
 	{
 		foreach (KeyValuePair<int, DecoChunk> keyValuePair in this.decoChunks)
@@ -154,7 +154,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E62 RID: 24162 RVA: 0x0024BFF0 File Offset: 0x0024A1F0
+	// Token: 0x06005E7B RID: 24187 RVA: 0x0024F2EC File Offset: 0x0024D4EC
 	public void OnWorldUnloaded()
 	{
 		if (!this.IsEnabled)
@@ -193,7 +193,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E63 RID: 24163 RVA: 0x0024C0E8 File Offset: 0x0024A2E8
+	// Token: 0x06005E7C RID: 24188 RVA: 0x0024F3E4 File Offset: 0x0024D5E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryLoad()
 	{
@@ -219,7 +219,7 @@ public class DecoManager
 		return false;
 	}
 
-	// Token: 0x06005E64 RID: 24164 RVA: 0x0024C1B8 File Offset: 0x0024A3B8
+	// Token: 0x06005E7D RID: 24189 RVA: 0x0024F4B4 File Offset: 0x0024D6B4
 	public void Save()
 	{
 		if (!this.IsEnabled || GameManager.Instance.IsEditMode() || !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -245,7 +245,7 @@ public class DecoManager
 		this.bDirty = false;
 	}
 
-	// Token: 0x06005E65 RID: 24165 RVA: 0x0024C278 File Offset: 0x0024A478
+	// Token: 0x06005E7E RID: 24190 RVA: 0x0024F574 File Offset: 0x0024D774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteTask(ThreadManager.TaskInfo _taskInfo)
 	{
@@ -259,7 +259,7 @@ public class DecoManager
 		Log.Out(string.Format("[DECO] write thread {0}ms", microStopwatch.ElapsedMilliseconds));
 	}
 
-	// Token: 0x06005E66 RID: 24166 RVA: 0x0024C2F8 File Offset: 0x0024A4F8
+	// Token: 0x06005E7F RID: 24191 RVA: 0x0024F5F4 File Offset: 0x0024D7F4
 	public void Read(BinaryReader _br, int _version = 2147483647, bool _resetExisting = true)
 	{
 		if (_resetExisting)
@@ -275,7 +275,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E67 RID: 24167 RVA: 0x0024C340 File Offset: 0x0024A540
+	// Token: 0x06005E80 RID: 24192 RVA: 0x0024F63C File Offset: 0x0024D83C
 	public void Write(BinaryWriter _bw, NameIdMapping _blockMap)
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -295,7 +295,7 @@ public class DecoManager
 		Log.Out(string.Format("[DECO] written {0}, in {1}ms", num, microStopwatch.ElapsedMilliseconds));
 	}
 
-	// Token: 0x06005E68 RID: 24168 RVA: 0x0024C3EC File Offset: 0x0024A5EC
+	// Token: 0x06005E81 RID: 24193 RVA: 0x0024F6E8 File Offset: 0x0024D8E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GenerateDecoWriteList()
 	{
@@ -317,7 +317,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E69 RID: 24169 RVA: 0x0024C4E0 File Offset: 0x0024A6E0
+	// Token: 0x06005E82 RID: 24194 RVA: 0x0024F7DC File Offset: 0x0024D9DC
 	public void UpdateTick(World _world)
 	{
 		if (!this.IsEnabled)
@@ -428,7 +428,7 @@ public class DecoManager
 		this.updateCoroutine = ThreadManager.StartCoroutine(this.UpdateDecorationsCo());
 	}
 
-	// Token: 0x06005E6A RID: 24170 RVA: 0x0024C878 File Offset: 0x0024AA78
+	// Token: 0x06005E83 RID: 24195 RVA: 0x0024FB74 File Offset: 0x0024DD74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UpdateDecorationsCo()
 	{
@@ -501,14 +501,14 @@ public class DecoManager
 		yield break;
 	}
 
-	// Token: 0x06005E6B RID: 24171 RVA: 0x0024C887 File Offset: 0x0024AA87
+	// Token: 0x06005E84 RID: 24196 RVA: 0x0024FB83 File Offset: 0x0024DD83
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DecoObject GetDecoObject()
 	{
 		return new DecoObject();
 	}
 
-	// Token: 0x06005E6C RID: 24172 RVA: 0x0024C890 File Offset: 0x0024AA90
+	// Token: 0x06005E85 RID: 24197 RVA: 0x0024FB8C File Offset: 0x0024DD8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DecoChunk GetDecoChunkAt(int _x, int _z)
 	{
@@ -521,7 +521,7 @@ public class DecoManager
 		return decoChunk;
 	}
 
-	// Token: 0x06005E6D RID: 24173 RVA: 0x0024C8B8 File Offset: 0x0024AAB8
+	// Token: 0x06005E86 RID: 24198 RVA: 0x0024FBB4 File Offset: 0x0024DDB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int decorateChunkRandom(DecoChunk _decoChunk, GameRandom rnd)
 	{
@@ -604,7 +604,7 @@ public class DecoManager
 		return num5;
 	}
 
-	// Token: 0x06005E6E RID: 24174 RVA: 0x0024CB34 File Offset: 0x0024AD34
+	// Token: 0x06005E87 RID: 24199 RVA: 0x0024FE30 File Offset: 0x0024E030
 	public void GetDecorationsOnChunk(int _chunkX, int _chunkZ, List<SBlockPosValue> _multiBlockList)
 	{
 		int num = 0;
@@ -659,7 +659,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E6F RID: 24175 RVA: 0x0024CCF8 File Offset: 0x0024AEF8
+	// Token: 0x06005E88 RID: 24200 RVA: 0x0024FFF4 File Offset: 0x0024E1F4
 	public bool GetParentBlockOfDecoration(Transform _t, out Vector3i _blockPos, out DecoObject _decoObject)
 	{
 		_blockPos = Vector3i.zero;
@@ -699,7 +699,7 @@ public class DecoManager
 		return false;
 	}
 
-	// Token: 0x06005E70 RID: 24176 RVA: 0x0024CE20 File Offset: 0x0024B020
+	// Token: 0x06005E89 RID: 24201 RVA: 0x0025011C File Offset: 0x0024E31C
 	public Transform GetDecorationTransform(Vector3i _blockPos, bool _bDetachTransform = false)
 	{
 		if (!this.IsEnabled)
@@ -745,7 +745,7 @@ public class DecoManager
 		return null;
 	}
 
-	// Token: 0x06005E71 RID: 24177 RVA: 0x0024CF0C File Offset: 0x0024B10C
+	// Token: 0x06005E8A RID: 24202 RVA: 0x00250208 File Offset: 0x0024E408
 	public void AddDecorationAt(World _world, BlockValue _blockValue, Vector3i _blockPos, bool _bForceBlockYPos = false)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -800,7 +800,7 @@ public class DecoManager
 		decoChunkAt.AddDecoObject(decoObject, true);
 	}
 
-	// Token: 0x06005E72 RID: 24178 RVA: 0x0024D0A4 File Offset: 0x0024B2A4
+	// Token: 0x06005E8B RID: 24203 RVA: 0x002503A0 File Offset: 0x0024E5A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addLoadedDecoration(DecoObject _decoObject)
 	{
@@ -821,7 +821,7 @@ public class DecoManager
 		this.bDirty = true;
 	}
 
-	// Token: 0x06005E73 RID: 24179 RVA: 0x0024D134 File Offset: 0x0024B334
+	// Token: 0x06005E8C RID: 24204 RVA: 0x00250430 File Offset: 0x0024E630
 	public static int CheckPosition(int worldWidth, int worldHeight, int _x, int _z)
 	{
 		int num = worldWidth / 2;
@@ -833,7 +833,7 @@ public class DecoManager
 		return _x + num + (_z + num2) * worldWidth;
 	}
 
-	// Token: 0x06005E74 RID: 24180 RVA: 0x0024D168 File Offset: 0x0024B368
+	// Token: 0x06005E8D RID: 24205 RVA: 0x00250464 File Offset: 0x0024E664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryAddToOccupiedMap(Block block, int xWorld, int zWorld, byte rotationByte, bool enableStopBigDecoCheck)
 	{
@@ -881,7 +881,7 @@ public class DecoManager
 		return true;
 	}
 
-	// Token: 0x06005E75 RID: 24181 RVA: 0x0024D2C8 File Offset: 0x0024B4C8
+	// Token: 0x06005E8E RID: 24206 RVA: 0x002505C4 File Offset: 0x0024E7C4
 	public bool RemoveDecorationAt(Vector3i _blockPos)
 	{
 		if (!this.IsEnabled)
@@ -907,7 +907,7 @@ public class DecoManager
 		return decoChunk.RemoveDecoObject(_blockPos);
 	}
 
-	// Token: 0x06005E76 RID: 24182 RVA: 0x0024D364 File Offset: 0x0024B564
+	// Token: 0x06005E8F RID: 24207 RVA: 0x00250660 File Offset: 0x0024E860
 	public void ClearDecoObjectsInArea(Vector3i _boundsPosition, Vector3i _boundsSize)
 	{
 		if (!this.IsEnabled)
@@ -933,7 +933,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E77 RID: 24183 RVA: 0x0024D400 File Offset: 0x0024B600
+	// Token: 0x06005E90 RID: 24208 RVA: 0x002506FC File Offset: 0x0024E8FC
 	public EnumDecoOccupied GetDecoOccupiedAt(int _x, int _z)
 	{
 		if (!this.IsEnabled)
@@ -975,13 +975,13 @@ public class DecoManager
 		return this.occupiedMap.Get(num);
 	}
 
-	// Token: 0x06005E78 RID: 24184 RVA: 0x0024D4FC File Offset: 0x0024B6FC
+	// Token: 0x06005E91 RID: 24209 RVA: 0x002507F8 File Offset: 0x0024E9F8
 	public void SetChunkDistance(int _distance)
 	{
 		GamePrefs.Set(EnumGamePrefs.OptionsGfxTreeDistance, _distance);
 	}
 
-	// Token: 0x06005E79 RID: 24185 RVA: 0x0024D509 File Offset: 0x0024B709
+	// Token: 0x06005E92 RID: 24210 RVA: 0x00250805 File Offset: 0x0024EA05
 	public void SetBlock(World _world, Vector3i _blockPos, BlockValue _bv)
 	{
 		if (_bv.isair)
@@ -993,7 +993,7 @@ public class DecoManager
 		this.AddDecorationAt(_world, _bv, _blockPos, true);
 	}
 
-	// Token: 0x06005E7A RID: 24186 RVA: 0x0024D52F File Offset: 0x0024B72F
+	// Token: 0x06005E93 RID: 24211 RVA: 0x0025082B File Offset: 0x0024EA2B
 	public void SaveDebugTexture(string path, bool _includeFlatAreas = false)
 	{
 		if (PlatformOptimizations.FileBackedArrays)
@@ -1009,7 +1009,7 @@ public class DecoManager
 		decoOccupiedMap.SaveAsTexture(path, _includeFlatAreas, null);
 	}
 
-	// Token: 0x06005E7B RID: 24187 RVA: 0x0024D55A File Offset: 0x0024B75A
+	// Token: 0x06005E94 RID: 24212 RVA: 0x00250856 File Offset: 0x0024EA56
 	public void SaveDebugTexture(string path, List<FlatArea> flatAreas)
 	{
 		if (PlatformOptimizations.FileBackedArrays)
@@ -1025,7 +1025,7 @@ public class DecoManager
 		decoOccupiedMap.SaveAsTexture(path, true, flatAreas);
 	}
 
-	// Token: 0x06005E7C RID: 24188 RVA: 0x0024D588 File Offset: 0x0024B788
+	// Token: 0x06005E95 RID: 24213 RVA: 0x00250884 File Offset: 0x0024EA84
 	public void SaveStateDebugTexture(string _filename)
 	{
 		Color32[] array = new Color32[this.worldWidth * this.worldHeight];
@@ -1075,7 +1075,7 @@ public class DecoManager
 		global::UnityEngine.Object.Destroy(texture2D);
 	}
 
-	// Token: 0x06005E7D RID: 24189 RVA: 0x0024D730 File Offset: 0x0024B930
+	// Token: 0x06005E96 RID: 24214 RVA: 0x00250A2C File Offset: 0x0024EC2C
 	public void SendDecosToClient(ClientInfo _cInfo)
 	{
 		List<DecoObject> list = this.decoWriteList;
@@ -1090,7 +1090,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E7E RID: 24190 RVA: 0x0024D79C File Offset: 0x0024B99C
+	// Token: 0x06005E97 RID: 24215 RVA: 0x00250A98 File Offset: 0x0024EC98
 	public void ResetDecosInWorldRect(Rect worldRect)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -1132,7 +1132,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E7F RID: 24191 RVA: 0x0024D8EC File Offset: 0x0024BAEC
+	// Token: 0x06005E98 RID: 24216 RVA: 0x00250BE8 File Offset: 0x0024EDE8
 	public void ResetDecosForWorldChunk(long worldChunkKey)
 	{
 		if (!ThreadManager.IsMainThread())
@@ -1159,7 +1159,7 @@ public class DecoManager
 		}
 	}
 
-	// Token: 0x06005E80 RID: 24192 RVA: 0x0024D9D4 File Offset: 0x0024BBD4
+	// Token: 0x06005E99 RID: 24217 RVA: 0x00250CD0 File Offset: 0x0024EED0
 	public EnumDecoOccupied GetDecoOccupiedFromMap(int xWorld, int zWorld)
 	{
 		if (!PlatformOptimizations.FileBackedArrays)
@@ -1174,170 +1174,170 @@ public class DecoManager
 		return this.fileBackedOccupiedMap.Get(num);
 	}
 
-	// Token: 0x06005E81 RID: 24193 RVA: 0x0024DA1C File Offset: 0x0024BC1C
+	// Token: 0x06005E9A RID: 24218 RVA: 0x00250D18 File Offset: 0x0024EF18
 	public void ResetAll()
 	{
 		Rect rect = new Rect((float)(-(float)this.worldWidth / 2), (float)(-(float)this.worldHeight / 2), (float)this.worldWidth, (float)this.worldHeight);
 		this.ResetDecosInWorldRect(rect);
 	}
 
-	// Token: 0x04004944 RID: 18756
+	// Token: 0x04004983 RID: 18819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FILEVERSION = 6;
 
-	// Token: 0x04004945 RID: 18757
+	// Token: 0x04004984 RID: 18820
 	public const int cChunkSize = 128;
 
-	// Token: 0x04004946 RID: 18758
+	// Token: 0x04004985 RID: 18821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cUpdateDelay = 1f;
 
-	// Token: 0x04004947 RID: 18759
+	// Token: 0x04004986 RID: 18822
 	public const int cUpdateCoMaxTimeUs = 900;
 
-	// Token: 0x04004948 RID: 18760
+	// Token: 0x04004987 RID: 18823
 	public static Vector3 cDecoMiddleOffset = new Vector3(0.5f, 0f, 0.5f);
 
-	// Token: 0x04004949 RID: 18761
+	// Token: 0x04004988 RID: 18824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DecoManager m_Instance;
 
-	// Token: 0x0400494A RID: 18762
+	// Token: 0x04004989 RID: 18825
 	public bool IsEnabled = true;
 
-	// Token: 0x0400494B RID: 18763
+	// Token: 0x0400498A RID: 18826
 	public bool IsHidden;
 
-	// Token: 0x0400494C RID: 18764
+	// Token: 0x0400498B RID: 18827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DecoChunk> decoChunks = new Dictionary<int, DecoChunk>();
 
-	// Token: 0x0400494D RID: 18765
+	// Token: 0x0400498C RID: 18828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DecoChunk> visibleDecoChunks = new List<DecoChunk>();
 
-	// Token: 0x0400494E RID: 18766
+	// Token: 0x0400498D RID: 18829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<DecoObject> loadedDecos;
 
-	// Token: 0x0400494F RID: 18767
+	// Token: 0x0400498E RID: 18830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldWidth;
 
-	// Token: 0x04004950 RID: 18768
+	// Token: 0x0400498F RID: 18831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldHeight;
 
-	// Token: 0x04004951 RID: 18769
+	// Token: 0x04004990 RID: 18832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldWidthHalf;
 
-	// Token: 0x04004952 RID: 18770
+	// Token: 0x04004991 RID: 18833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldHeightHalf;
 
-	// Token: 0x04004953 RID: 18771
+	// Token: 0x04004992 RID: 18834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DecoOccupiedMap occupiedMap;
 
-	// Token: 0x04004954 RID: 18772
+	// Token: 0x04004993 RID: 18835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileBackedDecoOccupiedMap fileBackedOccupiedMap;
 
-	// Token: 0x04004955 RID: 18773
+	// Token: 0x04004994 RID: 18836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunkProvider chunkProvider;
 
-	// Token: 0x04004956 RID: 18774
+	// Token: 0x04004995 RID: 18837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITerrainGenerator terrainGenerator;
 
-	// Token: 0x04004957 RID: 18775
+	// Token: 0x04004996 RID: 18838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04004958 RID: 18776
+	// Token: 0x04004997 RID: 18839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFixedSize;
 
-	// Token: 0x04004959 RID: 18777
+	// Token: 0x04004998 RID: 18840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filenamePath;
 
-	// Token: 0x0400495A RID: 18778
+	// Token: 0x04004999 RID: 18841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> overridePOIList;
 
-	// Token: 0x0400495B RID: 18779
+	// Token: 0x0400499A RID: 18842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PerlinNoise resourceNoise;
 
-	// Token: 0x0400495C RID: 18780
+	// Token: 0x0400499B RID: 18843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int checkDelayTicks;
 
-	// Token: 0x0400495D RID: 18781
+	// Token: 0x0400499C RID: 18844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bDirty;
 
-	// Token: 0x0400495E RID: 18782
+	// Token: 0x0400499D RID: 18845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream writeStream = new MemoryStream();
 
-	// Token: 0x0400495F RID: 18783
+	// Token: 0x0400499E RID: 18846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.TaskInfo writeTask;
 
-	// Token: 0x04004960 RID: 18784
+	// Token: 0x0400499F RID: 18847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<DecoManager.SAddDecoInfo> addDecosFromThread = new List<DecoManager.SAddDecoInfo>();
 
-	// Token: 0x04004961 RID: 18785
+	// Token: 0x040049A0 RID: 18848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> removeDecosFromThread = new List<Vector3i>();
 
-	// Token: 0x04004962 RID: 18786
+	// Token: 0x040049A1 RID: 18849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Rect> resetDecosInWorldRectFromThread = new List<Rect>();
 
-	// Token: 0x04004963 RID: 18787
+	// Token: 0x040049A2 RID: 18850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> resetDecosForWorldChunkFromThread = new List<long>();
 
-	// Token: 0x04004964 RID: 18788
+	// Token: 0x040049A3 RID: 18851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<DecoObject> decoWriteList = new List<DecoObject>(4096);
 
-	// Token: 0x04004965 RID: 18789
+	// Token: 0x040049A4 RID: 18852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MicroStopwatch msUpdate = new MicroStopwatch();
 
-	// Token: 0x04004966 RID: 18790
+	// Token: 0x040049A5 RID: 18853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine updateCoroutine;
 
-	// Token: 0x04004967 RID: 18791
+	// Token: 0x040049A6 RID: 18854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayer> playersToCheck = new List<EntityPlayer>();
 
-	// Token: 0x04004968 RID: 18792
+	// Token: 0x040049A7 RID: 18855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> chunksAroundPlayers = new HashSet<int>();
 
-	// Token: 0x02000C15 RID: 3093
+	// Token: 0x02000C27 RID: 3111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct SAddDecoInfo
 	{
-		// Token: 0x04004969 RID: 18793
+		// Token: 0x040049A8 RID: 18856
 		public World world;
 
-		// Token: 0x0400496A RID: 18794
+		// Token: 0x040049A9 RID: 18857
 		public BlockValue bv;
 
-		// Token: 0x0400496B RID: 18795
+		// Token: 0x040049AA RID: 18858
 		public Vector3i pos;
 
-		// Token: 0x0400496C RID: 18796
+		// Token: 0x040049AB RID: 18859
 		public bool bForceBlockYPos;
 	}
 }

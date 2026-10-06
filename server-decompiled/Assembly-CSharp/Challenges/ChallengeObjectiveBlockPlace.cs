@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018F9 RID: 6393
+	// Token: 0x02001925 RID: 6437
 	[Preserve]
 	public class ChallengeObjectiveBlockPlace : BaseChallengeObjective
 	{
-		// Token: 0x17001857 RID: 6231
-		// (get) Token: 0x0600C532 RID: 50482 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x170018F9 RID: 6393
+		// (get) Token: 0x0600C68A RID: 50826 RVA: 0x00020119 File Offset: 0x0001E319
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001858 RID: 6232
-		// (get) Token: 0x0600C533 RID: 50483 RVA: 0x0048A3D1 File Offset: 0x004885D1
+		// Token: 0x170018FA RID: 6394
+		// (get) Token: 0x0600C68B RID: 50827 RVA: 0x0048E8C1 File Offset: 0x0048CAC1
 		public override string DescriptionText
 		{
 			get
@@ -28,14 +28,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C534 RID: 50484 RVA: 0x0048A3FB File Offset: 0x004885FB
+		// Token: 0x0600C68C RID: 50828 RVA: 0x0048E8EB File Offset: 0x0048CAEB
 		public override void HandleOnCreated()
 		{
 			base.HandleOnCreated();
 			this.CreateRequirements();
 		}
 
-		// Token: 0x0600C535 RID: 50485 RVA: 0x0048A409 File Offset: 0x00488609
+		// Token: 0x0600C68D RID: 50829 RVA: 0x0048E8F9 File Offset: 0x0048CAF9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CreateRequirements()
 		{
@@ -46,19 +46,19 @@ namespace Challenges
 			this.Owner.SetRequirementGroup(new RequirementObjectiveGroupPlace((this.alternateItem != "") ? this.alternateItem : this.expectedBlock));
 		}
 
-		// Token: 0x0600C536 RID: 50486 RVA: 0x0048A444 File Offset: 0x00488644
+		// Token: 0x0600C68E RID: 50830 RVA: 0x0048E934 File Offset: 0x0048CB34
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.BlockPlace += this.Current_BlockPlace;
 		}
 
-		// Token: 0x0600C537 RID: 50487 RVA: 0x0048A45C File Offset: 0x0048865C
+		// Token: 0x0600C68F RID: 50831 RVA: 0x0048E94C File Offset: 0x0048CB4C
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.BlockPlace -= this.Current_BlockPlace;
 		}
 
-		// Token: 0x0600C538 RID: 50488 RVA: 0x0048A474 File Offset: 0x00488674
+		// Token: 0x0600C690 RID: 50832 RVA: 0x0048E964 File Offset: 0x0048CB64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BlockPlace(string blockName, Vector3i blockPos)
 		{
@@ -87,7 +87,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C539 RID: 50489 RVA: 0x0048A514 File Offset: 0x00488714
+		// Token: 0x0600C691 RID: 50833 RVA: 0x0048EA04 File Offset: 0x0048CC04
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -101,7 +101,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C53A RID: 50490 RVA: 0x0048A578 File Offset: 0x00488778
+		// Token: 0x0600C692 RID: 50834 RVA: 0x0048EA68 File Offset: 0x0048CC68
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveBlockPlace
@@ -111,10 +111,10 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009524 RID: 38180
+		// Token: 0x040095EA RID: 38378
 		public string expectedBlock = "";
 
-		// Token: 0x04009525 RID: 38181
+		// Token: 0x040095EB RID: 38379
 		public string alternateItem = "";
 	}
 }

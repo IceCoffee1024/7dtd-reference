@@ -4,25 +4,25 @@ using Challenges;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F3 RID: 499
+// Token: 0x020001F4 RID: 500
 [Preserve]
 public class ConsoleCmdChallenges : ConsoleCmdAbstract
 {
-	// Token: 0x06000F65 RID: 3941 RVA: 0x00063BFD File Offset: 0x00061DFD
+	// Token: 0x06000F58 RID: 3928 RVA: 0x00063BED File Offset: 0x00061DED
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "challenges" };
 	}
 
-	// Token: 0x06000F66 RID: 3942 RVA: 0x00063C0D File Offset: 0x00061E0D
+	// Token: 0x06000F59 RID: 3929 RVA: 0x00063BFD File Offset: 0x00061DFD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Complete certain challenges";
 	}
 
-	// Token: 0x06000F67 RID: 3943 RVA: 0x00063C14 File Offset: 0x00061E14
+	// Token: 0x06000F5A RID: 3930 RVA: 0x00063C04 File Offset: 0x00061E04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -33,8 +33,8 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}).Unindent(true);
 	}
 
-	// Token: 0x1700014E RID: 334
-	// (get) Token: 0x06000F68 RID: 3944 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000146 RID: 326
+	// (get) Token: 0x06000F5B RID: 3931 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -43,8 +43,8 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700014F RID: 335
-	// (get) Token: 0x06000F69 RID: 3945 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x17000147 RID: 327
+	// (get) Token: 0x06000F5C RID: 3932 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -53,7 +53,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F6A RID: 3946 RVA: 0x00063CB8 File Offset: 0x00061EB8
+	// Token: 0x06000F5D RID: 3933 RVA: 0x00063CA8 File Offset: 0x00061EA8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -85,7 +85,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown subcommand '" + text + "'");
 	}
 
-	// Token: 0x06000F6B RID: 3947 RVA: 0x00063D90 File Offset: 0x00061F90
+	// Token: 0x06000F5E RID: 3934 RVA: 0x00063D80 File Offset: 0x00061F80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeListGroups(List<string> _params)
 	{
@@ -112,7 +112,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F6C RID: 3948 RVA: 0x00063E7C File Offset: 0x0006207C
+	// Token: 0x06000F5F RID: 3935 RVA: 0x00063E6C File Offset: 0x0006206C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeList(List<string> _params)
 	{
@@ -148,7 +148,7 @@ public class ConsoleCmdChallenges : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F6D RID: 3949 RVA: 0x00063F88 File Offset: 0x00062188
+	// Token: 0x06000F60 RID: 3936 RVA: 0x00063F78 File Offset: 0x00062178
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void executeComplete(List<string> _params)
 	{

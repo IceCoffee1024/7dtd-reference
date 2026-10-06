@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Challenges
 {
-	// Token: 0x02001917 RID: 6423
+	// Token: 0x02001943 RID: 6467
 	public class RequirementGroupPhase
 	{
-		// Token: 0x0600C672 RID: 50802 RVA: 0x0048EEF2 File Offset: 0x0048D0F2
+		// Token: 0x0600C7CA RID: 51146 RVA: 0x004933DE File Offset: 0x004915DE
 		public void AddChallengeObjective(BaseChallengeObjective obj)
 		{
 			this.RequirementObjectiveList.Add(obj);
 		}
 
-		// Token: 0x0600C673 RID: 50803 RVA: 0x0048EF00 File Offset: 0x0048D100
+		// Token: 0x0600C7CB RID: 51147 RVA: 0x004933EC File Offset: 0x004915EC
 		public void AddHooks()
 		{
 			for (int i = 0; i < this.RequirementObjectiveList.Count; i++)
@@ -24,7 +24,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C674 RID: 50804 RVA: 0x0048EF4C File Offset: 0x0048D14C
+		// Token: 0x0600C7CC RID: 51148 RVA: 0x00493438 File Offset: 0x00491638
 		public bool HandleCheckStatus()
 		{
 			bool flag = false;
@@ -39,7 +39,7 @@ namespace Challenges
 			return flag;
 		}
 
-		// Token: 0x0600C675 RID: 50805 RVA: 0x0048EF98 File Offset: 0x0048D198
+		// Token: 0x0600C7CD RID: 51149 RVA: 0x00493484 File Offset: 0x00491684
 		public void HandleRemoveHooks()
 		{
 			for (int i = 0; i < this.RequirementObjectiveList.Count; i++)
@@ -48,7 +48,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C676 RID: 50806 RVA: 0x0048EFCC File Offset: 0x0048D1CC
+		// Token: 0x0600C7CE RID: 51150 RVA: 0x004934B8 File Offset: 0x004916B8
 		public void ResetComplete()
 		{
 			this.IsComplete = false;
@@ -58,7 +58,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C677 RID: 50807 RVA: 0x0048F008 File Offset: 0x0048D208
+		// Token: 0x0600C7CF RID: 51151 RVA: 0x004934F4 File Offset: 0x004916F4
 		public virtual void UpdateStatus()
 		{
 			for (int i = 0; i < this.RequirementObjectiveList.Count; i++)
@@ -67,7 +67,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C678 RID: 50808 RVA: 0x0048F03C File Offset: 0x0048D23C
+		// Token: 0x0600C7D0 RID: 51152 RVA: 0x00493528 File Offset: 0x00491728
 		public void Clone(RequirementGroupPhase phase)
 		{
 			for (int i = 0; i < phase.RequirementObjectiveList.Count; i++)
@@ -81,7 +81,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C679 RID: 50809 RVA: 0x0048F090 File Offset: 0x0048D290
+		// Token: 0x0600C7D1 RID: 51153 RVA: 0x0049357C File Offset: 0x0049177C
 		public RequirementGroupPhase Clone()
 		{
 			RequirementGroupPhase requirementGroupPhase = new RequirementGroupPhase();
@@ -97,7 +97,7 @@ namespace Challenges
 			return requirementGroupPhase;
 		}
 
-		// Token: 0x0600C67A RID: 50810 RVA: 0x0048F0EC File Offset: 0x0048D2EC
+		// Token: 0x0600C7D2 RID: 51154 RVA: 0x004935D8 File Offset: 0x004917D8
 		public Recipe GetItemRecipe()
 		{
 			for (int i = 0; i < this.RequirementObjectiveList.Count; i++)
@@ -111,10 +111,10 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x04009592 RID: 38290
+		// Token: 0x04009658 RID: 38488
 		public List<BaseChallengeObjective> RequirementObjectiveList = new List<BaseChallengeObjective>();
 
-		// Token: 0x04009593 RID: 38291
+		// Token: 0x04009659 RID: 38489
 		public bool IsComplete;
 	}
 }

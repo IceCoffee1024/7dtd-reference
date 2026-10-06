@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001CBD RID: 7357
+	// Token: 0x02001CEF RID: 7407
 	public class PlayerInteractionsRecorderMulti : IPlayerInteractionsRecorder
 	{
-		// Token: 0x0600DA7B RID: 55931 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBF5 RID: 56309 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform owner)
 		{
 		}
 
-		// Token: 0x0600DA7C RID: 55932 RVA: 0x004E2EDA File Offset: 0x004E10DA
+		// Token: 0x0600DBF6 RID: 56310 RVA: 0x004E7A22 File Offset: 0x004E5C22
 		public void RecordPlayerInteraction(PlayerInteraction interaction)
 		{
 			IPlatform nativePlatform = PlatformManager.NativePlatform;
@@ -36,7 +36,7 @@ namespace Platform.MultiPlatform
 			playerInteractionsRecorder2.RecordPlayerInteraction(interaction);
 		}
 
-		// Token: 0x0600DA7D RID: 55933 RVA: 0x004E2F12 File Offset: 0x004E1112
+		// Token: 0x0600DBF7 RID: 56311 RVA: 0x004E7A5A File Offset: 0x004E5C5A
 		public void RecordPlayerInteractions(IEnumerable<PlayerInteraction> interactions)
 		{
 			IPlatform nativePlatform = PlatformManager.NativePlatform;
@@ -61,7 +61,7 @@ namespace Platform.MultiPlatform
 			playerInteractionsRecorder2.RecordPlayerInteractions(interactions);
 		}
 
-		// Token: 0x0600DA7E RID: 55934 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBF8 RID: 56312 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}

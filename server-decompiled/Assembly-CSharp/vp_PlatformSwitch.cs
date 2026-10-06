@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015E4 RID: 5604
+// Token: 0x02001603 RID: 5635
 public class vp_PlatformSwitch : vp_Interactable
 {
-	// Token: 0x0600AEF7 RID: 44791 RVA: 0x00413729 File Offset: 0x00411929
+	// Token: 0x0600AF89 RID: 44937 RVA: 0x00417405 File Offset: 0x00415605
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -16,7 +16,7 @@ public class vp_PlatformSwitch : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600AEF8 RID: 44792 RVA: 0x00413768 File Offset: 0x00411968
+	// Token: 0x0600AF8A RID: 44938 RVA: 0x00417444 File Offset: 0x00415644
 	public override bool TryInteract(vp_FPPlayerEventHandler player)
 	{
 		if (this.Platform == null)
@@ -38,7 +38,7 @@ public class vp_PlatformSwitch : vp_Interactable
 		return true;
 	}
 
-	// Token: 0x0600AEF9 RID: 44793 RVA: 0x004137F8 File Offset: 0x004119F8
+	// Token: 0x0600AF8B RID: 44939 RVA: 0x004174D4 File Offset: 0x004156D4
 	public virtual void PlaySound()
 	{
 		if (this.AudioSource == null)
@@ -59,7 +59,7 @@ public class vp_PlatformSwitch : vp_Interactable
 		this.AudioSource.PlayOneShot(audioClip);
 	}
 
-	// Token: 0x0600AEFA RID: 44794 RVA: 0x00413888 File Offset: 0x00411A88
+	// Token: 0x0600AF8C RID: 44940 RVA: 0x00417564 File Offset: 0x00415764
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnTriggerEnter(Collider col)
 	{
@@ -87,27 +87,27 @@ public class vp_PlatformSwitch : vp_Interactable
 		this.TryInteract(this.m_Player);
 	}
 
-	// Token: 0x040082AF RID: 33455
+	// Token: 0x04008305 RID: 33541
 	public float SwitchTimeout;
 
-	// Token: 0x040082B0 RID: 33456
+	// Token: 0x04008306 RID: 33542
 	public vp_MovingPlatform Platform;
 
-	// Token: 0x040082B1 RID: 33457
+	// Token: 0x04008307 RID: 33543
 	public AudioSource AudioSource;
 
-	// Token: 0x040082B2 RID: 33458
+	// Token: 0x04008308 RID: 33544
 	public Vector2 SwitchPitchRange = new Vector2(1f, 1.5f);
 
-	// Token: 0x040082B3 RID: 33459
+	// Token: 0x04008309 RID: 33545
 	public List<AudioClip> SwitchSounds = new List<AudioClip>();
 
-	// Token: 0x040082B4 RID: 33460
+	// Token: 0x0400830A RID: 33546
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsSwitched;
 
-	// Token: 0x040082B5 RID: 33461
+	// Token: 0x0400830B RID: 33547
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_Timeout;

@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000201 RID: 513
+// Token: 0x02000202 RID: 514
 [Preserve]
 public class ConsoleCmdDamageReset : ConsoleCmdAbstract
 {
-	// Token: 0x06000FBE RID: 4030 RVA: 0x00065DA8 File Offset: 0x00063FA8
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x00065D98 File Offset: 0x00063F98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "damagereset" };
 	}
 
-	// Token: 0x06000FBF RID: 4031 RVA: 0x00065DB8 File Offset: 0x00063FB8
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x00065DA8 File Offset: 0x00063FA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Reset damage on all blocks in the currently loaded POI";
 	}
 
-	// Token: 0x06000FC0 RID: 4032 RVA: 0x00065DBF File Offset: 0x00063FBF
+	// Token: 0x06000FB3 RID: 4019 RVA: 0x00065DAF File Offset: 0x00063FAF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "\r\n\t\t\t|Usage:\r\n\t\t\t|    damagereset [include doors]\r\n\t\t\t|By default the command only resets non-door blocks to full health. If the optional argument is \"true\" doors are also repaired.\r\n\t\t\t".Unindent(true);
 	}
 
-	// Token: 0x06000FC1 RID: 4033 RVA: 0x00065DCC File Offset: 0x00063FCC
+	// Token: 0x06000FB4 RID: 4020 RVA: 0x00065DBC File Offset: 0x00063FBC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.IsEditMode())

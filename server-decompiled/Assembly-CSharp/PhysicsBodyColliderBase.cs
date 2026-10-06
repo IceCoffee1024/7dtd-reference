@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000901 RID: 2305
+// Token: 0x02000906 RID: 2310
 public abstract class PhysicsBodyColliderBase : IBodyColliderInstance
 {
-	// Token: 0x060042CC RID: 17100 RVA: 0x001A12A8 File Offset: 0x0019F4A8
+	// Token: 0x0600425E RID: 16990 RVA: 0x001A13AC File Offset: 0x0019F5AC
 	public PhysicsBodyColliderBase(Transform _transform, PhysicsBodyColliderConfiguration _config)
 	{
 		this.transform = _transform;
@@ -20,14 +20,14 @@ public abstract class PhysicsBodyColliderBase : IBodyColliderInstance
 		this.enableRigidBody(false);
 	}
 
-	// Token: 0x060042CD RID: 17101 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x0600425F RID: 16991 RVA: 0x0008806C File Offset: 0x0008626C
 	public void WriteToXML(TextWriter stream)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x17000705 RID: 1797
-	// (get) Token: 0x060042CE RID: 17102 RVA: 0x001A132C File Offset: 0x0019F52C
+	// Token: 0x17000724 RID: 1828
+	// (get) Token: 0x06004260 RID: 16992 RVA: 0x001A1430 File Offset: 0x0019F630
 	public Transform Transform
 	{
 		get
@@ -36,8 +36,8 @@ public abstract class PhysicsBodyColliderBase : IBodyColliderInstance
 		}
 	}
 
-	// Token: 0x17000706 RID: 1798
-	// (get) Token: 0x060042CF RID: 17103 RVA: 0x001A1334 File Offset: 0x0019F534
+	// Token: 0x17000725 RID: 1829
+	// (get) Token: 0x06004261 RID: 16993 RVA: 0x001A1438 File Offset: 0x0019F638
 	public PhysicsBodyColliderConfiguration Config
 	{
 		get
@@ -46,11 +46,11 @@ public abstract class PhysicsBodyColliderBase : IBodyColliderInstance
 		}
 	}
 
-	// Token: 0x17000707 RID: 1799
-	// (set) Token: 0x060042D0 RID: 17104
+	// Token: 0x17000726 RID: 1830
+	// (set) Token: 0x06004262 RID: 16994
 	public abstract EnumColliderMode ColliderMode { set; }
 
-	// Token: 0x060042D1 RID: 17105 RVA: 0x001A133C File Offset: 0x0019F53C
+	// Token: 0x06004263 RID: 16995 RVA: 0x001A1440 File Offset: 0x0019F640
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void enableRigidBody(bool _enabled)
 	{
@@ -73,15 +73,15 @@ public abstract class PhysicsBodyColliderBase : IBodyColliderInstance
 		}
 	}
 
-	// Token: 0x04003605 RID: 13829
+	// Token: 0x040035F9 RID: 13817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Rigidbody rigidBody;
 
-	// Token: 0x04003606 RID: 13830
+	// Token: 0x040035FA RID: 13818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform transform;
 
-	// Token: 0x04003607 RID: 13831
+	// Token: 0x040035FB RID: 13819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PhysicsBodyColliderConfiguration config;
 }

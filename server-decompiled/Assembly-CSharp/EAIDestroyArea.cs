@@ -4,11 +4,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000437 RID: 1079
+// Token: 0x02000439 RID: 1081
 [Preserve]
 public class EAIDestroyArea : EAIBase
 {
-	// Token: 0x06002117 RID: 8471 RVA: 0x000C763D File Offset: 0x000C583D
+	// Token: 0x06002106 RID: 8454 RVA: 0x000C76F1 File Offset: 0x000C58F1
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -16,7 +16,7 @@ public class EAIDestroyArea : EAIBase
 		this.executeDelay = 0.9f + base.RandomFloat * 0.6f;
 	}
 
-	// Token: 0x06002118 RID: 8472 RVA: 0x000C7668 File Offset: 0x000C5868
+	// Token: 0x06002107 RID: 8455 RVA: 0x000C771C File Offset: 0x000C591C
 	public override bool CanExecute()
 	{
 		EntityMoveHelper moveHelper = this.theEntity.moveHelper;
@@ -81,7 +81,7 @@ public class EAIDestroyArea : EAIBase
 		return true;
 	}
 
-	// Token: 0x06002119 RID: 8473 RVA: 0x000C78AE File Offset: 0x000C5AAE
+	// Token: 0x06002108 RID: 8456 RVA: 0x000C7962 File Offset: 0x000C5B62
 	public override void Start()
 	{
 		this.isAtPathEnd = false;
@@ -89,7 +89,7 @@ public class EAIDestroyArea : EAIBase
 		this.attackTimeout = 0;
 	}
 
-	// Token: 0x0600211A RID: 8474 RVA: 0x000C78CC File Offset: 0x000C5ACC
+	// Token: 0x06002109 RID: 8457 RVA: 0x000C7980 File Offset: 0x000C5B80
 	public void Stop()
 	{
 		EntityMoveHelper moveHelper = this.theEntity.moveHelper;
@@ -100,7 +100,7 @@ public class EAIDestroyArea : EAIBase
 		this.delayTime = 0f;
 	}
 
-	// Token: 0x0600211B RID: 8475 RVA: 0x000C78FC File Offset: 0x000C5AFC
+	// Token: 0x0600210A RID: 8458 RVA: 0x000C79B0 File Offset: 0x000C5BB0
 	public override bool Continue()
 	{
 		if (this.theEntity.bodyDamage.CurrentStun != EnumEntityStunType.None)
@@ -207,7 +207,7 @@ public class EAIDestroyArea : EAIBase
 		return this.isAtPathEnd || !this.theEntity.navigator.noPathAndNotPlanningOne();
 	}
 
-	// Token: 0x0600211C RID: 8476 RVA: 0x000C7C40 File Offset: 0x000C5E40
+	// Token: 0x0600210B RID: 8459 RVA: 0x000C7CF4 File Offset: 0x000C5EF4
 	public override void Update()
 	{
 		this.delayTime -= 0.05f;
@@ -233,7 +233,7 @@ public class EAIDestroyArea : EAIBase
 		}
 	}
 
-	// Token: 0x0600211D RID: 8477 RVA: 0x000C7CF8 File Offset: 0x000C5EF8
+	// Token: 0x0600210C RID: 8460 RVA: 0x000C7DAC File Offset: 0x000C5FAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldRayHitInfo GetHitInfo(out float damageScale)
 	{
@@ -241,7 +241,7 @@ public class EAIDestroyArea : EAIBase
 		return this.hitInfo;
 	}
 
-	// Token: 0x0600211E RID: 8478 RVA: 0x000C7D07 File Offset: 0x000C5F07
+	// Token: 0x0600210D RID: 8461 RVA: 0x000C7DBB File Offset: 0x000C5FBB
 	public override void Reset()
 	{
 		EntityMoveHelper moveHelper = this.theEntity.moveHelper;
@@ -250,7 +250,7 @@ public class EAIDestroyArea : EAIBase
 		moveHelper.IsDestroyArea = false;
 	}
 
-	// Token: 0x0600211F RID: 8479 RVA: 0x000C7D28 File Offset: 0x000C5F28
+	// Token: 0x0600210E RID: 8462 RVA: 0x000C7DDC File Offset: 0x000C5FDC
 	public override string ToString()
 	{
 		return string.Format("{0}, {1}, delayTime {2}, findC {3}", new object[]
@@ -262,7 +262,7 @@ public class EAIDestroyArea : EAIBase
 		});
 	}
 
-	// Token: 0x06002120 RID: 8480 RVA: 0x000C7D80 File Offset: 0x000C5F80
+	// Token: 0x0600210F RID: 8463 RVA: 0x000C7E34 File Offset: 0x000C6034
 	[Conditional("DEBUG_AIDESTROY")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogDestroy(string _format = "", params object[] _args)
@@ -277,83 +277,83 @@ public class EAIDestroyArea : EAIBase
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x040016B3 RID: 5811
+	// Token: 0x040016AA RID: 5802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDumbDistance = 9f;
 
-	// Token: 0x040016B4 RID: 5812
+	// Token: 0x040016AB RID: 5803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTowardsMeMaxDist = 5f;
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x040016AC RID: 5804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFindDirOffset = 8;
 
-	// Token: 0x040016B6 RID: 5814
+	// Token: 0x040016AD RID: 5805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] quadrants = new float[] { 9f, 9f, 9f, -8f, -8f, -8f, -8f, 9f };
 
-	// Token: 0x040016B7 RID: 5815
+	// Token: 0x040016AE RID: 5806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 targetPos;
 
-	// Token: 0x040016B8 RID: 5816
+	// Token: 0x040016AF RID: 5807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 seekPos;
 
-	// Token: 0x040016B9 RID: 5817
+	// Token: 0x040016B0 RID: 5808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i seekBlockPos;
 
-	// Token: 0x040016BA RID: 5818
+	// Token: 0x040016B1 RID: 5809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findDir;
 
-	// Token: 0x040016BB RID: 5819
+	// Token: 0x040016B2 RID: 5810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int findCount;
 
-	// Token: 0x040016BC RID: 5820
+	// Token: 0x040016B3 RID: 5811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLookFar;
 
-	// Token: 0x040016BD RID: 5821
+	// Token: 0x040016B4 RID: 5812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAtPathEnd;
 
-	// Token: 0x040016BE RID: 5822
+	// Token: 0x040016B5 RID: 5813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delayTime;
 
-	// Token: 0x040016BF RID: 5823
+	// Token: 0x040016B6 RID: 5814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int attackTimeout;
 
-	// Token: 0x040016C0 RID: 5824
+	// Token: 0x040016B7 RID: 5815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAIDestroyArea.eState state;
 
-	// Token: 0x040016C1 RID: 5825
+	// Token: 0x040016B8 RID: 5816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldRayHitInfo hitInfo = new WorldRayHitInfo();
 
-	// Token: 0x02000438 RID: 1080
+	// Token: 0x0200043A RID: 1082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum eState
 	{
-		// Token: 0x040016C3 RID: 5827
+		// Token: 0x040016BA RID: 5818
 		FindExistingPos,
-		// Token: 0x040016C4 RID: 5828
+		// Token: 0x040016BB RID: 5819
 		FindPos,
-		// Token: 0x040016C5 RID: 5829
+		// Token: 0x040016BC RID: 5820
 		FindPath,
-		// Token: 0x040016C6 RID: 5830
+		// Token: 0x040016BD RID: 5821
 		WaitForPath,
-		// Token: 0x040016C7 RID: 5831
+		// Token: 0x040016BE RID: 5822
 		HasPath,
-		// Token: 0x040016C8 RID: 5832
+		// Token: 0x040016BF RID: 5823
 		EndPath,
-		// Token: 0x040016C9 RID: 5833
+		// Token: 0x040016C0 RID: 5824
 		Attack
 	}
 }

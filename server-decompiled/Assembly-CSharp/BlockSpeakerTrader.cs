@@ -2,11 +2,11 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000151 RID: 337
+// Token: 0x02000153 RID: 339
 [Preserve]
 public class BlockSpeakerTrader : Block
 {
-	// Token: 0x06000950 RID: 2384 RVA: 0x00040CE8 File Offset: 0x0003EEE8
+	// Token: 0x06000956 RID: 2390 RVA: 0x00040DC8 File Offset: 0x0003EFC8
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000951 RID: 2385 RVA: 0x00040D94 File Offset: 0x0003EF94
+	// Token: 0x06000957 RID: 2391 RVA: 0x00040E74 File Offset: 0x0003F074
 	public void PlayOpen(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.openSound;
@@ -38,7 +38,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000952 RID: 2386 RVA: 0x00040DF8 File Offset: 0x0003EFF8
+	// Token: 0x06000958 RID: 2392 RVA: 0x00040ED8 File Offset: 0x0003F0D8
 	public void PlayClose(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.closeSound;
@@ -52,7 +52,7 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x06000953 RID: 2387 RVA: 0x00040E5C File Offset: 0x0003F05C
+	// Token: 0x06000959 RID: 2393 RVA: 0x00040F3C File Offset: 0x0003F13C
 	public void PlayWarning(Vector3i _blockPos, EntityTrader _trader)
 	{
 		string text = this.warningSound;
@@ -66,15 +66,15 @@ public class BlockSpeakerTrader : Block
 		}
 	}
 
-	// Token: 0x040009B9 RID: 2489
+	// Token: 0x040009BC RID: 2492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string openSound;
 
-	// Token: 0x040009BA RID: 2490
+	// Token: 0x040009BD RID: 2493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string closeSound;
 
-	// Token: 0x040009BB RID: 2491
+	// Token: 0x040009BE RID: 2494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warningSound;
 }

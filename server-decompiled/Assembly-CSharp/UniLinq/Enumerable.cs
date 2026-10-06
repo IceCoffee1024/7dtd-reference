@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x0200178D RID: 6029
+	// Token: 0x020017B9 RID: 6073
 	public static class Enumerable
 	{
-		// Token: 0x0600BAAD RID: 47789 RVA: 0x00457760 File Offset: 0x00455960
+		// Token: 0x0600BC04 RID: 48132 RVA: 0x0045BC80 File Offset: 0x00459E80
 		public static TSource Aggregate<TSource>(this IEnumerable<TSource> source, Func<TSource, TSource, TSource> func)
 		{
 			Check.SourceAndFunc(source, func);
@@ -29,7 +29,7 @@ namespace UniLinq
 			return tsource3;
 		}
 
-		// Token: 0x0600BAAE RID: 47790 RVA: 0x004577C8 File Offset: 0x004559C8
+		// Token: 0x0600BC05 RID: 48133 RVA: 0x0045BCE8 File Offset: 0x00459EE8
 		public static TAccumulate Aggregate<TSource, TAccumulate>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func)
 		{
 			Check.SourceAndFunc(source, func);
@@ -41,7 +41,7 @@ namespace UniLinq
 			return taccumulate;
 		}
 
-		// Token: 0x0600BAAF RID: 47791 RVA: 0x0045781C File Offset: 0x00455A1C
+		// Token: 0x0600BC06 RID: 48134 RVA: 0x0045BD3C File Offset: 0x00459F3C
 		public static TResult Aggregate<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, TResult> resultSelector)
 		{
 			Check.SourceAndFunc(source, func);
@@ -57,7 +57,7 @@ namespace UniLinq
 			return resultSelector(taccumulate);
 		}
 
-		// Token: 0x0600BAB0 RID: 47792 RVA: 0x00457884 File Offset: 0x00455A84
+		// Token: 0x0600BC07 RID: 48135 RVA: 0x0045BDA4 File Offset: 0x00459FA4
 		public static bool All<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
@@ -71,7 +71,7 @@ namespace UniLinq
 			return true;
 		}
 
-		// Token: 0x0600BAB1 RID: 47793 RVA: 0x004578DC File Offset: 0x00455ADC
+		// Token: 0x0600BC08 RID: 48136 RVA: 0x0045BDFC File Offset: 0x00459FFC
 		public static bool Any<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -88,7 +88,7 @@ namespace UniLinq
 			return flag;
 		}
 
-		// Token: 0x0600BAB2 RID: 47794 RVA: 0x00457930 File Offset: 0x00455B30
+		// Token: 0x0600BC09 RID: 48137 RVA: 0x0045BE50 File Offset: 0x0045A050
 		public static bool Any<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
@@ -102,13 +102,13 @@ namespace UniLinq
 			return false;
 		}
 
-		// Token: 0x0600BAB3 RID: 47795 RVA: 0x0012A165 File Offset: 0x00128365
+		// Token: 0x0600BC0A RID: 48138 RVA: 0x0012AC85 File Offset: 0x00128E85
 		public static IEnumerable<TSource> AsEnumerable<TSource>(this IEnumerable<TSource> source)
 		{
 			return source;
 		}
 
-		// Token: 0x0600BAB4 RID: 47796 RVA: 0x00457988 File Offset: 0x00455B88
+		// Token: 0x0600BC0B RID: 48139 RVA: 0x0045BEA8 File Offset: 0x0045A0A8
 		public static double Average(this IEnumerable<int> source)
 		{
 			Check.Source(source);
@@ -129,7 +129,7 @@ namespace UniLinq
 			return (double)num / (double)num2;
 		}
 
-		// Token: 0x0600BAB5 RID: 47797 RVA: 0x004579EC File Offset: 0x00455BEC
+		// Token: 0x0600BC0C RID: 48140 RVA: 0x0045BF0C File Offset: 0x0045A10C
 		public static double Average(this IEnumerable<long> source)
 		{
 			Check.Source(source);
@@ -147,7 +147,7 @@ namespace UniLinq
 			return (double)num / (double)num2;
 		}
 
-		// Token: 0x0600BAB6 RID: 47798 RVA: 0x00457A50 File Offset: 0x00455C50
+		// Token: 0x0600BC0D RID: 48141 RVA: 0x0045BF70 File Offset: 0x0045A170
 		public static double Average(this IEnumerable<double> source)
 		{
 			Check.Source(source);
@@ -165,7 +165,7 @@ namespace UniLinq
 			return num / (double)num2;
 		}
 
-		// Token: 0x0600BAB7 RID: 47799 RVA: 0x00457ABC File Offset: 0x00455CBC
+		// Token: 0x0600BC0E RID: 48142 RVA: 0x0045BFDC File Offset: 0x0045A1DC
 		public static float Average(this IEnumerable<float> source)
 		{
 			Check.Source(source);
@@ -183,7 +183,7 @@ namespace UniLinq
 			return num / (float)num2;
 		}
 
-		// Token: 0x0600BAB8 RID: 47800 RVA: 0x00457B24 File Offset: 0x00455D24
+		// Token: 0x0600BC0F RID: 48143 RVA: 0x0045C044 File Offset: 0x0045A244
 		public static decimal Average(this IEnumerable<decimal> source)
 		{
 			Check.Source(source);
@@ -201,7 +201,7 @@ namespace UniLinq
 			return num / num2;
 		}
 
-		// Token: 0x0600BAB9 RID: 47801 RVA: 0x00457B98 File Offset: 0x00455D98
+		// Token: 0x0600BC10 RID: 48144 RVA: 0x0045C0B8 File Offset: 0x0045A2B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TResult? AverageNullable<TElement, TAggregate, TResult>(this IEnumerable<TElement?> source, Func<TAggregate, TElement, TAggregate> func, Func<TAggregate, long, TResult> result) where TElement : struct where TAggregate : struct where TResult : struct
 		{
@@ -223,7 +223,7 @@ namespace UniLinq
 			return new TResult?(result(taggregate, num));
 		}
 
-		// Token: 0x0600BABA RID: 47802 RVA: 0x00457C24 File Offset: 0x00455E24
+		// Token: 0x0600BC11 RID: 48145 RVA: 0x0045C144 File Offset: 0x0045A344
 		public static double? Average(this IEnumerable<int?> source)
 		{
 			Check.Source(source);
@@ -244,7 +244,7 @@ namespace UniLinq
 			return new double?((double)num / (double)num2);
 		}
 
-		// Token: 0x0600BABB RID: 47803 RVA: 0x00457CA4 File Offset: 0x00455EA4
+		// Token: 0x0600BC12 RID: 48146 RVA: 0x0045C1C4 File Offset: 0x0045A3C4
 		public static double? Average(this IEnumerable<long?> source)
 		{
 			Check.Source(source);
@@ -268,7 +268,7 @@ namespace UniLinq
 			return new double?((double)num / (double)num2);
 		}
 
-		// Token: 0x0600BABC RID: 47804 RVA: 0x00457D24 File Offset: 0x00455F24
+		// Token: 0x0600BC13 RID: 48147 RVA: 0x0045C244 File Offset: 0x0045A444
 		public static double? Average(this IEnumerable<double?> source)
 		{
 			Check.Source(source);
@@ -289,7 +289,7 @@ namespace UniLinq
 			return new double?(num / (double)num2);
 		}
 
-		// Token: 0x0600BABD RID: 47805 RVA: 0x00457DA8 File Offset: 0x00455FA8
+		// Token: 0x0600BC14 RID: 48148 RVA: 0x0045C2C8 File Offset: 0x0045A4C8
 		public static decimal? Average(this IEnumerable<decimal?> source)
 		{
 			Check.Source(source);
@@ -310,7 +310,7 @@ namespace UniLinq
 			return new decimal?(num / num2);
 		}
 
-		// Token: 0x0600BABE RID: 47806 RVA: 0x00457E38 File Offset: 0x00456038
+		// Token: 0x0600BC15 RID: 48149 RVA: 0x0045C358 File Offset: 0x0045A558
 		public static float? Average(this IEnumerable<float?> source)
 		{
 			Check.Source(source);
@@ -331,7 +331,7 @@ namespace UniLinq
 			return new float?(num / (float)num2);
 		}
 
-		// Token: 0x0600BABF RID: 47807 RVA: 0x00457EB8 File Offset: 0x004560B8
+		// Token: 0x0600BC16 RID: 48150 RVA: 0x0045C3D8 File Offset: 0x0045A5D8
 		public static double Average<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -349,7 +349,7 @@ namespace UniLinq
 			return (double)num / (double)num2;
 		}
 
-		// Token: 0x0600BAC0 RID: 47808 RVA: 0x00457F24 File Offset: 0x00456124
+		// Token: 0x0600BC17 RID: 48151 RVA: 0x0045C444 File Offset: 0x0045A644
 		public static double? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -371,7 +371,7 @@ namespace UniLinq
 			return new double?((double)num / (double)num2);
 		}
 
-		// Token: 0x0600BAC1 RID: 47809 RVA: 0x00457FAC File Offset: 0x004561AC
+		// Token: 0x0600BC18 RID: 48152 RVA: 0x0045C4CC File Offset: 0x0045A6CC
 		public static double Average<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -392,7 +392,7 @@ namespace UniLinq
 			return (double)num / (double)num2;
 		}
 
-		// Token: 0x0600BAC2 RID: 47810 RVA: 0x00458018 File Offset: 0x00456218
+		// Token: 0x0600BC19 RID: 48153 RVA: 0x0045C538 File Offset: 0x0045A738
 		public static double? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -417,7 +417,7 @@ namespace UniLinq
 			return new double?((double)num / (double)num2);
 		}
 
-		// Token: 0x0600BAC3 RID: 47811 RVA: 0x004580A0 File Offset: 0x004562A0
+		// Token: 0x0600BC1A RID: 48154 RVA: 0x0045C5C0 File Offset: 0x0045A7C0
 		public static double Average<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -435,7 +435,7 @@ namespace UniLinq
 			return num / (double)num2;
 		}
 
-		// Token: 0x0600BAC4 RID: 47812 RVA: 0x00458114 File Offset: 0x00456314
+		// Token: 0x0600BC1B RID: 48155 RVA: 0x0045C634 File Offset: 0x0045A834
 		public static double? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -457,7 +457,7 @@ namespace UniLinq
 			return new double?(num / (double)num2);
 		}
 
-		// Token: 0x0600BAC5 RID: 47813 RVA: 0x004581A4 File Offset: 0x004563A4
+		// Token: 0x0600BC1C RID: 48156 RVA: 0x0045C6C4 File Offset: 0x0045A8C4
 		public static float Average<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -475,7 +475,7 @@ namespace UniLinq
 			return num / (float)num2;
 		}
 
-		// Token: 0x0600BAC6 RID: 47814 RVA: 0x00458214 File Offset: 0x00456414
+		// Token: 0x0600BC1D RID: 48157 RVA: 0x0045C734 File Offset: 0x0045A934
 		public static float? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -497,7 +497,7 @@ namespace UniLinq
 			return new float?(num / (float)num2);
 		}
 
-		// Token: 0x0600BAC7 RID: 47815 RVA: 0x004582A0 File Offset: 0x004564A0
+		// Token: 0x0600BC1E RID: 48158 RVA: 0x0045C7C0 File Offset: 0x0045A9C0
 		public static decimal Average<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -515,7 +515,7 @@ namespace UniLinq
 			return num / num2;
 		}
 
-		// Token: 0x0600BAC8 RID: 47816 RVA: 0x0045831C File Offset: 0x0045651C
+		// Token: 0x0600BC1F RID: 48159 RVA: 0x0045C83C File Offset: 0x0045AA3C
 		public static decimal? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -537,7 +537,7 @@ namespace UniLinq
 			return new decimal?(num / num2);
 		}
 
-		// Token: 0x0600BAC9 RID: 47817 RVA: 0x004583B4 File Offset: 0x004565B4
+		// Token: 0x0600BC20 RID: 48160 RVA: 0x0045C8D4 File Offset: 0x0045AAD4
 		public static IEnumerable<TResult> Cast<TResult>(this IEnumerable source)
 		{
 			Check.Source(source);
@@ -549,7 +549,7 @@ namespace UniLinq
 			return Enumerable.CreateCastIterator<TResult>(source);
 		}
 
-		// Token: 0x0600BACA RID: 47818 RVA: 0x004583D9 File Offset: 0x004565D9
+		// Token: 0x0600BC21 RID: 48161 RVA: 0x0045C8F9 File Offset: 0x0045AAF9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateCastIterator<TResult>(IEnumerable source)
 		{
@@ -563,14 +563,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BACB RID: 47819 RVA: 0x004583E9 File Offset: 0x004565E9
+		// Token: 0x0600BC22 RID: 48162 RVA: 0x0045C909 File Offset: 0x0045AB09
 		public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
 			Check.FirstAndSecond(first, second);
 			return Enumerable.CreateConcatIterator<TSource>(first, second);
 		}
 
-		// Token: 0x0600BACC RID: 47820 RVA: 0x004583F9 File Offset: 0x004565F9
+		// Token: 0x0600BC23 RID: 48163 RVA: 0x0045C919 File Offset: 0x0045AB19
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateConcatIterator<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
@@ -588,7 +588,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BACD RID: 47821 RVA: 0x00458410 File Offset: 0x00456610
+		// Token: 0x0600BC24 RID: 48164 RVA: 0x0045C930 File Offset: 0x0045AB30
 		public static bool Contains<TSource>(this IEnumerable<TSource> source, TSource value)
 		{
 			ICollection<TSource> collection = source as ICollection<TSource>;
@@ -599,7 +599,7 @@ namespace UniLinq
 			return source.Contains(value, null);
 		}
 
-		// Token: 0x0600BACE RID: 47822 RVA: 0x00458438 File Offset: 0x00456638
+		// Token: 0x0600BC25 RID: 48165 RVA: 0x0045C958 File Offset: 0x0045AB58
 		public static bool Contains<TSource>(this IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)
 		{
 			Check.Source(source);
@@ -617,7 +617,7 @@ namespace UniLinq
 			return false;
 		}
 
-		// Token: 0x0600BACF RID: 47823 RVA: 0x0045849C File Offset: 0x0045669C
+		// Token: 0x0600BC26 RID: 48166 RVA: 0x0045C9BC File Offset: 0x0045ABBC
 		public static int Count<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -640,7 +640,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BAD0 RID: 47824 RVA: 0x004584F4 File Offset: 0x004566F4
+		// Token: 0x0600BC27 RID: 48167 RVA: 0x0045CA14 File Offset: 0x0045AC14
 		public static int Count<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndSelector(source, predicate);
@@ -658,20 +658,20 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BAD1 RID: 47825 RVA: 0x0045854C File Offset: 0x0045674C
+		// Token: 0x0600BC28 RID: 48168 RVA: 0x0045CA6C File Offset: 0x0045AC6C
 		public static IEnumerable<TSource> DefaultIfEmpty<TSource>(this IEnumerable<TSource> source)
 		{
 			return source.DefaultIfEmpty(default(TSource));
 		}
 
-		// Token: 0x0600BAD2 RID: 47826 RVA: 0x00458568 File Offset: 0x00456768
+		// Token: 0x0600BC29 RID: 48169 RVA: 0x0045CA88 File Offset: 0x0045AC88
 		public static IEnumerable<TSource> DefaultIfEmpty<TSource>(this IEnumerable<TSource> source, TSource defaultValue)
 		{
 			Check.Source(source);
 			return Enumerable.CreateDefaultIfEmptyIterator<TSource>(source, defaultValue);
 		}
 
-		// Token: 0x0600BAD3 RID: 47827 RVA: 0x00458577 File Offset: 0x00456777
+		// Token: 0x0600BC2A RID: 48170 RVA: 0x0045CA97 File Offset: 0x0045AC97
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateDefaultIfEmptyIterator<TSource>(IEnumerable<TSource> source, TSource defaultValue)
 		{
@@ -690,13 +690,13 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAD4 RID: 47828 RVA: 0x0045858E File Offset: 0x0045678E
+		// Token: 0x0600BC2B RID: 48171 RVA: 0x0045CAAE File Offset: 0x0045ACAE
 		public static IEnumerable<TSource> Distinct<TSource>(this IEnumerable<TSource> source)
 		{
 			return source.Distinct<TSource>(null);
 		}
 
-		// Token: 0x0600BAD5 RID: 47829 RVA: 0x00458597 File Offset: 0x00456797
+		// Token: 0x0600BC2C RID: 48172 RVA: 0x0045CAB7 File Offset: 0x0045ACB7
 		public static IEnumerable<TSource> Distinct<TSource>(this IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)
 		{
 			Check.Source(source);
@@ -707,7 +707,7 @@ namespace UniLinq
 			return Enumerable.CreateDistinctIterator<TSource>(source, comparer);
 		}
 
-		// Token: 0x0600BAD6 RID: 47830 RVA: 0x004585B0 File Offset: 0x004567B0
+		// Token: 0x0600BC2D RID: 48173 RVA: 0x0045CAD0 File Offset: 0x0045ACD0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateDistinctIterator<TSource>(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)
 		{
@@ -725,7 +725,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAD7 RID: 47831 RVA: 0x004585C8 File Offset: 0x004567C8
+		// Token: 0x0600BC2E RID: 48174 RVA: 0x0045CAE8 File Offset: 0x0045ACE8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TSource ElementAt<TSource>(this IEnumerable<TSource> source, int index, Enumerable.Fallback fallback)
 		{
@@ -747,7 +747,7 @@ namespace UniLinq
 			return default(TSource);
 		}
 
-		// Token: 0x0600BAD8 RID: 47832 RVA: 0x00458630 File Offset: 0x00456830
+		// Token: 0x0600BC2F RID: 48175 RVA: 0x0045CB50 File Offset: 0x0045AD50
 		public static TSource ElementAt<TSource>(this IEnumerable<TSource> source, int index)
 		{
 			Check.Source(source);
@@ -763,7 +763,7 @@ namespace UniLinq
 			return source.ElementAt<TSource>(index, Enumerable.Fallback.Throw);
 		}
 
-		// Token: 0x0600BAD9 RID: 47833 RVA: 0x00458668 File Offset: 0x00456868
+		// Token: 0x0600BC30 RID: 48176 RVA: 0x0045CB88 File Offset: 0x0045AD88
 		public static TSource ElementAtOrDefault<TSource>(this IEnumerable<TSource> source, int index)
 		{
 			Check.Source(source);
@@ -783,19 +783,19 @@ namespace UniLinq
 			return list[index];
 		}
 
-		// Token: 0x0600BADA RID: 47834 RVA: 0x004586B6 File Offset: 0x004568B6
+		// Token: 0x0600BC31 RID: 48177 RVA: 0x0045CBD6 File Offset: 0x0045ADD6
 		public static IEnumerable<TResult> Empty<TResult>()
 		{
 			return new TResult[0];
 		}
 
-		// Token: 0x0600BADB RID: 47835 RVA: 0x004586BE File Offset: 0x004568BE
+		// Token: 0x0600BC32 RID: 48178 RVA: 0x0045CBDE File Offset: 0x0045ADDE
 		public static IEnumerable<TSource> Except<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
 			return first.Except<TSource>(second, null);
 		}
 
-		// Token: 0x0600BADC RID: 47836 RVA: 0x004586C8 File Offset: 0x004568C8
+		// Token: 0x0600BC33 RID: 48179 RVA: 0x0045CBE8 File Offset: 0x0045ADE8
 		public static IEnumerable<TSource> Except<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
 			Check.FirstAndSecond(first, second);
@@ -806,7 +806,7 @@ namespace UniLinq
 			return Enumerable.CreateExceptIterator<TSource>(first, second, comparer);
 		}
 
-		// Token: 0x0600BADD RID: 47837 RVA: 0x004586E3 File Offset: 0x004568E3
+		// Token: 0x0600BC34 RID: 48180 RVA: 0x0045CC03 File Offset: 0x0045AE03
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateExceptIterator<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
@@ -823,7 +823,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BADE RID: 47838 RVA: 0x00458704 File Offset: 0x00456904
+		// Token: 0x0600BC35 RID: 48181 RVA: 0x0045CC24 File Offset: 0x0045AE24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TSource First<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate, Enumerable.Fallback fallback)
 		{
@@ -841,7 +841,7 @@ namespace UniLinq
 			return default(TSource);
 		}
 
-		// Token: 0x0600BADF RID: 47839 RVA: 0x00458768 File Offset: 0x00456968
+		// Token: 0x0600BC36 RID: 48182 RVA: 0x0045CC88 File Offset: 0x0045AE88
 		public static TSource First<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -866,14 +866,14 @@ namespace UniLinq
 			throw Enumerable.EmptySequence();
 		}
 
-		// Token: 0x0600BAE0 RID: 47840 RVA: 0x004587D0 File Offset: 0x004569D0
+		// Token: 0x0600BC37 RID: 48183 RVA: 0x0045CCF0 File Offset: 0x0045AEF0
 		public static TSource First<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.First<TSource>(predicate, Enumerable.Fallback.Throw);
 		}
 
-		// Token: 0x0600BAE1 RID: 47841 RVA: 0x004587E4 File Offset: 0x004569E4
+		// Token: 0x0600BC38 RID: 48184 RVA: 0x0045CD04 File Offset: 0x0045AF04
 		public static TSource FirstOrDefault<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -887,27 +887,27 @@ namespace UniLinq
 			return default(TSource);
 		}
 
-		// Token: 0x0600BAE2 RID: 47842 RVA: 0x00458838 File Offset: 0x00456A38
+		// Token: 0x0600BC39 RID: 48185 RVA: 0x0045CD58 File Offset: 0x0045AF58
 		public static TSource FirstOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.First<TSource>(predicate, Enumerable.Fallback.Default);
 		}
 
-		// Token: 0x0600BAE3 RID: 47843 RVA: 0x00458849 File Offset: 0x00456A49
+		// Token: 0x0600BC3A RID: 48186 RVA: 0x0045CD69 File Offset: 0x0045AF69
 		public static IEnumerable<IGrouping<TKey, TSource>> GroupBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.GroupBy<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BAE4 RID: 47844 RVA: 0x00458853 File Offset: 0x00456A53
+		// Token: 0x0600BC3B RID: 48187 RVA: 0x0045CD73 File Offset: 0x0045AF73
 		public static IEnumerable<IGrouping<TKey, TSource>> GroupBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
 			return source.CreateGroupByIterator<TSource, TKey>(keySelector, comparer);
 		}
 
-		// Token: 0x0600BAE5 RID: 47845 RVA: 0x00458864 File Offset: 0x00456A64
+		// Token: 0x0600BC3C RID: 48188 RVA: 0x0045CD84 File Offset: 0x0045AF84
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<IGrouping<TKey, TSource>> CreateGroupByIterator<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)
 		{
@@ -967,20 +967,20 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAE6 RID: 47846 RVA: 0x00458882 File Offset: 0x00456A82
+		// Token: 0x0600BC3D RID: 48189 RVA: 0x0045CDA2 File Offset: 0x0045AFA2
 		public static IEnumerable<IGrouping<TKey, TElement>> GroupBy<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)
 		{
 			return source.GroupBy<TSource, TKey, TElement>(keySelector, elementSelector, null);
 		}
 
-		// Token: 0x0600BAE7 RID: 47847 RVA: 0x0045888D File Offset: 0x00456A8D
+		// Token: 0x0600BC3E RID: 48190 RVA: 0x0045CDAD File Offset: 0x0045AFAD
 		public static IEnumerable<IGrouping<TKey, TElement>> GroupBy<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeyElementSelectors(source, keySelector, elementSelector);
 			return source.CreateGroupByIterator<TSource, TKey, TElement>(keySelector, elementSelector, comparer);
 		}
 
-		// Token: 0x0600BAE8 RID: 47848 RVA: 0x004588A0 File Offset: 0x00456AA0
+		// Token: 0x0600BC3F RID: 48191 RVA: 0x0045CDC0 File Offset: 0x0045AFC0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<IGrouping<TKey, TElement>> CreateGroupByIterator<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)
 		{
@@ -1041,20 +1041,20 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAE9 RID: 47849 RVA: 0x004588C5 File Offset: 0x00456AC5
+		// Token: 0x0600BC40 RID: 48192 RVA: 0x0045CDE5 File Offset: 0x0045AFE5
 		public static IEnumerable<TResult> GroupBy<TSource, TKey, TElement, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector)
 		{
 			return source.GroupBy<TSource, TKey, TElement, TResult>(keySelector, elementSelector, resultSelector, null);
 		}
 
-		// Token: 0x0600BAEA RID: 47850 RVA: 0x004588D1 File Offset: 0x00456AD1
+		// Token: 0x0600BC41 RID: 48193 RVA: 0x0045CDF1 File Offset: 0x0045AFF1
 		public static IEnumerable<TResult> GroupBy<TSource, TKey, TElement, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.GroupBySelectors(source, keySelector, elementSelector, resultSelector);
 			return source.CreateGroupByIterator<TSource, TKey, TElement, TResult>(keySelector, elementSelector, resultSelector, comparer);
 		}
 
-		// Token: 0x0600BAEB RID: 47851 RVA: 0x004588E7 File Offset: 0x00456AE7
+		// Token: 0x0600BC42 RID: 48194 RVA: 0x0045CE07 File Offset: 0x0045B007
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateGroupByIterator<TSource, TKey, TElement, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
@@ -1068,20 +1068,20 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAEC RID: 47852 RVA: 0x00458914 File Offset: 0x00456B14
+		// Token: 0x0600BC43 RID: 48195 RVA: 0x0045CE34 File Offset: 0x0045B034
 		public static IEnumerable<TResult> GroupBy<TSource, TKey, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector)
 		{
 			return source.GroupBy<TSource, TKey, TResult>(keySelector, resultSelector, null);
 		}
 
-		// Token: 0x0600BAED RID: 47853 RVA: 0x0045891F File Offset: 0x00456B1F
+		// Token: 0x0600BC44 RID: 48196 RVA: 0x0045CE3F File Offset: 0x0045B03F
 		public static IEnumerable<TResult> GroupBy<TSource, TKey, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeyResultSelectors(source, keySelector, resultSelector);
 			return source.CreateGroupByIterator<TSource, TKey, TResult>(keySelector, resultSelector, comparer);
 		}
 
-		// Token: 0x0600BAEE RID: 47854 RVA: 0x00458932 File Offset: 0x00456B32
+		// Token: 0x0600BC45 RID: 48197 RVA: 0x0045CE52 File Offset: 0x0045B052
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateGroupByIterator<TSource, TKey, TResult>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
@@ -1095,13 +1095,13 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAEF RID: 47855 RVA: 0x00458957 File Offset: 0x00456B57
+		// Token: 0x0600BC46 RID: 48198 RVA: 0x0045CE77 File Offset: 0x0045B077
 		public static IEnumerable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector)
 		{
 			return outer.GroupJoin<TOuter, TInner, TKey, TResult>(inner, outerKeySelector, innerKeySelector, resultSelector, null);
 		}
 
-		// Token: 0x0600BAF0 RID: 47856 RVA: 0x00458965 File Offset: 0x00456B65
+		// Token: 0x0600BC47 RID: 48199 RVA: 0x0045CE85 File Offset: 0x0045B085
 		public static IEnumerable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.JoinSelectors(outer, inner, outerKeySelector, innerKeySelector, resultSelector);
@@ -1112,7 +1112,7 @@ namespace UniLinq
 			return outer.CreateGroupJoinIterator<TOuter, TInner, TKey, TResult>(inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
 		}
 
-		// Token: 0x0600BAF1 RID: 47857 RVA: 0x0045898A File Offset: 0x00456B8A
+		// Token: 0x0600BC48 RID: 48200 RVA: 0x0045CEAA File Offset: 0x0045B0AA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateGroupJoinIterator<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
@@ -1134,13 +1134,13 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAF2 RID: 47858 RVA: 0x004589BF File Offset: 0x00456BBF
+		// Token: 0x0600BC49 RID: 48201 RVA: 0x0045CEDF File Offset: 0x0045B0DF
 		public static IEnumerable<TSource> Intersect<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
 			return first.Intersect<TSource>(second, null);
 		}
 
-		// Token: 0x0600BAF3 RID: 47859 RVA: 0x004589C9 File Offset: 0x00456BC9
+		// Token: 0x0600BC4A RID: 48202 RVA: 0x0045CEE9 File Offset: 0x0045B0E9
 		public static IEnumerable<TSource> Intersect<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
 			Check.FirstAndSecond(first, second);
@@ -1151,7 +1151,7 @@ namespace UniLinq
 			return Enumerable.CreateIntersectIterator<TSource>(first, second, comparer);
 		}
 
-		// Token: 0x0600BAF4 RID: 47860 RVA: 0x004589E4 File Offset: 0x00456BE4
+		// Token: 0x0600BC4B RID: 48203 RVA: 0x0045CF04 File Offset: 0x0045B104
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateIntersectIterator<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
@@ -1168,7 +1168,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAF5 RID: 47861 RVA: 0x00458A02 File Offset: 0x00456C02
+		// Token: 0x0600BC4C RID: 48204 RVA: 0x0045CF22 File Offset: 0x0045B122
 		public static IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.JoinSelectors(outer, inner, outerKeySelector, innerKeySelector, resultSelector);
@@ -1179,7 +1179,7 @@ namespace UniLinq
 			return outer.CreateJoinIterator<TOuter, TInner, TKey, TResult>(inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
 		}
 
-		// Token: 0x0600BAF6 RID: 47862 RVA: 0x00458A27 File Offset: 0x00456C27
+		// Token: 0x0600BC4D RID: 48205 RVA: 0x0045CF47 File Offset: 0x0045B147
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateJoinIterator<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector, IEqualityComparer<TKey> comparer)
 		{
@@ -1202,13 +1202,13 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BAF7 RID: 47863 RVA: 0x00458A5C File Offset: 0x00456C5C
+		// Token: 0x0600BC4E RID: 48206 RVA: 0x0045CF7C File Offset: 0x0045B17C
 		public static IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector)
 		{
 			return outer.Join<TOuter, TInner, TKey, TResult>(inner, outerKeySelector, innerKeySelector, resultSelector, null);
 		}
 
-		// Token: 0x0600BAF8 RID: 47864 RVA: 0x00458A6C File Offset: 0x00456C6C
+		// Token: 0x0600BC4F RID: 48207 RVA: 0x0045CF8C File Offset: 0x0045B18C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TSource Last<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate, Enumerable.Fallback fallback)
 		{
@@ -1233,7 +1233,7 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BAF9 RID: 47865 RVA: 0x00458AD4 File Offset: 0x00456CD4
+		// Token: 0x0600BC50 RID: 48208 RVA: 0x0045CFF4 File Offset: 0x0045B1F4
 		public static TSource Last<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -1264,14 +1264,14 @@ namespace UniLinq
 			throw Enumerable.EmptySequence();
 		}
 
-		// Token: 0x0600BAFA RID: 47866 RVA: 0x00458B68 File Offset: 0x00456D68
+		// Token: 0x0600BC51 RID: 48209 RVA: 0x0045D088 File Offset: 0x0045B288
 		public static TSource Last<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.Last<TSource>(predicate, Enumerable.Fallback.Throw);
 		}
 
-		// Token: 0x0600BAFB RID: 47867 RVA: 0x00458B7C File Offset: 0x00456D7C
+		// Token: 0x0600BC52 RID: 48210 RVA: 0x0045D09C File Offset: 0x0045B29C
 		public static TSource LastOrDefault<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -1295,14 +1295,14 @@ namespace UniLinq
 			return list[list.Count - 1];
 		}
 
-		// Token: 0x0600BAFC RID: 47868 RVA: 0x00458C04 File Offset: 0x00456E04
+		// Token: 0x0600BC53 RID: 48211 RVA: 0x0045D124 File Offset: 0x0045B324
 		public static TSource LastOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.Last<TSource>(predicate, Enumerable.Fallback.Default);
 		}
 
-		// Token: 0x0600BAFD RID: 47869 RVA: 0x00458C18 File Offset: 0x00456E18
+		// Token: 0x0600BC54 RID: 48212 RVA: 0x0045D138 File Offset: 0x0045B338
 		public static long LongCount<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -1322,7 +1322,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BAFE RID: 47870 RVA: 0x00458C70 File Offset: 0x00456E70
+		// Token: 0x0600BC55 RID: 48213 RVA: 0x0045D190 File Offset: 0x0045B390
 		public static long LongCount<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndSelector(source, predicate);
@@ -1337,7 +1337,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BAFF RID: 47871 RVA: 0x00458CCC File Offset: 0x00456ECC
+		// Token: 0x0600BC56 RID: 48214 RVA: 0x0045D1EC File Offset: 0x0045B3EC
 		public static int Max(this IEnumerable<int> source)
 		{
 			Check.Source(source);
@@ -1355,7 +1355,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB00 RID: 47872 RVA: 0x00458D30 File Offset: 0x00456F30
+		// Token: 0x0600BC57 RID: 48215 RVA: 0x0045D250 File Offset: 0x0045B450
 		public static long Max(this IEnumerable<long> source)
 		{
 			Check.Source(source);
@@ -1373,7 +1373,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB01 RID: 47873 RVA: 0x00458D98 File Offset: 0x00456F98
+		// Token: 0x0600BC58 RID: 48216 RVA: 0x0045D2B8 File Offset: 0x0045B4B8
 		public static double Max(this IEnumerable<double> source)
 		{
 			Check.Source(source);
@@ -1391,7 +1391,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB02 RID: 47874 RVA: 0x00458E00 File Offset: 0x00457000
+		// Token: 0x0600BC59 RID: 48217 RVA: 0x0045D320 File Offset: 0x0045B520
 		public static float Max(this IEnumerable<float> source)
 		{
 			Check.Source(source);
@@ -1409,7 +1409,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB03 RID: 47875 RVA: 0x00458E64 File Offset: 0x00457064
+		// Token: 0x0600BC5A RID: 48218 RVA: 0x0045D384 File Offset: 0x0045B584
 		public static decimal Max(this IEnumerable<decimal> source)
 		{
 			Check.Source(source);
@@ -1427,7 +1427,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB04 RID: 47876 RVA: 0x00458ECC File Offset: 0x004570CC
+		// Token: 0x0600BC5B RID: 48219 RVA: 0x0045D3EC File Offset: 0x0045B5EC
 		public static int? Max(this IEnumerable<int?> source)
 		{
 			Check.Source(source);
@@ -1448,7 +1448,7 @@ namespace UniLinq
 			return new int?(num);
 		}
 
-		// Token: 0x0600BB05 RID: 47877 RVA: 0x00458F48 File Offset: 0x00457148
+		// Token: 0x0600BC5C RID: 48220 RVA: 0x0045D468 File Offset: 0x0045B668
 		public static long? Max(this IEnumerable<long?> source)
 		{
 			Check.Source(source);
@@ -1469,7 +1469,7 @@ namespace UniLinq
 			return new long?(num);
 		}
 
-		// Token: 0x0600BB06 RID: 47878 RVA: 0x00458FC8 File Offset: 0x004571C8
+		// Token: 0x0600BC5D RID: 48221 RVA: 0x0045D4E8 File Offset: 0x0045B6E8
 		public static double? Max(this IEnumerable<double?> source)
 		{
 			Check.Source(source);
@@ -1490,7 +1490,7 @@ namespace UniLinq
 			return new double?(num);
 		}
 
-		// Token: 0x0600BB07 RID: 47879 RVA: 0x00459048 File Offset: 0x00457248
+		// Token: 0x0600BC5E RID: 48222 RVA: 0x0045D568 File Offset: 0x0045B768
 		public static float? Max(this IEnumerable<float?> source)
 		{
 			Check.Source(source);
@@ -1511,7 +1511,7 @@ namespace UniLinq
 			return new float?(num);
 		}
 
-		// Token: 0x0600BB08 RID: 47880 RVA: 0x004590C4 File Offset: 0x004572C4
+		// Token: 0x0600BC5F RID: 48223 RVA: 0x0045D5E4 File Offset: 0x0045B7E4
 		public static decimal? Max(this IEnumerable<decimal?> source)
 		{
 			Check.Source(source);
@@ -1532,7 +1532,7 @@ namespace UniLinq
 			return new decimal?(num);
 		}
 
-		// Token: 0x0600BB09 RID: 47881 RVA: 0x00459148 File Offset: 0x00457348
+		// Token: 0x0600BC60 RID: 48224 RVA: 0x0045D668 File Offset: 0x0045B868
 		public static TSource Max<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -1573,7 +1573,7 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BB0A RID: 47882 RVA: 0x00459228 File Offset: 0x00457428
+		// Token: 0x0600BC61 RID: 48225 RVA: 0x0045D748 File Offset: 0x0045B948
 		public static int Max<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1591,7 +1591,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB0B RID: 47883 RVA: 0x00459294 File Offset: 0x00457494
+		// Token: 0x0600BC62 RID: 48226 RVA: 0x0045D7B4 File Offset: 0x0045B9B4
 		public static long Max<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1609,7 +1609,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB0C RID: 47884 RVA: 0x00459304 File Offset: 0x00457504
+		// Token: 0x0600BC63 RID: 48227 RVA: 0x0045D824 File Offset: 0x0045BA24
 		public static double Max<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1627,7 +1627,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB0D RID: 47885 RVA: 0x00459374 File Offset: 0x00457574
+		// Token: 0x0600BC64 RID: 48228 RVA: 0x0045D894 File Offset: 0x0045BA94
 		public static float Max<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1645,7 +1645,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB0E RID: 47886 RVA: 0x004593E0 File Offset: 0x004575E0
+		// Token: 0x0600BC65 RID: 48229 RVA: 0x0045D900 File Offset: 0x0045BB00
 		public static decimal Max<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1663,7 +1663,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB0F RID: 47887 RVA: 0x00459450 File Offset: 0x00457650
+		// Token: 0x0600BC66 RID: 48230 RVA: 0x0045D970 File Offset: 0x0045BB70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static U Iterate<T, U>(IEnumerable<T> source, U initValue, Func<T, U, U> selector)
 		{
@@ -1680,7 +1680,7 @@ namespace UniLinq
 			return initValue;
 		}
 
-		// Token: 0x0600BB10 RID: 47888 RVA: 0x004594AC File Offset: 0x004576AC
+		// Token: 0x0600BC67 RID: 48231 RVA: 0x0045D9CC File Offset: 0x0045BBCC
 		public static int? Max<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1711,7 +1711,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB11 RID: 47889 RVA: 0x00459554 File Offset: 0x00457754
+		// Token: 0x0600BC68 RID: 48232 RVA: 0x0045DA74 File Offset: 0x0045BC74
 		public static long? Max<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1742,7 +1742,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB12 RID: 47890 RVA: 0x004595FC File Offset: 0x004577FC
+		// Token: 0x0600BC69 RID: 48233 RVA: 0x0045DB1C File Offset: 0x0045BD1C
 		public static double? Max<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1773,7 +1773,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB13 RID: 47891 RVA: 0x004596A4 File Offset: 0x004578A4
+		// Token: 0x0600BC6A RID: 48234 RVA: 0x0045DBC4 File Offset: 0x0045BDC4
 		public static float? Max<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1804,7 +1804,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB14 RID: 47892 RVA: 0x0045974C File Offset: 0x0045794C
+		// Token: 0x0600BC6B RID: 48235 RVA: 0x0045DC6C File Offset: 0x0045BE6C
 		public static decimal? Max<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -1835,14 +1835,14 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB15 RID: 47893 RVA: 0x004597F8 File Offset: 0x004579F8
+		// Token: 0x0600BC6C RID: 48236 RVA: 0x0045DD18 File Offset: 0x0045BF18
 		public static TResult Max<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return source.Select<TSource, TResult>(selector).Max<TResult>();
 		}
 
-		// Token: 0x0600BB16 RID: 47894 RVA: 0x00459810 File Offset: 0x00457A10
+		// Token: 0x0600BC6D RID: 48237 RVA: 0x0045DD30 File Offset: 0x0045BF30
 		public static int Min(this IEnumerable<int> source)
 		{
 			Check.Source(source);
@@ -1860,7 +1860,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB17 RID: 47895 RVA: 0x00459874 File Offset: 0x00457A74
+		// Token: 0x0600BC6E RID: 48238 RVA: 0x0045DD94 File Offset: 0x0045BF94
 		public static long Min(this IEnumerable<long> source)
 		{
 			Check.Source(source);
@@ -1878,7 +1878,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB18 RID: 47896 RVA: 0x004598DC File Offset: 0x00457ADC
+		// Token: 0x0600BC6F RID: 48239 RVA: 0x0045DDFC File Offset: 0x0045BFFC
 		public static double Min(this IEnumerable<double> source)
 		{
 			Check.Source(source);
@@ -1896,7 +1896,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB19 RID: 47897 RVA: 0x00459944 File Offset: 0x00457B44
+		// Token: 0x0600BC70 RID: 48240 RVA: 0x0045DE64 File Offset: 0x0045C064
 		public static float Min(this IEnumerable<float> source)
 		{
 			Check.Source(source);
@@ -1914,7 +1914,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB1A RID: 47898 RVA: 0x004599A8 File Offset: 0x00457BA8
+		// Token: 0x0600BC71 RID: 48241 RVA: 0x0045DEC8 File Offset: 0x0045C0C8
 		public static decimal Min(this IEnumerable<decimal> source)
 		{
 			Check.Source(source);
@@ -1932,7 +1932,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB1B RID: 47899 RVA: 0x00459A10 File Offset: 0x00457C10
+		// Token: 0x0600BC72 RID: 48242 RVA: 0x0045DF30 File Offset: 0x0045C130
 		public static int? Min(this IEnumerable<int?> source)
 		{
 			Check.Source(source);
@@ -1953,7 +1953,7 @@ namespace UniLinq
 			return new int?(num);
 		}
 
-		// Token: 0x0600BB1C RID: 47900 RVA: 0x00459A8C File Offset: 0x00457C8C
+		// Token: 0x0600BC73 RID: 48243 RVA: 0x0045DFAC File Offset: 0x0045C1AC
 		public static long? Min(this IEnumerable<long?> source)
 		{
 			Check.Source(source);
@@ -1974,7 +1974,7 @@ namespace UniLinq
 			return new long?(num);
 		}
 
-		// Token: 0x0600BB1D RID: 47901 RVA: 0x00459B0C File Offset: 0x00457D0C
+		// Token: 0x0600BC74 RID: 48244 RVA: 0x0045E02C File Offset: 0x0045C22C
 		public static double? Min(this IEnumerable<double?> source)
 		{
 			Check.Source(source);
@@ -1995,7 +1995,7 @@ namespace UniLinq
 			return new double?(num);
 		}
 
-		// Token: 0x0600BB1E RID: 47902 RVA: 0x00459B8C File Offset: 0x00457D8C
+		// Token: 0x0600BC75 RID: 48245 RVA: 0x0045E0AC File Offset: 0x0045C2AC
 		public static float? Min(this IEnumerable<float?> source)
 		{
 			Check.Source(source);
@@ -2016,7 +2016,7 @@ namespace UniLinq
 			return new float?(num);
 		}
 
-		// Token: 0x0600BB1F RID: 47903 RVA: 0x00459C08 File Offset: 0x00457E08
+		// Token: 0x0600BC76 RID: 48246 RVA: 0x0045E128 File Offset: 0x0045C328
 		public static decimal? Min(this IEnumerable<decimal?> source)
 		{
 			Check.Source(source);
@@ -2037,7 +2037,7 @@ namespace UniLinq
 			return new decimal?(num);
 		}
 
-		// Token: 0x0600BB20 RID: 47904 RVA: 0x00459C8C File Offset: 0x00457E8C
+		// Token: 0x0600BC77 RID: 48247 RVA: 0x0045E1AC File Offset: 0x0045C3AC
 		public static TSource Min<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -2078,7 +2078,7 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BB21 RID: 47905 RVA: 0x00459D6C File Offset: 0x00457F6C
+		// Token: 0x0600BC78 RID: 48248 RVA: 0x0045E28C File Offset: 0x0045C48C
 		public static int Min<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2096,7 +2096,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB22 RID: 47906 RVA: 0x00459DD8 File Offset: 0x00457FD8
+		// Token: 0x0600BC79 RID: 48249 RVA: 0x0045E2F8 File Offset: 0x0045C4F8
 		public static long Min<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2114,7 +2114,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB23 RID: 47907 RVA: 0x00459E48 File Offset: 0x00458048
+		// Token: 0x0600BC7A RID: 48250 RVA: 0x0045E368 File Offset: 0x0045C568
 		public static double Min<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2132,7 +2132,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB24 RID: 47908 RVA: 0x00459EB8 File Offset: 0x004580B8
+		// Token: 0x0600BC7B RID: 48251 RVA: 0x0045E3D8 File Offset: 0x0045C5D8
 		public static float Min<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2150,7 +2150,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB25 RID: 47909 RVA: 0x00459F24 File Offset: 0x00458124
+		// Token: 0x0600BC7C RID: 48252 RVA: 0x0045E444 File Offset: 0x0045C644
 		public static decimal Min<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2168,7 +2168,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB26 RID: 47910 RVA: 0x00459F94 File Offset: 0x00458194
+		// Token: 0x0600BC7D RID: 48253 RVA: 0x0045E4B4 File Offset: 0x0045C6B4
 		public static int? Min<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2199,7 +2199,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB27 RID: 47911 RVA: 0x0045A03C File Offset: 0x0045823C
+		// Token: 0x0600BC7E RID: 48254 RVA: 0x0045E55C File Offset: 0x0045C75C
 		public static long? Min<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2230,7 +2230,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB28 RID: 47912 RVA: 0x0045A0E4 File Offset: 0x004582E4
+		// Token: 0x0600BC7F RID: 48255 RVA: 0x0045E604 File Offset: 0x0045C804
 		public static float? Min<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2261,7 +2261,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB29 RID: 47913 RVA: 0x0045A18C File Offset: 0x0045838C
+		// Token: 0x0600BC80 RID: 48256 RVA: 0x0045E6AC File Offset: 0x0045C8AC
 		public static double? Min<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2292,7 +2292,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB2A RID: 47914 RVA: 0x0045A234 File Offset: 0x00458434
+		// Token: 0x0600BC81 RID: 48257 RVA: 0x0045E754 File Offset: 0x0045C954
 		public static decimal? Min<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2323,21 +2323,21 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB2B RID: 47915 RVA: 0x0045A2E0 File Offset: 0x004584E0
+		// Token: 0x0600BC82 RID: 48258 RVA: 0x0045E800 File Offset: 0x0045CA00
 		public static TResult Min<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return source.Select<TSource, TResult>(selector).Min<TResult>();
 		}
 
-		// Token: 0x0600BB2C RID: 47916 RVA: 0x0045A2F5 File Offset: 0x004584F5
+		// Token: 0x0600BC83 RID: 48259 RVA: 0x0045E815 File Offset: 0x0045CA15
 		public static IEnumerable<TResult> OfType<TResult>(this IEnumerable source)
 		{
 			Check.Source(source);
 			return Enumerable.CreateOfTypeIterator<TResult>(source);
 		}
 
-		// Token: 0x0600BB2D RID: 47917 RVA: 0x0045A303 File Offset: 0x00458503
+		// Token: 0x0600BC84 RID: 48260 RVA: 0x0045E823 File Offset: 0x0045CA23
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateOfTypeIterator<TResult>(IEnumerable source)
 		{
@@ -2353,33 +2353,33 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB2E RID: 47918 RVA: 0x0045A313 File Offset: 0x00458513
+		// Token: 0x0600BC85 RID: 48261 RVA: 0x0045E833 File Offset: 0x0045CA33
 		public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.OrderBy<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB2F RID: 47919 RVA: 0x0045A31D File Offset: 0x0045851D
+		// Token: 0x0600BC86 RID: 48262 RVA: 0x0045E83D File Offset: 0x0045CA3D
 		public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
 			return new OrderedSequence<TSource, TKey>(source, keySelector, comparer, SortDirection.Ascending);
 		}
 
-		// Token: 0x0600BB30 RID: 47920 RVA: 0x0045A32F File Offset: 0x0045852F
+		// Token: 0x0600BC87 RID: 48263 RVA: 0x0045E84F File Offset: 0x0045CA4F
 		public static IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.OrderByDescending<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB31 RID: 47921 RVA: 0x0045A339 File Offset: 0x00458539
+		// Token: 0x0600BC88 RID: 48264 RVA: 0x0045E859 File Offset: 0x0045CA59
 		public static IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
 			return new OrderedSequence<TSource, TKey>(source, keySelector, comparer, SortDirection.Descending);
 		}
 
-		// Token: 0x0600BB32 RID: 47922 RVA: 0x0045A34B File Offset: 0x0045854B
+		// Token: 0x0600BC89 RID: 48265 RVA: 0x0045E86B File Offset: 0x0045CA6B
 		public static IEnumerable<int> Range(int start, int count)
 		{
 			if (count < 0)
@@ -2393,7 +2393,7 @@ namespace UniLinq
 			return Enumerable.CreateRangeIterator(start, count);
 		}
 
-		// Token: 0x0600BB33 RID: 47923 RVA: 0x0045A379 File Offset: 0x00458579
+		// Token: 0x0600BC8A RID: 48266 RVA: 0x0045E899 File Offset: 0x0045CA99
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<int> CreateRangeIterator(int start, int count)
 		{
@@ -2406,7 +2406,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB34 RID: 47924 RVA: 0x0045A390 File Offset: 0x00458590
+		// Token: 0x0600BC8B RID: 48267 RVA: 0x0045E8B0 File Offset: 0x0045CAB0
 		public static IEnumerable<TResult> Repeat<TResult>(TResult element, int count)
 		{
 			if (count < 0)
@@ -2416,7 +2416,7 @@ namespace UniLinq
 			return Enumerable.CreateRepeatIterator<TResult>(element, count);
 		}
 
-		// Token: 0x0600BB35 RID: 47925 RVA: 0x0045A3A3 File Offset: 0x004585A3
+		// Token: 0x0600BC8C RID: 48268 RVA: 0x0045E8C3 File Offset: 0x0045CAC3
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateRepeatIterator<TResult>(TResult element, int count)
 		{
@@ -2429,14 +2429,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB36 RID: 47926 RVA: 0x0045A3BA File Offset: 0x004585BA
+		// Token: 0x0600BC8D RID: 48269 RVA: 0x0045E8DA File Offset: 0x0045CADA
 		public static IEnumerable<TSource> Reverse<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
 			return Enumerable.CreateReverseIterator<TSource>(source);
 		}
 
-		// Token: 0x0600BB37 RID: 47927 RVA: 0x0045A3C8 File Offset: 0x004585C8
+		// Token: 0x0600BC8E RID: 48270 RVA: 0x0045E8E8 File Offset: 0x0045CAE8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateReverseIterator<TSource>(IEnumerable<TSource> source)
 		{
@@ -2450,14 +2450,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB38 RID: 47928 RVA: 0x0045A3D8 File Offset: 0x004585D8
+		// Token: 0x0600BC8F RID: 48271 RVA: 0x0045E8F8 File Offset: 0x0045CAF8
 		public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return Enumerable.CreateSelectIterator<TSource, TResult>(source, selector);
 		}
 
-		// Token: 0x0600BB39 RID: 47929 RVA: 0x0045A3E8 File Offset: 0x004585E8
+		// Token: 0x0600BC90 RID: 48272 RVA: 0x0045E908 File Offset: 0x0045CB08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectIterator<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
 		{
@@ -2470,14 +2470,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB3A RID: 47930 RVA: 0x0045A3FF File Offset: 0x004585FF
+		// Token: 0x0600BC91 RID: 48273 RVA: 0x0045E91F File Offset: 0x0045CB1F
 		public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, int, TResult> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return Enumerable.CreateSelectIterator<TSource, TResult>(source, selector);
 		}
 
-		// Token: 0x0600BB3B RID: 47931 RVA: 0x0045A40F File Offset: 0x0045860F
+		// Token: 0x0600BC92 RID: 48274 RVA: 0x0045E92F File Offset: 0x0045CB2F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectIterator<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, int, TResult> selector)
 		{
@@ -2493,14 +2493,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB3C RID: 47932 RVA: 0x0045A426 File Offset: 0x00458626
+		// Token: 0x0600BC93 RID: 48275 RVA: 0x0045E946 File Offset: 0x0045CB46
 		public static IEnumerable<TResult> SelectMany<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return Enumerable.CreateSelectManyIterator<TSource, TResult>(source, selector);
 		}
 
-		// Token: 0x0600BB3D RID: 47933 RVA: 0x0045A436 File Offset: 0x00458636
+		// Token: 0x0600BC94 RID: 48276 RVA: 0x0045E956 File Offset: 0x0045CB56
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectManyIterator<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)
 		{
@@ -2517,14 +2517,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB3E RID: 47934 RVA: 0x0045A44D File Offset: 0x0045864D
+		// Token: 0x0600BC95 RID: 48277 RVA: 0x0045E96D File Offset: 0x0045CB6D
 		public static IEnumerable<TResult> SelectMany<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TResult>> selector)
 		{
 			Check.SourceAndSelector(source, selector);
 			return Enumerable.CreateSelectManyIterator<TSource, TResult>(source, selector);
 		}
 
-		// Token: 0x0600BB3F RID: 47935 RVA: 0x0045A45D File Offset: 0x0045865D
+		// Token: 0x0600BC96 RID: 48278 RVA: 0x0045E97D File Offset: 0x0045CB7D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectManyIterator<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TResult>> selector)
 		{
@@ -2544,14 +2544,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB40 RID: 47936 RVA: 0x0045A474 File Offset: 0x00458674
+		// Token: 0x0600BC97 RID: 48279 RVA: 0x0045E994 File Offset: 0x0045CB94
 		public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(this IEnumerable<TSource> source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)
 		{
 			Check.SourceAndCollectionSelectors(source, collectionSelector, resultSelector);
 			return Enumerable.CreateSelectManyIterator<TSource, TCollection, TResult>(source, collectionSelector, resultSelector);
 		}
 
-		// Token: 0x0600BB41 RID: 47937 RVA: 0x0045A486 File Offset: 0x00458686
+		// Token: 0x0600BC98 RID: 48280 RVA: 0x0045E9A6 File Offset: 0x0045CBA6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectManyIterator<TSource, TCollection, TResult>(IEnumerable<TSource> source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> selector)
 		{
@@ -2569,14 +2569,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB42 RID: 47938 RVA: 0x0045A4A4 File Offset: 0x004586A4
+		// Token: 0x0600BC99 RID: 48281 RVA: 0x0045E9C4 File Offset: 0x0045CBC4
 		public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(this IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)
 		{
 			Check.SourceAndCollectionSelectors(source, collectionSelector, resultSelector);
 			return Enumerable.CreateSelectManyIterator<TSource, TCollection, TResult>(source, collectionSelector, resultSelector);
 		}
 
-		// Token: 0x0600BB43 RID: 47939 RVA: 0x0045A4B6 File Offset: 0x004586B6
+		// Token: 0x0600BC9A RID: 48282 RVA: 0x0045E9D6 File Offset: 0x0045CBD6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TResult> CreateSelectManyIterator<TSource, TCollection, TResult>(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> selector)
 		{
@@ -2598,7 +2598,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB44 RID: 47940 RVA: 0x0045A4D4 File Offset: 0x004586D4
+		// Token: 0x0600BC9B RID: 48283 RVA: 0x0045E9F4 File Offset: 0x0045CBF4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TSource Single<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate, Enumerable.Fallback fallback)
 		{
@@ -2623,7 +2623,7 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BB45 RID: 47941 RVA: 0x0045A544 File Offset: 0x00458744
+		// Token: 0x0600BC9C RID: 48284 RVA: 0x0045EA64 File Offset: 0x0045CC64
 		public static TSource Single<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -2645,14 +2645,14 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BB46 RID: 47942 RVA: 0x0045A5AC File Offset: 0x004587AC
+		// Token: 0x0600BC9D RID: 48285 RVA: 0x0045EACC File Offset: 0x0045CCCC
 		public static TSource Single<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.Single<TSource>(predicate, Enumerable.Fallback.Throw);
 		}
 
-		// Token: 0x0600BB47 RID: 47943 RVA: 0x0045A5C0 File Offset: 0x004587C0
+		// Token: 0x0600BC9E RID: 48286 RVA: 0x0045EAE0 File Offset: 0x0045CCE0
 		public static TSource SingleOrDefault<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -2670,21 +2670,21 @@ namespace UniLinq
 			return tsource;
 		}
 
-		// Token: 0x0600BB48 RID: 47944 RVA: 0x0045A620 File Offset: 0x00458820
+		// Token: 0x0600BC9F RID: 48287 RVA: 0x0045EB40 File Offset: 0x0045CD40
 		public static TSource SingleOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return source.Single<TSource>(predicate, Enumerable.Fallback.Default);
 		}
 
-		// Token: 0x0600BB49 RID: 47945 RVA: 0x0045A631 File Offset: 0x00458831
+		// Token: 0x0600BCA0 RID: 48288 RVA: 0x0045EB51 File Offset: 0x0045CD51
 		public static IEnumerable<TSource> Skip<TSource>(this IEnumerable<TSource> source, int count)
 		{
 			Check.Source(source);
 			return Enumerable.CreateSkipIterator<TSource>(source, count);
 		}
 
-		// Token: 0x0600BB4A RID: 47946 RVA: 0x0045A640 File Offset: 0x00458840
+		// Token: 0x0600BCA1 RID: 48289 RVA: 0x0045EB60 File Offset: 0x0045CD60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateSkipIterator<TSource>(IEnumerable<TSource> source, int count)
 		{
@@ -2717,14 +2717,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB4B RID: 47947 RVA: 0x0045A657 File Offset: 0x00458857
+		// Token: 0x0600BCA2 RID: 48290 RVA: 0x0045EB77 File Offset: 0x0045CD77
 		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return Enumerable.CreateSkipWhileIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB4C RID: 47948 RVA: 0x0045A667 File Offset: 0x00458867
+		// Token: 0x0600BCA3 RID: 48291 RVA: 0x0045EB87 File Offset: 0x0045CD87
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateSkipWhileIterator<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
@@ -2746,14 +2746,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB4D RID: 47949 RVA: 0x0045A67E File Offset: 0x0045887E
+		// Token: 0x0600BCA4 RID: 48292 RVA: 0x0045EB9E File Offset: 0x0045CD9E
 		public static IEnumerable<TSource> SkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return Enumerable.CreateSkipWhileIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB4E RID: 47950 RVA: 0x0045A68E File Offset: 0x0045888E
+		// Token: 0x0600BCA5 RID: 48293 RVA: 0x0045EBAE File Offset: 0x0045CDAE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateSkipWhileIterator<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
@@ -2778,7 +2778,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB4F RID: 47951 RVA: 0x0045A6A8 File Offset: 0x004588A8
+		// Token: 0x0600BCA6 RID: 48294 RVA: 0x0045EBC8 File Offset: 0x0045CDC8
 		public static int Sum(this IEnumerable<int> source)
 		{
 			Check.Source(source);
@@ -2793,7 +2793,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB50 RID: 47952 RVA: 0x0045A6F8 File Offset: 0x004588F8
+		// Token: 0x0600BCA7 RID: 48295 RVA: 0x0045EC18 File Offset: 0x0045CE18
 		public static int? Sum(this IEnumerable<int?> source)
 		{
 			Check.Source(source);
@@ -2811,7 +2811,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB51 RID: 47953 RVA: 0x0045A75C File Offset: 0x0045895C
+		// Token: 0x0600BCA8 RID: 48296 RVA: 0x0045EC7C File Offset: 0x0045CE7C
 		public static int Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2826,7 +2826,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB52 RID: 47954 RVA: 0x0045A7B4 File Offset: 0x004589B4
+		// Token: 0x0600BCA9 RID: 48297 RVA: 0x0045ECD4 File Offset: 0x0045CED4
 		public static int? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2845,7 +2845,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB53 RID: 47955 RVA: 0x0045A820 File Offset: 0x00458A20
+		// Token: 0x0600BCAA RID: 48298 RVA: 0x0045ED40 File Offset: 0x0045CF40
 		public static long Sum(this IEnumerable<long> source)
 		{
 			Check.Source(source);
@@ -2860,7 +2860,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB54 RID: 47956 RVA: 0x0045A870 File Offset: 0x00458A70
+		// Token: 0x0600BCAB RID: 48299 RVA: 0x0045ED90 File Offset: 0x0045CF90
 		public static long? Sum(this IEnumerable<long?> source)
 		{
 			Check.Source(source);
@@ -2878,7 +2878,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB55 RID: 47957 RVA: 0x0045A8D4 File Offset: 0x00458AD4
+		// Token: 0x0600BCAC RID: 48300 RVA: 0x0045EDF4 File Offset: 0x0045CFF4
 		public static long Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2893,7 +2893,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB56 RID: 47958 RVA: 0x0045A92C File Offset: 0x00458B2C
+		// Token: 0x0600BCAD RID: 48301 RVA: 0x0045EE4C File Offset: 0x0045D04C
 		public static long? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2912,7 +2912,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB57 RID: 47959 RVA: 0x0045A998 File Offset: 0x00458B98
+		// Token: 0x0600BCAE RID: 48302 RVA: 0x0045EEB8 File Offset: 0x0045D0B8
 		public static double Sum(this IEnumerable<double> source)
 		{
 			Check.Source(source);
@@ -2924,7 +2924,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB58 RID: 47960 RVA: 0x0045A9F0 File Offset: 0x00458BF0
+		// Token: 0x0600BCAF RID: 48303 RVA: 0x0045EF10 File Offset: 0x0045D110
 		public static double? Sum(this IEnumerable<double?> source)
 		{
 			Check.Source(source);
@@ -2939,7 +2939,7 @@ namespace UniLinq
 			return new double?(num);
 		}
 
-		// Token: 0x0600BB59 RID: 47961 RVA: 0x0045AA5C File Offset: 0x00458C5C
+		// Token: 0x0600BCB0 RID: 48304 RVA: 0x0045EF7C File Offset: 0x0045D17C
 		public static double Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2951,7 +2951,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB5A RID: 47962 RVA: 0x0045AABC File Offset: 0x00458CBC
+		// Token: 0x0600BCB1 RID: 48305 RVA: 0x0045EFDC File Offset: 0x0045D1DC
 		public static double? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -2967,7 +2967,7 @@ namespace UniLinq
 			return new double?(num);
 		}
 
-		// Token: 0x0600BB5B RID: 47963 RVA: 0x0045AB30 File Offset: 0x00458D30
+		// Token: 0x0600BCB2 RID: 48306 RVA: 0x0045F050 File Offset: 0x0045D250
 		public static float Sum(this IEnumerable<float> source)
 		{
 			Check.Source(source);
@@ -2979,7 +2979,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB5C RID: 47964 RVA: 0x0045AB84 File Offset: 0x00458D84
+		// Token: 0x0600BCB3 RID: 48307 RVA: 0x0045F0A4 File Offset: 0x0045D2A4
 		public static float? Sum(this IEnumerable<float?> source)
 		{
 			Check.Source(source);
@@ -2994,7 +2994,7 @@ namespace UniLinq
 			return new float?(num);
 		}
 
-		// Token: 0x0600BB5D RID: 47965 RVA: 0x0045ABEC File Offset: 0x00458DEC
+		// Token: 0x0600BCB4 RID: 48308 RVA: 0x0045F10C File Offset: 0x0045D30C
 		public static float Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -3006,7 +3006,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB5E RID: 47966 RVA: 0x0045AC48 File Offset: 0x00458E48
+		// Token: 0x0600BCB5 RID: 48309 RVA: 0x0045F168 File Offset: 0x0045D368
 		public static float? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -3022,7 +3022,7 @@ namespace UniLinq
 			return new float?(num);
 		}
 
-		// Token: 0x0600BB5F RID: 47967 RVA: 0x0045ACB8 File Offset: 0x00458EB8
+		// Token: 0x0600BCB6 RID: 48310 RVA: 0x0045F1D8 File Offset: 0x0045D3D8
 		public static decimal Sum(this IEnumerable<decimal> source)
 		{
 			Check.Source(source);
@@ -3034,7 +3034,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB60 RID: 47968 RVA: 0x0045AD10 File Offset: 0x00458F10
+		// Token: 0x0600BCB7 RID: 48311 RVA: 0x0045F230 File Offset: 0x0045D430
 		public static decimal? Sum(this IEnumerable<decimal?> source)
 		{
 			Check.Source(source);
@@ -3049,7 +3049,7 @@ namespace UniLinq
 			return new decimal?(num);
 		}
 
-		// Token: 0x0600BB61 RID: 47969 RVA: 0x0045AD7C File Offset: 0x00458F7C
+		// Token: 0x0600BCB8 RID: 48312 RVA: 0x0045F29C File Offset: 0x0045D49C
 		public static decimal Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -3061,7 +3061,7 @@ namespace UniLinq
 			return num;
 		}
 
-		// Token: 0x0600BB62 RID: 47970 RVA: 0x0045ADDC File Offset: 0x00458FDC
+		// Token: 0x0600BCB9 RID: 48313 RVA: 0x0045F2FC File Offset: 0x0045D4FC
 		public static decimal? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
 		{
 			Check.SourceAndSelector(source, selector);
@@ -3077,14 +3077,14 @@ namespace UniLinq
 			return new decimal?(num);
 		}
 
-		// Token: 0x0600BB63 RID: 47971 RVA: 0x0045AE54 File Offset: 0x00459054
+		// Token: 0x0600BCBA RID: 48314 RVA: 0x0045F374 File Offset: 0x0045D574
 		public static IEnumerable<TSource> Take<TSource>(this IEnumerable<TSource> source, int count)
 		{
 			Check.Source(source);
 			return Enumerable.CreateTakeIterator<TSource>(source, count);
 		}
 
-		// Token: 0x0600BB64 RID: 47972 RVA: 0x0045AE63 File Offset: 0x00459063
+		// Token: 0x0600BCBB RID: 48315 RVA: 0x0045F383 File Offset: 0x0045D583
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateTakeIterator<TSource>(IEnumerable<TSource> source, int count)
 		{
@@ -3108,14 +3108,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB65 RID: 47973 RVA: 0x0045AE7A File Offset: 0x0045907A
+		// Token: 0x0600BCBC RID: 48316 RVA: 0x0045F39A File Offset: 0x0045D59A
 		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return Enumerable.CreateTakeWhileIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB66 RID: 47974 RVA: 0x0045AE8A File Offset: 0x0045908A
+		// Token: 0x0600BCBD RID: 48317 RVA: 0x0045F3AA File Offset: 0x0045D5AA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateTakeWhileIterator<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
@@ -3132,14 +3132,14 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB67 RID: 47975 RVA: 0x0045AEA1 File Offset: 0x004590A1
+		// Token: 0x0600BCBE RID: 48318 RVA: 0x0045F3C1 File Offset: 0x0045D5C1
 		public static IEnumerable<TSource> TakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
 			return Enumerable.CreateTakeWhileIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB68 RID: 47976 RVA: 0x0045AEB1 File Offset: 0x004590B1
+		// Token: 0x0600BCBF RID: 48319 RVA: 0x0045F3D1 File Offset: 0x0045D5D1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateTakeWhileIterator<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
@@ -3159,33 +3159,33 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB69 RID: 47977 RVA: 0x0045AEC8 File Offset: 0x004590C8
+		// Token: 0x0600BCC0 RID: 48320 RVA: 0x0045F3E8 File Offset: 0x0045D5E8
 		public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(this IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.ThenBy<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB6A RID: 47978 RVA: 0x0045AED2 File Offset: 0x004590D2
+		// Token: 0x0600BCC1 RID: 48321 RVA: 0x0045F3F2 File Offset: 0x0045D5F2
 		public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(this IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
 			return (source as OrderedEnumerable<TSource>).CreateOrderedEnumerable<TKey>(keySelector, comparer, false);
 		}
 
-		// Token: 0x0600BB6B RID: 47979 RVA: 0x0045AEE9 File Offset: 0x004590E9
+		// Token: 0x0600BCC2 RID: 48322 RVA: 0x0045F409 File Offset: 0x0045D609
 		public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(this IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.ThenByDescending<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB6C RID: 47980 RVA: 0x0045AEF3 File Offset: 0x004590F3
+		// Token: 0x0600BCC3 RID: 48323 RVA: 0x0045F413 File Offset: 0x0045D613
 		public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(this IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
 			return (source as OrderedEnumerable<TSource>).CreateOrderedEnumerable<TKey>(keySelector, comparer, true);
 		}
 
-		// Token: 0x0600BB6D RID: 47981 RVA: 0x0045AF0C File Offset: 0x0045910C
+		// Token: 0x0600BCC4 RID: 48324 RVA: 0x0045F42C File Offset: 0x0045D62C
 		public static TSource[] ToArray<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
@@ -3225,13 +3225,13 @@ namespace UniLinq
 			return array;
 		}
 
-		// Token: 0x0600BB6E RID: 47982 RVA: 0x0045AFC4 File Offset: 0x004591C4
+		// Token: 0x0600BCC5 RID: 48325 RVA: 0x0045F4E4 File Offset: 0x0045D6E4
 		public static Dictionary<TKey, TElement> ToDictionary<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)
 		{
 			return source.ToDictionary<TSource, TKey, TElement>(keySelector, elementSelector, null);
 		}
 
-		// Token: 0x0600BB6F RID: 47983 RVA: 0x0045AFD0 File Offset: 0x004591D0
+		// Token: 0x0600BCC6 RID: 48326 RVA: 0x0045F4F0 File Offset: 0x0045D6F0
 		public static Dictionary<TKey, TElement> ToDictionary<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeyElementSelectors(source, keySelector, elementSelector);
@@ -3247,13 +3247,13 @@ namespace UniLinq
 			return dictionary;
 		}
 
-		// Token: 0x0600BB70 RID: 47984 RVA: 0x0045B040 File Offset: 0x00459240
+		// Token: 0x0600BCC7 RID: 48327 RVA: 0x0045F560 File Offset: 0x0045D760
 		public static Dictionary<TKey, TSource> ToDictionary<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.ToDictionary<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB71 RID: 47985 RVA: 0x0045B04C File Offset: 0x0045924C
+		// Token: 0x0600BCC8 RID: 48328 RVA: 0x0045F56C File Offset: 0x0045D76C
 		public static Dictionary<TKey, TSource> ToDictionary<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
@@ -3269,20 +3269,20 @@ namespace UniLinq
 			return dictionary;
 		}
 
-		// Token: 0x0600BB72 RID: 47986 RVA: 0x0045B0B4 File Offset: 0x004592B4
+		// Token: 0x0600BCC9 RID: 48329 RVA: 0x0045F5D4 File Offset: 0x0045D7D4
 		public static List<TSource> ToList<TSource>(this IEnumerable<TSource> source)
 		{
 			Check.Source(source);
 			return new List<TSource>(source);
 		}
 
-		// Token: 0x0600BB73 RID: 47987 RVA: 0x0045B0C2 File Offset: 0x004592C2
+		// Token: 0x0600BCCA RID: 48330 RVA: 0x0045F5E2 File Offset: 0x0045D7E2
 		public static ILookup<TKey, TSource> ToLookup<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
 		{
 			return source.ToLookup<TSource, TKey>(keySelector, null);
 		}
 
-		// Token: 0x0600BB74 RID: 47988 RVA: 0x0045B0CC File Offset: 0x004592CC
+		// Token: 0x0600BCCB RID: 48331 RVA: 0x0045F5EC File Offset: 0x0045D7EC
 		public static ILookup<TKey, TSource> ToLookup<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeySelector(source, keySelector);
@@ -3310,13 +3310,13 @@ namespace UniLinq
 			return new Lookup<TKey, TSource>(dictionary, list);
 		}
 
-		// Token: 0x0600BB75 RID: 47989 RVA: 0x0045B174 File Offset: 0x00459374
+		// Token: 0x0600BCCC RID: 48332 RVA: 0x0045F694 File Offset: 0x0045D894
 		public static ILookup<TKey, TElement> ToLookup<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)
 		{
 			return source.ToLookup<TSource, TKey, TElement>(keySelector, elementSelector, null);
 		}
 
-		// Token: 0x0600BB76 RID: 47990 RVA: 0x0045B180 File Offset: 0x00459380
+		// Token: 0x0600BCCD RID: 48333 RVA: 0x0045F6A0 File Offset: 0x0045D8A0
 		public static ILookup<TKey, TElement> ToLookup<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)
 		{
 			Check.SourceAndKeyElementSelectors(source, keySelector, elementSelector);
@@ -3344,13 +3344,13 @@ namespace UniLinq
 			return new Lookup<TKey, TElement>(dictionary, list);
 		}
 
-		// Token: 0x0600BB77 RID: 47991 RVA: 0x0045B230 File Offset: 0x00459430
+		// Token: 0x0600BCCE RID: 48334 RVA: 0x0045F750 File Offset: 0x0045D950
 		public static bool SequenceEqual<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
 			return first.SequenceEqual<TSource>(second, null);
 		}
 
-		// Token: 0x0600BB78 RID: 47992 RVA: 0x0045B23C File Offset: 0x0045943C
+		// Token: 0x0600BCCF RID: 48335 RVA: 0x0045F75C File Offset: 0x0045D95C
 		public static bool SequenceEqual<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
 			Check.FirstAndSecond(first, second);
@@ -3380,14 +3380,14 @@ namespace UniLinq
 			return flag;
 		}
 
-		// Token: 0x0600BB79 RID: 47993 RVA: 0x0045B2D4 File Offset: 0x004594D4
+		// Token: 0x0600BCD0 RID: 48336 RVA: 0x0045F7F4 File Offset: 0x0045D9F4
 		public static IEnumerable<TSource> Union<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second)
 		{
 			Check.FirstAndSecond(first, second);
 			return first.Union<TSource>(second, null);
 		}
 
-		// Token: 0x0600BB7A RID: 47994 RVA: 0x0045B2E5 File Offset: 0x004594E5
+		// Token: 0x0600BCD1 RID: 48337 RVA: 0x0045F805 File Offset: 0x0045DA05
 		public static IEnumerable<TSource> Union<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
 			Check.FirstAndSecond(first, second);
@@ -3398,7 +3398,7 @@ namespace UniLinq
 			return Enumerable.CreateUnionIterator<TSource>(first, second, comparer);
 		}
 
-		// Token: 0x0600BB7B RID: 47995 RVA: 0x0045B300 File Offset: 0x00459500
+		// Token: 0x0600BCD2 RID: 48338 RVA: 0x0045F820 File Offset: 0x0045DA20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateUnionIterator<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)
 		{
@@ -3425,7 +3425,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB7C RID: 47996 RVA: 0x0045B320 File Offset: 0x00459520
+		// Token: 0x0600BCD3 RID: 48339 RVA: 0x0045F840 File Offset: 0x0045DA40
 		public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
@@ -3437,7 +3437,7 @@ namespace UniLinq
 			return Enumerable.CreateWhereIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB7D RID: 47997 RVA: 0x0045B34D File Offset: 0x0045954D
+		// Token: 0x0600BCD4 RID: 48340 RVA: 0x0045F86D File Offset: 0x0045DA6D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateWhereIterator<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
@@ -3453,7 +3453,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB7E RID: 47998 RVA: 0x0045B364 File Offset: 0x00459564
+		// Token: 0x0600BCD5 RID: 48341 RVA: 0x0045F884 File Offset: 0x0045DA84
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateWhereIterator<TSource>(TSource[] source, Func<TSource, bool> predicate)
 		{
@@ -3470,7 +3470,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB7F RID: 47999 RVA: 0x0045B37C File Offset: 0x0045957C
+		// Token: 0x0600BCD6 RID: 48342 RVA: 0x0045F89C File Offset: 0x0045DA9C
 		public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
 			Check.SourceAndPredicate(source, predicate);
@@ -3482,7 +3482,7 @@ namespace UniLinq
 			return Enumerable.CreateWhereIterator<TSource>(source, predicate);
 		}
 
-		// Token: 0x0600BB80 RID: 48000 RVA: 0x0045B3A9 File Offset: 0x004595A9
+		// Token: 0x0600BCD7 RID: 48343 RVA: 0x0045F8C9 File Offset: 0x0045DAC9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateWhereIterator<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
 		{
@@ -3501,7 +3501,7 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB81 RID: 48001 RVA: 0x0045B3C0 File Offset: 0x004595C0
+		// Token: 0x0600BCD8 RID: 48344 RVA: 0x0045F8E0 File Offset: 0x0045DAE0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerable<TSource> CreateWhereIterator<TSource>(TSource[] source, Func<TSource, int, bool> predicate)
 		{
@@ -3518,41 +3518,41 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x0600BB82 RID: 48002 RVA: 0x0045B3D7 File Offset: 0x004595D7
+		// Token: 0x0600BCD9 RID: 48345 RVA: 0x0045F8F7 File Offset: 0x0045DAF7
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Exception EmptySequence()
 		{
 			return new InvalidOperationException("Sequence contains no elements");
 		}
 
-		// Token: 0x0600BB83 RID: 48003 RVA: 0x0045B3E3 File Offset: 0x004595E3
+		// Token: 0x0600BCDA RID: 48346 RVA: 0x0045F903 File Offset: 0x0045DB03
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Exception NoMatchingElement()
 		{
 			return new InvalidOperationException("Sequence contains no matching element");
 		}
 
-		// Token: 0x0600BB84 RID: 48004 RVA: 0x0045B3EF File Offset: 0x004595EF
+		// Token: 0x0600BCDB RID: 48347 RVA: 0x0045F90F File Offset: 0x0045DB0F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Exception MoreThanOneElement()
 		{
 			return new InvalidOperationException("Sequence contains more than one element");
 		}
 
-		// Token: 0x0600BB85 RID: 48005 RVA: 0x0045B3FB File Offset: 0x004595FB
+		// Token: 0x0600BCDC RID: 48348 RVA: 0x0045F91B File Offset: 0x0045DB1B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Exception MoreThanOneMatchingElement()
 		{
 			return new InvalidOperationException("Sequence contains more than one matching element");
 		}
 
-		// Token: 0x0200178E RID: 6030
+		// Token: 0x020017BA RID: 6074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum Fallback
 		{
-			// Token: 0x04008BE3 RID: 35811
+			// Token: 0x04008CA8 RID: 36008
 			Default,
-			// Token: 0x04008BE4 RID: 35812
+			// Token: 0x04008CA9 RID: 36009
 			Throw
 		}
 	}

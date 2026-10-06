@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200099C RID: 2460
+// Token: 0x020009A2 RID: 2466
 [Preserve]
 public class ObjectiveOpenWindow : BaseObjective
 {
-	// Token: 0x0600485F RID: 18527 RVA: 0x001C4ACC File Offset: 0x001C2CCC
+	// Token: 0x06004812 RID: 18450 RVA: 0x001C534D File Offset: 0x001C354D
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveOpenWindow_keyword", false, null);
 	}
 
-	// Token: 0x06004860 RID: 18528 RVA: 0x001C4AE0 File Offset: 0x001C2CE0
+	// Token: 0x06004813 RID: 18451 RVA: 0x001C5361 File Offset: 0x001C3561
 	public override void SetupDisplay()
 	{
 		byte currentValue = base.CurrentValue;
@@ -19,19 +20,19 @@ public class ObjectiveOpenWindow : BaseObjective
 		this.StatusText = "";
 	}
 
-	// Token: 0x06004861 RID: 18529 RVA: 0x001C4B0B File Offset: 0x001C2D0B
+	// Token: 0x06004814 RID: 18452 RVA: 0x001C538C File Offset: 0x001C358C
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.WindowChanged += this.Current_WindowOpened;
 	}
 
-	// Token: 0x06004862 RID: 18530 RVA: 0x001C4B23 File Offset: 0x001C2D23
+	// Token: 0x06004815 RID: 18453 RVA: 0x001C53A4 File Offset: 0x001C35A4
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.WindowChanged -= this.Current_WindowOpened;
 	}
 
-	// Token: 0x06004863 RID: 18531 RVA: 0x001C4B3B File Offset: 0x001C2D3B
+	// Token: 0x06004816 RID: 18454 RVA: 0x001C53BC File Offset: 0x001C35BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_WindowOpened(string windowName)
 	{
@@ -42,7 +43,7 @@ public class ObjectiveOpenWindow : BaseObjective
 		}
 	}
 
-	// Token: 0x06004864 RID: 18532 RVA: 0x001C4B68 File Offset: 0x001C2D68
+	// Token: 0x06004817 RID: 18455 RVA: 0x001C53E8 File Offset: 0x001C35E8
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 1;
@@ -53,16 +54,23 @@ public class ObjectiveOpenWindow : BaseObjective
 		}
 	}
 
-	// Token: 0x06004865 RID: 18533 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004818 RID: 18456 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveObjectives()
 	{
 	}
 
-	// Token: 0x06004866 RID: 18534 RVA: 0x001C4BA0 File Offset: 0x001C2DA0
+	// Token: 0x06004819 RID: 18457 RVA: 0x001C5420 File Offset: 0x001C3620
 	public override BaseObjective Clone()
 	{
 		ObjectiveOpenWindow objectiveOpenWindow = new ObjectiveOpenWindow();
 		this.CopyValues(objectiveOpenWindow);
 		return objectiveOpenWindow;
+	}
+
+	// Token: 0x0600481A RID: 18458 RVA: 0x001C543B File Offset: 0x001C363B
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InternalToParametersDictionary(ref Dictionary<string, object> parameters)
+	{
+		parameters.Add("window_name", this.ID);
 	}
 }

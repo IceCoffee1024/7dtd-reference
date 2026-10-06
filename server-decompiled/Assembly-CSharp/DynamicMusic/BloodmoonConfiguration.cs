@@ -6,26 +6,26 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A3A RID: 6714
+	// Token: 0x02001A66 RID: 6758
 	[Preserve]
 	public class BloodmoonConfiguration : AbstractConfiguration, IConfiguration<LayerState>, IConfiguration
 	{
-		// Token: 0x170018E8 RID: 6376
-		// (get) Token: 0x0600CBC2 RID: 52162 RVA: 0x004A791A File Offset: 0x004A5B1A
-		// (set) Token: 0x0600CBC3 RID: 52163 RVA: 0x004A7922 File Offset: 0x004A5B22
+		// Token: 0x1700198A RID: 6538
+		// (get) Token: 0x0600CD1A RID: 52506 RVA: 0x004ABDE6 File Offset: 0x004A9FE6
+		// (set) Token: 0x0600CD1B RID: 52507 RVA: 0x004ABDEE File Offset: 0x004A9FEE
 		public Dictionary<LayerType, LayerState> Layers
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600CBC4 RID: 52164 RVA: 0x004A792B File Offset: 0x004A5B2B
+		// Token: 0x0600CD1C RID: 52508 RVA: 0x004ABDF7 File Offset: 0x004A9FF7
 		public BloodmoonConfiguration()
 		{
 			this.Layers = new Dictionary<LayerType, LayerState>();
 		}
 
-		// Token: 0x0600CBC5 RID: 52165 RVA: 0x004A793E File Offset: 0x004A5B3E
+		// Token: 0x0600CD1D RID: 52509 RVA: 0x004ABE0A File Offset: 0x004AA00A
 		public override int CountFor(LayerType _layer)
 		{
 			if (!this.Layers.ContainsKey(_layer))
@@ -35,7 +35,7 @@ namespace DynamicMusic
 			return 1;
 		}
 
-		// Token: 0x0600CBC6 RID: 52166 RVA: 0x004A7954 File Offset: 0x004A5B54
+		// Token: 0x0600CD1E RID: 52510 RVA: 0x004ABE20 File Offset: 0x004AA020
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);
@@ -48,7 +48,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CBC7 RID: 52167 RVA: 0x004A7A1C File Offset: 0x004A5C1C
+		// Token: 0x0600CD1F RID: 52511 RVA: 0x004ABEE8 File Offset: 0x004AA0E8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LayerStateType getState(float _threatLevel, float _enabledThreshold, float _hiThreshold)
 		{

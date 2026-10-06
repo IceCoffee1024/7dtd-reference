@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020004C1 RID: 1217
+// Token: 0x020004C7 RID: 1223
 [Preserve]
 public class EntitySurvivor : EntityNPC
 {
-	// Token: 0x0600269E RID: 9886 RVA: 0x000EC0E6 File Offset: 0x000EA2E6
+	// Token: 0x06002694 RID: 9876 RVA: 0x000EC1DE File Offset: 0x000EA3DE
 	public EntitySurvivor()
 	{
 		this.npcID = "";

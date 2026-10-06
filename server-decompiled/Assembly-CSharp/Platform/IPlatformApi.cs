@@ -2,37 +2,37 @@
 
 namespace Platform
 {
-	// Token: 0x02001B74 RID: 7028
+	// Token: 0x02001BA6 RID: 7078
 	public interface IPlatformApi
 	{
-		// Token: 0x17001A0C RID: 6668
-		// (get) Token: 0x0600D26B RID: 53867
+		// Token: 0x17001AB2 RID: 6834
+		// (get) Token: 0x0600D3E3 RID: 54243
 		EApiStatus ClientApiStatus { get; }
 
-		// Token: 0x14000122 RID: 290
-		// (add) Token: 0x0600D26C RID: 53868
-		// (remove) Token: 0x0600D26D RID: 53869
+		// Token: 0x14000121 RID: 289
+		// (add) Token: 0x0600D3E4 RID: 54244
+		// (remove) Token: 0x0600D3E5 RID: 54245
 		event Action ClientApiInitialized;
 
-		// Token: 0x0600D26E RID: 53870
+		// Token: 0x0600D3E6 RID: 54246
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D26F RID: 53871
+		// Token: 0x0600D3E7 RID: 54247
 		bool InitClientApis();
 
-		// Token: 0x0600D270 RID: 53872
+		// Token: 0x0600D3E8 RID: 54248
 		bool InitServerApis();
 
-		// Token: 0x0600D271 RID: 53873
+		// Token: 0x0600D3E9 RID: 54249
 		void ServerApiLoaded();
 
-		// Token: 0x0600D272 RID: 53874
+		// Token: 0x0600D3EA RID: 54250
 		void Update();
 
-		// Token: 0x0600D273 RID: 53875
+		// Token: 0x0600D3EB RID: 54251
 		void Destroy();
 
-		// Token: 0x0600D274 RID: 53876
+		// Token: 0x0600D3EC RID: 54252
 		float GetScreenBoundsValueFromSystem();
 	}
 }

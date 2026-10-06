@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019CD RID: 6605
+	// Token: 0x020019F9 RID: 6649
 	[Preserve]
 	public class ActionTeleportToSpecial : ActionBaseClientAction
 	{
-		// Token: 0x0600C9CF RID: 51663 RVA: 0x004A07B4 File Offset: 0x0049E9B4
+		// Token: 0x0600CB27 RID: 52007 RVA: 0x004A4C58 File Offset: 0x004A2E58
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -51,7 +51,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C9D0 RID: 51664 RVA: 0x004A08A1 File Offset: 0x0049EAA1
+		// Token: 0x0600CB28 RID: 52008 RVA: 0x004A4D45 File Offset: 0x004A2F45
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator handleTeleport(EntityPlayer player)
 		{
@@ -72,7 +72,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C9D1 RID: 51665 RVA: 0x004A08B7 File Offset: 0x0049EAB7
+		// Token: 0x0600CB29 RID: 52009 RVA: 0x004A4D5B File Offset: 0x004A2F5B
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -80,7 +80,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseFloat(ActionTeleportToSpecial.PropTeleportDelay, ref this.teleportDelay);
 		}
 
-		// Token: 0x0600C9D2 RID: 51666 RVA: 0x004A08E2 File Offset: 0x0049EAE2
+		// Token: 0x0600CB2A RID: 52010 RVA: 0x004A4D86 File Offset: 0x004A2F86
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -92,35 +92,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400990F RID: 39183
+		// Token: 0x040099D5 RID: 39381
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 position;
 
-		// Token: 0x04009910 RID: 39184
+		// Token: 0x040099D6 RID: 39382
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float teleportDelay = 0.1f;
 
-		// Token: 0x04009911 RID: 39185
+		// Token: 0x040099D7 RID: 39383
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTeleportToSpecial.SpecialPointTypes pointType;
 
-		// Token: 0x04009912 RID: 39186
+		// Token: 0x040099D8 RID: 39384
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpecialType = "special_type";
 
-		// Token: 0x04009913 RID: 39187
+		// Token: 0x040099D9 RID: 39385
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTeleportDelay = "teleport_delay";
 
-		// Token: 0x020019CE RID: 6606
+		// Token: 0x020019FA RID: 6650
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum SpecialPointTypes
 		{
-			// Token: 0x04009915 RID: 39189
+			// Token: 0x040099DB RID: 39387
 			Bedroll,
-			// Token: 0x04009916 RID: 39190
+			// Token: 0x040099DC RID: 39388
 			Landclaim,
-			// Token: 0x04009917 RID: 39191
+			// Token: 0x040099DD RID: 39389
 			Backpack
 		}
 	}

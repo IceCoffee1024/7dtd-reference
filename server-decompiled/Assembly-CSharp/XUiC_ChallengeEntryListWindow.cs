@@ -4,11 +4,11 @@ using Challenges;
 using UniLinq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EDA RID: 3802
+// Token: 0x02000EE9 RID: 3817
 [Preserve]
 public class XUiC_ChallengeEntryListWindow : XUiController
 {
-	// Token: 0x06007747 RID: 30535 RVA: 0x002CCDD4 File Offset: 0x002CAFD4
+	// Token: 0x06007742 RID: 30530 RVA: 0x002D01AC File Offset: 0x002CE3AC
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007748 RID: 30536 RVA: 0x002CCE30 File Offset: 0x002CB030
+	// Token: 0x06007743 RID: 30531 RVA: 0x002D0208 File Offset: 0x002CE408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ChallengeGroupList GetListFromKey(string key)
 	{
@@ -46,7 +46,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		return xuiC_ChallengeGroupList;
 	}
 
-	// Token: 0x06007749 RID: 30537 RVA: 0x002CCE90 File Offset: 0x002CB090
+	// Token: 0x06007744 RID: 30532 RVA: 0x002D0268 File Offset: 0x002CE468
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -59,7 +59,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600774A RID: 30538 RVA: 0x002CCEF0 File Offset: 0x002CB0F0
+	// Token: 0x06007745 RID: 30533 RVA: 0x002D02C8 File Offset: 0x002CE4C8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -79,7 +79,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600774B RID: 30539 RVA: 0x002CCF9E File Offset: 0x002CB19E
+	// Token: 0x06007746 RID: 30534 RVA: 0x002D0376 File Offset: 0x002CE576
 	public override void OnClose()
 	{
 		if (this.categoryList != null)
@@ -89,7 +89,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x0600774C RID: 30540 RVA: 0x002CCFC5 File Offset: 0x002CB1C5
+	// Token: 0x06007747 RID: 30535 RVA: 0x002D039D File Offset: 0x002CE59D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -98,7 +98,7 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		this.categoryChange = true;
 	}
 
-	// Token: 0x0600774D RID: 30541 RVA: 0x002CCFF0 File Offset: 0x002CB1F0
+	// Token: 0x06007748 RID: 30536 RVA: 0x002D03C8 File Offset: 0x002CE5C8
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetSelectedByUnlockData(RecipeUnlockData unlockData)
 	{
@@ -127,31 +127,31 @@ public class XUiC_ChallengeEntryListWindow : XUiController
 		this.categoryChange = true;
 	}
 
-	// Token: 0x04005809 RID: 22537
+	// Token: 0x04005841 RID: 22593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x0400580A RID: 22538
+	// Token: 0x04005842 RID: 22594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ChallengeGroupList challengeList;
 
-	// Token: 0x0400580B RID: 22539
+	// Token: 0x04005843 RID: 22595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x0400580C RID: 22540
+	// Token: 0x04005844 RID: 22596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x0400580D RID: 22541
+	// Token: 0x04005845 RID: 22597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool categoryChange;
 
-	// Token: 0x0400580E RID: 22542
+	// Token: 0x04005846 RID: 22598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ChallengeGroupList> challengeGroupList = new List<XUiC_ChallengeGroupList>();
 
-	// Token: 0x0400580F RID: 22543
+	// Token: 0x04005847 RID: 22599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string displayKey = "";
 }

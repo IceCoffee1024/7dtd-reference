@@ -5,11 +5,11 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005A0 RID: 1440
+// Token: 0x020005A1 RID: 1441
 [Preserve]
 public class ItemActionDynamic : ItemAction
 {
-	// Token: 0x06002F37 RID: 12087 RVA: 0x0012C398 File Offset: 0x0012A598
+	// Token: 0x06002F79 RID: 12153 RVA: 0x0012CE68 File Offset: 0x0012B068
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -167,12 +167,12 @@ public class ItemActionDynamic : ItemAction
 		this.hitmaskOverride = Voxel.ToHitMask(_props.GetString("Hitmask_override"));
 	}
 
-	// Token: 0x06002F38 RID: 12088 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002F7A RID: 12154 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 	}
 
-	// Token: 0x06002F39 RID: 12089 RVA: 0x0012CA24 File Offset: 0x0012AC24
+	// Token: 0x06002F7B RID: 12155 RVA: 0x0012D4F4 File Offset: 0x0012B6F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator harvestOnCompletion(ItemActionDynamicMelee.ItemActionDynamicMeleeData dmd, Action callback)
 	{
@@ -187,36 +187,36 @@ public class ItemActionDynamic : ItemAction
 		yield break;
 	}
 
-	// Token: 0x06002F3A RID: 12090 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002F7C RID: 12156 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 	}
 
-	// Token: 0x06002F3B RID: 12091 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002F7D RID: 12157 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return false;
 	}
 
-	// Token: 0x06002F3C RID: 12092 RVA: 0x0012CA3A File Offset: 0x0012AC3A
+	// Token: 0x06002F7E RID: 12158 RVA: 0x0012D50A File Offset: 0x0012B70A
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionDynamic.ItemActionDynamicData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002F3D RID: 12093 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002F7F RID: 12159 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool GrazeCast(ItemActionDynamic.ItemActionDynamicData _actionData, float normalizedClipTime = -1f)
 	{
 		return false;
 	}
 
-	// Token: 0x06002F3E RID: 12094 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002F80 RID: 12160 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool Raycast(ItemActionDynamic.ItemActionDynamicData _actionData)
 	{
 		return false;
 	}
 
-	// Token: 0x06002F3F RID: 12095 RVA: 0x0012CA44 File Offset: 0x0012AC44
+	// Token: 0x06002F81 RID: 12161 RVA: 0x0012D514 File Offset: 0x0012B714
 	public override WorldRayHitInfo GetExecuteActionTarget(ItemActionData _actionData)
 	{
 		float sphereRadius = this.SphereRadius;
@@ -275,7 +275,7 @@ public class ItemActionDynamic : ItemAction
 		return _actionData.GetUpdatedHitInfo();
 	}
 
-	// Token: 0x06002F40 RID: 12096 RVA: 0x0012CD44 File Offset: 0x0012AF44
+	// Token: 0x06002F82 RID: 12162 RVA: 0x0012D814 File Offset: 0x0012BA14
 	public WorldRayHitInfo[] GetExecuteActionGrazeTarget(ItemActionData _actionData, float normalizedClipTime = -1f)
 	{
 		List<WorldRayHitInfo> list = new List<WorldRayHitInfo>();
@@ -383,7 +383,7 @@ public class ItemActionDynamic : ItemAction
 		return list.ToArray();
 	}
 
-	// Token: 0x06002F41 RID: 12097 RVA: 0x0012D4A0 File Offset: 0x0012B6A0
+	// Token: 0x06002F83 RID: 12163 RVA: 0x0012DF70 File Offset: 0x0012C170
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void hitTarget(ItemActionData _actionData, WorldRayHitInfo hitInfo, bool _isGrazingHit = false)
 	{
@@ -529,14 +529,14 @@ public class ItemActionDynamic : ItemAction
 		}
 	}
 
-	// Token: 0x06002F42 RID: 12098 RVA: 0x0012DA00 File Offset: 0x0012BC00
+	// Token: 0x06002F84 RID: 12164 RVA: 0x0012E4D0 File Offset: 0x0012C6D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float getCriticalChance(ItemActionData _actionData)
 	{
 		return EffectManager.GetValue(PassiveEffects.CriticalChance, _actionData.invData.itemValue, 0f, _actionData.invData.holdingEntity, null, _actionData.ActionTags, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002F43 RID: 12099 RVA: 0x0012DA44 File Offset: 0x0012BC44
+	// Token: 0x06002F85 RID: 12165 RVA: 0x0012E514 File Offset: 0x0012C714
 	public float GetDamageEntity(ItemValue _itemValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		this.tmpTag = ((actionIndex == 0) ? ItemActionAttack.PrimaryTag : ItemActionAttack.SecondaryTag);
@@ -548,7 +548,7 @@ public class ItemActionDynamic : ItemAction
 		return EffectManager.GetValue(PassiveEffects.EntityDamage, _itemValue, 0f, _holdingEntity, null, this.tmpTag, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002F44 RID: 12100 RVA: 0x0012DAD8 File Offset: 0x0012BCD8
+	// Token: 0x06002F86 RID: 12166 RVA: 0x0012E5A8 File Offset: 0x0012C7A8
 	public float GetDamageBlock(ItemValue _itemValue, BlockValue _blockValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		this.tmpTag = ((actionIndex == 0) ? ItemActionAttack.PrimaryTag : ItemActionAttack.SecondaryTag);
@@ -562,7 +562,7 @@ public class ItemActionDynamic : ItemAction
 		return Utils.FastMin((float)_blockValue.Block.blockMaterial.MaxIncomingDamage, value);
 	}
 
-	// Token: 0x06002F45 RID: 12101 RVA: 0x0012DBA8 File Offset: 0x0012BDA8
+	// Token: 0x06002F87 RID: 12167 RVA: 0x0012E678 File Offset: 0x0012C878
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isHitValid(WorldRayHitInfo _hitInfo, ItemActionData _actionData, out EntityAlive _hitEntity)
 	{
@@ -601,14 +601,14 @@ public class ItemActionDynamic : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002F46 RID: 12102 RVA: 0x0012DC7D File Offset: 0x0012BE7D
+	// Token: 0x06002F88 RID: 12168 RVA: 0x0012E74D File Offset: 0x0012C94D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isValidTarget(Entity _target, Entity _self, bool _deadInvalid = true)
 	{
 		return !this.shouldIgnoreTarget(_target, _self, _deadInvalid);
 	}
 
-	// Token: 0x06002F47 RID: 12103 RVA: 0x0012DC8C File Offset: 0x0012BE8C
+	// Token: 0x06002F89 RID: 12169 RVA: 0x0012E75C File Offset: 0x0012C95C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldIgnoreTarget(Entity _target, Entity _self, bool _ignoreDead = true)
 	{
@@ -633,7 +633,7 @@ public class ItemActionDynamic : ItemAction
 		return entityPlayer != null && entityPlayer2 != null && !entityPlayer.FriendlyFireCheck(entityPlayer2);
 	}
 
-	// Token: 0x06002F48 RID: 12104 RVA: 0x0012DD08 File Offset: 0x0012BF08
+	// Token: 0x06002F8A RID: 12170 RVA: 0x0012E7D8 File Offset: 0x0012C9D8
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -648,7 +648,7 @@ public class ItemActionDynamic : ItemAction
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x06002F49 RID: 12105 RVA: 0x0012DD40 File Offset: 0x0012BF40
+	// Token: 0x06002F8B RID: 12171 RVA: 0x0012E810 File Offset: 0x0012CA10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isShowOverlay(ItemActionData _actionData)
 	{
@@ -697,7 +697,7 @@ public class ItemActionDynamic : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002F4A RID: 12106 RVA: 0x0012DE94 File Offset: 0x0012C094
+	// Token: 0x06002F8C RID: 12172 RVA: 0x0012E964 File Offset: 0x0012CB64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isShowOverlayInternal(ItemActionData actionData)
 	{
@@ -723,7 +723,7 @@ public class ItemActionDynamic : ItemAction
 		return hitRootEntity && hitRootEntity == actionData.attackDetails.entityHit;
 	}
 
-	// Token: 0x06002F4B RID: 12107 RVA: 0x0012DF34 File Offset: 0x0012C134
+	// Token: 0x06002F8D RID: 12173 RVA: 0x0012EA04 File Offset: 0x0012CC04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void getOverlayData(ItemActionData actionData, out float _perc, out string _text)
 	{
@@ -756,7 +756,7 @@ public class ItemActionDynamic : ItemAction
 		_text = string.Format("{0}/{1}", Utils.FastMax(0f, num2 - num).ToCultureInvariantString("0"), num2.ToCultureInvariantString());
 	}
 
-	// Token: 0x06002F4C RID: 12108 RVA: 0x0012E05C File Offset: 0x0012C25C
+	// Token: 0x06002F8E RID: 12174 RVA: 0x0012EB2C File Offset: 0x0012CD2C
 	public override void OnHUD(ItemActionData actionData, int _x, int _y)
 	{
 		if (actionData == null)
@@ -798,111 +798,111 @@ public class ItemActionDynamic : ItemAction
 		}
 	}
 
-	// Token: 0x06002F4D RID: 12109 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06002F8F RID: 12175 RVA: 0x00020119 File Offset: 0x0001E319
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canShowOverlay(ItemActionData actionData)
 	{
 		return true;
 	}
 
-	// Token: 0x04002495 RID: 9365
+	// Token: 0x0400248E RID: 9358
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EnumDamageTypes DamageType;
 
-	// Token: 0x04002496 RID: 9366
+	// Token: 0x0400248F RID: 9359
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Dictionary<string, ItemActionAttack.Bonuses> ToolBonuses = new Dictionary<string, ItemActionAttack.Bonuses>();
 
-	// Token: 0x04002497 RID: 9367
+	// Token: 0x04002490 RID: 9360
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Dictionary<string, string> HitSoundOverrides;
 
-	// Token: 0x04002498 RID: 9368
+	// Token: 0x04002491 RID: 9361
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Dictionary<string, string> GrazeSoundOverrides;
 
-	// Token: 0x04002499 RID: 9369
+	// Token: 0x04002492 RID: 9362
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int lastModelLayer;
 
-	// Token: 0x0400249A RID: 9370
+	// Token: 0x04002493 RID: 9363
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float RangeDefault;
 
-	// Token: 0x0400249B RID: 9371
+	// Token: 0x04002494 RID: 9364
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public new float Range;
 
-	// Token: 0x0400249C RID: 9372
+	// Token: 0x04002495 RID: 9365
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public new float BlockRange;
 
-	// Token: 0x0400249D RID: 9373
+	// Token: 0x04002496 RID: 9366
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool UsePowerAttackAnimation;
 
-	// Token: 0x0400249E RID: 9374
+	// Token: 0x04002497 RID: 9367
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool UsePowerAttackTriggers;
 
-	// Token: 0x0400249F RID: 9375
+	// Token: 0x04002498 RID: 9368
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int hitmaskOverride;
 
-	// Token: 0x040024A0 RID: 9376
+	// Token: 0x04002499 RID: 9369
 	public bool UseGrazingHits;
 
-	// Token: 0x040024A1 RID: 9377
+	// Token: 0x0400249A RID: 9370
 	public float GrazeStart;
 
-	// Token: 0x040024A2 RID: 9378
+	// Token: 0x0400249B RID: 9371
 	public float GrazeEnd;
 
-	// Token: 0x040024A3 RID: 9379
+	// Token: 0x0400249C RID: 9372
 	public float GrazeDamagePercentage;
 
-	// Token: 0x040024A4 RID: 9380
+	// Token: 0x0400249D RID: 9373
 	public float GrazeStaminaPercentage;
 
-	// Token: 0x040024A5 RID: 9381
+	// Token: 0x0400249E RID: 9374
 	public bool IsVerticalSwing;
 
-	// Token: 0x040024A6 RID: 9382
+	// Token: 0x0400249F RID: 9375
 	public bool IsHorizontalSwing;
 
-	// Token: 0x040024A7 RID: 9383
+	// Token: 0x040024A0 RID: 9376
 	public bool InvertSwing;
 
-	// Token: 0x040024A8 RID: 9384
+	// Token: 0x040024A1 RID: 9377
 	public float SwingDegrees;
 
-	// Token: 0x040024A9 RID: 9385
+	// Token: 0x040024A2 RID: 9378
 	public float SwingAngle;
 
-	// Token: 0x040024AA RID: 9386
+	// Token: 0x040024A3 RID: 9379
 	public int EntityPenetrationCount;
 
-	// Token: 0x040024AB RID: 9387
+	// Token: 0x040024A4 RID: 9380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool harvestHitEffectOn;
 
-	// Token: 0x040024AC RID: 9388
+	// Token: 0x040024A5 RID: 9381
 	public float HarvestLength = 0.3f;
 
-	// Token: 0x040024AD RID: 9389
+	// Token: 0x040024A6 RID: 9382
 	public static bool ShowDebugSwing = false;
 
-	// Token: 0x040024AE RID: 9390
+	// Token: 0x040024A7 RID: 9383
 	public static List<GameObject> DebugDisplayHits = new List<GameObject>();
 
-	// Token: 0x040024AF RID: 9391
+	// Token: 0x040024A8 RID: 9384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tmpTag;
 
-	// Token: 0x020005A1 RID: 1441
+	// Token: 0x020005A2 RID: 1442
 	public class ItemActionDynamicData : ItemActionAttackData
 	{
-		// Token: 0x06002F50 RID: 12112 RVA: 0x0012E120 File Offset: 0x0012C320
+		// Token: 0x06002F92 RID: 12178 RVA: 0x0012EBF0 File Offset: 0x0012CDF0
 		public ItemActionDynamicData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
@@ -912,40 +912,40 @@ public class ItemActionDynamic : ItemAction
 			this.waterCollisionParticles.Init(_invData.holdingEntity.entityId, _invData.item.MadeOfMaterial.SurfaceCategory, "water", 16);
 		}
 
-		// Token: 0x040024B0 RID: 9392
+		// Token: 0x040024A9 RID: 9385
 		public Ray ray;
 
-		// Token: 0x040024B1 RID: 9393
+		// Token: 0x040024AA RID: 9386
 		public Vector3 rayStartPos;
 
-		// Token: 0x040024B2 RID: 9394
+		// Token: 0x040024AB RID: 9387
 		public bool useExistingRay;
 
-		// Token: 0x040024B3 RID: 9395
+		// Token: 0x040024AC RID: 9388
 		public bool IsHarvesting;
 
-		// Token: 0x040024B4 RID: 9396
+		// Token: 0x040024AD RID: 9389
 		public List<int> alreadyHitEnts;
 
-		// Token: 0x040024B5 RID: 9397
+		// Token: 0x040024AE RID: 9390
 		public List<Vector3i> alreadyHitBlocks;
 
-		// Token: 0x040024B6 RID: 9398
+		// Token: 0x040024AF RID: 9391
 		public List<PropRef> alreadyHitProps;
 
-		// Token: 0x040024B7 RID: 9399
+		// Token: 0x040024B0 RID: 9392
 		public Vector3 lastWeaponHeadPosition = Vector3.zero;
 
-		// Token: 0x040024B8 RID: 9400
+		// Token: 0x040024B1 RID: 9393
 		public Vector3 lastWeaponHeadPositionDebug = Vector3.zero;
 
-		// Token: 0x040024B9 RID: 9401
+		// Token: 0x040024B2 RID: 9394
 		public float lastClipPercentage = -1f;
 
-		// Token: 0x040024BA RID: 9402
+		// Token: 0x040024B3 RID: 9395
 		public float attackTime;
 
-		// Token: 0x040024BB RID: 9403
+		// Token: 0x040024B4 RID: 9396
 		public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 	}
 }

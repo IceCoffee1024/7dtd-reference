@@ -8,11 +8,11 @@ using System.Xml.Linq;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001279 RID: 4729
+// Token: 0x02001291 RID: 4753
 public class NewsManager
 {
-	// Token: 0x170011E5 RID: 4581
-	// (get) Token: 0x0600966C RID: 38508 RVA: 0x00389C84 File Offset: 0x00387E84
+	// Token: 0x17001229 RID: 4649
+	// (get) Token: 0x060096F9 RID: 38649 RVA: 0x0038E4CC File Offset: 0x0038C6CC
 	public static NewsManager Instance
 	{
 		get
@@ -26,12 +26,12 @@ public class NewsManager
 		}
 	}
 
-	// Token: 0x140000FC RID: 252
-	// (add) Token: 0x0600966D RID: 38509 RVA: 0x00389C9C File Offset: 0x00387E9C
-	// (remove) Token: 0x0600966E RID: 38510 RVA: 0x00389CD4 File Offset: 0x00387ED4
+	// Token: 0x140000FB RID: 251
+	// (add) Token: 0x060096FA RID: 38650 RVA: 0x0038E4E4 File Offset: 0x0038C6E4
+	// (remove) Token: 0x060096FB RID: 38651 RVA: 0x0038E51C File Offset: 0x0038C71C
 	public event Action<NewsManager> Updated;
 
-	// Token: 0x0600966F RID: 38511 RVA: 0x00389D0C File Offset: 0x00387F0C
+	// Token: 0x060096FC RID: 38652 RVA: 0x0038E554 File Offset: 0x0038C754
 	public void UpdateNews(bool _force = false)
 	{
 		foreach (KeyValuePair<string, NewsManager.NewsSource> keyValuePair in this.sources)
@@ -43,7 +43,7 @@ public class NewsManager
 		}
 	}
 
-	// Token: 0x06009670 RID: 38512 RVA: 0x00389D6C File Offset: 0x00387F6C
+	// Token: 0x060096FD RID: 38653 RVA: 0x0038E5B4 File Offset: 0x0038C7B4
 	public void RegisterNewsSource(string _uri)
 	{
 		if (this.sources.ContainsKey(_uri))
@@ -55,7 +55,7 @@ public class NewsManager
 		newsSource.RequestData(false);
 	}
 
-	// Token: 0x06009671 RID: 38513 RVA: 0x00389DA4 File Offset: 0x00387FA4
+	// Token: 0x060096FE RID: 38654 RVA: 0x0038E5EC File Offset: 0x0038C7EC
 	public void GetNewsData(List<string> _sources, List<NewsManager.NewsEntry> _target)
 	{
 		_target.Clear();
@@ -70,14 +70,14 @@ public class NewsManager
 		this.sortNewsByAge(_target);
 	}
 
-	// Token: 0x06009672 RID: 38514 RVA: 0x00389E10 File Offset: 0x00388010
+	// Token: 0x060096FF RID: 38655 RVA: 0x0038E658 File Offset: 0x0038C858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sortNewsByAge(List<NewsManager.NewsEntry> _list)
 	{
 		_list.Sort((NewsManager.NewsEntry _entryA, NewsManager.NewsEntry _entryB) => _entryB.Date.CompareTo(_entryA.Date));
 	}
 
-	// Token: 0x06009673 RID: 38515 RVA: 0x00389E37 File Offset: 0x00388037
+	// Token: 0x06009700 RID: 38656 RVA: 0x0038E67F File Offset: 0x0038C87F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void notifyListeners()
 	{
@@ -89,25 +89,25 @@ public class NewsManager
 		updated(this);
 	}
 
-	// Token: 0x040070AF RID: 28847
+	// Token: 0x04007119 RID: 28953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static NewsManager instance;
 
-	// Token: 0x040070B0 RID: 28848
+	// Token: 0x0400711A RID: 28954
 	public static readonly NewsManager.NewsEntry EmptyEntry = new NewsManager.NewsEntry(null, null, null, "- No Entries -", null, "", null, DateTime.Now);
 
-	// Token: 0x040070B1 RID: 28849
+	// Token: 0x0400711B RID: 28955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, NewsManager.NewsSource> sources = new CaseInsensitiveStringDictionary<NewsManager.NewsSource>();
 
-	// Token: 0x0200127A RID: 4730
+	// Token: 0x02001292 RID: 4754
 	public abstract class NewsSource
 	{
-		// Token: 0x170011E6 RID: 4582
-		// (get) Token: 0x06009676 RID: 38518
+		// Token: 0x1700122A RID: 4650
+		// (get) Token: 0x06009703 RID: 38659
 		public abstract bool IsCustom { get; }
 
-		// Token: 0x06009677 RID: 38519 RVA: 0x00389E7D File Offset: 0x0038807D
+		// Token: 0x06009704 RID: 38660 RVA: 0x0038E6C5 File Offset: 0x0038C8C5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public NewsSource(NewsManager _owner, string _uri)
 		{
@@ -115,7 +115,7 @@ public class NewsManager
 			this.OrigUri = _uri;
 		}
 
-		// Token: 0x06009678 RID: 38520 RVA: 0x00389EA0 File Offset: 0x003880A0
+		// Token: 0x06009705 RID: 38661 RVA: 0x0038E6E8 File Offset: 0x0038C8E8
 		public void RequestData(bool _force)
 		{
 			if (this.isUpdating)
@@ -136,11 +136,11 @@ public class NewsManager
 			ThreadManager.StartCoroutine(this.GetDataCo());
 		}
 
-		// Token: 0x06009679 RID: 38521
+		// Token: 0x06009706 RID: 38662
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract IEnumerator GetDataCo();
 
-		// Token: 0x0600967A RID: 38522 RVA: 0x00389F38 File Offset: 0x00388138
+		// Token: 0x06009707 RID: 38663 RVA: 0x0038E780 File Offset: 0x0038C980
 		public void GetData(List<NewsManager.NewsEntry> _target)
 		{
 			NewsManager owner = this.Owner;
@@ -150,10 +150,10 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x0600967B RID: 38523
+		// Token: 0x06009708 RID: 38664
 		public abstract void RequestImage(string _imageRelPath, Action<Texture2D> _callback);
 
-		// Token: 0x0600967C RID: 38524 RVA: 0x00389F80 File Offset: 0x00388180
+		// Token: 0x06009709 RID: 38665 RVA: 0x0038E7C8 File Offset: 0x0038C9C8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void LoadXml(XmlFile _xml)
 		{
@@ -189,7 +189,7 @@ public class NewsManager
 			this.Owner.notifyListeners();
 		}
 
-		// Token: 0x0600967D RID: 38525 RVA: 0x0038A0A8 File Offset: 0x003882A8
+		// Token: 0x0600970A RID: 38666 RVA: 0x0038E8F0 File Offset: 0x0038CAF0
 		public static NewsManager.NewsSource FromUri(NewsManager _owner, string _uri)
 		{
 			if (_uri.StartsWith("rfs://"))
@@ -199,43 +199,43 @@ public class NewsManager
 			return new NewsManager.NewsSourceWww(_owner, _uri);
 		}
 
-		// Token: 0x040070B3 RID: 28851
+		// Token: 0x0400711D RID: 28957
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public const string RemoteFileStorageProtocol = "rfs://";
 
-		// Token: 0x040070B4 RID: 28852
+		// Token: 0x0400711E RID: 28958
 		public readonly NewsManager Owner;
 
-		// Token: 0x040070B5 RID: 28853
+		// Token: 0x0400711F RID: 28959
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string OrigUri;
 
-		// Token: 0x040070B6 RID: 28854
+		// Token: 0x04007120 RID: 28960
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isUpdating;
 
-		// Token: 0x040070B7 RID: 28855
+		// Token: 0x04007121 RID: 28961
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public DateTime lastUpdated;
 
-		// Token: 0x040070B8 RID: 28856
+		// Token: 0x04007122 RID: 28962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<NewsManager.NewsEntry> entries = new List<NewsManager.NewsEntry>();
 	}
 
-	// Token: 0x0200127B RID: 4731
+	// Token: 0x02001293 RID: 4755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class NewsSourceRfs : NewsManager.NewsSource
 	{
-		// Token: 0x0600967E RID: 38526 RVA: 0x0038A0C6 File Offset: 0x003882C6
+		// Token: 0x0600970B RID: 38667 RVA: 0x0038E90E File Offset: 0x0038CB0E
 		public NewsSourceRfs(NewsManager _owner, string _uri)
 			: base(_owner, _uri)
 		{
 			this.rfsFilename = _uri.Substring("rfs://".Length);
 		}
 
-		// Token: 0x170011E7 RID: 4583
-		// (get) Token: 0x0600967F RID: 38527 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700122B RID: 4651
+		// (get) Token: 0x0600970C RID: 38668 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override bool IsCustom
 		{
 			get
@@ -244,7 +244,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x06009680 RID: 38528 RVA: 0x0038A0F1 File Offset: 0x003882F1
+		// Token: 0x0600970D RID: 38669 RVA: 0x0038E939 File Offset: 0x0038CB39
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator GetDataCo()
 		{
@@ -281,7 +281,7 @@ public class NewsManager
 			yield break;
 		}
 
-		// Token: 0x06009681 RID: 38529 RVA: 0x0038A100 File Offset: 0x00388300
+		// Token: 0x0600970E RID: 38670 RVA: 0x0038E948 File Offset: 0x0038CB48
 		public override void RequestImage(string _imageRelPath, Action<Texture2D> _callback)
 		{
 			Queue<ValueTuple<string, Action<Texture2D>>> queue = this.requestedImagesQueue;
@@ -292,7 +292,7 @@ public class NewsManager
 			this.startNextImageRequest();
 		}
 
-		// Token: 0x06009682 RID: 38530 RVA: 0x0038A154 File Offset: 0x00388354
+		// Token: 0x0600970F RID: 38671 RVA: 0x0038E99C File Offset: 0x0038CB9C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void startNextImageRequest()
 		{
@@ -307,7 +307,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x06009683 RID: 38531 RVA: 0x0038A1C0 File Offset: 0x003883C0
+		// Token: 0x06009710 RID: 38672 RVA: 0x0038EA08 File Offset: 0x0038CC08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void imageRequestCompleted()
 		{
@@ -319,7 +319,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x06009684 RID: 38532 RVA: 0x0038A210 File Offset: 0x00388410
+		// Token: 0x06009711 RID: 38673 RVA: 0x0038EA58 File Offset: 0x0038CC58
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator requestFromRemoteStorage(string _imageRelPath, Action<Texture2D> _callback)
 		{
@@ -348,7 +348,7 @@ public class NewsManager
 			yield break;
 		}
 
-		// Token: 0x06009685 RID: 38533 RVA: 0x0038A230 File Offset: 0x00388430
+		// Token: 0x06009712 RID: 38674 RVA: 0x0038EA78 File Offset: 0x0038CC78
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <GetDataCo>g__fileDownloadedCallback|4_0(IRemoteFileStorage.EFileDownloadResult _result, string _errorDetails, byte[] _data)
@@ -385,30 +385,30 @@ public class NewsManager
 			base.LoadXml(xmlFile);
 		}
 
-		// Token: 0x040070B9 RID: 28857
+		// Token: 0x04007123 RID: 28963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string rfsFilename;
 
-		// Token: 0x040070BA RID: 28858
+		// Token: 0x04007124 RID: 28964
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxParallelImageRequests = 3;
 
-		// Token: 0x040070BB RID: 28859
+		// Token: 0x04007125 RID: 28965
 		[TupleElementNames(new string[] { "imageRelPath", "callback" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Queue<ValueTuple<string, Action<Texture2D>>> requestedImagesQueue = new Queue<ValueTuple<string, Action<Texture2D>>>();
 
-		// Token: 0x040070BC RID: 28860
+		// Token: 0x04007126 RID: 28966
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int runningImageRequests;
 	}
 
-	// Token: 0x0200127F RID: 4735
+	// Token: 0x02001297 RID: 4759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class NewsSourceWww : NewsManager.NewsSource
 	{
-		// Token: 0x170011EC RID: 4588
-		// (get) Token: 0x06009694 RID: 38548 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001230 RID: 4656
+		// (get) Token: 0x06009721 RID: 38689 RVA: 0x00020119 File Offset: 0x0001E319
 		public override bool IsCustom
 		{
 			get
@@ -417,7 +417,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x06009695 RID: 38549 RVA: 0x0038A584 File Offset: 0x00388784
+		// Token: 0x06009722 RID: 38690 RVA: 0x0038EDCC File Offset: 0x0038CFCC
 		public NewsSourceWww(NewsManager _owner, string _uri)
 			: base(_owner, _uri)
 		{
@@ -441,7 +441,7 @@ public class NewsManager
 			this.baseUri = text.Substring(0, num + 1);
 		}
 
-		// Token: 0x06009696 RID: 38550 RVA: 0x0038A62F File Offset: 0x0038882F
+		// Token: 0x06009723 RID: 38691 RVA: 0x0038EE77 File Offset: 0x0038D077
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator GetDataCo()
 		{
@@ -450,13 +450,13 @@ public class NewsManager
 			return <GetDataCo>d__;
 		}
 
-		// Token: 0x06009697 RID: 38551 RVA: 0x0038A63E File Offset: 0x0038883E
+		// Token: 0x06009724 RID: 38692 RVA: 0x0038EE86 File Offset: 0x0038D086
 		public override void RequestImage(string _imageRelPath, Action<Texture2D> _callback)
 		{
 			ThreadManager.StartCoroutine(this.requestFromUri(_imageRelPath, _callback));
 		}
 
-		// Token: 0x06009698 RID: 38552 RVA: 0x0038A64E File Offset: 0x0038884E
+		// Token: 0x06009725 RID: 38693 RVA: 0x0038EE96 File Offset: 0x0038D096
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator requestFromUri(string _imageRelPath, Action<Texture2D> _callback)
 		{
@@ -467,20 +467,20 @@ public class NewsManager
 			return <requestFromUri>d__;
 		}
 
-		// Token: 0x040070CB RID: 28875
+		// Token: 0x04007135 RID: 28981
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string patchedUri;
 
-		// Token: 0x040070CC RID: 28876
+		// Token: 0x04007136 RID: 28982
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string baseUri;
 	}
 
-	// Token: 0x02001282 RID: 4738
+	// Token: 0x0200129A RID: 4762
 	public class NewsEntry : IEquatable<NewsManager.NewsEntry>
 	{
-		// Token: 0x170011F1 RID: 4593
-		// (get) Token: 0x060096A7 RID: 38567 RVA: 0x0038A95C File Offset: 0x00388B5C
+		// Token: 0x17001235 RID: 4661
+		// (get) Token: 0x06009734 RID: 38708 RVA: 0x0038F1A4 File Offset: 0x0038D3A4
 		public bool IsCustom
 		{
 			get
@@ -489,7 +489,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x060096A8 RID: 38568 RVA: 0x0038A974 File Offset: 0x00388B74
+		// Token: 0x06009735 RID: 38709 RVA: 0x0038F1BC File Offset: 0x0038D3BC
 		public NewsEntry(NewsManager.NewsSource _owner, string _customListName, string _imageRelPath, string _headline, string _headline2, string _text, string _url, DateTime _date)
 		{
 			this.owner = _owner;
@@ -502,8 +502,8 @@ public class NewsManager
 			this.Date = _date;
 		}
 
-		// Token: 0x170011F2 RID: 4594
-		// (get) Token: 0x060096A9 RID: 38569 RVA: 0x0038A9C4 File Offset: 0x00388BC4
+		// Token: 0x17001236 RID: 4662
+		// (get) Token: 0x06009736 RID: 38710 RVA: 0x0038F20C File Offset: 0x0038D40C
 		public bool HasImage
 		{
 			get
@@ -512,8 +512,8 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x170011F3 RID: 4595
-		// (get) Token: 0x060096AA RID: 38570 RVA: 0x0038A9D4 File Offset: 0x00388BD4
+		// Token: 0x17001237 RID: 4663
+		// (get) Token: 0x06009737 RID: 38711 RVA: 0x0038F21C File Offset: 0x0038D41C
 		public bool ImageLoaded
 		{
 			get
@@ -522,8 +522,8 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x170011F4 RID: 4596
-		// (get) Token: 0x060096AB RID: 38571 RVA: 0x0038A9E2 File Offset: 0x00388BE2
+		// Token: 0x17001238 RID: 4664
+		// (get) Token: 0x06009738 RID: 38712 RVA: 0x0038F22A File Offset: 0x0038D42A
 		public Texture2D Image
 		{
 			get
@@ -532,7 +532,7 @@ public class NewsManager
 			}
 		}
 
-		// Token: 0x060096AC RID: 38572 RVA: 0x0038A9EA File Offset: 0x00388BEA
+		// Token: 0x06009739 RID: 38713 RVA: 0x0038F232 File Offset: 0x0038D432
 		public void RequestImage()
 		{
 			if (!this.HasImage)
@@ -547,7 +547,7 @@ public class NewsManager
 			this.owner.RequestImage(this.imageRelPath, new Action<Texture2D>(this.setImage));
 		}
 
-		// Token: 0x060096AD RID: 38573 RVA: 0x0038AA24 File Offset: 0x00388C24
+		// Token: 0x0600973A RID: 38714 RVA: 0x0038F26C File Offset: 0x0038D46C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setImage(Texture2D _image)
 		{
@@ -558,25 +558,25 @@ public class NewsManager
 			this.owner.Owner.notifyListeners();
 		}
 
-		// Token: 0x060096AE RID: 38574 RVA: 0x0038AA7C File Offset: 0x00388C7C
+		// Token: 0x0600973B RID: 38715 RVA: 0x0038F2C4 File Offset: 0x0038D4C4
 		public bool Equals(NewsManager.NewsEntry _other)
 		{
 			return _other != null && (this == _other || (this.CustomListName == _other.CustomListName && this.imageRelPath == _other.imageRelPath && this.Headline == _other.Headline && this.Headline2 == _other.Headline2 && this.Text == _other.Text && this.Url == _other.Url && this.Date.Equals(_other.Date)));
 		}
 
-		// Token: 0x060096AF RID: 38575 RVA: 0x0038AB1C File Offset: 0x00388D1C
+		// Token: 0x0600973C RID: 38716 RVA: 0x0038F364 File Offset: 0x0038D564
 		public override bool Equals(object _obj)
 		{
 			return _obj != null && (this == _obj || (!(_obj.GetType() != base.GetType()) && this.Equals((NewsManager.NewsEntry)_obj)));
 		}
 
-		// Token: 0x060096B0 RID: 38576 RVA: 0x0038AB4C File Offset: 0x00388D4C
+		// Token: 0x0600973D RID: 38717 RVA: 0x0038F394 File Offset: 0x0038D594
 		public override int GetHashCode()
 		{
 			return (((((((((((((this.CustomListName != null) ? this.CustomListName.GetHashCode() : 0) * 397) ^ ((this.imageRelPath != null) ? this.imageRelPath.GetHashCode() : 0)) * 397) ^ ((this.Headline != null) ? this.Headline.GetHashCode() : 0)) * 397) ^ ((this.Headline2 != null) ? this.Headline2.GetHashCode() : 0)) * 397) ^ ((this.Text != null) ? this.Text.GetHashCode() : 0)) * 397) ^ ((this.Url != null) ? this.Url.GetHashCode() : 0)) * 397) ^ this.Date.GetHashCode();
 		}
 
-		// Token: 0x060096B1 RID: 38577 RVA: 0x0038AC18 File Offset: 0x00388E18
+		// Token: 0x0600973E RID: 38718 RVA: 0x0038F460 File Offset: 0x0038D660
 		public static NewsManager.NewsEntry FromXml(NewsManager.NewsSource _owner, string _customListName, XElement _element)
 		{
 			string text = null;
@@ -765,37 +765,37 @@ public class NewsManager
 			return new NewsManager.NewsEntry(_owner, _customListName, text, text2, text3, text4, text5, minValue);
 		}
 
-		// Token: 0x040070D8 RID: 28888
+		// Token: 0x04007142 RID: 28994
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly NewsManager.NewsSource owner;
 
-		// Token: 0x040070D9 RID: 28889
+		// Token: 0x04007143 RID: 28995
 		public readonly string CustomListName;
 
-		// Token: 0x040070DA RID: 28890
+		// Token: 0x04007144 RID: 28996
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string imageRelPath;
 
-		// Token: 0x040070DB RID: 28891
+		// Token: 0x04007145 RID: 28997
 		public readonly string Headline;
 
-		// Token: 0x040070DC RID: 28892
+		// Token: 0x04007146 RID: 28998
 		public readonly string Headline2;
 
-		// Token: 0x040070DD RID: 28893
+		// Token: 0x04007147 RID: 28999
 		public readonly string Text;
 
-		// Token: 0x040070DE RID: 28894
+		// Token: 0x04007148 RID: 29000
 		public readonly string Url;
 
-		// Token: 0x040070DF RID: 28895
+		// Token: 0x04007149 RID: 29001
 		public readonly DateTime Date;
 
-		// Token: 0x040070E0 RID: 28896
+		// Token: 0x0400714A RID: 29002
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool requestedImage;
 
-		// Token: 0x040070E1 RID: 28897
+		// Token: 0x0400714B RID: 29003
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Texture2D image;
 	}

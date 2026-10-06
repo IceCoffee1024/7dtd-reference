@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-// Token: 0x020008B7 RID: 2231
+// Token: 0x020008BC RID: 2236
 public sealed class ObjectMessaging
 {
-	// Token: 0x060040AD RID: 16557 RVA: 0x001937C6 File Offset: 0x001919C6
+	// Token: 0x06004043 RID: 16451 RVA: 0x001938CA File Offset: 0x00191ACA
 	public object CheckedSendMessage(Type _returnType, string methodName, ObjectMessaging.MethodSignature _methodSignature, object _target, params object[] _arguments)
 	{
 		return this.CheckedSendMessage(_returnType, methodName, _methodSignature, _target, ObjectMessaging.CacheDisposition.CacheTypeInfo, _arguments);
 	}
 
-	// Token: 0x060040AE RID: 16558 RVA: 0x001937D8 File Offset: 0x001919D8
+	// Token: 0x06004044 RID: 16452 RVA: 0x001938DC File Offset: 0x00191ADC
 	public object CheckedSendMessage(Type _returnType, string methodName, ObjectMessaging.MethodSignature _methodSignature, object _target, ObjectMessaging.CacheDisposition _cacheDispostion, params object[] _arguments)
 	{
 		object obj = null;
@@ -20,13 +20,13 @@ public sealed class ObjectMessaging
 		return obj;
 	}
 
-	// Token: 0x060040AF RID: 16559 RVA: 0x001937FB File Offset: 0x001919FB
+	// Token: 0x06004045 RID: 16453 RVA: 0x001938FF File Offset: 0x00191AFF
 	public object SendMessage(Type _returnType, string _methodName, ObjectMessaging.MethodSignature _methodSignature, object _target, params object[] _arguments)
 	{
 		return this.SendMessage(_returnType, _methodName, _methodSignature, _target, ObjectMessaging.CacheDisposition.CacheTypeInfo, _arguments);
 	}
 
-	// Token: 0x060040B0 RID: 16560 RVA: 0x0019380C File Offset: 0x00191A0C
+	// Token: 0x06004046 RID: 16454 RVA: 0x00193910 File Offset: 0x00191B10
 	public object SendMessage(Type _returnType, string _methodName, ObjectMessaging.MethodSignature _methodSignature, object _target, ObjectMessaging.CacheDisposition _cacheDispostion, params object[] _arguments)
 	{
 		object obj = null;
@@ -34,7 +34,7 @@ public sealed class ObjectMessaging
 		return obj;
 	}
 
-	// Token: 0x060040B1 RID: 16561 RVA: 0x0019382F File Offset: 0x00191A2F
+	// Token: 0x06004047 RID: 16455 RVA: 0x00193933 File Offset: 0x00191B33
 	public ObjectMessaging.MethodSignature GenerateMethodSignature(Type _returnType, Type[] _types)
 	{
 		if (_returnType == null)
@@ -48,7 +48,7 @@ public sealed class ObjectMessaging
 		};
 	}
 
-	// Token: 0x060040B2 RID: 16562 RVA: 0x0019385C File Offset: 0x00191A5C
+	// Token: 0x06004048 RID: 16456 RVA: 0x00193960 File Offset: 0x00191B60
 	public bool SendMessageEx(Type _returnType, string _methodName, ObjectMessaging.MethodSignature _messageSignature, object _target, ObjectMessaging.CacheDisposition _cacheDispostion, out object _returnValue, bool checkedCall, params object[] _arguments)
 	{
 		if (_returnType == null)
@@ -127,13 +127,13 @@ public sealed class ObjectMessaging
 		return false;
 	}
 
-	// Token: 0x060040B3 RID: 16563 RVA: 0x001939F2 File Offset: 0x00191BF2
+	// Token: 0x06004049 RID: 16457 RVA: 0x00193AF6 File Offset: 0x00191CF6
 	public void FlushCache()
 	{
 		this.typeCache.Clear();
 	}
 
-	// Token: 0x060040B4 RID: 16564 RVA: 0x00193A00 File Offset: 0x00191C00
+	// Token: 0x0600404A RID: 16458 RVA: 0x00193B04 File Offset: 0x00191D04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buildMethodSignature(string _methodName, Type _returnType, Type[] _argTypes)
 	{
@@ -154,7 +154,7 @@ public sealed class ObjectMessaging
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x060040B5 RID: 16565 RVA: 0x00193A80 File Offset: 0x00191C80
+	// Token: 0x0600404B RID: 16459 RVA: 0x00193B84 File Offset: 0x00191D84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MethodInfo findMethod(string _methodName, Type _target, Type _returnType, Type[] args)
 	{
@@ -176,29 +176,29 @@ public sealed class ObjectMessaging
 		return methodInfo;
 	}
 
-	// Token: 0x04003463 RID: 13411
+	// Token: 0x04003457 RID: 13399
 	public static ObjectMessaging Instance = new ObjectMessaging();
 
-	// Token: 0x04003464 RID: 13412
+	// Token: 0x04003458 RID: 13400
 	public const int DYNAMIC_SIGNATURE = 0;
 
-	// Token: 0x04003465 RID: 13413
+	// Token: 0x04003459 RID: 13401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Type, Dictionary<int, MethodInfo>> typeCache = new Dictionary<Type, Dictionary<int, MethodInfo>>();
 
-	// Token: 0x020008B8 RID: 2232
+	// Token: 0x020008BD RID: 2237
 	public enum CacheDisposition
 	{
-		// Token: 0x04003467 RID: 13415
+		// Token: 0x0400345B RID: 13403
 		CacheTypeInfo,
-		// Token: 0x04003468 RID: 13416
+		// Token: 0x0400345C RID: 13404
 		Uncached
 	}
 
-	// Token: 0x020008B9 RID: 2233
+	// Token: 0x020008BE RID: 2238
 	public sealed class MethodSignature
 	{
-		// Token: 0x060040B7 RID: 16567 RVA: 0x00193B04 File Offset: 0x00191D04
+		// Token: 0x0600404D RID: 16461 RVA: 0x00193C08 File Offset: 0x00191E08
 		public override int GetHashCode()
 		{
 			if (this.hash == 0)
@@ -215,13 +215,13 @@ public sealed class ObjectMessaging
 			return this.hash;
 		}
 
-		// Token: 0x04003469 RID: 13417
+		// Token: 0x0400345D RID: 13405
 		public Type[] ArgumentTypes;
 
-		// Token: 0x0400346A RID: 13418
+		// Token: 0x0400345E RID: 13406
 		public Type ReturnType;
 
-		// Token: 0x0400346B RID: 13419
+		// Token: 0x0400345F RID: 13407
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int hash;
 	}

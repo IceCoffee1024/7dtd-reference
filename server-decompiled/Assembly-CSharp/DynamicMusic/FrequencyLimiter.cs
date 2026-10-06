@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4C RID: 6732
+	// Token: 0x02001A78 RID: 6776
 	public class FrequencyLimiter : AbstractFilter, IMultiNotifiableFilter, INotifiable, INotifiableFilter<MusicActionType, SectionType>, INotifiable<MusicActionType>, IFilter<SectionType>, IGamePrefsChangedListener
 	{
-		// Token: 0x0600CC19 RID: 52249 RVA: 0x004A868A File Offset: 0x004A688A
+		// Token: 0x0600CD71 RID: 52593 RVA: 0x004ACB56 File Offset: 0x004AAD56
 		public FrequencyLimiter()
 		{
 			this.rng = GameRandomManager.Instance.CreateGameRandom();
@@ -17,7 +17,7 @@ namespace DynamicMusic
 			this.UpdateRollTime();
 		}
 
-		// Token: 0x0600CC1A RID: 52250 RVA: 0x004A86B4 File Offset: 0x004A68B4
+		// Token: 0x0600CD72 RID: 52594 RVA: 0x004ACB80 File Offset: 0x004AAD80
 		public override List<SectionType> Filter(List<SectionType> _sectionTypes)
 		{
 			if (AudioSettings.dspTime <= this.rollTime || this.rng.RandomRange(1f) > this.chanceOfPositiveRoll)
@@ -33,14 +33,14 @@ namespace DynamicMusic
 			return _sectionTypes;
 		}
 
-		// Token: 0x0600CC1B RID: 52251 RVA: 0x004A8714 File Offset: 0x004A6914
+		// Token: 0x0600CD73 RID: 52595 RVA: 0x004ACBE0 File Offset: 0x004AADE0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateRollTime()
 		{
 			this.rollTime = AudioSettings.dspTime + (double)this.cooldown;
 		}
 
-		// Token: 0x0600CC1C RID: 52252 RVA: 0x004A8729 File Offset: 0x004A6929
+		// Token: 0x0600CD74 RID: 52596 RVA: 0x004ACBF5 File Offset: 0x004AADF5
 		public void Notify(MusicActionType _state)
 		{
 			if (_state.Equals(MusicActionType.Stop))
@@ -49,13 +49,13 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CC1D RID: 52253 RVA: 0x004A8746 File Offset: 0x004A6946
+		// Token: 0x0600CD75 RID: 52597 RVA: 0x004ACC12 File Offset: 0x004AAE12
 		public void Notify()
 		{
 			this.UpdateRollTime();
 		}
 
-		// Token: 0x0600CC1E RID: 52254 RVA: 0x004A874E File Offset: 0x004A694E
+		// Token: 0x0600CD76 RID: 52598 RVA: 0x004ACC1A File Offset: 0x004AAE1A
 		public void OnGamePrefChanged(EnumGamePrefs _enum)
 		{
 			if (_enum.Equals(EnumGamePrefs.OptionsDynamicMusicDailyTime) || _enum.Equals(EnumGamePrefs.DayNightLength))
@@ -64,7 +64,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CC1F RID: 52255 RVA: 0x004A8788 File Offset: 0x004A6988
+		// Token: 0x0600CD77 RID: 52599 RVA: 0x004ACC54 File Offset: 0x004AAE54
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateParameters()
 		{
@@ -76,43 +76,43 @@ namespace DynamicMusic
 			this.chanceOfPositiveRoll = (float)Math.Pow(0.8999999761581421, 1.0 / (double)this.rollsPerDay);
 		}
 
-		// Token: 0x04009B0F RID: 39695
+		// Token: 0x04009BD5 RID: 39893
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cMinCooldown = 30f;
 
-		// Token: 0x04009B10 RID: 39696
+		// Token: 0x04009BD6 RID: 39894
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cProbOfFailingToReachDailyAllotted = 0.1f;
 
-		// Token: 0x04009B11 RID: 39697
+		// Token: 0x04009BD7 RID: 39895
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cPlayTime = 168f;
 
-		// Token: 0x04009B12 RID: 39698
+		// Token: 0x04009BD8 RID: 39896
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float dayLengthInSeconds;
 
-		// Token: 0x04009B13 RID: 39699
+		// Token: 0x04009BD9 RID: 39897
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float dailyAllottedPlaySeconds;
 
-		// Token: 0x04009B14 RID: 39700
+		// Token: 0x04009BDA RID: 39898
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float rollsPerDay;
 
-		// Token: 0x04009B15 RID: 39701
+		// Token: 0x04009BDB RID: 39899
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float cooldown;
 
-		// Token: 0x04009B16 RID: 39702
+		// Token: 0x04009BDC RID: 39900
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float chanceOfPositiveRoll;
 
-		// Token: 0x04009B17 RID: 39703
+		// Token: 0x04009BDD RID: 39901
 		[PublicizedFrom(EAccessModifier.Private)]
 		public double rollTime;
 
-		// Token: 0x04009B18 RID: 39704
+		// Token: 0x04009BDE RID: 39902
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameRandom rng;
 	}

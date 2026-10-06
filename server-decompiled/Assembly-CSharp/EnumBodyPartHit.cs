@@ -1,45 +1,45 @@
 ﻿using System;
 
-// Token: 0x0200046B RID: 1131
+// Token: 0x0200046D RID: 1133
 [Flags]
 public enum EnumBodyPartHit
 {
-	// Token: 0x040017B8 RID: 6072
+	// Token: 0x040017AF RID: 6063
 	None = 0,
-	// Token: 0x040017B9 RID: 6073
+	// Token: 0x040017B0 RID: 6064
 	Torso = 1,
-	// Token: 0x040017BA RID: 6074
+	// Token: 0x040017B1 RID: 6065
 	Head = 2,
-	// Token: 0x040017BB RID: 6075
+	// Token: 0x040017B2 RID: 6066
 	LeftUpperArm = 4,
-	// Token: 0x040017BC RID: 6076
+	// Token: 0x040017B3 RID: 6067
 	RightUpperArm = 8,
-	// Token: 0x040017BD RID: 6077
+	// Token: 0x040017B4 RID: 6068
 	LeftUpperLeg = 16,
-	// Token: 0x040017BE RID: 6078
+	// Token: 0x040017B5 RID: 6069
 	RightUpperLeg = 32,
-	// Token: 0x040017BF RID: 6079
+	// Token: 0x040017B6 RID: 6070
 	LeftLowerArm = 64,
-	// Token: 0x040017C0 RID: 6080
+	// Token: 0x040017B7 RID: 6071
 	RightLowerArm = 128,
-	// Token: 0x040017C1 RID: 6081
+	// Token: 0x040017B8 RID: 6072
 	LeftLowerLeg = 256,
-	// Token: 0x040017C2 RID: 6082
+	// Token: 0x040017B9 RID: 6073
 	RightLowerLeg = 512,
-	// Token: 0x040017C3 RID: 6083
+	// Token: 0x040017BA RID: 6074
 	Special = 1024,
-	// Token: 0x040017C4 RID: 6084
+	// Token: 0x040017BB RID: 6075
 	UpperArms = 12,
-	// Token: 0x040017C5 RID: 6085
+	// Token: 0x040017BC RID: 6076
 	LowerArms = 192,
-	// Token: 0x040017C6 RID: 6086
+	// Token: 0x040017BD RID: 6077
 	Arms = 204,
-	// Token: 0x040017C7 RID: 6087
+	// Token: 0x040017BE RID: 6078
 	UpperLegs = 48,
-	// Token: 0x040017C8 RID: 6088
+	// Token: 0x040017BF RID: 6079
 	LowerLegs = 768,
-	// Token: 0x040017C9 RID: 6089
+	// Token: 0x040017C0 RID: 6080
 	Legs = 816,
-	// Token: 0x040017CA RID: 6090
+	// Token: 0x040017C1 RID: 6081
 	BitsUsed = 11
 }

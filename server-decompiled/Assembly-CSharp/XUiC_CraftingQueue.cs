@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FFF RID: 4095
+// Token: 0x0200100E RID: 4110
 [Preserve]
 public class XUiC_CraftingQueue : XUiController
 {
-	// Token: 0x0600813F RID: 33087 RVA: 0x003103DC File Offset: 0x0030E5DC
+	// Token: 0x0600814E RID: 33102 RVA: 0x003133C4 File Offset: 0x003115C4
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_CraftingQueue : XUiController
 		}
 	}
 
-	// Token: 0x06008140 RID: 33088 RVA: 0x00310424 File Offset: 0x0030E624
+	// Token: 0x0600814F RID: 33103 RVA: 0x0031340C File Offset: 0x0031160C
 	public void ClearQueue()
 	{
 		for (int i = this.queueItems.Length - 1; i >= 0; i--)
@@ -29,25 +29,25 @@ public class XUiC_CraftingQueue : XUiController
 		}
 	}
 
-	// Token: 0x06008141 RID: 33089 RVA: 0x00310476 File Offset: 0x0030E676
+	// Token: 0x06008150 RID: 33104 RVA: 0x0031345E File Offset: 0x0031165E
 	public void HaltCrafting()
 	{
 		((XUiC_RecipeStack)this.queueItems[this.queueItems.Length - 1]).IsCrafting = false;
 	}
 
-	// Token: 0x06008142 RID: 33090 RVA: 0x00310494 File Offset: 0x0030E694
+	// Token: 0x06008151 RID: 33105 RVA: 0x0031347C File Offset: 0x0031167C
 	public void ResumeCrafting()
 	{
 		((XUiC_RecipeStack)this.queueItems[this.queueItems.Length - 1]).IsCrafting = true;
 	}
 
-	// Token: 0x06008143 RID: 33091 RVA: 0x003104B2 File Offset: 0x0030E6B2
+	// Token: 0x06008152 RID: 33106 RVA: 0x0031349A File Offset: 0x0031169A
 	public bool IsCrafting()
 	{
 		return ((XUiC_RecipeStack)this.queueItems[this.queueItems.Length - 1]).IsCrafting;
 	}
 
-	// Token: 0x06008144 RID: 33092 RVA: 0x003104D0 File Offset: 0x0030E6D0
+	// Token: 0x06008153 RID: 33107 RVA: 0x003134B8 File Offset: 0x003116B8
 	public bool AddItemToRepair(float _repairTimeLeft, ItemValue _itemToRepair, int _amountToRepair)
 	{
 		for (int i = this.queueItems.Length - 1; i >= 0; i--)
@@ -63,7 +63,7 @@ public class XUiC_CraftingQueue : XUiController
 		return false;
 	}
 
-	// Token: 0x06008145 RID: 33093 RVA: 0x00310530 File Offset: 0x0030E730
+	// Token: 0x06008154 RID: 33108 RVA: 0x00313518 File Offset: 0x00311718
 	public bool AddRecipeToCraft(Recipe _recipe, int _count = 1, float craftTime = -1f, bool isCrafting = true, float _oneItemCraftingTime = -1f)
 	{
 		for (int i = this.queueItems.Length - 1; i >= 0; i--)
@@ -76,7 +76,7 @@ public class XUiC_CraftingQueue : XUiController
 		return false;
 	}
 
-	// Token: 0x06008146 RID: 33094 RVA: 0x00310568 File Offset: 0x0030E768
+	// Token: 0x06008155 RID: 33109 RVA: 0x00313550 File Offset: 0x00311750
 	public bool AddRecipeToCraftAtIndex(int _index, Recipe _recipe, int _count = 1, float craftTime = -1f, bool isCrafting = true, bool recipeModification = false, int lastQuality = -1, int startingEntityId = -1, float _oneItemCraftingTime = -1f)
 	{
 		XUiC_RecipeStack xuiC_RecipeStack = (XUiC_RecipeStack)this.queueItems[_index];
@@ -97,7 +97,7 @@ public class XUiC_CraftingQueue : XUiController
 		return false;
 	}
 
-	// Token: 0x06008147 RID: 33095 RVA: 0x003105D0 File Offset: 0x0030E7D0
+	// Token: 0x06008156 RID: 33110 RVA: 0x003135B8 File Offset: 0x003117B8
 	public bool AddItemToRepairAtIndex(int _index, float _repairTimeLeft, ItemValue _itemToRepair, int _amountToRepair, bool isCrafting = true, int startingEntityId = -1)
 	{
 		XUiC_RecipeStack xuiC_RecipeStack = (XUiC_RecipeStack)this.queueItems[_index];
@@ -111,7 +111,7 @@ public class XUiC_CraftingQueue : XUiController
 		return false;
 	}
 
-	// Token: 0x06008148 RID: 33096 RVA: 0x0031062C File Offset: 0x0030E82C
+	// Token: 0x06008157 RID: 33111 RVA: 0x00313614 File Offset: 0x00311814
 	public XUiC_RecipeStack[] GetRecipesToCraft()
 	{
 		XUiC_RecipeStack[] array = new XUiC_RecipeStack[this.queueItems.Length];
@@ -122,7 +122,7 @@ public class XUiC_CraftingQueue : XUiController
 		return array;
 	}
 
-	// Token: 0x06008149 RID: 33097 RVA: 0x00310668 File Offset: 0x0030E868
+	// Token: 0x06008158 RID: 33112 RVA: 0x00313650 File Offset: 0x00311850
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -165,14 +165,14 @@ public class XUiC_CraftingQueue : XUiController
 		}
 	}
 
-	// Token: 0x0600814A RID: 33098 RVA: 0x0031075A File Offset: 0x0030E95A
+	// Token: 0x06008159 RID: 33113 RVA: 0x00313742 File Offset: 0x00311942
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.toolGrid = this.windowGroup.Controller.GetChildByType<XUiC_WorkstationToolGrid>();
 	}
 
-	// Token: 0x0600814B RID: 33099 RVA: 0x00310778 File Offset: 0x0030E978
+	// Token: 0x0600815A RID: 33114 RVA: 0x00313760 File Offset: 0x00311960
 	public void RefreshQueue()
 	{
 		XUiC_RecipeStack xuiC_RecipeStack = null;
@@ -188,11 +188,11 @@ public class XUiC_CraftingQueue : XUiController
 		}
 	}
 
-	// Token: 0x04005FD7 RID: 24535
+	// Token: 0x04006000 RID: 24576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationToolGrid toolGrid;
 
-	// Token: 0x04005FD8 RID: 24536
+	// Token: 0x04006001 RID: 24577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] queueItems;
 }

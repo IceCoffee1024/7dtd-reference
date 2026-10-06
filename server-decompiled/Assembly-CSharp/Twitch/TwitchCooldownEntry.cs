@@ -2,19 +2,19 @@
 
 namespace Twitch
 {
-	// Token: 0x0200182A RID: 6186
+	// Token: 0x02001856 RID: 6230
 	public class TwitchCooldownEntry
 	{
-		// Token: 0x04008F73 RID: 36723
+		// Token: 0x04009039 RID: 36921
 		public int StartGameStage;
 
-		// Token: 0x04008F74 RID: 36724
+		// Token: 0x0400903A RID: 36922
 		public int EndGameStage;
 
-		// Token: 0x04008F75 RID: 36725
+		// Token: 0x0400903B RID: 36923
 		public int CooldownMax;
 
-		// Token: 0x04008F76 RID: 36726
+		// Token: 0x0400903C RID: 36924
 		public int CooldownTime = 180;
 	}
 }

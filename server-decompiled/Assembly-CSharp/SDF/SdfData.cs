@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace SDF
 {
-	// Token: 0x0200169B RID: 5787
+	// Token: 0x020016C7 RID: 5831
 	public class SdfData
 	{
-		// Token: 0x0600B57B RID: 46459 RVA: 0x004389C0 File Offset: 0x00436BC0
+		// Token: 0x0600B6D2 RID: 46802 RVA: 0x0043CEE0 File Offset: 0x0043B0E0
 		public SdfData()
 		{
 			this.Nodes = new Dictionary<string, SdfTag>();
 		}
 
-		// Token: 0x0600B57C RID: 46460 RVA: 0x004389D4 File Offset: 0x00436BD4
+		// Token: 0x0600B6D3 RID: 46803 RVA: 0x0043CEF4 File Offset: 0x0043B0F4
 		public bool Add(SdfTag sdfTag)
 		{
 			if (this.Nodes.ContainsKey(sdfTag.Name))
@@ -26,7 +26,7 @@ namespace SDF
 			return true;
 		}
 
-		// Token: 0x0600B57D RID: 46461 RVA: 0x00438A25 File Offset: 0x00436C25
+		// Token: 0x0600B6D4 RID: 46804 RVA: 0x0043CF45 File Offset: 0x0043B145
 		public bool Remove(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -37,7 +37,7 @@ namespace SDF
 			return true;
 		}
 
-		// Token: 0x0600B57E RID: 46462 RVA: 0x00438A48 File Offset: 0x00436C48
+		// Token: 0x0600B6D5 RID: 46805 RVA: 0x0043CF68 File Offset: 0x0043B168
 		public int? GetInt(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -51,7 +51,7 @@ namespace SDF
 			return new int?(Convert.ToInt32(this.Nodes[tagName].Value));
 		}
 
-		// Token: 0x0600B57F RID: 46463 RVA: 0x00438AA8 File Offset: 0x00436CA8
+		// Token: 0x0600B6D6 RID: 46806 RVA: 0x0043CFC8 File Offset: 0x0043B1C8
 		public float? GetFloat(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -65,7 +65,7 @@ namespace SDF
 			return new float?((float)this.Nodes[tagName].Value);
 		}
 
-		// Token: 0x0600B580 RID: 46464 RVA: 0x00438B06 File Offset: 0x00436D06
+		// Token: 0x0600B6D7 RID: 46807 RVA: 0x0043D026 File Offset: 0x0043B226
 		public string GetString(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -79,7 +79,7 @@ namespace SDF
 			return this.Nodes[tagName].Value.ToString();
 		}
 
-		// Token: 0x0600B581 RID: 46465 RVA: 0x00438B44 File Offset: 0x00436D44
+		// Token: 0x0600B6D8 RID: 46808 RVA: 0x0043D064 File Offset: 0x0043B264
 		public bool? GetBool(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -93,7 +93,7 @@ namespace SDF
 			return new bool?((bool)this.Nodes[tagName].Value);
 		}
 
-		// Token: 0x0600B582 RID: 46466 RVA: 0x00438BA2 File Offset: 0x00436DA2
+		// Token: 0x0600B6D9 RID: 46809 RVA: 0x0043D0C2 File Offset: 0x0043B2C2
 		public string GetBinary(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -107,7 +107,7 @@ namespace SDF
 			return (string)this.Nodes[tagName].Value;
 		}
 
-		// Token: 0x0600B583 RID: 46467 RVA: 0x00438BE0 File Offset: 0x00436DE0
+		// Token: 0x0600B6DA RID: 46810 RVA: 0x0043D100 File Offset: 0x0043B300
 		public byte[] GetByteArray(string tagName)
 		{
 			if (!this.Nodes.ContainsKey(tagName))
@@ -121,7 +121,7 @@ namespace SDF
 			return (byte[])this.Nodes[tagName].Value;
 		}
 
-		// Token: 0x040087BF RID: 34751
+		// Token: 0x04008884 RID: 34948
 		public Dictionary<string, SdfTag> Nodes;
 	}
 }

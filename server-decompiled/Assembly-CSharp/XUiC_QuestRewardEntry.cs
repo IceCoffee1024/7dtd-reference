@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FE9 RID: 4073
+// Token: 0x02000FF8 RID: 4088
 [Preserve]
 public class XUiC_QuestRewardEntry : XUiController
 {
-	// Token: 0x17000EF9 RID: 3833
-	// (get) Token: 0x0600808F RID: 32911 RVA: 0x0030B28D File Offset: 0x0030948D
-	// (set) Token: 0x06008090 RID: 32912 RVA: 0x0030B295 File Offset: 0x00309495
+	// Token: 0x17000F20 RID: 3872
+	// (get) Token: 0x0600809E RID: 32926 RVA: 0x0030E275 File Offset: 0x0030C475
+	// (set) Token: 0x0600809F RID: 32927 RVA: 0x0030E27D File Offset: 0x0030C47D
 	public BaseReward Reward
 	{
 		get
@@ -21,13 +21,13 @@ public class XUiC_QuestRewardEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EFA RID: 3834
-	// (get) Token: 0x06008091 RID: 32913 RVA: 0x0030B2A5 File Offset: 0x003094A5
-	// (set) Token: 0x06008092 RID: 32914 RVA: 0x0030B2AD File Offset: 0x003094AD
+	// Token: 0x17000F21 RID: 3873
+	// (get) Token: 0x060080A0 RID: 32928 RVA: 0x0030E28D File Offset: 0x0030C48D
+	// (set) Token: 0x060080A1 RID: 32929 RVA: 0x0030E295 File Offset: 0x0030C495
 	public bool ChainQuest { get; set; }
 
-	// Token: 0x17000EFB RID: 3835
-	// (get) Token: 0x06008093 RID: 32915 RVA: 0x0030B2B6 File Offset: 0x003094B6
+	// Token: 0x17000F22 RID: 3874
+	// (get) Token: 0x060080A2 RID: 32930 RVA: 0x0030E29E File Offset: 0x0030C49E
 	public static string ChainQuestTypeKeyword
 	{
 		get
@@ -40,8 +40,8 @@ public class XUiC_QuestRewardEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EFC RID: 3836
-	// (get) Token: 0x06008094 RID: 32916 RVA: 0x0030B2DF File Offset: 0x003094DF
+	// Token: 0x17000F23 RID: 3875
+	// (get) Token: 0x060080A3 RID: 32931 RVA: 0x0030E2C7 File Offset: 0x0030C4C7
 	public static string QuestTypeKeyword
 	{
 		get
@@ -54,8 +54,8 @@ public class XUiC_QuestRewardEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EFD RID: 3837
-	// (get) Token: 0x06008095 RID: 32917 RVA: 0x0030B308 File Offset: 0x00309508
+	// Token: 0x17000F24 RID: 3876
+	// (get) Token: 0x060080A4 RID: 32932 RVA: 0x0030E2F0 File Offset: 0x0030C4F0
 	public static string OptionalKeyword
 	{
 		get
@@ -68,8 +68,8 @@ public class XUiC_QuestRewardEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EFE RID: 3838
-	// (get) Token: 0x06008096 RID: 32918 RVA: 0x0030B331 File Offset: 0x00309531
+	// Token: 0x17000F25 RID: 3877
+	// (get) Token: 0x060080A5 RID: 32933 RVA: 0x0030E319 File Offset: 0x0030C519
 	public static string BonusKeyword
 	{
 		get
@@ -82,7 +82,7 @@ public class XUiC_QuestRewardEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008097 RID: 32919 RVA: 0x0030B35C File Offset: 0x0030955C
+	// Token: 0x060080A6 RID: 32934 RVA: 0x0030E344 File Offset: 0x0030C544
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -168,14 +168,14 @@ public class XUiC_QuestRewardEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008098 RID: 32920 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x060080A7 RID: 32935 RVA: 0x0008A995 File Offset: 0x00088B95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008099 RID: 32921 RVA: 0x002C422D File Offset: 0x002C242D
+	// Token: 0x060080A8 RID: 32936 RVA: 0x002C75E5 File Offset: 0x002C57E5
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -183,47 +183,47 @@ public class XUiC_QuestRewardEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005F3D RID: 24381
+	// Token: 0x04005F66 RID: 24422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeIconName = "";
 
-	// Token: 0x04005F3E RID: 24382
+	// Token: 0x04005F67 RID: 24423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string incompleteIconName = "";
 
-	// Token: 0x04005F3F RID: 24383
+	// Token: 0x04005F68 RID: 24424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeColor = "0,255,0,255";
 
-	// Token: 0x04005F40 RID: 24384
+	// Token: 0x04005F69 RID: 24425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string incompleteColor = "255,0,0,255";
 
-	// Token: 0x04005F41 RID: 24385
+	// Token: 0x04005F6A RID: 24426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseReward reward;
 
-	// Token: 0x04005F43 RID: 24387
+	// Token: 0x04005F6C RID: 24428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string chainQuestTypeKeyword = "";
 
-	// Token: 0x04005F44 RID: 24388
+	// Token: 0x04005F6D RID: 24429
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string questTypeKeyword = "";
 
-	// Token: 0x04005F45 RID: 24389
+	// Token: 0x04005F6E RID: 24430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string optionalKeyword = "";
 
-	// Token: 0x04005F46 RID: 24390
+	// Token: 0x04005F6F RID: 24431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string bonusKeyword = "";
 
-	// Token: 0x04005F47 RID: 24391
+	// Token: 0x04005F70 RID: 24432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string> rewardOptionalFormatter = new CachedStringFormatter<string>((string _s) => "(" + _s + ") ");
 
-	// Token: 0x04005F48 RID: 24392
+	// Token: 0x04005F71 RID: 24433
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, string> rewardTypeFormatter = new CachedStringFormatter<string, string>((string _s1, string _s2) => _s1 + " " + _s2);
 }

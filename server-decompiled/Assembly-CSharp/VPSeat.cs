@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000CA4 RID: 3236
+// Token: 0x02000CB2 RID: 3250
 [Preserve]
 public class VPSeat : VehiclePart
 {
-	// Token: 0x06006344 RID: 25412 RVA: 0x0026FE94 File Offset: 0x0026E094
+	// Token: 0x06006337 RID: 25399 RVA: 0x002732D8 File Offset: 0x002714D8
 	public override void InitPrefabConnections()
 	{
 		base.InitIKTarget(AvatarIKGoal.LeftHand, null);

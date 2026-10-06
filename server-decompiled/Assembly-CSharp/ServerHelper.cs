@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014A0 RID: 5280
+// Token: 0x020014C0 RID: 5312
 public static class ServerHelper
 {
-	// Token: 0x0600A5A5 RID: 42405 RVA: 0x003D9EE0 File Offset: 0x003D80E0
+	// Token: 0x0600A653 RID: 42579 RVA: 0x003DEB6C File Offset: 0x003DCD6C
 	public static void SetupForServer(GameObject obj)
 	{
 		Component[] array = obj.GetComponentsInChildren<Renderer>();

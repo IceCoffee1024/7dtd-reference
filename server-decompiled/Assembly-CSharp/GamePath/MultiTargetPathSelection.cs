@@ -2,14 +2,14 @@
 
 namespace GamePath
 {
-	// Token: 0x020018E2 RID: 6370
+	// Token: 0x0200190E RID: 6414
 	public enum MultiTargetPathSelection
 	{
-		// Token: 0x04009475 RID: 38005
+		// Token: 0x0400953B RID: 38203
 		None,
-		// Token: 0x04009476 RID: 38006
+		// Token: 0x0400953C RID: 38204
 		Random,
-		// Token: 0x04009477 RID: 38007
+		// Token: 0x0400953D RID: 38205
 		Closest
 	}
 }

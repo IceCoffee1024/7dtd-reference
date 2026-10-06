@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x0200065F RID: 1631
+// Token: 0x02000661 RID: 1633
 public enum BuffEffectStackTypes
 {
-	// Token: 0x04002AE8 RID: 10984
+	// Token: 0x04002AE1 RID: 10977
 	Ignore,
-	// Token: 0x04002AE9 RID: 10985
+	// Token: 0x04002AE2 RID: 10978
 	Duration,
-	// Token: 0x04002AEA RID: 10986
+	// Token: 0x04002AE3 RID: 10979
 	Effect,
-	// Token: 0x04002AEB RID: 10987
+	// Token: 0x04002AE4 RID: 10980
 	Replace
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F2B RID: 3883
+// Token: 0x02000F3A RID: 3898
 [Preserve]
 public class XUiC_ItemDronePartStack : XUiC_ItemPartStack
 {
-	// Token: 0x060079DE RID: 31198 RVA: 0x002DE448 File Offset: 0x002DC648
+	// Token: 0x060079DB RID: 31195 RVA: 0x002E1814 File Offset: 0x002DFA14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanSwap(ItemStack stack)
 	{
@@ -22,7 +22,7 @@ public class XUiC_ItemDronePartStack : XUiC_ItemPartStack
 		return flag;
 	}
 
-	// Token: 0x060079DF RID: 31199 RVA: 0x002DE4A0 File Offset: 0x002DC6A0
+	// Token: 0x060079DC RID: 31196 RVA: 0x002E186C File Offset: 0x002DFA6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanRemove()
 	{

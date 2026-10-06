@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x0200071C RID: 1820
+// Token: 0x0200071E RID: 1822
 public class EntityMinEvents
 {
 }

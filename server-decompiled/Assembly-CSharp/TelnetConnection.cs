@@ -6,11 +6,11 @@ using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x020002CF RID: 719
+// Token: 0x020002D2 RID: 722
 public class TelnetConnection : ConsoleConnectionAbstract
 {
-	// Token: 0x1700024B RID: 587
-	// (get) Token: 0x060014B8 RID: 5304 RVA: 0x0007D2AF File Offset: 0x0007B4AF
+	// Token: 0x17000243 RID: 579
+	// (get) Token: 0x060014B5 RID: 5301 RVA: 0x0007D563 File Offset: 0x0007B763
 	public bool IsClosed
 	{
 		get
@@ -19,8 +19,8 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x1700024C RID: 588
-	// (get) Token: 0x060014B9 RID: 5305 RVA: 0x0007D2B9 File Offset: 0x0007B4B9
+	// Token: 0x17000244 RID: 580
+	// (get) Token: 0x060014B6 RID: 5302 RVA: 0x0007D56D File Offset: 0x0007B76D
 	public bool IsAuthenticated
 	{
 		get
@@ -29,11 +29,11 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x1700024D RID: 589
-	// (get) Token: 0x060014BA RID: 5306 RVA: 0x0007D2CB File Offset: 0x0007B4CB
+	// Token: 0x17000245 RID: 581
+	// (get) Token: 0x060014B7 RID: 5303 RVA: 0x0007D57F File Offset: 0x0007B77F
 	public int EndPointHash { get; }
 
-	// Token: 0x060014BB RID: 5307 RVA: 0x0007D2D4 File Offset: 0x0007B4D4
+	// Token: 0x060014B8 RID: 5304 RVA: 0x0007D588 File Offset: 0x0007B788
 	public TelnetConnection(TelnetConsole _owner, TcpClient _client, int _addressHash, bool _authEnabled)
 	{
 		this.telnet = _owner;
@@ -57,7 +57,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		this.LoginMessage();
 	}
 
-	// Token: 0x060014BC RID: 5308 RVA: 0x0007D3E8 File Offset: 0x0007B5E8
+	// Token: 0x060014B9 RID: 5305 RVA: 0x0007D69C File Offset: 0x0007B89C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoginMessage()
 	{
@@ -77,8 +77,8 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		this.toClientQueue.Enqueue(string.Empty);
 	}
 
-	// Token: 0x1700024E RID: 590
-	// (get) Token: 0x060014BD RID: 5309 RVA: 0x0007D574 File Offset: 0x0007B774
+	// Token: 0x17000246 RID: 582
+	// (get) Token: 0x060014BA RID: 5306 RVA: 0x0007D828 File Offset: 0x0007BA28
 	public bool ConnectionUsable
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -88,7 +88,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x060014BE RID: 5310 RVA: 0x0007D590 File Offset: 0x0007B790
+	// Token: 0x060014BB RID: 5307 RVA: 0x0007D844 File Offset: 0x0007BA44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int HandlerThread(ThreadManager.ThreadInfo _tInfo)
 	{
@@ -123,7 +123,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		return 25;
 	}
 
-	// Token: 0x060014BF RID: 5311 RVA: 0x0007D654 File Offset: 0x0007B854
+	// Token: 0x060014BC RID: 5308 RVA: 0x0007D908 File Offset: 0x0007BB08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool handleReading()
 	{
@@ -149,7 +149,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		return true;
 	}
 
-	// Token: 0x060014C0 RID: 5312 RVA: 0x0007D6DC File Offset: 0x0007B8DC
+	// Token: 0x060014BD RID: 5309 RVA: 0x0007D990 File Offset: 0x0007BB90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool submitInput()
 	{
@@ -175,7 +175,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		return true;
 	}
 
-	// Token: 0x060014C1 RID: 5313 RVA: 0x0007D74C File Offset: 0x0007B94C
+	// Token: 0x060014BE RID: 5310 RVA: 0x0007DA00 File Offset: 0x0007BC00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void authenticate(string _line)
 	{
@@ -198,7 +198,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		this.closeConnection = true;
 	}
 
-	// Token: 0x060014C2 RID: 5314 RVA: 0x0007D7EC File Offset: 0x0007B9EC
+	// Token: 0x060014BF RID: 5311 RVA: 0x0007DAA0 File Offset: 0x0007BCA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleWriting()
 	{
@@ -224,14 +224,14 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x060014C3 RID: 5315 RVA: 0x0007D8A3 File Offset: 0x0007BAA3
+	// Token: 0x060014C0 RID: 5312 RVA: 0x0007DB57 File Offset: 0x0007BD57
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ThreadEnd(ThreadManager.ThreadInfo _threadInfo, bool _exitForException)
 	{
 		this.Close(false);
 	}
 
-	// Token: 0x060014C4 RID: 5316 RVA: 0x0007D8AC File Offset: 0x0007BAAC
+	// Token: 0x060014C1 RID: 5313 RVA: 0x0007DB60 File Offset: 0x0007BD60
 	public void Close(bool _kickedForLogins = false)
 	{
 		if (this.closed)
@@ -258,7 +258,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		Log.Out(text2 + ((endPoint2 != null) ? endPoint2.ToString() : null));
 	}
 
-	// Token: 0x060014C5 RID: 5317 RVA: 0x0007D952 File Offset: 0x0007BB52
+	// Token: 0x060014C2 RID: 5314 RVA: 0x0007DC06 File Offset: 0x0007BE06
 	public override void SendLine(string _line)
 	{
 		if (!this.closed && this.IsAuthenticated)
@@ -269,7 +269,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		this.toClientQueue.Enqueue(null);
 	}
 
-	// Token: 0x060014C6 RID: 5318 RVA: 0x0007D980 File Offset: 0x0007BB80
+	// Token: 0x060014C3 RID: 5315 RVA: 0x0007DC34 File Offset: 0x0007BE34
 	public override void SendLines(List<string> _output)
 	{
 		for (int i = 0; i < _output.Count; i++)
@@ -278,7 +278,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x060014C7 RID: 5319 RVA: 0x0007D9AB File Offset: 0x0007BBAB
+	// Token: 0x060014C4 RID: 5316 RVA: 0x0007DC5F File Offset: 0x0007BE5F
 	public override void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 	{
 		if (base.IsLogLevelEnabled(_type))
@@ -287,7 +287,7 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		}
 	}
 
-	// Token: 0x060014C8 RID: 5320 RVA: 0x0007D9C0 File Offset: 0x0007BBC0
+	// Token: 0x060014C5 RID: 5317 RVA: 0x0007DC74 File Offset: 0x0007BE74
 	public override string GetDescription()
 	{
 		string text;
@@ -300,63 +300,63 @@ public class TelnetConnection : ConsoleConnectionAbstract
 		return text;
 	}
 
-	// Token: 0x04000DBD RID: 3517
+	// Token: 0x04000DB6 RID: 3510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MAX_CHARS_PER_CONVERSION = 64;
 
-	// Token: 0x04000DBE RID: 3518
+	// Token: 0x04000DB7 RID: 3511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly BlockingQueue<string> toClientQueue = new BlockingQueue<string>();
 
-	// Token: 0x04000DBF RID: 3519
+	// Token: 0x04000DB8 RID: 3512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly TelnetConsole telnet;
 
-	// Token: 0x04000DC0 RID: 3520
+	// Token: 0x04000DB9 RID: 3513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool authenticated;
 
-	// Token: 0x04000DC1 RID: 3521
+	// Token: 0x04000DBA RID: 3514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool authEnabled;
 
-	// Token: 0x04000DC2 RID: 3522
+	// Token: 0x04000DBB RID: 3515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly TcpClient client;
 
-	// Token: 0x04000DC3 RID: 3523
+	// Token: 0x04000DBC RID: 3516
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly EndPoint endpoint;
 
-	// Token: 0x04000DC4 RID: 3524
+	// Token: 0x04000DBD RID: 3517
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile bool closed;
 
-	// Token: 0x04000DC5 RID: 3525
+	// Token: 0x04000DBE RID: 3518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedDescription;
 
-	// Token: 0x04000DC6 RID: 3526
+	// Token: 0x04000DBF RID: 3519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly NetworkStream clientStream;
 
-	// Token: 0x04000DC7 RID: 3527
+	// Token: 0x04000DC0 RID: 3520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StreamReader reader;
 
-	// Token: 0x04000DC8 RID: 3528
+	// Token: 0x04000DC1 RID: 3521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder readStringBuilder = new StringBuilder();
 
-	// Token: 0x04000DC9 RID: 3529
+	// Token: 0x04000DC2 RID: 3522
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly char[] charBuffer = new char[64];
 
-	// Token: 0x04000DCA RID: 3530
+	// Token: 0x04000DC3 RID: 3523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool closeConnection;
 
-	// Token: 0x04000DCB RID: 3531
+	// Token: 0x04000DC4 RID: 3524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] byteBuffer = new byte[256];
 }

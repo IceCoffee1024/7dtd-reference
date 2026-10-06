@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000A49 RID: 2633
+// Token: 0x02000A53 RID: 2643
 public class CharacterGazeController : MonoBehaviour
 {
-	// Token: 0x1700088C RID: 2188
-	// (get) Token: 0x06004FC8 RID: 20424 RVA: 0x001E32BC File Offset: 0x001E14BC
+	// Token: 0x170008AC RID: 2220
+	// (get) Token: 0x06004F97 RID: 20375 RVA: 0x001E456C File Offset: 0x001E276C
 	public Transform LookAtTarget
 	{
 		get
@@ -22,9 +22,9 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700088D RID: 2189
-	// (get) Token: 0x06004FC9 RID: 20425 RVA: 0x001E331B File Offset: 0x001E151B
-	// (set) Token: 0x06004FCA RID: 20426 RVA: 0x001E3323 File Offset: 0x001E1523
+	// Token: 0x170008AD RID: 2221
+	// (get) Token: 0x06004F98 RID: 20376 RVA: 0x001E45CB File Offset: 0x001E27CB
+	// (set) Token: 0x06004F99 RID: 20377 RVA: 0x001E45D3 File Offset: 0x001E27D3
 	public Transform LookAtTransformOverride
 	{
 		get
@@ -37,8 +37,8 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700088E RID: 2190
-	// (get) Token: 0x06004FCB RID: 20427 RVA: 0x001E332C File Offset: 0x001E152C
+	// Token: 0x170008AE RID: 2222
+	// (get) Token: 0x06004F9A RID: 20378 RVA: 0x001E45DC File Offset: 0x001E27DC
 	public GameRandom Random
 	{
 		get
@@ -51,7 +51,7 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FCC RID: 20428 RVA: 0x001E335C File Offset: 0x001E155C
+	// Token: 0x06004F9B RID: 20379 RVA: 0x001E460C File Offset: 0x001E280C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -67,14 +67,14 @@ public class CharacterGazeController : MonoBehaviour
 		this.gazeTimer = Time.realtimeSinceStartup + this.Random.RandomRange(0.25f, 2f);
 	}
 
-	// Token: 0x06004FCD RID: 20429 RVA: 0x001E33F9 File Offset: 0x001E15F9
+	// Token: 0x06004F9C RID: 20380 RVA: 0x001E46A9 File Offset: 0x001E28A9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		CharacterGazeController.instances.Add(this);
 	}
 
-	// Token: 0x06004FCE RID: 20430 RVA: 0x001E3406 File Offset: 0x001E1606
+	// Token: 0x06004F9D RID: 20381 RVA: 0x001E46B6 File Offset: 0x001E28B6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -84,7 +84,7 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FCF RID: 20431 RVA: 0x001E3421 File Offset: 0x001E1621
+	// Token: 0x06004F9E RID: 20382 RVA: 0x001E46D1 File Offset: 0x001E28D1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -98,7 +98,7 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FD0 RID: 20432 RVA: 0x001E345C File Offset: 0x001E165C
+	// Token: 0x06004F9F RID: 20383 RVA: 0x001E470C File Offset: 0x001E290C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
@@ -115,7 +115,7 @@ public class CharacterGazeController : MonoBehaviour
 		this.UpdateEyeGaze();
 	}
 
-	// Token: 0x06004FD1 RID: 20433 RVA: 0x001E34B0 File Offset: 0x001E16B0
+	// Token: 0x06004FA0 RID: 20384 RVA: 0x001E4760 File Offset: 0x001E2960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLookAtTarget()
 	{
@@ -222,14 +222,14 @@ public class CharacterGazeController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FD2 RID: 20434 RVA: 0x001E37DB File Offset: 0x001E19DB
+	// Token: 0x06004FA1 RID: 20385 RVA: 0x001E4A8B File Offset: 0x001E2C8B
 	public void SnapNextUpdate()
 	{
 		this.shouldSnapHeadNextUpdate = true;
 		this.shouldSnapEyesNextUpdate = true;
 	}
 
-	// Token: 0x06004FD3 RID: 20435 RVA: 0x001E37EC File Offset: 0x001E19EC
+	// Token: 0x06004FA2 RID: 20386 RVA: 0x001E4A9C File Offset: 0x001E2C9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateHeadRotation()
 	{
@@ -270,7 +270,7 @@ public class CharacterGazeController : MonoBehaviour
 		this.headTransform.rotation = this.currentHeadRotation * this.neckTransform.rotation;
 	}
 
-	// Token: 0x06004FD4 RID: 20436 RVA: 0x001E39C8 File Offset: 0x001E1BC8
+	// Token: 0x06004FA3 RID: 20387 RVA: 0x001E4C78 File Offset: 0x001E2E78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEyeGaze()
 	{
@@ -307,88 +307,88 @@ public class CharacterGazeController : MonoBehaviour
 		this.LookAtTarget.localPosition = localPosition;
 	}
 
-	// Token: 0x06004FD5 RID: 20437 RVA: 0x001E3BF6 File Offset: 0x001E1DF6
+	// Token: 0x06004FA4 RID: 20388 RVA: 0x001E4EA6 File Offset: 0x001E30A6
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void Cleanup()
 	{
 		CharacterGazeController.instances.Clear();
 	}
 
-	// Token: 0x04003D38 RID: 15672
+	// Token: 0x04003D45 RID: 15685
 	public static List<CharacterGazeController> instances = new List<CharacterGazeController>();
 
-	// Token: 0x04003D39 RID: 15673
+	// Token: 0x04003D46 RID: 15686
 	public Transform leftEyeTransform;
 
-	// Token: 0x04003D3A RID: 15674
+	// Token: 0x04003D47 RID: 15687
 	public Transform rightEyeTransform;
 
-	// Token: 0x04003D3B RID: 15675
+	// Token: 0x04003D48 RID: 15688
 	public Vector3 leftEyeLocalPosition;
 
-	// Token: 0x04003D3C RID: 15676
+	// Token: 0x04003D49 RID: 15689
 	public Vector3 rightEyeLocalPosition;
 
-	// Token: 0x04003D3D RID: 15677
+	// Token: 0x04003D4A RID: 15690
 	public Transform rootTransform;
 
-	// Token: 0x04003D3E RID: 15678
+	// Token: 0x04003D4B RID: 15691
 	public Transform neckTransform;
 
-	// Token: 0x04003D3F RID: 15679
+	// Token: 0x04003D4C RID: 15692
 	public Transform headTransform;
 
-	// Token: 0x04003D40 RID: 15680
+	// Token: 0x04003D4D RID: 15693
 	[Range(0f, 100f)]
 	public float eyeRotationSpeed = 30f;
 
-	// Token: 0x04003D41 RID: 15681
+	// Token: 0x04003D4E RID: 15694
 	[Range(0f, 100f)]
 	public float headRotationSpeed = 7f;
 
-	// Token: 0x04003D42 RID: 15682
+	// Token: 0x04003D4F RID: 15695
 	[Range(0f, 50f)]
 	public float twitchSpeed = 25f;
 
-	// Token: 0x04003D43 RID: 15683
+	// Token: 0x04003D50 RID: 15696
 	public float eyeLookAtTargetAngle = 35f;
 
-	// Token: 0x04003D44 RID: 15684
+	// Token: 0x04003D51 RID: 15697
 	public float headLookAtTargetAngle = 75f;
 
-	// Token: 0x04003D45 RID: 15685
+	// Token: 0x04003D52 RID: 15698
 	[Range(0f, 20f)]
 	public float maxLookAtDistance = 5f;
 
-	// Token: 0x04003D46 RID: 15686
+	// Token: 0x04003D53 RID: 15699
 	public SkinnedMeshRenderer eyeSkinnedMeshRenderer;
 
-	// Token: 0x04003D47 RID: 15687
+	// Token: 0x04003D54 RID: 15700
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material eyeMaterial;
 
-	// Token: 0x04003D48 RID: 15688
+	// Token: 0x04003D55 RID: 15701
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform lookAtTransformOverride;
 
-	// Token: 0x04003D49 RID: 15689
+	// Token: 0x04003D56 RID: 15702
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool lookAtCamera;
 
-	// Token: 0x04003D4A RID: 15690
+	// Token: 0x04003D57 RID: 15703
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform lookAtTarget;
 
-	// Token: 0x04003D4B RID: 15691
+	// Token: 0x04003D58 RID: 15704
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameRandom random;
 
-	// Token: 0x04003D4C RID: 15692
+	// Token: 0x04003D59 RID: 15705
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> lookatOffsets = new List<Vector3>
@@ -407,52 +407,52 @@ public class CharacterGazeController : MonoBehaviour
 		new Vector3(0f, 0f, 2f)
 	};
 
-	// Token: 0x04003D4D RID: 15693
+	// Token: 0x04003D5A RID: 15706
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive entityAlive;
 
-	// Token: 0x04003D4E RID: 15694
+	// Token: 0x04003D5B RID: 15707
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Quaternion currentLeftEyeRotation;
 
-	// Token: 0x04003D4F RID: 15695
+	// Token: 0x04003D5C RID: 15708
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Quaternion currentRightEyeRotation;
 
-	// Token: 0x04003D50 RID: 15696
+	// Token: 0x04003D5D RID: 15709
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Quaternion currentHeadRotation;
 
-	// Token: 0x04003D51 RID: 15697
+	// Token: 0x04003D5E RID: 15710
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float gazeTimer;
 
-	// Token: 0x04003D52 RID: 15698
+	// Token: 0x04003D5F RID: 15711
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lookatOffsetIndex;
 
-	// Token: 0x04003D53 RID: 15699
+	// Token: 0x04003D60 RID: 15712
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool shouldSnapHeadNextUpdate;
 
-	// Token: 0x04003D54 RID: 15700
+	// Token: 0x04003D61 RID: 15713
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool shouldSnapEyesNextUpdate;
 
-	// Token: 0x04003D55 RID: 15701
+	// Token: 0x04003D62 RID: 15714
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDead;
 
-	// Token: 0x04003D56 RID: 15702
+	// Token: 0x04003D63 RID: 15715
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 lookAtTargetDefaultPosition = new Vector3(0f, 1.7f, 10f);

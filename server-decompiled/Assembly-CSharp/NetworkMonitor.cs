@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x0200144F RID: 5199
+// Token: 0x0200146F RID: 5231
 public class NetworkMonitor
 {
-	// Token: 0x0600A341 RID: 41793 RVA: 0x003D0398 File Offset: 0x003CE598
+	// Token: 0x0600A3ED RID: 41965 RVA: 0x003D4FA8 File Offset: 0x003D31A8
 	public NetworkMonitor(int _channel, Transform _parent)
 	{
 		this.channel = _channel;
@@ -22,7 +22,7 @@ public class NetworkMonitor
 		this.uiTxtSent = (((transform = _parent.Find("texSent")) != null) ? transform.GetComponent<UITexture>() : null);
 	}
 
-	// Token: 0x0600A342 RID: 41794 RVA: 0x003D0500 File Offset: 0x003CE700
+	// Token: 0x0600A3EE RID: 41966 RVA: 0x003D5110 File Offset: 0x003D3310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -41,7 +41,7 @@ public class NetworkMonitor
 		}
 	}
 
-	// Token: 0x0600A343 RID: 41795 RVA: 0x003D05C8 File Offset: 0x003CE7C8
+	// Token: 0x0600A3EF RID: 41967 RVA: 0x003D51D8 File Offset: 0x003D33D8
 	public void Cleanup()
 	{
 		SimpleGraph simpleGraph = this.graphReceived;
@@ -57,7 +57,7 @@ public class NetworkMonitor
 		simpleGraph2.Cleanup();
 	}
 
-	// Token: 0x0600A344 RID: 41796 RVA: 0x003D05EC File Offset: 0x003CE7EC
+	// Token: 0x0600A3F0 RID: 41968 RVA: 0x003D51FC File Offset: 0x003D33FC
 	public void ResetAllNumbers()
 	{
 		this.bResetNext = true;
@@ -71,7 +71,7 @@ public class NetworkMonitor
 		this.totalPSent = 0;
 	}
 
-	// Token: 0x0600A345 RID: 41797 RVA: 0x003D0638 File Offset: 0x003CE838
+	// Token: 0x0600A3F1 RID: 41969 RVA: 0x003D5248 File Offset: 0x003D3448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateDataForConnection(INetConnection[] _nc)
 	{
@@ -97,7 +97,7 @@ public class NetworkMonitor
 		this.bResetNext = false;
 	}
 
-	// Token: 0x0600A346 RID: 41798 RVA: 0x003D071C File Offset: 0x003CE91C
+	// Token: 0x0600A3F2 RID: 41970 RVA: 0x003D532C File Offset: 0x003D352C
 	public void Update()
 	{
 		if (this.Enabled != this.parent.gameObject.activeSelf)
@@ -192,7 +192,7 @@ public class NetworkMonitor
 		}
 	}
 
-	// Token: 0x0600A347 RID: 41799 RVA: 0x003D0B20 File Offset: 0x003CED20
+	// Token: 0x0600A3F3 RID: 41971 RVA: 0x003D5730 File Offset: 0x003D3930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePackageListText(StringBuilder _sb, UILabel _label, int[] _packagesPerType, int[] _bytesPerType, string _caption)
 	{
@@ -229,7 +229,7 @@ public class NetworkMonitor
 		}
 	}
 
-	// Token: 0x0600A348 RID: 41800 RVA: 0x003D0C64 File Offset: 0x003CEE64
+	// Token: 0x0600A3F4 RID: 41972 RVA: 0x003D5874 File Offset: 0x003D3A74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string printPackageSequence(RingBuffer<SNetPackageInfo> _sequence, string _addInfo)
 	{
@@ -277,7 +277,7 @@ public class NetworkMonitor
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A349 RID: 41801 RVA: 0x003D0D8C File Offset: 0x003CEF8C
+	// Token: 0x0600A3F5 RID: 41973 RVA: 0x003D599C File Offset: 0x003D3B9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string formatPackage(ulong _baseTick, SNetPackageInfo _lastPackage, int _lastPackageCnt, int _size)
 	{
@@ -290,184 +290,184 @@ public class NetworkMonitor
 		});
 	}
 
-	// Token: 0x04007A4B RID: 31307
+	// Token: 0x04007AC6 RID: 31430
 	public bool Enabled;
 
-	// Token: 0x04007A4C RID: 31308
+	// Token: 0x04007AC7 RID: 31431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool initialized;
 
-	// Token: 0x04007A4D RID: 31309
+	// Token: 0x04007AC8 RID: 31432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UILabel uiLblOverview;
 
-	// Token: 0x04007A4E RID: 31310
+	// Token: 0x04007AC9 RID: 31433
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UILabel uiLblRecvPkgCnt;
 
-	// Token: 0x04007A4F RID: 31311
+	// Token: 0x04007ACA RID: 31434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UILabel uiLblSentPkgCnt;
 
-	// Token: 0x04007A50 RID: 31312
+	// Token: 0x04007ACB RID: 31435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UILabel uiLblRecvPkgSeq;
 
-	// Token: 0x04007A51 RID: 31313
+	// Token: 0x04007ACC RID: 31436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UILabel uiLblSentPkgSeq;
 
-	// Token: 0x04007A52 RID: 31314
+	// Token: 0x04007ACD RID: 31437
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UITexture uiTxtRecv;
 
-	// Token: 0x04007A53 RID: 31315
+	// Token: 0x04007ACE RID: 31438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly UITexture uiTxtSent;
 
-	// Token: 0x04007A54 RID: 31316
+	// Token: 0x04007ACF RID: 31439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SimpleGraph graphReceived;
 
-	// Token: 0x04007A55 RID: 31317
+	// Token: 0x04007AD0 RID: 31440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SimpleGraph graphSent;
 
-	// Token: 0x04007A56 RID: 31318
+	// Token: 0x04007AD1 RID: 31441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] packagesPerTypeReceived = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04007A57 RID: 31319
+	// Token: 0x04007AD2 RID: 31442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] packagesPerTypeSent = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04007A58 RID: 31320
+	// Token: 0x04007AD3 RID: 31443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] bytesPerTypeReceived = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04007A59 RID: 31321
+	// Token: 0x04007AD4 RID: 31444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] bytesPerTypeSent = new int[NetPackageManager.KnownPackageCount];
 
-	// Token: 0x04007A5A RID: 31322
+	// Token: 0x04007AD5 RID: 31445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bResetNext;
 
-	// Token: 0x04007A5B RID: 31323
+	// Token: 0x04007AD6 RID: 31446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalBytesSent;
 
-	// Token: 0x04007A5C RID: 31324
+	// Token: 0x04007AD7 RID: 31447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalBytesReceived;
 
-	// Token: 0x04007A5D RID: 31325
+	// Token: 0x04007AD8 RID: 31448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalPackagesSent;
 
-	// Token: 0x04007A5E RID: 31326
+	// Token: 0x04007AD9 RID: 31449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalPackagesReceived;
 
-	// Token: 0x04007A5F RID: 31327
+	// Token: 0x04007ADA RID: 31450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RingBuffer<SNetPackageInfo> recSequence;
 
-	// Token: 0x04007A60 RID: 31328
+	// Token: 0x04007ADB RID: 31451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RingBuffer<SNetPackageInfo> sentSequence;
 
-	// Token: 0x04007A61 RID: 31329
+	// Token: 0x04007ADC RID: 31452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float timePassed;
 
-	// Token: 0x04007A62 RID: 31330
+	// Token: 0x04007ADD RID: 31453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<NetworkMonitor.SIdCnt> sortList = new List<NetworkMonitor.SIdCnt>();
 
-	// Token: 0x04007A63 RID: 31331
+	// Token: 0x04007ADE RID: 31454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly NetworkMonitor.SIdCntSorter sorter = new NetworkMonitor.SIdCntSorter();
 
-	// Token: 0x04007A64 RID: 31332
+	// Token: 0x04007ADF RID: 31455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Transform parent;
 
-	// Token: 0x04007A65 RID: 31333
+	// Token: 0x04007AE0 RID: 31456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int channel;
 
-	// Token: 0x04007A66 RID: 31334
+	// Token: 0x04007AE1 RID: 31457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sumBRecv;
 
-	// Token: 0x04007A67 RID: 31335
+	// Token: 0x04007AE2 RID: 31458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sumBSent;
 
-	// Token: 0x04007A68 RID: 31336
+	// Token: 0x04007AE3 RID: 31459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sumPRecv;
 
-	// Token: 0x04007A69 RID: 31337
+	// Token: 0x04007AE4 RID: 31460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sumPSent;
 
-	// Token: 0x04007A6A RID: 31338
+	// Token: 0x04007AE5 RID: 31461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalBRecv;
 
-	// Token: 0x04007A6B RID: 31339
+	// Token: 0x04007AE6 RID: 31462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalBSent;
 
-	// Token: 0x04007A6C RID: 31340
+	// Token: 0x04007AE7 RID: 31463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalPRecv;
 
-	// Token: 0x04007A6D RID: 31341
+	// Token: 0x04007AE8 RID: 31464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalPSent;
 
-	// Token: 0x04007A6E RID: 31342
+	// Token: 0x04007AE9 RID: 31465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float bpsRecv;
 
-	// Token: 0x04007A6F RID: 31343
+	// Token: 0x04007AEA RID: 31466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float bpsSent;
 
-	// Token: 0x04007A70 RID: 31344
+	// Token: 0x04007AEB RID: 31467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ppsRecv;
 
-	// Token: 0x04007A71 RID: 31345
+	// Token: 0x04007AEC RID: 31468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ppsSent;
 
-	// Token: 0x04007A72 RID: 31346
+	// Token: 0x04007AED RID: 31469
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int maxDisplayedPackageTypes = 16;
 
-	// Token: 0x02001450 RID: 5200
+	// Token: 0x02001470 RID: 5232
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct SIdCnt
 	{
-		// Token: 0x04007A73 RID: 31347
+		// Token: 0x04007AEE RID: 31470
 		public int Id;
 
-		// Token: 0x04007A74 RID: 31348
+		// Token: 0x04007AEF RID: 31471
 		public int Cnt;
 
-		// Token: 0x04007A75 RID: 31349
+		// Token: 0x04007AF0 RID: 31472
 		public int Bytes;
 	}
 
-	// Token: 0x02001451 RID: 5201
+	// Token: 0x02001471 RID: 5233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SIdCntSorter : IComparer<NetworkMonitor.SIdCnt>
 	{
-		// Token: 0x0600A34A RID: 41802 RVA: 0x003D0DF4 File Offset: 0x003CEFF4
+		// Token: 0x0600A3F6 RID: 41974 RVA: 0x003D5A04 File Offset: 0x003D3C04
 		public int Compare(NetworkMonitor.SIdCnt _obj1, NetworkMonitor.SIdCnt _obj2)
 		{
 			return _obj2.Cnt - _obj1.Cnt;

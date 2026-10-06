@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-// Token: 0x02000A01 RID: 2561
+// Token: 0x02000A0B RID: 2571
 public static class SdDirectory
 {
-	// Token: 0x06004C8E RID: 19598 RVA: 0x001D8EA8 File Offset: 0x001D70A8
+	// Token: 0x06004C5D RID: 19549 RVA: 0x001DA158 File Offset: 0x001D8358
 	public static SdDirectoryInfo CreateDirectory(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -17,14 +17,14 @@ public static class SdDirectory
 		return new SdDirectoryInfo(Directory.CreateDirectory(path));
 	}
 
-	// Token: 0x06004C8F RID: 19599 RVA: 0x001D8ED1 File Offset: 0x001D70D1
+	// Token: 0x06004C5E RID: 19550 RVA: 0x001DA181 File Offset: 0x001D8381
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static SdDirectoryInfo ManagedCreateDirectory(SaveDataManagedPath path)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryCreateDirectory(path);
 	}
 
-	// Token: 0x06004C90 RID: 19600 RVA: 0x001D8EE0 File Offset: 0x001D70E0
+	// Token: 0x06004C5F RID: 19551 RVA: 0x001DA190 File Offset: 0x001D8390
 	public static DateTime GetLastWriteTime(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -35,14 +35,14 @@ public static class SdDirectory
 		return Directory.GetLastWriteTime(path);
 	}
 
-	// Token: 0x06004C91 RID: 19601 RVA: 0x001D8F04 File Offset: 0x001D7104
+	// Token: 0x06004C60 RID: 19552 RVA: 0x001DA1B4 File Offset: 0x001D83B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime ManagedGetLastWriteTime(SaveDataManagedPath path)
 	{
 		return SdDirectory.ManagedGetLastWriteTimeUtc(path).ToLocalTime();
 	}
 
-	// Token: 0x06004C92 RID: 19602 RVA: 0x001D8F20 File Offset: 0x001D7120
+	// Token: 0x06004C61 RID: 19553 RVA: 0x001DA1D0 File Offset: 0x001D83D0
 	public static DateTime GetLastWriteTimeUtc(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -53,14 +53,14 @@ public static class SdDirectory
 		return Directory.GetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004C93 RID: 19603 RVA: 0x001D8F44 File Offset: 0x001D7144
+	// Token: 0x06004C62 RID: 19554 RVA: 0x001DA1F4 File Offset: 0x001D83F4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static DateTime ManagedGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004C94 RID: 19604 RVA: 0x001D8F54 File Offset: 0x001D7154
+	// Token: 0x06004C63 RID: 19555 RVA: 0x001DA204 File Offset: 0x001D8404
 	public static bool Exists(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -71,68 +71,68 @@ public static class SdDirectory
 		return Directory.Exists(path);
 	}
 
-	// Token: 0x06004C95 RID: 19605 RVA: 0x001D8F78 File Offset: 0x001D7178
+	// Token: 0x06004C64 RID: 19556 RVA: 0x001DA228 File Offset: 0x001D8428
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool ManagedExists(SaveDataManagedPath path)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryExists(path);
 	}
 
-	// Token: 0x06004C96 RID: 19606 RVA: 0x001D8F85 File Offset: 0x001D7185
+	// Token: 0x06004C65 RID: 19557 RVA: 0x001DA235 File Offset: 0x001D8435
 	public static string[] GetFiles(string path)
 	{
 		return SdDirectory.EnumerateFiles(path).ToArray<string>();
 	}
 
-	// Token: 0x06004C97 RID: 19607 RVA: 0x001D8F92 File Offset: 0x001D7192
+	// Token: 0x06004C66 RID: 19558 RVA: 0x001DA242 File Offset: 0x001D8442
 	public static string[] GetFiles(string path, string searchPattern)
 	{
 		return SdDirectory.EnumerateFiles(path, searchPattern).ToArray<string>();
 	}
 
-	// Token: 0x06004C98 RID: 19608 RVA: 0x001D8FA0 File Offset: 0x001D71A0
+	// Token: 0x06004C67 RID: 19559 RVA: 0x001DA250 File Offset: 0x001D8450
 	public static string[] GetFiles(string path, string searchPattern, SearchOption searchOption)
 	{
 		return SdDirectory.EnumerateFiles(path, searchPattern, searchOption).ToArray<string>();
 	}
 
-	// Token: 0x06004C99 RID: 19609 RVA: 0x001D8FAF File Offset: 0x001D71AF
+	// Token: 0x06004C68 RID: 19560 RVA: 0x001DA25F File Offset: 0x001D845F
 	public static string[] GetDirectories(string path)
 	{
 		return SdDirectory.EnumerateDirectories(path).ToArray<string>();
 	}
 
-	// Token: 0x06004C9A RID: 19610 RVA: 0x001D8FBC File Offset: 0x001D71BC
+	// Token: 0x06004C69 RID: 19561 RVA: 0x001DA26C File Offset: 0x001D846C
 	public static string[] GetDirectories(string path, string searchPattern)
 	{
 		return SdDirectory.EnumerateDirectories(path, searchPattern).ToArray<string>();
 	}
 
-	// Token: 0x06004C9B RID: 19611 RVA: 0x001D8FCA File Offset: 0x001D71CA
+	// Token: 0x06004C6A RID: 19562 RVA: 0x001DA27A File Offset: 0x001D847A
 	public static string[] GetDirectories(string path, string searchPattern, SearchOption searchOption)
 	{
 		return SdDirectory.EnumerateDirectories(path, searchPattern, searchOption).ToArray<string>();
 	}
 
-	// Token: 0x06004C9C RID: 19612 RVA: 0x001D8FD9 File Offset: 0x001D71D9
+	// Token: 0x06004C6B RID: 19563 RVA: 0x001DA289 File Offset: 0x001D8489
 	public static string[] GetFileSystemEntries(string path)
 	{
 		return SdDirectory.EnumerateFileSystemEntries(path).ToArray<string>();
 	}
 
-	// Token: 0x06004C9D RID: 19613 RVA: 0x001D8FE6 File Offset: 0x001D71E6
+	// Token: 0x06004C6C RID: 19564 RVA: 0x001DA296 File Offset: 0x001D8496
 	public static string[] GetFileSystemEntries(string path, string searchPattern)
 	{
 		return SdDirectory.EnumerateFileSystemEntries(path, searchPattern).ToArray<string>();
 	}
 
-	// Token: 0x06004C9E RID: 19614 RVA: 0x001D8FF4 File Offset: 0x001D71F4
+	// Token: 0x06004C6D RID: 19565 RVA: 0x001DA2A4 File Offset: 0x001D84A4
 	public static string[] GetFileSystemEntries(string path, string searchPattern, SearchOption searchOption)
 	{
 		return SdDirectory.EnumerateFileSystemEntries(path, searchPattern, searchOption).ToArray<string>();
 	}
 
-	// Token: 0x06004C9F RID: 19615 RVA: 0x001D9004 File Offset: 0x001D7204
+	// Token: 0x06004C6E RID: 19566 RVA: 0x001DA2B4 File Offset: 0x001D84B4
 	public static IEnumerable<string> EnumerateDirectories(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -144,7 +144,7 @@ public static class SdDirectory
 		return Directory.EnumerateDirectories(path);
 	}
 
-	// Token: 0x06004CA0 RID: 19616 RVA: 0x001D9054 File Offset: 0x001D7254
+	// Token: 0x06004C6F RID: 19567 RVA: 0x001DA304 File Offset: 0x001D8504
 	public static IEnumerable<string> EnumerateDirectories(string path, string searchPattern)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -156,7 +156,7 @@ public static class SdDirectory
 		return Directory.EnumerateDirectories(path, searchPattern);
 	}
 
-	// Token: 0x06004CA1 RID: 19617 RVA: 0x001D90A0 File Offset: 0x001D72A0
+	// Token: 0x06004C70 RID: 19568 RVA: 0x001DA350 File Offset: 0x001D8550
 	public static IEnumerable<string> EnumerateDirectories(string path, string searchPattern, SearchOption searchOption)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -168,14 +168,14 @@ public static class SdDirectory
 		return Directory.EnumerateDirectories(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA2 RID: 19618 RVA: 0x001D90EC File Offset: 0x001D72EC
+	// Token: 0x06004C71 RID: 19569 RVA: 0x001DA39C File Offset: 0x001D859C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<SaveDataManagedPath> ManagedEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryEnumerateDirectories(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA3 RID: 19619 RVA: 0x001D90FC File Offset: 0x001D72FC
+	// Token: 0x06004C72 RID: 19570 RVA: 0x001DA3AC File Offset: 0x001D85AC
 	public static IEnumerable<string> EnumerateFiles(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -187,7 +187,7 @@ public static class SdDirectory
 		return Directory.EnumerateFiles(path);
 	}
 
-	// Token: 0x06004CA4 RID: 19620 RVA: 0x001D914C File Offset: 0x001D734C
+	// Token: 0x06004C73 RID: 19571 RVA: 0x001DA3FC File Offset: 0x001D85FC
 	public static IEnumerable<string> EnumerateFiles(string path, string searchPattern)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -199,7 +199,7 @@ public static class SdDirectory
 		return Directory.EnumerateFiles(path, searchPattern);
 	}
 
-	// Token: 0x06004CA5 RID: 19621 RVA: 0x001D9198 File Offset: 0x001D7398
+	// Token: 0x06004C74 RID: 19572 RVA: 0x001DA448 File Offset: 0x001D8648
 	public static IEnumerable<string> EnumerateFiles(string path, string searchPattern, SearchOption searchOption)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -211,14 +211,14 @@ public static class SdDirectory
 		return Directory.EnumerateFiles(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA6 RID: 19622 RVA: 0x001D91E4 File Offset: 0x001D73E4
+	// Token: 0x06004C75 RID: 19573 RVA: 0x001DA494 File Offset: 0x001D8694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<SaveDataManagedPath> ManagedEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryEnumerateFiles(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CA7 RID: 19623 RVA: 0x001D91F4 File Offset: 0x001D73F4
+	// Token: 0x06004C76 RID: 19574 RVA: 0x001DA4A4 File Offset: 0x001D86A4
 	public static IEnumerable<string> EnumerateFileSystemEntries(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -230,7 +230,7 @@ public static class SdDirectory
 		return Directory.EnumerateFileSystemEntries(path);
 	}
 
-	// Token: 0x06004CA8 RID: 19624 RVA: 0x001D9244 File Offset: 0x001D7444
+	// Token: 0x06004C77 RID: 19575 RVA: 0x001DA4F4 File Offset: 0x001D86F4
 	public static IEnumerable<string> EnumerateFileSystemEntries(string path, string searchPattern)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -242,7 +242,7 @@ public static class SdDirectory
 		return Directory.EnumerateFileSystemEntries(path, searchPattern);
 	}
 
-	// Token: 0x06004CA9 RID: 19625 RVA: 0x001D9290 File Offset: 0x001D7490
+	// Token: 0x06004C78 RID: 19576 RVA: 0x001DA540 File Offset: 0x001D8740
 	public static IEnumerable<string> EnumerateFileSystemEntries(string path, string searchPattern, SearchOption searchOption)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -254,38 +254,38 @@ public static class SdDirectory
 		return Directory.EnumerateFileSystemEntries(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CAA RID: 19626 RVA: 0x001D92DC File Offset: 0x001D74DC
+	// Token: 0x06004C79 RID: 19577 RVA: 0x001DA58C File Offset: 0x001D878C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<SaveDataManagedPath> ManagedEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataUtils.SaveDataManager.ManagedDirectoryEnumerateFileSystemEntries(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004CAB RID: 19627 RVA: 0x001D92EB File Offset: 0x001D74EB
+	// Token: 0x06004C7A RID: 19578 RVA: 0x001DA59B File Offset: 0x001D879B
 	public static string[] GetLogicalDrives()
 	{
 		return Directory.GetLogicalDrives();
 	}
 
-	// Token: 0x06004CAC RID: 19628 RVA: 0x001D92F2 File Offset: 0x001D74F2
+	// Token: 0x06004C7B RID: 19579 RVA: 0x001DA5A2 File Offset: 0x001D87A2
 	public static string GetDirectoryRoot(string path)
 	{
 		return Directory.GetDirectoryRoot(path);
 	}
 
-	// Token: 0x06004CAD RID: 19629 RVA: 0x001D92FA File Offset: 0x001D74FA
+	// Token: 0x06004C7C RID: 19580 RVA: 0x001DA5AA File Offset: 0x001D87AA
 	public static string GetCurrentDirectory()
 	{
 		return Directory.GetCurrentDirectory();
 	}
 
-	// Token: 0x06004CAE RID: 19630 RVA: 0x001D9301 File Offset: 0x001D7501
+	// Token: 0x06004C7D RID: 19581 RVA: 0x001DA5B1 File Offset: 0x001D87B1
 	public static void SetCurrentDirectory(string path)
 	{
 		Directory.SetCurrentDirectory(path);
 	}
 
-	// Token: 0x06004CAF RID: 19631 RVA: 0x001D930C File Offset: 0x001D750C
+	// Token: 0x06004C7E RID: 19582 RVA: 0x001DA5BC File Offset: 0x001D87BC
 	public static void Delete(string path)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -297,7 +297,7 @@ public static class SdDirectory
 		Directory.Delete(path);
 	}
 
-	// Token: 0x06004CB0 RID: 19632 RVA: 0x001D9334 File Offset: 0x001D7534
+	// Token: 0x06004C7F RID: 19583 RVA: 0x001DA5E4 File Offset: 0x001D87E4
 	public static void Delete(string path, bool recursive)
 	{
 		SaveDataManagedPath saveDataManagedPath;
@@ -309,7 +309,7 @@ public static class SdDirectory
 		Directory.Delete(path, recursive);
 	}
 
-	// Token: 0x06004CB1 RID: 19633 RVA: 0x001D935A File Offset: 0x001D755A
+	// Token: 0x06004C80 RID: 19584 RVA: 0x001DA60A File Offset: 0x001D880A
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ManagedDelete(SaveDataManagedPath path, bool recursive)
 	{

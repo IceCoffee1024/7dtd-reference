@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000813 RID: 2067
+// Token: 0x02000811 RID: 2065
 [Preserve]
 public class NetPackageNavObject : NetPackage
 {
-	// Token: 0x06003CDF RID: 15583 RVA: 0x00183C7D File Offset: 0x00181E7D
+	// Token: 0x06003CA9 RID: 15529 RVA: 0x00183859 File Offset: 0x00181A59
 	public NetPackageNavObject Setup(string _navObjectClass, string _displayName, Vector3 _position, bool _isAdd, bool _usingLocalizationId, int _entityId = -1)
 	{
 		this.navObjectClass = _navObjectClass;
@@ -18,7 +18,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CE0 RID: 15584 RVA: 0x00183CAD File Offset: 0x00181EAD
+	// Token: 0x06003CAA RID: 15530 RVA: 0x00183889 File Offset: 0x00181A89
 	public NetPackageNavObject Setup(int _entityId)
 	{
 		this.navObjectClass = "";
@@ -30,7 +30,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CE1 RID: 15585 RVA: 0x00183CE6 File Offset: 0x00181EE6
+	// Token: 0x06003CAB RID: 15531 RVA: 0x001838C2 File Offset: 0x00181AC2
 	public NetPackageNavObject Setup(string _navObjectClass, string _displayName, Vector3 _position, bool _isAdd, Color _overrideColor, bool _usingLocalizationId)
 	{
 		this.navObjectClass = _navObjectClass;
@@ -43,7 +43,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CE2 RID: 15586 RVA: 0x00183D20 File Offset: 0x00181F20
+	// Token: 0x06003CAC RID: 15532 RVA: 0x001838FC File Offset: 0x00181AFC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.navObjectClass = _br.ReadString();
@@ -56,7 +56,7 @@ public class NetPackageNavObject : NetPackage
 		this.entityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003CE3 RID: 15587 RVA: 0x00183D90 File Offset: 0x00181F90
+	// Token: 0x06003CAD RID: 15533 RVA: 0x0018396C File Offset: 0x00181B6C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -70,7 +70,7 @@ public class NetPackageNavObject : NetPackage
 		_bw.Write(this.entityId);
 	}
 
-	// Token: 0x06003CE4 RID: 15588 RVA: 0x00183E10 File Offset: 0x00182010
+	// Token: 0x06003CAE RID: 15534 RVA: 0x001839EC File Offset: 0x00181BEC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -109,8 +109,8 @@ public class NetPackageNavObject : NetPackage
 		}
 	}
 
-	// Token: 0x1700065A RID: 1626
-	// (get) Token: 0x06003CE5 RID: 15589 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000679 RID: 1657
+	// (get) Token: 0x06003CAF RID: 15535 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -119,41 +119,35 @@ public class NetPackageNavObject : NetPackage
 		}
 	}
 
-	// Token: 0x06003CE6 RID: 15590 RVA: 0x00105CC1 File Offset: 0x00103EC1
-	public override int GetLength()
-	{
-		return 30;
-	}
-
-	// Token: 0x0400315F RID: 12639
+	// Token: 0x04003143 RID: 12611
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string navObjectClass;
 
-	// Token: 0x04003160 RID: 12640
+	// Token: 0x04003144 RID: 12612
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x04003161 RID: 12641
+	// Token: 0x04003145 RID: 12613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool usingLocalizationId;
 
-	// Token: 0x04003162 RID: 12642
+	// Token: 0x04003146 RID: 12614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x04003163 RID: 12643
+	// Token: 0x04003147 RID: 12615
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAdd;
 
-	// Token: 0x04003164 RID: 12644
+	// Token: 0x04003148 RID: 12616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04003165 RID: 12645
+	// Token: 0x04003149 RID: 12617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useOverrideColor;
 
-	// Token: 0x04003166 RID: 12646
+	// Token: 0x0400314A RID: 12618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color overrideColor;
 }

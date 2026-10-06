@@ -3,13 +3,13 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EDE RID: 3806
+// Token: 0x02000EED RID: 3821
 [Preserve]
 public class XUiC_CharacterCosmeticEntry : XUiController
 {
-	// Token: 0x17000E0A RID: 3594
-	// (get) Token: 0x06007769 RID: 30569 RVA: 0x002CD860 File Offset: 0x002CBA60
-	// (set) Token: 0x0600776A RID: 30570 RVA: 0x002CD868 File Offset: 0x002CBA68
+	// Token: 0x17000E27 RID: 3623
+	// (get) Token: 0x06007764 RID: 30564 RVA: 0x002D0C38 File Offset: 0x002CEE38
+	// (set) Token: 0x06007765 RID: 30565 RVA: 0x002D0C40 File Offset: 0x002CEE40
 	public ItemClass ItemClass
 	{
 		get
@@ -23,9 +23,9 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E0B RID: 3595
-	// (get) Token: 0x0600776B RID: 30571 RVA: 0x002CD878 File Offset: 0x002CBA78
-	// (set) Token: 0x0600776C RID: 30572 RVA: 0x002CD880 File Offset: 0x002CBA80
+	// Token: 0x17000E28 RID: 3624
+	// (get) Token: 0x06007766 RID: 30566 RVA: 0x002D0C50 File Offset: 0x002CEE50
+	// (set) Token: 0x06007767 RID: 30567 RVA: 0x002D0C58 File Offset: 0x002CEE58
 	public XUiC_CharacterCosmeticEntry.EntryTypes EntryType
 	{
 		get
@@ -39,9 +39,9 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E0C RID: 3596
-	// (get) Token: 0x0600776D RID: 30573 RVA: 0x002CD890 File Offset: 0x002CBA90
-	// (set) Token: 0x0600776E RID: 30574 RVA: 0x002CD898 File Offset: 0x002CBA98
+	// Token: 0x17000E29 RID: 3625
+	// (get) Token: 0x06007768 RID: 30568 RVA: 0x002D0C68 File Offset: 0x002CEE68
+	// (set) Token: 0x06007769 RID: 30569 RVA: 0x002D0C70 File Offset: 0x002CEE70
 	public int Index
 	{
 		get
@@ -55,9 +55,9 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E0D RID: 3597
-	// (get) Token: 0x0600776F RID: 30575 RVA: 0x002CD8A8 File Offset: 0x002CBAA8
-	// (set) Token: 0x06007770 RID: 30576 RVA: 0x002CD8B0 File Offset: 0x002CBAB0
+	// Token: 0x17000E2A RID: 3626
+	// (get) Token: 0x0600776A RID: 30570 RVA: 0x002D0C80 File Offset: 0x002CEE80
+	// (set) Token: 0x0600776B RID: 30571 RVA: 0x002D0C88 File Offset: 0x002CEE88
 	public new bool Selected
 	{
 		get
@@ -70,7 +70,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007771 RID: 30577 RVA: 0x002CD8BC File Offset: 0x002CBABC
+	// Token: 0x0600776C RID: 30572 RVA: 0x002D0C94 File Offset: 0x002CEE94
 	public override void Init()
 	{
 		base.Init();
@@ -91,21 +91,21 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007772 RID: 30578 RVA: 0x002CD92E File Offset: 0x002CBB2E
+	// Token: 0x0600776D RID: 30573 RVA: 0x002D0D06 File Offset: 0x002CEF06
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.PlayerEquipment.Equipment.CosmeticUnlocked += this.Equipment_CosmeticUnlocked;
 	}
 
-	// Token: 0x06007773 RID: 30579 RVA: 0x002CD957 File Offset: 0x002CBB57
+	// Token: 0x0600776E RID: 30574 RVA: 0x002D0D2F File Offset: 0x002CEF2F
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.PlayerEquipment.Equipment.CosmeticUnlocked -= this.Equipment_CosmeticUnlocked;
 	}
 
-	// Token: 0x06007774 RID: 30580 RVA: 0x002CD980 File Offset: 0x002CBB80
+	// Token: 0x0600776F RID: 30575 RVA: 0x002D0D58 File Offset: 0x002CEF58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Equipment_CosmeticUnlocked(string itemName)
 	{
@@ -126,9 +126,9 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E0E RID: 3598
-	// (get) Token: 0x06007775 RID: 30581 RVA: 0x002CD9D6 File Offset: 0x002CBBD6
-	// (set) Token: 0x06007776 RID: 30582 RVA: 0x002CD9DE File Offset: 0x002CBBDE
+	// Token: 0x17000E2B RID: 3627
+	// (get) Token: 0x06007770 RID: 30576 RVA: 0x002D0DAE File Offset: 0x002CEFAE
+	// (set) Token: 0x06007771 RID: 30577 RVA: 0x002D0DB6 File Offset: 0x002CEFB6
 	public Color32 SelectionBorderColor
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -147,9 +147,9 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000E0F RID: 3599
-	// (get) Token: 0x06007777 RID: 30583 RVA: 0x002CD9FC File Offset: 0x002CBBFC
-	// (set) Token: 0x06007778 RID: 30584 RVA: 0x002CDA04 File Offset: 0x002CBC04
+	// Token: 0x17000E2C RID: 3628
+	// (get) Token: 0x06007772 RID: 30578 RVA: 0x002D0DD4 File Offset: 0x002CEFD4
+	// (set) Token: 0x06007773 RID: 30579 RVA: 0x002D0DDC File Offset: 0x002CEFDC
 	public bool IsDragAndDrop
 	{
 		get
@@ -168,7 +168,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007779 RID: 30585 RVA: 0x002CDA2C File Offset: 0x002CBC2C
+	// Token: 0x06007774 RID: 30580 RVA: 0x002D0E04 File Offset: 0x002CF004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBorderColor()
 	{
@@ -190,7 +190,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		this.SelectionBorderColor = this.backgroundColor;
 	}
 
-	// Token: 0x0600777A RID: 30586 RVA: 0x002CDA88 File Offset: 0x002CBC88
+	// Token: 0x06007775 RID: 30581 RVA: 0x002D0E60 File Offset: 0x002CF060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -207,7 +207,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600777B RID: 30587 RVA: 0x002CDAC0 File Offset: 0x002CBCC0
+	// Token: 0x06007776 RID: 30582 RVA: 0x002D0E98 File Offset: 0x002CF098
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -220,7 +220,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600777C RID: 30588 RVA: 0x002CDB27 File Offset: 0x002CBD27
+	// Token: 0x06007777 RID: 30583 RVA: 0x002D0EFF File Offset: 0x002CF0FF
 	[return: TupleElementNames(new string[] { "isUnlocked", "set" })]
 	public ValueTuple<bool, EntitlementSetEnum> IsUnlocked()
 	{
@@ -235,8 +235,8 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		return this.xui.PlayerEquipment.Equipment.HasCosmeticUnlocked(this.itemClass);
 	}
 
-	// Token: 0x17000E10 RID: 3600
-	// (get) Token: 0x0600777D RID: 30589 RVA: 0x002CDB64 File Offset: 0x002CBD64
+	// Token: 0x17000E2D RID: 3629
+	// (get) Token: 0x06007778 RID: 30584 RVA: 0x002D0F3C File Offset: 0x002CF13C
 	public string Name
 	{
 		get
@@ -258,7 +258,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600777E RID: 30590 RVA: 0x002CDBC8 File Offset: 0x002CBDC8
+	// Token: 0x06007779 RID: 30585 RVA: 0x002D0FA0 File Offset: 0x002CF1A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -354,7 +354,7 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600777F RID: 30591 RVA: 0x002CDD84 File Offset: 0x002CBF84
+	// Token: 0x0600777A RID: 30586 RVA: 0x002D115C File Offset: 0x002CF35C
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "select_color")
@@ -390,85 +390,85 @@ public class XUiC_CharacterCosmeticEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x04005820 RID: 22560
+	// Token: 0x04005858 RID: 22616
 	public XUiC_CharacterCosmeticList Owner;
 
-	// Token: 0x04005821 RID: 22561
+	// Token: 0x04005859 RID: 22617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x04005822 RID: 22562
+	// Token: 0x0400585A RID: 22618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticEntry.EntryTypes entryType;
 
-	// Token: 0x04005823 RID: 22563
+	// Token: 0x0400585B RID: 22619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int index = -1;
 
-	// Token: 0x04005824 RID: 22564
+	// Token: 0x0400585C RID: 22620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool selected;
 
-	// Token: 0x04005825 RID: 22565
+	// Token: 0x0400585D RID: 22621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHovered;
 
-	// Token: 0x04005826 RID: 22566
+	// Token: 0x0400585E RID: 22622
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Sprite itemIconSprite;
 
-	// Token: 0x04005827 RID: 22567
+	// Token: 0x0400585F RID: 22623
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Texture backgroundTexture;
 
-	// Token: 0x04005828 RID: 22568
+	// Token: 0x04005860 RID: 22624
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 selectionBorderColor;
 
-	// Token: 0x04005829 RID: 22569
+	// Token: 0x04005861 RID: 22625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 selectColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x0400582A RID: 22570
+	// Token: 0x04005862 RID: 22626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 pressColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x0400582B RID: 22571
+	// Token: 0x04005863 RID: 22627
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 backgroundColor = new Color32(96, 96, 96, byte.MaxValue);
 
-	// Token: 0x0400582C RID: 22572
+	// Token: 0x04005864 RID: 22628
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 lockedBackgroundColor = new Color32(48, 48, 48, byte.MaxValue);
 
-	// Token: 0x0400582D RID: 22573
+	// Token: 0x04005865 RID: 22629
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 highlightColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x0400582E RID: 22574
+	// Token: 0x04005866 RID: 22630
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color32 holdingColor = new Color32(byte.MaxValue, 128, 0, byte.MaxValue);
 
-	// Token: 0x0400582F RID: 22575
+	// Token: 0x04005867 RID: 22631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDragAndDrop;
 
-	// Token: 0x04005830 RID: 22576
+	// Token: 0x04005868 RID: 22632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor backgroundcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005831 RID: 22577
+	// Token: 0x04005869 RID: 22633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor selectionbordercolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x02000EDF RID: 3807
+	// Token: 0x02000EEE RID: 3822
 	public enum EntryTypes
 	{
-		// Token: 0x04005833 RID: 22579
+		// Token: 0x0400586B RID: 22635
 		Item,
-		// Token: 0x04005834 RID: 22580
+		// Token: 0x0400586C RID: 22636
 		Empty,
-		// Token: 0x04005835 RID: 22581
+		// Token: 0x0400586D RID: 22637
 		Hide
 	}
 }

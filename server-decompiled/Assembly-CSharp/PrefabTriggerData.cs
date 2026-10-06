@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001CB RID: 459
+// Token: 0x020001CC RID: 460
 [Preserve]
 public class PrefabTriggerData
 {
-	// Token: 0x17000111 RID: 273
-	// (get) Token: 0x06000E23 RID: 3619 RVA: 0x0005D03D File Offset: 0x0005B23D
-	// (set) Token: 0x06000E24 RID: 3620 RVA: 0x0005D050 File Offset: 0x0005B250
+	// Token: 0x17000109 RID: 265
+	// (get) Token: 0x06000E1A RID: 3610 RVA: 0x0005D03D File Offset: 0x0005B23D
+	// (set) Token: 0x06000E1B RID: 3611 RVA: 0x0005D050 File Offset: 0x0005B250
 	public bool NeedsTriggerUpdate
 	{
 		get
@@ -33,7 +33,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E25 RID: 3621 RVA: 0x0005D0A8 File Offset: 0x0005B2A8
+	// Token: 0x06000E1C RID: 3612 RVA: 0x0005D0A8 File Offset: 0x0005B2A8
 	public PrefabTriggerData(PrefabInstance instance)
 	{
 		this.PrefabInstance = instance;
@@ -41,7 +41,7 @@ public class PrefabTriggerData
 		this.SetupData();
 	}
 
-	// Token: 0x06000E26 RID: 3622 RVA: 0x0005D110 File Offset: 0x0005B310
+	// Token: 0x06000E1D RID: 3613 RVA: 0x0005D110 File Offset: 0x0005B310
 	public void ResetData()
 	{
 		if (this.TriggeredLayers != null)
@@ -58,7 +58,7 @@ public class PrefabTriggerData
 		this.SetupData();
 	}
 
-	// Token: 0x06000E27 RID: 3623 RVA: 0x0005D16C File Offset: 0x0005B36C
+	// Token: 0x06000E1E RID: 3614 RVA: 0x0005D16C File Offset: 0x0005B36C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetupData()
 	{
@@ -146,7 +146,7 @@ public class PrefabTriggerData
 		this.RefreshTriggers();
 	}
 
-	// Token: 0x06000E28 RID: 3624 RVA: 0x0005D4C8 File Offset: 0x0005B6C8
+	// Token: 0x06000E1F RID: 3615 RVA: 0x0005D4C8 File Offset: 0x0005B6C8
 	public void Update(float deltaTime)
 	{
 		if (this.needsTriggerTimer != -1f)
@@ -160,7 +160,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E29 RID: 3625 RVA: 0x0005D500 File Offset: 0x0005B700
+	// Token: 0x06000E20 RID: 3616 RVA: 0x0005D500 File Offset: 0x0005B700
 	public void HandleNeedTriggers()
 	{
 		for (int i = 0; i < this.Triggers.Count; i++)
@@ -173,7 +173,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2A RID: 3626 RVA: 0x0005D55C File Offset: 0x0005B75C
+	// Token: 0x06000E21 RID: 3617 RVA: 0x0005D55C File Offset: 0x0005B75C
 	public void RefreshTriggers()
 	{
 		if (!GameManager.Instance.IsEditMode())
@@ -185,7 +185,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2B RID: 3627 RVA: 0x0005D5A4 File Offset: 0x0005B7A4
+	// Token: 0x06000E22 RID: 3618 RVA: 0x0005D5A4 File Offset: 0x0005B7A4
 	public void RefreshTriggersForQuest(FastTags<TagGroup.Global> questTags)
 	{
 		if (!GameManager.Instance.IsEditMode())
@@ -197,7 +197,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2C RID: 3628 RVA: 0x0005D5E8 File Offset: 0x0005B7E8
+	// Token: 0x06000E23 RID: 3619 RVA: 0x0005D5E8 File Offset: 0x0005B7E8
 	public void ResetTriggers()
 	{
 		if (!GameManager.Instance.IsEditMode())
@@ -209,7 +209,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2D RID: 3629 RVA: 0x0005D629 File Offset: 0x0005B829
+	// Token: 0x06000E24 RID: 3620 RVA: 0x0005D629 File Offset: 0x0005B829
 	public void AddPlayerInArea(int entityID)
 	{
 		if (!this.PlayersInArea.Contains(entityID))
@@ -218,7 +218,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2E RID: 3630 RVA: 0x0005D645 File Offset: 0x0005B845
+	// Token: 0x06000E25 RID: 3621 RVA: 0x0005D645 File Offset: 0x0005B845
 	public void RemovePlayerInArea(int entityID)
 	{
 		if (this.PlayersInArea.Contains(entityID))
@@ -227,7 +227,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E2F RID: 3631 RVA: 0x0005D664 File Offset: 0x0005B864
+	// Token: 0x06000E26 RID: 3622 RVA: 0x0005D664 File Offset: 0x0005B864
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void AddTriggeredBy(SleeperVolume triggeredVolume)
 	{
@@ -242,7 +242,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E30 RID: 3632 RVA: 0x0005D6C8 File Offset: 0x0005B8C8
+	// Token: 0x06000E27 RID: 3623 RVA: 0x0005D6C8 File Offset: 0x0005B8C8
 	public void Trigger(EntityPlayer player, byte index)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -269,7 +269,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E31 RID: 3633 RVA: 0x0005D780 File Offset: 0x0005B980
+	// Token: 0x06000E28 RID: 3624 RVA: 0x0005D780 File Offset: 0x0005B980
 	public void Trigger(EntityPlayer player, BlockTrigger trigger)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -302,7 +302,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E32 RID: 3634 RVA: 0x0005D8A4 File Offset: 0x0005BAA4
+	// Token: 0x06000E29 RID: 3625 RVA: 0x0005D8A4 File Offset: 0x0005BAA4
 	public void Trigger(EntityPlayer player, TriggerVolume trigger)
 	{
 		List<BlockChangeInfo> list = new List<BlockChangeInfo>();
@@ -331,7 +331,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E33 RID: 3635 RVA: 0x0005D98F File Offset: 0x0005BB8F
+	// Token: 0x06000E2A RID: 3626 RVA: 0x0005D98F File Offset: 0x0005BB8F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateBlocks(List<BlockChangeInfo> blockChanges)
 	{
@@ -341,7 +341,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E34 RID: 3636 RVA: 0x0005D9B0 File Offset: 0x0005BBB0
+	// Token: 0x06000E2B RID: 3627 RVA: 0x0005D9B0 File Offset: 0x0005BBB0
 	public void SetupTriggerTestNavObjects()
 	{
 		this.RemoveTriggerTestNavObjects();
@@ -353,7 +353,7 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x06000E35 RID: 3637 RVA: 0x0005DA50 File Offset: 0x0005BC50
+	// Token: 0x06000E2C RID: 3628 RVA: 0x0005DA50 File Offset: 0x0005BC50
 	public void RemoveTriggerTestNavObjects()
 	{
 		for (int i = 0; i < this.Triggers.Count; i++)
@@ -362,35 +362,35 @@ public class PrefabTriggerData
 		}
 	}
 
-	// Token: 0x04000C1E RID: 3102
+	// Token: 0x04000C17 RID: 3095
 	public Dictionary<int, List<BlockTrigger>> TriggeredByDictionary = new Dictionary<int, List<BlockTrigger>>();
 
-	// Token: 0x04000C1F RID: 3103
+	// Token: 0x04000C18 RID: 3096
 	public Dictionary<int, List<SleeperVolume>> TriggeredByVolumes = new Dictionary<int, List<SleeperVolume>>();
 
-	// Token: 0x04000C20 RID: 3104
+	// Token: 0x04000C19 RID: 3097
 	public PrefabInstance PrefabInstance;
 
-	// Token: 0x04000C21 RID: 3105
+	// Token: 0x04000C1A RID: 3098
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public World world;
 
-	// Token: 0x04000C22 RID: 3106
+	// Token: 0x04000C1B RID: 3099
 	public List<int> PlayersInArea = new List<int>();
 
-	// Token: 0x04000C23 RID: 3107
+	// Token: 0x04000C1C RID: 3100
 	public List<byte> TriggeredLayers;
 
-	// Token: 0x04000C24 RID: 3108
+	// Token: 0x04000C1D RID: 3101
 	public List<byte> TriggeredByLayers;
 
-	// Token: 0x04000C25 RID: 3109
+	// Token: 0x04000C1E RID: 3102
 	public List<BlockTrigger> Triggers = new List<BlockTrigger>();
 
-	// Token: 0x04000C26 RID: 3110
+	// Token: 0x04000C1F RID: 3103
 	public TriggerManager Owner;
 
-	// Token: 0x04000C27 RID: 3111
+	// Token: 0x04000C20 RID: 3104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float needsTriggerTimer = -1f;
 }

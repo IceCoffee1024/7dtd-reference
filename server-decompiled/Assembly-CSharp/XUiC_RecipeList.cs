@@ -4,13 +4,13 @@ using System.Collections.ObjectModel;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200100D RID: 4109
+// Token: 0x0200101C RID: 4124
 [Preserve]
 public class XUiC_RecipeList : XUiController
 {
-	// Token: 0x17000F19 RID: 3865
-	// (get) Token: 0x060081B0 RID: 33200 RVA: 0x00313877 File Offset: 0x00311A77
-	// (set) Token: 0x060081B1 RID: 33201 RVA: 0x00313880 File Offset: 0x00311A80
+	// Token: 0x17000F40 RID: 3904
+	// (get) Token: 0x060081BF RID: 33215 RVA: 0x003168A7 File Offset: 0x00314AA7
+	// (set) Token: 0x060081C0 RID: 33216 RVA: 0x003168B0 File Offset: 0x00314AB0
 	public string Workstation
 	{
 		get
@@ -41,23 +41,23 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x17000F1A RID: 3866
-	// (get) Token: 0x060081B2 RID: 33202 RVA: 0x00313963 File Offset: 0x00311B63
-	// (set) Token: 0x060081B3 RID: 33203 RVA: 0x0031396B File Offset: 0x00311B6B
+	// Token: 0x17000F41 RID: 3905
+	// (get) Token: 0x060081C1 RID: 33217 RVA: 0x00316993 File Offset: 0x00314B93
+	// (set) Token: 0x060081C2 RID: 33218 RVA: 0x0031699B File Offset: 0x00314B9B
 	public Recipe CurrentRecipe
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F1B RID: 3867
-	// (get) Token: 0x060081B4 RID: 33204 RVA: 0x00313974 File Offset: 0x00311B74
-	// (set) Token: 0x060081B5 RID: 33205 RVA: 0x0031397C File Offset: 0x00311B7C
+	// Token: 0x17000F42 RID: 3906
+	// (get) Token: 0x060081C3 RID: 33219 RVA: 0x003169A4 File Offset: 0x00314BA4
+	// (set) Token: 0x060081C4 RID: 33220 RVA: 0x003169AC File Offset: 0x00314BAC
 	public XUiC_RecipeCraftCount CraftCount { get; set; }
 
-	// Token: 0x17000F1C RID: 3868
-	// (get) Token: 0x060081B6 RID: 33206 RVA: 0x00313985 File Offset: 0x00311B85
-	// (set) Token: 0x060081B7 RID: 33207 RVA: 0x00313990 File Offset: 0x00311B90
+	// Token: 0x17000F43 RID: 3907
+	// (get) Token: 0x060081C5 RID: 33221 RVA: 0x003169B5 File Offset: 0x00314BB5
+	// (set) Token: 0x060081C6 RID: 33222 RVA: 0x003169C0 File Offset: 0x00314BC0
 	public int Page
 	{
 		get
@@ -85,14 +85,14 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x17000F1D RID: 3869
-	// (get) Token: 0x060081B8 RID: 33208 RVA: 0x003139F2 File Offset: 0x00311BF2
-	// (set) Token: 0x060081B9 RID: 33209 RVA: 0x003139FA File Offset: 0x00311BFA
+	// Token: 0x17000F44 RID: 3908
+	// (get) Token: 0x060081C7 RID: 33223 RVA: 0x00316A22 File Offset: 0x00314C22
+	// (set) Token: 0x060081C8 RID: 33224 RVA: 0x00316A2A File Offset: 0x00314C2A
 	public XUiC_CraftingInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x17000F1E RID: 3870
-	// (get) Token: 0x060081BA RID: 33210 RVA: 0x00313A03 File Offset: 0x00311C03
-	// (set) Token: 0x060081BB RID: 33211 RVA: 0x00313A0C File Offset: 0x00311C0C
+	// Token: 0x17000F45 RID: 3909
+	// (get) Token: 0x060081C9 RID: 33225 RVA: 0x00316A33 File Offset: 0x00314C33
+	// (set) Token: 0x060081CA RID: 33226 RVA: 0x00316A3C File Offset: 0x00314C3C
 	public XUiC_RecipeEntry SelectedEntry
 	{
 		get
@@ -123,17 +123,17 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x140000D9 RID: 217
-	// (add) Token: 0x060081BC RID: 33212 RVA: 0x00313AB4 File Offset: 0x00311CB4
-	// (remove) Token: 0x060081BD RID: 33213 RVA: 0x00313AEC File Offset: 0x00311CEC
+	// Token: 0x140000D8 RID: 216
+	// (add) Token: 0x060081CB RID: 33227 RVA: 0x00316AE4 File Offset: 0x00314CE4
+	// (remove) Token: 0x060081CC RID: 33228 RVA: 0x00316B1C File Offset: 0x00314D1C
 	public event XUiEvent_RecipeChangedEventHandler RecipeChanged;
 
-	// Token: 0x140000DA RID: 218
-	// (add) Token: 0x060081BE RID: 33214 RVA: 0x00313B24 File Offset: 0x00311D24
-	// (remove) Token: 0x060081BF RID: 33215 RVA: 0x00313B5C File Offset: 0x00311D5C
+	// Token: 0x140000D9 RID: 217
+	// (add) Token: 0x060081CD RID: 33229 RVA: 0x00316B54 File Offset: 0x00314D54
+	// (remove) Token: 0x060081CE RID: 33230 RVA: 0x00316B8C File Offset: 0x00314D8C
 	public event XUiEvent_PageNumberChangedEventHandler PageNumberChanged;
 
-	// Token: 0x060081C0 RID: 33216 RVA: 0x00313B94 File Offset: 0x00311D94
+	// Token: 0x060081CF RID: 33231 RVA: 0x00316BC4 File Offset: 0x00314DC4
 	public override void Init()
 	{
 		base.Init();
@@ -174,7 +174,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081C1 RID: 33217 RVA: 0x00313D22 File Offset: 0x00311F22
+	// Token: 0x060081D0 RID: 33232 RVA: 0x00316D52 File Offset: 0x00314F52
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFavoritesChanged(XUiController _sender, int _mouseButton)
 	{
@@ -186,7 +186,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081C2 RID: 33218 RVA: 0x00313D5F File Offset: 0x00311F5F
+	// Token: 0x060081D1 RID: 33233 RVA: 0x00316D8F File Offset: 0x00314F8F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -212,21 +212,21 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081C3 RID: 33219 RVA: 0x00313D8C File Offset: 0x00311F8C
+	// Token: 0x060081D2 RID: 33234 RVA: 0x00316DBC File Offset: 0x00314FBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnSubmitHandler(XUiController _sender, string _text)
 	{
 		this.GetRecipeData();
 	}
 
-	// Token: 0x060081C4 RID: 33220 RVA: 0x00313D8C File Offset: 0x00311F8C
+	// Token: 0x060081D3 RID: 33235 RVA: 0x00316DBC File Offset: 0x00314FBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
 		this.GetRecipeData();
 	}
 
-	// Token: 0x060081C5 RID: 33221 RVA: 0x00313D94 File Offset: 0x00311F94
+	// Token: 0x060081D4 RID: 33236 RVA: 0x00316DC4 File Offset: 0x00314FC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressRecipe(XUiController _sender, int _mouseButton)
 	{
@@ -241,7 +241,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081C6 RID: 33222 RVA: 0x00313DCC File Offset: 0x00311FCC
+	// Token: 0x060081D5 RID: 33237 RVA: 0x00316DFC File Offset: 0x00314FFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleCategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -249,7 +249,7 @@ public class XUiC_RecipeList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060081C7 RID: 33223 RVA: 0x00313DE1 File Offset: 0x00311FE1
+	// Token: 0x060081D6 RID: 33238 RVA: 0x00316E11 File Offset: 0x00315011
 	public void SetCategory(string _category)
 	{
 		if (this.txtInput != null)
@@ -263,19 +263,19 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081C8 RID: 33224 RVA: 0x00313E1D File Offset: 0x0031201D
+	// Token: 0x060081D7 RID: 33239 RVA: 0x00316E4D File Offset: 0x0031504D
 	public string GetCategory()
 	{
 		return this.category;
 	}
 
-	// Token: 0x060081C9 RID: 33225 RVA: 0x00313D8C File Offset: 0x00311F8C
+	// Token: 0x060081D8 RID: 33240 RVA: 0x00316DBC File Offset: 0x00314FBC
 	public void RefreshRecipes()
 	{
 		this.GetRecipeData();
 	}
 
-	// Token: 0x060081CA RID: 33226 RVA: 0x00313E25 File Offset: 0x00312025
+	// Token: 0x060081D9 RID: 33241 RVA: 0x00316E55 File Offset: 0x00315055
 	public void RefreshCurrentRecipes()
 	{
 		this.IsDirty = true;
@@ -286,7 +286,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081CB RID: 33227 RVA: 0x00313E48 File Offset: 0x00312048
+	// Token: 0x060081DA RID: 33242 RVA: 0x00316E78 File Offset: 0x00315078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetRecipeData()
 	{
@@ -344,7 +344,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081CC RID: 33228 RVA: 0x0031401C File Offset: 0x0031221C
+	// Token: 0x060081DB RID: 33243 RVA: 0x0031704C File Offset: 0x0031524C
 	public void SetRecipeDataByIngredientStack(ItemStack stack)
 	{
 		if (this.txtInput != null)
@@ -359,7 +359,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081CD RID: 33229 RVA: 0x00314078 File Offset: 0x00312278
+	// Token: 0x060081DC RID: 33244 RVA: 0x003170A8 File Offset: 0x003152A8
 	public void SetRecipeDataByItems(List<int> items)
 	{
 		if (items.Count == 0)
@@ -378,7 +378,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081CE RID: 33230 RVA: 0x003140DC File Offset: 0x003122DC
+	// Token: 0x060081DD RID: 33245 RVA: 0x0031710C File Offset: 0x0031530C
 	public void SetRecipeDataByItem(int itemID)
 	{
 		if (this.txtInput != null)
@@ -397,7 +397,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081CF RID: 33231 RVA: 0x00314160 File Offset: 0x00312360
+	// Token: 0x060081DE RID: 33246 RVA: 0x00317190 File Offset: 0x00315390
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty && this.xui.PlayerInventory != null)
@@ -470,7 +470,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081D0 RID: 33232 RVA: 0x003143E8 File Offset: 0x003125E8
+	// Token: 0x060081DF RID: 33247 RVA: 0x00317418 File Offset: 0x00315618
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -516,7 +516,7 @@ public class XUiC_RecipeList : XUiController
 		this.resortRecipes = true;
 	}
 
-	// Token: 0x060081D1 RID: 33233 RVA: 0x003145C4 File Offset: 0x003127C4
+	// Token: 0x060081E0 RID: 33248 RVA: 0x003175F4 File Offset: 0x003157F4
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -547,7 +547,7 @@ public class XUiC_RecipeList : XUiController
 		this.SelectedEntry = null;
 	}
 
-	// Token: 0x060081D2 RID: 33234 RVA: 0x0031471D File Offset: 0x0031291D
+	// Token: 0x060081E1 RID: 33249 RVA: 0x0031774D File Offset: 0x0031594D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorkStation_OnToolsOrFuelChanged()
 	{
@@ -556,7 +556,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D3 RID: 33235 RVA: 0x0031471D File Offset: 0x0031291D
+	// Token: 0x060081E2 RID: 33250 RVA: 0x0031774D File Offset: 0x0031594D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
@@ -565,7 +565,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D4 RID: 33236 RVA: 0x0031471D File Offset: 0x0031291D
+	// Token: 0x060081E3 RID: 33251 RVA: 0x0031774D File Offset: 0x0031594D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
@@ -574,7 +574,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D5 RID: 33237 RVA: 0x00314734 File Offset: 0x00312934
+	// Token: 0x060081E4 RID: 33252 RVA: 0x00317764 File Offset: 0x00315964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestJournal_QuestChanged(Quest q)
 	{
@@ -584,7 +584,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D6 RID: 33238 RVA: 0x00314734 File Offset: 0x00312934
+	// Token: 0x060081E5 RID: 33253 RVA: 0x00317764 File Offset: 0x00315964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void QuestTracker_OnTrackedChallengeChanged()
 	{
@@ -594,7 +594,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D7 RID: 33239 RVA: 0x0031471D File Offset: 0x0031291D
+	// Token: 0x060081E6 RID: 33254 RVA: 0x0031774D File Offset: 0x0031594D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorkstationMaterial_OnWeightsChanged()
 	{
@@ -603,7 +603,7 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D8 RID: 33240 RVA: 0x00314734 File Offset: 0x00312934
+	// Token: 0x060081E7 RID: 33255 RVA: 0x00317764 File Offset: 0x00315964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Recipes_OnTrackedRecipeChanged()
 	{
@@ -613,13 +613,13 @@ public class XUiC_RecipeList : XUiController
 		this.pageChanged = true;
 	}
 
-	// Token: 0x060081D9 RID: 33241 RVA: 0x00314751 File Offset: 0x00312951
+	// Token: 0x060081E8 RID: 33256 RVA: 0x00317781 File Offset: 0x00315981
 	public void ClearSelection()
 	{
 		this.SelectedEntry = null;
 	}
 
-	// Token: 0x060081DA RID: 33242 RVA: 0x0031475C File Offset: 0x0031295C
+	// Token: 0x060081E9 RID: 33257 RVA: 0x0031778C File Offset: 0x0031598C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildRecipeInfosList(List<ItemStack> _items)
 	{
@@ -637,7 +637,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081DB RID: 33243 RVA: 0x00314828 File Offset: 0x00312A28
+	// Token: 0x060081EA RID: 33258 RVA: 0x00317858 File Offset: 0x00315A58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRecipes()
 	{
@@ -648,7 +648,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081DC RID: 33244 RVA: 0x00314874 File Offset: 0x00312A74
+	// Token: 0x060081EB RID: 33259 RVA: 0x003178A4 File Offset: 0x00315AA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CompareRecipeInfos(XUiC_RecipeList.RecipeInfo lhs, XUiC_RecipeList.RecipeInfo rhs)
 	{
@@ -718,7 +718,7 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x060081DD RID: 33245 RVA: 0x003149E0 File Offset: 0x00312BE0
+	// Token: 0x060081EC RID: 33260 RVA: 0x00317A10 File Offset: 0x00315C10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CompareRecipeIngredients(List<ItemStack> lhs, List<ItemStack> rhs)
 	{
@@ -754,7 +754,7 @@ public class XUiC_RecipeList : XUiController
 		return 0;
 	}
 
-	// Token: 0x060081DE RID: 33246 RVA: 0x00314A88 File Offset: 0x00312C88
+	// Token: 0x060081ED RID: 33261 RVA: 0x00317AB8 File Offset: 0x00315CB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FindShowingWindow()
 	{
@@ -769,91 +769,91 @@ public class XUiC_RecipeList : XUiController
 		}
 	}
 
-	// Token: 0x04006019 RID: 24601
+	// Token: 0x04006042 RID: 24642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_RecipeList.RecipeInfo> recipeInfos = new List<XUiC_RecipeList.RecipeInfo>();
 
-	// Token: 0x0400601A RID: 24602
+	// Token: 0x04006043 RID: 24643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeEntry[] recipeControls;
 
-	// Token: 0x0400601B RID: 24603
+	// Token: 0x04006044 RID: 24644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string workStation = "";
 
-	// Token: 0x0400601C RID: 24604
+	// Token: 0x04006045 RID: 24645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x0400601D RID: 24605
+	// Token: 0x04006046 RID: 24646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeEntry selectedEntry;
 
-	// Token: 0x0400601E RID: 24606
+	// Token: 0x04006047 RID: 24647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button favorites;
 
-	// Token: 0x0400601F RID: 24607
+	// Token: 0x04006048 RID: 24648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string category = "Basics";
 
-	// Token: 0x04006020 RID: 24608
+	// Token: 0x04006049 RID: 24649
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Recipe> recipes = new List<Recipe>();
 
-	// Token: 0x04006021 RID: 24609
+	// Token: 0x0400604A RID: 24650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04006022 RID: 24610
+	// Token: 0x0400604B RID: 24651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04006023 RID: 24611
+	// Token: 0x0400604C RID: 24652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showFavorites;
 
-	// Token: 0x04006024 RID: 24612
+	// Token: 0x0400604D RID: 24653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 selectedColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x04006025 RID: 24613
+	// Token: 0x0400604E RID: 24654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x04006026 RID: 24614
+	// Token: 0x0400604F RID: 24655
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool resortRecipes;
 
-	// Token: 0x04006027 RID: 24615
+	// Token: 0x04006050 RID: 24656
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool pageChanged;
 
-	// Token: 0x04006028 RID: 24616
+	// Token: 0x04006051 RID: 24657
 	public string[] craftingArea = new string[] { "" };
 
-	// Token: 0x0400602E RID: 24622
+	// Token: 0x04006057 RID: 24663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemStack> updateStackList = new List<ItemStack>();
 
-	// Token: 0x0400602F RID: 24623
+	// Token: 0x04006058 RID: 24664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CraftingWindowGroup craftingWindow;
 
-	// Token: 0x0200100E RID: 4110
+	// Token: 0x0200101D RID: 4125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct RecipeInfo
 	{
-		// Token: 0x04006030 RID: 24624
+		// Token: 0x04006059 RID: 24665
 		public Recipe recipe;
 
-		// Token: 0x04006031 RID: 24625
+		// Token: 0x0400605A RID: 24666
 		public bool unlocked;
 
-		// Token: 0x04006032 RID: 24626
+		// Token: 0x0400605B RID: 24667
 		public bool hasIngredients;
 
-		// Token: 0x04006033 RID: 24627
+		// Token: 0x0400605C RID: 24668
 		public string name;
 	}
 }

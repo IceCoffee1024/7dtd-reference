@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015D7 RID: 5591
+// Token: 0x020015F9 RID: 5625
 public class vp_KillZone : MonoBehaviour
 {
-	// Token: 0x0600AEA0 RID: 44704 RVA: 0x00410F3C File Offset: 0x0040F13C
+	// Token: 0x0600AF53 RID: 44883 RVA: 0x00415D90 File Offset: 0x00413F90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider col)
 	{
@@ -29,12 +29,12 @@ public class vp_KillZone : MonoBehaviour
 		this.m_TargetDamageHandler.Damage(new vp_DamageInfo(this.m_TargetDamageHandler.CurrentHealth, this.m_TargetDamageHandler.Transform));
 	}
 
-	// Token: 0x0400823B RID: 33339
+	// Token: 0x040082BE RID: 33470
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_DamageHandler m_TargetDamageHandler;
 
-	// Token: 0x0400823C RID: 33340
+	// Token: 0x040082BF RID: 33471
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Respawner m_TargetRespawner;

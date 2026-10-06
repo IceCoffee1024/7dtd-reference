@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012A3 RID: 4771
+// Token: 0x020012BB RID: 4795
 public class NGuiWdwInGameHUD : MonoBehaviour
 {
-	// Token: 0x170011F8 RID: 4600
-	// (get) Token: 0x06009767 RID: 38759 RVA: 0x00390A11 File Offset: 0x0038EC11
+	// Token: 0x1700123C RID: 4668
+	// (get) Token: 0x060097F4 RID: 38900 RVA: 0x00395279 File Offset: 0x00393479
 	public GameManager gameManager
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -15,14 +15,14 @@ public class NGuiWdwInGameHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009768 RID: 38760 RVA: 0x00390A18 File Offset: 0x0038EC18
+	// Token: 0x060097F5 RID: 38901 RVA: 0x00395280 File Offset: 0x00393480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
 		this.playerUI = base.GetComponentInParent<LocalPlayerUI>();
 	}
 
-	// Token: 0x06009769 RID: 38761 RVA: 0x00390A28 File Offset: 0x0038EC28
+	// Token: 0x060097F6 RID: 38902 RVA: 0x00395290 File Offset: 0x00393490
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -48,7 +48,7 @@ public class NGuiWdwInGameHUD : MonoBehaviour
 		this.playerUI.windowManager.AddGlobalAction(nguiAction3);
 	}
 
-	// Token: 0x0600976A RID: 38762 RVA: 0x00390B2C File Offset: 0x0038ED2C
+	// Token: 0x060097F7 RID: 38903 RVA: 0x00395394 File Offset: 0x00393594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -56,21 +56,21 @@ public class NGuiWdwInGameHUD : MonoBehaviour
 		this.playerUI.OnEntityPlayerLocalAssigned += this.HandleEntityPlayerLocalAssigned;
 	}
 
-	// Token: 0x0600976B RID: 38763 RVA: 0x00390B56 File Offset: 0x0038ED56
+	// Token: 0x060097F8 RID: 38904 RVA: 0x003953BE File Offset: 0x003935BE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		this.playerUI.OnEntityPlayerLocalAssigned -= this.HandleEntityPlayerLocalAssigned;
 	}
 
-	// Token: 0x0600976C RID: 38764 RVA: 0x00390B6F File Offset: 0x0038ED6F
+	// Token: 0x060097F9 RID: 38905 RVA: 0x003953D7 File Offset: 0x003935D7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleEntityPlayerLocalAssigned(EntityPlayerLocal _entity)
 	{
 		this.playerEntity = _entity;
 	}
 
-	// Token: 0x0600976D RID: 38765 RVA: 0x00390B78 File Offset: 0x0038ED78
+	// Token: 0x060097FA RID: 38906 RVA: 0x003953E0 File Offset: 0x003935E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -106,68 +106,68 @@ public class NGuiWdwInGameHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007165 RID: 29029
+	// Token: 0x040071CF RID: 29135
 	public Texture2D[] overlayDamageTextures = new Texture2D[8];
 
-	// Token: 0x04007166 RID: 29030
+	// Token: 0x040071D0 RID: 29136
 	public Texture2D[] overlayDamageBloodDrops = new Texture2D[3];
 
-	// Token: 0x04007167 RID: 29031
+	// Token: 0x040071D1 RID: 29137
 	public Texture2D CrosshairTexture;
 
-	// Token: 0x04007168 RID: 29032
+	// Token: 0x040071D2 RID: 29138
 	public Texture2D CrosshairDamage;
 
-	// Token: 0x04007169 RID: 29033
+	// Token: 0x040071D3 RID: 29139
 	public Texture2D CrosshairUpgrade;
 
-	// Token: 0x0400716A RID: 29034
+	// Token: 0x040071D4 RID: 29140
 	public Texture2D CrosshairRepair;
 
-	// Token: 0x0400716B RID: 29035
+	// Token: 0x040071D5 RID: 29141
 	public Texture2D CrosshairAiming;
 
-	// Token: 0x0400716C RID: 29036
+	// Token: 0x040071D6 RID: 29142
 	public Texture2D CrosshairPowerSource;
 
-	// Token: 0x0400716D RID: 29037
+	// Token: 0x040071D7 RID: 29143
 	public Texture2D CrosshairPowerItem;
 
-	// Token: 0x0400716E RID: 29038
+	// Token: 0x040071D8 RID: 29144
 	public Texture2D[] StealthIcons = new Texture2D[5];
 
-	// Token: 0x0400716F RID: 29039
+	// Token: 0x040071D9 RID: 29145
 	public Texture2D[] StealthOverlays = new Texture2D[2];
 
-	// Token: 0x04007170 RID: 29040
+	// Token: 0x040071DA RID: 29146
 	public Texture2D CrosshairBlocked;
 
-	// Token: 0x04007171 RID: 29041
+	// Token: 0x040071DB RID: 29147
 	public Texture2D CrosshairDot;
 
-	// Token: 0x04007172 RID: 29042
+	// Token: 0x040071DC RID: 29148
 	public Texture2D CrosshairSquare;
 
-	// Token: 0x04007173 RID: 29043
+	// Token: 0x040071DD RID: 29149
 	public Transform FocusCube;
 
-	// Token: 0x04007174 RID: 29044
+	// Token: 0x040071DE RID: 29150
 	public float crosshairAlpha = 1f;
 
-	// Token: 0x04007175 RID: 29045
+	// Token: 0x040071DF RID: 29151
 	public bool showCrosshair = true;
 
-	// Token: 0x04007176 RID: 29046
+	// Token: 0x040071E0 RID: 29152
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string wdwOpenedOnGameStatsShowWindow;
 
-	// Token: 0x04007177 RID: 29047
+	// Token: 0x040071E1 RID: 29153
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal playerEntity;
 
-	// Token: 0x04007178 RID: 29048
+	// Token: 0x040071E2 RID: 29154
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;

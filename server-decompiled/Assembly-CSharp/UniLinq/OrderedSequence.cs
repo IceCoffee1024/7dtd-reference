@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x020017B8 RID: 6072
+	// Token: 0x020017E4 RID: 6116
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class OrderedSequence<TElement, TKey> : OrderedEnumerable<TElement>
 	{
-		// Token: 0x0600BCD8 RID: 48344 RVA: 0x0045F5FB File Offset: 0x0045D7FB
+		// Token: 0x0600BE2F RID: 48687 RVA: 0x00463B1B File Offset: 0x00461D1B
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public OrderedSequence(IEnumerable<TElement> source, Func<TElement, TKey> key_selector, IComparer<TKey> comparer, SortDirection direction)
 			: base(source)
@@ -17,7 +17,7 @@ namespace UniLinq
 			this.direction = direction;
 		}
 
-		// Token: 0x0600BCD9 RID: 48345 RVA: 0x0045F623 File Offset: 0x0045D823
+		// Token: 0x0600BE30 RID: 48688 RVA: 0x00463B43 File Offset: 0x00461D43
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public OrderedSequence(OrderedEnumerable<TElement> parent, IEnumerable<TElement> source, Func<TElement, TKey> keySelector, IComparer<TKey> comparer, SortDirection direction)
 			: this(source, keySelector, comparer, direction)
@@ -25,13 +25,13 @@ namespace UniLinq
 			this.parent = parent;
 		}
 
-		// Token: 0x0600BCDA RID: 48346 RVA: 0x0045F638 File Offset: 0x0045D838
+		// Token: 0x0600BE31 RID: 48689 RVA: 0x00463B58 File Offset: 0x00461D58
 		public override IEnumerator<TElement> GetEnumerator()
 		{
 			return base.GetEnumerator();
 		}
 
-		// Token: 0x0600BCDB RID: 48347 RVA: 0x0045F640 File Offset: 0x0045D840
+		// Token: 0x0600BE32 RID: 48690 RVA: 0x00463B60 File Offset: 0x00461D60
 		public override SortContext<TElement> CreateContext(SortContext<TElement> current)
 		{
 			SortContext<TElement> sortContext = new SortSequenceContext<TElement, TKey>(this.selector, this.comparer, this.direction, current);
@@ -42,26 +42,26 @@ namespace UniLinq
 			return sortContext;
 		}
 
-		// Token: 0x0600BCDC RID: 48348 RVA: 0x0045F67C File Offset: 0x0045D87C
+		// Token: 0x0600BE33 RID: 48691 RVA: 0x00463B9C File Offset: 0x00461D9C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerable<TElement> Sort(IEnumerable<TElement> source)
 		{
 			return QuickSort<TElement>.Sort(source, this.CreateContext(null));
 		}
 
-		// Token: 0x04008D42 RID: 36162
+		// Token: 0x04008E07 RID: 36359
 		[PublicizedFrom(EAccessModifier.Private)]
 		public OrderedEnumerable<TElement> parent;
 
-		// Token: 0x04008D43 RID: 36163
+		// Token: 0x04008E08 RID: 36360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Func<TElement, TKey> selector;
 
-		// Token: 0x04008D44 RID: 36164
+		// Token: 0x04008E09 RID: 36361
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IComparer<TKey> comparer;
 
-		// Token: 0x04008D45 RID: 36165
+		// Token: 0x04008E0A RID: 36362
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SortDirection direction;
 	}

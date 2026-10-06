@@ -1,41 +1,45 @@
 ﻿using System;
+using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x02000826 RID: 2086
+// Token: 0x02000824 RID: 2084
 [Preserve]
 public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 {
-	// Token: 0x06003D46 RID: 15686 RVA: 0x00185898 File Offset: 0x00183A98
+	// Token: 0x06003D04 RID: 15620 RVA: 0x00185460 File Offset: 0x00183660
 	public NetPackagePlayerEquipment Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
-		this.equipment = _entity.equipment;
+		this.equipmentData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+		{
+			_entity.equipment.Write(pbw, SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? StreamModeWrite.ToClient : StreamModeWrite.ToServer);
+		});
 		return this;
 	}
 
-	// Token: 0x06003D47 RID: 15687 RVA: 0x001858B3 File Offset: 0x00183AB3
+	// Token: 0x06003D05 RID: 15621 RVA: 0x001854A3 File Offset: 0x001836A3
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
-		this.equipment = Equipment.Read(_reader);
+		this.equipmentData = StreamUtils.ReadBlob(_reader);
 	}
 
-	// Token: 0x06003D48 RID: 15688 RVA: 0x001858C8 File Offset: 0x00183AC8
+	// Token: 0x06003D06 RID: 15622 RVA: 0x001854B8 File Offset: 0x001836B8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
-		this.equipment.Write(_writer);
+		StreamUtils.WriteBlob(_writer, this.equipmentData);
 	}
 
-	// Token: 0x06003D49 RID: 15689 RVA: 0x001858E0 File Offset: 0x00183AE0
+	// Token: 0x06003D07 RID: 15623 RVA: 0x001854D0 File Offset: 0x001836D0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
 		{
 			return;
 		}
-		EntityAlive entityAlive = _world.GetEntity(this.entityId) as EntityAlive;
-		if (!entityAlive)
+		EntityAlive ea = _world.GetEntity(this.entityId) as EntityAlive;
+		if (!ea)
 		{
 			Log.Out("Discarding " + base.GetType().Name + " for entity Id=" + this.entityId.ToString());
 			return;
@@ -44,19 +48,16 @@ public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 		{
 			return;
 		}
-		entityAlive.equipment.Apply(this.equipment, false);
+		StreamUtils.FromBlob(this.equipmentData, delegate(PooledBinaryReader pbr)
+		{
+			ea.equipment.ReadInto(pbr, SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? StreamModeRead.FromClient : StreamModeRead.FromServer);
+		});
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
 		{
-			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackagePlayerEquipment>().Setup(entityAlive), false, -1, base.Sender.entityId, -1, null, 192, false);
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackagePlayerEquipment>().Setup(ea), false, -1, base.Sender.entityId, -1, null, 192, false);
 		}
 	}
 
-	// Token: 0x06003D4A RID: 15690 RVA: 0x00177A99 File Offset: 0x00175C99
-	public override int GetLength()
-	{
-		return 60;
-	}
-
-	// Token: 0x040031BC RID: 12732
-	public Equipment equipment;
+	// Token: 0x040031A0 RID: 12704
+	public MemoryStream equipmentData;
 }

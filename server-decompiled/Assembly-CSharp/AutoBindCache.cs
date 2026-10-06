@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Token: 0x020010DE RID: 4318
+// Token: 0x020010EF RID: 4335
 public class AutoBindCache
 {
-	// Token: 0x17000FF2 RID: 4082
-	// (get) Token: 0x0600897E RID: 35198 RVA: 0x00346756 File Offset: 0x00344956
+	// Token: 0x17001027 RID: 4135
+	// (get) Token: 0x060089CC RID: 35276 RVA: 0x0034A506 File Offset: 0x00348706
 	public static AutoBindCache Instance
 	{
 		get
@@ -22,19 +22,19 @@ public class AutoBindCache
 		}
 	}
 
-	// Token: 0x0600897F RID: 35199 RVA: 0x0034676C File Offset: 0x0034496C
+	// Token: 0x060089CD RID: 35277 RVA: 0x0034A51C File Offset: 0x0034871C
 	public void BindComponents(XUiController _controller)
 	{
 		this.getCache(_controller).BindComponents(_controller);
 	}
 
-	// Token: 0x06008980 RID: 35200 RVA: 0x0034677B File Offset: 0x0034497B
+	// Token: 0x060089CE RID: 35278 RVA: 0x0034A52B File Offset: 0x0034872B
 	public void BindEvents(XUiController _controller)
 	{
 		this.getCache(_controller).BindEvents(_controller);
 	}
 
-	// Token: 0x06008981 RID: 35201 RVA: 0x0034678C File Offset: 0x0034498C
+	// Token: 0x060089CF RID: 35279 RVA: 0x0034A53C File Offset: 0x0034873C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AutoBindCache.AutoBindTypeCache getCache(XUiController _controller)
 	{
@@ -48,27 +48,27 @@ public class AutoBindCache
 		return autoBindTypeCache;
 	}
 
-	// Token: 0x04006640 RID: 26176
+	// Token: 0x04006682 RID: 26242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, AutoBindCache.AutoBindTypeCache> cachePerType = new Dictionary<Type, AutoBindCache.AutoBindTypeCache>(128);
 
-	// Token: 0x04006641 RID: 26177
+	// Token: 0x04006683 RID: 26243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static AutoBindCache instance;
 
-	// Token: 0x04006642 RID: 26178
+	// Token: 0x04006684 RID: 26244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<XUiController> controllersList = new List<XUiController>();
 
-	// Token: 0x04006643 RID: 26179
+	// Token: 0x04006685 RID: 26245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<XUiView> viewsList = new List<XUiView>();
 
-	// Token: 0x020010DF RID: 4319
+	// Token: 0x020010F0 RID: 4336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BindComponentInfo
 	{
-		// Token: 0x06008984 RID: 35204 RVA: 0x003467F4 File Offset: 0x003449F4
+		// Token: 0x060089D2 RID: 35282 RVA: 0x0034A5A4 File Offset: 0x003487A4
 		public BindComponentInfo(FieldInfo _targetField, AutoBindCache.BindComponentInfo.EFieldXuiType _fieldXuiType, AutoBindCache.BindComponentInfo.EMultiplicity _multiplicity, Type _lookupType, string _lookupId, bool _required, bool _isParentLookup)
 		{
 			this.targetField = _targetField;
@@ -80,7 +80,7 @@ public class AutoBindCache
 			this.parentLookup = _isParentLookup;
 		}
 
-		// Token: 0x06008985 RID: 35205 RVA: 0x00346848 File Offset: 0x00344A48
+		// Token: 0x060089D3 RID: 35283 RVA: 0x0034A5F8 File Offset: 0x003487F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void bindParent(XUiController _controller)
 		{
@@ -110,7 +110,7 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x06008986 RID: 35206 RVA: 0x003468A8 File Offset: 0x00344AA8
+		// Token: 0x060089D4 RID: 35284 RVA: 0x0034A658 File Offset: 0x00348858
 		public void Bind(XUiController _controller)
 		{
 			if (this.parentLookup)
@@ -199,7 +199,7 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x06008987 RID: 35207 RVA: 0x00346A90 File Offset: 0x00344C90
+		// Token: 0x060089D5 RID: 35285 RVA: 0x0034A840 File Offset: 0x00348A40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LogNoViewFound(XUiController _controller, string _message)
 		{
@@ -232,58 +232,58 @@ public class AutoBindCache
 			}));
 		}
 
-		// Token: 0x04006644 RID: 26180
+		// Token: 0x04006686 RID: 26246
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly FieldInfo targetField;
 
-		// Token: 0x04006645 RID: 26181
+		// Token: 0x04006687 RID: 26247
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AutoBindCache.BindComponentInfo.EFieldXuiType fieldXuiType;
 
-		// Token: 0x04006646 RID: 26182
+		// Token: 0x04006688 RID: 26248
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AutoBindCache.BindComponentInfo.EMultiplicity multiplicity;
 
-		// Token: 0x04006647 RID: 26183
+		// Token: 0x04006689 RID: 26249
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Type lookupType;
 
-		// Token: 0x04006648 RID: 26184
+		// Token: 0x0400668A RID: 26250
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string lookupId;
 
-		// Token: 0x04006649 RID: 26185
+		// Token: 0x0400668B RID: 26251
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool required;
 
-		// Token: 0x0400664A RID: 26186
+		// Token: 0x0400668C RID: 26252
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool parentLookup;
 
-		// Token: 0x020010E0 RID: 4320
+		// Token: 0x020010F1 RID: 4337
 		public enum EFieldXuiType
 		{
-			// Token: 0x0400664C RID: 26188
+			// Token: 0x0400668E RID: 26254
 			Controller,
-			// Token: 0x0400664D RID: 26189
+			// Token: 0x0400668F RID: 26255
 			View
 		}
 
-		// Token: 0x020010E1 RID: 4321
+		// Token: 0x020010F2 RID: 4338
 		public enum EMultiplicity
 		{
-			// Token: 0x0400664F RID: 26191
+			// Token: 0x04006691 RID: 26257
 			Single,
-			// Token: 0x04006650 RID: 26192
+			// Token: 0x04006692 RID: 26258
 			Array
 		}
 	}
 
-	// Token: 0x020010E2 RID: 4322
+	// Token: 0x020010F3 RID: 4339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BindEventInfo
 	{
-		// Token: 0x06008988 RID: 35208 RVA: 0x00346BA9 File Offset: 0x00344DA9
+		// Token: 0x060089D6 RID: 35286 RVA: 0x0034A959 File Offset: 0x00348B59
 		public BindEventInfo(EventInfo _eventInfo, FieldInfo _eventComponentField, MethodInfo _eventMethod)
 		{
 			this.eventInfo = _eventInfo;
@@ -291,7 +291,7 @@ public class AutoBindCache
 			this.eventMethod = _eventMethod;
 		}
 
-		// Token: 0x06008989 RID: 35209 RVA: 0x00346BC8 File Offset: 0x00344DC8
+		// Token: 0x060089D7 RID: 35287 RVA: 0x0034A978 File Offset: 0x00348B78
 		public void Bind(XUiController _controller)
 		{
 			Delegate @delegate = this.eventMethod.CreateDelegate(this.eventInfo.EventHandlerType, _controller);
@@ -341,38 +341,38 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x04006651 RID: 26193
+		// Token: 0x04006693 RID: 26259
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EventInfo eventInfo;
 
-		// Token: 0x04006652 RID: 26194
+		// Token: 0x04006694 RID: 26260
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly FieldInfo eventComponentField;
 
-		// Token: 0x04006653 RID: 26195
+		// Token: 0x04006695 RID: 26261
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MethodInfo eventMethod;
 	}
 
-	// Token: 0x020010E3 RID: 4323
+	// Token: 0x020010F4 RID: 4340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class AutoBindTypeCache
 	{
-		// Token: 0x0600898A RID: 35210 RVA: 0x00346D1C File Offset: 0x00344F1C
+		// Token: 0x060089D8 RID: 35288 RVA: 0x0034AACC File Offset: 0x00348CCC
 		public AutoBindTypeCache(Type _controllerType)
 		{
 			this.controllerType = _controllerType;
 			this.initCacheForController();
 		}
 
-		// Token: 0x0600898B RID: 35211 RVA: 0x00346D49 File Offset: 0x00344F49
+		// Token: 0x060089D9 RID: 35289 RVA: 0x0034AAF9 File Offset: 0x00348CF9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void initCacheForController()
 		{
 			this.<initCacheForController>g__RecurseTypeTree|4_0(this.controllerType);
 		}
 
-		// Token: 0x0600898C RID: 35212 RVA: 0x00346D58 File Offset: 0x00344F58
+		// Token: 0x060089DA RID: 35290 RVA: 0x0034AB08 File Offset: 0x00348D08
 		public void BindComponents(XUiController _controller)
 		{
 			for (int i = 0; i < this.fields.Count; i++)
@@ -381,7 +381,7 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x0600898D RID: 35213 RVA: 0x00346D90 File Offset: 0x00344F90
+		// Token: 0x060089DB RID: 35291 RVA: 0x0034AB40 File Offset: 0x00348D40
 		public void BindEvents(XUiController _controller)
 		{
 			for (int i = 0; i < this.events.Count; i++)
@@ -390,7 +390,7 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x0600898E RID: 35214 RVA: 0x00346DC8 File Offset: 0x00344FC8
+		// Token: 0x060089DC RID: 35292 RVA: 0x0034AB78 File Offset: 0x00348D78
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__RecurseTypeTree|4_0(Type _type)
@@ -405,7 +405,7 @@ public class AutoBindCache
 			ReflectionHelpers.GetMethodsWithAttribute<XuiBindEventAttribute>(_type, new Action<MethodInfo, bool, XuiBindEventAttribute>(this.<initCacheForController>g__EventMethodFoundCallback|4_4), true, true, false);
 		}
 
-		// Token: 0x0600898F RID: 35215 RVA: 0x00346E2A File Offset: 0x0034502A
+		// Token: 0x060089DD RID: 35293 RVA: 0x0034ABDA File Offset: 0x00348DDA
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__ParentFieldFoundCallback|4_1(FieldInfo _fieldInfo, bool _hasMultiple, XuiBindParentAttribute _attribute)
@@ -413,7 +413,7 @@ public class AutoBindCache
 			this.<initCacheForController>g__FieldFound|4_3(_fieldInfo, _hasMultiple, null, _attribute.Required, true);
 		}
 
-		// Token: 0x06008990 RID: 35216 RVA: 0x00346E3C File Offset: 0x0034503C
+		// Token: 0x060089DE RID: 35294 RVA: 0x0034ABEC File Offset: 0x00348DEC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__ComponentFieldFoundCallback|4_2(FieldInfo _fieldInfo, bool _hasMultiple, XuiBindComponentAttribute _attribute)
@@ -421,7 +421,7 @@ public class AutoBindCache
 			this.<initCacheForController>g__FieldFound|4_3(_fieldInfo, _hasMultiple, _attribute.XmlElementName, _attribute.Required, false);
 		}
 
-		// Token: 0x06008991 RID: 35217 RVA: 0x00346E54 File Offset: 0x00345054
+		// Token: 0x060089DF RID: 35295 RVA: 0x0034AC04 File Offset: 0x00348E04
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__FieldFound|4_3(FieldInfo _fieldInfo, bool _hasMultiple, string _xmlElementName, bool _required, bool _isParentLookup)
@@ -451,7 +451,7 @@ public class AutoBindCache
 			this.fields.Add(bindComponentInfo);
 		}
 
-		// Token: 0x06008992 RID: 35218 RVA: 0x00346F24 File Offset: 0x00345124
+		// Token: 0x060089E0 RID: 35296 RVA: 0x0034ACD4 File Offset: 0x00348ED4
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__EventMethodFoundCallback|4_4(MethodInfo _methodInfo, bool _hasMultiple, XuiBindEventAttribute _attribute)
@@ -499,15 +499,15 @@ public class AutoBindCache
 			}
 		}
 
-		// Token: 0x04006654 RID: 26196
+		// Token: 0x04006696 RID: 26262
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Type controllerType;
 
-		// Token: 0x04006655 RID: 26197
+		// Token: 0x04006697 RID: 26263
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<AutoBindCache.BindComponentInfo> fields = new List<AutoBindCache.BindComponentInfo>(64);
 
-		// Token: 0x04006656 RID: 26198
+		// Token: 0x04006698 RID: 26264
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<AutoBindCache.BindEventInfo> events = new List<AutoBindCache.BindEventInfo>();
 	}

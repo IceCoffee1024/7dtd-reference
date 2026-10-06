@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F23 RID: 3875
+// Token: 0x02000F32 RID: 3890
 [Preserve]
 public class XUiC_DialogResponseEntry : XUiController
 {
-	// Token: 0x17000E36 RID: 3638
-	// (get) Token: 0x0600799C RID: 31132 RVA: 0x002DD534 File Offset: 0x002DB734
-	// (set) Token: 0x0600799D RID: 31133 RVA: 0x002DD53C File Offset: 0x002DB73C
+	// Token: 0x17000E53 RID: 3667
+	// (get) Token: 0x06007997 RID: 31127 RVA: 0x002E08D0 File Offset: 0x002DEAD0
+	// (set) Token: 0x06007998 RID: 31128 RVA: 0x002E08D8 File Offset: 0x002DEAD8
 	public DialogResponse CurrentResponse
 	{
 		get
@@ -44,7 +44,7 @@ public class XUiC_DialogResponseEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600799E RID: 31134 RVA: 0x002DD608 File Offset: 0x002DB808
+	// Token: 0x06007999 RID: 31129 RVA: 0x002E09A4 File Offset: 0x002DEBA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -96,14 +96,14 @@ public class XUiC_DialogResponseEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600799F RID: 31135 RVA: 0x002DD73C File Offset: 0x002DB93C
+	// Token: 0x0600799A RID: 31130 RVA: 0x002E0AD8 File Offset: 0x002DECD8
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060079A0 RID: 31136 RVA: 0x002DD74B File Offset: 0x002DB94B
+	// Token: 0x0600799B RID: 31131 RVA: 0x002E0AE7 File Offset: 0x002DECE7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -120,7 +120,7 @@ public class XUiC_DialogResponseEntry : XUiController
 		}
 	}
 
-	// Token: 0x060079A1 RID: 31137 RVA: 0x002C422D File Offset: 0x002C242D
+	// Token: 0x0600799C RID: 31132 RVA: 0x002C75E5 File Offset: 0x002C57E5
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -128,13 +128,13 @@ public class XUiC_DialogResponseEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x060079A2 RID: 31138 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x0600799D RID: 31133 RVA: 0x0008A995 File Offset: 0x00088B95
 	public void Refresh()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060079A3 RID: 31139 RVA: 0x002DD77C File Offset: 0x002DB97C
+	// Token: 0x0600799E RID: 31134 RVA: 0x002E0B18 File Offset: 0x002DED18
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "enabled_color")
@@ -160,32 +160,32 @@ public class XUiC_DialogResponseEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x040059EB RID: 23019
+	// Token: 0x04005A23 RID: 23075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rowColor;
 
-	// Token: 0x040059EC RID: 23020
+	// Token: 0x04005A24 RID: 23076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hoverColor;
 
-	// Token: 0x040059ED RID: 23021
+	// Token: 0x04005A25 RID: 23077
 	public new bool Selected;
 
-	// Token: 0x040059EE RID: 23022
+	// Token: 0x04005A26 RID: 23078
 	public bool IsHovered;
 
-	// Token: 0x040059EF RID: 23023
+	// Token: 0x04005A27 RID: 23079
 	public bool HasRequirement = true;
 
-	// Token: 0x040059F0 RID: 23024
+	// Token: 0x04005A28 RID: 23080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string enabledColor = "255,255,255,255";
 
-	// Token: 0x040059F1 RID: 23025
+	// Token: 0x04005A29 RID: 23081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string disabledColor = "200,200,200,255";
 
-	// Token: 0x040059F2 RID: 23026
+	// Token: 0x04005A2A RID: 23082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DialogResponse currentResponse;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200132B RID: 4907
+// Token: 0x0200134B RID: 4939
 public class CameraControl : MonoBehaviour
 {
-	// Token: 0x06009B0F RID: 39695 RVA: 0x003A853C File Offset: 0x003A673C
+	// Token: 0x06009BBB RID: 39867 RVA: 0x003AD0B8 File Offset: 0x003AB2B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour
 		this.cameraLight.enabled = false;
 	}
 
-	// Token: 0x06009B10 RID: 39696 RVA: 0x003A858C File Offset: 0x003A678C
+	// Token: 0x06009BBC RID: 39868 RVA: 0x003AD108 File Offset: 0x003AB308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -75,39 +75,39 @@ public class CameraControl : MonoBehaviour
 		base.transform.localRotation = this.originalRotation * quaternion * quaternion2;
 	}
 
-	// Token: 0x040074CE RID: 29902
+	// Token: 0x04007549 RID: 30025
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Quaternion originalRotation;
 
-	// Token: 0x040074CF RID: 29903
+	// Token: 0x0400754A RID: 30026
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light cameraLight;
 
-	// Token: 0x040074D0 RID: 29904
+	// Token: 0x0400754B RID: 30027
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float rotationX;
 
-	// Token: 0x040074D1 RID: 29905
+	// Token: 0x0400754C RID: 30028
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float rotationY;
 
-	// Token: 0x040074D2 RID: 29906
+	// Token: 0x0400754D RID: 30029
 	public float sensitivityX = 2f;
 
-	// Token: 0x040074D3 RID: 29907
+	// Token: 0x0400754E RID: 30030
 	public float sensitivityY = 2f;
 
-	// Token: 0x040074D4 RID: 29908
+	// Token: 0x0400754F RID: 30031
 	public float speed = 0.1f;
 
-	// Token: 0x040074D5 RID: 29909
+	// Token: 0x04007550 RID: 30032
 	public GameObject textObject;
 
-	// Token: 0x040074D6 RID: 29910
+	// Token: 0x04007551 RID: 30033
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bPaused;

@@ -4,11 +4,11 @@ using System.Globalization;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020003D2 RID: 978
+// Token: 0x020003D5 RID: 981
 public class MiniTurretFireController : MonoBehaviour
 {
-	// Token: 0x17000392 RID: 914
-	// (get) Token: 0x06001D7C RID: 7548 RVA: 0x000B211F File Offset: 0x000B031F
+	// Token: 0x1700038A RID: 906
+	// (get) Token: 0x06001D74 RID: 7540 RVA: 0x000B232B File Offset: 0x000B052B
 	public bool IsOn
 	{
 		get
@@ -17,8 +17,8 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000393 RID: 915
-	// (get) Token: 0x06001D7D RID: 7549 RVA: 0x000B213C File Offset: 0x000B033C
+	// Token: 0x1700038B RID: 907
+	// (get) Token: 0x06001D75 RID: 7541 RVA: 0x000B2348 File Offset: 0x000B0548
 	public Vector3 TurretPosition
 	{
 		get
@@ -27,9 +27,9 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000394 RID: 916
-	// (get) Token: 0x06001D7E RID: 7550 RVA: 0x000B2158 File Offset: 0x000B0358
-	// (set) Token: 0x06001D7F RID: 7551 RVA: 0x000B2165 File Offset: 0x000B0365
+	// Token: 0x1700038C RID: 908
+	// (get) Token: 0x06001D76 RID: 7542 RVA: 0x000B2364 File Offset: 0x000B0564
+	// (set) Token: 0x06001D77 RID: 7543 RVA: 0x000B2371 File Offset: 0x000B0571
 	public float CenteredYaw
 	{
 		get
@@ -42,9 +42,9 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000395 RID: 917
-	// (get) Token: 0x06001D80 RID: 7552 RVA: 0x000B2173 File Offset: 0x000B0373
-	// (set) Token: 0x06001D81 RID: 7553 RVA: 0x000B2180 File Offset: 0x000B0380
+	// Token: 0x1700038D RID: 909
+	// (get) Token: 0x06001D78 RID: 7544 RVA: 0x000B237F File Offset: 0x000B057F
+	// (set) Token: 0x06001D79 RID: 7545 RVA: 0x000B238C File Offset: 0x000B058C
 	public float CenteredPitch
 	{
 		get
@@ -57,8 +57,8 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000396 RID: 918
-	// (get) Token: 0x06001D82 RID: 7554 RVA: 0x000B218E File Offset: 0x000B038E
+	// Token: 0x1700038E RID: 910
+	// (get) Token: 0x06001D7A RID: 7546 RVA: 0x000B239A File Offset: 0x000B059A
 	public float MaxDistance
 	{
 		get
@@ -67,7 +67,7 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D83 RID: 7555 RVA: 0x000B2198 File Offset: 0x000B0398
+	// Token: 0x06001D7B RID: 7547 RVA: 0x000B23A4 File Offset: 0x000B05A4
 	public void Init(DynamicProperties _properties, EntityTurret _entity)
 	{
 		this.entityTurret = _entity;
@@ -222,20 +222,20 @@ public class MiniTurretFireController : MonoBehaviour
 		this.waterCollisionParticles.Init(this.entityTurret.belongsPlayerId, "bullet", "water", 16);
 	}
 
-	// Token: 0x06001D84 RID: 7556 RVA: 0x000B2814 File Offset: 0x000B0A14
+	// Token: 0x06001D7C RID: 7548 RVA: 0x000B2A20 File Offset: 0x000B0C20
 	public virtual float GetRange(EntityAlive owner)
 	{
 		return EffectManager.GetValue(PassiveEffects.MaxRange, this.entityTurret.OriginalItemValue, this.maxDistance, owner, null, default(FastTags<TagGroup.Global>), true, false, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06001D85 RID: 7557 RVA: 0x000B284C File Offset: 0x000B0A4C
+	// Token: 0x06001D7D RID: 7549 RVA: 0x000B2A58 File Offset: 0x000B0C58
 	public virtual int GetBurstRoundCount(EntityAlive owner)
 	{
 		return (int)EffectManager.GetValue(PassiveEffects.BurstRoundCount, this.entityTurret.OriginalItemValue, 0f, owner, null, default(FastTags<TagGroup.Global>), true, false, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x17000397 RID: 919
-	// (get) Token: 0x06001D86 RID: 7558 RVA: 0x000B2884 File Offset: 0x000B0A84
+	// Token: 0x1700038F RID: 911
+	// (get) Token: 0x06001D7E RID: 7550 RVA: 0x000B2A90 File Offset: 0x000B0C90
 	public bool hasTarget
 	{
 		get
@@ -244,7 +244,7 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D87 RID: 7559 RVA: 0x000B2894 File Offset: 0x000B0A94
+	// Token: 0x06001D7F RID: 7551 RVA: 0x000B2AA0 File Offset: 0x000B0CA0
 	public void Update()
 	{
 		if (this.entityTurret == null)
@@ -386,7 +386,7 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D88 RID: 7560 RVA: 0x000B2E94 File Offset: 0x000B1094
+	// Token: 0x06001D80 RID: 7552 RVA: 0x000B30A0 File Offset: 0x000B12A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void findTarget()
 	{
@@ -444,7 +444,7 @@ public class MiniTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D89 RID: 7561 RVA: 0x000B30C8 File Offset: 0x000B12C8
+	// Token: 0x06001D81 RID: 7553 RVA: 0x000B32D4 File Offset: 0x000B14D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateLaser()
 	{
@@ -457,7 +457,7 @@ public class MiniTurretFireController : MonoBehaviour
 		this.Laser.transform.localScale = new Vector3(1f, 1f, num);
 	}
 
-	// Token: 0x06001D8A RID: 7562 RVA: 0x000B3184 File Offset: 0x000B1384
+	// Token: 0x06001D82 RID: 7554 RVA: 0x000B3390 File Offset: 0x000B1590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldIgnoreTarget(Entity _target)
 	{
@@ -568,7 +568,7 @@ public class MiniTurretFireController : MonoBehaviour
 		return _target as EntityAlive != null && !this.canHitEntity(_target, ref num, ref num2, out vector2);
 	}
 
-	// Token: 0x06001D8B RID: 7563 RVA: 0x000B3410 File Offset: 0x000B1610
+	// Token: 0x06001D83 RID: 7555 RVA: 0x000B361C File Offset: 0x000B181C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canHitEntity(Entity _targetEntity, ref float _yaw, ref float _pitch, out Vector3 targetPos)
 	{
@@ -598,7 +598,7 @@ public class MiniTurretFireController : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001D8C RID: 7564 RVA: 0x000B3504 File Offset: 0x000B1704
+	// Token: 0x06001D84 RID: 7556 RVA: 0x000B3710 File Offset: 0x000B1910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool trackTarget(Entity _target, ref float _yaw, ref float _pitch, out Vector3 _targetPos)
 	{
@@ -634,7 +634,7 @@ public class MiniTurretFireController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001D8D RID: 7565 RVA: 0x000B365C File Offset: 0x000B185C
+	// Token: 0x06001D85 RID: 7557 RVA: 0x000B3868 File Offset: 0x000B1A68
 	public virtual void Fire()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer || this.entityTurret == null || !this.entityTurret.IsOn)
@@ -706,13 +706,13 @@ public class MiniTurretFireController : MonoBehaviour
 		this.entityTurret.OriginalItemValue.UseTimes += EffectManager.GetValue(PassiveEffects.DegradationPerUse, this.entityTurret.OriginalItemValue, 1f, entityAlive, null, this.entityTurret.OriginalItemValue.ItemClass.ItemTags, true, false, true, true, true, 1, true, false) * ItemAction.ItemDegradationModifier;
 	}
 
-	// Token: 0x06001D8E RID: 7566 RVA: 0x000B3CE4 File Offset: 0x000B1EE4
+	// Token: 0x06001D86 RID: 7558 RVA: 0x000B3EF0 File Offset: 0x000B20F0
 	public float GetDamageEntity(ItemValue _itemValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		return EffectManager.GetValue(PassiveEffects.EntityDamage, _itemValue, (float)this.entityDamage, _holdingEntity, null, _itemValue.ItemClass.ItemTags, true, false, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06001D8F RID: 7567 RVA: 0x000B3D14 File Offset: 0x000B1F14
+	// Token: 0x06001D87 RID: 7559 RVA: 0x000B3F20 File Offset: 0x000B2120
 	public float GetDamageBlock(ItemValue _itemValue, BlockValue _blockValue, EntityAlive _holdingEntity = null, int actionIndex = 0)
 	{
 		this.tmpTag = _itemValue.ItemClass.ItemTags;
@@ -721,253 +721,253 @@ public class MiniTurretFireController : MonoBehaviour
 		return Utils.FastMin((float)_blockValue.Block.blockMaterial.MaxIncomingDamage, value);
 	}
 
-	// Token: 0x04001377 RID: 4983
+	// Token: 0x04001370 RID: 4976
 	public Transform Cone;
 
-	// Token: 0x04001378 RID: 4984
+	// Token: 0x04001371 RID: 4977
 	public Transform Laser;
 
-	// Token: 0x04001379 RID: 4985
+	// Token: 0x04001372 RID: 4978
 	public Transform Muzzle;
 
-	// Token: 0x0400137A RID: 4986
+	// Token: 0x04001373 RID: 4979
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConeYaw = 22.5f;
 
-	// Token: 0x0400137B RID: 4987
+	// Token: 0x04001374 RID: 4980
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConePitch = 22.5f;
 
-	// Token: 0x0400137C RID: 4988
+	// Token: 0x04001375 RID: 4981
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float baseConeDistance = 5.25f;
 
-	// Token: 0x0400137D RID: 4989
+	// Token: 0x04001376 RID: 4982
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float maxDistance;
 
-	// Token: 0x0400137E RID: 4990
+	// Token: 0x04001377 RID: 4983
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int entityDamage;
 
-	// Token: 0x0400137F RID: 4991
+	// Token: 0x04001378 RID: 4984
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int blockDamage;
 
-	// Token: 0x04001380 RID: 4992
+	// Token: 0x04001379 RID: 4985
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int rayCount;
 
-	// Token: 0x04001381 RID: 4993
+	// Token: 0x0400137A RID: 4986
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float wakeUpTimeMax = 0.6522f;
 
-	// Token: 0x04001382 RID: 4994
+	// Token: 0x0400137B RID: 4987
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fallAsleepTimeMax = 10f;
 
-	// Token: 0x04001383 RID: 4995
+	// Token: 0x0400137C RID: 4988
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool burstFireStarted;
 
-	// Token: 0x04001384 RID: 4996
+	// Token: 0x0400137D RID: 4989
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool burstFireFinished;
 
-	// Token: 0x04001385 RID: 4997
+	// Token: 0x0400137E RID: 4990
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int burstRoundCount;
 
-	// Token: 0x04001386 RID: 4998
+	// Token: 0x0400137F RID: 4991
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int burstRoundCountMax = 20;
 
-	// Token: 0x04001387 RID: 4999
+	// Token: 0x04001380 RID: 4992
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fireRateTimer;
 
-	// Token: 0x04001388 RID: 5000
+	// Token: 0x04001381 RID: 4993
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float fireRateMax = 0.1f;
 
-	// Token: 0x04001389 RID: 5001
+	// Token: 0x04001382 RID: 4994
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float coolOffTime;
 
-	// Token: 0x0400138A RID: 5002
+	// Token: 0x04001383 RID: 4995
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float coolOffTimeMax = 2f;
 
-	// Token: 0x0400138B RID: 5003
+	// Token: 0x04001384 RID: 4996
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float overshootTimeMax = 0.5f;
 
-	// Token: 0x0400138C RID: 5004
+	// Token: 0x04001385 RID: 4997
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MiniTurretFireController.TurretState state;
 
-	// Token: 0x0400138D RID: 5005
+	// Token: 0x04001386 RID: 4998
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string fireSound;
 
-	// Token: 0x0400138E RID: 5006
+	// Token: 0x04001387 RID: 4999
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string wakeUpSound;
 
-	// Token: 0x0400138F RID: 5007
+	// Token: 0x04001388 RID: 5000
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string overheatSound;
 
-	// Token: 0x04001390 RID: 5008
+	// Token: 0x04001389 RID: 5001
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string targetingSound;
 
-	// Token: 0x04001391 RID: 5009
+	// Token: 0x0400138A RID: 5002
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string muzzleFireParticle;
 
-	// Token: 0x04001392 RID: 5010
+	// Token: 0x0400138B RID: 5003
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string muzzleSmokeParticle;
 
-	// Token: 0x04001393 RID: 5011
+	// Token: 0x0400138C RID: 5004
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string ammoItemName;
 
-	// Token: 0x04001394 RID: 5012
+	// Token: 0x0400138D RID: 5005
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public DamageMultiplier damageMultiplier;
 
-	// Token: 0x04001395 RID: 5013
+	// Token: 0x0400138E RID: 5006
 	public List<string> buffActions;
 
-	// Token: 0x04001396 RID: 5014
+	// Token: 0x0400138F RID: 5007
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 yawRange;
 
-	// Token: 0x04001397 RID: 5015
+	// Token: 0x04001390 RID: 5008
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 pitchRange;
 
-	// Token: 0x04001398 RID: 5016
+	// Token: 0x04001391 RID: 5009
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 spreadHorizontal;
 
-	// Token: 0x04001399 RID: 5017
+	// Token: 0x04001392 RID: 5010
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 spreadVertical;
 
-	// Token: 0x0400139A RID: 5018
+	// Token: 0x04001393 RID: 5011
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EntityAlive currentEntityTarget;
 
-	// Token: 0x0400139B RID: 5019
+	// Token: 0x04001394 RID: 5012
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetChestHeadDelay;
 
-	// Token: 0x0400139C RID: 5020
+	// Token: 0x04001395 RID: 5013
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetChestHeadPercent;
 
-	// Token: 0x0400139D RID: 5021
+	// Token: 0x04001396 RID: 5014
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MiniTurretFireController.TurretEntitySorter sorter;
 
-	// Token: 0x0400139E RID: 5022
+	// Token: 0x04001397 RID: 5015
 	public EntityTurret entityTurret;
 
-	// Token: 0x0400139F RID: 5023
+	// Token: 0x04001398 RID: 5016
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 
-	// Token: 0x040013A0 RID: 5024
+	// Token: 0x04001399 RID: 5017
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Handle turretSpinAudioHandle;
 
-	// Token: 0x040013A1 RID: 5025
+	// Token: 0x0400139A RID: 5018
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cSeekRayRadius = 0.05f;
 
-	// Token: 0x040013A2 RID: 5026
+	// Token: 0x0400139B RID: 5019
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public FastTags<TagGroup.Global> tmpTag;
 
-	// Token: 0x040013A3 RID: 5027
+	// Token: 0x0400139C RID: 5020
 	public static FastTags<TagGroup.Global> RangedTag = FastTags<TagGroup.Global>.Parse("ranged");
 
-	// Token: 0x040013A4 RID: 5028
+	// Token: 0x0400139D RID: 5021
 	public static FastTags<TagGroup.Global> MeleeTag = FastTags<TagGroup.Global>.Parse("melee");
 
-	// Token: 0x040013A5 RID: 5029
+	// Token: 0x0400139E RID: 5022
 	public static FastTags<TagGroup.Global> PrimaryTag = FastTags<TagGroup.Global>.Parse("primary");
 
-	// Token: 0x040013A6 RID: 5030
+	// Token: 0x0400139F RID: 5023
 	public static FastTags<TagGroup.Global> SecondaryTag = FastTags<TagGroup.Global>.Parse("secondary");
 
-	// Token: 0x040013A7 RID: 5031
+	// Token: 0x040013A0 RID: 5024
 	public static FastTags<TagGroup.Global> TurretTag = FastTags<TagGroup.Global>.Parse("turret");
 
-	// Token: 0x020003D3 RID: 979
+	// Token: 0x020003D6 RID: 982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum TurretState
 	{
-		// Token: 0x040013A9 RID: 5033
+		// Token: 0x040013A2 RID: 5026
 		Asleep,
-		// Token: 0x040013AA RID: 5034
+		// Token: 0x040013A3 RID: 5027
 		Awake,
-		// Token: 0x040013AB RID: 5035
+		// Token: 0x040013A4 RID: 5028
 		Overheated
 	}
 
-	// Token: 0x020003D4 RID: 980
+	// Token: 0x020003D7 RID: 983
 	public class TurretEntitySorter : IComparer<Entity>
 	{
-		// Token: 0x06001D92 RID: 7570 RVA: 0x000B3E40 File Offset: 0x000B2040
+		// Token: 0x06001D8A RID: 7562 RVA: 0x000B404C File Offset: 0x000B224C
 		public TurretEntitySorter(Vector3 _self)
 		{
 			this.self = _self;
 		}
 
-		// Token: 0x06001D93 RID: 7571 RVA: 0x000B3E50 File Offset: 0x000B2050
+		// Token: 0x06001D8B RID: 7563 RVA: 0x000B405C File Offset: 0x000B225C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int isNearer(Entity _e, Entity _other)
 		{
@@ -984,20 +984,20 @@ public class MiniTurretFireController : MonoBehaviour
 			return 0;
 		}
 
-		// Token: 0x06001D94 RID: 7572 RVA: 0x000B3E90 File Offset: 0x000B2090
+		// Token: 0x06001D8C RID: 7564 RVA: 0x000B409C File Offset: 0x000B229C
 		public int Compare(Entity _obj1, Entity _obj2)
 		{
 			return this.isNearer(_obj1, _obj2);
 		}
 
-		// Token: 0x06001D95 RID: 7573 RVA: 0x000B3E9C File Offset: 0x000B209C
+		// Token: 0x06001D8D RID: 7565 RVA: 0x000B40A8 File Offset: 0x000B22A8
 		public float DistanceSqr(Vector3 pointA, Vector3 pointB)
 		{
 			Vector3 vector = pointA - pointB;
 			return vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
 		}
 
-		// Token: 0x040013AC RID: 5036
+		// Token: 0x040013A5 RID: 5029
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 self;
 	}

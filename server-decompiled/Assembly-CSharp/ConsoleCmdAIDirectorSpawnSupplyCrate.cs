@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E6 RID: 486
+// Token: 0x020001E7 RID: 487
 [Preserve]
 public class ConsoleCmdAIDirectorSpawnSupplyCrate : ConsoleCmdAbstract
 {
-	// Token: 0x06000EF8 RID: 3832 RVA: 0x0006141E File Offset: 0x0005F61E
+	// Token: 0x06000EEB RID: 3819 RVA: 0x0006140E File Offset: 0x0005F60E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnsupplycrate" };
 	}
 
-	// Token: 0x06000EF9 RID: 3833 RVA: 0x00061430 File Offset: 0x0005F630
+	// Token: 0x06000EEC RID: 3820 RVA: 0x00061420 File Offset: 0x0005F620
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;
@@ -38,7 +38,7 @@ public class ConsoleCmdAIDirectorSpawnSupplyCrate : ConsoleCmdAbstract
 		world.SpawnEntityInWorld(entity);
 	}
 
-	// Token: 0x06000EFA RID: 3834 RVA: 0x000614DC File Offset: 0x0005F6DC
+	// Token: 0x06000EED RID: 3821 RVA: 0x000614CC File Offset: 0x0005F6CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

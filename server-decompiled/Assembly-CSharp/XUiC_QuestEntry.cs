@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FDD RID: 4061
+// Token: 0x02000FEC RID: 4076
 [Preserve]
 public class XUiC_QuestEntry : XUiController
 {
-	// Token: 0x17000EE8 RID: 3816
-	// (get) Token: 0x06008021 RID: 32801 RVA: 0x003084F5 File Offset: 0x003066F5
-	// (set) Token: 0x06008022 RID: 32802 RVA: 0x00308500 File Offset: 0x00306700
+	// Token: 0x17000F0F RID: 3855
+	// (get) Token: 0x06008030 RID: 32816 RVA: 0x0030B4CD File Offset: 0x003096CD
+	// (set) Token: 0x06008031 RID: 32817 RVA: 0x0030B4D8 File Offset: 0x003096D8
 	public Quest Quest
 	{
 		get
@@ -25,22 +25,22 @@ public class XUiC_QuestEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000EE9 RID: 3817
-	// (get) Token: 0x06008023 RID: 32803 RVA: 0x00308563 File Offset: 0x00306763
-	// (set) Token: 0x06008024 RID: 32804 RVA: 0x0030856B File Offset: 0x0030676B
+	// Token: 0x17000F10 RID: 3856
+	// (get) Token: 0x06008032 RID: 32818 RVA: 0x0030B53B File Offset: 0x0030973B
+	// (set) Token: 0x06008033 RID: 32819 RVA: 0x0030B543 File Offset: 0x00309743
 	public XUiC_QuestWindowGroup QuestUIHandler { get; set; }
 
-	// Token: 0x17000EEA RID: 3818
-	// (get) Token: 0x06008025 RID: 32805 RVA: 0x00308574 File Offset: 0x00306774
-	// (set) Token: 0x06008026 RID: 32806 RVA: 0x0030857C File Offset: 0x0030677C
+	// Token: 0x17000F11 RID: 3857
+	// (get) Token: 0x06008034 RID: 32820 RVA: 0x0030B54C File Offset: 0x0030974C
+	// (set) Token: 0x06008035 RID: 32821 RVA: 0x0030B554 File Offset: 0x00309754
 	public bool Tracked { get; set; }
 
-	// Token: 0x17000EEB RID: 3819
-	// (get) Token: 0x06008027 RID: 32807 RVA: 0x00308585 File Offset: 0x00306785
-	// (set) Token: 0x06008028 RID: 32808 RVA: 0x0030858D File Offset: 0x0030678D
+	// Token: 0x17000F12 RID: 3858
+	// (get) Token: 0x06008036 RID: 32822 RVA: 0x0030B55D File Offset: 0x0030975D
+	// (set) Token: 0x06008037 RID: 32823 RVA: 0x0030B565 File Offset: 0x00309765
 	public SharedQuestEntry SharedQuestEntry { get; set; }
 
-	// Token: 0x06008029 RID: 32809 RVA: 0x00308598 File Offset: 0x00306798
+	// Token: 0x06008038 RID: 32824 RVA: 0x0030B570 File Offset: 0x00309770
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -243,14 +243,14 @@ public class XUiC_QuestEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600802A RID: 32810 RVA: 0x002DD73C File Offset: 0x002DB93C
+	// Token: 0x06008039 RID: 32825 RVA: 0x002E0AD8 File Offset: 0x002DECD8
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600802B RID: 32811 RVA: 0x00308AF9 File Offset: 0x00306CF9
+	// Token: 0x0600803A RID: 32826 RVA: 0x0030BAD1 File Offset: 0x00309CD1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -267,7 +267,7 @@ public class XUiC_QuestEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600802C RID: 32812 RVA: 0x002C422D File Offset: 0x002C242D
+	// Token: 0x0600803B RID: 32827 RVA: 0x002C75E5 File Offset: 0x002C57E5
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
@@ -275,13 +275,13 @@ public class XUiC_QuestEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600802D RID: 32813 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x0600803C RID: 32828 RVA: 0x0008A995 File Offset: 0x00088B95
 	public void Refresh()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600802E RID: 32814 RVA: 0x00308B28 File Offset: 0x00306D28
+	// Token: 0x0600803D RID: 32829 RVA: 0x0030BB00 File Offset: 0x00309D00
 	public override bool ParseAttribute(string name, string value)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(name);
@@ -404,77 +404,77 @@ public class XUiC_QuestEntry : XUiController
 		return base.ParseAttribute(name, value);
 	}
 
-	// Token: 0x04005ED8 RID: 24280
+	// Token: 0x04005F01 RID: 24321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string enabledColor;
 
-	// Token: 0x04005ED9 RID: 24281
+	// Token: 0x04005F02 RID: 24322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string disabledColor;
 
-	// Token: 0x04005EDA RID: 24282
+	// Token: 0x04005F03 RID: 24323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string failedColor;
 
-	// Token: 0x04005EDB RID: 24283
+	// Token: 0x04005F04 RID: 24324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeColor;
 
-	// Token: 0x04005EDC RID: 24284
+	// Token: 0x04005F05 RID: 24325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string finishedColor;
 
-	// Token: 0x04005EDD RID: 24285
+	// Token: 0x04005F06 RID: 24326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sharedColor;
 
-	// Token: 0x04005EDE RID: 24286
+	// Token: 0x04005F07 RID: 24327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string failedIcon;
 
-	// Token: 0x04005EDF RID: 24287
+	// Token: 0x04005F08 RID: 24328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeIcon;
 
-	// Token: 0x04005EE0 RID: 24288
+	// Token: 0x04005F09 RID: 24329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string finishedIcon;
 
-	// Token: 0x04005EE1 RID: 24289
+	// Token: 0x04005F0A RID: 24330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sharedIcon;
 
-	// Token: 0x04005EE2 RID: 24290
+	// Token: 0x04005F0B RID: 24331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string questlimitedIcon = "ui_game_symbol_quest_limited";
 
-	// Token: 0x04005EE3 RID: 24291
+	// Token: 0x04005F0C RID: 24332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string rowColor;
 
-	// Token: 0x04005EE4 RID: 24292
+	// Token: 0x04005F0D RID: 24333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hoverColor;
 
-	// Token: 0x04005EE5 RID: 24293
+	// Token: 0x04005F0E RID: 24334
 	public new bool Selected;
 
-	// Token: 0x04005EE6 RID: 24294
+	// Token: 0x04005F0F RID: 24335
 	public bool IsHovered;
 
-	// Token: 0x04005EE7 RID: 24295
+	// Token: 0x04005F10 RID: 24336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005EE8 RID: 24296
+	// Token: 0x04005F11 RID: 24337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest quest;
 
-	// Token: 0x04005EEC RID: 24300
+	// Token: 0x04005F15 RID: 24341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float, string> distanceFormatter = new CachedStringFormatter<float, string>((float _f, string _s) => _f.ToCultureInvariantString("0.0") + " " + _s);
 
-	// Token: 0x04005EED RID: 24301
+	// Token: 0x04005F16 RID: 24342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string> zerodistanceFormatter = new CachedStringFormatter<string>((string _s) => "0 " + _s);
 }

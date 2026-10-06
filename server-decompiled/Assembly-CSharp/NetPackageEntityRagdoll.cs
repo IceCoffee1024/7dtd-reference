@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E3 RID: 2019
+// Token: 0x020007E6 RID: 2022
 [Preserve]
 public class NetPackageEntityRagdoll : NetPackage
 {
-	// Token: 0x06003BB2 RID: 15282 RVA: 0x0017FB8D File Offset: 0x0017DD8D
+	// Token: 0x06003BC1 RID: 15297 RVA: 0x001800CD File Offset: 0x0017E2CD
 	public NetPackageEntityRagdoll Setup(Entity _entity, byte _state)
 	{
 		this.entityId = _entity.entityId;
@@ -15,7 +15,7 @@ public class NetPackageEntityRagdoll : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BB3 RID: 15283 RVA: 0x0017FBAC File Offset: 0x0017DDAC
+	// Token: 0x06003BC2 RID: 15298 RVA: 0x001800EC File Offset: 0x0017E2EC
 	public NetPackageEntityRagdoll Setup(Entity _entity, byte _mode, float _duration, EnumBodyPartHit _bodyPart, Vector3 _forceVec, Vector3 _forceWorldPos)
 	{
 		this.entityId = _entity.entityId;
@@ -33,7 +33,7 @@ public class NetPackageEntityRagdoll : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BB4 RID: 15284 RVA: 0x0017FC18 File Offset: 0x0017DE18
+	// Token: 0x06003BC3 RID: 15299 RVA: 0x00180158 File Offset: 0x0017E358
 	public override void read(PooledBinaryReader _br)
 	{
 		this.entityId = _br.ReadInt32();
@@ -58,7 +58,7 @@ public class NetPackageEntityRagdoll : NetPackage
 		}
 	}
 
-	// Token: 0x06003BB5 RID: 15285 RVA: 0x0017FCC0 File Offset: 0x0017DEC0
+	// Token: 0x06003BC4 RID: 15300 RVA: 0x00180200 File Offset: 0x0017E400
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -82,7 +82,7 @@ public class NetPackageEntityRagdoll : NetPackage
 		}
 	}
 
-	// Token: 0x06003BB6 RID: 15286 RVA: 0x0017FD64 File Offset: 0x0017DF64
+	// Token: 0x06003BC5 RID: 15301 RVA: 0x001802A4 File Offset: 0x0017E4A4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -105,57 +105,51 @@ public class NetPackageEntityRagdoll : NetPackage
 		}
 	}
 
-	// Token: 0x06003BB7 RID: 15287 RVA: 0x0017FE0C File Offset: 0x0017E00C
-	public override int GetLength()
-	{
-		return 48;
-	}
-
-	// Token: 0x0400309E RID: 12446
+	// Token: 0x04003097 RID: 12439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400309F RID: 12447
+	// Token: 0x04003098 RID: 12440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cFlagsForce = 1;
 
-	// Token: 0x040030A0 RID: 12448
+	// Token: 0x04003099 RID: 12441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cFlagsMode = 2;
 
-	// Token: 0x040030A1 RID: 12449
+	// Token: 0x0400309A RID: 12442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cFlagsState = 4;
 
-	// Token: 0x040030A2 RID: 12450
+	// Token: 0x0400309B RID: 12443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte flags;
 
-	// Token: 0x040030A3 RID: 12451
+	// Token: 0x0400309C RID: 12444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration;
 
-	// Token: 0x040030A4 RID: 12452
+	// Token: 0x0400309D RID: 12445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumBodyPartHit bodyPart;
 
-	// Token: 0x040030A5 RID: 12453
+	// Token: 0x0400309E RID: 12446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 forceVec;
 
-	// Token: 0x040030A6 RID: 12454
+	// Token: 0x0400309F RID: 12447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 forceWorldPos;
 
-	// Token: 0x040030A7 RID: 12455
+	// Token: 0x040030A0 RID: 12448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 hipPos;
 
-	// Token: 0x040030A8 RID: 12456
+	// Token: 0x040030A1 RID: 12449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte mode;
 
-	// Token: 0x040030A9 RID: 12457
+	// Token: 0x040030A2 RID: 12450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte state;
 }

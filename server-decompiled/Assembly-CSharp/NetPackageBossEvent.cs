@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B3 RID: 1971
+// Token: 0x020007B6 RID: 1974
 [Preserve]
 public class NetPackageBossEvent : NetPackage
 {
-	// Token: 0x06003A99 RID: 15001 RVA: 0x0017C135 File Offset: 0x0017A335
+	// Token: 0x06003ACD RID: 15053 RVA: 0x0017C7C1 File Offset: 0x0017A9C1
 	public NetPackageBossEvent Setup(NetPackageBossEvent.BossEventTypes _eventType, int _bossGroupID)
 	{
 		this.bossGroupID = _bossGroupID;
@@ -17,7 +17,7 @@ public class NetPackageBossEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A9A RID: 15002 RVA: 0x0017C15F File Offset: 0x0017A35F
+	// Token: 0x06003ACE RID: 15054 RVA: 0x0017C7EB File Offset: 0x0017A9EB
 	public NetPackageBossEvent Setup(NetPackageBossEvent.BossEventTypes _eventType, int _bossGroupID, BossGroup.BossGroupTypes _bossGroupType)
 	{
 		this.bossGroupID = _bossGroupID;
@@ -29,7 +29,7 @@ public class NetPackageBossEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A9B RID: 15003 RVA: 0x0017C190 File Offset: 0x0017A390
+	// Token: 0x06003ACF RID: 15055 RVA: 0x0017C81C File Offset: 0x0017AA1C
 	public NetPackageBossEvent Setup(NetPackageBossEvent.BossEventTypes _eventType, int _bossGroupID, int _entityID)
 	{
 		this.bossGroupID = _bossGroupID;
@@ -40,7 +40,7 @@ public class NetPackageBossEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A9C RID: 15004 RVA: 0x0017C1BA File Offset: 0x0017A3BA
+	// Token: 0x06003AD0 RID: 15056 RVA: 0x0017C846 File Offset: 0x0017AA46
 	public NetPackageBossEvent Setup(NetPackageBossEvent.BossEventTypes _eventType, int _bossGroupID, BossGroup.BossGroupTypes _bossGroupType, int _bossID, List<int> _minionIDs, string _bossIcon1)
 	{
 		this.bossGroupID = _bossGroupID;
@@ -52,7 +52,7 @@ public class NetPackageBossEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A9D RID: 15005 RVA: 0x0017C1EC File Offset: 0x0017A3EC
+	// Token: 0x06003AD1 RID: 15057 RVA: 0x0017C878 File Offset: 0x0017AA78
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.bossGroupID = _reader.ReadInt32();
@@ -71,7 +71,7 @@ public class NetPackageBossEvent : NetPackage
 		}
 	}
 
-	// Token: 0x06003A9E RID: 15006 RVA: 0x0017C270 File Offset: 0x0017A470
+	// Token: 0x06003AD2 RID: 15058 RVA: 0x0017C8FC File Offset: 0x0017AAFC
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -90,7 +90,7 @@ public class NetPackageBossEvent : NetPackage
 		}
 	}
 
-	// Token: 0x06003A9F RID: 15007 RVA: 0x0017C304 File Offset: 0x0017A504
+	// Token: 0x06003AD3 RID: 15059 RVA: 0x0017C990 File Offset: 0x0017AB90
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -122,44 +122,38 @@ public class NetPackageBossEvent : NetPackage
 		}
 	}
 
-	// Token: 0x06003AA0 RID: 15008 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x04002FD9 RID: 12249
+	// Token: 0x04002FD3 RID: 12243
 	public int bossGroupID;
 
-	// Token: 0x04002FDA RID: 12250
+	// Token: 0x04002FD4 RID: 12244
 	public int entityID;
 
-	// Token: 0x04002FDB RID: 12251
+	// Token: 0x04002FD5 RID: 12245
 	public List<int> minionIDs;
 
-	// Token: 0x04002FDC RID: 12252
+	// Token: 0x04002FD6 RID: 12246
 	public string bossIcon1;
 
-	// Token: 0x04002FDD RID: 12253
+	// Token: 0x04002FD7 RID: 12247
 	public BossGroup.BossGroupTypes bossGroupType;
 
-	// Token: 0x04002FDE RID: 12254
+	// Token: 0x04002FD8 RID: 12248
 	public NetPackageBossEvent.BossEventTypes eventType;
 
-	// Token: 0x020007B4 RID: 1972
+	// Token: 0x020007B7 RID: 1975
 	public enum BossEventTypes
 	{
-		// Token: 0x04002FE0 RID: 12256
+		// Token: 0x04002FDA RID: 12250
 		RequestGroups,
-		// Token: 0x04002FE1 RID: 12257
+		// Token: 0x04002FDB RID: 12251
 		AddGroup,
-		// Token: 0x04002FE2 RID: 12258
+		// Token: 0x04002FDC RID: 12252
 		UpdateGroupType,
-		// Token: 0x04002FE3 RID: 12259
+		// Token: 0x04002FDD RID: 12253
 		RemoveGroup,
-		// Token: 0x04002FE4 RID: 12260
+		// Token: 0x04002FDE RID: 12254
 		RemoveMinion,
-		// Token: 0x04002FE5 RID: 12261
+		// Token: 0x04002FDF RID: 12255
 		RequestStats
 	}
 }

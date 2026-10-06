@@ -2,12 +2,12 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016C1 RID: 5825
+	// Token: 0x020016ED RID: 5869
 	public enum ChannelConfiguration
 	{
-		// Token: 0x04008851 RID: 34897
+		// Token: 0x04008916 RID: 35094
 		BGR,
-		// Token: 0x04008852 RID: 34898
+		// Token: 0x04008917 RID: 35095
 		RGB
 	}
 }

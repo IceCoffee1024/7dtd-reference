@@ -3,13 +3,13 @@ using System.Collections;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E19 RID: 3609
+// Token: 0x02000E28 RID: 3624
 [Preserve]
 public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 {
-	// Token: 0x17000C53 RID: 3155
-	// (get) Token: 0x06006EB0 RID: 28336 RVA: 0x002ADD75 File Offset: 0x002ABF75
-	// (set) Token: 0x06006EB1 RID: 28337 RVA: 0x002ADD7D File Offset: 0x002ABF7D
+	// Token: 0x17000C6E RID: 3182
+	// (get) Token: 0x06006EA8 RID: 28328 RVA: 0x002B111D File Offset: 0x002AF31D
+	// (set) Token: 0x06006EA9 RID: 28329 RVA: 0x002B1125 File Offset: 0x002AF325
 	[XuiXmlBinding("startable")]
 	public bool ValidStartableState
 	{
@@ -30,8 +30,8 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000C54 RID: 3156
-	// (get) Token: 0x06006EB2 RID: 28338 RVA: 0x00295F26 File Offset: 0x00294126
+	// Token: 0x17000C6F RID: 3183
+	// (get) Token: 0x06006EAA RID: 28330 RVA: 0x002992B2 File Offset: 0x002974B2
 	[XuiXmlBinding("isroamingoptional")]
 	public bool IsRoamingOptional
 	{
@@ -42,9 +42,9 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000C55 RID: 3157
-	// (get) Token: 0x06006EB3 RID: 28339 RVA: 0x002ADD97 File Offset: 0x002ABF97
-	// (set) Token: 0x06006EB4 RID: 28340 RVA: 0x002ADD9F File Offset: 0x002ABF9F
+	// Token: 0x17000C70 RID: 3184
+	// (get) Token: 0x06006EAB RID: 28331 RVA: 0x002B113F File Offset: 0x002AF33F
+	// (set) Token: 0x06006EAC RID: 28332 RVA: 0x002B1147 File Offset: 0x002AF347
 	[XuiXmlBinding("showbar")]
 	public bool DataManagementBarEnabled
 	{
@@ -65,23 +65,23 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x17000C56 RID: 3158
-	// (get) Token: 0x06006EB5 RID: 28341
+	// Token: 0x17000C71 RID: 3185
+	// (get) Token: 0x06006EAD RID: 28333
 	public abstract bool PlayIntroMovie
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x17000C57 RID: 3159
-	// (get) Token: 0x06006EB6 RID: 28342
+	// Token: 0x17000C72 RID: 3186
+	// (get) Token: 0x06006EAE RID: 28334
 	public abstract bool AllowChangingCreativeMode
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x06006EB7 RID: 28343 RVA: 0x002ADDBC File Offset: 0x002ABFBC
+	// Token: 0x06006EAF RID: 28335 RVA: 0x002B1164 File Offset: 0x002AF364
 	public override void Init()
 	{
 		base.Init();
@@ -90,7 +90,7 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006EB8 RID: 28344 RVA: 0x002ADE0D File Offset: 0x002AC00D
+	// Token: 0x06006EB0 RID: 28336 RVA: 0x002B11B5 File Offset: 0x002AF3B5
 	public override void OnOpen()
 	{
 		this.windowGroup.openWindowOnEsc = XUiC_MainMenu.ID;
@@ -98,14 +98,14 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		base.OnOpen();
 	}
 
-	// Token: 0x06006EB9 RID: 28345 RVA: 0x002ADE36 File Offset: 0x002AC036
+	// Token: 0x06006EB1 RID: 28337 RVA: 0x002B11DE File Offset: 0x002AF3DE
 	public override void OnClose()
 	{
 		base.OnClose();
 		XUiC_MultiplayerPrivilegeNotification.Close();
 	}
 
-	// Token: 0x06006EBA RID: 28346 RVA: 0x002ADE43 File Offset: 0x002AC043
+	// Token: 0x06006EB2 RID: 28338 RVA: 0x002B11EB File Offset: 0x002AF3EB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -116,7 +116,7 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		}
 	}
 
-	// Token: 0x06006EBB RID: 28347 RVA: 0x002ADE61 File Offset: 0x002AC061
+	// Token: 0x06006EB3 RID: 28339 RVA: 0x002B1209 File Offset: 0x002AF409
 	[XuiBindEvent("SettingsChanged", "Settings")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnSettingsChanged()
@@ -124,7 +124,7 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006EBC RID: 28348 RVA: 0x002ADE69 File Offset: 0x002AC069
+	// Token: 0x06006EB4 RID: 28340 RVA: 0x002B1211 File Offset: 0x002AF411
 	[XuiBindEvent("OpenSandboxSettingsRequested", "Settings")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnOpenSandboxSettingsRequested()
@@ -135,18 +135,18 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		});
 	}
 
-	// Token: 0x06006EBD RID: 28349 RVA: 0x002ADE82 File Offset: 0x002AC082
+	// Token: 0x06006EB5 RID: 28341 RVA: 0x002B122A File Offset: 0x002AF42A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDataManagement_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		XUiC_DataManagement.OpenDataManagementWindow(this, new Action(this.OnDataManagementWindowClosed));
 	}
 
-	// Token: 0x06006EBE RID: 28350
+	// Token: 0x06006EB6 RID: 28342
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void OnDataManagementWindowClosed();
 
-	// Token: 0x06006EBF RID: 28351 RVA: 0x002ADE98 File Offset: 0x002AC098
+	// Token: 0x06006EB7 RID: 28343 RVA: 0x002B1240 File Offset: 0x002AF440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateBarUsageAndAllowanceValues()
 	{
@@ -159,7 +159,7 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		this.DataManagementBar.SetAllowanceBytes(instance.TotalAllowanceBytes);
 	}
 
-	// Token: 0x06006EC0 RID: 28352 RVA: 0x002ADED8 File Offset: 0x002AC0D8
+	// Token: 0x06006EB8 RID: 28344 RVA: 0x002B1280 File Offset: 0x002AF480
 	[XuiBindEvent("OnPress", "BtnStart")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void BtnStart_OnPressed(XUiController _sender, int _mouseButton)
@@ -195,43 +195,43 @@ public abstract class XUiC_NewContinueBase : XUiC_PlayGameDialogBase
 		ThreadManager.StartCoroutine(this.startGameCo());
 	}
 
-	// Token: 0x06006EC1 RID: 28353
+	// Token: 0x06006EB9 RID: 28345
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract IEnumerator startGameCo();
 
-	// Token: 0x06006EC2 RID: 28354
+	// Token: 0x06006EBA RID: 28346
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void validateStartable();
 
-	// Token: 0x06006EC3 RID: 28355 RVA: 0x002A1FB0 File Offset: 0x002A01B0
+	// Token: 0x06006EBB RID: 28347 RVA: 0x002A5340 File Offset: 0x002A3540
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_NewContinueBase()
 	{
 	}
 
-	// Token: 0x04005415 RID: 21525
+	// Token: 0x0400544C RID: 21580
 	public static bool LastStartedNewGame;
 
-	// Token: 0x04005416 RID: 21526
+	// Token: 0x0400544D RID: 21581
 	[XuiBindComponent("btnStart", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_Button BtnStart;
 
-	// Token: 0x04005417 RID: 21527
+	// Token: 0x0400544E RID: 21582
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_NewContinueGameSettings Settings;
 
-	// Token: 0x04005418 RID: 21528
+	// Token: 0x0400544F RID: 21583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validStartableState;
 
-	// Token: 0x04005419 RID: 21529
+	// Token: 0x04005450 RID: 21584
 	[XuiBindComponent("data_bar_controller", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiC_DataManagementBar DataManagementBar;
 
-	// Token: 0x0400541A RID: 21530
+	// Token: 0x04005451 RID: 21585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool dataManagementBarEnabled;
 }

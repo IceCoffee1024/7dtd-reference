@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C2 RID: 6594
+	// Token: 0x020019EE RID: 6638
 	[Preserve]
 	public class ActionShowWindow : ActionBaseClientAction
 	{
-		// Token: 0x0600C99D RID: 51613 RVA: 0x0049FA00 File Offset: 0x0049DC00
+		// Token: 0x0600CAF5 RID: 51957 RVA: 0x004A3EEC File Offset: 0x004A20EC
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -17,14 +17,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C99E RID: 51614 RVA: 0x0049FA2E File Offset: 0x0049DC2E
+		// Token: 0x0600CAF6 RID: 51958 RVA: 0x004A3F1A File Offset: 0x004A211A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionShowWindow.PropWindow, ref this.window);
 		}
 
-		// Token: 0x0600C99F RID: 51615 RVA: 0x0049FA48 File Offset: 0x0049DC48
+		// Token: 0x0600CAF7 RID: 51959 RVA: 0x004A3F34 File Offset: 0x004A2134
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -35,11 +35,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098EA RID: 39146
+		// Token: 0x040099B0 RID: 39344
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string PropWindow = "window";
 
-		// Token: 0x040098EB RID: 39147
+		// Token: 0x040099B1 RID: 39345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string window = "";
 	}

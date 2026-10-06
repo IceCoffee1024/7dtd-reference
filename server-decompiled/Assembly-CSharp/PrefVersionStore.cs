@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000A00 RID: 2560
+// Token: 0x02000A0A RID: 2570
 public class PrefVersionStore
 {
-	// Token: 0x06004C85 RID: 19589 RVA: 0x001D89A5 File Offset: 0x001D6BA5
+	// Token: 0x06004C54 RID: 19540 RVA: 0x001D9C55 File Offset: 0x001D7E55
 	public PrefVersionStore(string saveDir)
 	{
 		this.saveDir = saveDir;
 	}
 
-	// Token: 0x06004C86 RID: 19590 RVA: 0x001D89D8 File Offset: 0x001D6BD8
+	// Token: 0x06004C55 RID: 19541 RVA: 0x001D9C88 File Offset: 0x001D7E88
 	public void AddPref(string id, string prefName, PrefType type)
 	{
 		if (this.prefNameToFile.ContainsKey(prefName))
@@ -34,7 +34,7 @@ public class PrefVersionStore
 		this.prefNameToFile[prefName] = saveDataPrefs;
 	}
 
-	// Token: 0x06004C87 RID: 19591 RVA: 0x001D8A7C File Offset: 0x001D6C7C
+	// Token: 0x06004C56 RID: 19542 RVA: 0x001D9D2C File Offset: 0x001D7F2C
 	public void Save()
 	{
 		foreach (KeyValuePair<string, List<ValueTuple<string, PrefType>>> keyValuePair in this.prefs)
@@ -71,7 +71,7 @@ public class PrefVersionStore
 		}
 	}
 
-	// Token: 0x06004C88 RID: 19592 RVA: 0x001D8BB8 File Offset: 0x001D6DB8
+	// Token: 0x06004C57 RID: 19543 RVA: 0x001D9E68 File Offset: 0x001D8068
 	public void Apply()
 	{
 		foreach (KeyValuePair<string, List<ValueTuple<string, PrefType>>> keyValuePair in this.prefs)
@@ -110,13 +110,13 @@ public class PrefVersionStore
 		}
 	}
 
-	// Token: 0x06004C89 RID: 19593 RVA: 0x001D8D18 File Offset: 0x001D6F18
+	// Token: 0x06004C58 RID: 19544 RVA: 0x001D9FC8 File Offset: 0x001D81C8
 	public bool HasKey(string key)
 	{
 		return this.prefNameToFile.ContainsKey(key);
 	}
 
-	// Token: 0x06004C8A RID: 19594 RVA: 0x001D8D28 File Offset: 0x001D6F28
+	// Token: 0x06004C59 RID: 19545 RVA: 0x001D9FD8 File Offset: 0x001D81D8
 	public bool TryGetFloat(string key, out float value)
 	{
 		ISaveDataPrefs saveDataPrefs;
@@ -129,7 +129,7 @@ public class PrefVersionStore
 		return false;
 	}
 
-	// Token: 0x06004C8B RID: 19595 RVA: 0x001D8D64 File Offset: 0x001D6F64
+	// Token: 0x06004C5A RID: 19546 RVA: 0x001DA014 File Offset: 0x001D8214
 	public bool TryGetInt(string key, out int value)
 	{
 		ISaveDataPrefs saveDataPrefs;
@@ -142,7 +142,7 @@ public class PrefVersionStore
 		return false;
 	}
 
-	// Token: 0x06004C8C RID: 19596 RVA: 0x001D8D9C File Offset: 0x001D6F9C
+	// Token: 0x06004C5B RID: 19547 RVA: 0x001DA04C File Offset: 0x001D824C
 	public bool TryGetString(string key, out string value)
 	{
 		ISaveDataPrefs saveDataPrefs;
@@ -155,7 +155,7 @@ public class PrefVersionStore
 		return false;
 	}
 
-	// Token: 0x06004C8D RID: 19597 RVA: 0x001D8DD4 File Offset: 0x001D6FD4
+	// Token: 0x06004C5C RID: 19548 RVA: 0x001DA084 File Offset: 0x001D8284
 	public bool TryGetGamePref(EnumGamePrefs enumGamePref, out object value)
 	{
 		GamePrefs.EnumType? prefType = GamePrefs.GetPrefType(enumGamePref);
@@ -223,23 +223,23 @@ public class PrefVersionStore
 		return false;
 	}
 
-	// Token: 0x04003BE8 RID: 15336
+	// Token: 0x04003BF5 RID: 15349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string ext = ".cfg";
 
-	// Token: 0x04003BE9 RID: 15337
+	// Token: 0x04003BF6 RID: 15350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string saveDir;
 
-	// Token: 0x04003BEA RID: 15338
+	// Token: 0x04003BF7 RID: 15351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, List<ValueTuple<string, PrefType>>> prefs = new Dictionary<string, List<ValueTuple<string, PrefType>>>();
 
-	// Token: 0x04003BEB RID: 15339
+	// Token: 0x04003BF8 RID: 15352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, ISaveDataPrefs> idToFile = new Dictionary<string, ISaveDataPrefs>();
 
-	// Token: 0x04003BEC RID: 15340
+	// Token: 0x04003BF9 RID: 15353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, ISaveDataPrefs> prefNameToFile = new Dictionary<string, ISaveDataPrefs>();
 }

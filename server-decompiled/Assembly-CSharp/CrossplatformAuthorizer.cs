@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200078B RID: 1931
+// Token: 0x0200078D RID: 1933
 [Preserve]
 public class CrossplatformAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005DF RID: 1503
-	// (get) Token: 0x06003983 RID: 14723 RVA: 0x00178133 File Offset: 0x00176333
+	// Token: 0x17000604 RID: 1540
+	// (get) Token: 0x060039C5 RID: 14789 RVA: 0x001788EB File Offset: 0x00176AEB
 	public override int Order
 	{
 		get
@@ -17,8 +17,8 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E0 RID: 1504
-	// (get) Token: 0x06003984 RID: 14724 RVA: 0x0017813A File Offset: 0x0017633A
+	// Token: 0x17000605 RID: 1541
+	// (get) Token: 0x060039C6 RID: 14790 RVA: 0x001788F2 File Offset: 0x00176AF2
 	public override string AuthorizerName
 	{
 		get
@@ -27,8 +27,8 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E1 RID: 1505
-	// (get) Token: 0x06003985 RID: 14725 RVA: 0x00178141 File Offset: 0x00176341
+	// Token: 0x17000606 RID: 1542
+	// (get) Token: 0x060039C7 RID: 14791 RVA: 0x001788F9 File Offset: 0x00176AF9
 	public override string StateLocalizationKey
 	{
 		get
@@ -37,8 +37,8 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E2 RID: 1506
-	// (get) Token: 0x06003986 RID: 14726 RVA: 0x00178148 File Offset: 0x00176348
+	// Token: 0x17000607 RID: 1543
+	// (get) Token: 0x060039C8 RID: 14792 RVA: 0x00178900 File Offset: 0x00176B00
 	public override bool AuthorizerActive
 	{
 		get
@@ -48,7 +48,7 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003987 RID: 14727 RVA: 0x00178160 File Offset: 0x00176360
+	// Token: 0x060039C9 RID: 14793 RVA: 0x00178918 File Offset: 0x00176B18
 	public override void ServerStart()
 	{
 		base.ServerStart();
@@ -65,7 +65,7 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003988 RID: 14728 RVA: 0x001781E8 File Offset: 0x001763E8
+	// Token: 0x060039CA RID: 14794 RVA: 0x001789A0 File Offset: 0x00176BA0
 	public override void ServerStop()
 	{
 		base.ServerStop();
@@ -82,7 +82,7 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003989 RID: 14729 RVA: 0x00178258 File Offset: 0x00176458
+	// Token: 0x060039CB RID: 14795 RVA: 0x00178A10 File Offset: 0x00176C10
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		if (_clientInfo.CrossplatformId == null)
@@ -123,21 +123,21 @@ public class CrossplatformAuthorizer : AuthorizerAbs
 		return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 	}
 
-	// Token: 0x0600398A RID: 14730 RVA: 0x00178024 File Offset: 0x00176224
+	// Token: 0x060039CC RID: 14796 RVA: 0x001787DC File Offset: 0x001769DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void authPlayerSteamSuccessfulCallback(ClientInfo _clientInfo)
 	{
 		this.authResponsesHandler.AuthorizationAccepted(this, _clientInfo);
 	}
 
-	// Token: 0x0600398B RID: 14731 RVA: 0x00178033 File Offset: 0x00176233
+	// Token: 0x060039CD RID: 14797 RVA: 0x001787EB File Offset: 0x001769EB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void kickPlayerCallback(ClientInfo _cInfo, GameUtils.KickPlayerData _kickData)
 	{
 		this.authResponsesHandler.AuthorizationDenied(this, _cInfo, _kickData);
 	}
 
-	// Token: 0x0600398C RID: 14732 RVA: 0x00178363 File Offset: 0x00176563
+	// Token: 0x060039CE RID: 14798 RVA: 0x00178B1B File Offset: 0x00176D1B
 	public override void Disconnect(ClientInfo _clientInfo)
 	{
 		if (_clientInfo != null)

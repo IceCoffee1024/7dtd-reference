@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001293 RID: 4755
+// Token: 0x020012AB RID: 4779
 public interface INGuiButtonOnDoubleClick
 {
-	// Token: 0x06009710 RID: 38672
+	// Token: 0x0600979D RID: 38813
 	void NGuiButtonOnDoubleClick(Transform _t);
 }

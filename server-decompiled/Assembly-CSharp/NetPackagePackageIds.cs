@@ -3,12 +3,12 @@ using System.Runtime.CompilerServices;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081A RID: 2074
+// Token: 0x02000818 RID: 2072
 [Preserve]
 public class NetPackagePackageIds : NetPackage
 {
-	// Token: 0x1700065C RID: 1628
-	// (get) Token: 0x06003D04 RID: 15620 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700067B RID: 1659
+	// (get) Token: 0x06003CCA RID: 15562 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool FlushQueue
 	{
 		get
@@ -17,8 +17,8 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x1700065D RID: 1629
-	// (get) Token: 0x06003D05 RID: 15621 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700067C RID: 1660
+	// (get) Token: 0x06003CCB RID: 15563 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -27,8 +27,8 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x1700065E RID: 1630
-	// (get) Token: 0x06003D06 RID: 15622 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700067D RID: 1661
+	// (get) Token: 0x06003CCC RID: 15564 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -37,7 +37,7 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x06003D07 RID: 15623 RVA: 0x00184788 File Offset: 0x00182988
+	// Token: 0x06003CCD RID: 15565 RVA: 0x00184364 File Offset: 0x00182564
 	public NetPackagePackageIds Setup()
 	{
 		this.toSendCount = NetPackageManager.KnownPackageCount;
@@ -73,7 +73,7 @@ public class NetPackagePackageIds : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D08 RID: 15624 RVA: 0x00184830 File Offset: 0x00182A30
+	// Token: 0x06003CCE RID: 15566 RVA: 0x0018440C File Offset: 0x0018260C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.compatVersion = VersionInformation.Read(_reader);
@@ -91,7 +91,7 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x06003D09 RID: 15625 RVA: 0x001848B0 File Offset: 0x00182AB0
+	// Token: 0x06003CCF RID: 15567 RVA: 0x0018448C File Offset: 0x0018268C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -111,7 +111,7 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x06003D0A RID: 15626 RVA: 0x0018494C File Offset: 0x00182B4C
+	// Token: 0x06003CD0 RID: 15568 RVA: 0x00184528 File Offset: 0x00182728
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!this.compatVersion.EqualsMinor(Constants.cVersionInformation))
@@ -164,33 +164,27 @@ public class NetPackagePackageIds : NetPackage
 		}
 	}
 
-	// Token: 0x06003D0B RID: 15627 RVA: 0x00184AD4 File Offset: 0x00182CD4
-	public override int GetLength()
-	{
-		return 2 + this.toSendCount * 32;
-	}
-
-	// Token: 0x04003186 RID: 12678
+	// Token: 0x0400316A RID: 12650
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int toSendCount;
 
-	// Token: 0x04003187 RID: 12679
+	// Token: 0x0400316B RID: 12651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] mappings;
 
-	// Token: 0x04003188 RID: 12680
+	// Token: 0x0400316C RID: 12652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public VersionInformation compatVersion;
 
-	// Token: 0x04003189 RID: 12681
+	// Token: 0x0400316D RID: 12653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool serverUseEAC;
 
-	// Token: 0x0400318A RID: 12682
+	// Token: 0x0400316E RID: 12654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasHostUserAndToken;
 
-	// Token: 0x0400318B RID: 12683
+	// Token: 0x0400316F RID: 12655
 	[TupleElementNames(new string[] { "userId", "token" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<PlatformUserIdentifierAbs, string> hostUserAndToken;

@@ -5,13 +5,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FBA RID: 4026
+// Token: 0x02000FC9 RID: 4041
 [Preserve]
 public class XUiC_PowerSourceStats : XUiController
 {
-	// Token: 0x17000EDC RID: 3804
-	// (get) Token: 0x06007F42 RID: 32578 RVA: 0x00303EC5 File Offset: 0x003020C5
-	// (set) Token: 0x06007F43 RID: 32579 RVA: 0x00303ECD File Offset: 0x003020CD
+	// Token: 0x17000F03 RID: 3843
+	// (get) Token: 0x06007F51 RID: 32593 RVA: 0x00306E9D File Offset: 0x0030509D
+	// (set) Token: 0x06007F52 RID: 32594 RVA: 0x00306EA5 File Offset: 0x003050A5
 	public PowerSource PowerSource
 	{
 		get
@@ -25,9 +25,9 @@ public class XUiC_PowerSourceStats : XUiController
 		}
 	}
 
-	// Token: 0x17000EDD RID: 3805
-	// (get) Token: 0x06007F44 RID: 32580 RVA: 0x00303EDC File Offset: 0x003020DC
-	// (set) Token: 0x06007F45 RID: 32581 RVA: 0x00303EE4 File Offset: 0x003020E4
+	// Token: 0x17000F04 RID: 3844
+	// (get) Token: 0x06007F53 RID: 32595 RVA: 0x00306EB4 File Offset: 0x003050B4
+	// (set) Token: 0x06007F54 RID: 32596 RVA: 0x00306EBC File Offset: 0x003050BC
 	public TileEntityPowerSource TileEntity
 	{
 		get
@@ -44,16 +44,16 @@ public class XUiC_PowerSourceStats : XUiController
 		}
 	}
 
-	// Token: 0x17000EDE RID: 3806
-	// (get) Token: 0x06007F46 RID: 32582 RVA: 0x00303F0F File Offset: 0x0030210F
-	// (set) Token: 0x06007F47 RID: 32583 RVA: 0x00303F17 File Offset: 0x00302117
+	// Token: 0x17000F05 RID: 3845
+	// (get) Token: 0x06007F55 RID: 32597 RVA: 0x00306EE7 File Offset: 0x003050E7
+	// (set) Token: 0x06007F56 RID: 32598 RVA: 0x00306EEF File Offset: 0x003050EF
 	public XUiC_PowerSourceWindowGroup Owner
 	{
 		get; [PublicizedFrom(EAccessModifier.Internal)]
 		set;
 	}
 
-	// Token: 0x06007F48 RID: 32584 RVA: 0x00303F20 File Offset: 0x00302120
+	// Token: 0x06007F57 RID: 32599 RVA: 0x00306EF8 File Offset: 0x003050F8
 	public override void Init()
 	{
 		base.Init();
@@ -83,7 +83,7 @@ public class XUiC_PowerSourceStats : XUiController
 		this.turnOn = Localization.Get("xuiTurnOn", false, null);
 	}
 
-	// Token: 0x06007F49 RID: 32585 RVA: 0x003040AB File Offset: 0x003022AB
+	// Token: 0x06007F58 RID: 32600 RVA: 0x00307083 File Offset: 0x00305283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnRefuel_OnHover(XUiController _sender, bool _isOver)
 	{
@@ -91,7 +91,7 @@ public class XUiC_PowerSourceStats : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F4A RID: 32586 RVA: 0x003040BC File Offset: 0x003022BC
+	// Token: 0x06007F59 RID: 32601 RVA: 0x00307094 File Offset: 0x00305294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRefuel_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -137,7 +137,7 @@ public class XUiC_PowerSourceStats : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F4B RID: 32587 RVA: 0x00304244 File Offset: 0x00302444
+	// Token: 0x06007F5A RID: 32602 RVA: 0x0030721C File Offset: 0x0030541C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnOn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -175,7 +175,7 @@ public class XUiC_PowerSourceStats : XUiController
 		this.Owner.SetOn(flag);
 	}
 
-	// Token: 0x06007F4C RID: 32588 RVA: 0x00304468 File Offset: 0x00302668
+	// Token: 0x06007F5B RID: 32603 RVA: 0x00307440 File Offset: 0x00305640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshIsOn(bool isOn)
 	{
@@ -198,7 +198,7 @@ public class XUiC_PowerSourceStats : XUiController
 		}
 	}
 
-	// Token: 0x06007F4D RID: 32589 RVA: 0x003044D8 File Offset: 0x003026D8
+	// Token: 0x06007F5C RID: 32604 RVA: 0x003074B0 File Offset: 0x003056B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -372,7 +372,7 @@ public class XUiC_PowerSourceStats : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007F4E RID: 32590 RVA: 0x00304938 File Offset: 0x00302B38
+	// Token: 0x06007F5D RID: 32605 RVA: 0x00307910 File Offset: 0x00305B10
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -397,7 +397,7 @@ public class XUiC_PowerSourceStats : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F4F RID: 32591 RVA: 0x003049FC File Offset: 0x00302BFC
+	// Token: 0x06007F5E RID: 32606 RVA: 0x003079D4 File Offset: 0x00305BD4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -411,7 +411,7 @@ public class XUiC_PowerSourceStats : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x06007F50 RID: 32592 RVA: 0x00304A78 File Offset: 0x00302C78
+	// Token: 0x06007F5F RID: 32607 RVA: 0x00307A50 File Offset: 0x00305C50
 	public override void OnClose()
 	{
 		GameManager instance = GameManager.Instance;
@@ -427,106 +427,106 @@ public class XUiC_PowerSourceStats : XUiController
 		this.xui.CalloutWindow.ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts);
 	}
 
-	// Token: 0x04005E58 RID: 24152
+	// Token: 0x04005E81 RID: 24193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RefuelButtonHovered;
 
-	// Token: 0x04005E59 RID: 24153
+	// Token: 0x04005E82 RID: 24194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprFuelFill;
 
-	// Token: 0x04005E5A RID: 24154
+	// Token: 0x04005E83 RID: 24195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprFillPotential;
 
-	// Token: 0x04005E5B RID: 24155
+	// Token: 0x04005E84 RID: 24196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x04005E5C RID: 24156
+	// Token: 0x04005E85 RID: 24197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnRefuel;
 
-	// Token: 0x04005E5D RID: 24157
+	// Token: 0x04005E86 RID: 24198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnRefuel_Background;
 
-	// Token: 0x04005E5E RID: 24158
+	// Token: 0x04005E87 RID: 24199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnOn;
 
-	// Token: 0x04005E5F RID: 24159
+	// Token: 0x04005E88 RID: 24200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnOn_Background;
 
-	// Token: 0x04005E60 RID: 24160
+	// Token: 0x04005E89 RID: 24201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblOnOff;
 
-	// Token: 0x04005E61 RID: 24161
+	// Token: 0x04005E8A RID: 24202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprOnOff;
 
-	// Token: 0x04005E62 RID: 24162
+	// Token: 0x04005E8B RID: 24203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 onColor = new Color32(250, byte.MaxValue, 163, byte.MaxValue);
 
-	// Token: 0x04005E63 RID: 24163
+	// Token: 0x04005E8C RID: 24204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 offColor = Color.white;
 
-	// Token: 0x04005E64 RID: 24164
+	// Token: 0x04005E8D RID: 24205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOff;
 
-	// Token: 0x04005E65 RID: 24165
+	// Token: 0x04005E8E RID: 24206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOn;
 
-	// Token: 0x04005E66 RID: 24166
+	// Token: 0x04005E8F RID: 24207
 	public static FastTags<TagGroup.Global> tag = FastTags<TagGroup.Global>.Parse("gasoline");
 
-	// Token: 0x04005E67 RID: 24167
+	// Token: 0x04005E90 RID: 24208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PowerSource powerSource;
 
-	// Token: 0x04005E68 RID: 24168
+	// Token: 0x04005E91 RID: 24209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowerSource tileEntity;
 
-	// Token: 0x04005E6A RID: 24170
+	// Token: 0x04005E93 RID: 24211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastOn;
 
-	// Token: 0x04005E6B RID: 24171
+	// Token: 0x04005E94 RID: 24212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> fuelFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 
-	// Token: 0x04005E6C RID: 24172
+	// Token: 0x04005E95 RID: 24213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> maxfuelFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 
-	// Token: 0x04005E6D RID: 24173
+	// Token: 0x04005E96 RID: 24214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> maxoutputFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 
-	// Token: 0x04005E6E RID: 24174
+	// Token: 0x04005E97 RID: 24215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> powerFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 
-	// Token: 0x04005E6F RID: 24175
+	// Token: 0x04005E98 RID: 24216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat potentialFuelFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005E70 RID: 24176
+	// Token: 0x04005E99 RID: 24217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat powerFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005E71 RID: 24177
+	// Token: 0x04005E9A RID: 24218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat fuelFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005E72 RID: 24178
+	// Token: 0x04005E9B RID: 24219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

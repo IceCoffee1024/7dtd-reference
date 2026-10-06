@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000AE0 RID: 2784
+// Token: 0x02000AF2 RID: 2802
 public class EntitySpawner
 {
-	// Token: 0x17000907 RID: 2311
-	// (get) Token: 0x06005330 RID: 21296 RVA: 0x001FC637 File Offset: 0x001FA837
+	// Token: 0x17000929 RID: 2345
+	// (get) Token: 0x06005349 RID: 21321 RVA: 0x001FF897 File Offset: 0x001FDA97
 	public int CurrentWave
 	{
 		get
@@ -16,7 +16,7 @@ public class EntitySpawner
 		}
 	}
 
-	// Token: 0x06005331 RID: 21297 RVA: 0x001FC63F File Offset: 0x001FA83F
+	// Token: 0x0600534A RID: 21322 RVA: 0x001FF89F File Offset: 0x001FDA9F
 	public static int ModifySpawnCountByGameDifficulty(int count)
 	{
 		if (!EntityFactory.EnemySpawnMode)
@@ -26,7 +26,7 @@ public class EntitySpawner
 		return count;
 	}
 
-	// Token: 0x06005332 RID: 21298 RVA: 0x001FC64C File Offset: 0x001FA84C
+	// Token: 0x0600534B RID: 21323 RVA: 0x001FF8AC File Offset: 0x001FDAAC
 	public EntitySpawner()
 	{
 		this.position = Vector3i.zero;
@@ -47,7 +47,7 @@ public class EntitySpawner
 		this.entityIdSpawned = plist;
 	}
 
-	// Token: 0x06005333 RID: 21299 RVA: 0x001FC704 File Offset: 0x001FA904
+	// Token: 0x0600534C RID: 21324 RVA: 0x001FF964 File Offset: 0x001FDB64
 	public EntitySpawner(string _esClassname, Vector3i _position, Vector3i _size, int _triggerDiameter, ICollection<int> _entityIdsAlreadySpawned = null)
 		: this()
 	{
@@ -62,13 +62,13 @@ public class EntitySpawner
 		this.timeDelayBetweenSpawns = (EntitySpawnerClass.list.ContainsKey(this.entitySpawnerClassName) ? EntitySpawnerClass.list[this.entitySpawnerClassName].Day(0).delayBetweenSpawns : 0f);
 	}
 
-	// Token: 0x06005334 RID: 21300 RVA: 0x001FC77F File Offset: 0x001FA97F
+	// Token: 0x0600534D RID: 21325 RVA: 0x001FF9DF File Offset: 0x001FDBDF
 	public ICollection<int> GetEntityIdsSpaned()
 	{
 		return this.entityIdSpawned;
 	}
 
-	// Token: 0x06005335 RID: 21301 RVA: 0x001FC788 File Offset: 0x001FA988
+	// Token: 0x0600534E RID: 21326 RVA: 0x001FF9E8 File Offset: 0x001FDBE8
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(3);
@@ -91,7 +91,7 @@ public class EntitySpawner
 		_bw.Write(this.bCaveSpawn);
 	}
 
-	// Token: 0x06005336 RID: 21302 RVA: 0x001FC890 File Offset: 0x001FAA90
+	// Token: 0x0600534F RID: 21327 RVA: 0x001FFAF0 File Offset: 0x001FDCF0
 	public void Read(BinaryReader _br)
 	{
 		byte b = _br.ReadByte();
@@ -129,7 +129,7 @@ public class EntitySpawner
 		}
 	}
 
-	// Token: 0x06005337 RID: 21303 RVA: 0x001FC9D4 File Offset: 0x001FABD4
+	// Token: 0x06005350 RID: 21328 RVA: 0x001FFC34 File Offset: 0x001FDE34
 	public void Spawn(World _world, int _day, bool _bSpawnEnemies)
 	{
 		if (!AIDirector.CanSpawn(1f))
@@ -197,13 +197,13 @@ public class EntitySpawner
 		}, null, null);
 	}
 
-	// Token: 0x06005338 RID: 21304 RVA: 0x001FCA36 File Offset: 0x001FAC36
+	// Token: 0x06005351 RID: 21329 RVA: 0x001FFC96 File Offset: 0x001FDE96
 	public void ResetSpawner()
 	{
 		this.resetRuntimeVariables();
 	}
 
-	// Token: 0x06005339 RID: 21305 RVA: 0x001FCA3E File Offset: 0x001FAC3E
+	// Token: 0x06005352 RID: 21330 RVA: 0x001FFC9E File Offset: 0x001FDE9E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetRuntimeVariables()
 	{
@@ -215,7 +215,7 @@ public class EntitySpawner
 		this.numberToSpawnThisWave = 0;
 	}
 
-	// Token: 0x0600533A RID: 21306 RVA: 0x001FCA78 File Offset: 0x001FAC78
+	// Token: 0x06005353 RID: 21331 RVA: 0x001FFCD8 File Offset: 0x001FDED8
 	public void SpawnManually(World _world, int _day, bool _bSpawnEnemyEntities, EntitySpawner.ES_CheckSpawnPrecondition _checkSpawnPrecondition, EntitySpawner.ES_GetSpawnPosition _getSpawnPosition, EntitySpawner.ES_ModifySpawnCount _checkSpawnCount, List<Entity> _spawned)
 	{
 		if (this.entitySpawnerClassName == null)
@@ -376,73 +376,73 @@ public class EntitySpawner
 		}
 	}
 
-	// Token: 0x040040D8 RID: 16600
+	// Token: 0x04004115 RID: 16661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFileVersion = 3;
 
-	// Token: 0x040040D9 RID: 16601
+	// Token: 0x04004116 RID: 16662
 	public Vector3i position;
 
-	// Token: 0x040040DA RID: 16602
+	// Token: 0x04004117 RID: 16663
 	public Vector3i size;
 
-	// Token: 0x040040DB RID: 16603
+	// Token: 0x04004118 RID: 16664
 	public int triggerDiameter;
 
-	// Token: 0x040040DC RID: 16604
+	// Token: 0x04004119 RID: 16665
 	public string entitySpawnerClassName;
 
-	// Token: 0x040040DD RID: 16605
+	// Token: 0x0400411A RID: 16666
 	public bool bCaveSpawn;
 
-	// Token: 0x040040DE RID: 16606
+	// Token: 0x0400411B RID: 16667
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int totalSpawnedThisWave;
 
-	// Token: 0x040040DF RID: 16607
+	// Token: 0x0400411C RID: 16668
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float timeDelayToNextWave;
 
-	// Token: 0x040040E0 RID: 16608
+	// Token: 0x0400411D RID: 16669
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float timeDelayBetweenSpawns;
 
-	// Token: 0x040040E1 RID: 16609
+	// Token: 0x0400411E RID: 16670
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ulong worldTimeNextWave;
 
-	// Token: 0x040040E2 RID: 16610
+	// Token: 0x0400411F RID: 16671
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PList<int> entityIdSpawned;
 
-	// Token: 0x040040E3 RID: 16611
+	// Token: 0x04004120 RID: 16672
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int currentWave;
 
-	// Token: 0x040040E4 RID: 16612
+	// Token: 0x04004121 RID: 16673
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int lastDaySpawnCalled;
 
-	// Token: 0x040040E5 RID: 16613
+	// Token: 0x04004122 RID: 16674
 	public int numberToSpawnThisWave;
 
-	// Token: 0x040040E6 RID: 16614
+	// Token: 0x04004123 RID: 16675
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float lastTimeSpawnCalled;
 
-	// Token: 0x040040E7 RID: 16615
+	// Token: 0x04004124 RID: 16676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x02000AE1 RID: 2785
-	// (Invoke) Token: 0x0600533C RID: 21308
+	// Token: 0x02000AF3 RID: 2803
+	// (Invoke) Token: 0x06005355 RID: 21333
 	public delegate bool ES_CheckSpawnPrecondition(EntitySpawner _es, out EntityPlayer _outPlayerToAttack);
 
-	// Token: 0x02000AE2 RID: 2786
-	// (Invoke) Token: 0x06005340 RID: 21312
+	// Token: 0x02000AF4 RID: 2804
+	// (Invoke) Token: 0x06005359 RID: 21337
 	public delegate bool ES_GetSpawnPosition(EntitySpawner _es, EntityPlayer _inPlayerToAttack, out EntityPlayer _outPlayerToAttack, out Vector3 _pos);
 
-	// Token: 0x02000AE3 RID: 2787
-	// (Invoke) Token: 0x06005344 RID: 21316
+	// Token: 0x02000AF5 RID: 2805
+	// (Invoke) Token: 0x0600535D RID: 21341
 	public delegate int ES_ModifySpawnCount(EntitySpawner _es, int spawnCount);
 }

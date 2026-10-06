@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F25 RID: 3877
+// Token: 0x02000F34 RID: 3892
 [Preserve]
 public class XUiC_DialogStatementWindow : XUiController
 {
-	// Token: 0x17000E38 RID: 3640
-	// (get) Token: 0x060079AE RID: 31150 RVA: 0x002DDAEC File Offset: 0x002DBCEC
-	// (set) Token: 0x060079AF RID: 31151 RVA: 0x002DDAF4 File Offset: 0x002DBCF4
+	// Token: 0x17000E55 RID: 3669
+	// (get) Token: 0x060079A9 RID: 31145 RVA: 0x002E0E88 File Offset: 0x002DF088
+	// (set) Token: 0x060079AA RID: 31146 RVA: 0x002E0E90 File Offset: 0x002DF090
 	public Dialog CurrentDialog
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_DialogStatementWindow : XUiController
 		}
 	}
 
-	// Token: 0x060079B0 RID: 31152 RVA: 0x002DDB0C File Offset: 0x002DBD0C
+	// Token: 0x060079AB RID: 31147 RVA: 0x002E0EA8 File Offset: 0x002DF0A8
 	public override void Init()
 	{
 		base.Init();
@@ -38,14 +38,14 @@ public class XUiC_DialogStatementWindow : XUiController
 		}
 	}
 
-	// Token: 0x060079B1 RID: 31153 RVA: 0x002DDB5F File Offset: 0x002DBD5F
+	// Token: 0x060079AC RID: 31148 RVA: 0x002E0EFB File Offset: 0x002DF0FB
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.currentDialog = null;
 	}
 
-	// Token: 0x060079B2 RID: 31154 RVA: 0x002DDB6E File Offset: 0x002DBD6E
+	// Token: 0x060079AD RID: 31149 RVA: 0x002E0F0A File Offset: 0x002DF10A
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -55,7 +55,7 @@ public class XUiC_DialogStatementWindow : XUiController
 		}
 	}
 
-	// Token: 0x060079B3 RID: 31155 RVA: 0x002DDB88 File Offset: 0x002DBD88
+	// Token: 0x060079AE RID: 31150 RVA: 0x002E0F24 File Offset: 0x002DF124
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -67,22 +67,22 @@ public class XUiC_DialogStatementWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060079B4 RID: 31156 RVA: 0x002DD525 File Offset: 0x002DB725
+	// Token: 0x060079AF RID: 31151 RVA: 0x002E08C1 File Offset: 0x002DEAC1
 	public void Refresh()
 	{
 		base.RefreshBindings();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x040059FA RID: 23034
+	// Token: 0x04005A32 RID: 23090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label label;
 
-	// Token: 0x040059FB RID: 23035
+	// Token: 0x04005A33 RID: 23091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite backgroundSprite;
 
-	// Token: 0x040059FC RID: 23036
+	// Token: 0x04005A34 RID: 23092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dialog currentDialog;
 }

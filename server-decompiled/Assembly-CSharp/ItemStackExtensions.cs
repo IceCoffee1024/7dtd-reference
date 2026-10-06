@@ -3,7 +3,7 @@
 // Token: 0x0200057D RID: 1405
 public static class ItemStackExtensions
 {
-	// Token: 0x06002DDF RID: 11743 RVA: 0x001236BC File Offset: 0x001218BC
+	// Token: 0x06002DE3 RID: 11747 RVA: 0x00123908 File Offset: 0x00121B08
 	public static int GetArrayHashCode(this ItemStack[] _items)
 	{
 		if (_items == null)
@@ -17,5 +17,18 @@ public static class ItemStackExtensions
 			num = num * 31 + num2;
 		}
 		return num;
+	}
+
+	// Token: 0x06002DE4 RID: 11748 RVA: 0x00123944 File Offset: 0x00121B44
+	public static void ClearItemStackArray(this ItemStack[] _items)
+	{
+		if (_items == null)
+		{
+			return;
+		}
+		for (int i = 0; i < _items.Length; i++)
+		{
+			_items[i] = ItemStack.Empty;
+		}
 	}
 }

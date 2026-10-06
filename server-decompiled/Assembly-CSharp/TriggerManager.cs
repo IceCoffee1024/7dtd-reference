@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001C9 RID: 457
+// Token: 0x020001CA RID: 458
 public class TriggerManager
 {
-	// Token: 0x1700010E RID: 270
-	// (get) Token: 0x06000E08 RID: 3592 RVA: 0x0005C807 File Offset: 0x0005AA07
-	// (set) Token: 0x06000E09 RID: 3593 RVA: 0x0005C80F File Offset: 0x0005AA0F
+	// Token: 0x17000106 RID: 262
+	// (get) Token: 0x06000DFF RID: 3583 RVA: 0x0005C807 File Offset: 0x0005AA07
+	// (set) Token: 0x06000E00 RID: 3584 RVA: 0x0005C80F File Offset: 0x0005AA0F
 	public bool ShowNavObjects
 	{
 		get
@@ -22,7 +22,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E0A RID: 3594 RVA: 0x0005C824 File Offset: 0x0005AA24
+	// Token: 0x06000E01 RID: 3585 RVA: 0x0005C824 File Offset: 0x0005AA24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleNavObjects(bool enabled)
 	{
@@ -39,7 +39,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E0B RID: 3595 RVA: 0x0005C888 File Offset: 0x0005AA88
+	// Token: 0x06000E02 RID: 3586 RVA: 0x0005C888 File Offset: 0x0005AA88
 	public void AddPrefabData(PrefabInstance instance, int entityID)
 	{
 		PrefabTriggerData prefabTriggerData;
@@ -60,7 +60,7 @@ public class TriggerManager
 		prefabTriggerData.AddPlayerInArea(entityID);
 	}
 
-	// Token: 0x06000E0C RID: 3596 RVA: 0x0005C8E8 File Offset: 0x0005AAE8
+	// Token: 0x06000E03 RID: 3587 RVA: 0x0005C8E8 File Offset: 0x0005AAE8
 	public void RefreshTriggers(PrefabInstance instance, FastTags<TagGroup.Global> questTags)
 	{
 		PrefabTriggerData prefabTriggerData;
@@ -83,7 +83,7 @@ public class TriggerManager
 		prefabTriggerData.HandleNeedTriggers();
 	}
 
-	// Token: 0x06000E0D RID: 3597 RVA: 0x0005C950 File Offset: 0x0005AB50
+	// Token: 0x06000E04 RID: 3588 RVA: 0x0005C950 File Offset: 0x0005AB50
 	public void Trigger(EntityPlayer player, PrefabInstance instance, byte trigger)
 	{
 		PrefabTriggerData prefabTriggerData;
@@ -93,7 +93,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E0E RID: 3598 RVA: 0x0005C975 File Offset: 0x0005AB75
+	// Token: 0x06000E05 RID: 3589 RVA: 0x0005C975 File Offset: 0x0005AB75
 	public void TriggerBlocks(EntityPlayer player, PrefabInstance instance, BlockTrigger trigger)
 	{
 		if (!trigger.HasAnyTriggers())
@@ -106,7 +106,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E0F RID: 3599 RVA: 0x0005C9A4 File Offset: 0x0005ABA4
+	// Token: 0x06000E06 RID: 3590 RVA: 0x0005C9A4 File Offset: 0x0005ABA4
 	public void TriggerBlocks(EntityPlayer player, PrefabInstance instance, TriggerVolume trigger)
 	{
 		if (!trigger.HasAnyTriggers())
@@ -124,7 +124,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E10 RID: 3600 RVA: 0x0005C9FE File Offset: 0x0005ABFE
+	// Token: 0x06000E07 RID: 3591 RVA: 0x0005C9FE File Offset: 0x0005ABFE
 	public void RemovePlayer(PrefabInstance instance, int entityID)
 	{
 		if (this.PrefabDataDict.ContainsKey(instance))
@@ -133,7 +133,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E11 RID: 3601 RVA: 0x0005CA20 File Offset: 0x0005AC20
+	// Token: 0x06000E08 RID: 3592 RVA: 0x0005CA20 File Offset: 0x0005AC20
 	public void RemovePrefabData(PrefabInstance instance)
 	{
 		if (this.PrefabDataDict.ContainsKey(instance))
@@ -143,7 +143,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E12 RID: 3602 RVA: 0x0005CA50 File Offset: 0x0005AC50
+	// Token: 0x06000E09 RID: 3593 RVA: 0x0005CA50 File Offset: 0x0005AC50
 	public void Update()
 	{
 		float deltaTime = Time.deltaTime;
@@ -153,7 +153,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E13 RID: 3603 RVA: 0x0005CA90 File Offset: 0x0005AC90
+	// Token: 0x06000E0A RID: 3594 RVA: 0x0005CA90 File Offset: 0x0005AC90
 	public List<byte> GetTriggerLayers()
 	{
 		List<byte> list = new List<byte>();
@@ -177,7 +177,7 @@ public class TriggerManager
 		return list;
 	}
 
-	// Token: 0x06000E14 RID: 3604 RVA: 0x0005CB6C File Offset: 0x0005AD6C
+	// Token: 0x06000E0B RID: 3595 RVA: 0x0005CB6C File Offset: 0x0005AD6C
 	public void AddToUpdateList(PrefabTriggerData prefabTriggerData)
 	{
 		if (!this.UpdateList.Contains(prefabTriggerData))
@@ -186,7 +186,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E15 RID: 3605 RVA: 0x0005CB88 File Offset: 0x0005AD88
+	// Token: 0x06000E0C RID: 3596 RVA: 0x0005CB88 File Offset: 0x0005AD88
 	public void RemoveFromUpdateList(PrefabTriggerData prefabTriggerData)
 	{
 		if (this.UpdateList.Contains(prefabTriggerData))
@@ -195,7 +195,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E16 RID: 3606 RVA: 0x0005CBA8 File Offset: 0x0005ADA8
+	// Token: 0x06000E0D RID: 3597 RVA: 0x0005CBA8 File Offset: 0x0005ADA8
 	public void RemoveFromUpdateList(PrefabInstance instance)
 	{
 		for (int i = this.UpdateList.Count - 1; i >= 0; i--)
@@ -207,7 +207,7 @@ public class TriggerManager
 		}
 	}
 
-	// Token: 0x06000E17 RID: 3607 RVA: 0x0005CBF0 File Offset: 0x0005ADF0
+	// Token: 0x06000E0E RID: 3598 RVA: 0x0005CBF0 File Offset: 0x0005ADF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestGeneratorController getGeneratorController(Vector3i rootPos, Chunk chunk)
 	{
@@ -220,7 +220,7 @@ public class TriggerManager
 		return questGeneratorController;
 	}
 
-	// Token: 0x06000E18 RID: 3608 RVA: 0x0005CC28 File Offset: 0x0005AE28
+	// Token: 0x06000E0F RID: 3599 RVA: 0x0005CC28 File Offset: 0x0005AE28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockSwitchController getSwitchController(Vector3i rootPos, Chunk chunk)
 	{
@@ -233,7 +233,7 @@ public class TriggerManager
 		return blockSwitchController;
 	}
 
-	// Token: 0x06000E19 RID: 3609 RVA: 0x0005CC5D File Offset: 0x0005AE5D
+	// Token: 0x06000E10 RID: 3600 RVA: 0x0005CC5D File Offset: 0x0005AE5D
 	public IEnumerator CheckPowerState(BlockTrigger _triggered, FastTags<TagGroup.Global> questTag, Action<bool> callback)
 	{
 		bool flag = false;
@@ -329,14 +329,14 @@ public class TriggerManager
 		yield break;
 	}
 
-	// Token: 0x04000C0B RID: 3083
+	// Token: 0x04000C04 RID: 3076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<PrefabInstance, PrefabTriggerData> PrefabDataDict = new Dictionary<PrefabInstance, PrefabTriggerData>();
 
-	// Token: 0x04000C0C RID: 3084
+	// Token: 0x04000C05 RID: 3077
 	public List<PrefabTriggerData> UpdateList = new List<PrefabTriggerData>();
 
-	// Token: 0x04000C0D RID: 3085
+	// Token: 0x04000C06 RID: 3078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showNavObjects;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000A92 RID: 2706
+// Token: 0x02000AA1 RID: 2721
 public struct SignComplexityInfo
 {
-	// Token: 0x170008DC RID: 2268
-	// (get) Token: 0x060051B3 RID: 20915 RVA: 0x001F23C5 File Offset: 0x001F05C5
+	// Token: 0x170008FE RID: 2302
+	// (get) Token: 0x060051A8 RID: 20904 RVA: 0x001F43F1 File Offset: 0x001F25F1
 	public bool IsValid
 	{
 		get
@@ -14,8 +14,8 @@ public struct SignComplexityInfo
 		}
 	}
 
-	// Token: 0x170008DD RID: 2269
-	// (get) Token: 0x060051B4 RID: 20916 RVA: 0x001F23D0 File Offset: 0x001F05D0
+	// Token: 0x170008FF RID: 2303
+	// (get) Token: 0x060051A9 RID: 20905 RVA: 0x001F43FC File Offset: 0x001F25FC
 	public static SignComplexityInfo Invalid
 	{
 		get
@@ -24,7 +24,7 @@ public struct SignComplexityInfo
 		}
 	}
 
-	// Token: 0x060051B5 RID: 20917 RVA: 0x001F23F1 File Offset: 0x001F05F1
+	// Token: 0x060051AA RID: 20906 RVA: 0x001F441D File Offset: 0x001F261D
 	public SignComplexityInfo(float totalComplexity, Dictionary<SignData.SignLayer, LayerComplexityInfo> complexityByLayer, LayerStackInfo stackInfo)
 	{
 		this.TotalComplexity = totalComplexity;
@@ -32,20 +32,20 @@ public struct SignComplexityInfo
 		this.StackInfo = stackInfo;
 	}
 
-	// Token: 0x060051B6 RID: 20918 RVA: 0x001F2408 File Offset: 0x001F0608
+	// Token: 0x060051AB RID: 20907 RVA: 0x001F4434 File Offset: 0x001F2634
 	public bool TryGetLayerComplexityInfo(SignData.SignLayer layer, out LayerComplexityInfo layerComplexityInfo)
 	{
 		layerComplexityInfo = default(LayerComplexityInfo);
 		return layer != null && this.ComplexityByLayer != null && this.ComplexityByLayer.TryGetValue(layer, out layerComplexityInfo);
 	}
 
-	// Token: 0x04003EF4 RID: 16116
+	// Token: 0x04003F1F RID: 16159
 	public readonly float TotalComplexity;
 
-	// Token: 0x04003EF5 RID: 16117
+	// Token: 0x04003F20 RID: 16160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<SignData.SignLayer, LayerComplexityInfo> ComplexityByLayer;
 
-	// Token: 0x04003EF6 RID: 16118
+	// Token: 0x04003F21 RID: 16161
 	public readonly LayerStackInfo StackInfo;
 }

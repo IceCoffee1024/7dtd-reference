@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200063D RID: 1597
+// Token: 0x0200063F RID: 1599
 public class MapObjectWaypoint : MapObject
 {
-	// Token: 0x060033D7 RID: 13271 RVA: 0x0014D4A8 File Offset: 0x0014B6A8
+	// Token: 0x0600341A RID: 13338 RVA: 0x0014DE18 File Offset: 0x0014C018
 	public MapObjectWaypoint(Waypoint _w)
 		: base(EnumMapObjectType.MapMarker, _w.pos.ToVector3(), (long)MapObjectWaypoint.MapObjectWaypointKeys, null, false)
 	{
@@ -14,96 +14,96 @@ public class MapObjectWaypoint : MapObject
 		this.iconName = _w.icon;
 	}
 
-	// Token: 0x060033D8 RID: 13272 RVA: 0x0014D507 File Offset: 0x0014B707
+	// Token: 0x0600341B RID: 13339 RVA: 0x0014DE77 File Offset: 0x0014C077
 	public override string GetMapIcon()
 	{
 		return this.iconName;
 	}
 
-	// Token: 0x060033D9 RID: 13273 RVA: 0x0014D507 File Offset: 0x0014B707
+	// Token: 0x0600341C RID: 13340 RVA: 0x0014DE77 File Offset: 0x0014C077
 	public override string GetCompassIcon()
 	{
 		return this.iconName;
 	}
 
-	// Token: 0x060033DA RID: 13274 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600341D RID: 13341 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsOnCompass()
 	{
 		return true;
 	}
 
-	// Token: 0x060033DB RID: 13275 RVA: 0x0014D50F File Offset: 0x0014B70F
+	// Token: 0x0600341E RID: 13342 RVA: 0x0014DE7F File Offset: 0x0014C07F
 	public override bool IsTracked()
 	{
 		return this.waypoint.bTracked;
 	}
 
-	// Token: 0x060033DC RID: 13276 RVA: 0x0014D51C File Offset: 0x0014B71C
+	// Token: 0x0600341F RID: 13343 RVA: 0x0014DE8C File Offset: 0x0014C08C
 	public override float GetMaxCompassDistance()
 	{
 		return (float)(this.waypoint.bTracked ? 1000 : 1000);
 	}
 
-	// Token: 0x060033DD RID: 13277 RVA: 0x0014D538 File Offset: 0x0014B738
+	// Token: 0x06003420 RID: 13344 RVA: 0x0014DEA8 File Offset: 0x0014C0A8
 	public override float GetMinCompassDistance()
 	{
 		return (float)(this.waypoint.bTracked ? 250 : 0);
 	}
 
-	// Token: 0x060033DE RID: 13278 RVA: 0x0014D550 File Offset: 0x0014B750
+	// Token: 0x06003421 RID: 13345 RVA: 0x0014DEC0 File Offset: 0x0014C0C0
 	public override float GetMaxCompassIconScale()
 	{
 		return base.GetMaxCompassIconScale();
 	}
 
-	// Token: 0x060033DF RID: 13279 RVA: 0x0014D558 File Offset: 0x0014B758
+	// Token: 0x06003422 RID: 13346 RVA: 0x0014DEC8 File Offset: 0x0014C0C8
 	public override float GetMinCompassIconScale()
 	{
 		return base.GetMinCompassIconScale();
 	}
 
-	// Token: 0x060033E0 RID: 13280 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003423 RID: 13347 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLayerForMapIcon()
 	{
 		return 0;
 	}
 
-	// Token: 0x060033E1 RID: 13281 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06003424 RID: 13348 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsMapIconEnabled()
 	{
 		return true;
 	}
 
-	// Token: 0x060033E2 RID: 13282 RVA: 0x0014CCDE File Offset: 0x0014AEDE
+	// Token: 0x06003425 RID: 13349 RVA: 0x0014D64E File Offset: 0x0014B84E
 	public override void SetPosition(Vector3 _pos)
 	{
 		this.position = _pos;
 	}
 
-	// Token: 0x060033E3 RID: 13283 RVA: 0x0014D560 File Offset: 0x0014B760
+	// Token: 0x06003426 RID: 13350 RVA: 0x0014DED0 File Offset: 0x0014C0D0
 	public override string GetName()
 	{
 		return this.waypoint.name.Text;
 	}
 
-	// Token: 0x060033E4 RID: 13284 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003427 RID: 13351 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsShowName()
 	{
 		return false;
 	}
 
-	// Token: 0x04002910 RID: 10512
+	// Token: 0x04002909 RID: 10505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x04002911 RID: 10513
+	// Token: 0x0400290A RID: 10506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string iconName;
 
-	// Token: 0x04002912 RID: 10514
+	// Token: 0x0400290B RID: 10507
 	public Waypoint waypoint;
 
-	// Token: 0x04002913 RID: 10515
+	// Token: 0x0400290C RID: 10508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int MapObjectWaypointKeys;
 }

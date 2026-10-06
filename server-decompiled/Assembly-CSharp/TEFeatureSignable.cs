@@ -3,29 +3,29 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000183 RID: 387
+// Token: 0x02000184 RID: 388
 [Preserve]
-public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity, ILockTarget, IFeatureSavedInPrefab
+public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity, ILockTarget, IHasWorldAddress, IFeatureSavedInPrefab
 {
-	// Token: 0x06000B86 RID: 2950 RVA: 0x000492FD File Offset: 0x000474FD
+	// Token: 0x06000B8D RID: 2957 RVA: 0x000494C5 File Offset: 0x000476C5
 	public TEFeatureSignable()
 	{
 		PlatformUserManager.BlockedStateChanged += this.UserBlockedStateChanged;
 	}
 
-	// Token: 0x06000B87 RID: 2951 RVA: 0x00049321 File Offset: 0x00047521
+	// Token: 0x06000B8E RID: 2958 RVA: 0x000494E9 File Offset: 0x000476E9
 	public override void OnUnload(World _world)
 	{
 		PlatformUserManager.BlockedStateChanged -= this.UserBlockedStateChanged;
 	}
 
-	// Token: 0x06000B88 RID: 2952 RVA: 0x00049321 File Offset: 0x00047521
+	// Token: 0x06000B8F RID: 2959 RVA: 0x000494E9 File Offset: 0x000476E9
 	public override void OnDestroy()
 	{
 		PlatformUserManager.BlockedStateChanged -= this.UserBlockedStateChanged;
 	}
 
-	// Token: 0x06000B89 RID: 2953 RVA: 0x00049334 File Offset: 0x00047534
+	// Token: 0x06000B90 RID: 2960 RVA: 0x000494FC File Offset: 0x000476FC
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -49,7 +49,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		}
 	}
 
-	// Token: 0x06000B8A RID: 2954 RVA: 0x00049448 File Offset: 0x00047648
+	// Token: 0x06000B91 RID: 2961 RVA: 0x00049610 File Offset: 0x00047810
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -60,7 +60,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		}
 	}
 
-	// Token: 0x06000B8B RID: 2955 RVA: 0x00049470 File Offset: 0x00047670
+	// Token: 0x06000B92 RID: 2962 RVA: 0x00049638 File Offset: 0x00047838
 	public override void SetBlockEntityData(BlockEntityData _blockEntityData)
 	{
 		if (_blockEntityData == null || !_blockEntityData.bHasTransform)
@@ -101,7 +101,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		this.RefreshTextMesh(text);
 	}
 
-	// Token: 0x06000B8C RID: 2956 RVA: 0x00049584 File Offset: 0x00047784
+	// Token: 0x06000B93 RID: 2963 RVA: 0x0004974C File Offset: 0x0004794C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UserBlockedStateChanged(IPlatformUserData _userData, EBlockType _blockType, EUserBlockState _blockState)
 	{
@@ -112,7 +112,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		GeneratedTextManager.GetDisplayText(this.signText, new Action<string>(this.RefreshTextMesh), true, true, GeneratedTextManager.TextFilteringMode.FilterWithSafeString, GeneratedTextManager.BbCodeSupportMode.NotSupported);
 	}
 
-	// Token: 0x06000B8D RID: 2957 RVA: 0x000495C0 File Offset: 0x000477C0
+	// Token: 0x06000B94 RID: 2964 RVA: 0x00049788 File Offset: 0x00047988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshTextMesh(string _text)
 	{
@@ -127,7 +127,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		}
 	}
 
-	// Token: 0x06000B8E RID: 2958 RVA: 0x00049624 File Offset: 0x00047824
+	// Token: 0x06000B95 RID: 2965 RVA: 0x000497EC File Offset: 0x000479EC
 	public override void UpgradeDowngradeFrom(TileEntityComposite _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -142,13 +142,13 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		}
 	}
 
-	// Token: 0x06000B8F RID: 2959 RVA: 0x00049671 File Offset: 0x00047871
+	// Token: 0x06000B96 RID: 2966 RVA: 0x00049839 File Offset: 0x00047A39
 	public virtual void SetText(AuthoredText _authoredText, bool _syncData = true)
 	{
 		this.SetText((_authoredText != null) ? _authoredText.Text : null, _syncData, (_authoredText != null) ? _authoredText.Author : null);
 	}
 
-	// Token: 0x06000B90 RID: 2960 RVA: 0x00049694 File Offset: 0x00047894
+	// Token: 0x06000B97 RID: 2967 RVA: 0x0004985C File Offset: 0x00047A5C
 	public virtual void SetText(string _text, bool _syncData = true, PlatformUserIdentifierAbs _signingPlayer = null)
 	{
 		if (_signingPlayer == null)
@@ -172,19 +172,19 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		}
 	}
 
-	// Token: 0x06000B91 RID: 2961 RVA: 0x00049716 File Offset: 0x00047916
+	// Token: 0x06000B98 RID: 2968 RVA: 0x000498DE File Offset: 0x00047ADE
 	public virtual AuthoredText GetAuthoredText()
 	{
 		return this.signText;
 	}
 
-	// Token: 0x06000B92 RID: 2962 RVA: 0x0004971E File Offset: 0x0004791E
+	// Token: 0x06000B99 RID: 2969 RVA: 0x000498E6 File Offset: 0x00047AE6
 	public virtual bool CanRenderString(string _text)
 	{
 		return this.smartTextMesh != null && this.smartTextMesh.Length != 0 && this.smartTextMesh[0].CanRenderString(_text);
 	}
 
-	// Token: 0x06000B93 RID: 2963 RVA: 0x00049744 File Offset: 0x00047944
+	// Token: 0x06000B9A RID: 2970 RVA: 0x0004990C File Offset: 0x00047B0C
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -199,7 +199,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		return Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000B94 RID: 2964 RVA: 0x000497D8 File Offset: 0x000479D8
+	// Token: 0x06000B9B RID: 2971 RVA: 0x000499A0 File Offset: 0x00047BA0
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
@@ -207,7 +207,7 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		_addCallback(new BlockActivationCommand("report", "report", true, false, null), TileEntityComposite.EBlockCommandOrder.Last, base.FeatureData);
 	}
 
-	// Token: 0x06000B95 RID: 2965 RVA: 0x0004982C File Offset: 0x00047A2C
+	// Token: 0x06000B9C RID: 2972 RVA: 0x000499F4 File Offset: 0x00047BF4
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -233,14 +233,14 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		return true;
 	}
 
-	// Token: 0x06000B96 RID: 2966 RVA: 0x00049924 File Offset: 0x00047B24
+	// Token: 0x06000B9D RID: 2973 RVA: 0x00049AEC File Offset: 0x00047CEC
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
 		if (base.CommandIs(_commandName, "edit"))
 		{
 			_player.AimingGun = false;
-			LockManager.Instance.LockRequestLocal(this, null, 0);
+			LockManager.Instance.LockRequestLocal(this, 0);
 			return true;
 		}
 		if (base.CommandIs(_commandName, "report"))
@@ -258,11 +258,11 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		return false;
 	}
 
-	// Token: 0x06000B97 RID: 2967 RVA: 0x00049990 File Offset: 0x00047B90
-	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	// Token: 0x06000B9E RID: 2974 RVA: 0x00049B57 File Offset: 0x00047D57
+	public override void Read(PooledBinaryReader _br, StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		if (_eStreamMode == StreamModeRead.Persistency)
 		{
 			if (base.Parent.UseLocalVersioning())
 			{
@@ -276,11 +276,11 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		this.SetText(AuthoredText.FromStream(_br), false);
 	}
 
-	// Token: 0x06000B98 RID: 2968 RVA: 0x000499CC File Offset: 0x00047BCC
-	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	// Token: 0x06000B9F RID: 2975 RVA: 0x00049B94 File Offset: 0x00047D94
+	public override void Write(PooledBinaryWriter _bw, StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
-		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		if (_eStreamMode == StreamModeWrite.Persistency)
 		{
 			_bw.Write(18);
 		}
@@ -292,19 +292,14 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		AuthoredText.ToStream(this.signText, _bw);
 	}
 
-	// Token: 0x06000B99 RID: 2969 RVA: 0x00048AAD File Offset: 0x00046CAD
-	public override bool CanLockLocally(ILockContext _context, ushort _channel)
-	{
-		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
-	}
-
-	// Token: 0x06000B9A RID: 2970 RVA: 0x00049A1C File Offset: 0x00047C1C
-	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
+	// Token: 0x06000BA0 RID: 2976 RVA: 0x00049BE4 File Offset: 0x00047DE4
+	public override bool OnLockResponseLocal(bool _success, PooledBinaryReader _brServerContext, ushort _channel)
 	{
 		TEFeatureSignable.ShowUI(this, _success);
+		return true;
 	}
 
-	// Token: 0x06000B9B RID: 2971 RVA: 0x00049A28 File Offset: 0x00047C28
+	// Token: 0x06000BA1 RID: 2977 RVA: 0x00049BF0 File Offset: 0x00047DF0
 	public static void ShowUI(ITileEntitySignable _te, bool _lockGranted)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
@@ -317,43 +312,43 @@ public class TEFeatureSignable : TEFeatureAbs, ITileEntitySignable, ITileEntity,
 		uiforPrimaryPlayer.windowManager.Open("signMultiline", true);
 	}
 
-	// Token: 0x04000A9F RID: 2719
+	// Token: 0x04000A9E RID: 2718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 18;
 
-	// Token: 0x04000AA0 RID: 2720
+	// Token: 0x04000A9F RID: 2719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockable lockFeature;
 
-	// Token: 0x04000AA1 RID: 2721
+	// Token: 0x04000AA0 RID: 2720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockPickable lockpickFeature;
 
-	// Token: 0x04000AA2 RID: 2722
+	// Token: 0x04000AA1 RID: 2721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AuthoredText signText = new AuthoredText();
 
-	// Token: 0x04000AA3 RID: 2723
+	// Token: 0x04000AA2 RID: 2722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fontSize;
 
-	// Token: 0x04000AA4 RID: 2724
+	// Token: 0x04000AA3 RID: 2723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lineCount;
 
-	// Token: 0x04000AA5 RID: 2725
+	// Token: 0x04000AA4 RID: 2724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lineWidth;
 
-	// Token: 0x04000AA6 RID: 2726
+	// Token: 0x04000AA5 RID: 2725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lineSpacing;
 
-	// Token: 0x04000AA7 RID: 2727
+	// Token: 0x04000AA6 RID: 2726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string displayText;
 
-	// Token: 0x04000AA8 RID: 2728
+	// Token: 0x04000AA7 RID: 2727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SmartTextMesh[] smartTextMesh;
 }

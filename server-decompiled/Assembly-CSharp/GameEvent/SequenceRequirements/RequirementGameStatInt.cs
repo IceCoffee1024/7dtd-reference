@@ -3,31 +3,31 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200192A RID: 6442
+	// Token: 0x02001956 RID: 6486
 	[Preserve]
 	public class RequirementGameStatInt : BaseOperationRequirement
 	{
-		// Token: 0x0600C6E1 RID: 50913 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C839 RID: 51257 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C6E2 RID: 50914 RVA: 0x00490D02 File Offset: 0x0048EF02
+		// Token: 0x0600C83A RID: 51258 RVA: 0x004951EE File Offset: 0x004933EE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
 			return GameStats.GetInt(this.GameStat);
 		}
 
-		// Token: 0x0600C6E3 RID: 50915 RVA: 0x00490D14 File Offset: 0x0048EF14
+		// Token: 0x0600C83B RID: 51259 RVA: 0x00495200 File Offset: 0x00493400
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetIntValue(target as EntityAlive, this.valueText, 0);
 		}
 
-		// Token: 0x0600C6E4 RID: 50916 RVA: 0x00490D2D File Offset: 0x0048EF2D
+		// Token: 0x0600C83C RID: 51260 RVA: 0x00495219 File Offset: 0x00493419
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementGameStatInt.PropValue, ref this.valueText);
 		}
 
-		// Token: 0x0600C6E5 RID: 50917 RVA: 0x00490D58 File Offset: 0x0048EF58
+		// Token: 0x0600C83D RID: 51261 RVA: 0x00495244 File Offset: 0x00493444
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -48,19 +48,19 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040095DB RID: 38363
+		// Token: 0x040096A1 RID: 38561
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EnumGameStats GameStat = EnumGameStats.AnimalCount;
 
-		// Token: 0x040095DC RID: 38364
+		// Token: 0x040096A2 RID: 38562
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040095DD RID: 38365
+		// Token: 0x040096A3 RID: 38563
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGameStat = "gamestat";
 
-		// Token: 0x040095DE RID: 38366
+		// Token: 0x040096A4 RID: 38564
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

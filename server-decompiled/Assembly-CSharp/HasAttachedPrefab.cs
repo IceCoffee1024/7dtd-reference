@@ -4,11 +4,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006B4 RID: 1716
+// Token: 0x020006B6 RID: 1718
 [Preserve]
 public class HasAttachedPrefab : TargetedCompareRequirementBase
 {
-	// Token: 0x060035B3 RID: 13747 RVA: 0x001620C4 File Offset: 0x001602C4
+	// Token: 0x060035F6 RID: 13814 RVA: 0x00162A34 File Offset: 0x00160C34
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -36,13 +36,13 @@ public class HasAttachedPrefab : TargetedCompareRequirementBase
 		return this.invert;
 	}
 
-	// Token: 0x060035B4 RID: 13748 RVA: 0x0016215B File Offset: 0x0016035B
+	// Token: 0x060035F7 RID: 13815 RVA: 0x00162ACB File Offset: 0x00160CCB
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Does {0}Have Attached Prefab", this.invert ? "NOT " : ""));
 	}
 
-	// Token: 0x060035B5 RID: 13749 RVA: 0x00162184 File Offset: 0x00160384
+	// Token: 0x060035F8 RID: 13816 RVA: 0x00162AF4 File Offset: 0x00160CF4
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -67,11 +67,11 @@ public class HasAttachedPrefab : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002B65 RID: 11109
+	// Token: 0x04002B5E RID: 11102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string prefabName;
 
-	// Token: 0x04002B66 RID: 11110
+	// Token: 0x04002B5F RID: 11103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform_path;
 }

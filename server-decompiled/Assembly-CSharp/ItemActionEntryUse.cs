@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D69 RID: 3433
+// Token: 0x02000D7A RID: 3450
 [Preserve]
 public class ItemActionEntryUse : BaseItemActionEntry
 {
-	// Token: 0x0600683B RID: 26683 RVA: 0x002929D4 File Offset: 0x00290BD4
+	// Token: 0x06006842 RID: 26690 RVA: 0x00295F84 File Offset: 0x00294184
 	public ItemActionEntryUse(XUiController _controller, ItemActionEntryUse.ConsumeType _consumeType)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -44,7 +44,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		this.RefreshEnabled();
 	}
 
-	// Token: 0x0600683C RID: 26684 RVA: 0x00292B10 File Offset: 0x00290D10
+	// Token: 0x06006843 RID: 26691 RVA: 0x002960C0 File Offset: 0x002942C0
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -108,7 +108,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0600683D RID: 26685 RVA: 0x00292D18 File Offset: 0x00290F18
+	// Token: 0x06006844 RID: 26692 RVA: 0x002962C8 File Offset: 0x002944C8
 	public override void RefreshEnabled()
 	{
 		this.state = ItemActionEntryUse.StateTypes.Normal;
@@ -205,10 +205,10 @@ public class ItemActionEntryUse : BaseItemActionEntry
 			break;
 		}
 		Inventory toolbelt = base.ItemController.xui.PlayerInventory.Toolbelt;
-		base.Enabled = base.Enabled && toolbelt.GetItem(toolbelt.DUMMY_SLOT_IDX).IsEmpty();
+		base.Enabled = base.Enabled && !toolbelt.IsHandBusy();
 	}
 
-	// Token: 0x0600683E RID: 26686 RVA: 0x00293020 File Offset: 0x00291220
+	// Token: 0x06006845 RID: 26693 RVA: 0x002965C8 File Offset: 0x002947C8
 	public override void OnActivated()
 	{
 		ItemActionEntryUse.<>c__DisplayClass6_0 CS$<>8__locals1 = new ItemActionEntryUse.<>c__DisplayClass6_0();
@@ -225,8 +225,8 @@ public class ItemActionEntryUse : BaseItemActionEntry
 			return;
 		}
 		base.ItemController.xui.IsUsingItemActionEntryUse = true;
-		CS$<>8__locals1.itemStack = new ItemStack(CS$<>8__locals1.stackControl.ItemStack.itemValue.Clone(), 1);
-		CS$<>8__locals1.originalStack = new ItemStack(CS$<>8__locals1.stackControl.ItemStack.itemValue.Clone(), CS$<>8__locals1.stackControl.ItemStack.count);
+		ItemStack itemStack = new ItemStack(CS$<>8__locals1.stackControl.ItemStack.itemValue.Clone(), 1);
+		ItemStack itemStack2 = new ItemStack(CS$<>8__locals1.stackControl.ItemStack.itemValue.Clone(), CS$<>8__locals1.stackControl.ItemStack.count);
 		CS$<>8__locals1.inventory = base.ItemController.xui.PlayerInventory.Toolbelt;
 		if (this.consumeType == ItemActionEntryUse.ConsumeType.Quest)
 		{
@@ -281,19 +281,21 @@ public class ItemActionEntryUse : BaseItemActionEntry
 				break;
 			}
 		}
-		if (!(CS$<>8__locals1.itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx] is ItemActionEat))
+		if (!(itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx] is ItemActionEat))
 		{
-			CS$<>8__locals1.originalStack.count--;
-			if (CS$<>8__locals1.originalStack.count == 0)
+			ItemStack itemStack3 = itemStack2;
+			int count = itemStack3.count;
+			itemStack3.count = count - 1;
+			if (itemStack2.count == 0)
 			{
-				CS$<>8__locals1.originalStack = ItemStack.Empty;
+				itemStack2 = ItemStack.Empty;
 			}
 		}
 		if (this.consumeType != ItemActionEntryUse.ConsumeType.Quest)
 		{
-			CS$<>8__locals1.stackControl.ItemStack = CS$<>8__locals1.originalStack;
+			CS$<>8__locals1.stackControl.ItemStack = itemStack2;
 		}
-		if (!CS$<>8__locals1.itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx].UseAnimation && CS$<>8__locals1.itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx].ExecuteInstantAction(base.ItemController.xui.playerUI.entityPlayer, CS$<>8__locals1.itemStack, false, CS$<>8__locals1.stackControl))
+		if (!itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx].UseAnimation && itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx].ExecuteInstantAction(base.ItemController.xui.playerUI.entityPlayer, itemStack, false, CS$<>8__locals1.stackControl))
 		{
 			if (this.consumeType != ItemActionEntryUse.ConsumeType.Quest)
 			{
@@ -303,7 +305,7 @@ public class ItemActionEntryUse : BaseItemActionEntry
 			base.ItemController.xui.IsUsingItemActionEntryUse = false;
 			return;
 		}
-		ItemActionEat itemActionEat = CS$<>8__locals1.itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx] as ItemActionEat;
+		ItemActionEat itemActionEat = itemStack.itemValue.ItemClass.Actions[CS$<>8__locals1.actionIdx] as ItemActionEat;
 		if (itemActionEat != null && itemActionEat.UsePrompt)
 		{
 			XUiC_MessageBoxWindowGroup.ShowOkCancel(base.ItemController.xui, Localization.Get(itemActionEat.PromptTitle, false, null), Localization.Get(itemActionEat.PromptDescription, false, null), "", new Action(CS$<>8__locals1.<OnActivated>g__UseItemWithAnimation|1), new Action(CS$<>8__locals1.<OnActivated>g__SwitchBack|2), true, true, false);
@@ -312,11 +314,11 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		CS$<>8__locals1.<OnActivated>g__UseItemWithAnimation|1();
 	}
 
-	// Token: 0x0600683F RID: 26687 RVA: 0x002933F8 File Offset: 0x002915F8
+	// Token: 0x06006846 RID: 26694 RVA: 0x00296979 File Offset: 0x00294B79
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SwitchBackCoroutine(Inventory _inventory)
 	{
-		while (_inventory.IsHolsterDelayActive())
+		while (_inventory.IsHandBusy())
 		{
 			yield return null;
 		}
@@ -327,49 +329,49 @@ public class ItemActionEntryUse : BaseItemActionEntry
 		yield break;
 	}
 
-	// Token: 0x06006840 RID: 26688 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006847 RID: 26695 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnTimerCompleted()
 	{
 	}
 
-	// Token: 0x0400500E RID: 20494
+	// Token: 0x0400504D RID: 20557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ItemActionEntryUse.ConsumeType consumeType;
 
-	// Token: 0x0400500F RID: 20495
+	// Token: 0x0400504E RID: 20558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntryUse.StateTypes state;
 
-	// Token: 0x02000D6A RID: 3434
+	// Token: 0x02000D7B RID: 3451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04005011 RID: 20497
+		// Token: 0x04005050 RID: 20560
 		Normal,
-		// Token: 0x04005012 RID: 20498
+		// Token: 0x04005051 RID: 20561
 		RecipeKnown,
-		// Token: 0x04005013 RID: 20499
+		// Token: 0x04005052 RID: 20562
 		SkillRequirementsNotMet,
-		// Token: 0x04005014 RID: 20500
+		// Token: 0x04005053 RID: 20563
 		SkillKnown
 	}
 
-	// Token: 0x02000D6B RID: 3435
+	// Token: 0x02000D7C RID: 3452
 	public enum ConsumeType
 	{
-		// Token: 0x04005016 RID: 20502
+		// Token: 0x04005055 RID: 20565
 		None,
-		// Token: 0x04005017 RID: 20503
+		// Token: 0x04005056 RID: 20566
 		Eat,
-		// Token: 0x04005018 RID: 20504
+		// Token: 0x04005057 RID: 20567
 		Drink,
-		// Token: 0x04005019 RID: 20505
+		// Token: 0x04005058 RID: 20568
 		Heal,
-		// Token: 0x0400501A RID: 20506
+		// Token: 0x04005059 RID: 20569
 		Read,
-		// Token: 0x0400501B RID: 20507
+		// Token: 0x0400505A RID: 20570
 		Quest,
-		// Token: 0x0400501C RID: 20508
+		// Token: 0x0400505B RID: 20571
 		Open
 	}
 }

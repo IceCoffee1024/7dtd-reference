@@ -2,17 +2,17 @@
 
 namespace Twitch
 {
-	// Token: 0x020017CF RID: 6095
+	// Token: 0x020017FB RID: 6139
 	[Serializable]
 	public class ExtensionBitAction : ExtensionAction
 	{
-		// Token: 0x04008D8F RID: 36239
+		// Token: 0x04008E55 RID: 36437
 		public string txn_id;
 
-		// Token: 0x04008D90 RID: 36240
+		// Token: 0x04008E56 RID: 36438
 		public long time_created;
 
-		// Token: 0x04008D91 RID: 36241
+		// Token: 0x04008E57 RID: 36439
 		public int cost;
 	}
 }

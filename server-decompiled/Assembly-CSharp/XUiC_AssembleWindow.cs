@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EC0 RID: 3776
+// Token: 0x02000ECF RID: 3791
 [Preserve]
 public class XUiC_AssembleWindow : XUiController
 {
-	// Token: 0x060075FE RID: 30206 RVA: 0x002C478F File Offset: 0x002C298F
+	// Token: 0x060075F6 RID: 30198 RVA: 0x002C7B47 File Offset: 0x002C5D47
 	public override void Init()
 	{
 		base.Init();
@@ -17,9 +17,9 @@ public class XUiC_AssembleWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000DE4 RID: 3556
-	// (get) Token: 0x060075FF RID: 30207 RVA: 0x002C47C7 File Offset: 0x002C29C7
-	// (set) Token: 0x06007600 RID: 30208 RVA: 0x002C47D0 File Offset: 0x002C29D0
+	// Token: 0x17000DFF RID: 3583
+	// (get) Token: 0x060075F7 RID: 30199 RVA: 0x002C7B7F File Offset: 0x002C5D7F
+	// (set) Token: 0x060075F8 RID: 30200 RVA: 0x002C7B88 File Offset: 0x002C5D88
 	public virtual ItemStack ItemStack
 	{
 		get
@@ -42,14 +42,14 @@ public class XUiC_AssembleWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007601 RID: 30209 RVA: 0x002C4831 File Offset: 0x002C2A31
+	// Token: 0x060075F9 RID: 30201 RVA: 0x002C7BE9 File Offset: 0x002C5DE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnComplete_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.CloseAllOpenModalWindows(null, false);
 	}
 
-	// Token: 0x06007602 RID: 30210 RVA: 0x002C484C File Offset: 0x002C2A4C
+	// Token: 0x060075FA RID: 30202 RVA: 0x002C7C04 File Offset: 0x002C5E04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -261,7 +261,7 @@ public class XUiC_AssembleWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007603 RID: 30211 RVA: 0x002C4E14 File Offset: 0x002C3014
+	// Token: 0x060075FB RID: 30203 RVA: 0x002C81CC File Offset: 0x002C63CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatTitle(int index)
 	{
@@ -276,7 +276,7 @@ public class XUiC_AssembleWindow : XUiController
 		return UIDisplayInfoManager.Current.GetLocalizedName(this.itemDisplayEntry.DisplayStats[index].StatType);
 	}
 
-	// Token: 0x06007604 RID: 30212 RVA: 0x002C4E94 File Offset: 0x002C3094
+	// Token: 0x060075FC RID: 30204 RVA: 0x002C824C File Offset: 0x002C644C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatValue(int index)
 	{
@@ -288,7 +288,7 @@ public class XUiC_AssembleWindow : XUiController
 		return XUiM_ItemStack.GetStatItemValueTextWithModInfo(this.itemStack, this.xui.playerUI.entityPlayer, displayInfoEntry);
 	}
 
-	// Token: 0x06007605 RID: 30213 RVA: 0x002C4EF0 File Offset: 0x002C30F0
+	// Token: 0x060075FD RID: 30205 RVA: 0x002C82A8 File Offset: 0x002C64A8
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -303,41 +303,41 @@ public class XUiC_AssembleWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007606 RID: 30214 RVA: 0x002C4F28 File Offset: 0x002C3128
+	// Token: 0x060075FE RID: 30206 RVA: 0x002C82E0 File Offset: 0x002C64E0
 	public virtual void OnChanged()
 	{
 		XUiC_AssembleWindowGroup.GetWindowGroup(this.xui).ItemStack = this.ItemStack;
 	}
 
-	// Token: 0x0400573F RID: 22335
+	// Token: 0x04005776 RID: 22390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack = ItemStack.Empty;
 
-	// Token: 0x04005740 RID: 22336
+	// Token: 0x04005777 RID: 22391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 
-	// Token: 0x04005741 RID: 22337
+	// Token: 0x04005778 RID: 22392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnComplete;
 
-	// Token: 0x04005742 RID: 22338
+	// Token: 0x04005779 RID: 22393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor qualitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005743 RID: 22339
+	// Token: 0x0400577A RID: 22394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat qualityfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005744 RID: 22340
+	// Token: 0x0400577B RID: 22395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt qualityFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005745 RID: 22341
+	// Token: 0x0400577C RID: 22396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005746 RID: 22342
+	// Token: 0x0400577D RID: 22397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemDisplayEntry itemDisplayEntry;
 }

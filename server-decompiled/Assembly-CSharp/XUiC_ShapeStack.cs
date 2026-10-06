@@ -4,22 +4,22 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001025 RID: 4133
+// Token: 0x02001034 RID: 4148
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_ShapeStack : XUiC_SelectableEntry
 {
-	// Token: 0x17000F3B RID: 3899
-	// (get) Token: 0x060082A1 RID: 33441 RVA: 0x00319019 File Offset: 0x00317219
-	// (set) Token: 0x060082A2 RID: 33442 RVA: 0x00319021 File Offset: 0x00317221
+	// Token: 0x17000F62 RID: 3938
+	// (get) Token: 0x060082B0 RID: 33456 RVA: 0x0031C05D File Offset: 0x0031A25D
+	// (set) Token: 0x060082B1 RID: 33457 RVA: 0x0031C065 File Offset: 0x0031A265
 	public bool IsLocked
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F3C RID: 3900
-	// (get) Token: 0x060082A3 RID: 33443 RVA: 0x0031902A File Offset: 0x0031722A
-	// (set) Token: 0x060082A4 RID: 33444 RVA: 0x00319034 File Offset: 0x00317234
+	// Token: 0x17000F63 RID: 3939
+	// (get) Token: 0x060082B2 RID: 33458 RVA: 0x0031C06E File Offset: 0x0031A26E
+	// (set) Token: 0x060082B3 RID: 33459 RVA: 0x0031C078 File Offset: 0x0031A278
 	public Block BlockData
 	{
 		get
@@ -47,17 +47,17 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000F3D RID: 3901
-	// (get) Token: 0x060082A5 RID: 33445 RVA: 0x003190BE File Offset: 0x003172BE
-	// (set) Token: 0x060082A6 RID: 33446 RVA: 0x003190C6 File Offset: 0x003172C6
+	// Token: 0x17000F64 RID: 3940
+	// (get) Token: 0x060082B4 RID: 33460 RVA: 0x0031C102 File Offset: 0x0031A302
+	// (set) Token: 0x060082B5 RID: 33461 RVA: 0x0031C10A File Offset: 0x0031A30A
 	public XUiC_ShapeInfoWindow InfoWindow { get; set; }
 
-	// Token: 0x17000F3E RID: 3902
-	// (get) Token: 0x060082A7 RID: 33447 RVA: 0x003190CF File Offset: 0x003172CF
-	// (set) Token: 0x060082A8 RID: 33448 RVA: 0x003190D7 File Offset: 0x003172D7
+	// Token: 0x17000F65 RID: 3941
+	// (get) Token: 0x060082B6 RID: 33462 RVA: 0x0031C113 File Offset: 0x0031A313
+	// (set) Token: 0x060082B7 RID: 33463 RVA: 0x0031C11B File Offset: 0x0031A31B
 	public XUiC_ShapeMaterialInfoWindow MaterialInfoWindow { get; set; }
 
-	// Token: 0x060082A9 RID: 33449 RVA: 0x003190E0 File Offset: 0x003172E0
+	// Token: 0x060082B8 RID: 33464 RVA: 0x0031C124 File Offset: 0x0031A324
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -86,14 +86,14 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060082AA RID: 33450 RVA: 0x00319143 File Offset: 0x00317343
+	// Token: 0x060082B9 RID: 33465 RVA: 0x0031C187 File Offset: 0x0031A387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetColor(Color32 color)
 	{
 		this.background.Color = color;
 	}
 
-	// Token: 0x060082AB RID: 33451 RVA: 0x00319158 File Offset: 0x00317358
+	// Token: 0x060082BA RID: 33466 RVA: 0x0031C19C File Offset: 0x0031A39C
 	public override void Init()
 	{
 		base.Init();
@@ -102,7 +102,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		this.background = base.GetChildById("background").ViewComponent as XUiV_Sprite;
 	}
 
-	// Token: 0x060082AC RID: 33452 RVA: 0x003191B4 File Offset: 0x003173B4
+	// Token: 0x060082BB RID: 33467 RVA: 0x0031C1F8 File Offset: 0x0031A3F8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -168,7 +168,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		this.UpdateInput();
 	}
 
-	// Token: 0x060082AD RID: 33453 RVA: 0x00319384 File Offset: 0x00317584
+	// Token: 0x060082BC RID: 33468 RVA: 0x0031C3C8 File Offset: 0x0031A5C8
 	public static string GetFavoritesEntryName(Block _block)
 	{
 		if (_block == null)
@@ -182,7 +182,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		return _block.GetAutoShapeShapeName();
 	}
 
-	// Token: 0x060082AE RID: 33454 RVA: 0x003193A0 File Offset: 0x003175A0
+	// Token: 0x060082BD RID: 33469 RVA: 0x0031C3E4 File Offset: 0x0031A5E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -206,7 +206,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x060082AF RID: 33455 RVA: 0x00319485 File Offset: 0x00317685
+	// Token: 0x060082BE RID: 33470 RVA: 0x0031C4C9 File Offset: 0x0031A6C9
 	public void SetSelectedShapeForItem()
 	{
 		if (!this.IsLocked)
@@ -217,7 +217,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		base.IsSelected = true;
 	}
 
-	// Token: 0x060082B0 RID: 33456 RVA: 0x003194C4 File Offset: 0x003176C4
+	// Token: 0x060082BF RID: 33471 RVA: 0x0031C508 File Offset: 0x0031A708
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -236,13 +236,13 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x060082B1 RID: 33457 RVA: 0x00319518 File Offset: 0x00317718
+	// Token: 0x060082C0 RID: 33472 RVA: 0x0031C55C File Offset: 0x0031A75C
 	public XUiC_ShapeStack()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060082B2 RID: 33458 RVA: 0x00319594 File Offset: 0x00317794
+	// Token: 0x060082C1 RID: 33473 RVA: 0x0031C5D8 File Offset: 0x0031A7D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -275,7 +275,7 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		return true;
 	}
 
-	// Token: 0x060082B3 RID: 33459 RVA: 0x00319680 File Offset: 0x00317880
+	// Token: 0x060082C2 RID: 33474 RVA: 0x0031C6C4 File Offset: 0x0031A8C4
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -322,79 +322,79 @@ public class XUiC_ShapeStack : XUiC_SelectableEntry
 		return flag;
 	}
 
-	// Token: 0x040060BD RID: 24765
+	// Token: 0x040060E6 RID: 24806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bHighlightEnabled;
 
-	// Token: 0x040060BE RID: 24766
+	// Token: 0x040060E7 RID: 24807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bDropEnabled = true;
 
-	// Token: 0x040060BF RID: 24767
+	// Token: 0x040060E8 RID: 24808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip selectSound;
 
-	// Token: 0x040060C0 RID: 24768
+	// Token: 0x040060E9 RID: 24809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip placeSound;
 
-	// Token: 0x040060C1 RID: 24769
+	// Token: 0x040060EA RID: 24810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x040060C2 RID: 24770
+	// Token: 0x040060EB RID: 24811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 currentColor;
 
-	// Token: 0x040060C3 RID: 24771
+	// Token: 0x040060EC RID: 24812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 selectColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x040060C4 RID: 24772
+	// Token: 0x040060ED RID: 24813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 pressColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x040060C5 RID: 24773
+	// Token: 0x040060EE RID: 24814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastClicked;
 
-	// Token: 0x040060C6 RID: 24774
+	// Token: 0x040060EF RID: 24815
 	public static Color32 backgroundColor = new Color32(96, 96, 96, byte.MaxValue);
 
-	// Token: 0x040060C7 RID: 24775
+	// Token: 0x040060F0 RID: 24816
 	public static Color32 highlightColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x040060C8 RID: 24776
+	// Token: 0x040060F1 RID: 24817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController tintedOverlay;
 
-	// Token: 0x040060C9 RID: 24777
+	// Token: 0x040060F2 RID: 24818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label stackValue;
 
-	// Token: 0x040060CA RID: 24778
+	// Token: 0x040060F3 RID: 24819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite highlightOverlay;
 
-	// Token: 0x040060CB RID: 24779
+	// Token: 0x040060F4 RID: 24820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x040060CC RID: 24780
+	// Token: 0x040060F5 RID: 24821
 	public int ShapeIndex = -1;
 
-	// Token: 0x040060CE RID: 24782
+	// Token: 0x040060F7 RID: 24823
 	public XUiC_ShapeStackGrid Owner;
 
-	// Token: 0x040060CF RID: 24783
+	// Token: 0x040060F8 RID: 24824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block blockData;
 
-	// Token: 0x040060D2 RID: 24786
+	// Token: 0x040060FB RID: 24827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startMousePos = Vector3.zero;
 
-	// Token: 0x040060D3 RID: 24787
+	// Token: 0x040060FC RID: 24828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

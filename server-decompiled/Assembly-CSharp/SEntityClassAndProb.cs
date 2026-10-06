@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000ADC RID: 2780
+// Token: 0x02000AEE RID: 2798
 public struct SEntityClassAndProb
 {
-	// Token: 0x040040CF RID: 16591
+	// Token: 0x0400410C RID: 16652
 	public const int cIdNone = 0;
 
-	// Token: 0x040040D0 RID: 16592
+	// Token: 0x0400410D RID: 16653
 	public int entityClassId;
 
-	// Token: 0x040040D1 RID: 16593
+	// Token: 0x0400410E RID: 16654
 	public float prob;
 }

@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200060D RID: 1549
+// Token: 0x0200060F RID: 1551
 [Preserve]
 public class Fluctuating : LightState
 {
-	// Token: 0x17000529 RID: 1321
-	// (get) Token: 0x06003274 RID: 12916 RVA: 0x00148B2B File Offset: 0x00146D2B
+	// Token: 0x1700054F RID: 1359
+	// (get) Token: 0x060032B7 RID: 12983 RVA: 0x001494CF File Offset: 0x001476CF
 	public override float LODThreshold
 	{
 		get
@@ -16,8 +16,8 @@ public class Fluctuating : LightState
 		}
 	}
 
-	// Token: 0x1700052A RID: 1322
-	// (get) Token: 0x06003275 RID: 12917 RVA: 0x00148B32 File Offset: 0x00146D32
+	// Token: 0x17000550 RID: 1360
+	// (get) Token: 0x060032B8 RID: 12984 RVA: 0x001494D6 File Offset: 0x001476D6
 	public override float Intensity
 	{
 		get
@@ -26,8 +26,8 @@ public class Fluctuating : LightState
 		}
 	}
 
-	// Token: 0x1700052B RID: 1323
-	// (get) Token: 0x06003276 RID: 12918 RVA: 0x00148B3A File Offset: 0x00146D3A
+	// Token: 0x17000551 RID: 1361
+	// (get) Token: 0x060032B9 RID: 12985 RVA: 0x001494DE File Offset: 0x001476DE
 	public override float Emissive
 	{
 		get
@@ -36,7 +36,7 @@ public class Fluctuating : LightState
 		}
 	}
 
-	// Token: 0x06003277 RID: 12919 RVA: 0x00148B42 File Offset: 0x00146D42
+	// Token: 0x060032BA RID: 12986 RVA: 0x001494E6 File Offset: 0x001476E6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -47,7 +47,7 @@ public class Fluctuating : LightState
 		this.currentEmissive = this.startIntensity;
 	}
 
-	// Token: 0x06003278 RID: 12920 RVA: 0x00148B80 File Offset: 0x00146D80
+	// Token: 0x060032BB RID: 12987 RVA: 0x00149524 File Offset: 0x00147724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -103,7 +103,7 @@ public class Fluctuating : LightState
 		this.canSwitchProcess = num2 >= this.numOfFrames;
 	}
 
-	// Token: 0x06003279 RID: 12921 RVA: 0x00148D04 File Offset: 0x00146F04
+	// Token: 0x060032BC RID: 12988 RVA: 0x001496A8 File Offset: 0x001478A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Slide()
 	{
@@ -119,7 +119,7 @@ public class Fluctuating : LightState
 		this.t -= this.increment;
 	}
 
-	// Token: 0x0600327A RID: 12922 RVA: 0x00148DA0 File Offset: 0x00146FA0
+	// Token: 0x060032BD RID: 12989 RVA: 0x00149744 File Offset: 0x00147944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Flutter()
 	{
@@ -138,14 +138,14 @@ public class Fluctuating : LightState
 		this.currentEmissive = this.currentIntensity / 1f;
 	}
 
-	// Token: 0x0600327B RID: 12923 RVA: 0x00148E24 File Offset: 0x00147024
+	// Token: 0x060032BE RID: 12990 RVA: 0x001497C8 File Offset: 0x001479C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float slideProbability(float intensity)
 	{
 		return (intensity - 0.2f) / 0.8f;
 	}
 
-	// Token: 0x0600327C RID: 12924 RVA: 0x00148E34 File Offset: 0x00147034
+	// Token: 0x060032BF RID: 12991 RVA: 0x001497D8 File Offset: 0x001479D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeProcess()
 	{
@@ -163,87 +163,87 @@ public class Fluctuating : LightState
 		this.process++;
 	}
 
-	// Token: 0x0400280B RID: 10251
+	// Token: 0x04002804 RID: 10244
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float unityLightIntensityMax = 8f;
 
-	// Token: 0x0400280C RID: 10252
+	// Token: 0x04002805 RID: 10245
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float hiRange = 1f;
 
-	// Token: 0x0400280D RID: 10253
+	// Token: 0x04002806 RID: 10246
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float loRange = 0.2f;
 
-	// Token: 0x0400280E RID: 10254
+	// Token: 0x04002807 RID: 10247
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float flutterVariance = 0.0625f;
 
-	// Token: 0x0400280F RID: 10255
+	// Token: 0x04002808 RID: 10248
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float increment;
 
-	// Token: 0x04002810 RID: 10256
+	// Token: 0x04002809 RID: 10249
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float startIntensity;
 
-	// Token: 0x04002811 RID: 10257
+	// Token: 0x0400280A RID: 10250
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fixedFrameRate;
 
-	// Token: 0x04002812 RID: 10258
+	// Token: 0x0400280B RID: 10251
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentIntensity;
 
-	// Token: 0x04002813 RID: 10259
+	// Token: 0x0400280C RID: 10252
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentEmissive;
 
-	// Token: 0x04002814 RID: 10260
+	// Token: 0x0400280D RID: 10253
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool canSwitchProcess = true;
 
-	// Token: 0x04002815 RID: 10261
+	// Token: 0x0400280E RID: 10254
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int process;
 
-	// Token: 0x04002816 RID: 10262
+	// Token: 0x0400280F RID: 10255
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int numOfFrames;
 
-	// Token: 0x04002817 RID: 10263
+	// Token: 0x04002810 RID: 10256
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentFrame;
 
-	// Token: 0x04002818 RID: 10264
+	// Token: 0x04002811 RID: 10257
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float t;
 
-	// Token: 0x04002819 RID: 10265
+	// Token: 0x04002812 RID: 10258
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float preSlideIntenisty;
 
-	// Token: 0x0400281A RID: 10266
+	// Token: 0x04002813 RID: 10259
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float slideTo;
 
-	// Token: 0x0400281B RID: 10267
+	// Token: 0x04002814 RID: 10260
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool up;

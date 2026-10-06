@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UniLinq;
 
-// Token: 0x02000A44 RID: 2628
+// Token: 0x02000A4E RID: 2638
 public class Archetype
 {
-	// Token: 0x1700087E RID: 2174
-	// (get) Token: 0x06004F77 RID: 20343 RVA: 0x001E21A3 File Offset: 0x001E03A3
-	// (set) Token: 0x06004F78 RID: 20344 RVA: 0x001E21B8 File Offset: 0x001E03B8
+	// Token: 0x1700089E RID: 2206
+	// (get) Token: 0x06004F46 RID: 20294 RVA: 0x001E3453 File Offset: 0x001E1653
+	// (set) Token: 0x06004F47 RID: 20295 RVA: 0x001E3468 File Offset: 0x001E1668
 	public string Sex
 	{
 		get
@@ -24,8 +24,8 @@ public class Archetype
 		}
 	}
 
-	// Token: 0x1700087F RID: 2175
-	// (get) Token: 0x06004F79 RID: 20345 RVA: 0x001E21D0 File Offset: 0x001E03D0
+	// Token: 0x1700089F RID: 2207
+	// (get) Token: 0x06004F48 RID: 20296 RVA: 0x001E3480 File Offset: 0x001E1680
 	public bool ShowInList
 	{
 		get
@@ -34,7 +34,7 @@ public class Archetype
 		}
 	}
 
-	// Token: 0x06004F7A RID: 20346 RVA: 0x001E21F8 File Offset: 0x001E03F8
+	// Token: 0x06004F49 RID: 20297 RVA: 0x001E34A8 File Offset: 0x001E16A8
 	public Archetype(string _name, bool _isMale, bool _canCustomize)
 	{
 		this.Name = _name;
@@ -42,13 +42,13 @@ public class Archetype
 		this.CanCustomize = _canCustomize;
 	}
 
-	// Token: 0x06004F7B RID: 20347 RVA: 0x001E2262 File Offset: 0x001E0462
+	// Token: 0x06004F4A RID: 20298 RVA: 0x001E3512 File Offset: 0x001E1712
 	public static void InitializeStatics()
 	{
 		Archetype.s_Archetypes = new CaseInsensitiveStringDictionary<Archetype>();
 	}
 
-	// Token: 0x06004F7C RID: 20348 RVA: 0x001E2270 File Offset: 0x001E0470
+	// Token: 0x06004F4B RID: 20299 RVA: 0x001E3520 File Offset: 0x001E1720
 	public static void SetArchetype(Archetype archetype)
 	{
 		if (Archetype.s_Archetypes == null)
@@ -67,7 +67,7 @@ public class Archetype
 		}
 	}
 
-	// Token: 0x06004F7D RID: 20349 RVA: 0x001E22D3 File Offset: 0x001E04D3
+	// Token: 0x06004F4C RID: 20300 RVA: 0x001E3583 File Offset: 0x001E1783
 	public static Archetype GetArchetype(string name)
 	{
 		if (Archetype.s_Archetypes == null)
@@ -81,7 +81,7 @@ public class Archetype
 		return Archetype.s_Archetypes[name];
 	}
 
-	// Token: 0x06004F7E RID: 20350 RVA: 0x001E22F8 File Offset: 0x001E04F8
+	// Token: 0x06004F4D RID: 20301 RVA: 0x001E35A8 File Offset: 0x001E17A8
 	public void AddEquipmentSlot(SDCSUtils.SlotData slotData)
 	{
 		if (this.Equipment == null)
@@ -91,7 +91,7 @@ public class Archetype
 		this.Equipment.Add(slotData);
 	}
 
-	// Token: 0x06004F7F RID: 20351 RVA: 0x001E231C File Offset: 0x001E051C
+	// Token: 0x06004F4E RID: 20302 RVA: 0x001E35CC File Offset: 0x001E17CC
 	public Archetype Clone()
 	{
 		return new Archetype(this.Name, this.IsMale, this.CanCustomize)
@@ -109,48 +109,48 @@ public class Archetype
 		};
 	}
 
-	// Token: 0x06004F80 RID: 20352 RVA: 0x001E23B8 File Offset: 0x001E05B8
+	// Token: 0x06004F4F RID: 20303 RVA: 0x001E3668 File Offset: 0x001E1868
 	public static void SaveArchetypesToFile()
 	{
 		SDCSArchetypesFromXml.Save("archetypes", Archetype.s_Archetypes.Values.ToList<Archetype>());
 	}
 
-	// Token: 0x04003D1C RID: 15644
+	// Token: 0x04003D29 RID: 15657
 	public static Dictionary<string, Archetype> s_Archetypes;
 
-	// Token: 0x04003D1D RID: 15645
+	// Token: 0x04003D2A RID: 15658
 	public string Name;
 
-	// Token: 0x04003D1E RID: 15646
+	// Token: 0x04003D2B RID: 15659
 	public string Race;
 
-	// Token: 0x04003D1F RID: 15647
+	// Token: 0x04003D2C RID: 15660
 	public int Variant;
 
-	// Token: 0x04003D20 RID: 15648
+	// Token: 0x04003D2D RID: 15661
 	public string Hair = "";
 
-	// Token: 0x04003D21 RID: 15649
+	// Token: 0x04003D2E RID: 15662
 	public string HairColor = "";
 
-	// Token: 0x04003D22 RID: 15650
+	// Token: 0x04003D2F RID: 15663
 	public string MustacheName = "";
 
-	// Token: 0x04003D23 RID: 15651
+	// Token: 0x04003D30 RID: 15664
 	public string ChopsName = "";
 
-	// Token: 0x04003D24 RID: 15652
+	// Token: 0x04003D31 RID: 15665
 	public string BeardName = "";
 
-	// Token: 0x04003D25 RID: 15653
+	// Token: 0x04003D32 RID: 15666
 	public string EyeColorName = "Blue01";
 
-	// Token: 0x04003D26 RID: 15654
+	// Token: 0x04003D33 RID: 15667
 	public bool IsMale;
 
-	// Token: 0x04003D27 RID: 15655
+	// Token: 0x04003D34 RID: 15668
 	public bool CanCustomize;
 
-	// Token: 0x04003D28 RID: 15656
+	// Token: 0x04003D35 RID: 15669
 	public List<SDCSUtils.SlotData> Equipment;
 }

@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x02001909 RID: 6409
+	// Token: 0x02001935 RID: 6453
 	[Preserve]
 	public class ChallengeObjectiveLootContainer : BaseChallengeObjective
 	{
-		// Token: 0x1700187A RID: 6266
-		// (get) Token: 0x0600C5ED RID: 50669 RVA: 0x0048D70A File Offset: 0x0048B90A
+		// Token: 0x1700191C RID: 6428
+		// (get) Token: 0x0600C745 RID: 51013 RVA: 0x00491BFA File Offset: 0x0048FDFA
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -17,8 +17,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700187B RID: 6267
-		// (get) Token: 0x0600C5EE RID: 50670 RVA: 0x0048D70E File Offset: 0x0048B90E
+		// Token: 0x1700191D RID: 6429
+		// (get) Token: 0x0600C746 RID: 51014 RVA: 0x00491BFE File Offset: 0x0048FDFE
 		public override string DescriptionText
 		{
 			get
@@ -27,28 +27,28 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C5EF RID: 50671 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C747 RID: 51015 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C5F0 RID: 50672 RVA: 0x0048D71C File Offset: 0x0048B91C
+		// Token: 0x0600C748 RID: 51016 RVA: 0x00491C0C File Offset: 0x0048FE0C
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.ContainerOpened -= this.Current_ContainerOpened;
 			QuestEventManager.Current.ContainerOpened += this.Current_ContainerOpened;
 		}
 
-		// Token: 0x0600C5F1 RID: 50673 RVA: 0x0048D74C File Offset: 0x0048B94C
+		// Token: 0x0600C749 RID: 51017 RVA: 0x00491C3C File Offset: 0x0048FE3C
 		[PublicizedFrom(EAccessModifier.Private)]
-		public void Current_ContainerOpened(Vector3i containerLocation, ITileEntityLootable tileEntity)
+		public void Current_ContainerOpened(Vector3i containerLocation, TEFeatureStorage tileEntity, bool firstTimeTouched)
 		{
 			if (containerLocation == this.lastLocation)
 			{
 				return;
 			}
 			this.lastLocation = containerLocation;
-			if (tileEntity.bWasTouched)
+			if (!firstTimeTouched)
 			{
 				return;
 			}
@@ -61,19 +61,19 @@ namespace Challenges
 			this.CheckObjectiveComplete(true);
 		}
 
-		// Token: 0x0600C5F2 RID: 50674 RVA: 0x0048D799 File Offset: 0x0048B999
+		// Token: 0x0600C74A RID: 51018 RVA: 0x00491C84 File Offset: 0x0048FE84
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.ContainerOpened -= this.Current_ContainerOpened;
 		}
 
-		// Token: 0x0600C5F3 RID: 50675 RVA: 0x0048D7B1 File Offset: 0x0048B9B1
+		// Token: 0x0600C74B RID: 51019 RVA: 0x00491C9C File Offset: 0x0048FE9C
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveLootContainer();
 		}
 
-		// Token: 0x04009564 RID: 38244
+		// Token: 0x0400962A RID: 38442
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3i lastLocation = Vector3i.zero;
 	}

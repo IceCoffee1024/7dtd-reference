@@ -2,14 +2,14 @@
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D50 RID: 7504
+	// Token: 0x02001D82 RID: 7554
 	public enum StepHandlingMethod
 	{
-		// Token: 0x0400A7F0 RID: 42992
+		// Token: 0x0400A8C7 RID: 43207
 		None,
-		// Token: 0x0400A7F1 RID: 42993
+		// Token: 0x0400A8C8 RID: 43208
 		Standard,
-		// Token: 0x0400A7F2 RID: 42994
+		// Token: 0x0400A8C9 RID: 43209
 		Extra
 	}
 }

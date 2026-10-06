@@ -1,29 +1,29 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003EF RID: 1007
+// Token: 0x020003F2 RID: 1010
 public class EModelInstanceAssets
 {
-	// Token: 0x170003A6 RID: 934
-	// (get) Token: 0x06001E85 RID: 7813 RVA: 0x000B93F9 File Offset: 0x000B75F9
-	// (set) Token: 0x06001E86 RID: 7814 RVA: 0x000B9401 File Offset: 0x000B7601
+	// Token: 0x1700039E RID: 926
+	// (get) Token: 0x06001E7C RID: 7804 RVA: 0x000B95F5 File Offset: 0x000B77F5
+	// (set) Token: 0x06001E7D RID: 7805 RVA: 0x000B95FD File Offset: 0x000B77FD
 	public Transform Mesh
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170003A7 RID: 935
-	// (get) Token: 0x06001E87 RID: 7815 RVA: 0x000B940A File Offset: 0x000B760A
-	// (set) Token: 0x06001E88 RID: 7816 RVA: 0x000B9412 File Offset: 0x000B7612
+	// Token: 0x1700039F RID: 927
+	// (get) Token: 0x06001E7E RID: 7806 RVA: 0x000B9606 File Offset: 0x000B7806
+	// (set) Token: 0x06001E7F RID: 7807 RVA: 0x000B960E File Offset: 0x000B780E
 	public Material AltMaterial
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170003A8 RID: 936
-	// (get) Token: 0x06001E89 RID: 7817 RVA: 0x000B941B File Offset: 0x000B761B
+	// Token: 0x170003A0 RID: 928
+	// (get) Token: 0x06001E80 RID: 7808 RVA: 0x000B9617 File Offset: 0x000B7817
 	public bool IsLoadComplete
 	{
 		get
@@ -38,8 +38,8 @@ public class EModelInstanceAssets
 		}
 	}
 
-	// Token: 0x170003A9 RID: 937
-	// (get) Token: 0x06001E8A RID: 7818 RVA: 0x000B9444 File Offset: 0x000B7644
+	// Token: 0x170003A1 RID: 929
+	// (get) Token: 0x06001E81 RID: 7809 RVA: 0x000B9640 File Offset: 0x000B7840
 	public bool IsLoadSuccessful
 	{
 		get
@@ -48,7 +48,7 @@ public class EModelInstanceAssets
 		}
 	}
 
-	// Token: 0x06001E8B RID: 7819 RVA: 0x000B946C File Offset: 0x000B766C
+	// Token: 0x06001E82 RID: 7810 RVA: 0x000B9668 File Offset: 0x000B7868
 	public void Load(bool _loadSync, EntityCreationData _ecd, EntityClass _ec)
 	{
 		if (!string.IsNullOrEmpty(_ec.meshPath))
@@ -74,7 +74,7 @@ public class EModelInstanceAssets
 		}
 	}
 
-	// Token: 0x06001E8C RID: 7820 RVA: 0x000B9550 File Offset: 0x000B7750
+	// Token: 0x06001E83 RID: 7811 RVA: 0x000B974C File Offset: 0x000B794C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnMeshLoaded(GameObject mesh, string assetPath, string entityClassName)
 	{
@@ -86,7 +86,7 @@ public class EModelInstanceAssets
 		this.Mesh = mesh.transform;
 	}
 
-	// Token: 0x06001E8D RID: 7821 RVA: 0x000B95A4 File Offset: 0x000B77A4
+	// Token: 0x06001E84 RID: 7812 RVA: 0x000B97A0 File Offset: 0x000B79A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAltMaterialLoaded(Material material, string assetPath, string entityClassName)
 	{
@@ -98,7 +98,7 @@ public class EModelInstanceAssets
 		this.AltMaterial = material;
 	}
 
-	// Token: 0x06001E8E RID: 7822 RVA: 0x000B95F4 File Offset: 0x000B77F4
+	// Token: 0x06001E85 RID: 7813 RVA: 0x000B97F0 File Offset: 0x000B79F0
 	public void WaitForComplete()
 	{
 		if (this.meshHandle != null && !this.meshHandle.IsDone)
@@ -111,7 +111,7 @@ public class EModelInstanceAssets
 		}
 	}
 
-	// Token: 0x06001E8F RID: 7823 RVA: 0x000B9641 File Offset: 0x000B7841
+	// Token: 0x06001E86 RID: 7814 RVA: 0x000B983D File Offset: 0x000B7A3D
 	public void Release()
 	{
 		LoadManager.AssetRequestTask<GameObject> assetRequestTask = this.meshHandle;
@@ -127,11 +127,11 @@ public class EModelInstanceAssets
 		assetRequestTask2.Release();
 	}
 
-	// Token: 0x04001474 RID: 5236
+	// Token: 0x0400146D RID: 5229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LoadManager.AssetRequestTask<GameObject> meshHandle;
 
-	// Token: 0x04001475 RID: 5237
+	// Token: 0x0400146E RID: 5230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LoadManager.AssetRequestTask<Material> altMaterialHandle;
 }

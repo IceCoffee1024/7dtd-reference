@@ -6,12 +6,12 @@ using System.Threading;
 using JetBrains.Annotations;
 using UnityEngine;
 
-// Token: 0x0200147F RID: 5247
+// Token: 0x0200149F RID: 5279
 public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPoolableObject, IDisposable
 {
-	// Token: 0x1700135B RID: 4955
-	// (get) Token: 0x0600A4BD RID: 42173 RVA: 0x003D60FB File Offset: 0x003D42FB
-	// (set) Token: 0x0600A4BE RID: 42174 RVA: 0x003D6103 File Offset: 0x003D4303
+	// Token: 0x170013A0 RID: 5024
+	// (get) Token: 0x0600A56B RID: 42347 RVA: 0x003DAD87 File Offset: 0x003D8F87
+	// (set) Token: 0x0600A56C RID: 42348 RVA: 0x003DAD8F File Offset: 0x003D8F8F
 	public Encoding Encoding
 	{
 		get
@@ -30,7 +30,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4BF RID: 42175 RVA: 0x003D6134 File Offset: 0x003D4334
+	// Token: 0x0600A56D RID: 42349 RVA: 0x003DADC0 File Offset: 0x003D8FC0
 	public PooledBinaryWriter()
 	{
 		this.Encoding = new UTF8Encoding(false, false);
@@ -42,14 +42,14 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4C0 RID: 42176 RVA: 0x003D61A8 File Offset: 0x003D43A8
+	// Token: 0x0600A56E RID: 42350 RVA: 0x003DAE34 File Offset: 0x003D9034
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~PooledBinaryWriter()
 	{
 		Interlocked.Decrement(ref PooledBinaryWriter.INSTANCES_LIVE);
 	}
 
-	// Token: 0x0600A4C1 RID: 42177 RVA: 0x003D61DC File Offset: 0x003D43DC
+	// Token: 0x0600A56F RID: 42351 RVA: 0x003DAE68 File Offset: 0x003D9068
 	public void SetBaseStream(Stream _stream)
 	{
 		if (_stream != null && !_stream.CanWrite)
@@ -60,8 +60,8 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.encoder = null;
 	}
 
-	// Token: 0x1700135C RID: 4956
-	// (get) Token: 0x0600A4C2 RID: 42178 RVA: 0x003D6202 File Offset: 0x003D4402
+	// Token: 0x170013A1 RID: 5025
+	// (get) Token: 0x0600A570 RID: 42352 RVA: 0x003DAE8E File Offset: 0x003D908E
 	public override Stream BaseStream
 	{
 		get
@@ -70,32 +70,32 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4C3 RID: 42179 RVA: 0x003D620A File Offset: 0x003D440A
+	// Token: 0x0600A571 RID: 42353 RVA: 0x003DAE96 File Offset: 0x003D9096
 	public override void Flush()
 	{
 		this.OutStream.Flush();
 	}
 
-	// Token: 0x0600A4C4 RID: 42180 RVA: 0x003D6217 File Offset: 0x003D4417
+	// Token: 0x0600A572 RID: 42354 RVA: 0x003DAEA3 File Offset: 0x003D90A3
 	public override long Seek(int _offset, SeekOrigin _origin)
 	{
 		return this.OutStream.Seek((long)_offset, _origin);
 	}
 
-	// Token: 0x0600A4C5 RID: 42181 RVA: 0x003D6227 File Offset: 0x003D4427
+	// Token: 0x0600A573 RID: 42355 RVA: 0x003DAEB3 File Offset: 0x003D90B3
 	public override void Write(bool _value)
 	{
 		this.buffer[0] = ((!_value) ? 0 : 1);
 		this.OutStream.Write(this.buffer, 0, 1);
 	}
 
-	// Token: 0x0600A4C6 RID: 42182 RVA: 0x003D624C File Offset: 0x003D444C
+	// Token: 0x0600A574 RID: 42356 RVA: 0x003DAED8 File Offset: 0x003D90D8
 	public override void Write(byte _value)
 	{
 		this.OutStream.WriteByte(_value);
 	}
 
-	// Token: 0x0600A4C7 RID: 42183 RVA: 0x003D625A File Offset: 0x003D445A
+	// Token: 0x0600A575 RID: 42357 RVA: 0x003DAEE6 File Offset: 0x003D90E6
 	public override void Write(byte[] _buffer)
 	{
 		if (_buffer == null)
@@ -105,7 +105,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(_buffer, 0, _buffer.Length);
 	}
 
-	// Token: 0x0600A4C8 RID: 42184 RVA: 0x003D627A File Offset: 0x003D447A
+	// Token: 0x0600A576 RID: 42358 RVA: 0x003DAF06 File Offset: 0x003D9106
 	public override void Write(byte[] _buffer, int _index, int _count)
 	{
 		if (_buffer == null)
@@ -115,13 +115,13 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(_buffer, _index, _count);
 	}
 
-	// Token: 0x0600A4C9 RID: 42185 RVA: 0x003D6298 File Offset: 0x003D4498
+	// Token: 0x0600A577 RID: 42359 RVA: 0x003DAF24 File Offset: 0x003D9124
 	public override void Write(ReadOnlySpan<byte> _buffer)
 	{
 		this.OutStream.Write(_buffer);
 	}
 
-	// Token: 0x0600A4CA RID: 42186 RVA: 0x003D62A8 File Offset: 0x003D44A8
+	// Token: 0x0600A578 RID: 42360 RVA: 0x003DAF34 File Offset: 0x003D9134
 	public override void Write(char _ch)
 	{
 		this.charBuffer[0] = _ch;
@@ -129,13 +129,13 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, bytes);
 	}
 
-	// Token: 0x0600A4CB RID: 42187 RVA: 0x003D62EC File Offset: 0x003D44EC
+	// Token: 0x0600A579 RID: 42361 RVA: 0x003DAF78 File Offset: 0x003D9178
 	public override void Write(char[] _chars)
 	{
 		this.Write(_chars, 0, _chars.Length);
 	}
 
-	// Token: 0x0600A4CC RID: 42188 RVA: 0x003D62F9 File Offset: 0x003D44F9
+	// Token: 0x0600A57A RID: 42362 RVA: 0x003DAF85 File Offset: 0x003D9185
 	public override void Write(char[] _chars, int _index, int _count)
 	{
 		if (_chars == null)
@@ -145,7 +145,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.Write(_chars.AsSpan<char>(_index, _count));
 	}
 
-	// Token: 0x0600A4CD RID: 42189 RVA: 0x003D631C File Offset: 0x003D451C
+	// Token: 0x0600A57B RID: 42363 RVA: 0x003DAFA8 File Offset: 0x003D91A8
 	public override void Write(ReadOnlySpan<char> _chars)
 	{
 		int num;
@@ -157,7 +157,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4CE RID: 42190 RVA: 0x003D638C File Offset: 0x003D458C
+	// Token: 0x0600A57C RID: 42364 RVA: 0x003DB018 File Offset: 0x003D9218
 	public unsafe override void Write(decimal _value)
 	{
 		byte* ptr = (byte*)(&_value);
@@ -208,14 +208,14 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 16);
 	}
 
-	// Token: 0x0600A4CF RID: 42191 RVA: 0x003D646F File Offset: 0x003D466F
+	// Token: 0x0600A57D RID: 42365 RVA: 0x003DB0FB File Offset: 0x003D92FB
 	public override void Write(double _value)
 	{
 		BitConverterLE.GetBytes(_value, this.buffer);
 		this.OutStream.Write(this.buffer, 0, 8);
 	}
 
-	// Token: 0x0600A4D0 RID: 42192 RVA: 0x003D6490 File Offset: 0x003D4690
+	// Token: 0x0600A57E RID: 42366 RVA: 0x003DB11C File Offset: 0x003D931C
 	public override void Write(short _value)
 	{
 		this.buffer[0] = (byte)_value;
@@ -223,7 +223,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 2);
 	}
 
-	// Token: 0x0600A4D1 RID: 42193 RVA: 0x003D64BC File Offset: 0x003D46BC
+	// Token: 0x0600A57F RID: 42367 RVA: 0x003DB148 File Offset: 0x003D9348
 	public override void Write(int _value)
 	{
 		this.buffer[0] = (byte)_value;
@@ -233,7 +233,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 4);
 	}
 
-	// Token: 0x0600A4D2 RID: 42194 RVA: 0x003D650C File Offset: 0x003D470C
+	// Token: 0x0600A580 RID: 42368 RVA: 0x003DB198 File Offset: 0x003D9398
 	public override void Write(long _value)
 	{
 		int i = 0;
@@ -247,21 +247,21 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 8);
 	}
 
-	// Token: 0x0600A4D3 RID: 42195 RVA: 0x003D654D File Offset: 0x003D474D
+	// Token: 0x0600A581 RID: 42369 RVA: 0x003DB1D9 File Offset: 0x003D93D9
 	public override void Write(sbyte _value)
 	{
 		this.buffer[0] = (byte)_value;
 		this.OutStream.Write(this.buffer, 0, 1);
 	}
 
-	// Token: 0x0600A4D4 RID: 42196 RVA: 0x003D656C File Offset: 0x003D476C
+	// Token: 0x0600A582 RID: 42370 RVA: 0x003DB1F8 File Offset: 0x003D93F8
 	public override void Write(float _value)
 	{
 		BitConverterLE.GetBytes(_value, this.buffer);
 		this.OutStream.Write(this.buffer, 0, 4);
 	}
 
-	// Token: 0x0600A4D5 RID: 42197 RVA: 0x003D6590 File Offset: 0x003D4790
+	// Token: 0x0600A583 RID: 42371 RVA: 0x003DB21C File Offset: 0x003D941C
 	public unsafe override void Write(string _value)
 	{
 		if (_value == null)
@@ -315,7 +315,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4D6 RID: 42198 RVA: 0x003D6490 File Offset: 0x003D4690
+	// Token: 0x0600A584 RID: 42372 RVA: 0x003DB11C File Offset: 0x003D931C
 	public override void Write(ushort _value)
 	{
 		this.buffer[0] = (byte)_value;
@@ -323,7 +323,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 2);
 	}
 
-	// Token: 0x0600A4D7 RID: 42199 RVA: 0x003D66B4 File Offset: 0x003D48B4
+	// Token: 0x0600A585 RID: 42373 RVA: 0x003DB340 File Offset: 0x003D9540
 	public override void Write(uint _value)
 	{
 		this.buffer[0] = (byte)_value;
@@ -333,7 +333,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 4);
 	}
 
-	// Token: 0x0600A4D8 RID: 42200 RVA: 0x003D6704 File Offset: 0x003D4904
+	// Token: 0x0600A586 RID: 42374 RVA: 0x003DB390 File Offset: 0x003D9590
 	public override void Write(ulong _value)
 	{
 		int i = 0;
@@ -347,7 +347,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Write(this.buffer, 0, 8);
 	}
 
-	// Token: 0x0600A4D9 RID: 42201 RVA: 0x003D6748 File Offset: 0x003D4948
+	// Token: 0x0600A587 RID: 42375 RVA: 0x003DB3D4 File Offset: 0x003D95D4
 	public void Write7BitEncodedSignedInt(int _value)
 	{
 		long num = (long)_value;
@@ -376,7 +376,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		}
 	}
 
-	// Token: 0x0600A4DA RID: 42202 RVA: 0x003D67C0 File Offset: 0x003D49C0
+	// Token: 0x0600A588 RID: 42376 RVA: 0x003DB44C File Offset: 0x003D964C
 	public new void Write7BitEncodedInt(int _value)
 	{
 		do
@@ -393,7 +393,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		while (_value != 0);
 	}
 
-	// Token: 0x0600A4DB RID: 42203 RVA: 0x003D67F4 File Offset: 0x003D49F4
+	// Token: 0x0600A589 RID: 42377 RVA: 0x003DB480 File Offset: 0x003D9680
 	[MustUseReturnValue]
 	public PooledBinaryWriter.StreamWriteSizeMarker ReserveSizeMarker(PooledBinaryWriter.EMarkerSize _markerSize)
 	{
@@ -403,7 +403,7 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		return new PooledBinaryWriter.StreamWriteSizeMarker(position, _markerSize);
 	}
 
-	// Token: 0x0600A4DC RID: 42204 RVA: 0x003D6828 File Offset: 0x003D4A28
+	// Token: 0x0600A58A RID: 42378 RVA: 0x003DB4B4 File Offset: 0x003D96B4
 	public void FinalizeSizeMarker(ref PooledBinaryWriter.StreamWriteSizeMarker _sizeMarker)
 	{
 		long position = this.OutStream.Position;
@@ -448,141 +448,141 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		this.OutStream.Position = position;
 	}
 
-	// Token: 0x0600A4DD RID: 42205 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A58B RID: 42379 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Close()
 	{
 	}
 
-	// Token: 0x0600A4DE RID: 42206 RVA: 0x003D693C File Offset: 0x003D4B3C
+	// Token: 0x0600A58C RID: 42380 RVA: 0x003DB5C8 File Offset: 0x003D97C8
 	public void Reset()
 	{
 		this.SetBaseStream(null);
 	}
 
-	// Token: 0x0600A4DF RID: 42207 RVA: 0x003D6945 File Offset: 0x003D4B45
+	// Token: 0x0600A58D RID: 42381 RVA: 0x003DB5D1 File Offset: 0x003D97D1
 	public void Cleanup()
 	{
 		this.Reset();
 	}
 
-	// Token: 0x0600A4E0 RID: 42208 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A58E RID: 42382 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Dispose(bool _disposing)
 	{
 	}
 
-	// Token: 0x0600A4E1 RID: 42209 RVA: 0x003D694D File Offset: 0x003D4B4D
+	// Token: 0x0600A58F RID: 42383 RVA: 0x003DB5D9 File Offset: 0x003D97D9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.IDisposable.Dispose()
 	{
 		MemoryPools.poolBinaryWriter.FreeSync(this);
 	}
 
-	// Token: 0x0600A4E2 RID: 42210 RVA: 0x003D695A File Offset: 0x003D4B5A
+	// Token: 0x0600A590 RID: 42384 RVA: 0x003DB5E6 File Offset: 0x003D97E6
 	public bool ReadWrite(bool _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E3 RID: 42211 RVA: 0x003D6964 File Offset: 0x003D4B64
+	// Token: 0x0600A591 RID: 42385 RVA: 0x003DB5F0 File Offset: 0x003D97F0
 	public byte ReadWrite(byte _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E4 RID: 42212 RVA: 0x003D696E File Offset: 0x003D4B6E
+	// Token: 0x0600A592 RID: 42386 RVA: 0x003DB5FA File Offset: 0x003D97FA
 	public sbyte ReadWrite(sbyte _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E5 RID: 42213 RVA: 0x003D6978 File Offset: 0x003D4B78
+	// Token: 0x0600A593 RID: 42387 RVA: 0x003DB604 File Offset: 0x003D9804
 	public char ReadWrite(char _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E6 RID: 42214 RVA: 0x003D6982 File Offset: 0x003D4B82
+	// Token: 0x0600A594 RID: 42388 RVA: 0x003DB60E File Offset: 0x003D980E
 	public short ReadWrite(short _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E7 RID: 42215 RVA: 0x003D698C File Offset: 0x003D4B8C
+	// Token: 0x0600A595 RID: 42389 RVA: 0x003DB618 File Offset: 0x003D9818
 	public ushort ReadWrite(ushort _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E8 RID: 42216 RVA: 0x003D6996 File Offset: 0x003D4B96
+	// Token: 0x0600A596 RID: 42390 RVA: 0x003DB622 File Offset: 0x003D9822
 	public int ReadWrite(int _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4E9 RID: 42217 RVA: 0x003D69A0 File Offset: 0x003D4BA0
+	// Token: 0x0600A597 RID: 42391 RVA: 0x003DB62C File Offset: 0x003D982C
 	public uint ReadWrite(uint _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4EA RID: 42218 RVA: 0x003D69AA File Offset: 0x003D4BAA
+	// Token: 0x0600A598 RID: 42392 RVA: 0x003DB636 File Offset: 0x003D9836
 	public long ReadWrite(long _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4EB RID: 42219 RVA: 0x003D69B4 File Offset: 0x003D4BB4
+	// Token: 0x0600A599 RID: 42393 RVA: 0x003DB640 File Offset: 0x003D9840
 	public ulong ReadWrite(ulong _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4EC RID: 42220 RVA: 0x003D69BE File Offset: 0x003D4BBE
+	// Token: 0x0600A59A RID: 42394 RVA: 0x003DB64A File Offset: 0x003D984A
 	public float ReadWrite(float _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4ED RID: 42221 RVA: 0x003D69C8 File Offset: 0x003D4BC8
+	// Token: 0x0600A59B RID: 42395 RVA: 0x003DB654 File Offset: 0x003D9854
 	public double ReadWrite(double _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4EE RID: 42222 RVA: 0x003D69D2 File Offset: 0x003D4BD2
+	// Token: 0x0600A59C RID: 42396 RVA: 0x003DB65E File Offset: 0x003D985E
 	public decimal ReadWrite(decimal _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4EF RID: 42223 RVA: 0x003D69DC File Offset: 0x003D4BDC
+	// Token: 0x0600A59D RID: 42397 RVA: 0x003DB668 File Offset: 0x003D9868
 	public string ReadWrite(string _value)
 	{
 		this.Write(_value);
 		return _value;
 	}
 
-	// Token: 0x0600A4F0 RID: 42224 RVA: 0x003D69E6 File Offset: 0x003D4BE6
+	// Token: 0x0600A59E RID: 42398 RVA: 0x003DB672 File Offset: 0x003D9872
 	public void ReadWrite(byte[] _buffer, int _index, int _count)
 	{
 		this.Write(_buffer, _index, _count);
 	}
 
-	// Token: 0x0600A4F1 RID: 42225 RVA: 0x003D69F1 File Offset: 0x003D4BF1
+	// Token: 0x0600A59F RID: 42399 RVA: 0x003DB67D File Offset: 0x003D987D
 	public Vector3 ReadWrite(Vector3 _value)
 	{
 		this.Write(_value.x);
@@ -591,68 +591,68 @@ public class PooledBinaryWriter : BinaryWriter, IBinaryReaderOrWriter, IMemoryPo
 		return _value;
 	}
 
-	// Token: 0x04007AFA RID: 31482
+	// Token: 0x04007B75 RID: 31605
 	public static int INSTANCES_LIVE;
 
-	// Token: 0x04007AFB RID: 31483
+	// Token: 0x04007B76 RID: 31606
 	public static int INSTANCES_MAX;
 
-	// Token: 0x04007AFC RID: 31484
+	// Token: 0x04007B77 RID: 31607
 	public static int INSTANCES_CREATED;
 
-	// Token: 0x04007AFD RID: 31485
+	// Token: 0x04007B78 RID: 31608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BYTE_BUFFER_SIZE = 128;
 
-	// Token: 0x04007AFE RID: 31486
+	// Token: 0x04007B79 RID: 31609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CHAR_BUFFER_SIZE = 128;
 
-	// Token: 0x04007AFF RID: 31487
+	// Token: 0x04007B7A RID: 31610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] buffer = new byte[128];
 
-	// Token: 0x04007B00 RID: 31488
+	// Token: 0x04007B7B RID: 31611
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly char[] charBuffer = new char[128];
 
-	// Token: 0x04007B01 RID: 31489
+	// Token: 0x04007B7C RID: 31612
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxBytesPerChar;
 
-	// Token: 0x04007B02 RID: 31490
+	// Token: 0x04007B7D RID: 31613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Encoder encoder;
 
-	// Token: 0x04007B03 RID: 31491
+	// Token: 0x04007B7E RID: 31614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Encoding encoding;
 
-	// Token: 0x02001480 RID: 5248
+	// Token: 0x020014A0 RID: 5280
 	public enum EMarkerSize
 	{
-		// Token: 0x04007B05 RID: 31493
+		// Token: 0x04007B80 RID: 31616
 		UInt8 = 1,
-		// Token: 0x04007B06 RID: 31494
+		// Token: 0x04007B81 RID: 31617
 		UInt16,
-		// Token: 0x04007B07 RID: 31495
+		// Token: 0x04007B82 RID: 31618
 		UInt32 = 4
 	}
 
-	// Token: 0x02001481 RID: 5249
+	// Token: 0x020014A1 RID: 5281
 	public readonly struct StreamWriteSizeMarker
 	{
-		// Token: 0x0600A4F2 RID: 42226 RVA: 0x003D6A18 File Offset: 0x003D4C18
+		// Token: 0x0600A5A0 RID: 42400 RVA: 0x003DB6A4 File Offset: 0x003D98A4
 		public StreamWriteSizeMarker(long _position, PooledBinaryWriter.EMarkerSize _markerSize)
 		{
 			this.Position = _position;
 			this.MarkerSize = _markerSize;
 		}
 
-		// Token: 0x04007B08 RID: 31496
+		// Token: 0x04007B83 RID: 31619
 		public readonly long Position;
 
-		// Token: 0x04007B09 RID: 31497
+		// Token: 0x04007B84 RID: 31620
 		public readonly PooledBinaryWriter.EMarkerSize MarkerSize;
 	}
 }

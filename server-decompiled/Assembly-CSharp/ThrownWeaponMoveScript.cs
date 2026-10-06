@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using AssetManagement;
 using UnityEngine;
 
-// Token: 0x02000607 RID: 1543
+// Token: 0x02000609 RID: 1545
 public class ThrownWeaponMoveScript : MonoBehaviour
 {
-	// Token: 0x06003240 RID: 12864 RVA: 0x001472A4 File Offset: 0x001454A4
+	// Token: 0x06003283 RID: 12931 RVA: 0x00147C3C File Offset: 0x00145E3C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -15,7 +16,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003241 RID: 12865 RVA: 0x001472C0 File Offset: 0x001454C0
+	// Token: 0x06003284 RID: 12932 RVA: 0x00147C58 File Offset: 0x00145E58
 	public void Fire(Vector3 _idealStartPosition, Vector3 _flyDirection, Entity _firingEntity, int _hmOverride = 0, float _velocity = -1f)
 	{
 		this.flyDirection = _flyDirection.normalized;
@@ -56,7 +57,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003242 RID: 12866 RVA: 0x00147490 File Offset: 0x00145690
+	// Token: 0x06003285 RID: 12933 RVA: 0x00147E28 File Offset: 0x00146028
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FixedUpdate()
 	{
@@ -107,7 +108,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003243 RID: 12867 RVA: 0x00147634 File Offset: 0x00145834
+	// Token: 0x06003286 RID: 12934 RVA: 0x00147FCC File Offset: 0x001461CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void checkCollision(Vector3 _amountToMove)
 	{
@@ -176,15 +177,16 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003244 RID: 12868 RVA: 0x00147A47 File Offset: 0x00145C47
+	// Token: 0x06003287 RID: 12935 RVA: 0x001483DF File Offset: 0x001465DF
 	public void DropStuckProjectile()
 	{
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06003245 RID: 12869 RVA: 0x00147A54 File Offset: 0x00145C54
+	// Token: 0x06003288 RID: 12936 RVA: 0x001483EC File Offset: 0x001465EC
 	public void OnDestroy()
 	{
+		this.assetHandle.Destroy();
 		if (GameManager.Instance == null || GameManager.Instance.World == null || this.firingEntity == null || base.transform == null || this.itemValueWeapon == null)
 		{
 			return;
@@ -208,7 +210,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003246 RID: 12870 RVA: 0x00147C3C File Offset: 0x00145E3C
+	// Token: 0x06003289 RID: 12937 RVA: 0x001485E0 File Offset: 0x001467E0
 	public bool TryCollect(EntityPlayerLocal _player)
 	{
 		if (!this.itemWeapon.IsSticky)
@@ -226,99 +228,102 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06003247 RID: 12871 RVA: 0x00147CB6 File Offset: 0x00145EB6
+	// Token: 0x0600328A RID: 12938 RVA: 0x0014865A File Offset: 0x0014685A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<string> getBuffActions()
 	{
 		return this.itemActionThrownWeapon.BuffActions;
 	}
 
-	// Token: 0x040027E0 RID: 10208
+	// Token: 0x040027D8 RID: 10200
 	public const int InvalidID = -1;
 
-	// Token: 0x040027E1 RID: 10209
+	// Token: 0x040027D9 RID: 10201
 	public int ProjectileID = -1;
 
-	// Token: 0x040027E2 RID: 10210
+	// Token: 0x040027DA RID: 10202
 	public int ProjectileOwnerID;
 
-	// Token: 0x040027E3 RID: 10211
+	// Token: 0x040027DB RID: 10203
+	public InstanceHandle<GameObject> assetHandle;
+
+	// Token: 0x040027DC RID: 10204
 	public ItemActionThrownWeapon itemActionThrownWeapon;
 
-	// Token: 0x040027E4 RID: 10212
+	// Token: 0x040027DD RID: 10205
 	public ItemClass itemWeapon;
 
-	// Token: 0x040027E5 RID: 10213
+	// Token: 0x040027DE RID: 10206
 	public ItemValue itemValueWeapon;
 
-	// Token: 0x040027E6 RID: 10214
+	// Token: 0x040027DF RID: 10207
 	public ItemActionThrowAway.MyInventoryData actionData;
 
-	// Token: 0x040027E7 RID: 10215
+	// Token: 0x040027E0 RID: 10208
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static GameManager gameManager;
 
-	// Token: 0x040027E8 RID: 10216
+	// Token: 0x040027E1 RID: 10209
 	public Vector3 flyDirection;
 
-	// Token: 0x040027E9 RID: 10217
+	// Token: 0x040027E2 RID: 10210
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 idealPosition;
 
-	// Token: 0x040027EA RID: 10218
+	// Token: 0x040027E3 RID: 10211
 	public Vector3 velocity;
 
-	// Token: 0x040027EB RID: 10219
+	// Token: 0x040027E4 RID: 10212
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float timeShotStarted;
 
-	// Token: 0x040027EC RID: 10220
+	// Token: 0x040027E5 RID: 10213
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bArmed;
 
-	// Token: 0x040027ED RID: 10221
+	// Token: 0x040027E6 RID: 10214
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Entity firingEntity;
 
-	// Token: 0x040027EE RID: 10222
+	// Token: 0x040027E7 RID: 10215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 previousPosition;
 
-	// Token: 0x040027EF RID: 10223
+	// Token: 0x040027E8 RID: 10216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 gravity;
 
-	// Token: 0x040027F0 RID: 10224
+	// Token: 0x040027E9 RID: 10217
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bOnIdealPos;
 
-	// Token: 0x040027F1 RID: 10225
+	// Token: 0x040027EA RID: 10218
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int hmOverride;
 
-	// Token: 0x040027F2 RID: 10226
+	// Token: 0x040027EB RID: 10219
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public NavObject NavObject;
 
-	// Token: 0x040027F3 RID: 10227
+	// Token: 0x040027EC RID: 10220
 	public Vector3 FinalPosition;
 
-	// Token: 0x040027F4 RID: 10228
+	// Token: 0x040027ED RID: 10221
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 
-	// Token: 0x040027F5 RID: 10229
+	// Token: 0x040027EE RID: 10222
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive stuckInEntity;

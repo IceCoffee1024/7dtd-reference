@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F08 RID: 3848
+// Token: 0x02000F17 RID: 3863
 [Preserve]
 public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 {
-	// Token: 0x17000E20 RID: 3616
-	// (get) Token: 0x060078B4 RID: 30900 RVA: 0x002D87C0 File Offset: 0x002D69C0
+	// Token: 0x17000E3D RID: 3645
+	// (get) Token: 0x060078AF RID: 30895 RVA: 0x002DBB54 File Offset: 0x002D9D54
 	public int SelectedCraftingTier
 	{
 		get
@@ -16,7 +16,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078B5 RID: 30901 RVA: 0x002D87C8 File Offset: 0x002D69C8
+	// Token: 0x060078B0 RID: 30896 RVA: 0x002DBB5C File Offset: 0x002D9D5C
 	public override void Init()
 	{
 		base.Init();
@@ -54,7 +54,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.unlockByList = base.GetChildByType<XUiC_UnlockByList>();
 	}
 
-	// Token: 0x060078B6 RID: 30902 RVA: 0x002D89CF File Offset: 0x002D6BCF
+	// Token: 0x060078B1 RID: 30897 RVA: 0x002DBD63 File Offset: 0x002D9F63
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SubtractQualityButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -65,7 +65,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078B7 RID: 30903 RVA: 0x002D89EF File Offset: 0x002D6BEF
+	// Token: 0x060078B2 RID: 30898 RVA: 0x002DBD83 File Offset: 0x002D9F83
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddQualityButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -76,7 +76,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078B8 RID: 30904 RVA: 0x002D8A14 File Offset: 0x002D6C14
+	// Token: 0x060078B3 RID: 30899 RVA: 0x002DBDA8 File Offset: 0x002D9FA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetSelectedButtonByType(XUiC_CraftingInfoWindow.TabTypes tabType)
 	{
@@ -85,7 +85,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		((XUiV_Button)this.unlockedByButton.ViewComponent).Selected = tabType == XUiC_CraftingInfoWindow.TabTypes.UnlockedBy;
 	}
 
-	// Token: 0x060078B9 RID: 30905 RVA: 0x002D8A6C File Offset: 0x002D6C6C
+	// Token: 0x060078B4 RID: 30900 RVA: 0x002DBE00 File Offset: 0x002DA000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IngredientsButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -94,7 +94,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078BA RID: 30906 RVA: 0x002D8A88 File Offset: 0x002D6C88
+	// Token: 0x060078B5 RID: 30901 RVA: 0x002DBE1C File Offset: 0x002DA01C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DescriptionButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -103,7 +103,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078BB RID: 30907 RVA: 0x002D8AA4 File Offset: 0x002D6CA4
+	// Token: 0x060078B6 RID: 30902 RVA: 0x002DBE38 File Offset: 0x002DA038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UnlockedByButton_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -112,7 +112,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078BC RID: 30908 RVA: 0x002D8AC0 File Offset: 0x002D6CC0
+	// Token: 0x060078B7 RID: 30903 RVA: 0x002DBE54 File Offset: 0x002DA054
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -123,7 +123,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078BD RID: 30909 RVA: 0x002D8B18 File Offset: 0x002D6D18
+	// Token: 0x060078B8 RID: 30904 RVA: 0x002DBEAC File Offset: 0x002DA0AC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -134,14 +134,14 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078BE RID: 30910 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x060078B9 RID: 30905 RVA: 0x0008A995 File Offset: 0x00088B95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnItemsChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078BF RID: 30911 RVA: 0x002D8B70 File Offset: 0x002D6D70
+	// Token: 0x060078BA RID: 30906 RVA: 0x002DBF04 File Offset: 0x002DA104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
@@ -149,7 +149,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078C0 RID: 30912 RVA: 0x002D8B85 File Offset: 0x002D6D85
+	// Token: 0x060078BB RID: 30907 RVA: 0x002DBF19 File Offset: 0x002DA119
 	public override void Deselect()
 	{
 		if (this.selectedEntry != null)
@@ -158,7 +158,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078C1 RID: 30913 RVA: 0x002D8B9C File Offset: 0x002D6D9C
+	// Token: 0x060078BC RID: 30908 RVA: 0x002DBF30 File Offset: 0x002DA130
 	public void SetCategory(string category)
 	{
 		if (this.categoryList != null)
@@ -175,7 +175,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078C2 RID: 30914 RVA: 0x002D8C04 File Offset: 0x002D6E04
+	// Token: 0x060078BD RID: 30909 RVA: 0x002DBF98 File Offset: 0x002DA198
 	public override void Update(float _dt)
 	{
 		if (!this.windowGroup.isShowing)
@@ -276,7 +276,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x060078C3 RID: 30915 RVA: 0x002D8F7C File Offset: 0x002D717C
+	// Token: 0x060078BE RID: 30910 RVA: 0x002DC310 File Offset: 0x002DA510
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -600,7 +600,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060078C4 RID: 30916 RVA: 0x002D976C File Offset: 0x002D796C
+	// Token: 0x060078BF RID: 30911 RVA: 0x002DCB00 File Offset: 0x002DAD00
 	public void SetRecipe(XUiC_RecipeEntry _recipeEntry)
 	{
 		this.selectedEntry = _recipeEntry;
@@ -629,7 +629,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060078C5 RID: 30917 RVA: 0x002D980A File Offset: 0x002D7A0A
+	// Token: 0x060078C0 RID: 30912 RVA: 0x002DCB9E File Offset: 0x002DAD9E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRecipeChanged(Recipe _recipe, XUiC_RecipeEntry _recipeEntry)
 	{
@@ -640,7 +640,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		this.SetRecipe(_recipeEntry);
 	}
 
-	// Token: 0x060078C6 RID: 30918 RVA: 0x002D982C File Offset: 0x002D7A2C
+	// Token: 0x060078C1 RID: 30913 RVA: 0x002DCBC0 File Offset: 0x002DADC0
 	public override bool ParseAttribute(string attribute, string value)
 	{
 		if (base.ParseAttribute(attribute, value))
@@ -670,7 +670,7 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		return true;
 	}
 
-	// Token: 0x060078C7 RID: 30919 RVA: 0x002D98AA File Offset: 0x002D7AAA
+	// Token: 0x060078C2 RID: 30914 RVA: 0x002DCC3E File Offset: 0x002DAE3E
 	public void RefreshRecipe()
 	{
 		if (this.recipeCraftCount != null)
@@ -679,165 +679,165 @@ public class XUiC_CraftingInfoWindow : XUiC_InfoWindow
 		}
 	}
 
-	// Token: 0x04005936 RID: 22838
+	// Token: 0x0400596E RID: 22894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe recipe;
 
-	// Token: 0x04005937 RID: 22839
+	// Token: 0x0400596F RID: 22895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int craftCount;
 
-	// Token: 0x04005938 RID: 22840
+	// Token: 0x04005970 RID: 22896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selectedCraftingTier = 1;
 
-	// Token: 0x04005939 RID: 22841
+	// Token: 0x04005971 RID: 22897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selectedMaxCraftingTier = 1;
 
-	// Token: 0x0400593A RID: 22842
+	// Token: 0x04005972 RID: 22898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe lastRecipeSelected;
 
-	// Token: 0x0400593B RID: 22843
+	// Token: 0x04005973 RID: 22899
 	public XUiC_CraftingInfoWindow.TabTypes TabType;
 
-	// Token: 0x0400593C RID: 22844
+	// Token: 0x04005974 RID: 22900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeEntry selectedEntry;
 
-	// Token: 0x0400593D RID: 22845
+	// Token: 0x04005975 RID: 22901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController itemPreview;
 
-	// Token: 0x0400593E RID: 22846
+	// Token: 0x04005976 RID: 22902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowName;
 
-	// Token: 0x0400593F RID: 22847
+	// Token: 0x04005977 RID: 22903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController windowIcon;
 
-	// Token: 0x04005940 RID: 22848
+	// Token: 0x04005978 RID: 22904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController description;
 
-	// Token: 0x04005941 RID: 22849
+	// Token: 0x04005979 RID: 22905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController craftingTime;
 
-	// Token: 0x04005942 RID: 22850
+	// Token: 0x0400597A RID: 22906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController requiredToolOverlay;
 
-	// Token: 0x04005943 RID: 22851
+	// Token: 0x0400597B RID: 22907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController requiredToolCheckmark;
 
-	// Token: 0x04005944 RID: 22852
+	// Token: 0x0400597C RID: 22908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController requiredToolText;
 
-	// Token: 0x04005945 RID: 22853
+	// Token: 0x0400597D RID: 22909
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_IngredientList ingredientList;
 
-	// Token: 0x04005946 RID: 22854
+	// Token: 0x0400597E RID: 22910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_UnlockByList unlockByList;
 
-	// Token: 0x04005947 RID: 22855
+	// Token: 0x0400597F RID: 22911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x04005948 RID: 22856
+	// Token: 0x04005980 RID: 22912
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList actionItemList;
 
-	// Token: 0x04005949 RID: 22857
+	// Token: 0x04005981 RID: 22913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeList recipeList;
 
-	// Token: 0x0400594A RID: 22858
+	// Token: 0x04005982 RID: 22914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_InfoWindow emptyInfoWindow;
 
-	// Token: 0x0400594B RID: 22859
+	// Token: 0x04005983 RID: 22915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemInfoWindow itemInfoWindow;
 
-	// Token: 0x0400594C RID: 22860
+	// Token: 0x04005984 RID: 22916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeCraftCount recipeCraftCount;
 
-	// Token: 0x0400594D RID: 22861
+	// Token: 0x04005985 RID: 22917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController ingredientsButton;
 
-	// Token: 0x0400594E RID: 22862
+	// Token: 0x04005986 RID: 22918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController descriptionButton;
 
-	// Token: 0x0400594F RID: 22863
+	// Token: 0x04005987 RID: 22919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController unlockedByButton;
 
-	// Token: 0x04005950 RID: 22864
+	// Token: 0x04005988 RID: 22920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController addQualityButton;
 
-	// Token: 0x04005951 RID: 22865
+	// Token: 0x04005989 RID: 22921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController subtractQualityButton;
 
-	// Token: 0x04005952 RID: 22866
+	// Token: 0x0400598A RID: 22922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005953 RID: 22867
+	// Token: 0x0400598B RID: 22923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float> craftingtimeFormatter = new CachedStringFormatter<float>((float _time) => string.Format("{0:00}:{1:00}", (int)(_time / 60f), (int)(_time % 60f)));
 
-	// Token: 0x04005954 RID: 22868
+	// Token: 0x0400598C RID: 22924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005955 RID: 22869
+	// Token: 0x0400598D RID: 22925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat durabilityfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005956 RID: 22870
+	// Token: 0x0400598E RID: 22926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt durabilitytextFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005957 RID: 22871
+	// Token: 0x0400598F RID: 22927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor altitemtypeiconcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005958 RID: 22872
+	// Token: 0x04005990 RID: 22928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color validColor;
 
-	// Token: 0x04005959 RID: 22873
+	// Token: 0x04005991 RID: 22929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color invalidColor;
 
-	// Token: 0x0400595A RID: 22874
+	// Token: 0x04005992 RID: 22930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string validSprite;
 
-	// Token: 0x0400595B RID: 22875
+	// Token: 0x04005993 RID: 22931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string invalidSprite;
 
-	// Token: 0x02000F09 RID: 3849
+	// Token: 0x02000F18 RID: 3864
 	public enum TabTypes
 	{
-		// Token: 0x0400595D RID: 22877
+		// Token: 0x04005995 RID: 22933
 		Ingredients,
-		// Token: 0x0400595E RID: 22878
+		// Token: 0x04005996 RID: 22934
 		Description,
-		// Token: 0x0400595F RID: 22879
+		// Token: 0x04005997 RID: 22935
 		UnlockedBy
 	}
 }

@@ -4,10 +4,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C8D RID: 7309
+	// Token: 0x02001CBF RID: 7359
 	public class LobbyListInternet : LobbyListAbs
 	{
-		// Token: 0x0600D8B2 RID: 55474 RVA: 0x004DD415 File Offset: 0x004DB615
+		// Token: 0x0600DA2C RID: 55852 RVA: 0x004E1F5D File Offset: 0x004E015D
 		public override void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -20,7 +20,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D8B3 RID: 55475 RVA: 0x004DD435 File Offset: 0x004DB635
+		// Token: 0x0600DA2D RID: 55853 RVA: 0x004E1F7D File Offset: 0x004E017D
 		public override void StopSearch()
 		{
 			if (this.m_RequestLobbies != null && this.m_RequestLobbies.IsActive())
@@ -30,7 +30,7 @@ namespace Platform.Steam
 			this.isRefreshing = false;
 		}
 
-		// Token: 0x0600D8B4 RID: 55476 RVA: 0x004DD460 File Offset: 0x004DB660
+		// Token: 0x0600DA2E RID: 55854 RVA: 0x004E1FA8 File Offset: 0x004E01A8
 		public override void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (this.gameServerFoundCallback == null)
@@ -43,7 +43,7 @@ namespace Platform.Steam
 			this.isRefreshing = true;
 		}
 
-		// Token: 0x0600D8B5 RID: 55477 RVA: 0x004DD4A8 File Offset: 0x004DB6A8
+		// Token: 0x0600DA2F RID: 55855 RVA: 0x004E1FF0 File Offset: 0x004E01F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RequestLobbies_CallResult(LobbyMatchList_t _val, bool _ioFailure)
 		{
@@ -63,7 +63,7 @@ namespace Platform.Steam
 			ThreadManager.StartCoroutine(base.restartRefreshCo(3f));
 		}
 
-		// Token: 0x0400A47B RID: 42107
+		// Token: 0x0400A550 RID: 42320
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CallResult<LobbyMatchList_t> m_RequestLobbies;
 	}

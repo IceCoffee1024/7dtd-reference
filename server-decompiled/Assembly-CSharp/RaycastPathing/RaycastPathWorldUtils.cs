@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018D2 RID: 6354
+	// Token: 0x020018FE RID: 6398
 	[Preserve]
 	public class RaycastPathWorldUtils
 	{
-		// Token: 0x0600C40D RID: 50189 RVA: 0x00484EA0 File Offset: 0x004830A0
+		// Token: 0x0600C565 RID: 50533 RVA: 0x004893E8 File Offset: 0x004875E8
 		public static Vector3i GetBlockPosition(Vector3 worldPos)
 		{
 			Vector3i vector3i = new Vector3i(worldPos);
@@ -17,13 +17,13 @@ namespace RaycastPathing
 			return vector3i + Vector3i.FromVector3Rounded(vector);
 		}
 
-		// Token: 0x0600C40E RID: 50190 RVA: 0x00484ECF File Offset: 0x004830CF
+		// Token: 0x0600C566 RID: 50534 RVA: 0x00489417 File Offset: 0x00487617
 		public static Vector3 GetCenterPosition(Vector3 worldPos, float scale = 1f)
 		{
 			return worldPos + Vector3.one * 0.5f * scale;
 		}
 
-		// Token: 0x0600C40F RID: 50191 RVA: 0x00484EEC File Offset: 0x004830EC
+		// Token: 0x0600C567 RID: 50535 RVA: 0x00489434 File Offset: 0x00487634
 		public static bool IsConfinedSpace(World world, Vector3 point, float dist, bool debugDraw = false)
 		{
 			int num = 0;
@@ -38,20 +38,20 @@ namespace RaycastPathing
 			return (float)num < dist * dist;
 		}
 
-		// Token: 0x0600C410 RID: 50192 RVA: 0x00484F33 File Offset: 0x00483133
+		// Token: 0x0600C568 RID: 50536 RVA: 0x0048947B File Offset: 0x0048767B
 		public static bool IsUnderground(Vector3 target)
 		{
 			return Physics.Raycast(new Ray(target + RaycastPathWorldUtils.underGroundTestOffset - Origin.position, Vector3.down), RaycastPathWorldUtils.underGroundTestOffset.y, 268500992);
 		}
 
-		// Token: 0x0600C411 RID: 50193 RVA: 0x00484F68 File Offset: 0x00483168
+		// Token: 0x0600C569 RID: 50537 RVA: 0x004894B0 File Offset: 0x004876B0
 		public static bool isPosUnderWater(World world, Vector3 pos)
 		{
 			Vector3i blockPosition = RaycastPathWorldUtils.GetBlockPosition(pos);
 			return world.GetBlock(blockPosition).type == 240;
 		}
 
-		// Token: 0x0600C412 RID: 50194 RVA: 0x00484F94 File Offset: 0x00483194
+		// Token: 0x0600C56A RID: 50538 RVA: 0x004894DC File Offset: 0x004876DC
 		public static cPathNodeType getBlockType(World world, RaycastNode current, Vector3 adjacentCenter)
 		{
 			Vector3i vector3i = World.worldToBlockPos(adjacentCenter);
@@ -80,7 +80,7 @@ namespace RaycastPathing
 			return cPathNodeType;
 		}
 
-		// Token: 0x0600C413 RID: 50195 RVA: 0x00485014 File Offset: 0x00483214
+		// Token: 0x0600C56B RID: 50539 RVA: 0x0048955C File Offset: 0x0048775C
 		public static cPathNodeType getBlockType(World world, Vector3i pos)
 		{
 			BlockValue block = world.GetBlock(pos);
@@ -100,7 +100,7 @@ namespace RaycastPathing
 			return cPathNodeType;
 		}
 
-		// Token: 0x0600C414 RID: 50196 RVA: 0x00485050 File Offset: 0x00483250
+		// Token: 0x0600C56C RID: 50540 RVA: 0x00489598 File Offset: 0x00487798
 		public static List<RaycastNode> ScanBlocksAround(World world, Vector3 point, float dist, bool debugDraw = false)
 		{
 			List<RaycastNode> list = new List<RaycastNode>();
@@ -147,7 +147,7 @@ namespace RaycastPathing
 			return list2;
 		}
 
-		// Token: 0x0600C415 RID: 50197 RVA: 0x004851F4 File Offset: 0x004833F4
+		// Token: 0x0600C56D RID: 50541 RVA: 0x0048973C File Offset: 0x0048793C
 		public static List<RaycastNode> ScanVolume(World world, Vector3 pos, bool useTarget = false, bool useDiagnols = false, bool debugDraw = false, float duration = 0f)
 		{
 			List<RaycastNode> list = new List<RaycastNode>();
@@ -184,7 +184,7 @@ namespace RaycastPathing
 			return list;
 		}
 
-		// Token: 0x0600C416 RID: 50198 RVA: 0x004852F0 File Offset: 0x004834F0
+		// Token: 0x0600C56E RID: 50542 RVA: 0x00489838 File Offset: 0x00487A38
 		public static RaycastNode FindNodeType(List<RaycastNode> nodes, cPathNodeType targetType = cPathNodeType.Air)
 		{
 			RaycastNode raycastNode = null;
@@ -198,7 +198,7 @@ namespace RaycastPathing
 			return raycastNode;
 		}
 
-		// Token: 0x0600C417 RID: 50199 RVA: 0x00485328 File Offset: 0x00483528
+		// Token: 0x0600C56F RID: 50543 RVA: 0x00489870 File Offset: 0x00487A70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static RaycastNode InitNeighborNode(World world, RaycastNode current, Vector3i adjacentPos, bool debugDraw = false, float duration = 0f)
 		{
@@ -221,13 +221,13 @@ namespace RaycastPathing
 			return raycastNode;
 		}
 
-		// Token: 0x0600C418 RID: 50200 RVA: 0x004853BB File Offset: 0x004835BB
+		// Token: 0x0600C570 RID: 50544 RVA: 0x00489903 File Offset: 0x00487B03
 		public static float getH(Vector3 from, Vector3 to)
 		{
 			return Mathf.Abs(from.x - to.x) + Mathf.Abs(from.y - to.y) + Mathf.Abs(from.z - to.z);
 		}
 
-		// Token: 0x0600C419 RID: 50201 RVA: 0x004853F8 File Offset: 0x004835F8
+		// Token: 0x0600C571 RID: 50545 RVA: 0x00489940 File Offset: 0x00487B40
 		public static List<FloodFillNode> ScanNeighborNodes(World world, FloodFillPath path, FloodFillNode current, bool useDiagnols = false)
 		{
 			List<FloodFillNode> list = new List<FloodFillNode>();
@@ -253,7 +253,7 @@ namespace RaycastPathing
 			return list;
 		}
 
-		// Token: 0x0600C41A RID: 50202 RVA: 0x00485524 File Offset: 0x00483724
+		// Token: 0x0600C572 RID: 50546 RVA: 0x00489A6C File Offset: 0x00487C6C
 		public static FloodFillNode BuildNeighborNode(World world, FloodFillPath path, FloodFillNode current, Vector3i adjacentPos, bool debugDraw = false)
 		{
 			Vector3 vector = World.blockToTransformPos(adjacentPos) + Vector3.up * 0.5f;
@@ -277,7 +277,7 @@ namespace RaycastPathing
 			return floodFillNode;
 		}
 
-		// Token: 0x0600C41B RID: 50203 RVA: 0x004855F0 File Offset: 0x004837F0
+		// Token: 0x0600C573 RID: 50547 RVA: 0x00489B38 File Offset: 0x00487D38
 		public static bool HasSubBlocks(World world, RaycastNode current, Vector3 spacialCenter, bool debugDraw = false, float duration = 0f)
 		{
 			int num = 0;
@@ -292,7 +292,7 @@ namespace RaycastPathing
 			return num > 0;
 		}
 
-		// Token: 0x0600C41C RID: 50204 RVA: 0x00485634 File Offset: 0x00483834
+		// Token: 0x0600C574 RID: 50548 RVA: 0x00489B7C File Offset: 0x00487D7C
 		public static List<RaycastNode> ScanChildBlocksAround(World world, RaycastNode current, Vector3 spacialCenter, bool debugDraw = false, float duration = 0f)
 		{
 			List<RaycastNode> list = new List<RaycastNode>();
@@ -336,7 +336,7 @@ namespace RaycastPathing
 			return list;
 		}
 
-		// Token: 0x0600C41D RID: 50205 RVA: 0x0048574C File Offset: 0x0048394C
+		// Token: 0x0600C575 RID: 50549 RVA: 0x00489C94 File Offset: 0x00487E94
 		public static List<RaycastNode> ScanPath(World world, Vector3 fromPos, List<Vector3> path, bool useDiagnols, bool debugDraw = false, float duration = 0f)
 		{
 			List<RaycastNode> list = new List<RaycastNode>();
@@ -349,7 +349,7 @@ namespace RaycastPathing
 			return list;
 		}
 
-		// Token: 0x0600C41E RID: 50206 RVA: 0x00485794 File Offset: 0x00483994
+		// Token: 0x0600C576 RID: 50550 RVA: 0x00489CDC File Offset: 0x00487EDC
 		public static RaycastNode ScanPoint(World world, Vector3 worldPos, Vector3 fromPos, bool useDiagnols, bool debugDraw = false, float duration = 0f)
 		{
 			RaycastNode raycastNode = RaycastPathWorldUtils.CreateNode(world, World.worldToBlockPos(worldPos).ToVector3Center(), null, false, 0f);
@@ -387,7 +387,7 @@ namespace RaycastPathing
 			return raycastNode;
 		}
 
-		// Token: 0x0600C41F RID: 50207 RVA: 0x004858B4 File Offset: 0x00483AB4
+		// Token: 0x0600C577 RID: 50551 RVA: 0x00489DFC File Offset: 0x00487FFC
 		public static cPathNodeType GetBlockType(World world, Vector3 toPos)
 		{
 			Vector3i vector3i = World.worldToBlockPos(toPos);
@@ -412,7 +412,7 @@ namespace RaycastPathing
 			return cPathNodeType.Air;
 		}
 
-		// Token: 0x0600C420 RID: 50208 RVA: 0x00485930 File Offset: 0x00483B30
+		// Token: 0x0600C578 RID: 50552 RVA: 0x00489E78 File Offset: 0x00488078
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static RaycastNode CreateNode(World world, Vector3 worldPos, RaycastNode parent = null, bool debugDraw = false, float duration = 0f)
 		{
@@ -448,7 +448,7 @@ namespace RaycastPathing
 			return raycastNode;
 		}
 
-		// Token: 0x0600C421 RID: 50209 RVA: 0x004859DC File Offset: 0x00483BDC
+		// Token: 0x0600C579 RID: 50553 RVA: 0x00489F24 File Offset: 0x00488124
 		public static List<RaycastNode> CreateChildNodes(World world, Vector3 worldPos, bool debugDraw = false, float duration = 0f)
 		{
 			List<RaycastNode> list = new List<RaycastNode>();
@@ -473,7 +473,7 @@ namespace RaycastPathing
 			return list;
 		}
 
-		// Token: 0x0600C422 RID: 50210 RVA: 0x00485A80 File Offset: 0x00483C80
+		// Token: 0x0600C57A RID: 50554 RVA: 0x00489FC8 File Offset: 0x004881C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static RaycastNode ProcNeighborNodes(List<RaycastNode> currentNeighbors, RaycastNode current)
 		{
@@ -527,7 +527,7 @@ namespace RaycastPathing
 			return raycastNode7;
 		}
 
-		// Token: 0x0600C423 RID: 50211 RVA: 0x00485C20 File Offset: 0x00483E20
+		// Token: 0x0600C57B RID: 50555 RVA: 0x0048A168 File Offset: 0x00488368
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int GetChildAirblockCount(World world, Vector3 worldPos, bool debugDraw = false, float duration = 0f)
 		{
@@ -543,7 +543,7 @@ namespace RaycastPathing
 			return num;
 		}
 
-		// Token: 0x0600C424 RID: 50212 RVA: 0x00485C60 File Offset: 0x00483E60
+		// Token: 0x0600C57C RID: 50556 RVA: 0x0048A1A8 File Offset: 0x004883A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool HasChildNodes(World world, Vector3 worldPos, bool debugDraw = false, float duration = 0f)
 		{
@@ -551,14 +551,14 @@ namespace RaycastPathing
 			return childAirblockCount > 0 && childAirblockCount < RaycastPathWorldUtils.quarterBlockOffsets.Length;
 		}
 
-		// Token: 0x0600C425 RID: 50213 RVA: 0x00485C87 File Offset: 0x00483E87
+		// Token: 0x0600C57D RID: 50557 RVA: 0x0048A1CF File Offset: 0x004883CF
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool AreChildrenAir(World world, Vector3 worldPos, bool debugDraw = false, float duration = 0f)
 		{
 			return RaycastPathWorldUtils.GetChildAirblockCount(world, worldPos, debugDraw, duration) == RaycastPathWorldUtils.quarterBlockOffsets.Length;
 		}
 
-		// Token: 0x04009442 RID: 37954
+		// Token: 0x04009508 RID: 38152
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3i[] mainBlockAxis = new Vector3i[]
 		{
@@ -570,7 +570,7 @@ namespace RaycastPathing
 			new Vector3i(0, -1, 0)
 		};
 
-		// Token: 0x04009443 RID: 37955
+		// Token: 0x04009509 RID: 38153
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3i[] diagonalBlockAxis = new Vector3i[]
 		{
@@ -596,7 +596,7 @@ namespace RaycastPathing
 			new Vector3i(-1, -1, -1)
 		};
 
-		// Token: 0x04009444 RID: 37956
+		// Token: 0x0400950A RID: 38154
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3[] subBlockOffsets = new Vector3[]
 		{
@@ -610,7 +610,7 @@ namespace RaycastPathing
 			new Vector3(0f, 0f, 0f)
 		};
 
-		// Token: 0x04009445 RID: 37957
+		// Token: 0x0400950B RID: 38155
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3[] quarterBlockOffsets = new Vector3[]
 		{
@@ -624,11 +624,11 @@ namespace RaycastPathing
 			new Vector3(-0.25f, -0.25f, -0.25f)
 		};
 
-		// Token: 0x04009446 RID: 37958
+		// Token: 0x0400950C RID: 38156
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Vector3 underGroundTestOffset = new Vector3(0f, 255f, 0f);
 
-		// Token: 0x04009447 RID: 37959
+		// Token: 0x0400950D RID: 38157
 		public const int cPathLayer = 1073807360;
 	}
 }

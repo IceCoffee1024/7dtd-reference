@@ -2,15 +2,15 @@
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001CBE RID: 7358
+	// Token: 0x02001CF0 RID: 7408
 	public class RichPresence : IRichPresence
 	{
-		// Token: 0x0600DA80 RID: 55936 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBFA RID: 56314 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600DA81 RID: 55937 RVA: 0x004E2F4A File Offset: 0x004E114A
+		// Token: 0x0600DBFB RID: 56315 RVA: 0x004E7A92 File Offset: 0x004E5C92
 		public void UpdateRichPresence(IRichPresence.PresenceStates _state)
 		{
 			IRichPresence richPresence = PlatformManager.NativePlatform.RichPresence;

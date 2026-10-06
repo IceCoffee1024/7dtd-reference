@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000293 RID: 659
+// Token: 0x02000296 RID: 662
 [Preserve]
 public class ConsoleCmdShowSwings : ConsoleCmdAbstract
 {
-	// Token: 0x17000210 RID: 528
-	// (get) Token: 0x0600133F RID: 4927 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000208 RID: 520
+	// (get) Token: 0x0600133C RID: 4924 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,14 +17,14 @@ public class ConsoleCmdShowSwings : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001340 RID: 4928 RVA: 0x000761C7 File Offset: 0x000743C7
+	// Token: 0x0600133D RID: 4925 RVA: 0x0007647B File Offset: 0x0007467B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showswings" };
 	}
 
-	// Token: 0x06001341 RID: 4929 RVA: 0x000761D8 File Offset: 0x000743D8
+	// Token: 0x0600133E RID: 4926 RVA: 0x0007648C File Offset: 0x0007468C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		EntityAlive.ShowDebugDisplayHit = !EntityAlive.ShowDebugDisplayHit;
@@ -42,7 +42,7 @@ public class ConsoleCmdShowSwings : ConsoleCmdAbstract
 		ItemActionDynamic.DebugDisplayHits.Clear();
 	}
 
-	// Token: 0x06001342 RID: 4930 RVA: 0x00076251 File Offset: 0x00074451
+	// Token: 0x0600133F RID: 4927 RVA: 0x00076505 File Offset: 0x00074705
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

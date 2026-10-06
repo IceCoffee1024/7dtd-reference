@@ -2,24 +2,24 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200011E RID: 286
+// Token: 0x02000120 RID: 288
 [Preserve]
 public class BlockForge : BlockWorkstation
 {
-	// Token: 0x06000788 RID: 1928 RVA: 0x0003598C File Offset: 0x00033B8C
+	// Token: 0x0600078E RID: 1934 RVA: 0x00035A80 File Offset: 0x00033C80
 	public BlockForge()
 	{
 		this.CraftingParticleLightIntensity = 1.6f;
 	}
 
-	// Token: 0x06000789 RID: 1929 RVA: 0x0003599F File Offset: 0x00033B9F
+	// Token: 0x0600078F RID: 1935 RVA: 0x00035A93 File Offset: 0x00033C93
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.MaterialUpdate(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x0600078A RID: 1930 RVA: 0x000359B5 File Offset: 0x00033BB5
+	// Token: 0x06000790 RID: 1936 RVA: 0x00035AA9 File Offset: 0x00033CA9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -31,7 +31,7 @@ public class BlockForge : BlockWorkstation
 		this.MaterialUpdate(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x0600078B RID: 1931 RVA: 0x000359D4 File Offset: 0x00033BD4
+	// Token: 0x06000791 RID: 1937 RVA: 0x00035AC8 File Offset: 0x00033CC8
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (XUiM_Recipes.DisableSmelter)
@@ -45,7 +45,7 @@ public class BlockForge : BlockWorkstation
 		return _blockValue.Block.GetLocalizedBlockName() + "\n" + Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x0600078C RID: 1932 RVA: 0x00035A38 File Offset: 0x00033C38
+	// Token: 0x06000792 RID: 1938 RVA: 0x00035B2C File Offset: 0x00033D2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MaterialUpdate(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{

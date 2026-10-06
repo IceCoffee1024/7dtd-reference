@@ -7,13 +7,13 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using UnityEngine.Serialization;
 
-// Token: 0x020014DB RID: 5339
+// Token: 0x020014FD RID: 5373
 [global::UnityEngine.Scripting.Preserve]
 public class TriggerEffectManager : IDisposable
 {
-	// Token: 0x170013A7 RID: 5031
-	// (get) Token: 0x0600A7B2 RID: 42930 RVA: 0x003E5E4F File Offset: 0x003E404F
-	// (set) Token: 0x0600A7B3 RID: 42931 RVA: 0x003E5E57 File Offset: 0x003E4057
+	// Token: 0x170013EC RID: 5100
+	// (get) Token: 0x0600A865 RID: 43109 RVA: 0x003EACA3 File Offset: 0x003E8EA3
+	// (set) Token: 0x0600A866 RID: 43110 RVA: 0x003EACAB File Offset: 0x003E8EAB
 	public bool Enabled
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -29,7 +29,7 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7B4 RID: 42932 RVA: 0x003E5E68 File Offset: 0x003E4068
+	// Token: 0x0600A867 RID: 43111 RVA: 0x003EACBC File Offset: 0x003E8EBC
 	public TriggerEffectManager()
 	{
 		this.PollSetting();
@@ -42,7 +42,7 @@ public class TriggerEffectManager : IDisposable
 		InputManager.OnDeviceAttached += this.OnControllerConnected;
 	}
 
-	// Token: 0x0600A7B5 RID: 42933 RVA: 0x003E5ED7 File Offset: 0x003E40D7
+	// Token: 0x0600A868 RID: 43112 RVA: 0x003EAD2B File Offset: 0x003E8F2B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnControllerConnected(InputDevice device)
 	{
@@ -53,7 +53,7 @@ public class TriggerEffectManager : IDisposable
 		GameManager.Instance.triggerEffectManager.EnableVibration();
 	}
 
-	// Token: 0x0600A7B6 RID: 42934 RVA: 0x003E5F01 File Offset: 0x003E4101
+	// Token: 0x0600A869 RID: 43113 RVA: 0x003EAD55 File Offset: 0x003E8F55
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -69,7 +69,7 @@ public class TriggerEffectManager : IDisposable
 		TriggerEffectManager.UpdateControllerVibrationStrength();
 	}
 
-	// Token: 0x0600A7B7 RID: 42935 RVA: 0x003E5F28 File Offset: 0x003E4128
+	// Token: 0x0600A86A RID: 43114 RVA: 0x003EAD7C File Offset: 0x003E8F7C
 	public void Init()
 	{
 		try
@@ -90,34 +90,34 @@ public class TriggerEffectManager : IDisposable
 		GamePrefs.OnGamePrefChanged += this.OnGamePrefChanged;
 	}
 
-	// Token: 0x0600A7B8 RID: 42936 RVA: 0x003E5FB4 File Offset: 0x003E41B4
+	// Token: 0x0600A86B RID: 43115 RVA: 0x003EAE08 File Offset: 0x003E9008
 	public void EnableVibration()
 	{
 		TriggerEffectDualsensePC.EnableVibration();
 		TriggerEffectDualsense.EnableVibration();
 	}
 
-	// Token: 0x0600A7B9 RID: 42937 RVA: 0x003E5FC0 File Offset: 0x003E41C0
+	// Token: 0x0600A86C RID: 43116 RVA: 0x003EAE14 File Offset: 0x003E9014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitializeLightbarGradient()
 	{
 		TriggerEffectManager.lightbarGradients = Resources.Load<LightbarGradients>("Data/LightBarGradients");
 	}
 
-	// Token: 0x0600A7BA RID: 42938 RVA: 0x003E5FD1 File Offset: 0x003E41D1
+	// Token: 0x0600A86D RID: 43117 RVA: 0x003EAE25 File Offset: 0x003E9025
 	public static void SetEnabled(bool _enabled)
 	{
 		GameManager.Instance.triggerEffectManager.Enabled = _enabled;
 	}
 
-	// Token: 0x0600A7BB RID: 42939 RVA: 0x003E5FE3 File Offset: 0x003E41E3
+	// Token: 0x0600A86E RID: 43118 RVA: 0x003EAE37 File Offset: 0x003E9037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte FloatToByte(float value)
 	{
 		return (byte)(Mathf.Clamp01(value) * 255f);
 	}
 
-	// Token: 0x0600A7BC RID: 42940 RVA: 0x003E5FF4 File Offset: 0x003E41F4
+	// Token: 0x0600A86F RID: 43119 RVA: 0x003EAE48 File Offset: 0x003E9048
 	public void Update()
 	{
 		if (GameManager.Instance.World != null && TriggerEffectManager.audioRumbleStrength > 0f && !GameManager.Instance.IsPaused() && PlatformManager.NativePlatform.Input.CurrentInputStyle != PlayerInputManager.InputStyle.Keyboard)
@@ -214,7 +214,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = false;
 	}
 
-	// Token: 0x0600A7BD RID: 42941 RVA: 0x003E6355 File Offset: 0x003E4555
+	// Token: 0x0600A870 RID: 43120 RVA: 0x003EB1A9 File Offset: 0x003E93A9
 	public void SetGamepadTriggerEffectOff(TriggerEffectManager.GamepadTrigger trigger)
 	{
 		if (trigger != TriggerEffectManager.GamepadTrigger.LeftTrigger)
@@ -232,7 +232,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7BE RID: 42942 RVA: 0x003E6393 File Offset: 0x003E4593
+	// Token: 0x0600A871 RID: 43121 RVA: 0x003EB1E7 File Offset: 0x003E93E7
 	public void SetWeaponEffect(int userID, TriggerEffectManager.GamepadTrigger trigger, byte startPosition, byte endPosition, byte strength)
 	{
 		if (!this.Enabled)
@@ -244,7 +244,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7BF RID: 42943 RVA: 0x003E63BD File Offset: 0x003E45BD
+	// Token: 0x0600A872 RID: 43122 RVA: 0x003EB211 File Offset: 0x003E9411
 	public void ResetControllerIdentification()
 	{
 		TriggerEffectDualsensePC.ResetControllerIdentification();
@@ -252,7 +252,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7C0 RID: 42944 RVA: 0x003E63D0 File Offset: 0x003E45D0
+	// Token: 0x0600A873 RID: 43123 RVA: 0x003EB224 File Offset: 0x003E9424
 	public void SetControllerIdentification()
 	{
 		TriggerEffectDualsensePC.SetControllerIdentification();
@@ -260,7 +260,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7C1 RID: 42945 RVA: 0x003E63E3 File Offset: 0x003E45E3
+	// Token: 0x0600A874 RID: 43124 RVA: 0x003EB237 File Offset: 0x003E9437
 	public void SetTriggerEffectVibration(int userID, TriggerEffectManager.GamepadTrigger trigger, byte position, byte amplitude, byte frequency)
 	{
 		if (!this.Enabled)
@@ -272,7 +272,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7C2 RID: 42946 RVA: 0x003E640D File Offset: 0x003E460D
+	// Token: 0x0600A875 RID: 43125 RVA: 0x003EB261 File Offset: 0x003E9461
 	public void SetTriggerEffectVibrationMultiplePosition(int userID, TriggerEffectManager.GamepadTrigger trigger, byte[] amplitudes, byte frequency)
 	{
 		if (!this.Enabled)
@@ -284,7 +284,7 @@ public class TriggerEffectManager : IDisposable
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7C3 RID: 42947 RVA: 0x003E6434 File Offset: 0x003E4634
+	// Token: 0x0600A876 RID: 43126 RVA: 0x003EB288 File Offset: 0x003E9488
 	public void Shutdown()
 	{
 		this.StopGamepadVibration(true);
@@ -300,29 +300,29 @@ public class TriggerEffectManager : IDisposable
 		this.Enabled = false;
 	}
 
-	// Token: 0x0600A7C4 RID: 42948 RVA: 0x003E64A1 File Offset: 0x003E46A1
+	// Token: 0x0600A877 RID: 43127 RVA: 0x003EB2F5 File Offset: 0x003E94F5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LibShutdown()
 	{
 		TriggerEffectDualsensePC.LibShutdown();
 	}
 
-	// Token: 0x0600A7C5 RID: 42949 RVA: 0x003E64A8 File Offset: 0x003E46A8
+	// Token: 0x0600A878 RID: 43128 RVA: 0x003EB2FC File Offset: 0x003E94FC
 	public void Dispose()
 	{
 		this.Shutdown();
 		InputManager.OnDeviceAttached -= this.OnControllerConnected;
 	}
 
-	// Token: 0x0600A7C6 RID: 42950 RVA: 0x003E64C1 File Offset: 0x003E46C1
+	// Token: 0x0600A879 RID: 43129 RVA: 0x003EB315 File Offset: 0x003E9515
 	public void PollSetting()
 	{
 		this.Enabled = GamePrefs.GetBool(EnumGamePrefs.OptionsControllerTriggerEffects);
 	}
 
-	// Token: 0x170013A8 RID: 5032
-	// (get) Token: 0x0600A7C7 RID: 42951 RVA: 0x003E64D3 File Offset: 0x003E46D3
-	// (set) Token: 0x0600A7C8 RID: 42952 RVA: 0x003E64DB File Offset: 0x003E46DB
+	// Token: 0x170013ED RID: 5101
+	// (get) Token: 0x0600A87A RID: 43130 RVA: 0x003EB327 File Offset: 0x003E9527
+	// (set) Token: 0x0600A87B RID: 43131 RVA: 0x003EB32F File Offset: 0x003E952F
 	public bool inUI
 	{
 		get
@@ -339,14 +339,14 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7C9 RID: 42953 RVA: 0x003E64F4 File Offset: 0x003E46F4
+	// Token: 0x0600A87C RID: 43132 RVA: 0x003EB348 File Offset: 0x003E9548
 	public void SetGamepadVibration(float strength)
 	{
 		this._currentControllerVibrationStrength = strength;
 		this._stateChanged = true;
 	}
 
-	// Token: 0x0600A7CA RID: 42954 RVA: 0x003E6504 File Offset: 0x003E4704
+	// Token: 0x0600A87D RID: 43133 RVA: 0x003EB358 File Offset: 0x003E9558
 	public void StopGamepadVibration(bool clearSources = false)
 	{
 		if (clearSources)
@@ -363,7 +363,7 @@ public class TriggerEffectManager : IDisposable
 		InputManager.ActiveDevice.StopVibration();
 	}
 
-	// Token: 0x0600A7CB RID: 42955 RVA: 0x003E6555 File Offset: 0x003E4755
+	// Token: 0x0600A87E RID: 43134 RVA: 0x003EB3A9 File Offset: 0x003E95A9
 	public void SetTriggerEffect(TriggerEffectManager.ControllerTriggerEffect effect)
 	{
 		if (!this.Enabled)
@@ -374,7 +374,7 @@ public class TriggerEffectManager : IDisposable
 		this.SetTriggerEffect(TriggerEffectManager.GamepadTrigger.RightTrigger, effect, false);
 	}
 
-	// Token: 0x0600A7CC RID: 42956 RVA: 0x003E6574 File Offset: 0x003E4774
+	// Token: 0x0600A87F RID: 43135 RVA: 0x003EB3C8 File Offset: 0x003E95C8
 	public void SetTriggerEffect(TriggerEffectManager.GamepadTrigger trigger, TriggerEffectManager.ControllerTriggerEffect effect, bool asap = false)
 	{
 		if (!this.Enabled)
@@ -404,7 +404,7 @@ public class TriggerEffectManager : IDisposable
 		this._triggerSetRight = true;
 	}
 
-	// Token: 0x0600A7CD RID: 42957 RVA: 0x003E65E8 File Offset: 0x003E47E8
+	// Token: 0x0600A880 RID: 43136 RVA: 0x003EB43C File Offset: 0x003E963C
 	public static TriggerEffectManager.ControllerTriggerEffect GetTriggerEffect(ValueTuple<string, string> triggerEffectNames)
 	{
 		if (string.IsNullOrEmpty(triggerEffectNames.Item1) || string.IsNullOrEmpty(triggerEffectNames.Item2) || (triggerEffectNames.Item1.Contains("NoEffect") && triggerEffectNames.Item2.Contains("NoEffect")) || (triggerEffectNames.Item1.Contains("NoneEffect") && triggerEffectNames.Item2.Contains("NoneEffect")))
@@ -437,7 +437,7 @@ public class TriggerEffectManager : IDisposable
 		return controllerTriggerEffect;
 	}
 
-	// Token: 0x0600A7CE RID: 42958 RVA: 0x003E66E8 File Offset: 0x003E48E8
+	// Token: 0x0600A881 RID: 43137 RVA: 0x003EB53C File Offset: 0x003E973C
 	public static TriggerEffectManager.ControllerTriggerEffect GetTriggerEffect(string dualsenseTrigger, string impulseTrigger)
 	{
 		if (string.IsNullOrEmpty(dualsenseTrigger) || string.IsNullOrEmpty(impulseTrigger) || (dualsenseTrigger.Contains("NoEffect") && impulseTrigger.Contains("NoEffect")) || (dualsenseTrigger.Contains("NoneEffect") && impulseTrigger.Contains("NoneEffect")))
@@ -470,7 +470,7 @@ public class TriggerEffectManager : IDisposable
 		return controllerTriggerEffect;
 	}
 
-	// Token: 0x0600A7CF RID: 42959 RVA: 0x003E67B4 File Offset: 0x003E49B4
+	// Token: 0x0600A882 RID: 43138 RVA: 0x003EB608 File Offset: 0x003E9808
 	public static ValueTuple<TriggerEffectManager.TriggerEffectDS, TriggerEffectManager.TriggerEffectXB> GetTriggerEffectAsTuple(ValueTuple<string, string> triggerEffectNames)
 	{
 		if (string.IsNullOrEmpty(triggerEffectNames.Item1) || string.IsNullOrEmpty(triggerEffectNames.Item2) || (triggerEffectNames.Item1.Contains("NoEffect") && triggerEffectNames.Item2.Contains("NoEffect")) || (triggerEffectNames.Item1.Contains("NoneEffect") && triggerEffectNames.Item2.Contains("NoneEffect")))
@@ -499,13 +499,13 @@ public class TriggerEffectManager : IDisposable
 		return valueTuple;
 	}
 
-	// Token: 0x0600A7D0 RID: 42960 RVA: 0x003E68BE File Offset: 0x003E4ABE
+	// Token: 0x0600A883 RID: 43139 RVA: 0x003EB712 File Offset: 0x003E9912
 	public static bool SettingDefaultValue()
 	{
 		return Application.platform == RuntimePlatform.PS5 || Application.platform == RuntimePlatform.GameCoreXboxSeries || Application.platform == RuntimePlatform.WindowsEditor;
 	}
 
-	// Token: 0x0600A7D1 RID: 42961 RVA: 0x003E68DC File Offset: 0x003E4ADC
+	// Token: 0x0600A884 RID: 43140 RVA: 0x003EB730 File Offset: 0x003E9930
 	public void SetAudioRumbleSource(AudioSource _audioSource, float _strengthMultiplier, bool _locationBased)
 	{
 		AudioGamepadRumbleSource audioGamepadRumbleSource = null;
@@ -529,7 +529,7 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7D2 RID: 42962 RVA: 0x003E6948 File Offset: 0x003E4B48
+	// Token: 0x0600A885 RID: 43141 RVA: 0x003EB79C File Offset: 0x003E999C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDualSenseVibration(byte _smallMotor, byte _largeMotor)
 	{
@@ -537,7 +537,7 @@ public class TriggerEffectManager : IDisposable
 		TriggerEffectDualsensePC.SetDualSenseVibration(_smallMotor, _largeMotor);
 	}
 
-	// Token: 0x0600A7D3 RID: 42963 RVA: 0x003E6958 File Offset: 0x003E4B58
+	// Token: 0x0600A886 RID: 43142 RVA: 0x003EB7AC File Offset: 0x003E99AC
 	public static void UpdateControllerVibrationStrength()
 	{
 		switch (GamePrefs.GetInt(EnumGamePrefs.OptionsControllerVibrationStrength))
@@ -559,7 +559,7 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7D4 RID: 42964 RVA: 0x003E69B2 File Offset: 0x003E4BB2
+	// Token: 0x0600A887 RID: 43143 RVA: 0x003EB806 File Offset: 0x003E9A06
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLastInputStyleChanged(PlayerInputManager.InputStyle _style)
 	{
@@ -569,7 +569,7 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7D5 RID: 42965 RVA: 0x003E69C0 File Offset: 0x003E4BC0
+	// Token: 0x0600A888 RID: 43144 RVA: 0x003EB814 File Offset: 0x003E9A14
 	public static void UpdateDualSenseLightFromWeather(WeatherManager.BiomeWeather weather)
 	{
 		if (TriggerEffectManager.lightbarGradients == null || weather == null)
@@ -643,7 +643,7 @@ public class TriggerEffectManager : IDisposable
 		TriggerEffectManager.SetDualSenseLightbarColor(color);
 	}
 
-	// Token: 0x0600A7D6 RID: 42966 RVA: 0x003E6B6C File Offset: 0x003E4D6C
+	// Token: 0x0600A889 RID: 43145 RVA: 0x003EB9C0 File Offset: 0x003E9BC0
 	public static void SetDualSenseLightbarColor(Color color)
 	{
 		for (int i = 1; i < 5; i++)
@@ -653,19 +653,19 @@ public class TriggerEffectManager : IDisposable
 		}
 	}
 
-	// Token: 0x0600A7D7 RID: 42967 RVA: 0x003E6BDF File Offset: 0x003E4DDF
+	// Token: 0x0600A88A RID: 43146 RVA: 0x003EBA33 File Offset: 0x003E9C33
 	public static void SetMainMenuLightbarColor()
 	{
 		TriggerEffectManager.SetDualSenseLightbarColor(TriggerEffectManager.lightbarGradients.mainMenuColor);
 	}
 
-	// Token: 0x04007C61 RID: 31841
+	// Token: 0x04007CE4 RID: 31972
 	public static readonly Dictionary<string, TriggerEffectManager.TriggerEffectDS> ControllerTriggerEffectsDS = new Dictionary<string, TriggerEffectManager.TriggerEffectDS>();
 
-	// Token: 0x04007C62 RID: 31842
+	// Token: 0x04007CE5 RID: 31973
 	public static readonly Dictionary<string, TriggerEffectManager.TriggerEffectXB> ControllerTriggerEffectsXb = new Dictionary<string, TriggerEffectManager.TriggerEffectXB>();
 
-	// Token: 0x04007C63 RID: 31843
+	// Token: 0x04007CE6 RID: 31974
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static readonly TriggerEffectManager.TriggerEffectDS NoneEffectDs = new TriggerEffectManager.TriggerEffectDS
 	{
@@ -678,7 +678,7 @@ public class TriggerEffectManager : IDisposable
 		Strengths = Array.Empty<byte>()
 	};
 
-	// Token: 0x04007C64 RID: 31844
+	// Token: 0x04007CE7 RID: 31975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly TriggerEffectManager.TriggerEffectXB NoneEffectXb = new TriggerEffectManager.TriggerEffectXB
 	{
@@ -686,192 +686,192 @@ public class TriggerEffectManager : IDisposable
 		Strength = 0f
 	};
 
-	// Token: 0x04007C65 RID: 31845
+	// Token: 0x04007CE8 RID: 31976
 	public static readonly TriggerEffectManager.ControllerTriggerEffect NoneEffect = new TriggerEffectManager.ControllerTriggerEffect
 	{
 		DualsenseEffect = TriggerEffectManager.NoneEffectDs,
 		XboxTriggerEffect = TriggerEffectManager.NoneEffectXb
 	};
 
-	// Token: 0x04007C66 RID: 31846
+	// Token: 0x04007CE9 RID: 31977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool[] _controllersConnected = new bool[4];
 
-	// Token: 0x04007C67 RID: 31847
+	// Token: 0x04007CEA RID: 31978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float _currentControllerVibrationStrength;
 
-	// Token: 0x04007C68 RID: 31848
+	// Token: 0x04007CEB RID: 31979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _enabled;
 
-	// Token: 0x04007C69 RID: 31849
+	// Token: 0x04007CEC RID: 31980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _triggerSetLeft;
 
-	// Token: 0x04007C6A RID: 31850
+	// Token: 0x04007CED RID: 31981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _triggerSetRight;
 
-	// Token: 0x04007C6B RID: 31851
+	// Token: 0x04007CEE RID: 31982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _stateChanged;
 
-	// Token: 0x04007C6C RID: 31852
+	// Token: 0x04007CEF RID: 31983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TriggerEffectManager.ControllerTriggerEffect _currentEffectLeft;
 
-	// Token: 0x04007C6D RID: 31853
+	// Token: 0x04007CF0 RID: 31984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TriggerEffectManager.ControllerTriggerEffect _currentEffectRight;
 
-	// Token: 0x04007C6E RID: 31854
+	// Token: 0x04007CF1 RID: 31985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cAudioRumbleStrengthSubtle = 0.5f;
 
-	// Token: 0x04007C6F RID: 31855
+	// Token: 0x04007CF2 RID: 31986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cAudioRumbleStrengthStandard = 1f;
 
-	// Token: 0x04007C70 RID: 31856
+	// Token: 0x04007CF3 RID: 31987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cAudioRumbleStrengthStrong = 2f;
 
-	// Token: 0x04007C71 RID: 31857
+	// Token: 0x04007CF4 RID: 31988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cDualSenseRumbleStrengthMultiplier = 0.25f;
 
-	// Token: 0x04007C72 RID: 31858
+	// Token: 0x04007CF5 RID: 31989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float audioRumbleStrength = 1f;
 
-	// Token: 0x04007C73 RID: 31859
+	// Token: 0x04007CF6 RID: 31990
 	public AudioGamepadRumbleSource[] vibrationAudioSources = new AudioGamepadRumbleSource[5];
 
-	// Token: 0x04007C74 RID: 31860
+	// Token: 0x04007CF7 RID: 31991
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static LightbarGradients lightbarGradients;
 
-	// Token: 0x04007C75 RID: 31861
+	// Token: 0x04007CF8 RID: 31992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float leftAudioStrength;
 
-	// Token: 0x04007C76 RID: 31862
+	// Token: 0x04007CF9 RID: 31993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rightAudioStrength;
 
-	// Token: 0x04007C77 RID: 31863
+	// Token: 0x04007CFA RID: 31994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float targetLeftAudioStrength;
 
-	// Token: 0x04007C78 RID: 31864
+	// Token: 0x04007CFB RID: 31995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float targetRightAudioStrength;
 
-	// Token: 0x04007C79 RID: 31865
+	// Token: 0x04007CFC RID: 31996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _inUI;
 
-	// Token: 0x020014DC RID: 5340
+	// Token: 0x020014FE RID: 5374
 	public enum GamepadTrigger
 	{
-		// Token: 0x04007C7B RID: 31867
+		// Token: 0x04007CFE RID: 31998
 		LeftTrigger,
-		// Token: 0x04007C7C RID: 31868
+		// Token: 0x04007CFF RID: 31999
 		RightTrigger
 	}
 
-	// Token: 0x020014DD RID: 5341
+	// Token: 0x020014FF RID: 5375
 	public enum EffectDualsense
 	{
-		// Token: 0x04007C7E RID: 31870
+		// Token: 0x04007D01 RID: 32001
 		Off,
-		// Token: 0x04007C7F RID: 31871
+		// Token: 0x04007D02 RID: 32002
 		WeaponSingle,
-		// Token: 0x04007C80 RID: 31872
+		// Token: 0x04007D03 RID: 32003
 		WeaponMultipoint,
-		// Token: 0x04007C81 RID: 31873
+		// Token: 0x04007D04 RID: 32004
 		FeedbackSingle,
-		// Token: 0x04007C82 RID: 31874
+		// Token: 0x04007D05 RID: 32005
 		VibrationSingle,
-		// Token: 0x04007C83 RID: 31875
+		// Token: 0x04007D06 RID: 32006
 		FeedbackSlope,
-		// Token: 0x04007C84 RID: 31876
+		// Token: 0x04007D07 RID: 32007
 		VibrationSlope,
-		// Token: 0x04007C85 RID: 31877
+		// Token: 0x04007D08 RID: 32008
 		FeedbackMultipoint,
-		// Token: 0x04007C86 RID: 31878
+		// Token: 0x04007D09 RID: 32009
 		VibrationMultipoint
 	}
 
-	// Token: 0x020014DE RID: 5342
+	// Token: 0x02001500 RID: 5376
 	public struct TriggerEffectDS
 	{
-		// Token: 0x04007C87 RID: 31879
+		// Token: 0x04007D0A RID: 32010
 		public TriggerEffectManager.EffectDualsense Effect;
 
-		// Token: 0x04007C88 RID: 31880
+		// Token: 0x04007D0B RID: 32011
 		public byte Position;
 
-		// Token: 0x04007C89 RID: 31881
+		// Token: 0x04007D0C RID: 32012
 		public byte EndPosition;
 
-		// Token: 0x04007C8A RID: 31882
+		// Token: 0x04007D0D RID: 32013
 		public byte Frequency;
 
-		// Token: 0x04007C8B RID: 31883
+		// Token: 0x04007D0E RID: 32014
 		public byte AmplitudeEndStrength;
 
-		// Token: 0x04007C8C RID: 31884
+		// Token: 0x04007D0F RID: 32015
 		public byte Strength;
 
-		// Token: 0x04007C8D RID: 31885
+		// Token: 0x04007D10 RID: 32016
 		public byte[] Strengths;
 	}
 
-	// Token: 0x020014DF RID: 5343
+	// Token: 0x02001501 RID: 5377
 	public enum EffectXbox
 	{
-		// Token: 0x04007C8F RID: 31887
+		// Token: 0x04007D12 RID: 32018
 		Off,
-		// Token: 0x04007C90 RID: 31888
+		// Token: 0x04007D13 RID: 32019
 		FeedbackSingle,
-		// Token: 0x04007C91 RID: 31889
+		// Token: 0x04007D14 RID: 32020
 		VibrationSingle,
-		// Token: 0x04007C92 RID: 31890
+		// Token: 0x04007D15 RID: 32021
 		FeedbackSlope,
-		// Token: 0x04007C93 RID: 31891
+		// Token: 0x04007D16 RID: 32022
 		VibrationSlope
 	}
 
-	// Token: 0x020014E0 RID: 5344
+	// Token: 0x02001502 RID: 5378
 	public struct TriggerEffectXB
 	{
-		// Token: 0x04007C94 RID: 31892
+		// Token: 0x04007D17 RID: 32023
 		public TriggerEffectManager.EffectXbox Effect;
 
-		// Token: 0x04007C95 RID: 31893
+		// Token: 0x04007D18 RID: 32024
 		public float Strength;
 
-		// Token: 0x04007C96 RID: 31894
+		// Token: 0x04007D19 RID: 32025
 		[FormerlySerializedAs("endStrength")]
 		[FormerlySerializedAs("Amplitude")]
 		public float EndStrength;
 
-		// Token: 0x04007C97 RID: 31895
+		// Token: 0x04007D1A RID: 32026
 		public float StartPosition;
 
-		// Token: 0x04007C98 RID: 31896
+		// Token: 0x04007D1B RID: 32027
 		public float EndPosition;
 	}
 
-	// Token: 0x020014E1 RID: 5345
+	// Token: 0x02001503 RID: 5379
 	public struct ControllerTriggerEffect
 	{
-		// Token: 0x04007C99 RID: 31897
+		// Token: 0x04007D1C RID: 32028
 		public TriggerEffectManager.TriggerEffectDS DualsenseEffect;
 
-		// Token: 0x04007C9A RID: 31898
+		// Token: 0x04007D1D RID: 32029
 		public TriggerEffectManager.TriggerEffectXB XboxTriggerEffect;
 	}
 }

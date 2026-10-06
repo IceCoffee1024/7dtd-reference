@@ -1,25 +1,25 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FD4 RID: 4052
+// Token: 0x02000FE3 RID: 4067
 [Preserve]
 public class XUiC_PrefabQuestTags : XUiC_PrefabFeatureEditorList
 {
-	// Token: 0x06007FFA RID: 32762 RVA: 0x00307ED7 File Offset: 0x003060D7
+	// Token: 0x06008009 RID: 32777 RVA: 0x0030AEAF File Offset: 0x003090AF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool FeatureEnabled(string _featureName)
 	{
 		return this.EditPrefab.GetQuestTag(FastTags<TagGroup.Global>.Parse(_featureName));
 	}
 
-	// Token: 0x06007FFB RID: 32763 RVA: 0x00307EEA File Offset: 0x003060EA
+	// Token: 0x0600800A RID: 32778 RVA: 0x0030AEC2 File Offset: 0x003090C2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void AddNewFeature(string _featureName)
 	{
 		this.EditPrefab.ToggleQuestTag(FastTags<TagGroup.Global>.Parse(_featureName));
 	}
 
-	// Token: 0x06007FFC RID: 32764 RVA: 0x00307EFD File Offset: 0x003060FD
+	// Token: 0x0600800B RID: 32779 RVA: 0x0030AED5 File Offset: 0x003090D5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ToggleFeature(string _featureName)
 	{
@@ -27,7 +27,7 @@ public class XUiC_PrefabQuestTags : XUiC_PrefabFeatureEditorList
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007FFD RID: 32765 RVA: 0x00307F17 File Offset: 0x00306117
+	// Token: 0x0600800C RID: 32780 RVA: 0x0030AEEF File Offset: 0x003090EF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void GetSupportedFeatures()
 	{

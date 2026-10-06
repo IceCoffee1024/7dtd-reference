@@ -4,10 +4,10 @@ using System.IO;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x020001CC RID: 460
+// Token: 0x020001CD RID: 461
 public class TriggerVolume
 {
-	// Token: 0x06000E36 RID: 3638 RVA: 0x0005DA9B File Offset: 0x0005BC9B
+	// Token: 0x06000E2D RID: 3629 RVA: 0x0005DA9B File Offset: 0x0005BC9B
 	public static TriggerVolume Create(PrefabTriggerVolume psv, Vector3i _boxMin, Vector3i _boxMax)
 	{
 		TriggerVolume triggerVolume = new TriggerVolume();
@@ -17,7 +17,7 @@ public class TriggerVolume
 		return triggerVolume;
 	}
 
-	// Token: 0x06000E37 RID: 3639 RVA: 0x0005DAC4 File Offset: 0x0005BCC4
+	// Token: 0x06000E2E RID: 3630 RVA: 0x0005DAC4 File Offset: 0x0005BCC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMinMax(Vector3i _boxMin, Vector3i _boxMax)
 	{
@@ -26,8 +26,8 @@ public class TriggerVolume
 		this.Center = ((this.BoxMin + this.BoxMax) * 0.5f).ToVector3();
 	}
 
-	// Token: 0x17000112 RID: 274
-	// (get) Token: 0x06000E38 RID: 3640 RVA: 0x0005DB08 File Offset: 0x0005BD08
+	// Token: 0x1700010A RID: 266
+	// (get) Token: 0x06000E2F RID: 3631 RVA: 0x0005DB08 File Offset: 0x0005BD08
 	public PrefabInstance PrefabInstance
 	{
 		get
@@ -36,7 +36,7 @@ public class TriggerVolume
 		}
 	}
 
-	// Token: 0x06000E39 RID: 3641 RVA: 0x0005DB10 File Offset: 0x0005BD10
+	// Token: 0x06000E30 RID: 3632 RVA: 0x0005DB10 File Offset: 0x0005BD10
 	public bool AddToPrefabInstance()
 	{
 		this.prefabInstance = GameManager.Instance.World.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator().FindVolumeOwner(PrefabVolumeAbs.EVolumeType.Trigger, this.BoxMin, this.BoxMax);
@@ -48,19 +48,19 @@ public class TriggerVolume
 		return false;
 	}
 
-	// Token: 0x06000E3A RID: 3642 RVA: 0x0005DB65 File Offset: 0x0005BD65
+	// Token: 0x06000E31 RID: 3633 RVA: 0x0005DB65 File Offset: 0x0005BD65
 	public void Reset()
 	{
 		this.isTriggered = false;
 	}
 
-	// Token: 0x06000E3B RID: 3643 RVA: 0x0005DB6E File Offset: 0x0005BD6E
+	// Token: 0x06000E32 RID: 3634 RVA: 0x0005DB6E File Offset: 0x0005BD6E
 	public bool HasAnyTriggers()
 	{
 		return this.TriggersIndices.Count > 0;
 	}
 
-	// Token: 0x06000E3C RID: 3644 RVA: 0x0005DB80 File Offset: 0x0005BD80
+	// Token: 0x06000E33 RID: 3635 RVA: 0x0005DB80 File Offset: 0x0005BD80
 	public void CheckTouching(World _world, EntityPlayer _player)
 	{
 		if (this.isTriggered)
@@ -75,13 +75,13 @@ public class TriggerVolume
 		}
 	}
 
-	// Token: 0x06000E3D RID: 3645 RVA: 0x0005DC2D File Offset: 0x0005BE2D
+	// Token: 0x06000E34 RID: 3636 RVA: 0x0005DC2D File Offset: 0x0005BE2D
 	public bool Intersects(Bounds bounds)
 	{
 		return BoundsUtils.Intersects(bounds, this.BoxMin, this.BoxMax);
 	}
 
-	// Token: 0x06000E3E RID: 3646 RVA: 0x0005DC4B File Offset: 0x0005BE4B
+	// Token: 0x06000E35 RID: 3637 RVA: 0x0005DC4B File Offset: 0x0005BE4B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Touch(World _world, EntityPlayer _player)
 	{
@@ -89,7 +89,7 @@ public class TriggerVolume
 		_world.triggerManager.TriggerBlocks(_player, this.prefabInstance, this);
 	}
 
-	// Token: 0x06000E3F RID: 3647 RVA: 0x0005DC68 File Offset: 0x0005BE68
+	// Token: 0x06000E36 RID: 3638 RVA: 0x0005DC68 File Offset: 0x0005BE68
 	public static TriggerVolume Read(BinaryReader _br)
 	{
 		TriggerVolume triggerVolume = new TriggerVolume();
@@ -108,7 +108,7 @@ public class TriggerVolume
 		return triggerVolume;
 	}
 
-	// Token: 0x06000E40 RID: 3648 RVA: 0x0005DCF8 File Offset: 0x0005BEF8
+	// Token: 0x06000E37 RID: 3639 RVA: 0x0005DCF8 File Offset: 0x0005BEF8
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(2);
@@ -126,7 +126,7 @@ public class TriggerVolume
 		_bw.Write(this.isTriggered);
 	}
 
-	// Token: 0x06000E41 RID: 3649 RVA: 0x0005DDB8 File Offset: 0x0005BFB8
+	// Token: 0x06000E38 RID: 3640 RVA: 0x0005DDB8 File Offset: 0x0005BFB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawVolume()
 	{
@@ -144,7 +144,7 @@ public class TriggerVolume
 		Debug.DrawLine(new Vector3(vector2.x, vector2.y, vector.z), new Vector3(vector2.x, vector2.y, vector2.z), Color.cyan, 1f);
 	}
 
-	// Token: 0x06000E42 RID: 3650 RVA: 0x0005DFB4 File Offset: 0x0005C1B4
+	// Token: 0x06000E39 RID: 3641 RVA: 0x0005DFB4 File Offset: 0x0005C1B4
 	public void DrawDebugLines(float _duration)
 	{
 		string text = string.Format("TriggerVolume{0},{1}", this.BoxMin, this.BoxMax);
@@ -160,33 +160,33 @@ public class TriggerVolume
 		DebugLines.Create(text, GameManager.Instance.World.GetPrimaryPlayer().RootTransform, color, color, 0.03f, 0.03f, _duration).AddCube(vector, vector2);
 	}
 
-	// Token: 0x04000C28 RID: 3112
+	// Token: 0x04000C21 RID: 3105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte VERSION = 2;
 
-	// Token: 0x04000C29 RID: 3113
+	// Token: 0x04000C22 RID: 3106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPlayerYOffset = 0.8f;
 
-	// Token: 0x04000C2A RID: 3114
+	// Token: 0x04000C23 RID: 3107
 	public static Vector3i chunkPadding = new Vector3i(12, 1, 12);
 
-	// Token: 0x04000C2B RID: 3115
+	// Token: 0x04000C24 RID: 3108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance prefabInstance;
 
-	// Token: 0x04000C2C RID: 3116
+	// Token: 0x04000C25 RID: 3109
 	public List<byte> TriggersIndices = new List<byte>();
 
-	// Token: 0x04000C2D RID: 3117
+	// Token: 0x04000C26 RID: 3110
 	public Vector3i BoxMin;
 
-	// Token: 0x04000C2E RID: 3118
+	// Token: 0x04000C27 RID: 3111
 	public Vector3i BoxMax;
 
-	// Token: 0x04000C2F RID: 3119
+	// Token: 0x04000C28 RID: 3112
 	public Vector3 Center;
 
-	// Token: 0x04000C30 RID: 3120
+	// Token: 0x04000C29 RID: 3113
 	public bool isTriggered;
 }

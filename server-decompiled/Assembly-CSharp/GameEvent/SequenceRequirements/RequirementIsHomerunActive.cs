@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200193A RID: 6458
+	// Token: 0x02001966 RID: 6502
 	[Preserve]
 	public class RequirementIsHomerunActive : BaseRequirement
 	{
-		// Token: 0x0600C730 RID: 50992 RVA: 0x00491714 File Offset: 0x0048F914
+		// Token: 0x0600C888 RID: 51336 RVA: 0x00495C00 File Offset: 0x00493E00
 		public override bool CanPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -23,7 +23,7 @@ namespace GameEvent.SequenceRequirements
 			return !flag;
 		}
 
-		// Token: 0x0600C731 RID: 50993 RVA: 0x0049174C File Offset: 0x0048F94C
+		// Token: 0x0600C889 RID: 51337 RVA: 0x00495C38 File Offset: 0x00493E38
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

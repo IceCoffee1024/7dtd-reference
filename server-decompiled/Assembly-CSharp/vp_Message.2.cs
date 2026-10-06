@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x0200155F RID: 5471
+// Token: 0x02001581 RID: 5505
 [Preserve]
 public class vp_Message<V> : vp_Message
 {
-	// Token: 0x0600AB84 RID: 43908 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AC37 RID: 44087 RVA: 0x000027FC File Offset: 0x000009FC
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void Empty<T>(T value)
 	{
 	}
 
-	// Token: 0x0600AB85 RID: 43909 RVA: 0x003FEC84 File Offset: 0x003FCE84
+	// Token: 0x0600AC38 RID: 44088 RVA: 0x00403AD8 File Offset: 0x00401CD8
 	[Preserve]
 	public vp_Message(string name)
 		: base(name)
 	{
 	}
 
-	// Token: 0x0600AB86 RID: 43910 RVA: 0x003FEC90 File Offset: 0x003FCE90
+	// Token: 0x0600AC39 RID: 44089 RVA: 0x00403AE4 File Offset: 0x00401CE4
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
@@ -38,7 +38,7 @@ public class vp_Message<V> : vp_Message
 		}
 	}
 
-	// Token: 0x0600AB87 RID: 43911 RVA: 0x003FED68 File Offset: 0x003FCF68
+	// Token: 0x0600AC3A RID: 44090 RVA: 0x00403BBC File Offset: 0x00401DBC
 	[Preserve]
 	public override void Register(object t, string m, int v)
 	{
@@ -50,7 +50,7 @@ public class vp_Message<V> : vp_Message
 		base.Refresh();
 	}
 
-	// Token: 0x0600AB88 RID: 43912 RVA: 0x003FEC6D File Offset: 0x003FCE6D
+	// Token: 0x0600AC3B RID: 44091 RVA: 0x00403AC1 File Offset: 0x00401CC1
 	[Preserve]
 	public override void Unregister(object t)
 	{
@@ -58,12 +58,12 @@ public class vp_Message<V> : vp_Message
 		base.Refresh();
 	}
 
-	// Token: 0x04007F19 RID: 32537
+	// Token: 0x04007F9C RID: 32668
 	[Preserve]
 	public new vp_Message<V>.Sender<V> Send;
 
-	// Token: 0x02001560 RID: 5472
-	// (Invoke) Token: 0x0600AB8A RID: 43914
+	// Token: 0x02001582 RID: 5506
+	// (Invoke) Token: 0x0600AC3D RID: 44093
 	[Preserve]
 	public delegate void Sender<T>(T value);
 }

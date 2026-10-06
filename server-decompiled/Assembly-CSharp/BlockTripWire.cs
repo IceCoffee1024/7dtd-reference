@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000160 RID: 352
+// Token: 0x02000162 RID: 354
 [Preserve]
 public class BlockTripWire : BlockPowered
 {
-	// Token: 0x060009B4 RID: 2484 RVA: 0x00042AA4 File Offset: 0x00040CA4
+	// Token: 0x060009BA RID: 2490 RVA: 0x00042B80 File Offset: 0x00040D80
 	public BlockTripWire()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x060009B5 RID: 2485 RVA: 0x0003AB2C File Offset: 0x00038D2C
+	// Token: 0x060009BB RID: 2491 RVA: 0x0003AC1C File Offset: 0x00038E1C
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x060009B6 RID: 2486 RVA: 0x00042AFC File Offset: 0x00040CFC
+	// Token: 0x060009BC RID: 2492 RVA: 0x00042BD8 File Offset: 0x00040DD8
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -27,7 +27,7 @@ public class BlockTripWire : BlockPowered
 		};
 	}
 
-	// Token: 0x060009B7 RID: 2487 RVA: 0x00042B14 File Offset: 0x00040D14
+	// Token: 0x060009BD RID: 2493 RVA: 0x00042BF0 File Offset: 0x00040DF0
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -40,7 +40,7 @@ public class BlockTripWire : BlockPowered
 		}
 	}
 
-	// Token: 0x060009B8 RID: 2488 RVA: 0x00042B60 File Offset: 0x00040D60
+	// Token: 0x060009BE RID: 2494 RVA: 0x00042C3C File Offset: 0x00040E3C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityPoweredTrigger tileEntityPoweredTrigger = _world.GetTileEntity(_blockPos) as TileEntityPoweredTrigger;
@@ -58,7 +58,7 @@ public class BlockTripWire : BlockPowered
 		return "";
 	}
 
-	// Token: 0x060009B9 RID: 2489 RVA: 0x00042C04 File Offset: 0x00040E04
+	// Token: 0x060009BF RID: 2495 RVA: 0x00042CE0 File Offset: 0x00040EE0
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -75,7 +75,7 @@ public class BlockTripWire : BlockPowered
 		if (_commandName == "options")
 		{
 			_player.AimingGun = false;
-			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, null, 0);
+			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, 0);
 			return true;
 		}
 		if (!(_commandName == "take"))
@@ -86,13 +86,13 @@ public class BlockTripWire : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060009BA RID: 2490 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x060009C0 RID: 2496 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x060009BB RID: 2491 RVA: 0x00042CA0 File Offset: 0x00040EA0
+	// Token: 0x060009C1 RID: 2497 RVA: 0x00042D78 File Offset: 0x00040F78
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityPoweredTrigger tileEntityPoweredTrigger = _world.GetTileEntity(_blockPos) as TileEntityPoweredTrigger;
@@ -103,7 +103,7 @@ public class BlockTripWire : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x040009E5 RID: 2533
+	// Token: 0x040009E8 RID: 2536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

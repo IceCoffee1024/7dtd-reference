@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001023 RID: 4131
+// Token: 0x02001032 RID: 4146
 [Preserve]
 public class XUiC_ShapeInfoWindow : XUiController
 {
-	// Token: 0x06008294 RID: 33428 RVA: 0x002FB86C File Offset: 0x002F9A6C
+	// Token: 0x060082A3 RID: 33443 RVA: 0x002FE910 File Offset: 0x002FCB10
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -16,7 +16,7 @@ public class XUiC_ShapeInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008295 RID: 33429 RVA: 0x003188A0 File Offset: 0x00316AA0
+	// Token: 0x060082A4 RID: 33444 RVA: 0x0031B8E4 File Offset: 0x00319AE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -145,7 +145,7 @@ public class XUiC_ShapeInfoWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06008296 RID: 33430 RVA: 0x00318B58 File Offset: 0x00316D58
+	// Token: 0x060082A5 RID: 33445 RVA: 0x0031BB9C File Offset: 0x00319D9C
 	public void SetShape(Block _newBlockData)
 	{
 		this.blockData = _newBlockData;
@@ -169,7 +169,7 @@ public class XUiC_ShapeInfoWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008297 RID: 33431 RVA: 0x00318BD8 File Offset: 0x00316DD8
+	// Token: 0x060082A6 RID: 33446 RVA: 0x0031BC1C File Offset: 0x00319E1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatTitle(int index)
 	{
@@ -184,7 +184,7 @@ public class XUiC_ShapeInfoWindow : XUiController
 		return UIDisplayInfoManager.Current.GetLocalizedName(this.itemDisplayEntry.DisplayStats[index].StatType);
 	}
 
-	// Token: 0x06008298 RID: 33432 RVA: 0x00318C58 File Offset: 0x00316E58
+	// Token: 0x060082A7 RID: 33447 RVA: 0x0031BC9C File Offset: 0x00319E9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetStatValue(int index)
 	{
@@ -196,23 +196,23 @@ public class XUiC_ShapeInfoWindow : XUiController
 		return XUiM_ItemStack.GetStatItemValueTextWithCompareInfo(this.itemValue, ItemValue.None, this.xui.playerUI.entityPlayer, displayInfoEntry, false, true);
 	}
 
-	// Token: 0x040060B3 RID: 24755
+	// Token: 0x040060DC RID: 24796
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block blockData;
 
-	// Token: 0x040060B4 RID: 24756
+	// Token: 0x040060DD RID: 24797
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string shapeName = "";
 
-	// Token: 0x040060B5 RID: 24757
+	// Token: 0x040060DE RID: 24798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue itemValue;
 
-	// Token: 0x040060B6 RID: 24758
+	// Token: 0x040060DF RID: 24799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemDisplayEntry itemDisplayEntry;
 
-	// Token: 0x040060B7 RID: 24759
+	// Token: 0x040060E0 RID: 24800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 }

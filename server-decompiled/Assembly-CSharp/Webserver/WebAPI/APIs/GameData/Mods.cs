@@ -5,11 +5,11 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.GameData
 {
-	// Token: 0x02001AEC RID: 6892
+	// Token: 0x02001B18 RID: 6936
 	[Preserve]
 	public class Mods : AbsRestApi
 	{
-		// Token: 0x0600CF5F RID: 53087 RVA: 0x004B7E90 File Offset: 0x004B6090
+		// Token: 0x0600D0B7 RID: 53431 RVA: 0x004BC35C File Offset: 0x004BA55C
 		public Mods(Web _parent)
 			: base(null)
 		{
@@ -28,7 +28,7 @@ namespace Webserver.WebAPI.APIs.GameData
 			this.loadedWebMods = jsonWriter.ToUtf8ByteArray();
 		}
 
-		// Token: 0x0600CF60 RID: 53088 RVA: 0x004B7F00 File Offset: 0x004B6100
+		// Token: 0x0600D0B8 RID: 53432 RVA: 0x004BC3CC File Offset: 0x004BA5CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void writeModJson(ref JsonWriter _writer, WebMod _webMod)
 		{
@@ -54,7 +54,7 @@ namespace Webserver.WebAPI.APIs.GameData
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CF61 RID: 53089 RVA: 0x004B7FE8 File Offset: 0x004B61E8
+		// Token: 0x0600D0B9 RID: 53433 RVA: 0x004BC4B4 File Offset: 0x004BA6B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void writeWebModJson(ref JsonWriter _writer, WebMod _webMod)
 		{
@@ -83,7 +83,7 @@ namespace Webserver.WebAPI.APIs.GameData
 			}
 		}
 
-		// Token: 0x0600CF62 RID: 53090 RVA: 0x004B8078 File Offset: 0x004B6278
+		// Token: 0x0600D0BA RID: 53434 RVA: 0x004BC544 File Offset: 0x004BA744
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -93,13 +93,13 @@ namespace Webserver.WebAPI.APIs.GameData
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CF63 RID: 53091 RVA: 0x004B4F59 File Offset: 0x004B3159
+		// Token: 0x0600D0BB RID: 53435 RVA: 0x004B9425 File Offset: 0x004B7625
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;
 		}
 
-		// Token: 0x04009D6D RID: 40301
+		// Token: 0x04009E33 RID: 40499
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly byte[] loadedWebMods;
 	}

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000923 RID: 2339
+// Token: 0x02000928 RID: 2344
 public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 {
-	// Token: 0x1700073B RID: 1851
-	// (get) Token: 0x06004407 RID: 17415 RVA: 0x001A80D8 File Offset: 0x001A62D8
+	// Token: 0x1700075A RID: 1882
+	// (get) Token: 0x06004399 RID: 17305 RVA: 0x001A81DC File Offset: 0x001A63DC
 	public List<T> Areas
 	{
 		get
@@ -15,8 +15,8 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		}
 	}
 
-	// Token: 0x1700073C RID: 1852
-	// (get) Token: 0x06004408 RID: 17416 RVA: 0x001A80E0 File Offset: 0x001A62E0
+	// Token: 0x1700075B RID: 1883
+	// (get) Token: 0x0600439A RID: 17306 RVA: 0x001A81E4 File Offset: 0x001A63E4
 	public int Count
 	{
 		get
@@ -25,14 +25,14 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		}
 	}
 
-	// Token: 0x06004409 RID: 17417 RVA: 0x001A80ED File Offset: 0x001A62ED
+	// Token: 0x0600439B RID: 17307 RVA: 0x001A81F1 File Offset: 0x001A63F1
 	public void Clear()
 	{
 		this.areas.Clear();
 		this.maxSizeX = int.MinValue;
 	}
 
-	// Token: 0x0600440A RID: 17418 RVA: 0x001A8108 File Offset: 0x001A6308
+	// Token: 0x0600439C RID: 17308 RVA: 0x001A820C File Offset: 0x001A640C
 	public void Add(T _area)
 	{
 		this.maxSizeX = Utils.FastMax(this.maxSizeX, _area.AreaBounds.size.x);
@@ -40,7 +40,7 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		this.areas.Sort(DesignatedAreaStore<T>.sortByMinX);
 	}
 
-	// Token: 0x0600440B RID: 17419 RVA: 0x001A8160 File Offset: 0x001A6360
+	// Token: 0x0600439D RID: 17309 RVA: 0x001A8264 File Offset: 0x001A6464
 	public bool OverlapsBounds(Vector3i _min, Vector3i _max)
 	{
 		for (int i = 0; i < this.areas.Count; i++)
@@ -54,7 +54,7 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		return false;
 	}
 
-	// Token: 0x0600440C RID: 17420 RVA: 0x001A81DC File Offset: 0x001A63DC
+	// Token: 0x0600439E RID: 17310 RVA: 0x001A82E0 File Offset: 0x001A64E0
 	public T GetAt(int _x, int _z, int _padding = 0)
 	{
 		T t = default(T);
@@ -89,7 +89,7 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		return t;
 	}
 
-	// Token: 0x0600440D RID: 17421 RVA: 0x001A82E4 File Offset: 0x001A64E4
+	// Token: 0x0600439F RID: 17311 RVA: 0x001A83E8 File Offset: 0x001A65E8
 	public T GetOuterAt(int _x, int _z, int _depth = 0)
 	{
 		T t = default(T);
@@ -124,21 +124,21 @@ public class DesignatedAreaStore<T> where T : class, IDesignatedArea
 		return t;
 	}
 
-	// Token: 0x0600440E RID: 17422 RVA: 0x001A8450 File Offset: 0x001A6650
+	// Token: 0x060043A0 RID: 17312 RVA: 0x001A8554 File Offset: 0x001A6754
 	public bool ContainsPoint(int _x, int _z, int _padding = 0)
 	{
 		return this.GetAt(_x, _z, _padding) != null;
 	}
 
-	// Token: 0x040036DC RID: 14044
+	// Token: 0x040036D0 RID: 14032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<T> areas = new List<T>();
 
-	// Token: 0x040036DD RID: 14045
+	// Token: 0x040036D1 RID: 14033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxSizeX = int.MinValue;
 
-	// Token: 0x040036DE RID: 14046
+	// Token: 0x040036D2 RID: 14034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Comparison<T> sortByMinX = (T a, T b) => a.AreaBounds.xMin - b.AreaBounds.xMin;
 }

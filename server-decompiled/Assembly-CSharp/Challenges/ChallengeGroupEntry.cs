@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Challenges
 {
-	// Token: 0x020018F5 RID: 6389
+	// Token: 0x02001921 RID: 6433
 	public class ChallengeGroupEntry
 	{
-		// Token: 0x0600C4F6 RID: 50422 RVA: 0x00489919 File Offset: 0x00487B19
+		// Token: 0x0600C64E RID: 50766 RVA: 0x0048DE09 File Offset: 0x0048C009
 		public ChallengeGroupEntry(ChallengeGroup group)
 		{
 			this.ChallengeGroup = group;
 		}
 
-		// Token: 0x0600C4F7 RID: 50423 RVA: 0x0048992F File Offset: 0x00487B2F
+		// Token: 0x0600C64F RID: 50767 RVA: 0x0048DE1F File Offset: 0x0048C01F
 		public void CreateChallenges(EntityPlayer player)
 		{
 			this.ResetChallenges(player);
@@ -22,7 +22,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4F8 RID: 50424 RVA: 0x0048996C File Offset: 0x00487B6C
+		// Token: 0x0600C650 RID: 50768 RVA: 0x0048DE5C File Offset: 0x0048C05C
 		public void Update(int day, EntityPlayer player)
 		{
 			if (this.ChallengeGroup.DayReset == -1)
@@ -36,7 +36,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4F9 RID: 50425 RVA: 0x004899A0 File Offset: 0x00487BA0
+		// Token: 0x0600C651 RID: 50769 RVA: 0x0048DE90 File Offset: 0x0048C090
 		public void AddAnyMissingChallenges(EntityPlayer player)
 		{
 			ChallengeJournal challengeJournal = player.challengeJournal;
@@ -57,7 +57,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4FA RID: 50426 RVA: 0x00489A3C File Offset: 0x00487C3C
+		// Token: 0x0600C652 RID: 50770 RVA: 0x0048DF2C File Offset: 0x0048C12C
 		public void ResetChallenges(EntityPlayer player)
 		{
 			ChallengeJournal challengeJournal = player.challengeJournal;
@@ -101,10 +101,10 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x040094F2 RID: 38130
+		// Token: 0x040095B8 RID: 38328
 		public ChallengeGroup ChallengeGroup;
 
-		// Token: 0x040094F3 RID: 38131
+		// Token: 0x040095B9 RID: 38329
 		public int LastUpdateDay = -1;
 	}
 }

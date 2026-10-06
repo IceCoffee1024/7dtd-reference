@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085C RID: 2140
+// Token: 0x0200085F RID: 2143
 [Preserve]
 public class NetPackageTurretSync : NetPackage
 {
-	// Token: 0x06003E91 RID: 16017 RVA: 0x0018AFE5 File Offset: 0x001891E5
+	// Token: 0x06003E34 RID: 15924 RVA: 0x0018AE81 File Offset: 0x00189081
 	public NetPackageTurretSync Setup(int _entityId, int _targetEntityId, bool _isOn, ItemValue _originalItemValue)
 	{
 		this.entityId = _entityId;
@@ -15,7 +15,7 @@ public class NetPackageTurretSync : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E92 RID: 16018 RVA: 0x0018B005 File Offset: 0x00189205
+	// Token: 0x06003E35 RID: 15925 RVA: 0x0018AEA1 File Offset: 0x001890A1
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -25,7 +25,7 @@ public class NetPackageTurretSync : NetPackage
 		this.itemValue.Read(_reader);
 	}
 
-	// Token: 0x06003E93 RID: 16019 RVA: 0x0018B042 File Offset: 0x00189242
+	// Token: 0x06003E36 RID: 15926 RVA: 0x0018AEDE File Offset: 0x001890DE
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -35,7 +35,7 @@ public class NetPackageTurretSync : NetPackage
 		this.itemValue.Write(_writer);
 	}
 
-	// Token: 0x06003E94 RID: 16020 RVA: 0x0018B07C File Offset: 0x0018927C
+	// Token: 0x06003E37 RID: 15927 RVA: 0x0018AF18 File Offset: 0x00189118
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -51,14 +51,8 @@ public class NetPackageTurretSync : NetPackage
 		}
 	}
 
-	// Token: 0x06003E95 RID: 16021 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x1700067F RID: 1663
-	// (get) Token: 0x06003E96 RID: 16022 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x1700069E RID: 1694
+	// (get) Token: 0x06003E38 RID: 15928 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -67,15 +61,15 @@ public class NetPackageTurretSync : NetPackage
 		}
 	}
 
-	// Token: 0x040032A2 RID: 12962
+	// Token: 0x0400328D RID: 12941
 	public int entityId;
 
-	// Token: 0x040032A3 RID: 12963
+	// Token: 0x0400328E RID: 12942
 	public int targetEntityId;
 
-	// Token: 0x040032A4 RID: 12964
+	// Token: 0x0400328F RID: 12943
 	public bool isOn;
 
-	// Token: 0x040032A5 RID: 12965
+	// Token: 0x04003290 RID: 12944
 	public ItemValue itemValue;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020004F2 RID: 1266
+// Token: 0x020004F8 RID: 1272
 [Preserve]
 public class EntityVJeep : EntityDriveable
 {
-	// Token: 0x06002976 RID: 10614 RVA: 0x001040F5 File Offset: 0x001022F5
+	// Token: 0x0600296B RID: 10603 RVA: 0x00104A29 File Offset: 0x00102C29
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateWheelsSteering()
 	{

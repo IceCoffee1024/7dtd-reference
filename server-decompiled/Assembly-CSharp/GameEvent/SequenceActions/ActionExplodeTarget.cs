@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200197F RID: 6527
+	// Token: 0x020019AB RID: 6571
 	[Preserve]
 	public class ActionExplodeTarget : ActionBaseTargetAction
 	{
-		// Token: 0x0600C878 RID: 51320 RVA: 0x00498AA0 File Offset: 0x00496CA0
+		// Token: 0x0600C9D0 RID: 51664 RVA: 0x0049CF64 File Offset: 0x0049B164
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -30,7 +30,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C879 RID: 51321 RVA: 0x00498B9C File Offset: 0x00496D9C
+		// Token: 0x0600C9D1 RID: 51665 RVA: 0x0049D060 File Offset: 0x0049B260
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -44,7 +44,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionExplodeTarget.PropIgnoreHeatMap, ref this.ignoreHeatMap);
 		}
 
-		// Token: 0x0600C87A RID: 51322 RVA: 0x00498C38 File Offset: 0x00496E38
+		// Token: 0x0600C9D2 RID: 51666 RVA: 0x0049D0FC File Offset: 0x0049B2FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -61,60 +61,60 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400976C RID: 38764
+		// Token: 0x04009832 RID: 38962
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blastPowerText;
 
-		// Token: 0x0400976D RID: 38765
+		// Token: 0x04009833 RID: 38963
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blockDamageText;
 
-		// Token: 0x0400976E RID: 38766
+		// Token: 0x04009834 RID: 38964
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blockRadiusText;
 
-		// Token: 0x0400976F RID: 38767
+		// Token: 0x04009835 RID: 38965
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string entityDamageText;
 
-		// Token: 0x04009770 RID: 38768
+		// Token: 0x04009836 RID: 38966
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string entityRadiusText;
 
-		// Token: 0x04009771 RID: 38769
+		// Token: 0x04009837 RID: 38967
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int particleIndex = 13;
 
-		// Token: 0x04009772 RID: 38770
+		// Token: 0x04009838 RID: 38968
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool ignoreHeatMap = true;
 
-		// Token: 0x04009773 RID: 38771
+		// Token: 0x04009839 RID: 38969
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string blockTags = "";
 
-		// Token: 0x04009774 RID: 38772
+		// Token: 0x0400983A RID: 38970
 		public static string PropBlastPower = "blast_power";
 
-		// Token: 0x04009775 RID: 38773
+		// Token: 0x0400983B RID: 38971
 		public static string PropBlockDamage = "block_damage";
 
-		// Token: 0x04009776 RID: 38774
+		// Token: 0x0400983C RID: 38972
 		public static string PropBlockRadius = "block_radius";
 
-		// Token: 0x04009777 RID: 38775
+		// Token: 0x0400983D RID: 38973
 		public static string PropBlockTags = "block_tags";
 
-		// Token: 0x04009778 RID: 38776
+		// Token: 0x0400983E RID: 38974
 		public static string PropEntityDamage = "entity_damage";
 
-		// Token: 0x04009779 RID: 38777
+		// Token: 0x0400983F RID: 38975
 		public static string PropEntityRadius = "entity_radius";
 
-		// Token: 0x0400977A RID: 38778
+		// Token: 0x04009840 RID: 38976
 		public static string PropParticleIndex = "particle_index";
 
-		// Token: 0x0400977B RID: 38779
+		// Token: 0x04009841 RID: 38977
 		public static string PropIgnoreHeatMap = "ignore_heatmap";
 	}
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000148 RID: 328
+// Token: 0x0200014A RID: 330
 [Preserve]
 public class BlockRallyMarker : Block
 {
-	// Token: 0x06000914 RID: 2324 RVA: 0x0003F59C File Offset: 0x0003D79C
+	// Token: 0x0600091A RID: 2330 RVA: 0x0003F680 File Offset: 0x0003D880
 	public BlockRallyMarker()
 	{
 		this.StabilityIgnore = true;
 	}
 
-	// Token: 0x06000915 RID: 2325 RVA: 0x0003F5DC File Offset: 0x0003D7DC
+	// Token: 0x0600091B RID: 2331 RVA: 0x0003F6C0 File Offset: 0x0003D8C0
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		PlayerActionsLocal playerInput = ((EntityPlayerLocal)_entityFocusing).playerInput;
@@ -25,7 +25,7 @@ public class BlockRallyMarker : Block
 		return string.Empty;
 	}
 
-	// Token: 0x06000916 RID: 2326 RVA: 0x0003F688 File Offset: 0x0003D888
+	// Token: 0x0600091C RID: 2332 RVA: 0x0003F76C File Offset: 0x0003D96C
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "activate")
@@ -40,20 +40,20 @@ public class BlockRallyMarker : Block
 		return false;
 	}
 
-	// Token: 0x06000917 RID: 2327 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x0600091D RID: 2333 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x06000918 RID: 2328 RVA: 0x0003F6E2 File Offset: 0x0003D8E2
+	// Token: 0x0600091E RID: 2334 RVA: 0x0003F7C6 File Offset: 0x0003D9C6
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = true;
 		return this.cmds;
 	}
 
-	// Token: 0x06000919 RID: 2329 RVA: 0x0003F6FC File Offset: 0x0003D8FC
+	// Token: 0x0600091F RID: 2335 RVA: 0x0003F7E0 File Offset: 0x0003D9E0
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -77,14 +77,14 @@ public class BlockRallyMarker : Block
 		});
 	}
 
-	// Token: 0x0600091A RID: 2330 RVA: 0x0003F74E File Offset: 0x0003D94E
+	// Token: 0x06000920 RID: 2336 RVA: 0x0003F832 File Offset: 0x0003DA32
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
 		_world.IsEditor();
 	}
 
-	// Token: 0x040009A1 RID: 2465
+	// Token: 0x040009A4 RID: 2468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

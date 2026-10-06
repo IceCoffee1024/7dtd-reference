@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200068F RID: 1679
+// Token: 0x02000691 RID: 1681
 [Preserve]
 public class IsAlive : TargetedCompareRequirementBase
 {
-	// Token: 0x0600353D RID: 13629 RVA: 0x001607F7 File Offset: 0x0015E9F7
+	// Token: 0x06003580 RID: 13696 RVA: 0x00161177 File Offset: 0x0015F377
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -24,7 +24,7 @@ public class IsAlive : TargetedCompareRequirementBase
 		return this.target.IsAlive();
 	}
 
-	// Token: 0x0600353E RID: 13630 RVA: 0x00160836 File Offset: 0x0015EA36
+	// Token: 0x06003581 RID: 13697 RVA: 0x001611B6 File Offset: 0x0015F3B6
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Entity {0}Alive", this.invert ? "NOT " : ""));

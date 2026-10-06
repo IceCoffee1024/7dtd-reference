@@ -4,20 +4,20 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001B78 RID: 7032
+	// Token: 0x02001BAA RID: 7082
 	public interface IPlatformMemorySampler
 	{
-		// Token: 0x17001A0D RID: 6669
-		// (get) Token: 0x0600D276 RID: 53878
+		// Token: 0x17001AB3 RID: 6835
+		// (get) Token: 0x0600D3EE RID: 54254
 		IReadOnlyList<IPlatformMemoryStat> Statistics { get; }
 
-		// Token: 0x0600D277 RID: 53879
+		// Token: 0x0600D3EF RID: 54255
 		bool HasImportantChange();
 
-		// Token: 0x0600D278 RID: 53880
+		// Token: 0x0600D3F0 RID: 54256
 		void Sample();
 
-		// Token: 0x0600D279 RID: 53881 RVA: 0x004C67C8 File Offset: 0x004C49C8
+		// Token: 0x0600D3F1 RID: 54257 RVA: 0x004CB2B0 File Offset: 0x004C94B0
 		void UpdateLast()
 		{
 			foreach (IPlatformMemoryStat platformMemoryStat in this.Statistics)
@@ -26,7 +26,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D27A RID: 53882 RVA: 0x004C6814 File Offset: 0x004C4A14
+		// Token: 0x0600D3F2 RID: 54258 RVA: 0x004CB2FC File Offset: 0x004C94FC
 		int RenderToTable(IList<StringBuilder> tableLines, bool includeDeltas)
 		{
 			if (tableLines == null)

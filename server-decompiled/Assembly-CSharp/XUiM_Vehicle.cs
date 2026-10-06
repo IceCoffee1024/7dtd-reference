@@ -1,15 +1,15 @@
 ﻿using System;
 using Audio;
 
-// Token: 0x02001142 RID: 4418
+// Token: 0x0200115A RID: 4442
 public class XUiM_Vehicle : XUiModel
 {
-	// Token: 0x1700101F RID: 4127
-	// (get) Token: 0x06008BAC RID: 35756 RVA: 0x0035291E File Offset: 0x00350B1E
-	// (set) Token: 0x06008BAD RID: 35757 RVA: 0x00352926 File Offset: 0x00350B26
+	// Token: 0x17001054 RID: 4180
+	// (get) Token: 0x06008C17 RID: 35863 RVA: 0x00356D3F File Offset: 0x00354F3F
+	// (set) Token: 0x06008C18 RID: 35864 RVA: 0x00356D47 File Offset: 0x00354F47
 	public EntityVehicle CurrentVehicle { get; set; }
 
-	// Token: 0x06008BAE RID: 35758 RVA: 0x0035292F File Offset: 0x00350B2F
+	// Token: 0x06008C19 RID: 35865 RVA: 0x00356D50 File Offset: 0x00354F50
 	public static string GetEntityName(XUi _xui)
 	{
 		if (!(_xui.Vehicle.CurrentVehicle != null))
@@ -19,7 +19,7 @@ public class XUiM_Vehicle : XUiModel
 		return _xui.Vehicle.CurrentVehicle.EntityName;
 	}
 
-	// Token: 0x06008BAF RID: 35759 RVA: 0x0035295A File Offset: 0x00350B5A
+	// Token: 0x06008C1A RID: 35866 RVA: 0x00356D7B File Offset: 0x00354F7B
 	public static float GetSpeed(XUi _xui)
 	{
 		if (!(_xui.Vehicle.CurrentVehicle != null))
@@ -29,7 +29,7 @@ public class XUiM_Vehicle : XUiModel
 		return _xui.Vehicle.CurrentVehicle.GetVehicle().MaxPossibleSpeed;
 	}
 
-	// Token: 0x06008BB0 RID: 35760 RVA: 0x0035298C File Offset: 0x00350B8C
+	// Token: 0x06008C1B RID: 35867 RVA: 0x00356DAC File Offset: 0x00354FAC
 	public static string GetNoise(XUi _xui)
 	{
 		EntityVehicle currentVehicle = _xui.Vehicle.CurrentVehicle;
@@ -57,7 +57,7 @@ public class XUiM_Vehicle : XUiModel
 		return text;
 	}
 
-	// Token: 0x06008BB1 RID: 35761 RVA: 0x00352A00 File Offset: 0x00350C00
+	// Token: 0x06008C1C RID: 35868 RVA: 0x00356E20 File Offset: 0x00355020
 	public static float GetProtection(XUi _xui)
 	{
 		EntityVehicle currentVehicle = _xui.Vehicle.CurrentVehicle;
@@ -68,7 +68,7 @@ public class XUiM_Vehicle : XUiModel
 		return (1f - currentVehicle.GetVehicle().GetPlayerDamagePercent()) * 100f;
 	}
 
-	// Token: 0x06008BB2 RID: 35762 RVA: 0x00352A3F File Offset: 0x00350C3F
+	// Token: 0x06008C1D RID: 35869 RVA: 0x00356E5F File Offset: 0x0035505F
 	public static float GetFuelLevel(XUi _xui)
 	{
 		if (!(_xui.Vehicle.CurrentVehicle != null))
@@ -78,7 +78,7 @@ public class XUiM_Vehicle : XUiModel
 		return _xui.Vehicle.CurrentVehicle.GetVehicle().GetFuelPercent() * 100f;
 	}
 
-	// Token: 0x06008BB3 RID: 35763 RVA: 0x00352A75 File Offset: 0x00350C75
+	// Token: 0x06008C1E RID: 35870 RVA: 0x00356E95 File Offset: 0x00355095
 	public static float GetFuelFill(XUi _xui)
 	{
 		if (!(_xui.Vehicle.CurrentVehicle != null))
@@ -88,7 +88,7 @@ public class XUiM_Vehicle : XUiModel
 		return _xui.Vehicle.CurrentVehicle.GetVehicle().GetFuelPercent();
 	}
 
-	// Token: 0x06008BB4 RID: 35764 RVA: 0x00352AA5 File Offset: 0x00350CA5
+	// Token: 0x06008C1F RID: 35871 RVA: 0x00356EC5 File Offset: 0x003550C5
 	public static int GetPassengers(XUi _xui)
 	{
 		if (!(_xui.Vehicle.CurrentVehicle != null))
@@ -98,7 +98,7 @@ public class XUiM_Vehicle : XUiModel
 		return _xui.Vehicle.CurrentVehicle.GetAttachMaxCount();
 	}
 
-	// Token: 0x06008BB5 RID: 35765 RVA: 0x00352ACC File Offset: 0x00350CCC
+	// Token: 0x06008C20 RID: 35872 RVA: 0x00356EEC File Offset: 0x003550EC
 	public static string GetSpeedText(XUi _xui)
 	{
 		float num = ((_xui.Vehicle.CurrentVehicle != null) ? _xui.Vehicle.CurrentVehicle.GetVehicle().MaxPossibleSpeed : 0f);
@@ -125,7 +125,7 @@ public class XUiM_Vehicle : XUiModel
 		return text;
 	}
 
-	// Token: 0x06008BB6 RID: 35766 RVA: 0x00352B60 File Offset: 0x00350D60
+	// Token: 0x06008C21 RID: 35873 RVA: 0x00356F80 File Offset: 0x00355180
 	public bool SetPart(XUi _xui, string _vehicleSlotName, ItemStack _stack, out ItemStack _resultStack)
 	{
 		Log.Warning("XUiM_Vehicle SetPart {0}", new object[] { _vehicleSlotName });
@@ -134,12 +134,12 @@ public class XUiM_Vehicle : XUiModel
 		return false;
 	}
 
-	// Token: 0x06008BB7 RID: 35767 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06008C22 RID: 35874 RVA: 0x000027FC File Offset: 0x000009FC
 	public void RefreshVehicle()
 	{
 	}
 
-	// Token: 0x06008BB8 RID: 35768 RVA: 0x00352B88 File Offset: 0x00350D88
+	// Token: 0x06008C23 RID: 35875 RVA: 0x00356FA8 File Offset: 0x003551A8
 	public static bool RepairVehicle(XUi _xui, Vehicle _vehicle = null)
 	{
 		if (_vehicle == null)
@@ -184,15 +184,15 @@ public class XUiM_Vehicle : XUiModel
 		return true;
 	}
 
-	// Token: 0x0400674C RID: 26444
+	// Token: 0x040067A1 RID: 26529
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cRepairBase = 1000;
 
-	// Token: 0x0400674D RID: 26445
+	// Token: 0x040067A2 RID: 26530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRepairPercent = 0f;
 
-	// Token: 0x0400674E RID: 26446
+	// Token: 0x040067A3 RID: 26531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cRepairPerkPercent = 0.1f;
 }

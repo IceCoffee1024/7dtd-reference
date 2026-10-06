@@ -2,31 +2,31 @@
 
 namespace Audio
 {
-	// Token: 0x02001B14 RID: 6932
+	// Token: 0x02001B40 RID: 6976
 	public class ClipSourceMap
 	{
-		// Token: 0x04009E84 RID: 40580
+		// Token: 0x04009F4A RID: 40778
 		public string clipName;
 
-		// Token: 0x04009E85 RID: 40581
+		// Token: 0x04009F4B RID: 40779
 		public string audioSourceName;
 
-		// Token: 0x04009E86 RID: 40582
+		// Token: 0x04009F4C RID: 40780
 		public string clipName_distant;
 
-		// Token: 0x04009E87 RID: 40583
+		// Token: 0x04009F4D RID: 40781
 		public string audioSourceName_distant;
 
-		// Token: 0x04009E88 RID: 40584
+		// Token: 0x04009F4E RID: 40782
 		public bool forceLoop;
 
-		// Token: 0x04009E89 RID: 40585
+		// Token: 0x04009F4F RID: 40783
 		public bool hasSubtitle;
 
-		// Token: 0x04009E8A RID: 40586
+		// Token: 0x04009F50 RID: 40784
 		public string subtitleID;
 
-		// Token: 0x04009E8B RID: 40587
+		// Token: 0x04009F51 RID: 40785
 		public bool profanity;
 	}
 }

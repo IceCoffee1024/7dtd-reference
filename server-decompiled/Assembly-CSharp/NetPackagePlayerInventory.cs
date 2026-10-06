@@ -1,25 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine.Scripting;
 
 // Token: 0x02000828 RID: 2088
 [Preserve]
 public class NetPackagePlayerInventory : NetPackage
 {
-	// Token: 0x06003D53 RID: 15699 RVA: 0x00185A50 File Offset: 0x00183C50
+	// Token: 0x06003D13 RID: 15635 RVA: 0x001856A0 File Offset: 0x001838A0
 	public NetPackagePlayerInventory Setup(EntityPlayerLocal _player, bool _changedToolbelt, bool _changedBag, bool _changedEquipment, bool _changedDragAndDropItem)
 	{
 		if (_changedToolbelt)
 		{
-			this.toolbelt = ((_player.AttachedToEntity != null && _player.saveInventory != null) ? ItemStack.Clone(_player.saveInventory.GetSlots()) : ItemStack.Clone(_player.inventory.GetSlots()));
+			this.inventoryData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+			{
+				_player.inventory.Write(pbw, StreamModeWrite.Persistency);
+			});
 		}
 		if (_changedBag)
 		{
-			this.bag = _player.bag.Clone();
+			this.bagData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+			{
+				_player.bag.Write(pbw, StreamModeWrite.Persistency);
+			});
 		}
 		if (_changedEquipment)
 		{
-			this.equipment = _player.equipment.Clone();
+			this.equipmentData = StreamUtils.ToBlob(delegate(PooledBinaryWriter pbw)
+			{
+				_player.equipment.Write(pbw, StreamModeWrite.Persistency);
+			});
 		}
 		if (_changedDragAndDropItem)
 		{
@@ -28,8 +37,8 @@ public class NetPackagePlayerInventory : NetPackage
 		return this;
 	}
 
-	// Token: 0x17000666 RID: 1638
-	// (get) Token: 0x06003D54 RID: 15700 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000685 RID: 1669
+	// (get) Token: 0x06003D14 RID: 15636 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -38,75 +47,49 @@ public class NetPackagePlayerInventory : NetPackage
 		}
 	}
 
-	// Token: 0x06003D55 RID: 15701 RVA: 0x00185AE0 File Offset: 0x00183CE0
+	// Token: 0x06003D15 RID: 15637 RVA: 0x00185724 File Offset: 0x00183924
 	public override void read(PooledBinaryReader _reader)
 	{
 		if (_reader.ReadBoolean())
 		{
-			this.toolbelt = GameUtils.ReadItemStack(_reader);
+			this.inventoryData = StreamUtils.ReadBlob(_reader);
 		}
 		if (_reader.ReadBoolean())
 		{
-			this.bag = Bag.Read(_reader);
+			this.bagData = StreamUtils.ReadBlob(_reader);
 		}
 		if (_reader.ReadBoolean())
 		{
-			ItemValue[] array = GameUtils.ReadItemValueArray(_reader);
-			this.equipment = new Equipment();
-			int num = Utils.FastMin(array.Length, this.equipment.GetSlotCount());
-			for (int i = 0; i < num; i++)
-			{
-				this.equipment.SetSlotItemRaw(i, array[i]);
-			}
-			for (int j = 0; j < num; j++)
-			{
-				this.equipment.SetCosmeticSlot(j, _reader.ReadInt32());
-			}
-			int num2 = _reader.ReadInt32();
-			for (int k = 0; k < num2; k++)
-			{
-				this.equipment.m_unlockedCosmetics.Add(_reader.ReadInt32());
-			}
+			this.equipmentData = StreamUtils.ReadBlob(_reader);
 		}
 		if (_reader.ReadBoolean())
 		{
-			ItemStack[] array2 = GameUtils.ReadItemStack(_reader);
-			if (array2 != null && array2.Length != 0)
+			ItemStack[] array = GameUtils.ReadItemStack(_reader);
+			if (array != null && array.Length != 0)
 			{
-				this.dragAndDropItem = array2[0];
+				this.dragAndDropItem = array[0];
 			}
 		}
 	}
 
-	// Token: 0x06003D56 RID: 15702 RVA: 0x00185BD4 File Offset: 0x00183DD4
+	// Token: 0x06003D16 RID: 15638 RVA: 0x0018578C File Offset: 0x0018398C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
-		_writer.Write(this.toolbelt != null);
-		if (this.toolbelt != null)
+		_writer.Write(this.inventoryData != null);
+		if (this.inventoryData != null)
 		{
-			GameUtils.WriteItemStack(_writer, this.toolbelt);
+			StreamUtils.WriteBlob(_writer, this.inventoryData);
 		}
-		_writer.Write(this.bag != null);
-		if (this.bag != null)
+		_writer.Write(this.bagData != null);
+		if (this.bagData != null)
 		{
-			this.bag.Write(_writer);
+			StreamUtils.WriteBlob(_writer, this.bagData);
 		}
-		_writer.Write(this.equipment != null);
-		if (this.equipment != null)
+		_writer.Write(this.equipmentData != null);
+		if (this.equipmentData != null)
 		{
-			GameUtils.WriteItemValueArray(_writer, this.equipment.GetItems());
-			int[] cosmeticIDs = this.equipment.GetCosmeticIDs();
-			for (int i = 0; i < cosmeticIDs.Length; i++)
-			{
-				_writer.Write(cosmeticIDs[i]);
-			}
-			List<int> unlockedCosmetics = this.equipment.m_unlockedCosmetics;
-			_writer.Write(unlockedCosmetics.Count);
-			for (int j = 0; j < unlockedCosmetics.Count; j++)
-			{
-				_writer.Write(unlockedCosmetics[j]);
-			}
+			StreamUtils.WriteBlob(_writer, this.equipmentData);
 		}
 		_writer.Write(this.dragAndDropItem != null);
 		if (this.dragAndDropItem != null)
@@ -115,21 +98,21 @@ public class NetPackagePlayerInventory : NetPackage
 		}
 	}
 
-	// Token: 0x06003D57 RID: 15703 RVA: 0x00185CDC File Offset: 0x00183EDC
+	// Token: 0x06003D17 RID: 15639 RVA: 0x00185838 File Offset: 0x00183A38
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PlayerDataFile latestPlayerData = base.Sender.latestPlayerData;
-		if (this.toolbelt != null)
+		if (this.inventoryData != null)
 		{
-			latestPlayerData.inventory = this.toolbelt;
+			latestPlayerData.inventoryData = this.inventoryData;
 		}
-		if (this.bag != null)
+		if (this.bagData != null)
 		{
-			latestPlayerData.bag = this.bag;
+			latestPlayerData.bagData = this.bagData;
 		}
-		if (this.equipment != null)
+		if (this.equipmentData != null)
 		{
-			latestPlayerData.equipment = this.equipment;
+			latestPlayerData.equipmentData = this.equipmentData;
 		}
 		if (this.dragAndDropItem != null)
 		{
@@ -138,25 +121,19 @@ public class NetPackagePlayerInventory : NetPackage
 		latestPlayerData.bModifiedSinceLastSave = true;
 	}
 
-	// Token: 0x06003D58 RID: 15704 RVA: 0x00010E62 File Offset: 0x0000F062
-	public override int GetLength()
-	{
-		return 0;
-	}
-
-	// Token: 0x040031C1 RID: 12737
+	// Token: 0x040031A7 RID: 12711
 	[PublicizedFrom(EAccessModifier.Private)]
-	public ItemStack[] toolbelt;
+	public MemoryStream inventoryData;
 
-	// Token: 0x040031C2 RID: 12738
+	// Token: 0x040031A8 RID: 12712
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Bag bag;
+	public MemoryStream bagData;
 
-	// Token: 0x040031C3 RID: 12739
+	// Token: 0x040031A9 RID: 12713
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Equipment equipment;
+	public MemoryStream equipmentData;
 
-	// Token: 0x040031C4 RID: 12740
+	// Token: 0x040031AA RID: 12714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack dragAndDropItem;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000BD3 RID: 3027
+// Token: 0x02000BE5 RID: 3045
 public class UnityDistantTerrain
 {
-	// Token: 0x06005B35 RID: 23349 RVA: 0x00231110 File Offset: 0x0022F310
+	// Token: 0x06005B4E RID: 23374 RVA: 0x0023440C File Offset: 0x0023260C
 	public void Init(GameObject _parent, UnityDistantTerrain.Config _terrainConfig, int _visibleChunks, Material _terrainMaterial, Material _waterMaterial, int _waterChunks16x16Width, byte[] _waterChunks16x16, ITileArea<float[,]> _heights, TileArea<Color32[]> _splat0, TileArea<Color32[]> _splat1, TileArea<Color32[]> _splat2)
 	{
 		Transform transform = _parent.transform;
@@ -44,7 +44,7 @@ public class UnityDistantTerrain
 		transform.position = -Origin.position;
 	}
 
-	// Token: 0x06005B36 RID: 23350 RVA: 0x00231288 File Offset: 0x0022F488
+	// Token: 0x06005B4F RID: 23375 RVA: 0x00234584 File Offset: 0x00232784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddTerrainAndWaterToCache()
 	{
@@ -79,7 +79,7 @@ public class UnityDistantTerrain
 		gameObject.SetActive(false);
 	}
 
-	// Token: 0x06005B37 RID: 23351 RVA: 0x002313F0 File Offset: 0x0022F5F0
+	// Token: 0x06005B50 RID: 23376 RVA: 0x002346EC File Offset: 0x002328EC
 	public void Cleanup()
 	{
 		if (this.visibleParentT)
@@ -109,7 +109,7 @@ public class UnityDistantTerrain
 		this.terrainHeights.Cleanup();
 	}
 
-	// Token: 0x06005B38 RID: 23352 RVA: 0x002314E8 File Offset: 0x0022F6E8
+	// Token: 0x06005B51 RID: 23377 RVA: 0x002347E4 File Offset: 0x002329E4
 	public void FrameUpdate(EntityPlayerLocal _player)
 	{
 		this.BuildAroundPos(_player.position);
@@ -117,7 +117,7 @@ public class UnityDistantTerrain
 		this.UpdateTextureApply();
 	}
 
-	// Token: 0x06005B39 RID: 23353 RVA: 0x00231503 File Offset: 0x0022F703
+	// Token: 0x06005B52 RID: 23378 RVA: 0x002347FF File Offset: 0x002329FF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildAroundPos(Vector3 _position)
 	{
@@ -126,7 +126,7 @@ public class UnityDistantTerrain
 		this.BuildAroundPos(this.tempPositions);
 	}
 
-	// Token: 0x06005B3A RID: 23354 RVA: 0x00231528 File Offset: 0x0022F728
+	// Token: 0x06005B53 RID: 23379 RVA: 0x00234824 File Offset: 0x00232A24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildAroundPos(List<Vector3> _positions)
 	{
@@ -240,7 +240,7 @@ public class UnityDistantTerrain
 		DynamicMeshManager.UpdateDistantTerrainBounds(this.terrainTiles, this.terrainConfig);
 	}
 
-	// Token: 0x06005B3B RID: 23355 RVA: 0x00231A74 File Offset: 0x0022FC74
+	// Token: 0x06005B54 RID: 23380 RVA: 0x00234D70 File Offset: 0x00232F70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrain.TerrainAndWater GetFromCacheOrCreate()
 	{
@@ -253,7 +253,7 @@ public class UnityDistantTerrain
 		return terrainAndWater;
 	}
 
-	// Token: 0x06005B3C RID: 23356 RVA: 0x00231AC4 File Offset: 0x0022FCC4
+	// Token: 0x06005B55 RID: 23381 RVA: 0x00234DC0 File Offset: 0x00232FC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrain.TerrainAndWater CreateAndConfigureTerrain(int cx, int cz)
 	{
@@ -315,7 +315,7 @@ public class UnityDistantTerrain
 		return fromCacheOrCreate;
 	}
 
-	// Token: 0x06005B3D RID: 23357 RVA: 0x00231DDC File Offset: 0x0022FFDC
+	// Token: 0x06005B56 RID: 23382 RVA: 0x002350D8 File Offset: 0x002332D8
 	public void OnChunkUpdate(int _chunkX, int _chunkZ, bool _visible)
 	{
 		int num = this.terrainConfig.DataWidth / 16;
@@ -357,7 +357,7 @@ public class UnityDistantTerrain
 		this.UpdateTerrainTextureData(_chunkX, _chunkZ, _visible);
 	}
 
-	// Token: 0x06005B3E RID: 23358 RVA: 0x00231EF0 File Offset: 0x002300F0
+	// Token: 0x06005B57 RID: 23383 RVA: 0x002351EC File Offset: 0x002333EC
 	public void UpdateChunks()
 	{
 		if (!this.isAnyTerrainDirty)
@@ -395,7 +395,7 @@ public class UnityDistantTerrain
 		this.toUpdateTerrain.Clear();
 	}
 
-	// Token: 0x06005B3F RID: 23359 RVA: 0x00232048 File Offset: 0x00230248
+	// Token: 0x06005B58 RID: 23384 RVA: 0x00235344 File Offset: 0x00233544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateTerrainTextureData(int chunkX, int chunkZ, bool _bVisible)
 	{
@@ -439,7 +439,7 @@ public class UnityDistantTerrain
 		return true;
 	}
 
-	// Token: 0x06005B40 RID: 23360 RVA: 0x002321D8 File Offset: 0x002303D8
+	// Token: 0x06005B59 RID: 23385 RVA: 0x002354D4 File Offset: 0x002336D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateTextureApply()
 	{
@@ -453,7 +453,7 @@ public class UnityDistantTerrain
 		return true;
 	}
 
-	// Token: 0x06005B41 RID: 23361 RVA: 0x00232208 File Offset: 0x00230408
+	// Token: 0x06005B5A RID: 23386 RVA: 0x00235504 File Offset: 0x00233704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateVoxelChunkInfo(int _chunkX, int _chunkZ, HashSet<uint> _visibleVoxelChunks)
 	{
@@ -582,7 +582,7 @@ public class UnityDistantTerrain
 		}
 	}
 
-	// Token: 0x06005B42 RID: 23362 RVA: 0x00232790 File Offset: 0x00230990
+	// Token: 0x06005B5B RID: 23387 RVA: 0x00235A8C File Offset: 0x00233C8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateChunkHeights(int _chunkX, int _chunkZ, UnityDistantTerrain.VoxeChunkInfo _vciMiddle)
 	{
@@ -740,150 +740,150 @@ public class UnityDistantTerrain
 		return true;
 	}
 
-	// Token: 0x040046D0 RID: 18128
+	// Token: 0x0400470F RID: 18191
 	public const int cSplatBorderSize = 1;
 
-	// Token: 0x040046D1 RID: 18129
+	// Token: 0x04004710 RID: 18192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileArea<float[,]> terrainHeights;
 
-	// Token: 0x040046D2 RID: 18130
+	// Token: 0x04004711 RID: 18193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileArea<Color32[]> splat0Arr;
 
-	// Token: 0x040046D3 RID: 18131
+	// Token: 0x04004712 RID: 18194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileArea<Color32[]> splat1Arr;
 
-	// Token: 0x040046D4 RID: 18132
+	// Token: 0x04004713 RID: 18195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileArea<Color32[]> splat2Arr;
 
-	// Token: 0x040046D5 RID: 18133
+	// Token: 0x04004714 RID: 18196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject cacheParentObj;
 
-	// Token: 0x040046D6 RID: 18134
+	// Token: 0x04004715 RID: 18197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform cacheParentT;
 
-	// Token: 0x040046D7 RID: 18135
+	// Token: 0x04004716 RID: 18198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject visibleParentObj;
 
-	// Token: 0x040046D8 RID: 18136
+	// Token: 0x04004717 RID: 18199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform visibleParentT;
 
-	// Token: 0x040046D9 RID: 18137
+	// Token: 0x04004718 RID: 18200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material terrainMaterial;
 
-	// Token: 0x040046DA RID: 18138
+	// Token: 0x04004719 RID: 18201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material waterMaterial;
 
-	// Token: 0x040046DB RID: 18139
+	// Token: 0x0400471A RID: 18202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrain.Config terrainConfig;
 
-	// Token: 0x040046DC RID: 18140
+	// Token: 0x0400471B RID: 18203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int visibleChunks;
 
-	// Token: 0x040046DD RID: 18141
+	// Token: 0x0400471C RID: 18204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileArea<UnityDistantTerrain.TerrainAndWater> terrainTiles;
 
-	// Token: 0x040046DE RID: 18142
+	// Token: 0x0400471D RID: 18205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<UnityDistantTerrain.TerrainAndWater> terrainCache = new List<UnityDistantTerrain.TerrainAndWater>();
 
-	// Token: 0x040046DF RID: 18143
+	// Token: 0x0400471E RID: 18206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileArea<Texture2D>[] splatMapCache = new TileArea<Texture2D>[3];
 
-	// Token: 0x040046E0 RID: 18144
+	// Token: 0x0400471F RID: 18207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<uint> tempKeysToRemove = new List<uint>();
 
-	// Token: 0x040046E1 RID: 18145
+	// Token: 0x04004720 RID: 18208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3> tempPositions = new List<Vector3>();
 
-	// Token: 0x040046E2 RID: 18146
+	// Token: 0x04004721 RID: 18209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAnyTerrainDirty;
 
-	// Token: 0x040046E3 RID: 18147
+	// Token: 0x04004722 RID: 18210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isNeighborsDirty;
 
-	// Token: 0x040046E4 RID: 18148
+	// Token: 0x04004723 RID: 18211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClipTextureDirty;
 
-	// Token: 0x040046E5 RID: 18149
+	// Token: 0x04004724 RID: 18212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<uint> visibleTerrainTilesOfObservers = new HashSet<uint>();
 
-	// Token: 0x040046E6 RID: 18150
+	// Token: 0x04004725 RID: 18213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D terrainClipTexture;
 
-	// Token: 0x040046E7 RID: 18151
+	// Token: 0x04004726 RID: 18214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32[] terrainClipCols;
 
-	// Token: 0x040046E8 RID: 18152
+	// Token: 0x04004727 RID: 18215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnityDistantTerrainWaterPlane waterPlane;
 
-	// Token: 0x040046E9 RID: 18153
+	// Token: 0x04004728 RID: 18216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int waterChunks16x16Width;
 
-	// Token: 0x040046EA RID: 18154
+	// Token: 0x04004729 RID: 18217
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] waterChunks16x16;
 
-	// Token: 0x040046EB RID: 18155
+	// Token: 0x0400472A RID: 18218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<uint> visibleVoxelChunks = new HashSet<uint>();
 
-	// Token: 0x040046EC RID: 18156
+	// Token: 0x0400472B RID: 18219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] pixelErrorDistanceDiv = new float[] { 60f, 75f, 90f, 160f, 300f };
 
-	// Token: 0x040046ED RID: 18157
+	// Token: 0x0400472C RID: 18220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] basemapDistances = new float[] { 300f, 300f, 400f, 550f, 800f };
 
-	// Token: 0x040046EE RID: 18158
+	// Token: 0x0400472D RID: 18221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 colClipTerrainAndWater = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x040046EF RID: 18159
+	// Token: 0x0400472E RID: 18222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 colClipWater = new Color32(0, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x040046F0 RID: 18160
+	// Token: 0x0400472F RID: 18223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 colNoClip = new Color32(0, 0, 0, 0);
 
-	// Token: 0x040046F1 RID: 18161
+	// Token: 0x04004730 RID: 18224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<uint, UnityDistantTerrain.VoxeChunkInfo> dictChunkHeightsArr = new Dictionary<uint, UnityDistantTerrain.VoxeChunkInfo>();
 
-	// Token: 0x040046F2 RID: 18162
+	// Token: 0x04004731 RID: 18225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<uint> toRemove = new List<uint>();
 
-	// Token: 0x040046F3 RID: 18163
+	// Token: 0x04004732 RID: 18226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Terrain> toUpdateTerrain = new HashSet<Terrain>();
 
-	// Token: 0x040046F4 RID: 18164
+	// Token: 0x04004733 RID: 18227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i[] posAround = new Vector3i[]
 	{
@@ -898,15 +898,15 @@ public class UnityDistantTerrain
 		new Vector3i(1, 0, 1)
 	};
 
-	// Token: 0x040046F5 RID: 18165
+	// Token: 0x04004734 RID: 18228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[,] heights8x8 = new float[9, 9];
 
-	// Token: 0x02000BD4 RID: 3028
+	// Token: 0x02000BE6 RID: 3046
 	public struct Config
 	{
-		// Token: 0x1700098B RID: 2443
-		// (get) Token: 0x06005B44 RID: 23364 RVA: 0x00232BE5 File Offset: 0x00230DE5
+		// Token: 0x170009AD RID: 2477
+		// (get) Token: 0x06005B5D RID: 23389 RVA: 0x00235EE1 File Offset: 0x002340E1
 		public int ChunkWorldSize
 		{
 			get
@@ -915,65 +915,65 @@ public class UnityDistantTerrain
 			}
 		}
 
-		// Token: 0x040046F6 RID: 18166
+		// Token: 0x04004735 RID: 18229
 		public int DataWidth;
 
-		// Token: 0x040046F7 RID: 18167
+		// Token: 0x04004736 RID: 18230
 		public int DataHeight;
 
-		// Token: 0x040046F8 RID: 18168
+		// Token: 0x04004737 RID: 18231
 		public int DataTileSize;
 
-		// Token: 0x040046F9 RID: 18169
+		// Token: 0x04004738 RID: 18232
 		public int DataSteps;
 
-		// Token: 0x040046FA RID: 18170
+		// Token: 0x04004739 RID: 18233
 		public int SplatSteps;
 
-		// Token: 0x040046FB RID: 18171
+		// Token: 0x0400473A RID: 18234
 		public int MetersPerHeightPix;
 
-		// Token: 0x040046FC RID: 18172
+		// Token: 0x0400473B RID: 18235
 		public int MaxHeight;
 
-		// Token: 0x040046FD RID: 18173
+		// Token: 0x0400473C RID: 18236
 		public int PixelError;
 	}
 
-	// Token: 0x02000BD5 RID: 3029
+	// Token: 0x02000BE7 RID: 3047
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class TerrainAndWater
 	{
-		// Token: 0x040046FE RID: 18174
+		// Token: 0x0400473D RID: 18237
 		public Terrain terrain;
 
-		// Token: 0x040046FF RID: 18175
+		// Token: 0x0400473E RID: 18238
 		public GameObject waterPlane;
 	}
 
-	// Token: 0x02000BD6 RID: 3030
+	// Token: 0x02000BE8 RID: 3048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class VoxeChunkInfo
 	{
-		// Token: 0x06005B46 RID: 23366 RVA: 0x00232BED File Offset: 0x00230DED
+		// Token: 0x06005B5F RID: 23391 RVA: 0x00235EE9 File Offset: 0x002340E9
 		public bool IsEmpty()
 		{
 			return this.a0 == 0 && this.a1 == 0 && this.a2 == 0 && this.a3 == 0;
 		}
 
-		// Token: 0x04004700 RID: 18176
+		// Token: 0x0400473F RID: 18239
 		public bool isDirty;
 
-		// Token: 0x04004701 RID: 18177
+		// Token: 0x04004740 RID: 18240
 		public byte a0;
 
-		// Token: 0x04004702 RID: 18178
+		// Token: 0x04004741 RID: 18241
 		public byte a1;
 
-		// Token: 0x04004703 RID: 18179
+		// Token: 0x04004742 RID: 18242
 		public byte a2;
 
-		// Token: 0x04004704 RID: 18180
+		// Token: 0x04004743 RID: 18243
 		public byte a3;
 	}
 }

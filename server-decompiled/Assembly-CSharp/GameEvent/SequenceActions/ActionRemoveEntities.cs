@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A1 RID: 6561
+	// Token: 0x020019CD RID: 6605
 	[Preserve]
 	public class ActionRemoveEntities : BaseAction
 	{
-		// Token: 0x0600C8FC RID: 51452 RVA: 0x0049C830 File Offset: 0x0049AA30
+		// Token: 0x0600CA54 RID: 51796 RVA: 0x004A0CF4 File Offset: 0x0049EEF4
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.targetGroup != "")
@@ -35,14 +35,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8FD RID: 51453 RVA: 0x0049C8E9 File Offset: 0x0049AAE9
+		// Token: 0x0600CA55 RID: 51797 RVA: 0x004A0DAD File Offset: 0x0049EFAD
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRemoveData(GameEventManager gm, Entity ent)
 		{
 			gm.RemoveSpawnedEntry(ent);
 		}
 
-		// Token: 0x0600C8FE RID: 51454 RVA: 0x0049C8F2 File Offset: 0x0049AAF2
+		// Token: 0x0600CA56 RID: 51798 RVA: 0x004A0DB6 File Offset: 0x0049EFB6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator removeLater(Entity e)
 		{
@@ -59,14 +59,14 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C8FF RID: 51455 RVA: 0x0049C901 File Offset: 0x0049AB01
+		// Token: 0x0600CA57 RID: 51799 RVA: 0x004A0DC5 File Offset: 0x0049EFC5
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionRemoveEntities.PropTargetGroup, ref this.targetGroup);
 		}
 
-		// Token: 0x0600C900 RID: 51456 RVA: 0x0049C91B File Offset: 0x0049AB1B
+		// Token: 0x0600CA58 RID: 51800 RVA: 0x004A0DDF File Offset: 0x0049EFDF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -76,11 +76,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400984A RID: 38986
+		// Token: 0x04009910 RID: 39184
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x0400984B RID: 38987
+		// Token: 0x04009911 RID: 39185
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 	}

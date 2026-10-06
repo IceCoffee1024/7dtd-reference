@@ -2,12 +2,12 @@
 
 namespace Platform.XBL.Save.Storage
 {
-	// Token: 0x02001C4E RID: 7246
+	// Token: 0x02001C80 RID: 7296
 	public enum SaveStorageProvider
 	{
-		// Token: 0x0400A380 RID: 41856
+		// Token: 0x0400A455 RID: 42069
 		Blobs,
-		// Token: 0x0400A381 RID: 41857
+		// Token: 0x0400A456 RID: 42070
 		Files
 	}
 }

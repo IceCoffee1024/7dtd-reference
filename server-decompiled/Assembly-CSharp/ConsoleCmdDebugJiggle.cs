@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000208 RID: 520
+// Token: 0x02000209 RID: 521
 [Preserve]
 public class ConsoleCmdDebugJiggle : ConsoleCmdAbstract
 {
-	// Token: 0x06000FDD RID: 4061 RVA: 0x00066524 File Offset: 0x00064724
+	// Token: 0x06000FD0 RID: 4048 RVA: 0x00066514 File Offset: 0x00064714
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debugjiggle", "dgj" };
 	}
 
-	// Token: 0x06000FDE RID: 4062 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x06000FD1 RID: 4049 RVA: 0x0003223F File Offset: 0x0003043F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "";
 	}
 
-	// Token: 0x06000FDF RID: 4063 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x06000FD2 RID: 4050 RVA: 0x0003223F File Offset: 0x0003043F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x17000161 RID: 353
-	// (get) Token: 0x06000FE0 RID: 4064 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000159 RID: 345
+	// (get) Token: 0x06000FD3 RID: 4051 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -37,7 +37,7 @@ public class ConsoleCmdDebugJiggle : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FE1 RID: 4065 RVA: 0x0006653C File Offset: 0x0006473C
+	// Token: 0x06000FD4 RID: 4052 RVA: 0x0006652C File Offset: 0x0006472C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;
@@ -68,7 +68,7 @@ public class ConsoleCmdDebugJiggle : ConsoleCmdAbstract
 		this.LogEntityJiggles(entity);
 	}
 
-	// Token: 0x06000FE2 RID: 4066 RVA: 0x00066600 File Offset: 0x00064800
+	// Token: 0x06000FD5 RID: 4053 RVA: 0x000665F0 File Offset: 0x000647F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogEntityJiggles(Entity entity)
 	{

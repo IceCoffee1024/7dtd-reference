@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001530 RID: 5424
+// Token: 0x02001552 RID: 5458
 public class AnimationTestSceneTools : MonoBehaviour
 {
-	// Token: 0x0600AA4D RID: 43597 RVA: 0x003F7CCE File Offset: 0x003F5ECE
+	// Token: 0x0600AB00 RID: 43776 RVA: 0x003FCB22 File Offset: 0x003FAD22
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -12,7 +12,7 @@ public class AnimationTestSceneTools : MonoBehaviour
 		this.weaponPrefabCount = this.weaponPrefabs.Length;
 	}
 
-	// Token: 0x0600AA4E RID: 43598 RVA: 0x003F7CEC File Offset: 0x003F5EEC
+	// Token: 0x0600AB01 RID: 43777 RVA: 0x003FCB40 File Offset: 0x003FAD40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -98,7 +98,7 @@ public class AnimationTestSceneTools : MonoBehaviour
 		this.anim.SetFloat("Forward", this.forward);
 	}
 
-	// Token: 0x0600AA4F RID: 43599 RVA: 0x003F7F44 File Offset: 0x003F6144
+	// Token: 0x0600AB02 RID: 43778 RVA: 0x003FCD98 File Offset: 0x003FAF98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attachWeapon(int weaponPrefabIndex)
 	{
@@ -114,7 +114,7 @@ public class AnimationTestSceneTools : MonoBehaviour
 		this.anim.SetInteger("WeaponHoldType", this.weaponHoldTypes[weaponPrefabIndex]);
 	}
 
-	// Token: 0x0600AA50 RID: 43600 RVA: 0x003F7FE4 File Offset: 0x003F61E4
+	// Token: 0x0600AB03 RID: 43779 RVA: 0x003FCE38 File Offset: 0x003FB038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeAllWeapons()
 	{
@@ -129,7 +129,7 @@ public class AnimationTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA51 RID: 43601 RVA: 0x003F8040 File Offset: 0x003F6240
+	// Token: 0x0600AB04 RID: 43780 RVA: 0x003FCE94 File Offset: 0x003FB094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateYLook()
 	{
@@ -141,156 +141,156 @@ public class AnimationTestSceneTools : MonoBehaviour
 		this.anim.SetFloat("YLook", this.mousePosY);
 	}
 
-	// Token: 0x04007E5D RID: 32349
+	// Token: 0x04007EE0 RID: 32480
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator anim;
 
-	// Token: 0x04007E5E RID: 32350
+	// Token: 0x04007EE1 RID: 32481
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int layerIndex;
 
-	// Token: 0x04007E5F RID: 32351
+	// Token: 0x04007EE2 RID: 32482
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float oneHandMeleeTargetWeight;
 
-	// Token: 0x04007E60 RID: 32352
+	// Token: 0x04007EE3 RID: 32483
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float oneHandPistolTargetWeight;
 
-	// Token: 0x04007E61 RID: 32353
+	// Token: 0x04007EE4 RID: 32484
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int maxLayers;
 
-	// Token: 0x04007E62 RID: 32354
+	// Token: 0x04007EE5 RID: 32485
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float layerWeight;
 
-	// Token: 0x04007E63 RID: 32355
+	// Token: 0x04007EE6 RID: 32486
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float turnRate = 200f;
 
-	// Token: 0x04007E64 RID: 32356
+	// Token: 0x04007EE7 RID: 32487
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int totalModels;
 
-	// Token: 0x04007E65 RID: 32357
+	// Token: 0x04007EE8 RID: 32488
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentModel = 1;
 
-	// Token: 0x04007E66 RID: 32358
+	// Token: 0x04007EE9 RID: 32489
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int weaponPrefabIndex;
 
-	// Token: 0x04007E67 RID: 32359
+	// Token: 0x04007EEA RID: 32490
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int weaponJointChildrenCount;
 
-	// Token: 0x04007E68 RID: 32360
+	// Token: 0x04007EEB RID: 32491
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currOneHandMeleeWeight;
 
-	// Token: 0x04007E69 RID: 32361
+	// Token: 0x04007EEC RID: 32492
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currOneHandPistolWeight;
 
-	// Token: 0x04007E6A RID: 32362
+	// Token: 0x04007EED RID: 32493
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isCrouching;
 
-	// Token: 0x04007E6B RID: 32363
+	// Token: 0x04007EEE RID: 32494
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int weaponPrefabCount;
 
-	// Token: 0x04007E6C RID: 32364
+	// Token: 0x04007EEF RID: 32495
 	public GameObject[] weaponPrefabs;
 
-	// Token: 0x04007E6D RID: 32365
+	// Token: 0x04007EF0 RID: 32496
 	public int[] weaponHoldTypes;
 
-	// Token: 0x04007E6E RID: 32366
+	// Token: 0x04007EF1 RID: 32497
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float[] locomotionSpeeds = new float[] { 0f, 2.08f, 4.2f };
 
-	// Token: 0x04007E6F RID: 32367
+	// Token: 0x04007EF2 RID: 32498
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int locomotionState;
 
-	// Token: 0x04007E70 RID: 32368
+	// Token: 0x04007EF3 RID: 32499
 	public Transform weaponJoint;
 
-	// Token: 0x04007E71 RID: 32369
+	// Token: 0x04007EF4 RID: 32500
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject existingChild;
 
-	// Token: 0x04007E72 RID: 32370
+	// Token: 0x04007EF5 RID: 32501
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject newWeapon;
 
-	// Token: 0x04007E73 RID: 32371
+	// Token: 0x04007EF6 RID: 32502
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mousePosXRatio;
 
-	// Token: 0x04007E74 RID: 32372
+	// Token: 0x04007EF7 RID: 32503
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mousePosYRatio;
 
-	// Token: 0x04007E75 RID: 32373
+	// Token: 0x04007EF8 RID: 32504
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mousePosX;
 
-	// Token: 0x04007E76 RID: 32374
+	// Token: 0x04007EF9 RID: 32505
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float mousePosY;
 
-	// Token: 0x04007E77 RID: 32375
+	// Token: 0x04007EFA RID: 32506
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float forward;
 
-	// Token: 0x04007E78 RID: 32376
+	// Token: 0x04007EFB RID: 32507
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float forwardGoal;
 
-	// Token: 0x04007E79 RID: 32377
+	// Token: 0x04007EFC RID: 32508
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float strafe;
 
-	// Token: 0x04007E7A RID: 32378
+	// Token: 0x04007EFD RID: 32509
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float YLook;
 
-	// Token: 0x04007E7B RID: 32379
+	// Token: 0x04007EFE RID: 32510
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float horizontalMax = 4.2f;
 
-	// Token: 0x04007E7C RID: 32380
+	// Token: 0x04007EFF RID: 32511
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float verticalMax = 4.2f;

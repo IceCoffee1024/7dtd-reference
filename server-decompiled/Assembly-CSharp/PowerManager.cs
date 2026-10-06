@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x0200090F RID: 2319
+// Token: 0x02000914 RID: 2324
 public class PowerManager
 {
-	// Token: 0x1700071B RID: 1819
-	// (get) Token: 0x06004327 RID: 17191 RVA: 0x001A2D52 File Offset: 0x001A0F52
-	// (set) Token: 0x06004328 RID: 17192 RVA: 0x001A2D5A File Offset: 0x001A0F5A
+	// Token: 0x1700073A RID: 1850
+	// (get) Token: 0x060042B9 RID: 17081 RVA: 0x001A2E56 File Offset: 0x001A1056
+	// (set) Token: 0x060042BA RID: 17082 RVA: 0x001A2E5E File Offset: 0x001A105E
 	public byte CurrentFileVersion { get; set; }
 
-	// Token: 0x1700071C RID: 1820
-	// (get) Token: 0x06004329 RID: 17193 RVA: 0x001A2D63 File Offset: 0x001A0F63
+	// Token: 0x1700073B RID: 1851
+	// (get) Token: 0x060042BB RID: 17083 RVA: 0x001A2E67 File Offset: 0x001A1067
 	public static PowerManager Instance
 	{
 		get
@@ -25,8 +25,8 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x1700071D RID: 1821
-	// (get) Token: 0x0600432A RID: 17194 RVA: 0x001A2D7B File Offset: 0x001A0F7B
+	// Token: 0x1700073C RID: 1852
+	// (get) Token: 0x060042BC RID: 17084 RVA: 0x001A2E7F File Offset: 0x001A107F
 	public static bool HasInstance
 	{
 		get
@@ -35,7 +35,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x0600432B RID: 17195 RVA: 0x001A2D88 File Offset: 0x001A0F88
+	// Token: 0x060042BD RID: 17085 RVA: 0x001A2E8C File Offset: 0x001A108C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PowerManager()
 	{
@@ -45,7 +45,7 @@ public class PowerManager
 		this.PowerTriggers = new List<PowerTrigger>();
 	}
 
-	// Token: 0x0600432C RID: 17196 RVA: 0x001A2DE3 File Offset: 0x001A0FE3
+	// Token: 0x060042BE RID: 17086 RVA: 0x001A2EE7 File Offset: 0x001A10E7
 	public void SetTileEntityUpdate(TileEntityPoweredBlock tileEntity, bool shouldUpdate)
 	{
 		if (shouldUpdate)
@@ -56,7 +56,7 @@ public class PowerManager
 		this.ClientUpdateList.Remove(tileEntity);
 	}
 
-	// Token: 0x0600432D RID: 17197 RVA: 0x001A2E04 File Offset: 0x001A1004
+	// Token: 0x060042BF RID: 17087 RVA: 0x001A2F08 File Offset: 0x001A1108
 	public void Update()
 	{
 		if (GameManager.Instance.World == null || GameManager.Instance.World.Players == null || GameManager.Instance.World.Players.Count == 0)
@@ -91,7 +91,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x0600432E RID: 17198 RVA: 0x001A2F68 File Offset: 0x001A1168
+	// Token: 0x060042C0 RID: 17088 RVA: 0x001A306C File Offset: 0x001A126C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int savePowerDataThreaded(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -107,7 +107,7 @@ public class PowerManager
 		return -1;
 	}
 
-	// Token: 0x0600432F RID: 17199 RVA: 0x001A2FD4 File Offset: 0x001A11D4
+	// Token: 0x060042C1 RID: 17089 RVA: 0x001A30D8 File Offset: 0x001A12D8
 	public void LoadPowerManager()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "power.dat");
@@ -142,7 +142,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004330 RID: 17200 RVA: 0x001A30DC File Offset: 0x001A12DC
+	// Token: 0x060042C2 RID: 17090 RVA: 0x001A31E0 File Offset: 0x001A13E0
 	public void SavePowerManager()
 	{
 		if (this.dataSaveThreadInfo == null || !ThreadManager.ActiveThreads.ContainsKey("powerDataSave"))
@@ -157,8 +157,8 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004331 RID: 17201 RVA: 0x001A3168 File Offset: 0x001A1368
-	public void Write(BinaryWriter bw)
+	// Token: 0x060042C3 RID: 17091 RVA: 0x001A326C File Offset: 0x001A146C
+	public void Write(PooledBinaryWriter bw)
 	{
 		bw.Write(PowerManager.FileVersion);
 		bw.Write(this.Circuits.Count);
@@ -169,8 +169,8 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004332 RID: 17202 RVA: 0x001A31D4 File Offset: 0x001A13D4
-	public void Read(BinaryReader br)
+	// Token: 0x060042C4 RID: 17092 RVA: 0x001A32D8 File Offset: 0x001A14D8
+	public void Read(PooledBinaryReader br)
 	{
 		this.CurrentFileVersion = br.ReadByte();
 		this.Circuits.Clear();
@@ -183,7 +183,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004333 RID: 17203 RVA: 0x001A322C File Offset: 0x001A142C
+	// Token: 0x060042C5 RID: 17093 RVA: 0x001A3330 File Offset: 0x001A1530
 	public void Cleanup()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -199,7 +199,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004334 RID: 17204 RVA: 0x001A3278 File Offset: 0x001A1478
+	// Token: 0x060042C6 RID: 17094 RVA: 0x001A337C File Offset: 0x001A157C
 	public void AddPowerNode(PowerItem node, PowerItem parent = null)
 	{
 		this.Circuits.Add(node);
@@ -215,7 +215,7 @@ public class PowerManager
 		this.PowerItemDictionary.Add(node.Position, node);
 	}
 
-	// Token: 0x06004335 RID: 17205 RVA: 0x001A32E0 File Offset: 0x001A14E0
+	// Token: 0x060042C7 RID: 17095 RVA: 0x001A33E4 File Offset: 0x001A15E4
 	public void RemovePowerNode(PowerItem node)
 	{
 		foreach (PowerItem powerItem in new List<PowerItem>(node.Children))
@@ -238,7 +238,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004336 RID: 17206 RVA: 0x001A33A8 File Offset: 0x001A15A8
+	// Token: 0x060042C8 RID: 17096 RVA: 0x001A34AC File Offset: 0x001A16AC
 	public void FindPowerItems(Func<PowerItem, bool> _predicate, List<PowerItem> _results)
 	{
 		foreach (PowerItem powerItem in this.PowerItemDictionary.Values)
@@ -250,7 +250,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x06004337 RID: 17207 RVA: 0x001A340C File Offset: 0x001A160C
+	// Token: 0x060042C9 RID: 17097 RVA: 0x001A3510 File Offset: 0x001A1710
 	public void SetParent(PowerItem child, PowerItem parent)
 	{
 		if (child == null)
@@ -282,14 +282,14 @@ public class PowerManager
 		child.SendHasLocalChangesToRoot();
 	}
 
-	// Token: 0x06004338 RID: 17208 RVA: 0x001A347C File Offset: 0x001A167C
+	// Token: 0x060042CA RID: 17098 RVA: 0x001A3580 File Offset: 0x001A1780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CircularParentCheck(PowerItem Parent, PowerItem Child)
 	{
 		return Parent == Child || (Parent != null && Parent.Parent != null && this.CircularParentCheck(Parent.Parent, Child));
 	}
 
-	// Token: 0x06004339 RID: 17209 RVA: 0x001A34A0 File Offset: 0x001A16A0
+	// Token: 0x060042CB RID: 17099 RVA: 0x001A35A4 File Offset: 0x001A17A4
 	public void RemoveParent(PowerItem node)
 	{
 		if (node.Parent != null)
@@ -308,7 +308,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x0600433A RID: 17210 RVA: 0x001A3518 File Offset: 0x001A1718
+	// Token: 0x060042CC RID: 17100 RVA: 0x001A361C File Offset: 0x001A181C
 	public void RemoveChild(PowerItem child)
 	{
 		child.Parent.Children.Remove(child);
@@ -316,7 +316,7 @@ public class PowerManager
 		this.Circuits.Add(child);
 	}
 
-	// Token: 0x0600433B RID: 17211 RVA: 0x001A3540 File Offset: 0x001A1740
+	// Token: 0x060042CD RID: 17101 RVA: 0x001A3644 File Offset: 0x001A1844
 	public void SetParent(Vector3i childPos, Vector3i parentPos)
 	{
 		PowerItem powerItemByWorldPos = this.GetPowerItemByWorldPos(parentPos);
@@ -324,7 +324,7 @@ public class PowerManager
 		this.SetParent(powerItemByWorldPos2, powerItemByWorldPos);
 	}
 
-	// Token: 0x0600433C RID: 17212 RVA: 0x001A3565 File Offset: 0x001A1765
+	// Token: 0x060042CE RID: 17102 RVA: 0x001A3669 File Offset: 0x001A1869
 	public PowerItem GetPowerItemByWorldPos(Vector3i position)
 	{
 		if (this.PowerItemDictionary.ContainsKey(position))
@@ -334,7 +334,7 @@ public class PowerManager
 		return null;
 	}
 
-	// Token: 0x0600433D RID: 17213 RVA: 0x001A3584 File Offset: 0x001A1784
+	// Token: 0x060042CF RID: 17103 RVA: 0x001A3688 File Offset: 0x001A1888
 	public void LogPowerManager()
 	{
 		for (int i = 0; i < this.PowerSources.Count; i++)
@@ -343,7 +343,7 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x0600433E RID: 17214 RVA: 0x001A35BC File Offset: 0x001A17BC
+	// Token: 0x060042D0 RID: 17104 RVA: 0x001A36C0 File Offset: 0x001A18C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogChildren(PowerItem item)
 	{
@@ -368,50 +368,50 @@ public class PowerManager
 		}
 	}
 
-	// Token: 0x04003642 RID: 13890
+	// Token: 0x04003636 RID: 13878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float UPDATE_TIME_SEC = 0.16f;
 
-	// Token: 0x04003643 RID: 13891
+	// Token: 0x04003637 RID: 13879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SAVE_TIME_SEC = 120f;
 
-	// Token: 0x04003644 RID: 13892
+	// Token: 0x04003638 RID: 13880
 	public static byte FileVersion = 2;
 
-	// Token: 0x04003646 RID: 13894
+	// Token: 0x0400363A RID: 13882
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PowerManager instance;
 
-	// Token: 0x04003647 RID: 13895
+	// Token: 0x0400363B RID: 13883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PowerItem> Circuits;
 
-	// Token: 0x04003648 RID: 13896
+	// Token: 0x0400363C RID: 13884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PowerSource> PowerSources;
 
-	// Token: 0x04003649 RID: 13897
+	// Token: 0x0400363D RID: 13885
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PowerTrigger> PowerTriggers;
 
-	// Token: 0x0400364A RID: 13898
+	// Token: 0x0400363E RID: 13886
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector3i, PowerItem> PowerItemDictionary = new Dictionary<Vector3i, PowerItem>();
 
-	// Token: 0x0400364B RID: 13899
+	// Token: 0x0400363F RID: 13887
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 
-	// Token: 0x0400364C RID: 13900
+	// Token: 0x04003640 RID: 13888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saveTime = 120f;
 
-	// Token: 0x0400364D RID: 13901
+	// Token: 0x04003641 RID: 13889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo dataSaveThreadInfo;
 
-	// Token: 0x0400364E RID: 13902
+	// Token: 0x04003642 RID: 13890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<TileEntityPoweredBlock> ClientUpdateList = new HashSet<TileEntityPoweredBlock>();
 }

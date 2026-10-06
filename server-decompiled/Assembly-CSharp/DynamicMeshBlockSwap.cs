@@ -3,16 +3,16 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using ConcurrentCollections;
 
-// Token: 0x0200035E RID: 862
+// Token: 0x02000361 RID: 865
 public class DynamicMeshBlockSwap
 {
-	// Token: 0x060018FA RID: 6394 RVA: 0x0008CB10 File Offset: 0x0008AD10
+	// Token: 0x060018F5 RID: 6389 RVA: 0x0008CD90 File Offset: 0x0008AF90
 	public static bool IsValidBlock(int type)
 	{
 		return DynamicMeshBlockSwap.OpaqueBlocks.Contains(type) || DynamicMeshBlockSwap.TerrainBlocks.Contains(type);
 	}
 
-	// Token: 0x060018FB RID: 6395 RVA: 0x0008CB2C File Offset: 0x0008AD2C
+	// Token: 0x060018F6 RID: 6390 RVA: 0x0008CDAC File Offset: 0x0008AFAC
 	public static void Init()
 	{
 		DynamicMeshBlockSwap.BlockSwaps.Clear();
@@ -67,24 +67,24 @@ public class DynamicMeshBlockSwap
 		}
 	}
 
-	// Token: 0x04000FEA RID: 4074
+	// Token: 0x04000FE3 RID: 4067
 	public static BlockValue DoorReplacement;
 
-	// Token: 0x04000FEB RID: 4075
+	// Token: 0x04000FE4 RID: 4068
 	public static ConcurrentHashSet<int> DoorBlocks = new ConcurrentHashSet<int>();
 
-	// Token: 0x04000FEC RID: 4076
+	// Token: 0x04000FE5 RID: 4069
 	public static ConcurrentHashSet<int> OpaqueBlocks = new ConcurrentHashSet<int>();
 
-	// Token: 0x04000FED RID: 4077
+	// Token: 0x04000FE6 RID: 4070
 	public static ConcurrentHashSet<int> TerrainBlocks = new ConcurrentHashSet<int>();
 
-	// Token: 0x04000FEE RID: 4078
+	// Token: 0x04000FE7 RID: 4071
 	public static ConcurrentDictionary<int, int> BlockSwaps = new ConcurrentDictionary<int, int>();
 
-	// Token: 0x04000FEF RID: 4079
+	// Token: 0x04000FE8 RID: 4072
 	public static ConcurrentDictionary<int, long> TextureSwaps = new ConcurrentDictionary<int, long>();
 
-	// Token: 0x04000FF0 RID: 4080
+	// Token: 0x04000FE9 RID: 4073
 	public static HashSet<int> InvalidPaintIds = new HashSet<int>();
 }

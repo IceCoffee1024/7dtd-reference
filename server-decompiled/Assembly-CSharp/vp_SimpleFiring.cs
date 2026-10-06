@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200160F RID: 5647
+// Token: 0x0200162E RID: 5678
 public class vp_SimpleFiring : MonoBehaviour
 {
-	// Token: 0x0600B173 RID: 45427 RVA: 0x00423F3D File Offset: 0x0042213D
+	// Token: 0x0600B205 RID: 45573 RVA: 0x00427C19 File Offset: 0x00425E19
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.m_Player = (vp_PlayerEventHandler)base.transform.root.GetComponentInChildren(typeof(vp_PlayerEventHandler));
 	}
 
-	// Token: 0x0600B174 RID: 45428 RVA: 0x00423F64 File Offset: 0x00422164
+	// Token: 0x0600B206 RID: 45574 RVA: 0x00427C40 File Offset: 0x00425E40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -21,7 +21,7 @@ public class vp_SimpleFiring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B175 RID: 45429 RVA: 0x00423F80 File Offset: 0x00422180
+	// Token: 0x0600B207 RID: 45575 RVA: 0x00427C5C File Offset: 0x00425E5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -31,7 +31,7 @@ public class vp_SimpleFiring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B176 RID: 45430 RVA: 0x00423F9C File Offset: 0x0042219C
+	// Token: 0x0600B208 RID: 45576 RVA: 0x00427C78 File Offset: 0x00425E78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -41,7 +41,7 @@ public class vp_SimpleFiring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400855D RID: 34141
+	// Token: 0x040085B3 RID: 34227
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;

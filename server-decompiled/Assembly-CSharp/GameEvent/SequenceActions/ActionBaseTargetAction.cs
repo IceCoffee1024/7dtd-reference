@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200196F RID: 6511
+	// Token: 0x0200199B RID: 6555
 	[Preserve]
 	public class ActionBaseTargetAction : BaseAction
 	{
-		// Token: 0x0600C82A RID: 51242 RVA: 0x00496E64 File Offset: 0x00495064
+		// Token: 0x0600C982 RID: 51586 RVA: 0x0049B340 File Offset: 0x00499540
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.targetGroup != "")
@@ -74,17 +74,17 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C82B RID: 51243 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C983 RID: 51587 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void StartTargetAction()
 		{
 		}
 
-		// Token: 0x0600C82C RID: 51244 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C984 RID: 51588 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void EndTargetAction()
 		{
 		}
 
-		// Token: 0x0600C82D RID: 51245 RVA: 0x00496FA1 File Offset: 0x004951A1
+		// Token: 0x0600C985 RID: 51589 RVA: 0x0049B47D File Offset: 0x0049967D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
@@ -93,20 +93,20 @@ namespace GameEvent.SequenceActions
 			this.index = 0;
 		}
 
-		// Token: 0x0600C82E RID: 51246 RVA: 0x00046EDA File Offset: 0x000450DA
+		// Token: 0x0600C986 RID: 51590 RVA: 0x000470B6 File Offset: 0x000452B6
 		public virtual BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C82F RID: 51247 RVA: 0x00496FB7 File Offset: 0x004951B7
+		// Token: 0x0600C987 RID: 51591 RVA: 0x0049B493 File Offset: 0x00499693
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionBaseTargetAction.PropTargetGroup, ref this.targetGroup);
 		}
 
-		// Token: 0x0600C830 RID: 51248 RVA: 0x00496FD1 File Offset: 0x004951D1
+		// Token: 0x0600C988 RID: 51592 RVA: 0x0049B4AD File Offset: 0x004996AD
 		public override BaseAction Clone()
 		{
 			ActionBaseTargetAction actionBaseTargetAction = (ActionBaseTargetAction)base.Clone();
@@ -114,7 +114,7 @@ namespace GameEvent.SequenceActions
 			return actionBaseTargetAction;
 		}
 
-		// Token: 0x0600C831 RID: 51249 RVA: 0x00496FEA File Offset: 0x004951EA
+		// Token: 0x0600C989 RID: 51593 RVA: 0x0049B4C6 File Offset: 0x004996C6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -124,19 +124,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400971B RID: 38683
+		// Token: 0x040097E1 RID: 38881
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string targetGroup = "";
 
-		// Token: 0x0400971C RID: 38684
+		// Token: 0x040097E2 RID: 38882
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetGroup = "target_group";
 
-		// Token: 0x0400971D RID: 38685
+		// Token: 0x040097E3 RID: 38883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Entity> targetList;
 
-		// Token: 0x0400971E RID: 38686
+		// Token: 0x040097E4 RID: 38884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int index;
 	}

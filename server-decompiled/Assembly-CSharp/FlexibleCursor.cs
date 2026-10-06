@@ -3,11 +3,11 @@ using System.Collections;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020012D3 RID: 4819
+// Token: 0x020012F3 RID: 4851
 public class FlexibleCursor : CursorControllerAbs
 {
-	// Token: 0x17001220 RID: 4640
-	// (get) Token: 0x060098F5 RID: 39157 RVA: 0x0039EEDF File Offset: 0x0039D0DF
+	// Token: 0x17001265 RID: 4709
+	// (get) Token: 0x060099A1 RID: 39329 RVA: 0x003A3A8F File Offset: 0x003A1C8F
 	public bool SoftcursorAllowed
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -17,7 +17,7 @@ public class FlexibleCursor : CursorControllerAbs
 		}
 	}
 
-	// Token: 0x060098F6 RID: 39158 RVA: 0x003A0064 File Offset: 0x0039E264
+	// Token: 0x060099A2 RID: 39330 RVA: 0x003A4C14 File Offset: 0x003A2E14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -48,14 +48,14 @@ public class FlexibleCursor : CursorControllerAbs
 		FlexibleCursor.SetCursor(FlexibleCursor.currentCursorType);
 	}
 
-	// Token: 0x060098F7 RID: 39159 RVA: 0x003A016E File Offset: 0x0039E36E
+	// Token: 0x060099A3 RID: 39331 RVA: 0x003A4D1E File Offset: 0x003A2F1E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLastInputStyleChanged(PlayerInputManager.InputStyle _style)
 	{
 		FlexibleCursor.SetCursor(FlexibleCursor.currentCursorType);
 	}
 
-	// Token: 0x060098F8 RID: 39160 RVA: 0x0039F167 File Offset: 0x0039D367
+	// Token: 0x060099A4 RID: 39332 RVA: 0x003A3D17 File Offset: 0x003A1F17
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -64,7 +64,7 @@ public class FlexibleCursor : CursorControllerAbs
 		base.InitCursorBounds();
 	}
 
-	// Token: 0x060098F9 RID: 39161 RVA: 0x003A017A File Offset: 0x0039E37A
+	// Token: 0x060099A5 RID: 39333 RVA: 0x003A4D2A File Offset: 0x003A2F2A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -76,14 +76,14 @@ public class FlexibleCursor : CursorControllerAbs
 		base.DestroyBase();
 	}
 
-	// Token: 0x060098FA RID: 39162 RVA: 0x003A01B0 File Offset: 0x0039E3B0
+	// Token: 0x060099A6 RID: 39334 RVA: 0x003A4D60 File Offset: 0x003A2F60
 	public override void UpdateMoveSpeed()
 	{
 		CursorControllerAbs.regularSpeed = GamePrefs.GetFloat(EnumGamePrefs.OptionsInterfaceSensitivity);
 		this.speed = 500f + 1000f * CursorControllerAbs.regularSpeed;
 	}
 
-	// Token: 0x060098FB RID: 39163 RVA: 0x003A01D8 File Offset: 0x0039E3D8
+	// Token: 0x060099A7 RID: 39335 RVA: 0x003A4D88 File Offset: 0x003A2F88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -98,7 +98,7 @@ public class FlexibleCursor : CursorControllerAbs
 		}
 	}
 
-	// Token: 0x060098FC RID: 39164 RVA: 0x003A022C File Offset: 0x0039E42C
+	// Token: 0x060099A8 RID: 39336 RVA: 0x003A4DDC File Offset: 0x003A2FDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleControllerInput()
 	{
@@ -141,7 +141,7 @@ public class FlexibleCursor : CursorControllerAbs
 		this.SetScreenPosition(vector3.x, vector3.y);
 	}
 
-	// Token: 0x060098FD RID: 39165 RVA: 0x003A03FC File Offset: 0x0039E5FC
+	// Token: 0x060099A9 RID: 39337 RVA: 0x003A4FAC File Offset: 0x003A31AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 SnapOs(Vector3 _newPos)
 	{
@@ -169,7 +169,7 @@ public class FlexibleCursor : CursorControllerAbs
 		return this.uiCamera.cachedCamera.WorldToScreenPoint(vector);
 	}
 
-	// Token: 0x060098FE RID: 39166 RVA: 0x003A0564 File Offset: 0x0039E764
+	// Token: 0x060099AA RID: 39338 RVA: 0x003A5114 File Offset: 0x003A3314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 ConstrainCursorOs(Vector3 _newPos)
 	{
@@ -179,7 +179,7 @@ public class FlexibleCursor : CursorControllerAbs
 		return vector;
 	}
 
-	// Token: 0x060098FF RID: 39167 RVA: 0x003A05B8 File Offset: 0x0039E7B8
+	// Token: 0x060099AB RID: 39339 RVA: 0x003A5168 File Offset: 0x003A3368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 ConstrainToBounds(Vector3 _newPosition)
 	{
@@ -188,92 +188,92 @@ public class FlexibleCursor : CursorControllerAbs
 		return this.currentBounds.ClosestPoint(vector);
 	}
 
-	// Token: 0x06009900 RID: 39168 RVA: 0x003A05EC File Offset: 0x0039E7EC
+	// Token: 0x060099AC RID: 39340 RVA: 0x003A519C File Offset: 0x003A339C
 	public override Vector2 GetScreenPosition()
 	{
 		return MouseLib.GetLocalMousePosition();
 	}
 
-	// Token: 0x06009901 RID: 39169 RVA: 0x003A05EC File Offset: 0x0039E7EC
+	// Token: 0x060099AD RID: 39341 RVA: 0x003A519C File Offset: 0x003A339C
 	public override Vector2 GetLocalScreenPosition()
 	{
 		return MouseLib.GetLocalMousePosition();
 	}
 
-	// Token: 0x06009902 RID: 39170 RVA: 0x003A05F3 File Offset: 0x0039E7F3
+	// Token: 0x060099AE RID: 39342 RVA: 0x003A51A3 File Offset: 0x003A33A3
 	public override void SetScreenPosition(Vector2 _newPosition)
 	{
 		MouseLib.SetCursorPosition((int)(_newPosition.x + 0.5f), (int)(_newPosition.y + 0.5f));
 	}
 
-	// Token: 0x06009903 RID: 39171 RVA: 0x0039F858 File Offset: 0x0039DA58
+	// Token: 0x060099AF RID: 39343 RVA: 0x003A4408 File Offset: 0x003A2608
 	public override void SetScreenPosition(float _x, float _y)
 	{
 		this.SetScreenPosition(new Vector2(_x, _y));
 	}
 
-	// Token: 0x06009904 RID: 39172 RVA: 0x003A0614 File Offset: 0x0039E814
+	// Token: 0x060099B0 RID: 39344 RVA: 0x003A51C4 File Offset: 0x003A33C4
 	public override void ResetToCenter()
 	{
 		this.SetScreenPosition((float)(Screen.width / 2), (float)(Screen.height / 2));
 	}
 
-	// Token: 0x06009905 RID: 39173 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B1 RID: 39345 RVA: 0x0008806C File Offset: 0x0008626C
 	public override void SetNavigationTarget(XUiView _view)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06009906 RID: 39174 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B2 RID: 39346 RVA: 0x0008806C File Offset: 0x0008626C
 	public override void SetNavigationTargetLater(XUiView _view)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06009907 RID: 39175 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B3 RID: 39347 RVA: 0x0008806C File Offset: 0x0008626C
 	public override void ResetNavigationTarget()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06009908 RID: 39176 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B4 RID: 39348 RVA: 0x0008806C File Offset: 0x0008626C
 	public override void SetNavigationLockView(XUiView _view, XUiView _viewToSelect = null)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06009909 RID: 39177 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B5 RID: 39349 RVA: 0x0008806C File Offset: 0x0008626C
 	public override bool IsWithinNavigationLockView(XUiView _view)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x0600990A RID: 39178 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B6 RID: 39350 RVA: 0x0008806C File Offset: 0x0008626C
 	public override void RefreshSelection()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x0600990B RID: 39179 RVA: 0x003A062C File Offset: 0x0039E82C
+	// Token: 0x060099B7 RID: 39351 RVA: 0x003A51DC File Offset: 0x003A33DC
 	public override void SetCursorHidden(bool _hidden)
 	{
 		GameManager.Instance.SetCursorEnabledOverride(_hidden, false);
 	}
 
-	// Token: 0x0600990C RID: 39180 RVA: 0x003A063A File Offset: 0x0039E83A
+	// Token: 0x060099B8 RID: 39352 RVA: 0x003A51EA File Offset: 0x003A33EA
 	public override bool GetCursorHidden()
 	{
 		return GameManager.Instance.GetCursorEnabledOverride();
 	}
 
-	// Token: 0x0600990D RID: 39181 RVA: 0x00087DB8 File Offset: 0x00085FB8
+	// Token: 0x060099B9 RID: 39353 RVA: 0x0008806C File Offset: 0x0008626C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnVirtualCursorVisibleChanged()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x0600990E RID: 39182 RVA: 0x003A0646 File Offset: 0x0039E846
+	// Token: 0x060099BA RID: 39354 RVA: 0x003A51F6 File Offset: 0x003A33F6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator ApplyCursorChangeLater()
 	{
@@ -286,7 +286,7 @@ public class FlexibleCursor : CursorControllerAbs
 		yield break;
 	}
 
-	// Token: 0x0600990F RID: 39183 RVA: 0x003A064E File Offset: 0x0039E84E
+	// Token: 0x060099BB RID: 39355 RVA: 0x003A51FE File Offset: 0x003A33FE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SetCursorTexture(Texture2D _tex, Vector2 _hotspot)
 	{
@@ -301,7 +301,7 @@ public class FlexibleCursor : CursorControllerAbs
 		}
 	}
 
-	// Token: 0x06009910 RID: 39184 RVA: 0x003A0680 File Offset: 0x0039E880
+	// Token: 0x060099BC RID: 39356 RVA: 0x003A5230 File Offset: 0x003A3430
 	public new static void SetCursor(CursorControllerAbs.ECursorType _cursorType)
 	{
 		FlexibleCursor.currentCursorType = _cursorType;
@@ -326,122 +326,122 @@ public class FlexibleCursor : CursorControllerAbs
 		}
 	}
 
-	// Token: 0x04007301 RID: 29441
+	// Token: 0x0400737C RID: 29564
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float BaseSpeed = 500f;
 
-	// Token: 0x04007302 RID: 29442
+	// Token: 0x0400737D RID: 29565
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float SpeedModRange = 1000f;
 
-	// Token: 0x04007303 RID: 29443
+	// Token: 0x0400737E RID: 29566
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string defaultMouseCursorResource = "@:Textures/UI/cursor01.tga";
 
-	// Token: 0x04007304 RID: 29444
+	// Token: 0x0400737F RID: 29567
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Vector2 defaultMouseCursorCenter = Vector2.zero;
 
-	// Token: 0x04007305 RID: 29445
+	// Token: 0x04007380 RID: 29568
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string defaultControllerCursorResource = "@:Textures/UI/soft_cursor";
 
-	// Token: 0x04007306 RID: 29446
+	// Token: 0x04007381 RID: 29569
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Vector2 defaultControllerCursorCenter = new Vector2(16f, 16f);
 
-	// Token: 0x04007307 RID: 29447
+	// Token: 0x04007382 RID: 29570
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string mapCursorResource = "@:Textures/UI/map_cursor.tga";
 
-	// Token: 0x04007308 RID: 29448
+	// Token: 0x04007383 RID: 29571
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Vector2 mapCursorCenter = new Vector2(16f, 16f);
 
-	// Token: 0x04007309 RID: 29449
+	// Token: 0x04007384 RID: 29572
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture2D emptyCursor;
 
-	// Token: 0x0400730A RID: 29450
+	// Token: 0x04007385 RID: 29573
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture2D defaultControllerCursor;
 
-	// Token: 0x0400730B RID: 29451
+	// Token: 0x04007386 RID: 29574
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture2D defaultMouseCursor;
 
-	// Token: 0x0400730C RID: 29452
+	// Token: 0x04007387 RID: 29575
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture2D mapCursor;
 
-	// Token: 0x0400730D RID: 29453
+	// Token: 0x04007388 RID: 29576
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture2D currentCursorTexture;
 
-	// Token: 0x0400730E RID: 29454
+	// Token: 0x04007389 RID: 29577
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 currentCursorHotspot;
 
-	// Token: 0x0400730F RID: 29455
+	// Token: 0x0400738A RID: 29578
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static CursorControllerAbs.ECursorType currentCursorType = CursorControllerAbs.ECursorType.Default;
 
-	// Token: 0x04007310 RID: 29456
+	// Token: 0x0400738B RID: 29579
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Coroutine cursorUpdateCo;
 
-	// Token: 0x04007311 RID: 29457
+	// Token: 0x0400738C RID: 29580
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float speed;
 
-	// Token: 0x04007312 RID: 29458
+	// Token: 0x0400738D RID: 29581
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float speedMultiplier = 1f;
 
-	// Token: 0x04007313 RID: 29459
+	// Token: 0x0400738E RID: 29582
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float LastFrameTime;
 
-	// Token: 0x04007314 RID: 29460
+	// Token: 0x0400738F RID: 29583
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool snapped;
 
-	// Token: 0x04007315 RID: 29461
+	// Token: 0x04007390 RID: 29584
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float currentAcceleration;
 
-	// Token: 0x04007316 RID: 29462
+	// Token: 0x04007391 RID: 29585
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float OffsetSnapBounds = 0.1f;
 
-	// Token: 0x04007317 RID: 29463
+	// Token: 0x04007392 RID: 29586
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public PlayerInputManager.InputStyle m_lastInputStyle = PlayerInputManager.InputStyle.Count;
 
-	// Token: 0x04007318 RID: 29464
+	// Token: 0x04007393 RID: 29587
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int CONTROLLER_CURSOR_MOVEMENT_LIMIT = 5;

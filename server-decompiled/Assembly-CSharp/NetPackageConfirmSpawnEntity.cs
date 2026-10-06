@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007BF RID: 1983
+// Token: 0x020007C2 RID: 1986
 [Preserve]
 public class NetPackageConfirmSpawnEntity : NetPackage
 {
-	// Token: 0x1700061C RID: 1564
-	// (get) Token: 0x06003ADF RID: 15071 RVA: 0x0002F168 File Offset: 0x0002D368
+	// Token: 0x17000641 RID: 1601
+	// (get) Token: 0x06003B0A RID: 15114 RVA: 0x0002F260 File Offset: 0x0002D460
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageConfirmSpawnEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003AE0 RID: 15072 RVA: 0x0017CF4D File Offset: 0x0017B14D
+	// Token: 0x06003B0B RID: 15115 RVA: 0x0017D56A File Offset: 0x0017B76A
 	public NetPackageConfirmSpawnEntity Setup(int _createdEntityId, Guid _key)
 	{
 		this.createdEntityId = _createdEntityId;
@@ -23,7 +23,7 @@ public class NetPackageConfirmSpawnEntity : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AE1 RID: 15073 RVA: 0x0017CF60 File Offset: 0x0017B160
+	// Token: 0x06003B0C RID: 15116 RVA: 0x0017D57C File Offset: 0x0017B77C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.createdEntityId = (int)_reader.ReadInt64();
@@ -32,7 +32,7 @@ public class NetPackageConfirmSpawnEntity : NetPackage
 		this.key = new Guid(array);
 	}
 
-	// Token: 0x06003AE2 RID: 15074 RVA: 0x0017CF99 File Offset: 0x0017B199
+	// Token: 0x06003B0D RID: 15117 RVA: 0x0017D5B5 File Offset: 0x0017B7B5
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -40,7 +40,7 @@ public class NetPackageConfirmSpawnEntity : NetPackage
 		_writer.Write(this.key.ToByteArray());
 	}
 
-	// Token: 0x06003AE3 RID: 15075 RVA: 0x0017CFC0 File Offset: 0x0017B1C0
+	// Token: 0x06003B0E RID: 15118 RVA: 0x0017D5DC File Offset: 0x0017B7DC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world != null)
@@ -57,17 +57,11 @@ public class NetPackageConfirmSpawnEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003AE4 RID: 15076 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x0400300A RID: 12298
+	// Token: 0x04003004 RID: 12292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int createdEntityId;
 
-	// Token: 0x0400300B RID: 12299
+	// Token: 0x04003005 RID: 12293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Guid key;
 }

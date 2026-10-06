@@ -5,11 +5,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FA7 RID: 4007
+// Token: 0x02000FB6 RID: 4022
 [Preserve]
 public class XUiC_PlayersList : XUiController
 {
-	// Token: 0x06007E86 RID: 32390 RVA: 0x002FFB74 File Offset: 0x002FDD74
+	// Token: 0x06007E95 RID: 32405 RVA: 0x00302B4C File Offset: 0x00300D4C
 	public override void Init()
 	{
 		base.Init();
@@ -35,7 +35,7 @@ public class XUiC_PlayersList : XUiController
 		}
 	}
 
-	// Token: 0x06007E87 RID: 32391 RVA: 0x002FFC8C File Offset: 0x002FDE8C
+	// Token: 0x06007E96 RID: 32406 RVA: 0x00302C64 File Offset: 0x00300E64
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -44,7 +44,7 @@ public class XUiC_PlayersList : XUiController
 		PersistentPlayerList.OnPersistentAllyChangeEvent -= this.OnPlayerEventHandler;
 	}
 
-	// Token: 0x06007E88 RID: 32392 RVA: 0x002FFCC2 File Offset: 0x002FDEC2
+	// Token: 0x06007E97 RID: 32407 RVA: 0x00302C9A File Offset: 0x00300E9A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onLocalPlayerChanged(EntityPlayerLocal _localPlayer)
 	{
@@ -59,7 +59,7 @@ public class XUiC_PlayersList : XUiController
 		}
 	}
 
-	// Token: 0x06007E89 RID: 32393 RVA: 0x002FFCF4 File Offset: 0x002FDEF4
+	// Token: 0x06007E98 RID: 32408 RVA: 0x00302CCC File Offset: 0x00300ECC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -89,7 +89,7 @@ public class XUiC_PlayersList : XUiController
 		this.windowGroup.isEscClosable = false;
 	}
 
-	// Token: 0x06007E8A RID: 32394 RVA: 0x002FFE18 File Offset: 0x002FE018
+	// Token: 0x06007E99 RID: 32409 RVA: 0x00302DF0 File Offset: 0x00300FF0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -104,7 +104,7 @@ public class XUiC_PlayersList : XUiController
 		this.AllyCache.ClearAll();
 	}
 
-	// Token: 0x06007E8B RID: 32395 RVA: 0x002FFE78 File Offset: 0x002FE078
+	// Token: 0x06007E9A RID: 32410 RVA: 0x00302E50 File Offset: 0x00301050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePlayersList()
 	{
@@ -334,14 +334,14 @@ public class XUiC_PlayersList : XUiController
 		}
 	}
 
-	// Token: 0x06007E8C RID: 32396 RVA: 0x0030082C File Offset: 0x002FEA2C
+	// Token: 0x06007E9B RID: 32411 RVA: 0x00303804 File Offset: 0x00301A04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnListEventHandler(PersistentPlayerData _ppData, PersistentPlayerData _otherPlayer, EnumPersistentPlayerDataReason _reason)
 	{
 		this.updatePlayersList();
 	}
 
-	// Token: 0x06007E8D RID: 32397 RVA: 0x00300834 File Offset: 0x002FEA34
+	// Token: 0x06007E9C RID: 32412 RVA: 0x0030380C File Offset: 0x00301A0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPlayerEventHandler(PlatformUserIdentifierAbs source, PlatformUserIdentifierAbs target, AllyStore.AllyEvent allyEvent)
 	{
@@ -386,7 +386,7 @@ public class XUiC_PlayersList : XUiController
 		this.updatePlayersList();
 	}
 
-	// Token: 0x06007E8E RID: 32398 RVA: 0x00300980 File Offset: 0x002FEB80
+	// Token: 0x06007E9D RID: 32413 RVA: 0x00303958 File Offset: 0x00301B58
 	public void AddInvitePress(int _otherPlayerId)
 	{
 		PersistentPlayerData playerDataFromEntityID = GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(_otherPlayerId);
@@ -396,7 +396,7 @@ public class XUiC_PlayersList : XUiController
 		this.updatePlayersList();
 	}
 
-	// Token: 0x06007E8F RID: 32399 RVA: 0x003009D8 File Offset: 0x002FEBD8
+	// Token: 0x06007E9E RID: 32414 RVA: 0x003039B0 File Offset: 0x00301BB0
 	public void RemoveInvitePress(PersistentPlayerData _otherPpData)
 	{
 		PlatformUserIdentifierAbs internalLocalUserIdentifier = PlatformManager.InternalLocalUserIdentifier;
@@ -405,7 +405,7 @@ public class XUiC_PlayersList : XUiController
 		this.updatePlayersList();
 	}
 
-	// Token: 0x06007E90 RID: 32400 RVA: 0x00300A20 File Offset: 0x002FEC20
+	// Token: 0x06007E9F RID: 32415 RVA: 0x003039F8 File Offset: 0x00301BF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int PlayerComparator(PersistentPlayerData a, PersistentPlayerData b)
 	{
@@ -445,7 +445,7 @@ public class XUiC_PlayersList : XUiController
 		return -1;
 	}
 
-	// Token: 0x06007E91 RID: 32401 RVA: 0x00300AFC File Offset: 0x002FECFC
+	// Token: 0x06007EA0 RID: 32416 RVA: 0x00303AD4 File Offset: 0x00301CD4
 	public void ShowOnMap(int _playerId)
 	{
 		Entity entity = GameManager.Instance.World.GetEntity(_playerId);
@@ -457,7 +457,7 @@ public class XUiC_PlayersList : XUiController
 		((XUiC_MapArea)this.xui.GetWindow("mapArea").Controller).PositionMapAt(entity.GetPosition());
 	}
 
-	// Token: 0x06007E92 RID: 32402 RVA: 0x00300B64 File Offset: 0x002FED64
+	// Token: 0x06007EA1 RID: 32417 RVA: 0x00303B3C File Offset: 0x00301D3C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -469,50 +469,50 @@ public class XUiC_PlayersList : XUiController
 		}
 	}
 
-	// Token: 0x04005DCC RID: 24012
+	// Token: 0x04005DF5 RID: 24053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Grid playerList;
 
-	// Token: 0x04005DCD RID: 24013
+	// Token: 0x04005DF6 RID: 24054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PlayersListEntry[] playerEntries;
 
-	// Token: 0x04005DCE RID: 24014
+	// Token: 0x04005DF7 RID: 24055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging playerPager;
 
-	// Token: 0x04005DCF RID: 24015
+	// Token: 0x04005DF8 RID: 24056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label numberOfPlayers;
 
-	// Token: 0x04005DD0 RID: 24016
+	// Token: 0x04005DF9 RID: 24057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite reportHeaderSprite;
 
-	// Token: 0x04005DD1 RID: 24017
+	// Token: 0x04005DFA RID: 24058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PersistentPlayerList persistentPlayerList;
 
-	// Token: 0x04005DD2 RID: 24018
+	// Token: 0x04005DFB RID: 24059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateLimiter;
 
-	// Token: 0x04005DD3 RID: 24019
+	// Token: 0x04005DFC RID: 24060
 	public readonly AllyStore AllyCache = new AllyStore();
 
-	// Token: 0x04005DD4 RID: 24020
+	// Token: 0x04005DFD RID: 24061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PersistentPlayerData> sortedPlayerList = new List<PersistentPlayerData>();
 
-	// Token: 0x04005DD5 RID: 24021
+	// Token: 0x04005DFE RID: 24062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string twitchDisabled = "";
 
-	// Token: 0x04005DD6 RID: 24022
+	// Token: 0x04005DFF RID: 24063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string twitchSafe = "";
 
-	// Token: 0x04005DD7 RID: 24023
+	// Token: 0x04005E00 RID: 24064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bOpened;
 }

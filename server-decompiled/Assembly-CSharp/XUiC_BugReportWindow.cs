@@ -6,12 +6,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF4 RID: 3572
+// Token: 0x02000E03 RID: 3587
 [Preserve]
 public class XUiC_BugReportWindow : XUiController
 {
-	// Token: 0x17000C1B RID: 3099
-	// (get) Token: 0x06006D4A RID: 27978 RVA: 0x002A7745 File Offset: 0x002A5945
+	// Token: 0x17000C36 RID: 3126
+	// (get) Token: 0x06006D42 RID: 27970 RVA: 0x002AAAD5 File Offset: 0x002A8CD5
 	[XuiXmlBinding("intimeout")]
 	public bool InTimeout
 	{
@@ -22,9 +22,9 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C1C RID: 3100
-	// (get) Token: 0x06006D4B RID: 27979 RVA: 0x002A7767 File Offset: 0x002A5967
-	// (set) Token: 0x06006D4C RID: 27980 RVA: 0x002A7789 File Offset: 0x002A5989
+	// Token: 0x17000C37 RID: 3127
+	// (get) Token: 0x06006D43 RID: 27971 RVA: 0x002AAAF7 File Offset: 0x002A8CF7
+	// (set) Token: 0x06006D44 RID: 27972 RVA: 0x002AAB19 File Offset: 0x002A8D19
 	[XuiXmlBinding("description")]
 	public string Description
 	{
@@ -42,8 +42,8 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C1D RID: 3101
-	// (get) Token: 0x06006D4D RID: 27981 RVA: 0x002A77A7 File Offset: 0x002A59A7
+	// Token: 0x17000C38 RID: 3128
+	// (get) Token: 0x06006D45 RID: 27973 RVA: 0x002AAB37 File Offset: 0x002A8D37
 	[XuiXmlBinding("attach_saves_enabled")]
 	public bool AttachSavesEnabled
 	{
@@ -54,8 +54,8 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C1E RID: 3102
-	// (get) Token: 0x06006D4E RID: 27982 RVA: 0x002A77AE File Offset: 0x002A59AE
+	// Token: 0x17000C39 RID: 3129
+	// (get) Token: 0x06006D46 RID: 27974 RVA: 0x002AAB3E File Offset: 0x002A8D3E
 	[XuiXmlBinding("game_running")]
 	public bool GameRunningBinding
 	{
@@ -66,8 +66,8 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C1F RID: 3103
-	// (get) Token: 0x06006D4F RID: 27983 RVA: 0x002A77B5 File Offset: 0x002A59B5
+	// Token: 0x17000C3A RID: 3130
+	// (get) Token: 0x06006D47 RID: 27975 RVA: 0x002AAB45 File Offset: 0x002A8D45
 	public static bool GameRunning
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -77,7 +77,7 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006D50 RID: 27984 RVA: 0x002A77C6 File Offset: 0x002A59C6
+	// Token: 0x06006D48 RID: 27976 RVA: 0x002AAB56 File Offset: 0x002A8D56
 	public override void Init()
 	{
 		base.Init();
@@ -85,7 +85,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.saveSelectWindow.GetChildByType<XUiC_BugReportSavesList>().SelectionChanged += this.List_SelectionChanged;
 	}
 
-	// Token: 0x06006D51 RID: 27985 RVA: 0x002A77F6 File Offset: 0x002A59F6
+	// Token: 0x06006D49 RID: 27977 RVA: 0x002AAB86 File Offset: 0x002A8D86
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void List_SelectionChanged(XUiC_List<XUiC_BugReportSavesList.ListEntry> _list, XUiC_BugReportSavesList.ListEntry _previousEntry, XUiC_BugReportSavesList.ListEntry _newEntry)
 	{
@@ -93,7 +93,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006D52 RID: 27986 RVA: 0x002A7814 File Offset: 0x002A5A14
+	// Token: 0x06006D4A RID: 27978 RVA: 0x002AABA4 File Offset: 0x002A8DA4
 	[XuiBindEvent("OnValueChanged", "comboAttachSave")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboAttachSave_OnValueChanged(XUiController _sender, bool _oldValue, bool _newValue)
@@ -114,7 +114,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006D53 RID: 27987 RVA: 0x002A7860 File Offset: 0x002A5A60
+	// Token: 0x06006D4B RID: 27979 RVA: 0x002AABF0 File Offset: 0x002A8DF0
 	public static void Open()
 	{
 		LocalPlayerUI primaryUI = LocalPlayerUI.primaryUI;
@@ -122,7 +122,7 @@ public class XUiC_BugReportWindow : XUiController
 		primaryUI.windowManager.Open(childByType.windowGroup, XUiC_BugReportWindow.GameRunning);
 	}
 
-	// Token: 0x06006D54 RID: 27988 RVA: 0x002A7894 File Offset: 0x002A5A94
+	// Token: 0x06006D4C RID: 27980 RVA: 0x002AAC24 File Offset: 0x002A8E24
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -138,7 +138,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006D55 RID: 27989 RVA: 0x002A78F1 File Offset: 0x002A5AF1
+	// Token: 0x06006D4D RID: 27981 RVA: 0x002AAC81 File Offset: 0x002A8E81
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -149,7 +149,7 @@ public class XUiC_BugReportWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006D56 RID: 27990 RVA: 0x002A7914 File Offset: 0x002A5B14
+	// Token: 0x06006D4E RID: 27982 RVA: 0x002AACA4 File Offset: 0x002A8EA4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -168,7 +168,7 @@ public class XUiC_BugReportWindow : XUiController
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06006D57 RID: 27991 RVA: 0x0008A715 File Offset: 0x00088915
+	// Token: 0x06006D4F RID: 27983 RVA: 0x0008A995 File Offset: 0x00088B95
 	[XuiBindEvent("OnChangeHandler", "txtDescription")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtDescriptionOnChanged(XUiController _sender, string _text, bool _changeFromCode)
@@ -176,7 +176,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006D58 RID: 27992 RVA: 0x002A7A10 File Offset: 0x002A5C10
+	// Token: 0x06006D50 RID: 27984 RVA: 0x002AADA0 File Offset: 0x002A8FA0
 	[XuiBindEvent("OnPress", "btnSubmit")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSubmitOnPressed(XUiController _sender, int _mouseButton)
@@ -189,7 +189,7 @@ public class XUiC_BugReportWindow : XUiController
 		ThreadManager.StartCoroutine(this.submitRoutine());
 	}
 
-	// Token: 0x06006D59 RID: 27993 RVA: 0x002A7A3B File Offset: 0x002A5C3B
+	// Token: 0x06006D51 RID: 27985 RVA: 0x002AADCB File Offset: 0x002A8FCB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator submitRoutine()
 	{
@@ -277,7 +277,7 @@ public class XUiC_BugReportWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06006D5A RID: 27994 RVA: 0x002A7A4C File Offset: 0x002A5C4C
+	// Token: 0x06006D52 RID: 27986 RVA: 0x002AADDC File Offset: 0x002A8FDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handlePostSubmissionClose()
 	{
@@ -286,7 +286,7 @@ public class XUiC_BugReportWindow : XUiController
 		XUiC_MessageBoxWindowGroup.ShowOk(this.xui, Localization.Get("xuiBugReportHeader", false, null), Localization.Get("xuiBugReportSubmitted", false, null), "", null, false, XUiC_BugReportWindow.GameRunning, false);
 	}
 
-	// Token: 0x06006D5B RID: 27995 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
+	// Token: 0x06006D53 RID: 27987 RVA: 0x002AAE45 File Offset: 0x002A9045
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancelOnPressed(XUiController _sender, int _mouseButton)
@@ -294,7 +294,7 @@ public class XUiC_BugReportWindow : XUiController
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06006D5E RID: 27998 RVA: 0x002A7ADF File Offset: 0x002A5CDF
+	// Token: 0x06006D56 RID: 27990 RVA: 0x002AAE6F File Offset: 0x002A906F
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <submitRoutine>g__BugReportCallBack|29_0(BacktraceResult _result)
@@ -303,45 +303,45 @@ public class XUiC_BugReportWindow : XUiController
 		this.handlePostSubmissionClose();
 	}
 
-	// Token: 0x0400534E RID: 21326
+	// Token: 0x04005385 RID: 21381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastSubmissionTime = -1f;
 
-	// Token: 0x0400534F RID: 21327
+	// Token: 0x04005386 RID: 21382
 	[XuiBindComponent("txtDescription", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtDescription;
 
-	// Token: 0x04005350 RID: 21328
+	// Token: 0x04005387 RID: 21383
 	[XuiBindComponent("btnSubmit", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSubmit;
 
-	// Token: 0x04005351 RID: 21329
+	// Token: 0x04005388 RID: 21384
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x04005352 RID: 21330
+	// Token: 0x04005389 RID: 21385
 	[XuiBindComponent("comboAttachScreenshot", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxBool comboAttachScreenshot;
 
-	// Token: 0x04005353 RID: 21331
+	// Token: 0x0400538A RID: 21386
 	[XuiBindComponent("comboAttachSave", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxBool comboAttachSave;
 
-	// Token: 0x04005354 RID: 21332
+	// Token: 0x0400538B RID: 21387
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_BugReportSaveSelect saveSelectWindow;
 
-	// Token: 0x04005355 RID: 21333
+	// Token: 0x0400538C RID: 21388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveInfoProvider.SaveEntryInfo selectedSaveInfo;
 
-	// Token: 0x04005356 RID: 21334
+	// Token: 0x0400538D RID: 21389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool uploading;
 }

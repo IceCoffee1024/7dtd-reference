@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000B83 RID: 2947
+// Token: 0x02000B95 RID: 2965
 public class NameIdMapping : IMemoryPoolableObject, IDisposable
 {
-	// Token: 0x17000969 RID: 2409
-	// (get) Token: 0x0600593A RID: 22842 RVA: 0x00222F84 File Offset: 0x00221184
+	// Token: 0x1700098B RID: 2443
+	// (get) Token: 0x06005954 RID: 22868 RVA: 0x00226210 File Offset: 0x00224410
 	public Dictionary<string, int>.Enumerator NamesToIdsIterator
 	{
 		get
@@ -16,18 +16,18 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x0600593B RID: 22843 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06005955 RID: 22869 RVA: 0x0000640C File Offset: 0x0000460C
 	public NameIdMapping()
 	{
 	}
 
-	// Token: 0x0600593C RID: 22844 RVA: 0x00222F91 File Offset: 0x00221191
+	// Token: 0x06005956 RID: 22870 RVA: 0x0022621D File Offset: 0x0022441D
 	public NameIdMapping(string _filename, int _maxIds)
 	{
 		this.InitMapping(_filename, _maxIds);
 	}
 
-	// Token: 0x0600593D RID: 22845 RVA: 0x00222FA4 File Offset: 0x002211A4
+	// Token: 0x06005957 RID: 22871 RVA: 0x00226230 File Offset: 0x00224430
 	public void InitMapping(string _filename, int _maxIds)
 	{
 		this.filename = _filename;
@@ -42,7 +42,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x0600593E RID: 22846 RVA: 0x00222FF8 File Offset: 0x002211F8
+	// Token: 0x06005958 RID: 22872 RVA: 0x00226284 File Offset: 0x00224484
 	public void AddMapping(int _id, string _name, bool _force = false)
 	{
 		lock (this)
@@ -56,7 +56,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x0600593F RID: 22847 RVA: 0x0022305C File Offset: 0x0022125C
+	// Token: 0x06005959 RID: 22873 RVA: 0x002262E8 File Offset: 0x002244E8
 	public int GetIdForName(string _name)
 	{
 		lock (this)
@@ -70,7 +70,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return -1;
 	}
 
-	// Token: 0x06005940 RID: 22848 RVA: 0x002230A8 File Offset: 0x002212A8
+	// Token: 0x0600595A RID: 22874 RVA: 0x00226334 File Offset: 0x00224534
 	public string GetNameForId(int _id)
 	{
 		string text;
@@ -81,7 +81,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return text;
 	}
 
-	// Token: 0x06005941 RID: 22849 RVA: 0x002230E8 File Offset: 0x002212E8
+	// Token: 0x0600595B RID: 22875 RVA: 0x00226374 File Offset: 0x00224574
 	public ArrayListMP<int> createIdTranslationTable(Func<string, int> _getDstId, NameIdMapping.MissingEntryCallbackDelegate _onMissingDestination = null)
 	{
 		ArrayListMP<int> arrayListMP = new ArrayListMP<int>(MemoryPools.poolInt, Block.MAX_BLOCKS);
@@ -115,7 +115,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return arrayListMP;
 	}
 
-	// Token: 0x06005942 RID: 22850 RVA: 0x00223188 File Offset: 0x00221388
+	// Token: 0x0600595C RID: 22876 RVA: 0x00226414 File Offset: 0x00224614
 	public int ReplaceNames([TupleElementNames(new string[] { "oldName", "newName" })] IEnumerable<ValueTuple<string, string>> _replacementList)
 	{
 		int num = 0;
@@ -142,7 +142,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return num;
 	}
 
-	// Token: 0x06005943 RID: 22851 RVA: 0x00223248 File Offset: 0x00221448
+	// Token: 0x0600595D RID: 22877 RVA: 0x002264D4 File Offset: 0x002246D4
 	public void SaveIfDirty(bool _async = true)
 	{
 		if (this.isDirty)
@@ -159,7 +159,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x06005944 RID: 22852 RVA: 0x00223274 File Offset: 0x00221474
+	// Token: 0x0600595E RID: 22878 RVA: 0x00226500 File Offset: 0x00224700
 	public void WriteToFile()
 	{
 		try
@@ -192,7 +192,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x06005945 RID: 22853 RVA: 0x00223354 File Offset: 0x00221554
+	// Token: 0x0600595F RID: 22879 RVA: 0x002265E0 File Offset: 0x002247E0
 	public byte[] SaveToArray()
 	{
 		byte[] array;
@@ -208,7 +208,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return array;
 	}
 
-	// Token: 0x06005946 RID: 22854 RVA: 0x002233C4 File Offset: 0x002215C4
+	// Token: 0x06005960 RID: 22880 RVA: 0x00226650 File Offset: 0x00224850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveToWriter(BinaryWriter _writer)
 	{
@@ -235,7 +235,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x06005947 RID: 22855 RVA: 0x00223480 File Offset: 0x00221680
+	// Token: 0x06005961 RID: 22881 RVA: 0x0022670C File Offset: 0x0022490C
 	public bool LoadFromFile()
 	{
 		bool flag;
@@ -272,7 +272,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return flag;
 	}
 
-	// Token: 0x06005948 RID: 22856 RVA: 0x0022354C File Offset: 0x0022174C
+	// Token: 0x06005962 RID: 22882 RVA: 0x002267D8 File Offset: 0x002249D8
 	public bool LoadFromArray(byte[] _data)
 	{
 		bool flag;
@@ -297,7 +297,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		return flag;
 	}
 
-	// Token: 0x06005949 RID: 22857 RVA: 0x002235E0 File Offset: 0x002217E0
+	// Token: 0x06005963 RID: 22883 RVA: 0x0022686C File Offset: 0x00224A6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadFromReader(BinaryReader _reader)
 	{
@@ -318,7 +318,7 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		}
 	}
 
-	// Token: 0x0600594A RID: 22858 RVA: 0x00223680 File Offset: 0x00221880
+	// Token: 0x06005964 RID: 22884 RVA: 0x0022690C File Offset: 0x00224B0C
 	public void Reset()
 	{
 		this.filename = null;
@@ -334,43 +334,43 @@ public class NameIdMapping : IMemoryPoolableObject, IDisposable
 		this.isDirty = false;
 	}
 
-	// Token: 0x0600594B RID: 22859 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005965 RID: 22885 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x0600594C RID: 22860 RVA: 0x002236D1 File Offset: 0x002218D1
+	// Token: 0x06005966 RID: 22886 RVA: 0x0022695D File Offset: 0x00224B5D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.IDisposable.Dispose()
 	{
 		MemoryPools.poolNameIdMapping.FreeSync(this);
 	}
 
-	// Token: 0x04004552 RID: 17746
+	// Token: 0x04004590 RID: 17808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FILE_VERSION = 1;
 
-	// Token: 0x04004553 RID: 17747
+	// Token: 0x04004591 RID: 17809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, int> namesToIds;
 
-	// Token: 0x04004554 RID: 17748
+	// Token: 0x04004592 RID: 17810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] idsToNames;
 
-	// Token: 0x04004555 RID: 17749
+	// Token: 0x04004593 RID: 17811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDirty;
 
-	// Token: 0x04004556 RID: 17750
+	// Token: 0x04004594 RID: 17812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string path;
 
-	// Token: 0x04004557 RID: 17751
+	// Token: 0x04004595 RID: 17813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filename;
 
-	// Token: 0x02000B84 RID: 2948
-	// (Invoke) Token: 0x0600594F RID: 22863
+	// Token: 0x02000B96 RID: 2966
+	// (Invoke) Token: 0x06005969 RID: 22889
 	public delegate int MissingEntryCallbackDelegate(string _entryName, int _sourceId);
 }

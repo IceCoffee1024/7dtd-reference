@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000215 RID: 533
+// Token: 0x02000216 RID: 534
 [Preserve]
 public class ConsoleCmdExportPrefab : ConsoleCmdAbstract
 {
-	// Token: 0x0600102E RID: 4142 RVA: 0x00066F9F File Offset: 0x0006519F
+	// Token: 0x06001021 RID: 4129 RVA: 0x00066F8F File Offset: 0x0006518F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { ConsoleCmdExportPrefab.CommandName };
 	}
 
-	// Token: 0x17000178 RID: 376
-	// (get) Token: 0x0600102F RID: 4143 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000170 RID: 368
+	// (get) Token: 0x06001022 RID: 4130 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,21 +23,21 @@ public class ConsoleCmdExportPrefab : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001030 RID: 4144 RVA: 0x00066FAF File Offset: 0x000651AF
+	// Token: 0x06001023 RID: 4131 RVA: 0x00066F9F File Offset: 0x0006519F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Exports a prefab from a world area";
 	}
 
-	// Token: 0x06001031 RID: 4145 RVA: 0x00066FB6 File Offset: 0x000651B6
+	// Token: 0x06001024 RID: 4132 RVA: 0x00066FA6 File Offset: 0x000651A6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  exportprefab <name> <x1> <y1> <z1> <x2> <y2> <z2> [part]\nExports a prefab with the given name from a box defined by the coordinate pair of two corners\nIf the optional parameter 'part' is 'true' it will export into the 'Parts' subfolder of the prefabs folder";
 	}
 
-	// Token: 0x06001032 RID: 4146 RVA: 0x00066FC0 File Offset: 0x000651C0
+	// Token: 0x06001025 RID: 4133 RVA: 0x00066FB0 File Offset: 0x000651B0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 7 || _params.Count > 8)
@@ -102,7 +102,7 @@ public class ConsoleCmdExportPrefab : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Prefab could not be saved");
 	}
 
-	// Token: 0x06001033 RID: 4147 RVA: 0x00067188 File Offset: 0x00065388
+	// Token: 0x06001026 RID: 4134 RVA: 0x00067178 File Offset: 0x00065378
 	public static string BuildCommandString(string _prefabName, Vector3i _startPos, Vector3i _endPos, bool _asPart)
 	{
 		return string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8}", new object[]
@@ -119,7 +119,7 @@ public class ConsoleCmdExportPrefab : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x04000CB0 RID: 3248
+	// Token: 0x04000CA9 RID: 3241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string CommandName = "exportprefab";
 }

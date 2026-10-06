@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000B23 RID: 2851
+// Token: 0x02000B35 RID: 2869
 public class ChunkGameObjectLayer : IMemoryPoolableObject
 {
-	// Token: 0x06005632 RID: 22066 RVA: 0x0020F1C8 File Offset: 0x0020D3C8
+	// Token: 0x0600564B RID: 22091 RVA: 0x00212438 File Offset: 0x00210638
 	public ChunkGameObjectLayer()
 	{
 		int num = MeshDescription.meshes.Length;
@@ -30,7 +30,7 @@ public class ChunkGameObjectLayer : IMemoryPoolableObject
 		this.m_ParentGO.SetActive(false);
 	}
 
-	// Token: 0x06005633 RID: 22067 RVA: 0x0020F2C0 File Offset: 0x0020D4C0
+	// Token: 0x0600564C RID: 22092 RVA: 0x00212530 File Offset: 0x00210730
 	public void Init(int _chunkLayerIdx, IReadOnlyDictionary<string, int> _layerMappingTable, Transform _chunkT, bool _bStatic)
 	{
 		for (int i = 0; i < MeshDescription.meshes.Length; i++)
@@ -62,7 +62,7 @@ public class ChunkGameObjectLayer : IMemoryPoolableObject
 		this.m_ParentGO.transform.SetParent(_chunkT, false);
 	}
 
-	// Token: 0x06005634 RID: 22068 RVA: 0x0020F3B4 File Offset: 0x0020D5B4
+	// Token: 0x0600564D RID: 22093 RVA: 0x00212624 File Offset: 0x00210824
 	public void Reset()
 	{
 		foreach (MeshFilter meshFilter2 in this.m_MeshFilter)
@@ -91,7 +91,7 @@ public class ChunkGameObjectLayer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06005635 RID: 22069 RVA: 0x0020F448 File Offset: 0x0020D648
+	// Token: 0x0600564E RID: 22094 RVA: 0x002126B8 File Offset: 0x002108B8
 	public void Cleanup()
 	{
 		Span<MeshFilter> span = this.m_MeshFilter.AsSpan<MeshFilter>();
@@ -145,24 +145,24 @@ public class ChunkGameObjectLayer : IMemoryPoolableObject
 		GameUtils.NullThenDestroy<GameObject>(ref this.m_ParentGO);
 	}
 
-	// Token: 0x0400429F RID: 17055
+	// Token: 0x040042DC RID: 17116
 	public GameObject m_ParentGO;
 
-	// Token: 0x040042A0 RID: 17056
+	// Token: 0x040042DD RID: 17117
 	public MeshFilter[] m_MeshFilter;
 
-	// Token: 0x040042A1 RID: 17057
+	// Token: 0x040042DE RID: 17118
 	public MeshRenderer[] m_MeshRenderer;
 
-	// Token: 0x040042A2 RID: 17058
+	// Token: 0x040042DF RID: 17119
 	public MeshCollider[] m_MeshCollider;
 
-	// Token: 0x040042A3 RID: 17059
+	// Token: 0x040042E0 RID: 17120
 	public GameObject[] m_MeshesGO;
 
-	// Token: 0x040042A4 RID: 17060
+	// Token: 0x040042E1 RID: 17121
 	public bool isGrassCastShadows;
 
-	// Token: 0x040042A5 RID: 17061
+	// Token: 0x040042E2 RID: 17122
 	public static int InstanceCount;
 }

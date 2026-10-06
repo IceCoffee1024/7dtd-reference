@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000349 RID: 841
+// Token: 0x0200034C RID: 844
 [Preserve]
 public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList.LobbyMember>
 {
-	// Token: 0x0600184A RID: 6218 RVA: 0x0008A884 File Offset: 0x00088A84
+	// Token: 0x06001845 RID: 6213 RVA: 0x0008AB04 File Offset: 0x00088D04
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 		DiscordManager.Instance.VoiceStateChanged += this.InstanceOnVoiceStateChanged;
 	}
 
-	// Token: 0x0600184B RID: 6219 RVA: 0x0008A8F0 File Offset: 0x00088AF0
+	// Token: 0x06001846 RID: 6214 RVA: 0x0008AB70 File Offset: 0x00088D70
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -26,35 +26,35 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 		DiscordManager.Instance.VoiceStateChanged -= this.InstanceOnVoiceStateChanged;
 	}
 
-	// Token: 0x0600184C RID: 6220 RVA: 0x0008A95B File Offset: 0x00088B5B
+	// Token: 0x06001847 RID: 6215 RVA: 0x0008ABDB File Offset: 0x00088DDB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InstanceOnLobbyMembersChanged(DiscordManager.LobbyInfo _lobby)
 	{
 		this.RebuildList(false);
 	}
 
-	// Token: 0x0600184D RID: 6221 RVA: 0x0008A95B File Offset: 0x00088B5B
+	// Token: 0x06001848 RID: 6216 RVA: 0x0008ABDB File Offset: 0x00088DDB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InstanceOnCallChanged(DiscordManager.CallInfo _newCall)
 	{
 		this.RebuildList(false);
 	}
 
-	// Token: 0x0600184E RID: 6222 RVA: 0x0008A95B File Offset: 0x00088B5B
+	// Token: 0x06001849 RID: 6217 RVA: 0x0008ABDB File Offset: 0x00088DDB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InstanceOnCallMembersChanged(DiscordManager.CallInfo _call)
 	{
 		this.RebuildList(false);
 	}
 
-	// Token: 0x0600184F RID: 6223 RVA: 0x0008A964 File Offset: 0x00088B64
+	// Token: 0x0600184A RID: 6218 RVA: 0x0008ABE4 File Offset: 0x00088DE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InstanceOnVoiceStateChanged(bool _self, ulong _userId)
 	{
 		base.RefreshBindingsSelfAndChildren();
 	}
 
-	// Token: 0x06001850 RID: 6224 RVA: 0x0008A96C File Offset: 0x00088B6C
+	// Token: 0x0600184B RID: 6219 RVA: 0x0008ABEC File Offset: 0x00088DEC
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -72,7 +72,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06001851 RID: 6225 RVA: 0x0008AA1C File Offset: 0x00088C1C
+	// Token: 0x0600184C RID: 6220 RVA: 0x0008AC9C File Offset: 0x00088E9C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -82,21 +82,21 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 		}
 	}
 
-	// Token: 0x04000FA4 RID: 4004
+	// Token: 0x04000F9D RID: 3997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ulong> membersTempCopy = new List<ulong>();
 
-	// Token: 0x0200034A RID: 842
+	// Token: 0x0200034D RID: 845
 	[Preserve]
 	public class LobbyMember : XUiListEntry<XUiC_DiscordLobbyMemberList.LobbyMember>
 	{
-		// Token: 0x06001853 RID: 6227 RVA: 0x0008AA4B File Offset: 0x00088C4B
+		// Token: 0x0600184E RID: 6222 RVA: 0x0008ACCB File Offset: 0x00088ECB
 		public LobbyMember(DiscordManager.DiscordUser _discordUser)
 		{
 			this.User = _discordUser;
 		}
 
-		// Token: 0x06001854 RID: 6228 RVA: 0x0008AA5C File Offset: 0x00088C5C
+		// Token: 0x0600184F RID: 6223 RVA: 0x0008ACDC File Offset: 0x00088EDC
 		public override int CompareTo(XUiC_DiscordLobbyMemberList.LobbyMember _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -114,22 +114,22 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 			return string.Compare(this.User.DisplayName, _otherEntry.User.DisplayName, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06001855 RID: 6229 RVA: 0x0008AAA8 File Offset: 0x00088CA8
+		// Token: 0x06001850 RID: 6224 RVA: 0x0008AD28 File Offset: 0x00088F28
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.User.DisplayName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04000FA5 RID: 4005
+		// Token: 0x04000F9E RID: 3998
 		public readonly DiscordManager.DiscordUser User;
 	}
 
-	// Token: 0x0200034B RID: 843
+	// Token: 0x0200034E RID: 846
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_DiscordLobbyMemberList.LobbyMember>.XUiC_ListEntry
 	{
-		// Token: 0x06001856 RID: 6230 RVA: 0x0008AABC File Offset: 0x00088CBC
+		// Token: 0x06001851 RID: 6225 RVA: 0x0008AD3C File Offset: 0x00088F3C
 		[XuiXmlBinding("is_self")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingIsSelf()
@@ -149,7 +149,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 			return flag2.GetValueOrDefault();
 		}
 
-		// Token: 0x06001857 RID: 6231 RVA: 0x0008AB04 File Offset: 0x00088D04
+		// Token: 0x06001852 RID: 6226 RVA: 0x0008AD84 File Offset: 0x00088F84
 		[XuiXmlBinding("displayname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDisplayName()
@@ -168,7 +168,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 			return text ?? "";
 		}
 
-		// Token: 0x06001858 RID: 6232 RVA: 0x0008AB30 File Offset: 0x00088D30
+		// Token: 0x06001853 RID: 6227 RVA: 0x0008ADB0 File Offset: 0x00088FB0
 		[XuiXmlBinding("is_speaking")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingIsSpeaking()
@@ -188,7 +188,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 			return flag2.GetValueOrDefault();
 		}
 
-		// Token: 0x06001859 RID: 6233 RVA: 0x0008AB78 File Offset: 0x00088D78
+		// Token: 0x06001854 RID: 6228 RVA: 0x0008ADF8 File Offset: 0x00088FF8
 		[XuiXmlBinding("voice_muted")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingVoiceMuted()
@@ -208,7 +208,7 @@ public class XUiC_DiscordLobbyMemberList : XUiC_List<XUiC_DiscordLobbyMemberList
 			return flag2.GetValueOrDefault();
 		}
 
-		// Token: 0x0600185A RID: 6234 RVA: 0x0008ABC0 File Offset: 0x00088DC0
+		// Token: 0x06001855 RID: 6229 RVA: 0x0008AE40 File Offset: 0x00089040
 		[XuiXmlBinding("output_muted")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingOutputMuted()

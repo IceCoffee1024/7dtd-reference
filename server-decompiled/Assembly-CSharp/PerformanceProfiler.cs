@@ -7,20 +7,20 @@ using SystemInformation;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02001511 RID: 5393
+// Token: 0x02001533 RID: 5427
 public static class PerformanceProfiler
 {
-	// Token: 0x14000109 RID: 265
-	// (add) Token: 0x0600A9A3 RID: 43427 RVA: 0x003F4604 File Offset: 0x003F2804
-	// (remove) Token: 0x0600A9A4 RID: 43428 RVA: 0x003F4638 File Offset: 0x003F2838
+	// Token: 0x14000108 RID: 264
+	// (add) Token: 0x0600AA56 RID: 43606 RVA: 0x003F9458 File Offset: 0x003F7658
+	// (remove) Token: 0x0600AA57 RID: 43607 RVA: 0x003F948C File Offset: 0x003F768C
 	public static event Action<int, int, PerformanceProfiler.PerformanceMetrics> OnRunComplete;
 
-	// Token: 0x1400010A RID: 266
-	// (add) Token: 0x0600A9A5 RID: 43429 RVA: 0x003F466C File Offset: 0x003F286C
-	// (remove) Token: 0x0600A9A6 RID: 43430 RVA: 0x003F46A0 File Offset: 0x003F28A0
+	// Token: 0x14000109 RID: 265
+	// (add) Token: 0x0600AA58 RID: 43608 RVA: 0x003F94C0 File Offset: 0x003F76C0
+	// (remove) Token: 0x0600AA59 RID: 43609 RVA: 0x003F94F4 File Offset: 0x003F76F4
 	public static event Action<PerformanceProfiler.AggregateMetrics> OnSessionComplete;
 
-	// Token: 0x0600A9A7 RID: 43431 RVA: 0x003F46D4 File Offset: 0x003F28D4
+	// Token: 0x0600AA5A RID: 43610 RVA: 0x003F9528 File Offset: 0x003F7728
 	public static void BeginSession(string directory, int runCount, string prefix = null)
 	{
 		if (PerformanceProfiler.isInSession)
@@ -42,7 +42,7 @@ public static class PerformanceProfiler
 		Debug.Log(string.Format("[PerformanceProfiler] Session '{0}' begun — {1} run(s) planned.", PerformanceProfiler.sessionDirectory, runCount));
 	}
 
-	// Token: 0x0600A9A8 RID: 43432 RVA: 0x003F475A File Offset: 0x003F295A
+	// Token: 0x0600AA5B RID: 43611 RVA: 0x003F95AE File Offset: 0x003F77AE
 	public static void AbortSession()
 	{
 		if (!PerformanceProfiler.isInSession)
@@ -59,7 +59,7 @@ public static class PerformanceProfiler
 		Debug.Log("[PerformanceProfiler] Session aborted.");
 	}
 
-	// Token: 0x0600A9A9 RID: 43433 RVA: 0x003F4794 File Offset: 0x003F2994
+	// Token: 0x0600AA5C RID: 43612 RVA: 0x003F95E8 File Offset: 0x003F77E8
 	public static void StartCapture(string directory = null, string prefix = null, int targetFps = 30)
 	{
 		if (PerformanceProfiler.isCapturing)
@@ -92,7 +92,7 @@ public static class PerformanceProfiler
 		Debug.Log(string.Format("[PerformanceProfiler] Capture started{0}. Target: {1} FPS.", text, PerformanceProfiler.targetFramerate));
 	}
 
-	// Token: 0x0600A9AA RID: 43434 RVA: 0x003F48BC File Offset: 0x003F2ABC
+	// Token: 0x0600AA5D RID: 43613 RVA: 0x003F9710 File Offset: 0x003F7910
 	public static PerformanceProfiler.PerformanceMetrics StopCapture(bool saveOutput = true)
 	{
 		if (!PerformanceProfiler.isCapturing)
@@ -159,31 +159,31 @@ public static class PerformanceProfiler
 		return performanceMetrics;
 	}
 
-	// Token: 0x0600A9AB RID: 43435 RVA: 0x003F4AD4 File Offset: 0x003F2CD4
+	// Token: 0x0600AA5E RID: 43614 RVA: 0x003F9928 File Offset: 0x003F7B28
 	public static IReadOnlyList<PerformanceProfiler.SpikeEvent> GetLastRunSpikeEvents()
 	{
 		return PerformanceProfiler.lastRunSpikeEvents;
 	}
 
-	// Token: 0x0600A9AC RID: 43436 RVA: 0x003F4ADB File Offset: 0x003F2CDB
+	// Token: 0x0600AA5F RID: 43615 RVA: 0x003F992F File Offset: 0x003F7B2F
 	public static bool IsCapturing()
 	{
 		return PerformanceProfiler.isCapturing;
 	}
 
-	// Token: 0x0600A9AD RID: 43437 RVA: 0x003F4AE2 File Offset: 0x003F2CE2
+	// Token: 0x0600AA60 RID: 43616 RVA: 0x003F9936 File Offset: 0x003F7B36
 	public static int GetCurrentFrameCount()
 	{
 		return PerformanceProfiler.frameTimeData.Count;
 	}
 
-	// Token: 0x0600A9AE RID: 43438 RVA: 0x003F4AEE File Offset: 0x003F2CEE
+	// Token: 0x0600AA61 RID: 43617 RVA: 0x003F9942 File Offset: 0x003F7B42
 	public static float GetLastFrameTime()
 	{
 		return PerformanceProfiler.lastFrameTime;
 	}
 
-	// Token: 0x0600A9AF RID: 43439 RVA: 0x003F4AF8 File Offset: 0x003F2CF8
+	// Token: 0x0600AA62 RID: 43618 RVA: 0x003F994C File Offset: 0x003F7B4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FinalizeSession()
 	{
@@ -203,7 +203,7 @@ public static class PerformanceProfiler
 		Debug.Log("[PerformanceProfiler] Session '" + PerformanceProfiler.sessionDirectory + "' complete.");
 	}
 
-	// Token: 0x0600A9B0 RID: 43440 RVA: 0x003F4B94 File Offset: 0x003F2D94
+	// Token: 0x0600AA63 RID: 43619 RVA: 0x003F99E8 File Offset: 0x003F7BE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CaptureFrameTime()
 	{
@@ -249,7 +249,7 @@ public static class PerformanceProfiler
 		PerformanceProfiler.lastFrameTime = num;
 	}
 
-	// Token: 0x0600A9B1 RID: 43441 RVA: 0x003F4D3C File Offset: 0x003F2F3C
+	// Token: 0x0600AA64 RID: 43620 RVA: 0x003F9B90 File Offset: 0x003F7D90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float[] CalculateRollingBaseline()
 	{
@@ -274,7 +274,7 @@ public static class PerformanceProfiler
 		return array;
 	}
 
-	// Token: 0x0600A9B2 RID: 43442 RVA: 0x003F4DE4 File Offset: 0x003F2FE4
+	// Token: 0x0600AA65 RID: 43621 RVA: 0x003F9C38 File Offset: 0x003F7E38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<PerformanceProfiler.SpikeEvent> ExtractSpikeEvents(float[] baseline)
 	{
@@ -351,7 +351,7 @@ public static class PerformanceProfiler
 		return list2;
 	}
 
-	// Token: 0x0600A9B3 RID: 43443 RVA: 0x003F5098 File Offset: 0x003F3298
+	// Token: 0x0600AA66 RID: 43622 RVA: 0x003F9EEC File Offset: 0x003F80EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> DetectGcCollections()
 	{
@@ -366,7 +366,7 @@ public static class PerformanceProfiler
 		return list;
 	}
 
-	// Token: 0x0600A9B4 RID: 43444 RVA: 0x003F50F4 File Offset: 0x003F32F4
+	// Token: 0x0600AA67 RID: 43623 RVA: 0x003F9F48 File Offset: 0x003F8148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PerformanceProfiler.PerformanceMetrics CalculateMetrics(float captureDuration)
 	{
@@ -475,7 +475,7 @@ public static class PerformanceProfiler
 		return CS$<>8__locals1.m;
 	}
 
-	// Token: 0x0600A9B5 RID: 43445 RVA: 0x003F565C File Offset: 0x003F385C
+	// Token: 0x0600AA68 RID: 43624 RVA: 0x003FA4B0 File Offset: 0x003F86B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PerformanceProfiler.AggregateMetrics CalculateAggregateMetrics(List<PerformanceProfiler.PerformanceMetrics> runs)
 	{
@@ -509,7 +509,7 @@ public static class PerformanceProfiler
 		return agg;
 	}
 
-	// Token: 0x0600A9B6 RID: 43446 RVA: 0x003F5A2C File Offset: 0x003F3C2C
+	// Token: 0x0600AA69 RID: 43625 RVA: 0x003FA880 File Offset: 0x003F8A80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float GetPercentile(List<float> sorted, float percentile)
 	{
@@ -531,7 +531,7 @@ public static class PerformanceProfiler
 		return sorted[num2] * (1f - num3) + sorted[num2 + 1] * num3;
 	}
 
-	// Token: 0x0600A9B7 RID: 43447 RVA: 0x003F5AA0 File Offset: 0x003F3CA0
+	// Token: 0x0600AA6A RID: 43626 RVA: 0x003FA8F4 File Offset: 0x003F8AF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string BuildBasePath(string directory)
 	{
@@ -544,7 +544,7 @@ public static class PerformanceProfiler
 		return text;
 	}
 
-	// Token: 0x0600A9B8 RID: 43448 RVA: 0x003F5AD8 File Offset: 0x003F3CD8
+	// Token: 0x0600AA6B RID: 43627 RVA: 0x003FA92C File Offset: 0x003F8B2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryCreateProfilerRecorder()
 	{
@@ -567,7 +567,7 @@ public static class PerformanceProfiler
 		return false;
 	}
 
-	// Token: 0x0600A9B9 RID: 43449 RVA: 0x003F5B74 File Offset: 0x003F3D74
+	// Token: 0x0600AA6C RID: 43628 RVA: 0x003FA9C8 File Offset: 0x003F8BC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveRawData(string filepath)
 	{
@@ -598,7 +598,7 @@ public static class PerformanceProfiler
 		}
 	}
 
-	// Token: 0x0600A9BA RID: 43450 RVA: 0x003F5D64 File Offset: 0x003F3F64
+	// Token: 0x0600AA6D RID: 43629 RVA: 0x003FABB8 File Offset: 0x003F8DB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveSpikeEvents(string filepath, List<PerformanceProfiler.SpikeEvent> spikes)
 	{
@@ -626,7 +626,7 @@ public static class PerformanceProfiler
 		}
 	}
 
-	// Token: 0x0600A9BB RID: 43451 RVA: 0x003F5E80 File Offset: 0x003F4080
+	// Token: 0x0600AA6E RID: 43630 RVA: 0x003FACD4 File Offset: 0x003F8ED4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveMemorySnapshot(string filepath)
 	{
@@ -653,7 +653,7 @@ public static class PerformanceProfiler
 		}
 	}
 
-	// Token: 0x0600A9BC RID: 43452 RVA: 0x003F5F34 File Offset: 0x003F4134
+	// Token: 0x0600AA6F RID: 43631 RVA: 0x003FAD88 File Offset: 0x003F8F88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveAnalysis(string filepath, PerformanceProfiler.PerformanceMetrics m)
 	{
@@ -702,7 +702,7 @@ public static class PerformanceProfiler
 		}
 	}
 
-	// Token: 0x0600A9BD RID: 43453 RVA: 0x003F6304 File Offset: 0x003F4504
+	// Token: 0x0600AA70 RID: 43632 RVA: 0x003FB158 File Offset: 0x003F9358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SaveAggregateAnalysis(string filepath, PerformanceProfiler.AggregateMetrics agg)
 	{
@@ -739,7 +739,7 @@ public static class PerformanceProfiler
 		}
 	}
 
-	// Token: 0x0600A9BE RID: 43454 RVA: 0x003F659C File Offset: 0x003F479C
+	// Token: 0x0600AA71 RID: 43633 RVA: 0x003FB3F0 File Offset: 0x003F95F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogSummary(PerformanceProfiler.PerformanceMetrics m)
 	{
@@ -768,7 +768,7 @@ public static class PerformanceProfiler
 		Debug.Log(stringBuilder.ToString());
 	}
 
-	// Token: 0x0600A9BF RID: 43455 RVA: 0x003F67F8 File Offset: 0x003F49F8
+	// Token: 0x0600AA72 RID: 43634 RVA: 0x003FB64C File Offset: 0x003F984C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogAggregateSummary(PerformanceProfiler.AggregateMetrics agg)
 	{
@@ -785,337 +785,337 @@ public static class PerformanceProfiler
 		Debug.Log(stringBuilder.ToString());
 	}
 
-	// Token: 0x04007DAC RID: 32172
+	// Token: 0x04007E2F RID: 32303
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int SpikeBaselineHalfWindow = 30;
 
-	// Token: 0x04007DAD RID: 32173
+	// Token: 0x04007E30 RID: 32304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SpikeThresholdMultiplier = 2f;
 
-	// Token: 0x04007DAE RID: 32174
+	// Token: 0x04007E31 RID: 32305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int SpikeMergeGapFrames = 3;
 
-	// Token: 0x04007DAF RID: 32175
+	// Token: 0x04007E32 RID: 32306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float GcAttributionHeapDropMB = 0.5f;
 
-	// Token: 0x04007DB0 RID: 32176
+	// Token: 0x04007E33 RID: 32307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int GcAttributionWindowFrames = 1;
 
-	// Token: 0x04007DB3 RID: 32179
+	// Token: 0x04007E36 RID: 32310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isCapturing = false;
 
-	// Token: 0x04007DB4 RID: 32180
+	// Token: 0x04007E37 RID: 32311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string profilePrefix = null;
 
-	// Token: 0x04007DB5 RID: 32181
+	// Token: 0x04007E38 RID: 32312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<float> frameTimeData = new List<float>();
 
-	// Token: 0x04007DB6 RID: 32182
+	// Token: 0x04007E39 RID: 32313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<PerformanceProfiler.FrameInfo> frameExtraData = new List<PerformanceProfiler.FrameInfo>();
 
-	// Token: 0x04007DB7 RID: 32183
+	// Token: 0x04007E3A RID: 32314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ProfilerRecorder frameTimeRecorder;
 
-	// Token: 0x04007DB8 RID: 32184
+	// Token: 0x04007E3B RID: 32315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime captureStartTime;
 
-	// Token: 0x04007DB9 RID: 32185
+	// Token: 0x04007E3C RID: 32316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int targetFramerate = 30;
 
-	// Token: 0x04007DBA RID: 32186
+	// Token: 0x04007E3D RID: 32317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastFrameTime = 0f;
 
-	// Token: 0x04007DBB RID: 32187
+	// Token: 0x04007E3E RID: 32318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PerformanceProfiler.FrameTimeCapture captureComponent;
 
-	// Token: 0x04007DBC RID: 32188
+	// Token: 0x04007E3F RID: 32319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string captureDirectory;
 
-	// Token: 0x04007DBD RID: 32189
+	// Token: 0x04007E40 RID: 32320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ProfilingMetricCapture memoryProfiler;
 
-	// Token: 0x04007DBE RID: 32190
+	// Token: 0x04007E41 RID: 32321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string memorySnapshotStart;
 
-	// Token: 0x04007DBF RID: 32191
+	// Token: 0x04007E42 RID: 32322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<PerformanceProfiler.SpikeEvent> lastRunSpikeEvents = new List<PerformanceProfiler.SpikeEvent>();
 
-	// Token: 0x04007DC0 RID: 32192
+	// Token: 0x04007E43 RID: 32323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isInSession = false;
 
-	// Token: 0x04007DC1 RID: 32193
+	// Token: 0x04007E44 RID: 32324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int sessionRunTarget = 0;
 
-	// Token: 0x04007DC2 RID: 32194
+	// Token: 0x04007E45 RID: 32325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int sessionRunsCompleted = 0;
 
-	// Token: 0x04007DC3 RID: 32195
+	// Token: 0x04007E46 RID: 32326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<PerformanceProfiler.PerformanceMetrics> sessionRunMetrics = new List<PerformanceProfiler.PerformanceMetrics>();
 
-	// Token: 0x04007DC4 RID: 32196
+	// Token: 0x04007E47 RID: 32327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string sessionDirectory = null;
 
-	// Token: 0x04007DC5 RID: 32197
+	// Token: 0x04007E48 RID: 32328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string sessionPrefix = null;
 
-	// Token: 0x04007DC6 RID: 32198
+	// Token: 0x04007E49 RID: 32329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long lastSystemTextureMemory = 0L;
 
-	// Token: 0x02001512 RID: 5394
+	// Token: 0x02001534 RID: 5428
 	public struct FrameInfo
 	{
-		// Token: 0x04007DC7 RID: 32199
+		// Token: 0x04007E4A RID: 32330
 		public long systemTextureMemory;
 
-		// Token: 0x04007DC8 RID: 32200
+		// Token: 0x04007E4B RID: 32331
 		public long systemTextureMemoryDelta;
 
-		// Token: 0x04007DC9 RID: 32201
+		// Token: 0x04007E4C RID: 32332
 		public float texStreamCurrentMB;
 
-		// Token: 0x04007DCA RID: 32202
+		// Token: 0x04007E4D RID: 32333
 		public float texStreamTargetMB;
 
-		// Token: 0x04007DCB RID: 32203
+		// Token: 0x04007E4E RID: 32334
 		public float texStreamDesiredMB;
 
-		// Token: 0x04007DCC RID: 32204
+		// Token: 0x04007E4F RID: 32335
 		public float texStreamBudgetMB;
 
-		// Token: 0x04007DCD RID: 32205
+		// Token: 0x04007E50 RID: 32336
 		public float gcHeapMemoryMB;
 
-		// Token: 0x04007DCE RID: 32206
+		// Token: 0x04007E51 RID: 32337
 		public float rssMemoryMB;
 
-		// Token: 0x04007DCF RID: 32207
+		// Token: 0x04007E52 RID: 32338
 		public int chunkCount;
 
-		// Token: 0x04007DD0 RID: 32208
+		// Token: 0x04007E53 RID: 32339
 		public int displayedChunkObjects;
 
-		// Token: 0x04007DD1 RID: 32209
+		// Token: 0x04007E54 RID: 32340
 		public int enemyCount;
 
-		// Token: 0x04007DD2 RID: 32210
+		// Token: 0x04007E55 RID: 32341
 		public int entityCount;
 
-		// Token: 0x04007DD3 RID: 32211
+		// Token: 0x04007E56 RID: 32342
 		public int entityInstanceCount;
 
-		// Token: 0x04007DD4 RID: 32212
+		// Token: 0x04007E57 RID: 32343
 		public int itemCount;
 
-		// Token: 0x04007DD5 RID: 32213
+		// Token: 0x04007E58 RID: 32344
 		public float timeSinceLevelLoadMin;
 	}
 
-	// Token: 0x02001513 RID: 5395
+	// Token: 0x02001535 RID: 5429
 	public struct SpikeEvent
 	{
-		// Token: 0x04007DD6 RID: 32214
+		// Token: 0x04007E59 RID: 32345
 		public int startFrame;
 
-		// Token: 0x04007DD7 RID: 32215
+		// Token: 0x04007E5A RID: 32346
 		public int durationFrames;
 
-		// Token: 0x04007DD8 RID: 32216
+		// Token: 0x04007E5B RID: 32347
 		public float totalDurationMs;
 
-		// Token: 0x04007DD9 RID: 32217
+		// Token: 0x04007E5C RID: 32348
 		public float peakFrameTimeMs;
 
-		// Token: 0x04007DDA RID: 32218
+		// Token: 0x04007E5D RID: 32349
 		public float baselineFrameTimeMs;
 
-		// Token: 0x04007DDB RID: 32219
+		// Token: 0x04007E5E RID: 32350
 		public float peakMultiple;
 
-		// Token: 0x04007DDC RID: 32220
+		// Token: 0x04007E5F RID: 32351
 		public bool isGcAttributed;
 
-		// Token: 0x04007DDD RID: 32221
+		// Token: 0x04007E60 RID: 32352
 		public float gcHeapDropMB;
 	}
 
-	// Token: 0x02001514 RID: 5396
+	// Token: 0x02001536 RID: 5430
 	public struct PerformanceMetrics
 	{
-		// Token: 0x04007DDE RID: 32222
+		// Token: 0x04007E61 RID: 32353
 		public float averageFrameTime;
 
-		// Token: 0x04007DDF RID: 32223
+		// Token: 0x04007E62 RID: 32354
 		public float averageFPS;
 
-		// Token: 0x04007DE0 RID: 32224
+		// Token: 0x04007E63 RID: 32355
 		public float onePercentLow;
 
-		// Token: 0x04007DE1 RID: 32225
+		// Token: 0x04007E64 RID: 32356
 		public float pointOnePercentLow;
 
-		// Token: 0x04007DE2 RID: 32226
+		// Token: 0x04007E65 RID: 32357
 		public float fivePercentLow;
 
-		// Token: 0x04007DE3 RID: 32227
+		// Token: 0x04007E66 RID: 32358
 		public float maxFrameTime;
 
-		// Token: 0x04007DE4 RID: 32228
+		// Token: 0x04007E67 RID: 32359
 		public float minFrameTime;
 
-		// Token: 0x04007DE5 RID: 32229
+		// Token: 0x04007E68 RID: 32360
 		public float standardDeviation;
 
-		// Token: 0x04007DE6 RID: 32230
+		// Token: 0x04007E69 RID: 32361
 		public float coefficientOfVariation;
 
-		// Token: 0x04007DE7 RID: 32231
+		// Token: 0x04007E6A RID: 32362
 		public int framePacingViolations20;
 
-		// Token: 0x04007DE8 RID: 32232
+		// Token: 0x04007E6B RID: 32363
 		public int framePacingViolations50;
 
-		// Token: 0x04007DE9 RID: 32233
+		// Token: 0x04007E6C RID: 32364
 		public float framePacingViolationPercent20;
 
-		// Token: 0x04007DEA RID: 32234
+		// Token: 0x04007E6D RID: 32365
 		public float framePacingViolationPercent50;
 
-		// Token: 0x04007DEB RID: 32235
+		// Token: 0x04007E6E RID: 32366
 		public int maxConsecutiveBadFrames;
 
-		// Token: 0x04007DEC RID: 32236
+		// Token: 0x04007E6F RID: 32367
 		public int spikeEventCount;
 
-		// Token: 0x04007DED RID: 32237
+		// Token: 0x04007E70 RID: 32368
 		public int gcAttributedSpikeCount;
 
-		// Token: 0x04007DEE RID: 32238
+		// Token: 0x04007E71 RID: 32369
 		public int nonGcAttributedSpikeCount;
 
-		// Token: 0x04007DEF RID: 32239
+		// Token: 0x04007E72 RID: 32370
 		public float gcAttributedSpikePercent;
 
-		// Token: 0x04007DF0 RID: 32240
+		// Token: 0x04007E73 RID: 32371
 		public float meanSpikeDurationMs;
 
-		// Token: 0x04007DF1 RID: 32241
+		// Token: 0x04007E74 RID: 32372
 		public float maxSpikeDurationMs;
 
-		// Token: 0x04007DF2 RID: 32242
+		// Token: 0x04007E75 RID: 32373
 		public float meanTimeBetweenSpikesSec;
 
-		// Token: 0x04007DF3 RID: 32243
+		// Token: 0x04007E76 RID: 32374
 		public float meanGcSpikeMs;
 
-		// Token: 0x04007DF4 RID: 32244
+		// Token: 0x04007E77 RID: 32375
 		public float meanNonGcSpikeMs;
 
-		// Token: 0x04007DF5 RID: 32245
+		// Token: 0x04007E78 RID: 32376
 		public int estimatedGcCollectionCount;
 
-		// Token: 0x04007DF6 RID: 32246
+		// Token: 0x04007E79 RID: 32377
 		public float meanGcIntervalSec;
 
-		// Token: 0x04007DF7 RID: 32247
+		// Token: 0x04007E7A RID: 32378
 		public int totalFramesCaptured;
 
-		// Token: 0x04007DF8 RID: 32248
+		// Token: 0x04007E7B RID: 32379
 		public float captureDurationSeconds;
 	}
 
-	// Token: 0x02001515 RID: 5397
+	// Token: 0x02001537 RID: 5431
 	public struct AggregateMetrics
 	{
-		// Token: 0x04007DF9 RID: 32249
+		// Token: 0x04007E7C RID: 32380
 		public int runCount;
 
-		// Token: 0x04007DFA RID: 32250
+		// Token: 0x04007E7D RID: 32381
 		public float meanAverageFrameTime;
 
-		// Token: 0x04007DFB RID: 32251
+		// Token: 0x04007E7E RID: 32382
 		public float meanAverageFPS;
 
-		// Token: 0x04007DFC RID: 32252
+		// Token: 0x04007E7F RID: 32383
 		public float stdDevAverageFPS;
 
-		// Token: 0x04007DFD RID: 32253
+		// Token: 0x04007E80 RID: 32384
 		public float meanOnePercentLow;
 
-		// Token: 0x04007DFE RID: 32254
+		// Token: 0x04007E81 RID: 32385
 		public float stdDevOnePercentLow;
 
-		// Token: 0x04007DFF RID: 32255
+		// Token: 0x04007E82 RID: 32386
 		public float meanPointOnePercentLow;
 
-		// Token: 0x04007E00 RID: 32256
+		// Token: 0x04007E83 RID: 32387
 		public float meanFivePercentLow;
 
-		// Token: 0x04007E01 RID: 32257
+		// Token: 0x04007E84 RID: 32388
 		public float meanFramePacingViolationPercent20;
 
-		// Token: 0x04007E02 RID: 32258
+		// Token: 0x04007E85 RID: 32389
 		public float meanFramePacingViolationPercent50;
 
-		// Token: 0x04007E03 RID: 32259
+		// Token: 0x04007E86 RID: 32390
 		public float meanMaxConsecutiveBadFrames;
 
-		// Token: 0x04007E04 RID: 32260
+		// Token: 0x04007E87 RID: 32391
 		public float meanSpikeEventCount;
 
-		// Token: 0x04007E05 RID: 32261
+		// Token: 0x04007E88 RID: 32392
 		public float meanGcAttributedSpikePercent;
 
-		// Token: 0x04007E06 RID: 32262
+		// Token: 0x04007E89 RID: 32393
 		public float meanTimeBetweenSpikesSec;
 
-		// Token: 0x04007E07 RID: 32263
+		// Token: 0x04007E8A RID: 32394
 		public float meanEstimatedGcCollectionCount;
 
-		// Token: 0x04007E08 RID: 32264
+		// Token: 0x04007E8B RID: 32395
 		public float meanGcIntervalSec;
 
-		// Token: 0x04007E09 RID: 32265
+		// Token: 0x04007E8C RID: 32396
 		public float bestRunAverageFPS;
 
-		// Token: 0x04007E0A RID: 32266
+		// Token: 0x04007E8D RID: 32397
 		public float worstRunAverageFPS;
 
-		// Token: 0x04007E0B RID: 32267
+		// Token: 0x04007E8E RID: 32398
 		public int totalFramesCaptured;
 
-		// Token: 0x04007E0C RID: 32268
+		// Token: 0x04007E8F RID: 32399
 		public float totalCaptureDurationSeconds;
 	}
 
-	// Token: 0x02001516 RID: 5398
+	// Token: 0x02001538 RID: 5432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class FrameTimeCapture : MonoBehaviour
 	{
-		// Token: 0x0600A9C1 RID: 43457 RVA: 0x003F69CC File Offset: 0x003F4BCC
+		// Token: 0x0600AA74 RID: 43636 RVA: 0x003FB820 File Offset: 0x003F9A20
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LateUpdate()
 		{
@@ -1135,7 +1135,7 @@ public static class PerformanceProfiler
 			PerformanceProfiler.CaptureFrameTime();
 		}
 
-		// Token: 0x04007E0D RID: 32269
+		// Token: 0x04007E90 RID: 32400
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int lateUpdatesSeen;

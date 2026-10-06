@@ -3,16 +3,16 @@ using System.IO;
 
 namespace Platform.Local
 {
-	// Token: 0x02001CC9 RID: 7369
+	// Token: 0x02001CFB RID: 7419
 	public class RemoteFileStorage : IRemoteFileStorage
 	{
-		// Token: 0x0600DAC9 RID: 56009 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DC44 RID: 56388 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x17001B53 RID: 6995
-		// (get) Token: 0x0600DACA RID: 56010 RVA: 0x00020021 File Offset: 0x0001E221
+		// Token: 0x17001BF9 RID: 7161
+		// (get) Token: 0x0600DC45 RID: 56389 RVA: 0x00020119 File Offset: 0x0001E319
 		public bool IsReady
 		{
 			get
@@ -21,8 +21,8 @@ namespace Platform.Local
 			}
 		}
 
-		// Token: 0x17001B54 RID: 6996
-		// (get) Token: 0x0600DACB RID: 56011 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001BFA RID: 7162
+		// (get) Token: 0x0600DC46 RID: 56390 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool Unavailable
 		{
 			get
@@ -31,7 +31,7 @@ namespace Platform.Local
 			}
 		}
 
-		// Token: 0x0600DACC RID: 56012 RVA: 0x004E3C9C File Offset: 0x004E1E9C
+		// Token: 0x0600DC47 RID: 56391 RVA: 0x004E87E4 File Offset: 0x004E69E4
 		public void GetFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback)
 		{
 			if (_callback == null)
@@ -62,13 +62,13 @@ namespace Platform.Local
 			}
 		}
 
-		// Token: 0x0600DACD RID: 56013 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DC48 RID: 56392 RVA: 0x0008806C File Offset: 0x0008626C
 		public void GetCachedFile(string _filename, IRemoteFileStorage.FileDownloadCompleteCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DACE RID: 56014 RVA: 0x00087DB8 File Offset: 0x00085FB8
+		// Token: 0x0600DC49 RID: 56393 RVA: 0x0008806C File Offset: 0x0008626C
 		public bool CancelGetFile(string _filename, string _cancelReason)
 		{
 			throw new NotImplementedException();

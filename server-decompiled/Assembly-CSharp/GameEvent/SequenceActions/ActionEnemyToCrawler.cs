@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200197D RID: 6525
+	// Token: 0x020019A9 RID: 6569
 	[Preserve]
 	public class ActionEnemyToCrawler : ActionBaseTargetAction
 	{
-		// Token: 0x0600C870 RID: 51312 RVA: 0x0049877C File Offset: 0x0049697C
+		// Token: 0x0600C9C8 RID: 51656 RVA: 0x0049CC40 File Offset: 0x0049AE40
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C871 RID: 51313 RVA: 0x004987FF File Offset: 0x004969FF
+		// Token: 0x0600C9C9 RID: 51657 RVA: 0x0049CCC3 File Offset: 0x0049AEC3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

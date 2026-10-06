@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000BF7 RID: 3063
+// Token: 0x02000C09 RID: 3081
 public class BiomeDefinition
 {
-	// Token: 0x06005D88 RID: 23944 RVA: 0x00245172 File Offset: 0x00243372
+	// Token: 0x06005DA1 RID: 23969 RVA: 0x0024846E File Offset: 0x0024666E
 	public static string LocalizedBiomeName(BiomeDefinition.BiomeType _biomeType)
 	{
 		return Localization.Get("biome_" + _biomeType.ToStringCached<BiomeDefinition.BiomeType>(), false, null);
 	}
 
-	// Token: 0x06005D89 RID: 23945 RVA: 0x0024518C File Offset: 0x0024338C
+	// Token: 0x06005DA2 RID: 23970 RVA: 0x00248488 File Offset: 0x00246688
 	public BiomeDefinition(byte _id, byte _subId, string _name, uint _color, int _radiationLevel, string _buff)
 	{
 		this.m_Id = _id;
@@ -32,14 +32,14 @@ public class BiomeDefinition
 		this.InitWeather();
 	}
 
-	// Token: 0x06005D8A RID: 23946 RVA: 0x002452BB File Offset: 0x002434BB
+	// Token: 0x06005DA3 RID: 23971 RVA: 0x002485B7 File Offset: 0x002467B7
 	public void AddLayer(BiomeLayer _layer)
 	{
 		this.m_Layers.Add(_layer);
 		this.TotalLayerDepth += _layer.m_Depth;
 	}
 
-	// Token: 0x06005D8B RID: 23947 RVA: 0x002452DC File Offset: 0x002434DC
+	// Token: 0x06005DA4 RID: 23972 RVA: 0x002485D8 File Offset: 0x002467D8
 	public void AddDecoBlock(BiomeBlockDecoration _deco)
 	{
 		this.m_DecoBlocks.Add(_deco);
@@ -53,61 +53,61 @@ public class BiomeDefinition
 		}
 	}
 
-	// Token: 0x06005D8C RID: 23948 RVA: 0x00245325 File Offset: 0x00243525
+	// Token: 0x06005DA5 RID: 23973 RVA: 0x00248621 File Offset: 0x00246821
 	public void AddDecoPrefab(BiomePrefabDecoration _deco)
 	{
 		this.m_DecoPrefabs.Add(_deco);
 	}
 
-	// Token: 0x06005D8D RID: 23949 RVA: 0x00245333 File Offset: 0x00243533
+	// Token: 0x06005DA6 RID: 23974 RVA: 0x0024862F File Offset: 0x0024682F
 	public void AddBluff(BiomeBluffDecoration _deco)
 	{
 		this.m_DecoBluffs.Add(_deco);
 	}
 
-	// Token: 0x06005D8E RID: 23950 RVA: 0x00245341 File Offset: 0x00243541
+	// Token: 0x06005DA7 RID: 23975 RVA: 0x0024863D File Offset: 0x0024683D
 	public void AddReplacement(int _sourceId, int _targetId)
 	{
 		this.Replacements[_sourceId] = _targetId;
 	}
 
-	// Token: 0x06005D8F RID: 23951 RVA: 0x00245350 File Offset: 0x00243550
+	// Token: 0x06005DA8 RID: 23976 RVA: 0x0024864C File Offset: 0x0024684C
 	public void addSubBiome(BiomeDefinition _subbiome)
 	{
 		this.subbiomes.Add(_subbiome);
 	}
 
-	// Token: 0x06005D90 RID: 23952 RVA: 0x0024535E File Offset: 0x0024355E
+	// Token: 0x06005DA9 RID: 23977 RVA: 0x0024865A File Offset: 0x0024685A
 	public override bool Equals(object obj)
 	{
 		return obj is BiomeDefinition && ((BiomeDefinition)obj).m_Id == this.m_Id;
 	}
 
-	// Token: 0x06005D91 RID: 23953 RVA: 0x0024537D File Offset: 0x0024357D
+	// Token: 0x06005DAA RID: 23978 RVA: 0x00248679 File Offset: 0x00246879
 	public override int GetHashCode()
 	{
 		return (int)this.m_Id;
 	}
 
-	// Token: 0x06005D92 RID: 23954 RVA: 0x00245385 File Offset: 0x00243585
+	// Token: 0x06005DAB RID: 23979 RVA: 0x00248681 File Offset: 0x00246881
 	public override string ToString()
 	{
 		return this.m_sBiomeName;
 	}
 
-	// Token: 0x06005D93 RID: 23955 RVA: 0x0024538D File Offset: 0x0024358D
+	// Token: 0x06005DAC RID: 23980 RVA: 0x00248689 File Offset: 0x00246889
 	public static uint GetBiomeColor(BiomeDefinition.BiomeType _type)
 	{
 		return BiomeDefinition.BiomeColors[(int)_type];
 	}
 
-	// Token: 0x06005D94 RID: 23956 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005DAD RID: 23981 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitWeather()
 	{
 	}
 
-	// Token: 0x06005D95 RID: 23957 RVA: 0x00245398 File Offset: 0x00243598
+	// Token: 0x06005DAE RID: 23982 RVA: 0x00248694 File Offset: 0x00246894
 	public BiomeDefinition.WeatherGroup AddWeatherGroup(string _name, float _prob, float _duration, Vector2 _delay, string _buffName)
 	{
 		BiomeDefinition.WeatherGroup weatherGroup = new BiomeDefinition.WeatherGroup();
@@ -125,7 +125,7 @@ public class BiomeDefinition
 		return weatherGroup;
 	}
 
-	// Token: 0x06005D96 RID: 23958 RVA: 0x00245440 File Offset: 0x00243640
+	// Token: 0x06005DAF RID: 23983 RVA: 0x0024873C File Offset: 0x0024693C
 	public void SetupWeather()
 	{
 		float num = 0f;
@@ -142,21 +142,21 @@ public class BiomeDefinition
 		}
 	}
 
-	// Token: 0x06005D97 RID: 23959 RVA: 0x002454C1 File Offset: 0x002436C1
+	// Token: 0x06005DB0 RID: 23984 RVA: 0x002487BD File Offset: 0x002469BD
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public float WeatherGetValue(BiomeDefinition.Probabilities.ProbType _type)
 	{
 		return this.weatherValues[(int)_type];
 	}
 
-	// Token: 0x06005D98 RID: 23960 RVA: 0x002454CB File Offset: 0x002436CB
+	// Token: 0x06005DB1 RID: 23985 RVA: 0x002487C7 File Offset: 0x002469C7
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void WeatherSetValue(BiomeDefinition.Probabilities.ProbType _type, float _value)
 	{
 		this.weatherValues[(int)_type] = _value;
 	}
 
-	// Token: 0x06005D99 RID: 23961 RVA: 0x002454D8 File Offset: 0x002436D8
+	// Token: 0x06005DB2 RID: 23986 RVA: 0x002487D4 File Offset: 0x002469D4
 	public void WeatherRandomize(float _rand)
 	{
 		float num = 0f;
@@ -172,7 +172,7 @@ public class BiomeDefinition
 		}
 	}
 
-	// Token: 0x06005D9A RID: 23962 RVA: 0x00245524 File Offset: 0x00243724
+	// Token: 0x06005DB3 RID: 23987 RVA: 0x00248820 File Offset: 0x00246A20
 	public bool WeatherRandomize(string _weatherGroup)
 	{
 		int num = this.FindWeatherGroupIndex(_weatherGroup);
@@ -184,7 +184,7 @@ public class BiomeDefinition
 		return false;
 	}
 
-	// Token: 0x06005D9B RID: 23963 RVA: 0x00245548 File Offset: 0x00243748
+	// Token: 0x06005DB4 RID: 23988 RVA: 0x00248844 File Offset: 0x00246A44
 	public int WeatherGetDuration(string _weatherGroup)
 	{
 		BiomeDefinition.WeatherGroup weatherGroup = this.FindWeatherGroup(_weatherGroup);
@@ -195,7 +195,7 @@ public class BiomeDefinition
 		return 0;
 	}
 
-	// Token: 0x06005D9C RID: 23964 RVA: 0x00245568 File Offset: 0x00243768
+	// Token: 0x06005DB5 RID: 23989 RVA: 0x00248864 File Offset: 0x00246A64
 	public int WeatherGetDuration(string _weatherGroup, out Vector2i _delay)
 	{
 		BiomeDefinition.WeatherGroup weatherGroup = this.FindWeatherGroup(_weatherGroup);
@@ -208,7 +208,7 @@ public class BiomeDefinition
 		return 0;
 	}
 
-	// Token: 0x06005D9D RID: 23965 RVA: 0x002455A0 File Offset: 0x002437A0
+	// Token: 0x06005DB6 RID: 23990 RVA: 0x0024889C File Offset: 0x00246A9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition.WeatherGroup FindWeatherGroup(string _name)
 	{
@@ -223,7 +223,7 @@ public class BiomeDefinition
 		return null;
 	}
 
-	// Token: 0x06005D9E RID: 23966 RVA: 0x002455E4 File Offset: 0x002437E4
+	// Token: 0x06005DB7 RID: 23991 RVA: 0x002488E0 File Offset: 0x00246AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindWeatherGroupIndex(string _name)
 	{
@@ -237,7 +237,7 @@ public class BiomeDefinition
 		return -1;
 	}
 
-	// Token: 0x06005D9F RID: 23967 RVA: 0x00245624 File Offset: 0x00243824
+	// Token: 0x06005DB8 RID: 23992 RVA: 0x00248920 File Offset: 0x00246B20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectWeatherGroup(int _index)
 	{
@@ -253,7 +253,7 @@ public class BiomeDefinition
 		}
 	}
 
-	// Token: 0x06005DA0 RID: 23968 RVA: 0x00245688 File Offset: 0x00243888
+	// Token: 0x06005DB9 RID: 23993 RVA: 0x00248984 File Offset: 0x00246B84
 	public void SetWeatherGroup(int _index)
 	{
 		this.currentWeatherGroupIndex = _index;
@@ -262,171 +262,171 @@ public class BiomeDefinition
 		this.weatherSpectrum = weatherGroup.spectrum;
 	}
 
-	// Token: 0x0400482E RID: 18478
+	// Token: 0x0400486D RID: 18541
 	public float currentPlayerIntensity;
 
-	// Token: 0x0400482F RID: 18479
+	// Token: 0x0400486E RID: 18542
 	public const string BiomeNameLocalizationPrefix = "biome_";
 
-	// Token: 0x04004830 RID: 18480
+	// Token: 0x0400486F RID: 18543
 	public static string[] BiomeNames = new string[]
 	{
 		"any", "snow", "forest", "pine_forest", "plains", "desert", "water", "radiated", "wasteland", "burnt_forest",
 		"city", "city_wasteland", "wasteland_hub", "caveFloor", "caveCeiling"
 	};
 
-	// Token: 0x04004831 RID: 18481
+	// Token: 0x04004870 RID: 18544
 	public static uint[] BiomeColors = new uint[]
 	{
 		0U, 16777215U, 0U, 16384U, 0U, 16770167U, 25599U, 0U, 16754688U, 12189951U,
 		8421504U, 12632256U, 10526880U, 0U, 0U
 	};
 
-	// Token: 0x04004832 RID: 18482
+	// Token: 0x04004871 RID: 18545
 	public readonly byte m_Id;
 
-	// Token: 0x04004833 RID: 18483
+	// Token: 0x04004872 RID: 18546
 	public readonly BiomeDefinition.BiomeType m_BiomeType;
 
-	// Token: 0x04004834 RID: 18484
+	// Token: 0x04004873 RID: 18547
 	public byte subId;
 
-	// Token: 0x04004835 RID: 18485
+	// Token: 0x04004874 RID: 18548
 	public readonly string m_sBiomeName;
 
-	// Token: 0x04004836 RID: 18486
+	// Token: 0x04004875 RID: 18549
 	public readonly string LocalizedName;
 
-	// Token: 0x04004837 RID: 18487
+	// Token: 0x04004876 RID: 18550
 	public uint m_uiColor;
 
-	// Token: 0x04004838 RID: 18488
+	// Token: 0x04004877 RID: 18551
 	public string m_SpectrumName;
 
-	// Token: 0x04004839 RID: 18489
+	// Token: 0x04004878 RID: 18552
 	public static Dictionary<string, byte> nameToId;
 
-	// Token: 0x0400483A RID: 18490
+	// Token: 0x04004879 RID: 18553
 	public int m_RadiationLevel;
 
-	// Token: 0x0400483B RID: 18491
+	// Token: 0x0400487A RID: 18554
 	public int Difficulty = 1;
 
-	// Token: 0x0400483C RID: 18492
+	// Token: 0x0400487B RID: 18555
 	public List<BiomeLayer> m_Layers;
 
-	// Token: 0x0400483D RID: 18493
+	// Token: 0x0400487C RID: 18556
 	public List<BiomeBlockDecoration> m_DecoBlocks;
 
-	// Token: 0x0400483E RID: 18494
+	// Token: 0x0400487D RID: 18557
 	public List<BiomeBlockDecoration> m_DistantDecoBlocks;
 
-	// Token: 0x0400483F RID: 18495
+	// Token: 0x0400487E RID: 18558
 	public List<BiomePrefabDecoration> m_DecoPrefabs;
 
-	// Token: 0x04004840 RID: 18496
+	// Token: 0x0400487F RID: 18559
 	public List<BiomeBluffDecoration> m_DecoBluffs;
 
-	// Token: 0x04004841 RID: 18497
+	// Token: 0x04004880 RID: 18560
 	public List<BiomeDefinition.WeatherGroup> weatherGroups = new List<BiomeDefinition.WeatherGroup>();
 
-	// Token: 0x04004842 RID: 18498
+	// Token: 0x04004881 RID: 18561
 	public string weatherName;
 
-	// Token: 0x04004843 RID: 18499
+	// Token: 0x04004882 RID: 18562
 	public int currentWeatherGroupIndex;
 
-	// Token: 0x04004844 RID: 18500
+	// Token: 0x04004883 RID: 18563
 	public BiomeDefinition.WeatherGroup currentWeatherGroup;
 
-	// Token: 0x04004845 RID: 18501
+	// Token: 0x04004884 RID: 18564
 	public SpectrumWeatherType weatherSpectrum;
 
-	// Token: 0x04004846 RID: 18502
+	// Token: 0x04004885 RID: 18565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] weatherValues = new float[5];
 
-	// Token: 0x04004847 RID: 18503
+	// Token: 0x04004886 RID: 18566
 	public int TotalLayerDepth;
 
-	// Token: 0x04004848 RID: 18504
+	// Token: 0x04004887 RID: 18567
 	public List<BiomeDefinition> subbiomes = new List<BiomeDefinition>();
 
-	// Token: 0x04004849 RID: 18505
+	// Token: 0x04004888 RID: 18568
 	public float noiseFreq = 0.03f;
 
-	// Token: 0x0400484A RID: 18506
+	// Token: 0x04004889 RID: 18569
 	public float noiseMin = 0.2f;
 
-	// Token: 0x0400484B RID: 18507
+	// Token: 0x0400488A RID: 18570
 	public float noiseMax = 1f;
 
-	// Token: 0x0400484C RID: 18508
+	// Token: 0x0400488B RID: 18571
 	public Vector2 noiseOffset;
 
-	// Token: 0x0400484D RID: 18509
+	// Token: 0x0400488C RID: 18572
 	public Dictionary<int, int> Replacements = new Dictionary<int, int>();
 
-	// Token: 0x0400484E RID: 18510
+	// Token: 0x0400488D RID: 18573
 	public float GameStageMod;
 
-	// Token: 0x0400484F RID: 18511
+	// Token: 0x0400488E RID: 18574
 	public float GameStageBonus;
 
-	// Token: 0x04004850 RID: 18512
+	// Token: 0x0400488F RID: 18575
 	public float LootStageMod;
 
-	// Token: 0x04004851 RID: 18513
+	// Token: 0x04004890 RID: 18576
 	public float LootStageBonus;
 
-	// Token: 0x04004852 RID: 18514
+	// Token: 0x04004891 RID: 18577
 	public int LootStageMin = -1;
 
-	// Token: 0x04004853 RID: 18515
+	// Token: 0x04004892 RID: 18578
 	public int LootStageMax = -1;
 
-	// Token: 0x04004854 RID: 18516
+	// Token: 0x04004893 RID: 18579
 	public string Buff;
 
-	// Token: 0x02000BF8 RID: 3064
+	// Token: 0x02000C0A RID: 3082
 	public enum BiomeType
 	{
-		// Token: 0x04004856 RID: 18518
+		// Token: 0x04004895 RID: 18581
 		Any,
-		// Token: 0x04004857 RID: 18519
+		// Token: 0x04004896 RID: 18582
 		Snow,
-		// Token: 0x04004858 RID: 18520
+		// Token: 0x04004897 RID: 18583
 		Forest,
-		// Token: 0x04004859 RID: 18521
+		// Token: 0x04004898 RID: 18584
 		PineForest,
-		// Token: 0x0400485A RID: 18522
+		// Token: 0x04004899 RID: 18585
 		Plains,
-		// Token: 0x0400485B RID: 18523
+		// Token: 0x0400489A RID: 18586
 		Desert,
-		// Token: 0x0400485C RID: 18524
+		// Token: 0x0400489B RID: 18587
 		Water,
-		// Token: 0x0400485D RID: 18525
+		// Token: 0x0400489C RID: 18588
 		Radiated,
-		// Token: 0x0400485E RID: 18526
+		// Token: 0x0400489D RID: 18589
 		Wasteland,
-		// Token: 0x0400485F RID: 18527
+		// Token: 0x0400489E RID: 18590
 		burnt_forest,
-		// Token: 0x04004860 RID: 18528
+		// Token: 0x0400489F RID: 18591
 		city,
-		// Token: 0x04004861 RID: 18529
+		// Token: 0x040048A0 RID: 18592
 		city_wasteland,
-		// Token: 0x04004862 RID: 18530
+		// Token: 0x040048A1 RID: 18593
 		wasteland_hub,
-		// Token: 0x04004863 RID: 18531
+		// Token: 0x040048A2 RID: 18594
 		caveFloor,
-		// Token: 0x04004864 RID: 18532
+		// Token: 0x040048A3 RID: 18595
 		caveCeiling
 	}
 
-	// Token: 0x02000BF9 RID: 3065
+	// Token: 0x02000C0B RID: 3083
 	public class Probabilities
 	{
-		// Token: 0x06005DA2 RID: 23970 RVA: 0x0024576C File Offset: 0x0024396C
+		// Token: 0x06005DBB RID: 23995 RVA: 0x00248A68 File Offset: 0x00246C68
 		public Probabilities()
 		{
 			this.probabilities = new List<Vector3>[5];
@@ -436,13 +436,13 @@ public class BiomeDefinition
 			}
 		}
 
-		// Token: 0x06005DA3 RID: 23971 RVA: 0x002457A4 File Offset: 0x002439A4
+		// Token: 0x06005DBC RID: 23996 RVA: 0x00248AA0 File Offset: 0x00246CA0
 		public void AddProbability(BiomeDefinition.Probabilities.ProbType _type, Vector2 _range, float _probability)
 		{
 			this.probabilities[(int)_type].Add(new Vector3(_range.x, _range.y, _probability));
 		}
 
-		// Token: 0x06005DA4 RID: 23972 RVA: 0x002457D4 File Offset: 0x002439D4
+		// Token: 0x06005DBD RID: 23997 RVA: 0x00248AD0 File Offset: 0x00246CD0
 		public Vector2 CalcMinMaxPossibleValue(BiomeDefinition.Probabilities.ProbType type)
 		{
 			Vector2 vector = new Vector2(float.MaxValue, float.MinValue);
@@ -462,7 +462,7 @@ public class BiomeDefinition
 			return vector;
 		}
 
-		// Token: 0x06005DA5 RID: 23973 RVA: 0x0024584C File Offset: 0x00243A4C
+		// Token: 0x06005DBE RID: 23998 RVA: 0x00248B48 File Offset: 0x00246D48
 		public float GetRandomValue(BiomeDefinition.Probabilities.ProbType _type)
 		{
 			GameRandom gameRandom = GameManager.Instance.World.GetGameRandom();
@@ -482,7 +482,7 @@ public class BiomeDefinition
 			return 0f;
 		}
 
-		// Token: 0x06005DA6 RID: 23974 RVA: 0x002458D8 File Offset: 0x00243AD8
+		// Token: 0x06005DBF RID: 23999 RVA: 0x00248BD4 File Offset: 0x00246DD4
 		public void Normalize()
 		{
 			for (int i = 0; i < 5; i++)
@@ -502,62 +502,62 @@ public class BiomeDefinition
 			}
 		}
 
-		// Token: 0x04004865 RID: 18533
+		// Token: 0x040048A4 RID: 18596
 		public const int ProbTypeCount = 5;
 
-		// Token: 0x04004866 RID: 18534
+		// Token: 0x040048A5 RID: 18597
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Vector3>[] probabilities;
 
-		// Token: 0x02000BFA RID: 3066
+		// Token: 0x02000C0C RID: 3084
 		public enum ProbType
 		{
-			// Token: 0x04004868 RID: 18536
+			// Token: 0x040048A7 RID: 18599
 			Temperature,
-			// Token: 0x04004869 RID: 18537
+			// Token: 0x040048A8 RID: 18600
 			Precipitation,
-			// Token: 0x0400486A RID: 18538
+			// Token: 0x040048A9 RID: 18601
 			CloudThickness,
-			// Token: 0x0400486B RID: 18539
+			// Token: 0x040048AA RID: 18602
 			Wind,
-			// Token: 0x0400486C RID: 18540
+			// Token: 0x040048AB RID: 18603
 			Fog,
-			// Token: 0x0400486D RID: 18541
+			// Token: 0x040048AC RID: 18604
 			Count
 		}
 	}
 
-	// Token: 0x02000BFB RID: 3067
+	// Token: 0x02000C0D RID: 3085
 	public class WeatherGroup
 	{
-		// Token: 0x06005DA7 RID: 23975 RVA: 0x00245955 File Offset: 0x00243B55
+		// Token: 0x06005DC0 RID: 24000 RVA: 0x00248C51 File Offset: 0x00246E51
 		public void AddProbability(BiomeDefinition.Probabilities.ProbType _type, Vector2 _range, float _probability)
 		{
 			this.probabilities.AddProbability(_type, _range, _probability);
 		}
 
-		// Token: 0x0400486E RID: 18542
+		// Token: 0x040048AD RID: 18605
 		public string name;
 
-		// Token: 0x0400486F RID: 18543
+		// Token: 0x040048AE RID: 18606
 		public int stormLevel;
 
-		// Token: 0x04004870 RID: 18544
+		// Token: 0x040048AF RID: 18607
 		public float prob;
 
-		// Token: 0x04004871 RID: 18545
+		// Token: 0x040048B0 RID: 18608
 		public int duration;
 
-		// Token: 0x04004872 RID: 18546
+		// Token: 0x040048B1 RID: 18609
 		public Vector2i delay;
 
-		// Token: 0x04004873 RID: 18547
+		// Token: 0x040048B2 RID: 18610
 		public string buffName;
 
-		// Token: 0x04004874 RID: 18548
+		// Token: 0x040048B3 RID: 18611
 		public SpectrumWeatherType spectrum;
 
-		// Token: 0x04004875 RID: 18549
+		// Token: 0x040048B4 RID: 18612
 		public BiomeDefinition.Probabilities probabilities = new BiomeDefinition.Probabilities();
 	}
 }

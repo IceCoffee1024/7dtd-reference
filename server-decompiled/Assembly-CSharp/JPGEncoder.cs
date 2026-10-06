@@ -4,10 +4,10 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-// Token: 0x02001349 RID: 4937
+// Token: 0x02001369 RID: 4969
 public class JPGEncoder
 {
-	// Token: 0x06009BF0 RID: 39920 RVA: 0x003ADAA4 File Offset: 0x003ABCA4
+	// Token: 0x06009C9C RID: 40092 RVA: 0x003B2620 File Offset: 0x003B0820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitQuantTables(int sf)
 	{
@@ -57,7 +57,7 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009BF1 RID: 39921 RVA: 0x003ADBF8 File Offset: 0x003ABDF8
+	// Token: 0x06009C9D RID: 40093 RVA: 0x003B2774 File Offset: 0x003B0974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] ComputeHuffmanTbl(byte[] nrcodes, byte[] std_table)
 	{
@@ -79,7 +79,7 @@ public class JPGEncoder
 		return array;
 	}
 
-	// Token: 0x06009BF2 RID: 39922 RVA: 0x003ADC70 File Offset: 0x003ABE70
+	// Token: 0x06009C9E RID: 40094 RVA: 0x003B27EC File Offset: 0x003B09EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitHuffmanTbl()
 	{
@@ -89,7 +89,7 @@ public class JPGEncoder
 		this.UVAC_HT = this.ComputeHuffmanTbl(this.std_ac_chrominance_nrcodes, this.std_ac_chrominance_values);
 	}
 
-	// Token: 0x06009BF3 RID: 39923 RVA: 0x003ADCE0 File Offset: 0x003ABEE0
+	// Token: 0x06009C9F RID: 40095 RVA: 0x003B285C File Offset: 0x003B0A5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitCategoryfloat()
 	{
@@ -118,7 +118,7 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009BF4 RID: 39924 RVA: 0x003ADDA8 File Offset: 0x003ABFA8
+	// Token: 0x06009CA0 RID: 40096 RVA: 0x003B2924 File Offset: 0x003B0B24
 	public byte[] GetBytes()
 	{
 		if (!this.isDone)
@@ -129,7 +129,7 @@ public class JPGEncoder
 		return this.byteout.GetAllBytes();
 	}
 
-	// Token: 0x06009BF5 RID: 39925 RVA: 0x003ADDCC File Offset: 0x003ABFCC
+	// Token: 0x06009CA1 RID: 40097 RVA: 0x003B2948 File Offset: 0x003B0B48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteBits(JPGEncoder.BitString bs)
 	{
@@ -160,14 +160,14 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009BF6 RID: 39926 RVA: 0x003ADE7A File Offset: 0x003AC07A
+	// Token: 0x06009CA2 RID: 40098 RVA: 0x003B29F6 File Offset: 0x003B0BF6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteByte(byte value)
 	{
 		this.byteout.WriteByte(value);
 	}
 
-	// Token: 0x06009BF7 RID: 39927 RVA: 0x003ADE88 File Offset: 0x003AC088
+	// Token: 0x06009CA3 RID: 40099 RVA: 0x003B2A04 File Offset: 0x003B0C04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteWord(int value)
 	{
@@ -175,7 +175,7 @@ public class JPGEncoder
 		this.WriteByte((byte)(value & 255));
 	}
 
-	// Token: 0x06009BF8 RID: 39928 RVA: 0x003ADEA8 File Offset: 0x003AC0A8
+	// Token: 0x06009CA4 RID: 40100 RVA: 0x003B2A24 File Offset: 0x003B0C24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] FDCTQuant(float[] data, float[] fdtbl)
 	{
@@ -256,7 +256,7 @@ public class JPGEncoder
 		return data;
 	}
 
-	// Token: 0x06009BF9 RID: 39929 RVA: 0x003AE198 File Offset: 0x003AC398
+	// Token: 0x06009CA5 RID: 40101 RVA: 0x003B2D14 File Offset: 0x003B0F14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteAPP0()
 	{
@@ -276,7 +276,7 @@ public class JPGEncoder
 		this.WriteByte(0);
 	}
 
-	// Token: 0x06009BFA RID: 39930 RVA: 0x003AE210 File Offset: 0x003AC410
+	// Token: 0x06009CA6 RID: 40102 RVA: 0x003B2D8C File Offset: 0x003B0F8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteSOF0(int width, int height)
 	{
@@ -297,7 +297,7 @@ public class JPGEncoder
 		this.WriteByte(1);
 	}
 
-	// Token: 0x06009BFB RID: 39931 RVA: 0x003AE290 File Offset: 0x003AC490
+	// Token: 0x06009CA7 RID: 40103 RVA: 0x003B2E0C File Offset: 0x003B100C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteDQT()
 	{
@@ -315,7 +315,7 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009BFC RID: 39932 RVA: 0x003AE2FC File Offset: 0x003AC4FC
+	// Token: 0x06009CA8 RID: 40104 RVA: 0x003B2E78 File Offset: 0x003B1078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteDHT()
 	{
@@ -359,7 +359,7 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009BFD RID: 39933 RVA: 0x003AE424 File Offset: 0x003AC624
+	// Token: 0x06009CA9 RID: 40105 RVA: 0x003B2FA0 File Offset: 0x003B11A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writeSOS()
 	{
@@ -377,7 +377,7 @@ public class JPGEncoder
 		this.WriteByte(0);
 	}
 
-	// Token: 0x06009BFE RID: 39934 RVA: 0x003AE490 File Offset: 0x003AC690
+	// Token: 0x06009CAA RID: 40106 RVA: 0x003B300C File Offset: 0x003B120C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ProcessDU(float[] CDU, float[] fdtbl, float DC, JPGEncoder.BitString[] HTDC, JPGEncoder.BitString[] HTAC)
 	{
@@ -435,7 +435,7 @@ public class JPGEncoder
 		return DC;
 	}
 
-	// Token: 0x06009BFF RID: 39935 RVA: 0x003AE618 File Offset: 0x003AC818
+	// Token: 0x06009CAB RID: 40107 RVA: 0x003B3194 File Offset: 0x003B1394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RGB2YUV(JPGEncoder.BitmapData image, int xpos, int ypos)
 	{
@@ -453,25 +453,25 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009C00 RID: 39936 RVA: 0x003AE6FC File Offset: 0x003AC8FC
+	// Token: 0x06009CAC RID: 40108 RVA: 0x003B3278 File Offset: 0x003B1478
 	public JPGEncoder(Texture2D texture, float quality)
 		: this(texture, quality, "", false)
 	{
 	}
 
-	// Token: 0x06009C01 RID: 39937 RVA: 0x003AE70C File Offset: 0x003AC90C
+	// Token: 0x06009CAD RID: 40109 RVA: 0x003B3288 File Offset: 0x003B1488
 	public JPGEncoder(Texture2D texture, float quality, bool blocking)
 		: this(texture, quality, "", blocking)
 	{
 	}
 
-	// Token: 0x06009C02 RID: 39938 RVA: 0x003AE71C File Offset: 0x003AC91C
+	// Token: 0x06009CAE RID: 40110 RVA: 0x003B3298 File Offset: 0x003B1498
 	public JPGEncoder(Texture2D texture, float quality, string path)
 		: this(texture, quality, path, false)
 	{
 	}
 
-	// Token: 0x06009C03 RID: 39939 RVA: 0x003AE728 File Offset: 0x003AC928
+	// Token: 0x06009CAF RID: 40111 RVA: 0x003B32A4 File Offset: 0x003B14A4
 	public JPGEncoder(Texture2D texture, float quality, string path, bool blocking)
 	{
 		this.path = path;
@@ -488,7 +488,7 @@ public class JPGEncoder
 		}
 	}
 
-	// Token: 0x06009C04 RID: 39940 RVA: 0x003AE938 File Offset: 0x003ACB38
+	// Token: 0x06009CB0 RID: 40112 RVA: 0x003B34B4 File Offset: 0x003B16B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoEncoding()
 	{
@@ -505,7 +505,7 @@ public class JPGEncoder
 		Profiler.EndThreadProfiling();
 	}
 
-	// Token: 0x06009C05 RID: 39941 RVA: 0x003AE994 File Offset: 0x003ACB94
+	// Token: 0x06009CB1 RID: 40113 RVA: 0x003B3510 File Offset: 0x003B1710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Encode()
 	{
@@ -549,7 +549,7 @@ public class JPGEncoder
 		this.isDone = true;
 	}
 
-	// Token: 0x040075A3 RID: 30115
+	// Token: 0x0400761E RID: 30238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] ZigZag = new int[]
 	{
@@ -562,39 +562,39 @@ public class JPGEncoder
 		57, 58, 62, 63
 	};
 
-	// Token: 0x040075A4 RID: 30116
+	// Token: 0x0400761F RID: 30239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] YTable = new int[64];
 
-	// Token: 0x040075A5 RID: 30117
+	// Token: 0x04007620 RID: 30240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] UVTable = new int[64];
 
-	// Token: 0x040075A6 RID: 30118
+	// Token: 0x04007621 RID: 30241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] fdtbl_Y = new float[64];
 
-	// Token: 0x040075A7 RID: 30119
+	// Token: 0x04007622 RID: 30242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] fdtbl_UV = new float[64];
 
-	// Token: 0x040075A8 RID: 30120
+	// Token: 0x04007623 RID: 30243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] YDC_HT;
 
-	// Token: 0x040075A9 RID: 30121
+	// Token: 0x04007624 RID: 30244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] UVDC_HT;
 
-	// Token: 0x040075AA RID: 30122
+	// Token: 0x04007625 RID: 30245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] YAC_HT;
 
-	// Token: 0x040075AB RID: 30123
+	// Token: 0x04007626 RID: 30246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] UVAC_HT;
 
-	// Token: 0x040075AC RID: 30124
+	// Token: 0x04007627 RID: 30247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_dc_luminance_nrcodes = new byte[]
 	{
@@ -602,7 +602,7 @@ public class JPGEncoder
 		0, 0, 0, 0, 0, 0, 0
 	};
 
-	// Token: 0x040075AD RID: 30125
+	// Token: 0x04007628 RID: 30248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_dc_luminance_values = new byte[]
 	{
@@ -610,7 +610,7 @@ public class JPGEncoder
 		10, 11
 	};
 
-	// Token: 0x040075AE RID: 30126
+	// Token: 0x04007629 RID: 30249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_ac_luminance_nrcodes = new byte[]
 	{
@@ -618,7 +618,7 @@ public class JPGEncoder
 		5, 4, 4, 0, 0, 1, 125
 	};
 
-	// Token: 0x040075AF RID: 30127
+	// Token: 0x0400762A RID: 30250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_ac_luminance_values = new byte[]
 	{
@@ -641,7 +641,7 @@ public class JPGEncoder
 		249, 250
 	};
 
-	// Token: 0x040075B0 RID: 30128
+	// Token: 0x0400762B RID: 30251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_dc_chrominance_nrcodes = new byte[]
 	{
@@ -649,7 +649,7 @@ public class JPGEncoder
 		1, 1, 0, 0, 0, 0, 0
 	};
 
-	// Token: 0x040075B1 RID: 30129
+	// Token: 0x0400762C RID: 30252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_dc_chrominance_values = new byte[]
 	{
@@ -657,7 +657,7 @@ public class JPGEncoder
 		10, 11
 	};
 
-	// Token: 0x040075B2 RID: 30130
+	// Token: 0x0400762D RID: 30253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_ac_chrominance_nrcodes = new byte[]
 	{
@@ -665,7 +665,7 @@ public class JPGEncoder
 		5, 4, 4, 0, 1, 2, 119
 	};
 
-	// Token: 0x040075B3 RID: 30131
+	// Token: 0x0400762E RID: 30254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] std_ac_chrominance_values = new byte[]
 	{
@@ -688,79 +688,79 @@ public class JPGEncoder
 		249, 250
 	};
 
-	// Token: 0x040075B4 RID: 30132
+	// Token: 0x0400762F RID: 30255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitString[] bitcode = new JPGEncoder.BitString[65535];
 
-	// Token: 0x040075B5 RID: 30133
+	// Token: 0x04007630 RID: 30256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] category = new int[65535];
 
-	// Token: 0x040075B6 RID: 30134
+	// Token: 0x04007631 RID: 30257
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint bytenew;
 
-	// Token: 0x040075B7 RID: 30135
+	// Token: 0x04007632 RID: 30258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bytepos = 7;
 
-	// Token: 0x040075B8 RID: 30136
+	// Token: 0x04007633 RID: 30259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.ByteArray byteout = new JPGEncoder.ByteArray();
 
-	// Token: 0x040075B9 RID: 30137
+	// Token: 0x04007634 RID: 30260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] DU = new int[64];
 
-	// Token: 0x040075BA RID: 30138
+	// Token: 0x04007635 RID: 30261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] YDU = new float[64];
 
-	// Token: 0x040075BB RID: 30139
+	// Token: 0x04007636 RID: 30262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] UDU = new float[64];
 
-	// Token: 0x040075BC RID: 30140
+	// Token: 0x04007637 RID: 30263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] VDU = new float[64];
 
-	// Token: 0x040075BD RID: 30141
+	// Token: 0x04007638 RID: 30264
 	public bool isDone;
 
-	// Token: 0x040075BE RID: 30142
+	// Token: 0x04007639 RID: 30265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public JPGEncoder.BitmapData image;
 
-	// Token: 0x040075BF RID: 30143
+	// Token: 0x0400763A RID: 30266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sf;
 
-	// Token: 0x040075C0 RID: 30144
+	// Token: 0x0400763B RID: 30267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string path;
 
-	// Token: 0x040075C1 RID: 30145
+	// Token: 0x0400763C RID: 30268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int cores;
 
-	// Token: 0x0200134A RID: 4938
+	// Token: 0x0200136A RID: 4970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ByteArray
 	{
-		// Token: 0x06009C06 RID: 39942 RVA: 0x003AEB23 File Offset: 0x003ACD23
+		// Token: 0x06009CB2 RID: 40114 RVA: 0x003B369F File Offset: 0x003B189F
 		public ByteArray()
 		{
 			this.stream = new MemoryStream();
 			this.writer = new BinaryWriter(this.stream);
 		}
 
-		// Token: 0x06009C07 RID: 39943 RVA: 0x003AEB47 File Offset: 0x003ACD47
+		// Token: 0x06009CB3 RID: 40115 RVA: 0x003B36C3 File Offset: 0x003B18C3
 		public void WriteByte(byte value)
 		{
 			this.writer.Write(value);
 		}
 
-		// Token: 0x06009C08 RID: 39944 RVA: 0x003AEB58 File Offset: 0x003ACD58
+		// Token: 0x06009CB4 RID: 40116 RVA: 0x003B36D4 File Offset: 0x003B18D4
 		public byte[] GetAllBytes()
 		{
 			byte[] array = new byte[this.stream.Length];
@@ -769,31 +769,31 @@ public class JPGEncoder
 			return array;
 		}
 
-		// Token: 0x040075C2 RID: 30146
+		// Token: 0x0400763D RID: 30269
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MemoryStream stream;
 
-		// Token: 0x040075C3 RID: 30147
+		// Token: 0x0400763E RID: 30270
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BinaryWriter writer;
 	}
 
-	// Token: 0x0200134B RID: 4939
+	// Token: 0x0200136B RID: 4971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BitString
 	{
-		// Token: 0x040075C4 RID: 30148
+		// Token: 0x0400763F RID: 30271
 		public int length;
 
-		// Token: 0x040075C5 RID: 30149
+		// Token: 0x04007640 RID: 30272
 		public int value;
 	}
 
-	// Token: 0x0200134C RID: 4940
+	// Token: 0x0200136C RID: 4972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BitmapData
 	{
-		// Token: 0x06009C09 RID: 39945 RVA: 0x003AEB96 File Offset: 0x003ACD96
+		// Token: 0x06009CB5 RID: 40117 RVA: 0x003B3712 File Offset: 0x003B1912
 		public BitmapData(Texture2D texture)
 		{
 			this.height = texture.height;
@@ -801,7 +801,7 @@ public class JPGEncoder
 			this.pixels = texture.GetPixels32();
 		}
 
-		// Token: 0x06009C0A RID: 39946 RVA: 0x003AEBC2 File Offset: 0x003ACDC2
+		// Token: 0x06009CB6 RID: 40118 RVA: 0x003B373E File Offset: 0x003B193E
 		public Color32 GetPixelColor(int x, int y)
 		{
 			x = Mathf.Clamp(x, 0, this.width - 1);
@@ -809,13 +809,13 @@ public class JPGEncoder
 			return this.pixels[y * this.width + x];
 		}
 
-		// Token: 0x040075C6 RID: 30150
+		// Token: 0x04007641 RID: 30273
 		public int height;
 
-		// Token: 0x040075C7 RID: 30151
+		// Token: 0x04007642 RID: 30274
 		public int width;
 
-		// Token: 0x040075C8 RID: 30152
+		// Token: 0x04007643 RID: 30275
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Color32[] pixels;
 	}

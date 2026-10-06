@@ -6,11 +6,11 @@ using System.Threading;
 using Unity.Profiling;
 using UnityEngine;
 
-// Token: 0x02000B9D RID: 2973
+// Token: 0x02000BAF RID: 2991
 public class RegionFileManager : WorldChunkCache
 {
-	// Token: 0x17000970 RID: 2416
-	// (get) Token: 0x060059C8 RID: 22984 RVA: 0x00224D56 File Offset: 0x00222F56
+	// Token: 0x17000992 RID: 2450
+	// (get) Token: 0x060059E2 RID: 23010 RVA: 0x00227FE6 File Offset: 0x002261E6
 	public long MaxBytes
 	{
 		get
@@ -19,20 +19,20 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x17000971 RID: 2417
-	// (get) Token: 0x060059C9 RID: 22985 RVA: 0x00224D5E File Offset: 0x00222F5E
+	// Token: 0x17000993 RID: 2451
+	// (get) Token: 0x060059E3 RID: 23011 RVA: 0x00227FEE File Offset: 0x002261EE
 	public SaveDataSlot SaveDataSlot { get; }
 
-	// Token: 0x17000972 RID: 2418
-	// (get) Token: 0x060059CA RID: 22986 RVA: 0x00224D66 File Offset: 0x00222F66
-	// (set) Token: 0x060059CB RID: 22987 RVA: 0x00224D6E File Offset: 0x00222F6E
+	// Token: 0x17000994 RID: 2452
+	// (get) Token: 0x060059E4 RID: 23012 RVA: 0x00227FF6 File Offset: 0x002261F6
+	// (set) Token: 0x060059E5 RID: 23013 RVA: 0x00227FFE File Offset: 0x002261FE
 	public IReadOnlyCollection<LongSetGroups.Group> ChunkGroups
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060059CC RID: 22988 RVA: 0x00224D78 File Offset: 0x00222F78
+	// Token: 0x060059E6 RID: 23014 RVA: 0x00228008 File Offset: 0x00226208
 	public RegionFileManager(string _loadDirectory, string _saveDirectory, int _maxChunksInCache, bool _bSaveOnChunkDrop)
 	{
 		RegionFileManager.platformFactory = RegionFilePlatform.CreateFactory();
@@ -78,7 +78,7 @@ public class RegionFileManager : WorldChunkCache
 		this.taskInfoThreadSaveChunks = ThreadManager.StartThread("SaveChunks " + text, null, new ThreadManager.ThreadFunctionLoopDelegate(this.thread_SaveChunks), null, null, null, true, false);
 	}
 
-	// Token: 0x060059CD RID: 22989 RVA: 0x0022503C File Offset: 0x0022323C
+	// Token: 0x060059E7 RID: 23015 RVA: 0x002282CC File Offset: 0x002264CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadResetRequests()
 	{
@@ -101,7 +101,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059CE RID: 22990 RVA: 0x002250C4 File Offset: 0x002232C4
+	// Token: 0x060059E8 RID: 23016 RVA: 0x00228354 File Offset: 0x00226554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveResetRequests()
 	{
@@ -128,7 +128,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059CF RID: 22991 RVA: 0x00225180 File Offset: 0x00223380
+	// Token: 0x060059E9 RID: 23017 RVA: 0x00228410 File Offset: 0x00226610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGamePrefChanged(EnumGamePrefs pref)
 	{
@@ -175,7 +175,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059D0 RID: 22992 RVA: 0x002252F8 File Offset: 0x002234F8
+	// Token: 0x060059EA RID: 23018 RVA: 0x00228588 File Offset: 0x00226788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetChunkTimestamp(long chunkKey, uint timeStamp)
 	{
@@ -192,7 +192,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059D1 RID: 22993 RVA: 0x0022534C File Offset: 0x0022354C
+	// Token: 0x060059EB RID: 23019 RVA: 0x002285DC File Offset: 0x002267DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint GetChunkTimestamp(long chunkKey)
 	{
@@ -211,7 +211,7 @@ public class RegionFileManager : WorldChunkCache
 		return 0U;
 	}
 
-	// Token: 0x060059D2 RID: 22994 RVA: 0x002253A4 File Offset: 0x002235A4
+	// Token: 0x060059EC RID: 23020 RVA: 0x00228634 File Offset: 0x00226834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateGroupTimestamps()
 	{
@@ -238,7 +238,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059D3 RID: 22995 RVA: 0x002254C0 File Offset: 0x002236C0
+	// Token: 0x060059ED RID: 23021 RVA: 0x00228750 File Offset: 0x00226950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkProtectionLevel GetChunkProtectionLevelWithGrouping(long chunkKey)
 	{
@@ -256,19 +256,19 @@ public class RegionFileManager : WorldChunkCache
 		return ChunkProtectionLevel.None;
 	}
 
-	// Token: 0x060059D4 RID: 22996 RVA: 0x00225502 File Offset: 0x00223702
+	// Token: 0x060059EE RID: 23022 RVA: 0x00228792 File Offset: 0x00226992
 	public ChunkProtectionLevel GetChunkProtectionLevelForWorldPos(Vector3i worldPos)
 	{
 		return this.GetChunkProtectionLevel(World.toChunkXZ(worldPos.x), World.toChunkXZ(worldPos.z));
 	}
 
-	// Token: 0x060059D5 RID: 22997 RVA: 0x00225520 File Offset: 0x00223720
+	// Token: 0x060059EF RID: 23023 RVA: 0x002287B0 File Offset: 0x002269B0
 	public ChunkProtectionLevel GetChunkProtectionLevel(int chunkX, int chunkZ)
 	{
 		return this.GetChunkProtectionLevel(WorldChunkCache.MakeChunkKey(chunkX, chunkZ));
 	}
 
-	// Token: 0x060059D6 RID: 22998 RVA: 0x00225530 File Offset: 0x00223730
+	// Token: 0x060059F0 RID: 23024 RVA: 0x002287C0 File Offset: 0x002269C0
 	public ChunkProtectionLevel GetChunkProtectionLevel(long chunkKey)
 	{
 		object obj = this.saveLock;
@@ -296,7 +296,7 @@ public class RegionFileManager : WorldChunkCache
 		return chunkProtectionLevel2;
 	}
 
-	// Token: 0x060059D7 RID: 22999 RVA: 0x002255BC File Offset: 0x002237BC
+	// Token: 0x060059F1 RID: 23025 RVA: 0x0022884C File Offset: 0x00226A4C
 	public void RebuildChunkGroupsFromPOIs()
 	{
 		using (RegionFileManager.s_ComputeChunkGroups.Auto())
@@ -335,7 +335,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059D8 RID: 23000 RVA: 0x00225794 File Offset: 0x00223994
+	// Token: 0x060059F2 RID: 23026 RVA: 0x00228A24 File Offset: 0x00226C24
 	public void AddGroupedChunks(ICollection<long> chunksToGroup)
 	{
 		using (RegionFileManager.s_AddGroupedChunks.Auto())
@@ -351,7 +351,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059D9 RID: 23001 RVA: 0x0022581C File Offset: 0x00223A1C
+	// Token: 0x060059F3 RID: 23027 RVA: 0x00228AAC File Offset: 0x00226CAC
 	public void RemoveGroupedChunks(HashSetLong chunks)
 	{
 		using (RegionFileManager.s_RemoveGroupedChunks.Auto())
@@ -367,14 +367,14 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059DA RID: 23002 RVA: 0x002258A0 File Offset: 0x00223AA0
+	// Token: 0x060059F4 RID: 23028 RVA: 0x00228B30 File Offset: 0x00226D30
 	public override void Update()
 	{
 		base.Update();
 		this.ProcessPendingPersistentDataRemovals();
 	}
 
-	// Token: 0x060059DB RID: 23003 RVA: 0x002258B0 File Offset: 0x00223AB0
+	// Token: 0x060059F5 RID: 23029 RVA: 0x00228B40 File Offset: 0x00226D40
 	public void Cleanup()
 	{
 		this.startSavingTask();
@@ -407,13 +407,13 @@ public class RegionFileManager : WorldChunkCache
 		this.snapshotUtil.Cleanup();
 	}
 
-	// Token: 0x060059DC RID: 23004 RVA: 0x002259D0 File Offset: 0x00223BD0
+	// Token: 0x060059F6 RID: 23030 RVA: 0x00228C60 File Offset: 0x00226E60
 	public void SetCacheSize(int _cacheSize)
 	{
 		this.maxChunksInCache = _cacheSize;
 	}
 
-	// Token: 0x060059DD RID: 23005 RVA: 0x002259DC File Offset: 0x00223BDC
+	// Token: 0x060059F7 RID: 23031 RVA: 0x00228C6C File Offset: 0x00226E6C
 	public void RequestChunkReset(long _chunkKey)
 	{
 		Dictionary<long, uint> dictionary = this.chunksInSaveDir;
@@ -442,7 +442,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059DE RID: 23006 RVA: 0x00225A94 File Offset: 0x00223C94
+	// Token: 0x060059F8 RID: 23032 RVA: 0x00228D24 File Offset: 0x00226F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CullExpiredChunks()
 	{
@@ -485,7 +485,7 @@ public class RegionFileManager : WorldChunkCache
 								ChunkProtectionLevel chunkProtectionLevel;
 								if (this.chunkProtectionLevels.TryGetValue(num2, out chunkProtectionLevel))
 								{
-									this.<CullExpiredChunks>g__UpdateResetRequest|87_0(num2, chunkProtectionLevel);
+									this.<CullExpiredChunks>g__UpdateResetRequest|88_0(num2, chunkProtectionLevel);
 								}
 								else
 								{
@@ -506,7 +506,7 @@ public class RegionFileManager : WorldChunkCache
 						ChunkProtectionLevel chunkProtectionLevel2;
 						if (this.chunkProtectionLevels.TryGetValue(num3, out chunkProtectionLevel2))
 						{
-							this.<CullExpiredChunks>g__UpdateResetRequest|87_0(num3, chunkProtectionLevel2);
+							this.<CullExpiredChunks>g__UpdateResetRequest|88_0(num3, chunkProtectionLevel2);
 						}
 						else
 						{
@@ -526,7 +526,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059DF RID: 23007 RVA: 0x00225CF8 File Offset: 0x00223EF8
+	// Token: 0x060059F9 RID: 23033 RVA: 0x00228F88 File Offset: 0x00227188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MakeRoomForChunk(long chunkSizeInBytes, long chunkKey)
 	{
@@ -568,7 +568,7 @@ public class RegionFileManager : WorldChunkCache
 								this.sortedCullingCandidates.Clear();
 								foreach (long num4 in this.chunksInSaveDir.Keys)
 								{
-									if (num4 != chunkKey && (group == null || !group.Contains(chunkKey)))
+									if (num4 != chunkKey && (group == null || !group.Contains(num4)))
 									{
 										ulong num5 = (ulong)this.GetChunkTimestamp(num4);
 										ChunkProtectionLevel chunkProtectionLevel;
@@ -638,7 +638,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059E0 RID: 23008 RVA: 0x00226148 File Offset: 0x00224348
+	// Token: 0x060059FA RID: 23034 RVA: 0x002293DC File Offset: 0x002275DC
 	public bool MakeRoom(long requiredBytesToClear)
 	{
 		if (requiredBytesToClear <= 0L)
@@ -736,7 +736,7 @@ public class RegionFileManager : WorldChunkCache
 		return true;
 	}
 
-	// Token: 0x060059E1 RID: 23009 RVA: 0x00226568 File Offset: 0x00224768
+	// Token: 0x060059FB RID: 23035 RVA: 0x002297FC File Offset: 0x002279FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetChunkByteCount(long cullingCandidate)
 	{
@@ -745,14 +745,14 @@ public class RegionFileManager : WorldChunkCache
 		return this.GetChunkByteCount(num, num2);
 	}
 
-	// Token: 0x060059E2 RID: 23010 RVA: 0x0022658B File Offset: 0x0022478B
+	// Token: 0x060059FC RID: 23036 RVA: 0x0022981F File Offset: 0x00227A1F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetChunkByteCount(int chunkX, int chunkZ)
 	{
 		return this.regionFileAccess.GetChunkByteCount(this.saveDirectory, chunkX, chunkZ);
 	}
 
-	// Token: 0x060059E3 RID: 23011 RVA: 0x002265A0 File Offset: 0x002247A0
+	// Token: 0x060059FD RID: 23037 RVA: 0x00229834 File Offset: 0x00227A34
 	public void MainThreadCacheProtectedPositions()
 	{
 		if (!ThreadManager.IsMainThread())
@@ -817,7 +817,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059E4 RID: 23012 RVA: 0x0022698C File Offset: 0x00224B8C
+	// Token: 0x060059FE RID: 23038 RVA: 0x00229C20 File Offset: 0x00227E20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateChunkProtectionLevels(EnumResetUnprotectedChunksGroupingMode _groupingMode = EnumResetUnprotectedChunksGroupingMode.GroupedPOIs)
 	{
@@ -825,7 +825,7 @@ public class RegionFileManager : WorldChunkCache
 		{
 			this.chunkProtectionLevels.Clear();
 			this.groupProtectionLevels.Clear();
-			this.<UpdateChunkProtectionLevels>g__EvaluateSingleChunkProtectionLevels|95_0();
+			this.<UpdateChunkProtectionLevels>g__EvaluateSingleChunkProtectionLevels|96_0();
 			switch (_groupingMode)
 			{
 			case EnumResetUnprotectedChunksGroupingMode.NoGrouping:
@@ -882,7 +882,7 @@ public class RegionFileManager : WorldChunkCache
 				{
 					foreach (long num3 in occupiedChunks)
 					{
-						this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num3, list[j]);
+						this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num3, list[j]);
 					}
 				}
 			}
@@ -892,7 +892,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059E5 RID: 23013 RVA: 0x00226C50 File Offset: 0x00224E50
+	// Token: 0x060059FF RID: 23039 RVA: 0x00229EE4 File Offset: 0x002280E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool DoSaveChunks()
 	{
@@ -913,6 +913,12 @@ public class RegionFileManager : WorldChunkCache
 			}
 			this.protectionLevelsDirty = true;
 			this.CullExpiredChunks();
+			if (this.cullChunklessDataPending)
+			{
+				this.cullChunklessDataPending = false;
+				this.AssertSafeToCallMultiBlockManager("DoSaveChunks");
+				MultiBlockManager.Instance.CullChunklessData();
+			}
 			this.regionFileAccess.OptimizeLayouts();
 			if (this.chunkMemoryStreamsToSave.Count == 0 && this.chunksToSave.Count == 0)
 			{
@@ -964,13 +970,13 @@ public class RegionFileManager : WorldChunkCache
 						lock (list)
 						{
 							this.chunksToUnloadLater.Add(chunk);
-							goto IL_022C;
+							goto IL_0254;
 						}
 					}
 					MemoryPools.PoolChunks.FreeSync(chunk);
 				}
 			}
-			IL_022C:
+			IL_0254:
 			if (regionFileChunkSnapshot != null)
 			{
 				int num2 = WorldChunkCache.extractX(num);
@@ -989,6 +995,7 @@ public class RegionFileManager : WorldChunkCache
 				}
 				RegionFileManager.s_RegionDataSize.Value = this.regionFileAccess.GetTotalByteCount(this.saveDirectory);
 			}
+			this.AssertSafeToCallMultiBlockManager("DoSaveChunks");
 			MultiBlockManager.Instance.SaveIfDirty();
 		}
 		catch (Exception ex)
@@ -1008,7 +1015,17 @@ public class RegionFileManager : WorldChunkCache
 		return true;
 	}
 
-	// Token: 0x060059E6 RID: 23014 RVA: 0x00227058 File Offset: 0x00225258
+	// Token: 0x06005A00 RID: 23040 RVA: 0x0022A320 File Offset: 0x00228520
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void AssertSafeToCallMultiBlockManager(string _context)
+	{
+		if (Monitor.IsEntered(this.chunksInSaveDir))
+		{
+			Log.Error(_context + ": thread safety violation. MultiBlockManager must not be called while the lock on \"chunksInSaveDir\" is held; see the lock ordering note on saveLock.");
+		}
+	}
+
+	// Token: 0x06005A01 RID: 23041 RVA: 0x0022A340 File Offset: 0x00228540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int thread_SaveChunks(ThreadManager.ThreadInfo _taskInfo)
 	{
@@ -1035,7 +1052,7 @@ public class RegionFileManager : WorldChunkCache
 		return -1;
 	}
 
-	// Token: 0x060059E7 RID: 23015 RVA: 0x002270C8 File Offset: 0x002252C8
+	// Token: 0x06005A02 RID: 23042 RVA: 0x0022A3B0 File Offset: 0x002285B0
 	public override Chunk GetChunkSync(long _key)
 	{
 		Chunk chunk = null;
@@ -1122,7 +1139,7 @@ public class RegionFileManager : WorldChunkCache
 		return chunk;
 	}
 
-	// Token: 0x060059E8 RID: 23016 RVA: 0x002272A0 File Offset: 0x002254A0
+	// Token: 0x06005A03 RID: 23043 RVA: 0x0022A588 File Offset: 0x00228788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cacheChunk(Chunk _chunk)
 	{
@@ -1169,14 +1186,14 @@ public class RegionFileManager : WorldChunkCache
 		MemoryPools.PoolChunks.FreeSync(_chunk);
 	}
 
-	// Token: 0x060059E9 RID: 23017 RVA: 0x002273F4 File Offset: 0x002255F4
+	// Token: 0x06005A04 RID: 23044 RVA: 0x0022A6DC File Offset: 0x002288DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startSavingTask()
 	{
 		this.saveThreadWaitHandle.Set();
 	}
 
-	// Token: 0x060059EA RID: 23018 RVA: 0x00227402 File Offset: 0x00225602
+	// Token: 0x06005A05 RID: 23045 RVA: 0x0022A6EA File Offset: 0x002288EA
 	public override bool AddChunkSync(Chunk _chunk, bool _bOmitCallbacks = false)
 	{
 		if (!GameManager.bSavingActive || _chunk.NeedsDecoration)
@@ -1191,7 +1208,7 @@ public class RegionFileManager : WorldChunkCache
 		return true;
 	}
 
-	// Token: 0x060059EB RID: 23019 RVA: 0x00227438 File Offset: 0x00225638
+	// Token: 0x06005A06 RID: 23046 RVA: 0x0022A720 File Offset: 0x00228920
 	public override bool ContainsChunkSync(long key)
 	{
 		if (base.ContainsChunkSync(key))
@@ -1213,7 +1230,7 @@ public class RegionFileManager : WorldChunkCache
 		return this.isChunkInSaveDir(key) || this.isChunkInLoadDir(key);
 	}
 
-	// Token: 0x060059EC RID: 23020 RVA: 0x002274B0 File Offset: 0x002256B0
+	// Token: 0x06005A07 RID: 23047 RVA: 0x0022A798 File Offset: 0x00228998
 	public bool IsChunkSavedAndDormant(long key)
 	{
 		Dictionary<long, uint> dictionary = this.chunksInSaveDir;
@@ -1248,7 +1265,7 @@ public class RegionFileManager : WorldChunkCache
 		return flag2;
 	}
 
-	// Token: 0x060059ED RID: 23021 RVA: 0x00227558 File Offset: 0x00225758
+	// Token: 0x06005A08 RID: 23048 RVA: 0x0022A840 File Offset: 0x00228A40
 	public override void RemoveChunkSync(long key)
 	{
 		if (base.ContainsChunkSync(key))
@@ -1262,7 +1279,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059EE RID: 23022 RVA: 0x002275B0 File Offset: 0x002257B0
+	// Token: 0x06005A09 RID: 23049 RVA: 0x0022A898 File Offset: 0x00228A98
 	public int MakePersistent(ChunkCluster _mainCache, bool _bSaveEvenIfUnchanged)
 	{
 		List<Chunk> list = new List<Chunk>();
@@ -1325,7 +1342,7 @@ public class RegionFileManager : WorldChunkCache
 		return list.Count;
 	}
 
-	// Token: 0x060059EF RID: 23023 RVA: 0x00227734 File Offset: 0x00225934
+	// Token: 0x06005A0A RID: 23050 RVA: 0x0022AA1C File Offset: 0x00228C1C
 	public void WaitSaveDone()
 	{
 		MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -1357,14 +1374,14 @@ public class RegionFileManager : WorldChunkCache
 		}));
 	}
 
-	// Token: 0x060059F0 RID: 23024 RVA: 0x00227824 File Offset: 0x00225A24
+	// Token: 0x06005A0B RID: 23051 RVA: 0x0022AB0C File Offset: 0x00228D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isChunkInLoadDir(long _key)
 	{
 		return this.chunksInLoadDir.Contains(_key);
 	}
 
-	// Token: 0x060059F1 RID: 23025 RVA: 0x00227834 File Offset: 0x00225A34
+	// Token: 0x06005A0C RID: 23052 RVA: 0x0022AB1C File Offset: 0x00228D1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isChunkInSaveDir(long _key)
 	{
@@ -1377,7 +1394,7 @@ public class RegionFileManager : WorldChunkCache
 		return flag2;
 	}
 
-	// Token: 0x060059F2 RID: 23026 RVA: 0x0022787C File Offset: 0x00225A7C
+	// Token: 0x06005A0D RID: 23053 RVA: 0x0022AB64 File Offset: 0x00228D64
 	public virtual void SaveChunkSnapshot(Chunk _chunk, bool _saveIfUnchanged)
 	{
 		if (this.saveDirectory == null)
@@ -1400,7 +1417,7 @@ public class RegionFileManager : WorldChunkCache
 		this.startSavingTask();
 	}
 
-	// Token: 0x060059F3 RID: 23027 RVA: 0x00227904 File Offset: 0x00225B04
+	// Token: 0x06005A0E RID: 23054 RVA: 0x0022ABEC File Offset: 0x00228DEC
 	public long[] GetAllChunkKeys()
 	{
 		HashSetLong hashSetLong = new HashSetLong();
@@ -1421,7 +1438,7 @@ public class RegionFileManager : WorldChunkCache
 		return array;
 	}
 
-	// Token: 0x060059F4 RID: 23028 RVA: 0x002279EC File Offset: 0x00225BEC
+	// Token: 0x06005A0F RID: 23055 RVA: 0x0022ACD4 File Offset: 0x00228ED4
 	public HashSetLong GetUniqueChunkKeys(ChunkProtectionLevel excludedProtectionLevels)
 	{
 		HashSetLong hashSetLong = new HashSetLong();
@@ -1448,19 +1465,19 @@ public class RegionFileManager : WorldChunkCache
 		return hashSetLong;
 	}
 
-	// Token: 0x060059F5 RID: 23029 RVA: 0x00227AEC File Offset: 0x00225CEC
+	// Token: 0x06005A10 RID: 23056 RVA: 0x0022ADD4 File Offset: 0x00228FD4
 	public override void Clear()
 	{
 		base.Clear();
 	}
 
-	// Token: 0x060059F6 RID: 23030 RVA: 0x00227AF4 File Offset: 0x00225CF4
+	// Token: 0x06005A11 RID: 23057 RVA: 0x0022ADDC File Offset: 0x00228FDC
 	public void ClearCaches()
 	{
 		this.regionFileAccess.ClearCache();
 	}
 
-	// Token: 0x060059F7 RID: 23031 RVA: 0x00227B04 File Offset: 0x00225D04
+	// Token: 0x06005A12 RID: 23058 RVA: 0x0022ADEC File Offset: 0x00228FEC
 	public void RemoveChunks(ICollection<long> _chunks, bool _resetDecos = true, bool _optimizeFileLayouts = true)
 	{
 		if (_chunks.Count == 0)
@@ -1479,12 +1496,11 @@ public class RegionFileManager : WorldChunkCache
 			lock (dictionary)
 			{
 				this.RemovePersistentDataForChunks(_chunks);
-				RegionFileManager.resetVolumeDataForChunks(_chunks);
 				foreach (long num in _chunks)
 				{
-					this.<RemoveChunks>g__RemoveChunk|116_0(num, _resetDecos);
+					this.<RemoveChunks>g__RemoveChunk|118_0(num, _resetDecos);
 				}
-				MultiBlockManager.Instance.CullChunklessData();
+				this.cullChunklessDataPending = true;
 				List<NetPackageDeleteChunkData> list = this.pendingChunkDeletionPackages;
 				lock (list)
 				{
@@ -1503,7 +1519,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059F8 RID: 23032 RVA: 0x00227C58 File Offset: 0x00225E58
+	// Token: 0x06005A13 RID: 23059 RVA: 0x0022AF38 File Offset: 0x00229138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessChunkDeletionPackages()
 	{
@@ -1520,7 +1536,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059F9 RID: 23033 RVA: 0x00227D18 File Offset: 0x00225F18
+	// Token: 0x06005A14 RID: 23060 RVA: 0x0022AFF8 File Offset: 0x002291F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemovePersistentDataForChunks(ICollection<long> _chunks)
 	{
@@ -1550,12 +1566,12 @@ public class RegionFileManager : WorldChunkCache
 			bool backpacksChanged = false;
 			persistentPlayerData.RemoveBackpacks(delegate(PersistentPlayerData.ProtectedBackpack backpack)
 			{
-				long num5 = WorldChunkCache.MakeChunkKey(World.toChunkXZ(backpack.Position.x), World.toChunkXZ(backpack.Position.z));
+				long num6 = WorldChunkCache.MakeChunkKey(World.toChunkXZ(backpack.Position.x), World.toChunkXZ(backpack.Position.z));
 				using (IEnumerator<long> enumerator7 = _chunks.GetEnumerator())
 				{
 					while (enumerator7.MoveNext())
 					{
-						if (enumerator7.Current == num5)
+						if (enumerator7.Current == num6)
 						{
 							backpacksChanged = true;
 							return true;
@@ -1618,16 +1634,21 @@ public class RegionFileManager : WorldChunkCache
 		List<PowerItem> list2 = new List<PowerItem>();
 		PowerManager.Instance.FindPowerItems(delegate(PowerItem item)
 		{
-			long num6 = WorldChunkCache.MakeChunkKey(World.toChunkXZ(item.Position.x), World.toChunkXZ(item.Position.z));
-			return _chunks.Contains(num6);
+			long num7 = WorldChunkCache.MakeChunkKey(World.toChunkXZ(item.Position.x), World.toChunkXZ(item.Position.z));
+			return _chunks.Contains(num7);
 		}, list2);
 		foreach (PowerItem powerItem in list2)
 		{
 			PowerManager.Instance.RemovePowerNode(powerItem);
 		}
+		foreach (long num5 in _chunks)
+		{
+			GameManager.Instance.World.ResetTriggerVolumes(num5);
+			GameManager.Instance.World.ResetSleeperVolumes(num5);
+		}
 	}
 
-	// Token: 0x060059FA RID: 23034 RVA: 0x00228110 File Offset: 0x00226310
+	// Token: 0x06005A15 RID: 23061 RVA: 0x0022B44C File Offset: 0x0022964C
 	public void CheckPersistentData()
 	{
 		using (RegionFileManager.s_CheckPersistentData.Auto())
@@ -1684,37 +1705,28 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x060059FB RID: 23035 RVA: 0x002283F8 File Offset: 0x002265F8
+	// Token: 0x06005A16 RID: 23062 RVA: 0x0022B734 File Offset: 0x00229934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessPendingPersistentDataRemovals()
 	{
 		using (RegionFileManager.s_ProcessPersistentDataRemovals.Auto())
 		{
 			HashSet<long> hashSet = this.persistentDataRemovalsRequestedChunks;
+			HashSet<long> hashSet2;
 			lock (hashSet)
 			{
-				if (this.persistentDataRemovalsRequestedChunks.Count > 0)
+				if (this.persistentDataRemovalsRequestedChunks.Count == 0)
 				{
-					this.RemovePersistentDataForChunks(this.persistentDataRemovalsRequestedChunks);
-					this.persistentDataRemovalsRequestedChunks.Clear();
+					return;
 				}
+				hashSet2 = new HashSet<long>(this.persistentDataRemovalsRequestedChunks);
+				this.persistentDataRemovalsRequestedChunks.Clear();
 			}
+			this.RemovePersistentDataForChunks(hashSet2);
 		}
 	}
 
-	// Token: 0x060059FC RID: 23036 RVA: 0x00228480 File Offset: 0x00226680
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static void resetVolumeDataForChunks(ICollection<long> _chunks)
-	{
-		World world = GameManager.Instance.World;
-		foreach (long num in _chunks)
-		{
-			world.ResetTriggerVolumes(num);
-			world.ResetSleeperVolumes(num);
-		}
-	}
-
-	// Token: 0x060059FD RID: 23037 RVA: 0x002284DC File Offset: 0x002266DC
+	// Token: 0x06005A17 RID: 23063 RVA: 0x0022B7C8 File Offset: 0x002299C8
 	public HashSetLong ResetAllChunks(ChunkProtectionLevel excludedProtectionLevels, EnumResetUnprotectedChunksGroupingMode _groupingMode = EnumResetUnprotectedChunksGroupingMode.GroupedPOIs)
 	{
 		object obj = this.saveLock;
@@ -1733,7 +1745,7 @@ public class RegionFileManager : WorldChunkCache
 		return hashSetLong;
 	}
 
-	// Token: 0x060059FE RID: 23038 RVA: 0x00228560 File Offset: 0x00226760
+	// Token: 0x06005A18 RID: 23064 RVA: 0x0022B84C File Offset: 0x00229A4C
 	public HashSetLong ResetRegion(int _regionX, int _regionZ, ChunkProtectionLevel excludedProtectionLevels, EnumResetUnprotectedChunksGroupingMode _groupingMode = EnumResetUnprotectedChunksGroupingMode.GroupedPOIs)
 	{
 		object obj = this.saveLock;
@@ -1767,7 +1779,7 @@ public class RegionFileManager : WorldChunkCache
 		return hashSetLong2;
 	}
 
-	// Token: 0x060059FF RID: 23039 RVA: 0x00228680 File Offset: 0x00226880
+	// Token: 0x06005A19 RID: 23065 RVA: 0x0022B96C File Offset: 0x00229B6C
 	public bool TryResetChunks(ICollection<long> _chunks, ChunkProtectionLevel _excludedProtectionLevels, out ChunkProtectionLevel _protectionLevels)
 	{
 		if (_chunks.Count == 0)
@@ -1799,7 +1811,7 @@ public class RegionFileManager : WorldChunkCache
 		return flag3;
 	}
 
-	// Token: 0x06005A00 RID: 23040 RVA: 0x00228750 File Offset: 0x00226950
+	// Token: 0x06005A1A RID: 23066 RVA: 0x0022BA3C File Offset: 0x00229C3C
 	public void IterateChunkExpiryTimes(Action<long, ulong> action)
 	{
 		if (this.maxChunkAge < 0L)
@@ -1821,7 +1833,7 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x06005A01 RID: 23041 RVA: 0x0022880C File Offset: 0x00226A0C
+	// Token: 0x06005A1B RID: 23067 RVA: 0x0022BAF8 File Offset: 0x00229CF8
 	public void SaveChunkAgeDebugTexture(float rangeInDays)
 	{
 		float num = rangeInDays * 24f * 60f;
@@ -1836,7 +1848,7 @@ public class RegionFileManager : WorldChunkCache
 		{
 			this.UpdateChunkProtectionLevels(EnumResetUnprotectedChunksGroupingMode.GroupedPOIs);
 			this.UpdateGroupTimestamps();
-			float num5 = 1f / (float)RegionFileManager.<SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|126_0(ChunkProtectionLevel.CurrentlySynced);
+			float num5 = 1f / (float)RegionFileManager.<SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|127_0(ChunkProtectionLevel.CurrentlySynced);
 			for (int i = 0; i < array.Length; i++)
 			{
 				int num6 = i % vector2i.x - num2;
@@ -1864,7 +1876,7 @@ public class RegionFileManager : WorldChunkCache
 				ChunkProtectionLevel chunkProtectionLevel;
 				if (this.chunkProtectionLevels.TryGetValue(num8, out chunkProtectionLevel))
 				{
-					valueTuple.Item3 = (float)RegionFileManager.<SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|126_0(chunkProtectionLevel) * num5;
+					valueTuple.Item3 = (float)RegionFileManager.<SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|127_0(chunkProtectionLevel) * num5;
 				}
 				array[i] = new Color(valueTuple.Item1, valueTuple.Item2, valueTuple.Item3, valueTuple.Item4);
 			}
@@ -1877,10 +1889,10 @@ public class RegionFileManager : WorldChunkCache
 		global::UnityEngine.Object.Destroy(texture2D);
 	}
 
-	// Token: 0x06005A05 RID: 23045 RVA: 0x00228B6B File Offset: 0x00226D6B
+	// Token: 0x06005A1F RID: 23071 RVA: 0x0022BE57 File Offset: 0x0022A057
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <CullExpiredChunks>g__UpdateResetRequest|87_0(long chunkKey, ChunkProtectionLevel protectionLevel)
+	public void <CullExpiredChunks>g__UpdateResetRequest|88_0(long chunkKey, ChunkProtectionLevel protectionLevel)
 	{
 		if ((protectionLevel & ~(ChunkProtectionLevel.NearOfflinePlayer | ChunkProtectionLevel.NearQuestObjective | ChunkProtectionLevel.OfflinePlayer | ChunkProtectionLevel.QuestObjective | ChunkProtectionLevel.CurrentlySynced)) != ChunkProtectionLevel.None)
 		{
@@ -1888,10 +1900,10 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x06005A07 RID: 23047 RVA: 0x00228B9C File Offset: 0x00226D9C
+	// Token: 0x06005A21 RID: 23073 RVA: 0x0022BE88 File Offset: 0x0022A088
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateChunkProtectionLevels>g__EvaluateSingleChunkProtectionLevels|95_0()
+	public unsafe void <UpdateChunkProtectionLevels>g__EvaluateSingleChunkProtectionLevels|96_0()
 	{
 		int num = GamePrefs.GetInt(EnumGamePrefs.LandClaimSize) / 2;
 		int @int = GamePrefs.GetInt(EnumGamePrefs.BedrollDeadZoneSize);
@@ -1901,28 +1913,30 @@ public class RegionFileManager : WorldChunkCache
 			chunkCache.GetSyncRoot().EnterReadLock();
 			foreach (long num2 in chunkCache.chunkKeys)
 			{
-				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num2, ChunkProtectionLevel.CurrentlySynced);
+				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num2, ChunkProtectionLevel.CurrentlySynced);
 			}
 			chunkCache.GetSyncRoot().ExitReadLock();
 		}
-		GameManager.Instance.World.m_ChunkManager.ProcessChunksPendingUnload(delegate(Chunk chunk)
+		ReadOnlySpan<long> chunkKeysToUnloadSnapshot = GameManager.Instance.World.m_ChunkManager.GetChunkKeysToUnloadSnapshot();
+		for (int i = 0; i < chunkKeysToUnloadSnapshot.Length; i++)
 		{
-			this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(chunk.Key, ChunkProtectionLevel.CurrentlySynced);
-		});
+			long num3 = *chunkKeysToUnloadSnapshot[i];
+			this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num3, ChunkProtectionLevel.CurrentlySynced);
+		}
 		Dictionary<long, Chunk> dictionary = this.chunksToSave;
 		lock (dictionary)
 		{
-			foreach (long num3 in this.chunksToSave.Keys)
+			foreach (long num4 in this.chunksToSave.Keys)
 			{
-				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num3, ChunkProtectionLevel.CurrentlySynced);
+				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num4, ChunkProtectionLevel.CurrentlySynced);
 			}
 		}
 		Dictionary<long, IRegionFileChunkSnapshot> dictionary2 = this.chunkMemoryStreamsToSave;
 		lock (dictionary2)
 		{
-			foreach (long num4 in this.chunkMemoryStreamsToSave.Keys)
+			foreach (long num5 in this.chunkMemoryStreamsToSave.Keys)
 			{
-				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num4, ChunkProtectionLevel.CurrentlySynced);
+				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num5, ChunkProtectionLevel.CurrentlySynced);
 			}
 		}
 		foreach (HashSetLong hashSetLong in this.chunksByTraderID.Values)
@@ -1931,41 +1945,41 @@ public class RegionFileManager : WorldChunkCache
 			{
 				if (enumerator.MoveNext())
 				{
-					long num5 = enumerator.Current;
-					this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num5, ChunkProtectionLevel.Trader);
+					long num6 = enumerator.Current;
+					this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num6, ChunkProtectionLevel.Trader);
 				}
 			}
 		}
 		RegionFileManager.ProtectedPositionCache protectedPositionCache = this.ppdPositionCache;
 		lock (protectedPositionCache)
 		{
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.bedrolls, @int, ChunkProtectionLevel.Bedroll, 1, ChunkProtectionLevel.NearBedroll);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.lpBlocks, num, ChunkProtectionLevel.LandClaim, 1, ChunkProtectionLevel.NearLandClaim);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.offlinePlayers, 0, ChunkProtectionLevel.OfflinePlayer, 1, ChunkProtectionLevel.NearOfflinePlayer);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.backpacks, 0, ChunkProtectionLevel.DroppedBackpack, 1, ChunkProtectionLevel.NearDroppedBackpack);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.quests, num, ChunkProtectionLevel.QuestObjective, 1, ChunkProtectionLevel.NearQuestObjective);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.vendingMachines, num, ChunkProtectionLevel.Trader, 1, ChunkProtectionLevel.Trader);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.drones, num, ChunkProtectionLevel.Drone, 1, ChunkProtectionLevel.Drone);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.vehicles, num, ChunkProtectionLevel.Vehicle, 1, ChunkProtectionLevel.NearVehicle);
-			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(this.ppdPositionCache.supplyCrates, num, ChunkProtectionLevel.SupplyCrate, 1, ChunkProtectionLevel.NearSupplyCrate);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.bedrolls, @int, ChunkProtectionLevel.Bedroll, 1, ChunkProtectionLevel.NearBedroll);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.lpBlocks, num, ChunkProtectionLevel.LandClaim, 1, ChunkProtectionLevel.NearLandClaim);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.offlinePlayers, 0, ChunkProtectionLevel.OfflinePlayer, 1, ChunkProtectionLevel.NearOfflinePlayer);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.backpacks, 0, ChunkProtectionLevel.DroppedBackpack, 1, ChunkProtectionLevel.NearDroppedBackpack);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.quests, num, ChunkProtectionLevel.QuestObjective, 1, ChunkProtectionLevel.NearQuestObjective);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.vendingMachines, num, ChunkProtectionLevel.Trader, 1, ChunkProtectionLevel.Trader);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.drones, num, ChunkProtectionLevel.Drone, 1, ChunkProtectionLevel.Drone);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.vehicles, num, ChunkProtectionLevel.Vehicle, 1, ChunkProtectionLevel.NearVehicle);
+			this.<UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(this.ppdPositionCache.supplyCrates, num, ChunkProtectionLevel.SupplyCrate, 1, ChunkProtectionLevel.NearSupplyCrate);
 		}
 	}
 
-	// Token: 0x06005A09 RID: 23049 RVA: 0x00228F00 File Offset: 0x00227100
+	// Token: 0x06005A22 RID: 23074 RVA: 0x0022C1FC File Offset: 0x0022A3FC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|95_1(List<Vector3i> centerPositions, int halfSize, ChunkProtectionLevel innerProtectionLevel, int margin, ChunkProtectionLevel marginProtectionLevel)
+	public void <UpdateChunkProtectionLevels>g__ProcessProtectedPositionList|96_1(List<Vector3i> centerPositions, int halfSize, ChunkProtectionLevel innerProtectionLevel, int margin, ChunkProtectionLevel marginProtectionLevel)
 	{
 		foreach (Vector3i vector3i in centerPositions)
 		{
-			this.<UpdateChunkProtectionLevels>g__AddChunksInWorldArea|95_2(vector3i, halfSize, innerProtectionLevel, margin, marginProtectionLevel);
+			this.<UpdateChunkProtectionLevels>g__AddChunksInWorldArea|96_2(vector3i, halfSize, innerProtectionLevel, margin, marginProtectionLevel);
 		}
 	}
 
-	// Token: 0x06005A0A RID: 23050 RVA: 0x00228F54 File Offset: 0x00227154
+	// Token: 0x06005A23 RID: 23075 RVA: 0x0022C250 File Offset: 0x0022A450
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateChunkProtectionLevels>g__AddChunksInWorldArea|95_2(Vector3i centerPos, int halfSize, ChunkProtectionLevel innerProtectionLevel, int margin, ChunkProtectionLevel marginProtectionLevel)
+	public void <UpdateChunkProtectionLevels>g__AddChunksInWorldArea|96_2(Vector3i centerPos, int halfSize, ChunkProtectionLevel innerProtectionLevel, int margin, ChunkProtectionLevel marginProtectionLevel)
 	{
 		int num = World.toChunkXZ(centerPos.x - halfSize);
 		int num2 = World.toChunkXZ(centerPos.x + halfSize);
@@ -1977,15 +1991,15 @@ public class RegionFileManager : WorldChunkCache
 			{
 				ChunkProtectionLevel chunkProtectionLevel = ((i < num || i > num2 || j < num3 || j > num4) ? marginProtectionLevel : innerProtectionLevel);
 				long num5 = WorldChunkCache.MakeChunkKey(i, j);
-				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(num5, chunkProtectionLevel);
+				this.<UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(num5, chunkProtectionLevel);
 			}
 		}
 	}
 
-	// Token: 0x06005A0B RID: 23051 RVA: 0x00228FFC File Offset: 0x002271FC
+	// Token: 0x06005A24 RID: 23076 RVA: 0x0022C2F8 File Offset: 0x0022A4F8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <UpdateChunkProtectionLevels>g__AddProtectionLevel|95_3(long chunkKey, ChunkProtectionLevel protectionLevel)
+	public void <UpdateChunkProtectionLevels>g__AddProtectionLevel|96_3(long chunkKey, ChunkProtectionLevel protectionLevel)
 	{
 		ChunkProtectionLevel chunkProtectionLevel;
 		if (this.chunkProtectionLevels.TryGetValue(chunkKey, out chunkProtectionLevel))
@@ -2013,10 +2027,10 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x06005A0D RID: 23053 RVA: 0x00229084 File Offset: 0x00227284
+	// Token: 0x06005A26 RID: 23078 RVA: 0x0022C380 File Offset: 0x0022A580
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
-	public void <RemoveChunks>g__RemoveChunk|116_0(long _key, bool _resetDecos)
+	public void <RemoveChunks>g__RemoveChunk|118_0(long _key, bool _resetDecos)
 	{
 		using (RegionFileManager.s_RemoveChunk.Auto())
 		{
@@ -2043,10 +2057,10 @@ public class RegionFileManager : WorldChunkCache
 		}
 	}
 
-	// Token: 0x06005A10 RID: 23056 RVA: 0x00229221 File Offset: 0x00227421
+	// Token: 0x06005A29 RID: 23081 RVA: 0x0022C51D File Offset: 0x0022A71D
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static int <SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|126_0(ChunkProtectionLevel level)
+	public static int <SaveChunkAgeDebugTexture>g__OrdinalProtectionLevel|127_0(ChunkProtectionLevel level)
 	{
 		if (level != ChunkProtectionLevel.None)
 		{
@@ -2055,253 +2069,257 @@ public class RegionFileManager : WorldChunkCache
 		return 0;
 	}
 
-	// Token: 0x040045A1 RID: 17825
+	// Token: 0x040045DF RID: 17887
 	public const int cProtectedLandClaimChunkMargin = 1;
 
-	// Token: 0x040045A2 RID: 17826
+	// Token: 0x040045E0 RID: 17888
 	public const int cProtectedBedrollChunkMargin = 1;
 
-	// Token: 0x040045A3 RID: 17827
+	// Token: 0x040045E1 RID: 17889
 	public const int cProtectedOfflinePlayerChunkMargin = 1;
 
-	// Token: 0x040045A4 RID: 17828
+	// Token: 0x040045E2 RID: 17890
 	public const int cProtectedDroppedBackpackChunkMargin = 1;
 
-	// Token: 0x040045A5 RID: 17829
+	// Token: 0x040045E3 RID: 17891
 	public const int cProtectedVehicleChunkMargin = 1;
 
-	// Token: 0x040045A6 RID: 17830
+	// Token: 0x040045E4 RID: 17892
 	public const int cProtectedQuestObjectiveMargin = 1;
 
-	// Token: 0x040045A7 RID: 17831
+	// Token: 0x040045E5 RID: 17893
 	public const int cProtectedSupplyCrateMargin = 1;
 
-	// Token: 0x040045A8 RID: 17832
+	// Token: 0x040045E6 RID: 17894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_CullExpiredChunks = new ProfilerMarker("RegionFileManager.CullExpiredChunks");
 
-	// Token: 0x040045A9 RID: 17833
+	// Token: 0x040045E7 RID: 17895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_RemoveChunk = new ProfilerMarker("RegionFileManager.RemoveChunk");
 
-	// Token: 0x040045AA RID: 17834
+	// Token: 0x040045E8 RID: 17896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_UpdateProtectionLevels = new ProfilerMarker("RegionFileManager.UpdateProtectionLevels");
 
-	// Token: 0x040045AB RID: 17835
+	// Token: 0x040045E9 RID: 17897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_SortCullingCandidates = new ProfilerMarker("RegionFileManager.SortCullingCandidates");
 
-	// Token: 0x040045AC RID: 17836
+	// Token: 0x040045EA RID: 17898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_CollectBestCandidates = new ProfilerMarker("RegionFileManager.CollectBestCandidates");
 
-	// Token: 0x040045AD RID: 17837
+	// Token: 0x040045EB RID: 17899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ForceCullChunks = new ProfilerMarker("RegionFileManager.ForceCullChunks");
 
-	// Token: 0x040045AE RID: 17838
+	// Token: 0x040045EC RID: 17900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ComputeChunkGroups = new ProfilerMarker("RegionFileManager.ComputeChunkGroups");
 
-	// Token: 0x040045AF RID: 17839
+	// Token: 0x040045ED RID: 17901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_AddGroupedChunks = new ProfilerMarker("RegionFileManager.AddGroupedChunks");
 
-	// Token: 0x040045B0 RID: 17840
+	// Token: 0x040045EE RID: 17902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_RemoveGroupedChunks = new ProfilerMarker("RegionFileManager.RemoveGroupedChunks");
 
-	// Token: 0x040045B1 RID: 17841
+	// Token: 0x040045EF RID: 17903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_UpdateGroupTimestamps = new ProfilerMarker("RegionFileManager.UpdateGrouptimestamps");
 
-	// Token: 0x040045B2 RID: 17842
+	// Token: 0x040045F0 RID: 17904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_ProcessPersistentDataRemovals = new ProfilerMarker("RegionFileManager.ProcessPendingPersistentDataRemovals");
 
-	// Token: 0x040045B3 RID: 17843
+	// Token: 0x040045F1 RID: 17905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_CheckPersistentData = new ProfilerMarker("RegionFileManager.CheckPersistentData");
 
-	// Token: 0x040045B4 RID: 17844
+	// Token: 0x040045F2 RID: 17906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<long> s_RegionDataSize = new ProfilerCounterValue<long>(ProfilerCategory.Scripts, "Saved Region Data Size", ProfilerMarkerDataUnit.Bytes, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x040045B5 RID: 17845
+	// Token: 0x040045F3 RID: 17907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<int> s_ProtectedChunkCount = new ProfilerCounterValue<int>(ProfilerCategory.Scripts, "Protected Chunks", ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x040045B6 RID: 17846
+	// Token: 0x040045F4 RID: 17908
 	public const string pendingResetsFileName = "PendingResets.7pr";
 
-	// Token: 0x040045B7 RID: 17847
+	// Token: 0x040045F5 RID: 17909
 	public const string cChunkFileExt = ".ttc";
 
-	// Token: 0x040045B8 RID: 17848
+	// Token: 0x040045F6 RID: 17910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxChunksToCull = 10000;
 
-	// Token: 0x040045B9 RID: 17849
+	// Token: 0x040045F7 RID: 17911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMinimumByteAllowance = 20971520;
 
-	// Token: 0x040045BA RID: 17850
+	// Token: 0x040045F8 RID: 17912
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long cHeadroomBytes = 5242880L;
 
-	// Token: 0x040045BB RID: 17851
+	// Token: 0x040045F9 RID: 17913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IRegionFilePlatformFactory platformFactory = RegionFilePlatform.CreateFactory();
 
-	// Token: 0x040045BC RID: 17852
+	// Token: 0x040045FA RID: 17914
 	public static readonly IRegionFileDebugUtil DebugUtil = RegionFileManager.platformFactory.CreateDebugUtil();
 
-	// Token: 0x040045BD RID: 17853
+	// Token: 0x040045FB RID: 17915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileAccessAbstract regionFileAccess;
 
-	// Token: 0x040045BE RID: 17854
+	// Token: 0x040045FC RID: 17916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string saveDirectory;
 
-	// Token: 0x040045BF RID: 17855
+	// Token: 0x040045FD RID: 17917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string loadDirectory;
 
-	// Token: 0x040045C0 RID: 17856
+	// Token: 0x040045FE RID: 17918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxChunksInCache;
 
-	// Token: 0x040045C1 RID: 17857
+	// Token: 0x040045FF RID: 17919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long maxChunkAge = -1L;
 
-	// Token: 0x040045C2 RID: 17858
+	// Token: 0x04004600 RID: 17920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long maxBytes = -1L;
 
-	// Token: 0x040045C3 RID: 17859
+	// Token: 0x04004601 RID: 17921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> chunksInLocalCache = new List<long>();
 
-	// Token: 0x040045C4 RID: 17860
+	// Token: 0x04004602 RID: 17922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetLong chunksInLoadDir = new HashSetLong();
 
-	// Token: 0x040045C5 RID: 17861
+	// Token: 0x04004603 RID: 17923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, uint> chunksInSaveDir;
 
-	// Token: 0x040045C6 RID: 17862
+	// Token: 0x04004604 RID: 17924
+	[PublicizedFrom(EAccessModifier.Private)]
+	public volatile bool cullChunklessDataPending;
+
+	// Token: 0x04004605 RID: 17925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> expiredChunks = new List<long>(10000);
 
-	// Token: 0x040045C7 RID: 17863
+	// Token: 0x04004606 RID: 17926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> resetRequestedChunks = new List<long>();
 
-	// Token: 0x040045C8 RID: 17864
+	// Token: 0x04004607 RID: 17927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<long> persistentDataRemovalsRequestedChunks = new HashSet<long>();
 
-	// Token: 0x040045C9 RID: 17865
+	// Token: 0x04004608 RID: 17928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool protectionLevelsDirty = true;
 
-	// Token: 0x040045CA RID: 17866
+	// Token: 0x04004609 RID: 17929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, ChunkProtectionLevel> chunkProtectionLevels = new Dictionary<long, ChunkProtectionLevel>();
 
-	// Token: 0x040045CB RID: 17867
+	// Token: 0x0400460A RID: 17930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<KeyValuePair<long, ulong>> sortedCullingCandidates = new List<KeyValuePair<long, ulong>>();
 
-	// Token: 0x040045CC RID: 17868
+	// Token: 0x0400460B RID: 17931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, HashSetLong> chunksByTraderID = new Dictionary<int, HashSetLong>();
 
-	// Token: 0x040045CD RID: 17869
+	// Token: 0x0400460C RID: 17932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LongSetGroups chunkGroups = new LongSetGroups();
 
-	// Token: 0x040045CE RID: 17870
+	// Token: 0x0400460D RID: 17933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<LongSetGroups.Group, uint> groupTimestamps = new Dictionary<LongSetGroups.Group, uint>();
 
-	// Token: 0x040045CF RID: 17871
+	// Token: 0x0400460E RID: 17934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool groupTimestampsDirty;
 
-	// Token: 0x040045D0 RID: 17872
+	// Token: 0x0400460F RID: 17935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<LongSetGroups.Group, ChunkProtectionLevel> groupProtectionLevels = new Dictionary<LongSetGroups.Group, ChunkProtectionLevel>();
 
-	// Token: 0x040045D1 RID: 17873
+	// Token: 0x04004610 RID: 17936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<LongSetGroups.Group> processedChunkGroups = new HashSet<LongSetGroups.Group>();
 
-	// Token: 0x040045D2 RID: 17874
+	// Token: 0x04004611 RID: 17937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NetPackageDeleteChunkData> pendingChunkDeletionPackages = new List<NetPackageDeleteChunkData>();
 
-	// Token: 0x040045D3 RID: 17875
+	// Token: 0x04004612 RID: 17938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, Chunk> chunksToSave = new Dictionary<long, Chunk>();
 
-	// Token: 0x040045D4 RID: 17876
+	// Token: 0x04004613 RID: 17939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, IRegionFileChunkSnapshot> chunkMemoryStreamsToSave = new Dictionary<long, IRegionFileChunkSnapshot>();
 
-	// Token: 0x040045D5 RID: 17877
+	// Token: 0x04004614 RID: 17940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IRegionFileChunkSnapshotUtil snapshotUtil;
 
-	// Token: 0x040045D7 RID: 17879
+	// Token: 0x04004616 RID: 17942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Chunk> chunksToUnloadLater = new List<Chunk>();
 
-	// Token: 0x040045D8 RID: 17880
+	// Token: 0x04004617 RID: 17943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AutoResetEvent saveThreadWaitHandle = new AutoResetEvent(false);
 
-	// Token: 0x040045D9 RID: 17881
+	// Token: 0x04004618 RID: 17944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bSaveOnChunkDrop;
 
-	// Token: 0x040045DA RID: 17882
+	// Token: 0x04004619 RID: 17945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long chunkKeyCurrentlySaved = long.MaxValue;
 
-	// Token: 0x040045DB RID: 17883
+	// Token: 0x0400461A RID: 17946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo taskInfoThreadSaveChunks;
 
-	// Token: 0x040045DD RID: 17885
+	// Token: 0x0400461C RID: 17948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> dynamicPrefabsBuffer = new List<PrefabInstance>();
 
-	// Token: 0x040045DE RID: 17886
+	// Token: 0x0400461D RID: 17949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile bool bSaveRunning = true;
 
-	// Token: 0x040045DF RID: 17887
+	// Token: 0x0400461E RID: 17950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RegionFileManager.ProtectedPositionCache ppdPositionCache = new RegionFileManager.ProtectedPositionCache();
 
-	// Token: 0x040045E0 RID: 17888
+	// Token: 0x0400461F RID: 17951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int thread_SaveChunks_SleepCount;
 
-	// Token: 0x040045E1 RID: 17889
+	// Token: 0x04004620 RID: 17952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object saveLock = new object();
 
-	// Token: 0x02000B9E RID: 2974
+	// Token: 0x02000BB0 RID: 2992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ProtectedPositionCache
 	{
-		// Token: 0x06005A11 RID: 23057 RVA: 0x00229248 File Offset: 0x00227448
+		// Token: 0x06005A2A RID: 23082 RVA: 0x0022C544 File Offset: 0x0022A744
 		public void ClearAll()
 		{
 			this.bedrolls.Clear();
@@ -2315,31 +2333,31 @@ public class RegionFileManager : WorldChunkCache
 			this.supplyCrates.Clear();
 		}
 
-		// Token: 0x040045E2 RID: 17890
+		// Token: 0x04004621 RID: 17953
 		public readonly List<Vector3i> bedrolls = new List<Vector3i>();
 
-		// Token: 0x040045E3 RID: 17891
+		// Token: 0x04004622 RID: 17954
 		public readonly List<Vector3i> lpBlocks = new List<Vector3i>();
 
-		// Token: 0x040045E4 RID: 17892
+		// Token: 0x04004623 RID: 17955
 		public readonly List<Vector3i> offlinePlayers = new List<Vector3i>();
 
-		// Token: 0x040045E5 RID: 17893
+		// Token: 0x04004624 RID: 17956
 		public readonly List<Vector3i> backpacks = new List<Vector3i>();
 
-		// Token: 0x040045E6 RID: 17894
+		// Token: 0x04004625 RID: 17957
 		public readonly List<Vector3i> quests = new List<Vector3i>();
 
-		// Token: 0x040045E7 RID: 17895
+		// Token: 0x04004626 RID: 17958
 		public readonly List<Vector3i> vendingMachines = new List<Vector3i>();
 
-		// Token: 0x040045E8 RID: 17896
+		// Token: 0x04004627 RID: 17959
 		public readonly List<Vector3i> vehicles = new List<Vector3i>();
 
-		// Token: 0x040045E9 RID: 17897
+		// Token: 0x04004628 RID: 17960
 		public readonly List<Vector3i> drones = new List<Vector3i>();
 
-		// Token: 0x040045EA RID: 17898
+		// Token: 0x04004629 RID: 17961
 		public readonly List<Vector3i> supplyCrates = new List<Vector3i>();
 	}
 }

@@ -3,16 +3,16 @@ using SharpEXR.AttributeTypes;
 
 namespace SharpEXR.ColorSpace
 {
-	// Token: 0x020016DF RID: 5855
+	// Token: 0x0200170B RID: 5899
 	public static class XYZ
 	{
-		// Token: 0x0600B71A RID: 46874 RVA: 0x0043EAE0 File Offset: 0x0043CCE0
+		// Token: 0x0600B871 RID: 47217 RVA: 0x00443000 File Offset: 0x00441200
 		public static tMat3x3 CalcColorSpaceConversion_RGB_to_XYZ(Chromaticities chromaticities)
 		{
 			return XYZ.CalcColorSpaceConversion_RGB_to_XYZ(new tVec2(chromaticities.RedX, chromaticities.RedY), new tVec2(chromaticities.GreenX, chromaticities.GreenY), new tVec2(chromaticities.BlueX, chromaticities.BlueY), new tVec2(chromaticities.WhiteX, chromaticities.WhiteY));
 		}
 
-		// Token: 0x0600B71B RID: 46875 RVA: 0x0043EB38 File Offset: 0x0043CD38
+		// Token: 0x0600B872 RID: 47218 RVA: 0x00443058 File Offset: 0x00441258
 		public static tMat3x3 CalcColorSpaceConversion_RGB_to_XYZ(tVec2 red_xy, tVec2 green_xy, tVec2 blue_xy, tVec2 white_xy)
 		{
 			tMat3x3 tMat3x = default(tMat3x3);

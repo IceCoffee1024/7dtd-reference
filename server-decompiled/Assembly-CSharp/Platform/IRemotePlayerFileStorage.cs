@@ -2,19 +2,19 @@
 
 namespace Platform
 {
-	// Token: 0x02001B97 RID: 7063
+	// Token: 0x02001BC9 RID: 7113
 	public interface IRemotePlayerFileStorage
 	{
-		// Token: 0x0600D308 RID: 54024
+		// Token: 0x0600D480 RID: 54400
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D309 RID: 54025
+		// Token: 0x0600D481 RID: 54401
 		void ReadRemoteData(string _filename, bool _overwriteCache, IRemotePlayerFileStorage.FileReadCompleteCallback _callback);
 
-		// Token: 0x0600D30A RID: 54026
+		// Token: 0x0600D482 RID: 54402
 		void WriteRemoteData(string _filename, byte[] _data, bool _overwriteCache, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback);
 
-		// Token: 0x0600D30B RID: 54027 RVA: 0x004C7344 File Offset: 0x004C5544
+		// Token: 0x0600D483 RID: 54403 RVA: 0x004CBE2C File Offset: 0x004CA02C
 		void ReadRemoteObject<T>(string _filename, bool _overwriteCache, IRemotePlayerFileStorage.FileReadObjectCompleteCallback<T> _callback) where T : IRemotePlayerStorageObject, new()
 		{
 			if (_callback == null)
@@ -41,7 +41,7 @@ namespace Platform
 			});
 		}
 
-		// Token: 0x0600D30C RID: 54028 RVA: 0x004C7385 File Offset: 0x004C5585
+		// Token: 0x0600D484 RID: 54404 RVA: 0x004CBE6D File Offset: 0x004CA06D
 		void WriteRemoteObject(string _filename, IRemotePlayerStorageObject _object, bool _overwriteCache, IRemotePlayerFileStorage.FileWriteCompleteCallback _callback)
 		{
 			if (_callback == null)
@@ -52,7 +52,7 @@ namespace Platform
 			this.WriteRemoteData(_filename, IRemotePlayerFileStorage.ObjectToBytes(_object), _overwriteCache, _callback);
 		}
 
-		// Token: 0x0600D30D RID: 54029 RVA: 0x004C73A8 File Offset: 0x004C55A8
+		// Token: 0x0600D485 RID: 54405 RVA: 0x004CBE90 File Offset: 0x004CA090
 		public static T BytesToObject<T>(byte[] _data) where T : IRemotePlayerStorageObject, new()
 		{
 			T t;
@@ -85,7 +85,7 @@ namespace Platform
 			return t;
 		}
 
-		// Token: 0x0600D30E RID: 54030 RVA: 0x004C7478 File Offset: 0x004C5678
+		// Token: 0x0600D486 RID: 54406 RVA: 0x004CBF60 File Offset: 0x004CA160
 		public static byte[] ObjectToBytes(IRemotePlayerStorageObject _obj)
 		{
 			if (_obj == null)
@@ -115,7 +115,7 @@ namespace Platform
 			return array;
 		}
 
-		// Token: 0x0600D30F RID: 54031 RVA: 0x004C7520 File Offset: 0x004C5720
+		// Token: 0x0600D487 RID: 54407 RVA: 0x004CC008 File Offset: 0x004CA208
 		public static string GetCacheFolder(IUserClient _user)
 		{
 			if (_user == null || _user.UserStatus > EUserStatus.LoggedIn)
@@ -125,13 +125,13 @@ namespace Platform
 			return GameIO.GetUserGameDataDir() + "/RfsPlayerCache/" + _user.PlatformUserId.ReadablePlatformUserIdentifier;
 		}
 
-		// Token: 0x0600D310 RID: 54032 RVA: 0x004C754F File Offset: 0x004C574F
+		// Token: 0x0600D488 RID: 54408 RVA: 0x004CC037 File Offset: 0x004CA237
 		public static T ReadCachedObject<T>(IUserClient _user, string _filename) where T : IRemotePlayerStorageObject, new()
 		{
 			return IRemotePlayerFileStorage.BytesToObject<T>(IRemotePlayerFileStorage.ReadCachedData(_user, _filename));
 		}
 
-		// Token: 0x0600D311 RID: 54033 RVA: 0x004C7560 File Offset: 0x004C5760
+		// Token: 0x0600D489 RID: 54409 RVA: 0x004CC048 File Offset: 0x004CA248
 		public static byte[] ReadCachedData(IUserClient _user, string _filename)
 		{
 			object localCacheLock = IRemotePlayerFileStorage.LocalCacheLock;
@@ -152,13 +152,13 @@ namespace Platform
 			return array;
 		}
 
-		// Token: 0x0600D312 RID: 54034 RVA: 0x004C75D4 File Offset: 0x004C57D4
+		// Token: 0x0600D48A RID: 54410 RVA: 0x004CC0BC File Offset: 0x004CA2BC
 		public static bool WriteCachedObject(IUserClient _user, string _filename, IRemotePlayerStorageObject _object)
 		{
 			return IRemotePlayerFileStorage.WriteCachedObject(_user, _filename, IRemotePlayerFileStorage.ObjectToBytes(_object));
 		}
 
-		// Token: 0x0600D313 RID: 54035 RVA: 0x004C75E4 File Offset: 0x004C57E4
+		// Token: 0x0600D48B RID: 54411 RVA: 0x004CC0CC File Offset: 0x004CA2CC
 		public static bool WriteCachedObject(IUserClient _user, string _filename, byte[] _data)
 		{
 			object localCacheLock = IRemotePlayerFileStorage.LocalCacheLock;
@@ -188,7 +188,7 @@ namespace Platform
 			return flag2;
 		}
 
-		// Token: 0x0600D314 RID: 54036 RVA: 0x004C7678 File Offset: 0x004C5878
+		// Token: 0x0600D48C RID: 54412 RVA: 0x004CC160 File Offset: 0x004CA360
 		public static void ClearCache(IUserClient _user)
 		{
 			object localCacheLock = IRemotePlayerFileStorage.LocalCacheLock;
@@ -205,34 +205,34 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0400A0D5 RID: 41173
+		// Token: 0x0400A1AA RID: 41386
 		public static object LocalCacheLock = new object();
 
-		// Token: 0x02001B98 RID: 7064
+		// Token: 0x02001BCA RID: 7114
 		public enum CallbackResult
 		{
-			// Token: 0x0400A0D7 RID: 41175
+			// Token: 0x0400A1AC RID: 41388
 			Success,
-			// Token: 0x0400A0D8 RID: 41176
+			// Token: 0x0400A1AD RID: 41389
 			FileNotFound,
-			// Token: 0x0400A0D9 RID: 41177
+			// Token: 0x0400A1AE RID: 41390
 			NoConnection,
-			// Token: 0x0400A0DA RID: 41178
+			// Token: 0x0400A1AF RID: 41391
 			MalformedData,
-			// Token: 0x0400A0DB RID: 41179
+			// Token: 0x0400A1B0 RID: 41392
 			Other
 		}
 
-		// Token: 0x02001B99 RID: 7065
-		// (Invoke) Token: 0x0600D317 RID: 54039
+		// Token: 0x02001BCB RID: 7115
+		// (Invoke) Token: 0x0600D48F RID: 54415
 		public delegate void FileReadCompleteCallback(IRemotePlayerFileStorage.CallbackResult _result, byte[] _data);
 
-		// Token: 0x02001B9A RID: 7066
-		// (Invoke) Token: 0x0600D31B RID: 54043
+		// Token: 0x02001BCC RID: 7116
+		// (Invoke) Token: 0x0600D493 RID: 54419
 		public delegate void FileReadObjectCompleteCallback<T>(IRemotePlayerFileStorage.CallbackResult _result, T _object) where T : IRemotePlayerStorageObject;
 
-		// Token: 0x02001B9B RID: 7067
-		// (Invoke) Token: 0x0600D31F RID: 54047
+		// Token: 0x02001BCD RID: 7117
+		// (Invoke) Token: 0x0600D497 RID: 54423
 		public delegate void FileWriteCompleteCallback(IRemotePlayerFileStorage.CallbackResult _result);
 	}
 }

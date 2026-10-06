@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000BC6 RID: 3014
-// (Invoke) Token: 0x06005AFA RID: 23290
+// Token: 0x02000BD8 RID: 3032
+// (Invoke) Token: 0x06005B13 RID: 23315
 public delegate void AtomicActionDelegate();

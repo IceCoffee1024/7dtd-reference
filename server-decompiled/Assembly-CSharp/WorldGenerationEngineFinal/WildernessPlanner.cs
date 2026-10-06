@@ -5,22 +5,22 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200173D RID: 5949
+	// Token: 0x02001769 RID: 5993
 	public class WildernessPlanner
 	{
-		// Token: 0x0600B912 RID: 47378 RVA: 0x0044D36F File Offset: 0x0044B56F
+		// Token: 0x0600BA69 RID: 47721 RVA: 0x0045188F File Offset: 0x0044FA8F
 		public WildernessPlanner(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B913 RID: 47379 RVA: 0x0044D389 File Offset: 0x0044B589
+		// Token: 0x0600BA6A RID: 47722 RVA: 0x004518A9 File Offset: 0x0044FAA9
 		public void AddPathInfo(Vector2i _startPos, float _pathRadius)
 		{
 			this.WildernessPathInfos.Add(new WildernessPlanner.WildernessPathInfo(new Vector2i(_startPos), _pathRadius));
 		}
 
-		// Token: 0x0600B914 RID: 47380 RVA: 0x0044D3A8 File Offset: 0x0044B5A8
+		// Token: 0x0600BA6B RID: 47723 RVA: 0x004518C8 File Offset: 0x0044FAC8
 		public void Plan(DynamicProperties thisWorldProperties, int worldSeed)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -75,7 +75,7 @@ namespace WorldGenerationEngineFinal
 			}));
 		}
 
-		// Token: 0x0600B915 RID: 47381 RVA: 0x0044D599 File Offset: 0x0044B799
+		// Token: 0x0600BA6C RID: 47724 RVA: 0x00451AB9 File Offset: 0x0044FCB9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int GetLowBiasedRandom(GameRandom rnd, int max)
 		{
@@ -83,7 +83,7 @@ namespace WorldGenerationEngineFinal
 			return (int)(randomFloat * randomFloat * (float)max);
 		}
 
-		// Token: 0x0600B916 RID: 47382 RVA: 0x0044D5A8 File Offset: 0x0044B7A8
+		// Token: 0x0600BA6D RID: 47725 RVA: 0x00451AC8 File Offset: 0x0044FCC8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<StreetTile> GetUnusedWildernessTiles(BiomeType _biome)
 		{
@@ -92,7 +92,7 @@ namespace WorldGenerationEngineFinal
 				select st).ToList<StreetTile>();
 		}
 
-		// Token: 0x0600B917 RID: 47383 RVA: 0x0044D5E8 File Offset: 0x0044B7E8
+		// Token: 0x0600BA6E RID: 47726 RVA: 0x00451B08 File Offset: 0x0044FD08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetUnusedWildernessTiles(List<StreetTile> _list, List<StreetTile> _resultList)
 		{
@@ -104,7 +104,7 @@ namespace WorldGenerationEngineFinal
 			_resultList.AddRange(orderedEnumerable);
 		}
 
-		// Token: 0x0600B918 RID: 47384 RVA: 0x0044D640 File Offset: 0x0044B840
+		// Token: 0x0600BA6F RID: 47727 RVA: 0x00451B60 File Offset: 0x0044FD60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int distanceFromClosestTownship(StreetTile st)
 		{
@@ -120,7 +120,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B919 RID: 47385 RVA: 0x0044D6C0 File Offset: 0x0044B8C0
+		// Token: 0x0600BA70 RID: 47728 RVA: 0x00451BE0 File Offset: 0x0044FDE0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float distanceSqr(Vector2 pointA, Vector2 pointB)
 		{
@@ -128,40 +128,40 @@ namespace WorldGenerationEngineFinal
 			return vector.x * vector.x + vector.y * vector.y;
 		}
 
-		// Token: 0x04008A54 RID: 35412
+		// Token: 0x04008B19 RID: 35609
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cWildernessSpawnTries = 20;
 
-		// Token: 0x04008A55 RID: 35413
+		// Token: 0x04008B1A RID: 35610
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008A56 RID: 35414
+		// Token: 0x04008B1B RID: 35611
 		public readonly List<WildernessPlanner.WildernessPathInfo> WildernessPathInfos = new List<WildernessPlanner.WildernessPathInfo>();
 
-		// Token: 0x0200173E RID: 5950
+		// Token: 0x0200176A RID: 5994
 		public class WildernessPathInfo
 		{
-			// Token: 0x0600B91B RID: 47387 RVA: 0x0044D6F9 File Offset: 0x0044B8F9
+			// Token: 0x0600BA72 RID: 47730 RVA: 0x00451C19 File Offset: 0x0044FE19
 			public WildernessPathInfo(Vector2i _startPos, float _pathRadius)
 			{
 				this.Position = _startPos;
 				this.PathRadius = _pathRadius;
 			}
 
-			// Token: 0x04008A57 RID: 35415
+			// Token: 0x04008B1C RID: 35612
 			public Vector2i Position;
 
-			// Token: 0x04008A58 RID: 35416
+			// Token: 0x04008B1D RID: 35613
 			public float PathRadius;
 
-			// Token: 0x04008A59 RID: 35417
+			// Token: 0x04008B1E RID: 35614
 			public Path Path;
 
-			// Token: 0x04008A5A RID: 35418
+			// Token: 0x04008B1F RID: 35615
 			public float highwayDistance;
 
-			// Token: 0x04008A5B RID: 35419
+			// Token: 0x04008B20 RID: 35616
 			public Vector2 highwayPoint;
 		}
 	}

@@ -3,17 +3,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005C1 RID: 1473
+// Token: 0x020005C2 RID: 1474
 [Preserve]
 public class ItemActionQuest : ItemAction
 {
-	// Token: 0x06002FE8 RID: 12264 RVA: 0x001335FF File Offset: 0x001317FF
+	// Token: 0x0600302B RID: 12331 RVA: 0x0013409B File Offset: 0x0013229B
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionQuest.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FE9 RID: 12265 RVA: 0x00133608 File Offset: 0x00131808
+	// Token: 0x0600302C RID: 12332 RVA: 0x001340A4 File Offset: 0x001322A4
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -41,14 +41,14 @@ public class ItemActionQuest : ItemAction
 		this.Description = _props.Values["Description"];
 	}
 
-	// Token: 0x06002FEA RID: 12266 RVA: 0x001336BA File Offset: 0x001318BA
+	// Token: 0x0600302D RID: 12333 RVA: 0x00134156 File Offset: 0x00132356
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionQuest.MyInventoryData)_data).bQuestAccept = false;
 	}
 
-	// Token: 0x06002FEB RID: 12267 RVA: 0x001336D0 File Offset: 0x001318D0
+	// Token: 0x0600302E RID: 12334 RVA: 0x0013416C File Offset: 0x0013236C
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -77,15 +77,16 @@ public class ItemActionQuest : ItemAction
 			((ItemActionQuest.MyInventoryData)_actionData).bQuestAccept = true;
 			return;
 		}
-		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(_actionData.invData.holdingEntity as EntityPlayerLocal);
-		if (_actionData.invData.slotIdx < uiforPlayer.entityPlayer.inventory.PUBLIC_SLOTS)
+		XUiController xuiController = LocalPlayerUI.GetUIForPlayer(_actionData.invData.holdingEntity as EntityPlayerLocal).xui.FindWindowGroupByName("toolbelt");
+		XUiC_Toolbelt xuiC_Toolbelt = ((xuiController != null) ? xuiController.GetChildByType<XUiC_Toolbelt>() : null);
+		XUiC_ItemStack xuiC_ItemStack;
+		if (xuiC_Toolbelt != null && xuiC_Toolbelt.TryGetSlotControl(_actionData.invData.slotIdx, out xuiC_ItemStack))
 		{
-			XUiC_Toolbelt childByType = uiforPlayer.xui.FindWindowGroupByName("toolbelt").GetChildByType<XUiC_Toolbelt>();
-			this.ExecuteInstantAction(_actionData.invData.holdingEntity, _actionData.invData.itemStack, true, childByType.GetSlotControl(_actionData.invData.slotIdx));
+			this.ExecuteInstantAction(_actionData.invData.holdingEntity, _actionData.invData.itemStack, true, xuiC_ItemStack);
 		}
 	}
 
-	// Token: 0x06002FEC RID: 12268 RVA: 0x00133834 File Offset: 0x00131A34
+	// Token: 0x0600302F RID: 12335 RVA: 0x001342C0 File Offset: 0x001324C0
 	public override bool ExecuteInstantAction(EntityAlive ent, ItemStack stack, bool isHeldItem, XUiC_ItemStack stackController)
 	{
 		if (this.soundStart != null)
@@ -121,14 +122,14 @@ public class ItemActionQuest : ItemAction
 		return true;
 	}
 
-	// Token: 0x06002FED RID: 12269 RVA: 0x00133924 File Offset: 0x00131B24
+	// Token: 0x06003030 RID: 12336 RVA: 0x001343B0 File Offset: 0x001325B0
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionQuest.MyInventoryData myInventoryData = (ItemActionQuest.MyInventoryData)_actionData;
 		return myInventoryData.bQuestAccept && Time.time - myInventoryData.lastUseTime < 2f * AnimationDelayData.AnimationDelay[myInventoryData.invData.item.HoldType.Value].RayCast;
 	}
 
-	// Token: 0x06002FEE RID: 12270 RVA: 0x0013397C File Offset: 0x00131B7C
+	// Token: 0x06003031 RID: 12337 RVA: 0x00134408 File Offset: 0x00132608
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionQuest.MyInventoryData myInventoryData = (ItemActionQuest.MyInventoryData)_actionData;
@@ -149,12 +150,17 @@ public class ItemActionQuest : ItemAction
 				{
 					Quest quest3 = quest.CreateQuest();
 					XUiC_QuestOfferWindow xuiC_QuestOfferWindow = XUiC_QuestOfferWindow.OpenQuestOfferWindow(uiforPlayer.xui, quest3, -1, XUiC_QuestOfferWindow.OfferTypes.Item, -1, null);
-					if (myInventoryData.invData.slotIdx < uiforPlayer.entityPlayer.inventory.PUBLIC_SLOTS)
+					if (myInventoryData.invData.slotIdx >= 0 && myInventoryData.invData.slotIdx < uiforPlayer.entityPlayer.inventory.Length)
 					{
-						XUiC_Toolbelt childByType = uiforPlayer.xui.FindWindowGroupByName("toolbelt").GetChildByType<XUiC_Toolbelt>();
-						xuiC_QuestOfferWindow.ItemStackController = childByType.GetSlotControl(myInventoryData.invData.slotIdx);
-						xuiC_QuestOfferWindow.ItemStackController.QuestLock = true;
-						return;
+						XUiController xuiController = uiforPlayer.xui.FindWindowGroupByName("toolbelt");
+						XUiC_Toolbelt xuiC_Toolbelt = ((xuiController != null) ? xuiController.GetChildByType<XUiC_Toolbelt>() : null);
+						XUiC_ItemStack xuiC_ItemStack;
+						if (xuiC_Toolbelt != null && xuiC_Toolbelt.TryGetSlotControl(_actionData.invData.slotIdx, out xuiC_ItemStack))
+						{
+							xuiC_QuestOfferWindow.ItemStackController = xuiC_ItemStack;
+							xuiC_QuestOfferWindow.ItemStackController.QuestLock = true;
+							return;
+						}
 					}
 				}
 				else
@@ -165,26 +171,26 @@ public class ItemActionQuest : ItemAction
 		}
 	}
 
-	// Token: 0x04002518 RID: 9496
+	// Token: 0x04002511 RID: 9489
 	public string QuestGiven;
 
-	// Token: 0x04002519 RID: 9497
+	// Token: 0x04002512 RID: 9490
 	public new string Title;
 
-	// Token: 0x0400251A RID: 9498
+	// Token: 0x04002513 RID: 9491
 	public new string Description;
 
-	// Token: 0x020005C2 RID: 1474
+	// Token: 0x020005C3 RID: 1475
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002FF0 RID: 12272 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x06003033 RID: 12339 RVA: 0x0012B224 File Offset: 0x00129424
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400251B RID: 9499
+		// Token: 0x04002514 RID: 9492
 		public bool bQuestAccept;
 	}
 }

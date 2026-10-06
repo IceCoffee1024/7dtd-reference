@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200071B RID: 1819
+// Token: 0x0200071D RID: 1821
 [Preserve]
 public class MinEventActionAddChatMessage : MinEventActionTargetedBase
 {
-	// Token: 0x0600371B RID: 14107 RVA: 0x0016BE2C File Offset: 0x0016A02C
+	// Token: 0x0600375E RID: 14174 RVA: 0x0016C790 File Offset: 0x0016A990
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -19,13 +19,13 @@ public class MinEventActionAddChatMessage : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600371C RID: 14108 RVA: 0x0016BE83 File Offset: 0x0016A083
+	// Token: 0x0600375F RID: 14175 RVA: 0x0016C7E7 File Offset: 0x0016A9E7
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.message != null;
 	}
 
-	// Token: 0x0600371D RID: 14109 RVA: 0x0016BE9C File Offset: 0x0016A09C
+	// Token: 0x06003760 RID: 14176 RVA: 0x0016C800 File Offset: 0x0016AA00
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -52,7 +52,7 @@ public class MinEventActionAddChatMessage : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002CAA RID: 11434
+	// Token: 0x04002CA3 RID: 11427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message;
 }

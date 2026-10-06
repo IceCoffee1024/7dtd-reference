@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A8 RID: 1704
+// Token: 0x020006AA RID: 1706
 [Preserve]
 public class TargetRange : TargetedCompareRequirementBase
 {
-	// Token: 0x06003588 RID: 13704 RVA: 0x00161730 File Offset: 0x0015F930
+	// Token: 0x060035CB RID: 13771 RVA: 0x00162098 File Offset: 0x00160298
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -32,7 +32,7 @@ public class TargetRange : TargetedCompareRequirementBase
 		return RequirementBase.compareValues(_params.Self.GetDistance(_params.Other), this.operation, this.value);
 	}
 
-	// Token: 0x06003589 RID: 13705 RVA: 0x001617DA File Offset: 0x0015F9DA
+	// Token: 0x060035CC RID: 13772 RVA: 0x00162142 File Offset: 0x00160342
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("TargetRange: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));

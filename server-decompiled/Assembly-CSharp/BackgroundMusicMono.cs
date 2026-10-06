@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000566 RID: 1382
+// Token: 0x0200056C RID: 1388
 public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 {
-	// Token: 0x06002CE6 RID: 11494 RVA: 0x0011EC08 File Offset: 0x0011CE08
+	// Token: 0x06002CDC RID: 11484 RVA: 0x0011FA8C File Offset: 0x0011DC8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -25,7 +25,7 @@ public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 		this.Play(BackgroundMusicMono.MusicTrack.BackgroundMusic);
 	}
 
-	// Token: 0x06002CE7 RID: 11495 RVA: 0x0011EC94 File Offset: 0x0011CE94
+	// Token: 0x06002CDD RID: 11485 RVA: 0x0011FB18 File Offset: 0x0011DD18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -44,7 +44,7 @@ public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 		this.activeTracks.RemoveWhere((BackgroundMusicMono.MusicTrack activeTrack) => !this.UpdateTrack(activeTrack));
 	}
 
-	// Token: 0x06002CE8 RID: 11496 RVA: 0x0011ED00 File Offset: 0x0011CF00
+	// Token: 0x06002CDE RID: 11486 RVA: 0x0011FB84 File Offset: 0x0011DD84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddMusicTrack(BackgroundMusicMono.MusicTrack musicTrack, AudioClip audioClip)
 	{
@@ -60,7 +60,7 @@ public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 		this.musicTrackStates.Add(musicTrack, new BackgroundMusicMono.MusicTrackState(audioSource));
 	}
 
-	// Token: 0x06002CE9 RID: 11497 RVA: 0x0011ED5F File Offset: 0x0011CF5F
+	// Token: 0x06002CDF RID: 11487 RVA: 0x0011FBE3 File Offset: 0x0011DDE3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Play(BackgroundMusicMono.MusicTrack musicTrack)
 	{
@@ -72,7 +72,7 @@ public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 		this.activeTracks.Add(musicTrack);
 	}
 
-	// Token: 0x06002CEA RID: 11498 RVA: 0x0011ED80 File Offset: 0x0011CF80
+	// Token: 0x06002CE0 RID: 11488 RVA: 0x0011FC04 File Offset: 0x0011DE04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateTrack(BackgroundMusicMono.MusicTrack activeTrack)
 	{
@@ -110,57 +110,57 @@ public class BackgroundMusicMono : SingletonMonoBehaviour<BackgroundMusicMono>
 		return flag;
 	}
 
-	// Token: 0x0400233B RID: 9019
+	// Token: 0x04002345 RID: 9029
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float secondsToFadeOut = 3f;
 
-	// Token: 0x0400233C RID: 9020
+	// Token: 0x04002346 RID: 9030
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float secondsToFadeIn = 3f;
 
-	// Token: 0x0400233D RID: 9021
+	// Token: 0x04002347 RID: 9031
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly EnumDictionary<BackgroundMusicMono.MusicTrack, BackgroundMusicMono.MusicTrackState> musicTrackStates = new EnumDictionary<BackgroundMusicMono.MusicTrack, BackgroundMusicMono.MusicTrackState>();
 
-	// Token: 0x0400233E RID: 9022
+	// Token: 0x04002348 RID: 9032
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly HashSet<BackgroundMusicMono.MusicTrack> activeTracks = new HashSet<BackgroundMusicMono.MusicTrack>();
 
-	// Token: 0x0400233F RID: 9023
+	// Token: 0x04002349 RID: 9033
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BackgroundMusicMono.MusicTrack currentlyPlaying;
 
-	// Token: 0x02000567 RID: 1383
+	// Token: 0x0200056D RID: 1389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum MusicTrack
 	{
-		// Token: 0x04002341 RID: 9025
+		// Token: 0x0400234B RID: 9035
 		None,
-		// Token: 0x04002342 RID: 9026
+		// Token: 0x0400234C RID: 9036
 		BackgroundMusic,
-		// Token: 0x04002343 RID: 9027
+		// Token: 0x0400234D RID: 9037
 		CreditsSong
 	}
 
-	// Token: 0x02000568 RID: 1384
+	// Token: 0x0200056E RID: 1390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MusicTrackState
 	{
-		// Token: 0x06002CED RID: 11501 RVA: 0x0011EE56 File Offset: 0x0011D056
+		// Token: 0x06002CE3 RID: 11491 RVA: 0x0011FCDA File Offset: 0x0011DEDA
 		public MusicTrackState(AudioSource audioSource)
 		{
 			this.AudioSource = audioSource;
 		}
 
-		// Token: 0x04002344 RID: 9028
+		// Token: 0x0400234E RID: 9038
 		public readonly AudioSource AudioSource;
 
-		// Token: 0x04002345 RID: 9029
+		// Token: 0x0400234F RID: 9039
 		public float CurrentVolume;
 	}
 }

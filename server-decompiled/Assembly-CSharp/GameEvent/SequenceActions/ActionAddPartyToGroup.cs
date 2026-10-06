@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200195E RID: 6494
+	// Token: 0x0200198A RID: 6538
 	[Preserve]
 	public class ActionAddPartyToGroup : BaseAction
 	{
-		// Token: 0x0600C7DE RID: 51166 RVA: 0x00494DD8 File Offset: 0x00492FD8
+		// Token: 0x0600C936 RID: 51510 RVA: 0x004992C4 File Offset: 0x004974C4
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			EntityPlayer entityPlayer = base.Owner.Target as EntityPlayer;
@@ -43,7 +43,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7DF RID: 51167 RVA: 0x00494EB0 File Offset: 0x004930B0
+		// Token: 0x0600C937 RID: 51511 RVA: 0x0049939C File Offset: 0x0049759C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -53,7 +53,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddPartyToGroup.PropExcludeTwitchActive, ref this.excludeTwitchActive);
 		}
 
-		// Token: 0x0600C7E0 RID: 51168 RVA: 0x00494F08 File Offset: 0x00493108
+		// Token: 0x0600C938 RID: 51512 RVA: 0x004993F4 File Offset: 0x004975F4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -66,35 +66,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040096A4 RID: 38564
+		// Token: 0x0400976A RID: 38762
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x040096A5 RID: 38565
+		// Token: 0x0400976B RID: 38763
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool twitchNegative = true;
 
-		// Token: 0x040096A6 RID: 38566
+		// Token: 0x0400976C RID: 38764
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool excludeTarget;
 
-		// Token: 0x040096A7 RID: 38567
+		// Token: 0x0400976D RID: 38765
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool excludeTwitchActive;
 
-		// Token: 0x040096A8 RID: 38568
+		// Token: 0x0400976E RID: 38766
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 
-		// Token: 0x040096A9 RID: 38569
+		// Token: 0x0400976F RID: 38767
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTwitchNegative = "twitch_negative";
 
-		// Token: 0x040096AA RID: 38570
+		// Token: 0x04009770 RID: 38768
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeTarget = "exclude_target";
 
-		// Token: 0x040096AB RID: 38571
+		// Token: 0x04009771 RID: 38769
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeTwitchActive = "exclude_twitch_active";
 	}

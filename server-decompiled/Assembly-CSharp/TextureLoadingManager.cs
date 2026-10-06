@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000C5D RID: 3165
+// Token: 0x02000C6F RID: 3183
 public class TextureLoadingManager : MonoBehaviour
 {
-	// Token: 0x06006047 RID: 24647 RVA: 0x00261F3E File Offset: 0x0026013E
+	// Token: 0x06006060 RID: 24672 RVA: 0x0026523A File Offset: 0x0026343A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		TextureLoadingManager.Instance = this;
 	}
 
-	// Token: 0x06006048 RID: 24648 RVA: 0x00261F48 File Offset: 0x00260148
+	// Token: 0x06006061 RID: 24673 RVA: 0x00265244 File Offset: 0x00263444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -38,14 +38,14 @@ public class TextureLoadingManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06006049 RID: 24649 RVA: 0x0026200E File Offset: 0x0026020E
+	// Token: 0x06006062 RID: 24674 RVA: 0x0026530A File Offset: 0x0026350A
 	public void Cleanup()
 	{
 		this.availableTextures.Clear();
 		this.runningRequests.Clear();
 	}
 
-	// Token: 0x0600604A RID: 24650 RVA: 0x00262028 File Offset: 0x00260228
+	// Token: 0x06006063 RID: 24675 RVA: 0x00265324 File Offset: 0x00263524
 	public void LoadTexture(Material _m, string _propName, string _assetPath, string _texName, Texture _lowResTexture)
 	{
 		if (!Application.isPlaying)
@@ -81,7 +81,7 @@ public class TextureLoadingManager : MonoBehaviour
 		textureInfo.refCounts++;
 	}
 
-	// Token: 0x0600604B RID: 24651 RVA: 0x0026210C File Offset: 0x0026030C
+	// Token: 0x06006064 RID: 24676 RVA: 0x00265408 File Offset: 0x00263608
 	public bool UnloadTexture(string _assetPath, string _texName)
 	{
 		string text = _assetPath + _texName;
@@ -99,61 +99,61 @@ public class TextureLoadingManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600604C RID: 24652 RVA: 0x00262162 File Offset: 0x00260362
+	// Token: 0x06006065 RID: 24677 RVA: 0x0026545E File Offset: 0x0026365E
 	public int GetHiResTextureCount()
 	{
 		return this.availableTextures.Count;
 	}
 
-	// Token: 0x04004B96 RID: 19350
+	// Token: 0x04004BD5 RID: 19413
 	public static TextureLoadingManager Instance;
 
-	// Token: 0x04004B97 RID: 19351
+	// Token: 0x04004BD6 RID: 19414
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<string, TextureLoadingManager.TextureInfo> availableTextures = new Dictionary<string, TextureLoadingManager.TextureInfo>();
 
-	// Token: 0x04004B98 RID: 19352
+	// Token: 0x04004BD7 RID: 19415
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<TextureLoadingManager.AsyncLoadInfo> runningRequests = new List<TextureLoadingManager.AsyncLoadInfo>();
 
-	// Token: 0x04004B99 RID: 19353
+	// Token: 0x04004BD8 RID: 19416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeChecked;
 
-	// Token: 0x02000C5E RID: 3166
+	// Token: 0x02000C70 RID: 3184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct AsyncLoadInfo
 	{
-		// Token: 0x04004B9A RID: 19354
+		// Token: 0x04004BD9 RID: 19417
 		public ResourceRequest resRequest;
 
-		// Token: 0x04004B9B RID: 19355
+		// Token: 0x04004BDA RID: 19418
 		public string propName;
 
-		// Token: 0x04004B9C RID: 19356
+		// Token: 0x04004BDB RID: 19419
 		public Material material;
 
-		// Token: 0x04004B9D RID: 19357
+		// Token: 0x04004BDC RID: 19420
 		public string fullPath;
 
-		// Token: 0x04004B9E RID: 19358
+		// Token: 0x04004BDD RID: 19421
 		public Texture lowResTexture;
 	}
 
-	// Token: 0x02000C5F RID: 3167
+	// Token: 0x02000C71 RID: 3185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class TextureInfo
 	{
-		// Token: 0x04004B9F RID: 19359
+		// Token: 0x04004BDE RID: 19422
 		public bool bPending;
 
-		// Token: 0x04004BA0 RID: 19360
+		// Token: 0x04004BDF RID: 19423
 		public int refCounts;
 
-		// Token: 0x04004BA1 RID: 19361
+		// Token: 0x04004BE0 RID: 19424
 		public Texture tex;
 	}
 }

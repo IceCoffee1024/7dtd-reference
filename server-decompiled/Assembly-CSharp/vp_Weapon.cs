@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001610 RID: 5648
+// Token: 0x0200162F RID: 5679
 public class vp_Weapon : vp_Component
 {
-	// Token: 0x170014C0 RID: 5312
-	// (get) Token: 0x0600B178 RID: 45432 RVA: 0x00423FC6 File Offset: 0x004221C6
-	// (set) Token: 0x0600B179 RID: 45433 RVA: 0x00423FD8 File Offset: 0x004221D8
+	// Token: 0x17001503 RID: 5379
+	// (get) Token: 0x0600B20A RID: 45578 RVA: 0x00427CA2 File Offset: 0x00425EA2
+	// (set) Token: 0x0600B20B RID: 45579 RVA: 0x00427CB4 File Offset: 0x00425EB4
 	public bool Wielded
 	{
 		get
@@ -19,8 +19,8 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x170014C1 RID: 5313
-	// (get) Token: 0x0600B17A RID: 45434 RVA: 0x00423FE1 File Offset: 0x004221E1
+	// Token: 0x17001504 RID: 5380
+	// (get) Token: 0x0600B20C RID: 45580 RVA: 0x00427CBD File Offset: 0x00425EBD
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -34,7 +34,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B17B RID: 45435 RVA: 0x00424018 File Offset: 0x00422218
+	// Token: 0x0600B20D RID: 45581 RVA: 0x00427CF4 File Offset: 0x00425EF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -54,7 +54,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B17C RID: 45436 RVA: 0x004240B9 File Offset: 0x004222B9
+	// Token: 0x0600B20E RID: 45582 RVA: 0x00427D95 File Offset: 0x00425F95
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -62,7 +62,7 @@ public class vp_Weapon : vp_Component
 		base.OnEnable();
 	}
 
-	// Token: 0x0600B17D RID: 45437 RVA: 0x004240C7 File Offset: 0x004222C7
+	// Token: 0x0600B20F RID: 45583 RVA: 0x00427DA3 File Offset: 0x00425FA3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -71,9 +71,9 @@ public class vp_Weapon : vp_Component
 		base.OnDisable();
 	}
 
-	// Token: 0x170014C2 RID: 5314
-	// (get) Token: 0x0600B17E RID: 45438 RVA: 0x004240DC File Offset: 0x004222DC
-	// (set) Token: 0x0600B17F RID: 45439 RVA: 0x004240E4 File Offset: 0x004222E4
+	// Token: 0x17001505 RID: 5381
+	// (get) Token: 0x0600B210 RID: 45584 RVA: 0x00427DB8 File Offset: 0x00425FB8
+	// (set) Token: 0x0600B211 RID: 45585 RVA: 0x00427DC0 File Offset: 0x00425FC0
 	public Vector3 RotationSpring2DefaultRotation
 	{
 		get
@@ -86,7 +86,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B180 RID: 45440 RVA: 0x004240F0 File Offset: 0x004222F0
+	// Token: 0x0600B212 RID: 45586 RVA: 0x00427DCC File Offset: 0x00425FCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -100,8 +100,8 @@ public class vp_Weapon : vp_Component
 		base.CacheRenderers();
 	}
 
-	// Token: 0x170014C3 RID: 5315
-	// (get) Token: 0x0600B181 RID: 45441 RVA: 0x0042415B File Offset: 0x0042235B
+	// Token: 0x17001506 RID: 5382
+	// (get) Token: 0x0600B213 RID: 45587 RVA: 0x00427E37 File Offset: 0x00426037
 	public Vector3 Recoil
 	{
 		get
@@ -110,7 +110,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B182 RID: 45442 RVA: 0x00424168 File Offset: 0x00422368
+	// Token: 0x0600B214 RID: 45588 RVA: 0x00427E44 File Offset: 0x00426044
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void FixedUpdate()
 	{
@@ -122,20 +122,20 @@ public class vp_Weapon : vp_Component
 		this.UpdateSprings();
 	}
 
-	// Token: 0x0600B183 RID: 45443 RVA: 0x00424183 File Offset: 0x00422383
+	// Token: 0x0600B215 RID: 45589 RVA: 0x00427E5F File Offset: 0x0042605F
 	public virtual void AddForce2(Vector3 positional, Vector3 angular)
 	{
 		this.m_PositionSpring2.AddForce(positional);
 		this.m_RotationSpring2.AddForce(angular);
 	}
 
-	// Token: 0x0600B184 RID: 45444 RVA: 0x0042419D File Offset: 0x0042239D
+	// Token: 0x0600B216 RID: 45590 RVA: 0x00427E79 File Offset: 0x00426079
 	public virtual void AddForce2(float xPos, float yPos, float zPos, float xRot, float yRot, float zRot)
 	{
 		this.AddForce2(new Vector3(xPos, yPos, zPos), new Vector3(xRot, yRot, zRot));
 	}
 
-	// Token: 0x0600B185 RID: 45445 RVA: 0x004241B8 File Offset: 0x004223B8
+	// Token: 0x0600B217 RID: 45591 RVA: 0x00427E94 File Offset: 0x00426094
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateSprings()
 	{
@@ -145,7 +145,7 @@ public class vp_Weapon : vp_Component
 		this.m_RotationSpring2.FixedUpdate();
 	}
 
-	// Token: 0x0600B186 RID: 45446 RVA: 0x004241F0 File Offset: 0x004223F0
+	// Token: 0x0600B218 RID: 45592 RVA: 0x00427ECC File Offset: 0x004260CC
 	public override void Refresh()
 	{
 		if (!Application.isPlaying)
@@ -166,7 +166,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B187 RID: 45447 RVA: 0x004242D2 File Offset: 0x004224D2
+	// Token: 0x0600B219 RID: 45593 RVA: 0x00427FAE File Offset: 0x004261AE
 	public override void Activate()
 	{
 		base.Activate();
@@ -174,7 +174,7 @@ public class vp_Weapon : vp_Component
 		base.Rendering = true;
 	}
 
-	// Token: 0x0600B188 RID: 45448 RVA: 0x004242E8 File Offset: 0x004224E8
+	// Token: 0x0600B21A RID: 45594 RVA: 0x00427FC4 File Offset: 0x004261C4
 	public virtual void SnapSprings()
 	{
 		if (this.m_PositionSpring2 != null)
@@ -191,7 +191,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B189 RID: 45449 RVA: 0x0042435F File Offset: 0x0042255F
+	// Token: 0x0600B21B RID: 45595 RVA: 0x0042803B File Offset: 0x0042623B
 	public virtual void StopSprings()
 	{
 		if (this.m_PositionSpring2 != null)
@@ -204,7 +204,7 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0600B18A RID: 45450 RVA: 0x00424389 File Offset: 0x00422589
+	// Token: 0x0600B21C RID: 45596 RVA: 0x00428065 File Offset: 0x00426265
 	public virtual void Wield(bool isWielding = true)
 	{
 		this.m_Wielded = isWielding;
@@ -212,7 +212,7 @@ public class vp_Weapon : vp_Component
 		base.StateManager.CombineStates();
 	}
 
-	// Token: 0x0600B18B RID: 45451 RVA: 0x004243A3 File Offset: 0x004225A3
+	// Token: 0x0600B21D RID: 45597 RVA: 0x0042807F File Offset: 0x0042627F
 	public virtual void RefreshWeaponModel()
 	{
 		if (this.Player == null)
@@ -222,7 +222,7 @@ public class vp_Weapon : vp_Component
 		vp_Value<bool> isFirstPerson = this.Player.IsFirstPerson;
 	}
 
-	// Token: 0x0600B18C RID: 45452 RVA: 0x004243C0 File Offset: 0x004225C0
+	// Token: 0x0600B21E RID: 45598 RVA: 0x0042809C File Offset: 0x0042629C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Activate3rdPersonModel(bool active = true)
 	{
@@ -246,7 +246,7 @@ public class vp_Weapon : vp_Component
 		}, this.m_Weapon3rdPersonModelWakeUpTimer);
 	}
 
-	// Token: 0x0600B18D RID: 45453 RVA: 0x0042442A File Offset: 0x0042262A
+	// Token: 0x0600B21F RID: 45599 RVA: 0x00428106 File Offset: 0x00426306
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Dead()
 	{
@@ -257,7 +257,7 @@ public class vp_Weapon : vp_Component
 		base.Rendering = false;
 	}
 
-	// Token: 0x0600B18E RID: 45454 RVA: 0x0042444B File Offset: 0x0042264B
+	// Token: 0x0600B220 RID: 45600 RVA: 0x00428127 File Offset: 0x00426327
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Dead()
 	{
@@ -268,8 +268,8 @@ public class vp_Weapon : vp_Component
 		base.Rendering = true;
 	}
 
-	// Token: 0x170014C4 RID: 5316
-	// (get) Token: 0x0600B18F RID: 45455 RVA: 0x0042446C File Offset: 0x0042266C
+	// Token: 0x17001507 RID: 5383
+	// (get) Token: 0x0600B221 RID: 45601 RVA: 0x00428148 File Offset: 0x00426348
 	public virtual Vector3 OnValue_AimDirection
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -279,92 +279,92 @@ public class vp_Weapon : vp_Component
 		}
 	}
 
-	// Token: 0x0400855E RID: 34142
+	// Token: 0x040085B4 RID: 34228
 	public GameObject Weapon3rdPersonModel;
 
-	// Token: 0x0400855F RID: 34143
+	// Token: 0x040085B5 RID: 34229
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameObject m_WeaponModel;
 
-	// Token: 0x04008560 RID: 34144
+	// Token: 0x040085B6 RID: 34230
 	public Vector3 PositionOffset = new Vector3(0.15f, -0.15f, -0.15f);
 
-	// Token: 0x04008561 RID: 34145
+	// Token: 0x040085B7 RID: 34231
 	public Vector3 AimingPositionOffset = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x04008562 RID: 34146
+	// Token: 0x040085B8 RID: 34232
 	public float PositionSpring2Stiffness = 0.95f;
 
-	// Token: 0x04008563 RID: 34147
+	// Token: 0x040085B9 RID: 34233
 	public float PositionSpring2Damping = 0.25f;
 
-	// Token: 0x04008564 RID: 34148
+	// Token: 0x040085BA RID: 34234
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Spring m_PositionSpring2;
 
-	// Token: 0x04008565 RID: 34149
+	// Token: 0x040085BB RID: 34235
 	public Vector3 RotationOffset = Vector3.zero;
 
-	// Token: 0x04008566 RID: 34150
+	// Token: 0x040085BC RID: 34236
 	public float RotationSpring2Stiffness = 0.95f;
 
-	// Token: 0x04008567 RID: 34151
+	// Token: 0x040085BD RID: 34237
 	public float RotationSpring2Damping = 0.25f;
 
-	// Token: 0x04008568 RID: 34152
+	// Token: 0x040085BE RID: 34238
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Spring m_RotationSpring2;
 
-	// Token: 0x04008569 RID: 34153
+	// Token: 0x040085BF RID: 34239
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Wielded = true;
 
-	// Token: 0x0400856A RID: 34154
+	// Token: 0x040085C0 RID: 34240
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Weapon3rdPersonModelWakeUpTimer = new vp_Timer.Handle();
 
-	// Token: 0x0400856B RID: 34155
+	// Token: 0x040085C1 RID: 34241
 	public int AnimationType = 1;
 
-	// Token: 0x0400856C RID: 34156
+	// Token: 0x040085C2 RID: 34242
 	public int AnimationGrip = 1;
 
-	// Token: 0x0400856D RID: 34157
+	// Token: 0x040085C3 RID: 34243
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x0400856E RID: 34158
+	// Token: 0x040085C4 RID: 34244
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_RotationSpring2DefaultRotation = Vector3.zero;
 
-	// Token: 0x02001611 RID: 5649
+	// Token: 0x02001630 RID: 5680
 	public new enum Type
 	{
-		// Token: 0x04008570 RID: 34160
+		// Token: 0x040085C6 RID: 34246
 		Custom,
-		// Token: 0x04008571 RID: 34161
+		// Token: 0x040085C7 RID: 34247
 		Firearm,
-		// Token: 0x04008572 RID: 34162
+		// Token: 0x040085C8 RID: 34248
 		Melee,
-		// Token: 0x04008573 RID: 34163
+		// Token: 0x040085C9 RID: 34249
 		Thrown
 	}
 
-	// Token: 0x02001612 RID: 5650
+	// Token: 0x02001631 RID: 5681
 	public enum Grip
 	{
-		// Token: 0x04008575 RID: 34165
+		// Token: 0x040085CB RID: 34251
 		Custom,
-		// Token: 0x04008576 RID: 34166
+		// Token: 0x040085CC RID: 34252
 		OneHanded,
-		// Token: 0x04008577 RID: 34167
+		// Token: 0x040085CD RID: 34253
 		TwoHanded
 	}
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x020013E9 RID: 5097
+// Token: 0x02001409 RID: 5129
 public interface IDataItemFormatter
 {
-	// Token: 0x06009FE9 RID: 40937
+	// Token: 0x0600A094 RID: 41108
 	string ToString(object _value);
 }

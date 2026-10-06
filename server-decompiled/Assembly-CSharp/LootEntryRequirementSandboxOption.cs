@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x0200062A RID: 1578
+// Token: 0x0200062C RID: 1580
 [Preserve]
 public class LootEntryRequirementSandboxOption : BaseOperationLootEntryRequirement
 {
-	// Token: 0x06003322 RID: 13090 RVA: 0x0014C698 File Offset: 0x0014A898
+	// Token: 0x06003365 RID: 13157 RVA: 0x0014D008 File Offset: 0x0014B208
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -17,7 +17,7 @@ public class LootEntryRequirementSandboxOption : BaseOperationLootEntryRequireme
 		e.ParseAttribute("value", ref this.value);
 	}
 
-	// Token: 0x06003323 RID: 13091 RVA: 0x0014C6E8 File Offset: 0x0014A8E8
+	// Token: 0x06003366 RID: 13158 RVA: 0x0014D058 File Offset: 0x0014B258
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float LeftSide(EntityPlayer player)
 	{
@@ -28,18 +28,18 @@ public class LootEntryRequirementSandboxOption : BaseOperationLootEntryRequireme
 		return 0f;
 	}
 
-	// Token: 0x06003324 RID: 13092 RVA: 0x0014C704 File Offset: 0x0014A904
+	// Token: 0x06003367 RID: 13159 RVA: 0x0014D074 File Offset: 0x0014B274
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float RightSide(EntityPlayer player)
 	{
 		return this.value;
 	}
 
-	// Token: 0x040028E1 RID: 10465
+	// Token: 0x040028DA RID: 10458
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public global::SandboxOptions.SandboxOptions option;
 
-	// Token: 0x040028E2 RID: 10466
+	// Token: 0x040028DB RID: 10459
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float value;
 }

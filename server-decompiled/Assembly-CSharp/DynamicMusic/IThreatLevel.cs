@@ -3,16 +3,16 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A86 RID: 6790
+	// Token: 0x02001AB2 RID: 6834
 	public interface IThreatLevel
 	{
-		// Token: 0x17001929 RID: 6441
-		// (get) Token: 0x0600CD02 RID: 52482
+		// Token: 0x170019CB RID: 6603
+		// (get) Token: 0x0600CE5A RID: 52826
 		ThreatLevelType Category { get; }
 
-		// Token: 0x1700192A RID: 6442
-		// (get) Token: 0x0600CD03 RID: 52483
-		// (set) Token: 0x0600CD04 RID: 52484
+		// Token: 0x170019CC RID: 6604
+		// (get) Token: 0x0600CE5B RID: 52827
+		// (set) Token: 0x0600CE5C RID: 52828
 		float Numeric { get; set; }
 	}
 }

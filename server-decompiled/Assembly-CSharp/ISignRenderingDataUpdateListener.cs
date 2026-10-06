@@ -1,8 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000A8F RID: 2703
+// Token: 0x02000A9E RID: 2718
 public interface ISignRenderingDataUpdateListener
 {
-	// Token: 0x060051B1 RID: 20913
+	// Token: 0x060051A5 RID: 20901
 	void HandleRenderingDataUpdate();
+
+	// Token: 0x060051A6 RID: 20902
+	void HandleSignDataRemoved();
 }

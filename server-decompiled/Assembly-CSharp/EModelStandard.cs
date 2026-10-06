@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000519 RID: 1305
+// Token: 0x0200051F RID: 1311
 [Preserve]
 public class EModelStandard : EModelBase
 {
-	// Token: 0x06002AF3 RID: 10995 RVA: 0x0010F94C File Offset: 0x0010DB4C
+	// Token: 0x06002AE8 RID: 10984 RVA: 0x00110210 File Offset: 0x0010E410
 	public override void PostInit()
 	{
 		base.PostInit();

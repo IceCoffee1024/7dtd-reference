@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D54 RID: 3412
+// Token: 0x02000D65 RID: 3429
 [Preserve]
 public class ItemActionEntryCombine : BaseItemActionEntry
 {
-	// Token: 0x060067F7 RID: 26615 RVA: 0x0028F6E0 File Offset: 0x0028D8E0
+	// Token: 0x060067FE RID: 26622 RVA: 0x00292C48 File Offset: 0x00290E48
 	public ItemActionEntryCombine(XUiController _controller)
 		: base(_controller, "xuiCombine", "ui_game_symbol_add", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x060067F8 RID: 26616 RVA: 0x0028F700 File Offset: 0x0028D900
+	// Token: 0x060067FF RID: 26623 RVA: 0x00292C68 File Offset: 0x00290E68
 	public override void RefreshEnabled()
 	{
 		XUi xui = base.ItemController.xui;
@@ -23,7 +23,7 @@ public class ItemActionEntryCombine : BaseItemActionEntry
 		base.Enabled = xui.CurrentCombineGrid.HasEmptySlot();
 	}
 
-	// Token: 0x060067F9 RID: 26617 RVA: 0x0028F73C File Offset: 0x0028D93C
+	// Token: 0x06006800 RID: 26624 RVA: 0x00292CA4 File Offset: 0x00290EA4
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;

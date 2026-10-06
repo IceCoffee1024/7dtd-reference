@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200192D RID: 6445
+	// Token: 0x02001959 RID: 6489
 	[Preserve]
 	public class RequirementHasBuffByTag : BaseRequirement
 	{
-		// Token: 0x0600C6F6 RID: 50934 RVA: 0x00490F64 File Offset: 0x0048F164
+		// Token: 0x0600C84E RID: 51278 RVA: 0x00495450 File Offset: 0x00493650
 		public override bool CanPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C6F7 RID: 50935 RVA: 0x00490F9E File Offset: 0x0048F19E
+		// Token: 0x0600C84F RID: 51279 RVA: 0x0049548A File Offset: 0x0049368A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -28,7 +28,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C6F8 RID: 50936 RVA: 0x00490FD4 File Offset: 0x0048F1D4
+		// Token: 0x0600C850 RID: 51280 RVA: 0x004954C0 File Offset: 0x004936C0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -39,11 +39,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040095E6 RID: 38374
+		// Token: 0x040096AC RID: 38572
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> buffTags = FastTags<TagGroup.Global>.none;
 
-		// Token: 0x040095E7 RID: 38375
+		// Token: 0x040096AD RID: 38573
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffTags = "buff_tags";
 	}

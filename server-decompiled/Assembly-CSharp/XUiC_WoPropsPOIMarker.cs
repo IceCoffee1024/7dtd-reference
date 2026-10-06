@@ -4,11 +4,11 @@ using PrefabVolumes;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B8 RID: 4280
+// Token: 0x020010C9 RID: 4297
 [Preserve]
 public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISelectionCategoryCallback
 {
-	// Token: 0x06008874 RID: 34932 RVA: 0x00341DB4 File Offset: 0x0033FFB4
+	// Token: 0x060088C2 RID: 35010 RVA: 0x00345B64 File Offset: 0x00343D64
 	public override void Init()
 	{
 		base.Init();
@@ -128,14 +128,14 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		}
 	}
 
-	// Token: 0x06008875 RID: 34933 RVA: 0x003421BC File Offset: 0x003403BC
+	// Token: 0x060088C3 RID: 35011 RVA: 0x00345F6C File Offset: 0x0034416C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCreateMarker_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.spawnNewMarker();
 	}
 
-	// Token: 0x06008876 RID: 34934 RVA: 0x003421C4 File Offset: 0x003403C4
+	// Token: 0x060088C4 RID: 35012 RVA: 0x00345F74 File Offset: 0x00344174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDeleteMarker_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -150,7 +150,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		PrefabVolumeManager.Instance.SelectionBoxDelete(PrefabVolumeAbs.EVolumeType.Marker, selectionBox, false);
 	}
 
-	// Token: 0x06008877 RID: 34935 RVA: 0x003421FC File Offset: 0x003403FC
+	// Token: 0x060088C5 RID: 35013 RVA: 0x00345FAC File Offset: 0x003441AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkerList_SelectionChanged(XUiC_List<XUiC_PrefabMarkerList.PrefabMarkerEntry> _list, XUiC_PrefabMarkerList.PrefabMarkerEntry _previousEntry, XUiC_PrefabMarkerList.PrefabMarkerEntry _newEntry)
 	{
@@ -174,7 +174,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		}
 	}
 
-	// Token: 0x06008878 RID: 34936 RVA: 0x00342278 File Offset: 0x00340478
+	// Token: 0x060088C6 RID: 35014 RVA: 0x00346028 File Offset: 0x00344228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool modifyCurrentMarker(Action<Marker> _modifyAction)
 	{
@@ -192,7 +192,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		return true;
 	}
 
-	// Token: 0x06008879 RID: 34937 RVA: 0x003422C4 File Offset: 0x003404C4
+	// Token: 0x060088C7 RID: 35015 RVA: 0x00346074 File Offset: 0x00344274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Tags_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -202,7 +202,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x0600887A RID: 34938 RVA: 0x003422F4 File Offset: 0x003404F4
+	// Token: 0x060088C8 RID: 35016 RVA: 0x003460A4 File Offset: 0x003442A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PartSpawnChance_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
@@ -212,7 +212,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x0600887B RID: 34939 RVA: 0x00342324 File Offset: 0x00340524
+	// Token: 0x060088C9 RID: 35017 RVA: 0x003460D4 File Offset: 0x003442D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Rotations_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
 	{
@@ -222,7 +222,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x0600887C RID: 34940 RVA: 0x00342354 File Offset: 0x00340554
+	// Token: 0x060088CA RID: 35018 RVA: 0x00346104 File Offset: 0x00344304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void txtPoiMarkerPartName_OnValueChanged(XUiController _sender, string _text, bool _validInput, bool _changeFromCode)
 	{
@@ -236,7 +236,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x0600887D RID: 34941 RVA: 0x0034238C File Offset: 0x0034058C
+	// Token: 0x060088CB RID: 35019 RVA: 0x0034613C File Offset: 0x0034433C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GroupName_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -255,7 +255,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		this.markerList.RefreshBindingsSelfAndChildren();
 	}
 
-	// Token: 0x0600887E RID: 34942 RVA: 0x003423D0 File Offset: 0x003405D0
+	// Token: 0x060088CC RID: 35020 RVA: 0x00346180 File Offset: 0x00344380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkerType_OnValueChanged(XUiController _sender, Marker.MarkerTypes _oldValue, Marker.MarkerTypes _newValue)
 	{
@@ -271,7 +271,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x0600887F RID: 34943 RVA: 0x00342400 File Offset: 0x00340600
+	// Token: 0x060088CD RID: 35021 RVA: 0x003461B0 File Offset: 0x003443B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkerSize_OnValueChanged(XUiController _sender, Marker.MarkerSize _oldValue, Marker.MarkerSize _newValue)
 	{
@@ -285,7 +285,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x06008880 RID: 34944 RVA: 0x00342438 File Offset: 0x00340638
+	// Token: 0x060088CE RID: 35022 RVA: 0x003461E8 File Offset: 0x003443E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool StartSize_ModifyVector(string _text, bool _changeFromCode, int _dimension, Vector3i _currentValue, out Vector3i _newValue)
 	{
@@ -316,7 +316,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		return true;
 	}
 
-	// Token: 0x06008881 RID: 34945 RVA: 0x003424B4 File Offset: 0x003406B4
+	// Token: 0x060088CF RID: 35023 RVA: 0x00346264 File Offset: 0x00344464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void modifyStartPos(string _text, bool _changeFromCode, int _dimension)
 	{
@@ -338,7 +338,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		PrefabVolumeManager.Instance.UpdatePropertiesServer(prefabInstance.id, num, marker2);
 	}
 
-	// Token: 0x06008882 RID: 34946 RVA: 0x00342514 File Offset: 0x00340714
+	// Token: 0x060088D0 RID: 35024 RVA: 0x003462C4 File Offset: 0x003444C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void modifySize(string _text, bool _changeFromCode, int _dimension)
 	{
@@ -365,14 +365,14 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		PrefabVolumeManager.Instance.UpdatePropertiesServer(prefabInstance.id, num, marker2);
 	}
 
-	// Token: 0x06008883 RID: 34947 RVA: 0x00342584 File Offset: 0x00340784
+	// Token: 0x060088D1 RID: 35025 RVA: 0x00346334 File Offset: 0x00344534
 	public override void Update(float _dt)
 	{
 		base.RefreshBindings();
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008884 RID: 34948 RVA: 0x00342594 File Offset: 0x00340794
+	// Token: 0x060088D2 RID: 35026 RVA: 0x00346344 File Offset: 0x00344544
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -394,7 +394,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		return true;
 	}
 
-	// Token: 0x06008885 RID: 34949 RVA: 0x0034263D File Offset: 0x0034083D
+	// Token: 0x060088D3 RID: 35027 RVA: 0x003463ED File Offset: 0x003445ED
 	public override void OnOpen()
 	{
 		this.ignoreSelectionChange = true;
@@ -404,7 +404,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008886 RID: 34950 RVA: 0x00342660 File Offset: 0x00340860
+	// Token: 0x060088D4 RID: 35028 RVA: 0x00346410 File Offset: 0x00344610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateValues()
 	{
@@ -535,7 +535,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		}
 	}
 
-	// Token: 0x06008887 RID: 34951 RVA: 0x0034290C File Offset: 0x00340B0C
+	// Token: 0x060088D5 RID: 35029 RVA: 0x003466BC File Offset: 0x003448BC
 	public void CheckSpecialKeys(Event _ev, PlayerActionsLocal _playerActions)
 	{
 		if ((_ev.modifiers & EventModifiers.Control) != EventModifiers.None && (_ev.modifiers & EventModifiers.Shift) != EventModifiers.None && _ev.keyCode == KeyCode.Return)
@@ -564,7 +564,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		}
 	}
 
-	// Token: 0x06008888 RID: 34952 RVA: 0x003429F0 File Offset: 0x00340BF0
+	// Token: 0x060088D6 RID: 35030 RVA: 0x003467A0 File Offset: 0x003449A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void spawnNewMarker()
 	{
@@ -578,7 +578,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		PrefabVolumeManager.Instance.AddVolumeServer(PrefabVolumeAbs.EVolumeType.Marker, vector3i2, vector3i);
 	}
 
-	// Token: 0x06008889 RID: 34953 RVA: 0x00342A55 File Offset: 0x00340C55
+	// Token: 0x060088D7 RID: 35031 RVA: 0x00346805 File Offset: 0x00344A05
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -592,7 +592,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		XUiC_WoPropsPOIMarker.Instance = null;
 	}
 
-	// Token: 0x0600888A RID: 34954 RVA: 0x00342A8C File Offset: 0x00340C8C
+	// Token: 0x060088D8 RID: 35032 RVA: 0x0034683C File Offset: 0x00344A3C
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		this.updateValues();
@@ -600,14 +600,14 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		return true;
 	}
 
-	// Token: 0x0600888B RID: 34955 RVA: 0x00342AA1 File Offset: 0x00340CA1
+	// Token: 0x060088D9 RID: 35033 RVA: 0x00346851 File Offset: 0x00344A51
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		PrefabVolumeManager.Instance.SelectionBoxMoved(PrefabVolumeAbs.EVolumeType.Marker, _box, _moveVector);
 		POIMarkerToolManager.UpdateAllColors();
 	}
 
-	// Token: 0x0600888C RID: 34956 RVA: 0x00342AB8 File Offset: 0x00340CB8
+	// Token: 0x060088DA RID: 35034 RVA: 0x00346868 File Offset: 0x00344A68
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		SelectionBox selectionBox;
@@ -631,31 +631,31 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		POIMarkerToolManager.UpdateAllColors();
 	}
 
-	// Token: 0x0600888D RID: 34957 RVA: 0x00342B13 File Offset: 0x00340D13
+	// Token: 0x060088DB RID: 35035 RVA: 0x003468C3 File Offset: 0x00344AC3
 	public void OnSelectionBoxMirrored(Vector3i _axis)
 	{
 		POIMarkerToolManager.UpdateAllColors();
 	}
 
-	// Token: 0x0600888E RID: 34958 RVA: 0x00342B1A File Offset: 0x00340D1A
+	// Token: 0x060088DC RID: 35036 RVA: 0x003468CA File Offset: 0x00344ACA
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		return PrefabVolumeManager.Instance.SelectionBoxDelete(PrefabVolumeAbs.EVolumeType.Marker, _box, _checkCanDeleteOnly);
 	}
 
-	// Token: 0x0600888F RID: 34959 RVA: 0x003376F1 File Offset: 0x003358F1
+	// Token: 0x060088DD RID: 35037 RVA: 0x0033B509 File Offset: 0x00339709
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanShowProperties || _criteria == EnumSelectionBoxAvailabilities.CanResize;
 	}
 
-	// Token: 0x06008890 RID: 34960 RVA: 0x00342B29 File Offset: 0x00340D29
+	// Token: 0x060088DE RID: 35038 RVA: 0x003468D9 File Offset: 0x00344AD9
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 		_windowManager.SwitchVisible(this.windowGroup, true);
 	}
 
-	// Token: 0x06008891 RID: 34961 RVA: 0x00342B38 File Offset: 0x00340D38
+	// Token: 0x060088DF RID: 35039 RVA: 0x003468E8 File Offset: 0x00344AE8
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 		this.modifyCurrentMarker(delegate(Marker _volumeCopy)
@@ -664,7 +664,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		});
 	}
 
-	// Token: 0x06008892 RID: 34962 RVA: 0x00342B60 File Offset: 0x00340D60
+	// Token: 0x060088E0 RID: 35040 RVA: 0x00346910 File Offset: 0x00344B10
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 		POIMarkerToolManager.RegisterPoiMarker(_box);
@@ -676,7 +676,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		this.updateValues();
 	}
 
-	// Token: 0x06008893 RID: 34963 RVA: 0x00342B94 File Offset: 0x00340D94
+	// Token: 0x060088E1 RID: 35041 RVA: 0x00346944 File Offset: 0x00344B44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePartSpawnerSize(SelectionBox _selBox)
 	{
@@ -719,13 +719,13 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		PrefabVolumeManager.Instance.UpdatePropertiesServer(prefabInstance.id, num, marker2);
 	}
 
-	// Token: 0x06008894 RID: 34964 RVA: 0x00342B13 File Offset: 0x00340D13
+	// Token: 0x060088E2 RID: 35042 RVA: 0x003468C3 File Offset: 0x00344AC3
 	public void OnSelectionCategoryVisibilityChanged(SelectionCategory _category, bool _visible)
 	{
 		POIMarkerToolManager.UpdateAllColors();
 	}
 
-	// Token: 0x06008895 RID: 34965 RVA: 0x00342C7F File Offset: 0x00340E7F
+	// Token: 0x060088E3 RID: 35043 RVA: 0x00346A2F File Offset: 0x00344C2F
 	public void OnSelectionCategoryBoxAdded(SelectionBox _box)
 	{
 		POIMarkerToolManager.RegisterPoiMarker(_box);
@@ -734,7 +734,7 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		this.ignoreSelectionChange = false;
 	}
 
-	// Token: 0x06008896 RID: 34966 RVA: 0x00342CA1 File Offset: 0x00340EA1
+	// Token: 0x060088E4 RID: 35044 RVA: 0x00346A51 File Offset: 0x00344C51
 	public void OnSelectionCategoryBoxRemoved(SelectionBox _box)
 	{
 		POIMarkerToolManager.UnRegisterPoiMarker(_box);
@@ -743,74 +743,74 @@ public class XUiC_WoPropsPOIMarker : XUiController, ISelectionBoxCallback, ISele
 		this.ignoreSelectionChange = false;
 	}
 
-	// Token: 0x06008897 RID: 34967 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060088E5 RID: 35045 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionCategoryCleared(SelectionCategory _category)
 	{
 	}
 
-	// Token: 0x040065AD RID: 26029
+	// Token: 0x040065EF RID: 26095
 	public static string ID = "";
 
-	// Token: 0x040065AE RID: 26030
+	// Token: 0x040065F0 RID: 26096
 	public static XUiC_WoPropsPOIMarker Instance;
 
-	// Token: 0x040065AF RID: 26031
+	// Token: 0x040065F1 RID: 26097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput startX;
 
-	// Token: 0x040065B0 RID: 26032
+	// Token: 0x040065F2 RID: 26098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput startY;
 
-	// Token: 0x040065B1 RID: 26033
+	// Token: 0x040065F3 RID: 26099
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput startZ;
 
-	// Token: 0x040065B2 RID: 26034
+	// Token: 0x040065F4 RID: 26100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput sizeX;
 
-	// Token: 0x040065B3 RID: 26035
+	// Token: 0x040065F5 RID: 26101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput sizeY;
 
-	// Token: 0x040065B4 RID: 26036
+	// Token: 0x040065F6 RID: 26102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput sizeZ;
 
-	// Token: 0x040065B5 RID: 26037
+	// Token: 0x040065F7 RID: 26103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput groupName;
 
-	// Token: 0x040065B6 RID: 26038
+	// Token: 0x040065F8 RID: 26104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput tags;
 
-	// Token: 0x040065B7 RID: 26039
+	// Token: 0x040065F9 RID: 26105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<Marker.MarkerSize> markerSize;
 
-	// Token: 0x040065B8 RID: 26040
+	// Token: 0x040065FA RID: 26106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<Marker.MarkerTypes> markerType;
 
-	// Token: 0x040065B9 RID: 26041
+	// Token: 0x040065FB RID: 26107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DropDown txtPoiMarkerPartName;
 
-	// Token: 0x040065BA RID: 26042
+	// Token: 0x040065FC RID: 26108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabMarkerList markerList;
 
-	// Token: 0x040065BB RID: 26043
+	// Token: 0x040065FD RID: 26109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt rotations;
 
-	// Token: 0x040065BC RID: 26044
+	// Token: 0x040065FE RID: 26110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat partSpawnChance;
 
-	// Token: 0x040065BD RID: 26045
+	// Token: 0x040065FF RID: 26111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ignoreSelectionChange;
 }

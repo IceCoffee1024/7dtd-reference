@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000837 RID: 2103
+// Token: 0x02000838 RID: 2104
 [Preserve]
 public class NetPackageQuestEntitySpawn : NetPackage
 {
-	// Token: 0x06003DB8 RID: 15800 RVA: 0x00186DD4 File Offset: 0x00184FD4
+	// Token: 0x06003D6E RID: 15726 RVA: 0x0018690C File Offset: 0x00184B0C
 	public NetPackageQuestEntitySpawn Setup(int _entityType, int _entityThatPlaced = -1)
 	{
 		this.entityType = _entityType;
@@ -14,7 +14,7 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DB9 RID: 15801 RVA: 0x00186DF0 File Offset: 0x00184FF0
+	// Token: 0x06003D6F RID: 15727 RVA: 0x00186928 File Offset: 0x00184B28
 	public NetPackageQuestEntitySpawn Setup(string _gamestageGroup, int _entityThatPlaced = -1)
 	{
 		this.entityType = -1;
@@ -23,7 +23,7 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DBA RID: 15802 RVA: 0x00186E08 File Offset: 0x00185008
+	// Token: 0x06003D70 RID: 15728 RVA: 0x00186940 File Offset: 0x00184B40
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityType = _reader.ReadInt32();
@@ -31,7 +31,7 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		this.entityIDQuestHolder = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003DBB RID: 15803 RVA: 0x00186E2E File Offset: 0x0018502E
+	// Token: 0x06003D71 RID: 15729 RVA: 0x00186966 File Offset: 0x00184B66
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -40,8 +40,8 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		_writer.Write(this.entityIDQuestHolder);
 	}
 
-	// Token: 0x17000673 RID: 1651
-	// (get) Token: 0x06003DBC RID: 15804 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000692 RID: 1682
+	// (get) Token: 0x06003D72 RID: 15730 RVA: 0x00020119 File Offset: 0x0001E319
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -50,7 +50,7 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		}
 	}
 
-	// Token: 0x06003DBD RID: 15805 RVA: 0x00186E5C File Offset: 0x0018505C
+	// Token: 0x06003D73 RID: 15731 RVA: 0x00186994 File Offset: 0x00184B94
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -66,25 +66,19 @@ public class NetPackageQuestEntitySpawn : NetPackage
 		QuestActionSpawnEnemy.SpawnQuestEntity(this.entityType, this.entityIDQuestHolder, null);
 	}
 
-	// Token: 0x06003DBE RID: 15806 RVA: 0x000B93F5 File Offset: 0x000B75F5
-	public override int GetLength()
-	{
-		return 20;
-	}
-
-	// Token: 0x040031EF RID: 12783
+	// Token: 0x040031D6 RID: 12758
 	public int entityType = -1;
 
-	// Token: 0x040031F0 RID: 12784
+	// Token: 0x040031D7 RID: 12759
 	public string gamestageGroup;
 
-	// Token: 0x040031F1 RID: 12785
+	// Token: 0x040031D8 RID: 12760
 	public ItemValue itemValue;
 
-	// Token: 0x040031F2 RID: 12786
+	// Token: 0x040031D9 RID: 12761
 	public int entityIDQuestHolder;
 
-	// Token: 0x040031F3 RID: 12787
+	// Token: 0x040031DA RID: 12762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int lastClassId = -1;
 }

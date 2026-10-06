@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B7 RID: 1975
+// Token: 0x020007BA RID: 1978
 [Preserve]
 public class NetPackageChat : NetPackage
 {
-	// Token: 0x06003AA2 RID: 15010 RVA: 0x0017C3D4 File Offset: 0x0017A5D4
+	// Token: 0x06003AD5 RID: 15061 RVA: 0x0017CA60 File Offset: 0x0017AC60
 	public NetPackageChat Setup(EChatType _chatType, int _senderEntityId, string _msg, List<int> _recipientEntityIds, EMessageSender _msgSender, GeneratedTextManager.BbCodeSupportMode _bbMode)
 	{
 		this.chatType = _chatType;
@@ -18,7 +18,7 @@ public class NetPackageChat : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AA3 RID: 15011 RVA: 0x0017C414 File Offset: 0x0017A614
+	// Token: 0x06003AD6 RID: 15062 RVA: 0x0017CAA0 File Offset: 0x0017ACA0
 	public override void read(PooledBinaryReader _br)
 	{
 		this.chatType = (EChatType)_br.ReadByte();
@@ -37,7 +37,7 @@ public class NetPackageChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003AA4 RID: 15012 RVA: 0x0017C490 File Offset: 0x0017A690
+	// Token: 0x06003AD7 RID: 15063 RVA: 0x0017CB1C File Offset: 0x0017AD1C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -56,7 +56,7 @@ public class NetPackageChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003AA5 RID: 15013 RVA: 0x0017C540 File Offset: 0x0017A740
+	// Token: 0x06003AD8 RID: 15064 RVA: 0x0017CBCC File Offset: 0x0017ADCC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -71,34 +71,27 @@ public class NetPackageChat : NetPackage
 		GameManager.Instance.ChatMessageClient(this.chatType, this.senderEntityId, this.msg, null, this.msgSender, this.bbMode);
 	}
 
-	// Token: 0x06003AA6 RID: 15014 RVA: 0x0017C5B8 File Offset: 0x0017A7B8
-	public override int GetLength()
-	{
-		int num = ((this.recipientEntityIds == null) ? 0 : this.recipientEntityIds.Count);
-		return 7 + this.msg.Length + 4 * num;
-	}
-
-	// Token: 0x04002FF0 RID: 12272
+	// Token: 0x04002FEA RID: 12266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EChatType chatType;
 
-	// Token: 0x04002FF1 RID: 12273
+	// Token: 0x04002FEB RID: 12267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderEntityId;
 
-	// Token: 0x04002FF2 RID: 12274
+	// Token: 0x04002FEC RID: 12268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string msg;
 
-	// Token: 0x04002FF3 RID: 12275
+	// Token: 0x04002FED RID: 12269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EMessageSender msgSender;
 
-	// Token: 0x04002FF4 RID: 12276
+	// Token: 0x04002FEE RID: 12270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GeneratedTextManager.BbCodeSupportMode bbMode;
 
-	// Token: 0x04002FF5 RID: 12277
+	// Token: 0x04002FEF RID: 12271
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> recipientEntityIds;
 }

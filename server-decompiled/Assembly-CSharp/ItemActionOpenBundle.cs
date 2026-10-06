@@ -5,17 +5,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005BA RID: 1466
+// Token: 0x020005BB RID: 1467
 [Preserve]
 public class ItemActionOpenBundle : ItemAction
 {
-	// Token: 0x06002FCB RID: 12235 RVA: 0x00132133 File Offset: 0x00130333
+	// Token: 0x0600300E RID: 12302 RVA: 0x00132BCB File Offset: 0x00130DCB
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionOpenBundle.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FCC RID: 12236 RVA: 0x0013213C File Offset: 0x0013033C
+	// Token: 0x0600300F RID: 12303 RVA: 0x00132BD4 File Offset: 0x00130DD4
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -86,14 +86,14 @@ public class ItemActionOpenBundle : ItemAction
 		this.UseAnimation = false;
 	}
 
-	// Token: 0x06002FCD RID: 12237 RVA: 0x00132391 File Offset: 0x00130591
+	// Token: 0x06003010 RID: 12304 RVA: 0x00132E29 File Offset: 0x00131029
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
 		((ItemActionOpenBundle.MyInventoryData)_data).bEatingStarted = false;
 	}
 
-	// Token: 0x06002FCE RID: 12238 RVA: 0x001323A8 File Offset: 0x001305A8
+	// Token: 0x06003011 RID: 12305 RVA: 0x00132E40 File Offset: 0x00131040
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionOpenBundle.MyInventoryData myInventoryData = (ItemActionOpenBundle.MyInventoryData)_actionData;
@@ -151,7 +151,7 @@ public class ItemActionOpenBundle : ItemAction
 		this.ExecuteInstantAction(myInventoryData.invData.holdingEntity, myInventoryData.invData.itemStack, true, null);
 	}
 
-	// Token: 0x06002FCF RID: 12239 RVA: 0x001325BC File Offset: 0x001307BC
+	// Token: 0x06003012 RID: 12306 RVA: 0x00133054 File Offset: 0x00131254
 	public override bool ExecuteInstantAction(EntityAlive ent, ItemStack stack, bool isHeldItem, XUiC_ItemStack stackController)
 	{
 		ent.MinEventContext.ItemValue = stack.itemValue;
@@ -174,7 +174,8 @@ public class ItemActionOpenBundle : ItemAction
 			}
 			else
 			{
-				stack.count--;
+				int count = stack.count;
+				stack.count = count - 1;
 			}
 		}
 		ent.MinEventContext.ItemValue = stack.itemValue;
@@ -311,41 +312,41 @@ public class ItemActionOpenBundle : ItemAction
 		return true;
 	}
 
-	// Token: 0x040024FE RID: 9470
+	// Token: 0x040024F7 RID: 9463
 	public new string[] CreateItem;
 
-	// Token: 0x040024FF RID: 9471
+	// Token: 0x040024F8 RID: 9464
 	public string[] CreateItemCount;
 
-	// Token: 0x04002500 RID: 9472
+	// Token: 0x040024F9 RID: 9465
 	public new bool Consume;
 
-	// Token: 0x04002501 RID: 9473
+	// Token: 0x040024FA RID: 9466
 	public HashSet<int> ConditionBlockTypes;
 
-	// Token: 0x04002502 RID: 9474
+	// Token: 0x040024FB RID: 9467
 	public bool UniqueRandomOnly;
 
-	// Token: 0x04002503 RID: 9475
+	// Token: 0x040024FC RID: 9468
 	public string[] RandomItem;
 
-	// Token: 0x04002504 RID: 9476
+	// Token: 0x040024FD RID: 9469
 	public string[] RandomItemCount;
 
-	// Token: 0x04002505 RID: 9477
+	// Token: 0x040024FE RID: 9470
 	public int RandomCount = 1;
 
-	// Token: 0x020005BB RID: 1467
+	// Token: 0x020005BC RID: 1468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002FD1 RID: 12241 RVA: 0x0012A704 File Offset: 0x00128904
+		// Token: 0x06003014 RID: 12308 RVA: 0x0012B224 File Offset: 0x00129424
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002506 RID: 9478
+		// Token: 0x040024FF RID: 9471
 		public bool bEatingStarted;
 	}
 }

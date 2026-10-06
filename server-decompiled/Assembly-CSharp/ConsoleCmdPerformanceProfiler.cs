@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000255 RID: 597
+// Token: 0x02000258 RID: 600
 [Preserve]
 public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 {
-	// Token: 0x060011C2 RID: 4546 RVA: 0x0006F861 File Offset: 0x0006DA61
+	// Token: 0x060011BF RID: 4543 RVA: 0x0006FB0D File Offset: 0x0006DD0D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "performanceprofiler", "pp" };
 	}
 
-	// Token: 0x060011C3 RID: 4547 RVA: 0x0006F879 File Offset: 0x0006DA79
+	// Token: 0x060011C0 RID: 4544 RVA: 0x0006FB25 File Offset: 0x0006DD25
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Performance Profiling Utility";
 	}
 
-	// Token: 0x060011C4 RID: 4548 RVA: 0x0006F880 File Offset: 0x0006DA80
+	// Token: 0x060011C1 RID: 4545 RVA: 0x0006FB2C File Offset: 0x0006DD2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Type 'pp' to toggle capture, or 'pp start [fps]' / 'pp stop'.";
 	}
 
-	// Token: 0x170001CE RID: 462
-	// (get) Token: 0x060011C5 RID: 4549 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001C6 RID: 454
+	// (get) Token: 0x060011C2 RID: 4546 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -38,8 +38,8 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001CF RID: 463
-	// (get) Token: 0x060011C6 RID: 4550 RVA: 0x00061652 File Offset: 0x0005F852
+	// Token: 0x170001C7 RID: 455
+	// (get) Token: 0x060011C3 RID: 4547 RVA: 0x00061642 File Offset: 0x0005F842
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -48,8 +48,8 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001D0 RID: 464
-	// (get) Token: 0x060011C7 RID: 4551 RVA: 0x00060397 File Offset: 0x0005E597
+	// Token: 0x170001C8 RID: 456
+	// (get) Token: 0x060011C4 RID: 4548 RVA: 0x00060387 File Offset: 0x0005E587
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -58,7 +58,7 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011C8 RID: 4552 RVA: 0x0006F888 File Offset: 0x0006DA88
+	// Token: 0x060011C5 RID: 4549 RVA: 0x0006FB34 File Offset: 0x0006DD34
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -80,7 +80,7 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		this.CmdStop();
 	}
 
-	// Token: 0x060011C9 RID: 4553 RVA: 0x0006F8FC File Offset: 0x0006DAFC
+	// Token: 0x060011C6 RID: 4550 RVA: 0x0006FBA8 File Offset: 0x0006DDA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Toggle()
 	{
@@ -94,7 +94,7 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		PerformanceProfiler.StartCapture(null, null, 30);
 	}
 
-	// Token: 0x060011CA RID: 4554 RVA: 0x0006F93C File Offset: 0x0006DB3C
+	// Token: 0x060011C7 RID: 4551 RVA: 0x0006FBE8 File Offset: 0x0006DDE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdStart(List<string> p)
 	{
@@ -109,7 +109,7 @@ public class ConsoleCmdPerformanceProfiler : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Capture started at {0} FPS target.", num));
 	}
 
-	// Token: 0x060011CB RID: 4555 RVA: 0x0006F9A1 File Offset: 0x0006DBA1
+	// Token: 0x060011C8 RID: 4552 RVA: 0x0006FC4D File Offset: 0x0006DE4D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CmdStop()
 	{

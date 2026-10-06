@@ -2,16 +2,16 @@
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D51 RID: 7505
+	// Token: 0x02001D83 RID: 7555
 	public enum MovementSweepState
 	{
-		// Token: 0x0400A7F4 RID: 42996
+		// Token: 0x0400A8CB RID: 43211
 		Initial,
-		// Token: 0x0400A7F5 RID: 42997
+		// Token: 0x0400A8CC RID: 43212
 		AfterFirstHit,
-		// Token: 0x0400A7F6 RID: 42998
+		// Token: 0x0400A8CD RID: 43213
 		FoundBlockingCrease,
-		// Token: 0x0400A7F7 RID: 42999
+		// Token: 0x0400A8CE RID: 43214
 		FoundBlockingCorner
 	}
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02001566 RID: 5478
+// Token: 0x02001588 RID: 5512
 public enum vp_TargetEventOptions
 {
-	// Token: 0x04007F21 RID: 32545
+	// Token: 0x04007FA4 RID: 32676
 	DontRequireReceiver = 1,
-	// Token: 0x04007F22 RID: 32546
+	// Token: 0x04007FA5 RID: 32677
 	RequireReceiver,
-	// Token: 0x04007F23 RID: 32547
+	// Token: 0x04007FA6 RID: 32678
 	IncludeInactive = 4
 }

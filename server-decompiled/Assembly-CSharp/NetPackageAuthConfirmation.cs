@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AC RID: 1964
+// Token: 0x020007AF RID: 1967
 [Preserve]
 public class NetPackageAuthConfirmation : NetPackage
 {
-	// Token: 0x17000608 RID: 1544
-	// (get) Token: 0x06003A66 RID: 14950 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700062D RID: 1581
+	// (get) Token: 0x06003AA1 RID: 15009 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool FlushQueue
 	{
 		get
@@ -15,8 +15,8 @@ public class NetPackageAuthConfirmation : NetPackage
 		}
 	}
 
-	// Token: 0x17000609 RID: 1545
-	// (get) Token: 0x06003A67 RID: 14951 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x1700062E RID: 1582
+	// (get) Token: 0x06003AA2 RID: 15010 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -25,24 +25,24 @@ public class NetPackageAuthConfirmation : NetPackage
 		}
 	}
 
-	// Token: 0x06003A68 RID: 14952 RVA: 0x0012A165 File Offset: 0x00128365
+	// Token: 0x06003AA3 RID: 15011 RVA: 0x0012AC85 File Offset: 0x00128E85
 	public NetPackageAuthConfirmation Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003A69 RID: 14953 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003AA4 RID: 15012 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _reader)
 	{
 	}
 
-	// Token: 0x06003A6A RID: 14954 RVA: 0x0017BC33 File Offset: 0x00179E33
+	// Token: 0x06003AA5 RID: 15013 RVA: 0x0017C2CF File Offset: 0x0017A4CF
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 	}
 
-	// Token: 0x06003A6B RID: 14955 RVA: 0x0017BC3C File Offset: 0x00179E3C
+	// Token: 0x06003AA6 RID: 15014 RVA: 0x0017C2D8 File Offset: 0x0017A4D8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -54,11 +54,5 @@ public class NetPackageAuthConfirmation : NetPackage
 		{
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageAuthConfirmation>().Setup(), false);
 		}
-	}
-
-	// Token: 0x06003A6C RID: 14956 RVA: 0x00131719 File Offset: 0x0012F919
-	public override int GetLength()
-	{
-		return 9;
 	}
 }

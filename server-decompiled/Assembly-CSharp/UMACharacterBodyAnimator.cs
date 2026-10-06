@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000DB RID: 219
+// Token: 0x020000DD RID: 221
 public class UMACharacterBodyAnimator : BodyAnimator
 {
-	// Token: 0x0600058C RID: 1420 RVA: 0x000277B0 File Offset: 0x000259B0
+	// Token: 0x06000592 RID: 1426 RVA: 0x000278A8 File Offset: 0x00025AA8
 	public UMACharacterBodyAnimator(EntityAlive _entity, AvatarCharacterController.AnimationStates _animStates, Transform _bodyTransform, BodyAnimator.EnumState _defaultState)
 	{
 		Transform transform = _bodyTransform.FindInChilds((_entity.emodel is EModelSDCS) ? "RightWeapon" : "Gunjoint", false);
@@ -15,7 +15,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		this.hitStates = _animStates.HitStates;
 	}
 
-	// Token: 0x0600058D RID: 1421 RVA: 0x00027810 File Offset: 0x00025A10
+	// Token: 0x06000593 RID: 1427 RVA: 0x00027908 File Offset: 0x00025B08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void assignLayerWeights()
 	{
@@ -51,7 +51,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x0600058E RID: 1422 RVA: 0x00027908 File Offset: 0x00025B08
+	// Token: 0x06000594 RID: 1428 RVA: 0x00027A00 File Offset: 0x00025C00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void cacheLayerStateInfo()
 	{
@@ -65,7 +65,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x0600058F RID: 1423 RVA: 0x00027951 File Offset: 0x00025B51
+	// Token: 0x06000595 RID: 1429 RVA: 0x00027A49 File Offset: 0x00025C49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override AnimatorStateInfo getCachedLayerStateInfo(int _layer)
 	{
@@ -80,7 +80,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		return base.getCachedLayerStateInfo(_layer);
 	}
 
-	// Token: 0x06000590 RID: 1424 RVA: 0x00027970 File Offset: 0x00025B70
+	// Token: 0x06000596 RID: 1430 RVA: 0x00027A68 File Offset: 0x00025C68
 	public override void SetDrunk(float _numBeers)
 	{
 		if (base.Animator && this.Entity.AttachedToEntity == null && this.avatarController != null)
@@ -89,7 +89,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x06000591 RID: 1425 RVA: 0x000279C0 File Offset: 0x00025BC0
+	// Token: 0x06000597 RID: 1431 RVA: 0x00027AB8 File Offset: 0x00025CB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateSpineRotation()
 	{
@@ -107,7 +107,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x06000592 RID: 1426 RVA: 0x00027AB7 File Offset: 0x00025CB7
+	// Token: 0x06000598 RID: 1432 RVA: 0x00027BAF File Offset: 0x00025DAF
 	public override void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 		base.StartDeathAnimation(_bodyPart, _movementState, random);
@@ -115,14 +115,14 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		this.didDeathTransition = false;
 	}
 
-	// Token: 0x06000593 RID: 1427 RVA: 0x00027AD0 File Offset: 0x00025CD0
+	// Token: 0x06000599 RID: 1433 RVA: 0x00027BC8 File Offset: 0x00025DC8
 	public override void Update()
 	{
 		base.Update();
 		this.updateSpineRotation();
 	}
 
-	// Token: 0x06000594 RID: 1428 RVA: 0x00027AE0 File Offset: 0x00025CE0
+	// Token: 0x0600059A RID: 1434 RVA: 0x00027BD8 File Offset: 0x00025DD8
 	public override void LateUpdate()
 	{
 		base.LateUpdate();
@@ -154,35 +154,35 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x040005C1 RID: 1473
+	// Token: 0x040005C4 RID: 1476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimatorStateInfo currentOverrideLayer;
 
-	// Token: 0x040005C2 RID: 1474
+	// Token: 0x040005C5 RID: 1477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimatorStateInfo twoHandedLayer;
 
-	// Token: 0x040005C3 RID: 1475
+	// Token: 0x040005C6 RID: 1478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimatorStateInfo painLayer;
 
-	// Token: 0x040005C4 RID: 1476
+	// Token: 0x040005C7 RID: 1479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> deathStates;
 
-	// Token: 0x040005C5 RID: 1477
+	// Token: 0x040005C8 RID: 1480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> hitStates;
 
-	// Token: 0x040005C6 RID: 1478
+	// Token: 0x040005C9 RID: 1481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInDeathAnim;
 
-	// Token: 0x040005C7 RID: 1479
+	// Token: 0x040005CA RID: 1482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool didDeathTransition;
 
-	// Token: 0x040005C8 RID: 1480
+	// Token: 0x040005CB RID: 1483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cYLookUpdateSpeed = 12f;
 }

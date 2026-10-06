@@ -4,16 +4,16 @@ using UnityEngine.Scripting;
 
 namespace Quests.Requirements
 {
-	// Token: 0x020018A6 RID: 6310
+	// Token: 0x020018D2 RID: 6354
 	[Preserve]
 	public class RequirementGroup : BaseRequirement
 	{
-		// Token: 0x170017F0 RID: 6128
-		// (get) Token: 0x0600C2CC RID: 49868 RVA: 0x00480943 File Offset: 0x0047EB43
-		// (set) Token: 0x0600C2CD RID: 49869 RVA: 0x0048094B File Offset: 0x0047EB4B
+		// Token: 0x17001892 RID: 6290
+		// (get) Token: 0x0600C424 RID: 50212 RVA: 0x00484E7F File Offset: 0x0048307F
+		// (set) Token: 0x0600C425 RID: 50213 RVA: 0x00484E87 File Offset: 0x00483087
 		public RequirementGroup.GroupOperator Operator { get; set; }
 
-		// Token: 0x0600C2CE RID: 49870 RVA: 0x00480954 File Offset: 0x0047EB54
+		// Token: 0x0600C426 RID: 50214 RVA: 0x00484E90 File Offset: 0x00483090
 		public override void SetupRequirement()
 		{
 			this.Operator = EnumUtils.Parse<RequirementGroup.GroupOperator>(base.Value, false);
@@ -36,7 +36,7 @@ namespace Quests.Requirements
 			}
 		}
 
-		// Token: 0x0600C2CF RID: 49871 RVA: 0x004809F8 File Offset: 0x0047EBF8
+		// Token: 0x0600C427 RID: 50215 RVA: 0x00484F34 File Offset: 0x00483134
 		public override bool CheckRequirement()
 		{
 			if (!base.OwnerQuest.Active)
@@ -62,7 +62,7 @@ namespace Quests.Requirements
 			return flag;
 		}
 
-		// Token: 0x0600C2D0 RID: 49872 RVA: 0x00480A64 File Offset: 0x0047EC64
+		// Token: 0x0600C428 RID: 50216 RVA: 0x00484FA0 File Offset: 0x004831A0
 		public override BaseRequirement Clone()
 		{
 			RequirementGroup requirementGroup = new RequirementGroup();
@@ -76,15 +76,15 @@ namespace Quests.Requirements
 			return requirementGroup;
 		}
 
-		// Token: 0x040093C6 RID: 37830
+		// Token: 0x0400948C RID: 38028
 		public List<BaseRequirement> ChildRequirements = new List<BaseRequirement>();
 
-		// Token: 0x020018A7 RID: 6311
+		// Token: 0x020018D3 RID: 6355
 		public enum GroupOperator
 		{
-			// Token: 0x040093C9 RID: 37833
+			// Token: 0x0400948F RID: 38031
 			AND,
-			// Token: 0x040093CA RID: 37834
+			// Token: 0x04009490 RID: 38032
 			OR
 		}
 	}

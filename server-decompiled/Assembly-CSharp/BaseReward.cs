@@ -1,27 +1,26 @@
 ﻿using System;
-using System.IO;
 
-// Token: 0x020009EC RID: 2540
+// Token: 0x020009F6 RID: 2550
 public abstract class BaseReward
 {
-	// Token: 0x17000809 RID: 2057
-	// (get) Token: 0x06004BC2 RID: 19394 RVA: 0x001D6AE2 File Offset: 0x001D4CE2
-	// (set) Token: 0x06004BC3 RID: 19395 RVA: 0x001D6AEA File Offset: 0x001D4CEA
+	// Token: 0x17000829 RID: 2089
+	// (get) Token: 0x06004B91 RID: 19345 RVA: 0x001D7D86 File Offset: 0x001D5F86
+	// (set) Token: 0x06004B92 RID: 19346 RVA: 0x001D7D8E File Offset: 0x001D5F8E
 	public string ID { get; set; }
 
-	// Token: 0x1700080A RID: 2058
-	// (get) Token: 0x06004BC4 RID: 19396 RVA: 0x001D6AF3 File Offset: 0x001D4CF3
-	// (set) Token: 0x06004BC5 RID: 19397 RVA: 0x001D6AFB File Offset: 0x001D4CFB
+	// Token: 0x1700082A RID: 2090
+	// (get) Token: 0x06004B93 RID: 19347 RVA: 0x001D7D97 File Offset: 0x001D5F97
+	// (set) Token: 0x06004B94 RID: 19348 RVA: 0x001D7D9F File Offset: 0x001D5F9F
 	public string Value { get; set; }
 
-	// Token: 0x1700080B RID: 2059
-	// (get) Token: 0x06004BC6 RID: 19398 RVA: 0x001D6B04 File Offset: 0x001D4D04
-	// (set) Token: 0x06004BC7 RID: 19399 RVA: 0x001D6B0C File Offset: 0x001D4D0C
+	// Token: 0x1700082B RID: 2091
+	// (get) Token: 0x06004B95 RID: 19349 RVA: 0x001D7DA8 File Offset: 0x001D5FA8
+	// (set) Token: 0x06004B96 RID: 19350 RVA: 0x001D7DB0 File Offset: 0x001D5FB0
 	public Quest OwnerQuest { get; set; }
 
-	// Token: 0x1700080C RID: 2060
-	// (get) Token: 0x06004BC8 RID: 19400 RVA: 0x001D6B15 File Offset: 0x001D4D15
-	// (set) Token: 0x06004BC9 RID: 19401 RVA: 0x001D6B32 File Offset: 0x001D4D32
+	// Token: 0x1700082C RID: 2092
+	// (get) Token: 0x06004B97 RID: 19351 RVA: 0x001D7DB9 File Offset: 0x001D5FB9
+	// (set) Token: 0x06004B98 RID: 19352 RVA: 0x001D7DD6 File Offset: 0x001D5FD6
 	public string Description
 	{
 		get
@@ -39,9 +38,9 @@ public abstract class BaseReward
 		}
 	}
 
-	// Token: 0x1700080D RID: 2061
-	// (get) Token: 0x06004BCA RID: 19402 RVA: 0x001D6B3B File Offset: 0x001D4D3B
-	// (set) Token: 0x06004BCB RID: 19403 RVA: 0x001D6B58 File Offset: 0x001D4D58
+	// Token: 0x1700082D RID: 2093
+	// (get) Token: 0x06004B99 RID: 19353 RVA: 0x001D7DDF File Offset: 0x001D5FDF
+	// (set) Token: 0x06004B9A RID: 19354 RVA: 0x001D7DFC File Offset: 0x001D5FFC
 	public string ValueText
 	{
 		get
@@ -59,9 +58,9 @@ public abstract class BaseReward
 		}
 	}
 
-	// Token: 0x1700080E RID: 2062
-	// (get) Token: 0x06004BCC RID: 19404 RVA: 0x001D6B61 File Offset: 0x001D4D61
-	// (set) Token: 0x06004BCD RID: 19405 RVA: 0x001D6B7E File Offset: 0x001D4D7E
+	// Token: 0x1700082E RID: 2094
+	// (get) Token: 0x06004B9B RID: 19355 RVA: 0x001D7E05 File Offset: 0x001D6005
+	// (set) Token: 0x06004B9C RID: 19356 RVA: 0x001D7E22 File Offset: 0x001D6022
 	public string Icon
 	{
 		get
@@ -79,47 +78,47 @@ public abstract class BaseReward
 		}
 	}
 
-	// Token: 0x1700080F RID: 2063
-	// (get) Token: 0x06004BCE RID: 19406 RVA: 0x001D6B87 File Offset: 0x001D4D87
-	// (set) Token: 0x06004BCF RID: 19407 RVA: 0x001D6B8F File Offset: 0x001D4D8F
+	// Token: 0x1700082F RID: 2095
+	// (get) Token: 0x06004B9D RID: 19357 RVA: 0x001D7E2B File Offset: 0x001D602B
+	// (set) Token: 0x06004B9E RID: 19358 RVA: 0x001D7E33 File Offset: 0x001D6033
 	public string IconAtlas { get; set; }
 
-	// Token: 0x17000810 RID: 2064
-	// (get) Token: 0x06004BD0 RID: 19408 RVA: 0x001D6B98 File Offset: 0x001D4D98
-	// (set) Token: 0x06004BD1 RID: 19409 RVA: 0x001D6BA0 File Offset: 0x001D4DA0
+	// Token: 0x17000830 RID: 2096
+	// (get) Token: 0x06004B9F RID: 19359 RVA: 0x001D7E3C File Offset: 0x001D603C
+	// (set) Token: 0x06004BA0 RID: 19360 RVA: 0x001D7E44 File Offset: 0x001D6044
 	public bool HiddenReward { get; set; }
 
-	// Token: 0x17000811 RID: 2065
-	// (get) Token: 0x06004BD2 RID: 19410 RVA: 0x001D6BA9 File Offset: 0x001D4DA9
-	// (set) Token: 0x06004BD3 RID: 19411 RVA: 0x001D6BB1 File Offset: 0x001D4DB1
+	// Token: 0x17000831 RID: 2097
+	// (get) Token: 0x06004BA1 RID: 19361 RVA: 0x001D7E4D File Offset: 0x001D604D
+	// (set) Token: 0x06004BA2 RID: 19362 RVA: 0x001D7E55 File Offset: 0x001D6055
 	public bool Optional { get; set; }
 
-	// Token: 0x17000812 RID: 2066
-	// (get) Token: 0x06004BD4 RID: 19412 RVA: 0x001D6BBA File Offset: 0x001D4DBA
-	// (set) Token: 0x06004BD5 RID: 19413 RVA: 0x001D6BC2 File Offset: 0x001D4DC2
+	// Token: 0x17000832 RID: 2098
+	// (get) Token: 0x06004BA3 RID: 19363 RVA: 0x001D7E5E File Offset: 0x001D605E
+	// (set) Token: 0x06004BA4 RID: 19364 RVA: 0x001D7E66 File Offset: 0x001D6066
 	public bool isChosenReward { get; set; }
 
-	// Token: 0x17000813 RID: 2067
-	// (get) Token: 0x06004BD6 RID: 19414 RVA: 0x001D6BCB File Offset: 0x001D4DCB
-	// (set) Token: 0x06004BD7 RID: 19415 RVA: 0x001D6BD3 File Offset: 0x001D4DD3
+	// Token: 0x17000833 RID: 2099
+	// (get) Token: 0x06004BA5 RID: 19365 RVA: 0x001D7E6F File Offset: 0x001D606F
+	// (set) Token: 0x06004BA6 RID: 19366 RVA: 0x001D7E77 File Offset: 0x001D6077
 	public bool isChainReward { get; set; }
 
-	// Token: 0x17000814 RID: 2068
-	// (get) Token: 0x06004BD8 RID: 19416 RVA: 0x001D6BDC File Offset: 0x001D4DDC
-	// (set) Token: 0x06004BD9 RID: 19417 RVA: 0x001D6BE4 File Offset: 0x001D4DE4
+	// Token: 0x17000834 RID: 2100
+	// (get) Token: 0x06004BA7 RID: 19367 RVA: 0x001D7E80 File Offset: 0x001D6080
+	// (set) Token: 0x06004BA8 RID: 19368 RVA: 0x001D7E88 File Offset: 0x001D6088
 	public bool isFixedLocation { get; set; }
 
-	// Token: 0x17000815 RID: 2069
-	// (get) Token: 0x06004BDA RID: 19418 RVA: 0x001D6BED File Offset: 0x001D4DED
-	// (set) Token: 0x06004BDB RID: 19419 RVA: 0x001D6BF5 File Offset: 0x001D4DF5
+	// Token: 0x17000835 RID: 2101
+	// (get) Token: 0x06004BA9 RID: 19369 RVA: 0x001D7E91 File Offset: 0x001D6091
+	// (set) Token: 0x06004BAA RID: 19370 RVA: 0x001D7E99 File Offset: 0x001D6099
 	public BaseReward.ReceiveStages ReceiveStage { get; set; }
 
-	// Token: 0x17000816 RID: 2070
-	// (get) Token: 0x06004BDC RID: 19420 RVA: 0x001D6BFE File Offset: 0x001D4DFE
-	// (set) Token: 0x06004BDD RID: 19421 RVA: 0x001D6C06 File Offset: 0x001D4E06
+	// Token: 0x17000836 RID: 2102
+	// (get) Token: 0x06004BAB RID: 19371 RVA: 0x001D7EA2 File Offset: 0x001D60A2
+	// (set) Token: 0x06004BAC RID: 19372 RVA: 0x001D7EAA File Offset: 0x001D60AA
 	public byte RewardIndex { get; set; }
 
-	// Token: 0x06004BDE RID: 19422 RVA: 0x001D6C10 File Offset: 0x001D4E10
+	// Token: 0x06004BAD RID: 19373 RVA: 0x001D7EB4 File Offset: 0x001D60B4
 	public BaseReward()
 	{
 		this.IconAtlas = "UIAtlas";
@@ -127,7 +126,7 @@ public abstract class BaseReward
 		this.isFixedLocation = false;
 	}
 
-	// Token: 0x06004BDF RID: 19423 RVA: 0x001D6C60 File Offset: 0x001D4E60
+	// Token: 0x06004BAE RID: 19374 RVA: 0x001D7F04 File Offset: 0x001D6104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void CopyValues(BaseReward reward)
 	{
@@ -142,59 +141,59 @@ public abstract class BaseReward
 		reward.RewardIndex = this.RewardIndex;
 	}
 
-	// Token: 0x06004BE0 RID: 19424 RVA: 0x001D6CD9 File Offset: 0x001D4ED9
+	// Token: 0x06004BAF RID: 19375 RVA: 0x001D7F7D File Offset: 0x001D617D
 	public virtual void HandleVariables()
 	{
 		this.ID = this.OwnerQuest.ParseVariable(this.ID);
 		this.Value = this.OwnerQuest.ParseVariable(this.Value);
 	}
 
-	// Token: 0x06004BE1 RID: 19425 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004BB0 RID: 19376 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetupReward()
 	{
 	}
 
-	// Token: 0x06004BE2 RID: 19426 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004BB1 RID: 19377 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void GiveReward(EntityPlayer player)
 	{
 	}
 
-	// Token: 0x06004BE3 RID: 19427 RVA: 0x001D6D09 File Offset: 0x001D4F09
+	// Token: 0x06004BB2 RID: 19378 RVA: 0x001D7FAD File Offset: 0x001D61AD
 	public void GiveReward()
 	{
 		this.GiveReward(this.OwnerQuest.OwnerJournal.OwnerPlayer);
 	}
 
-	// Token: 0x06004BE4 RID: 19428 RVA: 0x001D6D21 File Offset: 0x001D4F21
+	// Token: 0x06004BB3 RID: 19379 RVA: 0x001D7FC5 File Offset: 0x001D61C5
 	public virtual ItemStack GetRewardItem()
 	{
 		return ItemStack.Empty;
 	}
 
-	// Token: 0x06004BE5 RID: 19429 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
+	// Token: 0x06004BB4 RID: 19380 RVA: 0x000200DA File Offset: 0x0001E2DA
 	public virtual BaseReward Clone()
 	{
 		return null;
 	}
 
-	// Token: 0x06004BE6 RID: 19430 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004BB5 RID: 19381 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetupGlobalRewardSettings()
 	{
 	}
 
-	// Token: 0x06004BE7 RID: 19431 RVA: 0x001D6D28 File Offset: 0x001D4F28
-	public virtual void Read(BinaryReader _br)
+	// Token: 0x06004BB6 RID: 19382 RVA: 0x001D7FCC File Offset: 0x001D61CC
+	public virtual void Read(PooledBinaryReader _br)
 	{
 		this.RewardIndex = _br.ReadByte();
 	}
 
-	// Token: 0x06004BE8 RID: 19432 RVA: 0x001D6D36 File Offset: 0x001D4F36
-	public virtual void Write(BinaryWriter _bw)
+	// Token: 0x06004BB7 RID: 19383 RVA: 0x001D7FDA File Offset: 0x001D61DA
+	public virtual void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(this.RewardIndex);
 	}
 
-	// Token: 0x06004BE9 RID: 19433 RVA: 0x001D6D44 File Offset: 0x001D4F44
+	// Token: 0x06004BB8 RID: 19384 RVA: 0x001D7FE8 File Offset: 0x001D61E8
 	public virtual void ParseProperties(DynamicProperties properties)
 	{
 		if (properties.Values.ContainsKey(BaseReward.PropID))
@@ -259,81 +258,81 @@ public abstract class BaseReward
 		}
 	}
 
-	// Token: 0x06004BEA RID: 19434 RVA: 0x00032147 File Offset: 0x00030347
+	// Token: 0x06004BB9 RID: 19385 RVA: 0x0003223F File Offset: 0x0003043F
 	public virtual string GetRewardText()
 	{
 		return "";
 	}
 
-	// Token: 0x04003BA0 RID: 15264
+	// Token: 0x04003BAD RID: 15277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool displaySetup;
 
-	// Token: 0x04003BA1 RID: 15265
+	// Token: 0x04003BAE RID: 15278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string description = "";
 
-	// Token: 0x04003BA2 RID: 15266
+	// Token: 0x04003BAF RID: 15279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueText = "";
 
-	// Token: 0x04003BA3 RID: 15267
+	// Token: 0x04003BB0 RID: 15280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string icon = "";
 
-	// Token: 0x04003BAF RID: 15279
+	// Token: 0x04003BBC RID: 15292
 	public static string PropID = "id";
 
-	// Token: 0x04003BB0 RID: 15280
+	// Token: 0x04003BBD RID: 15293
 	public static string PropValue = "value";
 
-	// Token: 0x04003BB1 RID: 15281
+	// Token: 0x04003BBE RID: 15294
 	public static string PropOptional = "optional";
 
-	// Token: 0x04003BB2 RID: 15282
+	// Token: 0x04003BBF RID: 15295
 	public static string PropReceiveStage = "stage";
 
-	// Token: 0x04003BB3 RID: 15283
+	// Token: 0x04003BC0 RID: 15296
 	public static string PropHidden = "hidden";
 
-	// Token: 0x04003BB4 RID: 15284
+	// Token: 0x04003BC1 RID: 15297
 	public static string PropIsChosen = "ischosen";
 
-	// Token: 0x04003BB5 RID: 15285
+	// Token: 0x04003BC2 RID: 15298
 	public static string PropIsChain = "chainreward";
 
-	// Token: 0x04003BB6 RID: 15286
+	// Token: 0x04003BC3 RID: 15299
 	public static string PropIsFixed = "isfixed";
 
-	// Token: 0x020009ED RID: 2541
+	// Token: 0x020009F7 RID: 2551
 	public enum RewardTypes
 	{
-		// Token: 0x04003BB8 RID: 15288
+		// Token: 0x04003BC5 RID: 15301
 		Exp,
-		// Token: 0x04003BB9 RID: 15289
+		// Token: 0x04003BC6 RID: 15302
 		Item,
-		// Token: 0x04003BBA RID: 15290
+		// Token: 0x04003BC7 RID: 15303
 		Level,
-		// Token: 0x04003BBB RID: 15291
+		// Token: 0x04003BC8 RID: 15304
 		Quest,
-		// Token: 0x04003BBC RID: 15292
+		// Token: 0x04003BC9 RID: 15305
 		Recipe,
-		// Token: 0x04003BBD RID: 15293
+		// Token: 0x04003BCA RID: 15306
 		ShowTip,
-		// Token: 0x04003BBE RID: 15294
+		// Token: 0x04003BCB RID: 15307
 		Skill,
-		// Token: 0x04003BBF RID: 15295
+		// Token: 0x04003BCC RID: 15308
 		SkillPoints
 	}
 
-	// Token: 0x020009EE RID: 2542
+	// Token: 0x020009F8 RID: 2552
 	public enum ReceiveStages
 	{
-		// Token: 0x04003BC1 RID: 15297
+		// Token: 0x04003BCE RID: 15310
 		QuestStart,
-		// Token: 0x04003BC2 RID: 15298
+		// Token: 0x04003BCF RID: 15311
 		QuestCompletion,
-		// Token: 0x04003BC3 RID: 15299
+		// Token: 0x04003BD0 RID: 15312
 		AfterCompleteNotification
 	}
 }

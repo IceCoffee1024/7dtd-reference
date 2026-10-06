@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
 
-// Token: 0x02001126 RID: 4390
+// Token: 0x0200113E RID: 4414
 public class XUiM_InGameService : XUiModel
 {
-	// Token: 0x06008AC0 RID: 35520 RVA: 0x0034CDC0 File Offset: 0x0034AFC0
+	// Token: 0x06008B2C RID: 35628 RVA: 0x0035124C File Offset: 0x0034F44C
 	public static string GetServiceStats(XUi _xui, InGameService _service)
 	{
 		if (_service == null)
@@ -21,14 +21,14 @@ public class XUiM_InGameService : XUiModel
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06008AC1 RID: 35521 RVA: 0x00127EB2 File Offset: 0x001260B2
+	// Token: 0x06008B2D RID: 35629 RVA: 0x001289D2 File Offset: 0x00126BD2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string StringFormatHandler(string _title, object _value)
 	{
 		return string.Format("{0}: [REPLACE_COLOR]{1}[-]\n", _title, _value);
 	}
 
-	// Token: 0x06008AC2 RID: 35522 RVA: 0x0034CE57 File Offset: 0x0034B057
+	// Token: 0x06008B2E RID: 35630 RVA: 0x003512E3 File Offset: 0x0034F4E3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string StringFormatHandler(string _title, object _value, string _units)
 	{

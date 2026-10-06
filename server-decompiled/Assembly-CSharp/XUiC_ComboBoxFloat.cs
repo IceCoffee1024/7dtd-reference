@@ -2,28 +2,28 @@
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E7E RID: 3710
+// Token: 0x02000E8D RID: 3725
 [Preserve]
 public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 {
-	// Token: 0x17000D40 RID: 3392
-	// (get) Token: 0x060072EE RID: 29422 RVA: 0x002BC577 File Offset: 0x002BA777
-	// (set) Token: 0x060072EF RID: 29423 RVA: 0x002BC57F File Offset: 0x002BA77F
+	// Token: 0x17000D5B RID: 3419
+	// (get) Token: 0x060072E6 RID: 29414 RVA: 0x002BF927 File Offset: 0x002BDB27
+	// (set) Token: 0x060072E7 RID: 29415 RVA: 0x002BF92F File Offset: 0x002BDB2F
 	public override long ValueGeneric { get; set; }
 
-	// Token: 0x17000D41 RID: 3393
-	// (get) Token: 0x060072F0 RID: 29424 RVA: 0x002BC588 File Offset: 0x002BA788
-	// (set) Token: 0x060072F1 RID: 29425 RVA: 0x002BC590 File Offset: 0x002BA790
+	// Token: 0x17000D5C RID: 3420
+	// (get) Token: 0x060072E8 RID: 29416 RVA: 0x002BF938 File Offset: 0x002BDB38
+	// (set) Token: 0x060072E9 RID: 29417 RVA: 0x002BF940 File Offset: 0x002BDB40
 	public override long ValueMinGeneric { get; set; }
 
-	// Token: 0x17000D42 RID: 3394
-	// (get) Token: 0x060072F2 RID: 29426 RVA: 0x002BC599 File Offset: 0x002BA799
-	// (set) Token: 0x060072F3 RID: 29427 RVA: 0x002BC5A1 File Offset: 0x002BA7A1
+	// Token: 0x17000D5D RID: 3421
+	// (get) Token: 0x060072EA RID: 29418 RVA: 0x002BF949 File Offset: 0x002BDB49
+	// (set) Token: 0x060072EB RID: 29419 RVA: 0x002BF951 File Offset: 0x002BDB51
 	public override long ValueMaxGeneric { get; set; }
 
-	// Token: 0x17000D43 RID: 3395
-	// (get) Token: 0x060072F4 RID: 29428 RVA: 0x002BC5AA File Offset: 0x002BA7AA
-	// (set) Token: 0x060072F5 RID: 29429 RVA: 0x002BC5C7 File Offset: 0x002BA7C7
+	// Token: 0x17000D5E RID: 3422
+	// (get) Token: 0x060072EC RID: 29420 RVA: 0x002BF95A File Offset: 0x002BDB5A
+	// (set) Token: 0x060072ED RID: 29421 RVA: 0x002BF977 File Offset: 0x002BDB77
 	public override double RelativeValue
 	{
 		get
@@ -36,14 +36,14 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		}
 	}
 
-	// Token: 0x060072F6 RID: 29430 RVA: 0x002BC5E5 File Offset: 0x002BA7E5
+	// Token: 0x060072EE RID: 29422 RVA: 0x002BF995 File Offset: 0x002BDB95
 	public XUiC_ComboBoxFloat()
 	{
 		this.Max = 1.0;
 		this.Min = 0.0;
 	}
 
-	// Token: 0x060072F7 RID: 29431 RVA: 0x002BC61A File Offset: 0x002BA81A
+	// Token: 0x060072EF RID: 29423 RVA: 0x002BF9CA File Offset: 0x002BDBCA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void BackPressed()
 	{
@@ -51,7 +51,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		base.BackPressed();
 	}
 
-	// Token: 0x060072F8 RID: 29432 RVA: 0x002BC635 File Offset: 0x002BA835
+	// Token: 0x060072F0 RID: 29424 RVA: 0x002BF9E5 File Offset: 0x002BDBE5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ForwardPressed()
 	{
@@ -59,7 +59,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		base.ForwardPressed();
 	}
 
-	// Token: 0x060072F9 RID: 29433 RVA: 0x002BC650 File Offset: 0x002BA850
+	// Token: 0x060072F1 RID: 29425 RVA: 0x002BFA00 File Offset: 0x002BDC00
 	[XuiXmlAttribute("value_min", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueMin(string _value)
@@ -70,7 +70,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		}
 	}
 
-	// Token: 0x060072FA RID: 29434 RVA: 0x002BC672 File Offset: 0x002BA872
+	// Token: 0x060072F2 RID: 29426 RVA: 0x002BFA22 File Offset: 0x002BDC22
 	[XuiXmlAttribute("value_max", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueMax(string _value)
@@ -81,7 +81,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		}
 	}
 
-	// Token: 0x060072FB RID: 29435 RVA: 0x002BC694 File Offset: 0x002BA894
+	// Token: 0x060072F3 RID: 29427 RVA: 0x002BFA44 File Offset: 0x002BDC44
 	[XuiXmlAttribute("value_increment", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueIncrement(string _value)
@@ -92,7 +92,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		}
 	}
 
-	// Token: 0x060072FC RID: 29436 RVA: 0x002BC6B8 File Offset: 0x002BA8B8
+	// Token: 0x060072F4 RID: 29428 RVA: 0x002BFA68 File Offset: 0x002BDC68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void incrementalChangeValue(double _value)
 	{
@@ -119,7 +119,7 @@ public class XUiC_ComboBoxFloat : XUiC_ComboBoxOrdinal<double>
 		base.TriggerValueChangedEvent(value);
 	}
 
-	// Token: 0x0400561A RID: 22042
+	// Token: 0x04005651 RID: 22097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double incrementSize = 1.0;
 }

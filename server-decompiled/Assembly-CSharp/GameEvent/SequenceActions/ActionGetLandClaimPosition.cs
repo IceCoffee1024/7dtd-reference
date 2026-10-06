@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001988 RID: 6536
+	// Token: 0x020019B4 RID: 6580
 	[Preserve]
 	public class ActionGetLandClaimPosition : BaseAction
 	{
-		// Token: 0x0600C897 RID: 51351 RVA: 0x0049ABA8 File Offset: 0x00498DA8
+		// Token: 0x0600C9EF RID: 51695 RVA: 0x0049F06C File Offset: 0x0049D26C
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			World world = GameManager.Instance.World;
@@ -38,7 +38,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C898 RID: 51352 RVA: 0x0049AC73 File Offset: 0x00498E73
+		// Token: 0x0600C9F0 RID: 51696 RVA: 0x0049F137 File Offset: 0x0049D337
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

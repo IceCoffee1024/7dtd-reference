@@ -6,11 +6,11 @@ using Assets.DuckType.Jiggle;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000D4 RID: 212
+// Token: 0x020000D6 RID: 214
 [Preserve]
 public class AvatarZombieController : AvatarHumanController
 {
-	// Token: 0x0600053C RID: 1340 RVA: 0x00024758 File Offset: 0x00022958
+	// Token: 0x06000542 RID: 1346 RVA: 0x00024850 File Offset: 0x00022A50
 	public override void SetInRightHand(Transform _transform)
 	{
 		this.idleTime = 0f;
@@ -30,7 +30,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600053D RID: 1341 RVA: 0x00024804 File Offset: 0x00022A04
+	// Token: 0x06000543 RID: 1347 RVA: 0x000248FC File Offset: 0x00022AFC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -101,7 +101,7 @@ public class AvatarZombieController : AvatarHumanController
 		this._setBool(AvatarController.isClimbingHash, false, true);
 	}
 
-	// Token: 0x0600053E RID: 1342 RVA: 0x00024A3C File Offset: 0x00022C3C
+	// Token: 0x06000544 RID: 1348 RVA: 0x00024B34 File Offset: 0x00022D34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void LateUpdate()
 	{
@@ -159,7 +159,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600053F RID: 1343 RVA: 0x00024C1C File Offset: 0x00022E1C
+	// Token: 0x06000545 RID: 1349 RVA: 0x00024D14 File Offset: 0x00022F14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLayerStateInfo()
 	{
@@ -172,7 +172,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000540 RID: 1344 RVA: 0x00024C80 File Offset: 0x00022E80
+	// Token: 0x06000546 RID: 1350 RVA: 0x00024D78 File Offset: 0x00022F78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLayerWeights()
 	{
@@ -181,7 +181,7 @@ public class AvatarZombieController : AvatarHumanController
 		this.anim.SetLayerWeight(2, (float)((this.isSuppressPain || this.entity.bodyDamage.CurrentStun != EnumEntityStunType.None) ? 0 : 1));
 	}
 
-	// Token: 0x06000541 RID: 1345 RVA: 0x0001C851 File Offset: 0x0001AA51
+	// Token: 0x06000547 RID: 1351 RVA: 0x0001C949 File Offset: 0x0001AB49
 	public override void ResetAnimations()
 	{
 		base.ResetAnimations();
@@ -189,12 +189,12 @@ public class AvatarZombieController : AvatarHumanController
 		this.anim.Play("None", 2, 0f);
 	}
 
-	// Token: 0x06000542 RID: 1346 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000548 RID: 1352 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetMeleeAttackSpeed(float _speed)
 	{
 	}
 
-	// Token: 0x06000543 RID: 1347 RVA: 0x00024CFC File Offset: 0x00022EFC
+	// Token: 0x06000549 RID: 1353 RVA: 0x00024DF4 File Offset: 0x00022FF4
 	public override AvatarController.ActionState GetActionState()
 	{
 		if (this.attackPlayingTime > 0f || this.overrideStateInfo.tagHash == AvatarController.attackHash)
@@ -217,13 +217,13 @@ public class AvatarZombieController : AvatarHumanController
 		return AvatarController.ActionState.None;
 	}
 
-	// Token: 0x06000544 RID: 1348 RVA: 0x0001B8A8 File Offset: 0x00019AA8
+	// Token: 0x0600054A RID: 1354 RVA: 0x0001B9A0 File Offset: 0x00019BA0
 	public override bool IsActionActive()
 	{
 		return this.GetActionState() > AvatarController.ActionState.None;
 	}
 
-	// Token: 0x06000545 RID: 1349 RVA: 0x00024D62 File Offset: 0x00022F62
+	// Token: 0x0600054B RID: 1355 RVA: 0x00024E5A File Offset: 0x0002305A
 	public override void StartAction(int _animType)
 	{
 		if (_animType < 3000)
@@ -237,13 +237,13 @@ public class AvatarZombieController : AvatarHumanController
 		this.actionTimeActive = 0.2f;
 	}
 
-	// Token: 0x06000546 RID: 1350 RVA: 0x00024DA2 File Offset: 0x00022FA2
+	// Token: 0x0600054C RID: 1356 RVA: 0x00024E9A File Offset: 0x0002309A
 	public override bool IsAnimationAttackPlaying()
 	{
 		return this.attackPlayingTime > 0f || this.overrideStateInfo.tagHash == AvatarController.attackHash || this.fullBodyStateInfo.tagHash == AvatarController.attackHash;
 	}
 
-	// Token: 0x06000547 RID: 1351 RVA: 0x00024DD8 File Offset: 0x00022FD8
+	// Token: 0x0600054D RID: 1357 RVA: 0x00024ED0 File Offset: 0x000230D0
 	public override void StartAnimationAttack()
 	{
 		if (!this.bipedT.gameObject.activeInHierarchy)
@@ -297,7 +297,7 @@ public class AvatarZombieController : AvatarHumanController
 		this._setTrigger(AvatarController.attackTriggerHash, true);
 	}
 
-	// Token: 0x06000548 RID: 1352 RVA: 0x00024EDF File Offset: 0x000230DF
+	// Token: 0x0600054E RID: 1358 RVA: 0x00024FD7 File Offset: 0x000231D7
 	public override void SetAttackImpact()
 	{
 		if (!this.isAttackImpact)
@@ -307,13 +307,13 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000549 RID: 1353 RVA: 0x00024EFB File Offset: 0x000230FB
+	// Token: 0x0600054F RID: 1359 RVA: 0x00024FF3 File Offset: 0x000231F3
 	public override bool IsAttackImpact()
 	{
 		return this.isAttackImpact;
 	}
 
-	// Token: 0x0600054A RID: 1354 RVA: 0x00024F04 File Offset: 0x00023104
+	// Token: 0x06000550 RID: 1360 RVA: 0x00024FFC File Offset: 0x000231FC
 	public override bool IsAnimationHitRunning()
 	{
 		if (this.hitWeight == 0f)
@@ -324,24 +324,24 @@ public class AvatarZombieController : AvatarHumanController
 		return tagHash == AvatarController.hitStartHash || (tagHash == AvatarController.hitHash && this.hitStateInfo.normalizedTime < 0.55f) || this.anim.IsInTransition(3);
 	}
 
-	// Token: 0x0600054B RID: 1355 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000551 RID: 1361 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsAnimationSpecialAttackPlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x0600054C RID: 1356 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000552 RID: 1362 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void StartAnimationSpecialAttack(bool _b, int _animType)
 	{
 	}
 
-	// Token: 0x0600054D RID: 1357 RVA: 0x00024F5C File Offset: 0x0002315C
+	// Token: 0x06000553 RID: 1363 RVA: 0x00025054 File Offset: 0x00023254
 	public override bool IsAnimationSpecialAttack2Playing()
 	{
 		return this.timeSpecialAttack2Playing > 0f;
 	}
 
-	// Token: 0x0600054E RID: 1358 RVA: 0x00024F6B File Offset: 0x0002316B
+	// Token: 0x06000554 RID: 1364 RVA: 0x00025063 File Offset: 0x00023263
 	public override void StartAnimationSpecialAttack2()
 	{
 		this.idleTime = 0f;
@@ -349,13 +349,13 @@ public class AvatarZombieController : AvatarHumanController
 		this._setTrigger(AvatarController.specialAttack2Hash, true);
 	}
 
-	// Token: 0x0600054F RID: 1359 RVA: 0x00024F8F File Offset: 0x0002318F
+	// Token: 0x06000555 RID: 1365 RVA: 0x00025087 File Offset: 0x00023287
 	public override bool IsAnimationRagingPlaying()
 	{
 		return this.timeRagePlaying > 0f;
 	}
 
-	// Token: 0x06000550 RID: 1360 RVA: 0x00024F9E File Offset: 0x0002319E
+	// Token: 0x06000556 RID: 1366 RVA: 0x00025096 File Offset: 0x00023296
 	public override void StartAnimationRaging()
 	{
 		this.idleTime = 0f;
@@ -363,27 +363,27 @@ public class AvatarZombieController : AvatarHumanController
 		this.timeRagePlaying = 0.3f;
 	}
 
-	// Token: 0x06000551 RID: 1361 RVA: 0x00024FC2 File Offset: 0x000231C2
+	// Token: 0x06000557 RID: 1367 RVA: 0x000250BA File Offset: 0x000232BA
 	public override void StartAnimationElectrocute(float _duration)
 	{
 		base.StartAnimationElectrocute(_duration);
 		this.idleTime = 0f;
 	}
 
-	// Token: 0x06000552 RID: 1362 RVA: 0x0001CB67 File Offset: 0x0001AD67
+	// Token: 0x06000558 RID: 1368 RVA: 0x0001CC5F File Offset: 0x0001AE5F
 	public override bool IsAnimationDigRunning()
 	{
 		return AvatarController.digHash == this.baseStateInfo.tagHash;
 	}
 
-	// Token: 0x06000553 RID: 1363 RVA: 0x0001CBCD File Offset: 0x0001ADCD
+	// Token: 0x06000559 RID: 1369 RVA: 0x0001CCC5 File Offset: 0x0001AEC5
 	public override void StartAnimationDodge(float _blend)
 	{
 		this._setFloat(AvatarController.dodgeBlendHash, _blend, true);
 		this._setBool(AvatarController.dodgeTriggerHash, true, true);
 	}
 
-	// Token: 0x06000554 RID: 1364 RVA: 0x00024FD8 File Offset: 0x000231D8
+	// Token: 0x0600055A RID: 1370 RVA: 0x000250D0 File Offset: 0x000232D0
 	public override void StartAnimationJumping()
 	{
 		this.idleTime = 0f;
@@ -397,7 +397,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000555 RID: 1365 RVA: 0x0002502C File Offset: 0x0002322C
+	// Token: 0x0600055B RID: 1371 RVA: 0x00025124 File Offset: 0x00023324
 	public override void StartAnimationJump(AnimJumpMode jumpMode)
 	{
 		this.idleTime = 0f;
@@ -418,20 +418,20 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000556 RID: 1366 RVA: 0x000250A3 File Offset: 0x000232A3
+	// Token: 0x0600055C RID: 1372 RVA: 0x0002519B File Offset: 0x0002339B
 	public override bool IsAnimationJumpRunning()
 	{
 		return this.isJumpStarted || AvatarController.jumpHash == this.baseStateInfo.tagHash;
 	}
 
-	// Token: 0x06000557 RID: 1367 RVA: 0x000250C4 File Offset: 0x000232C4
+	// Token: 0x0600055D RID: 1373 RVA: 0x000251BC File Offset: 0x000233BC
 	public override bool IsAnimationWithMotionRunning()
 	{
 		int tagHash = this.baseStateInfo.tagHash;
 		return tagHash == AvatarController.jumpHash || tagHash == AvatarController.moveHash;
 	}
 
-	// Token: 0x06000558 RID: 1368 RVA: 0x000250F0 File Offset: 0x000232F0
+	// Token: 0x0600055E RID: 1374 RVA: 0x000251E8 File Offset: 0x000233E8
 	public override void SetSwim(bool _enable)
 	{
 		int num = -1;
@@ -446,7 +446,7 @@ public class AvatarZombieController : AvatarHumanController
 		this.SetWalkType(num, true);
 	}
 
-	// Token: 0x06000559 RID: 1369 RVA: 0x00025134 File Offset: 0x00023334
+	// Token: 0x0600055F RID: 1375 RVA: 0x0002522C File Offset: 0x0002342C
 	public override void BeginStun(EnumEntityStunType stun, EnumBodyPartHit _bodyPart, Utils.EnumHitDirection _hitDirection, bool _criticalHit, float random)
 	{
 		this._setInt(AvatarController.stunTypeHash, (int)stun, true);
@@ -457,19 +457,19 @@ public class AvatarZombieController : AvatarHumanController
 		this._resetTrigger(AvatarController.endStunTriggerHash, true);
 	}
 
-	// Token: 0x0600055A RID: 1370 RVA: 0x0001CDCC File Offset: 0x0001AFCC
+	// Token: 0x06000560 RID: 1376 RVA: 0x0001CEC4 File Offset: 0x0001B0C4
 	public override void EndStun()
 	{
 		this._setTrigger(AvatarController.endStunTriggerHash, true);
 	}
 
-	// Token: 0x0600055B RID: 1371 RVA: 0x0001CDDA File Offset: 0x0001AFDA
+	// Token: 0x06000561 RID: 1377 RVA: 0x0001CED2 File Offset: 0x0001B0D2
 	public override bool IsAnimationStunRunning()
 	{
 		return this.baseStateInfo.tagHash == AvatarController.stunHash;
 	}
 
-	// Token: 0x0600055C RID: 1372 RVA: 0x00025198 File Offset: 0x00023398
+	// Token: 0x06000562 RID: 1378 RVA: 0x00025290 File Offset: 0x00023490
 	public override void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 		this.idleTime = 0f;
@@ -498,7 +498,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600055D RID: 1373 RVA: 0x0002527F File Offset: 0x0002347F
+	// Token: 0x06000563 RID: 1379 RVA: 0x00025377 File Offset: 0x00023577
 	public override void StartEating()
 	{
 		if (!this.isEating)
@@ -509,7 +509,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600055E RID: 1374 RVA: 0x000252A9 File Offset: 0x000234A9
+	// Token: 0x06000564 RID: 1380 RVA: 0x000253A1 File Offset: 0x000235A1
 	public override void StopEating()
 	{
 		if (this.isEating)
@@ -520,7 +520,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600055F RID: 1375 RVA: 0x000252D3 File Offset: 0x000234D3
+	// Token: 0x06000565 RID: 1381 RVA: 0x000253CB File Offset: 0x000235CB
 	public override void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float _random, float _duration)
 	{
 		if (!this.isCrawler || Time.time - this.crawlerTime > 2f)
@@ -529,7 +529,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000560 RID: 1376 RVA: 0x00025304 File Offset: 0x00023504
+	// Token: 0x06000566 RID: 1382 RVA: 0x000253FC File Offset: 0x000235FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InternalStartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float random, float _duration)
 	{
@@ -557,7 +557,7 @@ public class AvatarZombieController : AvatarHumanController
 	}
 
 	// Token: 0x17000055 RID: 85
-	// (get) Token: 0x06000561 RID: 1377 RVA: 0x000253CA File Offset: 0x000235CA
+	// (get) Token: 0x06000567 RID: 1383 RVA: 0x000254C2 File Offset: 0x000236C2
 	public bool rightArmDismembered
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -568,7 +568,7 @@ public class AvatarZombieController : AvatarHumanController
 	}
 
 	// Token: 0x17000056 RID: 86
-	// (get) Token: 0x06000562 RID: 1378 RVA: 0x000253DC File Offset: 0x000235DC
+	// (get) Token: 0x06000568 RID: 1384 RVA: 0x000254D4 File Offset: 0x000236D4
 	public bool leftArmDismembered
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -578,7 +578,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000563 RID: 1379 RVA: 0x000253F0 File Offset: 0x000235F0
+	// Token: 0x06000569 RID: 1385 RVA: 0x000254E8 File Offset: 0x000236E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isCensoredContent()
 	{
@@ -596,7 +596,7 @@ public class AvatarZombieController : AvatarHumanController
 		return true;
 	}
 
-	// Token: 0x06000564 RID: 1380 RVA: 0x00025460 File Offset: 0x00023660
+	// Token: 0x0600056A RID: 1386 RVA: 0x00025558 File Offset: 0x00023758
 	public void CleanupDismemberedLimbs()
 	{
 		for (int i = 0; i < this.dismemberedParts.Count; i++)
@@ -605,7 +605,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000565 RID: 1381 RVA: 0x00025498 File Offset: 0x00023698
+	// Token: 0x0600056B RID: 1387 RVA: 0x00025590 File Offset: 0x00023790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _InitDismembermentMaterials()
 	{
@@ -631,7 +631,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000566 RID: 1382 RVA: 0x00025560 File Offset: 0x00023760
+	// Token: 0x0600056C RID: 1388 RVA: 0x00025658 File Offset: 0x00023858
 	public override void RemoveLimb(BodyDamage _bodyDamage, bool restoreState)
 	{
 		if (DismembermentManager.DebugDontCreateParts)
@@ -740,7 +740,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000567 RID: 1383 RVA: 0x0002585C File Offset: 0x00023A5C
+	// Token: 0x0600056D RID: 1389 RVA: 0x00025954 File Offset: 0x00023B54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform SpawnLimbGore(Transform parent, string path, bool restoreState)
 	{
@@ -783,7 +783,7 @@ public class AvatarZombieController : AvatarHumanController
 		return gameObject.transform;
 	}
 
-	// Token: 0x06000568 RID: 1384 RVA: 0x0002593C File Offset: 0x00023B3C
+	// Token: 0x0600056E RID: 1390 RVA: 0x00025A34 File Offset: 0x00023C34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcDismemberedPart(Transform t, Transform partT, DismemberedPartData part, uint bodyDamageFlag)
 	{
@@ -1045,7 +1045,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000569 RID: 1385 RVA: 0x000261B8 File Offset: 0x000243B8
+	// Token: 0x0600056F RID: 1391 RVA: 0x000262B0 File Offset: 0x000244B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject addScalePoint(Transform boneT)
 	{
@@ -1061,7 +1061,7 @@ public class AvatarZombieController : AvatarHumanController
 		return gameObject;
 	}
 
-	// Token: 0x0600056A RID: 1386 RVA: 0x00026214 File Offset: 0x00024414
+	// Token: 0x06000570 RID: 1392 RVA: 0x0002630C File Offset: 0x0002450C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setUpEyeMats(Transform t)
 	{
@@ -1099,7 +1099,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600056B RID: 1387 RVA: 0x000262F8 File Offset: 0x000244F8
+	// Token: 0x06000571 RID: 1393 RVA: 0x000263F0 File Offset: 0x000245F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MakeDismemberedPart(uint bodyDamageFlag, EnumDamageTypes damageType, Transform partT, bool restoreState)
 	{
@@ -1283,7 +1283,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600056C RID: 1388 RVA: 0x0001E469 File Offset: 0x0001C669
+	// Token: 0x06000572 RID: 1394 RVA: 0x0001E561 File Offset: 0x0001C761
 	[Conditional("DEBUG_DISMEMBERMENT")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void logDismemberment(string _log)
@@ -1295,7 +1295,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600056D RID: 1389 RVA: 0x00026838 File Offset: 0x00024A38
+	// Token: 0x06000573 RID: 1395 RVA: 0x00026930 File Offset: 0x00024B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void scaleOutChildBones(Transform _boneT)
 	{
@@ -1312,7 +1312,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600056E RID: 1390 RVA: 0x0002688C File Offset: 0x00024A8C
+	// Token: 0x06000574 RID: 1396 RVA: 0x00026984 File Offset: 0x00024B84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void disableChildColliders(Transform _boneT)
 	{
@@ -1334,7 +1334,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0600056F RID: 1391 RVA: 0x00026900 File Offset: 0x00024B00
+	// Token: 0x06000575 RID: 1397 RVA: 0x000269F8 File Offset: 0x00024BF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ActivateDetachableLimbs(uint bodyDamageFlag, EnumDamageTypes damageType, Transform partT, DismemberedPart part)
 	{
@@ -1520,7 +1520,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000570 RID: 1392 RVA: 0x0002704C File Offset: 0x0002524C
+	// Token: 0x06000576 RID: 1398 RVA: 0x00027144 File Offset: 0x00025344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material GetMainZombieBodyMaterial()
 	{
@@ -1536,7 +1536,7 @@ public class AvatarZombieController : AvatarHumanController
 		return null;
 	}
 
-	// Token: 0x06000571 RID: 1393 RVA: 0x0002708C File Offset: 0x0002528C
+	// Token: 0x06000577 RID: 1399 RVA: 0x00027184 File Offset: 0x00025384
 	public override void Electrocute(bool enabled)
 	{
 		base.Electrocute(enabled);
@@ -1559,7 +1559,7 @@ public class AvatarZombieController : AvatarHumanController
 		this.StartAnimationElectrocute(num);
 	}
 
-	// Token: 0x06000572 RID: 1394 RVA: 0x00027104 File Offset: 0x00025304
+	// Token: 0x06000578 RID: 1400 RVA: 0x000271FC File Offset: 0x000253FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLimbShaderProps(EnumBodyPartHit partHit, DismemberedPart part)
 	{
@@ -1639,7 +1639,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000573 RID: 1395 RVA: 0x00027350 File Offset: 0x00025550
+	// Token: 0x06000579 RID: 1401 RVA: 0x00027448 File Offset: 0x00025648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void hideDismemberedPart(uint bodyDamageFlag)
 	{
@@ -1670,7 +1670,7 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x06000576 RID: 1398 RVA: 0x000273FC File Offset: 0x000255FC
+	// Token: 0x0600057C RID: 1404 RVA: 0x000274F4 File Offset: 0x000256F4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <Electrocute>g__SetProperty|91_0(Material mat, ref AvatarZombieController.<>c__DisplayClass91_0 A_1)
@@ -1681,182 +1681,182 @@ public class AvatarZombieController : AvatarHumanController
 		}
 	}
 
-	// Token: 0x0400058B RID: 1419
+	// Token: 0x0400058E RID: 1422
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float idleTime;
 
-	// Token: 0x0400058C RID: 1420
+	// Token: 0x0400058F RID: 1423
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float actionTimeActive;
 
-	// Token: 0x0400058D RID: 1421
+	// Token: 0x04000590 RID: 1424
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float attackPlayingTime;
 
-	// Token: 0x0400058E RID: 1422
+	// Token: 0x04000591 RID: 1425
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isAttackImpact;
 
-	// Token: 0x0400058F RID: 1423
+	// Token: 0x04000592 RID: 1426
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float timeSpecialAttack2Playing;
 
-	// Token: 0x04000590 RID: 1424
+	// Token: 0x04000593 RID: 1427
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float timeRagePlaying;
 
-	// Token: 0x04000591 RID: 1425
+	// Token: 0x04000594 RID: 1428
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isEating;
 
-	// Token: 0x04000592 RID: 1426
+	// Token: 0x04000595 RID: 1429
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int movementStateOverride = -1;
 
-	// Token: 0x04000593 RID: 1427
+	// Token: 0x04000596 RID: 1430
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool headDismembered;
 
-	// Token: 0x04000594 RID: 1428
+	// Token: 0x04000597 RID: 1431
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftUpperArmDismembered;
 
-	// Token: 0x04000595 RID: 1429
+	// Token: 0x04000598 RID: 1432
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftLowerArmDismembered;
 
-	// Token: 0x04000596 RID: 1430
+	// Token: 0x04000599 RID: 1433
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightUpperArmDismembered;
 
-	// Token: 0x04000597 RID: 1431
+	// Token: 0x0400059A RID: 1434
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightLowerArmDismembered;
 
-	// Token: 0x04000598 RID: 1432
+	// Token: 0x0400059B RID: 1435
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftUpperLegDismembered;
 
-	// Token: 0x04000599 RID: 1433
+	// Token: 0x0400059C RID: 1436
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool leftLowerLegDismembered;
 
-	// Token: 0x0400059A RID: 1434
+	// Token: 0x0400059D RID: 1437
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightUpperLegDismembered;
 
-	// Token: 0x0400059B RID: 1435
+	// Token: 0x0400059E RID: 1438
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool rightLowerLegDismembered;
 
-	// Token: 0x0400059C RID: 1436
+	// Token: 0x0400059F RID: 1439
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isInDeathAnim;
 
-	// Token: 0x0400059D RID: 1437
+	// Token: 0x040005A0 RID: 1440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool didDeathTransition;
 
-	// Token: 0x0400059E RID: 1438
+	// Token: 0x040005A1 RID: 1441
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material mainZombieMaterial;
 
-	// Token: 0x0400059F RID: 1439
+	// Token: 0x040005A2 RID: 1442
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material mainZombieMaterialCopy;
 
-	// Token: 0x040005A0 RID: 1440
+	// Token: 0x040005A3 RID: 1443
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material gibCapMaterial;
 
-	// Token: 0x040005A1 RID: 1441
+	// Token: 0x040005A4 RID: 1444
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material gibCapMaterialCopy;
 
-	// Token: 0x040005A2 RID: 1442
+	// Token: 0x040005A5 RID: 1445
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material dismemberMat;
 
-	// Token: 0x040005A3 RID: 1443
+	// Token: 0x040005A6 RID: 1446
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SkinnedMeshRenderer skinnedMeshRenderer;
 
-	// Token: 0x040005A4 RID: 1444
+	// Token: 0x040005A7 RID: 1447
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SkinnedMeshRenderer smrLODOne;
 
-	// Token: 0x040005A5 RID: 1445
+	// Token: 0x040005A8 RID: 1448
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SkinnedMeshRenderer smrLODTwo;
 
-	// Token: 0x040005A6 RID: 1446
+	// Token: 0x040005A9 RID: 1449
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string rootDismmemberDir;
 
-	// Token: 0x040005A7 RID: 1447
+	// Token: 0x040005AA RID: 1450
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string subFolderDismemberEntityName;
 
-	// Token: 0x040005A8 RID: 1448
+	// Token: 0x040005AB RID: 1451
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int altEntityMatId = -1;
 
-	// Token: 0x040005A9 RID: 1449
+	// Token: 0x040005AC RID: 1452
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string altMatName;
 
-	// Token: 0x040005AA RID: 1450
+	// Token: 0x040005AD RID: 1453
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<DismemberedPart> dismemberedParts = new List<DismemberedPart>();
 
-	// Token: 0x040005AB RID: 1451
+	// Token: 0x040005AE RID: 1454
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isCensored;
 
-	// Token: 0x040005AC RID: 1452
+	// Token: 0x040005AF RID: 1455
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cEmissiveColor = "_EmissiveColor";
 
-	// Token: 0x040005AD RID: 1453
+	// Token: 0x040005B0 RID: 1456
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 defaultHeadPos;
 
-	// Token: 0x040005AE RID: 1454
+	// Token: 0x040005B1 RID: 1457
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly int ElectrocuteEnabledProperty = Shader.PropertyToID("_ElectricShockEnabled");

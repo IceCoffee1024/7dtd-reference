@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024B RID: 587
+// Token: 0x0200024E RID: 590
 [Preserve]
 public class ConsoleCmdNetworkServer : ConsoleCmdAbstract
 {
-	// Token: 0x0600118E RID: 4494 RVA: 0x0006EE46 File Offset: 0x0006D046
+	// Token: 0x0600118B RID: 4491 RVA: 0x0006F0F2 File Offset: 0x0006D2F2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "networkserver", "nets" };
 	}
 
-	// Token: 0x170001C5 RID: 453
-	// (get) Token: 0x0600118F RID: 4495 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001BD RID: 445
+	// (get) Token: 0x0600118C RID: 4492 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,21 +23,21 @@ public class ConsoleCmdNetworkServer : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001190 RID: 4496 RVA: 0x0006EE5E File Offset: 0x0006D05E
+	// Token: 0x0600118D RID: 4493 RVA: 0x0006F10A File Offset: 0x0006D30A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Server side network commands";
 	}
 
-	// Token: 0x06001191 RID: 4497 RVA: 0x0006EE65 File Offset: 0x0006D065
+	// Token: 0x0600118E RID: 4494 RVA: 0x0006F111 File Offset: 0x0006D311
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Commands:\nlatencysim <min> <max> - sets simulation in millisecs (0 min disables)\npacketlosssim <chance> - sets simulation in percent (0 - 50)";
 	}
 
-	// Token: 0x06001192 RID: 4498 RVA: 0x0006EE6C File Offset: 0x0006D06C
+	// Token: 0x0600118F RID: 4495 RVA: 0x0006F118 File Offset: 0x0006D318
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

@@ -6,12 +6,12 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200026E RID: 622
+// Token: 0x02000271 RID: 625
 [Preserve]
 public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 {
-	// Token: 0x170001E5 RID: 485
-	// (get) Token: 0x06001269 RID: 4713 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001DD RID: 477
+	// (get) Token: 0x06001266 RID: 4710 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -20,20 +20,20 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600126A RID: 4714 RVA: 0x000735E7 File Offset: 0x000717E7
+	// Token: 0x06001267 RID: 4711 RVA: 0x0007389B File Offset: 0x00071A9B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "profilenetwork" };
 	}
 
-	// Token: 0x0600126B RID: 4715 RVA: 0x000735F7 File Offset: 0x000717F7
+	// Token: 0x06001268 RID: 4712 RVA: 0x000738AB File Offset: 0x00071AAB
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		this.doProfileNetwork();
 	}
 
-	// Token: 0x0600126C RID: 4716 RVA: 0x00073600 File Offset: 0x00071800
+	// Token: 0x06001269 RID: 4713 RVA: 0x000738B4 File Offset: 0x00071AB4
 	public void resetData()
 	{
 		ConsoleCmdProfileNetwork.lastTimeWritten = Time.time;
@@ -56,7 +56,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600126D RID: 4717 RVA: 0x00073684 File Offset: 0x00071884
+	// Token: 0x0600126A RID: 4714 RVA: 0x00073938 File Offset: 0x00071B38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetDataOnConnection(INetConnection[] _con)
 	{
@@ -78,7 +78,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600126E RID: 4718 RVA: 0x0007370C File Offset: 0x0007190C
+	// Token: 0x0600126B RID: 4715 RVA: 0x000739C0 File Offset: 0x00071BC0
 	public void doProfileNetwork()
 	{
 		string text = (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer ? "server" : "client");
@@ -144,7 +144,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600126F RID: 4719 RVA: 0x00073A28 File Offset: 0x00071C28
+	// Token: 0x0600126C RID: 4716 RVA: 0x00073CDC File Offset: 0x00071EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void printChannelStats(StreamWriter _file, int _channel, int _pkgsRx, int _bytesRx, int _pkgsTx, int _bytesTx, float _interval)
 	{
@@ -165,7 +165,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}));
 	}
 
-	// Token: 0x06001270 RID: 4720 RVA: 0x00073B0C File Offset: 0x00071D0C
+	// Token: 0x0600126D RID: 4717 RVA: 0x00073DC0 File Offset: 0x00071FC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doResultsForConnection(INetConnection[] _con, StreamWriter _outFile, int[] _tBytesSent, int[] _tBytesReceived, int[] _tPackagesSent, int[] _tPackagesReceived, int[] _tPackagesPerTypeSent, int[] _tBytesPerTypeSent, int[] _tPackagesPerTypeReceived, int[] _tBytesPerTypeReceived, float _interval)
 	{
@@ -197,7 +197,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001271 RID: 4721 RVA: 0x00073C2C File Offset: 0x00071E2C
+	// Token: 0x0600126E RID: 4718 RVA: 0x00073EE0 File Offset: 0x000720E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string printPackageSequence(RingBuffer<SNetPackageInfo> _sequence, string _addInfo)
 	{
@@ -246,7 +246,7 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06001272 RID: 4722 RVA: 0x00073D60 File Offset: 0x00071F60
+	// Token: 0x0600126F RID: 4719 RVA: 0x00074014 File Offset: 0x00072214
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string formatPackage(ulong _baseTick, SNetPackageInfo _lastPackage, int _lastPackageCnt, int _size)
 	{
@@ -259,30 +259,30 @@ public class ConsoleCmdProfileNetwork : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x06001273 RID: 4723 RVA: 0x00073DAE File Offset: 0x00071FAE
+	// Token: 0x06001270 RID: 4720 RVA: 0x00074062 File Offset: 0x00072262
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Writes network profiling information";
 	}
 
-	// Token: 0x04000D3C RID: 3388
+	// Token: 0x04000D35 RID: 3381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastTimeWritten;
 
-	// Token: 0x04000D3D RID: 3389
+	// Token: 0x04000D36 RID: 3382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ColWidthType = 3;
 
-	// Token: 0x04000D3E RID: 3390
+	// Token: 0x04000D37 RID: 3383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ColWidthCount = 6;
 
-	// Token: 0x04000D3F RID: 3391
+	// Token: 0x04000D38 RID: 3384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ColWidthSize = 8;
 
-	// Token: 0x04000D40 RID: 3392
+	// Token: 0x04000D39 RID: 3385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int ColWidthRate = 10;
 }

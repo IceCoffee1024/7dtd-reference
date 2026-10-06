@@ -6,17 +6,17 @@ using UniLinq;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A69 RID: 6761
+	// Token: 0x02001A95 RID: 6805
 	public class SectionSelector : ISectionSelector, INotifiable<MusicActionType>, ISelector<SectionType>
 	{
-		// Token: 0x0600CCC8 RID: 52424 RVA: 0x004AA70D File Offset: 0x004A890D
+		// Token: 0x0600CE20 RID: 52768 RVA: 0x004AEBD9 File Offset: 0x004ACDD9
 		public SectionSelector()
 		{
 			this.PlayerTracker = Factory.CreatePlayerTracker();
 			this.DayTimeTracker = Factory.CreateDayTimeTracker();
 		}
 
-		// Token: 0x0600CCC9 RID: 52425 RVA: 0x004AA740 File Offset: 0x004A8940
+		// Token: 0x0600CE21 RID: 52769 RVA: 0x004AEC0C File Offset: 0x004ACE0C
 		public SectionType Select()
 		{
 			this.sectionTypesBuffer.Clear();
@@ -41,28 +41,28 @@ namespace DynamicMusic
 			return this.sectionTypesBuffer[0];
 		}
 
-		// Token: 0x0600CCCA RID: 52426 RVA: 0x004AA804 File Offset: 0x004A8A04
+		// Token: 0x0600CE22 RID: 52770 RVA: 0x004AECD0 File Offset: 0x004ACED0
 		public void Notify(MusicActionType _state)
 		{
 			this.DayTimeTracker.Notify(_state);
 		}
 
-		// Token: 0x04009B68 RID: 39784
+		// Token: 0x04009C2E RID: 39982
 		public static bool IsDMSTempDisabled;
 
-		// Token: 0x04009B69 RID: 39785
+		// Token: 0x04009C2F RID: 39983
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly List<SectionType> sectionTypeEnumValues = Enum.GetValues(typeof(SectionType)).Cast<SectionType>().ToList<SectionType>();
 
-		// Token: 0x04009B6A RID: 39786
+		// Token: 0x04009C30 RID: 39984
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IFilter<SectionType> PlayerTracker;
 
-		// Token: 0x04009B6B RID: 39787
+		// Token: 0x04009C31 RID: 39985
 		[PublicizedFrom(EAccessModifier.Private)]
 		public INotifiableFilter<MusicActionType, SectionType> DayTimeTracker;
 
-		// Token: 0x04009B6C RID: 39788
+		// Token: 0x04009C32 RID: 39986
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<SectionType> sectionTypesBuffer = new List<SectionType>(SectionSelector.sectionTypeEnumValues.Count);
 	}

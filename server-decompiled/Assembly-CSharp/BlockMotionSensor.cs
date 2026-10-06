@@ -3,23 +3,23 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000131 RID: 305
+// Token: 0x02000133 RID: 307
 [Preserve]
 public class BlockMotionSensor : BlockPowered
 {
-	// Token: 0x0600083F RID: 2111 RVA: 0x0003AAD4 File Offset: 0x00038CD4
+	// Token: 0x06000845 RID: 2117 RVA: 0x0003ABC4 File Offset: 0x00038DC4
 	public BlockMotionSensor()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000840 RID: 2112 RVA: 0x0003AB2C File Offset: 0x00038D2C
+	// Token: 0x06000846 RID: 2118 RVA: 0x0003AC1C File Offset: 0x00038E1C
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x06000841 RID: 2113 RVA: 0x0003AB34 File Offset: 0x00038D34
+	// Token: 0x06000847 RID: 2119 RVA: 0x0003AC24 File Offset: 0x00038E24
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -32,7 +32,7 @@ public class BlockMotionSensor : BlockPowered
 		}
 	}
 
-	// Token: 0x06000842 RID: 2114 RVA: 0x0003AB88 File Offset: 0x00038D88
+	// Token: 0x06000848 RID: 2120 RVA: 0x0003AC78 File Offset: 0x00038E78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bChangeState = false)
 	{
@@ -102,40 +102,40 @@ public class BlockMotionSensor : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000843 RID: 2115 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000849 RID: 2121 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue blockDef, BlockFace face)
 	{
 		return false;
 	}
 
-	// Token: 0x06000844 RID: 2116 RVA: 0x0003ADA4 File Offset: 0x00038FA4
+	// Token: 0x0600084A RID: 2122 RVA: 0x0003AE94 File Offset: 0x00039094
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
 		this.updateState(_world, _blockPos, _blockValue, false);
 	}
 
-	// Token: 0x06000845 RID: 2117 RVA: 0x0003ADBA File Offset: 0x00038FBA
+	// Token: 0x0600084B RID: 2123 RVA: 0x0003AEAA File Offset: 0x000390AA
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.updateState(_world, _blockPos, _newBlockValue, false);
 	}
 
-	// Token: 0x06000846 RID: 2118 RVA: 0x0003ADD5 File Offset: 0x00038FD5
+	// Token: 0x0600084C RID: 2124 RVA: 0x0003AEC5 File Offset: 0x000390C5
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		this.updateState(_world, _blockPos, _blockValue, false);
 		return true;
 	}
 
-	// Token: 0x06000847 RID: 2119 RVA: 0x0003ADE3 File Offset: 0x00038FE3
+	// Token: 0x0600084D RID: 2125 RVA: 0x0003AED3 File Offset: 0x000390D3
 	public static bool IsSwitchOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x06000848 RID: 2120 RVA: 0x0003ADEB File Offset: 0x00038FEB
+	// Token: 0x0600084E RID: 2126 RVA: 0x0003AEDB File Offset: 0x000390DB
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -144,7 +144,7 @@ public class BlockMotionSensor : BlockPowered
 		};
 	}
 
-	// Token: 0x06000849 RID: 2121 RVA: 0x0003ADFC File Offset: 0x00038FFC
+	// Token: 0x0600084F RID: 2127 RVA: 0x0003AEEC File Offset: 0x000390EC
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -168,7 +168,7 @@ public class BlockMotionSensor : BlockPowered
 		}
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x0003AE80 File Offset: 0x00039080
+	// Token: 0x06000850 RID: 2128 RVA: 0x0003AF70 File Offset: 0x00039170
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false))
@@ -186,7 +186,7 @@ public class BlockMotionSensor : BlockPowered
 		return "";
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x0003AF10 File Offset: 0x00039110
+	// Token: 0x06000851 RID: 2129 RVA: 0x0003B000 File Offset: 0x00039200
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -203,7 +203,7 @@ public class BlockMotionSensor : BlockPowered
 		if (_commandName == "options")
 		{
 			_player.AimingGun = false;
-			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, null, 0);
+			LockManager.Instance.LockRequestLocal(tileEntityPoweredTrigger, 0);
 			return true;
 		}
 		if (!(_commandName == "take"))
@@ -214,13 +214,13 @@ public class BlockMotionSensor : BlockPowered
 		return true;
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x06000852 RID: 2130 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x0003AFAC File Offset: 0x000391AC
+	// Token: 0x06000853 RID: 2131 RVA: 0x0003B098 File Offset: 0x00039298
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);
@@ -230,7 +230,7 @@ public class BlockMotionSensor : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x0400094D RID: 2381
+	// Token: 0x04000950 RID: 2384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

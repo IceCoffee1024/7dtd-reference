@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F2 RID: 498
+// Token: 0x020001F3 RID: 499
 [Preserve]
 public class ConsoleCmdCensor : ConsoleCmdAbstract
 {
-	// Token: 0x1700014C RID: 332
-	// (get) Token: 0x06000F5F RID: 3935 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000144 RID: 324
+	// (get) Token: 0x06000F52 RID: 3922 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,22 +16,22 @@ public class ConsoleCmdCensor : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F60 RID: 3936 RVA: 0x00063BA3 File Offset: 0x00061DA3
+	// Token: 0x06000F53 RID: 3923 RVA: 0x00063B93 File Offset: 0x00061D93
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testCensor", "tcc" };
 	}
 
-	// Token: 0x06000F61 RID: 3937 RVA: 0x00063BBB File Offset: 0x00061DBB
+	// Token: 0x06000F54 RID: 3924 RVA: 0x00063BAB File Offset: 0x00061DAB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Censorship testing toggle.";
 	}
 
-	// Token: 0x1700014D RID: 333
-	// (get) Token: 0x06000F62 RID: 3938 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x17000145 RID: 325
+	// (get) Token: 0x06000F55 RID: 3925 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdCensor : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F63 RID: 3939 RVA: 0x00063BC2 File Offset: 0x00061DC2
+	// Token: 0x06000F56 RID: 3926 RVA: 0x00063BB2 File Offset: 0x00061DB2
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled))

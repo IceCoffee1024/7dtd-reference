@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200025E RID: 606
+// Token: 0x02000261 RID: 609
 [Preserve]
 public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 {
-	// Token: 0x170001D8 RID: 472
-	// (get) Token: 0x060011FF RID: 4607 RVA: 0x00020021 File Offset: 0x0001E221
+	// Token: 0x170001D0 RID: 464
+	// (get) Token: 0x060011FC RID: 4604 RVA: 0x00020119 File Offset: 0x0001E319
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,28 +17,28 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001200 RID: 4608 RVA: 0x0007065E File Offset: 0x0006E85E
+	// Token: 0x060011FD RID: 4605 RVA: 0x0007090A File Offset: 0x0006EB0A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Places all rotations of the currently held block";
 	}
 
-	// Token: 0x06001201 RID: 4609 RVA: 0x00070665 File Offset: 0x0006E865
+	// Token: 0x060011FE RID: 4606 RVA: 0x00070911 File Offset: 0x0006EB11
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Places the block you currently hold in your hand in all supported rotations. Starts\nat the current selection box and spreads out towards the right relative to the\ncurrent view direction of the player. Spaces out each block by 1m meter.";
 	}
 
-	// Token: 0x06001202 RID: 4610 RVA: 0x0007066C File Offset: 0x0006E86C
+	// Token: 0x060011FF RID: 4607 RVA: 0x00070918 File Offset: 0x0006EB18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "placeblockrotations", "pbr" };
 	}
 
-	// Token: 0x06001203 RID: 4611 RVA: 0x00070684 File Offset: 0x0006E884
+	// Token: 0x06001200 RID: 4608 RVA: 0x00070930 File Offset: 0x0006EB30
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)
@@ -60,8 +60,8 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		}
 		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
 		BlockValue blockValue = primaryPlayer.inventory.holdingItemItemValue.ToBlockValue(false);
-		ItemClassBlock.ItemBlockInventoryData itemBlockInventoryData = primaryPlayer.inventory.holdingItemData as ItemClassBlock.ItemBlockInventoryData;
-		if (blockValue.isair || itemBlockInventoryData == null)
+		ItemInventoryData holdingItemData = primaryPlayer.inventory.holdingItemData;
+		if (blockValue.isair || !holdingItemData.IsBlock)
 		{
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Player is not holding a block.");
 			return;
@@ -89,7 +89,7 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		blockValue.rotation = 0;
 		do
 		{
-			ConsoleCmdPlaceBlockRotations.PlaceBlock(blockValue, itemBlockInventoryData, vector3i, primaryPlayer);
+			ConsoleCmdPlaceBlockRotations.PlaceBlock(blockValue, holdingItemData, vector3i, primaryPlayer);
 			int num = 0;
 			blockValue.rotation = blockValue.Block.BlockPlacementHelper.LimitRotation(BlockPlacement.EnumRotationMode.Advanced, ref num, default(HitInfoDetails), true, blockValue, blockValue.rotation);
 			vector3i += zero;
@@ -97,9 +97,9 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		while (blockValue.rotation != 0);
 	}
 
-	// Token: 0x06001204 RID: 4612 RVA: 0x00070810 File Offset: 0x0006EA10
+	// Token: 0x06001201 RID: 4609 RVA: 0x00070ABC File Offset: 0x0006ECBC
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static void PlaceBlock(BlockValue _blockValue, ItemClassBlock.ItemBlockInventoryData _holdingData, Vector3i _placementPos, EntityPlayerLocal _player)
+	public static void PlaceBlock(BlockValue _blockValue, ItemInventoryData _holdingData, Vector3i _placementPos, EntityPlayerLocal _player)
 	{
 		BlockPlacement.Result result = new BlockPlacement.Result(BlockPlacement.EnumPlacement.Voxel, _placementPos + Vector3.one * 0.5f, _placementPos, BlockFace.None, _blockValue, _holdingData.propTransform);
 		Block block = _blockValue.Block;
